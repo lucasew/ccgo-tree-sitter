@@ -141,7 +141,7 @@ func (t *Transpiler) TranspileGrammar(grammarPath, outputDir string) error {
 
 		goCode := postProcess(string(data))
 		// Change package from main to grammar name (preserve comments)
-		goCode = strings.Replace(goCode, "package main", "package "+grammarName, 1)
+		goCode = strings.Replace(goCode, "package main", "package "+"grammar_"+grammarName, 1)
 
 		outputFile := filepath.Join(grammarOutDir, fmt.Sprintf("grammar-%s-%s.go", t.GOOS, t.GOARCH))
 		if err := os.WriteFile(outputFile, []byte(goCode), 0644); err != nil {
@@ -515,16 +515,6 @@ func postProcess(goCode string) string {
 }`)
 
 	return goCode
-}
-
-func postProcessAndWrite(inputPath, outputPath string) error {
-	data, err := os.ReadFile(inputPath)
-	if err != nil {
-		return err
-	}
-
-	processed := postProcess(string(data))
-	return os.WriteFile(outputPath, []byte(processed), 0644)
 }
 
 func extractGrammarName(path string) string {

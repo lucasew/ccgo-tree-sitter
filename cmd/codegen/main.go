@@ -28,9 +28,16 @@ allowing you to use tree-sitter parsers natively in Go without CGO.`,
 	RunE: run,
 }
 
+func env(key, defaultValue string) string {
+	if ret := os.Getenv(key); ret != "" {
+		return ret
+	}
+	return defaultValue
+}
+
 func init() {
-	rootCmd.Flags().StringVar(&targetGOOS, "goos", runtime.GOOS, "Target GOOS for generated code")
-	rootCmd.Flags().StringVar(&targetGOARCH, "goarch", runtime.GOARCH, "Target GOARCH for generated code")
+	rootCmd.Flags().StringVar(&targetGOOS, "goos", env("TARGET_GOOS", runtime.GOOS), "Target GOOS for generated code")
+	rootCmd.Flags().StringVar(&targetGOARCH, "goarch", env("TARGET_GOARCH", runtime.GOARCH), "Target GOARCH for generated code")
 	rootCmd.Flags().BoolVarP(&keepTemp, "keep-temp", "k", false, "Keep temporary files for debugging")
 }
 
@@ -41,6 +48,7 @@ func main() {
 }
 
 func run(cmd *cobra.Command, args []string) error {
+	slog.Info("compiling for target", "GOOS", targetGOOS, "GOARCH", targetGOARCH)
 	// Create transpiler
 	transpiler := &Transpiler{
 		TreeSitterPath: TREE_SITTER_PATH,

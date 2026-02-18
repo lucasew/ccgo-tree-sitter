@@ -1,5 +1,6 @@
 [tools]
 go = "1.26.0"
+uv = "0.9.28"
 "go:golang.org/x/tools/gopls" = "0.21.0"
 
 [tasks."codegen:linux-amd64"]
@@ -7,14 +8,17 @@ env = {
   TARGET_GOOS = "linux",
   TARGET_GOARCH = "amd64"
 }
-run = "go run ./cmd/codegen"
+run = "go run -v ./cmd/codegen"
 
 [tasks."codegen:linux-arm64"]
 env = {
   TARGET_GOOS = "linux",
   TARGET_GOARCH = "arm64"
 }
-run = "go run ./cmd/codegen"
+run = "go run -v ./cmd/codegen"
 
 [tasks.codegen]
 depends = ["codegen:*"]
+
+[tasks.install]
+run = "go get -v ./..."

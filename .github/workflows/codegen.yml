@@ -1,0 +1,46 @@
+name: Codegen and Test
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 * * 6' # Weekly on Saturday at midnight
+  workflow_dispatch:
+
+jobs:
+  codegen:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up tools (mise)
+        uses: jdx/mise-action@v2
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gcc
+
+      - name: Run Codegen and Test
+        run: uv run test.py
+
+      - name: Codegen
+        run: mise run codegen
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore: update generated grammars"
+          title: "Update generated grammars"
+          body: "Automated update of tree-sitter grammars generated code."
+          branch: "codegen-update"
+          delete-branch: true

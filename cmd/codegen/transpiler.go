@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"os"
-	"os/exec"
 	"path/filepath"
 	"regexp"
 	"strings"
@@ -37,6 +36,8 @@ func (t *Transpiler) TranspileCore(outputDir string) error {
 		"-I", tsInclude,
 		"-I", tsSrc,
 		"-include", "cmd/codegen/atomic_stubs.h",
+		"--package-name", "grammar",
+		"--prefix-external", "X",
 	}
 	if err := t.runCcgo(includeFlags, libC, outputFile); err != nil {
 		return fmt.Errorf("ccgo failed: %w", err)
@@ -96,13 +97,11 @@ func (t *Transpiler) TranspileGrammar(grammarPath, outputDir string) error {
 		"-I", grammarSrc,
 		"-I", tsInclude,
 		"-I", tsSrc,
+		"--package-name", grammarName,
+		"--prefix-external", "X",
 	}
 	if err := t.runCcgo(includeFlags, inputC, outputFile); err != nil {
 		return fmt.Errorf("transpilation failed: %w", err)
-	}
-
-	if err := postProcessFile(outputFile, "package main", "package "+grammarName); err != nil {
-		return err
 	}
 
 	if hasScanner {
@@ -146,7 +145,7 @@ func (t *Transpiler) runCcgo(extraFlags []string, inputPath, outputPath string) 
 	ccgoArgs := append([]string{"ccgo"}, extraFlags...)
 	ccgoArgs = append(ccgoArgs, inputPath, "-o", outputPath)
 	task := ccgo.NewTask(t.GOOS, t.GOARCH, ccgoArgs, os.Stdout, os.Stderr, nil)
-	return task.Exec()
+	return task.Main()
 }
 
 func postProcess(goCode string) string {

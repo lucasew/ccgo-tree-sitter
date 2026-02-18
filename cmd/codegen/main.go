@@ -11,12 +11,11 @@ import (
 )
 
 var (
-	treeSitterPath string
-	grammars       []string
-	targetGOOS     string
-	targetGOARCH   string
-	outputDir      string
-	keepTemp       bool
+	TREE_SITTER_PATH = "./third-party/tree-sitter"
+	OUTPUT_DIR       = "."
+	targetGOOS       string
+	targetGOARCH     string
+	keepTemp         bool
 )
 
 var rootCmd = &cobra.Command{
@@ -30,11 +29,8 @@ allowing you to use tree-sitter parsers natively in Go without CGO.`,
 }
 
 func init() {
-	rootCmd.Flags().StringVarP(&treeSitterPath, "tree-sitter", "t", "", "Path to tree-sitter source directory (required)")
-	rootCmd.Flags().StringArrayVarP(&grammars, "grammar", "g", []string{}, "Path to grammar source directory (can be specified multiple times)")
 	rootCmd.Flags().StringVar(&targetGOOS, "goos", runtime.GOOS, "Target GOOS for generated code")
 	rootCmd.Flags().StringVar(&targetGOARCH, "goarch", runtime.GOARCH, "Target GOARCH for generated code")
-	rootCmd.Flags().StringVarP(&outputDir, "output", "o", "", "Output directory (default: stdout)")
 	rootCmd.Flags().BoolVarP(&keepTemp, "keep-temp", "k", false, "Keep temporary files for debugging")
 
 	rootCmd.MarkFlagRequired("tree-sitter")
@@ -47,48 +43,47 @@ func main() {
 }
 
 func run(cmd *cobra.Command, args []string) error {
-	if treeSitterPath == "" {
-		return fmt.Errorf("--tree-sitter flag is required")
-	}
-
 	// Create transpiler
 	transpiler := &Transpiler{
-		TreeSitterPath: treeSitterPath,
+		TreeSitterPath: TREE_SITTER_PATH,
 		GOOS:           targetGOOS,
 		GOARCH:         targetGOARCH,
 		KeepTemp:       keepTemp,
 	}
 
 	// Transpile core
-	slog.Info("transpiling tree-sitter core", "path", treeSitterPath)
-	coreOutput := outputDir
-	if outputDir != "" {
-		coreOutput = filepath.Join(outputDir, "core")
+	slog.Info("transpiling tree-sitter core", "path", TREE_SITTER_PATH)
+	coreOutput := OUTPUT_DIR
+	if OUTPUT_DIR != "" {
+		coreOutput = filepath.Join(OUTPUT_DIR, "core")
 	}
 	if err := transpiler.TranspileCore(coreOutput); err != nil {
 		return fmt.Errorf("failed to transpile core: %w", err)
 	}
 
+	grammars, err := filepath.Glob("third-party/tree-sitter-*")
+	if err != nil {
+		return err
+	}
 	// Transpile grammars
 	for i, grammarPath := range grammars {
 		slog.Info("transpiling grammar", "index", i+1, "total", len(grammars), "path", grammarPath)
-		if err := transpiler.TranspileGrammar(grammarPath, outputDir); err != nil {
+		if err := transpiler.TranspileGrammar(grammarPath, OUTPUT_DIR); err != nil {
 			return fmt.Errorf("failed to transpile grammar %s: %w", grammarPath, err)
 		}
 	}
 
 	// Generate project structure if grammars were transpiled
-	if outputDir != "" && len(grammars) > 0 {
+	if OUTPUT_DIR != "" && len(grammars) > 0 {
 		slog.Info("generating project structure")
 		pg := &ProjectGenerator{
-			OutputDir: outputDir,
+			OutputDir: OUTPUT_DIR,
 			Grammars:  grammars,
 		}
 		if err := pg.Generate(); err != nil {
 			return fmt.Errorf("failed to generate project: %w", err)
 		}
-		slog.Info("project generated successfully", "output", outputDir)
-		slog.Info("build with: cd %s && go build ./cmd/parse", outputDir)
+		slog.Info("project generated successfully", "output", OUTPUT_DIR)
 	}
 
 	return nil

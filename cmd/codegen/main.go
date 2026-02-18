@@ -67,5 +67,19 @@ func run(cmd *cobra.Command, args []string) error {
 			return fmt.Errorf("failed to transpile grammar %s: %w", grammarPath, err)
 		}
 	}
+
+	// Generate project structure if grammars were transpiled
+	// if OUTPUT_DIR != "" && len(grammars) > 0 {
+	// 	slog.Info("generating project structure")
+	// 	pg := &ProjectGenerator{
+	// 		OutputDir: OUTPUT_DIR,
+	// 		Grammars:  grammars,
+	// 	}
+	// 	if err := pg.Generate(); err != nil {
+	// 		return fmt.Errorf("failed to generate project: %w", err)
+	// 	}
+	// 	slog.Info("project generated successfully", "output", OUTPUT_DIR)
+	// }
+
 	return nil
 }

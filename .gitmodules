@@ -1,0 +1,8 @@
+[submodule "third-party/ccgo"]
+	path = third-party/ccgo
+	url = ssh://git@github.com/lucasew/CONTRIB-ccgo
+	branch = feat/tree-sitter
+[submodule "third-party/tree-sitter"]
+	path = third-party/tree-sitter
+	url = ssh://git@github.com/lucasew/CONTRIB-tree-sitter
+	branch = fix/explicit-cast

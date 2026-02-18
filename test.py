@@ -5,9 +5,8 @@
 
 import os
 import subprocess
-import tempfile
 import sys
-import shutil
+import tempfile
 import re
 
 
@@ -32,31 +31,29 @@ def run_command(command, cwd=None, check=True):
 
 
 def main():
-    # Create temp directory
-    work_dir = tempfile.mkdtemp(prefix="tree-sitter-test-")
-    # work_dir = "/tmp/lewtec_debug/tree-sitter-test"
-    if os.path.exists(work_dir):
-        shutil.rmtree(work_dir)
-    os.makedirs(work_dir)
-    print(f"Work dir: {work_dir}")
+    repo_root = os.getcwd()
 
     try:
-        # 1. Run Transpiler
-        print("Running transpiler...")
-        # Get absolute path to current directory (repo root)
-        repo_root = os.getcwd()
-        cmd = f"go run . -t /tmp/tree-sitter -g /tmp/tree-sitter-json -o {work_dir}"
-        run_command(cmd, cwd=repo_root)
+        # 1. Run Codegen
+        print("Running codegen...")
+        run_command("go run ./cmd/codegen", cwd=repo_root)
 
-        # 2. Compile generated code
-        print("Compiling...")
-        run_command("go get modernc.org/libc@v1.68.0", cwd=work_dir)
-        run_command("go mod tidy", cwd=work_dir)
-        run_command("go build ./cmd/parse", cwd=work_dir)
+        # 3. Check for suspicious padding patterns in core
+        print("Checking for padding patterns in generated core...")
+        # Find the core file (it has GOOS and GOARCH in the name)
+        grammar_dir = os.path.join(repo_root, "grammar")
+        core_files = [
+            f
+            for f in os.listdir(grammar_dir)
+            if f.startswith("core-") and f.endswith(".go")
+        ]
 
-        # 3. Check for suspicious padding patterns
-        print("Checking for padding patterns in generated code...")
-        core_file = os.path.join(work_dir, "core", "tree_sitter.go")
+        if not core_files:
+            print("❌ Could not find generated core file in grammar/")
+            sys.exit(1)
+
+        core_file = os.path.join(grammar_dir, core_files[0])
+        print(f"Analyzing {core_file}...")
 
         with open(core_file, "r") as f:
             content = f.read()
@@ -78,46 +75,59 @@ def main():
         else:
             print("✅ No struct padding found in generated code (or N=0)")
 
-        # 4. Run Test
-        print("Running test...")
-        test_file = os.path.join(work_dir, "test.json")
-        with open(test_file, "w") as f:
+        # 4. Run Test with JSON
+        print("Running test with JSON...")
+        with tempfile.NamedTemporaryFile(suffix=".json", mode="w", delete=False) as f:
             f.write('{"key": [1, true]}')
+            test_json = f.name
 
-        result = run_command("./parse test.json", cwd=work_dir)
-        output = result.stdout.strip()
-        print("Output:")
-        print(output)
+        try:
+            result = run_command(f"go run ./cmd/parse {test_json}", cwd=repo_root)
+            output = result.stdout.strip()
+            print("Output:")
+            print(output)
 
-        # 5. Verify Output
-        # Expected (partial):
-        # document ...
-        #   object ...
-        #     pair ...
-        #       key: ...
-        #       value: ...
+            # 5. Verify Output
+            checks = ["document [", "pair [", "key:", "value: array"]
+            passed = True
+            for check in checks:
+                if check not in output:
+                    print(f"❌ Missing expected string: '{check}'")
+                    passed = False
 
-        checks = ["document [", "pair [", "key:", "value: array"]
+            if passed:
+                print("✅ JSON Test PASSED")
+            else:
+                print("❌ JSON Test FAILED: Output mismatch")
+                sys.exit(1)
+        finally:
+            if os.path.exists(test_json):
+                os.remove(test_json)
 
-        passed = True
-        for check in checks:
-            if check not in output:
-                print(f"❌ Missing expected string: '{check}'")
-                passed = False
-
-        if passed:
-            print("✅ Test PASSED")
-        else:
-            print("❌ Test FAILED: Output mismatch")
-            sys.exit(1)
+        # 6. Run Test with Lua (if available)
+        if os.path.exists(os.path.join(repo_root, "grammar/lua")):
+            print("Running test with Lua...")
+            with tempfile.NamedTemporaryFile(
+                suffix=".lua", mode="w", delete=False
+            ) as f:
+                f.write("local x = 10\nprint(x)")
+                test_lua = f.name
+            try:
+                result = run_command(f"go run ./cmd/parse {test_lua}", cwd=repo_root)
+                print("Lua Output:")
+                print(result.stdout.strip())
+                if "program [" in result.stdout:
+                    print("✅ Lua Test PASSED")
+                else:
+                    print("❌ Lua Test FAILED")
+                    passed = False
+            finally:
+                if os.path.exists(test_lua):
+                    os.remove(test_lua)
 
     except Exception as e:
         print(f"An error occurred: {e}")
         sys.exit(1)
-    finally:
-        # Cleanup (optional)
-        # shutil.rmtree(work_dir)
-        pass
 
 
 if __name__ == "__main__":

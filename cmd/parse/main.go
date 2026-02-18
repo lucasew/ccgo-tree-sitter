@@ -38,6 +38,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Supported languages: %s\n", grammar.SupportedLanguages())
 		os.Exit(1)
 	}
+	fmt.Printf("Using grammar: %p\n", lang)
 
 	// Create parser
 	parser := grammar.NewParser()

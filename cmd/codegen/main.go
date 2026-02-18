@@ -6,6 +6,8 @@ import (
 	"os"
 	"path/filepath"
 	"runtime"
+	"sort"
+	"strings"
 
 	"github.com/spf13/cobra"
 )
@@ -76,5 +78,39 @@ func run(cmd *cobra.Command, args []string) error {
 		}
 	}
 
+	slog.Info("updating languages registry in cmd/parse/languages.go")
+	if err := updateLanguagesGo(OUTPUT_DIR); err != nil {
+		return fmt.Errorf("failed to update languages registry: %w", err)
+	}
+
 	return nil
+}
+
+func updateLanguagesGo(outputDir string) error {
+	grammarDir := filepath.Join(outputDir, "grammar")
+	entries, err := os.ReadDir(grammarDir)
+	if err != nil {
+		return err
+	}
+
+	var languages []string
+	for _, entry := range entries {
+		if entry.IsDir() {
+			languages = append(languages, entry.Name())
+		}
+	}
+	sort.Strings(languages)
+
+	moduleName := "github.com/lucasew/ccgo-tree-sitter"
+
+	var sb strings.Builder
+	sb.WriteString("package main\n\n")
+	sb.WriteString("import (\n")
+	for _, lang := range languages {
+		sb.WriteString(fmt.Sprintf("\t_ \"%s/grammar/%s\"\n", moduleName, lang))
+	}
+	sb.WriteString(")\n")
+
+	targetFile := filepath.Join(outputDir, "cmd", "parse", "languages.go")
+	return os.WriteFile(targetFile, []byte(sb.String()), 0644)
 }

@@ -152,9 +152,9 @@ func (t *Transpiler) TranspileGrammar(grammarPath, outputDir string) error {
 		// Generate API wrapper
 		var apiErr error
 		if hasScanner {
-			apiErr = GenerateAPIWrapperWithScanner(outputDir, packageName)
+			apiErr = GenerateAPIWrapperWithScanner(outputDir, grammarName)
 		} else {
-			apiErr = GenerateAPIWrapper(outputDir, packageName)
+			apiErr = GenerateAPIWrapper(outputDir, grammarName)
 		}
 		if apiErr != nil {
 			return fmt.Errorf("failed to generate API: %w", apiErr)

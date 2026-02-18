@@ -107,7 +107,7 @@ func updateLanguagesGo(outputDir string) error {
 	sb.WriteString("package main\n\n")
 	sb.WriteString("import (\n")
 	for _, lang := range languages {
-		sb.WriteString(fmt.Sprintf("\t_ \"%s/grammar/%s\"\n", moduleName, lang))
+		fmt.Fprintf(&sb, "\t_ \"%s/grammar/%s\"\n", moduleName, lang)
 	}
 	sb.WriteString(")\n")
 

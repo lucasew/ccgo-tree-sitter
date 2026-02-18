@@ -116,7 +116,7 @@ def main():
                 result = run_command(f"go run ./cmd/parse {test_lua}", cwd=repo_root)
                 print("Lua Output:")
                 print(result.stdout.strip())
-                if "program [" in result.stdout:
+                if "chunk [" in result.stdout:
                     print("✅ Lua Test PASSED")
                 else:
                     print("❌ Lua Test FAILED")

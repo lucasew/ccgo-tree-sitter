@@ -1,4 +1,4 @@
-module sitter
+module github.com/lucasew/ccgo-tree-sitter
 
 go 1.25.0
 

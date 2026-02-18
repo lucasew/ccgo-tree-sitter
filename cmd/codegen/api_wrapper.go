@@ -9,12 +9,12 @@ import (
 func getModuleName(outputDir string) string {
 	moduleName := filepath.Base(outputDir)
 	if moduleName == "." {
-		moduleName = "tree-sitter-go"
+		moduleName = "github.com/lucasew/ccgo-tree-sitter"
 	}
 	return moduleName
 }
 
-var coreAPITemplate = `package core
+var coreAPITemplate = `package grammar
 
 import (
 	"unsafe"
@@ -185,26 +185,30 @@ func (n *Node) PrintTree() string {
 
 // GenerateAPIWrapper creates API wrapper files for core and grammars (without external scanner)
 func GenerateAPIWrapper(outputDir, grammarName string) error {
-	moduleName := getModuleName(outputDir)
-
-	coreAPIPath := filepath.Join(outputDir, "core", "api.go")
-	if err := os.WriteFile(coreAPIPath, []byte(coreAPITemplate), 0644); err != nil {
-		return err
+	coreAPIPath := filepath.Join(outputDir, "api.go")
+	if _, err := os.Stat(coreAPIPath); os.IsNotExist(err) {
+		if err := os.WriteFile(coreAPIPath, []byte(coreAPITemplate), 0644); err != nil {
+			return err
+		}
 	}
 
 	grammarAPI := fmt.Sprintf(`package %s
 
 import (
 	"unsafe"
-	"%s/core"
+	"github.com/lucasew/ccgo-tree-sitter/grammar"
 )
 
 // Language returns the TSLanguage for %s
-func Language() *core.TSLanguage {
+func Language() *grammar.TSLanguage {
 	ptr := tree_sitter_%s(nil)
-	return (*core.TSLanguage)(unsafe.Pointer(ptr))
+	return (*grammar.TSLanguage)(unsafe.Pointer(ptr))
 }
-`, grammarName, moduleName, grammarName, grammarName)
+
+func init() {
+	grammar.Register("%s", Language())
+}
+`, grammarName, grammarName, grammarName, grammarName)
 
 	grammarAPIPath := filepath.Join(outputDir, grammarName, "api.go")
 	return os.WriteFile(grammarAPIPath, []byte(grammarAPI), 0644)
@@ -212,11 +216,11 @@ func Language() *core.TSLanguage {
 
 // GenerateAPIWrapperWithScanner creates API wrapper with external scanner support
 func GenerateAPIWrapperWithScanner(outputDir, grammarName string) error {
-	moduleName := getModuleName(outputDir)
-
-	coreAPIPath := filepath.Join(outputDir, "core", "api.go")
-	if err := os.WriteFile(coreAPIPath, []byte(coreAPITemplate), 0644); err != nil {
-		return err
+	coreAPIPath := filepath.Join(outputDir, "api.go")
+	if _, err := os.Stat(coreAPIPath); os.IsNotExist(err) {
+		if err := os.WriteFile(coreAPIPath, []byte(coreAPITemplate), 0644); err != nil {
+			return err
+		}
 	}
 
 	grammarAPI := fmt.Sprintf(`package %s
@@ -224,13 +228,13 @@ func GenerateAPIWrapperWithScanner(outputDir, grammarName string) error {
 import (
 	"unsafe"
 	"reflect"
-	"%s/core"
+	"github.com/lucasew/ccgo-tree-sitter/grammar"
 )
 
 // Language returns the TSLanguage for %s with external scanner properly connected
-func Language() *core.TSLanguage {
+func Language() *grammar.TSLanguage {
 	ptr := tree_sitter_%s(nil)
-	lang := (*core.TSLanguage)(unsafe.Pointer(ptr))
+	lang := (*grammar.TSLanguage)(unsafe.Pointer(ptr))
 
 	// WORKAROUND: ccgo doesn't properly initialize function pointers in struct literals
 	// Manually connect external scanner functions
@@ -244,7 +248,11 @@ func Language() *core.TSLanguage {
 
 	return lang
 }
-`, grammarName, moduleName, grammarName, grammarName, grammarName, grammarName, grammarName, grammarName, grammarName)
+
+func init() {
+	grammar.Register("%s", Language())
+}
+`, grammarName, grammarName, grammarName, grammarName, grammarName, grammarName, grammarName, grammarName, grammarName)
 
 	grammarAPIPath := filepath.Join(outputDir, grammarName, "api.go")
 	return os.WriteFile(grammarAPIPath, []byte(grammarAPI), 0644)

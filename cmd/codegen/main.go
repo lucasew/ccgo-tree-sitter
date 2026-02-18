@@ -32,8 +32,6 @@ func init() {
 	rootCmd.Flags().StringVar(&targetGOOS, "goos", runtime.GOOS, "Target GOOS for generated code")
 	rootCmd.Flags().StringVar(&targetGOARCH, "goarch", runtime.GOARCH, "Target GOARCH for generated code")
 	rootCmd.Flags().BoolVarP(&keepTemp, "keep-temp", "k", false, "Keep temporary files for debugging")
-
-	rootCmd.MarkFlagRequired("tree-sitter")
 }
 
 func main() {
@@ -53,10 +51,7 @@ func run(cmd *cobra.Command, args []string) error {
 
 	// Transpile core
 	slog.Info("transpiling tree-sitter core", "path", TREE_SITTER_PATH)
-	coreOutput := OUTPUT_DIR
-	if OUTPUT_DIR != "" {
-		coreOutput = filepath.Join(OUTPUT_DIR, "core")
-	}
+	coreOutput := filepath.Join(OUTPUT_DIR, "grammar")
 	if err := transpiler.TranspileCore(coreOutput); err != nil {
 		return fmt.Errorf("failed to transpile core: %w", err)
 	}

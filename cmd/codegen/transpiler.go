@@ -65,10 +65,11 @@ func (t *Transpiler) TranspileCore(outputDir string) error {
 		}
 
 		goCode := postProcess(string(data))
-		// Change package from main to core (preserve comments)
-		goCode = strings.Replace(goCode, "package main", "package core", 1)
+		// Change package from main to grammar
+		goCode = strings.Replace(goCode, "package main", "package grammar", 1)
 
-		return os.WriteFile(filepath.Join(outputDir, "tree_sitter.go"), []byte(goCode), 0644)
+		outputFile := filepath.Join(outputDir, fmt.Sprintf("core-%s-%s.go", t.GOOS, t.GOARCH))
+		return os.WriteFile(outputFile, []byte(goCode), 0644)
 	}
 
 	// Output to stdout
@@ -142,7 +143,7 @@ func (t *Transpiler) TranspileGrammar(grammarPath, outputDir string) error {
 		// Change package from main to grammar name (preserve comments)
 		goCode = strings.Replace(goCode, "package main", "package "+grammarName, 1)
 
-		outputFile := filepath.Join(grammarOutDir, grammarName+".go")
+		outputFile := filepath.Join(grammarOutDir, fmt.Sprintf("grammar-%s-%s.go", t.GOOS, t.GOARCH))
 		if err := os.WriteFile(outputFile, []byte(goCode), 0644); err != nil {
 			return err
 		}

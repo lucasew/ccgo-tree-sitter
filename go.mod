@@ -1,0 +1,31 @@
+module sitter
+
+go 1.25.0
+
+require (
+	github.com/spf13/cobra v1.10.2
+	modernc.org/ccgo/v4 v4.30.2
+)
+
+require (
+	github.com/dustin/go-humanize v1.0.1 // indirect
+	github.com/hashicorp/golang-lru/v2 v2.0.7 // indirect
+	github.com/inconshreveable/mousetrap v1.1.0 // indirect
+	github.com/remyoudompheng/bigfft v0.0.0-20230129092748-24d4a6f8daec // indirect
+	github.com/spf13/pflag v1.0.9 // indirect
+	golang.org/x/mod v0.32.0 // indirect
+	golang.org/x/sync v0.19.0 // indirect
+	golang.org/x/tools v0.41.0 // indirect
+	modernc.org/cc/v4 v4.27.1 // indirect
+	modernc.org/gc/v2 v2.6.5 // indirect
+	modernc.org/gc/v3 v3.1.2 // indirect
+	modernc.org/mathutil v1.7.1 // indirect
+	modernc.org/opt v0.1.4 // indirect
+	modernc.org/sortutil v1.2.1 // indirect
+	modernc.org/strutil v1.2.1 // indirect
+	modernc.org/token v1.1.0 // indirect
+)
+
+replace modernc.org/ccgo/v4 => ./third-party/ccgo/v4
+
+replace modernc.org/ccgo/v3 => ./third-party/ccgo/v3

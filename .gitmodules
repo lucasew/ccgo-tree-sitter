@@ -6,3 +6,12 @@
 	path = third-party/tree-sitter
 	url = ssh://git@github.com/lucasew/CONTRIB-tree-sitter
 	branch = fix/explicit-cast
+[submodule "third-party/tree-sitter-lua"]
+	path = third-party/tree-sitter-lua
+	url = ssh://git@github.com/tree-sitter-grammars/tree-sitter-lua
+[submodule "third-party/tree-sitter-svelte"]
+	path = third-party/tree-sitter-svelte
+	url = ssh://git@github.com/tree-sitter-grammars/tree-sitter-svelte
+[submodule "third-party/tree-sitter-json"]
+	path = third-party/tree-sitter-json
+	url = ssh://git@github.com/tree-sitter/tree-sitter-json

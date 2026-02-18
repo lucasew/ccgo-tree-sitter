@@ -2,21 +2,14 @@ package main
 
 import (
 	"fmt"
-	"log/slog"
 	"os"
+	"os/exec"
 	"path/filepath"
 	"regexp"
 	"strings"
 
 	ccgo "modernc.org/ccgo/v4/lib"
 )
-
-// atomicStubs provides definitions for GCC atomic builtins that ccgo doesn't handle natively.
-const atomicStubs = `
-typedef unsigned int uint32_t;
-static inline uint32_t __atomic_add_fetch(volatile uint32_t *p, uint32_t v, int m) { *p += v; return *p; }
-static inline uint32_t __atomic_sub_fetch(volatile uint32_t *p, uint32_t v, int m) { *p -= v; return *p; }
-`
 
 // Transpiler handles C to Go transpilation using ccgo
 type Transpiler struct {
@@ -28,58 +21,28 @@ type Transpiler struct {
 
 // TranspileCore transpiles the tree-sitter core library
 func (t *Transpiler) TranspileCore(outputDir string) error {
-	tmpDir, err := os.MkdirTemp("", "tree-sitter-gen-*")
-	if err != nil {
-		return err
-	}
-	if !t.KeepTemp {
-		defer os.RemoveAll(tmpDir)
-	} else {
-		slog.Info("keeping temp dir", "path", tmpDir)
-	}
-
-	// Write atomic stubs header into tmpDir so ccgo can find it via -include
-	stubsH := filepath.Join(tmpDir, "atomic_stubs.h")
-	if err := os.WriteFile(stubsH, []byte(atomicStubs), 0644); err != nil {
-		return err
-	}
-
-	// Transpile directly with ccgo (no gcc -E step)
 	libC, err := filepath.Abs(filepath.Join(t.TreeSitterPath, "lib/src/lib.c"))
 	if err != nil {
 		return err
 	}
 	tsInclude, _ := filepath.Abs(filepath.Join(t.TreeSitterPath, "lib/include"))
 	tsSrc, _ := filepath.Abs(filepath.Join(t.TreeSitterPath, "lib/src"))
-	coreGo := filepath.Join(tmpDir, "core.go")
+
+	if err := os.MkdirAll(outputDir, 0755); err != nil {
+		return err
+	}
+	outputFile, _ := filepath.Abs(filepath.Join(outputDir, fmt.Sprintf("core-%s-%s.go", t.GOOS, t.GOARCH)))
+
 	includeFlags := []string{
-		"-I", tmpDir,
 		"-I", tsInclude,
 		"-I", tsSrc,
-		"-include", "atomic_stubs.h",
+		"-include", "cmd/codegen/atomic_stubs.h",
 	}
-	if err := t.runCcgo(includeFlags, libC, coreGo); err != nil {
+	if err := t.runCcgo(includeFlags, libC, outputFile); err != nil {
 		return fmt.Errorf("ccgo failed: %w", err)
 	}
 
-	// Post-process and write
-	data, err := os.ReadFile(coreGo)
-	if err != nil {
-		return err
-	}
-	goCode := postProcess(string(data))
-	goCode = strings.Replace(goCode, "package main", "package grammar", 1)
-
-	if outputDir != "" {
-		if err := os.MkdirAll(outputDir, 0755); err != nil {
-			return err
-		}
-		outputFile := filepath.Join(outputDir, fmt.Sprintf("core-%s-%s.go", t.GOOS, t.GOARCH))
-		return os.WriteFile(outputFile, []byte(goCode), 0644)
-	}
-
-	fmt.Print(goCode)
-	return nil
+	return postProcessFile(outputFile, "package main", "package grammar")
 }
 
 // TranspileGrammar transpiles a tree-sitter grammar
@@ -97,23 +60,21 @@ func (t *Transpiler) TranspileGrammar(grammarPath, outputDir string) error {
 		hasScanner = false
 	}
 
-	tmpDir, err := os.MkdirTemp("", "grammar-gen-*")
-	if err != nil {
-		return err
-	}
-	if !t.KeepTemp {
-		defer os.RemoveAll(tmpDir)
-	} else {
-		slog.Info("keeping temp dir", "path", tmpDir)
-	}
-
-	// Combine parser (and optional scanner) into one file
+	// Input: parser.c alone, or scanner.c+parser.c combined into a temp C file
 	var inputC string
 	if hasScanner {
-		inputC = filepath.Join(tmpDir, "combined.c")
-		if err := combineFiles([]string{scannerC, parserC}, inputC); err != nil {
+		tmp, err := os.CreateTemp("", "combined_*.c")
+		if err != nil {
+			return err
+		}
+		tmp.Close()
+		if !t.KeepTemp {
+			defer os.Remove(tmp.Name())
+		}
+		if err := combineFiles([]string{scannerC, parserC}, tmp.Name()); err != nil {
 			return fmt.Errorf("failed to combine files: %w", err)
 		}
+		inputC = tmp.Name()
 	} else {
 		var err error
 		inputC, err = filepath.Abs(parserC)
@@ -122,8 +83,12 @@ func (t *Transpiler) TranspileGrammar(grammarPath, outputDir string) error {
 		}
 	}
 
-	// Transpile directly with ccgo
-	grammarGo := filepath.Join(tmpDir, "grammar.go")
+	grammarOutDir := filepath.Join(outputDir, grammarName)
+	if err := os.MkdirAll(grammarOutDir, 0755); err != nil {
+		return err
+	}
+	outputFile, _ := filepath.Abs(filepath.Join(grammarOutDir, fmt.Sprintf("grammar-%s-%s.go", t.GOOS, t.GOARCH)))
+
 	grammarSrc, _ := filepath.Abs(filepath.Join(grammarPath, "src"))
 	tsInclude, _ := filepath.Abs(filepath.Join(t.TreeSitterPath, "lib/include"))
 	tsSrc, _ := filepath.Abs(filepath.Join(t.TreeSitterPath, "lib/src"))
@@ -132,41 +97,28 @@ func (t *Transpiler) TranspileGrammar(grammarPath, outputDir string) error {
 		"-I", tsInclude,
 		"-I", tsSrc,
 	}
-	if err := t.runCcgo(includeFlags, inputC, grammarGo); err != nil {
+	if err := t.runCcgo(includeFlags, inputC, outputFile); err != nil {
 		return fmt.Errorf("transpilation failed: %w", err)
 	}
 
-	// Write output as a proper Go package
-	if outputDir != "" {
-		grammarOutDir := filepath.Join(outputDir, grammarName)
-		if err := os.MkdirAll(grammarOutDir, 0755); err != nil {
-			return err
-		}
-
-		data, err := os.ReadFile(grammarGo)
-		if err != nil {
-			return err
-		}
-		goCode := postProcess(string(data))
-		goCode = strings.Replace(goCode, "package main", "package "+grammarName, 1)
-
-		outputFile := filepath.Join(grammarOutDir, fmt.Sprintf("grammar-%s-%s.go", t.GOOS, t.GOARCH))
-		if err := os.WriteFile(outputFile, []byte(goCode), 0644); err != nil {
-			return err
-		}
-
-		var apiErr error
-		if hasScanner {
-			apiErr = GenerateAPIWrapperWithScanner(outputDir, grammarName)
-		} else {
-			apiErr = GenerateAPIWrapper(outputDir, grammarName)
-		}
-		if apiErr != nil {
-			return fmt.Errorf("failed to generate API: %w", apiErr)
-		}
+	if err := postProcessFile(outputFile, "package main", "package "+grammarName); err != nil {
+		return err
 	}
 
-	return nil
+	if hasScanner {
+		return GenerateAPIWrapperWithScanner(outputDir, grammarName)
+	}
+	return GenerateAPIWrapper(outputDir, grammarName)
+}
+
+func postProcessFile(path, oldPkg, newPkg string) error {
+	data, err := os.ReadFile(path)
+	if err != nil {
+		return err
+	}
+	goCode := postProcess(string(data))
+	goCode = strings.Replace(goCode, oldPkg, newPkg, 1)
+	return os.WriteFile(path, []byte(goCode), 0644)
 }
 
 func combineFiles(inputs []string, output string) error {

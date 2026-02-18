@@ -1,6 +1,6 @@
-// Code generated for linux/amd64 by 'ccgo /tmp/grammar-gen-1411114682/preprocessed.c -o /tmp/grammar-gen-1411114682/grammar.go', DO NOT EDIT.
+// Code generated for linux/arm64 by 'ccgo /tmp/grammar-gen-3648570050/preprocessed.c -o /tmp/grammar-gen-3648570050/grammar.go', DO NOT EDIT.
 
-//go:build linux && amd64
+//go:build linux && arm64
 
 package lua
 
@@ -74,7 +74,7 @@ const __DEC64_MAX__ = "9.999999999999999E384"
 const __DEC64_MIN__ = 1e-383
 const __DEC64_SUBNORMAL_MIN__ = 0.000000000000001e-383
 const __DECIMAL_BID_FORMAT__ = 1
-const __DECIMAL_DIG__ = 17
+const __DECIMAL_DIG__ = 21
 const __DEC_EVAL_METHOD__ = 2
 const __ELF__ = 1
 const __FINITE_MATH_ONLY__ = 0
@@ -135,20 +135,20 @@ const __FLT32_MAX_EXP__ = 128
 const __FLT32_MAX__ = 3.40282346638528859811704183484516925e+38
 const __FLT32_MIN__ = 1.17549435082228750796873653722224568e-38
 const __FLT32_NORM_MAX__ = 3.40282346638528859811704183484516925e+38
-const __FLT64X_DECIMAL_DIG__ = 36
-const __FLT64X_DENORM_MIN__ = 6.47517511943802511092443895822764655e-4966
-const __FLT64X_DIG__ = 33
-const __FLT64X_EPSILON__ = 1.92592994438723585305597794258492732e-34
+const __FLT64X_DECIMAL_DIG__ = 21
+const __FLT64X_DENORM_MIN__ = 3.64519953188247460252840593361941982e-4951
+const __FLT64X_DIG__ = 18
+const __FLT64X_EPSILON__ = 1.08420217248550443400745280086994171e-19
 const __FLT64X_HAS_DENORM__ = 1
 const __FLT64X_HAS_INFINITY__ = 1
 const __FLT64X_HAS_QUIET_NAN__ = 1
 const __FLT64X_IS_IEC_60559__ = 1
-const __FLT64X_MANT_DIG__ = 113
+const __FLT64X_MANT_DIG__ = 64
 const __FLT64X_MAX_10_EXP__ = 4932
 const __FLT64X_MAX_EXP__ = 16384
-const __FLT64X_MAX__ = "1.18973149535723176508575932662800702e+4932"
+const __FLT64X_MAX__ = "1.18973149535723176502126385303097021e+4932"
 const __FLT64X_MIN__ = 3.36210314311209350626267781732175260e-4932
-const __FLT64X_NORM_MAX__ = "1.18973149535723176508575932662800702e+4932"
+const __FLT64X_NORM_MAX__ = "1.18973149535723176502126385303097021e+4932"
 const __FLT64_DECIMAL_DIG__ = 17
 const __FLT64_DENORM_MIN__ = 4.94065645841246544176568792868221372e-324
 const __FLT64_DIG__ = 15
@@ -239,21 +239,20 @@ const __INT_LEAST8_MAX__ = 0x7f
 const __INT_LEAST8_WIDTH__ = 8
 const __INT_MAX__ = 0x7fffffff
 const __INT_WIDTH__ = 32
-const __LDBL_DECIMAL_DIG__ = 17
-const __LDBL_DENORM_MIN__ = 4.94065645841246544176568792868221372e-324
-const __LDBL_DIG__ = 15
-const __LDBL_EPSILON__ = 2.22044604925031308084726333618164062e-16
+const __LDBL_DECIMAL_DIG__ = 21
+const __LDBL_DENORM_MIN__ = 3.64519953188247460252840593361941982e-4951
+const __LDBL_DIG__ = 18
+const __LDBL_EPSILON__ = 1.08420217248550443400745280086994171e-19
 const __LDBL_HAS_DENORM__ = 1
 const __LDBL_HAS_INFINITY__ = 1
 const __LDBL_HAS_QUIET_NAN__ = 1
 const __LDBL_IS_IEC_60559__ = 1
-const __LDBL_MANT_DIG__ = 53
-const __LDBL_MAX_10_EXP__ = 308
-const __LDBL_MAX_EXP__ = 1024
-const __LDBL_MAX__ = 1.79769313486231570814527423731704357e+308
-const __LDBL_MIN__ = 2.22507385850720138309023271733240406e-308
-const __LDBL_NORM_MAX__ = 1.79769313486231570814527423731704357e+308
-const __LONG_DOUBLE_64__ = 1
+const __LDBL_MANT_DIG__ = 64
+const __LDBL_MAX_10_EXP__ = 4932
+const __LDBL_MAX_EXP__ = 16384
+const __LDBL_MAX__ = "1.18973149535723176502126385303097021e+4932"
+const __LDBL_MIN__ = 3.36210314311209350626267781732175260e-4932
+const __LDBL_NORM_MAX__ = "1.18973149535723176502126385303097021e+4932"
 const __LONG_LONG_MAX__ = 0x7fffffffffffffff
 const __LONG_LONG_WIDTH__ = 64
 const __LONG_MAX__ = 0x7fffffffffffffff
@@ -492,7 +491,7 @@ type __sig_atomic_t = int32
 type __mbstate_t = struct {
 	F__count int32
 	F__value struct {
-		F__wchb [0][4]int8
+		F__wchb [0][4]uint8
 		F__wch  uint32
 	}
 }
@@ -531,7 +530,7 @@ type _IO_FILE = struct {
 	F_old_offset     __off_t
 	F_cur_column     uint16
 	F_vtable_offset  int8
-	F_shortbuf       [1]int8
+	F_shortbuf       [1]uint8
 	F_lock           uintptr
 	F_offset         __off64_t
 	F_codecvt        uintptr
@@ -540,7 +539,7 @@ type _IO_FILE = struct {
 	F_freeres_buf    uintptr
 	F_prevchain      uintptr
 	F_mode           int32
-	F_unused2        [20]int8
+	F_unused2        [20]uint8
 }
 
 type __FILE = struct {
@@ -563,7 +562,7 @@ type __FILE = struct {
 	F_old_offset     __off_t
 	F_cur_column     uint16
 	F_vtable_offset  int8
-	F_shortbuf       [1]int8
+	F_shortbuf       [1]uint8
 	F_lock           uintptr
 	F_offset         __off64_t
 	F_codecvt        uintptr
@@ -572,7 +571,7 @@ type __FILE = struct {
 	F_freeres_buf    uintptr
 	F_prevchain      uintptr
 	F_mode           int32
-	F_unused2        [20]int8
+	F_unused2        [20]uint8
 }
 
 type FILE = struct {
@@ -595,7 +594,7 @@ type FILE = struct {
 	F_old_offset     __off_t
 	F_cur_column     uint16
 	F_vtable_offset  int8
-	F_shortbuf       [1]int8
+	F_shortbuf       [1]uint8
 	F_lock           uintptr
 	F_offset         __off64_t
 	F_codecvt        uintptr
@@ -604,7 +603,7 @@ type FILE = struct {
 	F_freeres_buf    uintptr
 	F_prevchain      uintptr
 	F_mode           int32
-	F_unused2        [20]int8
+	F_unused2        [20]uint8
 }
 
 type _IO_lock_t = struct{}
@@ -848,12 +847,12 @@ type pthread_t = uint64
 
 type pthread_mutexattr_t = struct {
 	F__align [0]int32
-	F__size  [4]int8
+	F__size  [4]uint8
 }
 
 type pthread_condattr_t = struct {
 	F__align [0]int32
-	F__size  [4]int8
+	F__size  [4]uint8
 }
 
 type pthread_key_t = uint32
@@ -862,42 +861,42 @@ type pthread_once_t = int32
 
 type pthread_attr_t = struct {
 	F__align [0]int64
-	F__size  [56]int8
+	F__size  [56]uint8
 }
 
 type pthread_mutex_t = struct {
-	F__size  [0][40]int8
+	F__size  [0][40]uint8
 	F__align [0]int64
 	F__data  __pthread_mutex_s
 }
 
 type pthread_cond_t = struct {
-	F__size  [0][48]int8
+	F__size  [0][48]uint8
 	F__align [0]int64
 	F__data  __pthread_cond_s
 }
 
 type pthread_rwlock_t = struct {
-	F__size  [0][56]int8
+	F__size  [0][56]uint8
 	F__align [0]int64
 	F__data  __pthread_rwlock_arch_t
 }
 
 type pthread_rwlockattr_t = struct {
 	F__align [0]int64
-	F__size  [8]int8
+	F__size  [8]uint8
 }
 
 type pthread_spinlock_t = int32
 
 type pthread_barrier_t = struct {
 	F__align [0]int64
-	F__size  [32]int8
+	F__size  [32]uint8
 }
 
 type pthread_barrierattr_t = struct {
 	F__align [0]int32
-	F__size  [4]int8
+	F__size  [4]uint8
 }
 
 type random_data = struct {
@@ -1187,19 +1186,19 @@ func skip(tls *libc.TLS, lexer uintptr) {
 	(*(*func(*libc.TLS, uintptr, uint8))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fadvance})))(tls, lexer, libc.BoolUint8(1 != 0))
 }
 
-func consume_char(tls *libc.TLS, c int8, lexer uintptr) (r uint8) {
-	if (*TSLexer)(unsafe.Pointer(lexer)).Flookahead != int32(c) {
+func consume_char(tls *libc.TLS, c uint8, lexer uintptr) (r uint8) {
+	if (*TSLexer)(unsafe.Pointer(lexer)).Flookahead != libc.Int32FromUint8(c) {
 		return libc.BoolUint8(0 != 0)
 	}
 	consume(tls, lexer)
 	return libc.BoolUint8(1 != 0)
 }
 
-func consume_and_count_char(tls *libc.TLS, c int8, lexer uintptr) (r uint8_t) {
+func consume_and_count_char(tls *libc.TLS, c uint8, lexer uintptr) (r uint8_t) {
 	var count uint8_t
 	_ = count
 	count = uint8(0)
-	for (*TSLexer)(unsafe.Pointer(lexer)).Flookahead == int32(c) {
+	for (*TSLexer)(unsafe.Pointer(lexer)).Flookahead == libc.Int32FromUint8(c) {
 		count = count + 1
 		consume(tls, lexer)
 	}
@@ -1213,12 +1212,12 @@ func skip_whitespaces(tls *libc.TLS, lexer uintptr) {
 }
 
 type Scanner = struct {
-	Fending_char int8
+	Fending_char uint8
 	Flevel_count uint8_t
 }
 
 func reset_state(tls *libc.TLS, scanner uintptr) {
-	(*Scanner)(unsafe.Pointer(scanner)).Fending_char = 0
+	(*Scanner)(unsafe.Pointer(scanner)).Fending_char = uint8(0)
 	(*Scanner)(unsafe.Pointer(scanner)).Flevel_count = uint8(0)
 }
 
@@ -1240,8 +1239,8 @@ func tree_sitter_lua_external_scanner_serialize(tls *libc.TLS, payload uintptr, 
 	var scanner uintptr
 	_ = scanner
 	scanner = payload
-	*(*int8)(unsafe.Pointer(buffer)) = (*Scanner)(unsafe.Pointer(scanner)).Fending_char
-	*(*int8)(unsafe.Pointer(buffer + 1)) = libc.Int8FromUint8((*Scanner)(unsafe.Pointer(scanner)).Flevel_count)
+	*(*uint8)(unsafe.Pointer(buffer)) = (*Scanner)(unsafe.Pointer(scanner)).Fending_char
+	*(*uint8)(unsafe.Pointer(buffer + 1)) = (*Scanner)(unsafe.Pointer(scanner)).Flevel_count
 	return uint32(2)
 }
 
@@ -1252,19 +1251,19 @@ func tree_sitter_lua_external_scanner_deserialize(tls *libc.TLS, payload uintptr
 	if length == uint32(0) {
 		return
 	}
-	(*Scanner)(unsafe.Pointer(scanner)).Fending_char = *(*int8)(unsafe.Pointer(buffer))
+	(*Scanner)(unsafe.Pointer(scanner)).Fending_char = *(*uint8)(unsafe.Pointer(buffer))
 	if length == uint32(1) {
 		return
 	}
-	(*Scanner)(unsafe.Pointer(scanner)).Flevel_count = libc.Uint8FromInt8(*(*int8)(unsafe.Pointer(buffer + 1)))
+	(*Scanner)(unsafe.Pointer(scanner)).Flevel_count = *(*uint8)(unsafe.Pointer(buffer + 1))
 }
 
 func scan_block_start(tls *libc.TLS, scanner uintptr, lexer uintptr) (r uint8) {
 	var level uint8_t
 	_ = level
-	if consume_char(tls, int8('['), lexer) != 0 {
-		level = consume_and_count_char(tls, int8('='), lexer)
-		if consume_char(tls, int8('['), lexer) != 0 {
+	if consume_char(tls, uint8('['), lexer) != 0 {
+		level = consume_and_count_char(tls, uint8('='), lexer)
+		if consume_char(tls, uint8('['), lexer) != 0 {
 			(*Scanner)(unsafe.Pointer(scanner)).Flevel_count = level
 			return libc.BoolUint8(1 != 0)
 		}
@@ -1275,9 +1274,9 @@ func scan_block_start(tls *libc.TLS, scanner uintptr, lexer uintptr) (r uint8) {
 func scan_block_end(tls *libc.TLS, scanner uintptr, lexer uintptr) (r uint8) {
 	var level uint8_t
 	_ = level
-	if consume_char(tls, int8(']'), lexer) != 0 {
-		level = consume_and_count_char(tls, int8('='), lexer)
-		if libc.Int32FromUint8((*Scanner)(unsafe.Pointer(scanner)).Flevel_count) == libc.Int32FromUint8(level) && consume_char(tls, int8(']'), lexer) != 0 {
+	if consume_char(tls, uint8(']'), lexer) != 0 {
+		level = consume_and_count_char(tls, uint8('='), lexer)
+		if libc.Int32FromUint8((*Scanner)(unsafe.Pointer(scanner)).Flevel_count) == libc.Int32FromUint8(level) && consume_char(tls, uint8(']'), lexer) != 0 {
 			return libc.BoolUint8(1 != 0)
 		}
 	}
@@ -1299,7 +1298,7 @@ func scan_block_content(tls *libc.TLS, scanner uintptr, lexer uintptr) (r uint8)
 }
 
 func scan_comment_start(tls *libc.TLS, scanner uintptr, lexer uintptr) (r uint8) {
-	if consume_char(tls, int8('-'), lexer) != 0 && consume_char(tls, int8('-'), lexer) != 0 {
+	if consume_char(tls, uint8('-'), lexer) != 0 && consume_char(tls, uint8('-'), lexer) != 0 {
 		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
 		if scan_block_start(tls, scanner, lexer) != 0 {
 			(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
@@ -1311,7 +1310,7 @@ func scan_comment_start(tls *libc.TLS, scanner uintptr, lexer uintptr) (r uint8)
 }
 
 func scan_comment_content(tls *libc.TLS, scanner uintptr, lexer uintptr) (r uint8) {
-	if int32((*Scanner)(unsafe.Pointer(scanner)).Fending_char) == 0 {
+	if libc.Int32FromUint8((*Scanner)(unsafe.Pointer(scanner)).Fending_char) == 0 {
 		if scan_block_content(tls, scanner, lexer) != 0 {
 			(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(BLOCK_COMMENT_CONTENT)
 			return libc.BoolUint8(1 != 0)
@@ -1319,7 +1318,7 @@ func scan_comment_content(tls *libc.TLS, scanner uintptr, lexer uintptr) (r uint
 		return libc.BoolUint8(0 != 0)
 	}
 	for (*TSLexer)(unsafe.Pointer(lexer)).Flookahead != 0 {
-		if (*TSLexer)(unsafe.Pointer(lexer)).Flookahead == int32((*Scanner)(unsafe.Pointer(scanner)).Fending_char) {
+		if (*TSLexer)(unsafe.Pointer(lexer)).Flookahead == libc.Int32FromUint8((*Scanner)(unsafe.Pointer(scanner)).Fending_char) {
 			reset_state(tls, scanner)
 			(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(BLOCK_COMMENT_CONTENT)
 			return libc.BoolUint8(1 != 0)
@@ -1342,7 +1341,7 @@ func tree_sitter_lua_external_scanner_scan(tls *libc.TLS, payload uintptr, lexer
 		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(BLOCK_STRING_CONTENT)
 		return libc.BoolUint8(1 != 0)
 	}
-	if *(*uint8)(unsafe.Pointer(valid_symbols + uintptr(BLOCK_COMMENT_END))) != 0 && int32((*Scanner)(unsafe.Pointer(scanner)).Fending_char) == 0 && scan_block_end(tls, scanner, lexer) != 0 {
+	if *(*uint8)(unsafe.Pointer(valid_symbols + uintptr(BLOCK_COMMENT_END))) != 0 && libc.Int32FromUint8((*Scanner)(unsafe.Pointer(scanner)).Fending_char) == 0 && scan_block_end(tls, scanner, lexer) != 0 {
 		reset_state(tls, scanner)
 		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(BLOCK_COMMENT_END)
 		return libc.BoolUint8(1 != 0)

@@ -1,6 +1,6 @@
-// Code generated for linux/amd64 by 'ccgo /tmp/tree-sitter-gen-247452048/core_complete.c -o /tmp/tree-sitter-gen-247452048/core.go', DO NOT EDIT.
+// Code generated for linux/arm64 by 'ccgo /tmp/tree-sitter-gen-699388813/core_complete.c -o /tmp/tree-sitter-gen-699388813/core.go', DO NOT EDIT.
 
-//go:build linux && amd64
+//go:build linux && arm64
 
 package grammar
 
@@ -74,7 +74,7 @@ const __DEC64_MAX__ = "9.999999999999999E384"
 const __DEC64_MIN__ = 1e-383
 const __DEC64_SUBNORMAL_MIN__ = 0.000000000000001e-383
 const __DECIMAL_BID_FORMAT__ = 1
-const __DECIMAL_DIG__ = 17
+const __DECIMAL_DIG__ = 21
 const __DEC_EVAL_METHOD__ = 2
 const __ELF__ = 1
 const __FINITE_MATH_ONLY__ = 0
@@ -135,20 +135,20 @@ const __FLT32_MAX_EXP__ = 128
 const __FLT32_MAX__ = 3.40282346638528859811704183484516925e+38
 const __FLT32_MIN__ = 1.17549435082228750796873653722224568e-38
 const __FLT32_NORM_MAX__ = 3.40282346638528859811704183484516925e+38
-const __FLT64X_DECIMAL_DIG__ = 36
-const __FLT64X_DENORM_MIN__ = 6.47517511943802511092443895822764655e-4966
-const __FLT64X_DIG__ = 33
-const __FLT64X_EPSILON__ = 1.92592994438723585305597794258492732e-34
+const __FLT64X_DECIMAL_DIG__ = 21
+const __FLT64X_DENORM_MIN__ = 3.64519953188247460252840593361941982e-4951
+const __FLT64X_DIG__ = 18
+const __FLT64X_EPSILON__ = 1.08420217248550443400745280086994171e-19
 const __FLT64X_HAS_DENORM__ = 1
 const __FLT64X_HAS_INFINITY__ = 1
 const __FLT64X_HAS_QUIET_NAN__ = 1
 const __FLT64X_IS_IEC_60559__ = 1
-const __FLT64X_MANT_DIG__ = 113
+const __FLT64X_MANT_DIG__ = 64
 const __FLT64X_MAX_10_EXP__ = 4932
 const __FLT64X_MAX_EXP__ = 16384
-const __FLT64X_MAX__ = "1.18973149535723176508575932662800702e+4932"
+const __FLT64X_MAX__ = "1.18973149535723176502126385303097021e+4932"
 const __FLT64X_MIN__ = 3.36210314311209350626267781732175260e-4932
-const __FLT64X_NORM_MAX__ = "1.18973149535723176508575932662800702e+4932"
+const __FLT64X_NORM_MAX__ = "1.18973149535723176502126385303097021e+4932"
 const __FLT64_DECIMAL_DIG__ = 17
 const __FLT64_DENORM_MIN__ = 4.94065645841246544176568792868221372e-324
 const __FLT64_DIG__ = 15
@@ -239,21 +239,20 @@ const __INT_LEAST8_MAX__ = 0x7f
 const __INT_LEAST8_WIDTH__ = 8
 const __INT_MAX__ = 0x7fffffff
 const __INT_WIDTH__ = 32
-const __LDBL_DECIMAL_DIG__ = 17
-const __LDBL_DENORM_MIN__ = 4.94065645841246544176568792868221372e-324
-const __LDBL_DIG__ = 15
-const __LDBL_EPSILON__ = 2.22044604925031308084726333618164062e-16
+const __LDBL_DECIMAL_DIG__ = 21
+const __LDBL_DENORM_MIN__ = 3.64519953188247460252840593361941982e-4951
+const __LDBL_DIG__ = 18
+const __LDBL_EPSILON__ = 1.08420217248550443400745280086994171e-19
 const __LDBL_HAS_DENORM__ = 1
 const __LDBL_HAS_INFINITY__ = 1
 const __LDBL_HAS_QUIET_NAN__ = 1
 const __LDBL_IS_IEC_60559__ = 1
-const __LDBL_MANT_DIG__ = 53
-const __LDBL_MAX_10_EXP__ = 308
-const __LDBL_MAX_EXP__ = 1024
-const __LDBL_MAX__ = 1.79769313486231570814527423731704357e+308
-const __LDBL_MIN__ = 2.22507385850720138309023271733240406e-308
-const __LDBL_NORM_MAX__ = 1.79769313486231570814527423731704357e+308
-const __LONG_DOUBLE_64__ = 1
+const __LDBL_MANT_DIG__ = 64
+const __LDBL_MAX_10_EXP__ = 4932
+const __LDBL_MAX_EXP__ = 16384
+const __LDBL_MAX__ = "1.18973149535723176502126385303097021e+4932"
+const __LDBL_MIN__ = 3.36210314311209350626267781732175260e-4932
+const __LDBL_NORM_MAX__ = "1.18973149535723176502126385303097021e+4932"
 const __LONG_LONG_MAX__ = 0x7fffffffffffffff
 const __LONG_LONG_WIDTH__ = 64
 const __LONG_MAX__ = 0x7fffffffffffffff
@@ -492,7 +491,7 @@ type __sig_atomic_t = int32
 type __mbstate_t = struct {
 	F__count int32
 	F__value struct {
-		F__wchb [0][4]int8
+		F__wchb [0][4]uint8
 		F__wch  uint32
 	}
 }
@@ -531,7 +530,7 @@ type _IO_FILE = struct {
 	F_old_offset     __off_t
 	F_cur_column     uint16
 	F_vtable_offset  int8
-	F_shortbuf       [1]int8
+	F_shortbuf       [1]uint8
 	F_lock           uintptr
 	F_offset         __off64_t
 	F_codecvt        uintptr
@@ -540,7 +539,7 @@ type _IO_FILE = struct {
 	F_freeres_buf    uintptr
 	F_prevchain      uintptr
 	F_mode           int32
-	F_unused2        [20]int8
+	F_unused2        [20]uint8
 }
 
 type __FILE = struct {
@@ -563,7 +562,7 @@ type __FILE = struct {
 	F_old_offset     __off_t
 	F_cur_column     uint16
 	F_vtable_offset  int8
-	F_shortbuf       [1]int8
+	F_shortbuf       [1]uint8
 	F_lock           uintptr
 	F_offset         __off64_t
 	F_codecvt        uintptr
@@ -572,7 +571,7 @@ type __FILE = struct {
 	F_freeres_buf    uintptr
 	F_prevchain      uintptr
 	F_mode           int32
-	F_unused2        [20]int8
+	F_unused2        [20]uint8
 }
 
 type FILE = struct {
@@ -595,7 +594,7 @@ type FILE = struct {
 	F_old_offset     __off_t
 	F_cur_column     uint16
 	F_vtable_offset  int8
-	F_shortbuf       [1]int8
+	F_shortbuf       [1]uint8
 	F_lock           uintptr
 	F_offset         __off64_t
 	F_codecvt        uintptr
@@ -604,7 +603,7 @@ type FILE = struct {
 	F_freeres_buf    uintptr
 	F_prevchain      uintptr
 	F_mode           int32
-	F_unused2        [20]int8
+	F_unused2        [20]uint8
 }
 
 type _IO_lock_t = struct{}
@@ -848,12 +847,12 @@ type pthread_t = uint64
 
 type pthread_mutexattr_t = struct {
 	F__align [0]int32
-	F__size  [4]int8
+	F__size  [4]uint8
 }
 
 type pthread_condattr_t = struct {
 	F__align [0]int32
-	F__size  [4]int8
+	F__size  [4]uint8
 }
 
 type pthread_key_t = uint32
@@ -862,42 +861,42 @@ type pthread_once_t = int32
 
 type pthread_attr_t = struct {
 	F__align [0]int64
-	F__size  [56]int8
+	F__size  [56]uint8
 }
 
 type pthread_mutex_t = struct {
-	F__size  [0][40]int8
+	F__size  [0][40]uint8
 	F__align [0]int64
 	F__data  __pthread_mutex_s
 }
 
 type pthread_cond_t = struct {
-	F__size  [0][48]int8
+	F__size  [0][48]uint8
 	F__align [0]int64
 	F__data  __pthread_cond_s
 }
 
 type pthread_rwlock_t = struct {
-	F__size  [0][56]int8
+	F__size  [0][56]uint8
 	F__align [0]int64
 	F__data  __pthread_rwlock_arch_t
 }
 
 type pthread_rwlockattr_t = struct {
 	F__align [0]int64
-	F__size  [8]int8
+	F__size  [8]uint8
 }
 
 type pthread_spinlock_t = int32
 
 type pthread_barrier_t = struct {
 	F__align [0]int64
-	F__size  [32]int8
+	F__size  [32]uint8
 }
 
 type pthread_barrierattr_t = struct {
 	F__align [0]int32
-	F__size  [4]int8
+	F__size  [4]uint8
 }
 
 type random_data = struct {
@@ -1544,7 +1543,7 @@ func _array__erase(tls *libc.TLS, self_contents uintptr, size uintptr, element_s
 	*(*uint32_t)(unsafe.Pointer(size)) = *(*uint32_t)(unsafe.Pointer(size)) - 1
 }
 
-var __func__ = [14]int8{'_', 'a', 'r', 'r', 'a', 'y', '_', '_', 'e', 'r', 'a', 's', 'e'}
+var __func__ = [14]uint8{'_', 'a', 'r', 'r', 'a', 'y', '_', '_', 'e', 'r', 'a', 's', 'e'}
 
 func _array__reserve(tls *libc.TLS, contents uintptr, capacity uintptr, element_size size_t, new_capacity uint32_t) (r uintptr) {
 	var new_contents uintptr
@@ -1629,7 +1628,7 @@ func _array__splice(tls *libc.TLS, self_contents uintptr, size uintptr, capacity
 	return new_contents
 }
 
-var __func__1 = [15]int8{'_', 'a', 'r', 'r', 'a', 'y', '_', '_', 's', 'p', 'l', 'i', 'c', 'e'}
+var __func__1 = [15]uint8{'_', 'a', 'r', 'r', 'a', 'y', '_', '_', 's', 'p', 'l', 'i', 'c', 'e'}
 
 type TSFieldMapEntry = struct {
 	Ffield_id    TSFieldId
@@ -1733,7 +1732,7 @@ func set_contains(tls *libc.TLS, ranges uintptr, len1 uint32_t, lookahead int32_
 
 type ExternalScannerState = struct {
 	F__ccgo0_0 struct {
-		Fshort_data  [0][24]int8
+		Fshort_data  [0][24]uint8
 		Flong_data   uintptr
 		F__ccgo_pad2 [16]byte
 	}
@@ -2322,7 +2321,7 @@ func ts_tree_cursor_current_subtree(tls *libc.TLS, _self uintptr) (r Subtree) {
 	return *(*Subtree)(unsafe.Pointer((*TreeCursorEntry)(unsafe.Pointer(last_entry)).Fsubtree))
 }
 
-var __func__2 = [31]int8{'t', 's', '_', 't', 'r', 'e', 'e', '_', 'c', 'u', 'r', 's', 'o', 'r', '_', 'c', 'u', 'r', 'r', 'e', 'n', 't', '_', 's', 'u', 'b', 't', 'r', 'e', 'e'}
+var __func__2 = [31]uint8{'t', 's', '_', 't', 'r', 'e', 'e', '_', 'c', 'u', 'r', 's', 'o', 'r', '_', 'c', 'u', 'r', 'r', 'e', 'n', 't', '_', 's', 'u', 'b', 't', 'r', 'e', 'e'}
 
 type TSRangeArray = struct {
 	Fcontents uintptr
@@ -2587,21 +2586,21 @@ func ts_language_write_symbol_as_dot_string(tls *libc.TLS, self uintptr, f uintp
 	name = ts_language_symbol_name(tls, self, symbol)
 	chr = name
 	for {
-		if !(*(*int8)(unsafe.Pointer(chr)) != 0) {
+		if !(*(*uint8)(unsafe.Pointer(chr)) != 0) {
 			break
 		}
-		switch int32(*(*int8)(unsafe.Pointer(chr))) {
+		switch libc.Int32FromUint8(*(*uint8)(unsafe.Pointer(chr))) {
 		case int32('"'):
 			fallthrough
 		case int32('\\'):
 			libc.Xfputc(tls, int32('\\'), f)
-			libc.Xfputc(tls, int32(*(*int8)(unsafe.Pointer(chr))), f)
+			libc.Xfputc(tls, libc.Int32FromUint8(*(*uint8)(unsafe.Pointer(chr))), f)
 		case int32('\n'):
 			libc.Xfputs(tls, __ccgo_ts+277, f)
 		case int32('\t'):
 			libc.Xfputs(tls, __ccgo_ts+280, f)
 		default:
-			libc.Xfputc(tls, int32(*(*int8)(unsafe.Pointer(chr))), f)
+			libc.Xfputc(tls, libc.Int32FromUint8(*(*uint8)(unsafe.Pointer(chr))), f)
 			break
 		}
 		goto _1
@@ -2645,7 +2644,7 @@ func ts_range_array_add(tls *libc.TLS, self uintptr, start Length, end Length) {
 	}
 }
 
-var __func__3 = [19]int8{'t', 's', '_', 'r', 'a', 'n', 'g', 'e', '_', 'a', 'r', 'r', 'a', 'y', '_', 'a', 'd', 'd'}
+var __func__3 = [19]uint8{'t', 's', '_', 'r', 'a', 'n', 'g', 'e', '_', 'a', 'r', 'r', 'a', 'y', '_', 'a', 'd', 'd'}
 
 func ts_range_array_intersects(tls *libc.TLS, self uintptr, start_index uint32, start_byte uint32_t, end_byte uint32_t) (r uint8) {
 	var i uint32
@@ -2677,7 +2676,7 @@ func ts_range_array_intersects(tls *libc.TLS, self uintptr, start_index uint32, 
 	return libc.BoolUint8(0 != 0)
 }
 
-var __func__4 = [26]int8{'t', 's', '_', 'r', 'a', 'n', 'g', 'e', '_', 'a', 'r', 'r', 'a', 'y', '_', 'i', 'n', 't', 'e', 'r', 's', 'e', 'c', 't', 's'}
+var __func__4 = [26]uint8{'t', 's', '_', 'r', 'a', 'n', 'g', 'e', '_', 'a', 'r', 'r', 'a', 'y', '_', 'i', 'n', 't', 'e', 'r', 's', 'e', 'c', 't', 's'}
 
 func ts_range_array_get_changed_ranges(tls *libc.TLS, old_ranges uintptr, old_range_count uint32, new_ranges uintptr, new_range_count uint32, differences uintptr) {
 	var current_position, next_new_position, next_old_position Length
@@ -2884,7 +2883,7 @@ func iterator_start_position(tls *libc.TLS, self uintptr) (r Length) {
 	return r
 }
 
-var __func__5 = [24]int8{'i', 't', 'e', 'r', 'a', 't', 'o', 'r', '_', 's', 't', 'a', 'r', 't', '_', 'p', 'o', 's', 'i', 't', 'i', 'o', 'n'}
+var __func__5 = [24]uint8{'i', 't', 'e', 'r', 'a', 't', 'o', 'r', '_', 's', 't', 'a', 'r', 't', '_', 'p', 'o', 's', 'i', 't', 'i', 'o', 'n'}
 
 func iterator_end_position(tls *libc.TLS, self uintptr) (r Length) {
 	var entry TreeCursorEntry
@@ -2922,7 +2921,7 @@ func iterator_end_position(tls *libc.TLS, self uintptr) (r Length) {
 	return r
 }
 
-var __func__6 = [22]int8{'i', 't', 'e', 'r', 'a', 't', 'o', 'r', '_', 'e', 'n', 'd', '_', 'p', 'o', 's', 'i', 't', 'i', 'o', 'n'}
+var __func__6 = [22]uint8{'i', 't', 'e', 'r', 'a', 't', 'o', 'r', '_', 'e', 'n', 'd', '_', 'p', 'o', 's', 'i', 't', 'i', 'o', 'n'}
 
 func iterator_tree_is_visible(tls *libc.TLS, self uintptr) (r uint8) {
 	bp := tls.Alloc(16)
@@ -2981,7 +2980,7 @@ func iterator_tree_is_visible(tls *libc.TLS, self uintptr) (r uint8) {
 	return libc.BoolUint8(0 != 0)
 }
 
-var __func__7 = [25]int8{'i', 't', 'e', 'r', 'a', 't', 'o', 'r', '_', 't', 'r', 'e', 'e', '_', 'i', 's', '_', 'v', 'i', 's', 'i', 'b', 'l', 'e'}
+var __func__7 = [25]uint8{'i', 't', 'e', 'r', 'a', 't', 'o', 'r', '_', 't', 'r', 'e', 'e', '_', 'i', 's', '_', 'v', 'i', 's', 'i', 'b', 'l', 'e'}
 
 func iterator_get_visible_state(tls *libc.TLS, self uintptr, tree uintptr, alias_symbol uintptr, start_byte uintptr) {
 	var entry TreeCursorEntry
@@ -3044,7 +3043,7 @@ func iterator_get_visible_state(tls *libc.TLS, self uintptr, tree uintptr, alias
 	}
 }
 
-var __func__8 = [27]int8{'i', 't', 'e', 'r', 'a', 't', 'o', 'r', '_', 'g', 'e', 't', '_', 'v', 'i', 's', 'i', 'b', 'l', 'e', '_', 's', 't', 'a', 't', 'e'}
+var __func__8 = [27]uint8{'i', 't', 'e', 'r', 'a', 't', 'o', 'r', '_', 'g', 'e', 't', '_', 'v', 'i', 's', 'i', 'b', 'l', 'e', '_', 's', 't', 'a', 't', 'e'}
 
 func iterator_ascend(tls *libc.TLS, self uintptr) {
 	if iterator_done(tls, self) != 0 {
@@ -3081,7 +3080,7 @@ func iterator_ascend(tls *libc.TLS, self uintptr) {
 	(*Iterator)(unsafe.Pointer(self)).Fcursor.Fstack.Fsize = (*Iterator)(unsafe.Pointer(self)).Fcursor.Fstack.Fsize - 1
 }
 
-var __func__9 = [16]int8{'i', 't', 'e', 'r', 'a', 't', 'o', 'r', '_', 'a', 's', 'c', 'e', 'n', 'd'}
+var __func__9 = [16]uint8{'i', 't', 'e', 'r', 'a', 't', 'o', 'r', '_', 'a', 's', 'c', 'e', 'n', 'd'}
 
 func iterator_descend(tls *libc.TLS, self uintptr, goal_position uint32_t) (r uint8) {
 	bp := tls.Alloc(16)
@@ -3197,7 +3196,7 @@ func iterator_descend(tls *libc.TLS, self uintptr, goal_position uint32_t) (r ui
 	return libc.BoolUint8(0 != 0)
 }
 
-var __func__10 = [17]int8{'i', 't', 'e', 'r', 'a', 't', 'o', 'r', '_', 'd', 'e', 's', 'c', 'e', 'n', 'd'}
+var __func__10 = [17]uint8{'i', 't', 'e', 'r', 'a', 't', 'o', 'r', '_', 'd', 'e', 's', 'c', 'e', 'n', 'd'}
 
 func iterator_advance(tls *libc.TLS, self uintptr) {
 	bp := tls.Alloc(16)
@@ -3318,7 +3317,7 @@ func iterator_advance(tls *libc.TLS, self uintptr) {
 	}
 }
 
-var __func__11 = [17]int8{'i', 't', 'e', 'r', 'a', 't', 'o', 'r', '_', 'a', 'd', 'v', 'a', 'n', 'c', 'e'}
+var __func__11 = [17]uint8{'i', 't', 'e', 'r', 'a', 't', 'o', 'r', '_', 'a', 'd', 'v', 'a', 'n', 'c', 'e'}
 
 type IteratorComparison = int32
 
@@ -3518,7 +3517,7 @@ func ts_subtree_get_changed_ranges(tls *libc.TLS, old_tree uintptr, new_tree uin
 	return (*(*TSRangeArray)(unsafe.Pointer(bp))).Fsize
 }
 
-var __func__12 = [30]int8{'t', 's', '_', 's', 'u', 'b', 't', 'r', 'e', 'e', '_', 'g', 'e', 't', '_', 'c', 'h', 'a', 'n', 'g', 'e', 'd', '_', 'r', 'a', 'n', 'g', 'e', 's'}
+var __func__12 = [30]uint8{'t', 's', '_', 's', 'u', 'b', 't', 'r', 'e', 'e', '_', 'g', 'e', 't', '_', 'c', 'h', 'a', 'n', 'g', 'e', 'd', '_', 'r', 'a', 'n', 'g', 'e', 's'}
 
 func ts_language_copy(tls *libc.TLS, self uintptr) (r uintptr) {
 	if self != 0 && ts_language_is_wasm(tls, self) != 0 {
@@ -3623,7 +3622,7 @@ func ts_language_table_entry(tls *libc.TLS, self uintptr, state TSStateId, symbo
 	}
 }
 
-var __func__13 = [24]int8{'t', 's', '_', 'l', 'a', 'n', 'g', 'u', 'a', 'g', 'e', '_', 't', 'a', 'b', 'l', 'e', '_', 'e', 'n', 't', 'r', 'y'}
+var __func__13 = [24]uint8{'t', 's', '_', 'l', 'a', 'n', 'g', 'u', 'a', 'g', 'e', '_', 't', 'a', 'b', 'l', 'e', '_', 'e', 'n', 't', 'r', 'y'}
 
 func ts_language_lex_mode_for_state(tls *libc.TLS, self uintptr, state TSStateId) (r TSLexerMode) {
 	var mode TSLexMode
@@ -3760,7 +3759,7 @@ func ts_language_symbol_for_name(tls *libc.TLS, self uintptr, string1 uintptr, l
 			goto _1
 		}
 		symbol_name = *(*uintptr)(unsafe.Pointer((*TSLanguage)(unsafe.Pointer(self)).Fsymbol_names + uintptr(i)*8))
-		if !(libc.Xstrncmp(tls, symbol_name, string1, uint64(length)) != 0) && !(*(*int8)(unsafe.Pointer(symbol_name + uintptr(length))) != 0) {
+		if !(libc.Xstrncmp(tls, symbol_name, string1, uint64(length)) != 0) && !(*(*uint8)(unsafe.Pointer(symbol_name + uintptr(length))) != 0) {
 			return *(*TSSymbol)(unsafe.Pointer((*TSLanguage)(unsafe.Pointer(self)).Fpublic_symbol_map + uintptr(i)*2))
 		}
 		goto _1
@@ -3815,7 +3814,7 @@ func ts_language_field_id_for_name(tls *libc.TLS, self uintptr, name uintptr, na
 		}
 		switch libc.Xstrncmp(tls, name, *(*uintptr)(unsafe.Pointer((*TSLanguage)(unsafe.Pointer(self)).Ffield_names + uintptr(i)*8)), uint64(name_length)) {
 		case 0:
-			if int32(*(*int8)(unsafe.Pointer(*(*uintptr)(unsafe.Pointer((*TSLanguage)(unsafe.Pointer(self)).Ffield_names + uintptr(i)*8)) + uintptr(name_length)))) == 0 {
+			if libc.Int32FromUint8(*(*uint8)(unsafe.Pointer(*(*uintptr)(unsafe.Pointer((*TSLanguage)(unsafe.Pointer(self)).Ffield_names + uintptr(i)*8)) + uintptr(name_length)))) == 0 {
 				return i
 			}
 		case -int32(1):
@@ -3917,7 +3916,7 @@ type Lexer = struct {
 	Flookahead_size               uint32_t
 	Fdid_get_column               uint8
 	Fcolumn_data                  ColumnData
-	Fdebug_buffer                 [1024]int8
+	Fdebug_buffer                 [1024]uint8
 }
 
 type ptrdiff_t = int64
@@ -3957,7 +3956,7 @@ func ts_decode_utf8(tls *libc.TLS, string1 uintptr, length uint32_t, code_point 
 					*(*int32_t)(unsafe.Pointer(v4)) &= int32(0xf)
 					v5 = *(*uint8_t)(unsafe.Pointer(string1 + uintptr(i)))
 					__t = v5
-					if v6 = int32(*(*int8)(unsafe.Pointer(__ccgo_ts + 813 + uintptr(*(*int32_t)(unsafe.Pointer(v4))))))&(int32(1)<<(libc.Int32FromUint8(v5)>>int32(5))) != 0; v6 {
+					if v6 = libc.Int32FromUint8(*(*uint8)(unsafe.Pointer(__ccgo_ts + 813 + uintptr(*(*int32_t)(unsafe.Pointer(v4))))))&(int32(1)<<(libc.Int32FromUint8(v5)>>int32(5))) != 0; v6 {
 						__t = libc.Uint8FromInt32(int32(__t) & libc.Int32FromInt32(0x3f))
 					}
 					v3 = libc.BoolInt32(v6 && libc.Bool(libc.Int32FromInt32(1) != 0))
@@ -3968,7 +3967,7 @@ func ts_decode_utf8(tls *libc.TLS, string1 uintptr, length uint32_t, code_point 
 						v8 = *(*uint8_t)(unsafe.Pointer(string1 + uintptr(i)))
 						__t = v8
 					}
-					if v11 = v9 && int32(*(*int8)(unsafe.Pointer(__ccgo_ts + 830 + uintptr(libc.Int32FromUint8(v8)>>int32(4)))))&(int32(1)<<*(*int32_t)(unsafe.Pointer(code_point))) != 0; v11 {
+					if v11 = v9 && libc.Int32FromUint8(*(*uint8)(unsafe.Pointer(__ccgo_ts + 830 + uintptr(libc.Int32FromUint8(v8)>>int32(4)))))&(int32(1)<<*(*int32_t)(unsafe.Pointer(code_point))) != 0; v11 {
 						*(*int32_t)(unsafe.Pointer(code_point)) = *(*int32_t)(unsafe.Pointer(code_point))<<libc.Int32FromInt32(6) | libc.Int32FromUint8(__t)&int32(0x3f)
 						i = i + 1
 						v1 = i
@@ -5855,7 +5854,7 @@ func reusable_node_advance(tls *libc.TLS, self uintptr) {
 	}
 }
 
-var __func__14 = [22]int8{'r', 'e', 'u', 's', 'a', 'b', 'l', 'e', '_', 'n', 'o', 'd', 'e', '_', 'a', 'd', 'v', 'a', 'n', 'c', 'e'}
+var __func__14 = [22]uint8{'r', 'e', 'u', 's', 'a', 'b', 'l', 'e', '_', 'n', 'o', 'd', 'e', '_', 'a', 'd', 'v', 'a', 'n', 'c', 'e'}
 
 func reusable_node_descend(tls *libc.TLS, self uintptr) (r uint8) {
 	bp := tls.Alloc(16)
@@ -5932,7 +5931,7 @@ func reusable_node_descend(tls *libc.TLS, self uintptr) (r uint8) {
 	return r
 }
 
-var __func__15 = [22]int8{'r', 'e', 'u', 's', 'a', 'b', 'l', 'e', '_', 'n', 'o', 'd', 'e', '_', 'd', 'e', 's', 'c', 'e', 'n', 'd'}
+var __func__15 = [22]uint8{'r', 'e', 'u', 's', 'a', 'b', 'l', 'e', '_', 'n', 'o', 'd', 'e', '_', 'd', 'e', 's', 'c', 'e', 'n', 'd'}
 
 func reusable_node_advance_past_leaf(tls *libc.TLS, self uintptr) {
 	for reusable_node_descend(tls, self) != 0 {
@@ -6072,13 +6071,13 @@ func ts_parser__log(tls *libc.TLS, self uintptr) {
 		libc.Xfprintf(tls, (*TSParser)(unsafe.Pointer(self)).Fdot_graph_file, __ccgo_ts+982, 0)
 		chr = self + 192
 		for {
-			if !(int32(*(*int8)(unsafe.Pointer(chr))) != 0) {
+			if !(libc.Int32FromUint8(*(*uint8)(unsafe.Pointer(chr))) != 0) {
 				break
 			}
-			if int32(*(*int8)(unsafe.Pointer(chr))) == int32('"') || int32(*(*int8)(unsafe.Pointer(chr))) == int32('\\') {
+			if libc.Int32FromUint8(*(*uint8)(unsafe.Pointer(chr))) == int32('"') || libc.Int32FromUint8(*(*uint8)(unsafe.Pointer(chr))) == int32('\\') {
 				libc.Xfputc(tls, int32('\\'), (*TSParser)(unsafe.Pointer(self)).Fdot_graph_file)
 			}
-			libc.Xfputc(tls, int32(*(*int8)(unsafe.Pointer(chr))), (*TSParser)(unsafe.Pointer(self)).Fdot_graph_file)
+			libc.Xfputc(tls, libc.Int32FromUint8(*(*uint8)(unsafe.Pointer(chr))), (*TSParser)(unsafe.Pointer(self)).Fdot_graph_file)
 			goto _1
 		_1:
 			;
@@ -6202,7 +6201,7 @@ func ts_parser__breakdown_top_of_stack(tls *libc.TLS, self uintptr, version Stac
 	return did_break_down
 }
 
-var __func__16 = [34]int8{'t', 's', '_', 'p', 'a', 'r', 's', 'e', 'r', '_', '_', 'b', 'r', 'e', 'a', 'k', 'd', 'o', 'w', 'n', '_', 't', 'o', 'p', '_', 'o', 'f', '_', 's', 't', 'a', 'c', 'k'}
+var __func__16 = [34]uint8{'t', 's', '_', 'p', 'a', 'r', 's', 'e', 'r', '_', '_', 'b', 'r', 'e', 'a', 'k', 'd', 'o', 'w', 'n', '_', 't', 'o', 'p', '_', 'o', 'f', '_', 's', 't', 'a', 'c', 'k'}
 
 func ts_parser__breakdown_lookahead(tls *libc.TLS, self uintptr, lookahead uintptr, state TSStateId, reusable_node uintptr) {
 	bp := tls.Alloc(16)
@@ -6387,7 +6386,7 @@ func ts_parser__external_scanner_serialize(tls *libc.TLS, self uintptr) (r uint3
 	return length
 }
 
-var __func__17 = [38]int8{'t', 's', '_', 'p', 'a', 'r', 's', 'e', 'r', '_', '_', 'e', 'x', 't', 'e', 'r', 'n', 'a', 'l', '_', 's', 'c', 'a', 'n', 'n', 'e', 'r', '_', 's', 'e', 'r', 'i', 'a', 'l', 'i', 'z', 'e'}
+var __func__17 = [38]uint8{'t', 's', '_', 'p', 'a', 'r', 's', 'e', 'r', '_', '_', 'e', 'x', 't', 'e', 'r', 'n', 'a', 'l', '_', 's', 'c', 'a', 'n', 'n', 'e', 'r', '_', 's', 'e', 'r', 'i', 'a', 'l', 'i', 'z', 'e'}
 
 func ts_parser__external_scanner_deserialize(tls *libc.TLS, self uintptr, _external_token Subtree) {
 	bp := tls.Alloc(16)
@@ -6609,56 +6608,56 @@ func ts_parser__lex(tls *libc.TLS, self uintptr, version StackVersion, parse_sta
 		off = libc.X__builtin_snprintf(tls, buf, uint64(1024), __ccgo_ts+1413, 0)
 		i = 0
 		for {
-			if !(int32(*(*int8)(unsafe.Pointer(symbol2 + uintptr(i)))) != int32('\000') && off < int32(1024)) {
+			if !(libc.Int32FromUint8(*(*uint8)(unsafe.Pointer(symbol2 + uintptr(i)))) != int32('\000') && off < int32(1024)) {
 				break
 			}
-			switch int32(*(*int8)(unsafe.Pointer(symbol2 + uintptr(i)))) {
+			switch libc.Int32FromUint8(*(*uint8)(unsafe.Pointer(symbol2 + uintptr(i)))) {
 			case int32('\t'):
 				v3 = off
 				off = off + 1
-				*(*int8)(unsafe.Pointer(buf + uintptr(v3))) = int8('\\')
+				*(*uint8)(unsafe.Pointer(buf + uintptr(v3))) = uint8('\\')
 				v3 = off
 				off = off + 1
-				*(*int8)(unsafe.Pointer(buf + uintptr(v3))) = int8('t')
+				*(*uint8)(unsafe.Pointer(buf + uintptr(v3))) = uint8('t')
 			case int32('\n'):
 				v3 = off
 				off = off + 1
-				*(*int8)(unsafe.Pointer(buf + uintptr(v3))) = int8('\\')
+				*(*uint8)(unsafe.Pointer(buf + uintptr(v3))) = uint8('\\')
 				v3 = off
 				off = off + 1
-				*(*int8)(unsafe.Pointer(buf + uintptr(v3))) = int8('n')
+				*(*uint8)(unsafe.Pointer(buf + uintptr(v3))) = uint8('n')
 			case int32('\v'):
 				v3 = off
 				off = off + 1
-				*(*int8)(unsafe.Pointer(buf + uintptr(v3))) = int8('\\')
+				*(*uint8)(unsafe.Pointer(buf + uintptr(v3))) = uint8('\\')
 				v3 = off
 				off = off + 1
-				*(*int8)(unsafe.Pointer(buf + uintptr(v3))) = int8('v')
+				*(*uint8)(unsafe.Pointer(buf + uintptr(v3))) = uint8('v')
 			case int32('\f'):
 				v3 = off
 				off = off + 1
-				*(*int8)(unsafe.Pointer(buf + uintptr(v3))) = int8('\\')
+				*(*uint8)(unsafe.Pointer(buf + uintptr(v3))) = uint8('\\')
 				v3 = off
 				off = off + 1
-				*(*int8)(unsafe.Pointer(buf + uintptr(v3))) = int8('f')
+				*(*uint8)(unsafe.Pointer(buf + uintptr(v3))) = uint8('f')
 			case int32('\r'):
 				v3 = off
 				off = off + 1
-				*(*int8)(unsafe.Pointer(buf + uintptr(v3))) = int8('\\')
+				*(*uint8)(unsafe.Pointer(buf + uintptr(v3))) = uint8('\\')
 				v3 = off
 				off = off + 1
-				*(*int8)(unsafe.Pointer(buf + uintptr(v3))) = int8('r')
+				*(*uint8)(unsafe.Pointer(buf + uintptr(v3))) = uint8('r')
 			case int32('\\'):
 				v3 = off
 				off = off + 1
-				*(*int8)(unsafe.Pointer(buf + uintptr(v3))) = int8('\\')
+				*(*uint8)(unsafe.Pointer(buf + uintptr(v3))) = uint8('\\')
 				v3 = off
 				off = off + 1
-				*(*int8)(unsafe.Pointer(buf + uintptr(v3))) = int8('\\')
+				*(*uint8)(unsafe.Pointer(buf + uintptr(v3))) = uint8('\\')
 			default:
 				v3 = off
 				off = off + 1
-				*(*int8)(unsafe.Pointer(buf + uintptr(v3))) = *(*int8)(unsafe.Pointer(symbol2 + uintptr(i)))
+				*(*uint8)(unsafe.Pointer(buf + uintptr(v3))) = *(*uint8)(unsafe.Pointer(symbol2 + uintptr(i)))
 				break
 			}
 			goto _2
@@ -7058,7 +7057,7 @@ func ts_parser__reduce(tls *libc.TLS, self uintptr, version StackVersion, symbol
 	return v4
 }
 
-var __func__18 = [18]int8{'t', 's', '_', 'p', 'a', 'r', 's', 'e', 'r', '_', '_', 'r', 'e', 'd', 'u', 'c', 'e'}
+var __func__18 = [18]uint8{'t', 's', '_', 'p', 'a', 'r', 's', 'e', 'r', '_', '_', 'r', 'e', 'd', 'u', 'c', 'e'}
 
 func ts_parser__accept(tls *libc.TLS, self uintptr, version StackVersion, lookahead Subtree) {
 	bp := tls.Alloc(48)
@@ -7178,7 +7177,7 @@ func ts_parser__accept(tls *libc.TLS, self uintptr, version StackVersion, lookah
 	ts_stack_halt(tls, (*TSParser)(unsafe.Pointer(self)).Fstack, version)
 }
 
-var __func__19 = [18]int8{'t', 's', '_', 'p', 'a', 'r', 's', 'e', 'r', '_', '_', 'a', 'c', 'c', 'e', 'p', 't'}
+var __func__19 = [18]uint8{'t', 's', '_', 'p', 'a', 'r', 's', 'e', 'r', '_', '_', 'a', 'c', 'c', 'e', 'p', 't'}
 
 func ts_parser__do_all_potential_reductions(tls *libc.TLS, self uintptr, starting_version StackVersion, lookahead_symbol TSSymbol) (r uint8) {
 	bp := tls.Alloc(32)
@@ -7365,7 +7364,7 @@ func ts_parser__do_all_potential_reductions(tls *libc.TLS, self uintptr, startin
 	return can_shift_lookahead_symbol
 }
 
-var __func__20 = [39]int8{'t', 's', '_', 'p', 'a', 'r', 's', 'e', 'r', '_', '_', 'd', 'o', '_', 'a', 'l', 'l', '_', 'p', 'o', 't', 'e', 'n', 't', 'i', 'a', 'l', '_', 'r', 'e', 'd', 'u', 'c', 't', 'i', 'o', 'n', 's'}
+var __func__20 = [39]uint8{'t', 's', '_', 'p', 'a', 'r', 's', 'e', 'r', '_', '_', 'd', 'o', '_', 'a', 'l', 'l', '_', 'p', 'o', 't', 'e', 'n', 't', 'i', 'a', 'l', '_', 'r', 'e', 'd', 'u', 'c', 't', 'i', 'o', 'n', 's'}
 
 func ts_parser__recover_to_state(tls *libc.TLS, self uintptr, version StackVersion, depth uint32, goal_state TSStateId) (r uint8) {
 	bp := tls.Alloc(64)
@@ -7495,7 +7494,7 @@ func ts_parser__recover_to_state(tls *libc.TLS, self uintptr, version StackVersi
 	return libc.BoolUint8(previous_version != libc.Uint32FromInt32(-libc.Int32FromInt32(1)))
 }
 
-var __func__21 = [28]int8{'t', 's', '_', 'p', 'a', 'r', 's', 'e', 'r', '_', '_', 'r', 'e', 'c', 'o', 'v', 'e', 'r', '_', 't', 'o', '_', 's', 't', 'a', 't', 'e'}
+var __func__21 = [28]uint8{'t', 's', '_', 'p', 'a', 'r', 's', 'e', 'r', '_', '_', 'r', 'e', 'c', 'o', 'v', 'e', 'r', '_', 't', 'o', '_', 's', 't', 'a', 't', 'e'}
 
 func ts_parser__recover(tls *libc.TLS, self uintptr, version StackVersion, lookahead Subtree) {
 	bp := tls.Alloc(96)
@@ -7776,7 +7775,7 @@ func ts_parser__recover(tls *libc.TLS, self uintptr, version StackVersion, looka
 	(*TSParser)(unsafe.Pointer(self)).Fhas_error = has_error
 }
 
-var __func__22 = [19]int8{'t', 's', '_', 'p', 'a', 'r', 's', 'e', 'r', '_', '_', 'r', 'e', 'c', 'o', 'v', 'e', 'r'}
+var __func__22 = [19]uint8{'t', 's', '_', 'p', 'a', 'r', 's', 'e', 'r', '_', '_', 'r', 'e', 'c', 'o', 'v', 'e', 'r'}
 
 func ts_parser__handle_error(tls *libc.TLS, self uintptr, version StackVersion, _lookahead Subtree) {
 	bp := tls.Alloc(32)
@@ -7873,7 +7872,7 @@ func ts_parser__handle_error(tls *libc.TLS, self uintptr, version StackVersion, 
 	}
 }
 
-var __func__23 = [24]int8{'t', 's', '_', 'p', 'a', 'r', 's', 'e', 'r', '_', '_', 'h', 'a', 'n', 'd', 'l', 'e', '_', 'e', 'r', 'r', 'o', 'r'}
+var __func__23 = [24]uint8{'t', 's', '_', 'p', 'a', 'r', 's', 'e', 'r', '_', '_', 'h', 'a', 'n', 'd', 'l', 'e', '_', 'e', 'r', 'r', 'o', 'r'}
 
 func ts_parser__check_progress(tls *libc.TLS, self uintptr, lookahead uintptr, position uintptr, operations uint32) (r uint8) {
 	*(*uint32)(unsafe.Pointer(self + 1412)) += operations
@@ -8358,7 +8357,7 @@ func ts_parser__balance_subtree(tls *libc.TLS, self uintptr) (r uint8) {
 	return libc.BoolUint8(1 != 0)
 }
 
-var __func__24 = [27]int8{'t', 's', '_', 'p', 'a', 'r', 's', 'e', 'r', '_', '_', 'b', 'a', 'l', 'a', 'n', 'c', 'e', '_', 's', 'u', 'b', 't', 'r', 'e', 'e'}
+var __func__24 = [27]uint8{'t', 's', '_', 'p', 'a', 'r', 's', 'e', 'r', '_', '_', 'b', 'a', 'l', 'a', 'n', 'c', 'e', '_', 's', 'u', 'b', 't', 'r', 'e', 'e'}
 
 func ts_parser_has_outstanding_parse(tls *libc.TLS, self uintptr) (r uint8) {
 	return libc.BoolUint8((*TSParser)(unsafe.Pointer(self)).Fcanceled_balancing != 0 || (*TSParser)(unsafe.Pointer(self)).Fexternal_scanner_payload != 0 || libc.Int32FromUint16(ts_stack_state(tls, (*TSParser)(unsafe.Pointer(self)).Fstack, uint32(0))) != int32(1) || ts_stack_node_count_since_error(tls, (*TSParser)(unsafe.Pointer(self)).Fstack, uint32(0)) != uint32(0))
@@ -8683,7 +8682,7 @@ exit:
 	return result
 }
 
-var __func__25 = [16]int8{'t', 's', '_', 'p', 'a', 'r', 's', 'e', 'r', '_', 'p', 'a', 'r', 's', 'e'}
+var __func__25 = [16]uint8{'t', 's', '_', 'p', 'a', 'r', 's', 'e', 'r', '_', 'p', 'a', 'r', 's', 'e'}
 
 func ts_parser_parse_with_options(tls *libc.TLS, self uintptr, old_tree uintptr, input TSInput, parse_options TSParseOptions) (r uintptr) {
 	var result uintptr
@@ -9058,7 +9057,7 @@ func capture_list_pool_reset(tls *libc.TLS, self uintptr) {
 	(*CaptureListPool)(unsafe.Pointer(self)).Ffree_capture_list_count = (*CaptureListPool)(unsafe.Pointer(self)).Flist.Fsize
 }
 
-var __func__26 = [24]int8{'c', 'a', 'p', 't', 'u', 'r', 'e', '_', 'l', 'i', 's', 't', '_', 'p', 'o', 'o', 'l', '_', 'r', 'e', 's', 'e', 't'}
+var __func__26 = [24]uint8{'c', 'a', 'p', 't', 'u', 'r', 'e', '_', 'l', 'i', 's', 't', '_', 'p', 'o', 'o', 'l', '_', 'r', 'e', 's', 'e', 't'}
 
 func capture_list_pool_delete(tls *libc.TLS, self uintptr) {
 	var i uint16_t
@@ -9177,7 +9176,7 @@ func capture_list_pool_delete(tls *libc.TLS, self uintptr) {
 	})(unsafe.Pointer(self)).Fcapacity = uint32(0)
 }
 
-var __func__27 = [25]int8{'c', 'a', 'p', 't', 'u', 'r', 'e', '_', 'l', 'i', 's', 't', '_', 'p', 'o', 'o', 'l', '_', 'd', 'e', 'l', 'e', 't', 'e'}
+var __func__27 = [25]uint8{'c', 'a', 'p', 't', 'u', 'r', 'e', '_', 'l', 'i', 's', 't', '_', 'p', 'o', 'o', 'l', '_', 'd', 'e', 'l', 'e', 't', 'e'}
 
 func capture_list_pool_get(tls *libc.TLS, self uintptr, id uint16_t) (r uintptr) {
 	if uint32(id) >= (*CaptureListPool)(unsafe.Pointer(self)).Flist.Fsize {
@@ -9200,7 +9199,7 @@ func capture_list_pool_get(tls *libc.TLS, self uintptr, id uint16_t) (r uintptr)
 	})(unsafe.Pointer(self)).Fcontents + uintptr(id)*16
 }
 
-var __func__28 = [22]int8{'c', 'a', 'p', 't', 'u', 'r', 'e', '_', 'l', 'i', 's', 't', '_', 'p', 'o', 'o', 'l', '_', 'g', 'e', 't'}
+var __func__28 = [22]uint8{'c', 'a', 'p', 't', 'u', 'r', 'e', '_', 'l', 'i', 's', 't', '_', 'p', 'o', 'o', 'l', '_', 'g', 'e', 't'}
 
 func capture_list_pool_get_mut(tls *libc.TLS, self uintptr, id uint16_t) (r uintptr) {
 	_ = libc.Uint64FromInt64(4)
@@ -9226,7 +9225,7 @@ func capture_list_pool_get_mut(tls *libc.TLS, self uintptr, id uint16_t) (r uint
 	})(unsafe.Pointer(self)).Fcontents + uintptr(id)*16
 }
 
-var __func__29 = [26]int8{'c', 'a', 'p', 't', 'u', 'r', 'e', '_', 'l', 'i', 's', 't', '_', 'p', 'o', 'o', 'l', '_', 'g', 'e', 't', '_', 'm', 'u', 't'}
+var __func__29 = [26]uint8{'c', 'a', 'p', 't', 'u', 'r', 'e', '_', 'l', 'i', 's', 't', '_', 'p', 'o', 'o', 'l', '_', 'g', 'e', 't', '_', 'm', 'u', 't'}
 
 func capture_list_pool_is_empty(tls *libc.TLS, self uintptr) (r uint8) {
 	return libc.BoolUint8((*CaptureListPool)(unsafe.Pointer(self)).Ffree_capture_list_count == uint32(0) && (*CaptureListPool)(unsafe.Pointer(self)).Flist.Fsize >= (*CaptureListPool)(unsafe.Pointer(self)).Fmax_capture_list_count)
@@ -9316,7 +9315,7 @@ func capture_list_pool_acquire(tls *libc.TLS, self uintptr) (r uint16_t) {
 	return uint16(i1)
 }
 
-var __func__30 = [26]int8{'c', 'a', 'p', 't', 'u', 'r', 'e', '_', 'l', 'i', 's', 't', '_', 'p', 'o', 'o', 'l', '_', 'a', 'c', 'q', 'u', 'i', 'r', 'e'}
+var __func__30 = [26]uint8{'c', 'a', 'p', 't', 'u', 'r', 'e', '_', 'l', 'i', 's', 't', '_', 'p', 'o', 'o', 'l', '_', 'a', 'c', 'q', 'u', 'i', 'r', 'e'}
 
 func capture_list_pool_release(tls *libc.TLS, self uintptr, id uint16_t) {
 	if uint32(id) >= (*CaptureListPool)(unsafe.Pointer(self)).Flist.Fsize {
@@ -9340,7 +9339,7 @@ func capture_list_pool_release(tls *libc.TLS, self uintptr, id uint16_t) {
 	(*CaptureListPool)(unsafe.Pointer(self)).Ffree_capture_list_count = (*CaptureListPool)(unsafe.Pointer(self)).Ffree_capture_list_count + 1
 }
 
-var __func__31 = [26]int8{'c', 'a', 'p', 't', 'u', 'r', 'e', '_', 'l', 'i', 's', 't', '_', 'p', 'o', 'o', 'l', '_', 'r', 'e', 'l', 'e', 'a', 's', 'e'}
+var __func__31 = [26]uint8{'c', 'a', 'p', 't', 'u', 'r', 'e', '_', 'l', 'i', 's', 't', '_', 'p', 'o', 'o', 'l', '_', 'r', 'e', 'l', 'e', 'a', 's', 'e'}
 
 func quantifier_mul(tls *libc.TLS, left TSQuantifier1, right TSQuantifier1) (r TSQuantifier1) {
 	switch left {
@@ -9542,7 +9541,7 @@ func capture_quantifier_for_id(tls *libc.TLS, self uintptr, id uint16_t) (r TSQu
 	return v1
 }
 
-var __func__32 = [26]int8{'c', 'a', 'p', 't', 'u', 'r', 'e', '_', 'q', 'u', 'a', 'n', 't', 'i', 'f', 'i', 'e', 'r', '_', 'f', 'o', 'r', '_', 'i', 'd'}
+var __func__32 = [26]uint8{'c', 'a', 'p', 't', 'u', 'r', 'e', '_', 'q', 'u', 'a', 'n', 't', 'i', 'f', 'i', 'e', 'r', '_', 'f', 'o', 'r', '_', 'i', 'd'}
 
 func capture_quantifiers_add_for_id(tls *libc.TLS, self uintptr, id uint16_t, quantifier TSQuantifier1) {
 	var own_quantifier uintptr
@@ -9571,7 +9570,7 @@ func capture_quantifiers_add_for_id(tls *libc.TLS, self uintptr, id uint16_t, qu
 	*(*uint8_t)(unsafe.Pointer(own_quantifier)) = libc.Uint8FromInt32(quantifier_add(tls, libc.Int32FromUint8(*(*uint8_t)(unsafe.Pointer(own_quantifier))), quantifier))
 }
 
-var __func__33 = [31]int8{'c', 'a', 'p', 't', 'u', 'r', 'e', '_', 'q', 'u', 'a', 'n', 't', 'i', 'f', 'i', 'e', 'r', 's', '_', 'a', 'd', 'd', '_', 'f', 'o', 'r', '_', 'i', 'd'}
+var __func__33 = [31]uint8{'c', 'a', 'p', 't', 'u', 'r', 'e', '_', 'q', 'u', 'a', 'n', 't', 'i', 'f', 'i', 'e', 'r', 's', '_', 'a', 'd', 'd', '_', 'f', 'o', 'r', '_', 'i', 'd'}
 
 func capture_quantifiers_add_all(tls *libc.TLS, self uintptr, quantifiers uintptr) {
 	var id uint16_t
@@ -9618,7 +9617,7 @@ func capture_quantifiers_add_all(tls *libc.TLS, self uintptr, quantifiers uintpt
 	}
 }
 
-var __func__34 = [28]int8{'c', 'a', 'p', 't', 'u', 'r', 'e', '_', 'q', 'u', 'a', 'n', 't', 'i', 'f', 'i', 'e', 'r', 's', '_', 'a', 'd', 'd', '_', 'a', 'l', 'l'}
+var __func__34 = [28]uint8{'c', 'a', 'p', 't', 'u', 'r', 'e', '_', 'q', 'u', 'a', 'n', 't', 'i', 'f', 'i', 'e', 'r', 's', '_', 'a', 'd', 'd', '_', 'a', 'l', 'l'}
 
 func capture_quantifiers_mul(tls *libc.TLS, self uintptr, quantifier TSQuantifier1) {
 	var id uint16_t
@@ -9644,7 +9643,7 @@ func capture_quantifiers_mul(tls *libc.TLS, self uintptr, quantifier TSQuantifie
 	}
 }
 
-var __func__35 = [24]int8{'c', 'a', 'p', 't', 'u', 'r', 'e', '_', 'q', 'u', 'a', 'n', 't', 'i', 'f', 'i', 'e', 'r', 's', '_', 'm', 'u', 'l'}
+var __func__35 = [24]uint8{'c', 'a', 'p', 't', 'u', 'r', 'e', '_', 'q', 'u', 'a', 'n', 't', 'i', 'f', 'i', 'e', 'r', 's', '_', 'm', 'u', 'l'}
 
 func capture_quantifiers_join_all(tls *libc.TLS, self uintptr, quantifiers uintptr) {
 	var id, id1 uint32_t
@@ -9709,7 +9708,7 @@ func capture_quantifiers_join_all(tls *libc.TLS, self uintptr, quantifiers uintp
 	}
 }
 
-var __func__36 = [29]int8{'c', 'a', 'p', 't', 'u', 'r', 'e', '_', 'q', 'u', 'a', 'n', 't', 'i', 'f', 'i', 'e', 'r', 's', '_', 'j', 'o', 'i', 'n', '_', 'a', 'l', 'l'}
+var __func__36 = [29]uint8{'c', 'a', 'p', 't', 'u', 'r', 'e', '_', 'q', 'u', 'a', 'n', 't', 'i', 'f', 'i', 'e', 'r', 's', '_', 'j', 'o', 'i', 'n', '_', 'a', 'l', 'l'}
 
 func symbol_table_new(tls *libc.TLS) (r SymbolTable) {
 	return SymbolTable{}
@@ -9822,7 +9821,7 @@ func symbol_table_id_for_name(tls *libc.TLS, self uintptr, name uintptr, length 
 	return -int32(1)
 }
 
-var __func__37 = [25]int8{'s', 'y', 'm', 'b', 'o', 'l', '_', 't', 'a', 'b', 'l', 'e', '_', 'i', 'd', '_', 'f', 'o', 'r', '_', 'n', 'a', 'm', 'e'}
+var __func__37 = [25]uint8{'s', 'y', 'm', 'b', 'o', 'l', '_', 't', 'a', 'b', 'l', 'e', '_', 'i', 'd', '_', 'f', 'o', 'r', '_', 'n', 'a', 'm', 'e'}
 
 func symbol_table_name_for_id(tls *libc.TLS, self uintptr, id uint16_t, length uintptr) (r uintptr) {
 	var slice Slice
@@ -9860,7 +9859,7 @@ func symbol_table_name_for_id(tls *libc.TLS, self uintptr, id uint16_t, length u
 	})(unsafe.Pointer(self)).Fcontents + uintptr(slice.Foffset)
 }
 
-var __func__38 = [25]int8{'s', 'y', 'm', 'b', 'o', 'l', '_', 't', 'a', 'b', 'l', 'e', '_', 'n', 'a', 'm', 'e', '_', 'f', 'o', 'r', '_', 'i', 'd'}
+var __func__38 = [25]uint8{'s', 'y', 'm', 'b', 'o', 'l', '_', 't', 'a', 'b', 'l', 'e', '_', 'n', 'a', 'm', 'e', '_', 'f', 'o', 'r', '_', 'i', 'd'}
 
 func symbol_table_insert_name(tls *libc.TLS, self uintptr, name uintptr, length uint32_t) (r uint16_t) {
 	var id int32
@@ -9933,11 +9932,11 @@ _1: /**/
 			libc.X__assert_fail(tls, __ccgo_ts+3367, __ccgo_ts+3070, int32(802), uintptr(unsafe.Pointer(&__func__39)))
 		}
 	}
-	*(*int8)(unsafe.Pointer((*struct {
+	*(*uint8)(unsafe.Pointer((*struct {
 		Fcontents uintptr
 		Fsize     uint32_t
 		Fcapacity uint32_t
-	})(unsafe.Pointer(self)).Fcontents + uintptr((*SymbolTable)(unsafe.Pointer(self)).Fcharacters.Fsize-uint32(1)))) = 0
+	})(unsafe.Pointer(self)).Fcontents + uintptr((*SymbolTable)(unsafe.Pointer(self)).Fcharacters.Fsize-uint32(1)))) = uint8(0)
 	(*struct {
 		Fcontents uintptr
 		Fsize     uint32_t
@@ -9962,7 +9961,7 @@ _1: /**/
 	return uint16((*SymbolTable)(unsafe.Pointer(self)).Fslices.Fsize - uint32(1))
 }
 
-var __func__39 = [25]int8{'s', 'y', 'm', 'b', 'o', 'l', '_', 't', 'a', 'b', 'l', 'e', '_', 'i', 'n', 's', 'e', 'r', 't', '_', 'n', 'a', 'm', 'e'}
+var __func__39 = [25]uint8{'s', 'y', 'm', 'b', 'o', 'l', '_', 't', 'a', 'b', 'l', 'e', '_', 'i', 'n', 's', 'e', 'r', 't', '_', 'n', 'a', 'm', 'e'}
 
 func query_step__new(tls *libc.TLS, symbol TSSymbol, depth uint16_t, is_immediate uint8) (r QueryStep) {
 	bp := tls.Alloc(32)
@@ -10530,7 +10529,7 @@ func ts_query__pattern_map_search(tls *libc.TLS, self uintptr, needle TSSymbol, 
 	return libc.BoolUint8(libc.Int32FromUint16(needle) == libc.Int32FromUint16(symbol))
 }
 
-var __func__40 = [29]int8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', '_', 'p', 'a', 't', 't', 'e', 'r', 'n', '_', 'm', 'a', 'p', '_', 's', 'e', 'a', 'r', 'c', 'h'}
+var __func__40 = [29]uint8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', '_', 'p', 'a', 't', 't', 'e', 'r', 'n', '_', 'm', 'a', 'p', '_', 's', 'e', 'a', 'r', 'c', 'h'}
 
 func ts_query__pattern_map_insert(tls *libc.TLS, self uintptr, symbol TSSymbol, _new_entry PatternEntry) {
 	bp := tls.Alloc(16)
@@ -10587,7 +10586,7 @@ func ts_query__pattern_map_insert(tls *libc.TLS, self uintptr, symbol TSSymbol, 
 	})(unsafe.Pointer(self+96)).Fcontents, self+96+8, self+96+12, libc.Uint64FromInt64(6), *(*uint32_t)(unsafe.Pointer(bp + 8)), uint32(0), uint32(1), bp)
 }
 
-var __func__41 = [29]int8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', '_', 'p', 'a', 't', 't', 'e', 'r', 'n', '_', 'm', 'a', 'p', '_', 'i', 'n', 's', 'e', 'r', 't'}
+var __func__41 = [29]uint8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', '_', 'p', 'a', 't', 't', 'e', 'r', 'n', '_', 'm', 'a', 'p', '_', 'i', 'n', 's', 'e', 'r', 't'}
 
 func ts_query__perform_analysis(tls *libc.TLS, self uintptr, subgraphs uintptr, analysis uintptr) {
 	bp := tls.Alloc(192)
@@ -11115,7 +11114,7 @@ func ts_query__perform_analysis(tls *libc.TLS, self uintptr, subgraphs uintptr, 
 	}
 }
 
-var __func__42 = [27]int8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', '_', 'p', 'e', 'r', 'f', 'o', 'r', 'm', '_', 'a', 'n', 'a', 'l', 'y', 's', 'i', 's'}
+var __func__42 = [27]uint8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', '_', 'p', 'e', 'r', 'f', 'o', 'r', 'm', '_', 'a', 'n', 'a', 'l', 'y', 's', 'i', 's'}
 
 func ts_query__analyze_patterns(tls *libc.TLS, self uintptr, error_offset uintptr) (r uint8) {
 	bp := tls.Alloc(624)
@@ -13113,7 +13112,7 @@ supertype_cleanup:
 	return all_patterns_are_valid
 }
 
-var __func__43 = [27]int8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', '_', 'a', 'n', 'a', 'l', 'y', 'z', 'e', '_', 'p', 'a', 't', 't', 'e', 'r', 'n', 's'}
+var __func__43 = [27]uint8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', '_', 'a', 'n', 'a', 'l', 'y', 'z', 'e', '_', 'p', 'a', 't', 't', 'e', 'r', 'n', 's'}
 
 func ts_query__add_negated_fields(tls *libc.TLS, self uintptr, step_index uint16_t, field_ids uintptr, field_count uint16_t) {
 	var existing_field_id TSFieldId
@@ -13219,7 +13218,7 @@ func ts_query__add_negated_fields(tls *libc.TLS, self uintptr, step_index uint16
 	})(unsafe.Pointer(self+160)).Fcontents + uintptr(v2)*2)) = libc.Uint16FromInt32(libc.Int32FromInt32(0))
 }
 
-var __func__44 = [29]int8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', '_', 'a', 'd', 'd', '_', 'n', 'e', 'g', 'a', 't', 'e', 'd', '_', 'f', 'i', 'e', 'l', 'd', 's'}
+var __func__44 = [29]uint8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', '_', 'a', 'd', 'd', '_', 'n', 'e', 'g', 'a', 't', 'e', 'd', '_', 'f', 'i', 'e', 'l', 'd', 's'}
 
 func ts_query__parse_string_literal(tls *libc.TLS, self uintptr, stream uintptr) (r TSQueryError1) {
 	var is_escaped uint8
@@ -13274,11 +13273,11 @@ func ts_query__parse_string_literal(tls *libc.TLS, self uintptr, stream uintptr)
 			v12 = self + 176 + 8
 			v11 = *(*uint32_t)(unsafe.Pointer(v12))
 			*(*uint32_t)(unsafe.Pointer(v12)) = *(*uint32_t)(unsafe.Pointer(v12)) + 1
-			*(*int8)(unsafe.Pointer((*struct {
+			*(*uint8)(unsafe.Pointer((*struct {
 				Fcontents uintptr
 				Fsize     uint32_t
 				Fcapacity uint32_t
-			})(unsafe.Pointer(self+176)).Fcontents + uintptr(v11))) = int8(libc.Int32FromUint8('\n'))
+			})(unsafe.Pointer(self+176)).Fcontents + uintptr(v11))) = libc.Uint8FromInt32(libc.Int32FromUint8('\n'))
 			goto _9
 		_9:
 			;
@@ -13307,11 +13306,11 @@ func ts_query__parse_string_literal(tls *libc.TLS, self uintptr, stream uintptr)
 			v12 = self + 176 + 8
 			v11 = *(*uint32_t)(unsafe.Pointer(v12))
 			*(*uint32_t)(unsafe.Pointer(v12)) = *(*uint32_t)(unsafe.Pointer(v12)) + 1
-			*(*int8)(unsafe.Pointer((*struct {
+			*(*uint8)(unsafe.Pointer((*struct {
 				Fcontents uintptr
 				Fsize     uint32_t
 				Fcapacity uint32_t
-			})(unsafe.Pointer(self+176)).Fcontents + uintptr(v11))) = int8(libc.Int32FromUint8('\r'))
+			})(unsafe.Pointer(self+176)).Fcontents + uintptr(v11))) = libc.Uint8FromInt32(libc.Int32FromUint8('\r'))
 			goto _7
 		_4:
 			;
@@ -13331,11 +13330,11 @@ func ts_query__parse_string_literal(tls *libc.TLS, self uintptr, stream uintptr)
 			v12 = self + 176 + 8
 			v11 = *(*uint32_t)(unsafe.Pointer(v12))
 			*(*uint32_t)(unsafe.Pointer(v12)) = *(*uint32_t)(unsafe.Pointer(v12)) + 1
-			*(*int8)(unsafe.Pointer((*struct {
+			*(*uint8)(unsafe.Pointer((*struct {
 				Fcontents uintptr
 				Fsize     uint32_t
 				Fcapacity uint32_t
-			})(unsafe.Pointer(self+176)).Fcontents + uintptr(v11))) = int8(libc.Int32FromUint8('\t'))
+			})(unsafe.Pointer(self+176)).Fcontents + uintptr(v11))) = libc.Uint8FromInt32(libc.Int32FromUint8('\t'))
 			goto _7
 		_5:
 			;
@@ -13355,11 +13354,11 @@ func ts_query__parse_string_literal(tls *libc.TLS, self uintptr, stream uintptr)
 			v12 = self + 176 + 8
 			v11 = *(*uint32_t)(unsafe.Pointer(v12))
 			*(*uint32_t)(unsafe.Pointer(v12)) = *(*uint32_t)(unsafe.Pointer(v12)) + 1
-			*(*int8)(unsafe.Pointer((*struct {
+			*(*uint8)(unsafe.Pointer((*struct {
 				Fcontents uintptr
 				Fsize     uint32_t
 				Fcapacity uint32_t
-			})(unsafe.Pointer(self+176)).Fcontents + uintptr(v11))) = int8(libc.Int32FromUint8('\000'))
+			})(unsafe.Pointer(self+176)).Fcontents + uintptr(v11))) = libc.Uint8FromInt32(libc.Int32FromUint8('\000'))
 			goto _7
 		_6:
 			;
@@ -13958,7 +13957,7 @@ func ts_query__parse_pattern(tls *libc.TLS, self uintptr, stream uintptr, depth 
 					if stream_is_ident_start(tls, stream) != 0 {
 						stream_scan_identifier(tls, stream)
 						length = libc.Uint32FromInt64(int64((*Stream)(unsafe.Pointer(stream)).Finput) - int64(node_name))
-						if length == uint32(1) && int32(*(*int8)(unsafe.Pointer(node_name))) == int32('_') {
+						if length == uint32(1) && libc.Int32FromUint8(*(*uint8)(unsafe.Pointer(node_name))) == int32('_') {
 							symbol = WILDCARD_SYMBOL
 						} else {
 							if !(libc.Xstrncmp(tls, node_name, __ccgo_ts+6894, uint64(length)) != 0) {
@@ -14554,7 +14553,7 @@ func ts_query__parse_pattern(tls *libc.TLS, self uintptr, stream uintptr, depth 
 	return 0
 }
 
-var __func__45 = [24]int8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', '_', 'p', 'a', 'r', 's', 'e', '_', 'p', 'a', 't', 't', 'e', 'r', 'n'}
+var __func__45 = [24]uint8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', '_', 'p', 'a', 'r', 's', 'e', '_', 'p', 'a', 't', 't', 'e', 'r', 'n'}
 
 func ts_query_new(tls *libc.TLS, language uintptr, source uintptr, source_len uint32_t, error_offset uintptr, error_type uintptr) (r uintptr) {
 	bp := tls.Alloc(80)
@@ -14957,7 +14956,7 @@ func ts_query_new(tls *libc.TLS, language uintptr, source uintptr, source_len ui
 	return self
 }
 
-var __func__46 = [13]int8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', 'n', 'e', 'w'}
+var __func__46 = [13]uint8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', 'n', 'e', 'w'}
 
 func ts_query_delete(tls *libc.TLS, self uintptr) {
 	var capture_quantifiers uintptr
@@ -15231,7 +15230,7 @@ func ts_query_delete(tls *libc.TLS, self uintptr) {
 	}
 }
 
-var __func__47 = [16]int8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', 'd', 'e', 'l', 'e', 't', 'e'}
+var __func__47 = [16]uint8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', 'd', 'e', 'l', 'e', 't', 'e'}
 
 func ts_query_pattern_count(tls *libc.TLS, self uintptr) (r uint32_t) {
 	return (*TSQuery)(unsafe.Pointer(self)).Fpatterns.Fsize
@@ -15270,7 +15269,7 @@ func ts_query_capture_quantifier_for_id(tls *libc.TLS, self uintptr, pattern_ind
 	return capture_quantifier_for_id(tls, capture_quantifiers, uint16(capture_index))
 }
 
-var __func__48 = [35]int8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', 'c', 'a', 'p', 't', 'u', 'r', 'e', '_', 'q', 'u', 'a', 'n', 't', 'i', 'f', 'i', 'e', 'r', '_', 'f', 'o', 'r', '_', 'i', 'd'}
+var __func__48 = [35]uint8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', 'c', 'a', 'p', 't', 'u', 'r', 'e', '_', 'q', 'u', 'a', 'n', 't', 'i', 'f', 'i', 'e', 'r', '_', 'f', 'o', 'r', '_', 'i', 'd'}
 
 func ts_query_string_value_for_id(tls *libc.TLS, self uintptr, index uint32_t, length uintptr) (r uintptr) {
 	return symbol_table_name_for_id(tls, self+32, uint16(index), length)
@@ -15315,7 +15314,7 @@ func ts_query_predicates_for_pattern(tls *libc.TLS, self uintptr, pattern_index 
 	})(unsafe.Pointer(self+112)).Fcontents + uintptr(slice.Foffset)*8
 }
 
-var __func__49 = [32]int8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', 'p', 'r', 'e', 'd', 'i', 'c', 'a', 't', 'e', 's', '_', 'f', 'o', 'r', '_', 'p', 'a', 't', 't', 'e', 'r', 'n'}
+var __func__49 = [32]uint8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', 'p', 'r', 'e', 'd', 'i', 'c', 'a', 't', 'e', 's', '_', 'f', 'o', 'r', '_', 'p', 'a', 't', 't', 'e', 'r', 'n'}
 
 func ts_query_start_byte_for_pattern(tls *libc.TLS, self uintptr, pattern_index uint32_t) (r uint32_t) {
 	_ = libc.Uint64FromInt64(4)
@@ -15335,7 +15334,7 @@ func ts_query_start_byte_for_pattern(tls *libc.TLS, self uintptr, pattern_index 
 	})(unsafe.Pointer(self+128)).Fcontents + uintptr(pattern_index)*28)).Fstart_byte
 }
 
-var __func__50 = [32]int8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', 's', 't', 'a', 'r', 't', '_', 'b', 'y', 't', 'e', '_', 'f', 'o', 'r', '_', 'p', 'a', 't', 't', 'e', 'r', 'n'}
+var __func__50 = [32]uint8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', 's', 't', 'a', 'r', 't', '_', 'b', 'y', 't', 'e', '_', 'f', 'o', 'r', '_', 'p', 'a', 't', 't', 'e', 'r', 'n'}
 
 func ts_query_end_byte_for_pattern(tls *libc.TLS, self uintptr, pattern_index uint32_t) (r uint32_t) {
 	_ = libc.Uint64FromInt64(4)
@@ -15355,7 +15354,7 @@ func ts_query_end_byte_for_pattern(tls *libc.TLS, self uintptr, pattern_index ui
 	})(unsafe.Pointer(self+128)).Fcontents + uintptr(pattern_index)*28)).Fend_byte
 }
 
-var __func__51 = [30]int8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', 'e', 'n', 'd', '_', 'b', 'y', 't', 'e', '_', 'f', 'o', 'r', '_', 'p', 'a', 't', 't', 'e', 'r', 'n'}
+var __func__51 = [30]uint8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', 'e', 'n', 'd', '_', 'b', 'y', 't', 'e', '_', 'f', 'o', 'r', '_', 'p', 'a', 't', 't', 'e', 'r', 'n'}
 
 func ts_query_is_pattern_rooted(tls *libc.TLS, self uintptr, pattern_index uint32_t) (r uint8) {
 	var entry uintptr
@@ -15394,7 +15393,7 @@ func ts_query_is_pattern_rooted(tls *libc.TLS, self uintptr, pattern_index uint3
 	return libc.BoolUint8(1 != 0)
 }
 
-var __func__52 = [27]int8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', 'i', 's', '_', 'p', 'a', 't', 't', 'e', 'r', 'n', '_', 'r', 'o', 'o', 't', 'e', 'd'}
+var __func__52 = [27]uint8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', 'i', 's', '_', 'p', 'a', 't', 't', 'e', 'r', 'n', '_', 'r', 'o', 'o', 't', 'e', 'd'}
 
 func ts_query_is_pattern_non_local(tls *libc.TLS, self uintptr, pattern_index uint32_t) (r uint8) {
 	if pattern_index < (*TSQuery)(unsafe.Pointer(self)).Fpatterns.Fsize {
@@ -15419,7 +15418,7 @@ func ts_query_is_pattern_non_local(tls *libc.TLS, self uintptr, pattern_index ui
 	return r
 }
 
-var __func__53 = [30]int8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', 'i', 's', '_', 'p', 'a', 't', 't', 'e', 'r', 'n', '_', 'n', 'o', 'n', '_', 'l', 'o', 'c', 'a', 'l'}
+var __func__53 = [30]uint8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', 'i', 's', '_', 'p', 'a', 't', 't', 'e', 'r', 'n', '_', 'n', 'o', 'n', '_', 'l', 'o', 'c', 'a', 'l'}
 
 func ts_query_is_pattern_guaranteed_at_step(tls *libc.TLS, self uintptr, byte_offset uint32_t) (r uint8) {
 	var i uint32
@@ -15478,7 +15477,7 @@ func ts_query_is_pattern_guaranteed_at_step(tls *libc.TLS, self uintptr, byte_of
 	return r
 }
 
-var __func__54 = [39]int8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', 'i', 's', '_', 'p', 'a', 't', 't', 'e', 'r', 'n', '_', 'g', 'u', 'a', 'r', 'a', 'n', 't', 'e', 'e', 'd', '_', 'a', 't', '_', 's', 't', 'e', 'p'}
+var __func__54 = [39]uint8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', 'i', 's', '_', 'p', 'a', 't', 't', 'e', 'r', 'n', '_', 'g', 'u', 'a', 'r', 'a', 'n', 't', 'e', 'e', 'd', '_', 'a', 't', '_', 's', 't', 'e', 'p'}
 
 func ts_query__step_is_fallible(tls *libc.TLS, self uintptr, step_index uint16_t) (r uint8) {
 	var next_step, step uintptr
@@ -15522,7 +15521,7 @@ func ts_query__step_is_fallible(tls *libc.TLS, self uintptr, step_index uint16_t
 	return libc.BoolUint8(libc.Int32FromUint16((*QueryStep)(unsafe.Pointer(next_step)).Fdepth) != libc.Int32FromUint16(PATTERN_DONE_MARKER) && libc.Int32FromUint16((*QueryStep)(unsafe.Pointer(next_step)).Fdepth) > libc.Int32FromUint16((*QueryStep)(unsafe.Pointer(step)).Fdepth) && (!(int32(*(*uint8)(unsafe.Pointer(next_step + 19))&0x1>>0) != 0) || libc.Int32FromUint16((*QueryStep)(unsafe.Pointer(step)).Fsymbol) == libc.Int32FromUint16(WILDCARD_SYMBOL)))
 }
 
-var __func__55 = [27]int8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', '_', 's', 't', 'e', 'p', '_', 'i', 's', '_', 'f', 'a', 'l', 'l', 'i', 'b', 'l', 'e'}
+var __func__55 = [27]uint8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', '_', 's', 't', 'e', 'p', '_', 'i', 's', '_', 'f', 'a', 'l', 'l', 'i', 'b', 'l', 'e'}
 
 func ts_query_disable_capture(tls *libc.TLS, self uintptr, name uintptr, length uint32_t) {
 	var i uint32
@@ -15560,7 +15559,7 @@ func ts_query_disable_capture(tls *libc.TLS, self uintptr, name uintptr, length 
 	}
 }
 
-var __func__56 = [25]int8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', 'd', 'i', 's', 'a', 'b', 'l', 'e', '_', 'c', 'a', 'p', 't', 'u', 'r', 'e'}
+var __func__56 = [25]uint8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', 'd', 'i', 's', 'a', 'b', 'l', 'e', '_', 'c', 'a', 'p', 't', 'u', 'r', 'e'}
 
 func ts_query_disable_pattern(tls *libc.TLS, self uintptr, pattern_index uint32_t) {
 	var i uint32
@@ -15601,7 +15600,7 @@ func ts_query_disable_pattern(tls *libc.TLS, self uintptr, pattern_index uint32_
 	}
 }
 
-var __func__57 = [25]int8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', 'd', 'i', 's', 'a', 'b', 'l', 'e', '_', 'p', 'a', 't', 't', 'e', 'r', 'n'}
+var __func__57 = [25]uint8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', 'd', 'i', 's', 'a', 'b', 'l', 'e', '_', 'p', 'a', 't', 't', 'e', 'r', 'n'}
 
 func ts_query_cursor_new(tls *libc.TLS) (r uintptr) {
 	var self uintptr
@@ -15787,7 +15786,7 @@ func ts_query_cursor_exec(tls *libc.TLS, self uintptr, query uintptr, node TSNod
 	(*TSQueryCursor)(unsafe.Pointer(self)).Fquery_state = TSQueryCursorState{}
 }
 
-var __func__58 = [21]int8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', 'c', 'u', 'r', 's', 'o', 'r', '_', 'e', 'x', 'e', 'c'}
+var __func__58 = [21]uint8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', 'c', 'u', 'r', 's', 'o', 'r', '_', 'e', 'x', 'e', 'c'}
 
 func ts_query_cursor_exec_with_options(tls *libc.TLS, self uintptr, query uintptr, node TSNode, query_options uintptr) {
 	ts_query_cursor_exec(tls, self, query, node)
@@ -15940,7 +15939,7 @@ func ts_query_cursor__first_in_progress_capture(tls *libc.TLS, self uintptr, sta
 	return result
 }
 
-var __func__59 = [43]int8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', 'c', 'u', 'r', 's', 'o', 'r', '_', '_', 'f', 'i', 'r', 's', 't', '_', 'i', 'n', '_', 'p', 'r', 'o', 'g', 'r', 'e', 's', 's', '_', 'c', 'a', 'p', 't', 'u', 'r', 'e'}
+var __func__59 = [43]uint8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', 'c', 'u', 'r', 's', 'o', 'r', '_', '_', 'f', 'i', 'r', 's', 't', '_', 'i', 'n', '_', 'p', 'r', 'o', 'g', 'r', 'e', 's', 's', '_', 'c', 'a', 'p', 't', 'u', 'r', 'e'}
 
 func ts_query_cursor__compare_nodes(tls *libc.TLS, left TSNode, right TSNode) (r int32) {
 	var left_node_count, left_start, right_node_count, right_start uint32_t
@@ -16027,7 +16026,7 @@ func ts_query_cursor__compare_captures(tls *libc.TLS, self uintptr, left_state u
 	}
 }
 
-var __func__60 = [34]int8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', 'c', 'u', 'r', 's', 'o', 'r', '_', '_', 'c', 'o', 'm', 'p', 'a', 'r', 'e', '_', 'c', 'a', 'p', 't', 'u', 'r', 'e', 's'}
+var __func__60 = [34]uint8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', 'c', 'u', 'r', 's', 'o', 'r', '_', '_', 'c', 'o', 'm', 'p', 'a', 'r', 'e', '_', 'c', 'a', 'p', 't', 'u', 'r', 'e', 's'}
 
 func ts_query_cursor__add_state(tls *libc.TLS, self uintptr, pattern uintptr) {
 	bp := tls.Alloc(16)
@@ -16100,7 +16099,7 @@ func ts_query_cursor__add_state(tls *libc.TLS, self uintptr, pattern uintptr) {
 	})(unsafe.Pointer(self+40)).Fcontents, self+40+8, self+40+12, libc.Uint64FromInt64(16), index, uint32(0), uint32(1), bp)
 }
 
-var __func__61 = [27]int8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', 'c', 'u', 'r', 's', 'o', 'r', '_', '_', 'a', 'd', 'd', '_', 's', 't', 'a', 't', 'e'}
+var __func__61 = [27]uint8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', 'c', 'u', 'r', 's', 'o', 'r', '_', '_', 'a', 'd', 'd', '_', 's', 't', 'a', 't', 'e'}
 
 func ts_query_cursor__prepare_to_capture(tls *libc.TLS, self uintptr, state uintptr, state_index_to_preserve uint32) (r uintptr) {
 	bp := tls.Alloc(16)
@@ -16144,7 +16143,7 @@ func ts_query_cursor__prepare_to_capture(tls *libc.TLS, self uintptr, state uint
 	return capture_list_pool_get_mut(tls, self+72, uint16((*QueryState)(unsafe.Pointer(state)).Fcapture_list_id))
 }
 
-var __func__62 = [36]int8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', 'c', 'u', 'r', 's', 'o', 'r', '_', '_', 'p', 'r', 'e', 'p', 'a', 'r', 'e', '_', 't', 'o', '_', 'c', 'a', 'p', 't', 'u', 'r', 'e'}
+var __func__62 = [36]uint8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', 'c', 'u', 'r', 's', 'o', 'r', '_', '_', 'p', 'r', 'e', 'p', 'a', 'r', 'e', '_', 't', 'o', '_', 'c', 'a', 'p', 't', 'u', 'r', 'e'}
 
 func ts_query_cursor__capture(tls *libc.TLS, self uintptr, state uintptr, step uintptr, node TSNode) {
 	var capture_id uint16_t
@@ -16244,7 +16243,7 @@ func ts_query_cursor__copy_state(tls *libc.TLS, self uintptr, state_ref uintptr)
 	})(unsafe.Pointer(self+40)).Fcontents + uintptr(state_index+uint32(1))*16
 }
 
-var __func__63 = [28]int8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', 'c', 'u', 'r', 's', 'o', 'r', '_', '_', 'c', 'o', 'p', 'y', '_', 's', 't', 'a', 't', 'e'}
+var __func__63 = [28]uint8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', 'c', 'u', 'r', 's', 'o', 'r', '_', '_', 'c', 'o', 'p', 'y', '_', 's', 't', 'a', 't', 'e'}
 
 func ts_query_cursor__should_descend(tls *libc.TLS, self uintptr, node_intersects_range uint8) (r uint8) {
 	bp := tls.Alloc(16)
@@ -16357,7 +16356,7 @@ func ts_query_cursor__should_descend(tls *libc.TLS, self uintptr, node_intersect
 	return libc.BoolUint8(0 != 0)
 }
 
-var __func__64 = [32]int8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', 'c', 'u', 'r', 's', 'o', 'r', '_', '_', 's', 'h', 'o', 'u', 'l', 'd', '_', 'd', 'e', 's', 'c', 'e', 'n', 'd'}
+var __func__64 = [32]uint8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', 'c', 'u', 'r', 's', 'o', 'r', '_', '_', 's', 'h', 'o', 'u', 'l', 'd', '_', 'd', 'e', 's', 'c', 'e', 'n', 'd'}
 
 func range_intersects(tls *libc.TLS, a uintptr, b uintptr) (r uint8) {
 	var is_empty uint8
@@ -17111,7 +17110,7 @@ func ts_query_cursor__advance(tls *libc.TLS, self uintptr, stop_on_definite_step
 	return r
 }
 
-var __func__65 = [25]int8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', 'c', 'u', 'r', 's', 'o', 'r', '_', '_', 'a', 'd', 'v', 'a', 'n', 'c', 'e'}
+var __func__65 = [25]uint8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', 'c', 'u', 'r', 's', 'o', 'r', '_', '_', 'a', 'd', 'v', 'a', 'n', 'c', 'e'}
 
 func ts_query_cursor_next_match(tls *libc.TLS, self uintptr, match uintptr) (r uint8) {
 	var captures, state, v2 uintptr
@@ -17157,7 +17156,7 @@ func ts_query_cursor_next_match(tls *libc.TLS, self uintptr, match uintptr) (r u
 	return libc.BoolUint8(1 != 0)
 }
 
-var __func__66 = [27]int8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', 'c', 'u', 'r', 's', 'o', 'r', '_', 'n', 'e', 'x', 't', '_', 'm', 'a', 't', 'c', 'h'}
+var __func__66 = [27]uint8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', 'c', 'u', 'r', 's', 'o', 'r', '_', 'n', 'e', 'x', 't', '_', 'm', 'a', 't', 'c', 'h'}
 
 func ts_query_cursor_remove_match(tls *libc.TLS, self uintptr, match_id uint32_t) {
 	var i, i1 uint32
@@ -17233,7 +17232,7 @@ func ts_query_cursor_remove_match(tls *libc.TLS, self uintptr, match_id uint32_t
 	}
 }
 
-var __func__67 = [29]int8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', 'c', 'u', 'r', 's', 'o', 'r', '_', 'r', 'e', 'm', 'o', 'v', 'e', '_', 'm', 'a', 't', 'c', 'h'}
+var __func__67 = [29]uint8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', 'c', 'u', 'r', 's', 'o', 'r', '_', 'r', 'e', 'm', 'o', 'v', 'e', '_', 'm', 'a', 't', 'c', 'h'}
 
 func ts_query_cursor_next_capture(tls *libc.TLS, self uintptr, match uintptr, capture_index uintptr) (r uint8) {
 	bp := tls.Alloc(16)
@@ -17378,7 +17377,7 @@ func ts_query_cursor_next_capture(tls *libc.TLS, self uintptr, match uintptr, ca
 	return r
 }
 
-var __func__68 = [29]int8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', 'c', 'u', 'r', 's', 'o', 'r', '_', 'n', 'e', 'x', 't', '_', 'c', 'a', 'p', 't', 'u', 'r', 'e'}
+var __func__68 = [29]uint8{'t', 's', '_', 'q', 'u', 'e', 'r', 'y', '_', 'c', 'u', 'r', 's', 'o', 'r', '_', 'n', 'e', 'x', 't', '_', 'c', 'a', 'p', 't', 'u', 'r', 'e'}
 
 func ts_query_cursor_set_max_start_depth(tls *libc.TLS, self uintptr, max_start_depth uint32_t) {
 	(*TSQueryCursor)(unsafe.Pointer(self)).Fmax_start_depth = max_start_depth
@@ -17456,7 +17455,7 @@ func stack_node_retain(tls *libc.TLS, self uintptr) {
 	}
 }
 
-var __func__69 = [18]int8{'s', 't', 'a', 'c', 'k', '_', 'n', 'o', 'd', 'e', '_', 'r', 'e', 't', 'a', 'i', 'n'}
+var __func__69 = [18]uint8{'s', 't', 'a', 'c', 'k', '_', 'n', 'o', 'd', 'e', '_', 'r', 'e', 't', 'a', 'i', 'n'}
 
 func stack_node_release(tls *libc.TLS, self uintptr, pool uintptr, subtree_pool uintptr) {
 	bp := tls.Alloc(48)
@@ -17534,7 +17533,7 @@ recur:
 	}
 }
 
-var __func__70 = [19]int8{'s', 't', 'a', 'c', 'k', '_', 'n', 'o', 'd', 'e', '_', 'r', 'e', 'l', 'e', 'a', 's', 'e'}
+var __func__70 = [19]uint8{'s', 't', 'a', 'c', 'k', '_', 'n', 'o', 'd', 'e', '_', 'r', 'e', 'l', 'e', 'a', 's', 'e'}
 
 func stack__subtree_node_count(tls *libc.TLS, subtree Subtree) (r uint32_t) {
 	var count uint32_t
@@ -17788,7 +17787,7 @@ func ts_stack__add_version(tls *libc.TLS, self uintptr, original_version StackVe
 	return (*Stack)(unsafe.Pointer(self)).Fheads.Fsize - libc.Uint32FromInt32(1)
 }
 
-var __func__71 = [22]int8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', '_', 'a', 'd', 'd', '_', 'v', 'e', 'r', 's', 'i', 'o', 'n'}
+var __func__71 = [22]uint8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', '_', 'a', 'd', 'd', '_', 'v', 'e', 'r', 's', 'i', 'o', 'n'}
 
 func ts_stack__add_slice(tls *libc.TLS, self uintptr, original_version StackVersion, node uintptr, subtrees uintptr) {
 	bp := tls.Alloc(32)
@@ -17850,7 +17849,7 @@ func ts_stack__add_slice(tls *libc.TLS, self uintptr, original_version StackVers
 	*(*StackSlice)(unsafe.Pointer((*StackSliceArray)(unsafe.Pointer(self+16)).Fcontents + uintptr(v2)*24)) = slice1
 }
 
-var __func__72 = [20]int8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', '_', 'a', 'd', 'd', '_', 's', 'l', 'i', 'c', 'e'}
+var __func__72 = [20]uint8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', '_', 'a', 'd', 'd', '_', 's', 'l', 'i', 'c', 'e'}
 
 func stack__iter(tls *libc.TLS, self uintptr, version StackVersion, __ccgo_fp_callback StackCallback, payload uintptr, goal_subtree_count int32) (r StackSliceArray) {
 	bp := tls.Alloc(80)
@@ -18084,7 +18083,7 @@ func stack__iter(tls *libc.TLS, self uintptr, version StackVersion, __ccgo_fp_ca
 	return (*Stack)(unsafe.Pointer(self)).Fslices
 }
 
-var __func__73 = [12]int8{'s', 't', 'a', 'c', 'k', '_', '_', 'i', 't', 'e', 'r'}
+var __func__73 = [12]uint8{'s', 't', 'a', 'c', 'k', '_', '_', 'i', 't', 'e', 'r'}
 
 func ts_stack_new(tls *libc.TLS, subtree_pool uintptr) (r uintptr) {
 	var self uintptr
@@ -18276,7 +18275,7 @@ func ts_stack_delete(tls *libc.TLS, self uintptr) {
 	(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{ts_current_free})))(tls, self)
 }
 
-var __func__74 = [16]int8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'd', 'e', 'l', 'e', 't', 'e'}
+var __func__74 = [16]uint8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'd', 'e', 'l', 'e', 't', 'e'}
 
 func ts_stack_version_count(tls *libc.TLS, self uintptr) (r uint32_t) {
 	return (*Stack)(unsafe.Pointer(self)).Fheads.Fsize
@@ -18318,7 +18317,7 @@ func ts_stack_halted_version_count(tls *libc.TLS, self uintptr) (r uint32_t) {
 	return count
 }
 
-var __func__75 = [30]int8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'h', 'a', 'l', 't', 'e', 'd', '_', 'v', 'e', 'r', 's', 'i', 'o', 'n', '_', 'c', 'o', 'u', 'n', 't'}
+var __func__75 = [30]uint8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'h', 'a', 'l', 't', 'e', 'd', '_', 'v', 'e', 'r', 's', 'i', 'o', 'n', '_', 'c', 'o', 'u', 'n', 't'}
 
 func ts_stack_state(tls *libc.TLS, self uintptr, version StackVersion) (r TSStateId) {
 	_ = libc.Uint64FromInt64(4)
@@ -18338,7 +18337,7 @@ func ts_stack_state(tls *libc.TLS, self uintptr, version StackVersion) (r TSStat
 	})(unsafe.Pointer(self)).Fcontents + uintptr(version)*48)).Fnode)).Fstate
 }
 
-var __func__76 = [15]int8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 's', 't', 'a', 't', 'e'}
+var __func__76 = [15]uint8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 's', 't', 'a', 't', 'e'}
 
 func ts_stack_position(tls *libc.TLS, self uintptr, version StackVersion) (r Length) {
 	_ = libc.Uint64FromInt64(4)
@@ -18358,7 +18357,7 @@ func ts_stack_position(tls *libc.TLS, self uintptr, version StackVersion) (r Len
 	})(unsafe.Pointer(self)).Fcontents + uintptr(version)*48)).Fnode)).Fposition
 }
 
-var __func__77 = [18]int8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'p', 'o', 's', 'i', 't', 'i', 'o', 'n'}
+var __func__77 = [18]uint8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'p', 'o', 's', 'i', 't', 'i', 'o', 'n'}
 
 func ts_stack_last_external_token(tls *libc.TLS, self uintptr, version StackVersion) (r Subtree) {
 	_ = libc.Uint64FromInt64(4)
@@ -18378,7 +18377,7 @@ func ts_stack_last_external_token(tls *libc.TLS, self uintptr, version StackVers
 	})(unsafe.Pointer(self)).Fcontents + uintptr(version)*48)).Flast_external_token
 }
 
-var __func__78 = [29]int8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'l', 'a', 's', 't', '_', 'e', 'x', 't', 'e', 'r', 'n', 'a', 'l', '_', 't', 'o', 'k', 'e', 'n'}
+var __func__78 = [29]uint8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'l', 'a', 's', 't', '_', 'e', 'x', 't', 'e', 'r', 'n', 'a', 'l', '_', 't', 'o', 'k', 'e', 'n'}
 
 func ts_stack_set_last_external_token(tls *libc.TLS, self uintptr, version StackVersion, _token Subtree) {
 	bp := tls.Alloc(16)
@@ -18410,7 +18409,7 @@ func ts_stack_set_last_external_token(tls *libc.TLS, self uintptr, version Stack
 	(*StackHead)(unsafe.Pointer(head)).Flast_external_token = *(*Subtree)(unsafe.Pointer(bp))
 }
 
-var __func__79 = [33]int8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 's', 'e', 't', '_', 'l', 'a', 's', 't', '_', 'e', 'x', 't', 'e', 'r', 'n', 'a', 'l', '_', 't', 'o', 'k', 'e', 'n'}
+var __func__79 = [33]uint8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 's', 'e', 't', '_', 'l', 'a', 's', 't', '_', 'e', 'x', 't', 'e', 'r', 'n', 'a', 'l', '_', 't', 'o', 'k', 'e', 'n'}
 
 func ts_stack_error_cost(tls *libc.TLS, self uintptr, version StackVersion) (r uint32) {
 	var head uintptr
@@ -18438,7 +18437,7 @@ func ts_stack_error_cost(tls *libc.TLS, self uintptr, version StackVersion) (r u
 	return result
 }
 
-var __func__80 = [20]int8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'e', 'r', 'r', 'o', 'r', '_', 'c', 'o', 's', 't'}
+var __func__80 = [20]uint8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'e', 'r', 'r', 'o', 'r', '_', 'c', 'o', 's', 't'}
 
 func ts_stack_node_count_since_error(tls *libc.TLS, self uintptr, version StackVersion) (r uint32) {
 	var head uintptr
@@ -18464,7 +18463,7 @@ func ts_stack_node_count_since_error(tls *libc.TLS, self uintptr, version StackV
 	return (*StackNode)(unsafe.Pointer((*StackHead)(unsafe.Pointer(head)).Fnode)).Fnode_count - (*StackHead)(unsafe.Pointer(head)).Fnode_count_at_last_error
 }
 
-var __func__81 = [32]int8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'n', 'o', 'd', 'e', '_', 'c', 'o', 'u', 'n', 't', '_', 's', 'i', 'n', 'c', 'e', '_', 'e', 'r', 'r', 'o', 'r'}
+var __func__81 = [32]uint8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'n', 'o', 'd', 'e', '_', 'c', 'o', 'u', 'n', 't', '_', 's', 'i', 'n', 'c', 'e', '_', 'e', 'r', 'r', 'o', 'r'}
 
 func ts_stack_push(tls *libc.TLS, self uintptr, version StackVersion, _subtree Subtree, pending uint8, state TSStateId) {
 	bp := tls.Alloc(16)
@@ -18494,7 +18493,7 @@ func ts_stack_push(tls *libc.TLS, self uintptr, version StackVersion, _subtree S
 	(*StackHead)(unsafe.Pointer(head)).Fnode = new_node
 }
 
-var __func__82 = [14]int8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'p', 'u', 's', 'h'}
+var __func__82 = [14]uint8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'p', 'u', 's', 'h'}
 
 func pop_count_callback(tls *libc.TLS, payload uintptr, iterator uintptr) (r StackAction) {
 	var goal_subtree_count uintptr
@@ -18553,7 +18552,7 @@ func ts_stack_pop_pending(tls *libc.TLS, self uintptr, version StackVersion) (r 
 	return *(*StackSliceArray)(unsafe.Pointer(bp))
 }
 
-var __func__83 = [21]int8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'p', 'o', 'p', '_', 'p', 'e', 'n', 'd', 'i', 'n', 'g'}
+var __func__83 = [21]uint8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'p', 'o', 'p', '_', 'p', 'e', 'n', 'd', 'i', 'n', 'g'}
 
 func pop_error_callback(tls *libc.TLS, payload uintptr, iterator uintptr) (r StackAction) {
 	var found_error uintptr
@@ -18581,7 +18580,7 @@ func pop_error_callback(tls *libc.TLS, payload uintptr, iterator uintptr) (r Sta
 	return r
 }
 
-var __func__84 = [19]int8{'p', 'o', 'p', '_', 'e', 'r', 'r', 'o', 'r', '_', 'c', 'a', 'l', 'l', 'b', 'a', 'c', 'k'}
+var __func__84 = [19]uint8{'p', 'o', 'p', '_', 'e', 'r', 'r', 'o', 'r', '_', 'c', 'a', 'l', 'l', 'b', 'a', 'c', 'k'}
 
 func ts_stack_pop_error(tls *libc.TLS, self uintptr, version StackVersion) (r SubtreeArray) {
 	bp := tls.Alloc(32)
@@ -18646,7 +18645,7 @@ func ts_stack_pop_error(tls *libc.TLS, self uintptr, version StackVersion) (r Su
 	return SubtreeArray{}
 }
 
-var __func__85 = [19]int8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'p', 'o', 'p', '_', 'e', 'r', 'r', 'o', 'r'}
+var __func__85 = [19]uint8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'p', 'o', 'p', '_', 'e', 'r', 'r', 'o', 'r'}
 
 func pop_all_callback(tls *libc.TLS, payload uintptr, iterator uintptr) (r StackAction) {
 	var v1 int32
@@ -18717,7 +18716,7 @@ func summarize_stack_callback(tls *libc.TLS, payload uintptr, iterator uintptr) 
 	return uint32(StackActionNone)
 }
 
-var __func__86 = [25]int8{'s', 'u', 'm', 'm', 'a', 'r', 'i', 'z', 'e', '_', 's', 't', 'a', 'c', 'k', '_', 'c', 'a', 'l', 'l', 'b', 'a', 'c', 'k'}
+var __func__86 = [25]uint8{'s', 'u', 'm', 'm', 'a', 'r', 'i', 'z', 'e', '_', 's', 't', 'a', 'c', 'k', '_', 'c', 'a', 'l', 'l', 'b', 'a', 'c', 'k'}
 
 func ts_stack_record_summary(tls *libc.TLS, self uintptr, version StackVersion, max_depth uint32) {
 	bp := tls.Alloc(16)
@@ -18760,7 +18759,7 @@ func ts_stack_record_summary(tls *libc.TLS, self uintptr, version StackVersion, 
 	(*StackHead)(unsafe.Pointer(head)).Fsummary = (*(*SummarizeStackSession)(unsafe.Pointer(bp))).Fsummary
 }
 
-var __func__87 = [24]int8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'r', 'e', 'c', 'o', 'r', 'd', '_', 's', 'u', 'm', 'm', 'a', 'r', 'y'}
+var __func__87 = [24]uint8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'r', 'e', 'c', 'o', 'r', 'd', '_', 's', 'u', 'm', 'm', 'a', 'r', 'y'}
 
 func ts_stack_get_summary(tls *libc.TLS, self uintptr, version StackVersion) (r uintptr) {
 	_ = libc.Uint64FromInt64(4)
@@ -18780,7 +18779,7 @@ func ts_stack_get_summary(tls *libc.TLS, self uintptr, version StackVersion) (r 
 	})(unsafe.Pointer(self)).Fcontents + uintptr(version)*48)).Fsummary
 }
 
-var __func__88 = [21]int8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'g', 'e', 't', '_', 's', 'u', 'm', 'm', 'a', 'r', 'y'}
+var __func__88 = [21]uint8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'g', 'e', 't', '_', 's', 'u', 'm', 'm', 'a', 'r', 'y'}
 
 func ts_stack_dynamic_precedence(tls *libc.TLS, self uintptr, version StackVersion) (r int32) {
 	_ = libc.Uint64FromInt64(4)
@@ -18800,7 +18799,7 @@ func ts_stack_dynamic_precedence(tls *libc.TLS, self uintptr, version StackVersi
 	})(unsafe.Pointer(self)).Fcontents + uintptr(version)*48)).Fnode)).Fdynamic_precedence
 }
 
-var __func__89 = [28]int8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'd', 'y', 'n', 'a', 'm', 'i', 'c', '_', 'p', 'r', 'e', 'c', 'e', 'd', 'e', 'n', 'c', 'e'}
+var __func__89 = [28]uint8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'd', 'y', 'n', 'a', 'm', 'i', 'c', '_', 'p', 'r', 'e', 'c', 'e', 'd', 'e', 'n', 'c', 'e'}
 
 func ts_stack_has_advanced_since_error(tls *libc.TLS, self uintptr, version StackVersion) (r uint8) {
 	bp := tls.Alloc(16)
@@ -18850,7 +18849,7 @@ func ts_stack_has_advanced_since_error(tls *libc.TLS, self uintptr, version Stac
 	return libc.BoolUint8(0 != 0)
 }
 
-var __func__90 = [34]int8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'h', 'a', 's', '_', 'a', 'd', 'v', 'a', 'n', 'c', 'e', 'd', '_', 's', 'i', 'n', 'c', 'e', '_', 'e', 'r', 'r', 'o', 'r'}
+var __func__90 = [34]uint8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'h', 'a', 's', '_', 'a', 'd', 'v', 'a', 'n', 'c', 'e', 'd', '_', 's', 'i', 'n', 'c', 'e', '_', 'e', 'r', 'r', 'o', 'r'}
 
 func ts_stack_remove_version(tls *libc.TLS, self uintptr, version StackVersion) {
 	_ = libc.Uint64FromInt64(4)
@@ -18875,7 +18874,7 @@ func ts_stack_remove_version(tls *libc.TLS, self uintptr, version StackVersion) 
 	})(unsafe.Pointer(self)).Fcontents, self+8, libc.Uint64FromInt64(48), version)
 }
 
-var __func__91 = [24]int8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'r', 'e', 'm', 'o', 'v', 'e', '_', 'v', 'e', 'r', 's', 'i', 'o', 'n'}
+var __func__91 = [24]uint8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'r', 'e', 'm', 'o', 'v', 'e', '_', 'v', 'e', 'r', 's', 'i', 'o', 'n'}
 
 func ts_stack_renumber_version(tls *libc.TLS, self uintptr, v1 StackVersion, v2 StackVersion) {
 	var source_head, target_head uintptr
@@ -18938,7 +18937,7 @@ func ts_stack_renumber_version(tls *libc.TLS, self uintptr, v1 StackVersion, v2 
 	})(unsafe.Pointer(self)).Fcontents, self+8, libc.Uint64FromInt64(48), v1)
 }
 
-var __func__92 = [26]int8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'r', 'e', 'n', 'u', 'm', 'b', 'e', 'r', '_', 'v', 'e', 'r', 's', 'i', 'o', 'n'}
+var __func__92 = [26]uint8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'r', 'e', 'n', 'u', 'm', 'b', 'e', 'r', '_', 'v', 'e', 'r', 's', 'i', 'o', 'n'}
 
 func ts_stack_swap_versions(tls *libc.TLS, self uintptr, v1 StackVersion, v2 StackVersion) {
 	var temporary_head StackHead
@@ -19004,7 +19003,7 @@ func ts_stack_swap_versions(tls *libc.TLS, self uintptr, v1 StackVersion, v2 Sta
 	})(unsafe.Pointer(self)).Fcontents + uintptr(v2)*48)) = temporary_head
 }
 
-var __func__93 = [23]int8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 's', 'w', 'a', 'p', '_', 'v', 'e', 'r', 's', 'i', 'o', 'n', 's'}
+var __func__93 = [23]uint8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 's', 'w', 'a', 'p', '_', 'v', 'e', 'r', 's', 'i', 'o', 'n', 's'}
 
 func ts_stack_copy_version(tls *libc.TLS, self uintptr, version StackVersion) (r StackVersion) {
 	var head, v2 uintptr
@@ -19084,7 +19083,7 @@ func ts_stack_copy_version(tls *libc.TLS, self uintptr, version StackVersion) (r
 	return (*Stack)(unsafe.Pointer(self)).Fheads.Fsize - uint32(1)
 }
 
-var __func__94 = [22]int8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'c', 'o', 'p', 'y', '_', 'v', 'e', 'r', 's', 'i', 'o', 'n'}
+var __func__94 = [22]uint8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'c', 'o', 'p', 'y', '_', 'v', 'e', 'r', 's', 'i', 'o', 'n'}
 
 func ts_stack_merge(tls *libc.TLS, self uintptr, version1 StackVersion, version2 StackVersion) (r uint8) {
 	var head1, head2 uintptr
@@ -19141,7 +19140,7 @@ func ts_stack_merge(tls *libc.TLS, self uintptr, version1 StackVersion, version2
 	return libc.BoolUint8(1 != 0)
 }
 
-var __func__95 = [15]int8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'm', 'e', 'r', 'g', 'e'}
+var __func__95 = [15]uint8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'm', 'e', 'r', 'g', 'e'}
 
 func ts_stack_can_merge(tls *libc.TLS, self uintptr, version1 StackVersion, version2 StackVersion) (r uint8) {
 	var head1, head2 uintptr
@@ -19179,7 +19178,7 @@ func ts_stack_can_merge(tls *libc.TLS, self uintptr, version1 StackVersion, vers
 	return libc.BoolUint8((*StackHead)(unsafe.Pointer(head1)).Fstatus == int32(StackStatusActive) && (*StackHead)(unsafe.Pointer(head2)).Fstatus == int32(StackStatusActive) && libc.Int32FromUint16((*StackNode)(unsafe.Pointer((*StackHead)(unsafe.Pointer(head1)).Fnode)).Fstate) == libc.Int32FromUint16((*StackNode)(unsafe.Pointer((*StackHead)(unsafe.Pointer(head2)).Fnode)).Fstate) && (*StackNode)(unsafe.Pointer((*StackHead)(unsafe.Pointer(head1)).Fnode)).Fposition.Fbytes == (*StackNode)(unsafe.Pointer((*StackHead)(unsafe.Pointer(head2)).Fnode)).Fposition.Fbytes && (*StackNode)(unsafe.Pointer((*StackHead)(unsafe.Pointer(head1)).Fnode)).Ferror_cost == (*StackNode)(unsafe.Pointer((*StackHead)(unsafe.Pointer(head2)).Fnode)).Ferror_cost && ts_subtree_external_scanner_state_eq(tls, (*StackHead)(unsafe.Pointer(head1)).Flast_external_token, (*StackHead)(unsafe.Pointer(head2)).Flast_external_token) != 0)
 }
 
-var __func__96 = [19]int8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'c', 'a', 'n', '_', 'm', 'e', 'r', 'g', 'e'}
+var __func__96 = [19]uint8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'c', 'a', 'n', '_', 'm', 'e', 'r', 'g', 'e'}
 
 func ts_stack_halt(tls *libc.TLS, self uintptr, version StackVersion) {
 	_ = libc.Uint64FromInt64(4)
@@ -19199,7 +19198,7 @@ func ts_stack_halt(tls *libc.TLS, self uintptr, version StackVersion) {
 	})(unsafe.Pointer(self)).Fcontents + uintptr(version)*48)).Fstatus = int32(StackStatusHalted)
 }
 
-var __func__97 = [14]int8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'h', 'a', 'l', 't'}
+var __func__97 = [14]uint8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'h', 'a', 'l', 't'}
 
 func ts_stack_pause(tls *libc.TLS, self uintptr, version StackVersion, lookahead Subtree) {
 	var head uintptr
@@ -19224,7 +19223,7 @@ func ts_stack_pause(tls *libc.TLS, self uintptr, version StackVersion, lookahead
 	(*StackHead)(unsafe.Pointer(head)).Fnode_count_at_last_error = (*StackNode)(unsafe.Pointer((*StackHead)(unsafe.Pointer(head)).Fnode)).Fnode_count
 }
 
-var __func__98 = [15]int8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'p', 'a', 'u', 's', 'e'}
+var __func__98 = [15]uint8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'p', 'a', 'u', 's', 'e'}
 
 func ts_stack_is_active(tls *libc.TLS, self uintptr, version StackVersion) (r uint8) {
 	_ = libc.Uint64FromInt64(4)
@@ -19244,7 +19243,7 @@ func ts_stack_is_active(tls *libc.TLS, self uintptr, version StackVersion) (r ui
 	})(unsafe.Pointer(self)).Fcontents+uintptr(version)*48)).Fstatus == int32(StackStatusActive))
 }
 
-var __func__99 = [19]int8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'i', 's', '_', 'a', 'c', 't', 'i', 'v', 'e'}
+var __func__99 = [19]uint8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'i', 's', '_', 'a', 'c', 't', 'i', 'v', 'e'}
 
 func ts_stack_is_halted(tls *libc.TLS, self uintptr, version StackVersion) (r uint8) {
 	_ = libc.Uint64FromInt64(4)
@@ -19264,7 +19263,7 @@ func ts_stack_is_halted(tls *libc.TLS, self uintptr, version StackVersion) (r ui
 	})(unsafe.Pointer(self)).Fcontents+uintptr(version)*48)).Fstatus == int32(StackStatusHalted))
 }
 
-var __func__100 = [19]int8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'i', 's', '_', 'h', 'a', 'l', 't', 'e', 'd'}
+var __func__100 = [19]uint8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'i', 's', '_', 'h', 'a', 'l', 't', 'e', 'd'}
 
 func ts_stack_is_paused(tls *libc.TLS, self uintptr, version StackVersion) (r uint8) {
 	_ = libc.Uint64FromInt64(4)
@@ -19284,7 +19283,7 @@ func ts_stack_is_paused(tls *libc.TLS, self uintptr, version StackVersion) (r ui
 	})(unsafe.Pointer(self)).Fcontents+uintptr(version)*48)).Fstatus == int32(StackStatusPaused))
 }
 
-var __func__101 = [19]int8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'i', 's', '_', 'p', 'a', 'u', 's', 'e', 'd'}
+var __func__101 = [19]uint8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'i', 's', '_', 'p', 'a', 'u', 's', 'e', 'd'}
 
 func ts_stack_resume(tls *libc.TLS, self uintptr, version StackVersion) (r Subtree) {
 	var head uintptr
@@ -19317,7 +19316,7 @@ func ts_stack_resume(tls *libc.TLS, self uintptr, version StackVersion) (r Subtr
 	return result
 }
 
-var __func__102 = [16]int8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'r', 'e', 's', 'u', 'm', 'e'}
+var __func__102 = [16]uint8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'r', 'e', 's', 'u', 'm', 'e'}
 
 func ts_stack_clear(tls *libc.TLS, self uintptr) {
 	var i, v2 uint32_t
@@ -19381,7 +19380,7 @@ func ts_stack_clear(tls *libc.TLS, self uintptr) {
 	}
 }
 
-var __func__103 = [15]int8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'c', 'l', 'e', 'a', 'r'}
+var __func__103 = [15]uint8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'c', 'l', 'e', 'a', 'r'}
 
 func ts_stack_print_dot_graph(tls *libc.TLS, self uintptr, language uintptr, f uintptr) (r uint8) {
 	bp := tls.Alloc(96)
@@ -19485,7 +19484,7 @@ func ts_stack_print_dot_graph(tls *libc.TLS, self uintptr, language uintptr, f u
 				if !(j1 < (*ExternalScannerState)(unsafe.Pointer(state)).Flength) {
 					break
 				}
-				libc.Xfprintf(tls, f, __ccgo_ts+9846, libc.VaList(bp+48, int32(*(*int8)(unsafe.Pointer(data + uintptr(j1))))))
+				libc.Xfprintf(tls, f, __ccgo_ts+9846, libc.VaList(bp+48, libc.Int32FromUint8(*(*uint8)(unsafe.Pointer(data + uintptr(j1))))))
 				goto _3
 			_3:
 				;
@@ -19754,7 +19753,7 @@ func ts_stack_print_dot_graph(tls *libc.TLS, self uintptr, language uintptr, f u
 	return libc.BoolUint8(1 != 0)
 }
 
-var __func__104 = [25]int8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'p', 'r', 'i', 'n', 't', '_', 'd', 'o', 't', '_', 'g', 'r', 'a', 'p', 'h'}
+var __func__104 = [25]uint8{'t', 's', '_', 's', 't', 'a', 'c', 'k', '_', 'p', 'r', 'i', 'n', 't', '_', 'd', 'o', 't', '_', 'g', 'r', 'a', 'p', 'h'}
 
 const _ISupper = 256
 const _ISlower = 512
@@ -19856,7 +19855,7 @@ func ts_subtree_array_copy(tls *libc.TLS, self SubtreeArray, dest uintptr) {
 	}
 }
 
-var __func__105 = [22]int8{'t', 's', '_', 's', 'u', 'b', 't', 'r', 'e', 'e', '_', 'a', 'r', 'r', 'a', 'y', '_', 'c', 'o', 'p', 'y'}
+var __func__105 = [22]uint8{'t', 's', '_', 's', 'u', 'b', 't', 'r', 'e', 'e', '_', 'a', 'r', 'r', 'a', 'y', '_', 'c', 'o', 'p', 'y'}
 
 func ts_subtree_array_clear(tls *libc.TLS, pool uintptr, self uintptr) {
 	var i uint32_t
@@ -19881,7 +19880,7 @@ func ts_subtree_array_clear(tls *libc.TLS, pool uintptr, self uintptr) {
 	(*SubtreeArray)(unsafe.Pointer(self)).Fsize = uint32(0)
 }
 
-var __func__106 = [23]int8{'t', 's', '_', 's', 'u', 'b', 't', 'r', 'e', 'e', '_', 'a', 'r', 'r', 'a', 'y', '_', 'c', 'l', 'e', 'a', 'r'}
+var __func__106 = [23]uint8{'t', 's', '_', 's', 'u', 'b', 't', 'r', 'e', 'e', '_', 'a', 'r', 'r', 'a', 'y', '_', 'c', 'l', 'e', 'a', 'r'}
 
 func ts_subtree_array_delete(tls *libc.TLS, pool uintptr, self uintptr) {
 	ts_subtree_array_clear(tls, pool, self)
@@ -19921,7 +19920,7 @@ func ts_subtree_array_remove_trailing_extras(tls *libc.TLS, self uintptr, destin
 	ts_subtree_array_reverse(tls, destination)
 }
 
-var __func__107 = [40]int8{'t', 's', '_', 's', 'u', 'b', 't', 'r', 'e', 'e', '_', 'a', 'r', 'r', 'a', 'y', '_', 'r', 'e', 'm', 'o', 'v', 'e', '_', 't', 'r', 'a', 'i', 'l', 'i', 'n', 'g', '_', 'e', 'x', 't', 'r', 'a', 's'}
+var __func__107 = [40]uint8{'t', 's', '_', 's', 'u', 'b', 't', 'r', 'e', 'e', '_', 'a', 'r', 'r', 'a', 'y', '_', 'r', 'e', 'm', 'o', 'v', 'e', '_', 't', 'r', 'a', 'i', 'l', 'i', 'n', 'g', '_', 'e', 'x', 't', 'r', 'a', 's'}
 
 func ts_subtree_array_reverse(tls *libc.TLS, self uintptr) {
 	var i, limit uint32_t
@@ -19969,7 +19968,7 @@ func ts_subtree_array_reverse(tls *libc.TLS, self uintptr) {
 	}
 }
 
-var __func__108 = [25]int8{'t', 's', '_', 's', 'u', 'b', 't', 'r', 'e', 'e', '_', 'a', 'r', 'r', 'a', 'y', '_', 'r', 'e', 'v', 'e', 'r', 's', 'e'}
+var __func__108 = [25]uint8{'t', 's', '_', 's', 'u', 'b', 't', 'r', 'e', 'e', '_', 'a', 'r', 'r', 'a', 'y', '_', 'r', 'e', 'v', 'e', 'r', 's', 'e'}
 
 func ts_subtree_pool_new(tls *libc.TLS, capacity uint32_t) (r SubtreePool) {
 	bp := tls.Alloc(32)
@@ -20018,7 +20017,7 @@ func ts_subtree_pool_delete(tls *libc.TLS, self uintptr) {
 	}
 }
 
-var __func__109 = [23]int8{'t', 's', '_', 's', 'u', 'b', 't', 'r', 'e', 'e', '_', 'p', 'o', 'o', 'l', '_', 'd', 'e', 'l', 'e', 't', 'e'}
+var __func__109 = [23]uint8{'t', 's', '_', 's', 'u', 'b', 't', 'r', 'e', 'e', '_', 'p', 'o', 'o', 'l', '_', 'd', 'e', 'l', 'e', 't', 'e'}
 
 func ts_subtree_pool_allocate(tls *libc.TLS, self uintptr) (r uintptr) {
 	var v1 uint32_t
@@ -20110,7 +20109,7 @@ func ts_subtree_set_symbol(tls *libc.TLS, self uintptr, symbol TSSymbol, languag
 	}
 }
 
-var __func__110 = [22]int8{'t', 's', '_', 's', 'u', 'b', 't', 'r', 'e', 'e', '_', 's', 'e', 't', '_', 's', 'y', 'm', 'b', 'o', 'l'}
+var __func__110 = [22]uint8{'t', 's', '_', 's', 'u', 'b', 't', 'r', 'e', 'e', '_', 's', 'e', 't', '_', 's', 'y', 'm', 'b', 'o', 'l'}
 
 func ts_subtree_new_error(tls *libc.TLS, pool uintptr, lookahead_char int32_t, padding Length, size Length, bytes_scanned uint32_t, parse_state TSStateId, language uintptr) (r Subtree) {
 	bp := tls.Alloc(16)
@@ -20437,7 +20436,7 @@ func ts_subtree_summarize_children(tls *libc.TLS, _self MutableSubtree, language
 	}
 }
 
-var __func__111 = [30]int8{'t', 's', '_', 's', 'u', 'b', 't', 'r', 'e', 'e', '_', 's', 'u', 'm', 'm', 'a', 'r', 'i', 'z', 'e', '_', 'c', 'h', 'i', 'l', 'd', 'r', 'e', 'n'}
+var __func__111 = [30]uint8{'t', 's', '_', 's', 'u', 'b', 't', 'r', 'e', 'e', '_', 's', 'u', 'm', 'm', 'a', 'r', 'i', 'z', 'e', '_', 'c', 'h', 'i', 'l', 'd', 'r', 'e', 'n'}
 
 func ts_subtree_new_node(tls *libc.TLS, symbol TSSymbol, children uintptr, production_id uint32, language uintptr) (r MutableSubtree) {
 	var data uintptr
@@ -20562,7 +20561,7 @@ func ts_subtree_retain(tls *libc.TLS, _self Subtree) {
 	}
 }
 
-var __func__112 = [18]int8{'t', 's', '_', 's', 'u', 'b', 't', 'r', 'e', 'e', '_', 'r', 'e', 't', 'a', 'i', 'n'}
+var __func__112 = [18]uint8{'t', 's', '_', 's', 'u', 'b', 't', 'r', 'e', 'e', '_', 'r', 'e', 't', 'a', 'i', 'n'}
 
 func ts_subtree_release(tls *libc.TLS, pool uintptr, _self Subtree) {
 	bp := tls.Alloc(32)
@@ -20647,7 +20646,7 @@ func ts_subtree_release(tls *libc.TLS, pool uintptr, _self Subtree) {
 	}
 }
 
-var __func__113 = [19]int8{'t', 's', '_', 's', 'u', 'b', 't', 'r', 'e', 'e', '_', 'r', 'e', 'l', 'e', 'a', 's', 'e'}
+var __func__113 = [19]uint8{'t', 's', '_', 's', 'u', 'b', 't', 'r', 'e', 'e', '_', 'r', 'e', 'l', 'e', 'a', 's', 'e'}
 
 func ts_subtree_compare(tls *libc.TLS, _left Subtree, _right Subtree, pool uintptr) (r int32) {
 	bp := tls.Alloc(16)
@@ -21215,7 +21214,7 @@ func ts_subtree_string(tls *libc.TLS, self Subtree, alias_symbol TSSymbol, alias
 	defer tls.Free(16)
 	var result uintptr
 	var size size_t
-	var _ /* scratch_string at bp+0 */ [1]int8
+	var _ /* scratch_string at bp+0 */ [1]uint8
 	_, _ = result, size
 	size = ts_subtree__write_to_string(tls, self, bp, uint64(1), language, include_all, alias_symbol, alias_is_named, ROOT_FIELD) + uint64(1)
 	result = (*(*func(*libc.TLS, size_t) uintptr)(unsafe.Pointer(&struct{ uintptr }{ts_current_malloc})))(tls, size*uint64(1))
@@ -21372,7 +21371,7 @@ func ts_tree_cursor_is_entry_visible(tls *libc.TLS, self uintptr, index uint32_t
 	return r
 }
 
-var __func__114 = [32]int8{'t', 's', '_', 't', 'r', 'e', 'e', '_', 'c', 'u', 'r', 's', 'o', 'r', '_', 'i', 's', '_', 'e', 'n', 't', 'r', 'y', '_', 'v', 'i', 's', 'i', 'b', 'l', 'e'}
+var __func__114 = [32]uint8{'t', 's', '_', 't', 'r', 'e', 'e', '_', 'c', 'u', 'r', 's', 'o', 'r', '_', 'i', 's', '_', 'e', 'n', 't', 'r', 'y', '_', 'v', 'i', 's', 'i', 'b', 'l', 'e'}
 
 func ts_tree_cursor_iterate_children(tls *libc.TLS, self uintptr) (r CursorChildIterator) {
 	var alias_sequence, last_entry uintptr
@@ -21422,7 +21421,7 @@ func ts_tree_cursor_iterate_children(tls *libc.TLS, self uintptr) (r CursorChild
 	}
 }
 
-var __func__115 = [32]int8{'t', 's', '_', 't', 'r', 'e', 'e', '_', 'c', 'u', 'r', 's', 'o', 'r', '_', 'i', 't', 'e', 'r', 'a', 't', 'e', '_', 'c', 'h', 'i', 'l', 'd', 'r', 'e', 'n'}
+var __func__115 = [32]uint8{'t', 's', '_', 't', 'r', 'e', 'e', '_', 'c', 'u', 'r', 's', 'o', 'r', '_', 'i', 't', 'e', 'r', 'a', 't', 'e', '_', 'c', 'h', 'i', 'l', 'd', 'r', 'e', 'n'}
 
 func ts_tree_cursor_child_iterator_next(tls *libc.TLS, self uintptr, result uintptr, visible uintptr) (r uint8) {
 	var child, v1 uintptr
@@ -22147,7 +22146,7 @@ func ts_tree_cursor_goto_previous_sibling_internal(tls *libc.TLS, _self uintptr)
 	return step
 }
 
-var __func__116 = [46]int8{'t', 's', '_', 't', 'r', 'e', 'e', '_', 'c', 'u', 'r', 's', 'o', 'r', '_', 'g', 'o', 't', 'o', '_', 'p', 'r', 'e', 'v', 'i', 'o', 'u', 's', '_', 's', 'i', 'b', 'l', 'i', 'n', 'g', '_', 'i', 'n', 't', 'e', 'r', 'n', 'a', 'l'}
+var __func__116 = [46]uint8{'t', 's', '_', 't', 'r', 'e', 'e', '_', 'c', 'u', 'r', 's', 'o', 'r', '_', 'g', 'o', 't', 'o', '_', 'p', 'r', 'e', 'v', 'i', 'o', 'u', 's', '_', 's', 'i', 'b', 'l', 'i', 'n', 'g', '_', 'i', 'n', 't', 'e', 'r', 'n', 'a', 'l'}
 
 func ts_tree_cursor_goto_previous_sibling(tls *libc.TLS, self uintptr) (r uint8) {
 	switch ts_tree_cursor_goto_previous_sibling_internal(tls, self) {
@@ -22287,7 +22286,7 @@ func ts_tree_cursor_goto_descendant(tls *libc.TLS, _self uintptr, goal_descendan
 	}
 }
 
-var __func__117 = [31]int8{'t', 's', '_', 't', 'r', 'e', 'e', '_', 'c', 'u', 'r', 's', 'o', 'r', '_', 'g', 'o', 't', 'o', '_', 'd', 'e', 's', 'c', 'e', 'n', 'd', 'a', 'n', 't'}
+var __func__117 = [31]uint8{'t', 's', '_', 't', 'r', 'e', 'e', '_', 'c', 'u', 'r', 's', 'o', 'r', '_', 'g', 'o', 't', 'o', '_', 'd', 'e', 's', 'c', 'e', 'n', 'd', 'a', 'n', 't'}
 
 func ts_tree_cursor_current_descendant_index(tls *libc.TLS, _self uintptr) (r uint32_t) {
 	var last_entry, self uintptr
@@ -22319,7 +22318,7 @@ func ts_tree_cursor_current_descendant_index(tls *libc.TLS, _self uintptr) (r ui
 	return (*TreeCursorEntry)(unsafe.Pointer(last_entry)).Fdescendant_index
 }
 
-var __func__118 = [40]int8{'t', 's', '_', 't', 'r', 'e', 'e', '_', 'c', 'u', 'r', 's', 'o', 'r', '_', 'c', 'u', 'r', 'r', 'e', 'n', 't', '_', 'd', 'e', 's', 'c', 'e', 'n', 'd', 'a', 'n', 't', '_', 'i', 'n', 'd', 'e', 'x'}
+var __func__118 = [40]uint8{'t', 's', '_', 't', 'r', 'e', 'e', '_', 'c', 'u', 'r', 's', 'o', 'r', '_', 'c', 'u', 'r', 'r', 'e', 'n', 't', '_', 'd', 'e', 's', 'c', 'e', 'n', 'd', 'a', 'n', 't', '_', 'i', 'n', 'd', 'e', 'x'}
 
 func ts_tree_cursor_current_node(tls *libc.TLS, _self uintptr) (r TSNode) {
 	var alias_symbol TSSymbol
@@ -22379,7 +22378,7 @@ func ts_tree_cursor_current_node(tls *libc.TLS, _self uintptr) (r TSNode) {
 	return ts_node_new(tls, (*TreeCursor)(unsafe.Pointer(self)).Ftree, (*TreeCursorEntry)(unsafe.Pointer(last_entry)).Fsubtree, (*TreeCursorEntry)(unsafe.Pointer(last_entry)).Fposition, alias_symbol)
 }
 
-var __func__119 = [28]int8{'t', 's', '_', 't', 'r', 'e', 'e', '_', 'c', 'u', 'r', 's', 'o', 'r', '_', 'c', 'u', 'r', 'r', 'e', 'n', 't', '_', 'n', 'o', 'd', 'e'}
+var __func__119 = [28]uint8{'t', 's', '_', 't', 'r', 'e', 'e', '_', 'c', 'u', 'r', 's', 'o', 'r', '_', 'c', 'u', 'r', 'r', 'e', 'n', 't', '_', 'n', 'o', 'd', 'e'}
 
 func ts_tree_cursor_current_status(tls *libc.TLS, _self uintptr, field_id uintptr, has_later_siblings uintptr, has_later_named_siblings uintptr, can_have_later_siblings_with_this_field uintptr, supertypes uintptr, supertype_count uintptr) {
 	bp := tls.Alloc(32)
@@ -22549,7 +22548,7 @@ func ts_tree_cursor_current_status(tls *libc.TLS, _self uintptr, field_id uintpt
 	}
 }
 
-var __func__120 = [30]int8{'t', 's', '_', 't', 'r', 'e', 'e', '_', 'c', 'u', 'r', 's', 'o', 'r', '_', 'c', 'u', 'r', 'r', 'e', 'n', 't', '_', 's', 't', 'a', 't', 'u', 's'}
+var __func__120 = [30]uint8{'t', 's', '_', 't', 'r', 'e', 'e', '_', 'c', 'u', 'r', 's', 'o', 'r', '_', 'c', 'u', 'r', 'r', 'e', 'n', 't', '_', 's', 't', 'a', 't', 'u', 's'}
 
 func ts_tree_cursor_current_depth(tls *libc.TLS, _self uintptr) (r uint32_t) {
 	var depth uint32_t
@@ -22633,7 +22632,7 @@ func ts_tree_cursor_parent_node(tls *libc.TLS, _self uintptr) (r TSNode) {
 	return ts_node_new(tls, libc.UintptrFromInt32(0), libc.UintptrFromInt32(0), length_zero(tls), uint16(0))
 }
 
-var __func__121 = [27]int8{'t', 's', '_', 't', 'r', 'e', 'e', '_', 'c', 'u', 'r', 's', 'o', 'r', '_', 'p', 'a', 'r', 'e', 'n', 't', '_', 'n', 'o', 'd', 'e'}
+var __func__121 = [27]uint8{'t', 's', '_', 't', 'r', 'e', 'e', '_', 'c', 'u', 'r', 's', 'o', 'r', '_', 'p', 'a', 'r', 'e', 'n', 't', '_', 'n', 'o', 'd', 'e'}
 
 func ts_tree_cursor_current_field_id(tls *libc.TLS, _self uintptr) (r TSFieldId) {
 	bp := tls.Alloc(16)
@@ -22707,7 +22706,7 @@ func ts_tree_cursor_current_field_id(tls *libc.TLS, _self uintptr) (r TSFieldId)
 	return uint16(0)
 }
 
-var __func__122 = [32]int8{'t', 's', '_', 't', 'r', 'e', 'e', '_', 'c', 'u', 'r', 's', 'o', 'r', '_', 'c', 'u', 'r', 'r', 'e', 'n', 't', '_', 'f', 'i', 'e', 'l', 'd', '_', 'i', 'd'}
+var __func__122 = [32]uint8{'t', 's', '_', 't', 'r', 'e', 'e', '_', 'c', 'u', 'r', 's', 'o', 'r', '_', 'c', 'u', 'r', 'r', 'e', 'n', 't', '_', 'f', 'i', 'e', 'l', 'd', '_', 'i', 'd'}
 
 func ts_tree_cursor_current_field_name(tls *libc.TLS, _self uintptr) (r uintptr) {
 	var id TSFieldId

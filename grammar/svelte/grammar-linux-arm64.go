@@ -1,6 +1,6 @@
-// Code generated for linux/amd64 by 'ccgo /tmp/grammar-gen-4206551200/preprocessed.c -o /tmp/grammar-gen-4206551200/grammar.go', DO NOT EDIT.
+// Code generated for linux/arm64 by 'ccgo /tmp/grammar-gen-2186441065/preprocessed.c -o /tmp/grammar-gen-2186441065/grammar.go', DO NOT EDIT.
 
-//go:build linux && amd64
+//go:build linux && arm64
 
 package svelte
 
@@ -74,7 +74,7 @@ const __DEC64_MAX__ = "9.999999999999999E384"
 const __DEC64_MIN__ = 1e-383
 const __DEC64_SUBNORMAL_MIN__ = 0.000000000000001e-383
 const __DECIMAL_BID_FORMAT__ = 1
-const __DECIMAL_DIG__ = 17
+const __DECIMAL_DIG__ = 21
 const __DEC_EVAL_METHOD__ = 2
 const __ELF__ = 1
 const __FINITE_MATH_ONLY__ = 0
@@ -135,20 +135,20 @@ const __FLT32_MAX_EXP__ = 128
 const __FLT32_MAX__ = 3.40282346638528859811704183484516925e+38
 const __FLT32_MIN__ = 1.17549435082228750796873653722224568e-38
 const __FLT32_NORM_MAX__ = 3.40282346638528859811704183484516925e+38
-const __FLT64X_DECIMAL_DIG__ = 36
-const __FLT64X_DENORM_MIN__ = 6.47517511943802511092443895822764655e-4966
-const __FLT64X_DIG__ = 33
-const __FLT64X_EPSILON__ = 1.92592994438723585305597794258492732e-34
+const __FLT64X_DECIMAL_DIG__ = 21
+const __FLT64X_DENORM_MIN__ = 3.64519953188247460252840593361941982e-4951
+const __FLT64X_DIG__ = 18
+const __FLT64X_EPSILON__ = 1.08420217248550443400745280086994171e-19
 const __FLT64X_HAS_DENORM__ = 1
 const __FLT64X_HAS_INFINITY__ = 1
 const __FLT64X_HAS_QUIET_NAN__ = 1
 const __FLT64X_IS_IEC_60559__ = 1
-const __FLT64X_MANT_DIG__ = 113
+const __FLT64X_MANT_DIG__ = 64
 const __FLT64X_MAX_10_EXP__ = 4932
 const __FLT64X_MAX_EXP__ = 16384
-const __FLT64X_MAX__ = "1.18973149535723176508575932662800702e+4932"
+const __FLT64X_MAX__ = "1.18973149535723176502126385303097021e+4932"
 const __FLT64X_MIN__ = 3.36210314311209350626267781732175260e-4932
-const __FLT64X_NORM_MAX__ = "1.18973149535723176508575932662800702e+4932"
+const __FLT64X_NORM_MAX__ = "1.18973149535723176502126385303097021e+4932"
 const __FLT64_DECIMAL_DIG__ = 17
 const __FLT64_DENORM_MIN__ = 4.94065645841246544176568792868221372e-324
 const __FLT64_DIG__ = 15
@@ -239,21 +239,20 @@ const __INT_LEAST8_MAX__ = 0x7f
 const __INT_LEAST8_WIDTH__ = 8
 const __INT_MAX__ = 0x7fffffff
 const __INT_WIDTH__ = 32
-const __LDBL_DECIMAL_DIG__ = 17
-const __LDBL_DENORM_MIN__ = 4.94065645841246544176568792868221372e-324
-const __LDBL_DIG__ = 15
-const __LDBL_EPSILON__ = 2.22044604925031308084726333618164062e-16
+const __LDBL_DECIMAL_DIG__ = 21
+const __LDBL_DENORM_MIN__ = 3.64519953188247460252840593361941982e-4951
+const __LDBL_DIG__ = 18
+const __LDBL_EPSILON__ = 1.08420217248550443400745280086994171e-19
 const __LDBL_HAS_DENORM__ = 1
 const __LDBL_HAS_INFINITY__ = 1
 const __LDBL_HAS_QUIET_NAN__ = 1
 const __LDBL_IS_IEC_60559__ = 1
-const __LDBL_MANT_DIG__ = 53
-const __LDBL_MAX_10_EXP__ = 308
-const __LDBL_MAX_EXP__ = 1024
-const __LDBL_MAX__ = 1.79769313486231570814527423731704357e+308
-const __LDBL_MIN__ = 2.22507385850720138309023271733240406e-308
-const __LDBL_NORM_MAX__ = 1.79769313486231570814527423731704357e+308
-const __LONG_DOUBLE_64__ = 1
+const __LDBL_MANT_DIG__ = 64
+const __LDBL_MAX_10_EXP__ = 4932
+const __LDBL_MAX_EXP__ = 16384
+const __LDBL_MAX__ = "1.18973149535723176502126385303097021e+4932"
+const __LDBL_MIN__ = 3.36210314311209350626267781732175260e-4932
+const __LDBL_NORM_MAX__ = "1.18973149535723176502126385303097021e+4932"
 const __LONG_LONG_MAX__ = 0x7fffffffffffffff
 const __LONG_LONG_WIDTH__ = 64
 const __LONG_MAX__ = 0x7fffffffffffffff
@@ -492,7 +491,7 @@ type __sig_atomic_t = int32
 type __mbstate_t = struct {
 	F__count int32
 	F__value struct {
-		F__wchb [0][4]int8
+		F__wchb [0][4]uint8
 		F__wch  uint32
 	}
 }
@@ -531,7 +530,7 @@ type _IO_FILE = struct {
 	F_old_offset     __off_t
 	F_cur_column     uint16
 	F_vtable_offset  int8
-	F_shortbuf       [1]int8
+	F_shortbuf       [1]uint8
 	F_lock           uintptr
 	F_offset         __off64_t
 	F_codecvt        uintptr
@@ -540,7 +539,7 @@ type _IO_FILE = struct {
 	F_freeres_buf    uintptr
 	F_prevchain      uintptr
 	F_mode           int32
-	F_unused2        [20]int8
+	F_unused2        [20]uint8
 }
 
 type __FILE = struct {
@@ -563,7 +562,7 @@ type __FILE = struct {
 	F_old_offset     __off_t
 	F_cur_column     uint16
 	F_vtable_offset  int8
-	F_shortbuf       [1]int8
+	F_shortbuf       [1]uint8
 	F_lock           uintptr
 	F_offset         __off64_t
 	F_codecvt        uintptr
@@ -572,7 +571,7 @@ type __FILE = struct {
 	F_freeres_buf    uintptr
 	F_prevchain      uintptr
 	F_mode           int32
-	F_unused2        [20]int8
+	F_unused2        [20]uint8
 }
 
 type FILE = struct {
@@ -595,7 +594,7 @@ type FILE = struct {
 	F_old_offset     __off_t
 	F_cur_column     uint16
 	F_vtable_offset  int8
-	F_shortbuf       [1]int8
+	F_shortbuf       [1]uint8
 	F_lock           uintptr
 	F_offset         __off64_t
 	F_codecvt        uintptr
@@ -604,7 +603,7 @@ type FILE = struct {
 	F_freeres_buf    uintptr
 	F_prevchain      uintptr
 	F_mode           int32
-	F_unused2        [20]int8
+	F_unused2        [20]uint8
 }
 
 type _IO_lock_t = struct{}
@@ -848,12 +847,12 @@ type pthread_t = uint64
 
 type pthread_mutexattr_t = struct {
 	F__align [0]int32
-	F__size  [4]int8
+	F__size  [4]uint8
 }
 
 type pthread_condattr_t = struct {
 	F__align [0]int32
-	F__size  [4]int8
+	F__size  [4]uint8
 }
 
 type pthread_key_t = uint32
@@ -862,42 +861,42 @@ type pthread_once_t = int32
 
 type pthread_attr_t = struct {
 	F__align [0]int64
-	F__size  [56]int8
+	F__size  [56]uint8
 }
 
 type pthread_mutex_t = struct {
-	F__size  [0][40]int8
+	F__size  [0][40]uint8
 	F__align [0]int64
 	F__data  __pthread_mutex_s
 }
 
 type pthread_cond_t = struct {
-	F__size  [0][48]int8
+	F__size  [0][48]uint8
 	F__align [0]int64
 	F__data  __pthread_cond_s
 }
 
 type pthread_rwlock_t = struct {
-	F__size  [0][56]int8
+	F__size  [0][56]uint8
 	F__align [0]int64
 	F__data  __pthread_rwlock_arch_t
 }
 
 type pthread_rwlockattr_t = struct {
 	F__align [0]int64
-	F__size  [8]int8
+	F__size  [8]uint8
 }
 
 type pthread_spinlock_t = int32
 
 type pthread_barrier_t = struct {
 	F__align [0]int64
-	F__size  [32]int8
+	F__size  [32]uint8
 }
 
 type pthread_barrierattr_t = struct {
 	F__align [0]int32
-	F__size  [4]int8
+	F__size  [4]uint8
 }
 
 type random_data = struct {
@@ -1009,7 +1008,7 @@ func _array__erase(tls *libc.TLS, self uintptr, element_size size_t, index uint3
 	(*Array)(unsafe.Pointer(self)).Fsize = (*Array)(unsafe.Pointer(self)).Fsize - 1
 }
 
-var __func__ = [14]int8{'_', 'a', 'r', 'r', 'a', 'y', '_', '_', 'e', 'r', 'a', 's', 'e'}
+var __func__ = [14]uint8{'_', 'a', 'r', 'r', 'a', 'y', '_', '_', 'e', 'r', 'a', 's', 'e'}
 
 func _array__reserve(tls *libc.TLS, self uintptr, element_size size_t, new_capacity uint32_t) {
 	if new_capacity > (*Array)(unsafe.Pointer(self)).Fcapacity {
@@ -1080,7 +1079,7 @@ func _array__splice(tls *libc.TLS, self uintptr, element_size size_t, index uint
 	*(*uint32_t)(unsafe.Pointer(self + 8)) += new_count - old_count
 }
 
-var __func__1 = [15]int8{'_', 'a', 'r', 'r', 'a', 'y', '_', '_', 's', 'p', 'l', 'i', 'c', 'e'}
+var __func__1 = [15]uint8{'_', 'a', 'r', 'r', 'a', 'y', '_', '_', 's', 'p', 'l', 'i', 'c', 'e'}
 
 type TagType = int32
 
@@ -1220,7 +1219,7 @@ type String = struct {
 }
 
 type TagMapEntry = struct {
-	Ftag_name [16]int8
+	Ftag_name [16]uint8
 	Ftag_type TagType
 }
 
@@ -1231,506 +1230,506 @@ type Tag = struct {
 
 var TAG_TYPES_BY_TAG_NAME = [126]TagMapEntry{
 	0: {
-		Ftag_name: [16]int8{'a', 'r', 'e', 'a'},
+		Ftag_name: [16]uint8{'a', 'r', 'e', 'a'},
 	},
 	1: {
-		Ftag_name: [16]int8{'b', 'a', 's', 'e'},
+		Ftag_name: [16]uint8{'b', 'a', 's', 'e'},
 		Ftag_type: int32(BASE),
 	},
 	2: {
-		Ftag_name: [16]int8{'b', 'a', 's', 'e', 'f', 'o', 'n', 't'},
+		Ftag_name: [16]uint8{'b', 'a', 's', 'e', 'f', 'o', 'n', 't'},
 		Ftag_type: int32(BASEFONT),
 	},
 	3: {
-		Ftag_name: [16]int8{'b', 'g', 's', 'o', 'u', 'n', 'd'},
+		Ftag_name: [16]uint8{'b', 'g', 's', 'o', 'u', 'n', 'd'},
 		Ftag_type: int32(BGSOUND),
 	},
 	4: {
-		Ftag_name: [16]int8{'b', 'r'},
+		Ftag_name: [16]uint8{'b', 'r'},
 		Ftag_type: int32(BR),
 	},
 	5: {
-		Ftag_name: [16]int8{'c', 'o', 'l'},
+		Ftag_name: [16]uint8{'c', 'o', 'l'},
 		Ftag_type: int32(COL),
 	},
 	6: {
-		Ftag_name: [16]int8{'c', 'o', 'm', 'm', 'a', 'n', 'd'},
+		Ftag_name: [16]uint8{'c', 'o', 'm', 'm', 'a', 'n', 'd'},
 		Ftag_type: int32(COMMAND),
 	},
 	7: {
-		Ftag_name: [16]int8{'e', 'm', 'b', 'e', 'd'},
+		Ftag_name: [16]uint8{'e', 'm', 'b', 'e', 'd'},
 		Ftag_type: int32(EMBED),
 	},
 	8: {
-		Ftag_name: [16]int8{'f', 'r', 'a', 'm', 'e'},
+		Ftag_name: [16]uint8{'f', 'r', 'a', 'm', 'e'},
 		Ftag_type: int32(FRAME),
 	},
 	9: {
-		Ftag_name: [16]int8{'h', 'r'},
+		Ftag_name: [16]uint8{'h', 'r'},
 		Ftag_type: int32(HR),
 	},
 	10: {
-		Ftag_name: [16]int8{'i', 'm', 'a', 'g', 'e'},
+		Ftag_name: [16]uint8{'i', 'm', 'a', 'g', 'e'},
 		Ftag_type: int32(IMAGE),
 	},
 	11: {
-		Ftag_name: [16]int8{'i', 'm', 'g'},
+		Ftag_name: [16]uint8{'i', 'm', 'g'},
 		Ftag_type: int32(IMG),
 	},
 	12: {
-		Ftag_name: [16]int8{'i', 'n', 'p', 'u', 't'},
+		Ftag_name: [16]uint8{'i', 'n', 'p', 'u', 't'},
 		Ftag_type: int32(INPUT),
 	},
 	13: {
-		Ftag_name: [16]int8{'i', 's', 'i', 'n', 'd', 'e', 'x'},
+		Ftag_name: [16]uint8{'i', 's', 'i', 'n', 'd', 'e', 'x'},
 		Ftag_type: int32(ISINDEX),
 	},
 	14: {
-		Ftag_name: [16]int8{'k', 'e', 'y', 'g', 'e', 'n'},
+		Ftag_name: [16]uint8{'k', 'e', 'y', 'g', 'e', 'n'},
 		Ftag_type: int32(KEYGEN),
 	},
 	15: {
-		Ftag_name: [16]int8{'l', 'i', 'n', 'k'},
+		Ftag_name: [16]uint8{'l', 'i', 'n', 'k'},
 		Ftag_type: int32(LINK),
 	},
 	16: {
-		Ftag_name: [16]int8{'m', 'e', 'n', 'u', 'i', 't', 'e', 'm'},
+		Ftag_name: [16]uint8{'m', 'e', 'n', 'u', 'i', 't', 'e', 'm'},
 		Ftag_type: int32(MENUITEM),
 	},
 	17: {
-		Ftag_name: [16]int8{'m', 'e', 't', 'a'},
+		Ftag_name: [16]uint8{'m', 'e', 't', 'a'},
 		Ftag_type: int32(META),
 	},
 	18: {
-		Ftag_name: [16]int8{'n', 'e', 'x', 't', 'i', 'd'},
+		Ftag_name: [16]uint8{'n', 'e', 'x', 't', 'i', 'd'},
 		Ftag_type: int32(NEXTID),
 	},
 	19: {
-		Ftag_name: [16]int8{'p', 'a', 'r', 'a', 'm'},
+		Ftag_name: [16]uint8{'p', 'a', 'r', 'a', 'm'},
 		Ftag_type: int32(PARAM),
 	},
 	20: {
-		Ftag_name: [16]int8{'s', 'o', 'u', 'r', 'c', 'e'},
+		Ftag_name: [16]uint8{'s', 'o', 'u', 'r', 'c', 'e'},
 		Ftag_type: int32(SOURCE),
 	},
 	21: {
-		Ftag_name: [16]int8{'t', 'r', 'a', 'c', 'k'},
+		Ftag_name: [16]uint8{'t', 'r', 'a', 'c', 'k'},
 		Ftag_type: int32(TRACK),
 	},
 	22: {
-		Ftag_name: [16]int8{'w', 'b', 'r'},
+		Ftag_name: [16]uint8{'w', 'b', 'r'},
 		Ftag_type: int32(WBR),
 	},
 	23: {
-		Ftag_name: [16]int8{'a'},
+		Ftag_name: [16]uint8{'a'},
 		Ftag_type: int32(A),
 	},
 	24: {
-		Ftag_name: [16]int8{'a', 'b', 'b', 'r'},
+		Ftag_name: [16]uint8{'a', 'b', 'b', 'r'},
 		Ftag_type: int32(ABBR),
 	},
 	25: {
-		Ftag_name: [16]int8{'a', 'd', 'd', 'r', 'e', 's', 's'},
+		Ftag_name: [16]uint8{'a', 'd', 'd', 'r', 'e', 's', 's'},
 		Ftag_type: int32(ADDRESS),
 	},
 	26: {
-		Ftag_name: [16]int8{'a', 'r', 't', 'i', 'c', 'l', 'e'},
+		Ftag_name: [16]uint8{'a', 'r', 't', 'i', 'c', 'l', 'e'},
 		Ftag_type: int32(ARTICLE),
 	},
 	27: {
-		Ftag_name: [16]int8{'a', 's', 'i', 'd', 'e'},
+		Ftag_name: [16]uint8{'a', 's', 'i', 'd', 'e'},
 		Ftag_type: int32(ASIDE),
 	},
 	28: {
-		Ftag_name: [16]int8{'a', 'u', 'd', 'i', 'o'},
+		Ftag_name: [16]uint8{'a', 'u', 'd', 'i', 'o'},
 		Ftag_type: int32(AUDIO),
 	},
 	29: {
-		Ftag_name: [16]int8{'b'},
+		Ftag_name: [16]uint8{'b'},
 		Ftag_type: int32(B),
 	},
 	30: {
-		Ftag_name: [16]int8{'b', 'd', 'i'},
+		Ftag_name: [16]uint8{'b', 'd', 'i'},
 		Ftag_type: int32(BDI),
 	},
 	31: {
-		Ftag_name: [16]int8{'b', 'd', 'o'},
+		Ftag_name: [16]uint8{'b', 'd', 'o'},
 		Ftag_type: int32(BDO),
 	},
 	32: {
-		Ftag_name: [16]int8{'b', 'l', 'o', 'c', 'k', 'q', 'u', 'o', 't', 'e'},
+		Ftag_name: [16]uint8{'b', 'l', 'o', 'c', 'k', 'q', 'u', 'o', 't', 'e'},
 		Ftag_type: int32(BLOCKQUOTE),
 	},
 	33: {
-		Ftag_name: [16]int8{'b', 'o', 'd', 'y'},
+		Ftag_name: [16]uint8{'b', 'o', 'd', 'y'},
 		Ftag_type: int32(BODY),
 	},
 	34: {
-		Ftag_name: [16]int8{'b', 'u', 't', 't', 'o', 'n'},
+		Ftag_name: [16]uint8{'b', 'u', 't', 't', 'o', 'n'},
 		Ftag_type: int32(BUTTON),
 	},
 	35: {
-		Ftag_name: [16]int8{'c', 'a', 'n', 'v', 'a', 's'},
+		Ftag_name: [16]uint8{'c', 'a', 'n', 'v', 'a', 's'},
 		Ftag_type: int32(CANVAS),
 	},
 	36: {
-		Ftag_name: [16]int8{'c', 'a', 'p', 't', 'i', 'o', 'n'},
+		Ftag_name: [16]uint8{'c', 'a', 'p', 't', 'i', 'o', 'n'},
 		Ftag_type: int32(CAPTION),
 	},
 	37: {
-		Ftag_name: [16]int8{'c', 'i', 't', 'e'},
+		Ftag_name: [16]uint8{'c', 'i', 't', 'e'},
 		Ftag_type: int32(CITE),
 	},
 	38: {
-		Ftag_name: [16]int8{'c', 'o', 'd', 'e'},
+		Ftag_name: [16]uint8{'c', 'o', 'd', 'e'},
 		Ftag_type: int32(CODE),
 	},
 	39: {
-		Ftag_name: [16]int8{'c', 'o', 'l', 'g', 'r', 'o', 'u', 'p'},
+		Ftag_name: [16]uint8{'c', 'o', 'l', 'g', 'r', 'o', 'u', 'p'},
 		Ftag_type: int32(COLGROUP),
 	},
 	40: {
-		Ftag_name: [16]int8{'d', 'a', 't', 'a'},
+		Ftag_name: [16]uint8{'d', 'a', 't', 'a'},
 		Ftag_type: int32(DATA),
 	},
 	41: {
-		Ftag_name: [16]int8{'d', 'a', 't', 'a', 'l', 'i', 's', 't'},
+		Ftag_name: [16]uint8{'d', 'a', 't', 'a', 'l', 'i', 's', 't'},
 		Ftag_type: int32(DATALIST),
 	},
 	42: {
-		Ftag_name: [16]int8{'d', 'd'},
+		Ftag_name: [16]uint8{'d', 'd'},
 		Ftag_type: int32(DD),
 	},
 	43: {
-		Ftag_name: [16]int8{'d', 'e', 'l'},
+		Ftag_name: [16]uint8{'d', 'e', 'l'},
 		Ftag_type: int32(DEL),
 	},
 	44: {
-		Ftag_name: [16]int8{'d', 'e', 't', 'a', 'i', 'l', 's'},
+		Ftag_name: [16]uint8{'d', 'e', 't', 'a', 'i', 'l', 's'},
 		Ftag_type: int32(DETAILS),
 	},
 	45: {
-		Ftag_name: [16]int8{'d', 'f', 'n'},
+		Ftag_name: [16]uint8{'d', 'f', 'n'},
 		Ftag_type: int32(DFN),
 	},
 	46: {
-		Ftag_name: [16]int8{'d', 'i', 'a', 'l', 'o', 'g'},
+		Ftag_name: [16]uint8{'d', 'i', 'a', 'l', 'o', 'g'},
 		Ftag_type: int32(DIALOG),
 	},
 	47: {
-		Ftag_name: [16]int8{'d', 'i', 'v'},
+		Ftag_name: [16]uint8{'d', 'i', 'v'},
 		Ftag_type: int32(DIV),
 	},
 	48: {
-		Ftag_name: [16]int8{'d', 'l'},
+		Ftag_name: [16]uint8{'d', 'l'},
 		Ftag_type: int32(DL),
 	},
 	49: {
-		Ftag_name: [16]int8{'d', 't'},
+		Ftag_name: [16]uint8{'d', 't'},
 		Ftag_type: int32(DT),
 	},
 	50: {
-		Ftag_name: [16]int8{'e', 'm'},
+		Ftag_name: [16]uint8{'e', 'm'},
 		Ftag_type: int32(EM),
 	},
 	51: {
-		Ftag_name: [16]int8{'f', 'i', 'e', 'l', 'd', 's', 'e', 't'},
+		Ftag_name: [16]uint8{'f', 'i', 'e', 'l', 'd', 's', 'e', 't'},
 		Ftag_type: int32(FIELDSET),
 	},
 	52: {
-		Ftag_name: [16]int8{'f', 'i', 'g', 'c', 'a', 'p', 't', 'i', 'o', 'n'},
+		Ftag_name: [16]uint8{'f', 'i', 'g', 'c', 'a', 'p', 't', 'i', 'o', 'n'},
 		Ftag_type: int32(FIGCAPTION),
 	},
 	53: {
-		Ftag_name: [16]int8{'f', 'i', 'g', 'u', 'r', 'e'},
+		Ftag_name: [16]uint8{'f', 'i', 'g', 'u', 'r', 'e'},
 		Ftag_type: int32(FIGURE),
 	},
 	54: {
-		Ftag_name: [16]int8{'f', 'o', 'o', 't', 'e', 'r'},
+		Ftag_name: [16]uint8{'f', 'o', 'o', 't', 'e', 'r'},
 		Ftag_type: int32(FOOTER),
 	},
 	55: {
-		Ftag_name: [16]int8{'f', 'o', 'r', 'm'},
+		Ftag_name: [16]uint8{'f', 'o', 'r', 'm'},
 		Ftag_type: int32(FORM),
 	},
 	56: {
-		Ftag_name: [16]int8{'h', '1'},
+		Ftag_name: [16]uint8{'h', '1'},
 		Ftag_type: int32(H1),
 	},
 	57: {
-		Ftag_name: [16]int8{'h', '2'},
+		Ftag_name: [16]uint8{'h', '2'},
 		Ftag_type: int32(H2),
 	},
 	58: {
-		Ftag_name: [16]int8{'h', '3'},
+		Ftag_name: [16]uint8{'h', '3'},
 		Ftag_type: int32(H3),
 	},
 	59: {
-		Ftag_name: [16]int8{'h', '4'},
+		Ftag_name: [16]uint8{'h', '4'},
 		Ftag_type: int32(H4),
 	},
 	60: {
-		Ftag_name: [16]int8{'h', '5'},
+		Ftag_name: [16]uint8{'h', '5'},
 		Ftag_type: int32(H5),
 	},
 	61: {
-		Ftag_name: [16]int8{'h', '6'},
+		Ftag_name: [16]uint8{'h', '6'},
 		Ftag_type: int32(H6),
 	},
 	62: {
-		Ftag_name: [16]int8{'h', 'e', 'a', 'd'},
+		Ftag_name: [16]uint8{'h', 'e', 'a', 'd'},
 		Ftag_type: int32(HEAD),
 	},
 	63: {
-		Ftag_name: [16]int8{'h', 'e', 'a', 'd', 'e', 'r'},
+		Ftag_name: [16]uint8{'h', 'e', 'a', 'd', 'e', 'r'},
 		Ftag_type: int32(HEADER),
 	},
 	64: {
-		Ftag_name: [16]int8{'h', 'g', 'r', 'o', 'u', 'p'},
+		Ftag_name: [16]uint8{'h', 'g', 'r', 'o', 'u', 'p'},
 		Ftag_type: int32(HGROUP),
 	},
 	65: {
-		Ftag_name: [16]int8{'h', 't', 'm', 'l'},
+		Ftag_name: [16]uint8{'h', 't', 'm', 'l'},
 		Ftag_type: int32(HTML),
 	},
 	66: {
-		Ftag_name: [16]int8{'i'},
+		Ftag_name: [16]uint8{'i'},
 		Ftag_type: int32(I),
 	},
 	67: {
-		Ftag_name: [16]int8{'i', 'f', 'r', 'a', 'm', 'e'},
+		Ftag_name: [16]uint8{'i', 'f', 'r', 'a', 'm', 'e'},
 		Ftag_type: int32(IFRAME),
 	},
 	68: {
-		Ftag_name: [16]int8{'i', 'n', 's'},
+		Ftag_name: [16]uint8{'i', 'n', 's'},
 		Ftag_type: int32(INS),
 	},
 	69: {
-		Ftag_name: [16]int8{'k', 'b', 'd'},
+		Ftag_name: [16]uint8{'k', 'b', 'd'},
 		Ftag_type: int32(KBD),
 	},
 	70: {
-		Ftag_name: [16]int8{'l', 'a', 'b', 'e', 'l'},
+		Ftag_name: [16]uint8{'l', 'a', 'b', 'e', 'l'},
 		Ftag_type: int32(LABEL),
 	},
 	71: {
-		Ftag_name: [16]int8{'l', 'e', 'g', 'e', 'n', 'd'},
+		Ftag_name: [16]uint8{'l', 'e', 'g', 'e', 'n', 'd'},
 		Ftag_type: int32(LEGEND),
 	},
 	72: {
-		Ftag_name: [16]int8{'l', 'i'},
+		Ftag_name: [16]uint8{'l', 'i'},
 		Ftag_type: int32(LI),
 	},
 	73: {
-		Ftag_name: [16]int8{'m', 'a', 'i', 'n'},
+		Ftag_name: [16]uint8{'m', 'a', 'i', 'n'},
 		Ftag_type: int32(MAIN),
 	},
 	74: {
-		Ftag_name: [16]int8{'m', 'a', 'p'},
+		Ftag_name: [16]uint8{'m', 'a', 'p'},
 		Ftag_type: int32(MAP),
 	},
 	75: {
-		Ftag_name: [16]int8{'m', 'a', 'r', 'k'},
+		Ftag_name: [16]uint8{'m', 'a', 'r', 'k'},
 		Ftag_type: int32(MARK),
 	},
 	76: {
-		Ftag_name: [16]int8{'m', 'a', 't', 'h'},
+		Ftag_name: [16]uint8{'m', 'a', 't', 'h'},
 		Ftag_type: int32(MATH),
 	},
 	77: {
-		Ftag_name: [16]int8{'m', 'e', 'n', 'u'},
+		Ftag_name: [16]uint8{'m', 'e', 'n', 'u'},
 		Ftag_type: int32(MENU),
 	},
 	78: {
-		Ftag_name: [16]int8{'m', 'e', 't', 'e', 'r'},
+		Ftag_name: [16]uint8{'m', 'e', 't', 'e', 'r'},
 		Ftag_type: int32(METER),
 	},
 	79: {
-		Ftag_name: [16]int8{'n', 'a', 'v'},
+		Ftag_name: [16]uint8{'n', 'a', 'v'},
 		Ftag_type: int32(NAV),
 	},
 	80: {
-		Ftag_name: [16]int8{'n', 'o', 's', 'c', 'r', 'i', 'p', 't'},
+		Ftag_name: [16]uint8{'n', 'o', 's', 'c', 'r', 'i', 'p', 't'},
 		Ftag_type: int32(NOSCRIPT),
 	},
 	81: {
-		Ftag_name: [16]int8{'o', 'b', 'j', 'e', 'c', 't'},
+		Ftag_name: [16]uint8{'o', 'b', 'j', 'e', 'c', 't'},
 		Ftag_type: int32(OBJECT),
 	},
 	82: {
-		Ftag_name: [16]int8{'o', 'l'},
+		Ftag_name: [16]uint8{'o', 'l'},
 		Ftag_type: int32(OL),
 	},
 	83: {
-		Ftag_name: [16]int8{'o', 'p', 't', 'g', 'r', 'o', 'u', 'p'},
+		Ftag_name: [16]uint8{'o', 'p', 't', 'g', 'r', 'o', 'u', 'p'},
 		Ftag_type: int32(OPTGROUP),
 	},
 	84: {
-		Ftag_name: [16]int8{'o', 'p', 't', 'i', 'o', 'n'},
+		Ftag_name: [16]uint8{'o', 'p', 't', 'i', 'o', 'n'},
 		Ftag_type: int32(OPTION),
 	},
 	85: {
-		Ftag_name: [16]int8{'o', 'u', 't', 'p', 'u', 't'},
+		Ftag_name: [16]uint8{'o', 'u', 't', 'p', 'u', 't'},
 		Ftag_type: int32(OUTPUT),
 	},
 	86: {
-		Ftag_name: [16]int8{'p'},
+		Ftag_name: [16]uint8{'p'},
 		Ftag_type: int32(P),
 	},
 	87: {
-		Ftag_name: [16]int8{'p', 'i', 'c', 't', 'u', 'r', 'e'},
+		Ftag_name: [16]uint8{'p', 'i', 'c', 't', 'u', 'r', 'e'},
 		Ftag_type: int32(PICTURE),
 	},
 	88: {
-		Ftag_name: [16]int8{'p', 'r', 'e'},
+		Ftag_name: [16]uint8{'p', 'r', 'e'},
 		Ftag_type: int32(PRE),
 	},
 	89: {
-		Ftag_name: [16]int8{'p', 'r', 'o', 'g', 'r', 'e', 's', 's'},
+		Ftag_name: [16]uint8{'p', 'r', 'o', 'g', 'r', 'e', 's', 's'},
 		Ftag_type: int32(PROGRESS),
 	},
 	90: {
-		Ftag_name: [16]int8{'q'},
+		Ftag_name: [16]uint8{'q'},
 		Ftag_type: int32(Q),
 	},
 	91: {
-		Ftag_name: [16]int8{'r', 'b'},
+		Ftag_name: [16]uint8{'r', 'b'},
 		Ftag_type: int32(RB),
 	},
 	92: {
-		Ftag_name: [16]int8{'r', 'p'},
+		Ftag_name: [16]uint8{'r', 'p'},
 		Ftag_type: int32(RP),
 	},
 	93: {
-		Ftag_name: [16]int8{'r', 't'},
+		Ftag_name: [16]uint8{'r', 't'},
 		Ftag_type: int32(RT),
 	},
 	94: {
-		Ftag_name: [16]int8{'r', 't', 'c'},
+		Ftag_name: [16]uint8{'r', 't', 'c'},
 		Ftag_type: int32(RTC),
 	},
 	95: {
-		Ftag_name: [16]int8{'r', 'u', 'b', 'y'},
+		Ftag_name: [16]uint8{'r', 'u', 'b', 'y'},
 		Ftag_type: int32(RUBY),
 	},
 	96: {
-		Ftag_name: [16]int8{'s'},
+		Ftag_name: [16]uint8{'s'},
 		Ftag_type: int32(S),
 	},
 	97: {
-		Ftag_name: [16]int8{'s', 'a', 'm', 'p'},
+		Ftag_name: [16]uint8{'s', 'a', 'm', 'p'},
 		Ftag_type: int32(SAMP),
 	},
 	98: {
-		Ftag_name: [16]int8{'s', 'c', 'r', 'i', 'p', 't'},
+		Ftag_name: [16]uint8{'s', 'c', 'r', 'i', 'p', 't'},
 		Ftag_type: int32(SCRIPT),
 	},
 	99: {
-		Ftag_name: [16]int8{'s', 'e', 'c', 't', 'i', 'o', 'n'},
+		Ftag_name: [16]uint8{'s', 'e', 'c', 't', 'i', 'o', 'n'},
 		Ftag_type: int32(SECTION),
 	},
 	100: {
-		Ftag_name: [16]int8{'s', 'e', 'l', 'e', 'c', 't'},
+		Ftag_name: [16]uint8{'s', 'e', 'l', 'e', 'c', 't'},
 		Ftag_type: int32(SELECT),
 	},
 	101: {
-		Ftag_name: [16]int8{'s', 'l', 'o', 't'},
+		Ftag_name: [16]uint8{'s', 'l', 'o', 't'},
 		Ftag_type: int32(SLOT),
 	},
 	102: {
-		Ftag_name: [16]int8{'s', 'm', 'a', 'l', 'l'},
+		Ftag_name: [16]uint8{'s', 'm', 'a', 'l', 'l'},
 		Ftag_type: int32(SMALL),
 	},
 	103: {
-		Ftag_name: [16]int8{'s', 'p', 'a', 'n'},
+		Ftag_name: [16]uint8{'s', 'p', 'a', 'n'},
 		Ftag_type: int32(SPAN),
 	},
 	104: {
-		Ftag_name: [16]int8{'s', 't', 'r', 'o', 'n', 'g'},
+		Ftag_name: [16]uint8{'s', 't', 'r', 'o', 'n', 'g'},
 		Ftag_type: int32(STRONG),
 	},
 	105: {
-		Ftag_name: [16]int8{'s', 't', 'y', 'l', 'e'},
+		Ftag_name: [16]uint8{'s', 't', 'y', 'l', 'e'},
 		Ftag_type: int32(STYLE),
 	},
 	106: {
-		Ftag_name: [16]int8{'s', 'u', 'b'},
+		Ftag_name: [16]uint8{'s', 'u', 'b'},
 		Ftag_type: int32(SUB),
 	},
 	107: {
-		Ftag_name: [16]int8{'s', 'u', 'm', 'm', 'a', 'r', 'y'},
+		Ftag_name: [16]uint8{'s', 'u', 'm', 'm', 'a', 'r', 'y'},
 		Ftag_type: int32(SUMMARY),
 	},
 	108: {
-		Ftag_name: [16]int8{'s', 'u', 'p'},
+		Ftag_name: [16]uint8{'s', 'u', 'p'},
 		Ftag_type: int32(SUP),
 	},
 	109: {
-		Ftag_name: [16]int8{'s', 'v', 'g'},
+		Ftag_name: [16]uint8{'s', 'v', 'g'},
 		Ftag_type: int32(SVG),
 	},
 	110: {
-		Ftag_name: [16]int8{'t', 'a', 'b', 'l', 'e'},
+		Ftag_name: [16]uint8{'t', 'a', 'b', 'l', 'e'},
 		Ftag_type: int32(TABLE),
 	},
 	111: {
-		Ftag_name: [16]int8{'t', 'b', 'o', 'd', 'y'},
+		Ftag_name: [16]uint8{'t', 'b', 'o', 'd', 'y'},
 		Ftag_type: int32(TBODY),
 	},
 	112: {
-		Ftag_name: [16]int8{'t', 'd'},
+		Ftag_name: [16]uint8{'t', 'd'},
 		Ftag_type: int32(TD),
 	},
 	113: {
-		Ftag_name: [16]int8{'t', 'e', 'm', 'p', 'l', 'a', 't', 'e'},
+		Ftag_name: [16]uint8{'t', 'e', 'm', 'p', 'l', 'a', 't', 'e'},
 		Ftag_type: int32(TEMPLATE),
 	},
 	114: {
-		Ftag_name: [16]int8{'t', 'e', 'x', 't', 'a', 'r', 'e', 'a'},
+		Ftag_name: [16]uint8{'t', 'e', 'x', 't', 'a', 'r', 'e', 'a'},
 		Ftag_type: int32(TEXTAREA),
 	},
 	115: {
-		Ftag_name: [16]int8{'t', 'f', 'o', 'o', 't'},
+		Ftag_name: [16]uint8{'t', 'f', 'o', 'o', 't'},
 		Ftag_type: int32(TFOOT),
 	},
 	116: {
-		Ftag_name: [16]int8{'t', 'h'},
+		Ftag_name: [16]uint8{'t', 'h'},
 		Ftag_type: int32(TH),
 	},
 	117: {
-		Ftag_name: [16]int8{'t', 'h', 'e', 'a', 'd'},
+		Ftag_name: [16]uint8{'t', 'h', 'e', 'a', 'd'},
 		Ftag_type: int32(THEAD),
 	},
 	118: {
-		Ftag_name: [16]int8{'t', 'i', 'm', 'e'},
+		Ftag_name: [16]uint8{'t', 'i', 'm', 'e'},
 		Ftag_type: int32(TIME),
 	},
 	119: {
-		Ftag_name: [16]int8{'t', 'i', 't', 'l', 'e'},
+		Ftag_name: [16]uint8{'t', 'i', 't', 'l', 'e'},
 		Ftag_type: int32(TITLE),
 	},
 	120: {
-		Ftag_name: [16]int8{'t', 'r'},
+		Ftag_name: [16]uint8{'t', 'r'},
 		Ftag_type: int32(TR),
 	},
 	121: {
-		Ftag_name: [16]int8{'u'},
+		Ftag_name: [16]uint8{'u'},
 		Ftag_type: int32(U),
 	},
 	122: {
-		Ftag_name: [16]int8{'u', 'l'},
+		Ftag_name: [16]uint8{'u', 'l'},
 		Ftag_type: int32(UL),
 	},
 	123: {
-		Ftag_name: [16]int8{'v', 'a', 'r'},
+		Ftag_name: [16]uint8{'v', 'a', 'r'},
 		Ftag_type: int32(VAR),
 	},
 	124: {
-		Ftag_name: [16]int8{'v', 'i', 'd', 'e', 'o'},
+		Ftag_name: [16]uint8{'v', 'i', 'd', 'e', 'o'},
 		Ftag_type: int32(VIDEO),
 	},
 	125: {
-		Ftag_name: [16]int8{'c', 'u', 's', 't', 'o', 'm'},
+		Ftag_name: [16]uint8{'c', 'u', 's', 't', 'o', 'm'},
 		Ftag_type: int32(CUSTOM),
 	},
 }
@@ -2162,10 +2161,10 @@ func serialize(tls *libc.TLS, scanner uintptr, buffer uintptr) (r uint32) {
 			}
 			v1 = size
 			size = size + 1
-			*(*int8)(unsafe.Pointer(buffer + uintptr(v1))) = int8(tag.Ftype1)
+			*(*uint8)(unsafe.Pointer(buffer + uintptr(v1))) = libc.Uint8FromInt32(tag.Ftype1)
 			v1 = size
 			size = size + 1
-			*(*int8)(unsafe.Pointer(buffer + uintptr(v1))) = libc.Int8FromUint32(name_length)
+			*(*uint8)(unsafe.Pointer(buffer + uintptr(v1))) = uint8(name_length)
 			libc.Xstrncpy(tls, buffer+uintptr(size), tag.Fcustom_tag_name.Fcontents, uint64(name_length))
 			size = size + name_length
 		} else {
@@ -2174,7 +2173,7 @@ func serialize(tls *libc.TLS, scanner uintptr, buffer uintptr) (r uint32) {
 			}
 			v1 = size
 			size = size + 1
-			*(*int8)(unsafe.Pointer(buffer + uintptr(v1))) = int8(tag.Ftype1)
+			*(*uint8)(unsafe.Pointer(buffer + uintptr(v1))) = libc.Uint8FromInt32(tag.Ftype1)
 		}
 		goto _2
 	_2:
@@ -2231,11 +2230,11 @@ func deserialize(tls *libc.TLS, scanner uintptr, buffer uintptr, length uint32) 
 				*(*Tag)(unsafe.Pointer(bp + 8)) = tag_new(tls)
 				v3 = size
 				size = size + 1
-				(*(*Tag)(unsafe.Pointer(bp + 8))).Ftype1 = int32(*(*int8)(unsafe.Pointer(buffer + uintptr(v3))))
+				(*(*Tag)(unsafe.Pointer(bp + 8))).Ftype1 = libc.Int32FromUint8(*(*uint8)(unsafe.Pointer(buffer + uintptr(v3))))
 				if (*(*Tag)(unsafe.Pointer(bp + 8))).Ftype1 == int32(CUSTOM) {
 					v3 = size
 					size = size + 1
-					name_length = uint16(libc.Uint8FromInt8(*(*int8)(unsafe.Pointer(buffer + uintptr(v3)))))
+					name_length = uint16(*(*uint8)(unsafe.Pointer(buffer + uintptr(v3))))
 					_array__reserve(tls, bp+8+8, libc.Uint64FromInt64(1), uint32(name_length))
 					(*(*Tag)(unsafe.Pointer(bp + 8))).Fcustom_tag_name.Fsize = uint32(name_length)
 					libc.Xmemcpy(tls, (*(*Tag)(unsafe.Pointer(bp + 8))).Fcustom_tag_name.Fcontents, buffer+uintptr(size), uint64(name_length))
@@ -2290,7 +2289,7 @@ func scan_tag_name(tls *libc.TLS, lexer uintptr) (r String) {
 		v2 = bp + 8
 		v1 = *(*uint32_t)(unsafe.Pointer(v2))
 		*(*uint32_t)(unsafe.Pointer(v2)) = *(*uint32_t)(unsafe.Pointer(v2)) + 1
-		*(*int8)(unsafe.Pointer((*String)(unsafe.Pointer(bp)).Fcontents + uintptr(v1))) = int8((*TSLexer)(unsafe.Pointer(lexer)).Flookahead)
+		*(*uint8)(unsafe.Pointer((*String)(unsafe.Pointer(bp)).Fcontents + uintptr(v1))) = libc.Uint8FromInt32((*TSLexer)(unsafe.Pointer(lexer)).Flookahead)
 		advance(tls, lexer)
 	}
 	return *(*String)(unsafe.Pointer(bp))
@@ -2486,7 +2485,7 @@ func scan_raw_text(tls *libc.TLS, scanner uintptr, lexer uintptr) (r uint8) {
 	end_delimiter = v1
 	delimiter_index = uint32(0)
 	for (*TSLexer)(unsafe.Pointer(lexer)).Flookahead != 0 {
-		if int32(libc.Int8FromUint32(libc.Xtowupper(tls, libc.Uint32FromInt32((*TSLexer)(unsafe.Pointer(lexer)).Flookahead)))) == int32(*(*int8)(unsafe.Pointer(end_delimiter + uintptr(delimiter_index)))) {
+		if libc.Int32FromUint8(uint8(libc.Xtowupper(tls, libc.Uint32FromInt32((*TSLexer)(unsafe.Pointer(lexer)).Flookahead)))) == libc.Int32FromUint8(*(*uint8)(unsafe.Pointer(end_delimiter + uintptr(delimiter_index)))) {
 			delimiter_index = delimiter_index + 1
 			if uint64(delimiter_index) == libc.Xstrlen(tls, end_delimiter) {
 				break
@@ -2502,7 +2501,7 @@ func scan_raw_text(tls *libc.TLS, scanner uintptr, lexer uintptr) (r uint8) {
 	return libc.BoolUint8(1 != 0)
 }
 
-var __func__2 = [14]int8{'s', 'c', 'a', 'n', '_', 'r', 'a', 'w', '_', 't', 'e', 'x', 't'}
+var __func__2 = [14]uint8{'s', 'c', 'a', 'n', '_', 'r', 'a', 'w', '_', 't', 'e', 'x', 't'}
 
 func scan_svelte_raw_text_snippet(tls *libc.TLS, lexer uintptr) (r uint8) {
 	var advanced_once uint8
@@ -2774,7 +2773,7 @@ func scan_implicit_end_tag(tls *libc.TLS, scanner uintptr, lexer uintptr) (r uin
 	return libc.BoolUint8(0 != 0)
 }
 
-var __func__3 = [22]int8{'s', 'c', 'a', 'n', '_', 'i', 'm', 'p', 'l', 'i', 'c', 'i', 't', '_', 'e', 'n', 'd', '_', 't', 'a', 'g'}
+var __func__3 = [22]uint8{'s', 'c', 'a', 'n', '_', 'i', 'm', 'p', 'l', 'i', 'c', 'i', 't', '_', 'e', 'n', 'd', '_', 't', 'a', 'g'}
 
 func scan_start_tag_name(tls *libc.TLS, scanner uintptr, lexer uintptr) (r uint8) {
 	bp := tls.Alloc(16)
@@ -2858,7 +2857,7 @@ func scan_end_tag_name(tls *libc.TLS, scanner uintptr, lexer uintptr) (r uint8) 
 	return libc.BoolUint8(1 != 0)
 }
 
-var __func__4 = [18]int8{'s', 'c', 'a', 'n', '_', 'e', 'n', 'd', '_', 't', 'a', 'g', '_', 'n', 'a', 'm', 'e'}
+var __func__4 = [18]uint8{'s', 'c', 'a', 'n', '_', 'e', 'n', 'd', '_', 't', 'a', 'g', '_', 'n', 'a', 'm', 'e'}
 
 func scan_self_closing_tag_delimiter(tls *libc.TLS, scanner uintptr, lexer uintptr) (r uint8) {
 	advance(tls, lexer)
@@ -2984,7 +2983,7 @@ func tree_sitter_svelte_external_scanner_destroy(tls *libc.TLS, payload uintptr)
 	libc.Xfree(tls, scanner)
 }
 
-var __func__5 = [44]int8{'t', 'r', 'e', 'e', '_', 's', 'i', 't', 't', 'e', 'r', '_', 's', 'v', 'e', 'l', 't', 'e', '_', 'e', 'x', 't', 'e', 'r', 'n', 'a', 'l', '_', 's', 'c', 'a', 'n', 'n', 'e', 'r', '_', 'd', 'e', 's', 't', 'r', 'o', 'y'}
+var __func__5 = [44]uint8{'t', 'r', 'e', 'e', '_', 's', 'i', 't', 't', 'e', 'r', '_', 's', 'v', 'e', 'l', 't', 'e', '_', 'e', 'x', 't', 'e', 'r', 'n', 'a', 'l', '_', 's', 'c', 'a', 'n', 'n', 'e', 'r', '_', 'd', 'e', 's', 't', 'r', 'o', 'y'}
 
 type ts_symbol_identifiers = int32
 
@@ -25427,4 +25426,4 @@ func __ccgo_fp(f interface{}) uintptr {
 
 var __ccgo_ts = (*reflect.StringHeader)(unsafe.Pointer(&__ccgo_ts1)).Data
 
-var __ccgo_ts1 = "index < self->size\x00third-party/tree-sitter-svelte/src/tree_sitter/array.h\x00old_end <= self->size\x00(uint32_t)((&scanner->tags)->size - 1) < (&scanner->tags)->size\x00/tmp/grammar-gen-4206551200/combined.c\x00</SCRIPT\x00</STYLE\x00(uint32_t)(i) < (&scanner->tags)->size\x00end\x00<!\x00doctype_token1\x00>\x00doctype\x00<\x00/>\x00</\x00=\x00attribute_name\x00attribute_value\x00entity\x00'\x00\"\x00text\x00_single_quoted_attribute_value_token1\x00_double_quoted_attribute_value_token1\x00#\x00if\x00{\x00}\x00:\x00else if\x00else\x00/\x00each\x00as\x00await\x00then\x00catch\x00key\x00snippet\x00snippet_name\x00(\x00)\x00_tag_value_token1\x00@\x00html\x00const\x00debug\x00render\x00tag_name\x00erroneous_end_tag_name\x00_implicit_end_tag\x00raw_text\x00comment\x00svelte_raw_text\x00document\x00_node\x00element\x00script_element\x00style_element\x00start_tag\x00self_closing_tag\x00end_tag\x00erroneous_end_tag\x00attribute\x00quoted_attribute_value\x00_single_quoted_attribute_value\x00_double_quoted_attribute_value\x00if_statement\x00block_start_tag\x00if_start\x00block_tag\x00else_if_start\x00else_if_block\x00else_start\x00else_block\x00block_end_tag\x00if_end\x00each_statement\x00each_start\x00each_end\x00await_statement\x00await_start\x00then_start\x00then_block\x00catch_start\x00catch_block\x00await_end\x00key_statement\x00key_start\x00key_end\x00snippet_statement\x00snippet_start\x00snippet_end\x00expression\x00_tag_value\x00expression_tag\x00html_tag\x00const_tag\x00debug_tag\x00render_tag\x00document_repeat1\x00start_tag_repeat1\x00if_statement_repeat1\x00condition\x00identifier\x00parameter\x00tag\x00"
+var __ccgo_ts1 = "index < self->size\x00third-party/tree-sitter-svelte/src/tree_sitter/array.h\x00old_end <= self->size\x00(uint32_t)((&scanner->tags)->size - 1) < (&scanner->tags)->size\x00/tmp/grammar-gen-2186441065/combined.c\x00</SCRIPT\x00</STYLE\x00(uint32_t)(i) < (&scanner->tags)->size\x00end\x00<!\x00doctype_token1\x00>\x00doctype\x00<\x00/>\x00</\x00=\x00attribute_name\x00attribute_value\x00entity\x00'\x00\"\x00text\x00_single_quoted_attribute_value_token1\x00_double_quoted_attribute_value_token1\x00#\x00if\x00{\x00}\x00:\x00else if\x00else\x00/\x00each\x00as\x00await\x00then\x00catch\x00key\x00snippet\x00snippet_name\x00(\x00)\x00_tag_value_token1\x00@\x00html\x00const\x00debug\x00render\x00tag_name\x00erroneous_end_tag_name\x00_implicit_end_tag\x00raw_text\x00comment\x00svelte_raw_text\x00document\x00_node\x00element\x00script_element\x00style_element\x00start_tag\x00self_closing_tag\x00end_tag\x00erroneous_end_tag\x00attribute\x00quoted_attribute_value\x00_single_quoted_attribute_value\x00_double_quoted_attribute_value\x00if_statement\x00block_start_tag\x00if_start\x00block_tag\x00else_if_start\x00else_if_block\x00else_start\x00else_block\x00block_end_tag\x00if_end\x00each_statement\x00each_start\x00each_end\x00await_statement\x00await_start\x00then_start\x00then_block\x00catch_start\x00catch_block\x00await_end\x00key_statement\x00key_start\x00key_end\x00snippet_statement\x00snippet_start\x00snippet_end\x00expression\x00_tag_value\x00expression_tag\x00html_tag\x00const_tag\x00debug_tag\x00render_tag\x00document_repeat1\x00start_tag_repeat1\x00if_statement_repeat1\x00condition\x00identifier\x00parameter\x00tag\x00"

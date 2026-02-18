@@ -140,8 +140,9 @@ func (t *Transpiler) TranspileGrammar(grammarPath, outputDir string) error {
 		}
 
 		goCode := postProcess(string(data))
+		packageName := "grammar_" + grammarName
 		// Change package from main to grammar name (preserve comments)
-		goCode = strings.Replace(goCode, "package main", "package "+"grammar_"+grammarName, 1)
+		goCode = strings.Replace(goCode, "package main", "package "+packageName, 1)
 
 		outputFile := filepath.Join(grammarOutDir, fmt.Sprintf("grammar-%s-%s.go", t.GOOS, t.GOARCH))
 		if err := os.WriteFile(outputFile, []byte(goCode), 0644); err != nil {
@@ -151,9 +152,9 @@ func (t *Transpiler) TranspileGrammar(grammarPath, outputDir string) error {
 		// Generate API wrapper
 		var apiErr error
 		if hasScanner {
-			apiErr = GenerateAPIWrapperWithScanner(outputDir, grammarName)
+			apiErr = GenerateAPIWrapperWithScanner(outputDir, packageName)
 		} else {
-			apiErr = GenerateAPIWrapper(outputDir, grammarName)
+			apiErr = GenerateAPIWrapper(outputDir, packageName)
 		}
 		if apiErr != nil {
 			return fmt.Errorf("failed to generate API: %w", apiErr)

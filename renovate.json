@@ -3,5 +3,8 @@
   "extends": [
     "config:recommended",
     "github>lewtec/renovate-config:base"
-  ]
+  ],
+  "git-submodules": {
+    "enabled": true
+  }
 }

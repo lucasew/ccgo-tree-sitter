@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+ORGS=(tree-sitter tree-sitter-grammars)
+
+# Here we are exploiting that all bindings have "tree-sitter" before the name of the language and grammars have the language after
+
+cd ./third-party
+for ORG in "${ORGS[@]}"; do
+	for REPO in $(gh repo list tree-sitter -t '{{range .}}{{printf "%s\n" .name}}{{end}}' --json name | grep -e '^tree-sitter-' | grep -v template); do
+		if [[ ! -d "$REPO" ]]; then
+			git submodule add "ssh://git@github.com/$ORG/$REPO" "$REPO"
+		fi
+	done
+done

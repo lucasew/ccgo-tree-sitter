@@ -1,4 +1,4 @@
-// Code generated for linux/amd64 by 'ccgo /tmp/tree-sitter-gen-3805591399/core_complete.c -o /tmp/tree-sitter-gen-3805591399/core.go', DO NOT EDIT.
+// Code generated for linux/amd64 by 'ccgo /tmp/tree-sitter-gen-1601611919/core_complete.c -o /tmp/tree-sitter-gen-1601611919/core.go', DO NOT EDIT.
 
 //go:build linux && amd64
 
@@ -6721,29 +6721,24 @@ func ts_parser__reuse_node(tls *libc.TLS, self uintptr, version StackVersion, st
 	var byte_offset, end_byte_offset uint32_t
 	var leaf_symbol TSSymbol
 	var reason uintptr
-	var result, v1 Subtree
-	_, _, _, _, _, _ = byte_offset, end_byte_offset, leaf_symbol, reason, result, v1
-	for {
-		v1 = reusable_node_tree(tls, self+1368)
-		result = v1
-		if !(*(*uintptr)(unsafe.Pointer(uintptr(unsafe.Pointer(&v1)))) != 0) {
-			break
-		}
+	var _ /* result at bp+0 */ Subtree
+	_, _, _, _ = byte_offset, end_byte_offset, leaf_symbol, reason
+	for *(*uintptr)(unsafe.Pointer(bp)) != 0 {
 		byte_offset = reusable_node_byte_offset(tls, self+1368)
-		end_byte_offset = byte_offset + ts_subtree_total_bytes(tls, result)
-		if ts_subtree_is_eof(tls, result) != 0 {
+		end_byte_offset = byte_offset + ts_subtree_total_bytes(tls, *(*Subtree)(unsafe.Pointer(bp)))
+		if ts_subtree_is_eof(tls, *(*Subtree)(unsafe.Pointer(bp))) != 0 {
 			end_byte_offset = libc.Uint32FromUint32(4294967295)
 		}
 		if byte_offset > position {
 			if (*TSParser)(unsafe.Pointer(self)).Flexer.Flogger.Flog != 0 || (*TSParser)(unsafe.Pointer(self)).Fdot_graph_file != 0 {
-				libc.X__builtin_snprintf(tls, self+192, uint64(1024), __ccgo_ts+1444, libc.VaList(bp+8, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self)).Flanguage, ts_subtree_symbol(tls, result))))
+				libc.X__builtin_snprintf(tls, self+192, uint64(1024), __ccgo_ts+1444, libc.VaList(bp+16, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self)).Flanguage, ts_subtree_symbol(tls, *(*Subtree)(unsafe.Pointer(bp))))))
 				ts_parser__log(tls, self)
 			}
 			break
 		}
 		if byte_offset < position {
 			if (*TSParser)(unsafe.Pointer(self)).Flexer.Flogger.Flog != 0 || (*TSParser)(unsafe.Pointer(self)).Fdot_graph_file != 0 {
-				libc.X__builtin_snprintf(tls, self+192, uint64(1024), __ccgo_ts+1475, libc.VaList(bp+8, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self)).Flanguage, ts_subtree_symbol(tls, result))))
+				libc.X__builtin_snprintf(tls, self+192, uint64(1024), __ccgo_ts+1475, libc.VaList(bp+16, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self)).Flanguage, ts_subtree_symbol(tls, *(*Subtree)(unsafe.Pointer(bp))))))
 				ts_parser__log(tls, self)
 			}
 			if end_byte_offset <= position || !(reusable_node_descend(tls, self+1368) != 0) {
@@ -6753,23 +6748,23 @@ func ts_parser__reuse_node(tls *libc.TLS, self uintptr, version StackVersion, st
 		}
 		if !(ts_subtree_external_scanner_state_eq(tls, (*TSParser)(unsafe.Pointer(self)).Freusable_node.Flast_external_token, last_external_token) != 0) {
 			if (*TSParser)(unsafe.Pointer(self)).Flexer.Flogger.Flog != 0 || (*TSParser)(unsafe.Pointer(self)).Fdot_graph_file != 0 {
-				libc.X__builtin_snprintf(tls, self+192, uint64(1024), __ccgo_ts+1504, libc.VaList(bp+8, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self)).Flanguage, ts_subtree_symbol(tls, result))))
+				libc.X__builtin_snprintf(tls, self+192, uint64(1024), __ccgo_ts+1504, libc.VaList(bp+16, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self)).Flanguage, ts_subtree_symbol(tls, *(*Subtree)(unsafe.Pointer(bp))))))
 				ts_parser__log(tls, self)
 			}
 			reusable_node_advance(tls, self+1368)
 			continue
 		}
 		reason = libc.UintptrFromInt32(0)
-		if ts_subtree_has_changes(tls, result) != 0 {
+		if ts_subtree_has_changes(tls, *(*Subtree)(unsafe.Pointer(bp))) != 0 {
 			reason = __ccgo_ts + 1565
 		} else {
-			if ts_subtree_is_error(tls, result) != 0 {
+			if ts_subtree_is_error(tls, *(*Subtree)(unsafe.Pointer(bp))) != 0 {
 				reason = __ccgo_ts + 1577
 			} else {
-				if ts_subtree_missing(tls, result) != 0 {
+				if ts_subtree_missing(tls, *(*Subtree)(unsafe.Pointer(bp))) != 0 {
 					reason = __ccgo_ts + 1586
 				} else {
-					if ts_subtree_is_fragile(tls, result) != 0 {
+					if ts_subtree_is_fragile(tls, *(*Subtree)(unsafe.Pointer(bp))) != 0 {
 						reason = __ccgo_ts + 1597
 					} else {
 						if ts_parser__has_included_range_difference(tls, self, byte_offset, end_byte_offset) != 0 {
@@ -6781,7 +6776,7 @@ func ts_parser__reuse_node(tls *libc.TLS, self uintptr, version StackVersion, st
 		}
 		if reason != 0 {
 			if (*TSParser)(unsafe.Pointer(self)).Flexer.Flogger.Flog != 0 || (*TSParser)(unsafe.Pointer(self)).Fdot_graph_file != 0 {
-				libc.X__builtin_snprintf(tls, self+192, uint64(1024), __ccgo_ts+1642, libc.VaList(bp+8, reason, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self)).Flanguage, ts_subtree_symbol(tls, result))))
+				libc.X__builtin_snprintf(tls, self+192, uint64(1024), __ccgo_ts+1642, libc.VaList(bp+16, reason, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self)).Flanguage, ts_subtree_symbol(tls, *(*Subtree)(unsafe.Pointer(bp))))))
 				ts_parser__log(tls, self)
 			}
 			if !(reusable_node_descend(tls, self+1368) != 0) {
@@ -6791,22 +6786,22 @@ func ts_parser__reuse_node(tls *libc.TLS, self uintptr, version StackVersion, st
 			}
 			continue
 		}
-		leaf_symbol = ts_subtree_leaf_symbol(tls, result)
+		leaf_symbol = ts_subtree_leaf_symbol(tls, *(*Subtree)(unsafe.Pointer(bp)))
 		ts_language_table_entry(tls, (*TSParser)(unsafe.Pointer(self)).Flanguage, *(*TSStateId)(unsafe.Pointer(state)), leaf_symbol, table_entry)
-		if !(ts_parser__can_reuse_first_leaf(tls, self, *(*TSStateId)(unsafe.Pointer(state)), result, table_entry) != 0) {
+		if !(ts_parser__can_reuse_first_leaf(tls, self, *(*TSStateId)(unsafe.Pointer(state)), *(*Subtree)(unsafe.Pointer(bp)), table_entry) != 0) {
 			if (*TSParser)(unsafe.Pointer(self)).Flexer.Flogger.Flog != 0 || (*TSParser)(unsafe.Pointer(self)).Fdot_graph_file != 0 {
-				libc.X__builtin_snprintf(tls, self+192, uint64(1024), __ccgo_ts+1669, libc.VaList(bp+8, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self)).Flanguage, ts_subtree_symbol(tls, result)), ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self)).Flanguage, leaf_symbol)))
+				libc.X__builtin_snprintf(tls, self+192, uint64(1024), __ccgo_ts+1669, libc.VaList(bp+16, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self)).Flanguage, ts_subtree_symbol(tls, *(*Subtree)(unsafe.Pointer(bp)))), ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self)).Flanguage, leaf_symbol)))
 				ts_parser__log(tls, self)
 			}
 			reusable_node_advance_past_leaf(tls, self+1368)
 			break
 		}
 		if (*TSParser)(unsafe.Pointer(self)).Flexer.Flogger.Flog != 0 || (*TSParser)(unsafe.Pointer(self)).Fdot_graph_file != 0 {
-			libc.X__builtin_snprintf(tls, self+192, uint64(1024), __ccgo_ts+1717, libc.VaList(bp+8, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self)).Flanguage, ts_subtree_symbol(tls, result))))
+			libc.X__builtin_snprintf(tls, self+192, uint64(1024), __ccgo_ts+1717, libc.VaList(bp+16, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self)).Flanguage, ts_subtree_symbol(tls, *(*Subtree)(unsafe.Pointer(bp))))))
 			ts_parser__log(tls, self)
 		}
-		ts_subtree_retain(tls, result)
-		return result
+		ts_subtree_retain(tls, *(*Subtree)(unsafe.Pointer(bp)))
+		return *(*Subtree)(unsafe.Pointer(bp))
 	}
 	return Subtree{}
 }
@@ -20170,7 +20165,7 @@ func ts_subtree_clone(tls *libc.TLS, _self Subtree) (r MutableSubtree) {
 			*(*ExternalScannerState)(unsafe.Add(unsafe.Pointer(result), 48)) = ts_external_scanner_state_copy(tls, *(*uintptr)(unsafe.Pointer(bp))+48)
 		}
 	}
-	libc.AtomicStorePUint32(result, uint32(1))
+	libc.AtomicStorePUint32(result, libc.Uint32FromInt32(1))
 	return *(*MutableSubtree)(unsafe.Pointer(&struct{ f uintptr }{f: result}))
 }
 
@@ -20482,7 +20477,6 @@ func ts_subtree_new_node(tls *libc.TLS, symbol TSSymbol, children uintptr, produ
 			}
 			F__ccgo_pad3 [8]byte
 		})(unsafe.Pointer(&struct {
-			_ [48]byte
 			f struct {
 				Fvisible_child_count      uint32_t
 				Fnamed_child_count        uint32_t
@@ -20495,6 +20489,7 @@ func ts_subtree_new_node(tls *libc.TLS, symbol TSSymbol, children uintptr, produ
 					Fparse_state TSStateId
 				}
 			}
+			_ [8]byte
 		}{f: struct {
 			Fvisible_child_count      uint32_t
 			Fnamed_child_count        uint32_t
@@ -20873,7 +20868,7 @@ func ts_subtree_edit(tls *libc.TLS, _self Subtree, input_edit uintptr, pool uint
 				(*(*SubtreeInlineData)(unsafe.Pointer(bp + 24))).Fsize_bytes = uint8(size.Fbytes)
 			} else {
 				data = ts_subtree_pool_allocate(tls, pool)
-				libc.AtomicStorePUint32(data, uint32(1))
+				libc.AtomicStorePUint32(data, libc.Uint32FromInt32(1))
 				(*SubtreeHeapData)(unsafe.Pointer(data)).Fpadding = padding
 				(*SubtreeHeapData)(unsafe.Pointer(data)).Fsize = size
 				(*SubtreeHeapData)(unsafe.Pointer(data)).Flookahead_bytes = lookahead_bytes

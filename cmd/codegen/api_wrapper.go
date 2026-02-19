@@ -208,7 +208,7 @@ func Language() *grammar.TSLanguage {
 func init() {
 	grammar.Register("%s", Language())
 }
-`, grammarName, grammarName, grammarName, grammarName)
+`, "grammar_"+grammarName, grammarName, grammarName, grammarName)
 
 	grammarAPIPath := filepath.Join(outputDir, grammarName, "api.go")
 	return os.WriteFile(grammarAPIPath, []byte(grammarAPI), 0644)

@@ -192,7 +192,7 @@ func GenerateAPIWrapper(outputDir, grammarName string) error {
 		}
 	}
 
-	grammarAPI := fmt.Sprintf(`package %s
+	grammarAPI := fmt.Sprintf(`package grammar_%s
 
 import (
 	"unsafe"
@@ -223,7 +223,7 @@ func GenerateAPIWrapperWithScanner(outputDir, grammarName string) error {
 		}
 	}
 
-	grammarAPI := fmt.Sprintf(`package %s
+	grammarAPI := fmt.Sprintf(`package grammar_%s
 
 import (
 	"unsafe"

@@ -1,4 +1,4 @@
-package svelte
+package grammar_svelte
 
 import (
 	"unsafe"

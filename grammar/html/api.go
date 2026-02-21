@@ -1,4 +1,4 @@
-package html
+package grammar_html
 
 import (
 	"unsafe"

@@ -1,4 +1,4 @@
-package css
+package grammar_css
 
 import (
 	"unsafe"

@@ -1,4 +1,4 @@
-package java
+package grammar_java
 
 import (
 	"unsafe"

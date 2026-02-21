@@ -1,4 +1,4 @@
-package lua
+package grammar_lua
 
 import (
 	"unsafe"

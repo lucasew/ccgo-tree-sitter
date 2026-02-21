@@ -1,4 +1,4 @@
-package c_sharp
+package grammar_c_sharp
 
 import (
 	"unsafe"

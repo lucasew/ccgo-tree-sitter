@@ -1,4 +1,4 @@
-package regex
+package grammar_regex
 
 import (
 	"unsafe"

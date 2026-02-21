@@ -1,4 +1,4 @@
-package julia
+package grammar_julia
 
 import (
 	"unsafe"

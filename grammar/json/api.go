@@ -1,4 +1,4 @@
-package json
+package grammar_json
 
 import (
 	"unsafe"

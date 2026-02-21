@@ -1,4 +1,4 @@
-// Code generated for linux/amd64 by 'ccgo /tmp/grammar-gen-4097224065/preprocessed.c -o /tmp/grammar-gen-4097224065/grammar.go', DO NOT EDIT.
+// Code generated for linux/amd64 by 'ccgo /tmp/grammar-gen-3296832551/preprocessed.c -o /tmp/grammar-gen-3296832551/grammar.go', DO NOT EDIT.
 
 //go:build linux && amd64
 
@@ -9237,4 +9237,4 @@ func __ccgo_fp(f interface{}) uintptr {
 
 var __ccgo_ts = (*reflect.StringHeader)(unsafe.Pointer(&__ccgo_ts1)).Data
 
-var __ccgo_ts1 = "index < self->size\x00third-party/tree-sitter-html/src/tree_sitter/array.h\x00old_end <= self->size\x00(uint32_t)((&scanner->tags)->size - 1) < (&scanner->tags)->size\x00/tmp/grammar-gen-4097224065/combined.c\x00</SCRIPT\x00</STYLE\x00end\x00<!\x00doctype_token1\x00>\x00doctype\x00<\x00/>\x00</\x00=\x00attribute_name\x00attribute_value\x00entity\x00'\x00\"\x00text\x00tag_name\x00erroneous_end_tag_name\x00_implicit_end_tag\x00raw_text\x00comment\x00document\x00_node\x00element\x00script_element\x00style_element\x00start_tag\x00self_closing_tag\x00end_tag\x00erroneous_end_tag\x00attribute\x00quoted_attribute_value\x00document_repeat1\x00start_tag_repeat1\x00"
+var __ccgo_ts1 = "index < self->size\x00third-party/tree-sitter-html/src/tree_sitter/array.h\x00old_end <= self->size\x00(uint32_t)((&scanner->tags)->size - 1) < (&scanner->tags)->size\x00/tmp/grammar-gen-3296832551/combined.c\x00</SCRIPT\x00</STYLE\x00end\x00<!\x00doctype_token1\x00>\x00doctype\x00<\x00/>\x00</\x00=\x00attribute_name\x00attribute_value\x00entity\x00'\x00\"\x00text\x00tag_name\x00erroneous_end_tag_name\x00_implicit_end_tag\x00raw_text\x00comment\x00document\x00_node\x00element\x00script_element\x00style_element\x00start_tag\x00self_closing_tag\x00end_tag\x00erroneous_end_tag\x00attribute\x00quoted_attribute_value\x00document_repeat1\x00start_tag_repeat1\x00"

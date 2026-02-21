@@ -1,4 +1,4 @@
-package c
+package grammar_c
 
 import (
 	"unsafe"

@@ -1,4 +1,4 @@
-package cpp
+package grammar_cpp
 
 import (
 	"unsafe"

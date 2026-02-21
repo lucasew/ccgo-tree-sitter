@@ -1,4 +1,4 @@
-package bash
+package grammar_bash
 
 import (
 	"unsafe"

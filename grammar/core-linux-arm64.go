@@ -1,4 +1,4 @@
-// Code generated for linux/arm64 by 'ccgo /tmp/tree-sitter-gen-2147004994/core_complete.c -o /tmp/tree-sitter-gen-2147004994/core.go', DO NOT EDIT.
+// Code generated for linux/arm64 by 'ccgo /tmp/tree-sitter-gen-1936927831/core_complete.c -o /tmp/tree-sitter-gen-1936927831/core.go', DO NOT EDIT.
 
 //go:build linux && arm64
 
@@ -14,9 +14,7 @@ import (
 var _ reflect.Type
 var _ unsafe.Pointer
 
-const _FORTIFY_SOURCE = 3
 const _GNU_SOURCE = 1
-const _LIBCPP_HARDENING_MODE = "_LIBCPP_HARDENING_MODE_EXTENSIVE"
 const _LP64 = 1
 const _STDC_PREDEF_H = 1
 const __ATOMIC_ACQUIRE = 2
@@ -42,9 +40,9 @@ const __BFLT16_MAX__ = "3.38953138925153547590470800371487867e+38B"
 const __BFLT16_MIN__ = "1.17549435082228750796873653722224568e-38B"
 const __BFLT16_NORM_MAX__ = "3.38953138925153547590470800371487867e+38B"
 const __BIGGEST_ALIGNMENT__ = 16
-const __BITINT_MAXWIDTH__ = 65535
 const __BYTE_ORDER__ = "__ORDER_LITTLE_ENDIAN__"
 const __CCGO__ = 1
+const __CET__ = 3
 const __CHAR_BIT__ = 8
 const __DBL_DECIMAL_DIG__ = 17
 const __DBL_DIG__ = 15
@@ -208,8 +206,8 @@ const __GNUC_MINOR__ = 3
 const __GNUC_PATCHLEVEL__ = 0
 const __GNUC_STDC_INLINE__ = 1
 const __GNUC_WIDE_EXECUTION_CHARSET_NAME = "UTF-32LE"
-const __GNUC__ = 14
-const __GXX_ABI_VERSION = 1019
+const __GNUC__ = 13
+const __GXX_ABI_VERSION = 1018
 const __HAVE_SPECULATION_SAFE_VALUE = 1
 const __INT16_MAX__ = 0x7fff
 const __INT32_MAX__ = 0x7fffffff
@@ -260,11 +258,12 @@ const __LONG_WIDTH__ = 64
 const __LP64__ = 1
 const __MMX_WITH_SSE__ = 1
 const __MMX__ = 1
-const __OPTIMIZE__ = 1
+const __NO_INLINE__ = 1
 const __ORDER_BIG_ENDIAN__ = 4321
 const __ORDER_LITTLE_ENDIAN__ = 1234
 const __ORDER_PDP_ENDIAN__ = 3412
 const __PIC__ = 2
+const __PIE__ = 2
 const __PRAGMA_REDEFINE_EXTNAME = 1
 const __PRETTY_FUNCTION__ = "__func__"
 const __PTRDIFF_MAX__ = 0x7fffffffffffffff
@@ -324,7 +323,7 @@ const __UINT_LEAST16_MAX__ = 0xffff
 const __UINT_LEAST32_MAX__ = 0xffffffff
 const __UINT_LEAST64_MAX__ = 0xffffffffffffffff
 const __UINT_LEAST8_MAX__ = 0xff
-const __VERSION__ = "14.3.0"
+const __VERSION__ = "13.3.0"
 const __WCHAR_MAX__ = 0x7fffffff
 const __WCHAR_TYPE__ = "int"
 const __WCHAR_WIDTH__ = 32
@@ -340,6 +339,7 @@ const __k8__ = 1
 const __linux = 1
 const __linux__ = 1
 const __pic__ = 2
+const __pie__ = 2
 const __restrict_arr = "restrict"
 const __unix = 1
 const __unix__ = 1
@@ -537,7 +537,7 @@ type _IO_FILE = struct {
 	F_wide_data      uintptr
 	F_freeres_list   uintptr
 	F_freeres_buf    uintptr
-	F_prevchain      uintptr
+	F__pad5          size_t
 	F_mode           int32
 	F_unused2        [20]uint8
 }
@@ -569,7 +569,7 @@ type __FILE = struct {
 	F_wide_data      uintptr
 	F_freeres_list   uintptr
 	F_freeres_buf    uintptr
-	F_prevchain      uintptr
+	F__pad5          size_t
 	F_mode           int32
 	F_unused2        [20]uint8
 }
@@ -601,7 +601,7 @@ type FILE = struct {
 	F_wide_data      uintptr
 	F_freeres_list   uintptr
 	F_freeres_buf    uintptr
-	F_prevchain      uintptr
+	F__pad5          size_t
 	F_mode           int32
 	F_unused2        [20]uint8
 }
@@ -825,14 +825,13 @@ type __pthread_rwlock_arch_t = struct {
 }
 
 type __pthread_cond_s = struct {
-	F__wseq                 __atomic_wide_counter
-	F__g1_start             __atomic_wide_counter
-	F__g_size               [2]uint32
-	F__g1_orig_size         uint32
-	F__wrefs                uint32
-	F__g_signals            [2]uint32
-	F__unused_initialized_1 uint32
-	F__unused_initialized_2 uint32
+	F__wseq         __atomic_wide_counter
+	F__g1_start     __atomic_wide_counter
+	F__g_refs       [2]uint32
+	F__g_size       [2]uint32
+	F__g1_orig_size uint32
+	F__wrefs        uint32
+	F__g_signals    [2]uint32
 }
 
 type __tss_t = uint32

@@ -1,4 +1,4 @@
-package python
+package grammar_python
 
 import (
 	"unsafe"

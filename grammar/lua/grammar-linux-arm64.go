@@ -1,8 +1,8 @@
-// Code generated for linux/arm64 by 'ccgo /tmp/grammar-gen-891558780/preprocessed.c -o /tmp/grammar-gen-891558780/grammar.go', DO NOT EDIT.
+// Code generated for linux/arm64 by 'ccgo /tmp/grammar-gen-490246990/preprocessed.c -o /tmp/grammar-gen-490246990/grammar.go', DO NOT EDIT.
 
 //go:build linux && arm64
 
-package lua
+package grammar_lua
 
 import (
 	"reflect"
@@ -14,9 +14,7 @@ import (
 var _ reflect.Type
 var _ unsafe.Pointer
 
-const _FORTIFY_SOURCE = 3
 const _GNU_SOURCE = 1
-const _LIBCPP_HARDENING_MODE = "_LIBCPP_HARDENING_MODE_EXTENSIVE"
 const _LP64 = 1
 const _STDC_PREDEF_H = 1
 const __ATOMIC_ACQUIRE = 2
@@ -42,9 +40,9 @@ const __BFLT16_MAX__ = "3.38953138925153547590470800371487867e+38B"
 const __BFLT16_MIN__ = "1.17549435082228750796873653722224568e-38B"
 const __BFLT16_NORM_MAX__ = "3.38953138925153547590470800371487867e+38B"
 const __BIGGEST_ALIGNMENT__ = 16
-const __BITINT_MAXWIDTH__ = 65535
 const __BYTE_ORDER__ = "__ORDER_LITTLE_ENDIAN__"
 const __CCGO__ = 1
+const __CET__ = 3
 const __CHAR_BIT__ = 8
 const __DBL_DECIMAL_DIG__ = 17
 const __DBL_DIG__ = 15
@@ -208,8 +206,8 @@ const __GNUC_MINOR__ = 3
 const __GNUC_PATCHLEVEL__ = 0
 const __GNUC_STDC_INLINE__ = 1
 const __GNUC_WIDE_EXECUTION_CHARSET_NAME = "UTF-32LE"
-const __GNUC__ = 14
-const __GXX_ABI_VERSION = 1019
+const __GNUC__ = 13
+const __GXX_ABI_VERSION = 1018
 const __HAVE_SPECULATION_SAFE_VALUE = 1
 const __INT16_MAX__ = 0x7fff
 const __INT32_MAX__ = 0x7fffffff
@@ -260,11 +258,12 @@ const __LONG_WIDTH__ = 64
 const __LP64__ = 1
 const __MMX_WITH_SSE__ = 1
 const __MMX__ = 1
-const __OPTIMIZE__ = 1
+const __NO_INLINE__ = 1
 const __ORDER_BIG_ENDIAN__ = 4321
 const __ORDER_LITTLE_ENDIAN__ = 1234
 const __ORDER_PDP_ENDIAN__ = 3412
 const __PIC__ = 2
+const __PIE__ = 2
 const __PRAGMA_REDEFINE_EXTNAME = 1
 const __PRETTY_FUNCTION__ = "__func__"
 const __PTRDIFF_MAX__ = 0x7fffffffffffffff
@@ -324,7 +323,7 @@ const __UINT_LEAST16_MAX__ = 0xffff
 const __UINT_LEAST32_MAX__ = 0xffffffff
 const __UINT_LEAST64_MAX__ = 0xffffffffffffffff
 const __UINT_LEAST8_MAX__ = 0xff
-const __VERSION__ = "14.3.0"
+const __VERSION__ = "13.3.0"
 const __WCHAR_MAX__ = 0x7fffffff
 const __WCHAR_TYPE__ = "int"
 const __WCHAR_WIDTH__ = 32
@@ -340,6 +339,7 @@ const __k8__ = 1
 const __linux = 1
 const __linux__ = 1
 const __pic__ = 2
+const __pie__ = 2
 const __restrict_arr = "restrict"
 const __unix = 1
 const __unix__ = 1
@@ -537,7 +537,7 @@ type _IO_FILE = struct {
 	F_wide_data      uintptr
 	F_freeres_list   uintptr
 	F_freeres_buf    uintptr
-	F_prevchain      uintptr
+	F__pad5          size_t
 	F_mode           int32
 	F_unused2        [20]uint8
 }
@@ -569,7 +569,7 @@ type __FILE = struct {
 	F_wide_data      uintptr
 	F_freeres_list   uintptr
 	F_freeres_buf    uintptr
-	F_prevchain      uintptr
+	F__pad5          size_t
 	F_mode           int32
 	F_unused2        [20]uint8
 }
@@ -601,7 +601,7 @@ type FILE = struct {
 	F_wide_data      uintptr
 	F_freeres_list   uintptr
 	F_freeres_buf    uintptr
-	F_prevchain      uintptr
+	F__pad5          size_t
 	F_mode           int32
 	F_unused2        [20]uint8
 }
@@ -825,14 +825,13 @@ type __pthread_rwlock_arch_t = struct {
 }
 
 type __pthread_cond_s = struct {
-	F__wseq                 __atomic_wide_counter
-	F__g1_start             __atomic_wide_counter
-	F__g_size               [2]uint32
-	F__g1_orig_size         uint32
-	F__wrefs                uint32
-	F__g_signals            [2]uint32
-	F__unused_initialized_1 uint32
-	F__unused_initialized_2 uint32
+	F__wseq         __atomic_wide_counter
+	F__g1_start     __atomic_wide_counter
+	F__g_refs       [2]uint32
+	F__g_size       [2]uint32
+	F__g1_orig_size uint32
+	F__wrefs        uint32
+	F__g_signals    [2]uint32
 }
 
 type __tss_t = uint32
@@ -1063,15 +1062,15 @@ const TSParseActionTypeRecover = 3
 
 type TSParseAction = struct {
 	Freduce [0]struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}
-	Ftype1 [0]uint8_t
-	Fshift struct {
-		Ftype1      uint8_t
+	Ftype_token [0]uint8_t
+	Fshift      struct {
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -1105,25 +1104,25 @@ type TSCharacterRange = struct {
 
 func set_contains(tls *libc.TLS, ranges uintptr, len1 uint32_t, lookahead int32_t) (r uint8) {
 	var half_size, index, mid_index, size uint32_t
-	var range1, range11 uintptr
-	_, _, _, _, _, _ = half_size, index, mid_index, range1, range11, size
+	var range_token, range_token1 uintptr
+	_, _, _, _, _, _ = half_size, index, mid_index, range_token, range_token1, size
 	index = uint32(0)
 	size = len1 - index
 	for size > uint32(1) {
 		half_size = size / uint32(2)
 		mid_index = index + half_size
-		range1 = ranges + uintptr(mid_index)*8
-		if lookahead >= (*TSCharacterRange)(unsafe.Pointer(range1)).Fstart && lookahead <= (*TSCharacterRange)(unsafe.Pointer(range1)).Fend {
+		range_token = ranges + uintptr(mid_index)*8
+		if lookahead >= (*TSCharacterRange)(unsafe.Pointer(range_token)).Fstart && lookahead <= (*TSCharacterRange)(unsafe.Pointer(range_token)).Fend {
 			return libc.BoolUint8(1 != 0)
 		} else {
-			if lookahead > (*TSCharacterRange)(unsafe.Pointer(range1)).Fend {
+			if lookahead > (*TSCharacterRange)(unsafe.Pointer(range_token)).Fend {
 				index = mid_index
 			}
 		}
 		size = size - half_size
 	}
-	range11 = ranges + uintptr(index)*8
-	return libc.BoolUint8(lookahead >= (*TSCharacterRange)(unsafe.Pointer(range11)).Fstart && lookahead <= (*TSCharacterRange)(unsafe.Pointer(range11)).Fend)
+	range_token1 = ranges + uintptr(index)*8
+	return libc.BoolUint8(lookahead >= (*TSCharacterRange)(unsafe.Pointer(range_token1)).Fstart && lookahead <= (*TSCharacterRange)(unsafe.Pointer(range_token1)).Fend)
 }
 
 type wint_t = uint32
@@ -3669,8 +3668,8 @@ start:
 			if !(uint64(i) < libc.Uint64FromInt64(108)/libc.Uint64FromInt64(2)) {
 				break
 			}
-			if libc.Int32FromUint16(map1[i]) == lookahead {
-				state = map1[i+uint32(1)]
+			if libc.Int32FromUint16(map_token[i]) == lookahead {
+				state = map_token[i+uint32(1)]
 				goto next_state
 			}
 			goto _1
@@ -3868,8 +3867,8 @@ start:
 			if !(uint64(i1) < libc.Uint64FromInt64(104)/libc.Uint64FromInt64(2)) {
 				break
 			}
-			if libc.Int32FromUint16(map11[i1]) == lookahead {
-				state = map11[i1+uint32(1)]
+			if libc.Int32FromUint16(map_token1[i1]) == lookahead {
+				state = map_token1[i1+uint32(1)]
 				goto next_state
 			}
 			goto _2
@@ -3901,8 +3900,8 @@ start:
 			if !(uint64(i2) < libc.Uint64FromInt64(56)/libc.Uint64FromInt64(2)) {
 				break
 			}
-			if libc.Int32FromUint16(map2[i2]) == lookahead {
-				state = map2[i2+uint32(1)]
+			if libc.Int32FromUint16(map_token2[i2]) == lookahead {
+				state = map_token2[i2+uint32(1)]
 				goto next_state
 			}
 			goto _3
@@ -3934,8 +3933,8 @@ start:
 			if !(uint64(i3) < libc.Uint64FromInt64(100)/libc.Uint64FromInt64(2)) {
 				break
 			}
-			if libc.Int32FromUint16(map3[i3]) == lookahead {
-				state = map3[i3+uint32(1)]
+			if libc.Int32FromUint16(map_token3[i3]) == lookahead {
+				state = map_token3[i3+uint32(1)]
 				goto next_state
 			}
 			goto _4
@@ -4072,8 +4071,8 @@ start:
 			if !(uint64(i4) < libc.Uint64FromInt64(52)/libc.Uint64FromInt64(2)) {
 				break
 			}
-			if libc.Int32FromUint16(map4[i4]) == lookahead {
-				state = map4[i4+uint32(1)]
+			if libc.Int32FromUint16(map_token4[i4]) == lookahead {
+				state = map_token4[i4+uint32(1)]
 				goto next_state
 			}
 			goto _5
@@ -4095,8 +4094,8 @@ start:
 			if !(uint64(i5) < libc.Uint64FromInt64(36)/libc.Uint64FromInt64(2)) {
 				break
 			}
-			if libc.Int32FromUint16(map5[i5]) == lookahead {
-				state = map5[i5+uint32(1)]
+			if libc.Int32FromUint16(map_token5[i5]) == lookahead {
+				state = map_token5[i5+uint32(1)]
 				goto next_state
 			}
 			goto _6
@@ -4118,8 +4117,8 @@ start:
 			if !(uint64(i6) < libc.Uint64FromInt64(36)/libc.Uint64FromInt64(2)) {
 				break
 			}
-			if libc.Int32FromUint16(map6[i6]) == lookahead {
-				state = map6[i6+uint32(1)]
+			if libc.Int32FromUint16(map_token6[i6]) == lookahead {
+				state = map_token6[i6+uint32(1)]
 				goto next_state
 			}
 			goto _7
@@ -4525,7 +4524,7 @@ start:
 	return r
 }
 
-var map1 = [54]uint16_t{
+var map_token = [54]uint16_t{
 	0:  uint16('"'),
 	1:  uint16(42),
 	2:  uint16('#'),
@@ -4582,7 +4581,7 @@ var map1 = [54]uint16_t{
 	53: uint16(67),
 }
 
-var map11 = [52]uint16_t{
+var map_token1 = [52]uint16_t{
 	0:  uint16('"'),
 	1:  uint16(42),
 	2:  uint16('#'),
@@ -4637,7 +4636,7 @@ var map11 = [52]uint16_t{
 	51: uint16(67),
 }
 
-var map2 = [28]uint16_t{
+var map_token2 = [28]uint16_t{
 	0:  uint16('"'),
 	1:  uint16(42),
 	2:  uint16('#'),
@@ -4668,7 +4667,7 @@ var map2 = [28]uint16_t{
 	27: uint16(66),
 }
 
-var map3 = [50]uint16_t{
+var map_token3 = [50]uint16_t{
 	0:  uint16('"'),
 	1:  uint16(42),
 	2:  uint16('#'),
@@ -4721,7 +4720,7 @@ var map3 = [50]uint16_t{
 	49: uint16(67),
 }
 
-var map4 = [26]uint16_t{
+var map_token4 = [26]uint16_t{
 	0:  uint16('.'),
 	1:  uint16(38),
 	2:  uint16('B'),
@@ -4750,7 +4749,7 @@ var map4 = [26]uint16_t{
 	25: uint16(5),
 }
 
-var map5 = [18]uint16_t{
+var map_token5 = [18]uint16_t{
 	0:  uint16('.'),
 	1:  uint16(38),
 	2:  uint16('E'),
@@ -4771,7 +4770,7 @@ var map5 = [18]uint16_t{
 	17: uint16(11),
 }
 
-var map6 = [18]uint16_t{
+var map_token6 = [18]uint16_t{
 	0:  uint16('.'),
 	1:  uint16(40),
 	2:  uint16('I'),
@@ -4818,8 +4817,8 @@ start:
 			if !(uint64(i) < libc.Uint64FromInt64(56)/libc.Uint64FromInt64(2)) {
 				break
 			}
-			if libc.Int32FromUint16(map7[i]) == lookahead {
-				state = map7[i+uint32(1)]
+			if libc.Int32FromUint16(map_token7[i]) == lookahead {
+				state = map_token7[i+uint32(1)]
 				goto next_state
 			}
 			goto _1
@@ -5350,7 +5349,7 @@ start:
 	return r
 }
 
-var map7 = [28]uint16_t{
+var map_token7 = [28]uint16_t{
 	0:  uint16('a'),
 	1:  uint16(1),
 	2:  uint16('b'),
@@ -19573,14 +19572,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	4: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -19602,14 +19601,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	6: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -19630,14 +19629,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	8: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:  uint8(TSParseActionTypeReduce),
-		Fsymbol: uint16(sym_chunk),
+		Ftype_token: uint8(TSParseActionTypeReduce),
+		Fsymbol:     uint16(sym_chunk),
 	})))),
 	9: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
 		f struct {
@@ -19653,14 +19652,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	10: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -19682,14 +19681,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	12: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -19710,14 +19709,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	14: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -19739,14 +19738,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	16: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -19768,14 +19767,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	18: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -19796,14 +19795,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	20: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -19824,14 +19823,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	22: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -19852,14 +19851,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	24: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -19880,14 +19879,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	26: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -19908,14 +19907,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	28: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -19936,14 +19935,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	30: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -19964,14 +19963,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	32: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -19992,14 +19991,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	34: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -20020,14 +20019,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	36: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -20048,14 +20047,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	38: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -20077,14 +20076,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	40: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -20105,13 +20104,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	42: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(1),
 		Fsymbol:      uint16(sym_variable),
 	})))),
@@ -20128,13 +20127,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	44: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(1),
 		Fsymbol:      uint16(sym_variable),
 	})))),
@@ -20152,13 +20151,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	46: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(1),
 		Fsymbol:      uint16(sym__contextual_keyword),
 	})))),
@@ -20175,13 +20174,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	48: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(1),
 		Fsymbol:      uint16(sym__contextual_keyword),
 	})))),
@@ -20199,13 +20198,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	50: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(3),
 		Fsymbol:        uint16(sym_dot_index_expression),
 		Fproduction_id: uint16(29),
@@ -20223,13 +20222,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	52: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(3),
 		Fsymbol:        uint16(sym_dot_index_expression),
 		Fproduction_id: uint16(29),
@@ -20248,13 +20247,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	54: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(4),
 		Fsymbol:        uint16(sym_bracket_index_expression),
 		Fproduction_id: uint16(29),
@@ -20272,13 +20271,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	56: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(4),
 		Fsymbol:        uint16(sym_bracket_index_expression),
 		Fproduction_id: uint16(29),
@@ -20297,13 +20296,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	58: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(3),
 		Fsymbol:      uint16(sym_table_constructor),
 	})))),
@@ -20320,13 +20319,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	60: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(3),
 		Fsymbol:      uint16(sym_table_constructor),
 	})))),
@@ -20344,13 +20343,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	62: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(1),
 		Fsymbol:      uint16(sym_expression),
 	})))),
@@ -20367,13 +20366,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	64: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(1),
 		Fsymbol:      uint16(sym_expression),
 	})))),
@@ -20390,13 +20389,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	66: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(1),
 		Fsymbol:      uint16(sym__prefix_expression),
 	})))),
@@ -20414,13 +20413,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	68: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(1),
 		Fsymbol:      uint16(sym__prefix_expression),
 	})))),
@@ -20438,13 +20437,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	70: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(1),
 		Fsymbol:      uint16(sym_arguments),
 	})))),
@@ -20461,13 +20460,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	72: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(1),
 		Fsymbol:      uint16(sym_arguments),
 	})))),
@@ -20485,13 +20484,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	74: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(sym_function_call),
 		Fproduction_id: uint16(14),
@@ -20509,13 +20508,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	76: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(sym_function_call),
 		Fproduction_id: uint16(14),
@@ -20534,13 +20533,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	78: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(3),
 		Fsymbol:      uint16(sym_parenthesized_expression),
 	})))),
@@ -20557,13 +20556,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	80: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(3),
 		Fsymbol:      uint16(sym_parenthesized_expression),
 	})))),
@@ -20581,13 +20580,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	82: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(3),
 		Fsymbol:      uint16(sym_arguments),
 	})))),
@@ -20604,13 +20603,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	84: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(3),
 		Fsymbol:      uint16(sym_arguments),
 	})))),
@@ -20628,13 +20627,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	86: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(sym_arguments),
 	})))),
@@ -20651,13 +20650,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	88: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(sym_arguments),
 	})))),
@@ -20675,13 +20674,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	90: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(4),
 		Fsymbol:      uint16(sym_arguments),
 	})))),
@@ -20698,13 +20697,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	92: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(4),
 		Fsymbol:      uint16(sym_arguments),
 	})))),
@@ -20722,13 +20721,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	94: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(1),
 		Fsymbol:        uint16(sym_string),
 		Fproduction_id: uint16(9),
@@ -20746,13 +20745,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	96: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(1),
 		Fsymbol:        uint16(sym_string),
 		Fproduction_id: uint16(9),
@@ -20771,13 +20770,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	98: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(sym__quote_string),
 		Fproduction_id: uint16(18),
@@ -20795,13 +20794,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	100: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(sym__quote_string),
 		Fproduction_id: uint16(18),
@@ -20820,13 +20819,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	102: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(sym_table_constructor),
 	})))),
@@ -20843,13 +20842,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	104: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(sym_table_constructor),
 	})))),
@@ -20867,13 +20866,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	106: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(3),
 		Fsymbol:        uint16(sym__block_string),
 		Fproduction_id: uint16(16),
@@ -20891,13 +20890,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	108: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(3),
 		Fsymbol:        uint16(sym__block_string),
 		Fproduction_id: uint16(16),
@@ -20916,13 +20915,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	110: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(3),
 		Fsymbol:        uint16(sym__quote_string),
 		Fproduction_id: uint16(35),
@@ -20940,13 +20939,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	112: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(3),
 		Fsymbol:        uint16(sym__quote_string),
 		Fproduction_id: uint16(35),
@@ -20965,14 +20964,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	114: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -20993,14 +20992,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	116: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -21021,14 +21020,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	118: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -21049,14 +21048,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	120: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -21076,13 +21075,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	122: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(1),
 		Fsymbol:      uint16(sym__block),
 	})))),
@@ -21100,13 +21099,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	124: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(aux_sym_chunk_repeat1),
 	})))),
@@ -21123,26 +21122,26 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(2),
 	}})),
 	126: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(aux_sym_chunk_repeat1),
 	})))),
 	127: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -21163,13 +21162,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	129: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(aux_sym_chunk_repeat1),
 	})))),
@@ -21187,26 +21186,26 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	131: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(aux_sym_chunk_repeat1),
 	})))),
 	132: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -21228,26 +21227,26 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	134: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(aux_sym_chunk_repeat1),
 	})))),
 	135: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -21268,26 +21267,26 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(2),
 	}})),
 	137: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(aux_sym_chunk_repeat1),
 	})))),
 	138: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -21308,26 +21307,26 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(2),
 	}})),
 	140: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(aux_sym_chunk_repeat1),
 	})))),
 	141: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -21348,26 +21347,26 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(2),
 	}})),
 	143: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(aux_sym_chunk_repeat1),
 	})))),
 	144: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -21388,26 +21387,26 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(2),
 	}})),
 	146: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(aux_sym_chunk_repeat1),
 	})))),
 	147: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -21428,26 +21427,26 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(2),
 	}})),
 	149: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(aux_sym_chunk_repeat1),
 	})))),
 	150: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -21468,26 +21467,26 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(2),
 	}})),
 	152: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(aux_sym_chunk_repeat1),
 	})))),
 	153: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -21508,26 +21507,26 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(2),
 	}})),
 	155: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(aux_sym_chunk_repeat1),
 	})))),
 	156: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -21548,26 +21547,26 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(2),
 	}})),
 	158: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(aux_sym_chunk_repeat1),
 	})))),
 	159: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -21588,26 +21587,26 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(2),
 	}})),
 	161: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(aux_sym_chunk_repeat1),
 	})))),
 	162: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -21628,26 +21627,26 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(2),
 	}})),
 	164: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(aux_sym_chunk_repeat1),
 	})))),
 	165: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -21669,26 +21668,26 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	167: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(aux_sym_chunk_repeat1),
 	})))),
 	168: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -21709,13 +21708,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	170: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(3),
 		Fsymbol:        uint16(sym_elseif_statement),
 		Fproduction_id: uint16(37),
@@ -21734,13 +21733,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	172: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(3),
 		Fsymbol:        uint16(sym_binary_expression),
 		Fproduction_id: uint16(36),
@@ -21758,13 +21757,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	174: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(3),
 		Fsymbol:        uint16(sym_binary_expression),
 		Fproduction_id: uint16(36),
@@ -21784,14 +21783,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	176: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -21813,14 +21812,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	178: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -21842,14 +21841,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	180: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -21871,14 +21870,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	182: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -21899,14 +21898,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	184: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -21927,14 +21926,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	186: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -21956,14 +21955,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	188: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -21985,14 +21984,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	190: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -22013,14 +22012,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	192: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -22042,14 +22041,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	194: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -22071,14 +22070,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	196: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -22099,14 +22098,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	198: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -22127,14 +22126,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	200: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -22155,13 +22154,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	202: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(sym__function_body),
 		Fproduction_id: uint16(34),
@@ -22179,13 +22178,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	204: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(sym__function_body),
 		Fproduction_id: uint16(34),
@@ -22204,13 +22203,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	206: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(3),
 		Fsymbol:        uint16(sym__function_body),
 		Fproduction_id: uint16(49),
@@ -22228,13 +22227,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	208: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(3),
 		Fsymbol:        uint16(sym__function_body),
 		Fproduction_id: uint16(49),
@@ -22253,13 +22252,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	210: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(sym_function_definition),
 		Fproduction_id: uint16(17),
@@ -22277,13 +22276,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	212: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(sym_function_definition),
 		Fproduction_id: uint16(17),
@@ -22302,13 +22301,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	214: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(sym_unary_expression),
 		Fproduction_id: uint16(20),
@@ -22326,13 +22325,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	216: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(sym_unary_expression),
 		Fproduction_id: uint16(20),
@@ -22351,14 +22350,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	218: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -22379,14 +22378,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	220: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -22406,13 +22405,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	222: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(1),
 		Fsymbol:      uint16(sym_else_statement),
 	})))),
@@ -22430,14 +22429,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	224: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -22458,14 +22457,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	226: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -22486,14 +22485,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	228: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -22514,13 +22513,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	230: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(1),
 		Fsymbol:      uint16(sym_chunk),
 	})))),
@@ -22538,13 +22537,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	232: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(sym_chunk),
 	})))),
@@ -22562,13 +22561,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	234: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(1),
 		Fsymbol:        uint16(sym__variable_assignment_explist),
 		Fproduction_id: uint16(19),
@@ -22586,13 +22585,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	236: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(1),
 		Fsymbol:        uint16(sym__variable_assignment_explist),
 		Fproduction_id: uint16(19),
@@ -22612,14 +22611,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	238: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -22640,14 +22639,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	240: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -22668,13 +22667,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	242: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(aux_sym__variable_assignment_explist_repeat1),
 		Fproduction_id: uint16(59),
@@ -22692,13 +22691,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	244: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(aux_sym__variable_assignment_explist_repeat1),
 		Fproduction_id: uint16(59),
@@ -22717,13 +22716,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	246: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(3),
 		Fsymbol:        uint16(sym_repeat_statement),
 		Fproduction_id: uint16(22),
@@ -22741,13 +22740,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	248: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(3),
 		Fsymbol:        uint16(sym_repeat_statement),
 		Fproduction_id: uint16(22),
@@ -22766,13 +22765,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	250: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(4),
 		Fsymbol:        uint16(sym_repeat_statement),
 		Fproduction_id: uint16(38),
@@ -22790,13 +22789,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	252: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(4),
 		Fsymbol:        uint16(sym_repeat_statement),
 		Fproduction_id: uint16(38),
@@ -22816,14 +22815,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	254: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -22843,13 +22842,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	256: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(1),
 		Fsymbol:      uint16(sym_return_statement),
 	})))),
@@ -22867,14 +22866,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	258: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -22895,14 +22894,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	260: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -22923,14 +22922,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	262: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -22952,14 +22951,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	264: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -22981,14 +22980,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	266: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -23010,14 +23009,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	268: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -23039,14 +23038,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	270: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -23068,14 +23067,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	272: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -23096,14 +23095,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	274: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -23125,14 +23124,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	276: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -23153,14 +23152,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	278: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -23182,14 +23181,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	280: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -23211,14 +23210,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	282: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -23240,14 +23239,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	284: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -23268,13 +23267,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	286: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(1),
 		Fsymbol:      uint16(sym_return_statement),
 	})))),
@@ -23292,13 +23291,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	288: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(sym__field_list),
 	})))),
@@ -23316,13 +23315,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	290: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(3),
 		Fsymbol:      uint16(sym__field_list),
 	})))),
@@ -23341,14 +23340,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	292: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -23369,14 +23368,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	294: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -23397,13 +23396,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	296: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(aux_sym__expression_list_repeat1),
 	})))),
@@ -23420,13 +23419,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	298: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(aux_sym__expression_list_repeat1),
 	})))),
@@ -23445,14 +23444,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	300: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -23474,14 +23473,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	302: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -23502,13 +23501,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	304: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(1),
 		Fsymbol:      uint16(sym__expression_list),
 	})))),
@@ -23527,14 +23526,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	306: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -23554,13 +23553,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	308: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(1),
 		Fsymbol:      uint16(sym__expression_list),
 	})))),
@@ -23578,13 +23577,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	310: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(1),
 		Fsymbol:      uint16(sym_statement),
 	})))),
@@ -23601,13 +23600,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	312: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(1),
 		Fsymbol:      uint16(sym_statement),
 	})))),
@@ -23625,13 +23624,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	314: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(sym__att_name_list),
 		Fproduction_id: uint16(26),
@@ -23649,13 +23648,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	316: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(sym__att_name_list),
 		Fproduction_id: uint16(26),
@@ -23675,14 +23674,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	318: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -23704,14 +23703,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	320: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -23732,13 +23731,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	322: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(1),
 		Fsymbol:        uint16(sym__att_name_list),
 		Fproduction_id: uint16(7),
@@ -23756,13 +23755,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	324: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(1),
 		Fsymbol:        uint16(sym__att_name_list),
 		Fproduction_id: uint16(7),
@@ -23782,14 +23781,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	326: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -23810,13 +23809,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	328: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(1),
 		Fsymbol:        uint16(sym_field),
 		Fproduction_id: uint16(19),
@@ -23835,13 +23834,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	330: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(3),
 		Fsymbol:        uint16(sym_field),
 		Fproduction_id: uint16(50),
@@ -23860,13 +23859,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	332: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(aux_sym__att_name_list_repeat1),
 		Fproduction_id: uint16(31),
@@ -23884,13 +23883,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	334: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(aux_sym__att_name_list_repeat1),
 		Fproduction_id: uint16(31),
@@ -23909,13 +23908,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	336: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(5),
 		Fsymbol:        uint16(sym_field),
 		Fproduction_id: uint16(67),
@@ -23934,13 +23933,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	338: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(4),
 		Fsymbol:        uint16(sym__att_name_list),
 		Fproduction_id: uint16(58),
@@ -23958,13 +23957,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	340: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(4),
 		Fsymbol:        uint16(sym__att_name_list),
 		Fproduction_id: uint16(58),
@@ -23983,13 +23982,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	342: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(sym__att_name_list),
 		Fproduction_id: uint16(24),
@@ -24007,13 +24006,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	344: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(sym__att_name_list),
 		Fproduction_id: uint16(24),
@@ -24032,13 +24031,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	346: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(sym__att_name_list),
 		Fproduction_id: uint16(25),
@@ -24056,13 +24055,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	348: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(sym__att_name_list),
 		Fproduction_id: uint16(25),
@@ -24081,13 +24080,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	350: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(3),
 		Fsymbol:        uint16(sym__att_name_list),
 		Fproduction_id: uint16(42),
@@ -24105,13 +24104,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	352: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(3),
 		Fsymbol:        uint16(sym__att_name_list),
 		Fproduction_id: uint16(42),
@@ -24130,13 +24129,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	354: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(3),
 		Fsymbol:        uint16(sym__att_name_list),
 		Fproduction_id: uint16(46),
@@ -24154,13 +24153,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	356: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(3),
 		Fsymbol:        uint16(sym__att_name_list),
 		Fproduction_id: uint16(46),
@@ -24179,13 +24178,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	358: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(3),
 		Fsymbol:      uint16(sym__attrib),
 	})))),
@@ -24202,13 +24201,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	360: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(3),
 		Fsymbol:      uint16(sym__attrib),
 	})))),
@@ -24227,14 +24226,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	362: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -24255,13 +24254,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	364: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(5),
 		Fsymbol:        uint16(sym_for_numeric_clause),
 		Fproduction_id: uint16(65),
@@ -24280,13 +24279,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	366: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(3),
 		Fsymbol:        uint16(sym__att_name_list),
 		Fproduction_id: uint16(45),
@@ -24304,13 +24303,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	368: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(3),
 		Fsymbol:        uint16(sym__att_name_list),
 		Fproduction_id: uint16(45),
@@ -24329,13 +24328,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	370: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(aux_sym__att_name_list_repeat1),
 		Fproduction_id: uint16(43),
@@ -24353,13 +24352,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	372: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(aux_sym__att_name_list_repeat1),
 		Fproduction_id: uint16(43),
@@ -24378,27 +24377,27 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	374: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(aux_sym__att_name_list_repeat1),
 		Fproduction_id: uint16(43),
 	})))),
 	375: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -24421,14 +24420,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	377: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -24450,14 +24449,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	379: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -24479,14 +24478,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	381: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -24507,13 +24506,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	383: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(aux_sym__variable_assignment_explist_repeat1),
 		Fproduction_id: uint16(60),
@@ -24531,13 +24530,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	385: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(aux_sym__variable_assignment_explist_repeat1),
 		Fproduction_id: uint16(60),
@@ -24556,27 +24555,27 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	387: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(aux_sym__variable_assignment_explist_repeat1),
 		Fproduction_id: uint16(60),
 	})))),
 	388: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -24598,13 +24597,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	390: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(3),
 		Fsymbol:        uint16(aux_sym__att_name_list_repeat1),
 		Fproduction_id: uint16(57),
@@ -24622,13 +24621,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	392: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(3),
 		Fsymbol:        uint16(aux_sym__att_name_list_repeat1),
 		Fproduction_id: uint16(57),
@@ -24648,14 +24647,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	394: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -24677,14 +24676,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	396: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -24706,14 +24705,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	398: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -24734,13 +24733,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	400: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(7),
 		Fsymbol:        uint16(sym_for_numeric_clause),
 		Fproduction_id: uint16(69),
@@ -24760,14 +24759,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	402: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -24788,13 +24787,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	404: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(sym__variable_assignment_explist),
 		Fproduction_id: uint16(47),
@@ -24812,13 +24811,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	406: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(sym__variable_assignment_explist),
 		Fproduction_id: uint16(47),
@@ -24837,13 +24836,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	408: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(sym__global_variable_declaration),
 		Fproduction_id: uint16(13),
@@ -24861,13 +24860,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	410: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(sym__global_variable_declaration),
 		Fproduction_id: uint16(13),
@@ -24887,14 +24886,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	412: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -24915,13 +24914,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	414: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(sym_variable_declaration),
 		Fproduction_id: uint16(13),
@@ -24939,13 +24938,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	416: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(sym_variable_declaration),
 		Fproduction_id: uint16(13),
@@ -24964,13 +24963,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	418: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(1),
 		Fsymbol:        uint16(sym_declaration),
 		Fproduction_id: uint16(4),
@@ -24988,13 +24987,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	420: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(1),
 		Fsymbol:        uint16(sym_declaration),
 		Fproduction_id: uint16(4),
@@ -25013,13 +25012,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	422: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(1),
 		Fsymbol:        uint16(sym_statement),
 		Fproduction_id: uint16(1),
@@ -25037,13 +25036,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	424: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(1),
 		Fsymbol:        uint16(sym_statement),
 		Fproduction_id: uint16(1),
@@ -25062,13 +25061,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	426: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(3),
 		Fsymbol:        uint16(sym_function_declaration),
 		Fproduction_id: uint16(23),
@@ -25086,13 +25085,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	428: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(3),
 		Fsymbol:        uint16(sym_function_declaration),
 		Fproduction_id: uint16(23),
@@ -25111,13 +25110,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	430: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(1),
 		Fsymbol:      uint16(sym_declaration),
 	})))),
@@ -25134,13 +25133,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	432: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(1),
 		Fsymbol:      uint16(sym_declaration),
 	})))),
@@ -25158,13 +25157,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	434: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(3),
 		Fsymbol:        uint16(sym__global_implicit_variable_declaration),
 		Fproduction_id: uint16(27),
@@ -25182,13 +25181,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	436: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(3),
 		Fsymbol:        uint16(sym__global_implicit_variable_declaration),
 		Fproduction_id: uint16(27),
@@ -25207,13 +25206,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	438: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(3),
 		Fsymbol:        uint16(sym_assignment_statement),
 		Fproduction_id: uint16(28),
@@ -25231,13 +25230,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	440: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(3),
 		Fsymbol:        uint16(sym_assignment_statement),
 		Fproduction_id: uint16(28),
@@ -25256,13 +25255,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	442: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(1),
 		Fsymbol:        uint16(sym_declaration),
 		Fproduction_id: uint16(2),
@@ -25280,13 +25279,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	444: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(1),
 		Fsymbol:        uint16(sym_declaration),
 		Fproduction_id: uint16(2),
@@ -25305,13 +25304,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	446: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(sym_variable_declaration),
 		Fproduction_id: uint16(12),
@@ -25329,13 +25328,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	448: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(sym_variable_declaration),
 		Fproduction_id: uint16(12),
@@ -25354,13 +25353,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	450: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(1),
 		Fsymbol:        uint16(sym_declaration),
 		Fproduction_id: uint16(3),
@@ -25378,13 +25377,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	452: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(1),
 		Fsymbol:        uint16(sym_declaration),
 		Fproduction_id: uint16(3),
@@ -25403,13 +25402,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	454: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(sym__global_implicit_variable_declaration),
 	})))),
@@ -25426,13 +25425,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	456: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(sym__global_implicit_variable_declaration),
 	})))),
@@ -25450,13 +25449,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	458: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(sym__global_variable_declaration),
 		Fproduction_id: uint16(12),
@@ -25474,13 +25473,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	460: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(sym__global_variable_declaration),
 		Fproduction_id: uint16(12),
@@ -25499,13 +25498,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	462: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(1),
 		Fsymbol:        uint16(sym_declaration),
 		Fproduction_id: uint16(5),
@@ -25523,13 +25522,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	464: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(1),
 		Fsymbol:        uint16(sym_declaration),
 		Fproduction_id: uint16(5),
@@ -25548,13 +25547,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	466: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(1),
 		Fsymbol:        uint16(sym_declaration),
 		Fproduction_id: uint16(6),
@@ -25572,13 +25571,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	468: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(1),
 		Fsymbol:        uint16(sym_declaration),
 		Fproduction_id: uint16(6),
@@ -25597,13 +25596,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	470: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(4),
 		Fsymbol:        uint16(sym_while_statement),
 		Fproduction_id: uint16(37),
@@ -25621,13 +25620,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	472: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(4),
 		Fsymbol:        uint16(sym_while_statement),
 		Fproduction_id: uint16(37),
@@ -25646,13 +25645,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	474: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(4),
 		Fsymbol:        uint16(sym_if_statement),
 		Fproduction_id: uint16(37),
@@ -25670,13 +25669,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	476: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(4),
 		Fsymbol:        uint16(sym_if_statement),
 		Fproduction_id: uint16(37),
@@ -25695,13 +25694,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	478: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(sym_do_statement),
 	})))),
@@ -25718,13 +25717,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	480: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(sym_do_statement),
 	})))),
@@ -25742,13 +25741,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	482: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(4),
 		Fsymbol:        uint16(sym__local_function_declaration),
 		Fproduction_id: uint16(41),
@@ -25766,13 +25765,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	484: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(4),
 		Fsymbol:        uint16(sym__local_function_declaration),
 		Fproduction_id: uint16(41),
@@ -25791,13 +25790,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	486: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(1),
 		Fsymbol:      uint16(sym_empty_statement),
 	})))),
@@ -25814,13 +25813,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	488: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(1),
 		Fsymbol:      uint16(sym_empty_statement),
 	})))),
@@ -25838,13 +25837,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	490: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(3),
 		Fsymbol:        uint16(sym__variable_assignment),
 		Fproduction_id: uint16(44),
@@ -25862,13 +25861,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	492: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(3),
 		Fsymbol:        uint16(sym__variable_assignment),
 		Fproduction_id: uint16(44),
@@ -25887,13 +25886,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	494: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(4),
 		Fsymbol:        uint16(sym__global_function_declaration),
 		Fproduction_id: uint16(41),
@@ -25911,13 +25910,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	496: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(4),
 		Fsymbol:        uint16(sym__global_function_declaration),
 		Fproduction_id: uint16(41),
@@ -25936,13 +25935,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	498: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(5),
 		Fsymbol:        uint16(sym_while_statement),
 		Fproduction_id: uint16(51),
@@ -25960,13 +25959,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	500: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(5),
 		Fsymbol:        uint16(sym_while_statement),
 		Fproduction_id: uint16(51),
@@ -25985,13 +25984,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	502: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(5),
 		Fsymbol:        uint16(sym_if_statement),
 		Fproduction_id: uint16(52),
@@ -26009,13 +26008,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	504: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(5),
 		Fsymbol:        uint16(sym_if_statement),
 		Fproduction_id: uint16(52),
@@ -26034,13 +26033,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	506: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(5),
 		Fsymbol:        uint16(sym_if_statement),
 		Fproduction_id: uint16(53),
@@ -26058,13 +26057,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	508: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(5),
 		Fsymbol:        uint16(sym_if_statement),
 		Fproduction_id: uint16(53),
@@ -26083,13 +26082,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	510: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(5),
 		Fsymbol:        uint16(sym_if_statement),
 		Fproduction_id: uint16(54),
@@ -26107,13 +26106,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	512: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(5),
 		Fsymbol:        uint16(sym_if_statement),
 		Fproduction_id: uint16(54),
@@ -26132,13 +26131,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	514: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(5),
 		Fsymbol:        uint16(sym_for_statement),
 		Fproduction_id: uint16(56),
@@ -26156,13 +26155,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	516: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(5),
 		Fsymbol:        uint16(sym_for_statement),
 		Fproduction_id: uint16(56),
@@ -26181,13 +26180,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	518: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(6),
 		Fsymbol:        uint16(sym_if_statement),
 		Fproduction_id: uint16(62),
@@ -26205,13 +26204,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	520: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(6),
 		Fsymbol:        uint16(sym_if_statement),
 		Fproduction_id: uint16(62),
@@ -26230,13 +26229,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	522: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(6),
 		Fsymbol:        uint16(sym_if_statement),
 		Fproduction_id: uint16(63),
@@ -26254,13 +26253,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	524: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(6),
 		Fsymbol:        uint16(sym_if_statement),
 		Fproduction_id: uint16(63),
@@ -26279,13 +26278,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	526: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(6),
 		Fsymbol:        uint16(sym_if_statement),
 		Fproduction_id: uint16(64),
@@ -26303,13 +26302,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	528: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(6),
 		Fsymbol:        uint16(sym_if_statement),
 		Fproduction_id: uint16(64),
@@ -26328,13 +26327,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	530: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(7),
 		Fsymbol:        uint16(sym_if_statement),
 		Fproduction_id: uint16(68),
@@ -26352,13 +26351,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	532: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(7),
 		Fsymbol:        uint16(sym_if_statement),
 		Fproduction_id: uint16(68),
@@ -26377,13 +26376,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	534: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(1),
 		Fsymbol:      uint16(aux_sym_chunk_repeat1),
 	})))),
@@ -26400,13 +26399,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	536: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(1),
 		Fsymbol:      uint16(aux_sym_chunk_repeat1),
 	})))),
@@ -26424,13 +26423,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	538: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(3),
 		Fsymbol:      uint16(sym_label_statement),
 	})))),
@@ -26447,13 +26446,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	540: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(3),
 		Fsymbol:      uint16(sym_label_statement),
 	})))),
@@ -26471,13 +26470,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	542: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(3),
 		Fsymbol:        uint16(sym_do_statement),
 		Fproduction_id: uint16(21),
@@ -26495,13 +26494,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	544: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(3),
 		Fsymbol:        uint16(sym_do_statement),
 		Fproduction_id: uint16(21),
@@ -26520,13 +26519,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	546: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(sym_goto_statement),
 	})))),
@@ -26543,13 +26542,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	548: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(sym_goto_statement),
 	})))),
@@ -26567,13 +26566,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	550: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(4),
 		Fsymbol:        uint16(sym_for_statement),
 		Fproduction_id: uint16(40),
@@ -26591,13 +26590,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	552: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(4),
 		Fsymbol:        uint16(sym_for_statement),
 		Fproduction_id: uint16(40),
@@ -26615,13 +26614,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	554: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(1),
 		Fsymbol:      uint16(sym__field_sep),
 	})))),
@@ -26639,13 +26638,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	556: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(1),
 		Fsymbol:      uint16(sym__field_sep),
 	})))),
@@ -26663,14 +26662,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	558: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -26691,14 +26690,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	560: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -26720,14 +26719,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	562: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -26747,13 +26746,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	564: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(3),
 		Fsymbol:        uint16(sym_parameters),
 		Fproduction_id: uint16(48),
@@ -26772,13 +26771,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	566: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(3),
 		Fsymbol:        uint16(sym_parameters),
 		Fproduction_id: uint16(48),
@@ -26796,13 +26795,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	568: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(sym_parameters),
 	})))),
@@ -26820,13 +26819,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	570: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(sym_parameters),
 	})))),
@@ -26845,14 +26844,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	572: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -26874,14 +26873,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	574: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -26903,14 +26902,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	576: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -26932,14 +26931,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	578: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -26961,14 +26960,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	580: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -26990,14 +26989,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	582: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -27019,14 +27018,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	584: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -27048,14 +27047,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	586: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -27076,13 +27075,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	588: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(1),
 		Fsymbol:        uint16(sym__variable_assignment_varlist),
 		Fproduction_id: uint16(7),
@@ -27102,14 +27101,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	590: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -27130,26 +27129,26 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	592: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(aux_sym__expression_list_repeat1),
 	})))),
 	593: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -27171,13 +27170,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	595: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(aux_sym__variable_assignment_varlist_repeat1),
 		Fproduction_id: uint16(31),
@@ -27196,13 +27195,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	597: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(sym__expression_list),
 	})))),
@@ -27219,13 +27218,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	599: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(sym__expression_list),
 	})))),
@@ -27244,14 +27243,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	601: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -27273,14 +27272,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	603: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -27302,14 +27301,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	605: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -27331,14 +27330,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	607: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -27359,14 +27358,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	609: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -27387,13 +27386,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	611: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(sym_return_statement),
 	})))),
@@ -27412,14 +27411,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	613: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -27439,13 +27438,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	615: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(sym_return_statement),
 	})))),
@@ -27463,26 +27462,26 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	617: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(aux_sym__field_list_repeat1),
 	})))),
 	618: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -27504,13 +27503,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	620: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(aux_sym__field_list_repeat1),
 	})))),
@@ -27529,14 +27528,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	622: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -27557,13 +27556,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	624: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(aux_sym_if_statement_repeat1),
 		Fproduction_id: uint16(55),
@@ -27582,27 +27581,27 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	626: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(aux_sym_if_statement_repeat1),
 		Fproduction_id: uint16(55),
 	})))),
 	627: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -27623,13 +27622,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	629: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(aux_sym_if_statement_repeat1),
 		Fproduction_id: uint16(55),
@@ -27648,13 +27647,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	631: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(3),
 		Fsymbol:        uint16(sym_method_index_expression),
 		Fproduction_id: uint16(30),
@@ -27673,13 +27672,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	633: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(1),
 		Fsymbol:      uint16(sym__field_list),
 	})))),
@@ -27697,13 +27696,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	635: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(3),
 		Fsymbol:      uint16(sym_return_statement),
 	})))),
@@ -27720,13 +27719,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	637: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(3),
 		Fsymbol:      uint16(sym_return_statement),
 	})))),
@@ -27745,14 +27744,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	639: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -27774,14 +27773,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	641: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -27803,14 +27802,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	643: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -27832,14 +27831,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	645: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -27860,13 +27859,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	647: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(sym__block),
 	})))),
@@ -27883,13 +27882,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	649: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(sym__block),
 	})))),
@@ -27907,14 +27906,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	651: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -27936,14 +27935,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	653: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -27964,14 +27963,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	655: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -27992,13 +27991,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	657: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(1),
 		Fsymbol:      uint16(sym__block),
 	})))),
@@ -28016,27 +28015,27 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	659: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(aux_sym__name_list_repeat1),
 		Fproduction_id: uint16(32),
 	})))),
 	660: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -28058,13 +28057,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	662: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(aux_sym__name_list_repeat1),
 		Fproduction_id: uint16(32),
@@ -28083,14 +28082,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	664: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -28112,14 +28111,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	666: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -28139,13 +28138,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	668: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(aux_sym__doublequote_string_content),
 	})))),
@@ -28163,26 +28162,26 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	670: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(aux_sym__doublequote_string_content),
 	})))),
 	671: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -28203,13 +28202,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	673: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(aux_sym__singlequote_string_content),
 	})))),
@@ -28227,26 +28226,26 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	675: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(2),
 		Fsymbol:      uint16(aux_sym__singlequote_string_content),
 	})))),
 	676: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -28269,14 +28268,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	678: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -28298,14 +28297,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	680: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -28326,13 +28325,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	682: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(1),
 		Fsymbol:        uint16(sym__name_list),
 		Fproduction_id: uint16(7),
@@ -28352,14 +28351,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	684: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -28380,14 +28379,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	686: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -28408,14 +28407,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	688: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -28436,13 +28435,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	690: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(aux_sym__variable_assignment_varlist_repeat1),
 		Fproduction_id: uint16(32),
@@ -28461,27 +28460,27 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	692: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(aux_sym__variable_assignment_varlist_repeat1),
 		Fproduction_id: uint16(32),
 	})))),
 	693: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -28502,13 +28501,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	695: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(1),
 		Fsymbol:      uint16(aux_sym__singlequote_string_content),
 	})))),
@@ -28526,13 +28525,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	697: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(1),
 		Fsymbol:      uint16(aux_sym__singlequote_string_content),
 	})))),
@@ -28551,14 +28550,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	699: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -28579,13 +28578,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	701: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(1),
 		Fsymbol:        uint16(sym__parameter_list),
 		Fproduction_id: uint16(7),
@@ -28603,13 +28602,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	703: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(1),
 		Fsymbol:      uint16(aux_sym__doublequote_string_content),
 	})))),
@@ -28627,13 +28626,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	705: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(1),
 		Fsymbol:      uint16(aux_sym__doublequote_string_content),
 	})))),
@@ -28652,14 +28651,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	707: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -28680,13 +28679,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	709: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(1),
 		Fsymbol:        uint16(aux_sym_if_statement_repeat1),
 		Fproduction_id: uint16(39),
@@ -28704,13 +28703,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	711: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(1),
 		Fsymbol:        uint16(aux_sym_if_statement_repeat1),
 		Fproduction_id: uint16(39),
@@ -28730,14 +28729,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	713: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -28759,14 +28758,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	715: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -28787,13 +28786,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	717: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(sym__parameter_list),
 		Fproduction_id: uint16(15),
@@ -28813,14 +28812,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	719: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -28841,13 +28840,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	721: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(sym__variable_assignment_varlist),
 		Fproduction_id: uint16(15),
@@ -28866,13 +28865,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	723: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(sym__name_list),
 		Fproduction_id: uint16(15),
@@ -28891,13 +28890,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	725: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(aux_sym__name_list_repeat1),
 		Fproduction_id: uint16(31),
@@ -28916,13 +28915,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	727: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(4),
 		Fsymbol:        uint16(sym_elseif_statement),
 		Fproduction_id: uint16(52),
@@ -28940,13 +28939,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Fcount: uint8(1),
 	}})),
 	729: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(4),
 		Fsymbol:        uint16(sym_elseif_statement),
 		Fproduction_id: uint16(52),
@@ -28965,13 +28964,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	731: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(1),
 		Fsymbol:      uint16(sym__function_name_prefix_expression),
 	})))),
@@ -28989,13 +28988,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	733: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(1),
 		Fsymbol:        uint16(sym__function_name_prefix_expression),
 		Fproduction_id: uint16(10),
@@ -29015,14 +29014,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	735: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -29044,14 +29043,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	737: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -29072,13 +29071,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	739: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(1),
 		Fsymbol:      uint16(sym__function_name),
 	})))),
@@ -29096,13 +29095,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	741: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(3),
 		Fsymbol:        uint16(sym__function_name_dot_index_expression),
 		Fproduction_id: uint16(29),
@@ -29122,14 +29121,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	743: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -29150,13 +29149,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	745: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(1),
 		Fsymbol:      uint16(sym__vararg_parameter),
 	})))),
@@ -29175,14 +29174,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	747: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -29204,14 +29203,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	749: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -29232,13 +29231,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	751: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(3),
 		Fsymbol:        uint16(sym_for_generic_clause),
 		Fproduction_id: uint16(33),
@@ -29258,14 +29257,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	753: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -29287,14 +29286,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	755: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -29315,13 +29314,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	757: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(sym_else_statement),
 		Fproduction_id: uint16(21),
@@ -29341,14 +29340,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	759: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -29370,14 +29369,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	761: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -29399,14 +29398,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	763: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -29428,14 +29427,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	765: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -29457,14 +29456,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	767: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -29486,14 +29485,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	769: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -29515,14 +29514,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	771: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -29544,14 +29543,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	773: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -29573,14 +29572,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	775: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -29601,13 +29600,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	777: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:       uint8(TSParseActionTypeReduce),
+		Ftype_token:  uint8(TSParseActionTypeReduce),
 		Fchild_count: uint8(3),
 		Fsymbol:      uint16(sym_chunk),
 	})))),
@@ -29626,14 +29625,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	779: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -29655,14 +29654,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	781: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -29683,13 +29682,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	783: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(3),
 		Fsymbol:        uint16(sym__parameter_list),
 		Fproduction_id: uint16(61),
@@ -29708,13 +29707,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	785: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(sym__vararg_parameter),
 		Fproduction_id: uint16(31),
@@ -29733,13 +29732,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	787: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(1),
 		Fsymbol:        uint16(sym__function_name),
 		Fproduction_id: uint16(11),
@@ -29759,14 +29758,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	789: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -29788,14 +29787,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	791: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -29817,14 +29816,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	793: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -29846,14 +29845,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	795: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -29875,14 +29874,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	797: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -29904,14 +29903,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	799: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -29932,13 +29931,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	801: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(4),
 		Fsymbol:        uint16(sym__parameter_list),
 		Fproduction_id: uint16(66),
@@ -29958,14 +29957,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	803: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -29987,14 +29986,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	805: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -30016,14 +30015,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	807: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -30045,14 +30044,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	809: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -30090,14 +30089,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	813: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -30119,14 +30118,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	815: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -30148,14 +30147,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	817: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -30177,14 +30176,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	819: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -30206,14 +30205,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	821: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -30235,14 +30234,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	823: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -30264,14 +30263,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	825: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -30292,13 +30291,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	827: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(1),
 		Fsymbol:        uint16(sym__parameter_list),
 		Fproduction_id: uint16(33),
@@ -30318,14 +30317,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	829: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -30347,14 +30346,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	831: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -30375,13 +30374,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	833: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(3),
 		Fsymbol:        uint16(sym__function_name_method_index_expression),
 		Fproduction_id: uint16(30),
@@ -30401,14 +30400,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	835: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -30430,14 +30429,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	837: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -30459,14 +30458,14 @@ var ts_parse_actions = [844]TSParseActionEntry{
 	}})),
 	839: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
 		f struct {
-			Ftype1      uint8_t
+			Ftype_token uint8_t
 			Fstate      TSStateId
 			Fextra      uint8
 			Frepetition uint8
 		}
 		_ [2]byte
 	}{f: struct {
-		Ftype1      uint8_t
+		Ftype_token uint8_t
 		Fstate      TSStateId
 		Fextra      uint8
 		Frepetition uint8
@@ -30487,13 +30486,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	841: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(2),
 		Fsymbol:        uint16(sym_comment),
 		Fproduction_id: uint16(8),
@@ -30512,13 +30511,13 @@ var ts_parse_actions = [844]TSParseActionEntry{
 		Freusable: libc.BoolUint8(1 != 0),
 	}})),
 	843: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
-		Ftype1              uint8_t
+		Ftype_token         uint8_t
 		Fchild_count        uint8_t
 		Fsymbol             TSSymbol
 		Fdynamic_precedence int16_t
 		Fproduction_id      uint16_t
 	}{
-		Ftype1:         uint8(TSParseActionTypeReduce),
+		Ftype_token:    uint8(TSParseActionTypeReduce),
 		Fchild_count:   uint8(3),
 		Fsymbol:        uint16(sym_comment),
 		Fproduction_id: uint16(16),

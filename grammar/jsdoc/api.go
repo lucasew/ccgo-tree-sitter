@@ -1,4 +1,4 @@
-package jsdoc
+package grammar_jsdoc
 
 import (
 	"unsafe"

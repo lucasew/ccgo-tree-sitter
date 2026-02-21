@@ -1,4 +1,4 @@
-package rust
+package grammar_rust
 
 import (
 	"unsafe"

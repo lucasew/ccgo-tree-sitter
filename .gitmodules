@@ -196,3 +196,6 @@
 [submodule "third-party/tree-sitter-beancount"]
 	path = third-party/tree-sitter-beancount
 	url = https://github.com/polarmutex/tree-sitter-beancount.git
+[submodule "third-party/tree-sitter-templ"]
+	path = third-party/tree-sitter-templ
+	url = https://github.com/vrischmann/tree-sitter-templ.git

@@ -91,6 +91,7 @@ require (
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/solidity v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/svelte v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/tcl v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/templ v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/terraform v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/toml v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/tsv v0.0.0
@@ -226,6 +227,8 @@ replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/solidity => ./gr
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/svelte => ./grammar/svelte
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/tcl => ./grammar/tcl
+
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/templ => ./grammar/templ
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/terraform => ./grammar/terraform
 

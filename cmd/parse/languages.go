@@ -62,6 +62,7 @@ import (
 	_ "github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/solidity"
 	_ "github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/svelte"
 	_ "github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/tcl"
+	_ "github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/templ"
 	_ "github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/terraform"
 	_ "github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/toml"
 	_ "github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/tsv"

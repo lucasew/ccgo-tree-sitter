@@ -62,6 +62,7 @@ use (
 	./grammar/solidity
 	./grammar/svelte
 	./grammar/tcl
+	./grammar/templ
 	./grammar/terraform
 	./grammar/toml
 	./grammar/tsv

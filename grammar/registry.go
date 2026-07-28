@@ -40,6 +40,7 @@ var extensionToLanguage = map[string]string{
 	"vue":    "vue",
 	"svelte": "svelte",
 	"astro":  "astro",
+	"templ":  "templ",
 
 	// Web markup / style
 	"css":  "css",

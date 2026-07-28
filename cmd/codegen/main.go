@@ -110,6 +110,19 @@ func run(cmd *cobra.Command, args []string) error {
 	if err != nil {
 		return err
 	}
+	// ONLY_GRAMMAR=name limits the loop (local one-off; CI leaves unset).
+	if only := strings.TrimSpace(os.Getenv("ONLY_GRAMMAR")); only != "" {
+		var filtered []GrammarUnit
+		for _, u := range units {
+			if u.Name == only {
+				filtered = append(filtered, u)
+			}
+		}
+		if len(filtered) == 0 {
+			return fmt.Errorf("ONLY_GRAMMAR=%q matched no discovered unit", only)
+		}
+		units = filtered
+	}
 	slog.Info("discovered grammar units", "count", len(units))
 
 	var summaryWriter io.Writer

@@ -11,6 +11,7 @@ import (
 	"os/exec"
 	"path/filepath"
 	"regexp"
+	"sort"
 	"strings"
 	"sync"
 
@@ -1094,6 +1095,10 @@ func postProcessWindowsLibcCalls(goCode string) string {
 	// Only rewrite names whose const value is the underscore form; leave real
 	// funcs like InterlockedBitTestAndSet alone.
 	goCode = rewriteInterlockedStringAliasCalls(goCode)
+	// MinGW x86_64 often leaves Interlocked* as string consts + bare call sites
+	// without emitting the _Interlocked* bodies that arm64 headers produce.
+	// Inject portable wrappers for any remaining undefined call targets.
+	goCode = ensureMissingInterlockedHelpers(goCode)
 	return goCode
 }
 
@@ -1114,6 +1119,75 @@ func rewriteInterlockedStringAliasCalls(goCode string) string {
 		goCode = re.ReplaceAllString(goCode, underscored+"(")
 	}
 	return goCode
+}
+
+// interlockedHelperBodies are portable implementations matching MinGW arm64
+// output (libc.X__sync_*). Only the helpers tree-sitter actually calls on
+// windows/amd64 today; extend if new call sites appear.
+var interlockedHelperBodies = map[string]string{
+	"_InterlockedIncrement": `func _InterlockedIncrement(tls *libc.TLS, Addend uintptr) (r int32) {
+	return int32(libc.X__sync_add_and_fetch(tls, Addend, int32(1)))
+}
+`,
+	"_InterlockedDecrement": `func _InterlockedDecrement(tls *libc.TLS, Addend uintptr) (r int32) {
+	return int32(libc.X__sync_sub_and_fetch(tls, Addend, int32(1)))
+}
+`,
+	"_InterlockedIncrement64": `func _InterlockedIncrement64(tls *libc.TLS, Addend uintptr) (r int64) {
+	return int64(libc.X__sync_add_and_fetch(tls, Addend, int64(1)))
+}
+`,
+	"_InterlockedDecrement64": `func _InterlockedDecrement64(tls *libc.TLS, Addend uintptr) (r int64) {
+	return int64(libc.X__sync_sub_and_fetch(tls, Addend, int64(1)))
+}
+`,
+	"_InterlockedExchangeAdd": `func _InterlockedExchangeAdd(tls *libc.TLS, Addend uintptr, Value int32) (r int32) {
+	return int32(libc.X__sync_fetch_and_add(tls, Addend, Value))
+}
+`,
+	"_InterlockedCompareExchange": `func _InterlockedCompareExchange(tls *libc.TLS, Destination uintptr, ExChange int32, Comperand int32) (r int32) {
+	return libc.X__sync_val_compare_and_swapInt32(tls, Destination, Comperand, ExChange)
+}
+`,
+}
+
+// ensureMissingInterlockedHelpers appends wrappers for _Interlocked* symbols
+// that are called but never defined (common on MinGW x86_64 after rewriting
+// Interlocked* string-const aliases).
+func ensureMissingInterlockedHelpers(goCode string) string {
+	defined := map[string]bool{}
+	for _, m := range regexp.MustCompile(`(?m)^func (_Interlocked[A-Za-z0-9_]+)\(`).FindAllStringSubmatch(goCode, -1) {
+		defined[m[1]] = true
+	}
+	called := map[string]bool{}
+	for _, m := range regexp.MustCompile(`\b(_Interlocked[A-Za-z0-9_]+)\(`).FindAllStringSubmatch(goCode, -1) {
+		called[m[1]] = true
+	}
+	var missing []string
+	for name := range called {
+		if defined[name] {
+			continue
+		}
+		if _, ok := interlockedHelperBodies[name]; ok {
+			missing = append(missing, name)
+		}
+	}
+	if len(missing) == 0 {
+		return goCode
+	}
+	sort.Strings(missing)
+	var b strings.Builder
+	b.WriteString(goCode)
+	if !strings.HasSuffix(goCode, "\n") {
+		b.WriteByte('\n')
+	}
+	b.WriteString("\n// Injected by postProcessWindowsLibcCalls: MinGW left Interlocked*\n")
+	b.WriteString("// call sites without emitting _Interlocked* bodies.\n")
+	for _, name := range missing {
+		b.WriteString(interlockedHelperBodies[name])
+		b.WriteByte('\n')
+	}
+	return b.String()
 }
 
 func (t *Transpiler) prepareWorkDir(kind, suffix string) (string, error) {

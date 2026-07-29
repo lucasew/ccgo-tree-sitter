@@ -206,3 +206,6 @@
 [submodule "third-party/tree-sitter-twig"]
 	path = third-party/tree-sitter-twig
 	url = https://github.com/gbprod/tree-sitter-twig.git
+[submodule "third-party/tree-sitter-ql"]
+	path = third-party/tree-sitter-ql
+	url = https://github.com/tree-sitter/tree-sitter-ql.git

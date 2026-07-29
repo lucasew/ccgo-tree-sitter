@@ -494,3 +494,6 @@
 [submodule "third-party/tree-sitter-nickel"]
 	path = third-party/tree-sitter-nickel
 	url = https://github.com/nickel-lang/tree-sitter-nickel.git
+[submodule "third-party/tree-sitter-cue"]
+	path = third-party/tree-sitter-cue
+	url = https://github.com/eonpatapon/tree-sitter-cue.git

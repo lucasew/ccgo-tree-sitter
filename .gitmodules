@@ -542,3 +542,6 @@
 [submodule "third-party/tree-sitter-sml"]
 	path = third-party/tree-sitter-sml
 	url = https://github.com/MatthewFluet/tree-sitter-sml.git
+[submodule "third-party/tree-sitter-wasm"]
+	path = third-party/tree-sitter-wasm
+	url = https://github.com/wasm-lsp/tree-sitter-wasm.git

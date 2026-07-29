@@ -299,3 +299,6 @@
 [submodule "third-party/tree-sitter-meson"]
 	path = third-party/tree-sitter-meson
 	url = https://github.com/tree-sitter-grammars/tree-sitter-meson.git
+[submodule "third-party/tree-sitter-linkerscript"]
+	path = third-party/tree-sitter-linkerscript
+	url = https://github.com/tree-sitter-grammars/tree-sitter-linkerscript.git

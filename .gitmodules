@@ -362,3 +362,6 @@
 [submodule "third-party/tree-sitter-xcompose"]
 	path = third-party/tree-sitter-xcompose
 	url = https://github.com/tree-sitter-grammars/tree-sitter-xcompose.git
+[submodule "third-party/tree-sitter-ungrammar"]
+	path = third-party/tree-sitter-ungrammar
+	url = https://github.com/tree-sitter-grammars/tree-sitter-ungrammar.git

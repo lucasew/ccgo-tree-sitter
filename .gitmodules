@@ -278,3 +278,6 @@
 [submodule "third-party/tree-sitter-move"]
 	path = third-party/tree-sitter-move
 	url = https://github.com/tree-sitter-grammars/tree-sitter-move.git
+[submodule "third-party/tree-sitter-objc"]
+	path = third-party/tree-sitter-objc
+	url = https://github.com/tree-sitter-grammars/tree-sitter-objc.git

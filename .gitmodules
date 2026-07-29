@@ -407,3 +407,6 @@
 [submodule "third-party/tree-sitter-ada"]
 	path = third-party/tree-sitter-ada
 	url = https://github.com/briot/tree-sitter-ada.git
+[submodule "third-party/tree-sitter-groovy"]
+	path = third-party/tree-sitter-groovy
+	url = https://github.com/murtaza64/tree-sitter-groovy.git

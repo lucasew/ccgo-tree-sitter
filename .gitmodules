@@ -305,3 +305,6 @@
 [submodule "third-party/tree-sitter-properties"]
 	path = third-party/tree-sitter-properties
 	url = https://github.com/tree-sitter-grammars/tree-sitter-properties.git
+[submodule "third-party/tree-sitter-nqc"]
+	path = third-party/tree-sitter-nqc
+	url = https://github.com/tree-sitter-grammars/tree-sitter-nqc.git

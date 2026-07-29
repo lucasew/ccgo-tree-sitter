@@ -497,3 +497,6 @@
 [submodule "third-party/tree-sitter-cue"]
 	path = third-party/tree-sitter-cue
 	url = https://github.com/eonpatapon/tree-sitter-cue.git
+[submodule "third-party/tree-sitter-pkl"]
+	path = third-party/tree-sitter-pkl
+	url = https://github.com/apple/tree-sitter-pkl.git

@@ -239,3 +239,6 @@
 [submodule "third-party/tree-sitter-agda"]
 	path = third-party/tree-sitter-agda
 	url = https://github.com/tree-sitter/tree-sitter-agda.git
+[submodule "third-party/tree-sitter-capnp"]
+	path = third-party/tree-sitter-capnp
+	url = https://github.com/tree-sitter-grammars/tree-sitter-capnp.git

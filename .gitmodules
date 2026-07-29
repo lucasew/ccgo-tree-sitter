@@ -353,3 +353,6 @@
 [submodule "third-party/tree-sitter-thrift"]
 	path = third-party/tree-sitter-thrift
 	url = https://github.com/tree-sitter-grammars/tree-sitter-thrift.git
+[submodule "third-party/tree-sitter-uxntal"]
+	path = third-party/tree-sitter-uxntal
+	url = https://github.com/tree-sitter-grammars/tree-sitter-uxntal.git

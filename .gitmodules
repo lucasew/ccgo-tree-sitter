@@ -512,3 +512,6 @@
 [submodule "third-party/tree-sitter-surface"]
 	path = third-party/tree-sitter-surface
 	url = https://github.com/connorlay/tree-sitter-surface.git
+[submodule "third-party/tree-sitter-eex"]
+	path = third-party/tree-sitter-eex
+	url = https://github.com/connorlay/tree-sitter-eex.git

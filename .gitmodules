@@ -251,3 +251,6 @@
 [submodule "third-party/tree-sitter-doxygen"]
 	path = third-party/tree-sitter-doxygen
 	url = https://github.com/tree-sitter-grammars/tree-sitter-doxygen.git
+[submodule "third-party/tree-sitter-hlsl"]
+	path = third-party/tree-sitter-hlsl
+	url = https://github.com/tree-sitter-grammars/tree-sitter-hlsl.git

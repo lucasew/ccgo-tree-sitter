@@ -455,3 +455,6 @@
 [submodule "third-party/tree-sitter-cobol"]
 	path = third-party/tree-sitter-cobol
 	url = https://github.com/yutaro-sakamoto/tree-sitter-cobol.git
+[submodule "third-party/tree-sitter-prisma"]
+	path = third-party/tree-sitter-prisma
+	url = https://github.com/victorhqc/tree-sitter-prisma.git

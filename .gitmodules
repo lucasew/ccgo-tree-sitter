@@ -449,3 +449,6 @@
 [submodule "third-party/tree-sitter-gitignore"]
 	path = third-party/tree-sitter-gitignore
 	url = https://github.com/shunsambongi/tree-sitter-gitignore.git
+[submodule "third-party/tree-sitter-latex"]
+	path = third-party/tree-sitter-latex
+	url = https://github.com/latex-lsp/tree-sitter-latex.git

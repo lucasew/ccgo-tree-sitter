@@ -491,3 +491,6 @@
 [submodule "third-party/tree-sitter-http"]
 	path = third-party/tree-sitter-http
 	url = https://github.com/rest-nvim/tree-sitter-http.git
+[submodule "third-party/tree-sitter-nickel"]
+	path = third-party/tree-sitter-nickel
+	url = https://github.com/nickel-lang/tree-sitter-nickel.git

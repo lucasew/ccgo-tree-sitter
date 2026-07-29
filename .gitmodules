@@ -338,3 +338,6 @@
 [submodule "third-party/tree-sitter-ssh-config"]
 	path = third-party/tree-sitter-ssh-config
 	url = https://github.com/tree-sitter-grammars/tree-sitter-ssh-config.git
+[submodule "third-party/tree-sitter-starlark"]
+	path = third-party/tree-sitter-starlark
+	url = https://github.com/tree-sitter-grammars/tree-sitter-starlark.git

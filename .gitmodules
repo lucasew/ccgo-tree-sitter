@@ -548,3 +548,6 @@
 [submodule "third-party/tree-sitter-objdump"]
 	path = third-party/tree-sitter-objdump
 	url = https://github.com/ColinKennedy/tree-sitter-objdump.git
+[submodule "third-party/tree-sitter-comment"]
+	path = third-party/tree-sitter-comment
+	url = https://github.com/stsewd/tree-sitter-comment.git

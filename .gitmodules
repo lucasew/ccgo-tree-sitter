@@ -332,3 +332,6 @@
 [submodule "third-party/tree-sitter-smali"]
 	path = third-party/tree-sitter-smali
 	url = https://github.com/tree-sitter-grammars/tree-sitter-smali.git
+[submodule "third-party/tree-sitter-squirrel"]
+	path = third-party/tree-sitter-squirrel
+	url = https://github.com/tree-sitter-grammars/tree-sitter-squirrel.git

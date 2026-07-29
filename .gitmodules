@@ -215,3 +215,6 @@
 [submodule "third-party/tree-sitter-chatito"]
 	path = third-party/tree-sitter-chatito
 	url = https://github.com/tree-sitter-grammars/tree-sitter-chatito.git
+[submodule "third-party/tree-sitter-fluent"]
+	path = third-party/tree-sitter-fluent
+	url = https://github.com/tree-sitter/tree-sitter-fluent.git

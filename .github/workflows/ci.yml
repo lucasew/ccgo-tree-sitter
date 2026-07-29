@@ -12,6 +12,8 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.head_ref || github.ref_name }}
   cancel-in-progress: true
 
+# Checkouts are tip-only (fetch-depth: 1). Full history is never needed.
+
 jobs:
   prepare:
     name: prepare source
@@ -23,7 +25,10 @@ jobs:
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
         with:
           fetch-depth: 1
-          # No submodules: grammars via workspaced place; core via workspaced source cache.
+          fetch-tags: false
+          submodules: false
+          lfs: false
+          # Vendored grammars in-tree; core tree-sitter via workspaced cache.
 
       - name: Set up tools (mise)
         uses: jdx/mise-action@e6a8b3978addb5a52f2b4cd9d91eafa7f0ab959d # v4
@@ -105,11 +110,14 @@ jobs:
             checked_in: false
 
     steps:
-      # Local composite actions need a tiny checkout of .github only (no submodules).
+      # Local composite actions need a tiny checkout of .github only.
       - name: Checkout actions only
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
         with:
           fetch-depth: 1
+          fetch-tags: false
+          submodules: false
+          lfs: false
           sparse-checkout: |
             .github
           sparse-checkout-cone-mode: true
@@ -222,6 +230,9 @@ jobs:
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
         with:
           fetch-depth: 1
+          fetch-tags: false
+          submodules: false
+          lfs: false
           sparse-checkout: |
             .github
           sparse-checkout-cone-mode: true
@@ -297,6 +308,9 @@ jobs:
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
         with:
           fetch-depth: 1
+          fetch-tags: false
+          submodules: false
+          lfs: false
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up tools (mise)

@@ -551,3 +551,6 @@
 [submodule "third-party/tree-sitter-comment"]
 	path = third-party/tree-sitter-comment
 	url = https://github.com/stsewd/tree-sitter-comment.git
+[submodule "third-party/tree-sitter-nasm"]
+	path = third-party/tree-sitter-nasm
+	url = https://github.com/naclsn/tree-sitter-nasm.git

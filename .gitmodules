@@ -434,3 +434,6 @@
 [submodule "third-party/tree-sitter-bibtex"]
 	path = third-party/tree-sitter-bibtex
 	url = https://github.com/latex-lsp/tree-sitter-bibtex.git
+[submodule "third-party/tree-sitter-powershell"]
+	path = third-party/tree-sitter-powershell
+	url = https://github.com/airbus-cert/tree-sitter-powershell.git

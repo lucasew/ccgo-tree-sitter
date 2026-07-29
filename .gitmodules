@@ -323,3 +323,6 @@
 [submodule "third-party/tree-sitter-re2c"]
 	path = third-party/tree-sitter-re2c
 	url = https://github.com/tree-sitter-grammars/tree-sitter-re2c.git
+[submodule "third-party/tree-sitter-readline"]
+	path = third-party/tree-sitter-readline
+	url = https://github.com/tree-sitter-grammars/tree-sitter-readline.git

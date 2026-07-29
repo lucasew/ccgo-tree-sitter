@@ -290,3 +290,6 @@
 [submodule "third-party/tree-sitter-hyprlang"]
 	path = third-party/tree-sitter-hyprlang
 	url = https://github.com/tree-sitter-grammars/tree-sitter-hyprlang.git
+[submodule "third-party/tree-sitter-poe-filter"]
+	path = third-party/tree-sitter-poe-filter
+	url = https://github.com/tree-sitter-grammars/tree-sitter-poe-filter.git

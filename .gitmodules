@@ -314,3 +314,6 @@
 [submodule "third-party/tree-sitter-pymanifest"]
 	path = third-party/tree-sitter-pymanifest
 	url = https://github.com/tree-sitter-grammars/tree-sitter-pymanifest.git
+[submodule "third-party/tree-sitter-luau"]
+	path = third-party/tree-sitter-luau
+	url = https://github.com/tree-sitter-grammars/tree-sitter-luau.git

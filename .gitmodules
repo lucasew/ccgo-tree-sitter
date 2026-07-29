@@ -200,3 +200,6 @@
 [submodule "third-party/tree-sitter-php"]
 	path = third-party/tree-sitter-php
 	url = https://github.com/tree-sitter/tree-sitter-php.git
+[submodule "third-party/tree-sitter-objc"]
+	path = third-party/tree-sitter-objc
+	url = https://github.com/tree-sitter-grammars/tree-sitter-objc.git

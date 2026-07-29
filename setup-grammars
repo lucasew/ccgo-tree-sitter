@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
-# Add a tree-sitter grammar as a workspaced #grammar entry (not a git submodule).
+# Add a tree-sitter grammar as a one-shot #grammar: name: { … } entry.
 #
 # Usage:
-#   ./setup-grammars                     # list orgs and print how to add
-#   ./setup-grammars owner/repo          # append #grammar entry for that repo
-#   ./setup-grammars owner/repo path1,path2  # monorepo paths (default: src)
+#   ./setup-grammars                     # help
+#   ./setup-grammars owner/repo          # default paths: src
+#   ./setup-grammars owner/repo path1,path2  # monorepo units
 #
-# Then: workspaced mod lock && workspaced codebase apply
+# Then: mise run grammars:lock && mise run grammars:sync
 set -euo pipefail
 
 if [[ $# -eq 0 ]]; then
@@ -16,11 +16,32 @@ Add a grammar (workspaced #grammar + core:place), not a git submodule.
   ./setup-grammars owner/tree-sitter-foo
   ./setup-grammars tree-sitter/tree-sitter-typescript typescript/src,tsx/src,common
 
-Then:
-  workspaced mod lock
-  workspaced codebase apply   # or: mise run grammars:sync
+Each language is its own statement:
 
-Discover/codegen still look under third-party/tree-sitter-*/src/parser.c.
+  #grammar: foo: {
+  	from: "github:owner/tree-sitter-foo"
+  	repo: "tree-sitter-foo"
+  }
+
+Parse/astdump fixtures live next to sources:
+
+  testdata/<language>/<file.ext>
+  testdata/<language>/<file.ext>.golden.json
+
+Optional cue metadata (documents that fixtures exist):
+
+  #grammar: json: {
+  	from: "github:tree-sitter/tree-sitter-json"
+  	repo: "tree-sitter-json"
+  	astdump: {
+  		root_type: "document"
+  		first_child_type: "object"
+  	}
+  }
+
+Then:
+  mise run grammars:lock
+  mise run grammars:sync
 EOF
 	exit 0
 fi
@@ -28,7 +49,6 @@ fi
 SPEC="$1"
 PATHS="${2:-src}"
 
-# Normalize owner/repo
 SPEC="${SPEC#https://github.com/}"
 SPEC="${SPEC#git@github.com:}"
 SPEC="${SPEC%.git}"
@@ -46,7 +66,6 @@ if [[ "$REPO" != tree-sitter-* ]]; then
 fi
 
 KEY="${REPO#tree-sitter-}"
-# CUE key: quote if not a bare identifier
 if [[ "$KEY" =~ ^[A-Za-z_][A-Za-z0-9_]*$ ]]; then
 	CUE_KEY="$KEY"
 else
@@ -59,17 +78,15 @@ if [[ ! -f "$CUE_FILE" ]]; then
 	exit 1
 fi
 
-if grep -qE "^\t${CUE_KEY}: \{|^\t\"${KEY}\": \{" "$CUE_FILE" 2>/dev/null; then
+if grep -qE "^#grammar: ${CUE_KEY}: \{|^#grammar: \"${KEY}\": \{" "$CUE_FILE" 2>/dev/null; then
 	echo "grammar already listed: $KEY" >&2
 	exit 1
 fi
 
-# Build entry
 {
-	echo -n "	${CUE_KEY}: {"
-	echo
-	echo "		from: \"github:${OWNER}/${REPO}\""
-	echo "		repo: \"${REPO}\""
+	echo "#grammar: ${CUE_KEY}: {"
+	echo "	from: \"github:${OWNER}/${REPO}\""
+	echo "	repo: \"${REPO}\""
 	if [[ "$PATHS" != "src" ]]; then
 		IFS=',' read -ra parts <<<"$PATHS"
 		path_list=""
@@ -78,28 +95,25 @@ fi
 			[[ -n "$path_list" ]] && path_list+=", "
 			path_list+="\"$p\""
 		done
-		echo "		paths: [${path_list}]"
+		echo "	paths: [${path_list}]"
 	fi
-	echo "	}"
+	echo "}"
+	echo
 } >/tmp/grammar-entry.cue
 
-# Insert before closing brace of #grammar: {
-# Find line with lone "}" that closes #grammar (before #grammar: [string])
 python3 - "$CUE_FILE" /tmp/grammar-entry.cue <<'PY'
 import sys
 from pathlib import Path
 cue_path, entry_path = Path(sys.argv[1]), Path(sys.argv[2])
 text = cue_path.read_text()
-entry = entry_path.read_text().rstrip() + "\n"
-marker = "\n}\n\n#grammar: [string]:"
+entry = entry_path.read_text()
+# Insert before the schema / open definition of #grammar: [string]:
+marker = "\n#grammar: [string]:"
 if marker not in text:
-    # try without blank line
-    marker = "\n}\n#grammar: [string]:"
-if marker not in text:
-    sys.exit("could not find end of #grammar block")
+    sys.exit("could not find #grammar: [string]: schema marker")
 text = text.replace(marker, "\n" + entry + marker, 1)
 cue_path.write_text(text)
-print(f"added #grammar entry for {entry.splitlines()[0].strip()}")
+print(f"added {entry.splitlines()[0]}")
 PY
 
-echo "Next: workspaced mod lock && workspaced codebase apply"
+echo "Next: mise run grammars:lock && mise run grammars:sync"

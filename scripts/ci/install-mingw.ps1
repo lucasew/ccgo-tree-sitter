@@ -74,7 +74,9 @@ if ($Goarch -ne "arm64") {
 }
 
 # llvm-mingw ships aarch64-w64-mingw32-gcc for windows/arm64 hosts.
-$version = "20260616"
+# Pin to LLVM 21: modernc.org/cc fails parsing clang 22+ predefines
+# (<predefined>: unexpected integer constant, expected direct declarator).
+$version = "20251216"
 $asset = "llvm-mingw-$version-ucrt-aarch64.zip"
 $uri = "https://github.com/mstorsjo/llvm-mingw/releases/download/$version/$asset"
 $zip = Join-Path $env:RUNNER_TEMP $asset

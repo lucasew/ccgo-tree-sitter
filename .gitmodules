@@ -221,3 +221,6 @@
 [submodule "third-party/tree-sitter-cpon"]
 	path = third-party/tree-sitter-cpon
 	url = https://github.com/tree-sitter-grammars/tree-sitter-cpon.git
+[submodule "third-party/tree-sitter-cyberchef"]
+	path = third-party/tree-sitter-cyberchef
+	url = https://github.com/tree-sitter-grammars/tree-sitter-cyberchef.git

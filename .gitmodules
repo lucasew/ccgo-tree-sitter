@@ -293,3 +293,6 @@
 [submodule "third-party/tree-sitter-poe-filter"]
 	path = third-party/tree-sitter-poe-filter
 	url = https://github.com/tree-sitter-grammars/tree-sitter-poe-filter.git
+[submodule "third-party/tree-sitter-printf"]
+	path = third-party/tree-sitter-printf
+	url = https://github.com/tree-sitter-grammars/tree-sitter-printf.git

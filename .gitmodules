@@ -203,3 +203,6 @@
 [submodule "third-party/tree-sitter-qmldir"]
 	path = third-party/tree-sitter-qmldir
 	url = https://github.com/tree-sitter-grammars/tree-sitter-qmldir.git
+[submodule "third-party/tree-sitter-bibtex"]
+	path = third-party/tree-sitter-bibtex
+	url = https://github.com/latex-lsp/tree-sitter-bibtex.git

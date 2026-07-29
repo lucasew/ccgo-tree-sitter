@@ -530,3 +530,6 @@
 [submodule "third-party/tree-sitter-idris"]
 	path = third-party/tree-sitter-idris
 	url = https://github.com/kayhide/tree-sitter-idris.git
+[submodule "third-party/tree-sitter-asm"]
+	path = third-party/tree-sitter-asm
+	url = https://github.com/RubixDev/tree-sitter-asm.git

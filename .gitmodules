@@ -317,3 +317,6 @@
 [submodule "third-party/tree-sitter-luau"]
 	path = third-party/tree-sitter-luau
 	url = https://github.com/tree-sitter-grammars/tree-sitter-luau.git
+[submodule "third-party/tree-sitter-ql-dbscheme"]
+	path = third-party/tree-sitter-ql-dbscheme
+	url = https://github.com/tree-sitter/tree-sitter-ql-dbscheme.git

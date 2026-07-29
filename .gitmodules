@@ -539,3 +539,6 @@
 [submodule "third-party/tree-sitter-angular"]
 	path = third-party/tree-sitter-angular
 	url = https://github.com/dlvandenberg/tree-sitter-angular.git
+[submodule "third-party/tree-sitter-sml"]
+	path = third-party/tree-sitter-sml
+	url = https://github.com/MatthewFluet/tree-sitter-sml.git

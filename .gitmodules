@@ -440,3 +440,6 @@
 [submodule "third-party/tree-sitter-fsharp"]
 	path = third-party/tree-sitter-fsharp
 	url = https://github.com/ionide/tree-sitter-fsharp.git
+[submodule "third-party/tree-sitter-proto"]
+	path = third-party/tree-sitter-proto
+	url = https://github.com/mitchellh/tree-sitter-proto.git

@@ -416,3 +416,6 @@
 [submodule "third-party/tree-sitter-pascal"]
 	path = third-party/tree-sitter-pascal
 	url = https://github.com/Isopod/tree-sitter-pascal.git
+[submodule "third-party/tree-sitter-just"]
+	path = third-party/tree-sitter-just
+	url = https://github.com/casey/tree-sitter-just.git

@@ -557,3 +557,6 @@
 [submodule "third-party/tree-sitter-turtle"]
 	path = third-party/tree-sitter-turtle
 	url = https://github.com/GordianDziwis/tree-sitter-turtle.git
+[submodule "third-party/tree-sitter-gdscript"]
+	path = third-party/tree-sitter-gdscript
+	url = https://github.com/PrestonKnopp/tree-sitter-gdscript.git

@@ -554,3 +554,6 @@
 [submodule "third-party/tree-sitter-nasm"]
 	path = third-party/tree-sitter-nasm
 	url = https://github.com/naclsn/tree-sitter-nasm.git
+[submodule "third-party/tree-sitter-turtle"]
+	path = third-party/tree-sitter-turtle
+	url = https://github.com/GordianDziwis/tree-sitter-turtle.git

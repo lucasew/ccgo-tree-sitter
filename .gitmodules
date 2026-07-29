@@ -392,3 +392,6 @@
 [submodule "third-party/tree-sitter-racket"]
 	path = third-party/tree-sitter-racket
 	url = https://github.com/6cdh/tree-sitter-racket.git
+[submodule "third-party/tree-sitter-rescript"]
+	path = third-party/tree-sitter-rescript
+	url = https://github.com/rescript-lang/tree-sitter-rescript.git

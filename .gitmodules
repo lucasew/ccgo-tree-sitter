@@ -203,3 +203,9 @@
 [submodule "third-party/tree-sitter-slang"]
 	path = third-party/tree-sitter-slang
 	url = https://github.com/tree-sitter-grammars/tree-sitter-slang.git
+[submodule "third-party/tree-sitter-qmldir"]
+	path = third-party/tree-sitter-qmldir
+	url = https://github.com/tree-sitter-grammars/tree-sitter-qmldir.git
+[submodule "third-party/tree-sitter-twig"]
+	path = third-party/tree-sitter-twig
+	url = https://github.com/gbprod/tree-sitter-twig.git

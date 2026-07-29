@@ -242,3 +242,6 @@
 [submodule "third-party/tree-sitter-capnp"]
 	path = third-party/tree-sitter-capnp
 	url = https://github.com/tree-sitter-grammars/tree-sitter-capnp.git
+[submodule "third-party/tree-sitter-graph"]
+	path = third-party/tree-sitter-graph
+	url = https://github.com/tree-sitter/tree-sitter-graph.git

@@ -75,9 +75,30 @@ jobs:
 
           git submodule update --init --depth 1 "${submodule_path}"
 
-          # Verify it looks like a tree-sitter grammar (has parser.c somewhere under src/)
-          if ! find "${submodule_path}" -path '*/src/parser.c' -print -quit | grep -q .; then
-            echo "::warning::No src/parser.c found under ${submodule_path}; codegen may not discover this grammar."
+          # Require generated C sources. Codegen discovers only …/src/parser.c;
+          # grammars that only ship grammar.js (or omit parser.c on the default
+          # branch) never produce grammar/<lang>/ packages.
+          mapfile -t parsers < <(find "${submodule_path}" -path '*/src/parser.c' -type f | head -20)
+          if [[ ${#parsers[@]} -eq 0 ]]; then
+            echo "::error::No src/parser.c under ${submodule_path}."
+            echo "This repo is not usable by codegen as-is (generate-only grammars need a branch/ref that checks in parser.c, e.g. SQL gh-pages)."
+            echo "Refusing to open a PR that would only add a dead submodule."
+            git submodule deinit -f "${submodule_path}" || true
+            rm -rf "${submodule_path}"
+            git rm -f "${submodule_path}" 2>/dev/null || true
+            # Drop the .gitmodules entry we just added
+            git config -f .gitmodules --remove-section "submodule.${submodule_path}" 2>/dev/null || true
+            git add .gitmodules 2>/dev/null || true
+            exit 1
+          fi
+          echo "Found parser.c at:"
+          printf '  %s\n' "${parsers[@]}"
+
+          # Nested submodules under examples/test often point at missing remotes
+          # and break CI if anyone uses submodules: recursive. Surface a warning.
+          if [[ -f "${submodule_path}/.gitmodules" ]]; then
+            echo "::warning::${submodule_path} has nested .gitmodules; CI checks out top-level third-party only (non-recursive)."
+            cat "${submodule_path}/.gitmodules"
           fi
 
           echo "repo_name=${repo}" >> "$GITHUB_OUTPUT"

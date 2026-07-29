@@ -368,3 +368,6 @@
 [submodule "third-party/tree-sitter-vim"]
 	path = third-party/tree-sitter-vim
 	url = https://github.com/tree-sitter-grammars/tree-sitter-vim.git
+[submodule "third-party/tree-sitter-elm"]
+	path = third-party/tree-sitter-elm
+	url = https://github.com/elm-tooling/tree-sitter-elm.git

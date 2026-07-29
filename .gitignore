@@ -2,8 +2,15 @@
 __pycache__
 .codex
 
-# Materialised by workspaced codebase apply (core:place). Not committed.
-/third-party/tree-sitter-*/
+# Grammar C sources under third-party/tree-sitter-*/ are vendored (committed).
+# Refresh with: mise run grammars:sync (workspaced core:place).
+#
+# Full application trees — NOT grammars. Optional local corpora only; never vendor.
 /third-party/tensorflow/
 /third-party/django/
 .workspaced/
+
+# Never vendor compiler objects under placed trees
+*.o
+*.a
+*.so

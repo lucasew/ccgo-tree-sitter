@@ -37,8 +37,12 @@ mise run grammars:lock            # refresh workspaced.lock.json
 mise run test                     # pure Go tests (no transpile)
 ```
 
-Placed trees under `third-party/tree-sitter-*/` are gitignored; pins are in
-`workspaced.lock.json`. Core tree-sitter is a workspaced **source** (not placed):
+Grammar trees under `third-party/tree-sitter-*/` are **vendored** (committed);
+pins stay in `workspaced.lock.json`. Re-sync after changing `#grammar` entries.
+Do not vendor full application checkouts (`tensorflow`, `django`) — those are
+optional local corpora only and remain gitignored.
+
+Core tree-sitter is a workspaced **source** (not placed into the repo):
 
 ```bash
 mise run tree-sitter:path   # print/ensure ~/.cache/workspaced/sources/github/…

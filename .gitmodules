@@ -263,3 +263,6 @@
 [submodule "third-party/tree-sitter-gpg-config"]
 	path = third-party/tree-sitter-gpg-config
 	url = https://github.com/tree-sitter-grammars/tree-sitter-gpg-config.git
+[submodule "third-party/tree-sitter-go-sum"]
+	path = third-party/tree-sitter-go-sum
+	url = https://github.com/tree-sitter-grammars/tree-sitter-go-sum.git

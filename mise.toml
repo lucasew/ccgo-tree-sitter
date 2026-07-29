@@ -20,8 +20,14 @@ description = "Materialise grammar C sources via workspaced core:place"
 run = "workspaced codebase apply"
 
 [tasks."grammars:lock"]
-description = "Refresh workspaced.lock.json pins for #grammar / #fixture inputs"
+description = "Refresh workspaced.lock.json pins for tree_sitter / #grammar / #fixture inputs"
 run = "workspaced mod lock"
+
+# Core tree-sitter is a workspaced *source* (not core:place). Path is the
+# workspaced github cache; first lock populates it, codegen re-fetches on miss.
+[tasks."tree-sitter:path"]
+description = "Print workspaced cache path for tree_sitter (ensure fetch if missing)"
+run = "go run ./cmd/codegen print-tree-sitter-path"
 
 [tasks.install]
 run = "go get -v ./..."

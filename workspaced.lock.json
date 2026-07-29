@@ -1,49 +1,6 @@
 {
   "dependencies": [
     {
-      "kind": "tool",
-      "ref": "github:astral-sh/ruff",
-      "depName": "astral-sh/ruff",
-      "currentValue": "0.16.0",
-      "datasource": "github-releases"
-    },
-    {
-      "kind": "tool",
-      "ref": "github:golangci/golangci-lint",
-      "depName": "golangci/golangci-lint",
-      "currentValue": "v2.12.2",
-      "datasource": "github-releases"
-    },
-    {
-      "kind": "tool",
-      "ref": "github:rhysd/actionlint",
-      "depName": "rhysd/actionlint",
-      "currentValue": "v1.7.12",
-      "datasource": "github-releases"
-    },
-    {
-      "kind": "tool",
-      "ref": "registry:biome",
-      "depName": "biomejs/biome",
-      "currentValue": "2.5.6",
-      "datasource": "github-releases",
-      "versioning": "semver"
-    },
-    {
-      "kind": "tool",
-      "ref": "registry:nodejs",
-      "depName": "",
-      "currentValue": "v26.5.0",
-      "datasource": ""
-    },
-    {
-      "kind": "tool",
-      "ref": "registry:shellcheck",
-      "depName": "koalaman/shellcheck",
-      "currentValue": "0.11.0",
-      "datasource": "github-releases"
-    },
-    {
       "kind": "source",
       "ref": "github:6cdh/tree-sitter-racket",
       "depName": "6cdh/tree-sitter-racket",
@@ -269,6 +226,13 @@
       "datasource": "git-refs"
     },
     {
+      "kind": "tool",
+      "ref": "github:astral-sh/ruff",
+      "depName": "astral-sh/ruff",
+      "currentValue": "0.16.0",
+      "datasource": "github-releases"
+    },
+    {
       "kind": "source",
       "ref": "github:benwilliamgraham/tree-sitter-llvm",
       "depName": "benwilliamgraham/tree-sitter-llvm",
@@ -429,6 +393,13 @@
       "currentValue": "main",
       "currentDigest": "cefbd6863983b4df3214b7934bde5e9ca63d5b7f",
       "datasource": "git-refs"
+    },
+    {
+      "kind": "tool",
+      "ref": "github:golangci/golangci-lint",
+      "depName": "golangci/golangci-lint",
+      "currentValue": "v2.12.2",
+      "datasource": "github-releases"
     },
     {
       "kind": "source",
@@ -600,6 +571,13 @@
       "currentValue": "main",
       "currentDigest": "db8b4398de90b6d0b6c780aba96aaa2cd8e9202c",
       "datasource": "git-refs"
+    },
+    {
+      "kind": "tool",
+      "ref": "github:rhysd/actionlint",
+      "depName": "rhysd/actionlint",
+      "currentValue": "v1.7.12",
+      "datasource": "github-releases"
     },
     {
       "kind": "source",
@@ -1368,6 +1346,15 @@
     },
     {
       "kind": "source",
+      "ref": "github:tree-sitter/tree-sitter",
+      "depName": "tree-sitter/tree-sitter",
+      "packageName": "https://github.com/tree-sitter/tree-sitter",
+      "currentValue": "master",
+      "currentDigest": "9fc2f486a8c1e1f5a4b1954cdcd240fcd09eb003",
+      "datasource": "git-refs"
+    },
+    {
+      "kind": "source",
       "ref": "github:tree-sitter/tree-sitter-agda",
       "depName": "tree-sitter/tree-sitter-agda",
       "packageName": "https://github.com/tree-sitter/tree-sitter-agda",
@@ -1689,6 +1676,28 @@
       "currentValue": "main",
       "currentDigest": "e99dbdc3d800d5fa2796476efd60af91f6b43d93",
       "datasource": "git-refs"
+    },
+    {
+      "kind": "tool",
+      "ref": "registry:biome",
+      "depName": "biomejs/biome",
+      "currentValue": "2.5.6",
+      "datasource": "github-releases",
+      "versioning": "semver"
+    },
+    {
+      "kind": "tool",
+      "ref": "registry:nodejs",
+      "depName": "",
+      "currentValue": "v26.5.0",
+      "datasource": ""
+    },
+    {
+      "kind": "tool",
+      "ref": "registry:shellcheck",
+      "depName": "koalaman/shellcheck",
+      "currentValue": "0.11.0",
+      "datasource": "github-releases"
     }
   ]
 }

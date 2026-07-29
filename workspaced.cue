@@ -968,8 +968,22 @@ package workspaced
 	dest:    string
 }
 
+// Core C library (lib/src, lib/include). Source + lock only — not core:place'd
+// under third-party/. Cache path (workspaced):
+//   ~/.cache/workspaced/sources/github/sha256("v4:repo:tree-sitter/tree-sitter@HEAD")
+// Resolve / ensure: mise run tree-sitter:path  (or TREE_SITTER_PATH / codegen auto).
+#tree_sitter: {
+	from:    "github:tree-sitter/tree-sitter"
+	version: "HEAD"
+}
+
 workspaced: {
 	inputs: {
+		// Core tree-sitter: locked source, no place module.
+		tree_sitter: {
+			from:    #tree_sitter.from
+			version: #tree_sitter.version
+		}
 		for name, g in #grammar {
 			"grammar_\(name)": {
 				from:    g.from
@@ -985,6 +999,7 @@ workspaced: {
 	}
 	modules: {
 		// One core:place module per #grammar entry.
+		// (tree_sitter intentionally has no place module.)
 		for name, g in #grammar {
 			"grammar_\(name)": {
 				from: "core:place"

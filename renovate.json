@@ -5,6 +5,6 @@
     "github>lewtec/renovate-config:base"
   ],
   "git-submodules": {
-    "enabled": true
+    "enabled": false
   }
 }

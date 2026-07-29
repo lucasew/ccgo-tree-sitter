@@ -23,9 +23,13 @@ func TestTranspilePlacedJSON(t *testing.T) {
 			t.Skip("no clang/gcc on PATH for ccgo probe")
 		}
 	}
+	tsPath, err := resolveTreeSitterPath()
+	if err != nil {
+		t.Skip("tree-sitter source not available:", err)
+	}
 	out := t.TempDir()
 	tr := &Transpiler{
-		TreeSitterPath: filepath.Join(root, "third-party/tree-sitter"),
+		TreeSitterPath: tsPath,
 		GOOS:           runtime.GOOS,
 		GOARCH:         runtime.GOARCH,
 	}

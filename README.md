@@ -38,7 +38,12 @@ mise run test                     # pure Go tests (no transpile)
 ```
 
 Placed trees under `third-party/tree-sitter-*/` are gitignored; pins are in
-`workspaced.lock.json`. Core tree-sitter stays a submodule at `third-party/tree-sitter`.
+`workspaced.lock.json`. Core tree-sitter is a workspaced **source** (not placed):
+
+```bash
+mise run tree-sitter:path   # print/ensure ~/.cache/workspaced/sources/github/…
+# or: TREE_SITTER_PATH=/path/to/tree-sitter  (override for codegen)
+```
 
 Parse fixtures (astdump goldens) — one minimal sample per generated language:
 

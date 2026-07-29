@@ -500,3 +500,6 @@
 [submodule "third-party/tree-sitter-pkl"]
 	path = third-party/tree-sitter-pkl
 	url = https://github.com/apple/tree-sitter-pkl.git
+[submodule "third-party/tree-sitter-rego"]
+	path = third-party/tree-sitter-rego
+	url = https://github.com/FallenAngel97/tree-sitter-rego.git

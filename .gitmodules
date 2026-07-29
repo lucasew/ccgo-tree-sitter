@@ -287,3 +287,6 @@
 [submodule "third-party/tree-sitter-odin"]
 	path = third-party/tree-sitter-odin
 	url = https://github.com/tree-sitter-grammars/tree-sitter-odin.git
+[submodule "third-party/tree-sitter-hyprlang"]
+	path = third-party/tree-sitter-hyprlang
+	url = https://github.com/tree-sitter-grammars/tree-sitter-hyprlang.git

@@ -245,3 +245,6 @@
 [submodule "third-party/tree-sitter-graph"]
 	path = third-party/tree-sitter-graph
 	url = https://github.com/tree-sitter/tree-sitter-graph.git
+[submodule "third-party/tree-sitter-func"]
+	path = third-party/tree-sitter-func
+	url = https://github.com/tree-sitter-grammars/tree-sitter-func.git

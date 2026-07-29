@@ -281,3 +281,6 @@
 [submodule "third-party/tree-sitter-objc"]
 	path = third-party/tree-sitter-objc
 	url = https://github.com/tree-sitter-grammars/tree-sitter-objc.git
+[submodule "third-party/tree-sitter-pem"]
+	path = third-party/tree-sitter-pem
+	url = https://github.com/tree-sitter-grammars/tree-sitter-pem.git

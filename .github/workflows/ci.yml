@@ -23,7 +23,11 @@ jobs:
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
         with:
           fetch-depth: 1
-          submodules: recursive
+          # Top-level third-party/* only. Many grammars declare nested
+          # submodules under examples/test that point at missing or private
+          # remotes (e.g. toptal/gitignore, nqc/examples); recursive clone
+          # fails the whole prepare job. Codegen only needs src/parser.c.
+          submodules: true
 
       - name: Pack source (no .git)
         uses: ./.github/actions/pack-source
@@ -286,7 +290,8 @@ jobs:
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
         with:
           fetch-depth: 1
-          submodules: recursive
+          # Same as prepare: do not recurse into grammar-owned nested submodules.
+          submodules: true
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up tools (mise)

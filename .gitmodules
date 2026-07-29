@@ -461,3 +461,6 @@
 [submodule "third-party/tree-sitter-crystal"]
 	path = third-party/tree-sitter-crystal
 	url = https://github.com/crystal-lang-tools/tree-sitter-crystal.git
+[submodule "third-party/tree-sitter-git-rebase"]
+	path = third-party/tree-sitter-git-rebase
+	url = https://github.com/the-mikedavis/tree-sitter-git-rebase.git

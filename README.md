@@ -38,9 +38,11 @@ mise run test                     # pure Go tests (no transpile)
 ```
 
 Grammar trees under `third-party/tree-sitter-*/` are **vendored** (committed);
-pins stay in `workspaced.lock.json`. Re-sync after changing `#grammar` entries.
-Do not vendor full application checkouts (`tensorflow`, `django`) — those are
-optional local corpora only and remain gitignored.
+pins stay in `workspaced.lock.json`. Re-sync after changing `#grammar` entries
+(`mise run grammars:lock && mise run grammars:sync`). CI does not re-fetch
+grammar sources on every run. Do not vendor full application checkouts
+(`tensorflow`, `django`) — those are optional local corpora only and remain
+gitignored.
 
 Core tree-sitter is a workspaced **source** (not placed into the repo):
 

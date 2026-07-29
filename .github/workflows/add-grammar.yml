@@ -37,6 +37,8 @@ jobs:
         env:
           REPO_URL: ${{ inputs.repo_url }}
           PATHS: ${{ inputs.paths }}
+          # workspaced mod lock / place need authenticated GitHub API+codeload.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
 

@@ -33,10 +33,14 @@ jobs:
       - name: Set up tools (mise)
         uses: jdx/mise-action@e6a8b3978addb5a52f2b4cd9d91eafa7f0ab959d # v4
 
-      - name: Place grammar sources
-        run: mise run grammars:sync
-
+      # Grammars are vendored under third-party/tree-sitter-*/ — do NOT run
+      # grammars:sync here (that re-fetches every upstream from GitHub and hits
+      # anonymous rate limits / false "private repo" 403s). Refresh vendors
+      # locally with mise run grammars:lock && mise run grammars:sync.
       - name: Ensure tree-sitter core (workspaced source cache)
+        env:
+          # workspaced / codeload prefer GITHUB_TOKEN over anonymous.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: mise run tree-sitter:path
 
       - name: Pack source (no .git)
@@ -156,11 +160,12 @@ jobs:
           CGO_ENABLED: "0"
         run: go test ./cmd/codegen/
 
-      # prepare already placed sources into the artifact; task still depends on
-      # grammars:sync so a standalone mise run on a runner is complete.
+      # prepare packs vendored grammar C; only tree-sitter core may be fetched.
       - name: Codegen target bindings
         if: ${{ !matrix.checked_in }}
         shell: bash
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: mise run "${{ matrix.task }}"
 
       - name: Run tests
@@ -267,6 +272,9 @@ jobs:
 
       - name: Codegen ${{ matrix.goos }}/${{ matrix.goarch }}
         shell: bash
+        env:
+          # Codegen may fetch tree-sitter core into workspaced cache (codeload).
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: mise run "${{ matrix.task }}"
 
       - name: Collect artifact

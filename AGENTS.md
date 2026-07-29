@@ -6,7 +6,9 @@
   (committed). Declared in `workspaced.cue` (`#grammar`), pinned in
   `workspaced.lock.json`, refreshed with `mise run grammars:lock` /
   `mise run grammars:sync` (workspaced `core:place` — only transpile paths).
-  Do **not** vendor full apps (`third-party/tensorflow`, `third-party/django`).
+  CI packs the checkout as-is and does **not** re-run `grammars:sync` (avoids
+  mass GitHub fetches / anonymous 403s). Do **not** vendor full apps
+  (`third-party/tensorflow`, `third-party/django`).
 - **Core tree-sitter** is a workspaced *source* only (`inputs.tree_sitter` /
   `#tree_sitter`) — not placed into the repo. Pins in `workspaced.lock.json`;
   on-disk path is the workspaced github cache (`mise run tree-sitter:path` or

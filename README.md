@@ -23,14 +23,56 @@ first, then run `mise run test`.
 | windows/amd64 | `windows-latest` | no | **MinGW `gcc -E`** (not clang/MSVC) |
 | windows/arm64 | `windows-11-arm` | no | experimental; llvm-mingw `aarch64-w64-mingw32` |
 
-## Codegen
+## Grammar sources (local + CI)
+
+Grammar C inputs are **not** git submodules. They are declared in `workspaced.cue`
+(`#grammar`) and placed with workspaced `core:place` (only `src/` / monorepo units).
+**mise** installs both **go** and **workspaced**:
 
 ```bash
-mise run codegen                  # host GOOS/GOARCH only
-mise run codegen:darwin-arm64     # explicit triple
+mise install                      # go + workspaced from mise.toml
+mise run grammars:sync            # workspaced codebase apply
+./setup-grammars owner/tree-sitter-foo   # add a #grammar entry
+mise run grammars:lock            # refresh workspaced.lock.json
+mise run test                     # pure Go tests (no transpile)
 ```
 
-Prefer the **CI matrix** (each runner owns its native triple; merge opens a PR).
+Grammar trees under `third-party/tree-sitter-*/` are **vendored** (committed);
+pins stay in `workspaced.lock.json`. Re-sync after changing `#grammar` entries
+(`mise run grammars:lock && mise run grammars:sync`). CI does not re-fetch
+grammar sources on every run. Do not vendor full application checkouts
+(`tensorflow`, `django`) — those are optional local corpora only and remain
+gitignored.
+
+Core tree-sitter is a workspaced **source** (not placed into the repo):
+
+```bash
+mise run tree-sitter:path   # print/ensure ~/.cache/workspaced/sources/github/…
+# or: TREE_SITTER_PATH=/path/to/tree-sitter  (override for codegen)
+```
+
+Parse fixtures (astdump goldens) — one minimal sample per generated language:
+
+```text
+testdata/<language>/<file.ext>
+testdata/<language>/<file.ext>.golden.json
+```
+
+Sources are declared in `cmd/parse/fixture_sources.go`. Goldens are `grammar.ParseOutput` JSON.
+
+```bash
+UPDATE_GOLDENS=1 go test ./cmd/parse/ -run TestLanguageFixtures   # rewrite sources + goldens
+go test ./cmd/parse/ -run TestLanguageFixtures                       # compare goldens
+```
+
+Each language is its own `#grammar: name: { … }` in `workspaced.cue` (optional `astdump` metadata).
+
+## Codegen (CI only)
+
+**Do not transpile locally.** Each `codegen:*` mise task depends on
+`grammars:sync` (workspaced) and is intended for CI runners with the right
+preprocessor. Multi-platform regen is the GitHub Actions matrix on `main`
+(merge opens a PR with regenerated bindings).
 
 ### Target matrix
 

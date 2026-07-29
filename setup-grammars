@@ -1,15 +1,119 @@
 #!/usr/bin/env bash
+# Add a tree-sitter grammar as a one-shot #grammar: name: { … } entry.
+#
+# Usage:
+#   ./setup-grammars                     # help
+#   ./setup-grammars owner/repo          # default paths: src
+#   ./setup-grammars owner/repo path1,path2  # monorepo units
+#
+# Then: mise run grammars:lock && mise run grammars:sync
 set -euo pipefail
 
-ORGS=(tree-sitter tree-sitter-grammars)
+if [[ $# -eq 0 ]]; then
+	cat <<'EOF'
+Add a grammar (workspaced #grammar + core:place), not a git submodule.
 
-# Here we are exploiting that all bindings have "tree-sitter" before the name of the language and grammars have the language after
+  ./setup-grammars owner/tree-sitter-foo
+  ./setup-grammars tree-sitter/tree-sitter-typescript typescript/src,tsx/src,common
 
-cd ./third-party
-for ORG in "${ORGS[@]}"; do
-	for REPO in $(gh repo list "$ORG" --limit 1000 -t '{{range .}}{{printf "%s\n" .name}}{{end}}' --json name | grep -e '^tree-sitter-' | grep -v template); do
-		if [[ ! -d "$REPO" ]]; then
-			git submodule add "ssh://git@github.com/$ORG/$REPO" "$REPO"
-		fi
-	done
-done
+Each language is its own statement:
+
+  #grammar: foo: {
+  	from: "github:owner/tree-sitter-foo"
+  	repo: "tree-sitter-foo"
+  }
+
+Parse/astdump fixtures live next to sources:
+
+  testdata/<language>/<file.ext>
+  testdata/<language>/<file.ext>.golden.json
+
+Optional cue metadata (documents that fixtures exist):
+
+  #grammar: json: {
+  	from: "github:tree-sitter/tree-sitter-json"
+  	repo: "tree-sitter-json"
+  	astdump: {
+  		root_type: "document"
+  		first_child_type: "object"
+  	}
+  }
+
+Then:
+  mise run grammars:lock
+  mise run grammars:sync
+EOF
+	exit 0
+fi
+
+SPEC="$1"
+PATHS="${2:-src}"
+
+SPEC="${SPEC#https://github.com/}"
+SPEC="${SPEC#git@github.com:}"
+SPEC="${SPEC%.git}"
+SPEC="${SPEC%/}"
+
+OWNER="${SPEC%%/*}"
+REPO="${SPEC#*/}"
+if [[ -z "$OWNER" || -z "$REPO" || "$OWNER" == "$REPO" ]]; then
+	echo "expected owner/repo, got: $1" >&2
+	exit 1
+fi
+
+if [[ "$REPO" != tree-sitter-* ]]; then
+	echo "warning: repo name $REPO does not start with tree-sitter-" >&2
+fi
+
+KEY="${REPO#tree-sitter-}"
+if [[ "$KEY" =~ ^[A-Za-z_][A-Za-z0-9_]*$ ]]; then
+	CUE_KEY="$KEY"
+else
+	CUE_KEY="\"$KEY\""
+fi
+
+CUE_FILE=workspaced.cue
+if [[ ! -f "$CUE_FILE" ]]; then
+	echo "missing $CUE_FILE" >&2
+	exit 1
+fi
+
+if grep -qE "^#grammar: ${CUE_KEY}: \{|^#grammar: \"${KEY}\": \{" "$CUE_FILE" 2>/dev/null; then
+	echo "grammar already listed: $KEY" >&2
+	exit 1
+fi
+
+{
+	echo "#grammar: ${CUE_KEY}: {"
+	echo "	from: \"github:${OWNER}/${REPO}\""
+	echo "	repo: \"${REPO}\""
+	if [[ "$PATHS" != "src" ]]; then
+		IFS=',' read -ra parts <<<"$PATHS"
+		path_list=""
+		for p in "${parts[@]}"; do
+			p="${p// /}"
+			[[ -n "$path_list" ]] && path_list+=", "
+			path_list+="\"$p\""
+		done
+		echo "	paths: [${path_list}]"
+	fi
+	echo "}"
+	echo
+} >/tmp/grammar-entry.cue
+
+python3 - "$CUE_FILE" /tmp/grammar-entry.cue <<'PY'
+import sys
+from pathlib import Path
+cue_path, entry_path = Path(sys.argv[1]), Path(sys.argv[2])
+text = cue_path.read_text()
+entry = entry_path.read_text()
+# Insert before the schema / open definition of #grammar: [string]:
+marker = "\n#grammar: [string]:"
+if marker not in text:
+    sys.exit("could not find #grammar: [string]: schema marker")
+text = text.replace(marker, "\n" + entry + marker, 1)
+cue_path.write_text(text)
+print(f"added {entry.splitlines()[0]}")
+PY
+
+echo "Next: mise run grammars:lock && mise run grammars:sync"

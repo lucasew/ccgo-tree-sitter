@@ -14,7 +14,8 @@ import (
 )
 
 var (
-	treeSitterPath   = "./third-party/tree-sitter"
+	// treeSitterPath is set in run() via TREE_SITTER_PATH or workspaced cache.
+	treeSitterPath   string
 	defaultOutputDir = "."
 	targetGOOS       string
 	targetGOARCH     string
@@ -48,6 +49,19 @@ func init() {
 	rootCmd.Flags().StringVar(&targetGOOS, "goos", env("TARGET_GOOS", runtime.GOOS), "Target GOOS for generated code")
 	rootCmd.Flags().StringVar(&targetGOARCH, "goarch", env("TARGET_GOARCH", runtime.GOARCH), "Target GOARCH for generated code")
 	rootCmd.Flags().BoolVarP(&keepTemp, "keep-temp", "k", false, "Keep temporary files for debugging")
+
+	rootCmd.AddCommand(&cobra.Command{
+		Use:   "print-tree-sitter-path",
+		Short: "Print workspaced cache path for core tree-sitter (fetch if missing)",
+		RunE: func(cmd *cobra.Command, args []string) error {
+			p, err := resolveTreeSitterPath()
+			if err != nil {
+				return err
+			}
+			fmt.Println(p)
+			return nil
+		},
+	})
 
 	modulesCmd := &cobra.Command{
 		Use:   "modules",
@@ -88,6 +102,11 @@ func runModules(cmd *cobra.Command, args []string) error {
 
 func run(cmd *cobra.Command, args []string) error {
 	slog.Info("compiling for target", "GOOS", targetGOOS, "GOARCH", targetGOARCH, "CC", preprocessorIdentity(targetGOOS, targetGOARCH))
+	var err error
+	treeSitterPath, err = resolveTreeSitterPath()
+	if err != nil {
+		return fmt.Errorf("tree-sitter source: %w", err)
+	}
 	// Create transpiler
 	transpiler := &Transpiler{
 		TreeSitterPath: treeSitterPath,
@@ -109,6 +128,9 @@ func run(cmd *cobra.Command, args []string) error {
 	units, err := discoverGrammarUnits("third-party/tree-sitter-*")
 	if err != nil {
 		return err
+	}
+	if len(units) == 0 {
+		return fmt.Errorf("no grammar units under third-party/tree-sitter-*/src/parser.c; run `mise run grammars:sync` (workspaced codebase apply) first")
 	}
 	slog.Info("discovered grammar units", "count", len(units))
 

@@ -1,4 +1,4 @@
-name: Add Grammar Submodule
+name: Add Grammar
 
 on:
   workflow_dispatch:
@@ -7,11 +7,11 @@ on:
         description: "GitHub repository URL (e.g. https://github.com/tree-sitter/tree-sitter-kotlin)"
         required: true
         type: string
-      branch:
-        description: "Optional branch/tag/commit to pin the submodule to (leave empty for default branch)"
+      paths:
+        description: "Comma-separated paths inside the repo to place (default: src). Monorepos e.g. typescript/src,tsx/src,common"
         required: false
         type: string
-        default: ""
+        default: "src"
 
 jobs:
   add-grammar:
@@ -23,20 +23,28 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
         with:
+          fetch-depth: 1
+          fetch-tags: false
+          submodules: false
+          lfs: false
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Parse repo URL and add submodule
+      - name: Set up tools (mise)
+        uses: jdx/mise-action@e6a8b3978addb5a52f2b4cd9d91eafa7f0ab959d # v4
+
+      - name: Add #grammar entry and lock
         id: add
         env:
           REPO_URL: ${{ inputs.repo_url }}
-          BRANCH: ${{ inputs.branch }}
+          PATHS: ${{ inputs.paths }}
+          # workspaced mod lock / place need authenticated GitHub API+codeload.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          # Normalize URL: accept https://github.com/owner/repo(.git)?(/)? or owner/repo
           url="${REPO_URL%%#*}"
           url="${url%%\?*}"
           url="${url%/}"
@@ -54,85 +62,39 @@ jobs:
             repo="${BASH_REMATCH[2]}"
           else
             echo "::error::Could not parse GitHub repo from: ${REPO_URL}"
-            echo "Expected formats: https://github.com/owner/repo, git@github.com:owner/repo.git, or owner/repo"
             exit 1
           fi
 
-          clone_url="https://github.com/${owner}/${repo}.git"
-          submodule_path="third-party/${repo}"
+          spec="${owner}/${repo}"
+          echo "Adding grammar: ${spec} paths=${PATHS}"
+          ./setup-grammars "${spec}" "${PATHS}"
 
-          if [[ -d "$submodule_path" ]] || git config --file .gitmodules --get-regexp "path" 2>/dev/null | grep -qF "$submodule_path"; then
-            echo "::error::Submodule already exists at ${submodule_path}"
-            exit 1
-          fi
-
-          echo "Adding submodule: ${clone_url} -> ${submodule_path}"
-          if [[ -n "${BRANCH}" ]]; then
-            git submodule add -b "${BRANCH}" "${clone_url}" "${submodule_path}"
-          else
-            git submodule add "${clone_url}" "${submodule_path}"
-          fi
-
-          git submodule update --init --depth 1 "${submodule_path}"
-
-          # Require generated C sources. Codegen discovers only …/src/parser.c;
-          # grammars that only ship grammar.js (or omit parser.c on the default
-          # branch) never produce grammar/<lang>/ packages.
-          mapfile -t parsers < <(find "${submodule_path}" -path '*/src/parser.c' -type f | head -20)
-          if [[ ${#parsers[@]} -eq 0 ]]; then
-            echo "::error::No src/parser.c under ${submodule_path}."
-            echo "This repo is not usable by codegen as-is (generate-only grammars need a branch/ref that checks in parser.c, e.g. SQL gh-pages)."
-            echo "Refusing to open a PR that would only add a dead submodule."
-            git submodule deinit -f "${submodule_path}" || true
-            rm -rf "${submodule_path}"
-            git rm -f "${submodule_path}" 2>/dev/null || true
-            # Drop the .gitmodules entry we just added
-            git config -f .gitmodules --remove-section "submodule.${submodule_path}" 2>/dev/null || true
-            git add .gitmodules 2>/dev/null || true
-            exit 1
-          fi
-          echo "Found parser.c at:"
-          printf '  %s\n' "${parsers[@]}"
-
-          # Nested submodules under examples/test often point at missing remotes
-          # and break CI if anyone uses submodules: recursive. Surface a warning.
-          if [[ -f "${submodule_path}/.gitmodules" ]]; then
-            echo "::warning::${submodule_path} has nested .gitmodules; CI checks out top-level third-party only (non-recursive)."
-            cat "${submodule_path}/.gitmodules"
-          fi
+          mise run grammars:lock
 
           echo "repo_name=${repo}" >> "$GITHUB_OUTPUT"
           echo "owner=${owner}" >> "$GITHUB_OUTPUT"
-          echo "submodule_path=${submodule_path}" >> "$GITHUB_OUTPUT"
-          echo "clone_url=${clone_url}" >> "$GITHUB_OUTPUT"
-          if [[ -n "${BRANCH}" ]]; then
-            echo "branch_ref=${BRANCH}" >> "$GITHUB_OUTPUT"
-          else
-            echo "branch_ref=(default branch)" >> "$GITHUB_OUTPUT"
-          fi
+          echo "clone_url=https://github.com/${owner}/${repo}.git" >> "$GITHUB_OUTPUT"
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "chore: add ${{ steps.add.outputs.repo_name }} grammar submodule"
+          commit-message: "chore: add ${{ steps.add.outputs.repo_name }} grammar source"
           title: "Add grammar: ${{ steps.add.outputs.repo_name }}"
           body: |
-            Automated addition of a tree-sitter grammar submodule.
+            Automated addition of a tree-sitter grammar via workspaced `#grammar` + `core:place`.
 
             | | |
             |---|---|
             | **Repository** | [${{ steps.add.outputs.owner }}/${{ steps.add.outputs.repo_name }}](${{ steps.add.outputs.clone_url }}) |
-            | **Submodule path** | `${{ steps.add.outputs.submodule_path }}` |
+            | **Paths** | `${{ inputs.paths }}` |
             | **Source input** | `${{ inputs.repo_url }}` |
-            | **Branch/ref** | `${{ steps.add.outputs.branch_ref }}` |
 
-            After merge, run the **Codegen and Test** workflow (or wait for the weekly schedule / push to `main`) to generate Go bindings under `grammar/`.
+            Grammar C sources are materialised under `third-party/` by `workspaced codebase apply` (gitignored). After merge, run **Codegen and Test** (or wait for weekly schedule / push to `main`) to generate Go bindings under `grammar/`.
 
             Triggered by @${{ github.actor }} via workflow_dispatch.
           branch: "add-grammar/${{ steps.add.outputs.repo_name }}"
           delete-branch: true
           add-paths: |
-            .gitmodules
-            third-party/${{ steps.add.outputs.repo_name }}
-
+            workspaced.cue
+            workspaced.lock.json

@@ -1,7 +1,8 @@
 package main
 
 import (
-	"errors"
+	"bytes"
+	"encoding/json"
 	"os"
 	"path/filepath"
 	"regexp"
@@ -13,29 +14,16 @@ import (
 
 var structPaddingPattern = regexp.MustCompile(`&struct \{ _ \[`)
 
-type fixtureExpectation struct {
-	rootType       string
-	firstChildType string
-}
+const goldenSuffix = ".golden.json"
 
-var languageExpectations = map[string]fixtureExpectation{
-	"go": {
-		// Real-world fixture: refactree internal/fuzzy/catalog.go
-		rootType:       "source_file",
-		firstChildType: "package_clause",
-	},
-	"json": {
-		rootType:       "document",
-		firstChildType: "object",
-	},
-	"lua": {
-		rootType: "chunk",
-	},
-	"python": {
-		rootType:       "module",
-		firstChildType: "assignment",
-	},
-}
+// Layout:
+//
+//	testdata/<language>/<file.ext>
+//	testdata/<language>/<file.ext>.golden.json
+//
+// Golden is grammar.ParseOutput JSON (language, file, root ParseNode tree).
+// Sources for every generated language live in fixtureSources.
+// Set UPDATE_GOLDENS=1 to rewrite sources (from fixtureSources) and goldens.
 
 func TestGeneratedCoreHasNoStructPadding(t *testing.T) {
 	root := repoRoot(t)
@@ -73,120 +61,131 @@ func TestGeneratedCoreHasNoStructPadding(t *testing.T) {
 
 func TestLanguageFixtures(t *testing.T) {
 	root := repoRoot(t)
-	fixturesRoot := filepath.Join(root, "testdata", "fixtures")
+	testdataRoot := filepath.Join(root, "testdata")
+	update := os.Getenv("UPDATE_GOLDENS") == "1"
 
-	langsWithFixtures := make(map[string]struct{})
+	langs := grammar.List()
+	if len(langs) == 0 {
+		t.Fatal("no languages registered (import grammar packages in languages.go)")
+	}
+
+	// Every registered language must have a curated source snippet.
+	var missingSnippets []string
+	for _, language := range langs {
+		if _, ok := fixtureSources[language]; !ok {
+			missingSnippets = append(missingSnippets, language)
+		}
+	}
+	if len(missingSnippets) > 0 {
+		t.Fatalf("fixtureSources missing languages: %s", strings.Join(missingSnippets, ", "))
+	}
+	// No stale snippets for unregistered languages.
+	for language := range fixtureSources {
+		if _, ok := grammar.Get(language); !ok {
+			t.Fatalf("fixtureSources has %q but language is not registered", language)
+		}
+	}
+
 	fixtureCount := 0
-	err := filepath.WalkDir(fixturesRoot, func(path string, d os.DirEntry, err error) error {
-		if err != nil {
-			return err
-		}
-		if path == fixturesRoot {
-			return nil
-		}
+	var parseErrors []string
 
-		base := d.Name()
-		if strings.HasPrefix(base, ".") {
-			if d.IsDir() {
-				return filepath.SkipDir
-			}
-			return nil
-		}
-		if d.IsDir() {
-			return nil
-		}
-
-		relPath, err := filepath.Rel(fixturesRoot, path)
-		if err != nil {
-			return err
-		}
-		parts := strings.Split(filepath.ToSlash(relPath), "/")
-		if len(parts) < 2 {
-			return nil
-		}
-
-		language := parts[0]
-		langsWithFixtures[language] = struct{}{}
-		expectation, ok := languageExpectations[language]
-		if !ok {
-			return &testFailure{message: "missing expectation for fixture language", language: language}
-		}
+	for _, language := range langs {
+		snip := fixtureSources[language]
+		langDir := filepath.Join(testdataRoot, language)
+		srcPath := filepath.Join(langDir, snip.File)
+		goldenPath := srcPath + goldenSuffix
 
 		lang, ok := grammar.Get(language)
 		if !ok {
-			return &testFailure{message: "language is not registered", language: language}
+			t.Fatalf("language %q not registered", language)
+		}
+
+		if update {
+			if err := os.MkdirAll(langDir, 0o755); err != nil {
+				t.Fatalf("mkdir %s: %v", langDir, err)
+			}
+			if err := os.WriteFile(srcPath, []byte(snip.Source), 0o644); err != nil {
+				t.Fatalf("write source %s: %v", srcPath, err)
+			}
+		} else if _, err := os.Stat(srcPath); err != nil {
+			t.Fatalf("missing source %s (set UPDATE_GOLDENS=1 to materialise from fixtureSources)", srcPath)
 		}
 
 		fixtureCount++
-		fixturePath := path
-		fixtureLabel := strings.Join(parts[1:], "/")
-		t.Run(language+"/"+fixtureLabel, func(t *testing.T) {
-			source, err := os.ReadFile(fixturePath)
+		t.Run(language+"/"+snip.File, func(t *testing.T) {
+			source, err := os.ReadFile(srcPath)
 			if err != nil {
-				t.Fatalf("failed to read fixture %s: %v", fixturePath, err)
+				t.Fatalf("read fixture: %v", err)
 			}
 
 			parser := grammar.NewParser()
 			if !parser.SetLanguage(lang) {
-				t.Fatalf("failed to set language %q", language)
+				t.Fatalf("SetLanguage %q failed", language)
 			}
-
 			tree := parser.ParseBytes(source)
 			rootNode := tree.RootNode()
 			if rootNode.IsNull() {
-				t.Fatalf("root node is null for fixture %s", fixturePath)
+				t.Fatal("null root")
 			}
 			if rootNode.HasError() {
-				t.Fatalf("parse tree has errors for fixture %s:\n%s", fixturePath, rootNode.PrintTree())
+				msg := language + "/" + snip.File + ":\n" + rootNode.PrintTree()
+				if update {
+					// Still record failure when updating — goldens for broken trees are useless.
+					parseErrors = append(parseErrors, msg)
+				}
+				t.Fatalf("parse errors:\n%s", rootNode.PrintTree())
 			}
 
-			parseNode := grammar.BuildParseNode(rootNode, source, "")
-			if parseNode == nil {
-				t.Fatalf("parse node is nil for fixture %s", fixturePath)
-			}
-			if parseNode.Type != expectation.rootType {
-				t.Fatalf("unexpected root type for fixture %s: got %q want %q", fixturePath, parseNode.Type, expectation.rootType)
+			parseRoot := grammar.BuildParseNode(rootNode, source, "")
+			if parseRoot == nil {
+				t.Fatal("BuildParseNode returned nil")
 			}
 
-			if expectation.firstChildType != "" {
-				if len(parseNode.Children) == 0 {
-					t.Fatalf("expected at least one child node for fixture %s", fixturePath)
+			gotOut := grammar.ParseOutput{
+				Language: language,
+				File:     snip.File,
+				Root:     parseRoot,
+			}
+			gotJSON, err := json.MarshalIndent(gotOut, "", "  ")
+			if err != nil {
+				t.Fatalf("marshal golden candidate: %v", err)
+			}
+			gotJSON = append(gotJSON, '\n')
+
+			want, err := os.ReadFile(goldenPath)
+			if err != nil {
+				if os.IsNotExist(err) && update {
+					if err := os.WriteFile(goldenPath, gotJSON, 0o644); err != nil {
+						t.Fatalf("write golden %s: %v", goldenPath, err)
+					}
+					t.Logf("wrote %s", goldenPath)
+					return
 				}
-				if parseNode.Children[0].Type != expectation.firstChildType {
-					t.Fatalf("unexpected first child type for fixture %s: got %q want %q", fixturePath, parseNode.Children[0].Type, expectation.firstChildType)
+				t.Fatalf("missing golden %s (set UPDATE_GOLDENS=1 to create)", goldenPath)
+			}
+
+			if update && !bytes.Equal(want, gotJSON) {
+				if err := os.WriteFile(goldenPath, gotJSON, 0o644); err != nil {
+					t.Fatalf("update golden %s: %v", goldenPath, err)
 				}
+				t.Logf("updated %s", goldenPath)
+				return
+			}
+
+			if !bytes.Equal(want, gotJSON) {
+				t.Fatalf("golden mismatch for %s\n--- want ---\n%s\n--- got ---\n%s\n(set UPDATE_GOLDENS=1 to rewrite)",
+					goldenPath, want, gotJSON)
 			}
 		})
-		return nil
-	})
-	if err != nil {
-		var testErr *testFailure
-		if errors.As(err, &testErr) {
-			if testErr.message == "language is not registered" {
-				t.Fatalf("%v; supported languages: %s", err, grammar.SupportedLanguages())
-			}
-			t.Fatal(err)
-		}
-		t.Fatalf("failed to discover fixtures: %v", err)
 	}
+
 	if fixtureCount == 0 {
-		t.Fatalf("no fixtures found under %s", fixturesRoot)
+		t.Fatal("no language fixtures exercised")
 	}
-
-	for language := range languageExpectations {
-		if _, ok := langsWithFixtures[language]; !ok {
-			t.Fatalf("no fixtures found for language %q", language)
-		}
+	if len(parseErrors) > 0 && update {
+		t.Fatalf("%d fixtures still parse with errors — fix fixtureSources:\n%s",
+			len(parseErrors), strings.Join(parseErrors, "\n---\n"))
 	}
-}
-
-type testFailure struct {
-	message  string
-	language string
-}
-
-func (e *testFailure) Error() string {
-	return e.message + `: "` + e.language + `"`
 }
 
 func repoRoot(t *testing.T) string {

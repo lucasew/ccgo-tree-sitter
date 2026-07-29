@@ -21,31 +21,15 @@ func TestCoreEmitsUTFDecodeFuncs(t *testing.T) {
 		}
 	}
 	dir := t.TempDir()
+	tsPath, err := resolveTreeSitterPath()
+	if err != nil {
+		t.Skip("tree-sitter source not available:", err)
+	}
 	tr := &Transpiler{
-		TreeSitterPath: filepath.Join("..", "..", "third-party", "tree-sitter"),
-		// tests run with cwd = package dir; fix path relative to module root
-		GOOS:     runtime.GOOS,
-		GOARCH:   runtime.GOARCH,
-		KeepTemp: false,
-	}
-	// Resolve tree-sitter from module root
-	if _, err := os.Stat(tr.TreeSitterPath); err != nil {
-		tr.TreeSitterPath = "third-party/tree-sitter"
-		// when running from module root via go test ./cmd/codegen
-		if _, err := os.Stat(tr.TreeSitterPath); err != nil {
-			// try walk up
-			wd, _ := os.Getwd()
-			for d := wd; d != "/"; d = filepath.Dir(d) {
-				p := filepath.Join(d, "third-party", "tree-sitter")
-				if st, err := os.Stat(p); err == nil && st.IsDir() {
-					tr.TreeSitterPath = p
-					break
-				}
-			}
-		}
-	}
-	if _, err := os.Stat(filepath.Join(tr.TreeSitterPath, "lib/src/lib.c")); err != nil {
-		t.Fatalf("tree-sitter lib.c not found under %s: %v", tr.TreeSitterPath, err)
+		TreeSitterPath: tsPath,
+		GOOS:           runtime.GOOS,
+		GOARCH:         runtime.GOARCH,
+		KeepTemp:       false,
 	}
 	if err := tr.TranspileCore(dir); err != nil {
 		t.Fatalf("TranspileCore: %v", err)

@@ -209,3 +209,6 @@
 [submodule "third-party/tree-sitter-ql"]
 	path = third-party/tree-sitter-ql
 	url = https://github.com/tree-sitter/tree-sitter-ql.git
+[submodule "third-party/tree-sitter-verilog"]
+	path = third-party/tree-sitter-verilog
+	url = https://github.com/tree-sitter/tree-sitter-verilog.git

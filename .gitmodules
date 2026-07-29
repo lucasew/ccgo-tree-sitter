@@ -560,3 +560,6 @@
 [submodule "third-party/tree-sitter-gdscript"]
 	path = third-party/tree-sitter-gdscript
 	url = https://github.com/PrestonKnopp/tree-sitter-gdscript.git
+[submodule "third-party/tree-sitter-godot-resource"]
+	path = third-party/tree-sitter-godot-resource
+	url = https://github.com/PrestonKnopp/tree-sitter-godot-resource.git

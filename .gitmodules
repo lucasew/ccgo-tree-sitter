@@ -371,3 +371,6 @@
 [submodule "third-party/tree-sitter-elm"]
 	path = third-party/tree-sitter-elm
 	url = https://github.com/elm-tooling/tree-sitter-elm.git
+[submodule "third-party/tree-sitter-yuck"]
+	path = third-party/tree-sitter-yuck
+	url = https://github.com/tree-sitter-grammars/tree-sitter-yuck.git

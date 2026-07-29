@@ -1,6 +1,6 @@
 {
   "language": "json",
-  "file": "basic.json",
+  "file": "tiny.json",
   "root": {
     "type": "document",
     "start_byte": 0,

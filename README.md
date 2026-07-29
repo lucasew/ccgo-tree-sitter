@@ -40,14 +40,20 @@ mise run test                     # pure Go tests (no transpile)
 Placed trees under `third-party/tree-sitter-*/` are gitignored; pins are in
 `workspaced.lock.json`. Core tree-sitter stays a submodule at `third-party/tree-sitter`.
 
-Parse fixtures (astdump goldens):
+Parse fixtures (astdump goldens) — one minimal sample per generated language:
 
 ```text
 testdata/<language>/<file.ext>
 testdata/<language>/<file.ext>.golden.json
 ```
 
-`UPDATE_GOLDENS=1 go test ./cmd/parse/ -run TestLanguageFixtures` rewrites goldens.
+Sources are declared in `cmd/parse/fixture_sources.go`. Goldens are `grammar.ParseOutput` JSON.
+
+```bash
+UPDATE_GOLDENS=1 go test ./cmd/parse/ -run TestLanguageFixtures   # rewrite sources + goldens
+go test ./cmd/parse/ -run TestLanguageFixtures                       # compare goldens
+```
+
 Each language is its own `#grammar: name: { … }` in `workspaced.cue` (optional `astdump` metadata).
 
 ## Codegen (CI only)

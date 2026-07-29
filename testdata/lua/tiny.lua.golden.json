@@ -1,6 +1,6 @@
 {
   "language": "lua",
-  "file": "basic.lua",
+  "file": "tiny.lua",
   "root": {
     "type": "chunk",
     "start_byte": 0,

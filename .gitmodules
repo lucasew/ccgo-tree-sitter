@@ -485,3 +485,6 @@
 [submodule "third-party/tree-sitter-fortran"]
 	path = third-party/tree-sitter-fortran
 	url = https://github.com/stadelmanma/tree-sitter-fortran.git
+[submodule "third-party/tree-sitter-smithy"]
+	path = third-party/tree-sitter-smithy
+	url = https://github.com/indoorvivants/tree-sitter-smithy.git

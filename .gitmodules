@@ -437,3 +437,6 @@
 [submodule "third-party/tree-sitter-powershell"]
 	path = third-party/tree-sitter-powershell
 	url = https://github.com/airbus-cert/tree-sitter-powershell.git
+[submodule "third-party/tree-sitter-fsharp"]
+	path = third-party/tree-sitter-fsharp
+	url = https://github.com/ionide/tree-sitter-fsharp.git

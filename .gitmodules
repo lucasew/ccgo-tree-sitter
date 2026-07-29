@@ -359,3 +359,6 @@
 [submodule "third-party/tree-sitter-tablegen"]
 	path = third-party/tree-sitter-tablegen
 	url = https://github.com/tree-sitter-grammars/tree-sitter-tablegen.git
+[submodule "third-party/tree-sitter-xcompose"]
+	path = third-party/tree-sitter-xcompose
+	url = https://github.com/tree-sitter-grammars/tree-sitter-xcompose.git

@@ -227,3 +227,6 @@
 [submodule "third-party/tree-sitter-gstlaunch"]
 	path = third-party/tree-sitter-gstlaunch
 	url = https://github.com/tree-sitter-grammars/tree-sitter-gstlaunch.git
+[submodule "third-party/tree-sitter-gn"]
+	path = third-party/tree-sitter-gn
+	url = https://github.com/tree-sitter-grammars/tree-sitter-gn.git

@@ -317,9 +317,30 @@ func TestPostProcessWindowsLibcCalls(t *testing.T) {
 	if strings.Contains(out, "_InterlockedBitTestAndSet(") {
 		t.Fatalf("rewrote real InterlockedBitTestAndSet in\n%s", out)
 	}
+	// Missing _Interlocked* bodies must be injected after rewrite.
+	if !strings.Contains(out, "func _InterlockedIncrement(tls *libc.TLS, Addend uintptr)") {
+		t.Fatalf("missing injected _InterlockedIncrement helper in\n%s", out)
+	}
+	if !strings.Contains(out, "func _InterlockedDecrement(tls *libc.TLS, Addend uintptr)") {
+		t.Fatalf("missing injected _InterlockedDecrement helper in\n%s", out)
+	}
 	// Non-windows sources must be untouched.
 	linux := "package grammar\nfunc f() { strnlen(tls, 0, 0) }\n"
 	if got := postProcessWindowsLibcCalls(linux); got != linux {
 		t.Fatalf("rewrote non-windows source: %q", got)
+	}
+}
+
+func TestEnsureMissingInterlockedHelpersSkipsDefined(t *testing.T) {
+	in := "//go:build windows && amd64\n\npackage grammar\n\n" +
+		"func _InterlockedIncrement(tls *libc.TLS, Addend uintptr) (r int32) { return 0 }\n" +
+		"func f(tls *libc.TLS) { _ = _InterlockedIncrement(tls, p) }\n"
+	out := postProcessWindowsLibcCalls(in)
+	// Exactly one definition — do not inject a second body.
+	if n := strings.Count(out, "func _InterlockedIncrement("); n != 1 {
+		t.Fatalf("want 1 _InterlockedIncrement def, got %d in\n%s", n, out)
+	}
+	if strings.Contains(out, "Injected by postProcessWindowsLibcCalls") {
+		t.Fatalf("injected helpers despite existing def:\n%s", out)
 	}
 }

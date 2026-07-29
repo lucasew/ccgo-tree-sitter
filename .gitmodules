@@ -341,3 +341,6 @@
 [submodule "third-party/tree-sitter-starlark"]
 	path = third-party/tree-sitter-starlark
 	url = https://github.com/tree-sitter-grammars/tree-sitter-starlark.git
+[submodule "third-party/tree-sitter-wgsl-bevy"]
+	path = third-party/tree-sitter-wgsl-bevy
+	url = https://github.com/tree-sitter-grammars/tree-sitter-wgsl-bevy.git

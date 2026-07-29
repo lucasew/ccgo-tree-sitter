@@ -326,3 +326,6 @@
 [submodule "third-party/tree-sitter-readline"]
 	path = third-party/tree-sitter-readline
 	url = https://github.com/tree-sitter-grammars/tree-sitter-readline.git
+[submodule "third-party/tree-sitter-scss"]
+	path = third-party/tree-sitter-scss
+	url = https://github.com/tree-sitter-grammars/tree-sitter-scss.git

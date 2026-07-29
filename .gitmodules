@@ -296,3 +296,6 @@
 [submodule "third-party/tree-sitter-printf"]
 	path = third-party/tree-sitter-printf
 	url = https://github.com/tree-sitter-grammars/tree-sitter-printf.git
+[submodule "third-party/tree-sitter-meson"]
+	path = third-party/tree-sitter-meson
+	url = https://github.com/tree-sitter-grammars/tree-sitter-meson.git

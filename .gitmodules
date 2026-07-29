@@ -18,9 +18,6 @@
 [submodule "third-party/tree-sitter-c-sharp"]
 	path = third-party/tree-sitter-c-sharp
 	url = https://github.com/tree-sitter/tree-sitter-c-sharp
-[submodule "third-party/tree-sitter-php"]
-	path = third-party/tree-sitter-php
-	url = https://github.com/tree-sitter/tree-sitter-php
 [submodule "third-party/tree-sitter-ruby"]
 	path = third-party/tree-sitter-ruby
 	url = https://github.com/tree-sitter/tree-sitter-ruby
@@ -84,6 +81,7 @@
 [submodule "third-party/tree-sitter-sql"]
 	path = third-party/tree-sitter-sql
 	url = https://github.com/DerekStride/tree-sitter-sql
+	branch = gh-pages
 [submodule "third-party/tree-sitter-dockerfile"]
 	path = third-party/tree-sitter-dockerfile
 	url = https://github.com/camdencheek/tree-sitter-dockerfile
@@ -199,3 +197,6 @@
 [submodule "third-party/tree-sitter-templ"]
 	path = third-party/tree-sitter-templ
 	url = https://github.com/vrischmann/tree-sitter-templ.git
+[submodule "third-party/tree-sitter-php"]
+	path = third-party/tree-sitter-php
+	url = https://github.com/tree-sitter/tree-sitter-php.git

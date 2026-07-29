@@ -470,3 +470,6 @@
 [submodule "third-party/tree-sitter-wit"]
 	path = third-party/tree-sitter-wit
 	url = https://github.com/bytecodealliance/tree-sitter-wit.git
+[submodule "third-party/tree-sitter-vimdoc"]
+	path = third-party/tree-sitter-vimdoc
+	url = https://github.com/neovim/tree-sitter-vimdoc.git

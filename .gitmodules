@@ -476,3 +476,6 @@
 [submodule "third-party/tree-sitter-git-config"]
 	path = third-party/tree-sitter-git-config
 	url = https://github.com/the-mikedavis/tree-sitter-git-config.git
+[submodule "third-party/tree-sitter-wgsl"]
+	path = third-party/tree-sitter-wgsl
+	url = https://github.com/szebniok/tree-sitter-wgsl.git

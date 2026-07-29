@@ -236,3 +236,6 @@
 [submodule "third-party/tree-sitter-cst"]
 	path = third-party/tree-sitter-cst
 	url = https://github.com/tree-sitter-grammars/tree-sitter-cst.git
+[submodule "third-party/tree-sitter-agda"]
+	path = third-party/tree-sitter-agda
+	url = https://github.com/tree-sitter/tree-sitter-agda.git

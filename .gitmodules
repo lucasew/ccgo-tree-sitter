@@ -365,3 +365,6 @@
 [submodule "third-party/tree-sitter-ungrammar"]
 	path = third-party/tree-sitter-ungrammar
 	url = https://github.com/tree-sitter-grammars/tree-sitter-ungrammar.git
+[submodule "third-party/tree-sitter-vim"]
+	path = third-party/tree-sitter-vim
+	url = https://github.com/tree-sitter-grammars/tree-sitter-vim.git

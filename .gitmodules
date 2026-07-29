@@ -203,3 +203,6 @@
 [submodule "third-party/tree-sitter-qmldir"]
 	path = third-party/tree-sitter-qmldir
 	url = https://github.com/tree-sitter-grammars/tree-sitter-qmldir.git
+[submodule "third-party/tree-sitter-proto"]
+	path = third-party/tree-sitter-proto
+	url = https://github.com/mitchellh/tree-sitter-proto.git

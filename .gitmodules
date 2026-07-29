@@ -383,3 +383,6 @@
 [submodule "third-party/tree-sitter-typst"]
 	path = third-party/tree-sitter-typst
 	url = https://github.com/uben0/tree-sitter-typst.git
+[submodule "third-party/tree-sitter-purescript"]
+	path = third-party/tree-sitter-purescript
+	url = https://github.com/postsolar/tree-sitter-purescript.git

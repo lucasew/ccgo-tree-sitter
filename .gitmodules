@@ -515,3 +515,6 @@
 [submodule "third-party/tree-sitter-eex"]
 	path = third-party/tree-sitter-eex
 	url = https://github.com/connorlay/tree-sitter-eex.git
+[submodule "third-party/tree-sitter-roc"]
+	path = third-party/tree-sitter-roc
+	url = https://github.com/faldor20/tree-sitter-roc.git

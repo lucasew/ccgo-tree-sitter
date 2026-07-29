@@ -1,15 +1,105 @@
 #!/usr/bin/env bash
+# Add a tree-sitter grammar as a workspaced #grammar entry (not a git submodule).
+#
+# Usage:
+#   ./setup-grammars                     # list orgs and print how to add
+#   ./setup-grammars owner/repo          # append #grammar entry for that repo
+#   ./setup-grammars owner/repo path1,path2  # monorepo paths (default: src)
+#
+# Then: workspaced mod lock && workspaced codebase apply
 set -euo pipefail
 
-ORGS=(tree-sitter tree-sitter-grammars)
+if [[ $# -eq 0 ]]; then
+	cat <<'EOF'
+Add a grammar (workspaced #grammar + core:place), not a git submodule.
 
-# Here we are exploiting that all bindings have "tree-sitter" before the name of the language and grammars have the language after
+  ./setup-grammars owner/tree-sitter-foo
+  ./setup-grammars tree-sitter/tree-sitter-typescript typescript/src,tsx/src,common
 
-cd ./third-party
-for ORG in "${ORGS[@]}"; do
-	for REPO in $(gh repo list "$ORG" --limit 1000 -t '{{range .}}{{printf "%s\n" .name}}{{end}}' --json name | grep -e '^tree-sitter-' | grep -v template); do
-		if [[ ! -d "$REPO" ]]; then
-			git submodule add "ssh://git@github.com/$ORG/$REPO" "$REPO"
-		fi
-	done
-done
+Then:
+  workspaced mod lock
+  workspaced codebase apply   # or: mise run grammars:sync
+
+Discover/codegen still look under third-party/tree-sitter-*/src/parser.c.
+EOF
+	exit 0
+fi
+
+SPEC="$1"
+PATHS="${2:-src}"
+
+# Normalize owner/repo
+SPEC="${SPEC#https://github.com/}"
+SPEC="${SPEC#git@github.com:}"
+SPEC="${SPEC%.git}"
+SPEC="${SPEC%/}"
+
+OWNER="${SPEC%%/*}"
+REPO="${SPEC#*/}"
+if [[ -z "$OWNER" || -z "$REPO" || "$OWNER" == "$REPO" ]]; then
+	echo "expected owner/repo, got: $1" >&2
+	exit 1
+fi
+
+if [[ "$REPO" != tree-sitter-* ]]; then
+	echo "warning: repo name $REPO does not start with tree-sitter-" >&2
+fi
+
+KEY="${REPO#tree-sitter-}"
+# CUE key: quote if not a bare identifier
+if [[ "$KEY" =~ ^[A-Za-z_][A-Za-z0-9_]*$ ]]; then
+	CUE_KEY="$KEY"
+else
+	CUE_KEY="\"$KEY\""
+fi
+
+CUE_FILE=workspaced.cue
+if [[ ! -f "$CUE_FILE" ]]; then
+	echo "missing $CUE_FILE" >&2
+	exit 1
+fi
+
+if grep -qE "^\t${CUE_KEY}: \{|^\t\"${KEY}\": \{" "$CUE_FILE" 2>/dev/null; then
+	echo "grammar already listed: $KEY" >&2
+	exit 1
+fi
+
+# Build entry
+{
+	echo -n "	${CUE_KEY}: {"
+	echo
+	echo "		from: \"github:${OWNER}/${REPO}\""
+	echo "		repo: \"${REPO}\""
+	if [[ "$PATHS" != "src" ]]; then
+		IFS=',' read -ra parts <<<"$PATHS"
+		path_list=""
+		for p in "${parts[@]}"; do
+			p="${p// /}"
+			[[ -n "$path_list" ]] && path_list+=", "
+			path_list+="\"$p\""
+		done
+		echo "		paths: [${path_list}]"
+	fi
+	echo "	}"
+} >/tmp/grammar-entry.cue
+
+# Insert before closing brace of #grammar: {
+# Find line with lone "}" that closes #grammar (before #grammar: [string])
+python3 - "$CUE_FILE" /tmp/grammar-entry.cue <<'PY'
+import sys
+from pathlib import Path
+cue_path, entry_path = Path(sys.argv[1]), Path(sys.argv[2])
+text = cue_path.read_text()
+entry = entry_path.read_text().rstrip() + "\n"
+marker = "\n}\n\n#grammar: [string]:"
+if marker not in text:
+    # try without blank line
+    marker = "\n}\n#grammar: [string]:"
+if marker not in text:
+    sys.exit("could not find end of #grammar block")
+text = text.replace(marker, "\n" + entry + marker, 1)
+cue_path.write_text(text)
+print(f"added #grammar entry for {entry.splitlines()[0].strip()}")
+PY
+
+echo "Next: workspaced mod lock && workspaced codebase apply"

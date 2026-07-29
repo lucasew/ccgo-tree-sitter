@@ -9,4 +9,4 @@ require (
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar => ../
 
-replace modernc.org/libc => ../../third-party/libc
+replace modernc.org/libc => github.com/modernc-tree-sitter/libc v0.0.0-20260707203921-3c7a53d19f3f

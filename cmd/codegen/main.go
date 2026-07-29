@@ -110,6 +110,9 @@ func run(cmd *cobra.Command, args []string) error {
 	if err != nil {
 		return err
 	}
+	if len(units) == 0 {
+		return fmt.Errorf("no grammar units under third-party/tree-sitter-*/src/parser.c; run `mise run grammars:sync` (workspaced codebase apply) first")
+	}
 	slog.Info("discovered grammar units", "count", len(units))
 
 	var summaryWriter io.Writer

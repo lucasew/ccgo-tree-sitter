@@ -58,6 +58,14 @@ depends = [
 [tasks.install]
 run = "go get -v ./..."
 
+[tasks."grammars:sync"]
+description = "Materialise grammar C sources via workspaced core:place"
+run = "workspaced codebase apply"
+
+[tasks."grammars:lock"]
+description = "Refresh workspaced.lock.json pins for #grammar / #fixture inputs"
+run = "workspaced mod lock"
+
 [tasks.test]
 description = "Run unit tests against host grammars (pure Go, no CGO)"
 env = { CGO_ENABLED = "0" }

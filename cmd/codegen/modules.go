@@ -17,6 +17,10 @@ const (
 	grammarModulePath = rootModulePath + "/grammar"
 	moduleGoVersion   = "1.25.0"
 	localPseudoVer    = "v0.0.0"
+
+	// Forked libc with tree-sitter / Windows shims (not local submodule).
+	libcReplacePath = "github.com/modernc-tree-sitter/libc"
+	libcReplaceVer  = "v0.0.0-20260707203921-3c7a53d19f3f"
 )
 
 // ensureGrammarModules writes grammar/go.mod, grammar/<lang>/go.mod (with local
@@ -125,8 +129,8 @@ go %s
 
 require modernc.org/libc %s
 
-replace modernc.org/libc => ../third-party/libc
-`, grammarModulePath, moduleGoVersion, libcVer)
+replace modernc.org/libc => %s %s
+`, grammarModulePath, moduleGoVersion, libcVer, libcReplacePath, libcReplaceVer)
 	return os.WriteFile(filepath.Join(grammarDir, "go.mod"), []byte(content), 0644)
 }
 
@@ -146,8 +150,8 @@ require (
 
 replace %s => ../
 
-replace modernc.org/libc => ../../third-party/libc
-`, grammarModulePath, lang, moduleGoVersion, grammarModulePath, localPseudoVer, libcVer, grammarModulePath)
+replace modernc.org/libc => %s %s
+`, grammarModulePath, lang, moduleGoVersion, grammarModulePath, localPseudoVer, libcVer, grammarModulePath, libcReplacePath, libcReplaceVer)
 	return os.WriteFile(filepath.Join(grammarDir, lang, "go.mod"), []byte(content), 0644)
 }
 
@@ -238,6 +242,10 @@ func updateRootGoMod(outputDir string, langs []string) error {
 		return err
 	}
 	f.AddNewRequire("modernc.org/libc", libcVer, false)
+	// Keep the modernc-tree-sitter libc fork (not a third-party submodule).
+	if err := f.AddReplace("modernc.org/libc", "", libcReplacePath, libcReplaceVer); err != nil {
+		return err
+	}
 
 	f.Cleanup()
 	out, err := f.Format()

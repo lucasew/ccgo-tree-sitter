@@ -1,3 +1,9 @@
 /parse
 __pycache__
 .codex
+
+# Materialised by workspaced codebase apply (core:place). Not committed.
+/third-party/tree-sitter-*/
+/third-party/tensorflow/
+/third-party/django/
+.workspaced/

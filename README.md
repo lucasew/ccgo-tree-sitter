@@ -23,9 +23,24 @@ first, then run `mise run test`.
 | windows/amd64 | `windows-latest` | no | **MinGW `gcc -E`** (not clang/MSVC) |
 | windows/arm64 | `windows-11-arm` | no | experimental; llvm-mingw `aarch64-w64-mingw32` |
 
+## Grammar sources
+
+Grammar C inputs are **not** git submodules. They are declared in `workspaced.cue`
+(`#grammar`) and placed with workspaced `core:place` (only `src/` / monorepo units):
+
+```bash
+mise run grammars:sync            # workspaced codebase apply
+# or: workspaced mod lock && workspaced codebase apply
+./setup-grammars owner/tree-sitter-foo   # add a #grammar entry
+```
+
+Placed trees under `third-party/tree-sitter-*/` are gitignored; pins are in
+`workspaced.lock.json`. Core tree-sitter stays a submodule at `third-party/tree-sitter`.
+
 ## Codegen
 
 ```bash
+mise run grammars:sync            # first time / after lock changes
 mise run codegen                  # host GOOS/GOARCH only
 mise run codegen:darwin-arm64     # explicit triple
 ```

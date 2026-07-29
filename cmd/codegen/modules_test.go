@@ -33,7 +33,7 @@ func TestWriteLangGoMod(t *testing.T) {
 		"github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar v0.0.0",
 		"modernc.org/libc " + libcVer,
 		"replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar => ../",
-		"replace modernc.org/libc => ../../third-party/libc",
+		"replace modernc.org/libc => " + libcReplacePath + " " + libcReplaceVer,
 	} {
 		if !strings.Contains(s, want) {
 			t.Errorf("go.mod missing %q\n%s", want, s)
@@ -58,7 +58,7 @@ func TestWriteCoreGoMod(t *testing.T) {
 	for _, want := range []string{
 		"module github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar",
 		"require modernc.org/libc " + libcVer,
-		"replace modernc.org/libc => ../third-party/libc",
+		"replace modernc.org/libc => " + libcReplacePath + " " + libcReplaceVer,
 	} {
 		if !strings.Contains(s, want) {
 			t.Errorf("go.mod missing %q\n%s", want, s)

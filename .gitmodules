@@ -443,3 +443,6 @@
 [submodule "third-party/tree-sitter-proto"]
 	path = third-party/tree-sitter-proto
 	url = https://github.com/mitchellh/tree-sitter-proto.git
+[submodule "third-party/tree-sitter-perl"]
+	path = third-party/tree-sitter-perl
+	url = https://github.com/tree-sitter-perl/tree-sitter-perl.git

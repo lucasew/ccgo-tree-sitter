@@ -524,3 +524,6 @@
 [submodule "third-party/tree-sitter-nginx"]
 	path = third-party/tree-sitter-nginx
 	url = https://github.com/opa-oz/tree-sitter-nginx.git
+[submodule "third-party/tree-sitter-ini"]
+	path = third-party/tree-sitter-ini
+	url = https://github.com/justinmk/tree-sitter-ini.git

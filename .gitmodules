@@ -467,3 +467,6 @@
 [submodule "third-party/tree-sitter-gitcommit"]
 	path = third-party/tree-sitter-gitcommit
 	url = https://github.com/gbprod/tree-sitter-gitcommit.git
+[submodule "third-party/tree-sitter-wit"]
+	path = third-party/tree-sitter-wit
+	url = https://github.com/bytecodealliance/tree-sitter-wit.git

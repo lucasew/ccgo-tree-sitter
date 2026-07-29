@@ -266,3 +266,6 @@
 [submodule "third-party/tree-sitter-go-sum"]
 	path = third-party/tree-sitter-go-sum
 	url = https://github.com/tree-sitter-grammars/tree-sitter-go-sum.git
+[submodule "third-party/tree-sitter-kconfig"]
+	path = third-party/tree-sitter-kconfig
+	url = https://github.com/tree-sitter-grammars/tree-sitter-kconfig.git

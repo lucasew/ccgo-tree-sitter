@@ -464,3 +464,6 @@
 [submodule "third-party/tree-sitter-git-rebase"]
 	path = third-party/tree-sitter-git-rebase
 	url = https://github.com/the-mikedavis/tree-sitter-git-rebase.git
+[submodule "third-party/tree-sitter-gitcommit"]
+	path = third-party/tree-sitter-gitcommit
+	url = https://github.com/gbprod/tree-sitter-gitcommit.git

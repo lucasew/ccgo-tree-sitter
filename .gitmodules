@@ -479,3 +479,6 @@
 [submodule "third-party/tree-sitter-wgsl"]
 	path = third-party/tree-sitter-wgsl
 	url = https://github.com/szebniok/tree-sitter-wgsl.git
+[submodule "third-party/tree-sitter-json5"]
+	path = third-party/tree-sitter-json5
+	url = https://github.com/Joakker/tree-sitter-json5.git

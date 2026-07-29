@@ -124,9 +124,6 @@
 [submodule "third-party/tree-sitter-cmake"]
 	path = third-party/tree-sitter-cmake
 	url = https://github.com/uyha/tree-sitter-cmake.git
-[submodule "third-party/tree-sitter-swift"]
-	path = third-party/tree-sitter-swift
-	url = https://github.com/alex-pinkus/tree-sitter-swift.git
 [submodule "third-party/tree-sitter-zig"]
 	path = third-party/tree-sitter-zig
 	url = https://github.com/tree-sitter-grammars/tree-sitter-zig.git
@@ -242,9 +239,6 @@
 [submodule "third-party/tree-sitter-capnp"]
 	path = third-party/tree-sitter-capnp
 	url = https://github.com/tree-sitter-grammars/tree-sitter-capnp.git
-[submodule "third-party/tree-sitter-graph"]
-	path = third-party/tree-sitter-graph
-	url = https://github.com/tree-sitter/tree-sitter-graph.git
 [submodule "third-party/tree-sitter-func"]
 	path = third-party/tree-sitter-func
 	url = https://github.com/tree-sitter-grammars/tree-sitter-func.git
@@ -425,9 +419,6 @@
 [submodule "third-party/tree-sitter-rasi"]
 	path = third-party/tree-sitter-rasi
 	url = https://github.com/Fymyte/tree-sitter-rasi.git
-[submodule "third-party/tree-sitter-tmux"]
-	path = third-party/tree-sitter-tmux
-	url = https://github.com/Freed-Wu/tree-sitter-tmux.git
 [submodule "third-party/tree-sitter-graphql"]
 	path = third-party/tree-sitter-graphql
 	url = https://github.com/bkegley/tree-sitter-graphql.git
@@ -443,15 +434,9 @@
 [submodule "third-party/tree-sitter-proto"]
 	path = third-party/tree-sitter-proto
 	url = https://github.com/mitchellh/tree-sitter-proto.git
-[submodule "third-party/tree-sitter-perl"]
-	path = third-party/tree-sitter-perl
-	url = https://github.com/tree-sitter-perl/tree-sitter-perl.git
 [submodule "third-party/tree-sitter-gitignore"]
 	path = third-party/tree-sitter-gitignore
 	url = https://github.com/shunsambongi/tree-sitter-gitignore.git
-[submodule "third-party/tree-sitter-latex"]
-	path = third-party/tree-sitter-latex
-	url = https://github.com/latex-lsp/tree-sitter-latex.git
 [submodule "third-party/tree-sitter-cobol"]
 	path = third-party/tree-sitter-cobol
 	url = https://github.com/yutaro-sakamoto/tree-sitter-cobol.git

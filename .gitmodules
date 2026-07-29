@@ -563,3 +563,7 @@
 [submodule "third-party/tree-sitter-godot-resource"]
 	path = third-party/tree-sitter-godot-resource
 	url = https://github.com/PrestonKnopp/tree-sitter-godot-resource.git
+
+[submodule "third-party/tree-sitter-slang"]
+	path = third-party/tree-sitter-slang
+	url = https://github.com/tree-sitter-grammars/tree-sitter-slang.git

@@ -506,3 +506,6 @@
 [submodule "third-party/tree-sitter-heex"]
 	path = third-party/tree-sitter-heex
 	url = https://github.com/phoenixframework/tree-sitter-heex.git
+[submodule "third-party/tree-sitter-blade"]
+	path = third-party/tree-sitter-blade
+	url = https://github.com/EmranMR/tree-sitter-blade.git

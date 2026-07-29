@@ -212,3 +212,6 @@
 [submodule "third-party/tree-sitter-verilog"]
 	path = third-party/tree-sitter-verilog
 	url = https://github.com/tree-sitter/tree-sitter-verilog.git
+[submodule "third-party/tree-sitter-chatito"]
+	path = third-party/tree-sitter-chatito
+	url = https://github.com/tree-sitter-grammars/tree-sitter-chatito.git

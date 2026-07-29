@@ -27,6 +27,21 @@ var (
 	langEntryRe = regexp.MustCompile(`(?m)(?:TS_PUBLIC\s+)?const\s+TSLanguage\s*\*\s*tree_sitter_(\w+)\s*\(\s*void\s*\)`)
 )
 
+// skipTranspileReason maps language ids that must not enter ccgo. These panics
+// (stack overflow) kill the whole process; the normal "skip on error" path never
+// runs. Keep in sync with CI failures / known-bad oversized tables.
+var skipTranspileReason = map[string]string{
+	// ionide/tree-sitter-fsharp: ~55MB parser.c → ccgo recurses in
+	// modernc.org/cc StructType.Align until the 1GiB goroutine stack limit.
+	"fsharp":           "ccgo stack overflow on oversized parse tables (~55MB parser.c)",
+	"fsharp_signature": "same ionide monorepo; oversized tables (paired with fsharp)",
+}
+
+// maxParserCBytes skips units whose src/parser.c is larger than this. Beyond
+// this size ccgo has been observed to stack-overflow during type lowering.
+// fsharp is ~54MiB; leave headroom under that for grammars that still work.
+const maxParserCBytes = 50 << 20 // 50 MiB
+
 // discoverGrammarUnits finds every …/src/parser.c under third-party/tree-sitter-*,
 // assigns a language name (prefer C entry symbol tree_sitter_X, else unit folder),
 // sorts unwanted locations last, and keeps the first unit per normalized name.
@@ -63,8 +78,18 @@ func discoverGrammarUnits(thirdPartyGlob string) ([]GrammarUnit, error) {
 				return nil
 			}
 			unitPath := filepath.Dir(filepath.Dir(path)) // parent of src/
+			// Size gate before reading multi‑MB parser.c for the language symbol.
+			if st, err := d.Info(); err == nil && st.Size() > maxParserCBytes {
+				slog.Warn("excluding grammar unit (parser.c too large for ccgo)",
+					"path", path, "size_bytes", st.Size(), "max_bytes", maxParserCBytes)
+				return nil
+			}
 			name := languageNameForParser(path, unitPath)
 			if name == "" {
+				return nil
+			}
+			if reason, ok := skipTranspileReason[name]; ok {
+				slog.Warn("excluding grammar unit (known unsupported)", "grammar", name, "path", unitPath, "reason", reason)
 				return nil
 			}
 			candidates = append(candidates, GrammarUnit{

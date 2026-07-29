@@ -269,3 +269,6 @@
 [submodule "third-party/tree-sitter-kconfig"]
 	path = third-party/tree-sitter-kconfig
 	url = https://github.com/tree-sitter-grammars/tree-sitter-kconfig.git
+[submodule "third-party/tree-sitter-ispc"]
+	path = third-party/tree-sitter-ispc
+	url = https://github.com/tree-sitter-grammars/tree-sitter-ispc.git

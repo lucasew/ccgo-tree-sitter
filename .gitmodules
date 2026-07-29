@@ -203,3 +203,6 @@
 [submodule "third-party/tree-sitter-qmldir"]
 	path = third-party/tree-sitter-qmldir
 	url = https://github.com/tree-sitter-grammars/tree-sitter-qmldir.git
+[submodule "third-party/tree-sitter-crystal"]
+	path = third-party/tree-sitter-crystal
+	url = https://github.com/crystal-lang-tools/tree-sitter-crystal.git

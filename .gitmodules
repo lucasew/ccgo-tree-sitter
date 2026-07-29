@@ -356,3 +356,6 @@
 [submodule "third-party/tree-sitter-uxntal"]
 	path = third-party/tree-sitter-uxntal
 	url = https://github.com/tree-sitter-grammars/tree-sitter-uxntal.git
+[submodule "third-party/tree-sitter-tablegen"]
+	path = third-party/tree-sitter-tablegen
+	url = https://github.com/tree-sitter-grammars/tree-sitter-tablegen.git

@@ -545,3 +545,6 @@
 [submodule "third-party/tree-sitter-wasm"]
 	path = third-party/tree-sitter-wasm
 	url = https://github.com/wasm-lsp/tree-sitter-wasm.git
+[submodule "third-party/tree-sitter-objdump"]
+	path = third-party/tree-sitter-objdump
+	url = https://github.com/ColinKennedy/tree-sitter-objdump.git

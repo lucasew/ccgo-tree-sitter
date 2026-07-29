@@ -329,3 +329,6 @@
 [submodule "third-party/tree-sitter-scss"]
 	path = third-party/tree-sitter-scss
 	url = https://github.com/tree-sitter-grammars/tree-sitter-scss.git
+[submodule "third-party/tree-sitter-smali"]
+	path = third-party/tree-sitter-smali
+	url = https://github.com/tree-sitter-grammars/tree-sitter-smali.git

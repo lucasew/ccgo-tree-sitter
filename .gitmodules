@@ -260,3 +260,6 @@
 [submodule "third-party/tree-sitter-embedded-template"]
 	path = third-party/tree-sitter-embedded-template
 	url = https://github.com/tree-sitter/tree-sitter-embedded-template.git
+[submodule "third-party/tree-sitter-gpg-config"]
+	path = third-party/tree-sitter-gpg-config
+	url = https://github.com/tree-sitter-grammars/tree-sitter-gpg-config.git

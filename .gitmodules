@@ -311,3 +311,6 @@
 [submodule "third-party/tree-sitter-pony"]
 	path = third-party/tree-sitter-pony
 	url = https://github.com/tree-sitter-grammars/tree-sitter-pony.git
+[submodule "third-party/tree-sitter-pymanifest"]
+	path = third-party/tree-sitter-pymanifest
+	url = https://github.com/tree-sitter-grammars/tree-sitter-pymanifest.git

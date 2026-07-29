@@ -2,6 +2,8 @@
 go = "1.26.4"
 uv = "0.11.26"
 "go:golang.org/x/tools/gopls" = "0.22.0"
+# Places grammar C sources (core:place); also used by CI prepare / add-grammar.
+"github:lucasew/workspaced" = "0.14.1"
 
 # Pure-Go default: parse/tests must not require a host C compiler.
 # Codegen tasks set CC=clang only where the probe needs it.

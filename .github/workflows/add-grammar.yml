@@ -25,11 +25,8 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Install workspaced
-        run: |
-          set -euo pipefail
-          go install github.com/lucasew/workspaced/cmd/workspaced@latest
-          echo "$(go env GOPATH)/bin" >> "$GITHUB_PATH"
+      - name: Set up tools (mise)
+        uses: jdx/mise-action@e6a8b3978addb5a52f2b4cd9d91eafa7f0ab959d # v4
 
       - name: Add #grammar entry and lock
         id: add
@@ -66,7 +63,7 @@ jobs:
           echo "Adding grammar: ${spec} paths=${PATHS}"
           ./setup-grammars "${spec}" "${PATHS}"
 
-          workspaced mod lock
+          mise run grammars:lock
 
           echo "repo_name=${repo}" >> "$GITHUB_OUTPUT"
           echo "owner=${owner}" >> "$GITHUB_OUTPUT"

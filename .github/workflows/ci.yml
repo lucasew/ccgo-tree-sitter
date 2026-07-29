@@ -27,17 +27,11 @@ jobs:
           # Grammar C sources are placed by workspaced (see below).
           submodules: recursive
 
-      - name: Install Go
-        uses: actions/setup-go@d35c59abb061a4a6fb18e82ac0862c26744d6ab5 # v5
-        with:
-          go-version-file: go.mod
+      - name: Set up tools (mise)
+        uses: jdx/mise-action@e6a8b3978addb5a52f2b4cd9d91eafa7f0ab959d # v4
 
-      - name: Install workspaced and place grammar sources
-        run: |
-          set -euo pipefail
-          go install github.com/lucasew/workspaced/cmd/workspaced@latest
-          export PATH="$(go env GOPATH)/bin:$PATH"
-          workspaced codebase apply
+      - name: Place grammar sources
+        run: mise run grammars:sync
 
       - name: Pack source (no .git)
         uses: ./.github/actions/pack-source

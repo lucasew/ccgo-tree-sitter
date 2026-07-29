@@ -203,3 +203,6 @@
 [submodule "third-party/tree-sitter-qmldir"]
 	path = third-party/tree-sitter-qmldir
 	url = https://github.com/tree-sitter-grammars/tree-sitter-qmldir.git
+[submodule "third-party/tree-sitter-http"]
+	path = third-party/tree-sitter-http
+	url = https://github.com/rest-nvim/tree-sitter-http.git

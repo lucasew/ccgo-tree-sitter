@@ -413,3 +413,6 @@
 [submodule "third-party/tree-sitter-vhdl"]
 	path = third-party/tree-sitter-vhdl
 	url = https://github.com/alemuller/tree-sitter-vhdl.git
+[submodule "third-party/tree-sitter-pascal"]
+	path = third-party/tree-sitter-pascal
+	url = https://github.com/Isopod/tree-sitter-pascal.git

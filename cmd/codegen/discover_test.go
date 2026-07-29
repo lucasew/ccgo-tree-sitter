@@ -72,6 +72,20 @@ func TestDiscoverGrammarUnits_integration(t *testing.T) {
 			t.Errorf("examples parser should be excluded: %s", u.ParserC)
 		}
 	}
+
+	// fsharp (~55MB parser.c) stack-overflows ccgo — must not be scheduled.
+	if _, ok := byName["fsharp"]; ok {
+		t.Error("fsharp must be excluded (ccgo stack overflow on oversized tables)")
+	}
+	if _, ok := byName["fsharp_signature"]; ok {
+		t.Error("fsharp_signature must be excluded with fsharp")
+	}
+}
+
+func TestSkipTranspileReasonCoversFsharp(t *testing.T) {
+	if _, ok := skipTranspileReason["fsharp"]; !ok {
+		t.Fatal("expected fsharp in skipTranspileReason")
+	}
 }
 
 func TestNormalizeGrammarName(t *testing.T) {

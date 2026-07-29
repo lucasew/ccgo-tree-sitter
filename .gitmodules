@@ -536,3 +536,6 @@
 [submodule "third-party/tree-sitter-sparql"]
 	path = third-party/tree-sitter-sparql
 	url = https://github.com/GordianDziwis/tree-sitter-sparql.git
+[submodule "third-party/tree-sitter-angular"]
+	path = third-party/tree-sitter-angular
+	url = https://github.com/dlvandenberg/tree-sitter-angular.git

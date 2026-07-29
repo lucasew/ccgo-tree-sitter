@@ -218,3 +218,6 @@
 [submodule "third-party/tree-sitter-fluent"]
 	path = third-party/tree-sitter-fluent
 	url = https://github.com/tree-sitter/tree-sitter-fluent.git
+[submodule "third-party/tree-sitter-cpon"]
+	path = third-party/tree-sitter-cpon
+	url = https://github.com/tree-sitter-grammars/tree-sitter-cpon.git

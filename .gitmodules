@@ -254,3 +254,6 @@
 [submodule "third-party/tree-sitter-hlsl"]
 	path = third-party/tree-sitter-hlsl
 	url = https://github.com/tree-sitter-grammars/tree-sitter-hlsl.git
+[submodule "third-party/tree-sitter-firrtl"]
+	path = third-party/tree-sitter-firrtl
+	url = https://github.com/tree-sitter-grammars/tree-sitter-firrtl.git

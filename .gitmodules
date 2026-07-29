@@ -233,3 +233,6 @@
 [submodule "third-party/tree-sitter-bitbake"]
 	path = third-party/tree-sitter-bitbake
 	url = https://github.com/tree-sitter-grammars/tree-sitter-bitbake.git
+[submodule "third-party/tree-sitter-cst"]
+	path = third-party/tree-sitter-cst
+	url = https://github.com/tree-sitter-grammars/tree-sitter-cst.git

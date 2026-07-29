@@ -422,3 +422,6 @@
 [submodule "third-party/tree-sitter-fish"]
 	path = third-party/tree-sitter-fish
 	url = https://github.com/ram02z/tree-sitter-fish.git
+[submodule "third-party/tree-sitter-rasi"]
+	path = third-party/tree-sitter-rasi
+	url = https://github.com/Fymyte/tree-sitter-rasi.git

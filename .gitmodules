@@ -335,3 +335,6 @@
 [submodule "third-party/tree-sitter-squirrel"]
 	path = third-party/tree-sitter-squirrel
 	url = https://github.com/tree-sitter-grammars/tree-sitter-squirrel.git
+[submodule "third-party/tree-sitter-ssh-config"]
+	path = third-party/tree-sitter-ssh-config
+	url = https://github.com/tree-sitter-grammars/tree-sitter-ssh-config.git

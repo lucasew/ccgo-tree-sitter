@@ -521,3 +521,6 @@
 [submodule "third-party/tree-sitter-llvm"]
 	path = third-party/tree-sitter-llvm
 	url = https://github.com/benwilliamgraham/tree-sitter-llvm.git
+[submodule "third-party/tree-sitter-nginx"]
+	path = third-party/tree-sitter-nginx
+	url = https://github.com/opa-oz/tree-sitter-nginx.git

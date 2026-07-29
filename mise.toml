@@ -10,55 +10,10 @@ uv = "0.11.26"
 [env]
 CGO_ENABLED = "0"
 
-# Per-target tasks. CI runs exactly one task per runner (native OS/arch).
-# Windows uses MinGW gcc on PATH when CC is unset for that task.
-
-[tasks."codegen:linux-amd64"]
-env = { TARGET_GOOS = "linux", TARGET_GOARCH = "amd64", CC = "clang", CGO_ENABLED = "0" }
-run = "go run -v ./cmd/codegen"
-
-[tasks."codegen:linux-arm64"]
-env = { TARGET_GOOS = "linux", TARGET_GOARCH = "arm64", CC = "clang", CGO_ENABLED = "0" }
-run = "go run -v ./cmd/codegen"
-
-[tasks."codegen:linux-386"]
-env = { TARGET_GOOS = "linux", TARGET_GOARCH = "386", CC = "clang", CGO_ENABLED = "0" }
-run = "go run -v ./cmd/codegen"
-
-[tasks."codegen:darwin-amd64"]
-env = { TARGET_GOOS = "darwin", TARGET_GOARCH = "amd64", CC = "clang", CGO_ENABLED = "0" }
-run = "go run -v ./cmd/codegen"
-
-[tasks."codegen:darwin-arm64"]
-env = { TARGET_GOOS = "darwin", TARGET_GOARCH = "arm64", CC = "clang", CGO_ENABLED = "0" }
-run = "go run -v ./cmd/codegen"
-
-[tasks."codegen:windows-amd64"]
-env = { TARGET_GOOS = "windows", TARGET_GOARCH = "amd64", CGO_ENABLED = "0" }
-run = "go run -v ./cmd/codegen"
-
-[tasks."codegen:windows-arm64"]
-env = { TARGET_GOOS = "windows", TARGET_GOARCH = "arm64", CGO_ENABLED = "0" }
-run = "go run -v ./cmd/codegen"
-
-[tasks.codegen]
-description = "Codegen for the host GOOS/GOARCH only"
-run = "bash ./scripts/codegen-host.sh"
-
-[tasks."codegen:all"]
-description = "Codegen every configured target (prefer CI matrix)"
-depends = [
-  "codegen:linux-amd64",
-  "codegen:linux-arm64",
-  "codegen:linux-386",
-  "codegen:darwin-amd64",
-  "codegen:darwin-arm64",
-  "codegen:windows-amd64",
-  "codegen:windows-arm64",
-]
-
-[tasks.install]
-run = "go get -v ./..."
+# ---------------------------------------------------------------------------
+# Local: grammars:sync + test only. Never transpile/codegen on a laptop.
+# CI: prepare runs grammars:sync (workspaced), then mise run codegen:* on runners.
+# ---------------------------------------------------------------------------
 
 [tasks."grammars:sync"]
 description = "Materialise grammar C sources via workspaced core:place"
@@ -68,7 +23,58 @@ run = "workspaced codebase apply"
 description = "Refresh workspaced.lock.json pins for #grammar / #fixture inputs"
 run = "workspaced mod lock"
 
+[tasks.install]
+run = "go get -v ./..."
+
 [tasks.test]
 description = "Run unit tests against host grammars (pure Go, no CGO)"
 env = { CGO_ENABLED = "0" }
 run = "go test ./..."
+
+# Codegen is CI-only (native runner + preprocessor). Each task places sources
+# via workspaced first so a bare `mise run codegen:*` on a runner is complete.
+
+[tasks."codegen:linux-amd64"]
+description = "CI-only: transpile for linux/amd64"
+depends = ["grammars:sync"]
+env = { TARGET_GOOS = "linux", TARGET_GOARCH = "amd64", CC = "clang", CGO_ENABLED = "0" }
+run = "go run -v ./cmd/codegen"
+
+[tasks."codegen:linux-arm64"]
+description = "CI-only: transpile for linux/arm64"
+depends = ["grammars:sync"]
+env = { TARGET_GOOS = "linux", TARGET_GOARCH = "arm64", CC = "clang", CGO_ENABLED = "0" }
+run = "go run -v ./cmd/codegen"
+
+[tasks."codegen:linux-386"]
+description = "CI-only: transpile for linux/386"
+depends = ["grammars:sync"]
+env = { TARGET_GOOS = "linux", TARGET_GOARCH = "386", CC = "clang", CGO_ENABLED = "0" }
+run = "go run -v ./cmd/codegen"
+
+[tasks."codegen:darwin-amd64"]
+description = "CI-only: transpile for darwin/amd64"
+depends = ["grammars:sync"]
+env = { TARGET_GOOS = "darwin", TARGET_GOARCH = "amd64", CC = "clang", CGO_ENABLED = "0" }
+run = "go run -v ./cmd/codegen"
+
+[tasks."codegen:darwin-arm64"]
+description = "CI-only: transpile for darwin/arm64"
+depends = ["grammars:sync"]
+env = { TARGET_GOOS = "darwin", TARGET_GOARCH = "arm64", CC = "clang", CGO_ENABLED = "0" }
+run = "go run -v ./cmd/codegen"
+
+[tasks."codegen:windows-amd64"]
+description = "CI-only: transpile for windows/amd64 (MinGW gcc -E)"
+depends = ["grammars:sync"]
+env = { TARGET_GOOS = "windows", TARGET_GOARCH = "amd64", CGO_ENABLED = "0" }
+run = "go run -v ./cmd/codegen"
+
+[tasks."codegen:windows-arm64"]
+description = "CI-only: transpile for windows/arm64 (MinGW gcc -E)"
+depends = ["grammars:sync"]
+env = { TARGET_GOOS = "windows", TARGET_GOARCH = "arm64", CGO_ENABLED = "0" }
+run = "go run -v ./cmd/codegen"
+
+# Intentionally no host `codegen` / `codegen:all` convenience — multi-platform
+# regen is the CI matrix only (see .github/workflows/ci.yml).

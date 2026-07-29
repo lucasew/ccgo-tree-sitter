@@ -117,7 +117,7 @@ jobs:
         uses: ./.github/actions/restore-source
 
       - name: Set up tools (mise)
-        uses: jdx/mise-action@6d1e696aa24c1aa1bcc1adea0212707c71ab78a8 # v3
+        uses: jdx/mise-action@e6a8b3978addb5a52f2b4cd9d91eafa7f0ab959d # v4
 
       - name: Setup preprocessor
         uses: ./.github/actions/setup-preprocessor
@@ -147,6 +147,8 @@ jobs:
           CGO_ENABLED: "0"
         run: go test ./cmd/codegen/
 
+      # prepare already placed sources into the artifact; task still depends on
+      # grammars:sync so a standalone mise run on a runner is complete.
       - name: Codegen target bindings
         if: ${{ !matrix.checked_in }}
         shell: bash

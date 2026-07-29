@@ -23,29 +23,29 @@ first, then run `mise run test`.
 | windows/amd64 | `windows-latest` | no | **MinGW `gcc -E`** (not clang/MSVC) |
 | windows/arm64 | `windows-11-arm` | no | experimental; llvm-mingw `aarch64-w64-mingw32` |
 
-## Grammar sources
+## Grammar sources (local + CI)
 
 Grammar C inputs are **not** git submodules. They are declared in `workspaced.cue`
-(`#grammar`) and placed with workspaced `core:place` (only `src/` / monorepo units):
+(`#grammar`) and placed with workspaced `core:place` (only `src/` / monorepo units).
+**mise** installs both **go** and **workspaced**:
 
 ```bash
+mise install                      # go + workspaced from mise.toml
 mise run grammars:sync            # workspaced codebase apply
-# or: workspaced mod lock && workspaced codebase apply
 ./setup-grammars owner/tree-sitter-foo   # add a #grammar entry
+mise run grammars:lock            # refresh workspaced.lock.json
+mise run test                     # pure Go tests (no transpile)
 ```
 
 Placed trees under `third-party/tree-sitter-*/` are gitignored; pins are in
 `workspaced.lock.json`. Core tree-sitter stays a submodule at `third-party/tree-sitter`.
 
-## Codegen
+## Codegen (CI only)
 
-```bash
-mise run grammars:sync            # first time / after lock changes
-mise run codegen                  # host GOOS/GOARCH only
-mise run codegen:darwin-arm64     # explicit triple
-```
-
-Prefer the **CI matrix** (each runner owns its native triple; merge opens a PR).
+**Do not transpile locally.** Each `codegen:*` mise task depends on
+`grammars:sync` (workspaced) and is intended for CI runners with the right
+preprocessor. Multi-platform regen is the GitHub Actions matrix on `main`
+(merge opens a PR with regenerated bindings).
 
 ### Target matrix
 

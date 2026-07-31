@@ -221,10 +221,11 @@ package workspaced
 	repo: "tree-sitter-fluent"
 }
 
-#grammar: fortran: {
-	from: "github:stadelmanma/tree-sitter-fortran"
-	repo: "tree-sitter-fortran"
-}
+// TODO: deal with the iqlibc situation
+// #grammar: fortran: {
+// 	from: "github:stadelmanma/tree-sitter-fortran"
+// 	repo: "tree-sitter-fortran"
+// }
 
 #grammar: fsharp: {
 	from: "github:ionide/tree-sitter-fsharp"

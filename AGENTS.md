@@ -2,6 +2,8 @@
 - Don't edit ./grammar directly. Those files are all code generated.
 - **Never transpile/codegen locally.** Bindings are produced only on the CI
   matrix (`mise run codegen:$GOOS-$GOARCH` on runners after workspaced place).
+  Grammar transpile tries freestanding stubs first, then host headers
+  (see `docs/freestanding-grammar.md` / `cmd/codegen/freestanding/`).
 - Grammar **C sources** under `third-party/tree-sitter-*/` are **vendored**
   (committed). Declared in `workspaced.cue` (`#grammar`), pinned in
   `workspaced.lock.json`, refreshed with `mise run grammars:lock` /

@@ -452,32 +452,28 @@ func (t *Transpiler) TranspileCore(outputDir string) error {
 }
 
 // TranspileGrammar transpiles a tree-sitter grammar unit into the target directory.
-// grammarPath is the unit root (parent of src/); grammarName is the package/registry id
-// (typically from tree_sitter_<name> in parser.c). If grammarName is empty, it is derived
-// from the unit path.
+// Input is always the original C assets (parser.c + optional scanner.c).
+//
+// Path: freestanding stubs first (no host libc headers). On failure, fall back
+// to host headers (classic path). Skips when output hash matches inputs.
+//
+// grammarPath is the unit root (parent of src/); grammarName is the package id.
 func (t *Transpiler) TranspileGrammar(grammarPath, grammarName, outputDir string) error {
 	if grammarName == "" {
 		grammarName = normalizeGrammarName(grammarPath)
 	}
 
-	// Check parser.c exists
-	parserC := filepath.Join(grammarPath, "src", "parser.c")
-	if _, err := os.Stat(parserC); err != nil {
-		if os.IsNotExist(err) {
-			return fmt.Errorf("parser.c not found at %s", parserC)
-		}
-		return fmt.Errorf("cannot stat parser.c at %s: %w", parserC, err)
+	unit, err := classifyGrammarUnit(grammarPath, grammarName)
+	if err != nil {
+		return err
 	}
 
-	// Check for scanner.c
-	scannerC := filepath.Join(grammarPath, "src", "scanner.c")
-	hasScanner := true
-	if _, err := os.Stat(scannerC); err != nil {
-		if os.IsNotExist(err) {
-			hasScanner = false
-		} else {
-			return fmt.Errorf("cannot stat scanner.c at %s: %w", scannerC, err)
-		}
+	grammarOutDir := filepath.Join(outputDir, grammarName)
+	outputFile := filepath.Join(grammarOutDir, fmt.Sprintf("grammar-%s-%s.go", t.GOOS, t.GOARCH))
+
+	if outputDir != "" && !t.KeepTemp && grammarOutputUpToDate(outputFile, unit.InputHash) {
+		slog.Info("skip grammar (inputs unchanged)", "grammar", grammarName, "kind", unit.Kind, "out", filepath.Base(outputFile))
+		return nil
 	}
 
 	tmpDir, err := t.prepareWorkDir("grammar", grammarName)
@@ -490,61 +486,101 @@ func (t *Transpiler) TranspileGrammar(grammarPath, grammarName, outputDir string
 		slog.Info("keeping temp dir", "path", tmpDir)
 	}
 
-	// If has scanner, combine parser and scanner into one file
-	var combinedC string
-	if hasScanner {
-		combinedC = filepath.Join(tmpDir, "combined.c")
-		if err := combineFiles([]string{scannerC, parserC}, combinedC); err != nil {
-			return fmt.Errorf("failed to combine files: %w", err)
-		}
-	} else {
-		combinedC = parserC
-	}
-
-	// Transpile combined file
 	grammarGo := filepath.Join(tmpDir, "grammar.go")
-	if err := t.transpileGrammarFile(grammarPath, combinedC, grammarGo, tmpDir); err != nil {
+	mode, err := t.transpileGrammarUnit(unit, grammarGo, tmpDir)
+	if err != nil {
 		return fmt.Errorf("transpilation failed: %w", err)
 	}
+	slog.Info("transpiled grammar", "grammar", grammarName, "kind", unit.Kind, "mode", mode)
 
-	// Write output as a proper Go package
-	if outputDir != "" {
-		grammarOutDir := filepath.Join(outputDir, grammarName)
-		if err := os.MkdirAll(grammarOutDir, 0755); err != nil {
-			return err
-		}
-
-		// Read and modify package name
-		data, err := os.ReadFile(grammarGo)
-		if err != nil {
-			return err
-		}
-
-		goCode := postProcess(string(data), tmpDir)
-		// Change package from main to grammar name (preserve comments)
-		goCode = strings.Replace(goCode, "package main", "package grammar_"+grammarName, 1)
-
-		outputFile := filepath.Join(grammarOutDir, fmt.Sprintf("grammar-%s-%s.go", t.GOOS, t.GOARCH))
-		if err := os.WriteFile(outputFile, []byte(goCode), 0644); err != nil {
-			return err
-		}
-
-		// Generate API wrapper
-		var apiErr error
-		if hasScanner {
-			apiErr = GenerateAPIWrapperWithScanner(outputDir, grammarName)
-		} else {
-			apiErr = GenerateAPIWrapper(outputDir, grammarName)
-		}
-		if apiErr != nil {
-			return fmt.Errorf("failed to generate API: %w", apiErr)
-		}
-		if err := writeLangGoMod(outputDir, grammarName); err != nil {
-			return fmt.Errorf("failed to write grammar go.mod: %w", err)
-		}
+	if outputDir == "" {
+		return nil
+	}
+	if err := os.MkdirAll(grammarOutDir, 0755); err != nil {
+		return err
 	}
 
+	data, err := os.ReadFile(grammarGo)
+	if err != nil {
+		return err
+	}
+
+	goCode := postProcess(string(data), tmpDir)
+	goCode = strings.Replace(goCode, "package main", "package grammar_"+grammarName, 1)
+	// Drop host preprocessor const noise (smaller artifacts, fewer OS diffs).
+	goCode = slimGeneratedGrammar(goCode)
+	goCode = withGrammarHashComment(goCode, unit.InputHash)
+
+	if err := os.WriteFile(outputFile, []byte(goCode), 0644); err != nil {
+		return err
+	}
+
+	var apiErr error
+	if unit.Kind == GrammarScanner {
+		apiErr = GenerateAPIWrapperWithScanner(outputDir, grammarName)
+	} else {
+		apiErr = GenerateAPIWrapper(outputDir, grammarName)
+	}
+	if apiErr != nil {
+		return fmt.Errorf("failed to generate API: %w", apiErr)
+	}
+	if err := writeLangGoMod(outputDir, grammarName); err != nil {
+		return fmt.Errorf("failed to write grammar go.mod: %w", err)
+	}
 	return nil
+}
+
+// transpileGrammarUnit runs freestanding ccgo first, then host fallback.
+// Returns mode string "freestanding" or "host".
+func (t *Transpiler) transpileGrammarUnit(unit GrammarUnit, grammarGo, workDir string) (string, error) {
+	mainC, err := stageGrammarSources(unit, workDir)
+	if err != nil {
+		return "", err
+	}
+	if err := t.transpileGrammarFreestanding(unit, mainC, grammarGo, workDir); err == nil {
+		return "freestanding", nil
+	} else {
+		slog.Warn("freestanding grammar ccgo failed; trying host headers",
+			"grammar", unit.Name, "kind", unit.Kind, "error", err)
+	}
+
+	// Host fallback: classic combine + system includes.
+	var combinedC string
+	if unit.ScannerC != "" {
+		combinedC = filepath.Join(workDir, "combined_host.c")
+		if err := combineFiles([]string{unit.ScannerC, unit.ParserC}, combinedC); err != nil {
+			return "", err
+		}
+	} else {
+		combinedC = unit.ParserC
+	}
+	if err := t.transpileGrammarFile(unit.Path, combinedC, grammarGo, workDir); err != nil {
+		return "", err
+	}
+	return "host", nil
+}
+
+// transpileGrammarFreestanding ccgo's a staged unit with freestanding -I only
+// (plus grammar asset paths). No tree-sitter core lib/src — languages only need
+// the vendored tree_sitter/parser.h from the asset.
+func (t *Transpiler) transpileGrammarFreestanding(unit GrammarUnit, inputC, outputGo, workDir string) error {
+	if err := setupGoMod(workDir); err != nil {
+		return err
+	}
+	inputAbs, err := filepath.Abs(inputC)
+	if err != nil {
+		return err
+	}
+	fsDir := filepath.Join(workDir, "fs")
+	includes := []string{
+		fsDir,
+		workDir, // staged tree_sitter/ and other src headers
+		filepath.Join(unit.Path, "src"),
+		unit.Path,
+	}
+	includes = append(includes, unit.ExtraIncs...)
+	// Freestanding path should not depend on OS host-header macros.
+	return t.runCcgoGrammar(workDir, []string{inputAbs}, outputGo, includes, goKeywordDefines(), "", true)
 }
 
 // combineFiles sequentially concatenates multiple C input source paths
@@ -641,13 +677,17 @@ func (t *Transpiler) transpileGrammarFile(grammarPath, inputC, outputGo, workDir
 		filepath.Join(t.TreeSitterPath, "lib/include"),
 		filepath.Join(t.TreeSitterPath, "lib/src"),
 	}
-	return t.runCcgo(workDir, []string{inputAbs}, outputGo, includes, goKeywordDefines(), "")
+	return t.runCcgoGrammar(workDir, []string{inputAbs}, outputGo, includes, goKeywordDefines(), "", false)
 }
 
-// runCcgo invokes ccgo on raw C sources. ccgo runs its own preprocessor using
-// CC (via NewConfig) for system includes/predefines; we pass -I/-D/-std.
-// forceInclude, if non-empty, is passed as -include (forced header).
+// runCcgo invokes ccgo on raw C sources (core path — always host defines).
 func (t *Transpiler) runCcgo(workDir string, sources []string, outputPath string, includes, extraDefines []string, forceInclude string) (err error) {
+	return t.runCcgoGrammar(workDir, sources, outputPath, includes, extraDefines, forceInclude, false)
+}
+
+// runCcgoGrammar is the shared ccgo driver. freestanding skips host -D softening
+// (those macros are for MinGW/Darwin system headers, not grammar stubs).
+func (t *Transpiler) runCcgoGrammar(workDir string, sources []string, outputPath string, includes, extraDefines []string, forceInclude string, freestanding bool) (err error) {
 	outputArg := outputPath
 	if rel, err := filepath.Rel(workDir, outputPath); err == nil {
 		outputArg = rel
@@ -659,7 +699,9 @@ func (t *Transpiler) runCcgo(workDir string, sources []string, outputPath string
 	// out-of-line bodies from ccgo itself; do not pass -fno-inline (that forces
 	// emission of MinGW asm intrinsics and breaks Windows).
 	ccgoArgs = append(ccgoArgs, "-std=gnu11", "-O0")
-	ccgoArgs = append(ccgoArgs, hostDefinesForCcgo(t.GOOS, t.GOARCH)...)
+	if !freestanding {
+		ccgoArgs = append(ccgoArgs, hostDefinesForCcgo(t.GOOS, t.GOARCH)...)
+	}
 	ccgoArgs = append(ccgoArgs, extraDefines...)
 	if forceInclude != "" {
 		incArg := forceInclude

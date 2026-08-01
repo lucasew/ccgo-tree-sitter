@@ -18,6 +18,14 @@ type GrammarUnit struct {
 	Path string
 	// ParserC is the absolute or relative path to src/parser.c.
 	ParserC string
+	// ScannerC is src/scanner.c when present (external scanner).
+	ScannerC string
+	// Kind is pure parser vs scanner (set by classifyGrammarUnit).
+	Kind GrammarKind
+	// ExtraIncs are additional -I paths (monorepo common/, parent, …).
+	ExtraIncs []string
+	// InputHash fingerprints original C/headers for skip-if-unchanged.
+	InputHash string
 	// Priority is lower for preferred units; unwanted paths (schema, dialects, …) score higher.
 	Priority int
 }

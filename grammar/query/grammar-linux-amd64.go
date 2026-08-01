@@ -1,4 +1,4 @@
-// Code generated for linux/amd64 by 'ccgo -ignore-unsupported-alignment -ignore-unsupported-atomic-sizes -ignore-vector-functions -std=gnu11 -O0 -Dfunc=func_token -Dinterface=interface_token -Dselect=select_token -Dchan=chan_token -Dgo=go_token -Dmap=map_token -Dpackage=package_token -Dtype=type_token -Dvar=var_token -Dimport=import_token -Ddefer=defer_token -Dfallthrough=fallthrough_token -Drange=range_token -I /home/runner/work/ccgo-tree-sitter/ccgo-tree-sitter/third-party/tree-sitter-query/src -I /home/runner/work/ccgo-tree-sitter/ccgo-tree-sitter/third-party/tree-sitter-query -I /home/runner/work/ccgo-tree-sitter/ccgo-tree-sitter/third-party -I /home/runner/work/ccgo-tree-sitter/ccgo-tree-sitter/third-party/tree-sitter/lib/include -I /home/runner/work/ccgo-tree-sitter/ccgo-tree-sitter/third-party/tree-sitter/lib/src /home/runner/work/ccgo-tree-sitter/ccgo-tree-sitter/third-party/tree-sitter-query/src/parser.c -o grammar.go', DO NOT EDIT.
+// Code generated for linux/amd64 by 'ccgo -ignore-unsupported-alignment -ignore-unsupported-atomic-sizes -ignore-vector-functions -std=gnu11 -O0 -Dfunc=func_token -Dinterface=interface_token -Dselect=select_token -Dchan=chan_token -Dgo=go_token -Dmap=map_token -Dpackage=package_token -Dtype=type_token -Dvar=var_token -Dimport=import_token -Ddefer=defer_token -Dfallthrough=fallthrough_token -Drange=range_token -I /home/runner/work/ccgo-tree-sitter/ccgo-tree-sitter/third-party/tree-sitter-query/src -I /home/runner/work/ccgo-tree-sitter/ccgo-tree-sitter/third-party/tree-sitter-query -I /home/runner/work/ccgo-tree-sitter/ccgo-tree-sitter/third-party -I /home/runner/.cache/workspaced/sources/github/7349d53bdd4ab31f79a3eec0385f924117fa6d06f018e00aadd823c0dcd51ac2/lib/include -I /home/runner/.cache/workspaced/sources/github/7349d53bdd4ab31f79a3eec0385f924117fa6d06f018e00aadd823c0dcd51ac2/lib/src /home/runner/work/ccgo-tree-sitter/ccgo-tree-sitter/third-party/tree-sitter-query/src/parser.c -o grammar.go', DO NOT EDIT.
 
 //go:build linux && amd64
 
@@ -1509,7 +1509,7 @@ start:
 			state = uint16(29)
 			goto next_state
 		}
-		if lookahead != 0 {
+		if lookahead != 0 && lookahead != int32(0x17f) && lookahead != int32(0x212a) {
 			state = uint16(30)
 			goto next_state
 		}
@@ -1622,7 +1622,7 @@ start:
 		}
 		return result
 	case int32(7):
-		if lookahead != 0 && lookahead != int32('\n') {
+		if lookahead != 0 && lookahead != int32('\n') && lookahead != int32(0x17f) && lookahead != int32(0x212a) {
 			state = uint16(13)
 			goto next_state
 		}
@@ -1876,7 +1876,7 @@ start:
 			state = uint16(29)
 			goto next_state
 		}
-		if lookahead != 0 && (lookahead < int32('\t') || int32('\r') < lookahead) && lookahead != int32('"') && lookahead != int32('\\') {
+		if lookahead != 0 && (lookahead < int32('\t') || int32('\r') < lookahead) && lookahead != int32('"') && lookahead != int32('\\') && lookahead != int32(0x17f) && lookahead != int32(0x212a) {
 			state = uint16(30)
 			goto next_state
 		}
@@ -1885,7 +1885,7 @@ start:
 		result = libc.BoolUint8(true1 != 0)
 		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym_string_content_token1)
 		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
-		if lookahead != 0 && lookahead != int32('\n') && lookahead != int32('"') && lookahead != int32('\\') {
+		if lookahead != 0 && lookahead != int32('\n') && lookahead != int32('"') && lookahead != int32('\\') && lookahead != int32(0x17f) && lookahead != int32(0x212a) {
 			state = uint16(30)
 			goto next_state
 		}
@@ -1894,7 +1894,7 @@ start:
 		result = libc.BoolUint8(true1 != 0)
 		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(sym_comment)
 		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
-		if lookahead != 0 && lookahead != int32('\n') {
+		if lookahead != 0 && lookahead != int32('\n') && lookahead != int32(0x17f) && lookahead != int32(0x212a) {
 			state = uint16(31)
 			goto next_state
 		}

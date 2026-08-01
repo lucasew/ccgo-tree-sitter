@@ -174,7 +174,16 @@ jobs:
           CGO_ENABLED: "0"
           GOOS: ${{ matrix.goos }}
           GOARCH: ${{ matrix.goarch }}
-        run: go test work
+          # fixtures_test writes ::warning lines here; go test discards stdout on success.
+          GHA_ANNOTATIONS_FILE: ${{ runner.temp }}/gha-annotations.txt
+        run: |
+          set -euo pipefail
+          : > "${GHA_ANNOTATIONS_FILE}"
+          go test work
+          # Re-emit workflow commands so they become job Annotations.
+          if [[ -s "${GHA_ANNOTATIONS_FILE}" ]]; then
+            cat "${GHA_ANNOTATIONS_FILE}"
+          fi
 
   codegen:
     name: codegen (${{ matrix.goos }}/${{ matrix.goarch }})
@@ -300,7 +309,14 @@ jobs:
           CGO_ENABLED: "0"
           GOOS: ${{ matrix.goos }}
           GOARCH: ${{ matrix.goarch }}
-        run: go test work
+          GHA_ANNOTATIONS_FILE: ${{ runner.temp }}/gha-annotations.txt
+        run: |
+          set -euo pipefail
+          : > "${GHA_ANNOTATIONS_FILE}"
+          go test work
+          if [[ -s "${GHA_ANNOTATIONS_FILE}" ]]; then
+            cat "${GHA_ANNOTATIONS_FILE}"
+          fi
 
   merge:
     name: merge artifacts and open PR
@@ -366,7 +382,15 @@ jobs:
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Test merged linux/amd64 tree
-        run: mise run test
+        env:
+          GHA_ANNOTATIONS_FILE: ${{ runner.temp }}/gha-annotations.txt
+        run: |
+          set -euo pipefail
+          : > "${GHA_ANNOTATIONS_FILE}"
+          mise run test
+          if [[ -s "${GHA_ANNOTATIONS_FILE}" ]]; then
+            cat "${GHA_ANNOTATIONS_FILE}"
+          fi
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8

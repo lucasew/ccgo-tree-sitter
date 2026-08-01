@@ -1,0 +1,37750 @@
+// Code generated for windows/amd64 by 'ccgo -ignore-unsupported-alignment -ignore-unsupported-atomic-sizes -ignore-vector-functions --winapi-no-errno -ignore-link-errors -std=gnu11 -O0 -D__extension__= -D__forceinline=static inline -D__attribute__(...)= -D__declspec(x)= -D__cdecl= -D__stdcall= -D__fastcall= -D__thiscall= -D_cdecl= -D__restrict= -D__restrict__= -D__MINGW_EXTENSION= -D_X86INTRIN_H_INCLUDED -D_X86GPRINTRIN_H_INCLUDED -D_IMMINTRIN_H_INCLUDED -D_MMINTRIN_H_INCLUDED -D_XMMINTRIN_H_INCLUDED -D_EMMINTRIN_H_INCLUDED -D_PMMINTRIN_H_INCLUDED -D_MM3DNOW_H_INCLUDED -Dfunc=func_token -Dinterface=interface_token -Dselect=select_token -Dchan=chan_token -Dgo=go_token -Dmap=map_token -Dpackage=package_token -Dtype=type_token -Dvar=var_token -Dimport=import_token -Ddefer=defer_token -Dfallthrough=fallthrough_token -Drange=range_token -I D:\a\ccgo-tree-sitter\ccgo-tree-sitter\third-party\tree-sitter-re2c\src -I D:\a\ccgo-tree-sitter\ccgo-tree-sitter\third-party\tree-sitter-re2c -I D:\a\ccgo-tree-sitter\ccgo-tree-sitter\third-party -I C:\Users\runneradmin\.cache\workspaced\sources\github\7349d53bdd4ab31f79a3eec0385f924117fa6d06f018e00aadd823c0dcd51ac2\lib\include -I C:\Users\runneradmin\.cache\workspaced\sources\github\7349d53bdd4ab31f79a3eec0385f924117fa6d06f018e00aadd823c0dcd51ac2\lib\src D:\a\ccgo-tree-sitter\ccgo-tree-sitter\third-party\tree-sitter-re2c\src\parser.c -o grammar.go', DO NOT EDIT.
+
+//go:build windows && amd64
+
+package grammar_re2c
+
+import (
+	"reflect"
+	"unsafe"
+
+	"modernc.org/libc"
+)
+
+var _ reflect.Type
+var _ unsafe.Pointer
+
+const ALIAS_COUNT = 5
+const E2BIG = 7
+const EACCES = 13
+const EADDRINUSE = 100
+const EADDRNOTAVAIL = 101
+const EAFNOSUPPORT = 102
+const EAGAIN = 11
+const EALREADY = 103
+const EBADF = 9
+const EBADMSG = 104
+const EBUSY = 16
+const ECANCELED = 105
+const ECHILD = 10
+const ECONNABORTED = 106
+const ECONNREFUSED = 107
+const ECONNRESET = 108
+const EDEADLK = 36
+const EDEADLOCK = "EDEADLK"
+const EDESTADDRREQ = 109
+const EDOM = 33
+const EEXIST = 17
+const EFAULT = 14
+const EFBIG = 27
+const EHOSTUNREACH = 110
+const EIDRM = 111
+const EILSEQ = 42
+const EINPROGRESS = 112
+const EINTR = 4
+const EINVAL = 22
+const EIO = 5
+const EISCONN = 113
+const EISDIR = 21
+const ELOOP = 114
+const EMFILE = 24
+const EMLINK = 31
+const EMSGSIZE = 115
+const ENAMETOOLONG = 38
+const ENETDOWN = 116
+const ENETRESET = 117
+const ENETUNREACH = 118
+const ENFILE = 23
+const ENOBUFS = 119
+const ENODATA = 120
+const ENODEV = 19
+const ENOENT = 2
+const ENOEXEC = 8
+const ENOFILE = "ENOENT"
+const ENOLCK = 39
+const ENOLINK = 121
+const ENOMEM = 12
+const ENOMSG = 122
+const ENOPROTOOPT = 123
+const ENOSPC = 28
+const ENOSR = 124
+const ENOSTR = 125
+const ENOSYS = 40
+const ENOTCONN = 126
+const ENOTDIR = 20
+const ENOTEMPTY = 41
+const ENOTRECOVERABLE = 127
+const ENOTSOCK = 128
+const ENOTSUP = 129
+const ENOTTY = 25
+const ENXIO = 6
+const EOPNOTSUPP = 130
+const EOVERFLOW = 132
+const EOWNERDEAD = 133
+const EPERM = 1
+const EPIPE = 32
+const EPROTO = 134
+const EPROTONOSUPPORT = 135
+const EPROTOTYPE = 136
+const ERANGE = 34
+const EROFS = 30
+const ESPIPE = 29
+const ESRCH = 3
+const ETIME = 137
+const ETIMEDOUT = 138
+const ETXTBSY = 139
+const EWOULDBLOCK = 140
+const EXDEV = 18
+const EXIT_FAILURE = 1
+const EXIT_SUCCESS = 0
+const EXTERNAL_TOKEN_COUNT = 0
+const FIELD_COUNT = 21
+const INT16_MAX = 32767
+const INT32_MAX = 2147483647
+const INT64_MAX = 9223372036854775807
+const INT8_MAX = 127
+const INTMAX_MAX = "INT64_MAX"
+const INTMAX_MIN = "INT64_MIN"
+const INTPTR_MAX = "INT64_MAX"
+const INTPTR_MIN = "INT64_MIN"
+const INT_FAST16_MAX = "INT16_MAX"
+const INT_FAST16_MIN = "INT16_MIN"
+const INT_FAST32_MAX = "INT32_MAX"
+const INT_FAST32_MIN = "INT32_MIN"
+const INT_FAST64_MAX = "INT64_MAX"
+const INT_FAST64_MIN = "INT64_MIN"
+const INT_FAST8_MAX = "INT8_MAX"
+const INT_FAST8_MIN = "INT8_MIN"
+const INT_LEAST16_MAX = "INT16_MAX"
+const INT_LEAST16_MIN = "INT16_MIN"
+const INT_LEAST32_MAX = "INT32_MAX"
+const INT_LEAST32_MIN = "INT32_MIN"
+const INT_LEAST64_MAX = "INT64_MAX"
+const INT_LEAST64_MIN = "INT64_MIN"
+const INT_LEAST8_MAX = "INT8_MAX"
+const INT_LEAST8_MIN = "INT8_MIN"
+const LANGUAGE_VERSION = 14
+const LARGE_STATE_COUNT = 2
+const MAX_ALIAS_SEQUENCE_LENGTH = 6
+const MB_LEN_MAX = 5
+const MINGW_HAS_DDK_H = 1
+const MINGW_HAS_SECURE_API = 1
+const PATH_MAX = 260
+const PRODUCTION_ID_COUNT = 40
+const PTRDIFF_MAX = "INT64_MAX"
+const PTRDIFF_MIN = "INT64_MIN"
+const RAND_MAX = 0x7fff
+const SIG_ATOMIC_MAX = "INT32_MAX"
+const SIG_ATOMIC_MIN = "INT32_MIN"
+const SIZE_MAX = "UINT64_MAX"
+const SSIZE_MAX = "_I64_MAX"
+const STATE_COUNT = 391
+const STRUNCATE = 80
+const SYMBOL_COUNT = 218
+const TOKEN_COUNT = 121
+const TREE_SITTER_SERIALIZATION_BUFFER_SIZE = 1024
+const UINT16_MAX = 65535
+const UINT32_MAX = 0xffffffff
+const UINT64_MAX = "0xffffffffffffffffU"
+const UINT8_MAX = 255
+const UINTMAX_MAX = "UINT64_MAX"
+const UINTPTR_MAX = "UINT64_MAX"
+const UINT_FAST16_MAX = "UINT16_MAX"
+const UINT_FAST32_MAX = "UINT32_MAX"
+const UINT_FAST64_MAX = "UINT64_MAX"
+const UINT_FAST8_MAX = "UINT8_MAX"
+const UINT_LEAST16_MAX = "UINT16_MAX"
+const UINT_LEAST32_MAX = "UINT32_MAX"
+const UINT_LEAST64_MAX = "UINT64_MAX"
+const UINT_LEAST8_MAX = "UINT8_MAX"
+const UNALIGNED = "__unaligned"
+const USE___UUIDOF = 0
+const WCHAR_MAX = 0xffff
+const WCHAR_MIN = 0
+const WIN32 = 1
+const WIN64 = 1
+const WINNT = 1
+const WINT_MAX = 0xffff
+const WINT_MIN = 0
+const _ALLOCA_S_HEAP_MARKER = 56797
+const _ALLOCA_S_MARKER_SIZE = 16
+const _ALLOCA_S_STACK_MARKER = 0xCCCC
+const _ALLOCA_S_THRESHOLD = 1024
+const _ANONYMOUS_STRUCT = "__MINGW_EXTENSION"
+const _ANONYMOUS_UNION = "__MINGW_EXTENSION"
+const _ARGMAX = 100
+const _CALL_REPORTFAULT = 0x2
+const _CRTIMP2 = "_CRTIMP"
+const _CRTIMP_ALTERNATIVE = "_CRTIMP"
+const _CRTIMP_NOIA64 = "_CRTIMP"
+const _CRTIMP_PURE = "_CRTIMP"
+const _EMMINTRIN_H_INCLUDED = 1
+const _FREEENTRY = 0
+const _HEAP_MAXREQ = 0xFFFFFFFFFFFFFFE0
+const _I16_MAX = 32767
+const _I32_MAX = 2147483647
+const _I64_MAX = "9223372036854775807ll"
+const _I8_MAX = 127
+const _IMMINTRIN_H_INCLUDED = 1
+const _INTEGRAL_MAX_BITS = 64
+const _MAX_DIR = 256
+const _MAX_DRIVE = 3
+const _MAX_ENV = 32767
+const _MAX_EXT = 256
+const _MAX_FNAME = 256
+const _MAX_PATH = 260
+const _MAX_WAIT_MALLOC_CRT = 60000
+const _MCRTIMP = "_CRTIMP"
+const _MM3DNOW_H_INCLUDED = 1
+const _MMINTRIN_H_INCLUDED = 1
+const _MRTIMP2 = "_CRTIMP"
+const _M_AMD64 = 100
+const _M_X64 = 100
+const _OUT_TO_DEFAULT = 0
+const _OUT_TO_MSGBOX = 2
+const _OUT_TO_STDERR = 1
+const _PMMINTRIN_H_INCLUDED = 1
+const _REENTRANT = 1
+const _REPORT_ERRMODE = 3
+const _SECURECRT_FILL_BUFFER_PATTERN = 0xFD
+const _UI16_MAX = "0xffffu"
+const _UI32_MAX = "0xffffffffu"
+const _UI64_MAX = "0xffffffffffffffffull"
+const _UI8_MAX = "0xffu"
+const _USEDENTRY = 1
+const _WIN32 = 1
+const _WIN32_WINNT = 0xa00
+const _WIN64 = 1
+const _WRITE_ABORT_MSG = 0x1
+const _X86GPRINTRIN_H_INCLUDED = 1
+const _X86INTRIN_H_INCLUDED = 1
+const _XMMINTRIN_H_INCLUDED = 1
+const __ATOMIC_ACQUIRE = 2
+const __ATOMIC_ACQ_REL = 4
+const __ATOMIC_CONSUME = 1
+const __ATOMIC_HLE_ACQUIRE = 65536
+const __ATOMIC_HLE_RELEASE = 131072
+const __ATOMIC_RELAXED = 0
+const __ATOMIC_RELEASE = 3
+const __ATOMIC_SEQ_CST = 5
+const __BFLT16_DECIMAL_DIG__ = 4
+const __BFLT16_DENORM_MIN__ = "9.18354961579912115600575419704879436e-41B"
+const __BFLT16_DIG__ = 2
+const __BFLT16_EPSILON__ = "7.81250000000000000000000000000000000e-3B"
+const __BFLT16_HAS_DENORM__ = 1
+const __BFLT16_HAS_INFINITY__ = 1
+const __BFLT16_HAS_QUIET_NAN__ = 1
+const __BFLT16_IS_IEC_60559__ = 0
+const __BFLT16_MANT_DIG__ = 8
+const __BFLT16_MAX_10_EXP__ = 38
+const __BFLT16_MAX_EXP__ = 128
+const __BFLT16_MAX__ = "3.38953138925153547590470800371487867e+38B"
+const __BFLT16_MIN__ = "1.17549435082228750796873653722224568e-38B"
+const __BFLT16_NORM_MAX__ = "3.38953138925153547590470800371487867e+38B"
+const __BIGGEST_ALIGNMENT__ = 16
+const __BITINT_MAXWIDTH__ = 65535
+const __BYTE_ORDER__ = "__ORDER_LITTLE_ENDIAN__"
+const __C89_NAMELESS = "__MINGW_EXTENSION"
+const __CCGO__ = 1
+const __CHAR_BIT__ = 8
+const __CRTDECL = "__cdecl"
+const __DBL_DECIMAL_DIG__ = 17
+const __DBL_DIG__ = 15
+const __DBL_HAS_DENORM__ = 1
+const __DBL_HAS_INFINITY__ = 1
+const __DBL_HAS_QUIET_NAN__ = 1
+const __DBL_IS_IEC_60559__ = 1
+const __DBL_MANT_DIG__ = 53
+const __DBL_MAX_10_EXP__ = 308
+const __DBL_MAX_EXP__ = 1024
+const __DEC128_EPSILON__ = 1e-33
+const __DEC128_MANT_DIG__ = 34
+const __DEC128_MAX_EXP__ = 6145
+const __DEC128_MAX__ = "9.999999999999999999999999999999999E6144"
+const __DEC128_MIN__ = 1e-6143
+const __DEC128_SUBNORMAL_MIN__ = 0.000000000000000000000000000000001e-6143
+const __DEC32_EPSILON__ = 1e-6
+const __DEC32_MANT_DIG__ = 7
+const __DEC32_MAX_EXP__ = 97
+const __DEC32_MAX__ = 9.999999e96
+const __DEC32_MIN__ = 1e-95
+const __DEC32_SUBNORMAL_MIN__ = 0.000001e-95
+const __DEC64X_EPSILON__ = "1E-33D64x"
+const __DEC64X_MANT_DIG__ = 34
+const __DEC64X_MAX_EXP__ = 6145
+const __DEC64X_MAX__ = "9.999999999999999999999999999999999E6144D64x"
+const __DEC64X_MIN__ = "1E-6143D64x"
+const __DEC64X_SUBNORMAL_MIN__ = "0.000000000000000000000000000000001E-6143D64x"
+const __DEC64_EPSILON__ = 1e-15
+const __DEC64_MANT_DIG__ = 16
+const __DEC64_MAX_EXP__ = 385
+const __DEC64_MAX__ = "9.999999999999999E384"
+const __DEC64_MIN__ = 1e-383
+const __DEC64_SUBNORMAL_MIN__ = 0.000000000000001e-383
+const __DECIMAL_BID_FORMAT__ = 1
+const __DECIMAL_DIG__ = 17
+const __DEC_EVAL_METHOD__ = 2
+const __FINITE_MATH_ONLY__ = 0
+const __FLOAT_WORD_ORDER__ = "__ORDER_LITTLE_ENDIAN__"
+const __FLT128_DECIMAL_DIG__ = 36
+const __FLT128_DENORM_MIN__ = 6.47517511943802511092443895822764655e-4966
+const __FLT128_DIG__ = 33
+const __FLT128_EPSILON__ = 1.92592994438723585305597794258492732e-34
+const __FLT128_HAS_DENORM__ = 1
+const __FLT128_HAS_INFINITY__ = 1
+const __FLT128_HAS_QUIET_NAN__ = 1
+const __FLT128_IS_IEC_60559__ = 1
+const __FLT128_MANT_DIG__ = 113
+const __FLT128_MAX_10_EXP__ = 4932
+const __FLT128_MAX_EXP__ = 16384
+const __FLT128_MAX__ = "1.18973149535723176508575932662800702e+4932"
+const __FLT128_MIN__ = 3.36210314311209350626267781732175260e-4932
+const __FLT128_NORM_MAX__ = "1.18973149535723176508575932662800702e+4932"
+const __FLT16_DECIMAL_DIG__ = 5
+const __FLT16_DENORM_MIN__ = 5.96046447753906250000000000000000000e-8
+const __FLT16_DIG__ = 3
+const __FLT16_EPSILON__ = 9.76562500000000000000000000000000000e-4
+const __FLT16_HAS_DENORM__ = 1
+const __FLT16_HAS_INFINITY__ = 1
+const __FLT16_HAS_QUIET_NAN__ = 1
+const __FLT16_IS_IEC_60559__ = 1
+const __FLT16_MANT_DIG__ = 11
+const __FLT16_MAX_10_EXP__ = 4
+const __FLT16_MAX_EXP__ = 16
+const __FLT16_MAX__ = 6.55040000000000000000000000000000000e+4
+const __FLT16_MIN__ = 6.10351562500000000000000000000000000e-5
+const __FLT16_NORM_MAX__ = 6.55040000000000000000000000000000000e+4
+const __FLT32X_DECIMAL_DIG__ = 17
+const __FLT32X_DENORM_MIN__ = 4.94065645841246544176568792868221372e-324
+const __FLT32X_DIG__ = 15
+const __FLT32X_EPSILON__ = 2.22044604925031308084726333618164062e-16
+const __FLT32X_HAS_DENORM__ = 1
+const __FLT32X_HAS_INFINITY__ = 1
+const __FLT32X_HAS_QUIET_NAN__ = 1
+const __FLT32X_IS_IEC_60559__ = 1
+const __FLT32X_MANT_DIG__ = 53
+const __FLT32X_MAX_10_EXP__ = 308
+const __FLT32X_MAX_EXP__ = 1024
+const __FLT32X_MAX__ = 1.79769313486231570814527423731704357e+308
+const __FLT32X_MIN__ = 2.22507385850720138309023271733240406e-308
+const __FLT32X_NORM_MAX__ = 1.79769313486231570814527423731704357e+308
+const __FLT32_DECIMAL_DIG__ = 9
+const __FLT32_DENORM_MIN__ = 1.40129846432481707092372958328991613e-45
+const __FLT32_DIG__ = 6
+const __FLT32_EPSILON__ = 1.19209289550781250000000000000000000e-7
+const __FLT32_HAS_DENORM__ = 1
+const __FLT32_HAS_INFINITY__ = 1
+const __FLT32_HAS_QUIET_NAN__ = 1
+const __FLT32_IS_IEC_60559__ = 1
+const __FLT32_MANT_DIG__ = 24
+const __FLT32_MAX_10_EXP__ = 38
+const __FLT32_MAX_EXP__ = 128
+const __FLT32_MAX__ = 3.40282346638528859811704183484516925e+38
+const __FLT32_MIN__ = 1.17549435082228750796873653722224568e-38
+const __FLT32_NORM_MAX__ = 3.40282346638528859811704183484516925e+38
+const __FLT64X_DECIMAL_DIG__ = 36
+const __FLT64X_DENORM_MIN__ = 6.47517511943802511092443895822764655e-4966
+const __FLT64X_DIG__ = 33
+const __FLT64X_EPSILON__ = 1.92592994438723585305597794258492732e-34
+const __FLT64X_HAS_DENORM__ = 1
+const __FLT64X_HAS_INFINITY__ = 1
+const __FLT64X_HAS_QUIET_NAN__ = 1
+const __FLT64X_IS_IEC_60559__ = 1
+const __FLT64X_MANT_DIG__ = 113
+const __FLT64X_MAX_10_EXP__ = 4932
+const __FLT64X_MAX_EXP__ = 16384
+const __FLT64X_MAX__ = "1.18973149535723176508575932662800702e+4932"
+const __FLT64X_MIN__ = 3.36210314311209350626267781732175260e-4932
+const __FLT64X_NORM_MAX__ = "1.18973149535723176508575932662800702e+4932"
+const __FLT64_DECIMAL_DIG__ = 17
+const __FLT64_DENORM_MIN__ = 4.94065645841246544176568792868221372e-324
+const __FLT64_DIG__ = 15
+const __FLT64_EPSILON__ = 2.22044604925031308084726333618164062e-16
+const __FLT64_HAS_DENORM__ = 1
+const __FLT64_HAS_INFINITY__ = 1
+const __FLT64_HAS_QUIET_NAN__ = 1
+const __FLT64_IS_IEC_60559__ = 1
+const __FLT64_MANT_DIG__ = 53
+const __FLT64_MAX_10_EXP__ = 308
+const __FLT64_MAX_EXP__ = 1024
+const __FLT64_MAX__ = 1.79769313486231570814527423731704357e+308
+const __FLT64_MIN__ = 2.22507385850720138309023271733240406e-308
+const __FLT64_NORM_MAX__ = 1.79769313486231570814527423731704357e+308
+const __FLT_DECIMAL_DIG__ = 9
+const __FLT_DENORM_MIN__ = 1.40129846432481707092372958328991613e-45
+const __FLT_DIG__ = 6
+const __FLT_EPSILON__ = 1.19209289550781250000000000000000000e-7
+const __FLT_EVAL_METHOD_TS_18661_3__ = 2
+const __FLT_EVAL_METHOD__ = 2
+const __FLT_HAS_DENORM__ = 1
+const __FLT_HAS_INFINITY__ = 1
+const __FLT_HAS_QUIET_NAN__ = 1
+const __FLT_IS_IEC_60559__ = 1
+const __FLT_MANT_DIG__ = 24
+const __FLT_MAX_10_EXP__ = 38
+const __FLT_MAX_EXP__ = 128
+const __FLT_MAX__ = 3.40282346638528859811704183484516925e+38
+const __FLT_MIN__ = 1.17549435082228750796873653722224568e-38
+const __FLT_NORM_MAX__ = 3.40282346638528859811704183484516925e+38
+const __FLT_RADIX__ = 2
+const __FUNCTION__ = "__func__"
+const __FXSR__ = 1
+const __GCC_ASM_FLAG_OUTPUTS__ = 1
+const __GCC_ATOMIC_BOOL_LOCK_FREE = 2
+const __GCC_ATOMIC_CHAR16_T_LOCK_FREE = 2
+const __GCC_ATOMIC_CHAR32_T_LOCK_FREE = 2
+const __GCC_ATOMIC_CHAR_LOCK_FREE = 2
+const __GCC_ATOMIC_INT_LOCK_FREE = 2
+const __GCC_ATOMIC_LLONG_LOCK_FREE = 2
+const __GCC_ATOMIC_LONG_LOCK_FREE = 2
+const __GCC_ATOMIC_POINTER_LOCK_FREE = 2
+const __GCC_ATOMIC_SHORT_LOCK_FREE = 2
+const __GCC_ATOMIC_TEST_AND_SET_TRUEVAL = 1
+const __GCC_ATOMIC_WCHAR_T_LOCK_FREE = 2
+const __GCC_CONSTRUCTIVE_SIZE = 64
+const __GCC_DESTRUCTIVE_SIZE = 64
+const __GCC_HAVE_SYNC_COMPARE_AND_SWAP_1 = 1
+const __GCC_HAVE_SYNC_COMPARE_AND_SWAP_16 = 1
+const __GCC_HAVE_SYNC_COMPARE_AND_SWAP_2 = 1
+const __GCC_HAVE_SYNC_COMPARE_AND_SWAP_4 = 1
+const __GCC_HAVE_SYNC_COMPARE_AND_SWAP_8 = 1
+const __GCC_IEC_559 = 2
+const __GCC_IEC_559_COMPLEX = 2
+const __GNUC_EXECUTION_CHARSET_NAME = "UTF-8"
+const __GNUC_MINOR__ = 2
+const __GNUC_PATCHLEVEL__ = 0
+const __GNUC_STDC_INLINE__ = 1
+const __GNUC_WIDE_EXECUTION_CHARSET_NAME = "UTF-16LE"
+const __GNUC__ = 15
+const __GNU_EXTENSION = "__MINGW_EXTENSION"
+const __GOT_SECURE_LIB__ = "__STDC_SECURE_LIB__"
+const __GXX_ABI_VERSION = 1020
+const __GXX_MERGED_TYPEINFO_NAMES = 0
+const __GXX_TYPEINFO_EQUALITY_INLINE = 0
+const __HAVE_SPECULATION_SAFE_VALUE = 1
+const __INT16_MAX__ = 0x7fff
+const __INT32_MAX__ = 0x7fffffff
+const __INT32_TYPE__ = "int"
+const __INT64_MAX__ = 0x7fffffffffffffff
+const __INT8_MAX__ = 0x7f
+const __INTMAX_MAX__ = 0x7fffffffffffffff
+const __INTMAX_WIDTH__ = 64
+const __INTPTR_MAX__ = 0x7fffffffffffffff
+const __INTPTR_WIDTH__ = 64
+const __INT_FAST16_MAX__ = 0x7fff
+const __INT_FAST16_WIDTH__ = 16
+const __INT_FAST32_MAX__ = 0x7fffffff
+const __INT_FAST32_TYPE__ = "int"
+const __INT_FAST32_WIDTH__ = 32
+const __INT_FAST64_MAX__ = 0x7fffffffffffffff
+const __INT_FAST64_WIDTH__ = 64
+const __INT_FAST8_MAX__ = 0x7f
+const __INT_FAST8_WIDTH__ = 8
+const __INT_LEAST16_MAX__ = 0x7fff
+const __INT_LEAST16_WIDTH__ = 16
+const __INT_LEAST32_MAX__ = 0x7fffffff
+const __INT_LEAST32_TYPE__ = "int"
+const __INT_LEAST32_WIDTH__ = 32
+const __INT_LEAST64_MAX__ = 0x7fffffffffffffff
+const __INT_LEAST64_WIDTH__ = 64
+const __INT_LEAST8_MAX__ = 0x7f
+const __INT_LEAST8_WIDTH__ = 8
+const __INT_MAX__ = 0x7fffffff
+const __INT_WIDTH__ = 32
+const __LDBL_DECIMAL_DIG__ = 17
+const __LDBL_DENORM_MIN__ = 4.94065645841246544176568792868221372e-324
+const __LDBL_DIG__ = 15
+const __LDBL_EPSILON__ = 2.22044604925031308084726333618164062e-16
+const __LDBL_HAS_DENORM__ = 1
+const __LDBL_HAS_INFINITY__ = 1
+const __LDBL_HAS_QUIET_NAN__ = 1
+const __LDBL_IS_IEC_60559__ = 1
+const __LDBL_MANT_DIG__ = 53
+const __LDBL_MAX_10_EXP__ = 308
+const __LDBL_MAX_EXP__ = 1024
+const __LDBL_MAX__ = 1.79769313486231570814527423731704357e+308
+const __LDBL_MIN__ = 2.22507385850720138309023271733240406e-308
+const __LDBL_NORM_MAX__ = 1.79769313486231570814527423731704357e+308
+const __LONG32 = "long"
+const __LONG_DOUBLE_64__ = 1
+const __LONG_LONG_MAX__ = 0x7fffffffffffffff
+const __LONG_LONG_WIDTH__ = 64
+const __LONG_MAX__ = 0x7fffffff
+const __LONG_WIDTH__ = 32
+const __MINGW32_MAJOR_VERSION = 3
+const __MINGW32_MINOR_VERSION = 11
+const __MINGW32__ = 1
+const __MINGW64_VERSION_BUGFIX = 0
+const __MINGW64_VERSION_MAJOR = 13
+const __MINGW64_VERSION_MINOR = 0
+const __MINGW64_VERSION_RC = 0
+const __MINGW64_VERSION_STATE = "alpha"
+const __MINGW64__ = 1
+const __MINGW_DEBUGBREAK_IMPL = 1
+const __MINGW_FASTFAIL_IMPL = 1
+const __MINGW_FORTIFY_LEVEL = 0
+const __MINGW_FORTIFY_VA_ARG = 0
+const __MINGW_HAVE_ANSI_C99_PRINTF = 1
+const __MINGW_HAVE_ANSI_C99_SCANF = 1
+const __MINGW_HAVE_WIDE_C99_PRINTF = 1
+const __MINGW_HAVE_WIDE_C99_SCANF = 1
+const __MINGW_MSVC2005_DEPREC_STR = "This POSIX function is deprecated beginning in Visual C++ 2005, use _CRT_NONSTDC_NO_DEPRECATE to disable deprecation"
+const __MINGW_PREFETCH_IMPL = 1
+const __MINGW_SEC_WARN_STR = "This function or variable may be unsafe, use _CRT_SECURE_NO_WARNINGS to disable deprecation"
+const __MINGW_USE_UNDERSCORE_PREFIX = 0
+const __MSVCRT_VERSION__ = 0xE00
+const __MSVCRT__ = 1
+const __NO_INLINE__ = 1
+const __ORDER_BIG_ENDIAN__ = 4321
+const __ORDER_LITTLE_ENDIAN__ = 1234
+const __ORDER_PDP_ENDIAN__ = 3412
+const __PIC__ = 1
+const __PRAGMA_REDEFINE_EXTNAME = 1
+const __PRETTY_FUNCTION__ = "__func__"
+const __PTRDIFF_MAX__ = 0x7fffffffffffffff
+const __PTRDIFF_WIDTH__ = 64
+const __SCHAR_MAX__ = 0x7f
+const __SCHAR_WIDTH__ = 8
+const __SEG_FS = 1
+const __SEG_GS = 1
+const __SEH__ = 1
+const __SHRT_MAX__ = 0x7fff
+const __SHRT_WIDTH__ = 16
+const __SIG_ATOMIC_MAX__ = 0x7fffffff
+const __SIG_ATOMIC_TYPE__ = "int"
+const __SIG_ATOMIC_WIDTH__ = 32
+const __SIZEOF_DOUBLE__ = 8
+const __SIZEOF_FLOAT128__ = 16
+const __SIZEOF_FLOAT80__ = 16
+const __SIZEOF_FLOAT__ = 4
+const __SIZEOF_INT128__ = 16
+const __SIZEOF_INT__ = 4
+const __SIZEOF_LONG_DOUBLE__ = 8
+const __SIZEOF_LONG_LONG__ = 8
+const __SIZEOF_LONG__ = 4
+const __SIZEOF_POINTER__ = 8
+const __SIZEOF_PTRDIFF_T__ = 8
+const __SIZEOF_SHORT__ = 2
+const __SIZEOF_SIZE_T__ = 8
+const __SIZEOF_WCHAR_T__ = 2
+const __SIZEOF_WINT_T__ = 2
+const __SIZE_MAX__ = "0xffffffffffffffffU"
+const __SIZE_WIDTH__ = 64
+const __STDC_EMBED_EMPTY__ = 2
+const __STDC_EMBED_FOUND__ = 1
+const __STDC_EMBED_NOT_FOUND__ = 0
+const __STDC_HOSTED__ = 1
+const __STDC_SECURE_LIB__ = 200411
+const __STDC_UTF_16__ = 1
+const __STDC_UTF_32__ = 1
+const __STDC_VERSION__ = 201112
+const __STDC__ = 1
+const __UINT16_MAX__ = 0xffff
+const __UINT32_MAX__ = 0xffffffff
+const __UINT64_MAX__ = "0xffffffffffffffffU"
+const __UINT8_MAX__ = 0xff
+const __UINTMAX_MAX__ = "0xffffffffffffffffU"
+const __UINTPTR_MAX__ = "0xffffffffffffffffU"
+const __UINT_FAST16_MAX__ = 0xffff
+const __UINT_FAST32_MAX__ = 0xffffffff
+const __UINT_FAST64_MAX__ = "0xffffffffffffffffU"
+const __UINT_FAST8_MAX__ = 0xff
+const __UINT_LEAST16_MAX__ = 0xffff
+const __UINT_LEAST32_MAX__ = 0xffffffff
+const __UINT_LEAST64_MAX__ = "0xffffffffffffffffU"
+const __UINT_LEAST8_MAX__ = 0xff
+const __USE_MINGW_ANSI_STDIO = 0
+const __USING_POSIXTHREAD__ = 1
+const __VERSION__ = "15.2.0"
+const __WCHAR_MAX__ = 0xffff
+const __WCHAR_MIN__ = 0
+const __WCHAR_WIDTH__ = 16
+const __WIN32 = 1
+const __WIN32__ = 1
+const __WIN64 = 1
+const __WIN64__ = 1
+const __WINNT = 1
+const __WINNT__ = 1
+const __WINT_MAX__ = 0xffff
+const __WINT_MIN__ = 0
+const __WINT_WIDTH__ = 16
+const __amd64 = 1
+const __amd64__ = 1
+const __bool_true_false_are_defined = 1
+const __code_model_medium__ = 1
+const __int16 = "short"
+const __int32 = "int"
+const __int8 = "char"
+const __mingw_bos_ovr = "__mingw_ovr"
+const __nocona = 1
+const __nocona__ = 1
+const __pic__ = 1
+const __tune_core2__ = 1
+const __x86_64 = 1
+const __x86_64__ = 1
+const _inline = "__inline"
+const bool1 = "_Bool"
+const chan1 = "chan_token"
+const defer1 = "defer_token"
+const environ1 = "_environ"
+const fallthrough1 = "fallthrough_token"
+const false1 = 0
+const func1 = "func_token"
+const go1 = "go_token"
+const import1 = "import_token"
+const interface1 = "interface_token"
+const map1 = "map_token"
+const onexit_t = "_onexit_t"
+const package1 = "package_token"
+const range1 = "range_token"
+const select2 = "select_token"
+const sys_errlist = "_sys_errlist"
+const sys_nerr = "_sys_nerr"
+const true1 = 1
+const ts_builtin_sym_end = 0
+const type1 = "type_token"
+const var1 = "var_token"
+
+type __builtin_va_list = uintptr
+
+type __predefined_size_t = uint64
+
+type __predefined_wchar_t = uint16
+
+type __predefined_ptrdiff_t = int64
+
+type __gnuc_va_list = uintptr
+
+type va_list = uintptr
+
+type size_t = uint64
+
+type ssize_t = int64
+
+type rsize_t = uint64
+
+type intptr_t = int64
+
+type uintptr_t = uint64
+
+type ptrdiff_t = int64
+
+type wchar_t = uint16
+
+type wint_t = uint16
+
+type wctype_t = uint16
+
+type errno_t = int32
+
+type __time32_t = int32
+
+type __time64_t = int64
+
+type time_t = int64
+
+type threadlocaleinfostruct = struct {
+	F_locale_pctype      uintptr
+	F_locale_mb_cur_max  int32
+	F_locale_lc_codepage uint32
+}
+
+type pthreadlocinfo = uintptr
+
+type pthreadmbcinfo = uintptr
+
+type _locale_tstruct = struct {
+	Flocinfo pthreadlocinfo
+	Fmbcinfo pthreadmbcinfo
+}
+
+type localeinfo_struct = _locale_tstruct
+
+type _locale_t = uintptr
+
+type LC_ID = struct {
+	FwLanguage uint16
+	FwCountry  uint16
+	FwCodePage uint16
+}
+
+type tagLC_ID = LC_ID
+
+type LPLC_ID = uintptr
+
+type threadlocinfo = struct {
+	F_locale_pctype      uintptr
+	F_locale_mb_cur_max  int32
+	F_locale_lc_codepage uint32
+}
+
+type max_align_t = struct {
+	F__max_align_ll int64
+	F__max_align_ld float64
+}
+
+type int8_t = int8
+
+type uint8_t = uint8
+
+type int16_t = int16
+
+type uint16_t = uint16
+
+type int32_t = int32
+
+type uint32_t = uint32
+
+type int64_t = int64
+
+type uint64_t = uint64
+
+type int_least8_t = int8
+
+type uint_least8_t = uint8
+
+type int_least16_t = int16
+
+type uint_least16_t = uint16
+
+type int_least32_t = int32
+
+type uint_least32_t = uint32
+
+type int_least64_t = int64
+
+type uint_least64_t = uint64
+
+type int_fast8_t = int8
+
+type uint_fast8_t = uint8
+
+type int_fast16_t = int16
+
+type uint_fast16_t = uint16
+
+type int_fast32_t = int32
+
+type uint_fast32_t = uint32
+
+type int_fast64_t = int64
+
+type uint_fast64_t = uint64
+
+type intmax_t = int64
+
+type uintmax_t = uint64
+
+type _onexit_t = uintptr
+
+type div_t = struct {
+	Fquot int32
+	Frem  int32
+}
+
+type _div_t = div_t
+
+type ldiv_t = struct {
+	Fquot int32
+	Frem  int32
+}
+
+type _ldiv_t = ldiv_t
+
+type _LDOUBLE = struct {
+	Fld [10]uint8
+}
+
+type _CRT_DOUBLE = struct {
+	Fx float64
+}
+
+type _CRT_FLOAT = struct {
+	Ff float32
+}
+
+type _LONGDOUBLE = struct {
+	Fx float64
+}
+
+type _LDBL12 = struct {
+	Fld12 [12]uint8
+}
+
+type _purecall_handler = uintptr
+
+type _invalid_parameter_handler = uintptr
+
+type lldiv_t = struct {
+	Fquot int64
+	Frem  int64
+}
+
+type _HEAPINFO = struct {
+	F_pentry  uintptr
+	F_size    size_t
+	F_useflag int32
+}
+
+type _heapinfo = _HEAPINFO
+
+type TSStateId = uint16
+
+type TSSymbol = uint16
+
+type TSFieldId = uint16
+
+type TSLanguage = struct {
+	Fversion                   uint32_t
+	Fsymbol_count              uint32_t
+	Falias_count               uint32_t
+	Ftoken_count               uint32_t
+	Fexternal_token_count      uint32_t
+	Fstate_count               uint32_t
+	Flarge_state_count         uint32_t
+	Fproduction_id_count       uint32_t
+	Ffield_count               uint32_t
+	Fmax_alias_sequence_length uint16_t
+	Fparse_table               uintptr
+	Fsmall_parse_table         uintptr
+	Fsmall_parse_table_map     uintptr
+	Fparse_actions             uintptr
+	Fsymbol_names              uintptr
+	Ffield_names               uintptr
+	Ffield_map_slices          uintptr
+	Ffield_map_entries         uintptr
+	Fsymbol_metadata           uintptr
+	Fpublic_symbol_map         uintptr
+	Falias_map                 uintptr
+	Falias_sequences           uintptr
+	Flex_modes                 uintptr
+	Flex_fn                    uintptr
+	Fkeyword_lex_fn            uintptr
+	Fkeyword_capture_token     TSSymbol
+	Fexternal_scanner          struct {
+		Fstates      uintptr
+		Fsymbol_map  uintptr
+		Fcreate      uintptr
+		Fdestroy     uintptr
+		Fscan        uintptr
+		Fserialize   uintptr
+		Fdeserialize uintptr
+	}
+	Fprimary_state_ids uintptr
+}
+
+type TSFieldMapEntry = struct {
+	Ffield_id    TSFieldId
+	Fchild_index uint8_t
+	Finherited   uint8
+}
+
+type TSFieldMapSlice = struct {
+	Findex  uint16_t
+	Flength uint16_t
+}
+
+type TSSymbolMetadata = struct {
+	Fvisible   uint8
+	Fnamed     uint8
+	Fsupertype uint8
+}
+
+type TSLexer = struct {
+	Flookahead                  int32_t
+	Fresult_symbol              TSSymbol
+	Fadvance                    uintptr
+	Fmark_end                   uintptr
+	Fget_column                 uintptr
+	Fis_at_included_range_start uintptr
+	Feof                        uintptr
+	Flog                        uintptr
+}
+
+type TSParseActionType = int32
+
+const TSParseActionTypeShift = 0
+const TSParseActionTypeReduce = 1
+const TSParseActionTypeAccept = 2
+const TSParseActionTypeRecover = 3
+
+type TSParseAction = struct {
+	Freduce [0]struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}
+	Ftype_token [0]uint8_t
+	Fshift      struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}
+	F__ccgo_pad3 [2]byte
+}
+
+type TSLexMode = struct {
+	Flex_state          uint16_t
+	Fexternal_lex_state uint16_t
+}
+
+type TSParseActionEntry = struct {
+	Fentry [0]struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}
+	Faction TSParseAction
+}
+
+type TSCharacterRange = struct {
+	Fstart int32_t
+	Fend   int32_t
+}
+
+/*
+ *  Lexer Macros
+ */
+
+/*
+ *  Parse Table Macros
+ */
+
+type ts_symbol_identifiers = int32
+
+const sym_identifier = 1
+const sym_host_lang = 2
+const anon_sym_SLASH_STAR_BANG = 3
+const anon_sym_STAR_SLASH = 4
+const anon_sym_re2c = 5
+const anon_sym_local = 6
+const anon_sym_COLON = 7
+const anon_sym_rules = 8
+const aux_sym__block_name_token1 = 9
+const anon_sym_use = 10
+const anon_sym_max = 11
+const anon_sym_maxnmatch = 12
+const anon_sym_types = 13
+const anon_sym_getstate = 14
+const anon_sym_stags = 15
+const anon_sym_mtags = 16
+const anon_sym_include = 17
+const anon_sym_header = 18
+const anon_sym_on = 19
+const anon_sym_off = 20
+const sym_ignore_block = 21
+const anon_sym_format = 22
+const anon_sym_EQ = 23
+const anon_sym_SEMI = 24
+const anon_sym_separator = 25
+const anon_sym_re2c2 = 26
+const aux_sym__option_name_token1 = 27
+const anon_sym_AT = 28
+const anon_sym_flags = 29
+const anon_sym_define = 30
+const anon_sym_cond = 31
+const anon_sym_label = 32
+const anon_sym_variable = 33
+const anon_sym_yych = 34
+const anon_sym_state = 35
+const anon_sym_yybm = 36
+const anon_sym_cgoto = 37
+const anon_sym_api = 38
+const anon_sym_tags = 39
+const anon_sym_indent = 40
+const anon_sym_yyfill = 41
+const anon_sym_eof = 42
+const anon_sym_sentinel = 43
+const anon_sym_condprefix = 44
+const anon_sym_condenumprefix = 45
+const anon_sym_labelprefix = 46
+const anon_sym_startlabel = 47
+const anon_sym_posix_DASHcaptures = 48
+const anon_sym_DOT = 49
+const anon_sym_DASH_GT = 50
+const anon_sym_ignore = 51
+const anon_sym_substitute = 52
+const anon_sym_fail = 53
+const anon_sym_default = 54
+const anon_sym_custom = 55
+const anon_sym_match_DASHempty = 56
+const anon_sym_match_DASHnone = 57
+const anon_sym_error = 58
+const anon_sym_functions = 59
+const anon_sym_free_DASHform = 60
+const anon_sym_EQ_GT = 61
+const anon_sym_COLON_EQ_GT = 62
+const anon_sym_LT = 63
+const anon_sym_GT = 64
+const anon_sym_BANG = 65
+const anon_sym_COMMA = 66
+const anon_sym_STAR = 67
+const anon_sym_DOLLAR = 68
+const anon_sym_LBRACE = 69
+const anon_sym_RBRACE = 70
+const aux_sym__code_in_braces_token1 = 71
+const aux_sym__code_in_braces_token2 = 72
+const aux_sym__code_in_braces_token3 = 73
+const aux_sym__code_in_braces_token4 = 74
+const aux_sym__code_in_braces_token5 = 75
+const anon_sym_BANGuse = 76
+const anon_sym_BANGinclude = 77
+const anon_sym_SLASH = 78
+const anon_sym_PIPE = 79
+const anon_sym_BSLASH = 80
+const anon_sym_STAR2 = 81
+const anon_sym_PLUS = 82
+const anon_sym_QMARK = 83
+const anon_sym_LBRACE2 = 84
+const anon_sym_COMMA2 = 85
+const anon_sym_RBRACE2 = 86
+const aux_sym__mininum_token1 = 87
+const anon_sym_LPAREN = 88
+const anon_sym_RPAREN = 89
+const anon_sym_LBRACK = 90
+const anon_sym_CARET = 91
+const anon_sym_RBRACK = 92
+const aux_sym_range_token1 = 93
+const aux_sym_literal_token1 = 94
+const aux_sym_dstring_token1 = 95
+const aux_sym_sstring_token1 = 96
+const sym_quote = 97
+const sym_ctrl_code = 98
+const aux_sym__esc_hex_token1 = 99
+const aux_sym__esc_hex_token2 = 100
+const aux_sym__esc_hex_token3 = 101
+const aux_sym__esc_hex_token4 = 102
+const aux_sym__esc_hex_token5 = 103
+const aux_sym__esc_hex_token6 = 104
+const aux_sym__esc_hex_token7 = 105
+const aux_sym__esc_hex_token8 = 106
+const aux_sym__esc_oct_token1 = 107
+const aux_sym__esc_oct_token2 = 108
+const sym_hex_digit = 109
+const sym_oct_digit = 110
+const anon_sym_AT2 = 111
+const anon_sym_POUND = 112
+const anon_sym_0 = 113
+const anon_sym_DASH = 114
+const aux_sym_number_token1 = 115
+const aux_sym_number_token2 = 116
+const aux_sym_comment_token1 = 117
+const aux_sym_comment_token2 = 118
+const anon_sym_line = 119
+const aux_sym_linedir_token1 = 120
+const sym_re2c = 121
+const sym__block = 122
+const sym_global_block = 123
+const sym_local_block = 124
+const sym_rules_block = 125
+const sym_use_block = 126
+const sym_max_block = 127
+const sym_maxnmatch_block = 128
+const sym_getstate_block = 129
+const sym_stags_block = 130
+const sym_mtags_block = 131
+const sym_header_on_block = 132
+const sym_header_off_block = 133
+const sym_block_list = 134
+const sym__tag_directive = 135
+const sym_format_directive = 136
+const sym_separator_directive = 137
+const sym_body = 138
+const sym_named_definition = 139
+const sym_configuration = 140
+const sym__option_name = 141
+const sym_set_flags = 142
+const sym_define = 143
+const sym_set_cond = 144
+const sym_set_label = 145
+const sym_set_variable = 146
+const sym_set_yych = 147
+const sym_set_state = 148
+const sym_set_yybm = 149
+const sym_set_cgoto = 150
+const sym_set_api = 151
+const sym_set_tags = 152
+const sym_set_indent = 153
+const sym_set_yyfill = 154
+const sym_set_eof = 155
+const sym_set_sentinel = 156
+const sym_set_condprefix = 157
+const sym_set_condenumprefix = 158
+const sym_set_startlabel = 159
+const sym_set_posixcaptures = 160
+const sym_set_header = 161
+const sym__conf_value = 162
+const sym_field_expression = 163
+const sym_encoding_policy = 164
+const sym_input_conf = 165
+const sym_empty_class_conf = 166
+const sym_api_style = 167
+const sym_ordinary_rule = 168
+const sym_conditional_rule = 169
+const sym_shortcut = 170
+const sym_condition = 171
+const sym_pattern = 172
+const sym_action = 173
+const sym_code_block = 174
+const sym__code_in_braces = 175
+const sym_use = 176
+const sym_include = 177
+const sym_regex = 178
+const sym_lookahead = 179
+const sym__pattern_expr = 180
+const sym_alternation = 181
+const sym__branch = 182
+const sym__alt_expr = 183
+const sym_difference = 184
+const sym__dif_expr = 185
+const sym_concat = 186
+const sym__cat_expr = 187
+const sym_repetition = 188
+const sym_close = 189
+const sym_limits = 190
+const sym__mininum = 191
+const sym__maximum = 192
+const sym__exactly = 193
+const sym__atom = 194
+const sym_parenthesized = 195
+const sym_character_class = 196
+const sym_range = 197
+const sym_wildcard = 198
+const sym_literal = 199
+const sym_dstring = 200
+const sym_sstring = 201
+const sym__escape = 202
+const sym_code_unit = 203
+const sym_stag = 204
+const sym_mtag = 205
+const sym_number = 206
+const sym_comment = 207
+const sym_linedir = 208
+const aux_sym_re2c_repeat1 = 209
+const aux_sym_stags_block_repeat1 = 210
+const aux_sym_block_list_repeat1 = 211
+const aux_sym_body_repeat1 = 212
+const aux_sym__clist_repeat1 = 213
+const aux_sym_code_block_repeat1 = 214
+const aux_sym_alternation_repeat1 = 215
+const aux_sym_concat_repeat1 = 216
+const aux_sym_character_class_repeat1 = 217
+const alias_sym_block_name = 218
+const alias_sym_default = 219
+const alias_sym_field_identifier = 220
+const alias_sym_label = 221
+const alias_sym_name = 222
+
+var ts_symbol_names = [223]uintptr{
+	0:   __ccgo_ts,
+	1:   __ccgo_ts + 4,
+	2:   __ccgo_ts + 15,
+	3:   __ccgo_ts + 25,
+	4:   __ccgo_ts + 29,
+	5:   __ccgo_ts + 32,
+	6:   __ccgo_ts + 37,
+	7:   __ccgo_ts + 43,
+	8:   __ccgo_ts + 45,
+	9:   __ccgo_ts + 51,
+	10:  __ccgo_ts + 70,
+	11:  __ccgo_ts + 74,
+	12:  __ccgo_ts + 78,
+	13:  __ccgo_ts + 88,
+	14:  __ccgo_ts + 94,
+	15:  __ccgo_ts + 103,
+	16:  __ccgo_ts + 109,
+	17:  __ccgo_ts + 115,
+	18:  __ccgo_ts + 123,
+	19:  __ccgo_ts + 130,
+	20:  __ccgo_ts + 133,
+	21:  __ccgo_ts + 137,
+	22:  __ccgo_ts + 150,
+	23:  __ccgo_ts + 157,
+	24:  __ccgo_ts + 159,
+	25:  __ccgo_ts + 161,
+	26:  __ccgo_ts + 32,
+	27:  __ccgo_ts + 171,
+	28:  __ccgo_ts + 183,
+	29:  __ccgo_ts + 185,
+	30:  __ccgo_ts + 191,
+	31:  __ccgo_ts + 198,
+	32:  __ccgo_ts + 203,
+	33:  __ccgo_ts + 209,
+	34:  __ccgo_ts + 218,
+	35:  __ccgo_ts + 223,
+	36:  __ccgo_ts + 229,
+	37:  __ccgo_ts + 234,
+	38:  __ccgo_ts + 240,
+	39:  __ccgo_ts + 244,
+	40:  __ccgo_ts + 249,
+	41:  __ccgo_ts + 256,
+	42:  __ccgo_ts + 263,
+	43:  __ccgo_ts + 267,
+	44:  __ccgo_ts + 276,
+	45:  __ccgo_ts + 287,
+	46:  __ccgo_ts + 302,
+	47:  __ccgo_ts + 314,
+	48:  __ccgo_ts + 325,
+	49:  __ccgo_ts + 340,
+	50:  __ccgo_ts + 342,
+	51:  __ccgo_ts + 345,
+	52:  __ccgo_ts + 352,
+	53:  __ccgo_ts + 363,
+	54:  __ccgo_ts + 368,
+	55:  __ccgo_ts + 376,
+	56:  __ccgo_ts + 383,
+	57:  __ccgo_ts + 395,
+	58:  __ccgo_ts + 406,
+	59:  __ccgo_ts + 412,
+	60:  __ccgo_ts + 422,
+	61:  __ccgo_ts + 432,
+	62:  __ccgo_ts + 435,
+	63:  __ccgo_ts + 439,
+	64:  __ccgo_ts + 441,
+	65:  __ccgo_ts + 443,
+	66:  __ccgo_ts + 445,
+	67:  __ccgo_ts + 447,
+	68:  __ccgo_ts + 451,
+	69:  __ccgo_ts + 464,
+	70:  __ccgo_ts + 466,
+	71:  __ccgo_ts + 468,
+	72:  __ccgo_ts + 491,
+	73:  __ccgo_ts + 514,
+	74:  __ccgo_ts + 537,
+	75:  __ccgo_ts + 560,
+	76:  __ccgo_ts + 583,
+	77:  __ccgo_ts + 588,
+	78:  __ccgo_ts + 597,
+	79:  __ccgo_ts + 599,
+	80:  __ccgo_ts + 601,
+	81:  __ccgo_ts + 603,
+	82:  __ccgo_ts + 605,
+	83:  __ccgo_ts + 607,
+	84:  __ccgo_ts + 464,
+	85:  __ccgo_ts + 445,
+	86:  __ccgo_ts + 466,
+	87:  __ccgo_ts + 609,
+	88:  __ccgo_ts + 616,
+	89:  __ccgo_ts + 618,
+	90:  __ccgo_ts + 620,
+	91:  __ccgo_ts + 622,
+	92:  __ccgo_ts + 624,
+	93:  __ccgo_ts + 626,
+	94:  __ccgo_ts + 639,
+	95:  __ccgo_ts + 654,
+	96:  __ccgo_ts + 669,
+	97:  __ccgo_ts + 684,
+	98:  __ccgo_ts + 690,
+	99:  __ccgo_ts + 700,
+	100: __ccgo_ts + 716,
+	101: __ccgo_ts + 732,
+	102: __ccgo_ts + 748,
+	103: __ccgo_ts + 764,
+	104: __ccgo_ts + 780,
+	105: __ccgo_ts + 796,
+	106: __ccgo_ts + 812,
+	107: __ccgo_ts + 828,
+	108: __ccgo_ts + 844,
+	109: __ccgo_ts + 860,
+	110: __ccgo_ts + 870,
+	111: __ccgo_ts + 183,
+	112: __ccgo_ts + 880,
+	113: __ccgo_ts + 882,
+	114: __ccgo_ts + 884,
+	115: __ccgo_ts + 886,
+	116: __ccgo_ts + 900,
+	117: __ccgo_ts + 914,
+	118: __ccgo_ts + 929,
+	119: __ccgo_ts + 944,
+	120: __ccgo_ts + 949,
+	121: __ccgo_ts + 32,
+	122: __ccgo_ts + 964,
+	123: __ccgo_ts + 971,
+	124: __ccgo_ts + 984,
+	125: __ccgo_ts + 996,
+	126: __ccgo_ts + 1008,
+	127: __ccgo_ts + 1018,
+	128: __ccgo_ts + 1028,
+	129: __ccgo_ts + 1044,
+	130: __ccgo_ts + 1059,
+	131: __ccgo_ts + 1071,
+	132: __ccgo_ts + 1083,
+	133: __ccgo_ts + 1099,
+	134: __ccgo_ts + 1116,
+	135: __ccgo_ts + 1127,
+	136: __ccgo_ts + 1142,
+	137: __ccgo_ts + 1159,
+	138: __ccgo_ts + 1179,
+	139: __ccgo_ts + 1184,
+	140: __ccgo_ts + 1201,
+	141: __ccgo_ts + 1215,
+	142: __ccgo_ts + 1228,
+	143: __ccgo_ts + 191,
+	144: __ccgo_ts + 1238,
+	145: __ccgo_ts + 1247,
+	146: __ccgo_ts + 1257,
+	147: __ccgo_ts + 1270,
+	148: __ccgo_ts + 1279,
+	149: __ccgo_ts + 1289,
+	150: __ccgo_ts + 1298,
+	151: __ccgo_ts + 1308,
+	152: __ccgo_ts + 1316,
+	153: __ccgo_ts + 1325,
+	154: __ccgo_ts + 1336,
+	155: __ccgo_ts + 1347,
+	156: __ccgo_ts + 1355,
+	157: __ccgo_ts + 1368,
+	158: __ccgo_ts + 1383,
+	159: __ccgo_ts + 1402,
+	160: __ccgo_ts + 1417,
+	161: __ccgo_ts + 1435,
+	162: __ccgo_ts + 1446,
+	163: __ccgo_ts + 1458,
+	164: __ccgo_ts + 1475,
+	165: __ccgo_ts + 1491,
+	166: __ccgo_ts + 1502,
+	167: __ccgo_ts + 1519,
+	168: __ccgo_ts + 1529,
+	169: __ccgo_ts + 1543,
+	170: __ccgo_ts + 1560,
+	171: __ccgo_ts + 1569,
+	172: __ccgo_ts + 1579,
+	173: __ccgo_ts + 1587,
+	174: __ccgo_ts + 15,
+	175: __ccgo_ts + 1594,
+	176: __ccgo_ts + 70,
+	177: __ccgo_ts + 115,
+	178: __ccgo_ts + 1610,
+	179: __ccgo_ts + 1616,
+	180: __ccgo_ts + 1626,
+	181: __ccgo_ts + 1640,
+	182: __ccgo_ts + 1652,
+	183: __ccgo_ts + 1660,
+	184: __ccgo_ts + 1670,
+	185: __ccgo_ts + 1681,
+	186: __ccgo_ts + 1691,
+	187: __ccgo_ts + 1698,
+	188: __ccgo_ts + 1708,
+	189: __ccgo_ts + 1719,
+	190: __ccgo_ts + 1725,
+	191: __ccgo_ts + 1732,
+	192: __ccgo_ts + 1741,
+	193: __ccgo_ts + 1750,
+	194: __ccgo_ts + 1759,
+	195: __ccgo_ts + 1765,
+	196: __ccgo_ts + 1779,
+	197: __ccgo_ts + 1795,
+	198: __ccgo_ts + 1801,
+	199: __ccgo_ts + 1810,
+	200: __ccgo_ts + 1818,
+	201: __ccgo_ts + 1826,
+	202: __ccgo_ts + 1834,
+	203: __ccgo_ts + 1842,
+	204: __ccgo_ts + 1852,
+	205: __ccgo_ts + 1857,
+	206: __ccgo_ts + 609,
+	207: __ccgo_ts + 1862,
+	208: __ccgo_ts + 1870,
+	209: __ccgo_ts + 1878,
+	210: __ccgo_ts + 1891,
+	211: __ccgo_ts + 1911,
+	212: __ccgo_ts + 1930,
+	213: __ccgo_ts + 1943,
+	214: __ccgo_ts + 1958,
+	215: __ccgo_ts + 1977,
+	216: __ccgo_ts + 1997,
+	217: __ccgo_ts + 2012,
+	218: __ccgo_ts + 2036,
+	219: __ccgo_ts + 368,
+	220: __ccgo_ts + 2047,
+	221: __ccgo_ts + 203,
+	222: __ccgo_ts + 2064,
+}
+
+var ts_symbol_map = [223]TSSymbol{
+	1:   uint16(sym_identifier),
+	2:   uint16(sym_host_lang),
+	3:   uint16(anon_sym_SLASH_STAR_BANG),
+	4:   uint16(anon_sym_STAR_SLASH),
+	5:   uint16(anon_sym_re2c),
+	6:   uint16(anon_sym_local),
+	7:   uint16(anon_sym_COLON),
+	8:   uint16(anon_sym_rules),
+	9:   uint16(aux_sym__block_name_token1),
+	10:  uint16(anon_sym_use),
+	11:  uint16(anon_sym_max),
+	12:  uint16(anon_sym_maxnmatch),
+	13:  uint16(anon_sym_types),
+	14:  uint16(anon_sym_getstate),
+	15:  uint16(anon_sym_stags),
+	16:  uint16(anon_sym_mtags),
+	17:  uint16(anon_sym_include),
+	18:  uint16(anon_sym_header),
+	19:  uint16(anon_sym_on),
+	20:  uint16(anon_sym_off),
+	21:  uint16(sym_ignore_block),
+	22:  uint16(anon_sym_format),
+	23:  uint16(anon_sym_EQ),
+	24:  uint16(anon_sym_SEMI),
+	25:  uint16(anon_sym_separator),
+	26:  uint16(anon_sym_re2c),
+	27:  uint16(aux_sym__option_name_token1),
+	28:  uint16(anon_sym_AT),
+	29:  uint16(anon_sym_flags),
+	30:  uint16(anon_sym_define),
+	31:  uint16(anon_sym_cond),
+	32:  uint16(anon_sym_label),
+	33:  uint16(anon_sym_variable),
+	34:  uint16(anon_sym_yych),
+	35:  uint16(anon_sym_state),
+	36:  uint16(anon_sym_yybm),
+	37:  uint16(anon_sym_cgoto),
+	38:  uint16(anon_sym_api),
+	39:  uint16(anon_sym_tags),
+	40:  uint16(anon_sym_indent),
+	41:  uint16(anon_sym_yyfill),
+	42:  uint16(anon_sym_eof),
+	43:  uint16(anon_sym_sentinel),
+	44:  uint16(anon_sym_condprefix),
+	45:  uint16(anon_sym_condenumprefix),
+	46:  uint16(anon_sym_labelprefix),
+	47:  uint16(anon_sym_startlabel),
+	48:  uint16(anon_sym_posix_DASHcaptures),
+	49:  uint16(anon_sym_DOT),
+	50:  uint16(anon_sym_DASH_GT),
+	51:  uint16(anon_sym_ignore),
+	52:  uint16(anon_sym_substitute),
+	53:  uint16(anon_sym_fail),
+	54:  uint16(anon_sym_default),
+	55:  uint16(anon_sym_custom),
+	56:  uint16(anon_sym_match_DASHempty),
+	57:  uint16(anon_sym_match_DASHnone),
+	58:  uint16(anon_sym_error),
+	59:  uint16(anon_sym_functions),
+	60:  uint16(anon_sym_free_DASHform),
+	61:  uint16(anon_sym_EQ_GT),
+	62:  uint16(anon_sym_COLON_EQ_GT),
+	63:  uint16(anon_sym_LT),
+	64:  uint16(anon_sym_GT),
+	65:  uint16(anon_sym_BANG),
+	66:  uint16(anon_sym_COMMA),
+	67:  uint16(anon_sym_STAR),
+	68:  uint16(anon_sym_DOLLAR),
+	69:  uint16(anon_sym_LBRACE),
+	70:  uint16(anon_sym_RBRACE),
+	71:  uint16(aux_sym__code_in_braces_token1),
+	72:  uint16(aux_sym__code_in_braces_token2),
+	73:  uint16(aux_sym__code_in_braces_token3),
+	74:  uint16(aux_sym__code_in_braces_token4),
+	75:  uint16(aux_sym__code_in_braces_token5),
+	76:  uint16(anon_sym_BANGuse),
+	77:  uint16(anon_sym_BANGinclude),
+	78:  uint16(anon_sym_SLASH),
+	79:  uint16(anon_sym_PIPE),
+	80:  uint16(anon_sym_BSLASH),
+	81:  uint16(anon_sym_STAR),
+	82:  uint16(anon_sym_PLUS),
+	83:  uint16(anon_sym_QMARK),
+	84:  uint16(anon_sym_LBRACE),
+	85:  uint16(anon_sym_COMMA),
+	86:  uint16(anon_sym_RBRACE),
+	87:  uint16(sym_number),
+	88:  uint16(anon_sym_LPAREN),
+	89:  uint16(anon_sym_RPAREN),
+	90:  uint16(anon_sym_LBRACK),
+	91:  uint16(anon_sym_CARET),
+	92:  uint16(anon_sym_RBRACK),
+	93:  uint16(aux_sym_range_token1),
+	94:  uint16(aux_sym_literal_token1),
+	95:  uint16(aux_sym_dstring_token1),
+	96:  uint16(aux_sym_sstring_token1),
+	97:  uint16(sym_quote),
+	98:  uint16(sym_ctrl_code),
+	99:  uint16(aux_sym__esc_hex_token1),
+	100: uint16(aux_sym__esc_hex_token2),
+	101: uint16(aux_sym__esc_hex_token3),
+	102: uint16(aux_sym__esc_hex_token4),
+	103: uint16(aux_sym__esc_hex_token5),
+	104: uint16(aux_sym__esc_hex_token6),
+	105: uint16(aux_sym__esc_hex_token7),
+	106: uint16(aux_sym__esc_hex_token8),
+	107: uint16(aux_sym__esc_oct_token1),
+	108: uint16(aux_sym__esc_oct_token2),
+	109: uint16(sym_hex_digit),
+	110: uint16(sym_oct_digit),
+	111: uint16(anon_sym_AT),
+	112: uint16(anon_sym_POUND),
+	113: uint16(anon_sym_0),
+	114: uint16(anon_sym_DASH),
+	115: uint16(aux_sym_number_token1),
+	116: uint16(aux_sym_number_token2),
+	117: uint16(aux_sym_comment_token1),
+	118: uint16(aux_sym_comment_token2),
+	119: uint16(anon_sym_line),
+	120: uint16(aux_sym_linedir_token1),
+	121: uint16(sym_re2c),
+	122: uint16(sym__block),
+	123: uint16(sym_global_block),
+	124: uint16(sym_local_block),
+	125: uint16(sym_rules_block),
+	126: uint16(sym_use_block),
+	127: uint16(sym_max_block),
+	128: uint16(sym_maxnmatch_block),
+	129: uint16(sym_getstate_block),
+	130: uint16(sym_stags_block),
+	131: uint16(sym_mtags_block),
+	132: uint16(sym_header_on_block),
+	133: uint16(sym_header_off_block),
+	134: uint16(sym_block_list),
+	135: uint16(sym__tag_directive),
+	136: uint16(sym_format_directive),
+	137: uint16(sym_separator_directive),
+	138: uint16(sym_body),
+	139: uint16(sym_named_definition),
+	140: uint16(sym_configuration),
+	141: uint16(sym__option_name),
+	142: uint16(sym_set_flags),
+	143: uint16(sym_define),
+	144: uint16(sym_set_cond),
+	145: uint16(sym_set_label),
+	146: uint16(sym_set_variable),
+	147: uint16(sym_set_yych),
+	148: uint16(sym_set_state),
+	149: uint16(sym_set_yybm),
+	150: uint16(sym_set_cgoto),
+	151: uint16(sym_set_api),
+	152: uint16(sym_set_tags),
+	153: uint16(sym_set_indent),
+	154: uint16(sym_set_yyfill),
+	155: uint16(sym_set_eof),
+	156: uint16(sym_set_sentinel),
+	157: uint16(sym_set_condprefix),
+	158: uint16(sym_set_condenumprefix),
+	159: uint16(sym_set_startlabel),
+	160: uint16(sym_set_posixcaptures),
+	161: uint16(sym_set_header),
+	162: uint16(sym__conf_value),
+	163: uint16(sym_field_expression),
+	164: uint16(sym_encoding_policy),
+	165: uint16(sym_input_conf),
+	166: uint16(sym_empty_class_conf),
+	167: uint16(sym_api_style),
+	168: uint16(sym_ordinary_rule),
+	169: uint16(sym_conditional_rule),
+	170: uint16(sym_shortcut),
+	171: uint16(sym_condition),
+	172: uint16(sym_pattern),
+	173: uint16(sym_action),
+	174: uint16(sym_host_lang),
+	175: uint16(sym__code_in_braces),
+	176: uint16(sym_use),
+	177: uint16(sym_include),
+	178: uint16(sym_regex),
+	179: uint16(sym_lookahead),
+	180: uint16(sym__pattern_expr),
+	181: uint16(sym_alternation),
+	182: uint16(sym__branch),
+	183: uint16(sym__alt_expr),
+	184: uint16(sym_difference),
+	185: uint16(sym__dif_expr),
+	186: uint16(sym_concat),
+	187: uint16(sym__cat_expr),
+	188: uint16(sym_repetition),
+	189: uint16(sym_close),
+	190: uint16(sym_limits),
+	191: uint16(sym__mininum),
+	192: uint16(sym__maximum),
+	193: uint16(sym__exactly),
+	194: uint16(sym__atom),
+	195: uint16(sym_parenthesized),
+	196: uint16(sym_character_class),
+	197: uint16(sym_range),
+	198: uint16(sym_wildcard),
+	199: uint16(sym_literal),
+	200: uint16(sym_dstring),
+	201: uint16(sym_sstring),
+	202: uint16(sym__escape),
+	203: uint16(sym_code_unit),
+	204: uint16(sym_stag),
+	205: uint16(sym_mtag),
+	206: uint16(sym_number),
+	207: uint16(sym_comment),
+	208: uint16(sym_linedir),
+	209: uint16(aux_sym_re2c_repeat1),
+	210: uint16(aux_sym_stags_block_repeat1),
+	211: uint16(aux_sym_block_list_repeat1),
+	212: uint16(aux_sym_body_repeat1),
+	213: uint16(aux_sym__clist_repeat1),
+	214: uint16(aux_sym_code_block_repeat1),
+	215: uint16(aux_sym_alternation_repeat1),
+	216: uint16(aux_sym_concat_repeat1),
+	217: uint16(aux_sym_character_class_repeat1),
+	218: uint16(alias_sym_block_name),
+	219: uint16(alias_sym_default),
+	220: uint16(alias_sym_field_identifier),
+	221: uint16(alias_sym_label),
+	222: uint16(alias_sym_name),
+}
+
+var ts_symbol_metadata = [223]TSSymbolMetadata{
+	0: {
+		Fnamed: libc.BoolUint8(true1 != 0),
+	},
+	1: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	2: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	3: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	4: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	5: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	6: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	7: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	8: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	9: {},
+	10: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	11: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	12: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	13: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	14: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	15: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	16: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	17: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	18: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	19: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	20: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	21: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	22: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	23: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	24: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	25: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	26: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	27: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	28: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	29: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	30: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	31: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	32: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	33: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	34: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	35: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	36: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	37: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	38: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	39: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	40: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	41: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	42: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	43: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	44: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	45: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	46: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	47: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	48: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	49: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	50: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	51: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	52: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	53: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	54: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	55: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	56: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	57: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	58: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	59: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	60: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	61: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	62: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	63: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	64: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	65: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	66: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	67: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	68: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	69: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	70: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	71: {},
+	72: {},
+	73: {},
+	74: {},
+	75: {},
+	76: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	77: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	78: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	79: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	80: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	81: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	82: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	83: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	84: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	85: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	86: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	87: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	88: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	89: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	90: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	91: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	92: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	93: {},
+	94: {},
+	95: {},
+	96: {},
+	97: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	98: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	99:  {},
+	100: {},
+	101: {},
+	102: {},
+	103: {},
+	104: {},
+	105: {},
+	106: {},
+	107: {},
+	108: {},
+	109: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	110: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	111: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	112: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	113: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	114: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	115: {},
+	116: {},
+	117: {},
+	118: {},
+	119: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+	},
+	120: {},
+	121: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	122: {
+		Fnamed: libc.BoolUint8(true1 != 0),
+	},
+	123: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	124: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	125: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	126: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	127: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	128: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	129: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	130: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	131: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	132: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	133: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	134: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	135: {
+		Fnamed: libc.BoolUint8(true1 != 0),
+	},
+	136: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	137: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	138: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	139: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	140: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	141: {
+		Fnamed: libc.BoolUint8(true1 != 0),
+	},
+	142: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	143: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	144: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	145: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	146: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	147: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	148: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	149: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	150: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	151: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	152: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	153: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	154: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	155: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	156: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	157: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	158: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	159: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	160: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	161: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	162: {
+		Fnamed: libc.BoolUint8(true1 != 0),
+	},
+	163: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	164: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	165: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	166: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	167: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	168: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	169: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	170: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	171: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	172: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	173: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	174: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	175: {
+		Fnamed: libc.BoolUint8(true1 != 0),
+	},
+	176: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	177: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	178: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	179: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	180: {
+		Fnamed: libc.BoolUint8(true1 != 0),
+	},
+	181: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	182: {
+		Fnamed: libc.BoolUint8(true1 != 0),
+	},
+	183: {
+		Fnamed: libc.BoolUint8(true1 != 0),
+	},
+	184: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	185: {
+		Fnamed: libc.BoolUint8(true1 != 0),
+	},
+	186: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	187: {
+		Fnamed: libc.BoolUint8(true1 != 0),
+	},
+	188: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	189: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	190: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	191: {
+		Fnamed: libc.BoolUint8(true1 != 0),
+	},
+	192: {
+		Fnamed: libc.BoolUint8(true1 != 0),
+	},
+	193: {
+		Fnamed: libc.BoolUint8(true1 != 0),
+	},
+	194: {
+		Fnamed:     libc.BoolUint8(true1 != 0),
+		Fsupertype: libc.BoolUint8(true1 != 0),
+	},
+	195: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	196: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	197: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	198: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	199: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	200: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	201: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	202: {
+		Fnamed:     libc.BoolUint8(true1 != 0),
+		Fsupertype: libc.BoolUint8(true1 != 0),
+	},
+	203: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	204: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	205: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	206: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	207: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	208: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	209: {},
+	210: {},
+	211: {},
+	212: {},
+	213: {},
+	214: {},
+	215: {},
+	216: {},
+	217: {},
+	218: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	219: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	220: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	221: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+	222: {
+		Fvisible: libc.BoolUint8(true1 != 0),
+		Fnamed:   libc.BoolUint8(true1 != 0),
+	},
+}
+
+type ts_field_identifiers = int32
+
+const field_argument = 1
+const field_branch = 2
+const field_condition = 3
+const field_exactly = 4
+const field_expr = 5
+const field_field = 6
+const field_filename = 7
+const field_format = 8
+const field_from = 9
+const field_left = 10
+const field_linenum = 11
+const field_lookahead = 12
+const field_maximum = 13
+const field_minimum = 14
+const field_name = 15
+const field_operator = 16
+const field_option = 17
+const field_right = 18
+const field_separator = 19
+const field_to = 20
+const field_value = 21
+
+var ts_field_names = [22]uintptr{
+	0:  libc.UintptrFromInt32(0),
+	1:  __ccgo_ts + 2069,
+	2:  __ccgo_ts + 2078,
+	3:  __ccgo_ts + 1569,
+	4:  __ccgo_ts + 2085,
+	5:  __ccgo_ts + 2093,
+	6:  __ccgo_ts + 2098,
+	7:  __ccgo_ts + 2104,
+	8:  __ccgo_ts + 150,
+	9:  __ccgo_ts + 2113,
+	10: __ccgo_ts + 2118,
+	11: __ccgo_ts + 2123,
+	12: __ccgo_ts + 1616,
+	13: __ccgo_ts + 2131,
+	14: __ccgo_ts + 2139,
+	15: __ccgo_ts + 2064,
+	16: __ccgo_ts + 2147,
+	17: __ccgo_ts + 2156,
+	18: __ccgo_ts + 2163,
+	19: __ccgo_ts + 161,
+	20: __ccgo_ts + 2169,
+	21: __ccgo_ts + 2172,
+}
+
+var ts_field_map_slices = [40]TSFieldMapSlice{
+	4: {
+		Flength: uint16(1),
+	},
+	6: {
+		Findex:  uint16(1),
+		Flength: uint16(2),
+	},
+	7: {
+		Findex:  uint16(3),
+		Flength: uint16(3),
+	},
+	8: {
+		Findex:  uint16(6),
+		Flength: uint16(4),
+	},
+	11: {
+		Findex:  uint16(10),
+		Flength: uint16(1),
+	},
+	13: {
+		Findex:  uint16(11),
+		Flength: uint16(1),
+	},
+	14: {
+		Findex:  uint16(12),
+		Flength: uint16(3),
+	},
+	15: {
+		Findex:  uint16(15),
+		Flength: uint16(3),
+	},
+	16: {
+		Findex:  uint16(18),
+		Flength: uint16(1),
+	},
+	17: {
+		Findex:  uint16(19),
+		Flength: uint16(1),
+	},
+	20: {
+		Findex:  uint16(20),
+		Flength: uint16(2),
+	},
+	21: {
+		Findex:  uint16(22),
+		Flength: uint16(1),
+	},
+	22: {
+		Findex:  uint16(23),
+		Flength: uint16(2),
+	},
+	23: {
+		Findex:  uint16(25),
+		Flength: uint16(1),
+	},
+	26: {
+		Findex:  uint16(26),
+		Flength: uint16(1),
+	},
+	27: {
+		Findex:  uint16(27),
+		Flength: uint16(1),
+	},
+	28: {
+		Findex:  uint16(26),
+		Flength: uint16(1),
+	},
+	29: {
+		Findex:  uint16(28),
+		Flength: uint16(1),
+	},
+	31: {
+		Findex:  uint16(29),
+		Flength: uint16(2),
+	},
+	32: {
+		Findex:  uint16(31),
+		Flength: uint16(1),
+	},
+	33: {
+		Findex:  uint16(32),
+		Flength: uint16(1),
+	},
+	34: {
+		Findex:  uint16(33),
+		Flength: uint16(3),
+	},
+	35: {
+		Findex:  uint16(36),
+		Flength: uint16(2),
+	},
+	36: {
+		Findex:  uint16(38),
+		Flength: uint16(1),
+	},
+	37: {
+		Findex:  uint16(39),
+		Flength: uint16(1),
+	},
+	38: {
+		Findex:  uint16(40),
+		Flength: uint16(3),
+	},
+	39: {
+		Findex:  uint16(43),
+		Flength: uint16(2),
+	},
+}
+
+var ts_field_map_entries = [45]TSFieldMapEntry{
+	0: {
+		Ffield_id: uint16(field_branch),
+	},
+	1: {
+		Ffield_id:  uint16(field_branch),
+		Finherited: libc.BoolUint8(true1 != 0),
+	},
+	2: {
+		Ffield_id:    uint16(field_operator),
+		Fchild_index: uint8(1),
+	},
+	3: {
+		Ffield_id:  uint16(field_branch),
+		Finherited: libc.BoolUint8(true1 != 0),
+	},
+	4: {
+		Ffield_id:    uint16(field_branch),
+		Fchild_index: uint8(1),
+		Finherited:   libc.BoolUint8(true1 != 0),
+	},
+	5: {
+		Ffield_id:  uint16(field_operator),
+		Finherited: libc.BoolUint8(true1 != 0),
+	},
+	6: {
+		Ffield_id:  uint16(field_branch),
+		Finherited: libc.BoolUint8(true1 != 0),
+	},
+	7: {
+		Ffield_id:    uint16(field_branch),
+		Fchild_index: uint8(1),
+		Finherited:   libc.BoolUint8(true1 != 0),
+	},
+	8: {
+		Ffield_id:  uint16(field_operator),
+		Finherited: libc.BoolUint8(true1 != 0),
+	},
+	9: {
+		Ffield_id:    uint16(field_operator),
+		Fchild_index: uint8(1),
+		Finherited:   libc.BoolUint8(true1 != 0),
+	},
+	10: {
+		Ffield_id:    uint16(field_filename),
+		Fchild_index: uint8(1),
+	},
+	11: {
+		Ffield_id:    uint16(field_condition),
+		Fchild_index: uint8(1),
+	},
+	12: {
+		Ffield_id: uint16(field_expr),
+	},
+	13: {
+		Ffield_id:    uint16(field_lookahead),
+		Fchild_index: uint8(2),
+	},
+	14: {
+		Ffield_id:    uint16(field_operator),
+		Fchild_index: uint8(1),
+	},
+	15: {
+		Ffield_id: uint16(field_left),
+	},
+	16: {
+		Ffield_id:    uint16(field_operator),
+		Fchild_index: uint8(1),
+	},
+	17: {
+		Ffield_id:    uint16(field_right),
+		Fchild_index: uint8(2),
+	},
+	18: {
+		Ffield_id: uint16(field_minimum),
+	},
+	19: {
+		Ffield_id: uint16(field_exactly),
+	},
+	20: {
+		Ffield_id: uint16(field_from),
+	},
+	21: {
+		Ffield_id:    uint16(field_to),
+		Fchild_index: uint8(2),
+	},
+	22: {
+		Ffield_id:    uint16(field_filename),
+		Fchild_index: uint8(2),
+	},
+	23: {
+		Ffield_id: uint16(field_name),
+	},
+	24: {
+		Ffield_id:    uint16(field_value),
+		Fchild_index: uint8(2),
+	},
+	25: {
+		Ffield_id:    uint16(field_exactly),
+		Fchild_index: uint8(1),
+		Finherited:   libc.BoolUint8(true1 != 0),
+	},
+	26: {
+		Ffield_id: uint16(field_value),
+	},
+	27: {
+		Ffield_id:    uint16(field_value),
+		Fchild_index: uint8(2),
+		Finherited:   libc.BoolUint8(true1 != 0),
+	},
+	28: {
+		Ffield_id:    uint16(field_option),
+		Fchild_index: uint8(1),
+	},
+	29: {
+		Ffield_id:    uint16(field_filename),
+		Fchild_index: uint8(2),
+	},
+	30: {
+		Ffield_id:    uint16(field_linenum),
+		Fchild_index: uint8(3),
+	},
+	31: {
+		Ffield_id:    uint16(field_minimum),
+		Fchild_index: uint8(1),
+		Finherited:   libc.BoolUint8(true1 != 0),
+	},
+	32: {
+		Ffield_id: uint16(field_maximum),
+	},
+	33: {
+		Ffield_id:    uint16(field_field),
+		Fchild_index: uint8(1),
+		Finherited:   libc.BoolUint8(true1 != 0),
+	},
+	34: {
+		Ffield_id:    uint16(field_option),
+		Fchild_index: uint8(1),
+		Finherited:   libc.BoolUint8(true1 != 0),
+	},
+	35: {
+		Ffield_id:    uint16(field_value),
+		Fchild_index: uint8(3),
+		Finherited:   libc.BoolUint8(true1 != 0),
+	},
+	36: {
+		Ffield_id:    uint16(field_maximum),
+		Fchild_index: uint8(3),
+		Finherited:   libc.BoolUint8(true1 != 0),
+	},
+	37: {
+		Ffield_id:    uint16(field_minimum),
+		Fchild_index: uint8(1),
+		Finherited:   libc.BoolUint8(true1 != 0),
+	},
+	38: {
+		Ffield_id:    uint16(field_format),
+		Fchild_index: uint8(2),
+	},
+	39: {
+		Ffield_id:    uint16(field_separator),
+		Fchild_index: uint8(2),
+	},
+	40: {
+		Ffield_id: uint16(field_argument),
+	},
+	41: {
+		Ffield_id:    uint16(field_field),
+		Fchild_index: uint8(2),
+	},
+	42: {
+		Ffield_id:    uint16(field_operator),
+		Fchild_index: uint8(1),
+	},
+	43: {
+		Ffield_id:    uint16(field_field),
+		Fchild_index: uint8(3),
+	},
+	44: {
+		Ffield_id:    uint16(field_option),
+		Fchild_index: uint8(1),
+	},
+}
+
+var ts_alias_sequences = [40][6]TSSymbol{
+	0: {},
+	1: {
+		0: uint16(anon_sym_DOT),
+	},
+	2: {
+		0: uint16(alias_sym_default),
+	},
+	3: {
+		0: uint16(alias_sym_name),
+	},
+	5: {
+		2: uint16(alias_sym_block_name),
+	},
+	9: {
+		1: uint16(alias_sym_label),
+	},
+	10: {
+		0: uint16(alias_sym_label),
+	},
+	12: {
+		1: uint16(sym_literal),
+	},
+	13: {
+		1: uint16(alias_sym_label),
+	},
+	18: {
+		2: uint16(alias_sym_label),
+	},
+	19: {
+		2: uint16(sym_literal),
+	},
+	20: {
+		1: uint16(anon_sym_DASH),
+	},
+	22: {
+		0: uint16(alias_sym_name),
+	},
+	24: {
+		4: uint16(alias_sym_block_name),
+	},
+	25: {
+		1: uint16(alias_sym_block_name),
+	},
+	26: {
+		0: uint16(alias_sym_name),
+	},
+	30: {
+		3: uint16(alias_sym_label),
+	},
+	38: {
+		2: uint16(alias_sym_field_identifier),
+	},
+}
+
+var ts_non_terminal_alias_map = [1]uint16_t{}
+
+var ts_primary_state_ids = [391]TSStateId{
+	1:   uint16(1),
+	2:   uint16(2),
+	3:   uint16(3),
+	4:   uint16(4),
+	5:   uint16(5),
+	6:   uint16(6),
+	7:   uint16(7),
+	8:   uint16(8),
+	9:   uint16(9),
+	10:  uint16(10),
+	11:  uint16(11),
+	12:  uint16(12),
+	13:  uint16(12),
+	14:  uint16(11),
+	15:  uint16(11),
+	16:  uint16(16),
+	17:  uint16(11),
+	18:  uint16(12),
+	19:  uint16(12),
+	20:  uint16(12),
+	21:  uint16(11),
+	22:  uint16(11),
+	23:  uint16(11),
+	24:  uint16(12),
+	25:  uint16(12),
+	26:  uint16(12),
+	27:  uint16(11),
+	28:  uint16(28),
+	29:  uint16(29),
+	30:  uint16(30),
+	31:  uint16(29),
+	32:  uint16(29),
+	33:  uint16(33),
+	34:  uint16(34),
+	35:  uint16(35),
+	36:  uint16(36),
+	37:  uint16(37),
+	38:  uint16(38),
+	39:  uint16(39),
+	40:  uint16(40),
+	41:  uint16(41),
+	42:  uint16(42),
+	43:  uint16(43),
+	44:  uint16(44),
+	45:  uint16(45),
+	46:  uint16(46),
+	47:  uint16(47),
+	48:  uint16(48),
+	49:  uint16(49),
+	50:  uint16(50),
+	51:  uint16(51),
+	52:  uint16(52),
+	53:  uint16(53),
+	54:  uint16(54),
+	55:  uint16(55),
+	56:  uint16(56),
+	57:  uint16(52),
+	58:  uint16(58),
+	59:  uint16(58),
+	60:  uint16(60),
+	61:  uint16(58),
+	62:  uint16(58),
+	63:  uint16(58),
+	64:  uint16(53),
+	65:  uint16(51),
+	66:  uint16(58),
+	67:  uint16(58),
+	68:  uint16(51),
+	69:  uint16(53),
+	70:  uint16(52),
+	71:  uint16(51),
+	72:  uint16(53),
+	73:  uint16(52),
+	74:  uint16(52),
+	75:  uint16(53),
+	76:  uint16(76),
+	77:  uint16(53),
+	78:  uint16(78),
+	79:  uint16(79),
+	80:  uint16(79),
+	81:  uint16(51),
+	82:  uint16(79),
+	83:  uint16(52),
+	84:  uint16(79),
+	85:  uint16(53),
+	86:  uint16(51),
+	87:  uint16(79),
+	88:  uint16(52),
+	89:  uint16(79),
+	90:  uint16(79),
+	91:  uint16(51),
+	92:  uint16(79),
+	93:  uint16(93),
+	94:  uint16(93),
+	95:  uint16(93),
+	96:  uint16(93),
+	97:  uint16(51),
+	98:  uint16(93),
+	99:  uint16(52),
+	100: uint16(53),
+	101: uint16(93),
+	102: uint16(93),
+	103: uint16(93),
+	104: uint16(104),
+	105: uint16(105),
+	106: uint16(106),
+	107: uint16(107),
+	108: uint16(108),
+	109: uint16(109),
+	110: uint16(110),
+	111: uint16(111),
+	112: uint16(112),
+	113: uint16(111),
+	114: uint16(114),
+	115: uint16(115),
+	116: uint16(116),
+	117: uint16(111),
+	118: uint16(118),
+	119: uint16(119),
+	120: uint16(111),
+	121: uint16(121),
+	122: uint16(111),
+	123: uint16(123),
+	124: uint16(111),
+	125: uint16(125),
+	126: uint16(126),
+	127: uint16(127),
+	128: uint16(128),
+	129: uint16(111),
+	130: uint16(111),
+	131: uint16(131),
+	132: uint16(132),
+	133: uint16(133),
+	134: uint16(134),
+	135: uint16(135),
+	136: uint16(136),
+	137: uint16(137),
+	138: uint16(138),
+	139: uint16(139),
+	140: uint16(140),
+	141: uint16(141),
+	142: uint16(142),
+	143: uint16(143),
+	144: uint16(144),
+	145: uint16(145),
+	146: uint16(146),
+	147: uint16(147),
+	148: uint16(148),
+	149: uint16(149),
+	150: uint16(150),
+	151: uint16(151),
+	152: uint16(152),
+	153: uint16(153),
+	154: uint16(154),
+	155: uint16(155),
+	156: uint16(156),
+	157: uint16(157),
+	158: uint16(158),
+	159: uint16(159),
+	160: uint16(160),
+	161: uint16(161),
+	162: uint16(162),
+	163: uint16(163),
+	164: uint16(164),
+	165: uint16(165),
+	166: uint16(166),
+	167: uint16(167),
+	168: uint16(168),
+	169: uint16(169),
+	170: uint16(170),
+	171: uint16(171),
+	172: uint16(172),
+	173: uint16(173),
+	174: uint16(174),
+	175: uint16(175),
+	176: uint16(176),
+	177: uint16(177),
+	178: uint16(178),
+	179: uint16(179),
+	180: uint16(180),
+	181: uint16(181),
+	182: uint16(182),
+	183: uint16(183),
+	184: uint16(184),
+	185: uint16(185),
+	186: uint16(186),
+	187: uint16(187),
+	188: uint16(188),
+	189: uint16(189),
+	190: uint16(190),
+	191: uint16(191),
+	192: uint16(192),
+	193: uint16(193),
+	194: uint16(194),
+	195: uint16(195),
+	196: uint16(196),
+	197: uint16(197),
+	198: uint16(198),
+	199: uint16(199),
+	200: uint16(200),
+	201: uint16(201),
+	202: uint16(192),
+	203: uint16(194),
+	204: uint16(194),
+	205: uint16(205),
+	206: uint16(192),
+	207: uint16(207),
+	208: uint16(208),
+	209: uint16(209),
+	210: uint16(210),
+	211: uint16(211),
+	212: uint16(212),
+	213: uint16(104),
+	214: uint16(119),
+	215: uint16(215),
+	216: uint16(216),
+	217: uint16(217),
+	218: uint16(192),
+	219: uint16(219),
+	220: uint16(220),
+	221: uint16(194),
+	222: uint16(222),
+	223: uint16(223),
+	224: uint16(224),
+	225: uint16(225),
+	226: uint16(226),
+	227: uint16(192),
+	228: uint16(228),
+	229: uint16(229),
+	230: uint16(230),
+	231: uint16(231),
+	232: uint16(232),
+	233: uint16(233),
+	234: uint16(194),
+	235: uint16(192),
+	236: uint16(236),
+	237: uint16(192),
+	238: uint16(194),
+	239: uint16(194),
+	240: uint16(240),
+	241: uint16(241),
+	242: uint16(242),
+	243: uint16(243),
+	244: uint16(244),
+	245: uint16(245),
+	246: uint16(246),
+	247: uint16(247),
+	248: uint16(248),
+	249: uint16(249),
+	250: uint16(250),
+	251: uint16(192),
+	252: uint16(252),
+	253: uint16(253),
+	254: uint16(254),
+	255: uint16(255),
+	256: uint16(205),
+	257: uint16(257),
+	258: uint16(205),
+	259: uint16(259),
+	260: uint16(260),
+	261: uint16(261),
+	262: uint16(262),
+	263: uint16(263),
+	264: uint16(264),
+	265: uint16(265),
+	266: uint16(266),
+	267: uint16(267),
+	268: uint16(268),
+	269: uint16(269),
+	270: uint16(270),
+	271: uint16(271),
+	272: uint16(272),
+	273: uint16(273),
+	274: uint16(274),
+	275: uint16(275),
+	276: uint16(276),
+	277: uint16(277),
+	278: uint16(278),
+	279: uint16(279),
+	280: uint16(280),
+	281: uint16(281),
+	282: uint16(282),
+	283: uint16(283),
+	284: uint16(284),
+	285: uint16(285),
+	286: uint16(286),
+	287: uint16(287),
+	288: uint16(288),
+	289: uint16(289),
+	290: uint16(290),
+	291: uint16(291),
+	292: uint16(292),
+	293: uint16(293),
+	294: uint16(294),
+	295: uint16(295),
+	296: uint16(296),
+	297: uint16(297),
+	298: uint16(298),
+	299: uint16(299),
+	300: uint16(300),
+	301: uint16(301),
+	302: uint16(302),
+	303: uint16(303),
+	304: uint16(304),
+	305: uint16(305),
+	306: uint16(306),
+	307: uint16(307),
+	308: uint16(308),
+	309: uint16(309),
+	310: uint16(310),
+	311: uint16(276),
+	312: uint16(312),
+	313: uint16(313),
+	314: uint16(314),
+	315: uint16(315),
+	316: uint16(316),
+	317: uint16(317),
+	318: uint16(318),
+	319: uint16(319),
+	320: uint16(320),
+	321: uint16(321),
+	322: uint16(322),
+	323: uint16(323),
+	324: uint16(324),
+	325: uint16(325),
+	326: uint16(326),
+	327: uint16(327),
+	328: uint16(328),
+	329: uint16(329),
+	330: uint16(330),
+	331: uint16(331),
+	332: uint16(332),
+	333: uint16(333),
+	334: uint16(334),
+	335: uint16(335),
+	336: uint16(336),
+	337: uint16(337),
+	338: uint16(338),
+	339: uint16(339),
+	340: uint16(340),
+	341: uint16(341),
+	342: uint16(342),
+	343: uint16(310),
+	344: uint16(344),
+	345: uint16(345),
+	346: uint16(346),
+	347: uint16(347),
+	348: uint16(348),
+	349: uint16(349),
+	350: uint16(350),
+	351: uint16(351),
+	352: uint16(352),
+	353: uint16(353),
+	354: uint16(354),
+	355: uint16(355),
+	356: uint16(356),
+	357: uint16(357),
+	358: uint16(358),
+	359: uint16(359),
+	360: uint16(332),
+	361: uint16(361),
+	362: uint16(362),
+	363: uint16(363),
+	364: uint16(364),
+	365: uint16(365),
+	366: uint16(366),
+	367: uint16(367),
+	368: uint16(368),
+	369: uint16(369),
+	370: uint16(370),
+	371: uint16(371),
+	372: uint16(372),
+	373: uint16(373),
+	374: uint16(374),
+	375: uint16(375),
+	376: uint16(376),
+	377: uint16(377),
+	378: uint16(378),
+	379: uint16(379),
+	380: uint16(380),
+	381: uint16(381),
+	382: uint16(382),
+	383: uint16(383),
+	384: uint16(384),
+	385: uint16(385),
+	386: uint16(386),
+	387: uint16(387),
+	388: uint16(388),
+	389: uint16(389),
+	390: uint16(390),
+}
+
+func ts_lex(tls *libc.TLS, lexer uintptr, state TSStateId) (r uint8) {
+	var eof, result, skip uint8
+	var i, i1, i10, i11, i12, i13, i14, i15, i16, i17, i18, i19, i2, i20, i21, i22, i23, i24, i25, i26, i27, i28, i3, i4, i5, i6, i7, i8, i9 uint32_t
+	var lookahead int32_t
+	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = eof, i, i1, i10, i11, i12, i13, i14, i15, i16, i17, i18, i19, i2, i20, i21, i22, i23, i24, i25, i26, i27, i28, i3, i4, i5, i6, i7, i8, i9, lookahead, result, skip
+	result = libc.BoolUint8(false1 != 0)
+	skip = libc.BoolUint8(false1 != 0)
+	eof = libc.BoolUint8(false1 != 0)
+	goto start
+	goto next_state
+next_state:
+	;
+	(*(*func(*libc.TLS, uintptr, uint8))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fadvance})))(tls, lexer, skip)
+	goto start
+start:
+	;
+	skip = libc.BoolUint8(false1 != 0)
+	lookahead = (*TSLexer)(unsafe.Pointer(lexer)).Flookahead
+	eof = (*(*func(*libc.TLS, uintptr) uint8)(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Feof})))(tls, lexer)
+	switch int32(state) {
+	case 0:
+		if eof != 0 {
+			state = uint16(105)
+			goto next_state
+		}
+		i = uint32(0)
+		for {
+			if !(uint64(i) < libc.Uint64FromInt64(136)/libc.Uint64FromInt64(2)) {
+				break
+			}
+			if int32(map_token[i]) == lookahead {
+				state = map_token[i+uint32(1)]
+				goto next_state
+			}
+			goto _1
+		_1:
+			;
+			i = i + uint32(2)
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(101)
+			goto next_state
+		}
+		if int32('1') <= lookahead && lookahead <= int32('7') {
+			state = uint16(158)
+			goto next_state
+		}
+		if int32('A') <= lookahead && lookahead <= int32('F') || int32('a') <= lookahead && lookahead <= int32('f') {
+			state = uint16(212)
+			goto next_state
+		}
+		if int32('G') <= lookahead && lookahead <= int32('_') || int32('g') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(1):
+		if lookahead == int32('\n') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(29)
+			goto next_state
+		}
+		if lookahead == int32('"') {
+			state = uint16(181)
+			goto next_state
+		}
+		if lookahead == int32('#') {
+			state = uint16(215)
+			goto next_state
+		}
+		if lookahead == int32('\'') {
+			state = uint16(183)
+			goto next_state
+		}
+		if lookahead == int32('(') {
+			state = uint16(159)
+			goto next_state
+		}
+		if lookahead == int32('*') {
+			state = uint16(152)
+			goto next_state
+		}
+		if lookahead == int32('+') {
+			state = uint16(153)
+			goto next_state
+		}
+		if lookahead == int32('-') {
+			state = uint16(164)
+			goto next_state
+		}
+		if lookahead == int32('.') {
+			state = uint16(124)
+			goto next_state
+		}
+		if lookahead == int32('/') {
+			state = uint16(148)
+			goto next_state
+		}
+		if lookahead == int32(':') {
+			state = uint16(176)
+			goto next_state
+		}
+		if lookahead == int32('=') {
+			state = uint16(177)
+			goto next_state
+		}
+		if lookahead == int32('?') {
+			state = uint16(154)
+			goto next_state
+		}
+		if lookahead == int32('@') {
+			state = uint16(214)
+			goto next_state
+		}
+		if lookahead == int32('[') {
+			state = uint16(161)
+			goto next_state
+		}
+		if lookahead == int32('\\') {
+			state = uint16(151)
+			goto next_state
+		}
+		if lookahead == int32(']') {
+			state = uint16(163)
+			goto next_state
+		}
+		if lookahead == int32('{') {
+			state = uint16(155)
+			goto next_state
+		}
+		if lookahead == int32('|') {
+			state = uint16(149)
+			goto next_state
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			state = uint16(171)
+			goto next_state
+		}
+		if int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		if lookahead != 0 {
+			state = uint16(165)
+			goto next_state
+		}
+		return result
+	case int32(2):
+		if lookahead == int32('\n') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(30)
+			goto next_state
+		}
+		if lookahead == int32('"') {
+			state = uint16(181)
+			goto next_state
+		}
+		if lookahead == int32('#') {
+			state = uint16(215)
+			goto next_state
+		}
+		if lookahead == int32('\'') {
+			state = uint16(183)
+			goto next_state
+		}
+		if lookahead == int32('(') {
+			state = uint16(159)
+			goto next_state
+		}
+		if lookahead == int32('*') {
+			state = uint16(152)
+			goto next_state
+		}
+		if lookahead == int32('+') {
+			state = uint16(153)
+			goto next_state
+		}
+		if lookahead == int32('-') {
+			state = uint16(164)
+			goto next_state
+		}
+		if lookahead == int32('.') {
+			state = uint16(124)
+			goto next_state
+		}
+		if lookahead == int32('/') {
+			state = uint16(148)
+			goto next_state
+		}
+		if lookahead == int32(';') {
+			state = uint16(119)
+			goto next_state
+		}
+		if lookahead == int32('?') {
+			state = uint16(154)
+			goto next_state
+		}
+		if lookahead == int32('@') {
+			state = uint16(214)
+			goto next_state
+		}
+		if lookahead == int32('[') {
+			state = uint16(161)
+			goto next_state
+		}
+		if lookahead == int32('\\') {
+			state = uint16(151)
+			goto next_state
+		}
+		if lookahead == int32(']') {
+			state = uint16(163)
+			goto next_state
+		}
+		if lookahead == int32('{') {
+			state = uint16(155)
+			goto next_state
+		}
+		if lookahead == int32('|') {
+			state = uint16(149)
+			goto next_state
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			state = uint16(172)
+			goto next_state
+		}
+		if int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		if lookahead != 0 {
+			state = uint16(165)
+			goto next_state
+		}
+		return result
+	case int32(3):
+		if lookahead == int32('\n') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(32)
+			goto next_state
+		}
+		if lookahead == int32('"') {
+			state = uint16(181)
+			goto next_state
+		}
+		if lookahead == int32('#') {
+			state = uint16(215)
+			goto next_state
+		}
+		if lookahead == int32('\'') {
+			state = uint16(183)
+			goto next_state
+		}
+		if lookahead == int32('(') {
+			state = uint16(159)
+			goto next_state
+		}
+		if lookahead == int32('*') {
+			state = uint16(152)
+			goto next_state
+		}
+		if lookahead == int32('+') {
+			state = uint16(153)
+			goto next_state
+		}
+		if lookahead == int32('-') {
+			state = uint16(164)
+			goto next_state
+		}
+		if lookahead == int32('.') {
+			state = uint16(124)
+			goto next_state
+		}
+		if lookahead == int32('/') {
+			state = uint16(148)
+			goto next_state
+		}
+		if lookahead == int32('?') {
+			state = uint16(154)
+			goto next_state
+		}
+		if lookahead == int32('@') {
+			state = uint16(214)
+			goto next_state
+		}
+		if lookahead == int32('[') {
+			state = uint16(161)
+			goto next_state
+		}
+		if lookahead == int32('\\') {
+			state = uint16(151)
+			goto next_state
+		}
+		if lookahead == int32(']') {
+			state = uint16(163)
+			goto next_state
+		}
+		if lookahead == int32('{') {
+			state = uint16(155)
+			goto next_state
+		}
+		if lookahead == int32('|') {
+			state = uint16(149)
+			goto next_state
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			state = uint16(173)
+			goto next_state
+		}
+		if int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		if lookahead != 0 {
+			state = uint16(165)
+			goto next_state
+		}
+		return result
+	case int32(4):
+		if lookahead == int32('\n') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(22)
+			goto next_state
+		}
+		if lookahead == int32('"') {
+			state = uint16(181)
+			goto next_state
+		}
+		if lookahead == int32('#') {
+			state = uint16(215)
+			goto next_state
+		}
+		if lookahead == int32('\'') {
+			state = uint16(183)
+			goto next_state
+		}
+		if lookahead == int32('(') {
+			state = uint16(159)
+			goto next_state
+		}
+		if lookahead == int32(')') {
+			state = uint16(160)
+			goto next_state
+		}
+		if lookahead == int32('*') {
+			state = uint16(152)
+			goto next_state
+		}
+		if lookahead == int32('+') {
+			state = uint16(153)
+			goto next_state
+		}
+		if lookahead == int32('-') {
+			state = uint16(164)
+			goto next_state
+		}
+		if lookahead == int32('.') {
+			state = uint16(124)
+			goto next_state
+		}
+		if lookahead == int32('/') {
+			state = uint16(174)
+			goto next_state
+		}
+		if lookahead == int32('?') {
+			state = uint16(154)
+			goto next_state
+		}
+		if lookahead == int32('@') {
+			state = uint16(214)
+			goto next_state
+		}
+		if lookahead == int32('[') {
+			state = uint16(161)
+			goto next_state
+		}
+		if lookahead == int32('\\') {
+			state = uint16(151)
+			goto next_state
+		}
+		if lookahead == int32(']') {
+			state = uint16(163)
+			goto next_state
+		}
+		if lookahead == int32('{') {
+			state = uint16(155)
+			goto next_state
+		}
+		if lookahead == int32('|') {
+			state = uint16(149)
+			goto next_state
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			state = uint16(166)
+			goto next_state
+		}
+		if int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		if lookahead != 0 {
+			state = uint16(165)
+			goto next_state
+		}
+		return result
+	case int32(5):
+		if lookahead == int32('\n') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(28)
+			goto next_state
+		}
+		if lookahead == int32('"') {
+			state = uint16(181)
+			goto next_state
+		}
+		if lookahead == int32('#') {
+			state = uint16(215)
+			goto next_state
+		}
+		if lookahead == int32('\'') {
+			state = uint16(183)
+			goto next_state
+		}
+		if lookahead == int32('(') {
+			state = uint16(159)
+			goto next_state
+		}
+		if lookahead == int32('*') {
+			state = uint16(152)
+			goto next_state
+		}
+		if lookahead == int32('+') {
+			state = uint16(153)
+			goto next_state
+		}
+		if lookahead == int32('-') {
+			state = uint16(164)
+			goto next_state
+		}
+		if lookahead == int32('.') {
+			state = uint16(124)
+			goto next_state
+		}
+		if lookahead == int32('/') {
+			state = uint16(174)
+			goto next_state
+		}
+		if lookahead == int32('?') {
+			state = uint16(154)
+			goto next_state
+		}
+		if lookahead == int32('@') {
+			state = uint16(214)
+			goto next_state
+		}
+		if lookahead == int32('[') {
+			state = uint16(161)
+			goto next_state
+		}
+		if lookahead == int32('\\') {
+			state = uint16(151)
+			goto next_state
+		}
+		if lookahead == int32(']') {
+			state = uint16(163)
+			goto next_state
+		}
+		if lookahead == int32('{') {
+			state = uint16(155)
+			goto next_state
+		}
+		if lookahead == int32('|') {
+			state = uint16(149)
+			goto next_state
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			state = uint16(170)
+			goto next_state
+		}
+		if int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		if lookahead != 0 {
+			state = uint16(165)
+			goto next_state
+		}
+		return result
+	case int32(6):
+		if lookahead == int32('\n') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(48)
+			goto next_state
+		}
+		if lookahead == int32('-') {
+			state = uint16(164)
+			goto next_state
+		}
+		if lookahead == int32('/') {
+			state = uint16(174)
+			goto next_state
+		}
+		if lookahead == int32('\\') {
+			state = uint16(178)
+			goto next_state
+		}
+		if lookahead == int32(']') {
+			state = uint16(163)
+			goto next_state
+		}
+		if lookahead == int32('^') {
+			state = uint16(162)
+			goto next_state
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			state = uint16(175)
+			goto next_state
+		}
+		if lookahead != 0 {
+			state = uint16(165)
+			goto next_state
+		}
+		return result
+	case int32(7):
+		if lookahead == int32('\n') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(48)
+			goto next_state
+		}
+		if lookahead == int32('-') {
+			state = uint16(164)
+			goto next_state
+		}
+		if lookahead == int32('/') {
+			state = uint16(174)
+			goto next_state
+		}
+		if lookahead == int32('\\') {
+			state = uint16(178)
+			goto next_state
+		}
+		if lookahead == int32(']') {
+			state = uint16(163)
+			goto next_state
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			state = uint16(175)
+			goto next_state
+		}
+		if lookahead != 0 {
+			state = uint16(165)
+			goto next_state
+		}
+		return result
+	case int32(8):
+		if lookahead == int32('\n') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(48)
+			goto next_state
+		}
+		if lookahead == int32('-') {
+			state = uint16(164)
+			goto next_state
+		}
+		if lookahead == int32('/') {
+			state = uint16(174)
+			goto next_state
+		}
+		if lookahead == int32('\\') {
+			state = uint16(178)
+			goto next_state
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			state = uint16(175)
+			goto next_state
+		}
+		if lookahead != 0 {
+			state = uint16(165)
+			goto next_state
+		}
+		return result
+	case int32(9):
+		if lookahead == int32('\n') {
+			state = uint16(253)
+			goto next_state
+		}
+		if lookahead == int32('\r') {
+			state = uint16(9)
+			goto next_state
+		}
+		if lookahead == int32('-') {
+			state = uint16(242)
+			goto next_state
+		}
+		if lookahead == int32('/') {
+			state = uint16(39)
+			goto next_state
+		}
+		if lookahead == int32('0') {
+			state = uint16(240)
+			goto next_state
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\f') || lookahead == int32(' ') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(9)
+			goto next_state
+		}
+		if int32('1') <= lookahead && lookahead <= int32('9') {
+			state = uint16(244)
+			goto next_state
+		}
+		return result
+	case int32(10):
+		if lookahead == int32('\n') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(25)
+			goto next_state
+		}
+		if lookahead == int32('"') {
+			state = uint16(181)
+			goto next_state
+		}
+		if lookahead == int32('#') {
+			state = uint16(215)
+			goto next_state
+		}
+		if lookahead == int32('\'') {
+			state = uint16(183)
+			goto next_state
+		}
+		if lookahead == int32('(') {
+			state = uint16(159)
+			goto next_state
+		}
+		if lookahead == int32('*') {
+			state = uint16(152)
+			goto next_state
+		}
+		if lookahead == int32('+') {
+			state = uint16(153)
+			goto next_state
+		}
+		if lookahead == int32('-') {
+			state = uint16(164)
+			goto next_state
+		}
+		if lookahead == int32('.') {
+			state = uint16(124)
+			goto next_state
+		}
+		if lookahead == int32('/') {
+			state = uint16(174)
+			goto next_state
+		}
+		if lookahead == int32(':') {
+			state = uint16(176)
+			goto next_state
+		}
+		if lookahead == int32('=') {
+			state = uint16(177)
+			goto next_state
+		}
+		if lookahead == int32('?') {
+			state = uint16(154)
+			goto next_state
+		}
+		if lookahead == int32('@') {
+			state = uint16(214)
+			goto next_state
+		}
+		if lookahead == int32('[') {
+			state = uint16(161)
+			goto next_state
+		}
+		if lookahead == int32('\\') {
+			state = uint16(151)
+			goto next_state
+		}
+		if lookahead == int32(']') {
+			state = uint16(163)
+			goto next_state
+		}
+		if lookahead == int32('{') {
+			state = uint16(155)
+			goto next_state
+		}
+		if lookahead == int32('|') {
+			state = uint16(149)
+			goto next_state
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			state = uint16(167)
+			goto next_state
+		}
+		if int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		if lookahead != 0 {
+			state = uint16(165)
+			goto next_state
+		}
+		return result
+	case int32(11):
+		if lookahead == int32('\n') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(26)
+			goto next_state
+		}
+		if lookahead == int32('"') {
+			state = uint16(181)
+			goto next_state
+		}
+		if lookahead == int32('#') {
+			state = uint16(215)
+			goto next_state
+		}
+		if lookahead == int32('\'') {
+			state = uint16(183)
+			goto next_state
+		}
+		if lookahead == int32('(') {
+			state = uint16(159)
+			goto next_state
+		}
+		if lookahead == int32('*') {
+			state = uint16(152)
+			goto next_state
+		}
+		if lookahead == int32('+') {
+			state = uint16(153)
+			goto next_state
+		}
+		if lookahead == int32('-') {
+			state = uint16(164)
+			goto next_state
+		}
+		if lookahead == int32('.') {
+			state = uint16(124)
+			goto next_state
+		}
+		if lookahead == int32('/') {
+			state = uint16(174)
+			goto next_state
+		}
+		if lookahead == int32(';') {
+			state = uint16(119)
+			goto next_state
+		}
+		if lookahead == int32('?') {
+			state = uint16(154)
+			goto next_state
+		}
+		if lookahead == int32('@') {
+			state = uint16(214)
+			goto next_state
+		}
+		if lookahead == int32('[') {
+			state = uint16(161)
+			goto next_state
+		}
+		if lookahead == int32('\\') {
+			state = uint16(151)
+			goto next_state
+		}
+		if lookahead == int32(']') {
+			state = uint16(163)
+			goto next_state
+		}
+		if lookahead == int32('{') {
+			state = uint16(155)
+			goto next_state
+		}
+		if lookahead == int32('|') {
+			state = uint16(149)
+			goto next_state
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			state = uint16(168)
+			goto next_state
+		}
+		if int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		if lookahead != 0 {
+			state = uint16(165)
+			goto next_state
+		}
+		return result
+	case int32(12):
+		if lookahead == int32('\n') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(27)
+			goto next_state
+		}
+		if lookahead == int32('"') {
+			state = uint16(181)
+			goto next_state
+		}
+		if lookahead == int32('#') {
+			state = uint16(215)
+			goto next_state
+		}
+		if lookahead == int32('\'') {
+			state = uint16(183)
+			goto next_state
+		}
+		if lookahead == int32('(') {
+			state = uint16(159)
+			goto next_state
+		}
+		if lookahead == int32('*') {
+			state = uint16(152)
+			goto next_state
+		}
+		if lookahead == int32('+') {
+			state = uint16(153)
+			goto next_state
+		}
+		if lookahead == int32('-') {
+			state = uint16(164)
+			goto next_state
+		}
+		if lookahead == int32('.') {
+			state = uint16(124)
+			goto next_state
+		}
+		if lookahead == int32('/') {
+			state = uint16(174)
+			goto next_state
+		}
+		if lookahead == int32('?') {
+			state = uint16(154)
+			goto next_state
+		}
+		if lookahead == int32('@') {
+			state = uint16(214)
+			goto next_state
+		}
+		if lookahead == int32('[') {
+			state = uint16(161)
+			goto next_state
+		}
+		if lookahead == int32('\\') {
+			state = uint16(151)
+			goto next_state
+		}
+		if lookahead == int32(']') {
+			state = uint16(163)
+			goto next_state
+		}
+		if lookahead == int32('{') {
+			state = uint16(155)
+			goto next_state
+		}
+		if lookahead == int32('|') {
+			state = uint16(149)
+			goto next_state
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			state = uint16(169)
+			goto next_state
+		}
+		if int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		if lookahead != 0 {
+			state = uint16(165)
+			goto next_state
+		}
+		return result
+	case int32(13):
+		if lookahead == int32('\r') {
+			state = uint16(250)
+			goto next_state
+		}
+		if lookahead != 0 {
+			state = uint16(249)
+			goto next_state
+		}
+		return result
+	case int32(14):
+		i1 = uint32(0)
+		for {
+			if !(uint64(i1) < libc.Uint64FromInt64(80)/libc.Uint64FromInt64(2)) {
+				break
+			}
+			if int32(map_token1[i1]) == lookahead {
+				state = map_token1[i1+uint32(1)]
+				goto next_state
+			}
+			goto _2
+		_2:
+			;
+			i1 = i1 + uint32(2)
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(15)
+			goto next_state
+		}
+		if int32('0') <= lookahead && lookahead <= int32('7') {
+			state = uint16(213)
+			goto next_state
+		}
+		if int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(15):
+		i2 = uint32(0)
+		for {
+			if !(uint64(i2) < libc.Uint64FromInt64(80)/libc.Uint64FromInt64(2)) {
+				break
+			}
+			if int32(map_token2[i2]) == lookahead {
+				state = map_token2[i2+uint32(1)]
+				goto next_state
+			}
+			goto _3
+		_3:
+			;
+			i2 = i2 + uint32(2)
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(15)
+			goto next_state
+		}
+		if int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(16):
+		if lookahead == int32('!') {
+			state = uint16(111)
+			goto next_state
+		}
+		if lookahead == int32('*') {
+			state = uint16(37)
+			goto next_state
+		}
+		if lookahead != 0 {
+			state = uint16(38)
+			goto next_state
+		}
+		return result
+	case int32(17):
+		if lookahead == int32('!') {
+			state = uint16(111)
+			goto next_state
+		}
+		if lookahead == int32('*') {
+			state = uint16(107)
+			goto next_state
+		}
+		if lookahead != 0 {
+			state = uint16(108)
+			goto next_state
+		}
+		return result
+	case int32(18):
+		if lookahead == int32('!') {
+			state = uint16(38)
+			goto next_state
+		}
+		if lookahead == int32('*') {
+			state = uint16(107)
+			goto next_state
+		}
+		if lookahead == int32('/') {
+			state = uint16(110)
+			goto next_state
+		}
+		if lookahead != 0 {
+			state = uint16(108)
+			goto next_state
+		}
+		return result
+	case int32(19):
+		if lookahead == int32('"') {
+			state = uint16(140)
+			goto next_state
+		}
+		if lookahead == int32('\\') {
+			state = uint16(98)
+			goto next_state
+		}
+		if lookahead != 0 && lookahead != int32('\n') {
+			state = uint16(19)
+			goto next_state
+		}
+		return result
+	case int32(20):
+		if lookahead == int32('"') {
+			state = uint16(19)
+			goto next_state
+		}
+		if lookahead == int32('\'') {
+			state = uint16(35)
+			goto next_state
+		}
+		if lookahead == int32('/') {
+			state = uint16(39)
+			goto next_state
+		}
+		if lookahead == int32('\\') {
+			state = uint16(143)
+			goto next_state
+		}
+		if lookahead == int32('{') {
+			state = uint16(138)
+			goto next_state
+		}
+		if lookahead == int32('}') {
+			state = uint16(139)
+			goto next_state
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			state = uint16(142)
+			goto next_state
+		}
+		if lookahead != 0 {
+			state = uint16(143)
+			goto next_state
+		}
+		return result
+	case int32(21):
+		i3 = uint32(0)
+		for {
+			if !(uint64(i3) < libc.Uint64FromInt64(72)/libc.Uint64FromInt64(2)) {
+				break
+			}
+			if int32(map_token3[i3]) == lookahead {
+				state = map_token3[i3+uint32(1)]
+				goto next_state
+			}
+			goto _4
+		_4:
+			;
+			i3 = i3 + uint32(2)
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(23)
+			goto next_state
+		}
+		if int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(22):
+		i4 = uint32(0)
+		for {
+			if !(uint64(i4) < libc.Uint64FromInt64(44)/libc.Uint64FromInt64(2)) {
+				break
+			}
+			if int32(map_token4[i4]) == lookahead {
+				state = map_token4[i4+uint32(1)]
+				goto next_state
+			}
+			goto _5
+		_5:
+			;
+			i4 = i4 + uint32(2)
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(22)
+			goto next_state
+		}
+		if int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(23):
+		i5 = uint32(0)
+		for {
+			if !(uint64(i5) < libc.Uint64FromInt64(60)/libc.Uint64FromInt64(2)) {
+				break
+			}
+			if int32(map_token5[i5]) == lookahead {
+				state = map_token5[i5+uint32(1)]
+				goto next_state
+			}
+			goto _6
+		_6:
+			;
+			i5 = i5 + uint32(2)
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(23)
+			goto next_state
+		}
+		if int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(24):
+		i6 = uint32(0)
+		for {
+			if !(uint64(i6) < libc.Uint64FromInt64(60)/libc.Uint64FromInt64(2)) {
+				break
+			}
+			if int32(map_token6[i6]) == lookahead {
+				state = map_token6[i6+uint32(1)]
+				goto next_state
+			}
+			goto _7
+		_7:
+			;
+			i6 = i6 + uint32(2)
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(31)
+			goto next_state
+		}
+		if int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(25):
+		i7 = uint32(0)
+		for {
+			if !(uint64(i7) < libc.Uint64FromInt64(52)/libc.Uint64FromInt64(2)) {
+				break
+			}
+			if int32(map_token7[i7]) == lookahead {
+				state = map_token7[i7+uint32(1)]
+				goto next_state
+			}
+			goto _8
+		_8:
+			;
+			i7 = i7 + uint32(2)
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(25)
+			goto next_state
+		}
+		if int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(26):
+		i8 = uint32(0)
+		for {
+			if !(uint64(i8) < libc.Uint64FromInt64(44)/libc.Uint64FromInt64(2)) {
+				break
+			}
+			if int32(map_token8[i8]) == lookahead {
+				state = map_token8[i8+uint32(1)]
+				goto next_state
+			}
+			goto _9
+		_9:
+			;
+			i8 = i8 + uint32(2)
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(26)
+			goto next_state
+		}
+		if int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(27):
+		i9 = uint32(0)
+		for {
+			if !(uint64(i9) < libc.Uint64FromInt64(44)/libc.Uint64FromInt64(2)) {
+				break
+			}
+			if int32(map_token9[i9]) == lookahead {
+				state = map_token9[i9+uint32(1)]
+				goto next_state
+			}
+			goto _10
+		_10:
+			;
+			i9 = i9 + uint32(2)
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(27)
+			goto next_state
+		}
+		if int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(28):
+		i10 = uint32(0)
+		for {
+			if !(uint64(i10) < libc.Uint64FromInt64(40)/libc.Uint64FromInt64(2)) {
+				break
+			}
+			if int32(map_token10[i10]) == lookahead {
+				state = map_token10[i10+uint32(1)]
+				goto next_state
+			}
+			goto _11
+		_11:
+			;
+			i10 = i10 + uint32(2)
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(28)
+			goto next_state
+		}
+		if int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(29):
+		i11 = uint32(0)
+		for {
+			if !(uint64(i11) < libc.Uint64FromInt64(52)/libc.Uint64FromInt64(2)) {
+				break
+			}
+			if int32(map_token11[i11]) == lookahead {
+				state = map_token11[i11+uint32(1)]
+				goto next_state
+			}
+			goto _12
+		_12:
+			;
+			i11 = i11 + uint32(2)
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(29)
+			goto next_state
+		}
+		if int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(30):
+		i12 = uint32(0)
+		for {
+			if !(uint64(i12) < libc.Uint64FromInt64(44)/libc.Uint64FromInt64(2)) {
+				break
+			}
+			if int32(map_token12[i12]) == lookahead {
+				state = map_token12[i12+uint32(1)]
+				goto next_state
+			}
+			goto _13
+		_13:
+			;
+			i12 = i12 + uint32(2)
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(30)
+			goto next_state
+		}
+		if int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(31):
+		i13 = uint32(0)
+		for {
+			if !(uint64(i13) < libc.Uint64FromInt64(48)/libc.Uint64FromInt64(2)) {
+				break
+			}
+			if int32(map_token13[i13]) == lookahead {
+				state = map_token13[i13+uint32(1)]
+				goto next_state
+			}
+			goto _14
+		_14:
+			;
+			i13 = i13 + uint32(2)
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(31)
+			goto next_state
+		}
+		if int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(32):
+		i14 = uint32(0)
+		for {
+			if !(uint64(i14) < libc.Uint64FromInt64(44)/libc.Uint64FromInt64(2)) {
+				break
+			}
+			if int32(map_token14[i14]) == lookahead {
+				state = map_token14[i14+uint32(1)]
+				goto next_state
+			}
+			goto _15
+		_15:
+			;
+			i14 = i14 + uint32(2)
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(32)
+			goto next_state
+		}
+		if int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(33):
+		i15 = uint32(0)
+		for {
+			if !(uint64(i15) < libc.Uint64FromInt64(40)/libc.Uint64FromInt64(2)) {
+				break
+			}
+			if int32(map_token15[i15]) == lookahead {
+				state = map_token15[i15+uint32(1)]
+				goto next_state
+			}
+			goto _16
+		_16:
+			;
+			i15 = i15 + uint32(2)
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(34)
+			goto next_state
+		}
+		if int32('1') <= lookahead && lookahead <= int32('9') {
+			state = uint16(244)
+			goto next_state
+		}
+		if int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(34):
+		i16 = uint32(0)
+		for {
+			if !(uint64(i16) < libc.Uint64FromInt64(32)/libc.Uint64FromInt64(2)) {
+				break
+			}
+			if int32(map_token16[i16]) == lookahead {
+				state = map_token16[i16+uint32(1)]
+				goto next_state
+			}
+			goto _17
+		_17:
+			;
+			i16 = i16 + uint32(2)
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(34)
+			goto next_state
+		}
+		if int32('1') <= lookahead && lookahead <= int32('9') {
+			state = uint16(244)
+			goto next_state
+		}
+		if int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(35):
+		if lookahead == int32('\'') {
+			state = uint16(141)
+			goto next_state
+		}
+		if lookahead == int32('\\') {
+			state = uint16(96)
+			goto next_state
+		}
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(144)
+			goto next_state
+		}
+		if lookahead != 0 && lookahead != int32('\n') {
+			state = uint16(36)
+			goto next_state
+		}
+		return result
+	case int32(36):
+		if lookahead == int32('\'') {
+			state = uint16(141)
+			goto next_state
+		}
+		if lookahead == int32('\\') {
+			state = uint16(96)
+			goto next_state
+		}
+		if lookahead != 0 && lookahead != int32('\n') {
+			state = uint16(36)
+			goto next_state
+		}
+		return result
+	case int32(37):
+		if lookahead == int32('*') {
+			state = uint16(37)
+			goto next_state
+		}
+		if lookahead == int32('/') {
+			state = uint16(251)
+			goto next_state
+		}
+		if lookahead != 0 {
+			state = uint16(38)
+			goto next_state
+		}
+		return result
+	case int32(38):
+		if lookahead == int32('*') {
+			state = uint16(37)
+			goto next_state
+		}
+		if lookahead != 0 {
+			state = uint16(38)
+			goto next_state
+		}
+		return result
+	case int32(39):
+		if lookahead == int32('*') {
+			state = uint16(38)
+			goto next_state
+		}
+		if lookahead == int32('/') {
+			state = uint16(249)
+			goto next_state
+		}
+		return result
+	case int32(40):
+		if lookahead == int32('*') {
+			state = uint16(40)
+			goto next_state
+		}
+		if lookahead != 0 && lookahead != int32('/') {
+			state = uint16(116)
+			goto next_state
+		}
+		return result
+	case int32(41):
+		if lookahead == int32('*') {
+			state = uint16(100)
+			goto next_state
+		}
+		if lookahead != 0 {
+			state = uint16(110)
+			goto next_state
+		}
+		return result
+	case int32(42):
+		if lookahead == int32('*') {
+			state = uint16(18)
+			goto next_state
+		}
+		if lookahead != 0 {
+			state = uint16(108)
+			goto next_state
+		}
+		return result
+	case int32(43):
+		if lookahead == int32('*') {
+			state = uint16(56)
+			goto next_state
+		}
+		if lookahead == int32('/') {
+			state = uint16(39)
+			goto next_state
+		}
+		if lookahead == int32(':') {
+			state = uint16(113)
+			goto next_state
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(44)
+			goto next_state
+		}
+		if int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(44):
+		if lookahead == int32('*') {
+			state = uint16(56)
+			goto next_state
+		}
+		if lookahead == int32('/') {
+			state = uint16(39)
+			goto next_state
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(44)
+			goto next_state
+		}
+		if int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(45):
+		if lookahead == int32('*') {
+			state = uint16(17)
+			goto next_state
+		}
+		if lookahead == int32('/') {
+			state = uint16(247)
+			goto next_state
+		}
+		if lookahead != 0 {
+			state = uint16(110)
+			goto next_state
+		}
+		return result
+	case int32(46):
+		i17 = uint32(0)
+		for {
+			if !(uint64(i17) < libc.Uint64FromInt64(40)/libc.Uint64FromInt64(2)) {
+				break
+			}
+			if int32(map_token17[i17]) == lookahead {
+				state = map_token17[i17+uint32(1)]
+				goto next_state
+			}
+			goto _18
+		_18:
+			;
+			i17 = i17 + uint32(2)
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(47)
+			goto next_state
+		}
+		if int32('1') <= lookahead && lookahead <= int32('9') {
+			state = uint16(243)
+			goto next_state
+		}
+		if int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(47):
+		if lookahead == int32('/') {
+			state = uint16(39)
+			goto next_state
+		}
+		if lookahead == int32(':') {
+			state = uint16(58)
+			goto next_state
+		}
+		if lookahead == int32(';') {
+			state = uint16(119)
+			goto next_state
+		}
+		if lookahead == int32('=') {
+			state = uint16(59)
+			goto next_state
+		}
+		if lookahead == int32('\\') {
+			state = uint16(150)
+			goto next_state
+		}
+		if lookahead == int32('{') {
+			state = uint16(138)
+			goto next_state
+		}
+		if lookahead == int32('|') {
+			state = uint16(149)
+			goto next_state
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(47)
+			goto next_state
+		}
+		if int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(48):
+		if lookahead == int32('/') {
+			state = uint16(39)
+			goto next_state
+		}
+		if lookahead == int32('\\') {
+			state = uint16(62)
+			goto next_state
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(48)
+			goto next_state
+		}
+		return result
+	case int32(49):
+		if lookahead == int32('/') {
+			state = uint16(39)
+			goto next_state
+		}
+		if lookahead == int32('i') {
+			state = uint16(228)
+			goto next_state
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(49)
+			goto next_state
+		}
+		if int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(50):
+		if lookahead == int32('/') {
+			state = uint16(39)
+			goto next_state
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(50)
+			goto next_state
+		}
+		return result
+	case int32(51):
+		if lookahead == int32('/') {
+			state = uint16(39)
+			goto next_state
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(50)
+			goto next_state
+		}
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('F') || int32('a') <= lookahead && lookahead <= int32('f') {
+			state = uint16(211)
+			goto next_state
+		}
+		return result
+	case int32(52):
+		if lookahead == int32('/') {
+			state = uint16(39)
+			goto next_state
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(50)
+			goto next_state
+		}
+		if int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(115)
+			goto next_state
+		}
+		return result
+	case int32(53):
+		if lookahead == int32('/') {
+			state = uint16(39)
+			goto next_state
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(50)
+			goto next_state
+		}
+		if lookahead == int32('-') || int32('0') <= lookahead && lookahead <= int32(':') || int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(121)
+			goto next_state
+		}
+		return result
+	case int32(54):
+		if lookahead == int32('/') {
+			state = uint16(39)
+			goto next_state
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(54)
+			goto next_state
+		}
+		if int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(55):
+		if lookahead == int32('/') {
+			state = uint16(39)
+			goto next_state
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(54)
+			goto next_state
+		}
+		if int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(115)
+			goto next_state
+		}
+		return result
+	case int32(56):
+		if lookahead == int32('/') {
+			state = uint16(112)
+			goto next_state
+		}
+		return result
+	case int32(57):
+		if lookahead == int32('2') {
+			state = uint16(65)
+			goto next_state
+		}
+		return result
+	case int32(58):
+		if lookahead == int32('=') {
+			state = uint16(60)
+			goto next_state
+		}
+		return result
+	case int32(59):
+		if lookahead == int32('>') {
+			state = uint16(129)
+			goto next_state
+		}
+		return result
+	case int32(60):
+		if lookahead == int32('>') {
+			state = uint16(130)
+			goto next_state
+		}
+		return result
+	case int32(61):
+		if lookahead == int32('>') {
+			state = uint16(125)
+			goto next_state
+		}
+		return result
+	case int32(62):
+		if lookahead == int32('U') {
+			state = uint16(207)
+			goto next_state
+		}
+		if lookahead == int32('X') {
+			state = uint16(199)
+			goto next_state
+		}
+		if lookahead == int32('u') {
+			state = uint16(195)
+			goto next_state
+		}
+		if lookahead == int32('x') {
+			state = uint16(191)
+			goto next_state
+		}
+		if int32('0') <= lookahead && lookahead <= int32('2') {
+			state = uint16(210)
+			goto next_state
+		}
+		if lookahead == int32('"') || lookahead == int32('-') || lookahead == int32('\\') || lookahead == int32(']') {
+			state = uint16(184)
+			goto next_state
+		}
+		if lookahead == int32('a') || lookahead == int32('b') || lookahead == int32('f') || lookahead == int32('n') || lookahead == int32('r') || int32('t') <= lookahead && lookahead <= int32('v') {
+			state = uint16(185)
+			goto next_state
+		}
+		return result
+	case int32(63):
+		if lookahead == int32('a') {
+			state = uint16(84)
+			goto next_state
+		}
+		return result
+	case int32(64):
+		if lookahead == int32('c') {
+			state = uint16(63)
+			goto next_state
+		}
+		return result
+	case int32(65):
+		if lookahead == int32('c') {
+			state = uint16(116)
+			goto next_state
+		}
+		return result
+	case int32(66):
+		if lookahead == int32('c') {
+			state = uint16(76)
+			goto next_state
+		}
+		return result
+	case int32(67):
+		if lookahead == int32('d') {
+			state = uint16(73)
+			goto next_state
+		}
+		return result
+	case int32(68):
+		if lookahead == int32('e') {
+			state = uint16(77)
+			goto next_state
+		}
+		if lookahead == int32('n') {
+			state = uint16(81)
+			goto next_state
+		}
+		return result
+	case int32(69):
+		if lookahead == int32('e') {
+			state = uint16(57)
+			goto next_state
+		}
+		return result
+	case int32(70):
+		if lookahead == int32('e') {
+			state = uint16(127)
+			goto next_state
+		}
+		return result
+	case int32(71):
+		if lookahead == int32('e') {
+			state = uint16(88)
+			goto next_state
+		}
+		return result
+	case int32(72):
+		if lookahead == int32('e') {
+			state = uint16(145)
+			goto next_state
+		}
+		return result
+	case int32(73):
+		if lookahead == int32('e') {
+			state = uint16(146)
+			goto next_state
+		}
+		return result
+	case int32(74):
+		if lookahead == int32('f') {
+			state = uint16(82)
+			goto next_state
+		}
+		return result
+	case int32(75):
+		if lookahead == int32('i') {
+			state = uint16(80)
+			goto next_state
+		}
+		if lookahead == int32('u') {
+			state = uint16(89)
+			goto next_state
+		}
+		return result
+	case int32(76):
+		if lookahead == int32('l') {
+			state = uint16(92)
+			goto next_state
+		}
+		return result
+	case int32(77):
+		if lookahead == int32('m') {
+			state = uint16(83)
+			goto next_state
+		}
+		return result
+	case int32(78):
+		if lookahead == int32('m') {
+			state = uint16(128)
+			goto next_state
+		}
+		return result
+	case int32(79):
+		if lookahead == int32('n') {
+			state = uint16(70)
+			goto next_state
+		}
+		return result
+	case int32(80):
+		if lookahead == int32('n') {
+			state = uint16(66)
+			goto next_state
+		}
+		return result
+	case int32(81):
+		if lookahead == int32('o') {
+			state = uint16(79)
+			goto next_state
+		}
+		return result
+	case int32(82):
+		if lookahead == int32('o') {
+			state = uint16(86)
+			goto next_state
+		}
+		return result
+	case int32(83):
+		if lookahead == int32('p') {
+			state = uint16(90)
+			goto next_state
+		}
+		return result
+	case int32(84):
+		if lookahead == int32('p') {
+			state = uint16(91)
+			goto next_state
+		}
+		return result
+	case int32(85):
+		if lookahead == int32('r') {
+			state = uint16(69)
+			goto next_state
+		}
+		return result
+	case int32(86):
+		if lookahead == int32('r') {
+			state = uint16(78)
+			goto next_state
+		}
+		return result
+	case int32(87):
+		if lookahead == int32('r') {
+			state = uint16(71)
+			goto next_state
+		}
+		return result
+	case int32(88):
+		if lookahead == int32('s') {
+			state = uint16(123)
+			goto next_state
+		}
+		return result
+	case int32(89):
+		if lookahead == int32('s') {
+			state = uint16(72)
+			goto next_state
+		}
+		return result
+	case int32(90):
+		if lookahead == int32('t') {
+			state = uint16(94)
+			goto next_state
+		}
+		return result
+	case int32(91):
+		if lookahead == int32('t') {
+			state = uint16(93)
+			goto next_state
+		}
+		return result
+	case int32(92):
+		if lookahead == int32('u') {
+			state = uint16(67)
+			goto next_state
+		}
+		return result
+	case int32(93):
+		if lookahead == int32('u') {
+			state = uint16(87)
+			goto next_state
+		}
+		return result
+	case int32(94):
+		if lookahead == int32('y') {
+			state = uint16(126)
+			goto next_state
+		}
+		return result
+	case int32(95):
+		if lookahead != 0 && lookahead != int32('\n') {
+			state = uint16(180)
+			goto next_state
+		}
+		return result
+	case int32(96):
+		if lookahead != 0 && lookahead != int32('\n') {
+			state = uint16(36)
+			goto next_state
+		}
+		return result
+	case int32(97):
+		if lookahead != 0 && lookahead != int32('\n') {
+			state = uint16(183)
+			goto next_state
+		}
+		return result
+	case int32(98):
+		if lookahead != 0 && lookahead != int32('\n') {
+			state = uint16(19)
+			goto next_state
+		}
+		return result
+	case int32(99):
+		if lookahead != 0 && lookahead != int32('\n') {
+			state = uint16(181)
+			goto next_state
+		}
+		return result
+	case int32(100):
+		if lookahead != 0 && lookahead != int32('!') {
+			state = uint16(110)
+			goto next_state
+		}
+		return result
+	case int32(101):
+		if eof != 0 {
+			state = uint16(105)
+			goto next_state
+		}
+		i18 = uint32(0)
+		for {
+			if !(uint64(i18) < libc.Uint64FromInt64(108)/libc.Uint64FromInt64(2)) {
+				break
+			}
+			if int32(map_token18[i18]) == lookahead {
+				state = map_token18[i18+uint32(1)]
+				goto next_state
+			}
+			goto _19
+		_19:
+			;
+			i18 = i18 + uint32(2)
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(101)
+			goto next_state
+		}
+		if int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(102):
+		if eof != 0 {
+			state = uint16(105)
+			goto next_state
+		}
+		i19 = uint32(0)
+		for {
+			if !(uint64(i19) < libc.Uint64FromInt64(96)/libc.Uint64FromInt64(2)) {
+				break
+			}
+			if int32(map_token19[i19]) == lookahead {
+				state = map_token19[i19+uint32(1)]
+				goto next_state
+			}
+			goto _20
+		_20:
+			;
+			i19 = i19 + uint32(2)
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(103)
+			goto next_state
+		}
+		if int32('0') <= lookahead && lookahead <= int32('9') {
+			state = uint16(158)
+			goto next_state
+		}
+		if int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(103):
+		if eof != 0 {
+			state = uint16(105)
+			goto next_state
+		}
+		i20 = uint32(0)
+		for {
+			if !(uint64(i20) < libc.Uint64FromInt64(88)/libc.Uint64FromInt64(2)) {
+				break
+			}
+			if int32(map_token20[i20]) == lookahead {
+				state = map_token20[i20+uint32(1)]
+				goto next_state
+			}
+			goto _21
+		_21:
+			;
+			i20 = i20 + uint32(2)
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(103)
+			goto next_state
+		}
+		if int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(104):
+		if eof != 0 {
+			state = uint16(105)
+			goto next_state
+		}
+		if lookahead == int32('/') {
+			state = uint16(45)
+			goto next_state
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			state = uint16(109)
+			goto next_state
+		}
+		if lookahead != 0 {
+			state = uint16(110)
+			goto next_state
+		}
+		return result
+	case int32(105):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(ts_builtin_sym_end)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(106):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(sym_host_lang)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('\r') {
+			state = uint16(248)
+			goto next_state
+		}
+		if lookahead == int32('/') {
+			state = uint16(246)
+			goto next_state
+		}
+		if lookahead != 0 {
+			state = uint16(247)
+			goto next_state
+		}
+		return result
+	case int32(107):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(sym_host_lang)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('*') {
+			state = uint16(107)
+			goto next_state
+		}
+		if lookahead == int32('/') {
+			state = uint16(252)
+			goto next_state
+		}
+		if lookahead != 0 {
+			state = uint16(108)
+			goto next_state
+		}
+		return result
+	case int32(108):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(sym_host_lang)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('*') {
+			state = uint16(107)
+			goto next_state
+		}
+		if lookahead == int32('/') {
+			state = uint16(42)
+			goto next_state
+		}
+		if lookahead != 0 {
+			state = uint16(108)
+			goto next_state
+		}
+		return result
+	case int32(109):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(sym_host_lang)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('/') {
+			state = uint16(45)
+			goto next_state
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			state = uint16(109)
+			goto next_state
+		}
+		if lookahead != 0 {
+			state = uint16(110)
+			goto next_state
+		}
+		return result
+	case int32(110):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(sym_host_lang)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('/') {
+			state = uint16(41)
+			goto next_state
+		}
+		if lookahead != 0 {
+			state = uint16(110)
+			goto next_state
+		}
+		return result
+	case int32(111):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_SLASH_STAR_BANG)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(112):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_STAR_SLASH)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(113):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_COLON)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(114):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_COLON)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('=') {
+			state = uint16(60)
+			goto next_state
+		}
+		return result
+	case int32(115):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym__block_name_token1)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(115)
+			goto next_state
+		}
+		return result
+	case int32(116):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(sym_ignore_block)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('*') {
+			state = uint16(40)
+			goto next_state
+		}
+		if lookahead != 0 {
+			state = uint16(116)
+			goto next_state
+		}
+		return result
+	case int32(117):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_EQ)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(118):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_EQ)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('>') {
+			state = uint16(129)
+			goto next_state
+		}
+		return result
+	case int32(119):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_SEMI)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(120):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_re2c2)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(121):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym__option_name_token1)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('-') || int32('0') <= lookahead && lookahead <= int32(':') || int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(121)
+			goto next_state
+		}
+		return result
+	case int32(122):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_AT)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(123):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_posix_DASHcaptures)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(124):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_DOT)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(125):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_DASH_GT)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(126):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_match_DASHempty)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(127):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_match_DASHnone)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(128):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_free_DASHform)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(129):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_EQ_GT)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(130):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_COLON_EQ_GT)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(131):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_LT)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(132):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_GT)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(133):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_BANG)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(134):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_COMMA)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(135):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_STAR)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(136):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_STAR)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('/') {
+			state = uint16(112)
+			goto next_state
+		}
+		return result
+	case int32(137):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_DOLLAR)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(138):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_LBRACE)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(139):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_RBRACE)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(140):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym__code_in_braces_token1)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(141):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym__code_in_braces_token2)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(142):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym__code_in_braces_token3)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('/') {
+			state = uint16(39)
+			goto next_state
+		}
+		if lookahead == int32('\\') {
+			state = uint16(143)
+			goto next_state
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			state = uint16(142)
+			goto next_state
+		}
+		if lookahead != 0 && lookahead != int32('"') && lookahead != int32('\'') && lookahead != int32('{') && lookahead != int32('}') {
+			state = uint16(143)
+			goto next_state
+		}
+		return result
+	case int32(143):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym__code_in_braces_token3)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead != 0 && lookahead != int32('"') && lookahead != int32('\'') && lookahead != int32('/') && lookahead != int32('{') && lookahead != int32('}') {
+			state = uint16(143)
+			goto next_state
+		}
+		return result
+	case int32(144):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym__code_in_braces_token5)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('\'') {
+			state = uint16(141)
+			goto next_state
+		}
+		if lookahead == int32('\\') {
+			state = uint16(96)
+			goto next_state
+		}
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(144)
+			goto next_state
+		}
+		if lookahead != 0 && lookahead != int32('\n') {
+			state = uint16(36)
+			goto next_state
+		}
+		return result
+	case int32(145):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_BANGuse)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(146):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_BANGinclude)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(147):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_SLASH)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('*') {
+			state = uint16(16)
+			goto next_state
+		}
+		if lookahead == int32('/') {
+			state = uint16(249)
+			goto next_state
+		}
+		return result
+	case int32(148):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_SLASH)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('/') {
+			state = uint16(249)
+			goto next_state
+		}
+		return result
+	case int32(149):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_PIPE)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(150):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_BSLASH)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(151):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_BSLASH)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('U') {
+			state = uint16(207)
+			goto next_state
+		}
+		if lookahead == int32('X') {
+			state = uint16(199)
+			goto next_state
+		}
+		if lookahead == int32('u') {
+			state = uint16(195)
+			goto next_state
+		}
+		if lookahead == int32('x') {
+			state = uint16(191)
+			goto next_state
+		}
+		if int32('0') <= lookahead && lookahead <= int32('2') {
+			state = uint16(210)
+			goto next_state
+		}
+		if lookahead == int32('"') || lookahead == int32('-') || lookahead == int32('\\') || lookahead == int32(']') {
+			state = uint16(184)
+			goto next_state
+		}
+		if lookahead == int32('a') || lookahead == int32('b') || lookahead == int32('f') || lookahead == int32('n') || lookahead == int32('r') || int32('t') <= lookahead && lookahead <= int32('v') {
+			state = uint16(185)
+			goto next_state
+		}
+		return result
+	case int32(152):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_STAR2)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(153):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_PLUS)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(154):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_QMARK)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(155):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_LBRACE2)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(156):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_COMMA2)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(157):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_RBRACE2)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(158):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym__mininum_token1)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if int32('0') <= lookahead && lookahead <= int32('9') {
+			state = uint16(158)
+			goto next_state
+		}
+		return result
+	case int32(159):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_LPAREN)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(160):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_RPAREN)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(161):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_LBRACK)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(162):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_CARET)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(163):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_RBRACK)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(164):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym_range_token1)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(165):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym_literal_token1)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(166):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym_literal_token1)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		i21 = uint32(0)
+		for {
+			if !(uint64(i21) < libc.Uint64FromInt64(44)/libc.Uint64FromInt64(2)) {
+				break
+			}
+			if int32(map_token21[i21]) == lookahead {
+				state = map_token21[i21+uint32(1)]
+				goto next_state
+			}
+			goto _22
+		_22:
+			;
+			i21 = i21 + uint32(2)
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(22)
+			goto next_state
+		}
+		if int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(167):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym_literal_token1)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		i22 = uint32(0)
+		for {
+			if !(uint64(i22) < libc.Uint64FromInt64(52)/libc.Uint64FromInt64(2)) {
+				break
+			}
+			if int32(map_token22[i22]) == lookahead {
+				state = map_token22[i22+uint32(1)]
+				goto next_state
+			}
+			goto _23
+		_23:
+			;
+			i22 = i22 + uint32(2)
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(25)
+			goto next_state
+		}
+		if int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(168):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym_literal_token1)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		i23 = uint32(0)
+		for {
+			if !(uint64(i23) < libc.Uint64FromInt64(44)/libc.Uint64FromInt64(2)) {
+				break
+			}
+			if int32(map_token23[i23]) == lookahead {
+				state = map_token23[i23+uint32(1)]
+				goto next_state
+			}
+			goto _24
+		_24:
+			;
+			i23 = i23 + uint32(2)
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(26)
+			goto next_state
+		}
+		if int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(169):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym_literal_token1)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		i24 = uint32(0)
+		for {
+			if !(uint64(i24) < libc.Uint64FromInt64(44)/libc.Uint64FromInt64(2)) {
+				break
+			}
+			if int32(map_token24[i24]) == lookahead {
+				state = map_token24[i24+uint32(1)]
+				goto next_state
+			}
+			goto _25
+		_25:
+			;
+			i24 = i24 + uint32(2)
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(27)
+			goto next_state
+		}
+		if int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(170):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym_literal_token1)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		i25 = uint32(0)
+		for {
+			if !(uint64(i25) < libc.Uint64FromInt64(40)/libc.Uint64FromInt64(2)) {
+				break
+			}
+			if int32(map_token25[i25]) == lookahead {
+				state = map_token25[i25+uint32(1)]
+				goto next_state
+			}
+			goto _26
+		_26:
+			;
+			i25 = i25 + uint32(2)
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(28)
+			goto next_state
+		}
+		if int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(171):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym_literal_token1)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		i26 = uint32(0)
+		for {
+			if !(uint64(i26) < libc.Uint64FromInt64(52)/libc.Uint64FromInt64(2)) {
+				break
+			}
+			if int32(map_token26[i26]) == lookahead {
+				state = map_token26[i26+uint32(1)]
+				goto next_state
+			}
+			goto _27
+		_27:
+			;
+			i26 = i26 + uint32(2)
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(29)
+			goto next_state
+		}
+		if int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(172):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym_literal_token1)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		i27 = uint32(0)
+		for {
+			if !(uint64(i27) < libc.Uint64FromInt64(44)/libc.Uint64FromInt64(2)) {
+				break
+			}
+			if int32(map_token27[i27]) == lookahead {
+				state = map_token27[i27+uint32(1)]
+				goto next_state
+			}
+			goto _28
+		_28:
+			;
+			i27 = i27 + uint32(2)
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(30)
+			goto next_state
+		}
+		if int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(173):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym_literal_token1)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		i28 = uint32(0)
+		for {
+			if !(uint64(i28) < libc.Uint64FromInt64(44)/libc.Uint64FromInt64(2)) {
+				break
+			}
+			if int32(map_token28[i28]) == lookahead {
+				state = map_token28[i28+uint32(1)]
+				goto next_state
+			}
+			goto _29
+		_29:
+			;
+			i28 = i28 + uint32(2)
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(32)
+			goto next_state
+		}
+		if int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(174):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym_literal_token1)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('*') {
+			state = uint16(38)
+			goto next_state
+		}
+		if lookahead == int32('/') {
+			state = uint16(249)
+			goto next_state
+		}
+		return result
+	case int32(175):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym_literal_token1)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('/') {
+			state = uint16(39)
+			goto next_state
+		}
+		if lookahead == int32('\\') {
+			state = uint16(62)
+			goto next_state
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(48)
+			goto next_state
+		}
+		return result
+	case int32(176):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym_literal_token1)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('=') {
+			state = uint16(60)
+			goto next_state
+		}
+		return result
+	case int32(177):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym_literal_token1)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('>') {
+			state = uint16(129)
+			goto next_state
+		}
+		return result
+	case int32(178):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym_literal_token1)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('U') {
+			state = uint16(207)
+			goto next_state
+		}
+		if lookahead == int32('X') {
+			state = uint16(199)
+			goto next_state
+		}
+		if lookahead == int32('u') {
+			state = uint16(195)
+			goto next_state
+		}
+		if lookahead == int32('x') {
+			state = uint16(191)
+			goto next_state
+		}
+		if int32('0') <= lookahead && lookahead <= int32('2') {
+			state = uint16(210)
+			goto next_state
+		}
+		if lookahead == int32('"') || lookahead == int32('-') || lookahead == int32('\\') || lookahead == int32(']') {
+			state = uint16(184)
+			goto next_state
+		}
+		if lookahead == int32('a') || lookahead == int32('b') || lookahead == int32('f') || lookahead == int32('n') || lookahead == int32('r') || int32('t') <= lookahead && lookahead <= int32('v') {
+			state = uint16(185)
+			goto next_state
+		}
+		return result
+	case int32(179):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym_dstring_token1)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(180):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym_dstring_token1)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('"') {
+			state = uint16(140)
+			goto next_state
+		}
+		if lookahead == int32('\\') {
+			state = uint16(95)
+			goto next_state
+		}
+		if lookahead != 0 && lookahead != int32('\n') {
+			state = uint16(180)
+			goto next_state
+		}
+		return result
+	case int32(181):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym_dstring_token1)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('"') {
+			state = uint16(179)
+			goto next_state
+		}
+		if lookahead == int32('\\') {
+			state = uint16(99)
+			goto next_state
+		}
+		if lookahead != 0 && lookahead != int32('\n') {
+			state = uint16(181)
+			goto next_state
+		}
+		return result
+	case int32(182):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym_sstring_token1)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(183):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym_sstring_token1)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('\'') {
+			state = uint16(182)
+			goto next_state
+		}
+		if lookahead == int32('\\') {
+			state = uint16(97)
+			goto next_state
+		}
+		if lookahead != 0 && lookahead != int32('\n') {
+			state = uint16(183)
+			goto next_state
+		}
+		return result
+	case int32(184):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(sym_quote)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(185):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(sym_ctrl_code)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(186):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym__esc_hex_token1)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(187):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym__esc_hex_token2)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(188):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym__esc_hex_token3)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(189):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym__esc_hex_token4)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(190):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym__esc_hex_token5)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('F') || int32('a') <= lookahead && lookahead <= int32('f') {
+			state = uint16(186)
+			goto next_state
+		}
+		return result
+	case int32(191):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym__esc_hex_token5)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('F') || int32('a') <= lookahead && lookahead <= int32('f') {
+			state = uint16(190)
+			goto next_state
+		}
+		return result
+	case int32(192):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym__esc_hex_token6)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('F') || int32('a') <= lookahead && lookahead <= int32('f') {
+			state = uint16(187)
+			goto next_state
+		}
+		return result
+	case int32(193):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym__esc_hex_token6)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('F') || int32('a') <= lookahead && lookahead <= int32('f') {
+			state = uint16(192)
+			goto next_state
+		}
+		return result
+	case int32(194):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym__esc_hex_token6)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('F') || int32('a') <= lookahead && lookahead <= int32('f') {
+			state = uint16(193)
+			goto next_state
+		}
+		return result
+	case int32(195):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym__esc_hex_token6)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('F') || int32('a') <= lookahead && lookahead <= int32('f') {
+			state = uint16(194)
+			goto next_state
+		}
+		return result
+	case int32(196):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym__esc_hex_token7)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('F') || int32('a') <= lookahead && lookahead <= int32('f') {
+			state = uint16(188)
+			goto next_state
+		}
+		return result
+	case int32(197):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym__esc_hex_token7)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('F') || int32('a') <= lookahead && lookahead <= int32('f') {
+			state = uint16(196)
+			goto next_state
+		}
+		return result
+	case int32(198):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym__esc_hex_token7)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('F') || int32('a') <= lookahead && lookahead <= int32('f') {
+			state = uint16(197)
+			goto next_state
+		}
+		return result
+	case int32(199):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym__esc_hex_token7)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('F') || int32('a') <= lookahead && lookahead <= int32('f') {
+			state = uint16(198)
+			goto next_state
+		}
+		return result
+	case int32(200):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym__esc_hex_token8)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('F') || int32('a') <= lookahead && lookahead <= int32('f') {
+			state = uint16(189)
+			goto next_state
+		}
+		return result
+	case int32(201):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym__esc_hex_token8)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('F') || int32('a') <= lookahead && lookahead <= int32('f') {
+			state = uint16(200)
+			goto next_state
+		}
+		return result
+	case int32(202):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym__esc_hex_token8)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('F') || int32('a') <= lookahead && lookahead <= int32('f') {
+			state = uint16(201)
+			goto next_state
+		}
+		return result
+	case int32(203):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym__esc_hex_token8)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('F') || int32('a') <= lookahead && lookahead <= int32('f') {
+			state = uint16(202)
+			goto next_state
+		}
+		return result
+	case int32(204):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym__esc_hex_token8)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('F') || int32('a') <= lookahead && lookahead <= int32('f') {
+			state = uint16(203)
+			goto next_state
+		}
+		return result
+	case int32(205):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym__esc_hex_token8)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('F') || int32('a') <= lookahead && lookahead <= int32('f') {
+			state = uint16(204)
+			goto next_state
+		}
+		return result
+	case int32(206):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym__esc_hex_token8)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('F') || int32('a') <= lookahead && lookahead <= int32('f') {
+			state = uint16(205)
+			goto next_state
+		}
+		return result
+	case int32(207):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym__esc_hex_token8)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('F') || int32('a') <= lookahead && lookahead <= int32('f') {
+			state = uint16(206)
+			goto next_state
+		}
+		return result
+	case int32(208):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym__esc_oct_token1)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(209):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym__esc_oct_token2)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if int32('0') <= lookahead && lookahead <= int32('7') {
+			state = uint16(208)
+			goto next_state
+		}
+		return result
+	case int32(210):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym__esc_oct_token2)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if int32('0') <= lookahead && lookahead <= int32('7') {
+			state = uint16(209)
+			goto next_state
+		}
+		return result
+	case int32(211):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(sym_hex_digit)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(212):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(sym_hex_digit)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(213):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(sym_oct_digit)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(214):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_AT2)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(215):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_POUND)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(216):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(sym_identifier)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('-') {
+			state = uint16(68)
+			goto next_state
+		}
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(217):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(sym_identifier)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('-') {
+			state = uint16(64)
+			goto next_state
+		}
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(218):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(sym_identifier)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('-') {
+			state = uint16(74)
+			goto next_state
+		}
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(219):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(sym_identifier)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('2') {
+			state = uint16(223)
+			goto next_state
+		}
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(220):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(sym_identifier)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32(':') {
+			state = uint16(85)
+			goto next_state
+		}
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(221):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(sym_identifier)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('a') {
+			state = uint16(237)
+			goto next_state
+		}
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('b') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(222):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(sym_identifier)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('c') {
+			state = uint16(229)
+			goto next_state
+		}
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(223):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(sym_identifier)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('c') {
+			state = uint16(120)
+			goto next_state
+		}
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(224):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(sym_identifier)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('e') {
+			state = uint16(219)
+			goto next_state
+		}
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(225):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(sym_identifier)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('e') {
+			state = uint16(220)
+			goto next_state
+		}
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(226):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(sym_identifier)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('e') {
+			state = uint16(218)
+			goto next_state
+		}
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(227):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(sym_identifier)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('e') {
+			state = uint16(226)
+			goto next_state
+		}
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(228):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(sym_identifier)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('g') {
+			state = uint16(231)
+			goto next_state
+		}
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(229):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(sym_identifier)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('h') {
+			state = uint16(216)
+			goto next_state
+		}
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(230):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(sym_identifier)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('i') {
+			state = uint16(238)
+			goto next_state
+		}
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(231):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(sym_identifier)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('n') {
+			state = uint16(233)
+			goto next_state
+		}
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(232):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(sym_identifier)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('o') {
+			state = uint16(236)
+			goto next_state
+		}
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(233):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(sym_identifier)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('o') {
+			state = uint16(234)
+			goto next_state
+		}
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(234):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(sym_identifier)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('r') {
+			state = uint16(225)
+			goto next_state
+		}
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(235):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(sym_identifier)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('r') {
+			state = uint16(227)
+			goto next_state
+		}
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(236):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(sym_identifier)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('s') {
+			state = uint16(230)
+			goto next_state
+		}
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(237):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(sym_identifier)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('t') {
+			state = uint16(222)
+			goto next_state
+		}
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(238):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(sym_identifier)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('x') {
+			state = uint16(217)
+			goto next_state
+		}
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(239):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(sym_identifier)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if int32('0') <= lookahead && lookahead <= int32('9') || int32('A') <= lookahead && lookahead <= int32('Z') || lookahead == int32('_') || int32('a') <= lookahead && lookahead <= int32('z') {
+			state = uint16(239)
+			goto next_state
+		}
+		return result
+	case int32(240):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_0)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(241):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_0)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if int32('0') <= lookahead && lookahead <= int32('9') {
+			state = uint16(158)
+			goto next_state
+		}
+		return result
+	case int32(242):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_DASH)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(243):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym_number_token1)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if int32('0') <= lookahead && lookahead <= int32('9') {
+			state = uint16(243)
+			goto next_state
+		}
+		return result
+	case int32(244):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym_number_token2)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if int32('0') <= lookahead && lookahead <= int32('9') {
+			state = uint16(244)
+			goto next_state
+		}
+		return result
+	case int32(245):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym_comment_token1)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('!') {
+			state = uint16(249)
+			goto next_state
+		}
+		if lookahead == int32('\\') {
+			state = uint16(106)
+			goto next_state
+		}
+		if lookahead != 0 && lookahead != int32('\n') {
+			state = uint16(247)
+			goto next_state
+		}
+		return result
+	case int32(246):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym_comment_token1)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('*') {
+			state = uint16(245)
+			goto next_state
+		}
+		if lookahead == int32('\\') {
+			state = uint16(106)
+			goto next_state
+		}
+		if lookahead != 0 && lookahead != int32('\n') {
+			state = uint16(247)
+			goto next_state
+		}
+		return result
+	case int32(247):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym_comment_token1)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('/') {
+			state = uint16(246)
+			goto next_state
+		}
+		if lookahead == int32('\\') {
+			state = uint16(106)
+			goto next_state
+		}
+		if lookahead != 0 && lookahead != int32('\n') {
+			state = uint16(247)
+			goto next_state
+		}
+		return result
+	case int32(248):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym_comment_token1)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('/') {
+			state = uint16(246)
+			goto next_state
+		}
+		if lookahead == int32('\\') {
+			state = uint16(106)
+			goto next_state
+		}
+		if lookahead != 0 {
+			state = uint16(247)
+			goto next_state
+		}
+		return result
+	case int32(249):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym_comment_token1)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('\\') {
+			state = uint16(13)
+			goto next_state
+		}
+		if lookahead != 0 && lookahead != int32('\n') {
+			state = uint16(249)
+			goto next_state
+		}
+		return result
+	case int32(250):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym_comment_token1)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('\\') {
+			state = uint16(13)
+			goto next_state
+		}
+		if lookahead != 0 {
+			state = uint16(249)
+			goto next_state
+		}
+		return result
+	case int32(251):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym_comment_token2)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(252):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym_comment_token2)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('*') {
+			state = uint16(100)
+			goto next_state
+		}
+		if lookahead != 0 {
+			state = uint16(110)
+			goto next_state
+		}
+		return result
+	case int32(253):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(aux_sym_linedir_token1)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('\n') {
+			state = uint16(253)
+			goto next_state
+		}
+		if lookahead == int32('\r') {
+			state = uint16(9)
+			goto next_state
+		}
+		if lookahead == int32('/') {
+			state = uint16(39)
+			goto next_state
+		}
+		return result
+	default:
+		return libc.BoolUint8(false1 != 0)
+	}
+	return r
+}
+
+var map_token = [68]uint16_t{
+	0:  uint16('!'),
+	1:  uint16(133),
+	2:  uint16('"'),
+	3:  uint16(180),
+	4:  uint16('#'),
+	5:  uint16(215),
+	6:  uint16('$'),
+	7:  uint16(137),
+	8:  uint16('\''),
+	9:  uint16(35),
+	10: uint16('('),
+	11: uint16(159),
+	12: uint16(')'),
+	13: uint16(160),
+	14: uint16('*'),
+	15: uint16(152),
+	16: uint16('+'),
+	17: uint16(153),
+	18: uint16(','),
+	19: uint16(156),
+	20: uint16('-'),
+	21: uint16(242),
+	22: uint16('.'),
+	23: uint16(124),
+	24: uint16('/'),
+	25: uint16(147),
+	26: uint16('0'),
+	27: uint16(241),
+	28: uint16(':'),
+	29: uint16(114),
+	30: uint16(';'),
+	31: uint16(119),
+	32: uint16('<'),
+	33: uint16(131),
+	34: uint16('='),
+	35: uint16(118),
+	36: uint16('>'),
+	37: uint16(132),
+	38: uint16('?'),
+	39: uint16(154),
+	40: uint16('@'),
+	41: uint16(122),
+	42: uint16('['),
+	43: uint16(161),
+	44: uint16('\\'),
+	45: uint16(151),
+	46: uint16(']'),
+	47: uint16(163),
+	48: uint16('^'),
+	49: uint16(162),
+	50: uint16('i'),
+	51: uint16(228),
+	52: uint16('m'),
+	53: uint16(221),
+	54: uint16('p'),
+	55: uint16(232),
+	56: uint16('r'),
+	57: uint16(224),
+	58: uint16('{'),
+	59: uint16(155),
+	60: uint16('|'),
+	61: uint16(149),
+	62: uint16('}'),
+	63: uint16(157),
+	64: uint16('8'),
+	65: uint16(158),
+	66: uint16('9'),
+	67: uint16(158),
+}
+
+var map_token1 = [40]uint16_t{
+	0:  uint16('!'),
+	1:  uint16(133),
+	2:  uint16('"'),
+	3:  uint16(181),
+	4:  uint16('#'),
+	5:  uint16(215),
+	6:  uint16('$'),
+	7:  uint16(137),
+	8:  uint16('\''),
+	9:  uint16(183),
+	10: uint16('('),
+	11: uint16(159),
+	12: uint16(')'),
+	13: uint16(160),
+	14: uint16('*'),
+	15: uint16(136),
+	16: uint16('.'),
+	17: uint16(124),
+	18: uint16('/'),
+	19: uint16(39),
+	20: uint16(':'),
+	21: uint16(58),
+	22: uint16(';'),
+	23: uint16(119),
+	24: uint16('='),
+	25: uint16(59),
+	26: uint16('>'),
+	27: uint16(132),
+	28: uint16('@'),
+	29: uint16(214),
+	30: uint16('['),
+	31: uint16(161),
+	32: uint16('\\'),
+	33: uint16(150),
+	34: uint16('{'),
+	35: uint16(138),
+	36: uint16('|'),
+	37: uint16(149),
+	38: uint16('}'),
+	39: uint16(139),
+}
+
+var map_token2 = [40]uint16_t{
+	0:  uint16('!'),
+	1:  uint16(133),
+	2:  uint16('"'),
+	3:  uint16(181),
+	4:  uint16('#'),
+	5:  uint16(215),
+	6:  uint16('$'),
+	7:  uint16(137),
+	8:  uint16('\''),
+	9:  uint16(183),
+	10: uint16('('),
+	11: uint16(159),
+	12: uint16(')'),
+	13: uint16(160),
+	14: uint16('*'),
+	15: uint16(136),
+	16: uint16('.'),
+	17: uint16(124),
+	18: uint16('/'),
+	19: uint16(39),
+	20: uint16(':'),
+	21: uint16(58),
+	22: uint16(';'),
+	23: uint16(119),
+	24: uint16('='),
+	25: uint16(59),
+	26: uint16('>'),
+	27: uint16(132),
+	28: uint16('@'),
+	29: uint16(214),
+	30: uint16('['),
+	31: uint16(161),
+	32: uint16('\\'),
+	33: uint16(150),
+	34: uint16('{'),
+	35: uint16(138),
+	36: uint16('|'),
+	37: uint16(149),
+	38: uint16('}'),
+	39: uint16(139),
+}
+
+var map_token3 = [36]uint16_t{
+	0:  uint16('"'),
+	1:  uint16(181),
+	2:  uint16('#'),
+	3:  uint16(215),
+	4:  uint16('\''),
+	5:  uint16(183),
+	6:  uint16('('),
+	7:  uint16(159),
+	8:  uint16(')'),
+	9:  uint16(160),
+	10: uint16('*'),
+	11: uint16(152),
+	12: uint16('+'),
+	13: uint16(153),
+	14: uint16('.'),
+	15: uint16(124),
+	16: uint16('/'),
+	17: uint16(148),
+	18: uint16(':'),
+	19: uint16(58),
+	20: uint16(';'),
+	21: uint16(119),
+	22: uint16('='),
+	23: uint16(59),
+	24: uint16('?'),
+	25: uint16(154),
+	26: uint16('@'),
+	27: uint16(214),
+	28: uint16('['),
+	29: uint16(161),
+	30: uint16('\\'),
+	31: uint16(150),
+	32: uint16('{'),
+	33: uint16(155),
+	34: uint16('|'),
+	35: uint16(149),
+}
+
+var map_token4 = [22]uint16_t{
+	0:  uint16('"'),
+	1:  uint16(181),
+	2:  uint16('#'),
+	3:  uint16(215),
+	4:  uint16('\''),
+	5:  uint16(183),
+	6:  uint16('('),
+	7:  uint16(159),
+	8:  uint16(')'),
+	9:  uint16(160),
+	10: uint16('.'),
+	11: uint16(124),
+	12: uint16('/'),
+	13: uint16(39),
+	14: uint16('@'),
+	15: uint16(214),
+	16: uint16('['),
+	17: uint16(161),
+	18: uint16('\\'),
+	19: uint16(151),
+	20: uint16('|'),
+	21: uint16(149),
+}
+
+var map_token5 = [30]uint16_t{
+	0:  uint16('"'),
+	1:  uint16(181),
+	2:  uint16('#'),
+	3:  uint16(215),
+	4:  uint16('\''),
+	5:  uint16(183),
+	6:  uint16('('),
+	7:  uint16(159),
+	8:  uint16(')'),
+	9:  uint16(160),
+	10: uint16('.'),
+	11: uint16(124),
+	12: uint16('/'),
+	13: uint16(148),
+	14: uint16(':'),
+	15: uint16(58),
+	16: uint16(';'),
+	17: uint16(119),
+	18: uint16('='),
+	19: uint16(59),
+	20: uint16('@'),
+	21: uint16(214),
+	22: uint16('['),
+	23: uint16(161),
+	24: uint16('\\'),
+	25: uint16(150),
+	26: uint16('{'),
+	27: uint16(138),
+	28: uint16('|'),
+	29: uint16(149),
+}
+
+var map_token6 = [30]uint16_t{
+	0:  uint16('"'),
+	1:  uint16(181),
+	2:  uint16('#'),
+	3:  uint16(215),
+	4:  uint16('\''),
+	5:  uint16(183),
+	6:  uint16('('),
+	7:  uint16(159),
+	8:  uint16('*'),
+	9:  uint16(152),
+	10: uint16('+'),
+	11: uint16(153),
+	12: uint16('.'),
+	13: uint16(124),
+	14: uint16('/'),
+	15: uint16(148),
+	16: uint16('='),
+	17: uint16(117),
+	18: uint16('?'),
+	19: uint16(154),
+	20: uint16('@'),
+	21: uint16(214),
+	22: uint16('['),
+	23: uint16(161),
+	24: uint16('\\'),
+	25: uint16(150),
+	26: uint16('{'),
+	27: uint16(155),
+	28: uint16('|'),
+	29: uint16(149),
+}
+
+var map_token7 = [26]uint16_t{
+	0:  uint16('"'),
+	1:  uint16(181),
+	2:  uint16('#'),
+	3:  uint16(215),
+	4:  uint16('\''),
+	5:  uint16(183),
+	6:  uint16('('),
+	7:  uint16(159),
+	8:  uint16('.'),
+	9:  uint16(124),
+	10: uint16('/'),
+	11: uint16(39),
+	12: uint16(':'),
+	13: uint16(58),
+	14: uint16('='),
+	15: uint16(59),
+	16: uint16('@'),
+	17: uint16(214),
+	18: uint16('['),
+	19: uint16(161),
+	20: uint16('\\'),
+	21: uint16(151),
+	22: uint16('{'),
+	23: uint16(138),
+	24: uint16('|'),
+	25: uint16(149),
+}
+
+var map_token8 = [22]uint16_t{
+	0:  uint16('"'),
+	1:  uint16(181),
+	2:  uint16('#'),
+	3:  uint16(215),
+	4:  uint16('\''),
+	5:  uint16(183),
+	6:  uint16('('),
+	7:  uint16(159),
+	8:  uint16('.'),
+	9:  uint16(124),
+	10: uint16('/'),
+	11: uint16(39),
+	12: uint16(';'),
+	13: uint16(119),
+	14: uint16('@'),
+	15: uint16(214),
+	16: uint16('['),
+	17: uint16(161),
+	18: uint16('\\'),
+	19: uint16(151),
+	20: uint16('|'),
+	21: uint16(149),
+}
+
+var map_token9 = [22]uint16_t{
+	0:  uint16('"'),
+	1:  uint16(181),
+	2:  uint16('#'),
+	3:  uint16(215),
+	4:  uint16('\''),
+	5:  uint16(183),
+	6:  uint16('('),
+	7:  uint16(159),
+	8:  uint16('.'),
+	9:  uint16(124),
+	10: uint16('/'),
+	11: uint16(39),
+	12: uint16('@'),
+	13: uint16(214),
+	14: uint16('['),
+	15: uint16(161),
+	16: uint16('\\'),
+	17: uint16(151),
+	18: uint16('{'),
+	19: uint16(138),
+	20: uint16('|'),
+	21: uint16(149),
+}
+
+var map_token10 = [20]uint16_t{
+	0:  uint16('"'),
+	1:  uint16(181),
+	2:  uint16('#'),
+	3:  uint16(215),
+	4:  uint16('\''),
+	5:  uint16(183),
+	6:  uint16('('),
+	7:  uint16(159),
+	8:  uint16('.'),
+	9:  uint16(124),
+	10: uint16('/'),
+	11: uint16(39),
+	12: uint16('@'),
+	13: uint16(214),
+	14: uint16('['),
+	15: uint16(161),
+	16: uint16('\\'),
+	17: uint16(151),
+	18: uint16('|'),
+	19: uint16(149),
+}
+
+var map_token11 = [26]uint16_t{
+	0:  uint16('"'),
+	1:  uint16(181),
+	2:  uint16('#'),
+	3:  uint16(215),
+	4:  uint16('\''),
+	5:  uint16(183),
+	6:  uint16('('),
+	7:  uint16(159),
+	8:  uint16('.'),
+	9:  uint16(124),
+	10: uint16('/'),
+	11: uint16(148),
+	12: uint16(':'),
+	13: uint16(58),
+	14: uint16('='),
+	15: uint16(59),
+	16: uint16('@'),
+	17: uint16(214),
+	18: uint16('['),
+	19: uint16(161),
+	20: uint16('\\'),
+	21: uint16(151),
+	22: uint16('{'),
+	23: uint16(138),
+	24: uint16('|'),
+	25: uint16(149),
+}
+
+var map_token12 = [22]uint16_t{
+	0:  uint16('"'),
+	1:  uint16(181),
+	2:  uint16('#'),
+	3:  uint16(215),
+	4:  uint16('\''),
+	5:  uint16(183),
+	6:  uint16('('),
+	7:  uint16(159),
+	8:  uint16('.'),
+	9:  uint16(124),
+	10: uint16('/'),
+	11: uint16(148),
+	12: uint16(';'),
+	13: uint16(119),
+	14: uint16('@'),
+	15: uint16(214),
+	16: uint16('['),
+	17: uint16(161),
+	18: uint16('\\'),
+	19: uint16(151),
+	20: uint16('|'),
+	21: uint16(149),
+}
+
+var map_token13 = [24]uint16_t{
+	0:  uint16('"'),
+	1:  uint16(181),
+	2:  uint16('#'),
+	3:  uint16(215),
+	4:  uint16('\''),
+	5:  uint16(183),
+	6:  uint16('('),
+	7:  uint16(159),
+	8:  uint16('.'),
+	9:  uint16(124),
+	10: uint16('/'),
+	11: uint16(148),
+	12: uint16('='),
+	13: uint16(117),
+	14: uint16('@'),
+	15: uint16(214),
+	16: uint16('['),
+	17: uint16(161),
+	18: uint16('\\'),
+	19: uint16(150),
+	20: uint16('{'),
+	21: uint16(138),
+	22: uint16('|'),
+	23: uint16(149),
+}
+
+var map_token14 = [22]uint16_t{
+	0:  uint16('"'),
+	1:  uint16(181),
+	2:  uint16('#'),
+	3:  uint16(215),
+	4:  uint16('\''),
+	5:  uint16(183),
+	6:  uint16('('),
+	7:  uint16(159),
+	8:  uint16('.'),
+	9:  uint16(124),
+	10: uint16('/'),
+	11: uint16(148),
+	12: uint16('@'),
+	13: uint16(214),
+	14: uint16('['),
+	15: uint16(161),
+	16: uint16('\\'),
+	17: uint16(151),
+	18: uint16('{'),
+	19: uint16(138),
+	20: uint16('|'),
+	21: uint16(149),
+}
+
+var map_token15 = [20]uint16_t{
+	0:  uint16('"'),
+	1:  uint16(181),
+	2:  uint16('\''),
+	3:  uint16(183),
+	4:  uint16('-'),
+	5:  uint16(242),
+	6:  uint16('/'),
+	7:  uint16(39),
+	8:  uint16('0'),
+	9:  uint16(240),
+	10: uint16(':'),
+	11: uint16(113),
+	12: uint16('='),
+	13: uint16(117),
+	14: uint16('@'),
+	15: uint16(122),
+	16: uint16('f'),
+	17: uint16(235),
+	18: uint16('m'),
+	19: uint16(221),
+}
+
+var map_token16 = [16]uint16_t{
+	0:  uint16('"'),
+	1:  uint16(181),
+	2:  uint16('\''),
+	3:  uint16(183),
+	4:  uint16('-'),
+	5:  uint16(242),
+	6:  uint16('/'),
+	7:  uint16(39),
+	8:  uint16('0'),
+	9:  uint16(240),
+	10: uint16('='),
+	11: uint16(117),
+	12: uint16('f'),
+	13: uint16(235),
+	14: uint16('m'),
+	15: uint16(221),
+}
+
+var map_token17 = [20]uint16_t{
+	0:  uint16(','),
+	1:  uint16(156),
+	2:  uint16('/'),
+	3:  uint16(39),
+	4:  uint16(':'),
+	5:  uint16(58),
+	6:  uint16(';'),
+	7:  uint16(119),
+	8:  uint16('='),
+	9:  uint16(59),
+	10: uint16('\\'),
+	11: uint16(150),
+	12: uint16('p'),
+	13: uint16(232),
+	14: uint16('{'),
+	15: uint16(138),
+	16: uint16('|'),
+	17: uint16(149),
+	18: uint16('}'),
+	19: uint16(157),
+}
+
+var map_token18 = [54]uint16_t{
+	0:  uint16('!'),
+	1:  uint16(133),
+	2:  uint16('"'),
+	3:  uint16(180),
+	4:  uint16('#'),
+	5:  uint16(215),
+	6:  uint16('$'),
+	7:  uint16(137),
+	8:  uint16('\''),
+	9:  uint16(35),
+	10: uint16('('),
+	11: uint16(159),
+	12: uint16(')'),
+	13: uint16(160),
+	14: uint16('*'),
+	15: uint16(135),
+	16: uint16(','),
+	17: uint16(134),
+	18: uint16('-'),
+	19: uint16(242),
+	20: uint16('.'),
+	21: uint16(124),
+	22: uint16('/'),
+	23: uint16(147),
+	24: uint16('0'),
+	25: uint16(240),
+	26: uint16(':'),
+	27: uint16(58),
+	28: uint16(';'),
+	29: uint16(119),
+	30: uint16('<'),
+	31: uint16(131),
+	32: uint16('='),
+	33: uint16(118),
+	34: uint16('>'),
+	35: uint16(132),
+	36: uint16('@'),
+	37: uint16(214),
+	38: uint16('['),
+	39: uint16(161),
+	40: uint16('\\'),
+	41: uint16(151),
+	42: uint16('i'),
+	43: uint16(228),
+	44: uint16('m'),
+	45: uint16(221),
+	46: uint16('r'),
+	47: uint16(224),
+	48: uint16('{'),
+	49: uint16(138),
+	50: uint16('|'),
+	51: uint16(149),
+	52: uint16('}'),
+	53: uint16(139),
+}
+
+var map_token19 = [48]uint16_t{
+	0:  uint16('!'),
+	1:  uint16(75),
+	2:  uint16('"'),
+	3:  uint16(181),
+	4:  uint16('#'),
+	5:  uint16(215),
+	6:  uint16('$'),
+	7:  uint16(137),
+	8:  uint16('\''),
+	9:  uint16(183),
+	10: uint16('('),
+	11: uint16(159),
+	12: uint16(')'),
+	13: uint16(160),
+	14: uint16('*'),
+	15: uint16(136),
+	16: uint16(','),
+	17: uint16(134),
+	18: uint16('-'),
+	19: uint16(61),
+	20: uint16('.'),
+	21: uint16(124),
+	22: uint16('/'),
+	23: uint16(39),
+	24: uint16(':'),
+	25: uint16(113),
+	26: uint16(';'),
+	27: uint16(119),
+	28: uint16('<'),
+	29: uint16(131),
+	30: uint16('='),
+	31: uint16(117),
+	32: uint16('>'),
+	33: uint16(132),
+	34: uint16('@'),
+	35: uint16(214),
+	36: uint16('['),
+	37: uint16(161),
+	38: uint16('\\'),
+	39: uint16(150),
+	40: uint16('r'),
+	41: uint16(224),
+	42: uint16('{'),
+	43: uint16(138),
+	44: uint16('|'),
+	45: uint16(149),
+	46: uint16('}'),
+	47: uint16(157),
+}
+
+var map_token20 = [44]uint16_t{
+	0:  uint16('!'),
+	1:  uint16(75),
+	2:  uint16('"'),
+	3:  uint16(181),
+	4:  uint16('#'),
+	5:  uint16(215),
+	6:  uint16('$'),
+	7:  uint16(137),
+	8:  uint16('\''),
+	9:  uint16(183),
+	10: uint16('('),
+	11: uint16(159),
+	12: uint16(')'),
+	13: uint16(160),
+	14: uint16('*'),
+	15: uint16(136),
+	16: uint16(','),
+	17: uint16(134),
+	18: uint16('-'),
+	19: uint16(61),
+	20: uint16('.'),
+	21: uint16(124),
+	22: uint16('/'),
+	23: uint16(39),
+	24: uint16(';'),
+	25: uint16(119),
+	26: uint16('<'),
+	27: uint16(131),
+	28: uint16('='),
+	29: uint16(117),
+	30: uint16('>'),
+	31: uint16(132),
+	32: uint16('@'),
+	33: uint16(214),
+	34: uint16('['),
+	35: uint16(161),
+	36: uint16('\\'),
+	37: uint16(150),
+	38: uint16('r'),
+	39: uint16(224),
+	40: uint16('{'),
+	41: uint16(138),
+	42: uint16('|'),
+	43: uint16(149),
+}
+
+var map_token21 = [22]uint16_t{
+	0:  uint16('"'),
+	1:  uint16(181),
+	2:  uint16('#'),
+	3:  uint16(215),
+	4:  uint16('\''),
+	5:  uint16(183),
+	6:  uint16('('),
+	7:  uint16(159),
+	8:  uint16(')'),
+	9:  uint16(160),
+	10: uint16('.'),
+	11: uint16(124),
+	12: uint16('/'),
+	13: uint16(39),
+	14: uint16('@'),
+	15: uint16(214),
+	16: uint16('['),
+	17: uint16(161),
+	18: uint16('\\'),
+	19: uint16(151),
+	20: uint16('|'),
+	21: uint16(149),
+}
+
+var map_token22 = [26]uint16_t{
+	0:  uint16('"'),
+	1:  uint16(181),
+	2:  uint16('#'),
+	3:  uint16(215),
+	4:  uint16('\''),
+	5:  uint16(183),
+	6:  uint16('('),
+	7:  uint16(159),
+	8:  uint16('.'),
+	9:  uint16(124),
+	10: uint16('/'),
+	11: uint16(39),
+	12: uint16(':'),
+	13: uint16(58),
+	14: uint16('='),
+	15: uint16(59),
+	16: uint16('@'),
+	17: uint16(214),
+	18: uint16('['),
+	19: uint16(161),
+	20: uint16('\\'),
+	21: uint16(151),
+	22: uint16('{'),
+	23: uint16(138),
+	24: uint16('|'),
+	25: uint16(149),
+}
+
+var map_token23 = [22]uint16_t{
+	0:  uint16('"'),
+	1:  uint16(181),
+	2:  uint16('#'),
+	3:  uint16(215),
+	4:  uint16('\''),
+	5:  uint16(183),
+	6:  uint16('('),
+	7:  uint16(159),
+	8:  uint16('.'),
+	9:  uint16(124),
+	10: uint16('/'),
+	11: uint16(39),
+	12: uint16(';'),
+	13: uint16(119),
+	14: uint16('@'),
+	15: uint16(214),
+	16: uint16('['),
+	17: uint16(161),
+	18: uint16('\\'),
+	19: uint16(151),
+	20: uint16('|'),
+	21: uint16(149),
+}
+
+var map_token24 = [22]uint16_t{
+	0:  uint16('"'),
+	1:  uint16(181),
+	2:  uint16('#'),
+	3:  uint16(215),
+	4:  uint16('\''),
+	5:  uint16(183),
+	6:  uint16('('),
+	7:  uint16(159),
+	8:  uint16('.'),
+	9:  uint16(124),
+	10: uint16('/'),
+	11: uint16(39),
+	12: uint16('@'),
+	13: uint16(214),
+	14: uint16('['),
+	15: uint16(161),
+	16: uint16('\\'),
+	17: uint16(151),
+	18: uint16('{'),
+	19: uint16(138),
+	20: uint16('|'),
+	21: uint16(149),
+}
+
+var map_token25 = [20]uint16_t{
+	0:  uint16('"'),
+	1:  uint16(181),
+	2:  uint16('#'),
+	3:  uint16(215),
+	4:  uint16('\''),
+	5:  uint16(183),
+	6:  uint16('('),
+	7:  uint16(159),
+	8:  uint16('.'),
+	9:  uint16(124),
+	10: uint16('/'),
+	11: uint16(39),
+	12: uint16('@'),
+	13: uint16(214),
+	14: uint16('['),
+	15: uint16(161),
+	16: uint16('\\'),
+	17: uint16(151),
+	18: uint16('|'),
+	19: uint16(149),
+}
+
+var map_token26 = [26]uint16_t{
+	0:  uint16('"'),
+	1:  uint16(181),
+	2:  uint16('#'),
+	3:  uint16(215),
+	4:  uint16('\''),
+	5:  uint16(183),
+	6:  uint16('('),
+	7:  uint16(159),
+	8:  uint16('.'),
+	9:  uint16(124),
+	10: uint16('/'),
+	11: uint16(148),
+	12: uint16(':'),
+	13: uint16(58),
+	14: uint16('='),
+	15: uint16(59),
+	16: uint16('@'),
+	17: uint16(214),
+	18: uint16('['),
+	19: uint16(161),
+	20: uint16('\\'),
+	21: uint16(151),
+	22: uint16('{'),
+	23: uint16(138),
+	24: uint16('|'),
+	25: uint16(149),
+}
+
+var map_token27 = [22]uint16_t{
+	0:  uint16('"'),
+	1:  uint16(181),
+	2:  uint16('#'),
+	3:  uint16(215),
+	4:  uint16('\''),
+	5:  uint16(183),
+	6:  uint16('('),
+	7:  uint16(159),
+	8:  uint16('.'),
+	9:  uint16(124),
+	10: uint16('/'),
+	11: uint16(148),
+	12: uint16(';'),
+	13: uint16(119),
+	14: uint16('@'),
+	15: uint16(214),
+	16: uint16('['),
+	17: uint16(161),
+	18: uint16('\\'),
+	19: uint16(151),
+	20: uint16('|'),
+	21: uint16(149),
+}
+
+var map_token28 = [22]uint16_t{
+	0:  uint16('"'),
+	1:  uint16(181),
+	2:  uint16('#'),
+	3:  uint16(215),
+	4:  uint16('\''),
+	5:  uint16(183),
+	6:  uint16('('),
+	7:  uint16(159),
+	8:  uint16('.'),
+	9:  uint16(124),
+	10: uint16('/'),
+	11: uint16(148),
+	12: uint16('@'),
+	13: uint16(214),
+	14: uint16('['),
+	15: uint16(161),
+	16: uint16('\\'),
+	17: uint16(151),
+	18: uint16('{'),
+	19: uint16(138),
+	20: uint16('|'),
+	21: uint16(149),
+}
+
+func ts_lex_keywords(tls *libc.TLS, lexer uintptr, state TSStateId) (r uint8) {
+	var eof, result, skip uint8
+	var i uint32_t
+	var lookahead int32_t
+	_, _, _, _, _ = eof, i, lookahead, result, skip
+	result = libc.BoolUint8(false1 != 0)
+	skip = libc.BoolUint8(false1 != 0)
+	eof = libc.BoolUint8(false1 != 0)
+	goto start
+	goto next_state
+next_state:
+	;
+	(*(*func(*libc.TLS, uintptr, uint8))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fadvance})))(tls, lexer, skip)
+	goto start
+start:
+	;
+	skip = libc.BoolUint8(false1 != 0)
+	lookahead = (*TSLexer)(unsafe.Pointer(lexer)).Flookahead
+	eof = (*(*func(*libc.TLS, uintptr) uint8)(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Feof})))(tls, lexer)
+	switch int32(state) {
+	case 0:
+		i = uint32(0)
+		for {
+			if !(uint64(i) < libc.Uint64FromInt64(68)/libc.Uint64FromInt64(2)) {
+				break
+			}
+			if int32(map_token29[i]) == lookahead {
+				state = map_token29[i+uint32(1)]
+				goto next_state
+			}
+			goto _1
+		_1:
+			;
+			i = i + uint32(2)
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(18)
+			goto next_state
+		}
+		return result
+	case int32(1):
+		if lookahead == int32('p') {
+			state = uint16(19)
+			goto next_state
+		}
+		return result
+	case int32(2):
+		if lookahead == int32('g') {
+			state = uint16(20)
+			goto next_state
+		}
+		if lookahead == int32('o') {
+			state = uint16(21)
+			goto next_state
+		}
+		if lookahead == int32('u') {
+			state = uint16(22)
+			goto next_state
+		}
+		return result
+	case int32(3):
+		if lookahead == int32('e') {
+			state = uint16(23)
+			goto next_state
+		}
+		return result
+	case int32(4):
+		if lookahead == int32('o') {
+			state = uint16(24)
+			goto next_state
+		}
+		if lookahead == int32('r') {
+			state = uint16(25)
+			goto next_state
+		}
+		return result
+	case int32(5):
+		if lookahead == int32('a') {
+			state = uint16(26)
+			goto next_state
+		}
+		if lookahead == int32('l') {
+			state = uint16(27)
+			goto next_state
+		}
+		if lookahead == int32('o') {
+			state = uint16(28)
+			goto next_state
+		}
+		if lookahead == int32('u') {
+			state = uint16(29)
+			goto next_state
+		}
+		return result
+	case int32(6):
+		if lookahead == int32('e') {
+			state = uint16(30)
+			goto next_state
+		}
+		return result
+	case int32(7):
+		if lookahead == int32('e') {
+			state = uint16(31)
+			goto next_state
+		}
+		return result
+	case int32(8):
+		if lookahead == int32('g') {
+			state = uint16(32)
+			goto next_state
+		}
+		if lookahead == int32('n') {
+			state = uint16(33)
+			goto next_state
+		}
+		return result
+	case int32(9):
+		if lookahead == int32('a') {
+			state = uint16(34)
+			goto next_state
+		}
+		if lookahead == int32('i') {
+			state = uint16(35)
+			goto next_state
+		}
+		if lookahead == int32('o') {
+			state = uint16(36)
+			goto next_state
+		}
+		return result
+	case int32(10):
+		if lookahead == int32('a') {
+			state = uint16(37)
+			goto next_state
+		}
+		if lookahead == int32('t') {
+			state = uint16(38)
+			goto next_state
+		}
+		return result
+	case int32(11):
+		if lookahead == int32('f') {
+			state = uint16(39)
+			goto next_state
+		}
+		if lookahead == int32('n') {
+			state = uint16(40)
+			goto next_state
+		}
+		return result
+	case int32(12):
+		if lookahead == int32('e') {
+			state = uint16(41)
+			goto next_state
+		}
+		if lookahead == int32('u') {
+			state = uint16(42)
+			goto next_state
+		}
+		return result
+	case int32(13):
+		if lookahead == int32('e') {
+			state = uint16(43)
+			goto next_state
+		}
+		if lookahead == int32('t') {
+			state = uint16(44)
+			goto next_state
+		}
+		if lookahead == int32('u') {
+			state = uint16(45)
+			goto next_state
+		}
+		return result
+	case int32(14):
+		if lookahead == int32('a') {
+			state = uint16(46)
+			goto next_state
+		}
+		if lookahead == int32('y') {
+			state = uint16(47)
+			goto next_state
+		}
+		return result
+	case int32(15):
+		if lookahead == int32('s') {
+			state = uint16(48)
+			goto next_state
+		}
+		return result
+	case int32(16):
+		if lookahead == int32('a') {
+			state = uint16(49)
+			goto next_state
+		}
+		return result
+	case int32(17):
+		if lookahead == int32('y') {
+			state = uint16(50)
+			goto next_state
+		}
+		return result
+	case int32(18):
+		if lookahead == int32('c') {
+			state = uint16(51)
+			goto next_state
+		}
+		if lookahead == int32('d') {
+			state = uint16(52)
+			goto next_state
+		}
+		if lookahead == int32('e') {
+			state = uint16(53)
+			goto next_state
+		}
+		if lookahead == int32('f') {
+			state = uint16(54)
+			goto next_state
+		}
+		if lookahead == int32('i') {
+			state = uint16(55)
+			goto next_state
+		}
+		if lookahead == int32('l') {
+			state = uint16(56)
+			goto next_state
+		}
+		if lookahead == int32('s') {
+			state = uint16(57)
+			goto next_state
+		}
+		if int32('\t') <= lookahead && lookahead <= int32('\r') || lookahead == int32(' ') {
+			skip = libc.BoolUint8(true1 != 0)
+			state = uint16(18)
+			goto next_state
+		}
+		return result
+	case int32(19):
+		if lookahead == int32('i') {
+			state = uint16(58)
+			goto next_state
+		}
+		return result
+	case int32(20):
+		if lookahead == int32('o') {
+			state = uint16(59)
+			goto next_state
+		}
+		return result
+	case int32(21):
+		if lookahead == int32('n') {
+			state = uint16(60)
+			goto next_state
+		}
+		return result
+	case int32(22):
+		if lookahead == int32('s') {
+			state = uint16(61)
+			goto next_state
+		}
+		return result
+	case int32(23):
+		if lookahead == int32('f') {
+			state = uint16(62)
+			goto next_state
+		}
+		return result
+	case int32(24):
+		if lookahead == int32('f') {
+			state = uint16(63)
+			goto next_state
+		}
+		return result
+	case int32(25):
+		if lookahead == int32('r') {
+			state = uint16(64)
+			goto next_state
+		}
+		return result
+	case int32(26):
+		if lookahead == int32('i') {
+			state = uint16(65)
+			goto next_state
+		}
+		return result
+	case int32(27):
+		if lookahead == int32('a') {
+			state = uint16(66)
+			goto next_state
+		}
+		return result
+	case int32(28):
+		if lookahead == int32('r') {
+			state = uint16(67)
+			goto next_state
+		}
+		return result
+	case int32(29):
+		if lookahead == int32('n') {
+			state = uint16(68)
+			goto next_state
+		}
+		return result
+	case int32(30):
+		if lookahead == int32('t') {
+			state = uint16(69)
+			goto next_state
+		}
+		return result
+	case int32(31):
+		if lookahead == int32('a') {
+			state = uint16(70)
+			goto next_state
+		}
+		return result
+	case int32(32):
+		if lookahead == int32('n') {
+			state = uint16(71)
+			goto next_state
+		}
+		return result
+	case int32(33):
+		if lookahead == int32('c') {
+			state = uint16(72)
+			goto next_state
+		}
+		if lookahead == int32('d') {
+			state = uint16(73)
+			goto next_state
+		}
+		return result
+	case int32(34):
+		if lookahead == int32('b') {
+			state = uint16(74)
+			goto next_state
+		}
+		return result
+	case int32(35):
+		if lookahead == int32('n') {
+			state = uint16(75)
+			goto next_state
+		}
+		return result
+	case int32(36):
+		if lookahead == int32('c') {
+			state = uint16(76)
+			goto next_state
+		}
+		return result
+	case int32(37):
+		if lookahead == int32('x') {
+			state = uint16(77)
+			goto next_state
+		}
+		return result
+	case int32(38):
+		if lookahead == int32('a') {
+			state = uint16(78)
+			goto next_state
+		}
+		return result
+	case int32(39):
+		if lookahead == int32('f') {
+			state = uint16(79)
+			goto next_state
+		}
+		return result
+	case int32(40):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_on)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(41):
+		if lookahead == int32('2') {
+			state = uint16(80)
+			goto next_state
+		}
+		return result
+	case int32(42):
+		if lookahead == int32('l') {
+			state = uint16(81)
+			goto next_state
+		}
+		return result
+	case int32(43):
+		if lookahead == int32('n') {
+			state = uint16(82)
+			goto next_state
+		}
+		if lookahead == int32('p') {
+			state = uint16(83)
+			goto next_state
+		}
+		return result
+	case int32(44):
+		if lookahead == int32('a') {
+			state = uint16(84)
+			goto next_state
+		}
+		return result
+	case int32(45):
+		if lookahead == int32('b') {
+			state = uint16(85)
+			goto next_state
+		}
+		return result
+	case int32(46):
+		if lookahead == int32('g') {
+			state = uint16(86)
+			goto next_state
+		}
+		return result
+	case int32(47):
+		if lookahead == int32('p') {
+			state = uint16(87)
+			goto next_state
+		}
+		return result
+	case int32(48):
+		if lookahead == int32('e') {
+			state = uint16(88)
+			goto next_state
+		}
+		return result
+	case int32(49):
+		if lookahead == int32('r') {
+			state = uint16(89)
+			goto next_state
+		}
+		return result
+	case int32(50):
+		if lookahead == int32('b') {
+			state = uint16(90)
+			goto next_state
+		}
+		if lookahead == int32('c') {
+			state = uint16(91)
+			goto next_state
+		}
+		if lookahead == int32('f') {
+			state = uint16(92)
+			goto next_state
+		}
+		return result
+	case int32(51):
+		if lookahead == int32('u') {
+			state = uint16(22)
+			goto next_state
+		}
+		return result
+	case int32(52):
+		if lookahead == int32('e') {
+			state = uint16(93)
+			goto next_state
+		}
+		return result
+	case int32(53):
+		if lookahead == int32('r') {
+			state = uint16(25)
+			goto next_state
+		}
+		return result
+	case int32(54):
+		if lookahead == int32('a') {
+			state = uint16(26)
+			goto next_state
+		}
+		if lookahead == int32('o') {
+			state = uint16(28)
+			goto next_state
+		}
+		if lookahead == int32('u') {
+			state = uint16(29)
+			goto next_state
+		}
+		return result
+	case int32(55):
+		if lookahead == int32('g') {
+			state = uint16(32)
+			goto next_state
+		}
+		return result
+	case int32(56):
+		if lookahead == int32('i') {
+			state = uint16(35)
+			goto next_state
+		}
+		return result
+	case int32(57):
+		if lookahead == int32('e') {
+			state = uint16(94)
+			goto next_state
+		}
+		if lookahead == int32('u') {
+			state = uint16(45)
+			goto next_state
+		}
+		return result
+	case int32(58):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_api)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(59):
+		if lookahead == int32('t') {
+			state = uint16(95)
+			goto next_state
+		}
+		return result
+	case int32(60):
+		if lookahead == int32('d') {
+			state = uint16(96)
+			goto next_state
+		}
+		return result
+	case int32(61):
+		if lookahead == int32('t') {
+			state = uint16(97)
+			goto next_state
+		}
+		return result
+	case int32(62):
+		if lookahead == int32('a') {
+			state = uint16(98)
+			goto next_state
+		}
+		if lookahead == int32('i') {
+			state = uint16(99)
+			goto next_state
+		}
+		return result
+	case int32(63):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_eof)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(64):
+		if lookahead == int32('o') {
+			state = uint16(100)
+			goto next_state
+		}
+		return result
+	case int32(65):
+		if lookahead == int32('l') {
+			state = uint16(101)
+			goto next_state
+		}
+		return result
+	case int32(66):
+		if lookahead == int32('g') {
+			state = uint16(102)
+			goto next_state
+		}
+		return result
+	case int32(67):
+		if lookahead == int32('m') {
+			state = uint16(103)
+			goto next_state
+		}
+		return result
+	case int32(68):
+		if lookahead == int32('c') {
+			state = uint16(104)
+			goto next_state
+		}
+		return result
+	case int32(69):
+		if lookahead == int32('s') {
+			state = uint16(105)
+			goto next_state
+		}
+		return result
+	case int32(70):
+		if lookahead == int32('d') {
+			state = uint16(106)
+			goto next_state
+		}
+		return result
+	case int32(71):
+		if lookahead == int32('o') {
+			state = uint16(107)
+			goto next_state
+		}
+		return result
+	case int32(72):
+		if lookahead == int32('l') {
+			state = uint16(108)
+			goto next_state
+		}
+		return result
+	case int32(73):
+		if lookahead == int32('e') {
+			state = uint16(109)
+			goto next_state
+		}
+		return result
+	case int32(74):
+		if lookahead == int32('e') {
+			state = uint16(110)
+			goto next_state
+		}
+		return result
+	case int32(75):
+		if lookahead == int32('e') {
+			state = uint16(111)
+			goto next_state
+		}
+		return result
+	case int32(76):
+		if lookahead == int32('a') {
+			state = uint16(112)
+			goto next_state
+		}
+		return result
+	case int32(77):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_max)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('n') {
+			state = uint16(113)
+			goto next_state
+		}
+		return result
+	case int32(78):
+		if lookahead == int32('g') {
+			state = uint16(114)
+			goto next_state
+		}
+		return result
+	case int32(79):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_off)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(80):
+		if lookahead == int32('c') {
+			state = uint16(115)
+			goto next_state
+		}
+		return result
+	case int32(81):
+		if lookahead == int32('e') {
+			state = uint16(116)
+			goto next_state
+		}
+		return result
+	case int32(82):
+		if lookahead == int32('t') {
+			state = uint16(117)
+			goto next_state
+		}
+		return result
+	case int32(83):
+		if lookahead == int32('a') {
+			state = uint16(118)
+			goto next_state
+		}
+		return result
+	case int32(84):
+		if lookahead == int32('g') {
+			state = uint16(119)
+			goto next_state
+		}
+		if lookahead == int32('r') {
+			state = uint16(120)
+			goto next_state
+		}
+		if lookahead == int32('t') {
+			state = uint16(121)
+			goto next_state
+		}
+		return result
+	case int32(85):
+		if lookahead == int32('s') {
+			state = uint16(122)
+			goto next_state
+		}
+		return result
+	case int32(86):
+		if lookahead == int32('s') {
+			state = uint16(123)
+			goto next_state
+		}
+		return result
+	case int32(87):
+		if lookahead == int32('e') {
+			state = uint16(124)
+			goto next_state
+		}
+		return result
+	case int32(88):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_use)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(89):
+		if lookahead == int32('i') {
+			state = uint16(125)
+			goto next_state
+		}
+		return result
+	case int32(90):
+		if lookahead == int32('m') {
+			state = uint16(126)
+			goto next_state
+		}
+		return result
+	case int32(91):
+		if lookahead == int32('h') {
+			state = uint16(127)
+			goto next_state
+		}
+		return result
+	case int32(92):
+		if lookahead == int32('i') {
+			state = uint16(128)
+			goto next_state
+		}
+		return result
+	case int32(93):
+		if lookahead == int32('f') {
+			state = uint16(129)
+			goto next_state
+		}
+		return result
+	case int32(94):
+		if lookahead == int32('p') {
+			state = uint16(83)
+			goto next_state
+		}
+		return result
+	case int32(95):
+		if lookahead == int32('o') {
+			state = uint16(130)
+			goto next_state
+		}
+		return result
+	case int32(96):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_cond)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('e') {
+			state = uint16(131)
+			goto next_state
+		}
+		if lookahead == int32('p') {
+			state = uint16(132)
+			goto next_state
+		}
+		return result
+	case int32(97):
+		if lookahead == int32('o') {
+			state = uint16(133)
+			goto next_state
+		}
+		return result
+	case int32(98):
+		if lookahead == int32('u') {
+			state = uint16(134)
+			goto next_state
+		}
+		return result
+	case int32(99):
+		if lookahead == int32('n') {
+			state = uint16(135)
+			goto next_state
+		}
+		return result
+	case int32(100):
+		if lookahead == int32('r') {
+			state = uint16(136)
+			goto next_state
+		}
+		return result
+	case int32(101):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_fail)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(102):
+		if lookahead == int32('s') {
+			state = uint16(137)
+			goto next_state
+		}
+		return result
+	case int32(103):
+		if lookahead == int32('a') {
+			state = uint16(138)
+			goto next_state
+		}
+		return result
+	case int32(104):
+		if lookahead == int32('t') {
+			state = uint16(139)
+			goto next_state
+		}
+		return result
+	case int32(105):
+		if lookahead == int32('t') {
+			state = uint16(140)
+			goto next_state
+		}
+		return result
+	case int32(106):
+		if lookahead == int32('e') {
+			state = uint16(141)
+			goto next_state
+		}
+		return result
+	case int32(107):
+		if lookahead == int32('r') {
+			state = uint16(142)
+			goto next_state
+		}
+		return result
+	case int32(108):
+		if lookahead == int32('u') {
+			state = uint16(143)
+			goto next_state
+		}
+		return result
+	case int32(109):
+		if lookahead == int32('n') {
+			state = uint16(144)
+			goto next_state
+		}
+		return result
+	case int32(110):
+		if lookahead == int32('l') {
+			state = uint16(145)
+			goto next_state
+		}
+		return result
+	case int32(111):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_line)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(112):
+		if lookahead == int32('l') {
+			state = uint16(146)
+			goto next_state
+		}
+		return result
+	case int32(113):
+		if lookahead == int32('m') {
+			state = uint16(147)
+			goto next_state
+		}
+		return result
+	case int32(114):
+		if lookahead == int32('s') {
+			state = uint16(148)
+			goto next_state
+		}
+		return result
+	case int32(115):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_re2c)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(116):
+		if lookahead == int32('s') {
+			state = uint16(149)
+			goto next_state
+		}
+		return result
+	case int32(117):
+		if lookahead == int32('i') {
+			state = uint16(150)
+			goto next_state
+		}
+		return result
+	case int32(118):
+		if lookahead == int32('r') {
+			state = uint16(151)
+			goto next_state
+		}
+		return result
+	case int32(119):
+		if lookahead == int32('s') {
+			state = uint16(152)
+			goto next_state
+		}
+		return result
+	case int32(120):
+		if lookahead == int32('t') {
+			state = uint16(153)
+			goto next_state
+		}
+		return result
+	case int32(121):
+		if lookahead == int32('e') {
+			state = uint16(154)
+			goto next_state
+		}
+		return result
+	case int32(122):
+		if lookahead == int32('t') {
+			state = uint16(155)
+			goto next_state
+		}
+		return result
+	case int32(123):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_tags)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(124):
+		if lookahead == int32('s') {
+			state = uint16(156)
+			goto next_state
+		}
+		return result
+	case int32(125):
+		if lookahead == int32('a') {
+			state = uint16(157)
+			goto next_state
+		}
+		return result
+	case int32(126):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_yybm)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(127):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_yych)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(128):
+		if lookahead == int32('l') {
+			state = uint16(158)
+			goto next_state
+		}
+		return result
+	case int32(129):
+		if lookahead == int32('a') {
+			state = uint16(98)
+			goto next_state
+		}
+		return result
+	case int32(130):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_cgoto)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(131):
+		if lookahead == int32('n') {
+			state = uint16(159)
+			goto next_state
+		}
+		return result
+	case int32(132):
+		if lookahead == int32('r') {
+			state = uint16(160)
+			goto next_state
+		}
+		return result
+	case int32(133):
+		if lookahead == int32('m') {
+			state = uint16(161)
+			goto next_state
+		}
+		return result
+	case int32(134):
+		if lookahead == int32('l') {
+			state = uint16(162)
+			goto next_state
+		}
+		return result
+	case int32(135):
+		if lookahead == int32('e') {
+			state = uint16(163)
+			goto next_state
+		}
+		return result
+	case int32(136):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_error)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(137):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_flags)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(138):
+		if lookahead == int32('t') {
+			state = uint16(164)
+			goto next_state
+		}
+		return result
+	case int32(139):
+		if lookahead == int32('i') {
+			state = uint16(165)
+			goto next_state
+		}
+		return result
+	case int32(140):
+		if lookahead == int32('a') {
+			state = uint16(166)
+			goto next_state
+		}
+		return result
+	case int32(141):
+		if lookahead == int32('r') {
+			state = uint16(167)
+			goto next_state
+		}
+		return result
+	case int32(142):
+		if lookahead == int32('e') {
+			state = uint16(168)
+			goto next_state
+		}
+		return result
+	case int32(143):
+		if lookahead == int32('d') {
+			state = uint16(169)
+			goto next_state
+		}
+		return result
+	case int32(144):
+		if lookahead == int32('t') {
+			state = uint16(170)
+			goto next_state
+		}
+		return result
+	case int32(145):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_label)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		if lookahead == int32('p') {
+			state = uint16(171)
+			goto next_state
+		}
+		return result
+	case int32(146):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_local)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(147):
+		if lookahead == int32('a') {
+			state = uint16(172)
+			goto next_state
+		}
+		return result
+	case int32(148):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_mtags)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(149):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_rules)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(150):
+		if lookahead == int32('n') {
+			state = uint16(173)
+			goto next_state
+		}
+		return result
+	case int32(151):
+		if lookahead == int32('a') {
+			state = uint16(174)
+			goto next_state
+		}
+		return result
+	case int32(152):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_stags)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(153):
+		if lookahead == int32('l') {
+			state = uint16(175)
+			goto next_state
+		}
+		return result
+	case int32(154):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_state)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(155):
+		if lookahead == int32('i') {
+			state = uint16(176)
+			goto next_state
+		}
+		return result
+	case int32(156):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_types)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(157):
+		if lookahead == int32('b') {
+			state = uint16(177)
+			goto next_state
+		}
+		return result
+	case int32(158):
+		if lookahead == int32('l') {
+			state = uint16(178)
+			goto next_state
+		}
+		return result
+	case int32(159):
+		if lookahead == int32('u') {
+			state = uint16(179)
+			goto next_state
+		}
+		return result
+	case int32(160):
+		if lookahead == int32('e') {
+			state = uint16(180)
+			goto next_state
+		}
+		return result
+	case int32(161):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_custom)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(162):
+		if lookahead == int32('t') {
+			state = uint16(181)
+			goto next_state
+		}
+		return result
+	case int32(163):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_define)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(164):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_format)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(165):
+		if lookahead == int32('o') {
+			state = uint16(182)
+			goto next_state
+		}
+		return result
+	case int32(166):
+		if lookahead == int32('t') {
+			state = uint16(183)
+			goto next_state
+		}
+		return result
+	case int32(167):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_header)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(168):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_ignore)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(169):
+		if lookahead == int32('e') {
+			state = uint16(184)
+			goto next_state
+		}
+		return result
+	case int32(170):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_indent)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(171):
+		if lookahead == int32('r') {
+			state = uint16(185)
+			goto next_state
+		}
+		return result
+	case int32(172):
+		if lookahead == int32('t') {
+			state = uint16(186)
+			goto next_state
+		}
+		return result
+	case int32(173):
+		if lookahead == int32('e') {
+			state = uint16(187)
+			goto next_state
+		}
+		return result
+	case int32(174):
+		if lookahead == int32('t') {
+			state = uint16(188)
+			goto next_state
+		}
+		return result
+	case int32(175):
+		if lookahead == int32('a') {
+			state = uint16(189)
+			goto next_state
+		}
+		return result
+	case int32(176):
+		if lookahead == int32('t') {
+			state = uint16(190)
+			goto next_state
+		}
+		return result
+	case int32(177):
+		if lookahead == int32('l') {
+			state = uint16(191)
+			goto next_state
+		}
+		return result
+	case int32(178):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_yyfill)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(179):
+		if lookahead == int32('m') {
+			state = uint16(192)
+			goto next_state
+		}
+		return result
+	case int32(180):
+		if lookahead == int32('f') {
+			state = uint16(193)
+			goto next_state
+		}
+		return result
+	case int32(181):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_default)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(182):
+		if lookahead == int32('n') {
+			state = uint16(194)
+			goto next_state
+		}
+		return result
+	case int32(183):
+		if lookahead == int32('e') {
+			state = uint16(195)
+			goto next_state
+		}
+		return result
+	case int32(184):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_include)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(185):
+		if lookahead == int32('e') {
+			state = uint16(196)
+			goto next_state
+		}
+		return result
+	case int32(186):
+		if lookahead == int32('c') {
+			state = uint16(197)
+			goto next_state
+		}
+		return result
+	case int32(187):
+		if lookahead == int32('l') {
+			state = uint16(198)
+			goto next_state
+		}
+		return result
+	case int32(188):
+		if lookahead == int32('o') {
+			state = uint16(199)
+			goto next_state
+		}
+		return result
+	case int32(189):
+		if lookahead == int32('b') {
+			state = uint16(200)
+			goto next_state
+		}
+		return result
+	case int32(190):
+		if lookahead == int32('u') {
+			state = uint16(201)
+			goto next_state
+		}
+		return result
+	case int32(191):
+		if lookahead == int32('e') {
+			state = uint16(202)
+			goto next_state
+		}
+		return result
+	case int32(192):
+		if lookahead == int32('p') {
+			state = uint16(203)
+			goto next_state
+		}
+		return result
+	case int32(193):
+		if lookahead == int32('i') {
+			state = uint16(204)
+			goto next_state
+		}
+		return result
+	case int32(194):
+		if lookahead == int32('s') {
+			state = uint16(205)
+			goto next_state
+		}
+		return result
+	case int32(195):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_getstate)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(196):
+		if lookahead == int32('f') {
+			state = uint16(206)
+			goto next_state
+		}
+		return result
+	case int32(197):
+		if lookahead == int32('h') {
+			state = uint16(207)
+			goto next_state
+		}
+		return result
+	case int32(198):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_sentinel)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(199):
+		if lookahead == int32('r') {
+			state = uint16(208)
+			goto next_state
+		}
+		return result
+	case int32(200):
+		if lookahead == int32('e') {
+			state = uint16(209)
+			goto next_state
+		}
+		return result
+	case int32(201):
+		if lookahead == int32('t') {
+			state = uint16(210)
+			goto next_state
+		}
+		return result
+	case int32(202):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_variable)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(203):
+		if lookahead == int32('r') {
+			state = uint16(211)
+			goto next_state
+		}
+		return result
+	case int32(204):
+		if lookahead == int32('x') {
+			state = uint16(212)
+			goto next_state
+		}
+		return result
+	case int32(205):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_functions)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(206):
+		if lookahead == int32('i') {
+			state = uint16(213)
+			goto next_state
+		}
+		return result
+	case int32(207):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_maxnmatch)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(208):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_separator)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(209):
+		if lookahead == int32('l') {
+			state = uint16(214)
+			goto next_state
+		}
+		return result
+	case int32(210):
+		if lookahead == int32('e') {
+			state = uint16(215)
+			goto next_state
+		}
+		return result
+	case int32(211):
+		if lookahead == int32('e') {
+			state = uint16(216)
+			goto next_state
+		}
+		return result
+	case int32(212):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_condprefix)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(213):
+		if lookahead == int32('x') {
+			state = uint16(217)
+			goto next_state
+		}
+		return result
+	case int32(214):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_startlabel)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(215):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_substitute)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(216):
+		if lookahead == int32('f') {
+			state = uint16(218)
+			goto next_state
+		}
+		return result
+	case int32(217):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_labelprefix)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	case int32(218):
+		if lookahead == int32('i') {
+			state = uint16(219)
+			goto next_state
+		}
+		return result
+	case int32(219):
+		if lookahead == int32('x') {
+			state = uint16(220)
+			goto next_state
+		}
+		return result
+	case int32(220):
+		result = libc.BoolUint8(true1 != 0)
+		(*TSLexer)(unsafe.Pointer(lexer)).Fresult_symbol = uint16(anon_sym_condenumprefix)
+		(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSLexer)(unsafe.Pointer(lexer)).Fmark_end})))(tls, lexer)
+		return result
+	default:
+		return libc.BoolUint8(false1 != 0)
+	}
+	return r
+}
+
+var map_token29 = [34]uint16_t{
+	0:  uint16('a'),
+	1:  uint16(1),
+	2:  uint16('c'),
+	3:  uint16(2),
+	4:  uint16('d'),
+	5:  uint16(3),
+	6:  uint16('e'),
+	7:  uint16(4),
+	8:  uint16('f'),
+	9:  uint16(5),
+	10: uint16('g'),
+	11: uint16(6),
+	12: uint16('h'),
+	13: uint16(7),
+	14: uint16('i'),
+	15: uint16(8),
+	16: uint16('l'),
+	17: uint16(9),
+	18: uint16('m'),
+	19: uint16(10),
+	20: uint16('o'),
+	21: uint16(11),
+	22: uint16('r'),
+	23: uint16(12),
+	24: uint16('s'),
+	25: uint16(13),
+	26: uint16('t'),
+	27: uint16(14),
+	28: uint16('u'),
+	29: uint16(15),
+	30: uint16('v'),
+	31: uint16(16),
+	32: uint16('y'),
+	33: uint16(17),
+}
+
+var ts_lex_modes = [391]TSLexMode{
+	0: {},
+	1: {
+		Flex_state: uint16(104),
+	},
+	2: {
+		Flex_state: uint16(102),
+	},
+	3: {
+		Flex_state: uint16(102),
+	},
+	4: {
+		Flex_state: uint16(102),
+	},
+	5: {
+		Flex_state: uint16(102),
+	},
+	6: {
+		Flex_state: uint16(102),
+	},
+	7: {
+		Flex_state: uint16(102),
+	},
+	8: {
+		Flex_state: uint16(102),
+	},
+	9: {
+		Flex_state: uint16(102),
+	},
+	10: {
+		Flex_state: uint16(46),
+	},
+	11: {
+		Flex_state: uint16(1),
+	},
+	12: {
+		Flex_state: uint16(1),
+	},
+	13: {
+		Flex_state: uint16(10),
+	},
+	14: {
+		Flex_state: uint16(10),
+	},
+	15: {
+		Flex_state: uint16(2),
+	},
+	16: {
+		Flex_state: uint16(14),
+	},
+	17: {
+		Flex_state: uint16(3),
+	},
+	18: {
+		Flex_state: uint16(2),
+	},
+	19: {
+		Flex_state: uint16(3),
+	},
+	20: {
+		Flex_state: uint16(4),
+	},
+	21: {
+		Flex_state: uint16(4),
+	},
+	22: {
+		Flex_state: uint16(12),
+	},
+	23: {
+		Flex_state: uint16(11),
+	},
+	24: {
+		Flex_state: uint16(12),
+	},
+	25: {
+		Flex_state: uint16(11),
+	},
+	26: {
+		Flex_state: uint16(5),
+	},
+	27: {
+		Flex_state: uint16(5),
+	},
+	28: {
+		Flex_state: uint16(14),
+	},
+	29: {
+		Flex_state: uint16(14),
+	},
+	30: {
+		Flex_state: uint16(14),
+	},
+	31: {
+		Flex_state: uint16(14),
+	},
+	32: {
+		Flex_state: uint16(14),
+	},
+	33: {
+		Flex_state: uint16(33),
+	},
+	34: {
+		Flex_state: uint16(33),
+	},
+	35: {
+		Flex_state: uint16(33),
+	},
+	36: {
+		Flex_state: uint16(33),
+	},
+	37: {
+		Flex_state: uint16(33),
+	},
+	38: {
+		Flex_state: uint16(33),
+	},
+	39: {
+		Flex_state: uint16(33),
+	},
+	40: {
+		Flex_state: uint16(33),
+	},
+	41: {
+		Flex_state: uint16(33),
+	},
+	42: {
+		Flex_state: uint16(33),
+	},
+	43: {
+		Flex_state: uint16(33),
+	},
+	44: {
+		Flex_state: uint16(33),
+	},
+	45: {
+		Flex_state: uint16(33),
+	},
+	46: {
+		Flex_state: uint16(33),
+	},
+	47: {
+		Flex_state: uint16(33),
+	},
+	48: {
+		Flex_state: uint16(33),
+	},
+	49: {
+		Flex_state: uint16(33),
+	},
+	50: {
+		Flex_state: uint16(33),
+	},
+	51: {
+		Flex_state: uint16(23),
+	},
+	52: {
+		Flex_state: uint16(23),
+	},
+	53: {
+		Flex_state: uint16(23),
+	},
+	54: {
+		Flex_state: uint16(33),
+	},
+	55: {
+		Flex_state: uint16(33),
+	},
+	56: {
+		Flex_state: uint16(33),
+	},
+	57: {
+		Flex_state: uint16(14),
+	},
+	58: {
+		Flex_state: uint16(14),
+	},
+	59: {
+		Flex_state: uint16(14),
+	},
+	60: {
+		Flex_state: uint16(14),
+	},
+	61: {
+		Flex_state: uint16(14),
+	},
+	62: {
+		Flex_state: uint16(14),
+	},
+	63: {
+		Flex_state: uint16(14),
+	},
+	64: {
+		Flex_state: uint16(14),
+	},
+	65: {
+		Flex_state: uint16(14),
+	},
+	66: {
+		Flex_state: uint16(14),
+	},
+	67: {
+		Flex_state: uint16(14),
+	},
+	68: {
+		Flex_state: uint16(23),
+	},
+	69: {
+		Flex_state: uint16(23),
+	},
+	70: {
+		Flex_state: uint16(23),
+	},
+	71: {
+		Flex_state: uint16(23),
+	},
+	72: {
+		Flex_state: uint16(23),
+	},
+	73: {
+		Flex_state: uint16(23),
+	},
+	74: {
+		Flex_state: uint16(14),
+	},
+	75: {
+		Flex_state: uint16(14),
+	},
+	76: {
+		Flex_state: uint16(21),
+	},
+	77: {
+		Flex_state: uint16(14),
+	},
+	78: {
+		Flex_state: uint16(49),
+	},
+	79: {
+		Flex_state: uint16(14),
+	},
+	80: {
+		Flex_state: uint16(14),
+	},
+	81: {
+		Flex_state: uint16(14),
+	},
+	82: {
+		Flex_state: uint16(14),
+	},
+	83: {
+		Flex_state: uint16(14),
+	},
+	84: {
+		Flex_state: uint16(14),
+	},
+	85: {
+		Flex_state: uint16(14),
+	},
+	86: {
+		Flex_state: uint16(14),
+	},
+	87: {
+		Flex_state: uint16(14),
+	},
+	88: {
+		Flex_state: uint16(14),
+	},
+	89: {
+		Flex_state: uint16(14),
+	},
+	90: {
+		Flex_state: uint16(14),
+	},
+	91: {
+		Flex_state: uint16(14),
+	},
+	92: {
+		Flex_state: uint16(14),
+	},
+	93: {
+		Flex_state: uint16(6),
+	},
+	94: {
+		Flex_state: uint16(6),
+	},
+	95: {
+		Flex_state: uint16(6),
+	},
+	96: {
+		Flex_state: uint16(6),
+	},
+	97: {
+		Flex_state: uint16(14),
+	},
+	98: {
+		Flex_state: uint16(6),
+	},
+	99: {
+		Flex_state: uint16(14),
+	},
+	100: {
+		Flex_state: uint16(14),
+	},
+	101: {
+		Flex_state: uint16(6),
+	},
+	102: {
+		Flex_state: uint16(6),
+	},
+	103: {
+		Flex_state: uint16(6),
+	},
+	104: {
+		Flex_state: uint16(21),
+	},
+	105: {
+		Flex_state: uint16(21),
+	},
+	106: {
+		Flex_state: uint16(7),
+	},
+	107: {
+		Flex_state: uint16(21),
+	},
+	108: {
+		Flex_state: uint16(21),
+	},
+	109: {
+		Flex_state: uint16(21),
+	},
+	110: {
+		Flex_state: uint16(21),
+	},
+	111: {
+		Flex_state: uint16(7),
+	},
+	112: {
+		Flex_state: uint16(21),
+	},
+	113: {
+		Flex_state: uint16(7),
+	},
+	114: {
+		Flex_state: uint16(21),
+	},
+	115: {
+		Flex_state: uint16(7),
+	},
+	116: {
+		Flex_state: uint16(21),
+	},
+	117: {
+		Flex_state: uint16(7),
+	},
+	118: {
+		Flex_state: uint16(7),
+	},
+	119: {
+		Flex_state: uint16(21),
+	},
+	120: {
+		Flex_state: uint16(7),
+	},
+	121: {
+		Flex_state: uint16(21),
+	},
+	122: {
+		Flex_state: uint16(7),
+	},
+	123: {
+		Flex_state: uint16(21),
+	},
+	124: {
+		Flex_state: uint16(7),
+	},
+	125: {
+		Flex_state: uint16(21),
+	},
+	126: {
+		Flex_state: uint16(7),
+	},
+	127: {
+		Flex_state: uint16(21),
+	},
+	128: {
+		Flex_state: uint16(7),
+	},
+	129: {
+		Flex_state: uint16(7),
+	},
+	130: {
+		Flex_state: uint16(7),
+	},
+	131: {
+		Flex_state: uint16(102),
+	},
+	132: {
+		Flex_state: uint16(24),
+	},
+	133: {
+		Flex_state: uint16(102),
+	},
+	134: {
+		Flex_state: uint16(8),
+	},
+	135: {
+		Flex_state: uint16(23),
+	},
+	136: {
+		Flex_state: uint16(23),
+	},
+	137: {
+		Flex_state: uint16(23),
+	},
+	138: {
+		Flex_state: uint16(23),
+	},
+	139: {
+		Flex_state: uint16(23),
+	},
+	140: {
+		Flex_state: uint16(23),
+	},
+	141: {
+		Flex_state: uint16(23),
+	},
+	142: {
+		Flex_state: uint16(102),
+	},
+	143: {
+		Flex_state: uint16(102),
+	},
+	144: {
+		Flex_state: uint16(102),
+	},
+	145: {
+		Flex_state: uint16(102),
+	},
+	146: {
+		Flex_state: uint16(102),
+	},
+	147: {
+		Flex_state: uint16(102),
+	},
+	148: {
+		Flex_state: uint16(7),
+	},
+	149: {
+		Flex_state: uint16(102),
+	},
+	150: {
+		Flex_state: uint16(102),
+	},
+	151: {
+		Flex_state: uint16(7),
+	},
+	152: {
+		Flex_state: uint16(102),
+	},
+	153: {
+		Flex_state: uint16(7),
+	},
+	154: {
+		Flex_state: uint16(7),
+	},
+	155: {
+		Flex_state: uint16(7),
+	},
+	156: {
+		Flex_state: uint16(102),
+	},
+	157: {
+		Flex_state: uint16(102),
+	},
+	158: {
+		Flex_state: uint16(7),
+	},
+	159: {
+		Flex_state: uint16(102),
+	},
+	160: {
+		Flex_state: uint16(102),
+	},
+	161: {
+		Flex_state: uint16(7),
+	},
+	162: {
+		Flex_state: uint16(102),
+	},
+	163: {
+		Flex_state: uint16(14),
+	},
+	164: {
+		Flex_state: uint16(14),
+	},
+	165: {
+		Flex_state: uint16(14),
+	},
+	166: {
+		Flex_state: uint16(14),
+	},
+	167: {
+		Flex_state: uint16(14),
+	},
+	168: {
+		Flex_state: uint16(14),
+	},
+	169: {
+		Flex_state: uint16(43),
+	},
+	170: {
+		Flex_state: uint16(43),
+	},
+	171: {
+		Flex_state: uint16(20),
+	},
+	172: {
+		Flex_state: uint16(20),
+	},
+	173: {
+		Flex_state: uint16(20),
+	},
+	174: {
+		Flex_state: uint16(20),
+	},
+	175: {
+		Flex_state: uint16(20),
+	},
+	176: {
+		Flex_state: uint16(23),
+	},
+	177: {
+		Flex_state: uint16(14),
+	},
+	178: {
+		Flex_state: uint16(23),
+	},
+	179: {
+		Flex_state: uint16(23),
+	},
+	180: {
+		Flex_state: uint16(20),
+	},
+	181: {
+		Flex_state: uint16(14),
+	},
+	182: {
+		Flex_state: uint16(14),
+	},
+	183: {
+		Flex_state: uint16(14),
+	},
+	184: {
+		Flex_state: uint16(14),
+	},
+	185: {
+		Flex_state: uint16(14),
+	},
+	186: {
+		Flex_state: uint16(14),
+	},
+	187: {
+		Flex_state: uint16(14),
+	},
+	188: {
+		Flex_state: uint16(20),
+	},
+	189: {
+		Flex_state: uint16(20),
+	},
+	190: {
+		Flex_state: uint16(23),
+	},
+	191: {
+		Flex_state: uint16(20),
+	},
+	192: {
+		Flex_state: uint16(23),
+	},
+	193: {
+		Flex_state: uint16(23),
+	},
+	194: {
+		Flex_state: uint16(23),
+	},
+	195: {
+		Flex_state: uint16(104),
+	},
+	196: {
+		Flex_state: uint16(43),
+	},
+	197: {
+		Flex_state: uint16(46),
+	},
+	198: {
+		Flex_state: uint16(9),
+	},
+	199: {
+		Flex_state: uint16(104),
+	},
+	200: {
+		Flex_state: uint16(14),
+	},
+	201: {
+		Flex_state: uint16(43),
+	},
+	202: {
+		Flex_state: uint16(46),
+	},
+	203: {
+		Flex_state: uint16(46),
+	},
+	204: {
+		Flex_state: uint16(23),
+	},
+	205: {
+		Flex_state: uint16(23),
+	},
+	206: {
+		Flex_state: uint16(23),
+	},
+	207: {
+		Flex_state: uint16(102),
+	},
+	208: {
+		Flex_state: uint16(102),
+	},
+	209: {
+		Flex_state: uint16(102),
+	},
+	210: {
+		Flex_state: uint16(43),
+	},
+	211: {
+		Flex_state: uint16(102),
+	},
+	212: {
+		Flex_state: uint16(102),
+	},
+	213: {
+		Flex_state: uint16(9),
+	},
+	214: {
+		Flex_state: uint16(9),
+	},
+	215: {
+		Flex_state: uint16(102),
+	},
+	216: {
+		Flex_state: uint16(14),
+	},
+	217: {
+		Flex_state: uint16(46),
+	},
+	218: {
+		Flex_state: uint16(23),
+	},
+	219: {
+		Flex_state: uint16(46),
+	},
+	220: {
+		Flex_state: uint16(102),
+	},
+	221: {
+		Flex_state: uint16(23),
+	},
+	222: {
+		Flex_state: uint16(14),
+	},
+	223: {
+		Flex_state: uint16(46),
+	},
+	224: {
+		Flex_state: uint16(104),
+	},
+	225: {
+		Flex_state: uint16(102),
+	},
+	226: {
+		Flex_state: uint16(102),
+	},
+	227: {
+		Flex_state: uint16(102),
+	},
+	228: {
+		Flex_state: uint16(33),
+	},
+	229: {
+		Flex_state: uint16(102),
+	},
+	230: {
+		Flex_state: uint16(14),
+	},
+	231: {
+		Flex_state: uint16(14),
+	},
+	232: {
+		Flex_state: uint16(14),
+	},
+	233: {
+		Flex_state: uint16(104),
+	},
+	234: {
+		Flex_state: uint16(102),
+	},
+	235: {
+		Flex_state: uint16(102),
+	},
+	236: {
+		Flex_state: uint16(46),
+	},
+	237: {
+		Flex_state: uint16(102),
+	},
+	238: {
+		Flex_state: uint16(102),
+	},
+	239: {
+		Flex_state: uint16(102),
+	},
+	240: {
+		Flex_state: uint16(102),
+	},
+	241: {
+		Flex_state: uint16(102),
+	},
+	242: {
+		Flex_state: uint16(14),
+	},
+	243: {
+		Flex_state: uint16(102),
+	},
+	244: {
+		Flex_state: uint16(102),
+	},
+	245: {
+		Flex_state: uint16(102),
+	},
+	246: {
+		Flex_state: uint16(14),
+	},
+	247: {
+		Flex_state: uint16(102),
+	},
+	248: {
+		Flex_state: uint16(55),
+	},
+	249: {
+		Flex_state: uint16(102),
+	},
+	250: {
+		Flex_state: uint16(46),
+	},
+	251: {
+		Flex_state: uint16(102),
+	},
+	252: {
+		Flex_state: uint16(102),
+	},
+	253: {
+		Flex_state: uint16(102),
+	},
+	254: {
+		Flex_state: uint16(102),
+	},
+	255: {
+		Flex_state: uint16(102),
+	},
+	256: {
+		Flex_state: uint16(23),
+	},
+	257: {
+		Flex_state: uint16(102),
+	},
+	258: {
+		Flex_state: uint16(23),
+	},
+	259: {
+		Flex_state: uint16(14),
+	},
+	260: {
+		Flex_state: uint16(102),
+	},
+	261: {
+		Flex_state: uint16(102),
+	},
+	262: {
+		Flex_state: uint16(102),
+	},
+	263: {
+		Flex_state: uint16(102),
+	},
+	264: {
+		Flex_state: uint16(102),
+	},
+	265: {
+		Flex_state: uint16(14),
+	},
+	266: {
+		Flex_state: uint16(102),
+	},
+	267: {
+		Flex_state: uint16(102),
+	},
+	268: {
+		Flex_state: uint16(102),
+	},
+	269: {
+		Flex_state: uint16(102),
+	},
+	270: {
+		Flex_state: uint16(102),
+	},
+	271: {
+		Flex_state: uint16(102),
+	},
+	272: {
+		Flex_state: uint16(102),
+	},
+	273: {
+		Flex_state: uint16(102),
+	},
+	274: {
+		Flex_state: uint16(102),
+	},
+	275: {
+		Flex_state: uint16(102),
+	},
+	276: {
+		Flex_state: uint16(9),
+	},
+	277: {
+		Flex_state: uint16(102),
+	},
+	278: {
+		Flex_state: uint16(102),
+	},
+	279: {
+		Flex_state: uint16(102),
+	},
+	280: {
+		Flex_state: uint16(102),
+	},
+	281: {
+		Flex_state: uint16(102),
+	},
+	282: {
+		Flex_state: uint16(102),
+	},
+	283: {
+		Flex_state: uint16(102),
+	},
+	284: {
+		Flex_state: uint16(102),
+	},
+	285: {
+		Flex_state: uint16(102),
+	},
+	286: {
+		Flex_state: uint16(14),
+	},
+	287: {
+		Flex_state: uint16(53),
+	},
+	288: {
+		Flex_state: uint16(102),
+	},
+	289: {
+		Flex_state: uint16(102),
+	},
+	290: {
+		Flex_state: uint16(102),
+	},
+	291: {
+		Flex_state: uint16(102),
+	},
+	292: {
+		Flex_state: uint16(102),
+	},
+	293: {
+		Flex_state: uint16(102),
+	},
+	294: {
+		Flex_state: uint16(102),
+	},
+	295: {
+		Flex_state: uint16(102),
+	},
+	296: {
+		Flex_state: uint16(102),
+	},
+	297: {
+		Flex_state: uint16(102),
+	},
+	298: {
+		Flex_state: uint16(102),
+	},
+	299: {
+		Flex_state: uint16(102),
+	},
+	300: {
+		Flex_state: uint16(102),
+	},
+	301: {
+		Flex_state: uint16(14),
+	},
+	302: {
+		Flex_state: uint16(102),
+	},
+	303: {
+		Flex_state: uint16(102),
+	},
+	304: {
+		Flex_state: uint16(102),
+	},
+	305: {
+		Flex_state: uint16(102),
+	},
+	306: {
+		Flex_state: uint16(102),
+	},
+	307: {
+		Flex_state: uint16(102),
+	},
+	308: {
+		Flex_state: uint16(102),
+	},
+	309: {
+		Flex_state: uint16(14),
+	},
+	310: {
+		Flex_state: uint16(102),
+	},
+	311: {
+		Flex_state: uint16(102),
+	},
+	312: {
+		Flex_state: uint16(14),
+	},
+	313: {
+		Flex_state: uint16(102),
+	},
+	314: {
+		Flex_state: uint16(14),
+	},
+	315: {
+		Flex_state: uint16(14),
+	},
+	316: {
+		Flex_state: uint16(102),
+	},
+	317: {
+		Flex_state: uint16(102),
+	},
+	318: {
+		Flex_state: uint16(102),
+	},
+	319: {
+		Flex_state: uint16(102),
+	},
+	320: {
+		Flex_state: uint16(102),
+	},
+	321: {
+		Flex_state: uint16(102),
+	},
+	322: {
+		Flex_state: uint16(102),
+	},
+	323: {
+		Flex_state: uint16(102),
+	},
+	324: {
+		Flex_state: uint16(52),
+	},
+	325: {
+		Flex_state: uint16(102),
+	},
+	326: {
+		Flex_state: uint16(52),
+	},
+	327: {
+		Flex_state: uint16(102),
+	},
+	328: {
+		Flex_state: uint16(102),
+	},
+	329: {
+		Flex_state: uint16(102),
+	},
+	330: {
+		Flex_state: uint16(102),
+	},
+	331: {
+		Flex_state: uint16(102),
+	},
+	332: {
+		Flex_state: uint16(46),
+	},
+	333: {
+		Flex_state: uint16(102),
+	},
+	334: {
+		Flex_state: uint16(52),
+	},
+	335: {
+		Flex_state: uint16(14),
+	},
+	336: {
+		Flex_state: uint16(102),
+	},
+	337: {
+		Flex_state: uint16(102),
+	},
+	338: {
+		Flex_state: uint16(51),
+	},
+	339: {
+		Flex_state: uint16(14),
+	},
+	340: {
+		Flex_state: uint16(102),
+	},
+	341: {
+		Flex_state: uint16(102),
+	},
+	342: {
+		Flex_state: uint16(102),
+	},
+	343: {
+		Flex_state: uint16(9),
+	},
+	344: {
+		Flex_state: uint16(46),
+	},
+	345: {
+		Flex_state: uint16(102),
+	},
+	346: {
+		Flex_state: uint16(52),
+	},
+	347: {
+		Flex_state: uint16(102),
+	},
+	348: {
+		Flex_state: uint16(102),
+	},
+	349: {
+		Flex_state: uint16(52),
+	},
+	350: {
+		Flex_state: uint16(102),
+	},
+	351: {
+		Flex_state: uint16(52),
+	},
+	352: {
+		Flex_state: uint16(52),
+	},
+	353: {
+		Flex_state: uint16(102),
+	},
+	354: {
+		Flex_state: uint16(102),
+	},
+	355: {
+		Flex_state: uint16(102),
+	},
+	356: {
+		Flex_state: uint16(102),
+	},
+	357: {
+		Flex_state: uint16(102),
+	},
+	358: {
+		Flex_state: uint16(102),
+	},
+	359: {
+		Flex_state: uint16(102),
+	},
+	360: {
+		Flex_state: uint16(46),
+	},
+	361: {
+		Flex_state: uint16(14),
+	},
+	362: {
+		Flex_state: uint16(9),
+	},
+	363: {
+		Flex_state: uint16(14),
+	},
+	364: {
+		Flex_state: uint16(14),
+	},
+	365: {
+		Flex_state: uint16(102),
+	},
+	366: {
+		Flex_state: uint16(14),
+	},
+	367: {
+		Flex_state: uint16(53),
+	},
+	368: {
+		Flex_state: uint16(102),
+	},
+	369: {
+		Flex_state: uint16(102),
+	},
+	370: {
+		Flex_state: uint16(102),
+	},
+	371: {
+		Flex_state: uint16(102),
+	},
+	372: {
+		Flex_state: uint16(102),
+	},
+	373: {
+		Flex_state: uint16(102),
+	},
+	374: {
+		Flex_state: uint16(102),
+	},
+	375: {
+		Flex_state: uint16(102),
+	},
+	376: {
+		Flex_state: uint16(102),
+	},
+	377: {
+		Flex_state: uint16(102),
+	},
+	378: {
+		Flex_state: uint16(102),
+	},
+	379: {
+		Flex_state: uint16(102),
+	},
+	380: {
+		Flex_state: uint16(102),
+	},
+	381: {
+		Flex_state: uint16(102),
+	},
+	382: {
+		Flex_state: uint16(52),
+	},
+	383: {
+		Flex_state: uint16(14),
+	},
+	384: {
+		Flex_state: uint16(102),
+	},
+	385: {
+		Flex_state: uint16(102),
+	},
+	386: {
+		Flex_state: uint16(14),
+	},
+	387: {
+		Flex_state: uint16(102),
+	},
+	388: {
+		Flex_state: uint16(102),
+	},
+	389: {
+		Flex_state: uint16(102),
+	},
+	390: {
+		Flex_state: uint16(-libc.Int32FromInt32(1)),
+	},
+}
+
+var ts_parse_table = [2][218]uint16_t{
+	0: {
+		0:   uint16(1),
+		1:   uint16(1),
+		3:   uint16(1),
+		5:   uint16(1),
+		6:   uint16(1),
+		7:   uint16(1),
+		8:   uint16(1),
+		10:  uint16(1),
+		11:  uint16(1),
+		12:  uint16(1),
+		13:  uint16(1),
+		14:  uint16(1),
+		15:  uint16(1),
+		16:  uint16(1),
+		17:  uint16(1),
+		18:  uint16(1),
+		19:  uint16(1),
+		20:  uint16(1),
+		21:  uint16(1),
+		22:  uint16(1),
+		23:  uint16(1),
+		24:  uint16(1),
+		25:  uint16(1),
+		26:  uint16(1),
+		28:  uint16(1),
+		29:  uint16(1),
+		30:  uint16(1),
+		31:  uint16(1),
+		32:  uint16(1),
+		33:  uint16(1),
+		34:  uint16(1),
+		35:  uint16(1),
+		36:  uint16(1),
+		37:  uint16(1),
+		38:  uint16(1),
+		39:  uint16(1),
+		40:  uint16(1),
+		41:  uint16(1),
+		42:  uint16(1),
+		43:  uint16(1),
+		44:  uint16(1),
+		45:  uint16(1),
+		46:  uint16(1),
+		47:  uint16(1),
+		48:  uint16(1),
+		49:  uint16(1),
+		51:  uint16(1),
+		52:  uint16(1),
+		53:  uint16(1),
+		54:  uint16(1),
+		55:  uint16(1),
+		56:  uint16(1),
+		57:  uint16(1),
+		58:  uint16(1),
+		59:  uint16(1),
+		61:  uint16(1),
+		62:  uint16(1),
+		63:  uint16(1),
+		64:  uint16(1),
+		65:  uint16(1),
+		66:  uint16(1),
+		67:  uint16(1),
+		68:  uint16(1),
+		69:  uint16(1),
+		70:  uint16(1),
+		71:  uint16(1),
+		72:  uint16(1),
+		75:  uint16(1),
+		78:  uint16(1),
+		79:  uint16(1),
+		80:  uint16(1),
+		81:  uint16(1),
+		82:  uint16(1),
+		83:  uint16(1),
+		84:  uint16(1),
+		85:  uint16(1),
+		86:  uint16(1),
+		87:  uint16(1),
+		88:  uint16(1),
+		89:  uint16(1),
+		90:  uint16(1),
+		91:  uint16(1),
+		92:  uint16(1),
+		93:  uint16(1),
+		95:  uint16(1),
+		97:  uint16(1),
+		98:  uint16(1),
+		99:  uint16(1),
+		100: uint16(1),
+		101: uint16(1),
+		102: uint16(1),
+		103: uint16(1),
+		104: uint16(1),
+		105: uint16(1),
+		106: uint16(1),
+		107: uint16(1),
+		108: uint16(1),
+		109: uint16(1),
+		110: uint16(1),
+		111: uint16(1),
+		112: uint16(1),
+		113: uint16(1),
+		114: uint16(1),
+		117: uint16(3),
+		118: uint16(5),
+		119: uint16(1),
+	},
+	1: {
+		0:   uint16(7),
+		2:   uint16(5),
+		3:   uint16(9),
+		117: uint16(11),
+		118: uint16(5),
+		121: uint16(375),
+		122: uint16(233),
+		207: uint16(1),
+		209: uint16(199),
+	},
+}
+
+var ts_small_parse_table = [12841]uint16_t{
+	0:     uint16(37),
+	1:     uint16(3),
+	2:     uint16(1),
+	3:     uint16(aux_sym_comment_token1),
+	4:     uint16(13),
+	5:     uint16(1),
+	6:     uint16(sym_identifier),
+	7:     uint16(15),
+	8:     uint16(1),
+	9:     uint16(anon_sym_STAR_SLASH),
+	10:    uint16(17),
+	11:    uint16(1),
+	12:    uint16(anon_sym_COLON),
+	13:    uint16(19),
+	14:    uint16(1),
+	15:    uint16(anon_sym_re2c2),
+	16:    uint16(21),
+	17:    uint16(1),
+	18:    uint16(anon_sym_DOT),
+	19:    uint16(23),
+	20:    uint16(1),
+	21:    uint16(anon_sym_LT),
+	22:    uint16(25),
+	23:    uint16(1),
+	24:    uint16(anon_sym_STAR),
+	25:    uint16(27),
+	26:    uint16(1),
+	27:    uint16(anon_sym_DOLLAR),
+	28:    uint16(29),
+	29:    uint16(1),
+	30:    uint16(anon_sym_BANGuse),
+	31:    uint16(31),
+	32:    uint16(1),
+	33:    uint16(anon_sym_BANGinclude),
+	34:    uint16(33),
+	35:    uint16(1),
+	36:    uint16(anon_sym_LPAREN),
+	37:    uint16(35),
+	38:    uint16(1),
+	39:    uint16(anon_sym_LBRACK),
+	40:    uint16(37),
+	41:    uint16(1),
+	42:    uint16(aux_sym_dstring_token1),
+	43:    uint16(39),
+	44:    uint16(1),
+	45:    uint16(aux_sym_sstring_token1),
+	46:    uint16(41),
+	47:    uint16(1),
+	48:    uint16(anon_sym_AT2),
+	49:    uint16(43),
+	50:    uint16(1),
+	51:    uint16(anon_sym_POUND),
+	52:    uint16(45),
+	53:    uint16(1),
+	54:    uint16(aux_sym_comment_token2),
+	55:    uint16(2),
+	56:    uint16(1),
+	57:    uint16(sym_comment),
+	58:    uint16(9),
+	59:    uint16(1),
+	60:    uint16(aux_sym_body_repeat1),
+	61:    uint16(16),
+	62:    uint16(1),
+	63:    uint16(sym_condition),
+	64:    uint16(58),
+	65:    uint16(1),
+	66:    uint16(aux_sym_alternation_repeat1),
+	67:    uint16(71),
+	68:    uint16(1),
+	69:    uint16(sym__cat_expr),
+	70:    uint16(76),
+	71:    uint16(1),
+	72:    uint16(sym__atom),
+	73:    uint16(136),
+	74:    uint16(1),
+	75:    uint16(sym_repetition),
+	76:    uint16(178),
+	77:    uint16(1),
+	78:    uint16(sym_concat),
+	79:    uint16(193),
+	80:    uint16(1),
+	81:    uint16(sym_alternation),
+	82:    uint16(204),
+	83:    uint16(1),
+	84:    uint16(sym__alt_expr),
+	85:    uint16(219),
+	86:    uint16(1),
+	87:    uint16(sym_lookahead),
+	88:    uint16(236),
+	89:    uint16(1),
+	90:    uint16(sym_regex),
+	91:    uint16(253),
+	92:    uint16(1),
+	93:    uint16(sym_pattern),
+	94:    uint16(258),
+	95:    uint16(1),
+	96:    uint16(sym__pattern_expr),
+	97:    uint16(331),
+	98:    uint16(1),
+	99:    uint16(sym__branch),
+	100:   uint16(350),
+	101:   uint16(1),
+	102:   uint16(sym_body),
+	103:   uint16(176),
+	104:   uint16(2),
+	105:   uint16(sym_difference),
+	106:   uint16(sym__dif_expr),
+	107:   uint16(112),
+	108:   uint16(7),
+	109:   uint16(sym_parenthesized),
+	110:   uint16(sym_character_class),
+	111:   uint16(sym_wildcard),
+	112:   uint16(sym_dstring),
+	113:   uint16(sym_sstring),
+	114:   uint16(sym_stag),
+	115:   uint16(sym_mtag),
+	116:   uint16(146),
+	117:   uint16(7),
+	118:   uint16(sym_named_definition),
+	119:   uint16(sym_configuration),
+	120:   uint16(sym_ordinary_rule),
+	121:   uint16(sym_conditional_rule),
+	122:   uint16(sym_use),
+	123:   uint16(sym_include),
+	124:   uint16(sym_linedir),
+	125:   uint16(37),
+	126:   uint16(3),
+	127:   uint16(1),
+	128:   uint16(aux_sym_comment_token1),
+	129:   uint16(13),
+	130:   uint16(1),
+	131:   uint16(sym_identifier),
+	132:   uint16(19),
+	133:   uint16(1),
+	134:   uint16(anon_sym_re2c2),
+	135:   uint16(21),
+	136:   uint16(1),
+	137:   uint16(anon_sym_DOT),
+	138:   uint16(23),
+	139:   uint16(1),
+	140:   uint16(anon_sym_LT),
+	141:   uint16(25),
+	142:   uint16(1),
+	143:   uint16(anon_sym_STAR),
+	144:   uint16(27),
+	145:   uint16(1),
+	146:   uint16(anon_sym_DOLLAR),
+	147:   uint16(29),
+	148:   uint16(1),
+	149:   uint16(anon_sym_BANGuse),
+	150:   uint16(31),
+	151:   uint16(1),
+	152:   uint16(anon_sym_BANGinclude),
+	153:   uint16(33),
+	154:   uint16(1),
+	155:   uint16(anon_sym_LPAREN),
+	156:   uint16(35),
+	157:   uint16(1),
+	158:   uint16(anon_sym_LBRACK),
+	159:   uint16(37),
+	160:   uint16(1),
+	161:   uint16(aux_sym_dstring_token1),
+	162:   uint16(39),
+	163:   uint16(1),
+	164:   uint16(aux_sym_sstring_token1),
+	165:   uint16(41),
+	166:   uint16(1),
+	167:   uint16(anon_sym_AT2),
+	168:   uint16(43),
+	169:   uint16(1),
+	170:   uint16(anon_sym_POUND),
+	171:   uint16(45),
+	172:   uint16(1),
+	173:   uint16(aux_sym_comment_token2),
+	174:   uint16(47),
+	175:   uint16(1),
+	176:   uint16(anon_sym_STAR_SLASH),
+	177:   uint16(49),
+	178:   uint16(1),
+	179:   uint16(anon_sym_COLON),
+	180:   uint16(3),
+	181:   uint16(1),
+	182:   uint16(sym_comment),
+	183:   uint16(9),
+	184:   uint16(1),
+	185:   uint16(aux_sym_body_repeat1),
+	186:   uint16(16),
+	187:   uint16(1),
+	188:   uint16(sym_condition),
+	189:   uint16(58),
+	190:   uint16(1),
+	191:   uint16(aux_sym_alternation_repeat1),
+	192:   uint16(71),
+	193:   uint16(1),
+	194:   uint16(sym__cat_expr),
+	195:   uint16(76),
+	196:   uint16(1),
+	197:   uint16(sym__atom),
+	198:   uint16(136),
+	199:   uint16(1),
+	200:   uint16(sym_repetition),
+	201:   uint16(178),
+	202:   uint16(1),
+	203:   uint16(sym_concat),
+	204:   uint16(193),
+	205:   uint16(1),
+	206:   uint16(sym_alternation),
+	207:   uint16(204),
+	208:   uint16(1),
+	209:   uint16(sym__alt_expr),
+	210:   uint16(219),
+	211:   uint16(1),
+	212:   uint16(sym_lookahead),
+	213:   uint16(236),
+	214:   uint16(1),
+	215:   uint16(sym_regex),
+	216:   uint16(253),
+	217:   uint16(1),
+	218:   uint16(sym_pattern),
+	219:   uint16(258),
+	220:   uint16(1),
+	221:   uint16(sym__pattern_expr),
+	222:   uint16(331),
+	223:   uint16(1),
+	224:   uint16(sym__branch),
+	225:   uint16(348),
+	226:   uint16(1),
+	227:   uint16(sym_body),
+	228:   uint16(176),
+	229:   uint16(2),
+	230:   uint16(sym_difference),
+	231:   uint16(sym__dif_expr),
+	232:   uint16(112),
+	233:   uint16(7),
+	234:   uint16(sym_parenthesized),
+	235:   uint16(sym_character_class),
+	236:   uint16(sym_wildcard),
+	237:   uint16(sym_dstring),
+	238:   uint16(sym_sstring),
+	239:   uint16(sym_stag),
+	240:   uint16(sym_mtag),
+	241:   uint16(146),
+	242:   uint16(7),
+	243:   uint16(sym_named_definition),
+	244:   uint16(sym_configuration),
+	245:   uint16(sym_ordinary_rule),
+	246:   uint16(sym_conditional_rule),
+	247:   uint16(sym_use),
+	248:   uint16(sym_include),
+	249:   uint16(sym_linedir),
+	250:   uint16(37),
+	251:   uint16(3),
+	252:   uint16(1),
+	253:   uint16(aux_sym_comment_token1),
+	254:   uint16(13),
+	255:   uint16(1),
+	256:   uint16(sym_identifier),
+	257:   uint16(19),
+	258:   uint16(1),
+	259:   uint16(anon_sym_re2c2),
+	260:   uint16(21),
+	261:   uint16(1),
+	262:   uint16(anon_sym_DOT),
+	263:   uint16(23),
+	264:   uint16(1),
+	265:   uint16(anon_sym_LT),
+	266:   uint16(25),
+	267:   uint16(1),
+	268:   uint16(anon_sym_STAR),
+	269:   uint16(27),
+	270:   uint16(1),
+	271:   uint16(anon_sym_DOLLAR),
+	272:   uint16(29),
+	273:   uint16(1),
+	274:   uint16(anon_sym_BANGuse),
+	275:   uint16(31),
+	276:   uint16(1),
+	277:   uint16(anon_sym_BANGinclude),
+	278:   uint16(33),
+	279:   uint16(1),
+	280:   uint16(anon_sym_LPAREN),
+	281:   uint16(35),
+	282:   uint16(1),
+	283:   uint16(anon_sym_LBRACK),
+	284:   uint16(37),
+	285:   uint16(1),
+	286:   uint16(aux_sym_dstring_token1),
+	287:   uint16(39),
+	288:   uint16(1),
+	289:   uint16(aux_sym_sstring_token1),
+	290:   uint16(41),
+	291:   uint16(1),
+	292:   uint16(anon_sym_AT2),
+	293:   uint16(43),
+	294:   uint16(1),
+	295:   uint16(anon_sym_POUND),
+	296:   uint16(45),
+	297:   uint16(1),
+	298:   uint16(aux_sym_comment_token2),
+	299:   uint16(51),
+	300:   uint16(1),
+	301:   uint16(anon_sym_STAR_SLASH),
+	302:   uint16(53),
+	303:   uint16(1),
+	304:   uint16(anon_sym_COLON),
+	305:   uint16(4),
+	306:   uint16(1),
+	307:   uint16(sym_comment),
+	308:   uint16(9),
+	309:   uint16(1),
+	310:   uint16(aux_sym_body_repeat1),
+	311:   uint16(16),
+	312:   uint16(1),
+	313:   uint16(sym_condition),
+	314:   uint16(58),
+	315:   uint16(1),
+	316:   uint16(aux_sym_alternation_repeat1),
+	317:   uint16(71),
+	318:   uint16(1),
+	319:   uint16(sym__cat_expr),
+	320:   uint16(76),
+	321:   uint16(1),
+	322:   uint16(sym__atom),
+	323:   uint16(136),
+	324:   uint16(1),
+	325:   uint16(sym_repetition),
+	326:   uint16(178),
+	327:   uint16(1),
+	328:   uint16(sym_concat),
+	329:   uint16(193),
+	330:   uint16(1),
+	331:   uint16(sym_alternation),
+	332:   uint16(204),
+	333:   uint16(1),
+	334:   uint16(sym__alt_expr),
+	335:   uint16(219),
+	336:   uint16(1),
+	337:   uint16(sym_lookahead),
+	338:   uint16(236),
+	339:   uint16(1),
+	340:   uint16(sym_regex),
+	341:   uint16(253),
+	342:   uint16(1),
+	343:   uint16(sym_pattern),
+	344:   uint16(258),
+	345:   uint16(1),
+	346:   uint16(sym__pattern_expr),
+	347:   uint16(331),
+	348:   uint16(1),
+	349:   uint16(sym__branch),
+	350:   uint16(341),
+	351:   uint16(1),
+	352:   uint16(sym_body),
+	353:   uint16(176),
+	354:   uint16(2),
+	355:   uint16(sym_difference),
+	356:   uint16(sym__dif_expr),
+	357:   uint16(112),
+	358:   uint16(7),
+	359:   uint16(sym_parenthesized),
+	360:   uint16(sym_character_class),
+	361:   uint16(sym_wildcard),
+	362:   uint16(sym_dstring),
+	363:   uint16(sym_sstring),
+	364:   uint16(sym_stag),
+	365:   uint16(sym_mtag),
+	366:   uint16(146),
+	367:   uint16(7),
+	368:   uint16(sym_named_definition),
+	369:   uint16(sym_configuration),
+	370:   uint16(sym_ordinary_rule),
+	371:   uint16(sym_conditional_rule),
+	372:   uint16(sym_use),
+	373:   uint16(sym_include),
+	374:   uint16(sym_linedir),
+	375:   uint16(36),
+	376:   uint16(3),
+	377:   uint16(1),
+	378:   uint16(aux_sym_comment_token1),
+	379:   uint16(13),
+	380:   uint16(1),
+	381:   uint16(sym_identifier),
+	382:   uint16(19),
+	383:   uint16(1),
+	384:   uint16(anon_sym_re2c2),
+	385:   uint16(21),
+	386:   uint16(1),
+	387:   uint16(anon_sym_DOT),
+	388:   uint16(23),
+	389:   uint16(1),
+	390:   uint16(anon_sym_LT),
+	391:   uint16(25),
+	392:   uint16(1),
+	393:   uint16(anon_sym_STAR),
+	394:   uint16(27),
+	395:   uint16(1),
+	396:   uint16(anon_sym_DOLLAR),
+	397:   uint16(29),
+	398:   uint16(1),
+	399:   uint16(anon_sym_BANGuse),
+	400:   uint16(31),
+	401:   uint16(1),
+	402:   uint16(anon_sym_BANGinclude),
+	403:   uint16(33),
+	404:   uint16(1),
+	405:   uint16(anon_sym_LPAREN),
+	406:   uint16(35),
+	407:   uint16(1),
+	408:   uint16(anon_sym_LBRACK),
+	409:   uint16(37),
+	410:   uint16(1),
+	411:   uint16(aux_sym_dstring_token1),
+	412:   uint16(39),
+	413:   uint16(1),
+	414:   uint16(aux_sym_sstring_token1),
+	415:   uint16(41),
+	416:   uint16(1),
+	417:   uint16(anon_sym_AT2),
+	418:   uint16(43),
+	419:   uint16(1),
+	420:   uint16(anon_sym_POUND),
+	421:   uint16(45),
+	422:   uint16(1),
+	423:   uint16(aux_sym_comment_token2),
+	424:   uint16(55),
+	425:   uint16(1),
+	426:   uint16(anon_sym_STAR_SLASH),
+	427:   uint16(5),
+	428:   uint16(1),
+	429:   uint16(sym_comment),
+	430:   uint16(9),
+	431:   uint16(1),
+	432:   uint16(aux_sym_body_repeat1),
+	433:   uint16(16),
+	434:   uint16(1),
+	435:   uint16(sym_condition),
+	436:   uint16(58),
+	437:   uint16(1),
+	438:   uint16(aux_sym_alternation_repeat1),
+	439:   uint16(71),
+	440:   uint16(1),
+	441:   uint16(sym__cat_expr),
+	442:   uint16(76),
+	443:   uint16(1),
+	444:   uint16(sym__atom),
+	445:   uint16(136),
+	446:   uint16(1),
+	447:   uint16(sym_repetition),
+	448:   uint16(178),
+	449:   uint16(1),
+	450:   uint16(sym_concat),
+	451:   uint16(193),
+	452:   uint16(1),
+	453:   uint16(sym_alternation),
+	454:   uint16(204),
+	455:   uint16(1),
+	456:   uint16(sym__alt_expr),
+	457:   uint16(219),
+	458:   uint16(1),
+	459:   uint16(sym_lookahead),
+	460:   uint16(236),
+	461:   uint16(1),
+	462:   uint16(sym_regex),
+	463:   uint16(253),
+	464:   uint16(1),
+	465:   uint16(sym_pattern),
+	466:   uint16(258),
+	467:   uint16(1),
+	468:   uint16(sym__pattern_expr),
+	469:   uint16(283),
+	470:   uint16(1),
+	471:   uint16(sym_body),
+	472:   uint16(331),
+	473:   uint16(1),
+	474:   uint16(sym__branch),
+	475:   uint16(176),
+	476:   uint16(2),
+	477:   uint16(sym_difference),
+	478:   uint16(sym__dif_expr),
+	479:   uint16(112),
+	480:   uint16(7),
+	481:   uint16(sym_parenthesized),
+	482:   uint16(sym_character_class),
+	483:   uint16(sym_wildcard),
+	484:   uint16(sym_dstring),
+	485:   uint16(sym_sstring),
+	486:   uint16(sym_stag),
+	487:   uint16(sym_mtag),
+	488:   uint16(146),
+	489:   uint16(7),
+	490:   uint16(sym_named_definition),
+	491:   uint16(sym_configuration),
+	492:   uint16(sym_ordinary_rule),
+	493:   uint16(sym_conditional_rule),
+	494:   uint16(sym_use),
+	495:   uint16(sym_include),
+	496:   uint16(sym_linedir),
+	497:   uint16(36),
+	498:   uint16(3),
+	499:   uint16(1),
+	500:   uint16(aux_sym_comment_token1),
+	501:   uint16(13),
+	502:   uint16(1),
+	503:   uint16(sym_identifier),
+	504:   uint16(19),
+	505:   uint16(1),
+	506:   uint16(anon_sym_re2c2),
+	507:   uint16(21),
+	508:   uint16(1),
+	509:   uint16(anon_sym_DOT),
+	510:   uint16(23),
+	511:   uint16(1),
+	512:   uint16(anon_sym_LT),
+	513:   uint16(25),
+	514:   uint16(1),
+	515:   uint16(anon_sym_STAR),
+	516:   uint16(27),
+	517:   uint16(1),
+	518:   uint16(anon_sym_DOLLAR),
+	519:   uint16(29),
+	520:   uint16(1),
+	521:   uint16(anon_sym_BANGuse),
+	522:   uint16(31),
+	523:   uint16(1),
+	524:   uint16(anon_sym_BANGinclude),
+	525:   uint16(33),
+	526:   uint16(1),
+	527:   uint16(anon_sym_LPAREN),
+	528:   uint16(35),
+	529:   uint16(1),
+	530:   uint16(anon_sym_LBRACK),
+	531:   uint16(37),
+	532:   uint16(1),
+	533:   uint16(aux_sym_dstring_token1),
+	534:   uint16(39),
+	535:   uint16(1),
+	536:   uint16(aux_sym_sstring_token1),
+	537:   uint16(41),
+	538:   uint16(1),
+	539:   uint16(anon_sym_AT2),
+	540:   uint16(43),
+	541:   uint16(1),
+	542:   uint16(anon_sym_POUND),
+	543:   uint16(45),
+	544:   uint16(1),
+	545:   uint16(aux_sym_comment_token2),
+	546:   uint16(57),
+	547:   uint16(1),
+	548:   uint16(anon_sym_STAR_SLASH),
+	549:   uint16(6),
+	550:   uint16(1),
+	551:   uint16(sym_comment),
+	552:   uint16(9),
+	553:   uint16(1),
+	554:   uint16(aux_sym_body_repeat1),
+	555:   uint16(16),
+	556:   uint16(1),
+	557:   uint16(sym_condition),
+	558:   uint16(58),
+	559:   uint16(1),
+	560:   uint16(aux_sym_alternation_repeat1),
+	561:   uint16(71),
+	562:   uint16(1),
+	563:   uint16(sym__cat_expr),
+	564:   uint16(76),
+	565:   uint16(1),
+	566:   uint16(sym__atom),
+	567:   uint16(136),
+	568:   uint16(1),
+	569:   uint16(sym_repetition),
+	570:   uint16(178),
+	571:   uint16(1),
+	572:   uint16(sym_concat),
+	573:   uint16(193),
+	574:   uint16(1),
+	575:   uint16(sym_alternation),
+	576:   uint16(204),
+	577:   uint16(1),
+	578:   uint16(sym__alt_expr),
+	579:   uint16(219),
+	580:   uint16(1),
+	581:   uint16(sym_lookahead),
+	582:   uint16(236),
+	583:   uint16(1),
+	584:   uint16(sym_regex),
+	585:   uint16(253),
+	586:   uint16(1),
+	587:   uint16(sym_pattern),
+	588:   uint16(258),
+	589:   uint16(1),
+	590:   uint16(sym__pattern_expr),
+	591:   uint16(307),
+	592:   uint16(1),
+	593:   uint16(sym_body),
+	594:   uint16(331),
+	595:   uint16(1),
+	596:   uint16(sym__branch),
+	597:   uint16(176),
+	598:   uint16(2),
+	599:   uint16(sym_difference),
+	600:   uint16(sym__dif_expr),
+	601:   uint16(112),
+	602:   uint16(7),
+	603:   uint16(sym_parenthesized),
+	604:   uint16(sym_character_class),
+	605:   uint16(sym_wildcard),
+	606:   uint16(sym_dstring),
+	607:   uint16(sym_sstring),
+	608:   uint16(sym_stag),
+	609:   uint16(sym_mtag),
+	610:   uint16(146),
+	611:   uint16(7),
+	612:   uint16(sym_named_definition),
+	613:   uint16(sym_configuration),
+	614:   uint16(sym_ordinary_rule),
+	615:   uint16(sym_conditional_rule),
+	616:   uint16(sym_use),
+	617:   uint16(sym_include),
+	618:   uint16(sym_linedir),
+	619:   uint16(36),
+	620:   uint16(3),
+	621:   uint16(1),
+	622:   uint16(aux_sym_comment_token1),
+	623:   uint16(13),
+	624:   uint16(1),
+	625:   uint16(sym_identifier),
+	626:   uint16(19),
+	627:   uint16(1),
+	628:   uint16(anon_sym_re2c2),
+	629:   uint16(21),
+	630:   uint16(1),
+	631:   uint16(anon_sym_DOT),
+	632:   uint16(23),
+	633:   uint16(1),
+	634:   uint16(anon_sym_LT),
+	635:   uint16(25),
+	636:   uint16(1),
+	637:   uint16(anon_sym_STAR),
+	638:   uint16(27),
+	639:   uint16(1),
+	640:   uint16(anon_sym_DOLLAR),
+	641:   uint16(29),
+	642:   uint16(1),
+	643:   uint16(anon_sym_BANGuse),
+	644:   uint16(31),
+	645:   uint16(1),
+	646:   uint16(anon_sym_BANGinclude),
+	647:   uint16(33),
+	648:   uint16(1),
+	649:   uint16(anon_sym_LPAREN),
+	650:   uint16(35),
+	651:   uint16(1),
+	652:   uint16(anon_sym_LBRACK),
+	653:   uint16(37),
+	654:   uint16(1),
+	655:   uint16(aux_sym_dstring_token1),
+	656:   uint16(39),
+	657:   uint16(1),
+	658:   uint16(aux_sym_sstring_token1),
+	659:   uint16(41),
+	660:   uint16(1),
+	661:   uint16(anon_sym_AT2),
+	662:   uint16(43),
+	663:   uint16(1),
+	664:   uint16(anon_sym_POUND),
+	665:   uint16(45),
+	666:   uint16(1),
+	667:   uint16(aux_sym_comment_token2),
+	668:   uint16(59),
+	669:   uint16(1),
+	670:   uint16(anon_sym_STAR_SLASH),
+	671:   uint16(7),
+	672:   uint16(1),
+	673:   uint16(sym_comment),
+	674:   uint16(9),
+	675:   uint16(1),
+	676:   uint16(aux_sym_body_repeat1),
+	677:   uint16(16),
+	678:   uint16(1),
+	679:   uint16(sym_condition),
+	680:   uint16(58),
+	681:   uint16(1),
+	682:   uint16(aux_sym_alternation_repeat1),
+	683:   uint16(71),
+	684:   uint16(1),
+	685:   uint16(sym__cat_expr),
+	686:   uint16(76),
+	687:   uint16(1),
+	688:   uint16(sym__atom),
+	689:   uint16(136),
+	690:   uint16(1),
+	691:   uint16(sym_repetition),
+	692:   uint16(178),
+	693:   uint16(1),
+	694:   uint16(sym_concat),
+	695:   uint16(193),
+	696:   uint16(1),
+	697:   uint16(sym_alternation),
+	698:   uint16(204),
+	699:   uint16(1),
+	700:   uint16(sym__alt_expr),
+	701:   uint16(219),
+	702:   uint16(1),
+	703:   uint16(sym_lookahead),
+	704:   uint16(236),
+	705:   uint16(1),
+	706:   uint16(sym_regex),
+	707:   uint16(253),
+	708:   uint16(1),
+	709:   uint16(sym_pattern),
+	710:   uint16(258),
+	711:   uint16(1),
+	712:   uint16(sym__pattern_expr),
+	713:   uint16(282),
+	714:   uint16(1),
+	715:   uint16(sym_body),
+	716:   uint16(331),
+	717:   uint16(1),
+	718:   uint16(sym__branch),
+	719:   uint16(176),
+	720:   uint16(2),
+	721:   uint16(sym_difference),
+	722:   uint16(sym__dif_expr),
+	723:   uint16(112),
+	724:   uint16(7),
+	725:   uint16(sym_parenthesized),
+	726:   uint16(sym_character_class),
+	727:   uint16(sym_wildcard),
+	728:   uint16(sym_dstring),
+	729:   uint16(sym_sstring),
+	730:   uint16(sym_stag),
+	731:   uint16(sym_mtag),
+	732:   uint16(146),
+	733:   uint16(7),
+	734:   uint16(sym_named_definition),
+	735:   uint16(sym_configuration),
+	736:   uint16(sym_ordinary_rule),
+	737:   uint16(sym_conditional_rule),
+	738:   uint16(sym_use),
+	739:   uint16(sym_include),
+	740:   uint16(sym_linedir),
+	741:   uint16(34),
+	742:   uint16(3),
+	743:   uint16(1),
+	744:   uint16(aux_sym_comment_token1),
+	745:   uint16(45),
+	746:   uint16(1),
+	747:   uint16(aux_sym_comment_token2),
+	748:   uint16(61),
+	749:   uint16(1),
+	750:   uint16(sym_identifier),
+	751:   uint16(64),
+	752:   uint16(1),
+	753:   uint16(anon_sym_STAR_SLASH),
+	754:   uint16(66),
+	755:   uint16(1),
+	756:   uint16(anon_sym_re2c2),
+	757:   uint16(69),
+	758:   uint16(1),
+	759:   uint16(anon_sym_DOT),
+	760:   uint16(72),
+	761:   uint16(1),
+	762:   uint16(anon_sym_LT),
+	763:   uint16(75),
+	764:   uint16(1),
+	765:   uint16(anon_sym_STAR),
+	766:   uint16(78),
+	767:   uint16(1),
+	768:   uint16(anon_sym_DOLLAR),
+	769:   uint16(81),
+	770:   uint16(1),
+	771:   uint16(anon_sym_BANGuse),
+	772:   uint16(84),
+	773:   uint16(1),
+	774:   uint16(anon_sym_BANGinclude),
+	775:   uint16(87),
+	776:   uint16(1),
+	777:   uint16(anon_sym_LPAREN),
+	778:   uint16(90),
+	779:   uint16(1),
+	780:   uint16(anon_sym_LBRACK),
+	781:   uint16(93),
+	782:   uint16(1),
+	783:   uint16(aux_sym_dstring_token1),
+	784:   uint16(96),
+	785:   uint16(1),
+	786:   uint16(aux_sym_sstring_token1),
+	787:   uint16(99),
+	788:   uint16(1),
+	789:   uint16(anon_sym_AT2),
+	790:   uint16(102),
+	791:   uint16(1),
+	792:   uint16(anon_sym_POUND),
+	793:   uint16(16),
+	794:   uint16(1),
+	795:   uint16(sym_condition),
+	796:   uint16(58),
+	797:   uint16(1),
+	798:   uint16(aux_sym_alternation_repeat1),
+	799:   uint16(71),
+	800:   uint16(1),
+	801:   uint16(sym__cat_expr),
+	802:   uint16(76),
+	803:   uint16(1),
+	804:   uint16(sym__atom),
+	805:   uint16(136),
+	806:   uint16(1),
+	807:   uint16(sym_repetition),
+	808:   uint16(178),
+	809:   uint16(1),
+	810:   uint16(sym_concat),
+	811:   uint16(193),
+	812:   uint16(1),
+	813:   uint16(sym_alternation),
+	814:   uint16(204),
+	815:   uint16(1),
+	816:   uint16(sym__alt_expr),
+	817:   uint16(219),
+	818:   uint16(1),
+	819:   uint16(sym_lookahead),
+	820:   uint16(236),
+	821:   uint16(1),
+	822:   uint16(sym_regex),
+	823:   uint16(253),
+	824:   uint16(1),
+	825:   uint16(sym_pattern),
+	826:   uint16(258),
+	827:   uint16(1),
+	828:   uint16(sym__pattern_expr),
+	829:   uint16(331),
+	830:   uint16(1),
+	831:   uint16(sym__branch),
+	832:   uint16(8),
+	833:   uint16(2),
+	834:   uint16(sym_comment),
+	835:   uint16(aux_sym_body_repeat1),
+	836:   uint16(176),
+	837:   uint16(2),
+	838:   uint16(sym_difference),
+	839:   uint16(sym__dif_expr),
+	840:   uint16(112),
+	841:   uint16(7),
+	842:   uint16(sym_parenthesized),
+	843:   uint16(sym_character_class),
+	844:   uint16(sym_wildcard),
+	845:   uint16(sym_dstring),
+	846:   uint16(sym_sstring),
+	847:   uint16(sym_stag),
+	848:   uint16(sym_mtag),
+	849:   uint16(146),
+	850:   uint16(7),
+	851:   uint16(sym_named_definition),
+	852:   uint16(sym_configuration),
+	853:   uint16(sym_ordinary_rule),
+	854:   uint16(sym_conditional_rule),
+	855:   uint16(sym_use),
+	856:   uint16(sym_include),
+	857:   uint16(sym_linedir),
+	858:   uint16(35),
+	859:   uint16(3),
+	860:   uint16(1),
+	861:   uint16(aux_sym_comment_token1),
+	862:   uint16(13),
+	863:   uint16(1),
+	864:   uint16(sym_identifier),
+	865:   uint16(19),
+	866:   uint16(1),
+	867:   uint16(anon_sym_re2c2),
+	868:   uint16(21),
+	869:   uint16(1),
+	870:   uint16(anon_sym_DOT),
+	871:   uint16(23),
+	872:   uint16(1),
+	873:   uint16(anon_sym_LT),
+	874:   uint16(25),
+	875:   uint16(1),
+	876:   uint16(anon_sym_STAR),
+	877:   uint16(27),
+	878:   uint16(1),
+	879:   uint16(anon_sym_DOLLAR),
+	880:   uint16(29),
+	881:   uint16(1),
+	882:   uint16(anon_sym_BANGuse),
+	883:   uint16(31),
+	884:   uint16(1),
+	885:   uint16(anon_sym_BANGinclude),
+	886:   uint16(33),
+	887:   uint16(1),
+	888:   uint16(anon_sym_LPAREN),
+	889:   uint16(35),
+	890:   uint16(1),
+	891:   uint16(anon_sym_LBRACK),
+	892:   uint16(37),
+	893:   uint16(1),
+	894:   uint16(aux_sym_dstring_token1),
+	895:   uint16(39),
+	896:   uint16(1),
+	897:   uint16(aux_sym_sstring_token1),
+	898:   uint16(41),
+	899:   uint16(1),
+	900:   uint16(anon_sym_AT2),
+	901:   uint16(43),
+	902:   uint16(1),
+	903:   uint16(anon_sym_POUND),
+	904:   uint16(45),
+	905:   uint16(1),
+	906:   uint16(aux_sym_comment_token2),
+	907:   uint16(105),
+	908:   uint16(1),
+	909:   uint16(anon_sym_STAR_SLASH),
+	910:   uint16(8),
+	911:   uint16(1),
+	912:   uint16(aux_sym_body_repeat1),
+	913:   uint16(9),
+	914:   uint16(1),
+	915:   uint16(sym_comment),
+	916:   uint16(16),
+	917:   uint16(1),
+	918:   uint16(sym_condition),
+	919:   uint16(58),
+	920:   uint16(1),
+	921:   uint16(aux_sym_alternation_repeat1),
+	922:   uint16(71),
+	923:   uint16(1),
+	924:   uint16(sym__cat_expr),
+	925:   uint16(76),
+	926:   uint16(1),
+	927:   uint16(sym__atom),
+	928:   uint16(136),
+	929:   uint16(1),
+	930:   uint16(sym_repetition),
+	931:   uint16(178),
+	932:   uint16(1),
+	933:   uint16(sym_concat),
+	934:   uint16(193),
+	935:   uint16(1),
+	936:   uint16(sym_alternation),
+	937:   uint16(204),
+	938:   uint16(1),
+	939:   uint16(sym__alt_expr),
+	940:   uint16(219),
+	941:   uint16(1),
+	942:   uint16(sym_lookahead),
+	943:   uint16(236),
+	944:   uint16(1),
+	945:   uint16(sym_regex),
+	946:   uint16(253),
+	947:   uint16(1),
+	948:   uint16(sym_pattern),
+	949:   uint16(258),
+	950:   uint16(1),
+	951:   uint16(sym__pattern_expr),
+	952:   uint16(331),
+	953:   uint16(1),
+	954:   uint16(sym__branch),
+	955:   uint16(176),
+	956:   uint16(2),
+	957:   uint16(sym_difference),
+	958:   uint16(sym__dif_expr),
+	959:   uint16(112),
+	960:   uint16(7),
+	961:   uint16(sym_parenthesized),
+	962:   uint16(sym_character_class),
+	963:   uint16(sym_wildcard),
+	964:   uint16(sym_dstring),
+	965:   uint16(sym_sstring),
+	966:   uint16(sym_stag),
+	967:   uint16(sym_mtag),
+	968:   uint16(146),
+	969:   uint16(7),
+	970:   uint16(sym_named_definition),
+	971:   uint16(sym_configuration),
+	972:   uint16(sym_ordinary_rule),
+	973:   uint16(sym_conditional_rule),
+	974:   uint16(sym_use),
+	975:   uint16(sym_include),
+	976:   uint16(sym_linedir),
+	977:   uint16(24),
+	978:   uint16(3),
+	979:   uint16(1),
+	980:   uint16(aux_sym_comment_token1),
+	981:   uint16(45),
+	982:   uint16(1),
+	983:   uint16(aux_sym_comment_token2),
+	984:   uint16(107),
+	985:   uint16(1),
+	986:   uint16(anon_sym_header),
+	987:   uint16(109),
+	988:   uint16(1),
+	989:   uint16(anon_sym_flags),
+	990:   uint16(111),
+	991:   uint16(1),
+	992:   uint16(anon_sym_define),
+	993:   uint16(113),
+	994:   uint16(1),
+	995:   uint16(anon_sym_cond),
+	996:   uint16(115),
+	997:   uint16(1),
+	998:   uint16(anon_sym_label),
+	999:   uint16(117),
+	1000:  uint16(1),
+	1001:  uint16(anon_sym_variable),
+	1002:  uint16(119),
+	1003:  uint16(1),
+	1004:  uint16(anon_sym_yych),
+	1005:  uint16(121),
+	1006:  uint16(1),
+	1007:  uint16(anon_sym_state),
+	1008:  uint16(123),
+	1009:  uint16(1),
+	1010:  uint16(anon_sym_yybm),
+	1011:  uint16(125),
+	1012:  uint16(1),
+	1013:  uint16(anon_sym_cgoto),
+	1014:  uint16(127),
+	1015:  uint16(1),
+	1016:  uint16(anon_sym_api),
+	1017:  uint16(129),
+	1018:  uint16(1),
+	1019:  uint16(anon_sym_tags),
+	1020:  uint16(131),
+	1021:  uint16(1),
+	1022:  uint16(anon_sym_indent),
+	1023:  uint16(133),
+	1024:  uint16(1),
+	1025:  uint16(anon_sym_yyfill),
+	1026:  uint16(135),
+	1027:  uint16(1),
+	1028:  uint16(anon_sym_eof),
+	1029:  uint16(137),
+	1030:  uint16(1),
+	1031:  uint16(anon_sym_sentinel),
+	1032:  uint16(139),
+	1033:  uint16(1),
+	1034:  uint16(anon_sym_condprefix),
+	1035:  uint16(141),
+	1036:  uint16(1),
+	1037:  uint16(anon_sym_condenumprefix),
+	1038:  uint16(143),
+	1039:  uint16(1),
+	1040:  uint16(anon_sym_startlabel),
+	1041:  uint16(145),
+	1042:  uint16(1),
+	1043:  uint16(anon_sym_posix_DASHcaptures),
+	1044:  uint16(10),
+	1045:  uint16(1),
+	1046:  uint16(sym_comment),
+	1047:  uint16(279),
+	1048:  uint16(20),
+	1049:  uint16(sym_set_flags),
+	1050:  uint16(sym_define),
+	1051:  uint16(sym_set_cond),
+	1052:  uint16(sym_set_label),
+	1053:  uint16(sym_set_variable),
+	1054:  uint16(sym_set_yych),
+	1055:  uint16(sym_set_state),
+	1056:  uint16(sym_set_yybm),
+	1057:  uint16(sym_set_cgoto),
+	1058:  uint16(sym_set_api),
+	1059:  uint16(sym_set_tags),
+	1060:  uint16(sym_set_indent),
+	1061:  uint16(sym_set_yyfill),
+	1062:  uint16(sym_set_eof),
+	1063:  uint16(sym_set_sentinel),
+	1064:  uint16(sym_set_condprefix),
+	1065:  uint16(sym_set_condenumprefix),
+	1066:  uint16(sym_set_startlabel),
+	1067:  uint16(sym_set_posixcaptures),
+	1068:  uint16(sym_set_header),
+	1069:  uint16(16),
+	1070:  uint16(5),
+	1071:  uint16(1),
+	1072:  uint16(aux_sym_comment_token2),
+	1073:  uint16(11),
+	1074:  uint16(1),
+	1075:  uint16(aux_sym_comment_token1),
+	1076:  uint16(151),
+	1077:  uint16(1),
+	1078:  uint16(anon_sym_RBRACK),
+	1079:  uint16(153),
+	1080:  uint16(1),
+	1081:  uint16(aux_sym_range_token1),
+	1082:  uint16(155),
+	1083:  uint16(1),
+	1084:  uint16(aux_sym_literal_token1),
+	1085:  uint16(163),
+	1086:  uint16(1),
+	1087:  uint16(aux_sym__esc_oct_token2),
+	1088:  uint16(11),
+	1089:  uint16(1),
+	1090:  uint16(sym_comment),
+	1091:  uint16(118),
+	1092:  uint16(1),
+	1093:  uint16(aux_sym_character_class_repeat1),
+	1094:  uint16(155),
+	1095:  uint16(1),
+	1096:  uint16(sym_code_unit),
+	1097:  uint16(158),
+	1098:  uint16(1),
+	1099:  uint16(sym_range),
+	1100:  uint16(157),
+	1101:  uint16(2),
+	1102:  uint16(sym_quote),
+	1103:  uint16(sym_ctrl_code),
+	1104:  uint16(148),
+	1105:  uint16(2),
+	1106:  uint16(sym_literal),
+	1107:  uint16(sym__escape),
+	1108:  uint16(149),
+	1109:  uint16(4),
+	1110:  uint16(anon_sym_STAR2),
+	1111:  uint16(anon_sym_PLUS),
+	1112:  uint16(anon_sym_QMARK),
+	1113:  uint16(anon_sym_LBRACE2),
+	1114:  uint16(161),
+	1115:  uint16(4),
+	1116:  uint16(aux_sym__esc_hex_token5),
+	1117:  uint16(aux_sym__esc_hex_token6),
+	1118:  uint16(aux_sym__esc_hex_token7),
+	1119:  uint16(aux_sym__esc_hex_token8),
+	1120:  uint16(159),
+	1121:  uint16(5),
+	1122:  uint16(aux_sym__esc_hex_token1),
+	1123:  uint16(aux_sym__esc_hex_token2),
+	1124:  uint16(aux_sym__esc_hex_token3),
+	1125:  uint16(aux_sym__esc_hex_token4),
+	1126:  uint16(aux_sym__esc_oct_token1),
+	1127:  uint16(147),
+	1128:  uint16(14),
+	1129:  uint16(anon_sym_DOT),
+	1130:  uint16(anon_sym_EQ_GT),
+	1131:  uint16(anon_sym_COLON_EQ_GT),
+	1132:  uint16(anon_sym_LBRACE),
+	1133:  uint16(anon_sym_SLASH),
+	1134:  uint16(anon_sym_PIPE),
+	1135:  uint16(anon_sym_BSLASH),
+	1136:  uint16(anon_sym_LPAREN),
+	1137:  uint16(anon_sym_LBRACK),
+	1138:  uint16(aux_sym_dstring_token1),
+	1139:  uint16(aux_sym_sstring_token1),
+	1140:  uint16(anon_sym_AT2),
+	1141:  uint16(anon_sym_POUND),
+	1142:  uint16(sym_identifier),
+	1143:  uint16(16),
+	1144:  uint16(5),
+	1145:  uint16(1),
+	1146:  uint16(aux_sym_comment_token2),
+	1147:  uint16(11),
+	1148:  uint16(1),
+	1149:  uint16(aux_sym_comment_token1),
+	1150:  uint16(153),
+	1151:  uint16(1),
+	1152:  uint16(aux_sym_range_token1),
+	1153:  uint16(155),
+	1154:  uint16(1),
+	1155:  uint16(aux_sym_literal_token1),
+	1156:  uint16(163),
+	1157:  uint16(1),
+	1158:  uint16(aux_sym__esc_oct_token2),
+	1159:  uint16(169),
+	1160:  uint16(1),
+	1161:  uint16(anon_sym_RBRACK),
+	1162:  uint16(12),
+	1163:  uint16(1),
+	1164:  uint16(sym_comment),
+	1165:  uint16(126),
+	1166:  uint16(1),
+	1167:  uint16(aux_sym_character_class_repeat1),
+	1168:  uint16(155),
+	1169:  uint16(1),
+	1170:  uint16(sym_code_unit),
+	1171:  uint16(158),
+	1172:  uint16(1),
+	1173:  uint16(sym_range),
+	1174:  uint16(157),
+	1175:  uint16(2),
+	1176:  uint16(sym_quote),
+	1177:  uint16(sym_ctrl_code),
+	1178:  uint16(148),
+	1179:  uint16(2),
+	1180:  uint16(sym_literal),
+	1181:  uint16(sym__escape),
+	1182:  uint16(161),
+	1183:  uint16(4),
+	1184:  uint16(aux_sym__esc_hex_token5),
+	1185:  uint16(aux_sym__esc_hex_token6),
+	1186:  uint16(aux_sym__esc_hex_token7),
+	1187:  uint16(aux_sym__esc_hex_token8),
+	1188:  uint16(167),
+	1189:  uint16(4),
+	1190:  uint16(anon_sym_STAR2),
+	1191:  uint16(anon_sym_PLUS),
+	1192:  uint16(anon_sym_QMARK),
+	1193:  uint16(anon_sym_LBRACE2),
+	1194:  uint16(159),
+	1195:  uint16(5),
+	1196:  uint16(aux_sym__esc_hex_token1),
+	1197:  uint16(aux_sym__esc_hex_token2),
+	1198:  uint16(aux_sym__esc_hex_token3),
+	1199:  uint16(aux_sym__esc_hex_token4),
+	1200:  uint16(aux_sym__esc_oct_token1),
+	1201:  uint16(165),
+	1202:  uint16(14),
+	1203:  uint16(anon_sym_DOT),
+	1204:  uint16(anon_sym_EQ_GT),
+	1205:  uint16(anon_sym_COLON_EQ_GT),
+	1206:  uint16(anon_sym_LBRACE),
+	1207:  uint16(anon_sym_SLASH),
+	1208:  uint16(anon_sym_PIPE),
+	1209:  uint16(anon_sym_BSLASH),
+	1210:  uint16(anon_sym_LPAREN),
+	1211:  uint16(anon_sym_LBRACK),
+	1212:  uint16(aux_sym_dstring_token1),
+	1213:  uint16(aux_sym_sstring_token1),
+	1214:  uint16(anon_sym_AT2),
+	1215:  uint16(anon_sym_POUND),
+	1216:  uint16(sym_identifier),
+	1217:  uint16(16),
+	1218:  uint16(5),
+	1219:  uint16(1),
+	1220:  uint16(aux_sym_comment_token2),
+	1221:  uint16(11),
+	1222:  uint16(1),
+	1223:  uint16(aux_sym_comment_token1),
+	1224:  uint16(153),
+	1225:  uint16(1),
+	1226:  uint16(aux_sym_range_token1),
+	1227:  uint16(155),
+	1228:  uint16(1),
+	1229:  uint16(aux_sym_literal_token1),
+	1230:  uint16(163),
+	1231:  uint16(1),
+	1232:  uint16(aux_sym__esc_oct_token2),
+	1233:  uint16(169),
+	1234:  uint16(1),
+	1235:  uint16(anon_sym_RBRACK),
+	1236:  uint16(13),
+	1237:  uint16(1),
+	1238:  uint16(sym_comment),
+	1239:  uint16(126),
+	1240:  uint16(1),
+	1241:  uint16(aux_sym_character_class_repeat1),
+	1242:  uint16(155),
+	1243:  uint16(1),
+	1244:  uint16(sym_code_unit),
+	1245:  uint16(158),
+	1246:  uint16(1),
+	1247:  uint16(sym_range),
+	1248:  uint16(157),
+	1249:  uint16(2),
+	1250:  uint16(sym_quote),
+	1251:  uint16(sym_ctrl_code),
+	1252:  uint16(148),
+	1253:  uint16(2),
+	1254:  uint16(sym_literal),
+	1255:  uint16(sym__escape),
+	1256:  uint16(161),
+	1257:  uint16(4),
+	1258:  uint16(aux_sym__esc_hex_token5),
+	1259:  uint16(aux_sym__esc_hex_token6),
+	1260:  uint16(aux_sym__esc_hex_token7),
+	1261:  uint16(aux_sym__esc_hex_token8),
+	1262:  uint16(167),
+	1263:  uint16(4),
+	1264:  uint16(anon_sym_STAR2),
+	1265:  uint16(anon_sym_PLUS),
+	1266:  uint16(anon_sym_QMARK),
+	1267:  uint16(anon_sym_LBRACE2),
+	1268:  uint16(159),
+	1269:  uint16(5),
+	1270:  uint16(aux_sym__esc_hex_token1),
+	1271:  uint16(aux_sym__esc_hex_token2),
+	1272:  uint16(aux_sym__esc_hex_token3),
+	1273:  uint16(aux_sym__esc_hex_token4),
+	1274:  uint16(aux_sym__esc_oct_token1),
+	1275:  uint16(165),
+	1276:  uint16(13),
+	1277:  uint16(anon_sym_DOT),
+	1278:  uint16(anon_sym_EQ_GT),
+	1279:  uint16(anon_sym_COLON_EQ_GT),
+	1280:  uint16(anon_sym_LBRACE),
+	1281:  uint16(anon_sym_PIPE),
+	1282:  uint16(anon_sym_BSLASH),
+	1283:  uint16(anon_sym_LPAREN),
+	1284:  uint16(anon_sym_LBRACK),
+	1285:  uint16(aux_sym_dstring_token1),
+	1286:  uint16(aux_sym_sstring_token1),
+	1287:  uint16(anon_sym_AT2),
+	1288:  uint16(anon_sym_POUND),
+	1289:  uint16(sym_identifier),
+	1290:  uint16(16),
+	1291:  uint16(5),
+	1292:  uint16(1),
+	1293:  uint16(aux_sym_comment_token2),
+	1294:  uint16(11),
+	1295:  uint16(1),
+	1296:  uint16(aux_sym_comment_token1),
+	1297:  uint16(151),
+	1298:  uint16(1),
+	1299:  uint16(anon_sym_RBRACK),
+	1300:  uint16(153),
+	1301:  uint16(1),
+	1302:  uint16(aux_sym_range_token1),
+	1303:  uint16(155),
+	1304:  uint16(1),
+	1305:  uint16(aux_sym_literal_token1),
+	1306:  uint16(163),
+	1307:  uint16(1),
+	1308:  uint16(aux_sym__esc_oct_token2),
+	1309:  uint16(14),
+	1310:  uint16(1),
+	1311:  uint16(sym_comment),
+	1312:  uint16(118),
+	1313:  uint16(1),
+	1314:  uint16(aux_sym_character_class_repeat1),
+	1315:  uint16(155),
+	1316:  uint16(1),
+	1317:  uint16(sym_code_unit),
+	1318:  uint16(158),
+	1319:  uint16(1),
+	1320:  uint16(sym_range),
+	1321:  uint16(157),
+	1322:  uint16(2),
+	1323:  uint16(sym_quote),
+	1324:  uint16(sym_ctrl_code),
+	1325:  uint16(148),
+	1326:  uint16(2),
+	1327:  uint16(sym_literal),
+	1328:  uint16(sym__escape),
+	1329:  uint16(149),
+	1330:  uint16(4),
+	1331:  uint16(anon_sym_STAR2),
+	1332:  uint16(anon_sym_PLUS),
+	1333:  uint16(anon_sym_QMARK),
+	1334:  uint16(anon_sym_LBRACE2),
+	1335:  uint16(161),
+	1336:  uint16(4),
+	1337:  uint16(aux_sym__esc_hex_token5),
+	1338:  uint16(aux_sym__esc_hex_token6),
+	1339:  uint16(aux_sym__esc_hex_token7),
+	1340:  uint16(aux_sym__esc_hex_token8),
+	1341:  uint16(159),
+	1342:  uint16(5),
+	1343:  uint16(aux_sym__esc_hex_token1),
+	1344:  uint16(aux_sym__esc_hex_token2),
+	1345:  uint16(aux_sym__esc_hex_token3),
+	1346:  uint16(aux_sym__esc_hex_token4),
+	1347:  uint16(aux_sym__esc_oct_token1),
+	1348:  uint16(147),
+	1349:  uint16(13),
+	1350:  uint16(anon_sym_DOT),
+	1351:  uint16(anon_sym_EQ_GT),
+	1352:  uint16(anon_sym_COLON_EQ_GT),
+	1353:  uint16(anon_sym_LBRACE),
+	1354:  uint16(anon_sym_PIPE),
+	1355:  uint16(anon_sym_BSLASH),
+	1356:  uint16(anon_sym_LPAREN),
+	1357:  uint16(anon_sym_LBRACK),
+	1358:  uint16(aux_sym_dstring_token1),
+	1359:  uint16(aux_sym_sstring_token1),
+	1360:  uint16(anon_sym_AT2),
+	1361:  uint16(anon_sym_POUND),
+	1362:  uint16(sym_identifier),
+	1363:  uint16(16),
+	1364:  uint16(5),
+	1365:  uint16(1),
+	1366:  uint16(aux_sym_comment_token2),
+	1367:  uint16(11),
+	1368:  uint16(1),
+	1369:  uint16(aux_sym_comment_token1),
+	1370:  uint16(151),
+	1371:  uint16(1),
+	1372:  uint16(anon_sym_RBRACK),
+	1373:  uint16(153),
+	1374:  uint16(1),
+	1375:  uint16(aux_sym_range_token1),
+	1376:  uint16(155),
+	1377:  uint16(1),
+	1378:  uint16(aux_sym_literal_token1),
+	1379:  uint16(163),
+	1380:  uint16(1),
+	1381:  uint16(aux_sym__esc_oct_token2),
+	1382:  uint16(15),
+	1383:  uint16(1),
+	1384:  uint16(sym_comment),
+	1385:  uint16(118),
+	1386:  uint16(1),
+	1387:  uint16(aux_sym_character_class_repeat1),
+	1388:  uint16(155),
+	1389:  uint16(1),
+	1390:  uint16(sym_code_unit),
+	1391:  uint16(158),
+	1392:  uint16(1),
+	1393:  uint16(sym_range),
+	1394:  uint16(157),
+	1395:  uint16(2),
+	1396:  uint16(sym_quote),
+	1397:  uint16(sym_ctrl_code),
+	1398:  uint16(148),
+	1399:  uint16(2),
+	1400:  uint16(sym_literal),
+	1401:  uint16(sym__escape),
+	1402:  uint16(149),
+	1403:  uint16(4),
+	1404:  uint16(anon_sym_STAR2),
+	1405:  uint16(anon_sym_PLUS),
+	1406:  uint16(anon_sym_QMARK),
+	1407:  uint16(anon_sym_LBRACE2),
+	1408:  uint16(161),
+	1409:  uint16(4),
+	1410:  uint16(aux_sym__esc_hex_token5),
+	1411:  uint16(aux_sym__esc_hex_token6),
+	1412:  uint16(aux_sym__esc_hex_token7),
+	1413:  uint16(aux_sym__esc_hex_token8),
+	1414:  uint16(159),
+	1415:  uint16(5),
+	1416:  uint16(aux_sym__esc_hex_token1),
+	1417:  uint16(aux_sym__esc_hex_token2),
+	1418:  uint16(aux_sym__esc_hex_token3),
+	1419:  uint16(aux_sym__esc_hex_token4),
+	1420:  uint16(aux_sym__esc_oct_token1),
+	1421:  uint16(147),
+	1422:  uint16(12),
+	1423:  uint16(anon_sym_SEMI),
+	1424:  uint16(anon_sym_DOT),
+	1425:  uint16(anon_sym_SLASH),
+	1426:  uint16(anon_sym_PIPE),
+	1427:  uint16(anon_sym_BSLASH),
+	1428:  uint16(anon_sym_LPAREN),
+	1429:  uint16(anon_sym_LBRACK),
+	1430:  uint16(aux_sym_dstring_token1),
+	1431:  uint16(aux_sym_sstring_token1),
+	1432:  uint16(anon_sym_AT2),
+	1433:  uint16(anon_sym_POUND),
+	1434:  uint16(sym_identifier),
+	1435:  uint16(31),
+	1436:  uint16(3),
+	1437:  uint16(1),
+	1438:  uint16(aux_sym_comment_token1),
+	1439:  uint16(21),
+	1440:  uint16(1),
+	1441:  uint16(anon_sym_DOT),
+	1442:  uint16(27),
+	1443:  uint16(1),
+	1444:  uint16(anon_sym_DOLLAR),
+	1445:  uint16(33),
+	1446:  uint16(1),
+	1447:  uint16(anon_sym_LPAREN),
+	1448:  uint16(37),
+	1449:  uint16(1),
+	1450:  uint16(aux_sym_dstring_token1),
+	1451:  uint16(39),
+	1452:  uint16(1),
+	1453:  uint16(aux_sym_sstring_token1),
+	1454:  uint16(41),
+	1455:  uint16(1),
+	1456:  uint16(anon_sym_AT2),
+	1457:  uint16(45),
+	1458:  uint16(1),
+	1459:  uint16(aux_sym_comment_token2),
+	1460:  uint16(171),
+	1461:  uint16(1),
+	1462:  uint16(sym_identifier),
+	1463:  uint16(175),
+	1464:  uint16(1),
+	1465:  uint16(anon_sym_STAR),
+	1466:  uint16(177),
+	1467:  uint16(1),
+	1468:  uint16(anon_sym_LBRACE),
+	1469:  uint16(179),
+	1470:  uint16(1),
+	1471:  uint16(anon_sym_LBRACK),
+	1472:  uint16(181),
+	1473:  uint16(1),
+	1474:  uint16(anon_sym_POUND),
+	1475:  uint16(16),
+	1476:  uint16(1),
+	1477:  uint16(sym_comment),
+	1478:  uint16(51),
+	1479:  uint16(1),
+	1480:  uint16(sym__cat_expr),
+	1481:  uint16(59),
+	1482:  uint16(1),
+	1483:  uint16(aux_sym_alternation_repeat1),
+	1484:  uint16(76),
+	1485:  uint16(1),
+	1486:  uint16(sym__atom),
+	1487:  uint16(133),
+	1488:  uint16(1),
+	1489:  uint16(sym_shortcut),
+	1490:  uint16(136),
+	1491:  uint16(1),
+	1492:  uint16(sym_repetition),
+	1493:  uint16(150),
+	1494:  uint16(1),
+	1495:  uint16(sym_action),
+	1496:  uint16(178),
+	1497:  uint16(1),
+	1498:  uint16(sym_concat),
+	1499:  uint16(193),
+	1500:  uint16(1),
+	1501:  uint16(sym_alternation),
+	1502:  uint16(194),
+	1503:  uint16(1),
+	1504:  uint16(sym__alt_expr),
+	1505:  uint16(197),
+	1506:  uint16(1),
+	1507:  uint16(sym_pattern),
+	1508:  uint16(205),
+	1509:  uint16(1),
+	1510:  uint16(sym__pattern_expr),
+	1511:  uint16(219),
+	1512:  uint16(1),
+	1513:  uint16(sym_lookahead),
+	1514:  uint16(236),
+	1515:  uint16(1),
+	1516:  uint16(sym_regex),
+	1517:  uint16(331),
+	1518:  uint16(1),
+	1519:  uint16(sym__branch),
+	1520:  uint16(173),
+	1521:  uint16(2),
+	1522:  uint16(anon_sym_EQ_GT),
+	1523:  uint16(anon_sym_COLON_EQ_GT),
+	1524:  uint16(176),
+	1525:  uint16(2),
+	1526:  uint16(sym_difference),
+	1527:  uint16(sym__dif_expr),
+	1528:  uint16(112),
+	1529:  uint16(7),
+	1530:  uint16(sym_parenthesized),
+	1531:  uint16(sym_character_class),
+	1532:  uint16(sym_wildcard),
+	1533:  uint16(sym_dstring),
+	1534:  uint16(sym_sstring),
+	1535:  uint16(sym_stag),
+	1536:  uint16(sym_mtag),
+	1537:  uint16(16),
+	1538:  uint16(5),
+	1539:  uint16(1),
+	1540:  uint16(aux_sym_comment_token2),
+	1541:  uint16(11),
+	1542:  uint16(1),
+	1543:  uint16(aux_sym_comment_token1),
+	1544:  uint16(151),
+	1545:  uint16(1),
+	1546:  uint16(anon_sym_RBRACK),
+	1547:  uint16(153),
+	1548:  uint16(1),
+	1549:  uint16(aux_sym_range_token1),
+	1550:  uint16(155),
+	1551:  uint16(1),
+	1552:  uint16(aux_sym_literal_token1),
+	1553:  uint16(163),
+	1554:  uint16(1),
+	1555:  uint16(aux_sym__esc_oct_token2),
+	1556:  uint16(17),
+	1557:  uint16(1),
+	1558:  uint16(sym_comment),
+	1559:  uint16(118),
+	1560:  uint16(1),
+	1561:  uint16(aux_sym_character_class_repeat1),
+	1562:  uint16(155),
+	1563:  uint16(1),
+	1564:  uint16(sym_code_unit),
+	1565:  uint16(158),
+	1566:  uint16(1),
+	1567:  uint16(sym_range),
+	1568:  uint16(157),
+	1569:  uint16(2),
+	1570:  uint16(sym_quote),
+	1571:  uint16(sym_ctrl_code),
+	1572:  uint16(148),
+	1573:  uint16(2),
+	1574:  uint16(sym_literal),
+	1575:  uint16(sym__escape),
+	1576:  uint16(149),
+	1577:  uint16(4),
+	1578:  uint16(anon_sym_STAR2),
+	1579:  uint16(anon_sym_PLUS),
+	1580:  uint16(anon_sym_QMARK),
+	1581:  uint16(anon_sym_LBRACE2),
+	1582:  uint16(161),
+	1583:  uint16(4),
+	1584:  uint16(aux_sym__esc_hex_token5),
+	1585:  uint16(aux_sym__esc_hex_token6),
+	1586:  uint16(aux_sym__esc_hex_token7),
+	1587:  uint16(aux_sym__esc_hex_token8),
+	1588:  uint16(159),
+	1589:  uint16(5),
+	1590:  uint16(aux_sym__esc_hex_token1),
+	1591:  uint16(aux_sym__esc_hex_token2),
+	1592:  uint16(aux_sym__esc_hex_token3),
+	1593:  uint16(aux_sym__esc_hex_token4),
+	1594:  uint16(aux_sym__esc_oct_token1),
+	1595:  uint16(147),
+	1596:  uint16(12),
+	1597:  uint16(anon_sym_DOT),
+	1598:  uint16(anon_sym_LBRACE),
+	1599:  uint16(anon_sym_SLASH),
+	1600:  uint16(anon_sym_PIPE),
+	1601:  uint16(anon_sym_BSLASH),
+	1602:  uint16(anon_sym_LPAREN),
+	1603:  uint16(anon_sym_LBRACK),
+	1604:  uint16(aux_sym_dstring_token1),
+	1605:  uint16(aux_sym_sstring_token1),
+	1606:  uint16(anon_sym_AT2),
+	1607:  uint16(anon_sym_POUND),
+	1608:  uint16(sym_identifier),
+	1609:  uint16(16),
+	1610:  uint16(5),
+	1611:  uint16(1),
+	1612:  uint16(aux_sym_comment_token2),
+	1613:  uint16(11),
+	1614:  uint16(1),
+	1615:  uint16(aux_sym_comment_token1),
+	1616:  uint16(153),
+	1617:  uint16(1),
+	1618:  uint16(aux_sym_range_token1),
+	1619:  uint16(155),
+	1620:  uint16(1),
+	1621:  uint16(aux_sym_literal_token1),
+	1622:  uint16(163),
+	1623:  uint16(1),
+	1624:  uint16(aux_sym__esc_oct_token2),
+	1625:  uint16(169),
+	1626:  uint16(1),
+	1627:  uint16(anon_sym_RBRACK),
+	1628:  uint16(18),
+	1629:  uint16(1),
+	1630:  uint16(sym_comment),
+	1631:  uint16(126),
+	1632:  uint16(1),
+	1633:  uint16(aux_sym_character_class_repeat1),
+	1634:  uint16(155),
+	1635:  uint16(1),
+	1636:  uint16(sym_code_unit),
+	1637:  uint16(158),
+	1638:  uint16(1),
+	1639:  uint16(sym_range),
+	1640:  uint16(157),
+	1641:  uint16(2),
+	1642:  uint16(sym_quote),
+	1643:  uint16(sym_ctrl_code),
+	1644:  uint16(148),
+	1645:  uint16(2),
+	1646:  uint16(sym_literal),
+	1647:  uint16(sym__escape),
+	1648:  uint16(161),
+	1649:  uint16(4),
+	1650:  uint16(aux_sym__esc_hex_token5),
+	1651:  uint16(aux_sym__esc_hex_token6),
+	1652:  uint16(aux_sym__esc_hex_token7),
+	1653:  uint16(aux_sym__esc_hex_token8),
+	1654:  uint16(167),
+	1655:  uint16(4),
+	1656:  uint16(anon_sym_STAR2),
+	1657:  uint16(anon_sym_PLUS),
+	1658:  uint16(anon_sym_QMARK),
+	1659:  uint16(anon_sym_LBRACE2),
+	1660:  uint16(159),
+	1661:  uint16(5),
+	1662:  uint16(aux_sym__esc_hex_token1),
+	1663:  uint16(aux_sym__esc_hex_token2),
+	1664:  uint16(aux_sym__esc_hex_token3),
+	1665:  uint16(aux_sym__esc_hex_token4),
+	1666:  uint16(aux_sym__esc_oct_token1),
+	1667:  uint16(165),
+	1668:  uint16(12),
+	1669:  uint16(anon_sym_SEMI),
+	1670:  uint16(anon_sym_DOT),
+	1671:  uint16(anon_sym_SLASH),
+	1672:  uint16(anon_sym_PIPE),
+	1673:  uint16(anon_sym_BSLASH),
+	1674:  uint16(anon_sym_LPAREN),
+	1675:  uint16(anon_sym_LBRACK),
+	1676:  uint16(aux_sym_dstring_token1),
+	1677:  uint16(aux_sym_sstring_token1),
+	1678:  uint16(anon_sym_AT2),
+	1679:  uint16(anon_sym_POUND),
+	1680:  uint16(sym_identifier),
+	1681:  uint16(16),
+	1682:  uint16(5),
+	1683:  uint16(1),
+	1684:  uint16(aux_sym_comment_token2),
+	1685:  uint16(11),
+	1686:  uint16(1),
+	1687:  uint16(aux_sym_comment_token1),
+	1688:  uint16(153),
+	1689:  uint16(1),
+	1690:  uint16(aux_sym_range_token1),
+	1691:  uint16(155),
+	1692:  uint16(1),
+	1693:  uint16(aux_sym_literal_token1),
+	1694:  uint16(163),
+	1695:  uint16(1),
+	1696:  uint16(aux_sym__esc_oct_token2),
+	1697:  uint16(169),
+	1698:  uint16(1),
+	1699:  uint16(anon_sym_RBRACK),
+	1700:  uint16(19),
+	1701:  uint16(1),
+	1702:  uint16(sym_comment),
+	1703:  uint16(126),
+	1704:  uint16(1),
+	1705:  uint16(aux_sym_character_class_repeat1),
+	1706:  uint16(155),
+	1707:  uint16(1),
+	1708:  uint16(sym_code_unit),
+	1709:  uint16(158),
+	1710:  uint16(1),
+	1711:  uint16(sym_range),
+	1712:  uint16(157),
+	1713:  uint16(2),
+	1714:  uint16(sym_quote),
+	1715:  uint16(sym_ctrl_code),
+	1716:  uint16(148),
+	1717:  uint16(2),
+	1718:  uint16(sym_literal),
+	1719:  uint16(sym__escape),
+	1720:  uint16(161),
+	1721:  uint16(4),
+	1722:  uint16(aux_sym__esc_hex_token5),
+	1723:  uint16(aux_sym__esc_hex_token6),
+	1724:  uint16(aux_sym__esc_hex_token7),
+	1725:  uint16(aux_sym__esc_hex_token8),
+	1726:  uint16(167),
+	1727:  uint16(4),
+	1728:  uint16(anon_sym_STAR2),
+	1729:  uint16(anon_sym_PLUS),
+	1730:  uint16(anon_sym_QMARK),
+	1731:  uint16(anon_sym_LBRACE2),
+	1732:  uint16(159),
+	1733:  uint16(5),
+	1734:  uint16(aux_sym__esc_hex_token1),
+	1735:  uint16(aux_sym__esc_hex_token2),
+	1736:  uint16(aux_sym__esc_hex_token3),
+	1737:  uint16(aux_sym__esc_hex_token4),
+	1738:  uint16(aux_sym__esc_oct_token1),
+	1739:  uint16(165),
+	1740:  uint16(12),
+	1741:  uint16(anon_sym_DOT),
+	1742:  uint16(anon_sym_LBRACE),
+	1743:  uint16(anon_sym_SLASH),
+	1744:  uint16(anon_sym_PIPE),
+	1745:  uint16(anon_sym_BSLASH),
+	1746:  uint16(anon_sym_LPAREN),
+	1747:  uint16(anon_sym_LBRACK),
+	1748:  uint16(aux_sym_dstring_token1),
+	1749:  uint16(aux_sym_sstring_token1),
+	1750:  uint16(anon_sym_AT2),
+	1751:  uint16(anon_sym_POUND),
+	1752:  uint16(sym_identifier),
+	1753:  uint16(16),
+	1754:  uint16(5),
+	1755:  uint16(1),
+	1756:  uint16(aux_sym_comment_token2),
+	1757:  uint16(11),
+	1758:  uint16(1),
+	1759:  uint16(aux_sym_comment_token1),
+	1760:  uint16(153),
+	1761:  uint16(1),
+	1762:  uint16(aux_sym_range_token1),
+	1763:  uint16(155),
+	1764:  uint16(1),
+	1765:  uint16(aux_sym_literal_token1),
+	1766:  uint16(163),
+	1767:  uint16(1),
+	1768:  uint16(aux_sym__esc_oct_token2),
+	1769:  uint16(169),
+	1770:  uint16(1),
+	1771:  uint16(anon_sym_RBRACK),
+	1772:  uint16(20),
+	1773:  uint16(1),
+	1774:  uint16(sym_comment),
+	1775:  uint16(126),
+	1776:  uint16(1),
+	1777:  uint16(aux_sym_character_class_repeat1),
+	1778:  uint16(155),
+	1779:  uint16(1),
+	1780:  uint16(sym_code_unit),
+	1781:  uint16(158),
+	1782:  uint16(1),
+	1783:  uint16(sym_range),
+	1784:  uint16(157),
+	1785:  uint16(2),
+	1786:  uint16(sym_quote),
+	1787:  uint16(sym_ctrl_code),
+	1788:  uint16(148),
+	1789:  uint16(2),
+	1790:  uint16(sym_literal),
+	1791:  uint16(sym__escape),
+	1792:  uint16(161),
+	1793:  uint16(4),
+	1794:  uint16(aux_sym__esc_hex_token5),
+	1795:  uint16(aux_sym__esc_hex_token6),
+	1796:  uint16(aux_sym__esc_hex_token7),
+	1797:  uint16(aux_sym__esc_hex_token8),
+	1798:  uint16(167),
+	1799:  uint16(4),
+	1800:  uint16(anon_sym_STAR2),
+	1801:  uint16(anon_sym_PLUS),
+	1802:  uint16(anon_sym_QMARK),
+	1803:  uint16(anon_sym_LBRACE2),
+	1804:  uint16(159),
+	1805:  uint16(5),
+	1806:  uint16(aux_sym__esc_hex_token1),
+	1807:  uint16(aux_sym__esc_hex_token2),
+	1808:  uint16(aux_sym__esc_hex_token3),
+	1809:  uint16(aux_sym__esc_hex_token4),
+	1810:  uint16(aux_sym__esc_oct_token1),
+	1811:  uint16(165),
+	1812:  uint16(11),
+	1813:  uint16(anon_sym_DOT),
+	1814:  uint16(anon_sym_PIPE),
+	1815:  uint16(anon_sym_BSLASH),
+	1816:  uint16(anon_sym_LPAREN),
+	1817:  uint16(anon_sym_RPAREN),
+	1818:  uint16(anon_sym_LBRACK),
+	1819:  uint16(aux_sym_dstring_token1),
+	1820:  uint16(aux_sym_sstring_token1),
+	1821:  uint16(anon_sym_AT2),
+	1822:  uint16(anon_sym_POUND),
+	1823:  uint16(sym_identifier),
+	1824:  uint16(16),
+	1825:  uint16(5),
+	1826:  uint16(1),
+	1827:  uint16(aux_sym_comment_token2),
+	1828:  uint16(11),
+	1829:  uint16(1),
+	1830:  uint16(aux_sym_comment_token1),
+	1831:  uint16(151),
+	1832:  uint16(1),
+	1833:  uint16(anon_sym_RBRACK),
+	1834:  uint16(153),
+	1835:  uint16(1),
+	1836:  uint16(aux_sym_range_token1),
+	1837:  uint16(155),
+	1838:  uint16(1),
+	1839:  uint16(aux_sym_literal_token1),
+	1840:  uint16(163),
+	1841:  uint16(1),
+	1842:  uint16(aux_sym__esc_oct_token2),
+	1843:  uint16(21),
+	1844:  uint16(1),
+	1845:  uint16(sym_comment),
+	1846:  uint16(118),
+	1847:  uint16(1),
+	1848:  uint16(aux_sym_character_class_repeat1),
+	1849:  uint16(155),
+	1850:  uint16(1),
+	1851:  uint16(sym_code_unit),
+	1852:  uint16(158),
+	1853:  uint16(1),
+	1854:  uint16(sym_range),
+	1855:  uint16(157),
+	1856:  uint16(2),
+	1857:  uint16(sym_quote),
+	1858:  uint16(sym_ctrl_code),
+	1859:  uint16(148),
+	1860:  uint16(2),
+	1861:  uint16(sym_literal),
+	1862:  uint16(sym__escape),
+	1863:  uint16(149),
+	1864:  uint16(4),
+	1865:  uint16(anon_sym_STAR2),
+	1866:  uint16(anon_sym_PLUS),
+	1867:  uint16(anon_sym_QMARK),
+	1868:  uint16(anon_sym_LBRACE2),
+	1869:  uint16(161),
+	1870:  uint16(4),
+	1871:  uint16(aux_sym__esc_hex_token5),
+	1872:  uint16(aux_sym__esc_hex_token6),
+	1873:  uint16(aux_sym__esc_hex_token7),
+	1874:  uint16(aux_sym__esc_hex_token8),
+	1875:  uint16(159),
+	1876:  uint16(5),
+	1877:  uint16(aux_sym__esc_hex_token1),
+	1878:  uint16(aux_sym__esc_hex_token2),
+	1879:  uint16(aux_sym__esc_hex_token3),
+	1880:  uint16(aux_sym__esc_hex_token4),
+	1881:  uint16(aux_sym__esc_oct_token1),
+	1882:  uint16(147),
+	1883:  uint16(11),
+	1884:  uint16(anon_sym_DOT),
+	1885:  uint16(anon_sym_PIPE),
+	1886:  uint16(anon_sym_BSLASH),
+	1887:  uint16(anon_sym_LPAREN),
+	1888:  uint16(anon_sym_RPAREN),
+	1889:  uint16(anon_sym_LBRACK),
+	1890:  uint16(aux_sym_dstring_token1),
+	1891:  uint16(aux_sym_sstring_token1),
+	1892:  uint16(anon_sym_AT2),
+	1893:  uint16(anon_sym_POUND),
+	1894:  uint16(sym_identifier),
+	1895:  uint16(16),
+	1896:  uint16(5),
+	1897:  uint16(1),
+	1898:  uint16(aux_sym_comment_token2),
+	1899:  uint16(11),
+	1900:  uint16(1),
+	1901:  uint16(aux_sym_comment_token1),
+	1902:  uint16(151),
+	1903:  uint16(1),
+	1904:  uint16(anon_sym_RBRACK),
+	1905:  uint16(153),
+	1906:  uint16(1),
+	1907:  uint16(aux_sym_range_token1),
+	1908:  uint16(155),
+	1909:  uint16(1),
+	1910:  uint16(aux_sym_literal_token1),
+	1911:  uint16(163),
+	1912:  uint16(1),
+	1913:  uint16(aux_sym__esc_oct_token2),
+	1914:  uint16(22),
+	1915:  uint16(1),
+	1916:  uint16(sym_comment),
+	1917:  uint16(118),
+	1918:  uint16(1),
+	1919:  uint16(aux_sym_character_class_repeat1),
+	1920:  uint16(155),
+	1921:  uint16(1),
+	1922:  uint16(sym_code_unit),
+	1923:  uint16(158),
+	1924:  uint16(1),
+	1925:  uint16(sym_range),
+	1926:  uint16(157),
+	1927:  uint16(2),
+	1928:  uint16(sym_quote),
+	1929:  uint16(sym_ctrl_code),
+	1930:  uint16(148),
+	1931:  uint16(2),
+	1932:  uint16(sym_literal),
+	1933:  uint16(sym__escape),
+	1934:  uint16(149),
+	1935:  uint16(4),
+	1936:  uint16(anon_sym_STAR2),
+	1937:  uint16(anon_sym_PLUS),
+	1938:  uint16(anon_sym_QMARK),
+	1939:  uint16(anon_sym_LBRACE2),
+	1940:  uint16(161),
+	1941:  uint16(4),
+	1942:  uint16(aux_sym__esc_hex_token5),
+	1943:  uint16(aux_sym__esc_hex_token6),
+	1944:  uint16(aux_sym__esc_hex_token7),
+	1945:  uint16(aux_sym__esc_hex_token8),
+	1946:  uint16(159),
+	1947:  uint16(5),
+	1948:  uint16(aux_sym__esc_hex_token1),
+	1949:  uint16(aux_sym__esc_hex_token2),
+	1950:  uint16(aux_sym__esc_hex_token3),
+	1951:  uint16(aux_sym__esc_hex_token4),
+	1952:  uint16(aux_sym__esc_oct_token1),
+	1953:  uint16(147),
+	1954:  uint16(11),
+	1955:  uint16(anon_sym_DOT),
+	1956:  uint16(anon_sym_LBRACE),
+	1957:  uint16(anon_sym_PIPE),
+	1958:  uint16(anon_sym_BSLASH),
+	1959:  uint16(anon_sym_LPAREN),
+	1960:  uint16(anon_sym_LBRACK),
+	1961:  uint16(aux_sym_dstring_token1),
+	1962:  uint16(aux_sym_sstring_token1),
+	1963:  uint16(anon_sym_AT2),
+	1964:  uint16(anon_sym_POUND),
+	1965:  uint16(sym_identifier),
+	1966:  uint16(16),
+	1967:  uint16(5),
+	1968:  uint16(1),
+	1969:  uint16(aux_sym_comment_token2),
+	1970:  uint16(11),
+	1971:  uint16(1),
+	1972:  uint16(aux_sym_comment_token1),
+	1973:  uint16(151),
+	1974:  uint16(1),
+	1975:  uint16(anon_sym_RBRACK),
+	1976:  uint16(153),
+	1977:  uint16(1),
+	1978:  uint16(aux_sym_range_token1),
+	1979:  uint16(155),
+	1980:  uint16(1),
+	1981:  uint16(aux_sym_literal_token1),
+	1982:  uint16(163),
+	1983:  uint16(1),
+	1984:  uint16(aux_sym__esc_oct_token2),
+	1985:  uint16(23),
+	1986:  uint16(1),
+	1987:  uint16(sym_comment),
+	1988:  uint16(118),
+	1989:  uint16(1),
+	1990:  uint16(aux_sym_character_class_repeat1),
+	1991:  uint16(155),
+	1992:  uint16(1),
+	1993:  uint16(sym_code_unit),
+	1994:  uint16(158),
+	1995:  uint16(1),
+	1996:  uint16(sym_range),
+	1997:  uint16(157),
+	1998:  uint16(2),
+	1999:  uint16(sym_quote),
+	2000:  uint16(sym_ctrl_code),
+	2001:  uint16(148),
+	2002:  uint16(2),
+	2003:  uint16(sym_literal),
+	2004:  uint16(sym__escape),
+	2005:  uint16(149),
+	2006:  uint16(4),
+	2007:  uint16(anon_sym_STAR2),
+	2008:  uint16(anon_sym_PLUS),
+	2009:  uint16(anon_sym_QMARK),
+	2010:  uint16(anon_sym_LBRACE2),
+	2011:  uint16(161),
+	2012:  uint16(4),
+	2013:  uint16(aux_sym__esc_hex_token5),
+	2014:  uint16(aux_sym__esc_hex_token6),
+	2015:  uint16(aux_sym__esc_hex_token7),
+	2016:  uint16(aux_sym__esc_hex_token8),
+	2017:  uint16(159),
+	2018:  uint16(5),
+	2019:  uint16(aux_sym__esc_hex_token1),
+	2020:  uint16(aux_sym__esc_hex_token2),
+	2021:  uint16(aux_sym__esc_hex_token3),
+	2022:  uint16(aux_sym__esc_hex_token4),
+	2023:  uint16(aux_sym__esc_oct_token1),
+	2024:  uint16(147),
+	2025:  uint16(11),
+	2026:  uint16(anon_sym_SEMI),
+	2027:  uint16(anon_sym_DOT),
+	2028:  uint16(anon_sym_PIPE),
+	2029:  uint16(anon_sym_BSLASH),
+	2030:  uint16(anon_sym_LPAREN),
+	2031:  uint16(anon_sym_LBRACK),
+	2032:  uint16(aux_sym_dstring_token1),
+	2033:  uint16(aux_sym_sstring_token1),
+	2034:  uint16(anon_sym_AT2),
+	2035:  uint16(anon_sym_POUND),
+	2036:  uint16(sym_identifier),
+	2037:  uint16(16),
+	2038:  uint16(5),
+	2039:  uint16(1),
+	2040:  uint16(aux_sym_comment_token2),
+	2041:  uint16(11),
+	2042:  uint16(1),
+	2043:  uint16(aux_sym_comment_token1),
+	2044:  uint16(153),
+	2045:  uint16(1),
+	2046:  uint16(aux_sym_range_token1),
+	2047:  uint16(155),
+	2048:  uint16(1),
+	2049:  uint16(aux_sym_literal_token1),
+	2050:  uint16(163),
+	2051:  uint16(1),
+	2052:  uint16(aux_sym__esc_oct_token2),
+	2053:  uint16(169),
+	2054:  uint16(1),
+	2055:  uint16(anon_sym_RBRACK),
+	2056:  uint16(24),
+	2057:  uint16(1),
+	2058:  uint16(sym_comment),
+	2059:  uint16(126),
+	2060:  uint16(1),
+	2061:  uint16(aux_sym_character_class_repeat1),
+	2062:  uint16(155),
+	2063:  uint16(1),
+	2064:  uint16(sym_code_unit),
+	2065:  uint16(158),
+	2066:  uint16(1),
+	2067:  uint16(sym_range),
+	2068:  uint16(157),
+	2069:  uint16(2),
+	2070:  uint16(sym_quote),
+	2071:  uint16(sym_ctrl_code),
+	2072:  uint16(148),
+	2073:  uint16(2),
+	2074:  uint16(sym_literal),
+	2075:  uint16(sym__escape),
+	2076:  uint16(161),
+	2077:  uint16(4),
+	2078:  uint16(aux_sym__esc_hex_token5),
+	2079:  uint16(aux_sym__esc_hex_token6),
+	2080:  uint16(aux_sym__esc_hex_token7),
+	2081:  uint16(aux_sym__esc_hex_token8),
+	2082:  uint16(167),
+	2083:  uint16(4),
+	2084:  uint16(anon_sym_STAR2),
+	2085:  uint16(anon_sym_PLUS),
+	2086:  uint16(anon_sym_QMARK),
+	2087:  uint16(anon_sym_LBRACE2),
+	2088:  uint16(159),
+	2089:  uint16(5),
+	2090:  uint16(aux_sym__esc_hex_token1),
+	2091:  uint16(aux_sym__esc_hex_token2),
+	2092:  uint16(aux_sym__esc_hex_token3),
+	2093:  uint16(aux_sym__esc_hex_token4),
+	2094:  uint16(aux_sym__esc_oct_token1),
+	2095:  uint16(165),
+	2096:  uint16(11),
+	2097:  uint16(anon_sym_DOT),
+	2098:  uint16(anon_sym_LBRACE),
+	2099:  uint16(anon_sym_PIPE),
+	2100:  uint16(anon_sym_BSLASH),
+	2101:  uint16(anon_sym_LPAREN),
+	2102:  uint16(anon_sym_LBRACK),
+	2103:  uint16(aux_sym_dstring_token1),
+	2104:  uint16(aux_sym_sstring_token1),
+	2105:  uint16(anon_sym_AT2),
+	2106:  uint16(anon_sym_POUND),
+	2107:  uint16(sym_identifier),
+	2108:  uint16(16),
+	2109:  uint16(5),
+	2110:  uint16(1),
+	2111:  uint16(aux_sym_comment_token2),
+	2112:  uint16(11),
+	2113:  uint16(1),
+	2114:  uint16(aux_sym_comment_token1),
+	2115:  uint16(153),
+	2116:  uint16(1),
+	2117:  uint16(aux_sym_range_token1),
+	2118:  uint16(155),
+	2119:  uint16(1),
+	2120:  uint16(aux_sym_literal_token1),
+	2121:  uint16(163),
+	2122:  uint16(1),
+	2123:  uint16(aux_sym__esc_oct_token2),
+	2124:  uint16(169),
+	2125:  uint16(1),
+	2126:  uint16(anon_sym_RBRACK),
+	2127:  uint16(25),
+	2128:  uint16(1),
+	2129:  uint16(sym_comment),
+	2130:  uint16(126),
+	2131:  uint16(1),
+	2132:  uint16(aux_sym_character_class_repeat1),
+	2133:  uint16(155),
+	2134:  uint16(1),
+	2135:  uint16(sym_code_unit),
+	2136:  uint16(158),
+	2137:  uint16(1),
+	2138:  uint16(sym_range),
+	2139:  uint16(157),
+	2140:  uint16(2),
+	2141:  uint16(sym_quote),
+	2142:  uint16(sym_ctrl_code),
+	2143:  uint16(148),
+	2144:  uint16(2),
+	2145:  uint16(sym_literal),
+	2146:  uint16(sym__escape),
+	2147:  uint16(161),
+	2148:  uint16(4),
+	2149:  uint16(aux_sym__esc_hex_token5),
+	2150:  uint16(aux_sym__esc_hex_token6),
+	2151:  uint16(aux_sym__esc_hex_token7),
+	2152:  uint16(aux_sym__esc_hex_token8),
+	2153:  uint16(167),
+	2154:  uint16(4),
+	2155:  uint16(anon_sym_STAR2),
+	2156:  uint16(anon_sym_PLUS),
+	2157:  uint16(anon_sym_QMARK),
+	2158:  uint16(anon_sym_LBRACE2),
+	2159:  uint16(159),
+	2160:  uint16(5),
+	2161:  uint16(aux_sym__esc_hex_token1),
+	2162:  uint16(aux_sym__esc_hex_token2),
+	2163:  uint16(aux_sym__esc_hex_token3),
+	2164:  uint16(aux_sym__esc_hex_token4),
+	2165:  uint16(aux_sym__esc_oct_token1),
+	2166:  uint16(165),
+	2167:  uint16(11),
+	2168:  uint16(anon_sym_SEMI),
+	2169:  uint16(anon_sym_DOT),
+	2170:  uint16(anon_sym_PIPE),
+	2171:  uint16(anon_sym_BSLASH),
+	2172:  uint16(anon_sym_LPAREN),
+	2173:  uint16(anon_sym_LBRACK),
+	2174:  uint16(aux_sym_dstring_token1),
+	2175:  uint16(aux_sym_sstring_token1),
+	2176:  uint16(anon_sym_AT2),
+	2177:  uint16(anon_sym_POUND),
+	2178:  uint16(sym_identifier),
+	2179:  uint16(16),
+	2180:  uint16(5),
+	2181:  uint16(1),
+	2182:  uint16(aux_sym_comment_token2),
+	2183:  uint16(11),
+	2184:  uint16(1),
+	2185:  uint16(aux_sym_comment_token1),
+	2186:  uint16(153),
+	2187:  uint16(1),
+	2188:  uint16(aux_sym_range_token1),
+	2189:  uint16(155),
+	2190:  uint16(1),
+	2191:  uint16(aux_sym_literal_token1),
+	2192:  uint16(163),
+	2193:  uint16(1),
+	2194:  uint16(aux_sym__esc_oct_token2),
+	2195:  uint16(169),
+	2196:  uint16(1),
+	2197:  uint16(anon_sym_RBRACK),
+	2198:  uint16(26),
+	2199:  uint16(1),
+	2200:  uint16(sym_comment),
+	2201:  uint16(126),
+	2202:  uint16(1),
+	2203:  uint16(aux_sym_character_class_repeat1),
+	2204:  uint16(155),
+	2205:  uint16(1),
+	2206:  uint16(sym_code_unit),
+	2207:  uint16(158),
+	2208:  uint16(1),
+	2209:  uint16(sym_range),
+	2210:  uint16(157),
+	2211:  uint16(2),
+	2212:  uint16(sym_quote),
+	2213:  uint16(sym_ctrl_code),
+	2214:  uint16(148),
+	2215:  uint16(2),
+	2216:  uint16(sym_literal),
+	2217:  uint16(sym__escape),
+	2218:  uint16(161),
+	2219:  uint16(4),
+	2220:  uint16(aux_sym__esc_hex_token5),
+	2221:  uint16(aux_sym__esc_hex_token6),
+	2222:  uint16(aux_sym__esc_hex_token7),
+	2223:  uint16(aux_sym__esc_hex_token8),
+	2224:  uint16(167),
+	2225:  uint16(4),
+	2226:  uint16(anon_sym_STAR2),
+	2227:  uint16(anon_sym_PLUS),
+	2228:  uint16(anon_sym_QMARK),
+	2229:  uint16(anon_sym_LBRACE2),
+	2230:  uint16(159),
+	2231:  uint16(5),
+	2232:  uint16(aux_sym__esc_hex_token1),
+	2233:  uint16(aux_sym__esc_hex_token2),
+	2234:  uint16(aux_sym__esc_hex_token3),
+	2235:  uint16(aux_sym__esc_hex_token4),
+	2236:  uint16(aux_sym__esc_oct_token1),
+	2237:  uint16(165),
+	2238:  uint16(10),
+	2239:  uint16(anon_sym_DOT),
+	2240:  uint16(anon_sym_PIPE),
+	2241:  uint16(anon_sym_BSLASH),
+	2242:  uint16(anon_sym_LPAREN),
+	2243:  uint16(anon_sym_LBRACK),
+	2244:  uint16(aux_sym_dstring_token1),
+	2245:  uint16(aux_sym_sstring_token1),
+	2246:  uint16(anon_sym_AT2),
+	2247:  uint16(anon_sym_POUND),
+	2248:  uint16(sym_identifier),
+	2249:  uint16(16),
+	2250:  uint16(5),
+	2251:  uint16(1),
+	2252:  uint16(aux_sym_comment_token2),
+	2253:  uint16(11),
+	2254:  uint16(1),
+	2255:  uint16(aux_sym_comment_token1),
+	2256:  uint16(151),
+	2257:  uint16(1),
+	2258:  uint16(anon_sym_RBRACK),
+	2259:  uint16(153),
+	2260:  uint16(1),
+	2261:  uint16(aux_sym_range_token1),
+	2262:  uint16(155),
+	2263:  uint16(1),
+	2264:  uint16(aux_sym_literal_token1),
+	2265:  uint16(163),
+	2266:  uint16(1),
+	2267:  uint16(aux_sym__esc_oct_token2),
+	2268:  uint16(27),
+	2269:  uint16(1),
+	2270:  uint16(sym_comment),
+	2271:  uint16(118),
+	2272:  uint16(1),
+	2273:  uint16(aux_sym_character_class_repeat1),
+	2274:  uint16(155),
+	2275:  uint16(1),
+	2276:  uint16(sym_code_unit),
+	2277:  uint16(158),
+	2278:  uint16(1),
+	2279:  uint16(sym_range),
+	2280:  uint16(157),
+	2281:  uint16(2),
+	2282:  uint16(sym_quote),
+	2283:  uint16(sym_ctrl_code),
+	2284:  uint16(148),
+	2285:  uint16(2),
+	2286:  uint16(sym_literal),
+	2287:  uint16(sym__escape),
+	2288:  uint16(149),
+	2289:  uint16(4),
+	2290:  uint16(anon_sym_STAR2),
+	2291:  uint16(anon_sym_PLUS),
+	2292:  uint16(anon_sym_QMARK),
+	2293:  uint16(anon_sym_LBRACE2),
+	2294:  uint16(161),
+	2295:  uint16(4),
+	2296:  uint16(aux_sym__esc_hex_token5),
+	2297:  uint16(aux_sym__esc_hex_token6),
+	2298:  uint16(aux_sym__esc_hex_token7),
+	2299:  uint16(aux_sym__esc_hex_token8),
+	2300:  uint16(159),
+	2301:  uint16(5),
+	2302:  uint16(aux_sym__esc_hex_token1),
+	2303:  uint16(aux_sym__esc_hex_token2),
+	2304:  uint16(aux_sym__esc_hex_token3),
+	2305:  uint16(aux_sym__esc_hex_token4),
+	2306:  uint16(aux_sym__esc_oct_token1),
+	2307:  uint16(147),
+	2308:  uint16(10),
+	2309:  uint16(anon_sym_DOT),
+	2310:  uint16(anon_sym_PIPE),
+	2311:  uint16(anon_sym_BSLASH),
+	2312:  uint16(anon_sym_LPAREN),
+	2313:  uint16(anon_sym_LBRACK),
+	2314:  uint16(aux_sym_dstring_token1),
+	2315:  uint16(aux_sym_sstring_token1),
+	2316:  uint16(anon_sym_AT2),
+	2317:  uint16(anon_sym_POUND),
+	2318:  uint16(sym_identifier),
+	2319:  uint16(24),
+	2320:  uint16(3),
+	2321:  uint16(1),
+	2322:  uint16(aux_sym_comment_token1),
+	2323:  uint16(21),
+	2324:  uint16(1),
+	2325:  uint16(anon_sym_DOT),
+	2326:  uint16(33),
+	2327:  uint16(1),
+	2328:  uint16(anon_sym_LPAREN),
+	2329:  uint16(37),
+	2330:  uint16(1),
+	2331:  uint16(aux_sym_dstring_token1),
+	2332:  uint16(39),
+	2333:  uint16(1),
+	2334:  uint16(aux_sym_sstring_token1),
+	2335:  uint16(41),
+	2336:  uint16(1),
+	2337:  uint16(anon_sym_AT2),
+	2338:  uint16(45),
+	2339:  uint16(1),
+	2340:  uint16(aux_sym_comment_token2),
+	2341:  uint16(171),
+	2342:  uint16(1),
+	2343:  uint16(sym_identifier),
+	2344:  uint16(181),
+	2345:  uint16(1),
+	2346:  uint16(anon_sym_POUND),
+	2347:  uint16(183),
+	2348:  uint16(1),
+	2349:  uint16(anon_sym_LBRACK),
+	2350:  uint16(28),
+	2351:  uint16(1),
+	2352:  uint16(sym_comment),
+	2353:  uint16(63),
+	2354:  uint16(1),
+	2355:  uint16(aux_sym_alternation_repeat1),
+	2356:  uint16(68),
+	2357:  uint16(1),
+	2358:  uint16(sym__cat_expr),
+	2359:  uint16(76),
+	2360:  uint16(1),
+	2361:  uint16(sym__atom),
+	2362:  uint16(136),
+	2363:  uint16(1),
+	2364:  uint16(sym_repetition),
+	2365:  uint16(178),
+	2366:  uint16(1),
+	2367:  uint16(sym_concat),
+	2368:  uint16(193),
+	2369:  uint16(1),
+	2370:  uint16(sym_alternation),
+	2371:  uint16(219),
+	2372:  uint16(1),
+	2373:  uint16(sym_lookahead),
+	2374:  uint16(221),
+	2375:  uint16(1),
+	2376:  uint16(sym__alt_expr),
+	2377:  uint16(256),
+	2378:  uint16(1),
+	2379:  uint16(sym__pattern_expr),
+	2380:  uint16(328),
+	2381:  uint16(1),
+	2382:  uint16(sym_regex),
+	2383:  uint16(331),
+	2384:  uint16(1),
+	2385:  uint16(sym__branch),
+	2386:  uint16(176),
+	2387:  uint16(2),
+	2388:  uint16(sym_difference),
+	2389:  uint16(sym__dif_expr),
+	2390:  uint16(112),
+	2391:  uint16(7),
+	2392:  uint16(sym_parenthesized),
+	2393:  uint16(sym_character_class),
+	2394:  uint16(sym_wildcard),
+	2395:  uint16(sym_dstring),
+	2396:  uint16(sym_sstring),
+	2397:  uint16(sym_stag),
+	2398:  uint16(sym_mtag),
+	2399:  uint16(22),
+	2400:  uint16(3),
+	2401:  uint16(1),
+	2402:  uint16(aux_sym_comment_token1),
+	2403:  uint16(21),
+	2404:  uint16(1),
+	2405:  uint16(anon_sym_DOT),
+	2406:  uint16(33),
+	2407:  uint16(1),
+	2408:  uint16(anon_sym_LPAREN),
+	2409:  uint16(37),
+	2410:  uint16(1),
+	2411:  uint16(aux_sym_dstring_token1),
+	2412:  uint16(39),
+	2413:  uint16(1),
+	2414:  uint16(aux_sym_sstring_token1),
+	2415:  uint16(41),
+	2416:  uint16(1),
+	2417:  uint16(anon_sym_AT2),
+	2418:  uint16(45),
+	2419:  uint16(1),
+	2420:  uint16(aux_sym_comment_token2),
+	2421:  uint16(171),
+	2422:  uint16(1),
+	2423:  uint16(sym_identifier),
+	2424:  uint16(181),
+	2425:  uint16(1),
+	2426:  uint16(anon_sym_POUND),
+	2427:  uint16(185),
+	2428:  uint16(1),
+	2429:  uint16(anon_sym_LBRACK),
+	2430:  uint16(29),
+	2431:  uint16(1),
+	2432:  uint16(sym_comment),
+	2433:  uint16(67),
+	2434:  uint16(1),
+	2435:  uint16(aux_sym_alternation_repeat1),
+	2436:  uint16(76),
+	2437:  uint16(1),
+	2438:  uint16(sym__atom),
+	2439:  uint16(91),
+	2440:  uint16(1),
+	2441:  uint16(sym__cat_expr),
+	2442:  uint16(136),
+	2443:  uint16(1),
+	2444:  uint16(sym_repetition),
+	2445:  uint16(178),
+	2446:  uint16(1),
+	2447:  uint16(sym_concat),
+	2448:  uint16(193),
+	2449:  uint16(1),
+	2450:  uint16(sym_alternation),
+	2451:  uint16(217),
+	2452:  uint16(1),
+	2453:  uint16(sym__pattern_expr),
+	2454:  uint16(239),
+	2455:  uint16(1),
+	2456:  uint16(sym__alt_expr),
+	2457:  uint16(331),
+	2458:  uint16(1),
+	2459:  uint16(sym__branch),
+	2460:  uint16(176),
+	2461:  uint16(2),
+	2462:  uint16(sym_difference),
+	2463:  uint16(sym__dif_expr),
+	2464:  uint16(112),
+	2465:  uint16(7),
+	2466:  uint16(sym_parenthesized),
+	2467:  uint16(sym_character_class),
+	2468:  uint16(sym_wildcard),
+	2469:  uint16(sym_dstring),
+	2470:  uint16(sym_sstring),
+	2471:  uint16(sym_stag),
+	2472:  uint16(sym_mtag),
+	2473:  uint16(22),
+	2474:  uint16(3),
+	2475:  uint16(1),
+	2476:  uint16(aux_sym_comment_token1),
+	2477:  uint16(21),
+	2478:  uint16(1),
+	2479:  uint16(anon_sym_DOT),
+	2480:  uint16(33),
+	2481:  uint16(1),
+	2482:  uint16(anon_sym_LPAREN),
+	2483:  uint16(37),
+	2484:  uint16(1),
+	2485:  uint16(aux_sym_dstring_token1),
+	2486:  uint16(39),
+	2487:  uint16(1),
+	2488:  uint16(aux_sym_sstring_token1),
+	2489:  uint16(41),
+	2490:  uint16(1),
+	2491:  uint16(anon_sym_AT2),
+	2492:  uint16(45),
+	2493:  uint16(1),
+	2494:  uint16(aux_sym_comment_token2),
+	2495:  uint16(171),
+	2496:  uint16(1),
+	2497:  uint16(sym_identifier),
+	2498:  uint16(181),
+	2499:  uint16(1),
+	2500:  uint16(anon_sym_POUND),
+	2501:  uint16(187),
+	2502:  uint16(1),
+	2503:  uint16(anon_sym_LBRACK),
+	2504:  uint16(30),
+	2505:  uint16(1),
+	2506:  uint16(sym_comment),
+	2507:  uint16(66),
+	2508:  uint16(1),
+	2509:  uint16(aux_sym_alternation_repeat1),
+	2510:  uint16(76),
+	2511:  uint16(1),
+	2512:  uint16(sym__atom),
+	2513:  uint16(81),
+	2514:  uint16(1),
+	2515:  uint16(sym__cat_expr),
+	2516:  uint16(136),
+	2517:  uint16(1),
+	2518:  uint16(sym_repetition),
+	2519:  uint16(178),
+	2520:  uint16(1),
+	2521:  uint16(sym_concat),
+	2522:  uint16(193),
+	2523:  uint16(1),
+	2524:  uint16(sym_alternation),
+	2525:  uint16(234),
+	2526:  uint16(1),
+	2527:  uint16(sym__alt_expr),
+	2528:  uint16(329),
+	2529:  uint16(1),
+	2530:  uint16(sym__pattern_expr),
+	2531:  uint16(331),
+	2532:  uint16(1),
+	2533:  uint16(sym__branch),
+	2534:  uint16(176),
+	2535:  uint16(2),
+	2536:  uint16(sym_difference),
+	2537:  uint16(sym__dif_expr),
+	2538:  uint16(112),
+	2539:  uint16(7),
+	2540:  uint16(sym_parenthesized),
+	2541:  uint16(sym_character_class),
+	2542:  uint16(sym_wildcard),
+	2543:  uint16(sym_dstring),
+	2544:  uint16(sym_sstring),
+	2545:  uint16(sym_stag),
+	2546:  uint16(sym_mtag),
+	2547:  uint16(22),
+	2548:  uint16(3),
+	2549:  uint16(1),
+	2550:  uint16(aux_sym_comment_token1),
+	2551:  uint16(21),
+	2552:  uint16(1),
+	2553:  uint16(anon_sym_DOT),
+	2554:  uint16(33),
+	2555:  uint16(1),
+	2556:  uint16(anon_sym_LPAREN),
+	2557:  uint16(37),
+	2558:  uint16(1),
+	2559:  uint16(aux_sym_dstring_token1),
+	2560:  uint16(39),
+	2561:  uint16(1),
+	2562:  uint16(aux_sym_sstring_token1),
+	2563:  uint16(41),
+	2564:  uint16(1),
+	2565:  uint16(anon_sym_AT2),
+	2566:  uint16(45),
+	2567:  uint16(1),
+	2568:  uint16(aux_sym_comment_token2),
+	2569:  uint16(171),
+	2570:  uint16(1),
+	2571:  uint16(sym_identifier),
+	2572:  uint16(181),
+	2573:  uint16(1),
+	2574:  uint16(anon_sym_POUND),
+	2575:  uint16(189),
+	2576:  uint16(1),
+	2577:  uint16(anon_sym_LBRACK),
+	2578:  uint16(31),
+	2579:  uint16(1),
+	2580:  uint16(sym_comment),
+	2581:  uint16(61),
+	2582:  uint16(1),
+	2583:  uint16(aux_sym_alternation_repeat1),
+	2584:  uint16(76),
+	2585:  uint16(1),
+	2586:  uint16(sym__atom),
+	2587:  uint16(86),
+	2588:  uint16(1),
+	2589:  uint16(sym__cat_expr),
+	2590:  uint16(136),
+	2591:  uint16(1),
+	2592:  uint16(sym_repetition),
+	2593:  uint16(178),
+	2594:  uint16(1),
+	2595:  uint16(sym_concat),
+	2596:  uint16(193),
+	2597:  uint16(1),
+	2598:  uint16(sym_alternation),
+	2599:  uint16(217),
+	2600:  uint16(1),
+	2601:  uint16(sym__pattern_expr),
+	2602:  uint16(238),
+	2603:  uint16(1),
+	2604:  uint16(sym__alt_expr),
+	2605:  uint16(331),
+	2606:  uint16(1),
+	2607:  uint16(sym__branch),
+	2608:  uint16(176),
+	2609:  uint16(2),
+	2610:  uint16(sym_difference),
+	2611:  uint16(sym__dif_expr),
+	2612:  uint16(112),
+	2613:  uint16(7),
+	2614:  uint16(sym_parenthesized),
+	2615:  uint16(sym_character_class),
+	2616:  uint16(sym_wildcard),
+	2617:  uint16(sym_dstring),
+	2618:  uint16(sym_sstring),
+	2619:  uint16(sym_stag),
+	2620:  uint16(sym_mtag),
+	2621:  uint16(22),
+	2622:  uint16(3),
+	2623:  uint16(1),
+	2624:  uint16(aux_sym_comment_token1),
+	2625:  uint16(21),
+	2626:  uint16(1),
+	2627:  uint16(anon_sym_DOT),
+	2628:  uint16(33),
+	2629:  uint16(1),
+	2630:  uint16(anon_sym_LPAREN),
+	2631:  uint16(37),
+	2632:  uint16(1),
+	2633:  uint16(aux_sym_dstring_token1),
+	2634:  uint16(39),
+	2635:  uint16(1),
+	2636:  uint16(aux_sym_sstring_token1),
+	2637:  uint16(41),
+	2638:  uint16(1),
+	2639:  uint16(anon_sym_AT2),
+	2640:  uint16(45),
+	2641:  uint16(1),
+	2642:  uint16(aux_sym_comment_token2),
+	2643:  uint16(171),
+	2644:  uint16(1),
+	2645:  uint16(sym_identifier),
+	2646:  uint16(181),
+	2647:  uint16(1),
+	2648:  uint16(anon_sym_POUND),
+	2649:  uint16(191),
+	2650:  uint16(1),
+	2651:  uint16(anon_sym_LBRACK),
+	2652:  uint16(32),
+	2653:  uint16(1),
+	2654:  uint16(sym_comment),
+	2655:  uint16(62),
+	2656:  uint16(1),
+	2657:  uint16(aux_sym_alternation_repeat1),
+	2658:  uint16(65),
+	2659:  uint16(1),
+	2660:  uint16(sym__cat_expr),
+	2661:  uint16(76),
+	2662:  uint16(1),
+	2663:  uint16(sym__atom),
+	2664:  uint16(136),
+	2665:  uint16(1),
+	2666:  uint16(sym_repetition),
+	2667:  uint16(178),
+	2668:  uint16(1),
+	2669:  uint16(sym_concat),
+	2670:  uint16(193),
+	2671:  uint16(1),
+	2672:  uint16(sym_alternation),
+	2673:  uint16(203),
+	2674:  uint16(1),
+	2675:  uint16(sym__alt_expr),
+	2676:  uint16(217),
+	2677:  uint16(1),
+	2678:  uint16(sym__pattern_expr),
+	2679:  uint16(331),
+	2680:  uint16(1),
+	2681:  uint16(sym__branch),
+	2682:  uint16(176),
+	2683:  uint16(2),
+	2684:  uint16(sym_difference),
+	2685:  uint16(sym__dif_expr),
+	2686:  uint16(112),
+	2687:  uint16(7),
+	2688:  uint16(sym_parenthesized),
+	2689:  uint16(sym_character_class),
+	2690:  uint16(sym_wildcard),
+	2691:  uint16(sym_dstring),
+	2692:  uint16(sym_sstring),
+	2693:  uint16(sym_stag),
+	2694:  uint16(sym_mtag),
+	2695:  uint16(16),
+	2696:  uint16(3),
+	2697:  uint16(1),
+	2698:  uint16(aux_sym_comment_token1),
+	2699:  uint16(37),
+	2700:  uint16(1),
+	2701:  uint16(aux_sym_dstring_token1),
+	2702:  uint16(39),
+	2703:  uint16(1),
+	2704:  uint16(aux_sym_sstring_token1),
+	2705:  uint16(45),
+	2706:  uint16(1),
+	2707:  uint16(aux_sym_comment_token2),
+	2708:  uint16(193),
+	2709:  uint16(1),
+	2710:  uint16(sym_identifier),
+	2711:  uint16(201),
+	2712:  uint16(1),
+	2713:  uint16(anon_sym_error),
+	2714:  uint16(203),
+	2715:  uint16(1),
+	2716:  uint16(anon_sym_functions),
+	2717:  uint16(205),
+	2718:  uint16(1),
+	2719:  uint16(anon_sym_free_DASHform),
+	2720:  uint16(209),
+	2721:  uint16(1),
+	2722:  uint16(anon_sym_DASH),
+	2723:  uint16(33),
+	2724:  uint16(1),
+	2725:  uint16(sym_comment),
+	2726:  uint16(298),
+	2727:  uint16(1),
+	2728:  uint16(sym__conf_value),
+	2729:  uint16(197),
+	2730:  uint16(2),
+	2731:  uint16(anon_sym_default),
+	2732:  uint16(anon_sym_custom),
+	2733:  uint16(199),
+	2734:  uint16(2),
+	2735:  uint16(anon_sym_match_DASHempty),
+	2736:  uint16(anon_sym_match_DASHnone),
+	2737:  uint16(207),
+	2738:  uint16(2),
+	2739:  uint16(anon_sym_0),
+	2740:  uint16(aux_sym_number_token2),
+	2741:  uint16(195),
+	2742:  uint16(3),
+	2743:  uint16(anon_sym_ignore),
+	2744:  uint16(anon_sym_substitute),
+	2745:  uint16(anon_sym_fail),
+	2746:  uint16(355),
+	2747:  uint16(8),
+	2748:  uint16(sym_field_expression),
+	2749:  uint16(sym_encoding_policy),
+	2750:  uint16(sym_input_conf),
+	2751:  uint16(sym_empty_class_conf),
+	2752:  uint16(sym_api_style),
+	2753:  uint16(sym_dstring),
+	2754:  uint16(sym_sstring),
+	2755:  uint16(sym_number),
+	2756:  uint16(16),
+	2757:  uint16(3),
+	2758:  uint16(1),
+	2759:  uint16(aux_sym_comment_token1),
+	2760:  uint16(37),
+	2761:  uint16(1),
+	2762:  uint16(aux_sym_dstring_token1),
+	2763:  uint16(39),
+	2764:  uint16(1),
+	2765:  uint16(aux_sym_sstring_token1),
+	2766:  uint16(45),
+	2767:  uint16(1),
+	2768:  uint16(aux_sym_comment_token2),
+	2769:  uint16(193),
+	2770:  uint16(1),
+	2771:  uint16(sym_identifier),
+	2772:  uint16(201),
+	2773:  uint16(1),
+	2774:  uint16(anon_sym_error),
+	2775:  uint16(203),
+	2776:  uint16(1),
+	2777:  uint16(anon_sym_functions),
+	2778:  uint16(205),
+	2779:  uint16(1),
+	2780:  uint16(anon_sym_free_DASHform),
+	2781:  uint16(209),
+	2782:  uint16(1),
+	2783:  uint16(anon_sym_DASH),
+	2784:  uint16(34),
+	2785:  uint16(1),
+	2786:  uint16(sym_comment),
+	2787:  uint16(293),
+	2788:  uint16(1),
+	2789:  uint16(sym__conf_value),
+	2790:  uint16(197),
+	2791:  uint16(2),
+	2792:  uint16(anon_sym_default),
+	2793:  uint16(anon_sym_custom),
+	2794:  uint16(199),
+	2795:  uint16(2),
+	2796:  uint16(anon_sym_match_DASHempty),
+	2797:  uint16(anon_sym_match_DASHnone),
+	2798:  uint16(207),
+	2799:  uint16(2),
+	2800:  uint16(anon_sym_0),
+	2801:  uint16(aux_sym_number_token2),
+	2802:  uint16(195),
+	2803:  uint16(3),
+	2804:  uint16(anon_sym_ignore),
+	2805:  uint16(anon_sym_substitute),
+	2806:  uint16(anon_sym_fail),
+	2807:  uint16(355),
+	2808:  uint16(8),
+	2809:  uint16(sym_field_expression),
+	2810:  uint16(sym_encoding_policy),
+	2811:  uint16(sym_input_conf),
+	2812:  uint16(sym_empty_class_conf),
+	2813:  uint16(sym_api_style),
+	2814:  uint16(sym_dstring),
+	2815:  uint16(sym_sstring),
+	2816:  uint16(sym_number),
+	2817:  uint16(16),
+	2818:  uint16(3),
+	2819:  uint16(1),
+	2820:  uint16(aux_sym_comment_token1),
+	2821:  uint16(37),
+	2822:  uint16(1),
+	2823:  uint16(aux_sym_dstring_token1),
+	2824:  uint16(39),
+	2825:  uint16(1),
+	2826:  uint16(aux_sym_sstring_token1),
+	2827:  uint16(45),
+	2828:  uint16(1),
+	2829:  uint16(aux_sym_comment_token2),
+	2830:  uint16(193),
+	2831:  uint16(1),
+	2832:  uint16(sym_identifier),
+	2833:  uint16(201),
+	2834:  uint16(1),
+	2835:  uint16(anon_sym_error),
+	2836:  uint16(203),
+	2837:  uint16(1),
+	2838:  uint16(anon_sym_functions),
+	2839:  uint16(205),
+	2840:  uint16(1),
+	2841:  uint16(anon_sym_free_DASHform),
+	2842:  uint16(209),
+	2843:  uint16(1),
+	2844:  uint16(anon_sym_DASH),
+	2845:  uint16(35),
+	2846:  uint16(1),
+	2847:  uint16(sym_comment),
+	2848:  uint16(294),
+	2849:  uint16(1),
+	2850:  uint16(sym__conf_value),
+	2851:  uint16(197),
+	2852:  uint16(2),
+	2853:  uint16(anon_sym_default),
+	2854:  uint16(anon_sym_custom),
+	2855:  uint16(199),
+	2856:  uint16(2),
+	2857:  uint16(anon_sym_match_DASHempty),
+	2858:  uint16(anon_sym_match_DASHnone),
+	2859:  uint16(207),
+	2860:  uint16(2),
+	2861:  uint16(anon_sym_0),
+	2862:  uint16(aux_sym_number_token2),
+	2863:  uint16(195),
+	2864:  uint16(3),
+	2865:  uint16(anon_sym_ignore),
+	2866:  uint16(anon_sym_substitute),
+	2867:  uint16(anon_sym_fail),
+	2868:  uint16(355),
+	2869:  uint16(8),
+	2870:  uint16(sym_field_expression),
+	2871:  uint16(sym_encoding_policy),
+	2872:  uint16(sym_input_conf),
+	2873:  uint16(sym_empty_class_conf),
+	2874:  uint16(sym_api_style),
+	2875:  uint16(sym_dstring),
+	2876:  uint16(sym_sstring),
+	2877:  uint16(sym_number),
+	2878:  uint16(16),
+	2879:  uint16(3),
+	2880:  uint16(1),
+	2881:  uint16(aux_sym_comment_token1),
+	2882:  uint16(37),
+	2883:  uint16(1),
+	2884:  uint16(aux_sym_dstring_token1),
+	2885:  uint16(39),
+	2886:  uint16(1),
+	2887:  uint16(aux_sym_sstring_token1),
+	2888:  uint16(45),
+	2889:  uint16(1),
+	2890:  uint16(aux_sym_comment_token2),
+	2891:  uint16(193),
+	2892:  uint16(1),
+	2893:  uint16(sym_identifier),
+	2894:  uint16(201),
+	2895:  uint16(1),
+	2896:  uint16(anon_sym_error),
+	2897:  uint16(203),
+	2898:  uint16(1),
+	2899:  uint16(anon_sym_functions),
+	2900:  uint16(205),
+	2901:  uint16(1),
+	2902:  uint16(anon_sym_free_DASHform),
+	2903:  uint16(209),
+	2904:  uint16(1),
+	2905:  uint16(anon_sym_DASH),
+	2906:  uint16(36),
+	2907:  uint16(1),
+	2908:  uint16(sym_comment),
+	2909:  uint16(295),
+	2910:  uint16(1),
+	2911:  uint16(sym__conf_value),
+	2912:  uint16(197),
+	2913:  uint16(2),
+	2914:  uint16(anon_sym_default),
+	2915:  uint16(anon_sym_custom),
+	2916:  uint16(199),
+	2917:  uint16(2),
+	2918:  uint16(anon_sym_match_DASHempty),
+	2919:  uint16(anon_sym_match_DASHnone),
+	2920:  uint16(207),
+	2921:  uint16(2),
+	2922:  uint16(anon_sym_0),
+	2923:  uint16(aux_sym_number_token2),
+	2924:  uint16(195),
+	2925:  uint16(3),
+	2926:  uint16(anon_sym_ignore),
+	2927:  uint16(anon_sym_substitute),
+	2928:  uint16(anon_sym_fail),
+	2929:  uint16(355),
+	2930:  uint16(8),
+	2931:  uint16(sym_field_expression),
+	2932:  uint16(sym_encoding_policy),
+	2933:  uint16(sym_input_conf),
+	2934:  uint16(sym_empty_class_conf),
+	2935:  uint16(sym_api_style),
+	2936:  uint16(sym_dstring),
+	2937:  uint16(sym_sstring),
+	2938:  uint16(sym_number),
+	2939:  uint16(16),
+	2940:  uint16(3),
+	2941:  uint16(1),
+	2942:  uint16(aux_sym_comment_token1),
+	2943:  uint16(37),
+	2944:  uint16(1),
+	2945:  uint16(aux_sym_dstring_token1),
+	2946:  uint16(39),
+	2947:  uint16(1),
+	2948:  uint16(aux_sym_sstring_token1),
+	2949:  uint16(45),
+	2950:  uint16(1),
+	2951:  uint16(aux_sym_comment_token2),
+	2952:  uint16(193),
+	2953:  uint16(1),
+	2954:  uint16(sym_identifier),
+	2955:  uint16(201),
+	2956:  uint16(1),
+	2957:  uint16(anon_sym_error),
+	2958:  uint16(203),
+	2959:  uint16(1),
+	2960:  uint16(anon_sym_functions),
+	2961:  uint16(205),
+	2962:  uint16(1),
+	2963:  uint16(anon_sym_free_DASHform),
+	2964:  uint16(209),
+	2965:  uint16(1),
+	2966:  uint16(anon_sym_DASH),
+	2967:  uint16(37),
+	2968:  uint16(1),
+	2969:  uint16(sym_comment),
+	2970:  uint16(296),
+	2971:  uint16(1),
+	2972:  uint16(sym__conf_value),
+	2973:  uint16(197),
+	2974:  uint16(2),
+	2975:  uint16(anon_sym_default),
+	2976:  uint16(anon_sym_custom),
+	2977:  uint16(199),
+	2978:  uint16(2),
+	2979:  uint16(anon_sym_match_DASHempty),
+	2980:  uint16(anon_sym_match_DASHnone),
+	2981:  uint16(207),
+	2982:  uint16(2),
+	2983:  uint16(anon_sym_0),
+	2984:  uint16(aux_sym_number_token2),
+	2985:  uint16(195),
+	2986:  uint16(3),
+	2987:  uint16(anon_sym_ignore),
+	2988:  uint16(anon_sym_substitute),
+	2989:  uint16(anon_sym_fail),
+	2990:  uint16(355),
+	2991:  uint16(8),
+	2992:  uint16(sym_field_expression),
+	2993:  uint16(sym_encoding_policy),
+	2994:  uint16(sym_input_conf),
+	2995:  uint16(sym_empty_class_conf),
+	2996:  uint16(sym_api_style),
+	2997:  uint16(sym_dstring),
+	2998:  uint16(sym_sstring),
+	2999:  uint16(sym_number),
+	3000:  uint16(16),
+	3001:  uint16(3),
+	3002:  uint16(1),
+	3003:  uint16(aux_sym_comment_token1),
+	3004:  uint16(37),
+	3005:  uint16(1),
+	3006:  uint16(aux_sym_dstring_token1),
+	3007:  uint16(39),
+	3008:  uint16(1),
+	3009:  uint16(aux_sym_sstring_token1),
+	3010:  uint16(45),
+	3011:  uint16(1),
+	3012:  uint16(aux_sym_comment_token2),
+	3013:  uint16(193),
+	3014:  uint16(1),
+	3015:  uint16(sym_identifier),
+	3016:  uint16(201),
+	3017:  uint16(1),
+	3018:  uint16(anon_sym_error),
+	3019:  uint16(203),
+	3020:  uint16(1),
+	3021:  uint16(anon_sym_functions),
+	3022:  uint16(205),
+	3023:  uint16(1),
+	3024:  uint16(anon_sym_free_DASHform),
+	3025:  uint16(209),
+	3026:  uint16(1),
+	3027:  uint16(anon_sym_DASH),
+	3028:  uint16(38),
+	3029:  uint16(1),
+	3030:  uint16(sym_comment),
+	3031:  uint16(297),
+	3032:  uint16(1),
+	3033:  uint16(sym__conf_value),
+	3034:  uint16(197),
+	3035:  uint16(2),
+	3036:  uint16(anon_sym_default),
+	3037:  uint16(anon_sym_custom),
+	3038:  uint16(199),
+	3039:  uint16(2),
+	3040:  uint16(anon_sym_match_DASHempty),
+	3041:  uint16(anon_sym_match_DASHnone),
+	3042:  uint16(207),
+	3043:  uint16(2),
+	3044:  uint16(anon_sym_0),
+	3045:  uint16(aux_sym_number_token2),
+	3046:  uint16(195),
+	3047:  uint16(3),
+	3048:  uint16(anon_sym_ignore),
+	3049:  uint16(anon_sym_substitute),
+	3050:  uint16(anon_sym_fail),
+	3051:  uint16(355),
+	3052:  uint16(8),
+	3053:  uint16(sym_field_expression),
+	3054:  uint16(sym_encoding_policy),
+	3055:  uint16(sym_input_conf),
+	3056:  uint16(sym_empty_class_conf),
+	3057:  uint16(sym_api_style),
+	3058:  uint16(sym_dstring),
+	3059:  uint16(sym_sstring),
+	3060:  uint16(sym_number),
+	3061:  uint16(16),
+	3062:  uint16(3),
+	3063:  uint16(1),
+	3064:  uint16(aux_sym_comment_token1),
+	3065:  uint16(37),
+	3066:  uint16(1),
+	3067:  uint16(aux_sym_dstring_token1),
+	3068:  uint16(39),
+	3069:  uint16(1),
+	3070:  uint16(aux_sym_sstring_token1),
+	3071:  uint16(45),
+	3072:  uint16(1),
+	3073:  uint16(aux_sym_comment_token2),
+	3074:  uint16(193),
+	3075:  uint16(1),
+	3076:  uint16(sym_identifier),
+	3077:  uint16(201),
+	3078:  uint16(1),
+	3079:  uint16(anon_sym_error),
+	3080:  uint16(203),
+	3081:  uint16(1),
+	3082:  uint16(anon_sym_functions),
+	3083:  uint16(205),
+	3084:  uint16(1),
+	3085:  uint16(anon_sym_free_DASHform),
+	3086:  uint16(209),
+	3087:  uint16(1),
+	3088:  uint16(anon_sym_DASH),
+	3089:  uint16(39),
+	3090:  uint16(1),
+	3091:  uint16(sym_comment),
+	3092:  uint16(299),
+	3093:  uint16(1),
+	3094:  uint16(sym__conf_value),
+	3095:  uint16(197),
+	3096:  uint16(2),
+	3097:  uint16(anon_sym_default),
+	3098:  uint16(anon_sym_custom),
+	3099:  uint16(199),
+	3100:  uint16(2),
+	3101:  uint16(anon_sym_match_DASHempty),
+	3102:  uint16(anon_sym_match_DASHnone),
+	3103:  uint16(207),
+	3104:  uint16(2),
+	3105:  uint16(anon_sym_0),
+	3106:  uint16(aux_sym_number_token2),
+	3107:  uint16(195),
+	3108:  uint16(3),
+	3109:  uint16(anon_sym_ignore),
+	3110:  uint16(anon_sym_substitute),
+	3111:  uint16(anon_sym_fail),
+	3112:  uint16(355),
+	3113:  uint16(8),
+	3114:  uint16(sym_field_expression),
+	3115:  uint16(sym_encoding_policy),
+	3116:  uint16(sym_input_conf),
+	3117:  uint16(sym_empty_class_conf),
+	3118:  uint16(sym_api_style),
+	3119:  uint16(sym_dstring),
+	3120:  uint16(sym_sstring),
+	3121:  uint16(sym_number),
+	3122:  uint16(16),
+	3123:  uint16(3),
+	3124:  uint16(1),
+	3125:  uint16(aux_sym_comment_token1),
+	3126:  uint16(37),
+	3127:  uint16(1),
+	3128:  uint16(aux_sym_dstring_token1),
+	3129:  uint16(39),
+	3130:  uint16(1),
+	3131:  uint16(aux_sym_sstring_token1),
+	3132:  uint16(45),
+	3133:  uint16(1),
+	3134:  uint16(aux_sym_comment_token2),
+	3135:  uint16(193),
+	3136:  uint16(1),
+	3137:  uint16(sym_identifier),
+	3138:  uint16(201),
+	3139:  uint16(1),
+	3140:  uint16(anon_sym_error),
+	3141:  uint16(203),
+	3142:  uint16(1),
+	3143:  uint16(anon_sym_functions),
+	3144:  uint16(205),
+	3145:  uint16(1),
+	3146:  uint16(anon_sym_free_DASHform),
+	3147:  uint16(209),
+	3148:  uint16(1),
+	3149:  uint16(anon_sym_DASH),
+	3150:  uint16(40),
+	3151:  uint16(1),
+	3152:  uint16(sym_comment),
+	3153:  uint16(300),
+	3154:  uint16(1),
+	3155:  uint16(sym__conf_value),
+	3156:  uint16(197),
+	3157:  uint16(2),
+	3158:  uint16(anon_sym_default),
+	3159:  uint16(anon_sym_custom),
+	3160:  uint16(199),
+	3161:  uint16(2),
+	3162:  uint16(anon_sym_match_DASHempty),
+	3163:  uint16(anon_sym_match_DASHnone),
+	3164:  uint16(207),
+	3165:  uint16(2),
+	3166:  uint16(anon_sym_0),
+	3167:  uint16(aux_sym_number_token2),
+	3168:  uint16(195),
+	3169:  uint16(3),
+	3170:  uint16(anon_sym_ignore),
+	3171:  uint16(anon_sym_substitute),
+	3172:  uint16(anon_sym_fail),
+	3173:  uint16(355),
+	3174:  uint16(8),
+	3175:  uint16(sym_field_expression),
+	3176:  uint16(sym_encoding_policy),
+	3177:  uint16(sym_input_conf),
+	3178:  uint16(sym_empty_class_conf),
+	3179:  uint16(sym_api_style),
+	3180:  uint16(sym_dstring),
+	3181:  uint16(sym_sstring),
+	3182:  uint16(sym_number),
+	3183:  uint16(16),
+	3184:  uint16(3),
+	3185:  uint16(1),
+	3186:  uint16(aux_sym_comment_token1),
+	3187:  uint16(37),
+	3188:  uint16(1),
+	3189:  uint16(aux_sym_dstring_token1),
+	3190:  uint16(39),
+	3191:  uint16(1),
+	3192:  uint16(aux_sym_sstring_token1),
+	3193:  uint16(45),
+	3194:  uint16(1),
+	3195:  uint16(aux_sym_comment_token2),
+	3196:  uint16(193),
+	3197:  uint16(1),
+	3198:  uint16(sym_identifier),
+	3199:  uint16(201),
+	3200:  uint16(1),
+	3201:  uint16(anon_sym_error),
+	3202:  uint16(203),
+	3203:  uint16(1),
+	3204:  uint16(anon_sym_functions),
+	3205:  uint16(205),
+	3206:  uint16(1),
+	3207:  uint16(anon_sym_free_DASHform),
+	3208:  uint16(209),
+	3209:  uint16(1),
+	3210:  uint16(anon_sym_DASH),
+	3211:  uint16(41),
+	3212:  uint16(1),
+	3213:  uint16(sym_comment),
+	3214:  uint16(347),
+	3215:  uint16(1),
+	3216:  uint16(sym__conf_value),
+	3217:  uint16(197),
+	3218:  uint16(2),
+	3219:  uint16(anon_sym_default),
+	3220:  uint16(anon_sym_custom),
+	3221:  uint16(199),
+	3222:  uint16(2),
+	3223:  uint16(anon_sym_match_DASHempty),
+	3224:  uint16(anon_sym_match_DASHnone),
+	3225:  uint16(207),
+	3226:  uint16(2),
+	3227:  uint16(anon_sym_0),
+	3228:  uint16(aux_sym_number_token2),
+	3229:  uint16(195),
+	3230:  uint16(3),
+	3231:  uint16(anon_sym_ignore),
+	3232:  uint16(anon_sym_substitute),
+	3233:  uint16(anon_sym_fail),
+	3234:  uint16(355),
+	3235:  uint16(8),
+	3236:  uint16(sym_field_expression),
+	3237:  uint16(sym_encoding_policy),
+	3238:  uint16(sym_input_conf),
+	3239:  uint16(sym_empty_class_conf),
+	3240:  uint16(sym_api_style),
+	3241:  uint16(sym_dstring),
+	3242:  uint16(sym_sstring),
+	3243:  uint16(sym_number),
+	3244:  uint16(16),
+	3245:  uint16(3),
+	3246:  uint16(1),
+	3247:  uint16(aux_sym_comment_token1),
+	3248:  uint16(37),
+	3249:  uint16(1),
+	3250:  uint16(aux_sym_dstring_token1),
+	3251:  uint16(39),
+	3252:  uint16(1),
+	3253:  uint16(aux_sym_sstring_token1),
+	3254:  uint16(45),
+	3255:  uint16(1),
+	3256:  uint16(aux_sym_comment_token2),
+	3257:  uint16(193),
+	3258:  uint16(1),
+	3259:  uint16(sym_identifier),
+	3260:  uint16(201),
+	3261:  uint16(1),
+	3262:  uint16(anon_sym_error),
+	3263:  uint16(203),
+	3264:  uint16(1),
+	3265:  uint16(anon_sym_functions),
+	3266:  uint16(205),
+	3267:  uint16(1),
+	3268:  uint16(anon_sym_free_DASHform),
+	3269:  uint16(209),
+	3270:  uint16(1),
+	3271:  uint16(anon_sym_DASH),
+	3272:  uint16(42),
+	3273:  uint16(1),
+	3274:  uint16(sym_comment),
+	3275:  uint16(384),
+	3276:  uint16(1),
+	3277:  uint16(sym__conf_value),
+	3278:  uint16(197),
+	3279:  uint16(2),
+	3280:  uint16(anon_sym_default),
+	3281:  uint16(anon_sym_custom),
+	3282:  uint16(199),
+	3283:  uint16(2),
+	3284:  uint16(anon_sym_match_DASHempty),
+	3285:  uint16(anon_sym_match_DASHnone),
+	3286:  uint16(207),
+	3287:  uint16(2),
+	3288:  uint16(anon_sym_0),
+	3289:  uint16(aux_sym_number_token2),
+	3290:  uint16(195),
+	3291:  uint16(3),
+	3292:  uint16(anon_sym_ignore),
+	3293:  uint16(anon_sym_substitute),
+	3294:  uint16(anon_sym_fail),
+	3295:  uint16(355),
+	3296:  uint16(8),
+	3297:  uint16(sym_field_expression),
+	3298:  uint16(sym_encoding_policy),
+	3299:  uint16(sym_input_conf),
+	3300:  uint16(sym_empty_class_conf),
+	3301:  uint16(sym_api_style),
+	3302:  uint16(sym_dstring),
+	3303:  uint16(sym_sstring),
+	3304:  uint16(sym_number),
+	3305:  uint16(16),
+	3306:  uint16(3),
+	3307:  uint16(1),
+	3308:  uint16(aux_sym_comment_token1),
+	3309:  uint16(37),
+	3310:  uint16(1),
+	3311:  uint16(aux_sym_dstring_token1),
+	3312:  uint16(39),
+	3313:  uint16(1),
+	3314:  uint16(aux_sym_sstring_token1),
+	3315:  uint16(45),
+	3316:  uint16(1),
+	3317:  uint16(aux_sym_comment_token2),
+	3318:  uint16(193),
+	3319:  uint16(1),
+	3320:  uint16(sym_identifier),
+	3321:  uint16(201),
+	3322:  uint16(1),
+	3323:  uint16(anon_sym_error),
+	3324:  uint16(203),
+	3325:  uint16(1),
+	3326:  uint16(anon_sym_functions),
+	3327:  uint16(205),
+	3328:  uint16(1),
+	3329:  uint16(anon_sym_free_DASHform),
+	3330:  uint16(209),
+	3331:  uint16(1),
+	3332:  uint16(anon_sym_DASH),
+	3333:  uint16(43),
+	3334:  uint16(1),
+	3335:  uint16(sym_comment),
+	3336:  uint16(268),
+	3337:  uint16(1),
+	3338:  uint16(sym__conf_value),
+	3339:  uint16(197),
+	3340:  uint16(2),
+	3341:  uint16(anon_sym_default),
+	3342:  uint16(anon_sym_custom),
+	3343:  uint16(199),
+	3344:  uint16(2),
+	3345:  uint16(anon_sym_match_DASHempty),
+	3346:  uint16(anon_sym_match_DASHnone),
+	3347:  uint16(207),
+	3348:  uint16(2),
+	3349:  uint16(anon_sym_0),
+	3350:  uint16(aux_sym_number_token2),
+	3351:  uint16(195),
+	3352:  uint16(3),
+	3353:  uint16(anon_sym_ignore),
+	3354:  uint16(anon_sym_substitute),
+	3355:  uint16(anon_sym_fail),
+	3356:  uint16(355),
+	3357:  uint16(8),
+	3358:  uint16(sym_field_expression),
+	3359:  uint16(sym_encoding_policy),
+	3360:  uint16(sym_input_conf),
+	3361:  uint16(sym_empty_class_conf),
+	3362:  uint16(sym_api_style),
+	3363:  uint16(sym_dstring),
+	3364:  uint16(sym_sstring),
+	3365:  uint16(sym_number),
+	3366:  uint16(16),
+	3367:  uint16(3),
+	3368:  uint16(1),
+	3369:  uint16(aux_sym_comment_token1),
+	3370:  uint16(37),
+	3371:  uint16(1),
+	3372:  uint16(aux_sym_dstring_token1),
+	3373:  uint16(39),
+	3374:  uint16(1),
+	3375:  uint16(aux_sym_sstring_token1),
+	3376:  uint16(45),
+	3377:  uint16(1),
+	3378:  uint16(aux_sym_comment_token2),
+	3379:  uint16(193),
+	3380:  uint16(1),
+	3381:  uint16(sym_identifier),
+	3382:  uint16(201),
+	3383:  uint16(1),
+	3384:  uint16(anon_sym_error),
+	3385:  uint16(203),
+	3386:  uint16(1),
+	3387:  uint16(anon_sym_functions),
+	3388:  uint16(205),
+	3389:  uint16(1),
+	3390:  uint16(anon_sym_free_DASHform),
+	3391:  uint16(209),
+	3392:  uint16(1),
+	3393:  uint16(anon_sym_DASH),
+	3394:  uint16(44),
+	3395:  uint16(1),
+	3396:  uint16(sym_comment),
+	3397:  uint16(269),
+	3398:  uint16(1),
+	3399:  uint16(sym__conf_value),
+	3400:  uint16(197),
+	3401:  uint16(2),
+	3402:  uint16(anon_sym_default),
+	3403:  uint16(anon_sym_custom),
+	3404:  uint16(199),
+	3405:  uint16(2),
+	3406:  uint16(anon_sym_match_DASHempty),
+	3407:  uint16(anon_sym_match_DASHnone),
+	3408:  uint16(207),
+	3409:  uint16(2),
+	3410:  uint16(anon_sym_0),
+	3411:  uint16(aux_sym_number_token2),
+	3412:  uint16(195),
+	3413:  uint16(3),
+	3414:  uint16(anon_sym_ignore),
+	3415:  uint16(anon_sym_substitute),
+	3416:  uint16(anon_sym_fail),
+	3417:  uint16(355),
+	3418:  uint16(8),
+	3419:  uint16(sym_field_expression),
+	3420:  uint16(sym_encoding_policy),
+	3421:  uint16(sym_input_conf),
+	3422:  uint16(sym_empty_class_conf),
+	3423:  uint16(sym_api_style),
+	3424:  uint16(sym_dstring),
+	3425:  uint16(sym_sstring),
+	3426:  uint16(sym_number),
+	3427:  uint16(16),
+	3428:  uint16(3),
+	3429:  uint16(1),
+	3430:  uint16(aux_sym_comment_token1),
+	3431:  uint16(37),
+	3432:  uint16(1),
+	3433:  uint16(aux_sym_dstring_token1),
+	3434:  uint16(39),
+	3435:  uint16(1),
+	3436:  uint16(aux_sym_sstring_token1),
+	3437:  uint16(45),
+	3438:  uint16(1),
+	3439:  uint16(aux_sym_comment_token2),
+	3440:  uint16(193),
+	3441:  uint16(1),
+	3442:  uint16(sym_identifier),
+	3443:  uint16(201),
+	3444:  uint16(1),
+	3445:  uint16(anon_sym_error),
+	3446:  uint16(203),
+	3447:  uint16(1),
+	3448:  uint16(anon_sym_functions),
+	3449:  uint16(205),
+	3450:  uint16(1),
+	3451:  uint16(anon_sym_free_DASHform),
+	3452:  uint16(209),
+	3453:  uint16(1),
+	3454:  uint16(anon_sym_DASH),
+	3455:  uint16(45),
+	3456:  uint16(1),
+	3457:  uint16(sym_comment),
+	3458:  uint16(270),
+	3459:  uint16(1),
+	3460:  uint16(sym__conf_value),
+	3461:  uint16(197),
+	3462:  uint16(2),
+	3463:  uint16(anon_sym_default),
+	3464:  uint16(anon_sym_custom),
+	3465:  uint16(199),
+	3466:  uint16(2),
+	3467:  uint16(anon_sym_match_DASHempty),
+	3468:  uint16(anon_sym_match_DASHnone),
+	3469:  uint16(207),
+	3470:  uint16(2),
+	3471:  uint16(anon_sym_0),
+	3472:  uint16(aux_sym_number_token2),
+	3473:  uint16(195),
+	3474:  uint16(3),
+	3475:  uint16(anon_sym_ignore),
+	3476:  uint16(anon_sym_substitute),
+	3477:  uint16(anon_sym_fail),
+	3478:  uint16(355),
+	3479:  uint16(8),
+	3480:  uint16(sym_field_expression),
+	3481:  uint16(sym_encoding_policy),
+	3482:  uint16(sym_input_conf),
+	3483:  uint16(sym_empty_class_conf),
+	3484:  uint16(sym_api_style),
+	3485:  uint16(sym_dstring),
+	3486:  uint16(sym_sstring),
+	3487:  uint16(sym_number),
+	3488:  uint16(16),
+	3489:  uint16(3),
+	3490:  uint16(1),
+	3491:  uint16(aux_sym_comment_token1),
+	3492:  uint16(37),
+	3493:  uint16(1),
+	3494:  uint16(aux_sym_dstring_token1),
+	3495:  uint16(39),
+	3496:  uint16(1),
+	3497:  uint16(aux_sym_sstring_token1),
+	3498:  uint16(45),
+	3499:  uint16(1),
+	3500:  uint16(aux_sym_comment_token2),
+	3501:  uint16(193),
+	3502:  uint16(1),
+	3503:  uint16(sym_identifier),
+	3504:  uint16(201),
+	3505:  uint16(1),
+	3506:  uint16(anon_sym_error),
+	3507:  uint16(203),
+	3508:  uint16(1),
+	3509:  uint16(anon_sym_functions),
+	3510:  uint16(205),
+	3511:  uint16(1),
+	3512:  uint16(anon_sym_free_DASHform),
+	3513:  uint16(209),
+	3514:  uint16(1),
+	3515:  uint16(anon_sym_DASH),
+	3516:  uint16(46),
+	3517:  uint16(1),
+	3518:  uint16(sym_comment),
+	3519:  uint16(271),
+	3520:  uint16(1),
+	3521:  uint16(sym__conf_value),
+	3522:  uint16(197),
+	3523:  uint16(2),
+	3524:  uint16(anon_sym_default),
+	3525:  uint16(anon_sym_custom),
+	3526:  uint16(199),
+	3527:  uint16(2),
+	3528:  uint16(anon_sym_match_DASHempty),
+	3529:  uint16(anon_sym_match_DASHnone),
+	3530:  uint16(207),
+	3531:  uint16(2),
+	3532:  uint16(anon_sym_0),
+	3533:  uint16(aux_sym_number_token2),
+	3534:  uint16(195),
+	3535:  uint16(3),
+	3536:  uint16(anon_sym_ignore),
+	3537:  uint16(anon_sym_substitute),
+	3538:  uint16(anon_sym_fail),
+	3539:  uint16(355),
+	3540:  uint16(8),
+	3541:  uint16(sym_field_expression),
+	3542:  uint16(sym_encoding_policy),
+	3543:  uint16(sym_input_conf),
+	3544:  uint16(sym_empty_class_conf),
+	3545:  uint16(sym_api_style),
+	3546:  uint16(sym_dstring),
+	3547:  uint16(sym_sstring),
+	3548:  uint16(sym_number),
+	3549:  uint16(16),
+	3550:  uint16(3),
+	3551:  uint16(1),
+	3552:  uint16(aux_sym_comment_token1),
+	3553:  uint16(37),
+	3554:  uint16(1),
+	3555:  uint16(aux_sym_dstring_token1),
+	3556:  uint16(39),
+	3557:  uint16(1),
+	3558:  uint16(aux_sym_sstring_token1),
+	3559:  uint16(45),
+	3560:  uint16(1),
+	3561:  uint16(aux_sym_comment_token2),
+	3562:  uint16(193),
+	3563:  uint16(1),
+	3564:  uint16(sym_identifier),
+	3565:  uint16(201),
+	3566:  uint16(1),
+	3567:  uint16(anon_sym_error),
+	3568:  uint16(203),
+	3569:  uint16(1),
+	3570:  uint16(anon_sym_functions),
+	3571:  uint16(205),
+	3572:  uint16(1),
+	3573:  uint16(anon_sym_free_DASHform),
+	3574:  uint16(209),
+	3575:  uint16(1),
+	3576:  uint16(anon_sym_DASH),
+	3577:  uint16(47),
+	3578:  uint16(1),
+	3579:  uint16(sym_comment),
+	3580:  uint16(272),
+	3581:  uint16(1),
+	3582:  uint16(sym__conf_value),
+	3583:  uint16(197),
+	3584:  uint16(2),
+	3585:  uint16(anon_sym_default),
+	3586:  uint16(anon_sym_custom),
+	3587:  uint16(199),
+	3588:  uint16(2),
+	3589:  uint16(anon_sym_match_DASHempty),
+	3590:  uint16(anon_sym_match_DASHnone),
+	3591:  uint16(207),
+	3592:  uint16(2),
+	3593:  uint16(anon_sym_0),
+	3594:  uint16(aux_sym_number_token2),
+	3595:  uint16(195),
+	3596:  uint16(3),
+	3597:  uint16(anon_sym_ignore),
+	3598:  uint16(anon_sym_substitute),
+	3599:  uint16(anon_sym_fail),
+	3600:  uint16(355),
+	3601:  uint16(8),
+	3602:  uint16(sym_field_expression),
+	3603:  uint16(sym_encoding_policy),
+	3604:  uint16(sym_input_conf),
+	3605:  uint16(sym_empty_class_conf),
+	3606:  uint16(sym_api_style),
+	3607:  uint16(sym_dstring),
+	3608:  uint16(sym_sstring),
+	3609:  uint16(sym_number),
+	3610:  uint16(16),
+	3611:  uint16(3),
+	3612:  uint16(1),
+	3613:  uint16(aux_sym_comment_token1),
+	3614:  uint16(37),
+	3615:  uint16(1),
+	3616:  uint16(aux_sym_dstring_token1),
+	3617:  uint16(39),
+	3618:  uint16(1),
+	3619:  uint16(aux_sym_sstring_token1),
+	3620:  uint16(45),
+	3621:  uint16(1),
+	3622:  uint16(aux_sym_comment_token2),
+	3623:  uint16(193),
+	3624:  uint16(1),
+	3625:  uint16(sym_identifier),
+	3626:  uint16(201),
+	3627:  uint16(1),
+	3628:  uint16(anon_sym_error),
+	3629:  uint16(203),
+	3630:  uint16(1),
+	3631:  uint16(anon_sym_functions),
+	3632:  uint16(205),
+	3633:  uint16(1),
+	3634:  uint16(anon_sym_free_DASHform),
+	3635:  uint16(209),
+	3636:  uint16(1),
+	3637:  uint16(anon_sym_DASH),
+	3638:  uint16(48),
+	3639:  uint16(1),
+	3640:  uint16(sym_comment),
+	3641:  uint16(273),
+	3642:  uint16(1),
+	3643:  uint16(sym__conf_value),
+	3644:  uint16(197),
+	3645:  uint16(2),
+	3646:  uint16(anon_sym_default),
+	3647:  uint16(anon_sym_custom),
+	3648:  uint16(199),
+	3649:  uint16(2),
+	3650:  uint16(anon_sym_match_DASHempty),
+	3651:  uint16(anon_sym_match_DASHnone),
+	3652:  uint16(207),
+	3653:  uint16(2),
+	3654:  uint16(anon_sym_0),
+	3655:  uint16(aux_sym_number_token2),
+	3656:  uint16(195),
+	3657:  uint16(3),
+	3658:  uint16(anon_sym_ignore),
+	3659:  uint16(anon_sym_substitute),
+	3660:  uint16(anon_sym_fail),
+	3661:  uint16(355),
+	3662:  uint16(8),
+	3663:  uint16(sym_field_expression),
+	3664:  uint16(sym_encoding_policy),
+	3665:  uint16(sym_input_conf),
+	3666:  uint16(sym_empty_class_conf),
+	3667:  uint16(sym_api_style),
+	3668:  uint16(sym_dstring),
+	3669:  uint16(sym_sstring),
+	3670:  uint16(sym_number),
+	3671:  uint16(16),
+	3672:  uint16(3),
+	3673:  uint16(1),
+	3674:  uint16(aux_sym_comment_token1),
+	3675:  uint16(37),
+	3676:  uint16(1),
+	3677:  uint16(aux_sym_dstring_token1),
+	3678:  uint16(39),
+	3679:  uint16(1),
+	3680:  uint16(aux_sym_sstring_token1),
+	3681:  uint16(45),
+	3682:  uint16(1),
+	3683:  uint16(aux_sym_comment_token2),
+	3684:  uint16(193),
+	3685:  uint16(1),
+	3686:  uint16(sym_identifier),
+	3687:  uint16(201),
+	3688:  uint16(1),
+	3689:  uint16(anon_sym_error),
+	3690:  uint16(203),
+	3691:  uint16(1),
+	3692:  uint16(anon_sym_functions),
+	3693:  uint16(205),
+	3694:  uint16(1),
+	3695:  uint16(anon_sym_free_DASHform),
+	3696:  uint16(209),
+	3697:  uint16(1),
+	3698:  uint16(anon_sym_DASH),
+	3699:  uint16(49),
+	3700:  uint16(1),
+	3701:  uint16(sym_comment),
+	3702:  uint16(288),
+	3703:  uint16(1),
+	3704:  uint16(sym__conf_value),
+	3705:  uint16(197),
+	3706:  uint16(2),
+	3707:  uint16(anon_sym_default),
+	3708:  uint16(anon_sym_custom),
+	3709:  uint16(199),
+	3710:  uint16(2),
+	3711:  uint16(anon_sym_match_DASHempty),
+	3712:  uint16(anon_sym_match_DASHnone),
+	3713:  uint16(207),
+	3714:  uint16(2),
+	3715:  uint16(anon_sym_0),
+	3716:  uint16(aux_sym_number_token2),
+	3717:  uint16(195),
+	3718:  uint16(3),
+	3719:  uint16(anon_sym_ignore),
+	3720:  uint16(anon_sym_substitute),
+	3721:  uint16(anon_sym_fail),
+	3722:  uint16(355),
+	3723:  uint16(8),
+	3724:  uint16(sym_field_expression),
+	3725:  uint16(sym_encoding_policy),
+	3726:  uint16(sym_input_conf),
+	3727:  uint16(sym_empty_class_conf),
+	3728:  uint16(sym_api_style),
+	3729:  uint16(sym_dstring),
+	3730:  uint16(sym_sstring),
+	3731:  uint16(sym_number),
+	3732:  uint16(16),
+	3733:  uint16(3),
+	3734:  uint16(1),
+	3735:  uint16(aux_sym_comment_token1),
+	3736:  uint16(37),
+	3737:  uint16(1),
+	3738:  uint16(aux_sym_dstring_token1),
+	3739:  uint16(39),
+	3740:  uint16(1),
+	3741:  uint16(aux_sym_sstring_token1),
+	3742:  uint16(45),
+	3743:  uint16(1),
+	3744:  uint16(aux_sym_comment_token2),
+	3745:  uint16(193),
+	3746:  uint16(1),
+	3747:  uint16(sym_identifier),
+	3748:  uint16(201),
+	3749:  uint16(1),
+	3750:  uint16(anon_sym_error),
+	3751:  uint16(203),
+	3752:  uint16(1),
+	3753:  uint16(anon_sym_functions),
+	3754:  uint16(205),
+	3755:  uint16(1),
+	3756:  uint16(anon_sym_free_DASHform),
+	3757:  uint16(209),
+	3758:  uint16(1),
+	3759:  uint16(anon_sym_DASH),
+	3760:  uint16(50),
+	3761:  uint16(1),
+	3762:  uint16(sym_comment),
+	3763:  uint16(289),
+	3764:  uint16(1),
+	3765:  uint16(sym__conf_value),
+	3766:  uint16(197),
+	3767:  uint16(2),
+	3768:  uint16(anon_sym_default),
+	3769:  uint16(anon_sym_custom),
+	3770:  uint16(199),
+	3771:  uint16(2),
+	3772:  uint16(anon_sym_match_DASHempty),
+	3773:  uint16(anon_sym_match_DASHnone),
+	3774:  uint16(207),
+	3775:  uint16(2),
+	3776:  uint16(anon_sym_0),
+	3777:  uint16(aux_sym_number_token2),
+	3778:  uint16(195),
+	3779:  uint16(3),
+	3780:  uint16(anon_sym_ignore),
+	3781:  uint16(anon_sym_substitute),
+	3782:  uint16(anon_sym_fail),
+	3783:  uint16(355),
+	3784:  uint16(8),
+	3785:  uint16(sym_field_expression),
+	3786:  uint16(sym_encoding_policy),
+	3787:  uint16(sym_input_conf),
+	3788:  uint16(sym_empty_class_conf),
+	3789:  uint16(sym_api_style),
+	3790:  uint16(sym_dstring),
+	3791:  uint16(sym_sstring),
+	3792:  uint16(sym_number),
+	3793:  uint16(18),
+	3794:  uint16(3),
+	3795:  uint16(1),
+	3796:  uint16(aux_sym_comment_token1),
+	3797:  uint16(5),
+	3798:  uint16(1),
+	3799:  uint16(aux_sym_comment_token2),
+	3800:  uint16(21),
+	3801:  uint16(1),
+	3802:  uint16(anon_sym_DOT),
+	3803:  uint16(33),
+	3804:  uint16(1),
+	3805:  uint16(anon_sym_LPAREN),
+	3806:  uint16(37),
+	3807:  uint16(1),
+	3808:  uint16(aux_sym_dstring_token1),
+	3809:  uint16(39),
+	3810:  uint16(1),
+	3811:  uint16(aux_sym_sstring_token1),
+	3812:  uint16(41),
+	3813:  uint16(1),
+	3814:  uint16(anon_sym_AT2),
+	3815:  uint16(171),
+	3816:  uint16(1),
+	3817:  uint16(sym_identifier),
+	3818:  uint16(179),
+	3819:  uint16(1),
+	3820:  uint16(anon_sym_LBRACK),
+	3821:  uint16(181),
+	3822:  uint16(1),
+	3823:  uint16(anon_sym_POUND),
+	3824:  uint16(213),
+	3825:  uint16(1),
+	3826:  uint16(anon_sym_SLASH),
+	3827:  uint16(51),
+	3828:  uint16(1),
+	3829:  uint16(sym_comment),
+	3830:  uint16(52),
+	3831:  uint16(1),
+	3832:  uint16(aux_sym_concat_repeat1),
+	3833:  uint16(76),
+	3834:  uint16(1),
+	3835:  uint16(sym__atom),
+	3836:  uint16(136),
+	3837:  uint16(1),
+	3838:  uint16(sym_repetition),
+	3839:  uint16(139),
+	3840:  uint16(1),
+	3841:  uint16(sym__cat_expr),
+	3842:  uint16(211),
+	3843:  uint16(5),
+	3844:  uint16(anon_sym_EQ_GT),
+	3845:  uint16(anon_sym_COLON_EQ_GT),
+	3846:  uint16(anon_sym_LBRACE),
+	3847:  uint16(anon_sym_PIPE),
+	3848:  uint16(anon_sym_BSLASH),
+	3849:  uint16(112),
+	3850:  uint16(7),
+	3851:  uint16(sym_parenthesized),
+	3852:  uint16(sym_character_class),
+	3853:  uint16(sym_wildcard),
+	3854:  uint16(sym_dstring),
+	3855:  uint16(sym_sstring),
+	3856:  uint16(sym_stag),
+	3857:  uint16(sym_mtag),
+	3858:  uint16(18),
+	3859:  uint16(3),
+	3860:  uint16(1),
+	3861:  uint16(aux_sym_comment_token1),
+	3862:  uint16(5),
+	3863:  uint16(1),
+	3864:  uint16(aux_sym_comment_token2),
+	3865:  uint16(21),
+	3866:  uint16(1),
+	3867:  uint16(anon_sym_DOT),
+	3868:  uint16(33),
+	3869:  uint16(1),
+	3870:  uint16(anon_sym_LPAREN),
+	3871:  uint16(37),
+	3872:  uint16(1),
+	3873:  uint16(aux_sym_dstring_token1),
+	3874:  uint16(39),
+	3875:  uint16(1),
+	3876:  uint16(aux_sym_sstring_token1),
+	3877:  uint16(41),
+	3878:  uint16(1),
+	3879:  uint16(anon_sym_AT2),
+	3880:  uint16(171),
+	3881:  uint16(1),
+	3882:  uint16(sym_identifier),
+	3883:  uint16(179),
+	3884:  uint16(1),
+	3885:  uint16(anon_sym_LBRACK),
+	3886:  uint16(181),
+	3887:  uint16(1),
+	3888:  uint16(anon_sym_POUND),
+	3889:  uint16(217),
+	3890:  uint16(1),
+	3891:  uint16(anon_sym_SLASH),
+	3892:  uint16(52),
+	3893:  uint16(1),
+	3894:  uint16(sym_comment),
+	3895:  uint16(53),
+	3896:  uint16(1),
+	3897:  uint16(aux_sym_concat_repeat1),
+	3898:  uint16(76),
+	3899:  uint16(1),
+	3900:  uint16(sym__atom),
+	3901:  uint16(136),
+	3902:  uint16(1),
+	3903:  uint16(sym_repetition),
+	3904:  uint16(139),
+	3905:  uint16(1),
+	3906:  uint16(sym__cat_expr),
+	3907:  uint16(215),
+	3908:  uint16(5),
+	3909:  uint16(anon_sym_EQ_GT),
+	3910:  uint16(anon_sym_COLON_EQ_GT),
+	3911:  uint16(anon_sym_LBRACE),
+	3912:  uint16(anon_sym_PIPE),
+	3913:  uint16(anon_sym_BSLASH),
+	3914:  uint16(112),
+	3915:  uint16(7),
+	3916:  uint16(sym_parenthesized),
+	3917:  uint16(sym_character_class),
+	3918:  uint16(sym_wildcard),
+	3919:  uint16(sym_dstring),
+	3920:  uint16(sym_sstring),
+	3921:  uint16(sym_stag),
+	3922:  uint16(sym_mtag),
+	3923:  uint16(17),
+	3924:  uint16(3),
+	3925:  uint16(1),
+	3926:  uint16(aux_sym_comment_token1),
+	3927:  uint16(5),
+	3928:  uint16(1),
+	3929:  uint16(aux_sym_comment_token2),
+	3930:  uint16(219),
+	3931:  uint16(1),
+	3932:  uint16(sym_identifier),
+	3933:  uint16(222),
+	3934:  uint16(1),
+	3935:  uint16(anon_sym_DOT),
+	3936:  uint16(227),
+	3937:  uint16(1),
+	3938:  uint16(anon_sym_SLASH),
+	3939:  uint16(229),
+	3940:  uint16(1),
+	3941:  uint16(anon_sym_LPAREN),
+	3942:  uint16(232),
+	3943:  uint16(1),
+	3944:  uint16(anon_sym_LBRACK),
+	3945:  uint16(235),
+	3946:  uint16(1),
+	3947:  uint16(aux_sym_dstring_token1),
+	3948:  uint16(238),
+	3949:  uint16(1),
+	3950:  uint16(aux_sym_sstring_token1),
+	3951:  uint16(241),
+	3952:  uint16(1),
+	3953:  uint16(anon_sym_AT2),
+	3954:  uint16(244),
+	3955:  uint16(1),
+	3956:  uint16(anon_sym_POUND),
+	3957:  uint16(76),
+	3958:  uint16(1),
+	3959:  uint16(sym__atom),
+	3960:  uint16(136),
+	3961:  uint16(1),
+	3962:  uint16(sym_repetition),
+	3963:  uint16(139),
+	3964:  uint16(1),
+	3965:  uint16(sym__cat_expr),
+	3966:  uint16(53),
+	3967:  uint16(2),
+	3968:  uint16(sym_comment),
+	3969:  uint16(aux_sym_concat_repeat1),
+	3970:  uint16(225),
+	3971:  uint16(5),
+	3972:  uint16(anon_sym_EQ_GT),
+	3973:  uint16(anon_sym_COLON_EQ_GT),
+	3974:  uint16(anon_sym_LBRACE),
+	3975:  uint16(anon_sym_PIPE),
+	3976:  uint16(anon_sym_BSLASH),
+	3977:  uint16(112),
+	3978:  uint16(7),
+	3979:  uint16(sym_parenthesized),
+	3980:  uint16(sym_character_class),
+	3981:  uint16(sym_wildcard),
+	3982:  uint16(sym_dstring),
+	3983:  uint16(sym_sstring),
+	3984:  uint16(sym_stag),
+	3985:  uint16(sym_mtag),
+	3986:  uint16(16),
+	3987:  uint16(3),
+	3988:  uint16(1),
+	3989:  uint16(aux_sym_comment_token1),
+	3990:  uint16(37),
+	3991:  uint16(1),
+	3992:  uint16(aux_sym_dstring_token1),
+	3993:  uint16(39),
+	3994:  uint16(1),
+	3995:  uint16(aux_sym_sstring_token1),
+	3996:  uint16(45),
+	3997:  uint16(1),
+	3998:  uint16(aux_sym_comment_token2),
+	3999:  uint16(193),
+	4000:  uint16(1),
+	4001:  uint16(sym_identifier),
+	4002:  uint16(201),
+	4003:  uint16(1),
+	4004:  uint16(anon_sym_error),
+	4005:  uint16(203),
+	4006:  uint16(1),
+	4007:  uint16(anon_sym_functions),
+	4008:  uint16(205),
+	4009:  uint16(1),
+	4010:  uint16(anon_sym_free_DASHform),
+	4011:  uint16(209),
+	4012:  uint16(1),
+	4013:  uint16(anon_sym_DASH),
+	4014:  uint16(54),
+	4015:  uint16(1),
+	4016:  uint16(sym_comment),
+	4017:  uint16(292),
+	4018:  uint16(1),
+	4019:  uint16(sym__conf_value),
+	4020:  uint16(197),
+	4021:  uint16(2),
+	4022:  uint16(anon_sym_default),
+	4023:  uint16(anon_sym_custom),
+	4024:  uint16(199),
+	4025:  uint16(2),
+	4026:  uint16(anon_sym_match_DASHempty),
+	4027:  uint16(anon_sym_match_DASHnone),
+	4028:  uint16(207),
+	4029:  uint16(2),
+	4030:  uint16(anon_sym_0),
+	4031:  uint16(aux_sym_number_token2),
+	4032:  uint16(195),
+	4033:  uint16(3),
+	4034:  uint16(anon_sym_ignore),
+	4035:  uint16(anon_sym_substitute),
+	4036:  uint16(anon_sym_fail),
+	4037:  uint16(355),
+	4038:  uint16(8),
+	4039:  uint16(sym_field_expression),
+	4040:  uint16(sym_encoding_policy),
+	4041:  uint16(sym_input_conf),
+	4042:  uint16(sym_empty_class_conf),
+	4043:  uint16(sym_api_style),
+	4044:  uint16(sym_dstring),
+	4045:  uint16(sym_sstring),
+	4046:  uint16(sym_number),
+	4047:  uint16(16),
+	4048:  uint16(3),
+	4049:  uint16(1),
+	4050:  uint16(aux_sym_comment_token1),
+	4051:  uint16(37),
+	4052:  uint16(1),
+	4053:  uint16(aux_sym_dstring_token1),
+	4054:  uint16(39),
+	4055:  uint16(1),
+	4056:  uint16(aux_sym_sstring_token1),
+	4057:  uint16(45),
+	4058:  uint16(1),
+	4059:  uint16(aux_sym_comment_token2),
+	4060:  uint16(193),
+	4061:  uint16(1),
+	4062:  uint16(sym_identifier),
+	4063:  uint16(201),
+	4064:  uint16(1),
+	4065:  uint16(anon_sym_error),
+	4066:  uint16(203),
+	4067:  uint16(1),
+	4068:  uint16(anon_sym_functions),
+	4069:  uint16(205),
+	4070:  uint16(1),
+	4071:  uint16(anon_sym_free_DASHform),
+	4072:  uint16(209),
+	4073:  uint16(1),
+	4074:  uint16(anon_sym_DASH),
+	4075:  uint16(55),
+	4076:  uint16(1),
+	4077:  uint16(sym_comment),
+	4078:  uint16(290),
+	4079:  uint16(1),
+	4080:  uint16(sym__conf_value),
+	4081:  uint16(197),
+	4082:  uint16(2),
+	4083:  uint16(anon_sym_default),
+	4084:  uint16(anon_sym_custom),
+	4085:  uint16(199),
+	4086:  uint16(2),
+	4087:  uint16(anon_sym_match_DASHempty),
+	4088:  uint16(anon_sym_match_DASHnone),
+	4089:  uint16(207),
+	4090:  uint16(2),
+	4091:  uint16(anon_sym_0),
+	4092:  uint16(aux_sym_number_token2),
+	4093:  uint16(195),
+	4094:  uint16(3),
+	4095:  uint16(anon_sym_ignore),
+	4096:  uint16(anon_sym_substitute),
+	4097:  uint16(anon_sym_fail),
+	4098:  uint16(355),
+	4099:  uint16(8),
+	4100:  uint16(sym_field_expression),
+	4101:  uint16(sym_encoding_policy),
+	4102:  uint16(sym_input_conf),
+	4103:  uint16(sym_empty_class_conf),
+	4104:  uint16(sym_api_style),
+	4105:  uint16(sym_dstring),
+	4106:  uint16(sym_sstring),
+	4107:  uint16(sym_number),
+	4108:  uint16(16),
+	4109:  uint16(3),
+	4110:  uint16(1),
+	4111:  uint16(aux_sym_comment_token1),
+	4112:  uint16(37),
+	4113:  uint16(1),
+	4114:  uint16(aux_sym_dstring_token1),
+	4115:  uint16(39),
+	4116:  uint16(1),
+	4117:  uint16(aux_sym_sstring_token1),
+	4118:  uint16(45),
+	4119:  uint16(1),
+	4120:  uint16(aux_sym_comment_token2),
+	4121:  uint16(193),
+	4122:  uint16(1),
+	4123:  uint16(sym_identifier),
+	4124:  uint16(201),
+	4125:  uint16(1),
+	4126:  uint16(anon_sym_error),
+	4127:  uint16(203),
+	4128:  uint16(1),
+	4129:  uint16(anon_sym_functions),
+	4130:  uint16(205),
+	4131:  uint16(1),
+	4132:  uint16(anon_sym_free_DASHform),
+	4133:  uint16(209),
+	4134:  uint16(1),
+	4135:  uint16(anon_sym_DASH),
+	4136:  uint16(56),
+	4137:  uint16(1),
+	4138:  uint16(sym_comment),
+	4139:  uint16(291),
+	4140:  uint16(1),
+	4141:  uint16(sym__conf_value),
+	4142:  uint16(197),
+	4143:  uint16(2),
+	4144:  uint16(anon_sym_default),
+	4145:  uint16(anon_sym_custom),
+	4146:  uint16(199),
+	4147:  uint16(2),
+	4148:  uint16(anon_sym_match_DASHempty),
+	4149:  uint16(anon_sym_match_DASHnone),
+	4150:  uint16(207),
+	4151:  uint16(2),
+	4152:  uint16(anon_sym_0),
+	4153:  uint16(aux_sym_number_token2),
+	4154:  uint16(195),
+	4155:  uint16(3),
+	4156:  uint16(anon_sym_ignore),
+	4157:  uint16(anon_sym_substitute),
+	4158:  uint16(anon_sym_fail),
+	4159:  uint16(355),
+	4160:  uint16(8),
+	4161:  uint16(sym_field_expression),
+	4162:  uint16(sym_encoding_policy),
+	4163:  uint16(sym_input_conf),
+	4164:  uint16(sym_empty_class_conf),
+	4165:  uint16(sym_api_style),
+	4166:  uint16(sym_dstring),
+	4167:  uint16(sym_sstring),
+	4168:  uint16(sym_number),
+	4169:  uint16(17),
+	4170:  uint16(3),
+	4171:  uint16(1),
+	4172:  uint16(aux_sym_comment_token1),
+	4173:  uint16(21),
+	4174:  uint16(1),
+	4175:  uint16(anon_sym_DOT),
+	4176:  uint16(33),
+	4177:  uint16(1),
+	4178:  uint16(anon_sym_LPAREN),
+	4179:  uint16(37),
+	4180:  uint16(1),
+	4181:  uint16(aux_sym_dstring_token1),
+	4182:  uint16(39),
+	4183:  uint16(1),
+	4184:  uint16(aux_sym_sstring_token1),
+	4185:  uint16(41),
+	4186:  uint16(1),
+	4187:  uint16(anon_sym_AT2),
+	4188:  uint16(45),
+	4189:  uint16(1),
+	4190:  uint16(aux_sym_comment_token2),
+	4191:  uint16(171),
+	4192:  uint16(1),
+	4193:  uint16(sym_identifier),
+	4194:  uint16(181),
+	4195:  uint16(1),
+	4196:  uint16(anon_sym_POUND),
+	4197:  uint16(191),
+	4198:  uint16(1),
+	4199:  uint16(anon_sym_LBRACK),
+	4200:  uint16(57),
+	4201:  uint16(1),
+	4202:  uint16(sym_comment),
+	4203:  uint16(64),
+	4204:  uint16(1),
+	4205:  uint16(aux_sym_concat_repeat1),
+	4206:  uint16(76),
+	4207:  uint16(1),
+	4208:  uint16(sym__atom),
+	4209:  uint16(136),
+	4210:  uint16(1),
+	4211:  uint16(sym_repetition),
+	4212:  uint16(139),
+	4213:  uint16(1),
+	4214:  uint16(sym__cat_expr),
+	4215:  uint16(215),
+	4216:  uint16(5),
+	4217:  uint16(anon_sym_EQ_GT),
+	4218:  uint16(anon_sym_COLON_EQ_GT),
+	4219:  uint16(anon_sym_LBRACE),
+	4220:  uint16(anon_sym_PIPE),
+	4221:  uint16(anon_sym_BSLASH),
+	4222:  uint16(112),
+	4223:  uint16(7),
+	4224:  uint16(sym_parenthesized),
+	4225:  uint16(sym_character_class),
+	4226:  uint16(sym_wildcard),
+	4227:  uint16(sym_dstring),
+	4228:  uint16(sym_sstring),
+	4229:  uint16(sym_stag),
+	4230:  uint16(sym_mtag),
+	4231:  uint16(20),
+	4232:  uint16(3),
+	4233:  uint16(1),
+	4234:  uint16(aux_sym_comment_token1),
+	4235:  uint16(21),
+	4236:  uint16(1),
+	4237:  uint16(anon_sym_DOT),
+	4238:  uint16(33),
+	4239:  uint16(1),
+	4240:  uint16(anon_sym_LPAREN),
+	4241:  uint16(35),
+	4242:  uint16(1),
+	4243:  uint16(anon_sym_LBRACK),
+	4244:  uint16(37),
+	4245:  uint16(1),
+	4246:  uint16(aux_sym_dstring_token1),
+	4247:  uint16(39),
+	4248:  uint16(1),
+	4249:  uint16(aux_sym_sstring_token1),
+	4250:  uint16(41),
+	4251:  uint16(1),
+	4252:  uint16(anon_sym_AT2),
+	4253:  uint16(45),
+	4254:  uint16(1),
+	4255:  uint16(aux_sym_comment_token2),
+	4256:  uint16(171),
+	4257:  uint16(1),
+	4258:  uint16(sym_identifier),
+	4259:  uint16(181),
+	4260:  uint16(1),
+	4261:  uint16(anon_sym_POUND),
+	4262:  uint16(58),
+	4263:  uint16(1),
+	4264:  uint16(sym_comment),
+	4265:  uint16(60),
+	4266:  uint16(1),
+	4267:  uint16(aux_sym_alternation_repeat1),
+	4268:  uint16(71),
+	4269:  uint16(1),
+	4270:  uint16(sym__cat_expr),
+	4271:  uint16(76),
+	4272:  uint16(1),
+	4273:  uint16(sym__atom),
+	4274:  uint16(136),
+	4275:  uint16(1),
+	4276:  uint16(sym_repetition),
+	4277:  uint16(178),
+	4278:  uint16(1),
+	4279:  uint16(sym_concat),
+	4280:  uint16(190),
+	4281:  uint16(1),
+	4282:  uint16(sym__branch),
+	4283:  uint16(206),
+	4284:  uint16(1),
+	4285:  uint16(sym__alt_expr),
+	4286:  uint16(176),
+	4287:  uint16(2),
+	4288:  uint16(sym_difference),
+	4289:  uint16(sym__dif_expr),
+	4290:  uint16(112),
+	4291:  uint16(7),
+	4292:  uint16(sym_parenthesized),
+	4293:  uint16(sym_character_class),
+	4294:  uint16(sym_wildcard),
+	4295:  uint16(sym_dstring),
+	4296:  uint16(sym_sstring),
+	4297:  uint16(sym_stag),
+	4298:  uint16(sym_mtag),
+	4299:  uint16(20),
+	4300:  uint16(3),
+	4301:  uint16(1),
+	4302:  uint16(aux_sym_comment_token1),
+	4303:  uint16(21),
+	4304:  uint16(1),
+	4305:  uint16(anon_sym_DOT),
+	4306:  uint16(33),
+	4307:  uint16(1),
+	4308:  uint16(anon_sym_LPAREN),
+	4309:  uint16(37),
+	4310:  uint16(1),
+	4311:  uint16(aux_sym_dstring_token1),
+	4312:  uint16(39),
+	4313:  uint16(1),
+	4314:  uint16(aux_sym_sstring_token1),
+	4315:  uint16(41),
+	4316:  uint16(1),
+	4317:  uint16(anon_sym_AT2),
+	4318:  uint16(45),
+	4319:  uint16(1),
+	4320:  uint16(aux_sym_comment_token2),
+	4321:  uint16(171),
+	4322:  uint16(1),
+	4323:  uint16(sym_identifier),
+	4324:  uint16(179),
+	4325:  uint16(1),
+	4326:  uint16(anon_sym_LBRACK),
+	4327:  uint16(181),
+	4328:  uint16(1),
+	4329:  uint16(anon_sym_POUND),
+	4330:  uint16(51),
+	4331:  uint16(1),
+	4332:  uint16(sym__cat_expr),
+	4333:  uint16(59),
+	4334:  uint16(1),
+	4335:  uint16(sym_comment),
+	4336:  uint16(60),
+	4337:  uint16(1),
+	4338:  uint16(aux_sym_alternation_repeat1),
+	4339:  uint16(76),
+	4340:  uint16(1),
+	4341:  uint16(sym__atom),
+	4342:  uint16(136),
+	4343:  uint16(1),
+	4344:  uint16(sym_repetition),
+	4345:  uint16(178),
+	4346:  uint16(1),
+	4347:  uint16(sym_concat),
+	4348:  uint16(190),
+	4349:  uint16(1),
+	4350:  uint16(sym__branch),
+	4351:  uint16(192),
+	4352:  uint16(1),
+	4353:  uint16(sym__alt_expr),
+	4354:  uint16(176),
+	4355:  uint16(2),
+	4356:  uint16(sym_difference),
+	4357:  uint16(sym__dif_expr),
+	4358:  uint16(112),
+	4359:  uint16(7),
+	4360:  uint16(sym_parenthesized),
+	4361:  uint16(sym_character_class),
+	4362:  uint16(sym_wildcard),
+	4363:  uint16(sym_dstring),
+	4364:  uint16(sym_sstring),
+	4365:  uint16(sym_stag),
+	4366:  uint16(sym_mtag),
+	4367:  uint16(19),
+	4368:  uint16(3),
+	4369:  uint16(1),
+	4370:  uint16(aux_sym_comment_token1),
+	4371:  uint16(45),
+	4372:  uint16(1),
+	4373:  uint16(aux_sym_comment_token2),
+	4374:  uint16(247),
+	4375:  uint16(1),
+	4376:  uint16(sym_identifier),
+	4377:  uint16(250),
+	4378:  uint16(1),
+	4379:  uint16(anon_sym_DOT),
+	4380:  uint16(253),
+	4381:  uint16(1),
+	4382:  uint16(anon_sym_LPAREN),
+	4383:  uint16(256),
+	4384:  uint16(1),
+	4385:  uint16(anon_sym_LBRACK),
+	4386:  uint16(259),
+	4387:  uint16(1),
+	4388:  uint16(aux_sym_dstring_token1),
+	4389:  uint16(262),
+	4390:  uint16(1),
+	4391:  uint16(aux_sym_sstring_token1),
+	4392:  uint16(265),
+	4393:  uint16(1),
+	4394:  uint16(anon_sym_AT2),
+	4395:  uint16(268),
+	4396:  uint16(1),
+	4397:  uint16(anon_sym_POUND),
+	4398:  uint16(76),
+	4399:  uint16(1),
+	4400:  uint16(sym__atom),
+	4401:  uint16(97),
+	4402:  uint16(1),
+	4403:  uint16(sym__cat_expr),
+	4404:  uint16(136),
+	4405:  uint16(1),
+	4406:  uint16(sym_repetition),
+	4407:  uint16(178),
+	4408:  uint16(1),
+	4409:  uint16(sym_concat),
+	4410:  uint16(251),
+	4411:  uint16(1),
+	4412:  uint16(sym__alt_expr),
+	4413:  uint16(331),
+	4414:  uint16(1),
+	4415:  uint16(sym__branch),
+	4416:  uint16(60),
+	4417:  uint16(2),
+	4418:  uint16(sym_comment),
+	4419:  uint16(aux_sym_alternation_repeat1),
+	4420:  uint16(176),
+	4421:  uint16(2),
+	4422:  uint16(sym_difference),
+	4423:  uint16(sym__dif_expr),
+	4424:  uint16(112),
+	4425:  uint16(7),
+	4426:  uint16(sym_parenthesized),
+	4427:  uint16(sym_character_class),
+	4428:  uint16(sym_wildcard),
+	4429:  uint16(sym_dstring),
+	4430:  uint16(sym_sstring),
+	4431:  uint16(sym_stag),
+	4432:  uint16(sym_mtag),
+	4433:  uint16(20),
+	4434:  uint16(3),
+	4435:  uint16(1),
+	4436:  uint16(aux_sym_comment_token1),
+	4437:  uint16(21),
+	4438:  uint16(1),
+	4439:  uint16(anon_sym_DOT),
+	4440:  uint16(33),
+	4441:  uint16(1),
+	4442:  uint16(anon_sym_LPAREN),
+	4443:  uint16(37),
+	4444:  uint16(1),
+	4445:  uint16(aux_sym_dstring_token1),
+	4446:  uint16(39),
+	4447:  uint16(1),
+	4448:  uint16(aux_sym_sstring_token1),
+	4449:  uint16(41),
+	4450:  uint16(1),
+	4451:  uint16(anon_sym_AT2),
+	4452:  uint16(45),
+	4453:  uint16(1),
+	4454:  uint16(aux_sym_comment_token2),
+	4455:  uint16(171),
+	4456:  uint16(1),
+	4457:  uint16(sym_identifier),
+	4458:  uint16(181),
+	4459:  uint16(1),
+	4460:  uint16(anon_sym_POUND),
+	4461:  uint16(189),
+	4462:  uint16(1),
+	4463:  uint16(anon_sym_LBRACK),
+	4464:  uint16(60),
+	4465:  uint16(1),
+	4466:  uint16(aux_sym_alternation_repeat1),
+	4467:  uint16(61),
+	4468:  uint16(1),
+	4469:  uint16(sym_comment),
+	4470:  uint16(76),
+	4471:  uint16(1),
+	4472:  uint16(sym__atom),
+	4473:  uint16(86),
+	4474:  uint16(1),
+	4475:  uint16(sym__cat_expr),
+	4476:  uint16(136),
+	4477:  uint16(1),
+	4478:  uint16(sym_repetition),
+	4479:  uint16(178),
+	4480:  uint16(1),
+	4481:  uint16(sym_concat),
+	4482:  uint16(190),
+	4483:  uint16(1),
+	4484:  uint16(sym__branch),
+	4485:  uint16(235),
+	4486:  uint16(1),
+	4487:  uint16(sym__alt_expr),
+	4488:  uint16(176),
+	4489:  uint16(2),
+	4490:  uint16(sym_difference),
+	4491:  uint16(sym__dif_expr),
+	4492:  uint16(112),
+	4493:  uint16(7),
+	4494:  uint16(sym_parenthesized),
+	4495:  uint16(sym_character_class),
+	4496:  uint16(sym_wildcard),
+	4497:  uint16(sym_dstring),
+	4498:  uint16(sym_sstring),
+	4499:  uint16(sym_stag),
+	4500:  uint16(sym_mtag),
+	4501:  uint16(20),
+	4502:  uint16(3),
+	4503:  uint16(1),
+	4504:  uint16(aux_sym_comment_token1),
+	4505:  uint16(21),
+	4506:  uint16(1),
+	4507:  uint16(anon_sym_DOT),
+	4508:  uint16(33),
+	4509:  uint16(1),
+	4510:  uint16(anon_sym_LPAREN),
+	4511:  uint16(37),
+	4512:  uint16(1),
+	4513:  uint16(aux_sym_dstring_token1),
+	4514:  uint16(39),
+	4515:  uint16(1),
+	4516:  uint16(aux_sym_sstring_token1),
+	4517:  uint16(41),
+	4518:  uint16(1),
+	4519:  uint16(anon_sym_AT2),
+	4520:  uint16(45),
+	4521:  uint16(1),
+	4522:  uint16(aux_sym_comment_token2),
+	4523:  uint16(171),
+	4524:  uint16(1),
+	4525:  uint16(sym_identifier),
+	4526:  uint16(181),
+	4527:  uint16(1),
+	4528:  uint16(anon_sym_POUND),
+	4529:  uint16(191),
+	4530:  uint16(1),
+	4531:  uint16(anon_sym_LBRACK),
+	4532:  uint16(60),
+	4533:  uint16(1),
+	4534:  uint16(aux_sym_alternation_repeat1),
+	4535:  uint16(62),
+	4536:  uint16(1),
+	4537:  uint16(sym_comment),
+	4538:  uint16(65),
+	4539:  uint16(1),
+	4540:  uint16(sym__cat_expr),
+	4541:  uint16(76),
+	4542:  uint16(1),
+	4543:  uint16(sym__atom),
+	4544:  uint16(136),
+	4545:  uint16(1),
+	4546:  uint16(sym_repetition),
+	4547:  uint16(178),
+	4548:  uint16(1),
+	4549:  uint16(sym_concat),
+	4550:  uint16(190),
+	4551:  uint16(1),
+	4552:  uint16(sym__branch),
+	4553:  uint16(202),
+	4554:  uint16(1),
+	4555:  uint16(sym__alt_expr),
+	4556:  uint16(176),
+	4557:  uint16(2),
+	4558:  uint16(sym_difference),
+	4559:  uint16(sym__dif_expr),
+	4560:  uint16(112),
+	4561:  uint16(7),
+	4562:  uint16(sym_parenthesized),
+	4563:  uint16(sym_character_class),
+	4564:  uint16(sym_wildcard),
+	4565:  uint16(sym_dstring),
+	4566:  uint16(sym_sstring),
+	4567:  uint16(sym_stag),
+	4568:  uint16(sym_mtag),
+	4569:  uint16(20),
+	4570:  uint16(3),
+	4571:  uint16(1),
+	4572:  uint16(aux_sym_comment_token1),
+	4573:  uint16(21),
+	4574:  uint16(1),
+	4575:  uint16(anon_sym_DOT),
+	4576:  uint16(33),
+	4577:  uint16(1),
+	4578:  uint16(anon_sym_LPAREN),
+	4579:  uint16(37),
+	4580:  uint16(1),
+	4581:  uint16(aux_sym_dstring_token1),
+	4582:  uint16(39),
+	4583:  uint16(1),
+	4584:  uint16(aux_sym_sstring_token1),
+	4585:  uint16(41),
+	4586:  uint16(1),
+	4587:  uint16(anon_sym_AT2),
+	4588:  uint16(45),
+	4589:  uint16(1),
+	4590:  uint16(aux_sym_comment_token2),
+	4591:  uint16(171),
+	4592:  uint16(1),
+	4593:  uint16(sym_identifier),
+	4594:  uint16(181),
+	4595:  uint16(1),
+	4596:  uint16(anon_sym_POUND),
+	4597:  uint16(183),
+	4598:  uint16(1),
+	4599:  uint16(anon_sym_LBRACK),
+	4600:  uint16(60),
+	4601:  uint16(1),
+	4602:  uint16(aux_sym_alternation_repeat1),
+	4603:  uint16(63),
+	4604:  uint16(1),
+	4605:  uint16(sym_comment),
+	4606:  uint16(68),
+	4607:  uint16(1),
+	4608:  uint16(sym__cat_expr),
+	4609:  uint16(76),
+	4610:  uint16(1),
+	4611:  uint16(sym__atom),
+	4612:  uint16(136),
+	4613:  uint16(1),
+	4614:  uint16(sym_repetition),
+	4615:  uint16(178),
+	4616:  uint16(1),
+	4617:  uint16(sym_concat),
+	4618:  uint16(190),
+	4619:  uint16(1),
+	4620:  uint16(sym__branch),
+	4621:  uint16(218),
+	4622:  uint16(1),
+	4623:  uint16(sym__alt_expr),
+	4624:  uint16(176),
+	4625:  uint16(2),
+	4626:  uint16(sym_difference),
+	4627:  uint16(sym__dif_expr),
+	4628:  uint16(112),
+	4629:  uint16(7),
+	4630:  uint16(sym_parenthesized),
+	4631:  uint16(sym_character_class),
+	4632:  uint16(sym_wildcard),
+	4633:  uint16(sym_dstring),
+	4634:  uint16(sym_sstring),
+	4635:  uint16(sym_stag),
+	4636:  uint16(sym_mtag),
+	4637:  uint16(16),
+	4638:  uint16(3),
+	4639:  uint16(1),
+	4640:  uint16(aux_sym_comment_token1),
+	4641:  uint16(45),
+	4642:  uint16(1),
+	4643:  uint16(aux_sym_comment_token2),
+	4644:  uint16(219),
+	4645:  uint16(1),
+	4646:  uint16(sym_identifier),
+	4647:  uint16(222),
+	4648:  uint16(1),
+	4649:  uint16(anon_sym_DOT),
+	4650:  uint16(229),
+	4651:  uint16(1),
+	4652:  uint16(anon_sym_LPAREN),
+	4653:  uint16(235),
+	4654:  uint16(1),
+	4655:  uint16(aux_sym_dstring_token1),
+	4656:  uint16(238),
+	4657:  uint16(1),
+	4658:  uint16(aux_sym_sstring_token1),
+	4659:  uint16(241),
+	4660:  uint16(1),
+	4661:  uint16(anon_sym_AT2),
+	4662:  uint16(244),
+	4663:  uint16(1),
+	4664:  uint16(anon_sym_POUND),
+	4665:  uint16(271),
+	4666:  uint16(1),
+	4667:  uint16(anon_sym_LBRACK),
+	4668:  uint16(76),
+	4669:  uint16(1),
+	4670:  uint16(sym__atom),
+	4671:  uint16(136),
+	4672:  uint16(1),
+	4673:  uint16(sym_repetition),
+	4674:  uint16(139),
+	4675:  uint16(1),
+	4676:  uint16(sym__cat_expr),
+	4677:  uint16(64),
+	4678:  uint16(2),
+	4679:  uint16(sym_comment),
+	4680:  uint16(aux_sym_concat_repeat1),
+	4681:  uint16(225),
+	4682:  uint16(5),
+	4683:  uint16(anon_sym_EQ_GT),
+	4684:  uint16(anon_sym_COLON_EQ_GT),
+	4685:  uint16(anon_sym_LBRACE),
+	4686:  uint16(anon_sym_PIPE),
+	4687:  uint16(anon_sym_BSLASH),
+	4688:  uint16(112),
+	4689:  uint16(7),
+	4690:  uint16(sym_parenthesized),
+	4691:  uint16(sym_character_class),
+	4692:  uint16(sym_wildcard),
+	4693:  uint16(sym_dstring),
+	4694:  uint16(sym_sstring),
+	4695:  uint16(sym_stag),
+	4696:  uint16(sym_mtag),
+	4697:  uint16(17),
+	4698:  uint16(3),
+	4699:  uint16(1),
+	4700:  uint16(aux_sym_comment_token1),
+	4701:  uint16(21),
+	4702:  uint16(1),
+	4703:  uint16(anon_sym_DOT),
+	4704:  uint16(33),
+	4705:  uint16(1),
+	4706:  uint16(anon_sym_LPAREN),
+	4707:  uint16(37),
+	4708:  uint16(1),
+	4709:  uint16(aux_sym_dstring_token1),
+	4710:  uint16(39),
+	4711:  uint16(1),
+	4712:  uint16(aux_sym_sstring_token1),
+	4713:  uint16(41),
+	4714:  uint16(1),
+	4715:  uint16(anon_sym_AT2),
+	4716:  uint16(45),
+	4717:  uint16(1),
+	4718:  uint16(aux_sym_comment_token2),
+	4719:  uint16(171),
+	4720:  uint16(1),
+	4721:  uint16(sym_identifier),
+	4722:  uint16(181),
+	4723:  uint16(1),
+	4724:  uint16(anon_sym_POUND),
+	4725:  uint16(191),
+	4726:  uint16(1),
+	4727:  uint16(anon_sym_LBRACK),
+	4728:  uint16(57),
+	4729:  uint16(1),
+	4730:  uint16(aux_sym_concat_repeat1),
+	4731:  uint16(65),
+	4732:  uint16(1),
+	4733:  uint16(sym_comment),
+	4734:  uint16(76),
+	4735:  uint16(1),
+	4736:  uint16(sym__atom),
+	4737:  uint16(136),
+	4738:  uint16(1),
+	4739:  uint16(sym_repetition),
+	4740:  uint16(139),
+	4741:  uint16(1),
+	4742:  uint16(sym__cat_expr),
+	4743:  uint16(211),
+	4744:  uint16(5),
+	4745:  uint16(anon_sym_EQ_GT),
+	4746:  uint16(anon_sym_COLON_EQ_GT),
+	4747:  uint16(anon_sym_LBRACE),
+	4748:  uint16(anon_sym_PIPE),
+	4749:  uint16(anon_sym_BSLASH),
+	4750:  uint16(112),
+	4751:  uint16(7),
+	4752:  uint16(sym_parenthesized),
+	4753:  uint16(sym_character_class),
+	4754:  uint16(sym_wildcard),
+	4755:  uint16(sym_dstring),
+	4756:  uint16(sym_sstring),
+	4757:  uint16(sym_stag),
+	4758:  uint16(sym_mtag),
+	4759:  uint16(20),
+	4760:  uint16(3),
+	4761:  uint16(1),
+	4762:  uint16(aux_sym_comment_token1),
+	4763:  uint16(21),
+	4764:  uint16(1),
+	4765:  uint16(anon_sym_DOT),
+	4766:  uint16(33),
+	4767:  uint16(1),
+	4768:  uint16(anon_sym_LPAREN),
+	4769:  uint16(37),
+	4770:  uint16(1),
+	4771:  uint16(aux_sym_dstring_token1),
+	4772:  uint16(39),
+	4773:  uint16(1),
+	4774:  uint16(aux_sym_sstring_token1),
+	4775:  uint16(41),
+	4776:  uint16(1),
+	4777:  uint16(anon_sym_AT2),
+	4778:  uint16(45),
+	4779:  uint16(1),
+	4780:  uint16(aux_sym_comment_token2),
+	4781:  uint16(171),
+	4782:  uint16(1),
+	4783:  uint16(sym_identifier),
+	4784:  uint16(181),
+	4785:  uint16(1),
+	4786:  uint16(anon_sym_POUND),
+	4787:  uint16(187),
+	4788:  uint16(1),
+	4789:  uint16(anon_sym_LBRACK),
+	4790:  uint16(60),
+	4791:  uint16(1),
+	4792:  uint16(aux_sym_alternation_repeat1),
+	4793:  uint16(66),
+	4794:  uint16(1),
+	4795:  uint16(sym_comment),
+	4796:  uint16(76),
+	4797:  uint16(1),
+	4798:  uint16(sym__atom),
+	4799:  uint16(81),
+	4800:  uint16(1),
+	4801:  uint16(sym__cat_expr),
+	4802:  uint16(136),
+	4803:  uint16(1),
+	4804:  uint16(sym_repetition),
+	4805:  uint16(178),
+	4806:  uint16(1),
+	4807:  uint16(sym_concat),
+	4808:  uint16(190),
+	4809:  uint16(1),
+	4810:  uint16(sym__branch),
+	4811:  uint16(227),
+	4812:  uint16(1),
+	4813:  uint16(sym__alt_expr),
+	4814:  uint16(176),
+	4815:  uint16(2),
+	4816:  uint16(sym_difference),
+	4817:  uint16(sym__dif_expr),
+	4818:  uint16(112),
+	4819:  uint16(7),
+	4820:  uint16(sym_parenthesized),
+	4821:  uint16(sym_character_class),
+	4822:  uint16(sym_wildcard),
+	4823:  uint16(sym_dstring),
+	4824:  uint16(sym_sstring),
+	4825:  uint16(sym_stag),
+	4826:  uint16(sym_mtag),
+	4827:  uint16(20),
+	4828:  uint16(3),
+	4829:  uint16(1),
+	4830:  uint16(aux_sym_comment_token1),
+	4831:  uint16(21),
+	4832:  uint16(1),
+	4833:  uint16(anon_sym_DOT),
+	4834:  uint16(33),
+	4835:  uint16(1),
+	4836:  uint16(anon_sym_LPAREN),
+	4837:  uint16(37),
+	4838:  uint16(1),
+	4839:  uint16(aux_sym_dstring_token1),
+	4840:  uint16(39),
+	4841:  uint16(1),
+	4842:  uint16(aux_sym_sstring_token1),
+	4843:  uint16(41),
+	4844:  uint16(1),
+	4845:  uint16(anon_sym_AT2),
+	4846:  uint16(45),
+	4847:  uint16(1),
+	4848:  uint16(aux_sym_comment_token2),
+	4849:  uint16(171),
+	4850:  uint16(1),
+	4851:  uint16(sym_identifier),
+	4852:  uint16(181),
+	4853:  uint16(1),
+	4854:  uint16(anon_sym_POUND),
+	4855:  uint16(185),
+	4856:  uint16(1),
+	4857:  uint16(anon_sym_LBRACK),
+	4858:  uint16(60),
+	4859:  uint16(1),
+	4860:  uint16(aux_sym_alternation_repeat1),
+	4861:  uint16(67),
+	4862:  uint16(1),
+	4863:  uint16(sym_comment),
+	4864:  uint16(76),
+	4865:  uint16(1),
+	4866:  uint16(sym__atom),
+	4867:  uint16(91),
+	4868:  uint16(1),
+	4869:  uint16(sym__cat_expr),
+	4870:  uint16(136),
+	4871:  uint16(1),
+	4872:  uint16(sym_repetition),
+	4873:  uint16(178),
+	4874:  uint16(1),
+	4875:  uint16(sym_concat),
+	4876:  uint16(190),
+	4877:  uint16(1),
+	4878:  uint16(sym__branch),
+	4879:  uint16(237),
+	4880:  uint16(1),
+	4881:  uint16(sym__alt_expr),
+	4882:  uint16(176),
+	4883:  uint16(2),
+	4884:  uint16(sym_difference),
+	4885:  uint16(sym__dif_expr),
+	4886:  uint16(112),
+	4887:  uint16(7),
+	4888:  uint16(sym_parenthesized),
+	4889:  uint16(sym_character_class),
+	4890:  uint16(sym_wildcard),
+	4891:  uint16(sym_dstring),
+	4892:  uint16(sym_sstring),
+	4893:  uint16(sym_stag),
+	4894:  uint16(sym_mtag),
+	4895:  uint16(18),
+	4896:  uint16(3),
+	4897:  uint16(1),
+	4898:  uint16(aux_sym_comment_token1),
+	4899:  uint16(5),
+	4900:  uint16(1),
+	4901:  uint16(aux_sym_comment_token2),
+	4902:  uint16(21),
+	4903:  uint16(1),
+	4904:  uint16(anon_sym_DOT),
+	4905:  uint16(33),
+	4906:  uint16(1),
+	4907:  uint16(anon_sym_LPAREN),
+	4908:  uint16(37),
+	4909:  uint16(1),
+	4910:  uint16(aux_sym_dstring_token1),
+	4911:  uint16(39),
+	4912:  uint16(1),
+	4913:  uint16(aux_sym_sstring_token1),
+	4914:  uint16(41),
+	4915:  uint16(1),
+	4916:  uint16(anon_sym_AT2),
+	4917:  uint16(171),
+	4918:  uint16(1),
+	4919:  uint16(sym_identifier),
+	4920:  uint16(181),
+	4921:  uint16(1),
+	4922:  uint16(anon_sym_POUND),
+	4923:  uint16(183),
+	4924:  uint16(1),
+	4925:  uint16(anon_sym_LBRACK),
+	4926:  uint16(213),
+	4927:  uint16(1),
+	4928:  uint16(anon_sym_SLASH),
+	4929:  uint16(68),
+	4930:  uint16(1),
+	4931:  uint16(sym_comment),
+	4932:  uint16(70),
+	4933:  uint16(1),
+	4934:  uint16(aux_sym_concat_repeat1),
+	4935:  uint16(76),
+	4936:  uint16(1),
+	4937:  uint16(sym__atom),
+	4938:  uint16(136),
+	4939:  uint16(1),
+	4940:  uint16(sym_repetition),
+	4941:  uint16(139),
+	4942:  uint16(1),
+	4943:  uint16(sym__cat_expr),
+	4944:  uint16(211),
+	4945:  uint16(3),
+	4946:  uint16(anon_sym_SEMI),
+	4947:  uint16(anon_sym_PIPE),
+	4948:  uint16(anon_sym_BSLASH),
+	4949:  uint16(112),
+	4950:  uint16(7),
+	4951:  uint16(sym_parenthesized),
+	4952:  uint16(sym_character_class),
+	4953:  uint16(sym_wildcard),
+	4954:  uint16(sym_dstring),
+	4955:  uint16(sym_sstring),
+	4956:  uint16(sym_stag),
+	4957:  uint16(sym_mtag),
+	4958:  uint16(17),
+	4959:  uint16(3),
+	4960:  uint16(1),
+	4961:  uint16(aux_sym_comment_token1),
+	4962:  uint16(5),
+	4963:  uint16(1),
+	4964:  uint16(aux_sym_comment_token2),
+	4965:  uint16(219),
+	4966:  uint16(1),
+	4967:  uint16(sym_identifier),
+	4968:  uint16(222),
+	4969:  uint16(1),
+	4970:  uint16(anon_sym_DOT),
+	4971:  uint16(227),
+	4972:  uint16(1),
+	4973:  uint16(anon_sym_SLASH),
+	4974:  uint16(229),
+	4975:  uint16(1),
+	4976:  uint16(anon_sym_LPAREN),
+	4977:  uint16(235),
+	4978:  uint16(1),
+	4979:  uint16(aux_sym_dstring_token1),
+	4980:  uint16(238),
+	4981:  uint16(1),
+	4982:  uint16(aux_sym_sstring_token1),
+	4983:  uint16(241),
+	4984:  uint16(1),
+	4985:  uint16(anon_sym_AT2),
+	4986:  uint16(244),
+	4987:  uint16(1),
+	4988:  uint16(anon_sym_POUND),
+	4989:  uint16(274),
+	4990:  uint16(1),
+	4991:  uint16(anon_sym_LBRACK),
+	4992:  uint16(76),
+	4993:  uint16(1),
+	4994:  uint16(sym__atom),
+	4995:  uint16(136),
+	4996:  uint16(1),
+	4997:  uint16(sym_repetition),
+	4998:  uint16(139),
+	4999:  uint16(1),
+	5000:  uint16(sym__cat_expr),
+	5001:  uint16(69),
+	5002:  uint16(2),
+	5003:  uint16(sym_comment),
+	5004:  uint16(aux_sym_concat_repeat1),
+	5005:  uint16(225),
+	5006:  uint16(3),
+	5007:  uint16(anon_sym_SEMI),
+	5008:  uint16(anon_sym_PIPE),
+	5009:  uint16(anon_sym_BSLASH),
+	5010:  uint16(112),
+	5011:  uint16(7),
+	5012:  uint16(sym_parenthesized),
+	5013:  uint16(sym_character_class),
+	5014:  uint16(sym_wildcard),
+	5015:  uint16(sym_dstring),
+	5016:  uint16(sym_sstring),
+	5017:  uint16(sym_stag),
+	5018:  uint16(sym_mtag),
+	5019:  uint16(18),
+	5020:  uint16(3),
+	5021:  uint16(1),
+	5022:  uint16(aux_sym_comment_token1),
+	5023:  uint16(5),
+	5024:  uint16(1),
+	5025:  uint16(aux_sym_comment_token2),
+	5026:  uint16(21),
+	5027:  uint16(1),
+	5028:  uint16(anon_sym_DOT),
+	5029:  uint16(33),
+	5030:  uint16(1),
+	5031:  uint16(anon_sym_LPAREN),
+	5032:  uint16(37),
+	5033:  uint16(1),
+	5034:  uint16(aux_sym_dstring_token1),
+	5035:  uint16(39),
+	5036:  uint16(1),
+	5037:  uint16(aux_sym_sstring_token1),
+	5038:  uint16(41),
+	5039:  uint16(1),
+	5040:  uint16(anon_sym_AT2),
+	5041:  uint16(171),
+	5042:  uint16(1),
+	5043:  uint16(sym_identifier),
+	5044:  uint16(181),
+	5045:  uint16(1),
+	5046:  uint16(anon_sym_POUND),
+	5047:  uint16(183),
+	5048:  uint16(1),
+	5049:  uint16(anon_sym_LBRACK),
+	5050:  uint16(217),
+	5051:  uint16(1),
+	5052:  uint16(anon_sym_SLASH),
+	5053:  uint16(69),
+	5054:  uint16(1),
+	5055:  uint16(aux_sym_concat_repeat1),
+	5056:  uint16(70),
+	5057:  uint16(1),
+	5058:  uint16(sym_comment),
+	5059:  uint16(76),
+	5060:  uint16(1),
+	5061:  uint16(sym__atom),
+	5062:  uint16(136),
+	5063:  uint16(1),
+	5064:  uint16(sym_repetition),
+	5065:  uint16(139),
+	5066:  uint16(1),
+	5067:  uint16(sym__cat_expr),
+	5068:  uint16(215),
+	5069:  uint16(3),
+	5070:  uint16(anon_sym_SEMI),
+	5071:  uint16(anon_sym_PIPE),
+	5072:  uint16(anon_sym_BSLASH),
+	5073:  uint16(112),
+	5074:  uint16(7),
+	5075:  uint16(sym_parenthesized),
+	5076:  uint16(sym_character_class),
+	5077:  uint16(sym_wildcard),
+	5078:  uint16(sym_dstring),
+	5079:  uint16(sym_sstring),
+	5080:  uint16(sym_stag),
+	5081:  uint16(sym_mtag),
+	5082:  uint16(18),
+	5083:  uint16(3),
+	5084:  uint16(1),
+	5085:  uint16(aux_sym_comment_token1),
+	5086:  uint16(5),
+	5087:  uint16(1),
+	5088:  uint16(aux_sym_comment_token2),
+	5089:  uint16(21),
+	5090:  uint16(1),
+	5091:  uint16(anon_sym_DOT),
+	5092:  uint16(33),
+	5093:  uint16(1),
+	5094:  uint16(anon_sym_LPAREN),
+	5095:  uint16(35),
+	5096:  uint16(1),
+	5097:  uint16(anon_sym_LBRACK),
+	5098:  uint16(37),
+	5099:  uint16(1),
+	5100:  uint16(aux_sym_dstring_token1),
+	5101:  uint16(39),
+	5102:  uint16(1),
+	5103:  uint16(aux_sym_sstring_token1),
+	5104:  uint16(41),
+	5105:  uint16(1),
+	5106:  uint16(anon_sym_AT2),
+	5107:  uint16(171),
+	5108:  uint16(1),
+	5109:  uint16(sym_identifier),
+	5110:  uint16(181),
+	5111:  uint16(1),
+	5112:  uint16(anon_sym_POUND),
+	5113:  uint16(213),
+	5114:  uint16(1),
+	5115:  uint16(anon_sym_SLASH),
+	5116:  uint16(71),
+	5117:  uint16(1),
+	5118:  uint16(sym_comment),
+	5119:  uint16(73),
+	5120:  uint16(1),
+	5121:  uint16(aux_sym_concat_repeat1),
+	5122:  uint16(76),
+	5123:  uint16(1),
+	5124:  uint16(sym__atom),
+	5125:  uint16(136),
+	5126:  uint16(1),
+	5127:  uint16(sym_repetition),
+	5128:  uint16(139),
+	5129:  uint16(1),
+	5130:  uint16(sym__cat_expr),
+	5131:  uint16(211),
+	5132:  uint16(3),
+	5133:  uint16(anon_sym_LBRACE),
+	5134:  uint16(anon_sym_PIPE),
+	5135:  uint16(anon_sym_BSLASH),
+	5136:  uint16(112),
+	5137:  uint16(7),
+	5138:  uint16(sym_parenthesized),
+	5139:  uint16(sym_character_class),
+	5140:  uint16(sym_wildcard),
+	5141:  uint16(sym_dstring),
+	5142:  uint16(sym_sstring),
+	5143:  uint16(sym_stag),
+	5144:  uint16(sym_mtag),
+	5145:  uint16(17),
+	5146:  uint16(3),
+	5147:  uint16(1),
+	5148:  uint16(aux_sym_comment_token1),
+	5149:  uint16(5),
+	5150:  uint16(1),
+	5151:  uint16(aux_sym_comment_token2),
+	5152:  uint16(219),
+	5153:  uint16(1),
+	5154:  uint16(sym_identifier),
+	5155:  uint16(222),
+	5156:  uint16(1),
+	5157:  uint16(anon_sym_DOT),
+	5158:  uint16(227),
+	5159:  uint16(1),
+	5160:  uint16(anon_sym_SLASH),
+	5161:  uint16(229),
+	5162:  uint16(1),
+	5163:  uint16(anon_sym_LPAREN),
+	5164:  uint16(235),
+	5165:  uint16(1),
+	5166:  uint16(aux_sym_dstring_token1),
+	5167:  uint16(238),
+	5168:  uint16(1),
+	5169:  uint16(aux_sym_sstring_token1),
+	5170:  uint16(241),
+	5171:  uint16(1),
+	5172:  uint16(anon_sym_AT2),
+	5173:  uint16(244),
+	5174:  uint16(1),
+	5175:  uint16(anon_sym_POUND),
+	5176:  uint16(277),
+	5177:  uint16(1),
+	5178:  uint16(anon_sym_LBRACK),
+	5179:  uint16(76),
+	5180:  uint16(1),
+	5181:  uint16(sym__atom),
+	5182:  uint16(136),
+	5183:  uint16(1),
+	5184:  uint16(sym_repetition),
+	5185:  uint16(139),
+	5186:  uint16(1),
+	5187:  uint16(sym__cat_expr),
+	5188:  uint16(72),
+	5189:  uint16(2),
+	5190:  uint16(sym_comment),
+	5191:  uint16(aux_sym_concat_repeat1),
+	5192:  uint16(225),
+	5193:  uint16(3),
+	5194:  uint16(anon_sym_LBRACE),
+	5195:  uint16(anon_sym_PIPE),
+	5196:  uint16(anon_sym_BSLASH),
+	5197:  uint16(112),
+	5198:  uint16(7),
+	5199:  uint16(sym_parenthesized),
+	5200:  uint16(sym_character_class),
+	5201:  uint16(sym_wildcard),
+	5202:  uint16(sym_dstring),
+	5203:  uint16(sym_sstring),
+	5204:  uint16(sym_stag),
+	5205:  uint16(sym_mtag),
+	5206:  uint16(18),
+	5207:  uint16(3),
+	5208:  uint16(1),
+	5209:  uint16(aux_sym_comment_token1),
+	5210:  uint16(5),
+	5211:  uint16(1),
+	5212:  uint16(aux_sym_comment_token2),
+	5213:  uint16(21),
+	5214:  uint16(1),
+	5215:  uint16(anon_sym_DOT),
+	5216:  uint16(33),
+	5217:  uint16(1),
+	5218:  uint16(anon_sym_LPAREN),
+	5219:  uint16(35),
+	5220:  uint16(1),
+	5221:  uint16(anon_sym_LBRACK),
+	5222:  uint16(37),
+	5223:  uint16(1),
+	5224:  uint16(aux_sym_dstring_token1),
+	5225:  uint16(39),
+	5226:  uint16(1),
+	5227:  uint16(aux_sym_sstring_token1),
+	5228:  uint16(41),
+	5229:  uint16(1),
+	5230:  uint16(anon_sym_AT2),
+	5231:  uint16(171),
+	5232:  uint16(1),
+	5233:  uint16(sym_identifier),
+	5234:  uint16(181),
+	5235:  uint16(1),
+	5236:  uint16(anon_sym_POUND),
+	5237:  uint16(217),
+	5238:  uint16(1),
+	5239:  uint16(anon_sym_SLASH),
+	5240:  uint16(72),
+	5241:  uint16(1),
+	5242:  uint16(aux_sym_concat_repeat1),
+	5243:  uint16(73),
+	5244:  uint16(1),
+	5245:  uint16(sym_comment),
+	5246:  uint16(76),
+	5247:  uint16(1),
+	5248:  uint16(sym__atom),
+	5249:  uint16(136),
+	5250:  uint16(1),
+	5251:  uint16(sym_repetition),
+	5252:  uint16(139),
+	5253:  uint16(1),
+	5254:  uint16(sym__cat_expr),
+	5255:  uint16(215),
+	5256:  uint16(3),
+	5257:  uint16(anon_sym_LBRACE),
+	5258:  uint16(anon_sym_PIPE),
+	5259:  uint16(anon_sym_BSLASH),
+	5260:  uint16(112),
+	5261:  uint16(7),
+	5262:  uint16(sym_parenthesized),
+	5263:  uint16(sym_character_class),
+	5264:  uint16(sym_wildcard),
+	5265:  uint16(sym_dstring),
+	5266:  uint16(sym_sstring),
+	5267:  uint16(sym_stag),
+	5268:  uint16(sym_mtag),
+	5269:  uint16(17),
+	5270:  uint16(3),
+	5271:  uint16(1),
+	5272:  uint16(aux_sym_comment_token1),
+	5273:  uint16(21),
+	5274:  uint16(1),
+	5275:  uint16(anon_sym_DOT),
+	5276:  uint16(33),
+	5277:  uint16(1),
+	5278:  uint16(anon_sym_LPAREN),
+	5279:  uint16(37),
+	5280:  uint16(1),
+	5281:  uint16(aux_sym_dstring_token1),
+	5282:  uint16(39),
+	5283:  uint16(1),
+	5284:  uint16(aux_sym_sstring_token1),
+	5285:  uint16(41),
+	5286:  uint16(1),
+	5287:  uint16(anon_sym_AT2),
+	5288:  uint16(45),
+	5289:  uint16(1),
+	5290:  uint16(aux_sym_comment_token2),
+	5291:  uint16(171),
+	5292:  uint16(1),
+	5293:  uint16(sym_identifier),
+	5294:  uint16(181),
+	5295:  uint16(1),
+	5296:  uint16(anon_sym_POUND),
+	5297:  uint16(185),
+	5298:  uint16(1),
+	5299:  uint16(anon_sym_LBRACK),
+	5300:  uint16(74),
+	5301:  uint16(1),
+	5302:  uint16(sym_comment),
+	5303:  uint16(75),
+	5304:  uint16(1),
+	5305:  uint16(aux_sym_concat_repeat1),
+	5306:  uint16(76),
+	5307:  uint16(1),
+	5308:  uint16(sym__atom),
+	5309:  uint16(136),
+	5310:  uint16(1),
+	5311:  uint16(sym_repetition),
+	5312:  uint16(139),
+	5313:  uint16(1),
+	5314:  uint16(sym__cat_expr),
+	5315:  uint16(215),
+	5316:  uint16(3),
+	5317:  uint16(anon_sym_SEMI),
+	5318:  uint16(anon_sym_PIPE),
+	5319:  uint16(anon_sym_BSLASH),
+	5320:  uint16(112),
+	5321:  uint16(7),
+	5322:  uint16(sym_parenthesized),
+	5323:  uint16(sym_character_class),
+	5324:  uint16(sym_wildcard),
+	5325:  uint16(sym_dstring),
+	5326:  uint16(sym_sstring),
+	5327:  uint16(sym_stag),
+	5328:  uint16(sym_mtag),
+	5329:  uint16(16),
+	5330:  uint16(3),
+	5331:  uint16(1),
+	5332:  uint16(aux_sym_comment_token1),
+	5333:  uint16(45),
+	5334:  uint16(1),
+	5335:  uint16(aux_sym_comment_token2),
+	5336:  uint16(219),
+	5337:  uint16(1),
+	5338:  uint16(sym_identifier),
+	5339:  uint16(222),
+	5340:  uint16(1),
+	5341:  uint16(anon_sym_DOT),
+	5342:  uint16(229),
+	5343:  uint16(1),
+	5344:  uint16(anon_sym_LPAREN),
+	5345:  uint16(235),
+	5346:  uint16(1),
+	5347:  uint16(aux_sym_dstring_token1),
+	5348:  uint16(238),
+	5349:  uint16(1),
+	5350:  uint16(aux_sym_sstring_token1),
+	5351:  uint16(241),
+	5352:  uint16(1),
+	5353:  uint16(anon_sym_AT2),
+	5354:  uint16(244),
+	5355:  uint16(1),
+	5356:  uint16(anon_sym_POUND),
+	5357:  uint16(280),
+	5358:  uint16(1),
+	5359:  uint16(anon_sym_LBRACK),
+	5360:  uint16(76),
+	5361:  uint16(1),
+	5362:  uint16(sym__atom),
+	5363:  uint16(136),
+	5364:  uint16(1),
+	5365:  uint16(sym_repetition),
+	5366:  uint16(139),
+	5367:  uint16(1),
+	5368:  uint16(sym__cat_expr),
+	5369:  uint16(75),
+	5370:  uint16(2),
+	5371:  uint16(sym_comment),
+	5372:  uint16(aux_sym_concat_repeat1),
+	5373:  uint16(225),
+	5374:  uint16(3),
+	5375:  uint16(anon_sym_SEMI),
+	5376:  uint16(anon_sym_PIPE),
+	5377:  uint16(anon_sym_BSLASH),
+	5378:  uint16(112),
+	5379:  uint16(7),
+	5380:  uint16(sym_parenthesized),
+	5381:  uint16(sym_character_class),
+	5382:  uint16(sym_wildcard),
+	5383:  uint16(sym_dstring),
+	5384:  uint16(sym_sstring),
+	5385:  uint16(sym_stag),
+	5386:  uint16(sym_mtag),
+	5387:  uint16(8),
+	5388:  uint16(3),
+	5389:  uint16(1),
+	5390:  uint16(aux_sym_comment_token1),
+	5391:  uint16(5),
+	5392:  uint16(1),
+	5393:  uint16(aux_sym_comment_token2),
+	5394:  uint16(289),
+	5395:  uint16(1),
+	5396:  uint16(anon_sym_LBRACE2),
+	5397:  uint16(76),
+	5398:  uint16(1),
+	5399:  uint16(sym_comment),
+	5400:  uint16(285),
+	5401:  uint16(2),
+	5402:  uint16(anon_sym_LBRACE),
+	5403:  uint16(anon_sym_SLASH),
+	5404:  uint16(138),
+	5405:  uint16(2),
+	5406:  uint16(sym_close),
+	5407:  uint16(sym_limits),
+	5408:  uint16(287),
+	5409:  uint16(3),
+	5410:  uint16(anon_sym_STAR2),
+	5411:  uint16(anon_sym_PLUS),
+	5412:  uint16(anon_sym_QMARK),
+	5413:  uint16(283),
+	5414:  uint16(14),
+	5415:  uint16(anon_sym_SEMI),
+	5416:  uint16(anon_sym_DOT),
+	5417:  uint16(anon_sym_EQ_GT),
+	5418:  uint16(anon_sym_COLON_EQ_GT),
+	5419:  uint16(anon_sym_PIPE),
+	5420:  uint16(anon_sym_BSLASH),
+	5421:  uint16(anon_sym_LPAREN),
+	5422:  uint16(anon_sym_RPAREN),
+	5423:  uint16(anon_sym_LBRACK),
+	5424:  uint16(aux_sym_dstring_token1),
+	5425:  uint16(aux_sym_sstring_token1),
+	5426:  uint16(anon_sym_AT2),
+	5427:  uint16(anon_sym_POUND),
+	5428:  uint16(sym_identifier),
+	5429:  uint16(16),
+	5430:  uint16(3),
+	5431:  uint16(1),
+	5432:  uint16(aux_sym_comment_token1),
+	5433:  uint16(45),
+	5434:  uint16(1),
+	5435:  uint16(aux_sym_comment_token2),
+	5436:  uint16(219),
+	5437:  uint16(1),
+	5438:  uint16(sym_identifier),
+	5439:  uint16(222),
+	5440:  uint16(1),
+	5441:  uint16(anon_sym_DOT),
+	5442:  uint16(229),
+	5443:  uint16(1),
+	5444:  uint16(anon_sym_LPAREN),
+	5445:  uint16(235),
+	5446:  uint16(1),
+	5447:  uint16(aux_sym_dstring_token1),
+	5448:  uint16(238),
+	5449:  uint16(1),
+	5450:  uint16(aux_sym_sstring_token1),
+	5451:  uint16(241),
+	5452:  uint16(1),
+	5453:  uint16(anon_sym_AT2),
+	5454:  uint16(244),
+	5455:  uint16(1),
+	5456:  uint16(anon_sym_POUND),
+	5457:  uint16(291),
+	5458:  uint16(1),
+	5459:  uint16(anon_sym_LBRACK),
+	5460:  uint16(76),
+	5461:  uint16(1),
+	5462:  uint16(sym__atom),
+	5463:  uint16(136),
+	5464:  uint16(1),
+	5465:  uint16(sym_repetition),
+	5466:  uint16(139),
+	5467:  uint16(1),
+	5468:  uint16(sym__cat_expr),
+	5469:  uint16(77),
+	5470:  uint16(2),
+	5471:  uint16(sym_comment),
+	5472:  uint16(aux_sym_concat_repeat1),
+	5473:  uint16(225),
+	5474:  uint16(3),
+	5475:  uint16(anon_sym_PIPE),
+	5476:  uint16(anon_sym_BSLASH),
+	5477:  uint16(anon_sym_RPAREN),
+	5478:  uint16(112),
+	5479:  uint16(7),
+	5480:  uint16(sym_parenthesized),
+	5481:  uint16(sym_character_class),
+	5482:  uint16(sym_wildcard),
+	5483:  uint16(sym_dstring),
+	5484:  uint16(sym_sstring),
+	5485:  uint16(sym_stag),
+	5486:  uint16(sym_mtag),
+	5487:  uint16(15),
+	5488:  uint16(3),
+	5489:  uint16(1),
+	5490:  uint16(aux_sym_comment_token1),
+	5491:  uint16(45),
+	5492:  uint16(1),
+	5493:  uint16(aux_sym_comment_token2),
+	5494:  uint16(294),
+	5495:  uint16(1),
+	5496:  uint16(anon_sym_re2c),
+	5497:  uint16(296),
+	5498:  uint16(1),
+	5499:  uint16(anon_sym_local),
+	5500:  uint16(298),
+	5501:  uint16(1),
+	5502:  uint16(anon_sym_rules),
+	5503:  uint16(300),
+	5504:  uint16(1),
+	5505:  uint16(anon_sym_use),
+	5506:  uint16(302),
+	5507:  uint16(1),
+	5508:  uint16(anon_sym_max),
+	5509:  uint16(304),
+	5510:  uint16(1),
+	5511:  uint16(anon_sym_maxnmatch),
+	5512:  uint16(306),
+	5513:  uint16(1),
+	5514:  uint16(anon_sym_getstate),
+	5515:  uint16(308),
+	5516:  uint16(1),
+	5517:  uint16(anon_sym_stags),
+	5518:  uint16(310),
+	5519:  uint16(1),
+	5520:  uint16(anon_sym_mtags),
+	5521:  uint16(312),
+	5522:  uint16(1),
+	5523:  uint16(anon_sym_header),
+	5524:  uint16(314),
+	5525:  uint16(1),
+	5526:  uint16(sym_ignore_block),
+	5527:  uint16(78),
+	5528:  uint16(1),
+	5529:  uint16(sym_comment),
+	5530:  uint16(365),
+	5531:  uint16(11),
+	5532:  uint16(sym_global_block),
+	5533:  uint16(sym_local_block),
+	5534:  uint16(sym_rules_block),
+	5535:  uint16(sym_use_block),
+	5536:  uint16(sym_max_block),
+	5537:  uint16(sym_maxnmatch_block),
+	5538:  uint16(sym_getstate_block),
+	5539:  uint16(sym_stags_block),
+	5540:  uint16(sym_mtags_block),
+	5541:  uint16(sym_header_on_block),
+	5542:  uint16(sym_header_off_block),
+	5543:  uint16(18),
+	5544:  uint16(3),
+	5545:  uint16(1),
+	5546:  uint16(aux_sym_comment_token1),
+	5547:  uint16(21),
+	5548:  uint16(1),
+	5549:  uint16(anon_sym_DOT),
+	5550:  uint16(33),
+	5551:  uint16(1),
+	5552:  uint16(anon_sym_LPAREN),
+	5553:  uint16(35),
+	5554:  uint16(1),
+	5555:  uint16(anon_sym_LBRACK),
+	5556:  uint16(37),
+	5557:  uint16(1),
+	5558:  uint16(aux_sym_dstring_token1),
+	5559:  uint16(39),
+	5560:  uint16(1),
+	5561:  uint16(aux_sym_sstring_token1),
+	5562:  uint16(41),
+	5563:  uint16(1),
+	5564:  uint16(anon_sym_AT2),
+	5565:  uint16(45),
+	5566:  uint16(1),
+	5567:  uint16(aux_sym_comment_token2),
+	5568:  uint16(171),
+	5569:  uint16(1),
+	5570:  uint16(sym_identifier),
+	5571:  uint16(181),
+	5572:  uint16(1),
+	5573:  uint16(anon_sym_POUND),
+	5574:  uint16(71),
+	5575:  uint16(1),
+	5576:  uint16(sym__cat_expr),
+	5577:  uint16(76),
+	5578:  uint16(1),
+	5579:  uint16(sym__atom),
+	5580:  uint16(79),
+	5581:  uint16(1),
+	5582:  uint16(sym_comment),
+	5583:  uint16(136),
+	5584:  uint16(1),
+	5585:  uint16(sym_repetition),
+	5586:  uint16(178),
+	5587:  uint16(1),
+	5588:  uint16(sym_concat),
+	5589:  uint16(179),
+	5590:  uint16(1),
+	5591:  uint16(sym__alt_expr),
+	5592:  uint16(176),
+	5593:  uint16(2),
+	5594:  uint16(sym_difference),
+	5595:  uint16(sym__dif_expr),
+	5596:  uint16(112),
+	5597:  uint16(7),
+	5598:  uint16(sym_parenthesized),
+	5599:  uint16(sym_character_class),
+	5600:  uint16(sym_wildcard),
+	5601:  uint16(sym_dstring),
+	5602:  uint16(sym_sstring),
+	5603:  uint16(sym_stag),
+	5604:  uint16(sym_mtag),
+	5605:  uint16(18),
+	5606:  uint16(3),
+	5607:  uint16(1),
+	5608:  uint16(aux_sym_comment_token1),
+	5609:  uint16(21),
+	5610:  uint16(1),
+	5611:  uint16(anon_sym_DOT),
+	5612:  uint16(33),
+	5613:  uint16(1),
+	5614:  uint16(anon_sym_LPAREN),
+	5615:  uint16(37),
+	5616:  uint16(1),
+	5617:  uint16(aux_sym_dstring_token1),
+	5618:  uint16(39),
+	5619:  uint16(1),
+	5620:  uint16(aux_sym_sstring_token1),
+	5621:  uint16(41),
+	5622:  uint16(1),
+	5623:  uint16(anon_sym_AT2),
+	5624:  uint16(45),
+	5625:  uint16(1),
+	5626:  uint16(aux_sym_comment_token2),
+	5627:  uint16(171),
+	5628:  uint16(1),
+	5629:  uint16(sym_identifier),
+	5630:  uint16(179),
+	5631:  uint16(1),
+	5632:  uint16(anon_sym_LBRACK),
+	5633:  uint16(181),
+	5634:  uint16(1),
+	5635:  uint16(anon_sym_POUND),
+	5636:  uint16(51),
+	5637:  uint16(1),
+	5638:  uint16(sym__cat_expr),
+	5639:  uint16(76),
+	5640:  uint16(1),
+	5641:  uint16(sym__atom),
+	5642:  uint16(80),
+	5643:  uint16(1),
+	5644:  uint16(sym_comment),
+	5645:  uint16(136),
+	5646:  uint16(1),
+	5647:  uint16(sym_repetition),
+	5648:  uint16(178),
+	5649:  uint16(1),
+	5650:  uint16(sym_concat),
+	5651:  uint16(179),
+	5652:  uint16(1),
+	5653:  uint16(sym__alt_expr),
+	5654:  uint16(176),
+	5655:  uint16(2),
+	5656:  uint16(sym_difference),
+	5657:  uint16(sym__dif_expr),
+	5658:  uint16(112),
+	5659:  uint16(7),
+	5660:  uint16(sym_parenthesized),
+	5661:  uint16(sym_character_class),
+	5662:  uint16(sym_wildcard),
+	5663:  uint16(sym_dstring),
+	5664:  uint16(sym_sstring),
+	5665:  uint16(sym_stag),
+	5666:  uint16(sym_mtag),
+	5667:  uint16(17),
+	5668:  uint16(3),
+	5669:  uint16(1),
+	5670:  uint16(aux_sym_comment_token1),
+	5671:  uint16(21),
+	5672:  uint16(1),
+	5673:  uint16(anon_sym_DOT),
+	5674:  uint16(33),
+	5675:  uint16(1),
+	5676:  uint16(anon_sym_LPAREN),
+	5677:  uint16(37),
+	5678:  uint16(1),
+	5679:  uint16(aux_sym_dstring_token1),
+	5680:  uint16(39),
+	5681:  uint16(1),
+	5682:  uint16(aux_sym_sstring_token1),
+	5683:  uint16(41),
+	5684:  uint16(1),
+	5685:  uint16(anon_sym_AT2),
+	5686:  uint16(45),
+	5687:  uint16(1),
+	5688:  uint16(aux_sym_comment_token2),
+	5689:  uint16(171),
+	5690:  uint16(1),
+	5691:  uint16(sym_identifier),
+	5692:  uint16(181),
+	5693:  uint16(1),
+	5694:  uint16(anon_sym_POUND),
+	5695:  uint16(187),
+	5696:  uint16(1),
+	5697:  uint16(anon_sym_LBRACK),
+	5698:  uint16(76),
+	5699:  uint16(1),
+	5700:  uint16(sym__atom),
+	5701:  uint16(81),
+	5702:  uint16(1),
+	5703:  uint16(sym_comment),
+	5704:  uint16(83),
+	5705:  uint16(1),
+	5706:  uint16(aux_sym_concat_repeat1),
+	5707:  uint16(136),
+	5708:  uint16(1),
+	5709:  uint16(sym_repetition),
+	5710:  uint16(139),
+	5711:  uint16(1),
+	5712:  uint16(sym__cat_expr),
+	5713:  uint16(211),
+	5714:  uint16(3),
+	5715:  uint16(anon_sym_PIPE),
+	5716:  uint16(anon_sym_BSLASH),
+	5717:  uint16(anon_sym_RPAREN),
+	5718:  uint16(112),
+	5719:  uint16(7),
+	5720:  uint16(sym_parenthesized),
+	5721:  uint16(sym_character_class),
+	5722:  uint16(sym_wildcard),
+	5723:  uint16(sym_dstring),
+	5724:  uint16(sym_sstring),
+	5725:  uint16(sym_stag),
+	5726:  uint16(sym_mtag),
+	5727:  uint16(18),
+	5728:  uint16(3),
+	5729:  uint16(1),
+	5730:  uint16(aux_sym_comment_token1),
+	5731:  uint16(21),
+	5732:  uint16(1),
+	5733:  uint16(anon_sym_DOT),
+	5734:  uint16(33),
+	5735:  uint16(1),
+	5736:  uint16(anon_sym_LPAREN),
+	5737:  uint16(37),
+	5738:  uint16(1),
+	5739:  uint16(aux_sym_dstring_token1),
+	5740:  uint16(39),
+	5741:  uint16(1),
+	5742:  uint16(aux_sym_sstring_token1),
+	5743:  uint16(41),
+	5744:  uint16(1),
+	5745:  uint16(anon_sym_AT2),
+	5746:  uint16(45),
+	5747:  uint16(1),
+	5748:  uint16(aux_sym_comment_token2),
+	5749:  uint16(171),
+	5750:  uint16(1),
+	5751:  uint16(sym_identifier),
+	5752:  uint16(181),
+	5753:  uint16(1),
+	5754:  uint16(anon_sym_POUND),
+	5755:  uint16(187),
+	5756:  uint16(1),
+	5757:  uint16(anon_sym_LBRACK),
+	5758:  uint16(76),
+	5759:  uint16(1),
+	5760:  uint16(sym__atom),
+	5761:  uint16(81),
+	5762:  uint16(1),
+	5763:  uint16(sym__cat_expr),
+	5764:  uint16(82),
+	5765:  uint16(1),
+	5766:  uint16(sym_comment),
+	5767:  uint16(136),
+	5768:  uint16(1),
+	5769:  uint16(sym_repetition),
+	5770:  uint16(178),
+	5771:  uint16(1),
+	5772:  uint16(sym_concat),
+	5773:  uint16(179),
+	5774:  uint16(1),
+	5775:  uint16(sym__alt_expr),
+	5776:  uint16(176),
+	5777:  uint16(2),
+	5778:  uint16(sym_difference),
+	5779:  uint16(sym__dif_expr),
+	5780:  uint16(112),
+	5781:  uint16(7),
+	5782:  uint16(sym_parenthesized),
+	5783:  uint16(sym_character_class),
+	5784:  uint16(sym_wildcard),
+	5785:  uint16(sym_dstring),
+	5786:  uint16(sym_sstring),
+	5787:  uint16(sym_stag),
+	5788:  uint16(sym_mtag),
+	5789:  uint16(17),
+	5790:  uint16(3),
+	5791:  uint16(1),
+	5792:  uint16(aux_sym_comment_token1),
+	5793:  uint16(21),
+	5794:  uint16(1),
+	5795:  uint16(anon_sym_DOT),
+	5796:  uint16(33),
+	5797:  uint16(1),
+	5798:  uint16(anon_sym_LPAREN),
+	5799:  uint16(37),
+	5800:  uint16(1),
+	5801:  uint16(aux_sym_dstring_token1),
+	5802:  uint16(39),
+	5803:  uint16(1),
+	5804:  uint16(aux_sym_sstring_token1),
+	5805:  uint16(41),
+	5806:  uint16(1),
+	5807:  uint16(anon_sym_AT2),
+	5808:  uint16(45),
+	5809:  uint16(1),
+	5810:  uint16(aux_sym_comment_token2),
+	5811:  uint16(171),
+	5812:  uint16(1),
+	5813:  uint16(sym_identifier),
+	5814:  uint16(181),
+	5815:  uint16(1),
+	5816:  uint16(anon_sym_POUND),
+	5817:  uint16(187),
+	5818:  uint16(1),
+	5819:  uint16(anon_sym_LBRACK),
+	5820:  uint16(76),
+	5821:  uint16(1),
+	5822:  uint16(sym__atom),
+	5823:  uint16(77),
+	5824:  uint16(1),
+	5825:  uint16(aux_sym_concat_repeat1),
+	5826:  uint16(83),
+	5827:  uint16(1),
+	5828:  uint16(sym_comment),
+	5829:  uint16(136),
+	5830:  uint16(1),
+	5831:  uint16(sym_repetition),
+	5832:  uint16(139),
+	5833:  uint16(1),
+	5834:  uint16(sym__cat_expr),
+	5835:  uint16(215),
+	5836:  uint16(3),
+	5837:  uint16(anon_sym_PIPE),
+	5838:  uint16(anon_sym_BSLASH),
+	5839:  uint16(anon_sym_RPAREN),
+	5840:  uint16(112),
+	5841:  uint16(7),
+	5842:  uint16(sym_parenthesized),
+	5843:  uint16(sym_character_class),
+	5844:  uint16(sym_wildcard),
+	5845:  uint16(sym_dstring),
+	5846:  uint16(sym_sstring),
+	5847:  uint16(sym_stag),
+	5848:  uint16(sym_mtag),
+	5849:  uint16(18),
+	5850:  uint16(3),
+	5851:  uint16(1),
+	5852:  uint16(aux_sym_comment_token1),
+	5853:  uint16(21),
+	5854:  uint16(1),
+	5855:  uint16(anon_sym_DOT),
+	5856:  uint16(33),
+	5857:  uint16(1),
+	5858:  uint16(anon_sym_LPAREN),
+	5859:  uint16(37),
+	5860:  uint16(1),
+	5861:  uint16(aux_sym_dstring_token1),
+	5862:  uint16(39),
+	5863:  uint16(1),
+	5864:  uint16(aux_sym_sstring_token1),
+	5865:  uint16(41),
+	5866:  uint16(1),
+	5867:  uint16(anon_sym_AT2),
+	5868:  uint16(45),
+	5869:  uint16(1),
+	5870:  uint16(aux_sym_comment_token2),
+	5871:  uint16(171),
+	5872:  uint16(1),
+	5873:  uint16(sym_identifier),
+	5874:  uint16(181),
+	5875:  uint16(1),
+	5876:  uint16(anon_sym_POUND),
+	5877:  uint16(183),
+	5878:  uint16(1),
+	5879:  uint16(anon_sym_LBRACK),
+	5880:  uint16(68),
+	5881:  uint16(1),
+	5882:  uint16(sym__cat_expr),
+	5883:  uint16(76),
+	5884:  uint16(1),
+	5885:  uint16(sym__atom),
+	5886:  uint16(84),
+	5887:  uint16(1),
+	5888:  uint16(sym_comment),
+	5889:  uint16(136),
+	5890:  uint16(1),
+	5891:  uint16(sym_repetition),
+	5892:  uint16(178),
+	5893:  uint16(1),
+	5894:  uint16(sym_concat),
+	5895:  uint16(179),
+	5896:  uint16(1),
+	5897:  uint16(sym__alt_expr),
+	5898:  uint16(176),
+	5899:  uint16(2),
+	5900:  uint16(sym_difference),
+	5901:  uint16(sym__dif_expr),
+	5902:  uint16(112),
+	5903:  uint16(7),
+	5904:  uint16(sym_parenthesized),
+	5905:  uint16(sym_character_class),
+	5906:  uint16(sym_wildcard),
+	5907:  uint16(sym_dstring),
+	5908:  uint16(sym_sstring),
+	5909:  uint16(sym_stag),
+	5910:  uint16(sym_mtag),
+	5911:  uint16(16),
+	5912:  uint16(3),
+	5913:  uint16(1),
+	5914:  uint16(aux_sym_comment_token1),
+	5915:  uint16(45),
+	5916:  uint16(1),
+	5917:  uint16(aux_sym_comment_token2),
+	5918:  uint16(219),
+	5919:  uint16(1),
+	5920:  uint16(sym_identifier),
+	5921:  uint16(222),
+	5922:  uint16(1),
+	5923:  uint16(anon_sym_DOT),
+	5924:  uint16(229),
+	5925:  uint16(1),
+	5926:  uint16(anon_sym_LPAREN),
+	5927:  uint16(235),
+	5928:  uint16(1),
+	5929:  uint16(aux_sym_dstring_token1),
+	5930:  uint16(238),
+	5931:  uint16(1),
+	5932:  uint16(aux_sym_sstring_token1),
+	5933:  uint16(241),
+	5934:  uint16(1),
+	5935:  uint16(anon_sym_AT2),
+	5936:  uint16(244),
+	5937:  uint16(1),
+	5938:  uint16(anon_sym_POUND),
+	5939:  uint16(316),
+	5940:  uint16(1),
+	5941:  uint16(anon_sym_LBRACK),
+	5942:  uint16(76),
+	5943:  uint16(1),
+	5944:  uint16(sym__atom),
+	5945:  uint16(136),
+	5946:  uint16(1),
+	5947:  uint16(sym_repetition),
+	5948:  uint16(139),
+	5949:  uint16(1),
+	5950:  uint16(sym__cat_expr),
+	5951:  uint16(85),
+	5952:  uint16(2),
+	5953:  uint16(sym_comment),
+	5954:  uint16(aux_sym_concat_repeat1),
+	5955:  uint16(225),
+	5956:  uint16(3),
+	5957:  uint16(anon_sym_LBRACE),
+	5958:  uint16(anon_sym_PIPE),
+	5959:  uint16(anon_sym_BSLASH),
+	5960:  uint16(112),
+	5961:  uint16(7),
+	5962:  uint16(sym_parenthesized),
+	5963:  uint16(sym_character_class),
+	5964:  uint16(sym_wildcard),
+	5965:  uint16(sym_dstring),
+	5966:  uint16(sym_sstring),
+	5967:  uint16(sym_stag),
+	5968:  uint16(sym_mtag),
+	5969:  uint16(17),
+	5970:  uint16(3),
+	5971:  uint16(1),
+	5972:  uint16(aux_sym_comment_token1),
+	5973:  uint16(21),
+	5974:  uint16(1),
+	5975:  uint16(anon_sym_DOT),
+	5976:  uint16(33),
+	5977:  uint16(1),
+	5978:  uint16(anon_sym_LPAREN),
+	5979:  uint16(37),
+	5980:  uint16(1),
+	5981:  uint16(aux_sym_dstring_token1),
+	5982:  uint16(39),
+	5983:  uint16(1),
+	5984:  uint16(aux_sym_sstring_token1),
+	5985:  uint16(41),
+	5986:  uint16(1),
+	5987:  uint16(anon_sym_AT2),
+	5988:  uint16(45),
+	5989:  uint16(1),
+	5990:  uint16(aux_sym_comment_token2),
+	5991:  uint16(171),
+	5992:  uint16(1),
+	5993:  uint16(sym_identifier),
+	5994:  uint16(181),
+	5995:  uint16(1),
+	5996:  uint16(anon_sym_POUND),
+	5997:  uint16(189),
+	5998:  uint16(1),
+	5999:  uint16(anon_sym_LBRACK),
+	6000:  uint16(76),
+	6001:  uint16(1),
+	6002:  uint16(sym__atom),
+	6003:  uint16(86),
+	6004:  uint16(1),
+	6005:  uint16(sym_comment),
+	6006:  uint16(88),
+	6007:  uint16(1),
+	6008:  uint16(aux_sym_concat_repeat1),
+	6009:  uint16(136),
+	6010:  uint16(1),
+	6011:  uint16(sym_repetition),
+	6012:  uint16(139),
+	6013:  uint16(1),
+	6014:  uint16(sym__cat_expr),
+	6015:  uint16(211),
+	6016:  uint16(3),
+	6017:  uint16(anon_sym_LBRACE),
+	6018:  uint16(anon_sym_PIPE),
+	6019:  uint16(anon_sym_BSLASH),
+	6020:  uint16(112),
+	6021:  uint16(7),
+	6022:  uint16(sym_parenthesized),
+	6023:  uint16(sym_character_class),
+	6024:  uint16(sym_wildcard),
+	6025:  uint16(sym_dstring),
+	6026:  uint16(sym_sstring),
+	6027:  uint16(sym_stag),
+	6028:  uint16(sym_mtag),
+	6029:  uint16(18),
+	6030:  uint16(3),
+	6031:  uint16(1),
+	6032:  uint16(aux_sym_comment_token1),
+	6033:  uint16(21),
+	6034:  uint16(1),
+	6035:  uint16(anon_sym_DOT),
+	6036:  uint16(33),
+	6037:  uint16(1),
+	6038:  uint16(anon_sym_LPAREN),
+	6039:  uint16(37),
+	6040:  uint16(1),
+	6041:  uint16(aux_sym_dstring_token1),
+	6042:  uint16(39),
+	6043:  uint16(1),
+	6044:  uint16(aux_sym_sstring_token1),
+	6045:  uint16(41),
+	6046:  uint16(1),
+	6047:  uint16(anon_sym_AT2),
+	6048:  uint16(45),
+	6049:  uint16(1),
+	6050:  uint16(aux_sym_comment_token2),
+	6051:  uint16(171),
+	6052:  uint16(1),
+	6053:  uint16(sym_identifier),
+	6054:  uint16(181),
+	6055:  uint16(1),
+	6056:  uint16(anon_sym_POUND),
+	6057:  uint16(189),
+	6058:  uint16(1),
+	6059:  uint16(anon_sym_LBRACK),
+	6060:  uint16(76),
+	6061:  uint16(1),
+	6062:  uint16(sym__atom),
+	6063:  uint16(86),
+	6064:  uint16(1),
+	6065:  uint16(sym__cat_expr),
+	6066:  uint16(87),
+	6067:  uint16(1),
+	6068:  uint16(sym_comment),
+	6069:  uint16(136),
+	6070:  uint16(1),
+	6071:  uint16(sym_repetition),
+	6072:  uint16(178),
+	6073:  uint16(1),
+	6074:  uint16(sym_concat),
+	6075:  uint16(179),
+	6076:  uint16(1),
+	6077:  uint16(sym__alt_expr),
+	6078:  uint16(176),
+	6079:  uint16(2),
+	6080:  uint16(sym_difference),
+	6081:  uint16(sym__dif_expr),
+	6082:  uint16(112),
+	6083:  uint16(7),
+	6084:  uint16(sym_parenthesized),
+	6085:  uint16(sym_character_class),
+	6086:  uint16(sym_wildcard),
+	6087:  uint16(sym_dstring),
+	6088:  uint16(sym_sstring),
+	6089:  uint16(sym_stag),
+	6090:  uint16(sym_mtag),
+	6091:  uint16(17),
+	6092:  uint16(3),
+	6093:  uint16(1),
+	6094:  uint16(aux_sym_comment_token1),
+	6095:  uint16(21),
+	6096:  uint16(1),
+	6097:  uint16(anon_sym_DOT),
+	6098:  uint16(33),
+	6099:  uint16(1),
+	6100:  uint16(anon_sym_LPAREN),
+	6101:  uint16(37),
+	6102:  uint16(1),
+	6103:  uint16(aux_sym_dstring_token1),
+	6104:  uint16(39),
+	6105:  uint16(1),
+	6106:  uint16(aux_sym_sstring_token1),
+	6107:  uint16(41),
+	6108:  uint16(1),
+	6109:  uint16(anon_sym_AT2),
+	6110:  uint16(45),
+	6111:  uint16(1),
+	6112:  uint16(aux_sym_comment_token2),
+	6113:  uint16(171),
+	6114:  uint16(1),
+	6115:  uint16(sym_identifier),
+	6116:  uint16(181),
+	6117:  uint16(1),
+	6118:  uint16(anon_sym_POUND),
+	6119:  uint16(189),
+	6120:  uint16(1),
+	6121:  uint16(anon_sym_LBRACK),
+	6122:  uint16(76),
+	6123:  uint16(1),
+	6124:  uint16(sym__atom),
+	6125:  uint16(85),
+	6126:  uint16(1),
+	6127:  uint16(aux_sym_concat_repeat1),
+	6128:  uint16(88),
+	6129:  uint16(1),
+	6130:  uint16(sym_comment),
+	6131:  uint16(136),
+	6132:  uint16(1),
+	6133:  uint16(sym_repetition),
+	6134:  uint16(139),
+	6135:  uint16(1),
+	6136:  uint16(sym__cat_expr),
+	6137:  uint16(215),
+	6138:  uint16(3),
+	6139:  uint16(anon_sym_LBRACE),
+	6140:  uint16(anon_sym_PIPE),
+	6141:  uint16(anon_sym_BSLASH),
+	6142:  uint16(112),
+	6143:  uint16(7),
+	6144:  uint16(sym_parenthesized),
+	6145:  uint16(sym_character_class),
+	6146:  uint16(sym_wildcard),
+	6147:  uint16(sym_dstring),
+	6148:  uint16(sym_sstring),
+	6149:  uint16(sym_stag),
+	6150:  uint16(sym_mtag),
+	6151:  uint16(18),
+	6152:  uint16(3),
+	6153:  uint16(1),
+	6154:  uint16(aux_sym_comment_token1),
+	6155:  uint16(21),
+	6156:  uint16(1),
+	6157:  uint16(anon_sym_DOT),
+	6158:  uint16(33),
+	6159:  uint16(1),
+	6160:  uint16(anon_sym_LPAREN),
+	6161:  uint16(37),
+	6162:  uint16(1),
+	6163:  uint16(aux_sym_dstring_token1),
+	6164:  uint16(39),
+	6165:  uint16(1),
+	6166:  uint16(aux_sym_sstring_token1),
+	6167:  uint16(41),
+	6168:  uint16(1),
+	6169:  uint16(anon_sym_AT2),
+	6170:  uint16(45),
+	6171:  uint16(1),
+	6172:  uint16(aux_sym_comment_token2),
+	6173:  uint16(171),
+	6174:  uint16(1),
+	6175:  uint16(sym_identifier),
+	6176:  uint16(181),
+	6177:  uint16(1),
+	6178:  uint16(anon_sym_POUND),
+	6179:  uint16(319),
+	6180:  uint16(1),
+	6181:  uint16(anon_sym_LBRACK),
+	6182:  uint16(76),
+	6183:  uint16(1),
+	6184:  uint16(sym__atom),
+	6185:  uint16(89),
+	6186:  uint16(1),
+	6187:  uint16(sym_comment),
+	6188:  uint16(97),
+	6189:  uint16(1),
+	6190:  uint16(sym__cat_expr),
+	6191:  uint16(136),
+	6192:  uint16(1),
+	6193:  uint16(sym_repetition),
+	6194:  uint16(178),
+	6195:  uint16(1),
+	6196:  uint16(sym_concat),
+	6197:  uint16(179),
+	6198:  uint16(1),
+	6199:  uint16(sym__alt_expr),
+	6200:  uint16(176),
+	6201:  uint16(2),
+	6202:  uint16(sym_difference),
+	6203:  uint16(sym__dif_expr),
+	6204:  uint16(112),
+	6205:  uint16(7),
+	6206:  uint16(sym_parenthesized),
+	6207:  uint16(sym_character_class),
+	6208:  uint16(sym_wildcard),
+	6209:  uint16(sym_dstring),
+	6210:  uint16(sym_sstring),
+	6211:  uint16(sym_stag),
+	6212:  uint16(sym_mtag),
+	6213:  uint16(18),
+	6214:  uint16(3),
+	6215:  uint16(1),
+	6216:  uint16(aux_sym_comment_token1),
+	6217:  uint16(21),
+	6218:  uint16(1),
+	6219:  uint16(anon_sym_DOT),
+	6220:  uint16(33),
+	6221:  uint16(1),
+	6222:  uint16(anon_sym_LPAREN),
+	6223:  uint16(37),
+	6224:  uint16(1),
+	6225:  uint16(aux_sym_dstring_token1),
+	6226:  uint16(39),
+	6227:  uint16(1),
+	6228:  uint16(aux_sym_sstring_token1),
+	6229:  uint16(41),
+	6230:  uint16(1),
+	6231:  uint16(anon_sym_AT2),
+	6232:  uint16(45),
+	6233:  uint16(1),
+	6234:  uint16(aux_sym_comment_token2),
+	6235:  uint16(171),
+	6236:  uint16(1),
+	6237:  uint16(sym_identifier),
+	6238:  uint16(181),
+	6239:  uint16(1),
+	6240:  uint16(anon_sym_POUND),
+	6241:  uint16(191),
+	6242:  uint16(1),
+	6243:  uint16(anon_sym_LBRACK),
+	6244:  uint16(65),
+	6245:  uint16(1),
+	6246:  uint16(sym__cat_expr),
+	6247:  uint16(76),
+	6248:  uint16(1),
+	6249:  uint16(sym__atom),
+	6250:  uint16(90),
+	6251:  uint16(1),
+	6252:  uint16(sym_comment),
+	6253:  uint16(136),
+	6254:  uint16(1),
+	6255:  uint16(sym_repetition),
+	6256:  uint16(178),
+	6257:  uint16(1),
+	6258:  uint16(sym_concat),
+	6259:  uint16(179),
+	6260:  uint16(1),
+	6261:  uint16(sym__alt_expr),
+	6262:  uint16(176),
+	6263:  uint16(2),
+	6264:  uint16(sym_difference),
+	6265:  uint16(sym__dif_expr),
+	6266:  uint16(112),
+	6267:  uint16(7),
+	6268:  uint16(sym_parenthesized),
+	6269:  uint16(sym_character_class),
+	6270:  uint16(sym_wildcard),
+	6271:  uint16(sym_dstring),
+	6272:  uint16(sym_sstring),
+	6273:  uint16(sym_stag),
+	6274:  uint16(sym_mtag),
+	6275:  uint16(17),
+	6276:  uint16(3),
+	6277:  uint16(1),
+	6278:  uint16(aux_sym_comment_token1),
+	6279:  uint16(21),
+	6280:  uint16(1),
+	6281:  uint16(anon_sym_DOT),
+	6282:  uint16(33),
+	6283:  uint16(1),
+	6284:  uint16(anon_sym_LPAREN),
+	6285:  uint16(37),
+	6286:  uint16(1),
+	6287:  uint16(aux_sym_dstring_token1),
+	6288:  uint16(39),
+	6289:  uint16(1),
+	6290:  uint16(aux_sym_sstring_token1),
+	6291:  uint16(41),
+	6292:  uint16(1),
+	6293:  uint16(anon_sym_AT2),
+	6294:  uint16(45),
+	6295:  uint16(1),
+	6296:  uint16(aux_sym_comment_token2),
+	6297:  uint16(171),
+	6298:  uint16(1),
+	6299:  uint16(sym_identifier),
+	6300:  uint16(181),
+	6301:  uint16(1),
+	6302:  uint16(anon_sym_POUND),
+	6303:  uint16(185),
+	6304:  uint16(1),
+	6305:  uint16(anon_sym_LBRACK),
+	6306:  uint16(74),
+	6307:  uint16(1),
+	6308:  uint16(aux_sym_concat_repeat1),
+	6309:  uint16(76),
+	6310:  uint16(1),
+	6311:  uint16(sym__atom),
+	6312:  uint16(91),
+	6313:  uint16(1),
+	6314:  uint16(sym_comment),
+	6315:  uint16(136),
+	6316:  uint16(1),
+	6317:  uint16(sym_repetition),
+	6318:  uint16(139),
+	6319:  uint16(1),
+	6320:  uint16(sym__cat_expr),
+	6321:  uint16(211),
+	6322:  uint16(3),
+	6323:  uint16(anon_sym_SEMI),
+	6324:  uint16(anon_sym_PIPE),
+	6325:  uint16(anon_sym_BSLASH),
+	6326:  uint16(112),
+	6327:  uint16(7),
+	6328:  uint16(sym_parenthesized),
+	6329:  uint16(sym_character_class),
+	6330:  uint16(sym_wildcard),
+	6331:  uint16(sym_dstring),
+	6332:  uint16(sym_sstring),
+	6333:  uint16(sym_stag),
+	6334:  uint16(sym_mtag),
+	6335:  uint16(18),
+	6336:  uint16(3),
+	6337:  uint16(1),
+	6338:  uint16(aux_sym_comment_token1),
+	6339:  uint16(21),
+	6340:  uint16(1),
+	6341:  uint16(anon_sym_DOT),
+	6342:  uint16(33),
+	6343:  uint16(1),
+	6344:  uint16(anon_sym_LPAREN),
+	6345:  uint16(37),
+	6346:  uint16(1),
+	6347:  uint16(aux_sym_dstring_token1),
+	6348:  uint16(39),
+	6349:  uint16(1),
+	6350:  uint16(aux_sym_sstring_token1),
+	6351:  uint16(41),
+	6352:  uint16(1),
+	6353:  uint16(anon_sym_AT2),
+	6354:  uint16(45),
+	6355:  uint16(1),
+	6356:  uint16(aux_sym_comment_token2),
+	6357:  uint16(171),
+	6358:  uint16(1),
+	6359:  uint16(sym_identifier),
+	6360:  uint16(181),
+	6361:  uint16(1),
+	6362:  uint16(anon_sym_POUND),
+	6363:  uint16(185),
+	6364:  uint16(1),
+	6365:  uint16(anon_sym_LBRACK),
+	6366:  uint16(76),
+	6367:  uint16(1),
+	6368:  uint16(sym__atom),
+	6369:  uint16(91),
+	6370:  uint16(1),
+	6371:  uint16(sym__cat_expr),
+	6372:  uint16(92),
+	6373:  uint16(1),
+	6374:  uint16(sym_comment),
+	6375:  uint16(136),
+	6376:  uint16(1),
+	6377:  uint16(sym_repetition),
+	6378:  uint16(178),
+	6379:  uint16(1),
+	6380:  uint16(sym_concat),
+	6381:  uint16(179),
+	6382:  uint16(1),
+	6383:  uint16(sym__alt_expr),
+	6384:  uint16(176),
+	6385:  uint16(2),
+	6386:  uint16(sym_difference),
+	6387:  uint16(sym__dif_expr),
+	6388:  uint16(112),
+	6389:  uint16(7),
+	6390:  uint16(sym_parenthesized),
+	6391:  uint16(sym_character_class),
+	6392:  uint16(sym_wildcard),
+	6393:  uint16(sym_dstring),
+	6394:  uint16(sym_sstring),
+	6395:  uint16(sym_stag),
+	6396:  uint16(sym_mtag),
+	6397:  uint16(15),
+	6398:  uint16(5),
+	6399:  uint16(1),
+	6400:  uint16(aux_sym_comment_token2),
+	6401:  uint16(11),
+	6402:  uint16(1),
+	6403:  uint16(aux_sym_comment_token1),
+	6404:  uint16(153),
+	6405:  uint16(1),
+	6406:  uint16(aux_sym_range_token1),
+	6407:  uint16(155),
+	6408:  uint16(1),
+	6409:  uint16(aux_sym_literal_token1),
+	6410:  uint16(163),
+	6411:  uint16(1),
+	6412:  uint16(aux_sym__esc_oct_token2),
+	6413:  uint16(321),
+	6414:  uint16(1),
+	6415:  uint16(anon_sym_CARET),
+	6416:  uint16(323),
+	6417:  uint16(1),
+	6418:  uint16(anon_sym_RBRACK),
+	6419:  uint16(93),
+	6420:  uint16(1),
+	6421:  uint16(sym_comment),
+	6422:  uint16(106),
+	6423:  uint16(1),
+	6424:  uint16(aux_sym_character_class_repeat1),
+	6425:  uint16(155),
+	6426:  uint16(1),
+	6427:  uint16(sym_code_unit),
+	6428:  uint16(158),
+	6429:  uint16(1),
+	6430:  uint16(sym_range),
+	6431:  uint16(157),
+	6432:  uint16(2),
+	6433:  uint16(sym_quote),
+	6434:  uint16(sym_ctrl_code),
+	6435:  uint16(148),
+	6436:  uint16(2),
+	6437:  uint16(sym_literal),
+	6438:  uint16(sym__escape),
+	6439:  uint16(161),
+	6440:  uint16(4),
+	6441:  uint16(aux_sym__esc_hex_token5),
+	6442:  uint16(aux_sym__esc_hex_token6),
+	6443:  uint16(aux_sym__esc_hex_token7),
+	6444:  uint16(aux_sym__esc_hex_token8),
+	6445:  uint16(159),
+	6446:  uint16(5),
+	6447:  uint16(aux_sym__esc_hex_token1),
+	6448:  uint16(aux_sym__esc_hex_token2),
+	6449:  uint16(aux_sym__esc_hex_token3),
+	6450:  uint16(aux_sym__esc_hex_token4),
+	6451:  uint16(aux_sym__esc_oct_token1),
+	6452:  uint16(15),
+	6453:  uint16(5),
+	6454:  uint16(1),
+	6455:  uint16(aux_sym_comment_token2),
+	6456:  uint16(11),
+	6457:  uint16(1),
+	6458:  uint16(aux_sym_comment_token1),
+	6459:  uint16(153),
+	6460:  uint16(1),
+	6461:  uint16(aux_sym_range_token1),
+	6462:  uint16(155),
+	6463:  uint16(1),
+	6464:  uint16(aux_sym_literal_token1),
+	6465:  uint16(163),
+	6466:  uint16(1),
+	6467:  uint16(aux_sym__esc_oct_token2),
+	6468:  uint16(325),
+	6469:  uint16(1),
+	6470:  uint16(anon_sym_CARET),
+	6471:  uint16(327),
+	6472:  uint16(1),
+	6473:  uint16(anon_sym_RBRACK),
+	6474:  uint16(94),
+	6475:  uint16(1),
+	6476:  uint16(sym_comment),
+	6477:  uint16(106),
+	6478:  uint16(1),
+	6479:  uint16(aux_sym_character_class_repeat1),
+	6480:  uint16(155),
+	6481:  uint16(1),
+	6482:  uint16(sym_code_unit),
+	6483:  uint16(158),
+	6484:  uint16(1),
+	6485:  uint16(sym_range),
+	6486:  uint16(157),
+	6487:  uint16(2),
+	6488:  uint16(sym_quote),
+	6489:  uint16(sym_ctrl_code),
+	6490:  uint16(148),
+	6491:  uint16(2),
+	6492:  uint16(sym_literal),
+	6493:  uint16(sym__escape),
+	6494:  uint16(161),
+	6495:  uint16(4),
+	6496:  uint16(aux_sym__esc_hex_token5),
+	6497:  uint16(aux_sym__esc_hex_token6),
+	6498:  uint16(aux_sym__esc_hex_token7),
+	6499:  uint16(aux_sym__esc_hex_token8),
+	6500:  uint16(159),
+	6501:  uint16(5),
+	6502:  uint16(aux_sym__esc_hex_token1),
+	6503:  uint16(aux_sym__esc_hex_token2),
+	6504:  uint16(aux_sym__esc_hex_token3),
+	6505:  uint16(aux_sym__esc_hex_token4),
+	6506:  uint16(aux_sym__esc_oct_token1),
+	6507:  uint16(15),
+	6508:  uint16(5),
+	6509:  uint16(1),
+	6510:  uint16(aux_sym_comment_token2),
+	6511:  uint16(11),
+	6512:  uint16(1),
+	6513:  uint16(aux_sym_comment_token1),
+	6514:  uint16(153),
+	6515:  uint16(1),
+	6516:  uint16(aux_sym_range_token1),
+	6517:  uint16(155),
+	6518:  uint16(1),
+	6519:  uint16(aux_sym_literal_token1),
+	6520:  uint16(163),
+	6521:  uint16(1),
+	6522:  uint16(aux_sym__esc_oct_token2),
+	6523:  uint16(329),
+	6524:  uint16(1),
+	6525:  uint16(anon_sym_CARET),
+	6526:  uint16(331),
+	6527:  uint16(1),
+	6528:  uint16(anon_sym_RBRACK),
+	6529:  uint16(95),
+	6530:  uint16(1),
+	6531:  uint16(sym_comment),
+	6532:  uint16(106),
+	6533:  uint16(1),
+	6534:  uint16(aux_sym_character_class_repeat1),
+	6535:  uint16(155),
+	6536:  uint16(1),
+	6537:  uint16(sym_code_unit),
+	6538:  uint16(158),
+	6539:  uint16(1),
+	6540:  uint16(sym_range),
+	6541:  uint16(157),
+	6542:  uint16(2),
+	6543:  uint16(sym_quote),
+	6544:  uint16(sym_ctrl_code),
+	6545:  uint16(148),
+	6546:  uint16(2),
+	6547:  uint16(sym_literal),
+	6548:  uint16(sym__escape),
+	6549:  uint16(161),
+	6550:  uint16(4),
+	6551:  uint16(aux_sym__esc_hex_token5),
+	6552:  uint16(aux_sym__esc_hex_token6),
+	6553:  uint16(aux_sym__esc_hex_token7),
+	6554:  uint16(aux_sym__esc_hex_token8),
+	6555:  uint16(159),
+	6556:  uint16(5),
+	6557:  uint16(aux_sym__esc_hex_token1),
+	6558:  uint16(aux_sym__esc_hex_token2),
+	6559:  uint16(aux_sym__esc_hex_token3),
+	6560:  uint16(aux_sym__esc_hex_token4),
+	6561:  uint16(aux_sym__esc_oct_token1),
+	6562:  uint16(15),
+	6563:  uint16(5),
+	6564:  uint16(1),
+	6565:  uint16(aux_sym_comment_token2),
+	6566:  uint16(11),
+	6567:  uint16(1),
+	6568:  uint16(aux_sym_comment_token1),
+	6569:  uint16(153),
+	6570:  uint16(1),
+	6571:  uint16(aux_sym_range_token1),
+	6572:  uint16(155),
+	6573:  uint16(1),
+	6574:  uint16(aux_sym_literal_token1),
+	6575:  uint16(163),
+	6576:  uint16(1),
+	6577:  uint16(aux_sym__esc_oct_token2),
+	6578:  uint16(333),
+	6579:  uint16(1),
+	6580:  uint16(anon_sym_CARET),
+	6581:  uint16(335),
+	6582:  uint16(1),
+	6583:  uint16(anon_sym_RBRACK),
+	6584:  uint16(96),
+	6585:  uint16(1),
+	6586:  uint16(sym_comment),
+	6587:  uint16(106),
+	6588:  uint16(1),
+	6589:  uint16(aux_sym_character_class_repeat1),
+	6590:  uint16(155),
+	6591:  uint16(1),
+	6592:  uint16(sym_code_unit),
+	6593:  uint16(158),
+	6594:  uint16(1),
+	6595:  uint16(sym_range),
+	6596:  uint16(157),
+	6597:  uint16(2),
+	6598:  uint16(sym_quote),
+	6599:  uint16(sym_ctrl_code),
+	6600:  uint16(148),
+	6601:  uint16(2),
+	6602:  uint16(sym_literal),
+	6603:  uint16(sym__escape),
+	6604:  uint16(161),
+	6605:  uint16(4),
+	6606:  uint16(aux_sym__esc_hex_token5),
+	6607:  uint16(aux_sym__esc_hex_token6),
+	6608:  uint16(aux_sym__esc_hex_token7),
+	6609:  uint16(aux_sym__esc_hex_token8),
+	6610:  uint16(159),
+	6611:  uint16(5),
+	6612:  uint16(aux_sym__esc_hex_token1),
+	6613:  uint16(aux_sym__esc_hex_token2),
+	6614:  uint16(aux_sym__esc_hex_token3),
+	6615:  uint16(aux_sym__esc_hex_token4),
+	6616:  uint16(aux_sym__esc_oct_token1),
+	6617:  uint16(17),
+	6618:  uint16(3),
+	6619:  uint16(1),
+	6620:  uint16(aux_sym_comment_token1),
+	6621:  uint16(21),
+	6622:  uint16(1),
+	6623:  uint16(anon_sym_DOT),
+	6624:  uint16(33),
+	6625:  uint16(1),
+	6626:  uint16(anon_sym_LPAREN),
+	6627:  uint16(37),
+	6628:  uint16(1),
+	6629:  uint16(aux_sym_dstring_token1),
+	6630:  uint16(39),
+	6631:  uint16(1),
+	6632:  uint16(aux_sym_sstring_token1),
+	6633:  uint16(41),
+	6634:  uint16(1),
+	6635:  uint16(anon_sym_AT2),
+	6636:  uint16(45),
+	6637:  uint16(1),
+	6638:  uint16(aux_sym_comment_token2),
+	6639:  uint16(171),
+	6640:  uint16(1),
+	6641:  uint16(sym_identifier),
+	6642:  uint16(181),
+	6643:  uint16(1),
+	6644:  uint16(anon_sym_POUND),
+	6645:  uint16(319),
+	6646:  uint16(1),
+	6647:  uint16(anon_sym_LBRACK),
+	6648:  uint16(76),
+	6649:  uint16(1),
+	6650:  uint16(sym__atom),
+	6651:  uint16(97),
+	6652:  uint16(1),
+	6653:  uint16(sym_comment),
+	6654:  uint16(99),
+	6655:  uint16(1),
+	6656:  uint16(aux_sym_concat_repeat1),
+	6657:  uint16(136),
+	6658:  uint16(1),
+	6659:  uint16(sym_repetition),
+	6660:  uint16(139),
+	6661:  uint16(1),
+	6662:  uint16(sym__cat_expr),
+	6663:  uint16(211),
+	6664:  uint16(2),
+	6665:  uint16(anon_sym_PIPE),
+	6666:  uint16(anon_sym_BSLASH),
+	6667:  uint16(112),
+	6668:  uint16(7),
+	6669:  uint16(sym_parenthesized),
+	6670:  uint16(sym_character_class),
+	6671:  uint16(sym_wildcard),
+	6672:  uint16(sym_dstring),
+	6673:  uint16(sym_sstring),
+	6674:  uint16(sym_stag),
+	6675:  uint16(sym_mtag),
+	6676:  uint16(15),
+	6677:  uint16(5),
+	6678:  uint16(1),
+	6679:  uint16(aux_sym_comment_token2),
+	6680:  uint16(11),
+	6681:  uint16(1),
+	6682:  uint16(aux_sym_comment_token1),
+	6683:  uint16(153),
+	6684:  uint16(1),
+	6685:  uint16(aux_sym_range_token1),
+	6686:  uint16(155),
+	6687:  uint16(1),
+	6688:  uint16(aux_sym_literal_token1),
+	6689:  uint16(163),
+	6690:  uint16(1),
+	6691:  uint16(aux_sym__esc_oct_token2),
+	6692:  uint16(337),
+	6693:  uint16(1),
+	6694:  uint16(anon_sym_CARET),
+	6695:  uint16(339),
+	6696:  uint16(1),
+	6697:  uint16(anon_sym_RBRACK),
+	6698:  uint16(98),
+	6699:  uint16(1),
+	6700:  uint16(sym_comment),
+	6701:  uint16(106),
+	6702:  uint16(1),
+	6703:  uint16(aux_sym_character_class_repeat1),
+	6704:  uint16(155),
+	6705:  uint16(1),
+	6706:  uint16(sym_code_unit),
+	6707:  uint16(158),
+	6708:  uint16(1),
+	6709:  uint16(sym_range),
+	6710:  uint16(157),
+	6711:  uint16(2),
+	6712:  uint16(sym_quote),
+	6713:  uint16(sym_ctrl_code),
+	6714:  uint16(148),
+	6715:  uint16(2),
+	6716:  uint16(sym_literal),
+	6717:  uint16(sym__escape),
+	6718:  uint16(161),
+	6719:  uint16(4),
+	6720:  uint16(aux_sym__esc_hex_token5),
+	6721:  uint16(aux_sym__esc_hex_token6),
+	6722:  uint16(aux_sym__esc_hex_token7),
+	6723:  uint16(aux_sym__esc_hex_token8),
+	6724:  uint16(159),
+	6725:  uint16(5),
+	6726:  uint16(aux_sym__esc_hex_token1),
+	6727:  uint16(aux_sym__esc_hex_token2),
+	6728:  uint16(aux_sym__esc_hex_token3),
+	6729:  uint16(aux_sym__esc_hex_token4),
+	6730:  uint16(aux_sym__esc_oct_token1),
+	6731:  uint16(17),
+	6732:  uint16(3),
+	6733:  uint16(1),
+	6734:  uint16(aux_sym_comment_token1),
+	6735:  uint16(21),
+	6736:  uint16(1),
+	6737:  uint16(anon_sym_DOT),
+	6738:  uint16(33),
+	6739:  uint16(1),
+	6740:  uint16(anon_sym_LPAREN),
+	6741:  uint16(37),
+	6742:  uint16(1),
+	6743:  uint16(aux_sym_dstring_token1),
+	6744:  uint16(39),
+	6745:  uint16(1),
+	6746:  uint16(aux_sym_sstring_token1),
+	6747:  uint16(41),
+	6748:  uint16(1),
+	6749:  uint16(anon_sym_AT2),
+	6750:  uint16(45),
+	6751:  uint16(1),
+	6752:  uint16(aux_sym_comment_token2),
+	6753:  uint16(171),
+	6754:  uint16(1),
+	6755:  uint16(sym_identifier),
+	6756:  uint16(181),
+	6757:  uint16(1),
+	6758:  uint16(anon_sym_POUND),
+	6759:  uint16(319),
+	6760:  uint16(1),
+	6761:  uint16(anon_sym_LBRACK),
+	6762:  uint16(76),
+	6763:  uint16(1),
+	6764:  uint16(sym__atom),
+	6765:  uint16(99),
+	6766:  uint16(1),
+	6767:  uint16(sym_comment),
+	6768:  uint16(100),
+	6769:  uint16(1),
+	6770:  uint16(aux_sym_concat_repeat1),
+	6771:  uint16(136),
+	6772:  uint16(1),
+	6773:  uint16(sym_repetition),
+	6774:  uint16(139),
+	6775:  uint16(1),
+	6776:  uint16(sym__cat_expr),
+	6777:  uint16(215),
+	6778:  uint16(2),
+	6779:  uint16(anon_sym_PIPE),
+	6780:  uint16(anon_sym_BSLASH),
+	6781:  uint16(112),
+	6782:  uint16(7),
+	6783:  uint16(sym_parenthesized),
+	6784:  uint16(sym_character_class),
+	6785:  uint16(sym_wildcard),
+	6786:  uint16(sym_dstring),
+	6787:  uint16(sym_sstring),
+	6788:  uint16(sym_stag),
+	6789:  uint16(sym_mtag),
+	6790:  uint16(16),
+	6791:  uint16(3),
+	6792:  uint16(1),
+	6793:  uint16(aux_sym_comment_token1),
+	6794:  uint16(45),
+	6795:  uint16(1),
+	6796:  uint16(aux_sym_comment_token2),
+	6797:  uint16(219),
+	6798:  uint16(1),
+	6799:  uint16(sym_identifier),
+	6800:  uint16(222),
+	6801:  uint16(1),
+	6802:  uint16(anon_sym_DOT),
+	6803:  uint16(229),
+	6804:  uint16(1),
+	6805:  uint16(anon_sym_LPAREN),
+	6806:  uint16(235),
+	6807:  uint16(1),
+	6808:  uint16(aux_sym_dstring_token1),
+	6809:  uint16(238),
+	6810:  uint16(1),
+	6811:  uint16(aux_sym_sstring_token1),
+	6812:  uint16(241),
+	6813:  uint16(1),
+	6814:  uint16(anon_sym_AT2),
+	6815:  uint16(244),
+	6816:  uint16(1),
+	6817:  uint16(anon_sym_POUND),
+	6818:  uint16(341),
+	6819:  uint16(1),
+	6820:  uint16(anon_sym_LBRACK),
+	6821:  uint16(76),
+	6822:  uint16(1),
+	6823:  uint16(sym__atom),
+	6824:  uint16(136),
+	6825:  uint16(1),
+	6826:  uint16(sym_repetition),
+	6827:  uint16(139),
+	6828:  uint16(1),
+	6829:  uint16(sym__cat_expr),
+	6830:  uint16(225),
+	6831:  uint16(2),
+	6832:  uint16(anon_sym_PIPE),
+	6833:  uint16(anon_sym_BSLASH),
+	6834:  uint16(100),
+	6835:  uint16(2),
+	6836:  uint16(sym_comment),
+	6837:  uint16(aux_sym_concat_repeat1),
+	6838:  uint16(112),
+	6839:  uint16(7),
+	6840:  uint16(sym_parenthesized),
+	6841:  uint16(sym_character_class),
+	6842:  uint16(sym_wildcard),
+	6843:  uint16(sym_dstring),
+	6844:  uint16(sym_sstring),
+	6845:  uint16(sym_stag),
+	6846:  uint16(sym_mtag),
+	6847:  uint16(15),
+	6848:  uint16(5),
+	6849:  uint16(1),
+	6850:  uint16(aux_sym_comment_token2),
+	6851:  uint16(11),
+	6852:  uint16(1),
+	6853:  uint16(aux_sym_comment_token1),
+	6854:  uint16(153),
+	6855:  uint16(1),
+	6856:  uint16(aux_sym_range_token1),
+	6857:  uint16(155),
+	6858:  uint16(1),
+	6859:  uint16(aux_sym_literal_token1),
+	6860:  uint16(163),
+	6861:  uint16(1),
+	6862:  uint16(aux_sym__esc_oct_token2),
+	6863:  uint16(344),
+	6864:  uint16(1),
+	6865:  uint16(anon_sym_CARET),
+	6866:  uint16(346),
+	6867:  uint16(1),
+	6868:  uint16(anon_sym_RBRACK),
+	6869:  uint16(101),
+	6870:  uint16(1),
+	6871:  uint16(sym_comment),
+	6872:  uint16(106),
+	6873:  uint16(1),
+	6874:  uint16(aux_sym_character_class_repeat1),
+	6875:  uint16(155),
+	6876:  uint16(1),
+	6877:  uint16(sym_code_unit),
+	6878:  uint16(158),
+	6879:  uint16(1),
+	6880:  uint16(sym_range),
+	6881:  uint16(157),
+	6882:  uint16(2),
+	6883:  uint16(sym_quote),
+	6884:  uint16(sym_ctrl_code),
+	6885:  uint16(148),
+	6886:  uint16(2),
+	6887:  uint16(sym_literal),
+	6888:  uint16(sym__escape),
+	6889:  uint16(161),
+	6890:  uint16(4),
+	6891:  uint16(aux_sym__esc_hex_token5),
+	6892:  uint16(aux_sym__esc_hex_token6),
+	6893:  uint16(aux_sym__esc_hex_token7),
+	6894:  uint16(aux_sym__esc_hex_token8),
+	6895:  uint16(159),
+	6896:  uint16(5),
+	6897:  uint16(aux_sym__esc_hex_token1),
+	6898:  uint16(aux_sym__esc_hex_token2),
+	6899:  uint16(aux_sym__esc_hex_token3),
+	6900:  uint16(aux_sym__esc_hex_token4),
+	6901:  uint16(aux_sym__esc_oct_token1),
+	6902:  uint16(15),
+	6903:  uint16(5),
+	6904:  uint16(1),
+	6905:  uint16(aux_sym_comment_token2),
+	6906:  uint16(11),
+	6907:  uint16(1),
+	6908:  uint16(aux_sym_comment_token1),
+	6909:  uint16(153),
+	6910:  uint16(1),
+	6911:  uint16(aux_sym_range_token1),
+	6912:  uint16(155),
+	6913:  uint16(1),
+	6914:  uint16(aux_sym_literal_token1),
+	6915:  uint16(163),
+	6916:  uint16(1),
+	6917:  uint16(aux_sym__esc_oct_token2),
+	6918:  uint16(348),
+	6919:  uint16(1),
+	6920:  uint16(anon_sym_CARET),
+	6921:  uint16(350),
+	6922:  uint16(1),
+	6923:  uint16(anon_sym_RBRACK),
+	6924:  uint16(102),
+	6925:  uint16(1),
+	6926:  uint16(sym_comment),
+	6927:  uint16(106),
+	6928:  uint16(1),
+	6929:  uint16(aux_sym_character_class_repeat1),
+	6930:  uint16(155),
+	6931:  uint16(1),
+	6932:  uint16(sym_code_unit),
+	6933:  uint16(158),
+	6934:  uint16(1),
+	6935:  uint16(sym_range),
+	6936:  uint16(157),
+	6937:  uint16(2),
+	6938:  uint16(sym_quote),
+	6939:  uint16(sym_ctrl_code),
+	6940:  uint16(148),
+	6941:  uint16(2),
+	6942:  uint16(sym_literal),
+	6943:  uint16(sym__escape),
+	6944:  uint16(161),
+	6945:  uint16(4),
+	6946:  uint16(aux_sym__esc_hex_token5),
+	6947:  uint16(aux_sym__esc_hex_token6),
+	6948:  uint16(aux_sym__esc_hex_token7),
+	6949:  uint16(aux_sym__esc_hex_token8),
+	6950:  uint16(159),
+	6951:  uint16(5),
+	6952:  uint16(aux_sym__esc_hex_token1),
+	6953:  uint16(aux_sym__esc_hex_token2),
+	6954:  uint16(aux_sym__esc_hex_token3),
+	6955:  uint16(aux_sym__esc_hex_token4),
+	6956:  uint16(aux_sym__esc_oct_token1),
+	6957:  uint16(15),
+	6958:  uint16(5),
+	6959:  uint16(1),
+	6960:  uint16(aux_sym_comment_token2),
+	6961:  uint16(11),
+	6962:  uint16(1),
+	6963:  uint16(aux_sym_comment_token1),
+	6964:  uint16(153),
+	6965:  uint16(1),
+	6966:  uint16(aux_sym_range_token1),
+	6967:  uint16(155),
+	6968:  uint16(1),
+	6969:  uint16(aux_sym_literal_token1),
+	6970:  uint16(163),
+	6971:  uint16(1),
+	6972:  uint16(aux_sym__esc_oct_token2),
+	6973:  uint16(352),
+	6974:  uint16(1),
+	6975:  uint16(anon_sym_CARET),
+	6976:  uint16(354),
+	6977:  uint16(1),
+	6978:  uint16(anon_sym_RBRACK),
+	6979:  uint16(103),
+	6980:  uint16(1),
+	6981:  uint16(sym_comment),
+	6982:  uint16(106),
+	6983:  uint16(1),
+	6984:  uint16(aux_sym_character_class_repeat1),
+	6985:  uint16(155),
+	6986:  uint16(1),
+	6987:  uint16(sym_code_unit),
+	6988:  uint16(158),
+	6989:  uint16(1),
+	6990:  uint16(sym_range),
+	6991:  uint16(157),
+	6992:  uint16(2),
+	6993:  uint16(sym_quote),
+	6994:  uint16(sym_ctrl_code),
+	6995:  uint16(148),
+	6996:  uint16(2),
+	6997:  uint16(sym_literal),
+	6998:  uint16(sym__escape),
+	6999:  uint16(161),
+	7000:  uint16(4),
+	7001:  uint16(aux_sym__esc_hex_token5),
+	7002:  uint16(aux_sym__esc_hex_token6),
+	7003:  uint16(aux_sym__esc_hex_token7),
+	7004:  uint16(aux_sym__esc_hex_token8),
+	7005:  uint16(159),
+	7006:  uint16(5),
+	7007:  uint16(aux_sym__esc_hex_token1),
+	7008:  uint16(aux_sym__esc_hex_token2),
+	7009:  uint16(aux_sym__esc_hex_token3),
+	7010:  uint16(aux_sym__esc_hex_token4),
+	7011:  uint16(aux_sym__esc_oct_token1),
+	7012:  uint16(5),
+	7013:  uint16(3),
+	7014:  uint16(1),
+	7015:  uint16(aux_sym_comment_token1),
+	7016:  uint16(5),
+	7017:  uint16(1),
+	7018:  uint16(aux_sym_comment_token2),
+	7019:  uint16(104),
+	7020:  uint16(1),
+	7021:  uint16(sym_comment),
+	7022:  uint16(358),
+	7023:  uint16(2),
+	7024:  uint16(anon_sym_LBRACE),
+	7025:  uint16(anon_sym_SLASH),
+	7026:  uint16(356),
+	7027:  uint16(18),
+	7028:  uint16(anon_sym_SEMI),
+	7029:  uint16(anon_sym_DOT),
+	7030:  uint16(anon_sym_EQ_GT),
+	7031:  uint16(anon_sym_COLON_EQ_GT),
+	7032:  uint16(anon_sym_PIPE),
+	7033:  uint16(anon_sym_BSLASH),
+	7034:  uint16(anon_sym_STAR2),
+	7035:  uint16(anon_sym_PLUS),
+	7036:  uint16(anon_sym_QMARK),
+	7037:  uint16(anon_sym_LBRACE2),
+	7038:  uint16(anon_sym_LPAREN),
+	7039:  uint16(anon_sym_RPAREN),
+	7040:  uint16(anon_sym_LBRACK),
+	7041:  uint16(aux_sym_dstring_token1),
+	7042:  uint16(aux_sym_sstring_token1),
+	7043:  uint16(anon_sym_AT2),
+	7044:  uint16(anon_sym_POUND),
+	7045:  uint16(sym_identifier),
+	7046:  uint16(5),
+	7047:  uint16(3),
+	7048:  uint16(1),
+	7049:  uint16(aux_sym_comment_token1),
+	7050:  uint16(5),
+	7051:  uint16(1),
+	7052:  uint16(aux_sym_comment_token2),
+	7053:  uint16(105),
+	7054:  uint16(1),
+	7055:  uint16(sym_comment),
+	7056:  uint16(362),
+	7057:  uint16(2),
+	7058:  uint16(anon_sym_LBRACE),
+	7059:  uint16(anon_sym_SLASH),
+	7060:  uint16(360),
+	7061:  uint16(18),
+	7062:  uint16(anon_sym_SEMI),
+	7063:  uint16(anon_sym_DOT),
+	7064:  uint16(anon_sym_EQ_GT),
+	7065:  uint16(anon_sym_COLON_EQ_GT),
+	7066:  uint16(anon_sym_PIPE),
+	7067:  uint16(anon_sym_BSLASH),
+	7068:  uint16(anon_sym_STAR2),
+	7069:  uint16(anon_sym_PLUS),
+	7070:  uint16(anon_sym_QMARK),
+	7071:  uint16(anon_sym_LBRACE2),
+	7072:  uint16(anon_sym_LPAREN),
+	7073:  uint16(anon_sym_RPAREN),
+	7074:  uint16(anon_sym_LBRACK),
+	7075:  uint16(aux_sym_dstring_token1),
+	7076:  uint16(aux_sym_sstring_token1),
+	7077:  uint16(anon_sym_AT2),
+	7078:  uint16(anon_sym_POUND),
+	7079:  uint16(sym_identifier),
+	7080:  uint16(14),
+	7081:  uint16(5),
+	7082:  uint16(1),
+	7083:  uint16(aux_sym_comment_token2),
+	7084:  uint16(11),
+	7085:  uint16(1),
+	7086:  uint16(aux_sym_comment_token1),
+	7087:  uint16(153),
+	7088:  uint16(1),
+	7089:  uint16(aux_sym_range_token1),
+	7090:  uint16(155),
+	7091:  uint16(1),
+	7092:  uint16(aux_sym_literal_token1),
+	7093:  uint16(163),
+	7094:  uint16(1),
+	7095:  uint16(aux_sym__esc_oct_token2),
+	7096:  uint16(364),
+	7097:  uint16(1),
+	7098:  uint16(anon_sym_RBRACK),
+	7099:  uint16(106),
+	7100:  uint16(1),
+	7101:  uint16(sym_comment),
+	7102:  uint16(128),
+	7103:  uint16(1),
+	7104:  uint16(aux_sym_character_class_repeat1),
+	7105:  uint16(155),
+	7106:  uint16(1),
+	7107:  uint16(sym_code_unit),
+	7108:  uint16(158),
+	7109:  uint16(1),
+	7110:  uint16(sym_range),
+	7111:  uint16(157),
+	7112:  uint16(2),
+	7113:  uint16(sym_quote),
+	7114:  uint16(sym_ctrl_code),
+	7115:  uint16(148),
+	7116:  uint16(2),
+	7117:  uint16(sym_literal),
+	7118:  uint16(sym__escape),
+	7119:  uint16(161),
+	7120:  uint16(4),
+	7121:  uint16(aux_sym__esc_hex_token5),
+	7122:  uint16(aux_sym__esc_hex_token6),
+	7123:  uint16(aux_sym__esc_hex_token7),
+	7124:  uint16(aux_sym__esc_hex_token8),
+	7125:  uint16(159),
+	7126:  uint16(5),
+	7127:  uint16(aux_sym__esc_hex_token1),
+	7128:  uint16(aux_sym__esc_hex_token2),
+	7129:  uint16(aux_sym__esc_hex_token3),
+	7130:  uint16(aux_sym__esc_hex_token4),
+	7131:  uint16(aux_sym__esc_oct_token1),
+	7132:  uint16(5),
+	7133:  uint16(3),
+	7134:  uint16(1),
+	7135:  uint16(aux_sym_comment_token1),
+	7136:  uint16(5),
+	7137:  uint16(1),
+	7138:  uint16(aux_sym_comment_token2),
+	7139:  uint16(107),
+	7140:  uint16(1),
+	7141:  uint16(sym_comment),
+	7142:  uint16(368),
+	7143:  uint16(2),
+	7144:  uint16(anon_sym_LBRACE),
+	7145:  uint16(anon_sym_SLASH),
+	7146:  uint16(366),
+	7147:  uint16(18),
+	7148:  uint16(anon_sym_SEMI),
+	7149:  uint16(anon_sym_DOT),
+	7150:  uint16(anon_sym_EQ_GT),
+	7151:  uint16(anon_sym_COLON_EQ_GT),
+	7152:  uint16(anon_sym_PIPE),
+	7153:  uint16(anon_sym_BSLASH),
+	7154:  uint16(anon_sym_STAR2),
+	7155:  uint16(anon_sym_PLUS),
+	7156:  uint16(anon_sym_QMARK),
+	7157:  uint16(anon_sym_LBRACE2),
+	7158:  uint16(anon_sym_LPAREN),
+	7159:  uint16(anon_sym_RPAREN),
+	7160:  uint16(anon_sym_LBRACK),
+	7161:  uint16(aux_sym_dstring_token1),
+	7162:  uint16(aux_sym_sstring_token1),
+	7163:  uint16(anon_sym_AT2),
+	7164:  uint16(anon_sym_POUND),
+	7165:  uint16(sym_identifier),
+	7166:  uint16(5),
+	7167:  uint16(3),
+	7168:  uint16(1),
+	7169:  uint16(aux_sym_comment_token1),
+	7170:  uint16(5),
+	7171:  uint16(1),
+	7172:  uint16(aux_sym_comment_token2),
+	7173:  uint16(108),
+	7174:  uint16(1),
+	7175:  uint16(sym_comment),
+	7176:  uint16(372),
+	7177:  uint16(2),
+	7178:  uint16(anon_sym_LBRACE),
+	7179:  uint16(anon_sym_SLASH),
+	7180:  uint16(370),
+	7181:  uint16(18),
+	7182:  uint16(anon_sym_SEMI),
+	7183:  uint16(anon_sym_DOT),
+	7184:  uint16(anon_sym_EQ_GT),
+	7185:  uint16(anon_sym_COLON_EQ_GT),
+	7186:  uint16(anon_sym_PIPE),
+	7187:  uint16(anon_sym_BSLASH),
+	7188:  uint16(anon_sym_STAR2),
+	7189:  uint16(anon_sym_PLUS),
+	7190:  uint16(anon_sym_QMARK),
+	7191:  uint16(anon_sym_LBRACE2),
+	7192:  uint16(anon_sym_LPAREN),
+	7193:  uint16(anon_sym_RPAREN),
+	7194:  uint16(anon_sym_LBRACK),
+	7195:  uint16(aux_sym_dstring_token1),
+	7196:  uint16(aux_sym_sstring_token1),
+	7197:  uint16(anon_sym_AT2),
+	7198:  uint16(anon_sym_POUND),
+	7199:  uint16(sym_identifier),
+	7200:  uint16(5),
+	7201:  uint16(3),
+	7202:  uint16(1),
+	7203:  uint16(aux_sym_comment_token1),
+	7204:  uint16(5),
+	7205:  uint16(1),
+	7206:  uint16(aux_sym_comment_token2),
+	7207:  uint16(109),
+	7208:  uint16(1),
+	7209:  uint16(sym_comment),
+	7210:  uint16(376),
+	7211:  uint16(2),
+	7212:  uint16(anon_sym_LBRACE),
+	7213:  uint16(anon_sym_SLASH),
+	7214:  uint16(374),
+	7215:  uint16(18),
+	7216:  uint16(anon_sym_SEMI),
+	7217:  uint16(anon_sym_DOT),
+	7218:  uint16(anon_sym_EQ_GT),
+	7219:  uint16(anon_sym_COLON_EQ_GT),
+	7220:  uint16(anon_sym_PIPE),
+	7221:  uint16(anon_sym_BSLASH),
+	7222:  uint16(anon_sym_STAR2),
+	7223:  uint16(anon_sym_PLUS),
+	7224:  uint16(anon_sym_QMARK),
+	7225:  uint16(anon_sym_LBRACE2),
+	7226:  uint16(anon_sym_LPAREN),
+	7227:  uint16(anon_sym_RPAREN),
+	7228:  uint16(anon_sym_LBRACK),
+	7229:  uint16(aux_sym_dstring_token1),
+	7230:  uint16(aux_sym_sstring_token1),
+	7231:  uint16(anon_sym_AT2),
+	7232:  uint16(anon_sym_POUND),
+	7233:  uint16(sym_identifier),
+	7234:  uint16(5),
+	7235:  uint16(3),
+	7236:  uint16(1),
+	7237:  uint16(aux_sym_comment_token1),
+	7238:  uint16(5),
+	7239:  uint16(1),
+	7240:  uint16(aux_sym_comment_token2),
+	7241:  uint16(110),
+	7242:  uint16(1),
+	7243:  uint16(sym_comment),
+	7244:  uint16(380),
+	7245:  uint16(2),
+	7246:  uint16(anon_sym_LBRACE),
+	7247:  uint16(anon_sym_SLASH),
+	7248:  uint16(378),
+	7249:  uint16(18),
+	7250:  uint16(anon_sym_SEMI),
+	7251:  uint16(anon_sym_DOT),
+	7252:  uint16(anon_sym_EQ_GT),
+	7253:  uint16(anon_sym_COLON_EQ_GT),
+	7254:  uint16(anon_sym_PIPE),
+	7255:  uint16(anon_sym_BSLASH),
+	7256:  uint16(anon_sym_STAR2),
+	7257:  uint16(anon_sym_PLUS),
+	7258:  uint16(anon_sym_QMARK),
+	7259:  uint16(anon_sym_LBRACE2),
+	7260:  uint16(anon_sym_LPAREN),
+	7261:  uint16(anon_sym_RPAREN),
+	7262:  uint16(anon_sym_LBRACK),
+	7263:  uint16(aux_sym_dstring_token1),
+	7264:  uint16(aux_sym_sstring_token1),
+	7265:  uint16(anon_sym_AT2),
+	7266:  uint16(anon_sym_POUND),
+	7267:  uint16(sym_identifier),
+	7268:  uint16(14),
+	7269:  uint16(5),
+	7270:  uint16(1),
+	7271:  uint16(aux_sym_comment_token2),
+	7272:  uint16(11),
+	7273:  uint16(1),
+	7274:  uint16(aux_sym_comment_token1),
+	7275:  uint16(153),
+	7276:  uint16(1),
+	7277:  uint16(aux_sym_range_token1),
+	7278:  uint16(155),
+	7279:  uint16(1),
+	7280:  uint16(aux_sym_literal_token1),
+	7281:  uint16(163),
+	7282:  uint16(1),
+	7283:  uint16(aux_sym__esc_oct_token2),
+	7284:  uint16(382),
+	7285:  uint16(1),
+	7286:  uint16(anon_sym_RBRACK),
+	7287:  uint16(111),
+	7288:  uint16(1),
+	7289:  uint16(sym_comment),
+	7290:  uint16(115),
+	7291:  uint16(1),
+	7292:  uint16(aux_sym_character_class_repeat1),
+	7293:  uint16(155),
+	7294:  uint16(1),
+	7295:  uint16(sym_code_unit),
+	7296:  uint16(158),
+	7297:  uint16(1),
+	7298:  uint16(sym_range),
+	7299:  uint16(157),
+	7300:  uint16(2),
+	7301:  uint16(sym_quote),
+	7302:  uint16(sym_ctrl_code),
+	7303:  uint16(148),
+	7304:  uint16(2),
+	7305:  uint16(sym_literal),
+	7306:  uint16(sym__escape),
+	7307:  uint16(161),
+	7308:  uint16(4),
+	7309:  uint16(aux_sym__esc_hex_token5),
+	7310:  uint16(aux_sym__esc_hex_token6),
+	7311:  uint16(aux_sym__esc_hex_token7),
+	7312:  uint16(aux_sym__esc_hex_token8),
+	7313:  uint16(159),
+	7314:  uint16(5),
+	7315:  uint16(aux_sym__esc_hex_token1),
+	7316:  uint16(aux_sym__esc_hex_token2),
+	7317:  uint16(aux_sym__esc_hex_token3),
+	7318:  uint16(aux_sym__esc_hex_token4),
+	7319:  uint16(aux_sym__esc_oct_token1),
+	7320:  uint16(5),
+	7321:  uint16(3),
+	7322:  uint16(1),
+	7323:  uint16(aux_sym_comment_token1),
+	7324:  uint16(5),
+	7325:  uint16(1),
+	7326:  uint16(aux_sym_comment_token2),
+	7327:  uint16(112),
+	7328:  uint16(1),
+	7329:  uint16(sym_comment),
+	7330:  uint16(386),
+	7331:  uint16(2),
+	7332:  uint16(anon_sym_LBRACE),
+	7333:  uint16(anon_sym_SLASH),
+	7334:  uint16(384),
+	7335:  uint16(18),
+	7336:  uint16(anon_sym_SEMI),
+	7337:  uint16(anon_sym_DOT),
+	7338:  uint16(anon_sym_EQ_GT),
+	7339:  uint16(anon_sym_COLON_EQ_GT),
+	7340:  uint16(anon_sym_PIPE),
+	7341:  uint16(anon_sym_BSLASH),
+	7342:  uint16(anon_sym_STAR2),
+	7343:  uint16(anon_sym_PLUS),
+	7344:  uint16(anon_sym_QMARK),
+	7345:  uint16(anon_sym_LBRACE2),
+	7346:  uint16(anon_sym_LPAREN),
+	7347:  uint16(anon_sym_RPAREN),
+	7348:  uint16(anon_sym_LBRACK),
+	7349:  uint16(aux_sym_dstring_token1),
+	7350:  uint16(aux_sym_sstring_token1),
+	7351:  uint16(anon_sym_AT2),
+	7352:  uint16(anon_sym_POUND),
+	7353:  uint16(sym_identifier),
+	7354:  uint16(14),
+	7355:  uint16(5),
+	7356:  uint16(1),
+	7357:  uint16(aux_sym_comment_token2),
+	7358:  uint16(11),
+	7359:  uint16(1),
+	7360:  uint16(aux_sym_comment_token1),
+	7361:  uint16(153),
+	7362:  uint16(1),
+	7363:  uint16(aux_sym_range_token1),
+	7364:  uint16(155),
+	7365:  uint16(1),
+	7366:  uint16(aux_sym_literal_token1),
+	7367:  uint16(163),
+	7368:  uint16(1),
+	7369:  uint16(aux_sym__esc_oct_token2),
+	7370:  uint16(388),
+	7371:  uint16(1),
+	7372:  uint16(anon_sym_RBRACK),
+	7373:  uint16(113),
+	7374:  uint16(1),
+	7375:  uint16(sym_comment),
+	7376:  uint16(115),
+	7377:  uint16(1),
+	7378:  uint16(aux_sym_character_class_repeat1),
+	7379:  uint16(155),
+	7380:  uint16(1),
+	7381:  uint16(sym_code_unit),
+	7382:  uint16(158),
+	7383:  uint16(1),
+	7384:  uint16(sym_range),
+	7385:  uint16(157),
+	7386:  uint16(2),
+	7387:  uint16(sym_quote),
+	7388:  uint16(sym_ctrl_code),
+	7389:  uint16(148),
+	7390:  uint16(2),
+	7391:  uint16(sym_literal),
+	7392:  uint16(sym__escape),
+	7393:  uint16(161),
+	7394:  uint16(4),
+	7395:  uint16(aux_sym__esc_hex_token5),
+	7396:  uint16(aux_sym__esc_hex_token6),
+	7397:  uint16(aux_sym__esc_hex_token7),
+	7398:  uint16(aux_sym__esc_hex_token8),
+	7399:  uint16(159),
+	7400:  uint16(5),
+	7401:  uint16(aux_sym__esc_hex_token1),
+	7402:  uint16(aux_sym__esc_hex_token2),
+	7403:  uint16(aux_sym__esc_hex_token3),
+	7404:  uint16(aux_sym__esc_hex_token4),
+	7405:  uint16(aux_sym__esc_oct_token1),
+	7406:  uint16(5),
+	7407:  uint16(3),
+	7408:  uint16(1),
+	7409:  uint16(aux_sym_comment_token1),
+	7410:  uint16(5),
+	7411:  uint16(1),
+	7412:  uint16(aux_sym_comment_token2),
+	7413:  uint16(114),
+	7414:  uint16(1),
+	7415:  uint16(sym_comment),
+	7416:  uint16(392),
+	7417:  uint16(2),
+	7418:  uint16(anon_sym_LBRACE),
+	7419:  uint16(anon_sym_SLASH),
+	7420:  uint16(390),
+	7421:  uint16(18),
+	7422:  uint16(anon_sym_SEMI),
+	7423:  uint16(anon_sym_DOT),
+	7424:  uint16(anon_sym_EQ_GT),
+	7425:  uint16(anon_sym_COLON_EQ_GT),
+	7426:  uint16(anon_sym_PIPE),
+	7427:  uint16(anon_sym_BSLASH),
+	7428:  uint16(anon_sym_STAR2),
+	7429:  uint16(anon_sym_PLUS),
+	7430:  uint16(anon_sym_QMARK),
+	7431:  uint16(anon_sym_LBRACE2),
+	7432:  uint16(anon_sym_LPAREN),
+	7433:  uint16(anon_sym_RPAREN),
+	7434:  uint16(anon_sym_LBRACK),
+	7435:  uint16(aux_sym_dstring_token1),
+	7436:  uint16(aux_sym_sstring_token1),
+	7437:  uint16(anon_sym_AT2),
+	7438:  uint16(anon_sym_POUND),
+	7439:  uint16(sym_identifier),
+	7440:  uint16(14),
+	7441:  uint16(5),
+	7442:  uint16(1),
+	7443:  uint16(aux_sym_comment_token2),
+	7444:  uint16(11),
+	7445:  uint16(1),
+	7446:  uint16(aux_sym_comment_token1),
+	7447:  uint16(153),
+	7448:  uint16(1),
+	7449:  uint16(aux_sym_range_token1),
+	7450:  uint16(155),
+	7451:  uint16(1),
+	7452:  uint16(aux_sym_literal_token1),
+	7453:  uint16(163),
+	7454:  uint16(1),
+	7455:  uint16(aux_sym__esc_oct_token2),
+	7456:  uint16(394),
+	7457:  uint16(1),
+	7458:  uint16(anon_sym_RBRACK),
+	7459:  uint16(115),
+	7460:  uint16(1),
+	7461:  uint16(sym_comment),
+	7462:  uint16(128),
+	7463:  uint16(1),
+	7464:  uint16(aux_sym_character_class_repeat1),
+	7465:  uint16(155),
+	7466:  uint16(1),
+	7467:  uint16(sym_code_unit),
+	7468:  uint16(158),
+	7469:  uint16(1),
+	7470:  uint16(sym_range),
+	7471:  uint16(157),
+	7472:  uint16(2),
+	7473:  uint16(sym_quote),
+	7474:  uint16(sym_ctrl_code),
+	7475:  uint16(148),
+	7476:  uint16(2),
+	7477:  uint16(sym_literal),
+	7478:  uint16(sym__escape),
+	7479:  uint16(161),
+	7480:  uint16(4),
+	7481:  uint16(aux_sym__esc_hex_token5),
+	7482:  uint16(aux_sym__esc_hex_token6),
+	7483:  uint16(aux_sym__esc_hex_token7),
+	7484:  uint16(aux_sym__esc_hex_token8),
+	7485:  uint16(159),
+	7486:  uint16(5),
+	7487:  uint16(aux_sym__esc_hex_token1),
+	7488:  uint16(aux_sym__esc_hex_token2),
+	7489:  uint16(aux_sym__esc_hex_token3),
+	7490:  uint16(aux_sym__esc_hex_token4),
+	7491:  uint16(aux_sym__esc_oct_token1),
+	7492:  uint16(5),
+	7493:  uint16(3),
+	7494:  uint16(1),
+	7495:  uint16(aux_sym_comment_token1),
+	7496:  uint16(5),
+	7497:  uint16(1),
+	7498:  uint16(aux_sym_comment_token2),
+	7499:  uint16(116),
+	7500:  uint16(1),
+	7501:  uint16(sym_comment),
+	7502:  uint16(398),
+	7503:  uint16(2),
+	7504:  uint16(anon_sym_LBRACE),
+	7505:  uint16(anon_sym_SLASH),
+	7506:  uint16(396),
+	7507:  uint16(18),
+	7508:  uint16(anon_sym_SEMI),
+	7509:  uint16(anon_sym_DOT),
+	7510:  uint16(anon_sym_EQ_GT),
+	7511:  uint16(anon_sym_COLON_EQ_GT),
+	7512:  uint16(anon_sym_PIPE),
+	7513:  uint16(anon_sym_BSLASH),
+	7514:  uint16(anon_sym_STAR2),
+	7515:  uint16(anon_sym_PLUS),
+	7516:  uint16(anon_sym_QMARK),
+	7517:  uint16(anon_sym_LBRACE2),
+	7518:  uint16(anon_sym_LPAREN),
+	7519:  uint16(anon_sym_RPAREN),
+	7520:  uint16(anon_sym_LBRACK),
+	7521:  uint16(aux_sym_dstring_token1),
+	7522:  uint16(aux_sym_sstring_token1),
+	7523:  uint16(anon_sym_AT2),
+	7524:  uint16(anon_sym_POUND),
+	7525:  uint16(sym_identifier),
+	7526:  uint16(14),
+	7527:  uint16(5),
+	7528:  uint16(1),
+	7529:  uint16(aux_sym_comment_token2),
+	7530:  uint16(11),
+	7531:  uint16(1),
+	7532:  uint16(aux_sym_comment_token1),
+	7533:  uint16(153),
+	7534:  uint16(1),
+	7535:  uint16(aux_sym_range_token1),
+	7536:  uint16(155),
+	7537:  uint16(1),
+	7538:  uint16(aux_sym_literal_token1),
+	7539:  uint16(163),
+	7540:  uint16(1),
+	7541:  uint16(aux_sym__esc_oct_token2),
+	7542:  uint16(400),
+	7543:  uint16(1),
+	7544:  uint16(anon_sym_RBRACK),
+	7545:  uint16(115),
+	7546:  uint16(1),
+	7547:  uint16(aux_sym_character_class_repeat1),
+	7548:  uint16(117),
+	7549:  uint16(1),
+	7550:  uint16(sym_comment),
+	7551:  uint16(155),
+	7552:  uint16(1),
+	7553:  uint16(sym_code_unit),
+	7554:  uint16(158),
+	7555:  uint16(1),
+	7556:  uint16(sym_range),
+	7557:  uint16(157),
+	7558:  uint16(2),
+	7559:  uint16(sym_quote),
+	7560:  uint16(sym_ctrl_code),
+	7561:  uint16(148),
+	7562:  uint16(2),
+	7563:  uint16(sym_literal),
+	7564:  uint16(sym__escape),
+	7565:  uint16(161),
+	7566:  uint16(4),
+	7567:  uint16(aux_sym__esc_hex_token5),
+	7568:  uint16(aux_sym__esc_hex_token6),
+	7569:  uint16(aux_sym__esc_hex_token7),
+	7570:  uint16(aux_sym__esc_hex_token8),
+	7571:  uint16(159),
+	7572:  uint16(5),
+	7573:  uint16(aux_sym__esc_hex_token1),
+	7574:  uint16(aux_sym__esc_hex_token2),
+	7575:  uint16(aux_sym__esc_hex_token3),
+	7576:  uint16(aux_sym__esc_hex_token4),
+	7577:  uint16(aux_sym__esc_oct_token1),
+	7578:  uint16(14),
+	7579:  uint16(5),
+	7580:  uint16(1),
+	7581:  uint16(aux_sym_comment_token2),
+	7582:  uint16(11),
+	7583:  uint16(1),
+	7584:  uint16(aux_sym_comment_token1),
+	7585:  uint16(153),
+	7586:  uint16(1),
+	7587:  uint16(aux_sym_range_token1),
+	7588:  uint16(155),
+	7589:  uint16(1),
+	7590:  uint16(aux_sym_literal_token1),
+	7591:  uint16(163),
+	7592:  uint16(1),
+	7593:  uint16(aux_sym__esc_oct_token2),
+	7594:  uint16(402),
+	7595:  uint16(1),
+	7596:  uint16(anon_sym_RBRACK),
+	7597:  uint16(118),
+	7598:  uint16(1),
+	7599:  uint16(sym_comment),
+	7600:  uint16(128),
+	7601:  uint16(1),
+	7602:  uint16(aux_sym_character_class_repeat1),
+	7603:  uint16(155),
+	7604:  uint16(1),
+	7605:  uint16(sym_code_unit),
+	7606:  uint16(158),
+	7607:  uint16(1),
+	7608:  uint16(sym_range),
+	7609:  uint16(157),
+	7610:  uint16(2),
+	7611:  uint16(sym_quote),
+	7612:  uint16(sym_ctrl_code),
+	7613:  uint16(148),
+	7614:  uint16(2),
+	7615:  uint16(sym_literal),
+	7616:  uint16(sym__escape),
+	7617:  uint16(161),
+	7618:  uint16(4),
+	7619:  uint16(aux_sym__esc_hex_token5),
+	7620:  uint16(aux_sym__esc_hex_token6),
+	7621:  uint16(aux_sym__esc_hex_token7),
+	7622:  uint16(aux_sym__esc_hex_token8),
+	7623:  uint16(159),
+	7624:  uint16(5),
+	7625:  uint16(aux_sym__esc_hex_token1),
+	7626:  uint16(aux_sym__esc_hex_token2),
+	7627:  uint16(aux_sym__esc_hex_token3),
+	7628:  uint16(aux_sym__esc_hex_token4),
+	7629:  uint16(aux_sym__esc_oct_token1),
+	7630:  uint16(5),
+	7631:  uint16(3),
+	7632:  uint16(1),
+	7633:  uint16(aux_sym_comment_token1),
+	7634:  uint16(5),
+	7635:  uint16(1),
+	7636:  uint16(aux_sym_comment_token2),
+	7637:  uint16(119),
+	7638:  uint16(1),
+	7639:  uint16(sym_comment),
+	7640:  uint16(406),
+	7641:  uint16(2),
+	7642:  uint16(anon_sym_LBRACE),
+	7643:  uint16(anon_sym_SLASH),
+	7644:  uint16(404),
+	7645:  uint16(18),
+	7646:  uint16(anon_sym_SEMI),
+	7647:  uint16(anon_sym_DOT),
+	7648:  uint16(anon_sym_EQ_GT),
+	7649:  uint16(anon_sym_COLON_EQ_GT),
+	7650:  uint16(anon_sym_PIPE),
+	7651:  uint16(anon_sym_BSLASH),
+	7652:  uint16(anon_sym_STAR2),
+	7653:  uint16(anon_sym_PLUS),
+	7654:  uint16(anon_sym_QMARK),
+	7655:  uint16(anon_sym_LBRACE2),
+	7656:  uint16(anon_sym_LPAREN),
+	7657:  uint16(anon_sym_RPAREN),
+	7658:  uint16(anon_sym_LBRACK),
+	7659:  uint16(aux_sym_dstring_token1),
+	7660:  uint16(aux_sym_sstring_token1),
+	7661:  uint16(anon_sym_AT2),
+	7662:  uint16(anon_sym_POUND),
+	7663:  uint16(sym_identifier),
+	7664:  uint16(14),
+	7665:  uint16(5),
+	7666:  uint16(1),
+	7667:  uint16(aux_sym_comment_token2),
+	7668:  uint16(11),
+	7669:  uint16(1),
+	7670:  uint16(aux_sym_comment_token1),
+	7671:  uint16(153),
+	7672:  uint16(1),
+	7673:  uint16(aux_sym_range_token1),
+	7674:  uint16(155),
+	7675:  uint16(1),
+	7676:  uint16(aux_sym_literal_token1),
+	7677:  uint16(163),
+	7678:  uint16(1),
+	7679:  uint16(aux_sym__esc_oct_token2),
+	7680:  uint16(408),
+	7681:  uint16(1),
+	7682:  uint16(anon_sym_RBRACK),
+	7683:  uint16(115),
+	7684:  uint16(1),
+	7685:  uint16(aux_sym_character_class_repeat1),
+	7686:  uint16(120),
+	7687:  uint16(1),
+	7688:  uint16(sym_comment),
+	7689:  uint16(155),
+	7690:  uint16(1),
+	7691:  uint16(sym_code_unit),
+	7692:  uint16(158),
+	7693:  uint16(1),
+	7694:  uint16(sym_range),
+	7695:  uint16(157),
+	7696:  uint16(2),
+	7697:  uint16(sym_quote),
+	7698:  uint16(sym_ctrl_code),
+	7699:  uint16(148),
+	7700:  uint16(2),
+	7701:  uint16(sym_literal),
+	7702:  uint16(sym__escape),
+	7703:  uint16(161),
+	7704:  uint16(4),
+	7705:  uint16(aux_sym__esc_hex_token5),
+	7706:  uint16(aux_sym__esc_hex_token6),
+	7707:  uint16(aux_sym__esc_hex_token7),
+	7708:  uint16(aux_sym__esc_hex_token8),
+	7709:  uint16(159),
+	7710:  uint16(5),
+	7711:  uint16(aux_sym__esc_hex_token1),
+	7712:  uint16(aux_sym__esc_hex_token2),
+	7713:  uint16(aux_sym__esc_hex_token3),
+	7714:  uint16(aux_sym__esc_hex_token4),
+	7715:  uint16(aux_sym__esc_oct_token1),
+	7716:  uint16(5),
+	7717:  uint16(3),
+	7718:  uint16(1),
+	7719:  uint16(aux_sym_comment_token1),
+	7720:  uint16(5),
+	7721:  uint16(1),
+	7722:  uint16(aux_sym_comment_token2),
+	7723:  uint16(121),
+	7724:  uint16(1),
+	7725:  uint16(sym_comment),
+	7726:  uint16(412),
+	7727:  uint16(2),
+	7728:  uint16(anon_sym_LBRACE),
+	7729:  uint16(anon_sym_SLASH),
+	7730:  uint16(410),
+	7731:  uint16(18),
+	7732:  uint16(anon_sym_SEMI),
+	7733:  uint16(anon_sym_DOT),
+	7734:  uint16(anon_sym_EQ_GT),
+	7735:  uint16(anon_sym_COLON_EQ_GT),
+	7736:  uint16(anon_sym_PIPE),
+	7737:  uint16(anon_sym_BSLASH),
+	7738:  uint16(anon_sym_STAR2),
+	7739:  uint16(anon_sym_PLUS),
+	7740:  uint16(anon_sym_QMARK),
+	7741:  uint16(anon_sym_LBRACE2),
+	7742:  uint16(anon_sym_LPAREN),
+	7743:  uint16(anon_sym_RPAREN),
+	7744:  uint16(anon_sym_LBRACK),
+	7745:  uint16(aux_sym_dstring_token1),
+	7746:  uint16(aux_sym_sstring_token1),
+	7747:  uint16(anon_sym_AT2),
+	7748:  uint16(anon_sym_POUND),
+	7749:  uint16(sym_identifier),
+	7750:  uint16(14),
+	7751:  uint16(5),
+	7752:  uint16(1),
+	7753:  uint16(aux_sym_comment_token2),
+	7754:  uint16(11),
+	7755:  uint16(1),
+	7756:  uint16(aux_sym_comment_token1),
+	7757:  uint16(153),
+	7758:  uint16(1),
+	7759:  uint16(aux_sym_range_token1),
+	7760:  uint16(155),
+	7761:  uint16(1),
+	7762:  uint16(aux_sym_literal_token1),
+	7763:  uint16(163),
+	7764:  uint16(1),
+	7765:  uint16(aux_sym__esc_oct_token2),
+	7766:  uint16(414),
+	7767:  uint16(1),
+	7768:  uint16(anon_sym_RBRACK),
+	7769:  uint16(115),
+	7770:  uint16(1),
+	7771:  uint16(aux_sym_character_class_repeat1),
+	7772:  uint16(122),
+	7773:  uint16(1),
+	7774:  uint16(sym_comment),
+	7775:  uint16(155),
+	7776:  uint16(1),
+	7777:  uint16(sym_code_unit),
+	7778:  uint16(158),
+	7779:  uint16(1),
+	7780:  uint16(sym_range),
+	7781:  uint16(157),
+	7782:  uint16(2),
+	7783:  uint16(sym_quote),
+	7784:  uint16(sym_ctrl_code),
+	7785:  uint16(148),
+	7786:  uint16(2),
+	7787:  uint16(sym_literal),
+	7788:  uint16(sym__escape),
+	7789:  uint16(161),
+	7790:  uint16(4),
+	7791:  uint16(aux_sym__esc_hex_token5),
+	7792:  uint16(aux_sym__esc_hex_token6),
+	7793:  uint16(aux_sym__esc_hex_token7),
+	7794:  uint16(aux_sym__esc_hex_token8),
+	7795:  uint16(159),
+	7796:  uint16(5),
+	7797:  uint16(aux_sym__esc_hex_token1),
+	7798:  uint16(aux_sym__esc_hex_token2),
+	7799:  uint16(aux_sym__esc_hex_token3),
+	7800:  uint16(aux_sym__esc_hex_token4),
+	7801:  uint16(aux_sym__esc_oct_token1),
+	7802:  uint16(5),
+	7803:  uint16(3),
+	7804:  uint16(1),
+	7805:  uint16(aux_sym_comment_token1),
+	7806:  uint16(5),
+	7807:  uint16(1),
+	7808:  uint16(aux_sym_comment_token2),
+	7809:  uint16(123),
+	7810:  uint16(1),
+	7811:  uint16(sym_comment),
+	7812:  uint16(165),
+	7813:  uint16(2),
+	7814:  uint16(anon_sym_LBRACE),
+	7815:  uint16(anon_sym_SLASH),
+	7816:  uint16(167),
+	7817:  uint16(18),
+	7818:  uint16(anon_sym_SEMI),
+	7819:  uint16(anon_sym_DOT),
+	7820:  uint16(anon_sym_EQ_GT),
+	7821:  uint16(anon_sym_COLON_EQ_GT),
+	7822:  uint16(anon_sym_PIPE),
+	7823:  uint16(anon_sym_BSLASH),
+	7824:  uint16(anon_sym_STAR2),
+	7825:  uint16(anon_sym_PLUS),
+	7826:  uint16(anon_sym_QMARK),
+	7827:  uint16(anon_sym_LBRACE2),
+	7828:  uint16(anon_sym_LPAREN),
+	7829:  uint16(anon_sym_RPAREN),
+	7830:  uint16(anon_sym_LBRACK),
+	7831:  uint16(aux_sym_dstring_token1),
+	7832:  uint16(aux_sym_sstring_token1),
+	7833:  uint16(anon_sym_AT2),
+	7834:  uint16(anon_sym_POUND),
+	7835:  uint16(sym_identifier),
+	7836:  uint16(14),
+	7837:  uint16(5),
+	7838:  uint16(1),
+	7839:  uint16(aux_sym_comment_token2),
+	7840:  uint16(11),
+	7841:  uint16(1),
+	7842:  uint16(aux_sym_comment_token1),
+	7843:  uint16(153),
+	7844:  uint16(1),
+	7845:  uint16(aux_sym_range_token1),
+	7846:  uint16(155),
+	7847:  uint16(1),
+	7848:  uint16(aux_sym_literal_token1),
+	7849:  uint16(163),
+	7850:  uint16(1),
+	7851:  uint16(aux_sym__esc_oct_token2),
+	7852:  uint16(416),
+	7853:  uint16(1),
+	7854:  uint16(anon_sym_RBRACK),
+	7855:  uint16(115),
+	7856:  uint16(1),
+	7857:  uint16(aux_sym_character_class_repeat1),
+	7858:  uint16(124),
+	7859:  uint16(1),
+	7860:  uint16(sym_comment),
+	7861:  uint16(155),
+	7862:  uint16(1),
+	7863:  uint16(sym_code_unit),
+	7864:  uint16(158),
+	7865:  uint16(1),
+	7866:  uint16(sym_range),
+	7867:  uint16(157),
+	7868:  uint16(2),
+	7869:  uint16(sym_quote),
+	7870:  uint16(sym_ctrl_code),
+	7871:  uint16(148),
+	7872:  uint16(2),
+	7873:  uint16(sym_literal),
+	7874:  uint16(sym__escape),
+	7875:  uint16(161),
+	7876:  uint16(4),
+	7877:  uint16(aux_sym__esc_hex_token5),
+	7878:  uint16(aux_sym__esc_hex_token6),
+	7879:  uint16(aux_sym__esc_hex_token7),
+	7880:  uint16(aux_sym__esc_hex_token8),
+	7881:  uint16(159),
+	7882:  uint16(5),
+	7883:  uint16(aux_sym__esc_hex_token1),
+	7884:  uint16(aux_sym__esc_hex_token2),
+	7885:  uint16(aux_sym__esc_hex_token3),
+	7886:  uint16(aux_sym__esc_hex_token4),
+	7887:  uint16(aux_sym__esc_oct_token1),
+	7888:  uint16(5),
+	7889:  uint16(3),
+	7890:  uint16(1),
+	7891:  uint16(aux_sym_comment_token1),
+	7892:  uint16(5),
+	7893:  uint16(1),
+	7894:  uint16(aux_sym_comment_token2),
+	7895:  uint16(125),
+	7896:  uint16(1),
+	7897:  uint16(sym_comment),
+	7898:  uint16(420),
+	7899:  uint16(2),
+	7900:  uint16(anon_sym_LBRACE),
+	7901:  uint16(anon_sym_SLASH),
+	7902:  uint16(418),
+	7903:  uint16(18),
+	7904:  uint16(anon_sym_SEMI),
+	7905:  uint16(anon_sym_DOT),
+	7906:  uint16(anon_sym_EQ_GT),
+	7907:  uint16(anon_sym_COLON_EQ_GT),
+	7908:  uint16(anon_sym_PIPE),
+	7909:  uint16(anon_sym_BSLASH),
+	7910:  uint16(anon_sym_STAR2),
+	7911:  uint16(anon_sym_PLUS),
+	7912:  uint16(anon_sym_QMARK),
+	7913:  uint16(anon_sym_LBRACE2),
+	7914:  uint16(anon_sym_LPAREN),
+	7915:  uint16(anon_sym_RPAREN),
+	7916:  uint16(anon_sym_LBRACK),
+	7917:  uint16(aux_sym_dstring_token1),
+	7918:  uint16(aux_sym_sstring_token1),
+	7919:  uint16(anon_sym_AT2),
+	7920:  uint16(anon_sym_POUND),
+	7921:  uint16(sym_identifier),
+	7922:  uint16(14),
+	7923:  uint16(5),
+	7924:  uint16(1),
+	7925:  uint16(aux_sym_comment_token2),
+	7926:  uint16(11),
+	7927:  uint16(1),
+	7928:  uint16(aux_sym_comment_token1),
+	7929:  uint16(153),
+	7930:  uint16(1),
+	7931:  uint16(aux_sym_range_token1),
+	7932:  uint16(155),
+	7933:  uint16(1),
+	7934:  uint16(aux_sym_literal_token1),
+	7935:  uint16(163),
+	7936:  uint16(1),
+	7937:  uint16(aux_sym__esc_oct_token2),
+	7938:  uint16(422),
+	7939:  uint16(1),
+	7940:  uint16(anon_sym_RBRACK),
+	7941:  uint16(126),
+	7942:  uint16(1),
+	7943:  uint16(sym_comment),
+	7944:  uint16(128),
+	7945:  uint16(1),
+	7946:  uint16(aux_sym_character_class_repeat1),
+	7947:  uint16(155),
+	7948:  uint16(1),
+	7949:  uint16(sym_code_unit),
+	7950:  uint16(158),
+	7951:  uint16(1),
+	7952:  uint16(sym_range),
+	7953:  uint16(157),
+	7954:  uint16(2),
+	7955:  uint16(sym_quote),
+	7956:  uint16(sym_ctrl_code),
+	7957:  uint16(148),
+	7958:  uint16(2),
+	7959:  uint16(sym_literal),
+	7960:  uint16(sym__escape),
+	7961:  uint16(161),
+	7962:  uint16(4),
+	7963:  uint16(aux_sym__esc_hex_token5),
+	7964:  uint16(aux_sym__esc_hex_token6),
+	7965:  uint16(aux_sym__esc_hex_token7),
+	7966:  uint16(aux_sym__esc_hex_token8),
+	7967:  uint16(159),
+	7968:  uint16(5),
+	7969:  uint16(aux_sym__esc_hex_token1),
+	7970:  uint16(aux_sym__esc_hex_token2),
+	7971:  uint16(aux_sym__esc_hex_token3),
+	7972:  uint16(aux_sym__esc_hex_token4),
+	7973:  uint16(aux_sym__esc_oct_token1),
+	7974:  uint16(5),
+	7975:  uint16(3),
+	7976:  uint16(1),
+	7977:  uint16(aux_sym_comment_token1),
+	7978:  uint16(5),
+	7979:  uint16(1),
+	7980:  uint16(aux_sym_comment_token2),
+	7981:  uint16(127),
+	7982:  uint16(1),
+	7983:  uint16(sym_comment),
+	7984:  uint16(426),
+	7985:  uint16(2),
+	7986:  uint16(anon_sym_LBRACE),
+	7987:  uint16(anon_sym_SLASH),
+	7988:  uint16(424),
+	7989:  uint16(18),
+	7990:  uint16(anon_sym_SEMI),
+	7991:  uint16(anon_sym_DOT),
+	7992:  uint16(anon_sym_EQ_GT),
+	7993:  uint16(anon_sym_COLON_EQ_GT),
+	7994:  uint16(anon_sym_PIPE),
+	7995:  uint16(anon_sym_BSLASH),
+	7996:  uint16(anon_sym_STAR2),
+	7997:  uint16(anon_sym_PLUS),
+	7998:  uint16(anon_sym_QMARK),
+	7999:  uint16(anon_sym_LBRACE2),
+	8000:  uint16(anon_sym_LPAREN),
+	8001:  uint16(anon_sym_RPAREN),
+	8002:  uint16(anon_sym_LBRACK),
+	8003:  uint16(aux_sym_dstring_token1),
+	8004:  uint16(aux_sym_sstring_token1),
+	8005:  uint16(anon_sym_AT2),
+	8006:  uint16(anon_sym_POUND),
+	8007:  uint16(sym_identifier),
+	8008:  uint16(13),
+	8009:  uint16(5),
+	8010:  uint16(1),
+	8011:  uint16(aux_sym_comment_token2),
+	8012:  uint16(11),
+	8013:  uint16(1),
+	8014:  uint16(aux_sym_comment_token1),
+	8015:  uint16(428),
+	8016:  uint16(1),
+	8017:  uint16(anon_sym_RBRACK),
+	8018:  uint16(430),
+	8019:  uint16(1),
+	8020:  uint16(aux_sym_range_token1),
+	8021:  uint16(433),
+	8022:  uint16(1),
+	8023:  uint16(aux_sym_literal_token1),
+	8024:  uint16(445),
+	8025:  uint16(1),
+	8026:  uint16(aux_sym__esc_oct_token2),
+	8027:  uint16(155),
+	8028:  uint16(1),
+	8029:  uint16(sym_code_unit),
+	8030:  uint16(158),
+	8031:  uint16(1),
+	8032:  uint16(sym_range),
+	8033:  uint16(436),
+	8034:  uint16(2),
+	8035:  uint16(sym_quote),
+	8036:  uint16(sym_ctrl_code),
+	8037:  uint16(128),
+	8038:  uint16(2),
+	8039:  uint16(sym_comment),
+	8040:  uint16(aux_sym_character_class_repeat1),
+	8041:  uint16(148),
+	8042:  uint16(2),
+	8043:  uint16(sym_literal),
+	8044:  uint16(sym__escape),
+	8045:  uint16(442),
+	8046:  uint16(4),
+	8047:  uint16(aux_sym__esc_hex_token5),
+	8048:  uint16(aux_sym__esc_hex_token6),
+	8049:  uint16(aux_sym__esc_hex_token7),
+	8050:  uint16(aux_sym__esc_hex_token8),
+	8051:  uint16(439),
+	8052:  uint16(5),
+	8053:  uint16(aux_sym__esc_hex_token1),
+	8054:  uint16(aux_sym__esc_hex_token2),
+	8055:  uint16(aux_sym__esc_hex_token3),
+	8056:  uint16(aux_sym__esc_hex_token4),
+	8057:  uint16(aux_sym__esc_oct_token1),
+	8058:  uint16(14),
+	8059:  uint16(5),
+	8060:  uint16(1),
+	8061:  uint16(aux_sym_comment_token2),
+	8062:  uint16(11),
+	8063:  uint16(1),
+	8064:  uint16(aux_sym_comment_token1),
+	8065:  uint16(153),
+	8066:  uint16(1),
+	8067:  uint16(aux_sym_range_token1),
+	8068:  uint16(155),
+	8069:  uint16(1),
+	8070:  uint16(aux_sym_literal_token1),
+	8071:  uint16(163),
+	8072:  uint16(1),
+	8073:  uint16(aux_sym__esc_oct_token2),
+	8074:  uint16(448),
+	8075:  uint16(1),
+	8076:  uint16(anon_sym_RBRACK),
+	8077:  uint16(115),
+	8078:  uint16(1),
+	8079:  uint16(aux_sym_character_class_repeat1),
+	8080:  uint16(129),
+	8081:  uint16(1),
+	8082:  uint16(sym_comment),
+	8083:  uint16(155),
+	8084:  uint16(1),
+	8085:  uint16(sym_code_unit),
+	8086:  uint16(158),
+	8087:  uint16(1),
+	8088:  uint16(sym_range),
+	8089:  uint16(157),
+	8090:  uint16(2),
+	8091:  uint16(sym_quote),
+	8092:  uint16(sym_ctrl_code),
+	8093:  uint16(148),
+	8094:  uint16(2),
+	8095:  uint16(sym_literal),
+	8096:  uint16(sym__escape),
+	8097:  uint16(161),
+	8098:  uint16(4),
+	8099:  uint16(aux_sym__esc_hex_token5),
+	8100:  uint16(aux_sym__esc_hex_token6),
+	8101:  uint16(aux_sym__esc_hex_token7),
+	8102:  uint16(aux_sym__esc_hex_token8),
+	8103:  uint16(159),
+	8104:  uint16(5),
+	8105:  uint16(aux_sym__esc_hex_token1),
+	8106:  uint16(aux_sym__esc_hex_token2),
+	8107:  uint16(aux_sym__esc_hex_token3),
+	8108:  uint16(aux_sym__esc_hex_token4),
+	8109:  uint16(aux_sym__esc_oct_token1),
+	8110:  uint16(14),
+	8111:  uint16(5),
+	8112:  uint16(1),
+	8113:  uint16(aux_sym_comment_token2),
+	8114:  uint16(11),
+	8115:  uint16(1),
+	8116:  uint16(aux_sym_comment_token1),
+	8117:  uint16(153),
+	8118:  uint16(1),
+	8119:  uint16(aux_sym_range_token1),
+	8120:  uint16(155),
+	8121:  uint16(1),
+	8122:  uint16(aux_sym_literal_token1),
+	8123:  uint16(163),
+	8124:  uint16(1),
+	8125:  uint16(aux_sym__esc_oct_token2),
+	8126:  uint16(450),
+	8127:  uint16(1),
+	8128:  uint16(anon_sym_RBRACK),
+	8129:  uint16(115),
+	8130:  uint16(1),
+	8131:  uint16(aux_sym_character_class_repeat1),
+	8132:  uint16(130),
+	8133:  uint16(1),
+	8134:  uint16(sym_comment),
+	8135:  uint16(155),
+	8136:  uint16(1),
+	8137:  uint16(sym_code_unit),
+	8138:  uint16(158),
+	8139:  uint16(1),
+	8140:  uint16(sym_range),
+	8141:  uint16(157),
+	8142:  uint16(2),
+	8143:  uint16(sym_quote),
+	8144:  uint16(sym_ctrl_code),
+	8145:  uint16(148),
+	8146:  uint16(2),
+	8147:  uint16(sym_literal),
+	8148:  uint16(sym__escape),
+	8149:  uint16(161),
+	8150:  uint16(4),
+	8151:  uint16(aux_sym__esc_hex_token5),
+	8152:  uint16(aux_sym__esc_hex_token6),
+	8153:  uint16(aux_sym__esc_hex_token7),
+	8154:  uint16(aux_sym__esc_hex_token8),
+	8155:  uint16(159),
+	8156:  uint16(5),
+	8157:  uint16(aux_sym__esc_hex_token1),
+	8158:  uint16(aux_sym__esc_hex_token2),
+	8159:  uint16(aux_sym__esc_hex_token3),
+	8160:  uint16(aux_sym__esc_hex_token4),
+	8161:  uint16(aux_sym__esc_oct_token1),
+	8162:  uint16(7),
+	8163:  uint16(3),
+	8164:  uint16(1),
+	8165:  uint16(aux_sym_comment_token1),
+	8166:  uint16(45),
+	8167:  uint16(1),
+	8168:  uint16(aux_sym_comment_token2),
+	8169:  uint16(177),
+	8170:  uint16(1),
+	8171:  uint16(anon_sym_LBRACE),
+	8172:  uint16(131),
+	8173:  uint16(1),
+	8174:  uint16(sym_comment),
+	8175:  uint16(149),
+	8176:  uint16(1),
+	8177:  uint16(sym_action),
+	8178:  uint16(452),
+	8179:  uint16(3),
+	8180:  uint16(anon_sym_re2c2),
+	8181:  uint16(anon_sym_STAR),
+	8182:  uint16(sym_identifier),
+	8183:  uint16(454),
+	8184:  uint16(12),
+	8185:  uint16(anon_sym_STAR_SLASH),
+	8186:  uint16(anon_sym_DOT),
+	8187:  uint16(anon_sym_LT),
+	8188:  uint16(anon_sym_DOLLAR),
+	8189:  uint16(anon_sym_BANGuse),
+	8190:  uint16(anon_sym_BANGinclude),
+	8191:  uint16(anon_sym_LPAREN),
+	8192:  uint16(anon_sym_LBRACK),
+	8193:  uint16(aux_sym_dstring_token1),
+	8194:  uint16(aux_sym_sstring_token1),
+	8195:  uint16(anon_sym_AT2),
+	8196:  uint16(anon_sym_POUND),
+	8197:  uint16(6),
+	8198:  uint16(3),
+	8199:  uint16(1),
+	8200:  uint16(aux_sym_comment_token1),
+	8201:  uint16(5),
+	8202:  uint16(1),
+	8203:  uint16(aux_sym_comment_token2),
+	8204:  uint16(456),
+	8205:  uint16(1),
+	8206:  uint16(anon_sym_EQ),
+	8207:  uint16(132),
+	8208:  uint16(1),
+	8209:  uint16(sym_comment),
+	8210:  uint16(412),
+	8211:  uint16(2),
+	8212:  uint16(anon_sym_LBRACE),
+	8213:  uint16(anon_sym_SLASH),
+	8214:  uint16(410),
+	8215:  uint16(14),
+	8216:  uint16(anon_sym_DOT),
+	8217:  uint16(anon_sym_PIPE),
+	8218:  uint16(anon_sym_BSLASH),
+	8219:  uint16(anon_sym_STAR2),
+	8220:  uint16(anon_sym_PLUS),
+	8221:  uint16(anon_sym_QMARK),
+	8222:  uint16(anon_sym_LBRACE2),
+	8223:  uint16(anon_sym_LPAREN),
+	8224:  uint16(anon_sym_LBRACK),
+	8225:  uint16(aux_sym_dstring_token1),
+	8226:  uint16(aux_sym_sstring_token1),
+	8227:  uint16(anon_sym_AT2),
+	8228:  uint16(anon_sym_POUND),
+	8229:  uint16(sym_identifier),
+	8230:  uint16(7),
+	8231:  uint16(3),
+	8232:  uint16(1),
+	8233:  uint16(aux_sym_comment_token1),
+	8234:  uint16(45),
+	8235:  uint16(1),
+	8236:  uint16(aux_sym_comment_token2),
+	8237:  uint16(177),
+	8238:  uint16(1),
+	8239:  uint16(anon_sym_LBRACE),
+	8240:  uint16(133),
+	8241:  uint16(1),
+	8242:  uint16(sym_comment),
+	8243:  uint16(159),
+	8244:  uint16(1),
+	8245:  uint16(sym_action),
+	8246:  uint16(458),
+	8247:  uint16(3),
+	8248:  uint16(anon_sym_re2c2),
+	8249:  uint16(anon_sym_STAR),
+	8250:  uint16(sym_identifier),
+	8251:  uint16(460),
+	8252:  uint16(12),
+	8253:  uint16(anon_sym_STAR_SLASH),
+	8254:  uint16(anon_sym_DOT),
+	8255:  uint16(anon_sym_LT),
+	8256:  uint16(anon_sym_DOLLAR),
+	8257:  uint16(anon_sym_BANGuse),
+	8258:  uint16(anon_sym_BANGinclude),
+	8259:  uint16(anon_sym_LPAREN),
+	8260:  uint16(anon_sym_LBRACK),
+	8261:  uint16(aux_sym_dstring_token1),
+	8262:  uint16(aux_sym_sstring_token1),
+	8263:  uint16(anon_sym_AT2),
+	8264:  uint16(anon_sym_POUND),
+	8265:  uint16(11),
+	8266:  uint16(5),
+	8267:  uint16(1),
+	8268:  uint16(aux_sym_comment_token2),
+	8269:  uint16(11),
+	8270:  uint16(1),
+	8271:  uint16(aux_sym_comment_token1),
+	8272:  uint16(153),
+	8273:  uint16(1),
+	8274:  uint16(aux_sym_range_token1),
+	8275:  uint16(155),
+	8276:  uint16(1),
+	8277:  uint16(aux_sym_literal_token1),
+	8278:  uint16(163),
+	8279:  uint16(1),
+	8280:  uint16(aux_sym__esc_oct_token2),
+	8281:  uint16(134),
+	8282:  uint16(1),
+	8283:  uint16(sym_comment),
+	8284:  uint16(155),
+	8285:  uint16(1),
+	8286:  uint16(sym_code_unit),
+	8287:  uint16(157),
+	8288:  uint16(2),
+	8289:  uint16(sym_quote),
+	8290:  uint16(sym_ctrl_code),
+	8291:  uint16(161),
+	8292:  uint16(2),
+	8293:  uint16(sym_literal),
+	8294:  uint16(sym__escape),
+	8295:  uint16(161),
+	8296:  uint16(4),
+	8297:  uint16(aux_sym__esc_hex_token5),
+	8298:  uint16(aux_sym__esc_hex_token6),
+	8299:  uint16(aux_sym__esc_hex_token7),
+	8300:  uint16(aux_sym__esc_hex_token8),
+	8301:  uint16(159),
+	8302:  uint16(5),
+	8303:  uint16(aux_sym__esc_hex_token1),
+	8304:  uint16(aux_sym__esc_hex_token2),
+	8305:  uint16(aux_sym__esc_hex_token3),
+	8306:  uint16(aux_sym__esc_hex_token4),
+	8307:  uint16(aux_sym__esc_oct_token1),
+	8308:  uint16(5),
+	8309:  uint16(3),
+	8310:  uint16(1),
+	8311:  uint16(aux_sym_comment_token1),
+	8312:  uint16(5),
+	8313:  uint16(1),
+	8314:  uint16(aux_sym_comment_token2),
+	8315:  uint16(464),
+	8316:  uint16(1),
+	8317:  uint16(anon_sym_SLASH),
+	8318:  uint16(135),
+	8319:  uint16(1),
+	8320:  uint16(sym_comment),
+	8321:  uint16(462),
+	8322:  uint16(15),
+	8323:  uint16(anon_sym_SEMI),
+	8324:  uint16(anon_sym_DOT),
+	8325:  uint16(anon_sym_EQ_GT),
+	8326:  uint16(anon_sym_COLON_EQ_GT),
+	8327:  uint16(anon_sym_LBRACE),
+	8328:  uint16(anon_sym_PIPE),
+	8329:  uint16(anon_sym_BSLASH),
+	8330:  uint16(anon_sym_LPAREN),
+	8331:  uint16(anon_sym_RPAREN),
+	8332:  uint16(anon_sym_LBRACK),
+	8333:  uint16(aux_sym_dstring_token1),
+	8334:  uint16(aux_sym_sstring_token1),
+	8335:  uint16(anon_sym_AT2),
+	8336:  uint16(anon_sym_POUND),
+	8337:  uint16(sym_identifier),
+	8338:  uint16(5),
+	8339:  uint16(3),
+	8340:  uint16(1),
+	8341:  uint16(aux_sym_comment_token1),
+	8342:  uint16(5),
+	8343:  uint16(1),
+	8344:  uint16(aux_sym_comment_token2),
+	8345:  uint16(285),
+	8346:  uint16(1),
+	8347:  uint16(anon_sym_SLASH),
+	8348:  uint16(136),
+	8349:  uint16(1),
+	8350:  uint16(sym_comment),
+	8351:  uint16(283),
+	8352:  uint16(15),
+	8353:  uint16(anon_sym_SEMI),
+	8354:  uint16(anon_sym_DOT),
+	8355:  uint16(anon_sym_EQ_GT),
+	8356:  uint16(anon_sym_COLON_EQ_GT),
+	8357:  uint16(anon_sym_LBRACE),
+	8358:  uint16(anon_sym_PIPE),
+	8359:  uint16(anon_sym_BSLASH),
+	8360:  uint16(anon_sym_LPAREN),
+	8361:  uint16(anon_sym_RPAREN),
+	8362:  uint16(anon_sym_LBRACK),
+	8363:  uint16(aux_sym_dstring_token1),
+	8364:  uint16(aux_sym_sstring_token1),
+	8365:  uint16(anon_sym_AT2),
+	8366:  uint16(anon_sym_POUND),
+	8367:  uint16(sym_identifier),
+	8368:  uint16(5),
+	8369:  uint16(3),
+	8370:  uint16(1),
+	8371:  uint16(aux_sym_comment_token1),
+	8372:  uint16(5),
+	8373:  uint16(1),
+	8374:  uint16(aux_sym_comment_token2),
+	8375:  uint16(468),
+	8376:  uint16(1),
+	8377:  uint16(anon_sym_SLASH),
+	8378:  uint16(137),
+	8379:  uint16(1),
+	8380:  uint16(sym_comment),
+	8381:  uint16(466),
+	8382:  uint16(15),
+	8383:  uint16(anon_sym_SEMI),
+	8384:  uint16(anon_sym_DOT),
+	8385:  uint16(anon_sym_EQ_GT),
+	8386:  uint16(anon_sym_COLON_EQ_GT),
+	8387:  uint16(anon_sym_LBRACE),
+	8388:  uint16(anon_sym_PIPE),
+	8389:  uint16(anon_sym_BSLASH),
+	8390:  uint16(anon_sym_LPAREN),
+	8391:  uint16(anon_sym_RPAREN),
+	8392:  uint16(anon_sym_LBRACK),
+	8393:  uint16(aux_sym_dstring_token1),
+	8394:  uint16(aux_sym_sstring_token1),
+	8395:  uint16(anon_sym_AT2),
+	8396:  uint16(anon_sym_POUND),
+	8397:  uint16(sym_identifier),
+	8398:  uint16(5),
+	8399:  uint16(3),
+	8400:  uint16(1),
+	8401:  uint16(aux_sym_comment_token1),
+	8402:  uint16(5),
+	8403:  uint16(1),
+	8404:  uint16(aux_sym_comment_token2),
+	8405:  uint16(472),
+	8406:  uint16(1),
+	8407:  uint16(anon_sym_SLASH),
+	8408:  uint16(138),
+	8409:  uint16(1),
+	8410:  uint16(sym_comment),
+	8411:  uint16(470),
+	8412:  uint16(15),
+	8413:  uint16(anon_sym_SEMI),
+	8414:  uint16(anon_sym_DOT),
+	8415:  uint16(anon_sym_EQ_GT),
+	8416:  uint16(anon_sym_COLON_EQ_GT),
+	8417:  uint16(anon_sym_LBRACE),
+	8418:  uint16(anon_sym_PIPE),
+	8419:  uint16(anon_sym_BSLASH),
+	8420:  uint16(anon_sym_LPAREN),
+	8421:  uint16(anon_sym_RPAREN),
+	8422:  uint16(anon_sym_LBRACK),
+	8423:  uint16(aux_sym_dstring_token1),
+	8424:  uint16(aux_sym_sstring_token1),
+	8425:  uint16(anon_sym_AT2),
+	8426:  uint16(anon_sym_POUND),
+	8427:  uint16(sym_identifier),
+	8428:  uint16(5),
+	8429:  uint16(3),
+	8430:  uint16(1),
+	8431:  uint16(aux_sym_comment_token1),
+	8432:  uint16(5),
+	8433:  uint16(1),
+	8434:  uint16(aux_sym_comment_token2),
+	8435:  uint16(476),
+	8436:  uint16(1),
+	8437:  uint16(anon_sym_SLASH),
+	8438:  uint16(139),
+	8439:  uint16(1),
+	8440:  uint16(sym_comment),
+	8441:  uint16(474),
+	8442:  uint16(15),
+	8443:  uint16(anon_sym_SEMI),
+	8444:  uint16(anon_sym_DOT),
+	8445:  uint16(anon_sym_EQ_GT),
+	8446:  uint16(anon_sym_COLON_EQ_GT),
+	8447:  uint16(anon_sym_LBRACE),
+	8448:  uint16(anon_sym_PIPE),
+	8449:  uint16(anon_sym_BSLASH),
+	8450:  uint16(anon_sym_LPAREN),
+	8451:  uint16(anon_sym_RPAREN),
+	8452:  uint16(anon_sym_LBRACK),
+	8453:  uint16(aux_sym_dstring_token1),
+	8454:  uint16(aux_sym_sstring_token1),
+	8455:  uint16(anon_sym_AT2),
+	8456:  uint16(anon_sym_POUND),
+	8457:  uint16(sym_identifier),
+	8458:  uint16(5),
+	8459:  uint16(3),
+	8460:  uint16(1),
+	8461:  uint16(aux_sym_comment_token1),
+	8462:  uint16(5),
+	8463:  uint16(1),
+	8464:  uint16(aux_sym_comment_token2),
+	8465:  uint16(480),
+	8466:  uint16(1),
+	8467:  uint16(anon_sym_SLASH),
+	8468:  uint16(140),
+	8469:  uint16(1),
+	8470:  uint16(sym_comment),
+	8471:  uint16(478),
+	8472:  uint16(15),
+	8473:  uint16(anon_sym_SEMI),
+	8474:  uint16(anon_sym_DOT),
+	8475:  uint16(anon_sym_EQ_GT),
+	8476:  uint16(anon_sym_COLON_EQ_GT),
+	8477:  uint16(anon_sym_LBRACE),
+	8478:  uint16(anon_sym_PIPE),
+	8479:  uint16(anon_sym_BSLASH),
+	8480:  uint16(anon_sym_LPAREN),
+	8481:  uint16(anon_sym_RPAREN),
+	8482:  uint16(anon_sym_LBRACK),
+	8483:  uint16(aux_sym_dstring_token1),
+	8484:  uint16(aux_sym_sstring_token1),
+	8485:  uint16(anon_sym_AT2),
+	8486:  uint16(anon_sym_POUND),
+	8487:  uint16(sym_identifier),
+	8488:  uint16(5),
+	8489:  uint16(3),
+	8490:  uint16(1),
+	8491:  uint16(aux_sym_comment_token1),
+	8492:  uint16(5),
+	8493:  uint16(1),
+	8494:  uint16(aux_sym_comment_token2),
+	8495:  uint16(484),
+	8496:  uint16(1),
+	8497:  uint16(anon_sym_SLASH),
+	8498:  uint16(141),
+	8499:  uint16(1),
+	8500:  uint16(sym_comment),
+	8501:  uint16(482),
+	8502:  uint16(15),
+	8503:  uint16(anon_sym_SEMI),
+	8504:  uint16(anon_sym_DOT),
+	8505:  uint16(anon_sym_EQ_GT),
+	8506:  uint16(anon_sym_COLON_EQ_GT),
+	8507:  uint16(anon_sym_LBRACE),
+	8508:  uint16(anon_sym_PIPE),
+	8509:  uint16(anon_sym_BSLASH),
+	8510:  uint16(anon_sym_LPAREN),
+	8511:  uint16(anon_sym_RPAREN),
+	8512:  uint16(anon_sym_LBRACK),
+	8513:  uint16(aux_sym_dstring_token1),
+	8514:  uint16(aux_sym_sstring_token1),
+	8515:  uint16(anon_sym_AT2),
+	8516:  uint16(anon_sym_POUND),
+	8517:  uint16(sym_identifier),
+	8518:  uint16(5),
+	8519:  uint16(3),
+	8520:  uint16(1),
+	8521:  uint16(aux_sym_comment_token1),
+	8522:  uint16(45),
+	8523:  uint16(1),
+	8524:  uint16(aux_sym_comment_token2),
+	8525:  uint16(142),
+	8526:  uint16(1),
+	8527:  uint16(sym_comment),
+	8528:  uint16(486),
+	8529:  uint16(3),
+	8530:  uint16(anon_sym_re2c2),
+	8531:  uint16(anon_sym_STAR),
+	8532:  uint16(sym_identifier),
+	8533:  uint16(488),
+	8534:  uint16(13),
+	8535:  uint16(anon_sym_STAR_SLASH),
+	8536:  uint16(anon_sym_DOT),
+	8537:  uint16(anon_sym_LT),
+	8538:  uint16(anon_sym_DOLLAR),
+	8539:  uint16(anon_sym_LBRACE),
+	8540:  uint16(anon_sym_BANGuse),
+	8541:  uint16(anon_sym_BANGinclude),
+	8542:  uint16(anon_sym_LPAREN),
+	8543:  uint16(anon_sym_LBRACK),
+	8544:  uint16(aux_sym_dstring_token1),
+	8545:  uint16(aux_sym_sstring_token1),
+	8546:  uint16(anon_sym_AT2),
+	8547:  uint16(anon_sym_POUND),
+	8548:  uint16(5),
+	8549:  uint16(3),
+	8550:  uint16(1),
+	8551:  uint16(aux_sym_comment_token1),
+	8552:  uint16(45),
+	8553:  uint16(1),
+	8554:  uint16(aux_sym_comment_token2),
+	8555:  uint16(143),
+	8556:  uint16(1),
+	8557:  uint16(sym_comment),
+	8558:  uint16(490),
+	8559:  uint16(3),
+	8560:  uint16(anon_sym_re2c2),
+	8561:  uint16(anon_sym_STAR),
+	8562:  uint16(sym_identifier),
+	8563:  uint16(492),
+	8564:  uint16(12),
+	8565:  uint16(anon_sym_STAR_SLASH),
+	8566:  uint16(anon_sym_DOT),
+	8567:  uint16(anon_sym_LT),
+	8568:  uint16(anon_sym_DOLLAR),
+	8569:  uint16(anon_sym_BANGuse),
+	8570:  uint16(anon_sym_BANGinclude),
+	8571:  uint16(anon_sym_LPAREN),
+	8572:  uint16(anon_sym_LBRACK),
+	8573:  uint16(aux_sym_dstring_token1),
+	8574:  uint16(aux_sym_sstring_token1),
+	8575:  uint16(anon_sym_AT2),
+	8576:  uint16(anon_sym_POUND),
+	8577:  uint16(5),
+	8578:  uint16(3),
+	8579:  uint16(1),
+	8580:  uint16(aux_sym_comment_token1),
+	8581:  uint16(45),
+	8582:  uint16(1),
+	8583:  uint16(aux_sym_comment_token2),
+	8584:  uint16(144),
+	8585:  uint16(1),
+	8586:  uint16(sym_comment),
+	8587:  uint16(494),
+	8588:  uint16(3),
+	8589:  uint16(anon_sym_re2c2),
+	8590:  uint16(anon_sym_STAR),
+	8591:  uint16(sym_identifier),
+	8592:  uint16(496),
+	8593:  uint16(12),
+	8594:  uint16(anon_sym_STAR_SLASH),
+	8595:  uint16(anon_sym_DOT),
+	8596:  uint16(anon_sym_LT),
+	8597:  uint16(anon_sym_DOLLAR),
+	8598:  uint16(anon_sym_BANGuse),
+	8599:  uint16(anon_sym_BANGinclude),
+	8600:  uint16(anon_sym_LPAREN),
+	8601:  uint16(anon_sym_LBRACK),
+	8602:  uint16(aux_sym_dstring_token1),
+	8603:  uint16(aux_sym_sstring_token1),
+	8604:  uint16(anon_sym_AT2),
+	8605:  uint16(anon_sym_POUND),
+	8606:  uint16(5),
+	8607:  uint16(3),
+	8608:  uint16(1),
+	8609:  uint16(aux_sym_comment_token1),
+	8610:  uint16(45),
+	8611:  uint16(1),
+	8612:  uint16(aux_sym_comment_token2),
+	8613:  uint16(145),
+	8614:  uint16(1),
+	8615:  uint16(sym_comment),
+	8616:  uint16(498),
+	8617:  uint16(3),
+	8618:  uint16(anon_sym_re2c2),
+	8619:  uint16(anon_sym_STAR),
+	8620:  uint16(sym_identifier),
+	8621:  uint16(500),
+	8622:  uint16(12),
+	8623:  uint16(anon_sym_STAR_SLASH),
+	8624:  uint16(anon_sym_DOT),
+	8625:  uint16(anon_sym_LT),
+	8626:  uint16(anon_sym_DOLLAR),
+	8627:  uint16(anon_sym_BANGuse),
+	8628:  uint16(anon_sym_BANGinclude),
+	8629:  uint16(anon_sym_LPAREN),
+	8630:  uint16(anon_sym_LBRACK),
+	8631:  uint16(aux_sym_dstring_token1),
+	8632:  uint16(aux_sym_sstring_token1),
+	8633:  uint16(anon_sym_AT2),
+	8634:  uint16(anon_sym_POUND),
+	8635:  uint16(5),
+	8636:  uint16(3),
+	8637:  uint16(1),
+	8638:  uint16(aux_sym_comment_token1),
+	8639:  uint16(45),
+	8640:  uint16(1),
+	8641:  uint16(aux_sym_comment_token2),
+	8642:  uint16(146),
+	8643:  uint16(1),
+	8644:  uint16(sym_comment),
+	8645:  uint16(502),
+	8646:  uint16(3),
+	8647:  uint16(anon_sym_re2c2),
+	8648:  uint16(anon_sym_STAR),
+	8649:  uint16(sym_identifier),
+	8650:  uint16(504),
+	8651:  uint16(12),
+	8652:  uint16(anon_sym_STAR_SLASH),
+	8653:  uint16(anon_sym_DOT),
+	8654:  uint16(anon_sym_LT),
+	8655:  uint16(anon_sym_DOLLAR),
+	8656:  uint16(anon_sym_BANGuse),
+	8657:  uint16(anon_sym_BANGinclude),
+	8658:  uint16(anon_sym_LPAREN),
+	8659:  uint16(anon_sym_LBRACK),
+	8660:  uint16(aux_sym_dstring_token1),
+	8661:  uint16(aux_sym_sstring_token1),
+	8662:  uint16(anon_sym_AT2),
+	8663:  uint16(anon_sym_POUND),
+	8664:  uint16(5),
+	8665:  uint16(3),
+	8666:  uint16(1),
+	8667:  uint16(aux_sym_comment_token1),
+	8668:  uint16(45),
+	8669:  uint16(1),
+	8670:  uint16(aux_sym_comment_token2),
+	8671:  uint16(147),
+	8672:  uint16(1),
+	8673:  uint16(sym_comment),
+	8674:  uint16(506),
+	8675:  uint16(3),
+	8676:  uint16(anon_sym_re2c2),
+	8677:  uint16(anon_sym_STAR),
+	8678:  uint16(sym_identifier),
+	8679:  uint16(508),
+	8680:  uint16(12),
+	8681:  uint16(anon_sym_STAR_SLASH),
+	8682:  uint16(anon_sym_DOT),
+	8683:  uint16(anon_sym_LT),
+	8684:  uint16(anon_sym_DOLLAR),
+	8685:  uint16(anon_sym_BANGuse),
+	8686:  uint16(anon_sym_BANGinclude),
+	8687:  uint16(anon_sym_LPAREN),
+	8688:  uint16(anon_sym_LBRACK),
+	8689:  uint16(aux_sym_dstring_token1),
+	8690:  uint16(aux_sym_sstring_token1),
+	8691:  uint16(anon_sym_AT2),
+	8692:  uint16(anon_sym_POUND),
+	8693:  uint16(6),
+	8694:  uint16(5),
+	8695:  uint16(1),
+	8696:  uint16(aux_sym_comment_token2),
+	8697:  uint16(11),
+	8698:  uint16(1),
+	8699:  uint16(aux_sym_comment_token1),
+	8700:  uint16(510),
+	8701:  uint16(1),
+	8702:  uint16(anon_sym_RBRACK),
+	8703:  uint16(512),
+	8704:  uint16(1),
+	8705:  uint16(aux_sym_range_token1),
+	8706:  uint16(148),
+	8707:  uint16(1),
+	8708:  uint16(sym_comment),
+	8709:  uint16(515),
+	8710:  uint16(13),
+	8711:  uint16(aux_sym_literal_token1),
+	8712:  uint16(sym_quote),
+	8713:  uint16(sym_ctrl_code),
+	8714:  uint16(aux_sym__esc_hex_token1),
+	8715:  uint16(aux_sym__esc_hex_token2),
+	8716:  uint16(aux_sym__esc_hex_token3),
+	8717:  uint16(aux_sym__esc_hex_token4),
+	8718:  uint16(aux_sym__esc_hex_token5),
+	8719:  uint16(aux_sym__esc_hex_token6),
+	8720:  uint16(aux_sym__esc_hex_token7),
+	8721:  uint16(aux_sym__esc_hex_token8),
+	8722:  uint16(aux_sym__esc_oct_token1),
+	8723:  uint16(aux_sym__esc_oct_token2),
+	8724:  uint16(5),
+	8725:  uint16(3),
+	8726:  uint16(1),
+	8727:  uint16(aux_sym_comment_token1),
+	8728:  uint16(45),
+	8729:  uint16(1),
+	8730:  uint16(aux_sym_comment_token2),
+	8731:  uint16(149),
+	8732:  uint16(1),
+	8733:  uint16(sym_comment),
+	8734:  uint16(517),
+	8735:  uint16(3),
+	8736:  uint16(anon_sym_re2c2),
+	8737:  uint16(anon_sym_STAR),
+	8738:  uint16(sym_identifier),
+	8739:  uint16(519),
+	8740:  uint16(12),
+	8741:  uint16(anon_sym_STAR_SLASH),
+	8742:  uint16(anon_sym_DOT),
+	8743:  uint16(anon_sym_LT),
+	8744:  uint16(anon_sym_DOLLAR),
+	8745:  uint16(anon_sym_BANGuse),
+	8746:  uint16(anon_sym_BANGinclude),
+	8747:  uint16(anon_sym_LPAREN),
+	8748:  uint16(anon_sym_LBRACK),
+	8749:  uint16(aux_sym_dstring_token1),
+	8750:  uint16(aux_sym_sstring_token1),
+	8751:  uint16(anon_sym_AT2),
+	8752:  uint16(anon_sym_POUND),
+	8753:  uint16(5),
+	8754:  uint16(3),
+	8755:  uint16(1),
+	8756:  uint16(aux_sym_comment_token1),
+	8757:  uint16(45),
+	8758:  uint16(1),
+	8759:  uint16(aux_sym_comment_token2),
+	8760:  uint16(150),
+	8761:  uint16(1),
+	8762:  uint16(sym_comment),
+	8763:  uint16(458),
+	8764:  uint16(3),
+	8765:  uint16(anon_sym_re2c2),
+	8766:  uint16(anon_sym_STAR),
+	8767:  uint16(sym_identifier),
+	8768:  uint16(460),
+	8769:  uint16(12),
+	8770:  uint16(anon_sym_STAR_SLASH),
+	8771:  uint16(anon_sym_DOT),
+	8772:  uint16(anon_sym_LT),
+	8773:  uint16(anon_sym_DOLLAR),
+	8774:  uint16(anon_sym_BANGuse),
+	8775:  uint16(anon_sym_BANGinclude),
+	8776:  uint16(anon_sym_LPAREN),
+	8777:  uint16(anon_sym_LBRACK),
+	8778:  uint16(aux_sym_dstring_token1),
+	8779:  uint16(aux_sym_sstring_token1),
+	8780:  uint16(anon_sym_AT2),
+	8781:  uint16(anon_sym_POUND),
+	8782:  uint16(5),
+	8783:  uint16(5),
+	8784:  uint16(1),
+	8785:  uint16(aux_sym_comment_token2),
+	8786:  uint16(11),
+	8787:  uint16(1),
+	8788:  uint16(aux_sym_comment_token1),
+	8789:  uint16(151),
+	8790:  uint16(1),
+	8791:  uint16(sym_comment),
+	8792:  uint16(521),
+	8793:  uint16(2),
+	8794:  uint16(anon_sym_RBRACK),
+	8795:  uint16(aux_sym_range_token1),
+	8796:  uint16(523),
+	8797:  uint16(13),
+	8798:  uint16(aux_sym_literal_token1),
+	8799:  uint16(sym_quote),
+	8800:  uint16(sym_ctrl_code),
+	8801:  uint16(aux_sym__esc_hex_token1),
+	8802:  uint16(aux_sym__esc_hex_token2),
+	8803:  uint16(aux_sym__esc_hex_token3),
+	8804:  uint16(aux_sym__esc_hex_token4),
+	8805:  uint16(aux_sym__esc_hex_token5),
+	8806:  uint16(aux_sym__esc_hex_token6),
+	8807:  uint16(aux_sym__esc_hex_token7),
+	8808:  uint16(aux_sym__esc_hex_token8),
+	8809:  uint16(aux_sym__esc_oct_token1),
+	8810:  uint16(aux_sym__esc_oct_token2),
+	8811:  uint16(5),
+	8812:  uint16(3),
+	8813:  uint16(1),
+	8814:  uint16(aux_sym_comment_token1),
+	8815:  uint16(45),
+	8816:  uint16(1),
+	8817:  uint16(aux_sym_comment_token2),
+	8818:  uint16(152),
+	8819:  uint16(1),
+	8820:  uint16(sym_comment),
+	8821:  uint16(525),
+	8822:  uint16(3),
+	8823:  uint16(anon_sym_re2c2),
+	8824:  uint16(anon_sym_STAR),
+	8825:  uint16(sym_identifier),
+	8826:  uint16(527),
+	8827:  uint16(12),
+	8828:  uint16(anon_sym_STAR_SLASH),
+	8829:  uint16(anon_sym_DOT),
+	8830:  uint16(anon_sym_LT),
+	8831:  uint16(anon_sym_DOLLAR),
+	8832:  uint16(anon_sym_BANGuse),
+	8833:  uint16(anon_sym_BANGinclude),
+	8834:  uint16(anon_sym_LPAREN),
+	8835:  uint16(anon_sym_LBRACK),
+	8836:  uint16(aux_sym_dstring_token1),
+	8837:  uint16(aux_sym_sstring_token1),
+	8838:  uint16(anon_sym_AT2),
+	8839:  uint16(anon_sym_POUND),
+	8840:  uint16(5),
+	8841:  uint16(5),
+	8842:  uint16(1),
+	8843:  uint16(aux_sym_comment_token2),
+	8844:  uint16(11),
+	8845:  uint16(1),
+	8846:  uint16(aux_sym_comment_token1),
+	8847:  uint16(153),
+	8848:  uint16(1),
+	8849:  uint16(sym_comment),
+	8850:  uint16(529),
+	8851:  uint16(2),
+	8852:  uint16(anon_sym_RBRACK),
+	8853:  uint16(aux_sym_range_token1),
+	8854:  uint16(531),
+	8855:  uint16(13),
+	8856:  uint16(aux_sym_literal_token1),
+	8857:  uint16(sym_quote),
+	8858:  uint16(sym_ctrl_code),
+	8859:  uint16(aux_sym__esc_hex_token1),
+	8860:  uint16(aux_sym__esc_hex_token2),
+	8861:  uint16(aux_sym__esc_hex_token3),
+	8862:  uint16(aux_sym__esc_hex_token4),
+	8863:  uint16(aux_sym__esc_hex_token5),
+	8864:  uint16(aux_sym__esc_hex_token6),
+	8865:  uint16(aux_sym__esc_hex_token7),
+	8866:  uint16(aux_sym__esc_hex_token8),
+	8867:  uint16(aux_sym__esc_oct_token1),
+	8868:  uint16(aux_sym__esc_oct_token2),
+	8869:  uint16(5),
+	8870:  uint16(5),
+	8871:  uint16(1),
+	8872:  uint16(aux_sym_comment_token2),
+	8873:  uint16(11),
+	8874:  uint16(1),
+	8875:  uint16(aux_sym_comment_token1),
+	8876:  uint16(154),
+	8877:  uint16(1),
+	8878:  uint16(sym_comment),
+	8879:  uint16(533),
+	8880:  uint16(2),
+	8881:  uint16(anon_sym_RBRACK),
+	8882:  uint16(aux_sym_range_token1),
+	8883:  uint16(535),
+	8884:  uint16(13),
+	8885:  uint16(aux_sym_literal_token1),
+	8886:  uint16(sym_quote),
+	8887:  uint16(sym_ctrl_code),
+	8888:  uint16(aux_sym__esc_hex_token1),
+	8889:  uint16(aux_sym__esc_hex_token2),
+	8890:  uint16(aux_sym__esc_hex_token3),
+	8891:  uint16(aux_sym__esc_hex_token4),
+	8892:  uint16(aux_sym__esc_hex_token5),
+	8893:  uint16(aux_sym__esc_hex_token6),
+	8894:  uint16(aux_sym__esc_hex_token7),
+	8895:  uint16(aux_sym__esc_hex_token8),
+	8896:  uint16(aux_sym__esc_oct_token1),
+	8897:  uint16(aux_sym__esc_oct_token2),
+	8898:  uint16(5),
+	8899:  uint16(5),
+	8900:  uint16(1),
+	8901:  uint16(aux_sym_comment_token2),
+	8902:  uint16(11),
+	8903:  uint16(1),
+	8904:  uint16(aux_sym_comment_token1),
+	8905:  uint16(155),
+	8906:  uint16(1),
+	8907:  uint16(sym_comment),
+	8908:  uint16(537),
+	8909:  uint16(2),
+	8910:  uint16(anon_sym_RBRACK),
+	8911:  uint16(aux_sym_range_token1),
+	8912:  uint16(539),
+	8913:  uint16(13),
+	8914:  uint16(aux_sym_literal_token1),
+	8915:  uint16(sym_quote),
+	8916:  uint16(sym_ctrl_code),
+	8917:  uint16(aux_sym__esc_hex_token1),
+	8918:  uint16(aux_sym__esc_hex_token2),
+	8919:  uint16(aux_sym__esc_hex_token3),
+	8920:  uint16(aux_sym__esc_hex_token4),
+	8921:  uint16(aux_sym__esc_hex_token5),
+	8922:  uint16(aux_sym__esc_hex_token6),
+	8923:  uint16(aux_sym__esc_hex_token7),
+	8924:  uint16(aux_sym__esc_hex_token8),
+	8925:  uint16(aux_sym__esc_oct_token1),
+	8926:  uint16(aux_sym__esc_oct_token2),
+	8927:  uint16(5),
+	8928:  uint16(3),
+	8929:  uint16(1),
+	8930:  uint16(aux_sym_comment_token1),
+	8931:  uint16(45),
+	8932:  uint16(1),
+	8933:  uint16(aux_sym_comment_token2),
+	8934:  uint16(156),
+	8935:  uint16(1),
+	8936:  uint16(sym_comment),
+	8937:  uint16(541),
+	8938:  uint16(3),
+	8939:  uint16(anon_sym_re2c2),
+	8940:  uint16(anon_sym_STAR),
+	8941:  uint16(sym_identifier),
+	8942:  uint16(543),
+	8943:  uint16(12),
+	8944:  uint16(anon_sym_STAR_SLASH),
+	8945:  uint16(anon_sym_DOT),
+	8946:  uint16(anon_sym_LT),
+	8947:  uint16(anon_sym_DOLLAR),
+	8948:  uint16(anon_sym_BANGuse),
+	8949:  uint16(anon_sym_BANGinclude),
+	8950:  uint16(anon_sym_LPAREN),
+	8951:  uint16(anon_sym_LBRACK),
+	8952:  uint16(aux_sym_dstring_token1),
+	8953:  uint16(aux_sym_sstring_token1),
+	8954:  uint16(anon_sym_AT2),
+	8955:  uint16(anon_sym_POUND),
+	8956:  uint16(5),
+	8957:  uint16(3),
+	8958:  uint16(1),
+	8959:  uint16(aux_sym_comment_token1),
+	8960:  uint16(45),
+	8961:  uint16(1),
+	8962:  uint16(aux_sym_comment_token2),
+	8963:  uint16(157),
+	8964:  uint16(1),
+	8965:  uint16(sym_comment),
+	8966:  uint16(545),
+	8967:  uint16(3),
+	8968:  uint16(anon_sym_re2c2),
+	8969:  uint16(anon_sym_STAR),
+	8970:  uint16(sym_identifier),
+	8971:  uint16(547),
+	8972:  uint16(12),
+	8973:  uint16(anon_sym_STAR_SLASH),
+	8974:  uint16(anon_sym_DOT),
+	8975:  uint16(anon_sym_LT),
+	8976:  uint16(anon_sym_DOLLAR),
+	8977:  uint16(anon_sym_BANGuse),
+	8978:  uint16(anon_sym_BANGinclude),
+	8979:  uint16(anon_sym_LPAREN),
+	8980:  uint16(anon_sym_LBRACK),
+	8981:  uint16(aux_sym_dstring_token1),
+	8982:  uint16(aux_sym_sstring_token1),
+	8983:  uint16(anon_sym_AT2),
+	8984:  uint16(anon_sym_POUND),
+	8985:  uint16(5),
+	8986:  uint16(5),
+	8987:  uint16(1),
+	8988:  uint16(aux_sym_comment_token2),
+	8989:  uint16(11),
+	8990:  uint16(1),
+	8991:  uint16(aux_sym_comment_token1),
+	8992:  uint16(158),
+	8993:  uint16(1),
+	8994:  uint16(sym_comment),
+	8995:  uint16(510),
+	8996:  uint16(2),
+	8997:  uint16(anon_sym_RBRACK),
+	8998:  uint16(aux_sym_range_token1),
+	8999:  uint16(515),
+	9000:  uint16(13),
+	9001:  uint16(aux_sym_literal_token1),
+	9002:  uint16(sym_quote),
+	9003:  uint16(sym_ctrl_code),
+	9004:  uint16(aux_sym__esc_hex_token1),
+	9005:  uint16(aux_sym__esc_hex_token2),
+	9006:  uint16(aux_sym__esc_hex_token3),
+	9007:  uint16(aux_sym__esc_hex_token4),
+	9008:  uint16(aux_sym__esc_hex_token5),
+	9009:  uint16(aux_sym__esc_hex_token6),
+	9010:  uint16(aux_sym__esc_hex_token7),
+	9011:  uint16(aux_sym__esc_hex_token8),
+	9012:  uint16(aux_sym__esc_oct_token1),
+	9013:  uint16(aux_sym__esc_oct_token2),
+	9014:  uint16(5),
+	9015:  uint16(3),
+	9016:  uint16(1),
+	9017:  uint16(aux_sym_comment_token1),
+	9018:  uint16(45),
+	9019:  uint16(1),
+	9020:  uint16(aux_sym_comment_token2),
+	9021:  uint16(159),
+	9022:  uint16(1),
+	9023:  uint16(sym_comment),
+	9024:  uint16(452),
+	9025:  uint16(3),
+	9026:  uint16(anon_sym_re2c2),
+	9027:  uint16(anon_sym_STAR),
+	9028:  uint16(sym_identifier),
+	9029:  uint16(454),
+	9030:  uint16(12),
+	9031:  uint16(anon_sym_STAR_SLASH),
+	9032:  uint16(anon_sym_DOT),
+	9033:  uint16(anon_sym_LT),
+	9034:  uint16(anon_sym_DOLLAR),
+	9035:  uint16(anon_sym_BANGuse),
+	9036:  uint16(anon_sym_BANGinclude),
+	9037:  uint16(anon_sym_LPAREN),
+	9038:  uint16(anon_sym_LBRACK),
+	9039:  uint16(aux_sym_dstring_token1),
+	9040:  uint16(aux_sym_sstring_token1),
+	9041:  uint16(anon_sym_AT2),
+	9042:  uint16(anon_sym_POUND),
+	9043:  uint16(5),
+	9044:  uint16(3),
+	9045:  uint16(1),
+	9046:  uint16(aux_sym_comment_token1),
+	9047:  uint16(45),
+	9048:  uint16(1),
+	9049:  uint16(aux_sym_comment_token2),
+	9050:  uint16(160),
+	9051:  uint16(1),
+	9052:  uint16(sym_comment),
+	9053:  uint16(549),
+	9054:  uint16(3),
+	9055:  uint16(anon_sym_re2c2),
+	9056:  uint16(anon_sym_STAR),
+	9057:  uint16(sym_identifier),
+	9058:  uint16(551),
+	9059:  uint16(12),
+	9060:  uint16(anon_sym_STAR_SLASH),
+	9061:  uint16(anon_sym_DOT),
+	9062:  uint16(anon_sym_LT),
+	9063:  uint16(anon_sym_DOLLAR),
+	9064:  uint16(anon_sym_BANGuse),
+	9065:  uint16(anon_sym_BANGinclude),
+	9066:  uint16(anon_sym_LPAREN),
+	9067:  uint16(anon_sym_LBRACK),
+	9068:  uint16(aux_sym_dstring_token1),
+	9069:  uint16(aux_sym_sstring_token1),
+	9070:  uint16(anon_sym_AT2),
+	9071:  uint16(anon_sym_POUND),
+	9072:  uint16(5),
+	9073:  uint16(5),
+	9074:  uint16(1),
+	9075:  uint16(aux_sym_comment_token2),
+	9076:  uint16(11),
+	9077:  uint16(1),
+	9078:  uint16(aux_sym_comment_token1),
+	9079:  uint16(161),
+	9080:  uint16(1),
+	9081:  uint16(sym_comment),
+	9082:  uint16(553),
+	9083:  uint16(2),
+	9084:  uint16(anon_sym_RBRACK),
+	9085:  uint16(aux_sym_range_token1),
+	9086:  uint16(555),
+	9087:  uint16(13),
+	9088:  uint16(aux_sym_literal_token1),
+	9089:  uint16(sym_quote),
+	9090:  uint16(sym_ctrl_code),
+	9091:  uint16(aux_sym__esc_hex_token1),
+	9092:  uint16(aux_sym__esc_hex_token2),
+	9093:  uint16(aux_sym__esc_hex_token3),
+	9094:  uint16(aux_sym__esc_hex_token4),
+	9095:  uint16(aux_sym__esc_hex_token5),
+	9096:  uint16(aux_sym__esc_hex_token6),
+	9097:  uint16(aux_sym__esc_hex_token7),
+	9098:  uint16(aux_sym__esc_hex_token8),
+	9099:  uint16(aux_sym__esc_oct_token1),
+	9100:  uint16(aux_sym__esc_oct_token2),
+	9101:  uint16(5),
+	9102:  uint16(3),
+	9103:  uint16(1),
+	9104:  uint16(aux_sym_comment_token1),
+	9105:  uint16(45),
+	9106:  uint16(1),
+	9107:  uint16(aux_sym_comment_token2),
+	9108:  uint16(162),
+	9109:  uint16(1),
+	9110:  uint16(sym_comment),
+	9111:  uint16(557),
+	9112:  uint16(3),
+	9113:  uint16(anon_sym_re2c2),
+	9114:  uint16(anon_sym_STAR),
+	9115:  uint16(sym_identifier),
+	9116:  uint16(559),
+	9117:  uint16(12),
+	9118:  uint16(anon_sym_STAR_SLASH),
+	9119:  uint16(anon_sym_DOT),
+	9120:  uint16(anon_sym_LT),
+	9121:  uint16(anon_sym_DOLLAR),
+	9122:  uint16(anon_sym_BANGuse),
+	9123:  uint16(anon_sym_BANGinclude),
+	9124:  uint16(anon_sym_LPAREN),
+	9125:  uint16(anon_sym_LBRACK),
+	9126:  uint16(aux_sym_dstring_token1),
+	9127:  uint16(aux_sym_sstring_token1),
+	9128:  uint16(anon_sym_AT2),
+	9129:  uint16(anon_sym_POUND),
+	9130:  uint16(4),
+	9131:  uint16(3),
+	9132:  uint16(1),
+	9133:  uint16(aux_sym_comment_token1),
+	9134:  uint16(45),
+	9135:  uint16(1),
+	9136:  uint16(aux_sym_comment_token2),
+	9137:  uint16(163),
+	9138:  uint16(1),
+	9139:  uint16(sym_comment),
+	9140:  uint16(561),
+	9141:  uint16(13),
+	9142:  uint16(anon_sym_DOT),
+	9143:  uint16(anon_sym_EQ_GT),
+	9144:  uint16(anon_sym_COLON_EQ_GT),
+	9145:  uint16(anon_sym_STAR),
+	9146:  uint16(anon_sym_DOLLAR),
+	9147:  uint16(anon_sym_LBRACE),
+	9148:  uint16(anon_sym_LPAREN),
+	9149:  uint16(anon_sym_LBRACK),
+	9150:  uint16(aux_sym_dstring_token1),
+	9151:  uint16(aux_sym_sstring_token1),
+	9152:  uint16(anon_sym_AT2),
+	9153:  uint16(anon_sym_POUND),
+	9154:  uint16(sym_identifier),
+	9155:  uint16(4),
+	9156:  uint16(3),
+	9157:  uint16(1),
+	9158:  uint16(aux_sym_comment_token1),
+	9159:  uint16(45),
+	9160:  uint16(1),
+	9161:  uint16(aux_sym_comment_token2),
+	9162:  uint16(164),
+	9163:  uint16(1),
+	9164:  uint16(sym_comment),
+	9165:  uint16(563),
+	9166:  uint16(13),
+	9167:  uint16(anon_sym_DOT),
+	9168:  uint16(anon_sym_EQ_GT),
+	9169:  uint16(anon_sym_COLON_EQ_GT),
+	9170:  uint16(anon_sym_STAR),
+	9171:  uint16(anon_sym_DOLLAR),
+	9172:  uint16(anon_sym_LBRACE),
+	9173:  uint16(anon_sym_LPAREN),
+	9174:  uint16(anon_sym_LBRACK),
+	9175:  uint16(aux_sym_dstring_token1),
+	9176:  uint16(aux_sym_sstring_token1),
+	9177:  uint16(anon_sym_AT2),
+	9178:  uint16(anon_sym_POUND),
+	9179:  uint16(sym_identifier),
+	9180:  uint16(4),
+	9181:  uint16(3),
+	9182:  uint16(1),
+	9183:  uint16(aux_sym_comment_token1),
+	9184:  uint16(45),
+	9185:  uint16(1),
+	9186:  uint16(aux_sym_comment_token2),
+	9187:  uint16(165),
+	9188:  uint16(1),
+	9189:  uint16(sym_comment),
+	9190:  uint16(565),
+	9191:  uint16(13),
+	9192:  uint16(anon_sym_DOT),
+	9193:  uint16(anon_sym_EQ_GT),
+	9194:  uint16(anon_sym_COLON_EQ_GT),
+	9195:  uint16(anon_sym_STAR),
+	9196:  uint16(anon_sym_DOLLAR),
+	9197:  uint16(anon_sym_LBRACE),
+	9198:  uint16(anon_sym_LPAREN),
+	9199:  uint16(anon_sym_LBRACK),
+	9200:  uint16(aux_sym_dstring_token1),
+	9201:  uint16(aux_sym_sstring_token1),
+	9202:  uint16(anon_sym_AT2),
+	9203:  uint16(anon_sym_POUND),
+	9204:  uint16(sym_identifier),
+	9205:  uint16(4),
+	9206:  uint16(3),
+	9207:  uint16(1),
+	9208:  uint16(aux_sym_comment_token1),
+	9209:  uint16(45),
+	9210:  uint16(1),
+	9211:  uint16(aux_sym_comment_token2),
+	9212:  uint16(166),
+	9213:  uint16(1),
+	9214:  uint16(sym_comment),
+	9215:  uint16(567),
+	9216:  uint16(13),
+	9217:  uint16(anon_sym_DOT),
+	9218:  uint16(anon_sym_EQ_GT),
+	9219:  uint16(anon_sym_COLON_EQ_GT),
+	9220:  uint16(anon_sym_STAR),
+	9221:  uint16(anon_sym_DOLLAR),
+	9222:  uint16(anon_sym_LBRACE),
+	9223:  uint16(anon_sym_LPAREN),
+	9224:  uint16(anon_sym_LBRACK),
+	9225:  uint16(aux_sym_dstring_token1),
+	9226:  uint16(aux_sym_sstring_token1),
+	9227:  uint16(anon_sym_AT2),
+	9228:  uint16(anon_sym_POUND),
+	9229:  uint16(sym_identifier),
+	9230:  uint16(4),
+	9231:  uint16(3),
+	9232:  uint16(1),
+	9233:  uint16(aux_sym_comment_token1),
+	9234:  uint16(45),
+	9235:  uint16(1),
+	9236:  uint16(aux_sym_comment_token2),
+	9237:  uint16(167),
+	9238:  uint16(1),
+	9239:  uint16(sym_comment),
+	9240:  uint16(569),
+	9241:  uint16(13),
+	9242:  uint16(anon_sym_DOT),
+	9243:  uint16(anon_sym_EQ_GT),
+	9244:  uint16(anon_sym_COLON_EQ_GT),
+	9245:  uint16(anon_sym_STAR),
+	9246:  uint16(anon_sym_DOLLAR),
+	9247:  uint16(anon_sym_LBRACE),
+	9248:  uint16(anon_sym_LPAREN),
+	9249:  uint16(anon_sym_LBRACK),
+	9250:  uint16(aux_sym_dstring_token1),
+	9251:  uint16(aux_sym_sstring_token1),
+	9252:  uint16(anon_sym_AT2),
+	9253:  uint16(anon_sym_POUND),
+	9254:  uint16(sym_identifier),
+	9255:  uint16(4),
+	9256:  uint16(3),
+	9257:  uint16(1),
+	9258:  uint16(aux_sym_comment_token1),
+	9259:  uint16(45),
+	9260:  uint16(1),
+	9261:  uint16(aux_sym_comment_token2),
+	9262:  uint16(168),
+	9263:  uint16(1),
+	9264:  uint16(sym_comment),
+	9265:  uint16(571),
+	9266:  uint16(13),
+	9267:  uint16(anon_sym_DOT),
+	9268:  uint16(anon_sym_EQ_GT),
+	9269:  uint16(anon_sym_COLON_EQ_GT),
+	9270:  uint16(anon_sym_STAR),
+	9271:  uint16(anon_sym_DOLLAR),
+	9272:  uint16(anon_sym_LBRACE),
+	9273:  uint16(anon_sym_LPAREN),
+	9274:  uint16(anon_sym_LBRACK),
+	9275:  uint16(aux_sym_dstring_token1),
+	9276:  uint16(aux_sym_sstring_token1),
+	9277:  uint16(anon_sym_AT2),
+	9278:  uint16(anon_sym_POUND),
+	9279:  uint16(sym_identifier),
+	9280:  uint16(12),
+	9281:  uint16(3),
+	9282:  uint16(1),
+	9283:  uint16(aux_sym_comment_token1),
+	9284:  uint16(45),
+	9285:  uint16(1),
+	9286:  uint16(aux_sym_comment_token2),
+	9287:  uint16(573),
+	9288:  uint16(1),
+	9289:  uint16(anon_sym_STAR_SLASH),
+	9290:  uint16(575),
+	9291:  uint16(1),
+	9292:  uint16(anon_sym_COLON),
+	9293:  uint16(577),
+	9294:  uint16(1),
+	9295:  uint16(anon_sym_format),
+	9296:  uint16(579),
+	9297:  uint16(1),
+	9298:  uint16(anon_sym_separator),
+	9299:  uint16(169),
+	9300:  uint16(1),
+	9301:  uint16(sym_comment),
+	9302:  uint16(182),
+	9303:  uint16(1),
+	9304:  uint16(aux_sym_stags_block_repeat1),
+	9305:  uint16(184),
+	9306:  uint16(1),
+	9307:  uint16(sym_block_list),
+	9308:  uint16(201),
+	9309:  uint16(1),
+	9310:  uint16(aux_sym_block_list_repeat1),
+	9311:  uint16(230),
+	9312:  uint16(1),
+	9313:  uint16(sym__tag_directive),
+	9314:  uint16(231),
+	9315:  uint16(2),
+	9316:  uint16(sym_format_directive),
+	9317:  uint16(sym_separator_directive),
+	9318:  uint16(12),
+	9319:  uint16(3),
+	9320:  uint16(1),
+	9321:  uint16(aux_sym_comment_token1),
+	9322:  uint16(45),
+	9323:  uint16(1),
+	9324:  uint16(aux_sym_comment_token2),
+	9325:  uint16(575),
+	9326:  uint16(1),
+	9327:  uint16(anon_sym_COLON),
+	9328:  uint16(577),
+	9329:  uint16(1),
+	9330:  uint16(anon_sym_format),
+	9331:  uint16(579),
+	9332:  uint16(1),
+	9333:  uint16(anon_sym_separator),
+	9334:  uint16(581),
+	9335:  uint16(1),
+	9336:  uint16(anon_sym_STAR_SLASH),
+	9337:  uint16(170),
+	9338:  uint16(1),
+	9339:  uint16(sym_comment),
+	9340:  uint16(183),
+	9341:  uint16(1),
+	9342:  uint16(aux_sym_stags_block_repeat1),
+	9343:  uint16(187),
+	9344:  uint16(1),
+	9345:  uint16(sym_block_list),
+	9346:  uint16(201),
+	9347:  uint16(1),
+	9348:  uint16(aux_sym_block_list_repeat1),
+	9349:  uint16(230),
+	9350:  uint16(1),
+	9351:  uint16(sym__tag_directive),
+	9352:  uint16(231),
+	9353:  uint16(2),
+	9354:  uint16(sym_format_directive),
+	9355:  uint16(sym_separator_directive),
+	9356:  uint16(9),
+	9357:  uint16(5),
+	9358:  uint16(1),
+	9359:  uint16(aux_sym_comment_token2),
+	9360:  uint16(11),
+	9361:  uint16(1),
+	9362:  uint16(aux_sym_comment_token1),
+	9363:  uint16(583),
+	9364:  uint16(1),
+	9365:  uint16(anon_sym_LBRACE),
+	9366:  uint16(585),
+	9367:  uint16(1),
+	9368:  uint16(anon_sym_RBRACE),
+	9369:  uint16(171),
+	9370:  uint16(1),
+	9371:  uint16(sym_comment),
+	9372:  uint16(172),
+	9373:  uint16(1),
+	9374:  uint16(aux_sym_code_block_repeat1),
+	9375:  uint16(191),
+	9376:  uint16(1),
+	9377:  uint16(sym__code_in_braces),
+	9378:  uint16(335),
+	9379:  uint16(1),
+	9380:  uint16(sym_code_block),
+	9381:  uint16(587),
+	9382:  uint16(5),
+	9383:  uint16(aux_sym__code_in_braces_token1),
+	9384:  uint16(aux_sym__code_in_braces_token2),
+	9385:  uint16(aux_sym__code_in_braces_token3),
+	9386:  uint16(aux_sym__code_in_braces_token4),
+	9387:  uint16(aux_sym__code_in_braces_token5),
+	9388:  uint16(8),
+	9389:  uint16(5),
+	9390:  uint16(1),
+	9391:  uint16(aux_sym_comment_token2),
+	9392:  uint16(11),
+	9393:  uint16(1),
+	9394:  uint16(aux_sym_comment_token1),
+	9395:  uint16(583),
+	9396:  uint16(1),
+	9397:  uint16(anon_sym_LBRACE),
+	9398:  uint16(589),
+	9399:  uint16(1),
+	9400:  uint16(anon_sym_RBRACE),
+	9401:  uint16(172),
+	9402:  uint16(1),
+	9403:  uint16(sym_comment),
+	9404:  uint16(173),
+	9405:  uint16(1),
+	9406:  uint16(aux_sym_code_block_repeat1),
+	9407:  uint16(191),
+	9408:  uint16(1),
+	9409:  uint16(sym__code_in_braces),
+	9410:  uint16(587),
+	9411:  uint16(5),
+	9412:  uint16(aux_sym__code_in_braces_token1),
+	9413:  uint16(aux_sym__code_in_braces_token2),
+	9414:  uint16(aux_sym__code_in_braces_token3),
+	9415:  uint16(aux_sym__code_in_braces_token4),
+	9416:  uint16(aux_sym__code_in_braces_token5),
+	9417:  uint16(7),
+	9418:  uint16(5),
+	9419:  uint16(1),
+	9420:  uint16(aux_sym_comment_token2),
+	9421:  uint16(11),
+	9422:  uint16(1),
+	9423:  uint16(aux_sym_comment_token1),
+	9424:  uint16(591),
+	9425:  uint16(1),
+	9426:  uint16(anon_sym_LBRACE),
+	9427:  uint16(594),
+	9428:  uint16(1),
+	9429:  uint16(anon_sym_RBRACE),
+	9430:  uint16(191),
+	9431:  uint16(1),
+	9432:  uint16(sym__code_in_braces),
+	9433:  uint16(173),
+	9434:  uint16(2),
+	9435:  uint16(sym_comment),
+	9436:  uint16(aux_sym_code_block_repeat1),
+	9437:  uint16(596),
+	9438:  uint16(5),
+	9439:  uint16(aux_sym__code_in_braces_token1),
+	9440:  uint16(aux_sym__code_in_braces_token2),
+	9441:  uint16(aux_sym__code_in_braces_token3),
+	9442:  uint16(aux_sym__code_in_braces_token4),
+	9443:  uint16(aux_sym__code_in_braces_token5),
+	9444:  uint16(8),
+	9445:  uint16(5),
+	9446:  uint16(1),
+	9447:  uint16(aux_sym_comment_token2),
+	9448:  uint16(11),
+	9449:  uint16(1),
+	9450:  uint16(aux_sym_comment_token1),
+	9451:  uint16(599),
+	9452:  uint16(1),
+	9453:  uint16(anon_sym_LBRACE),
+	9454:  uint16(602),
+	9455:  uint16(1),
+	9456:  uint16(anon_sym_RBRACE),
+	9457:  uint16(173),
+	9458:  uint16(1),
+	9459:  uint16(aux_sym_code_block_repeat1),
+	9460:  uint16(174),
+	9461:  uint16(1),
+	9462:  uint16(sym_comment),
+	9463:  uint16(191),
+	9464:  uint16(1),
+	9465:  uint16(sym__code_in_braces),
+	9466:  uint16(605),
+	9467:  uint16(5),
+	9468:  uint16(aux_sym__code_in_braces_token1),
+	9469:  uint16(aux_sym__code_in_braces_token2),
+	9470:  uint16(aux_sym__code_in_braces_token3),
+	9471:  uint16(aux_sym__code_in_braces_token4),
+	9472:  uint16(aux_sym__code_in_braces_token5),
+	9473:  uint16(8),
+	9474:  uint16(5),
+	9475:  uint16(1),
+	9476:  uint16(aux_sym_comment_token2),
+	9477:  uint16(11),
+	9478:  uint16(1),
+	9479:  uint16(aux_sym_comment_token1),
+	9480:  uint16(608),
+	9481:  uint16(1),
+	9482:  uint16(anon_sym_LBRACE),
+	9483:  uint16(611),
+	9484:  uint16(1),
+	9485:  uint16(anon_sym_RBRACE),
+	9486:  uint16(174),
+	9487:  uint16(1),
+	9488:  uint16(aux_sym_code_block_repeat1),
+	9489:  uint16(175),
+	9490:  uint16(1),
+	9491:  uint16(sym_comment),
+	9492:  uint16(191),
+	9493:  uint16(1),
+	9494:  uint16(sym__code_in_braces),
+	9495:  uint16(614),
+	9496:  uint16(5),
+	9497:  uint16(aux_sym__code_in_braces_token1),
+	9498:  uint16(aux_sym__code_in_braces_token2),
+	9499:  uint16(aux_sym__code_in_braces_token3),
+	9500:  uint16(aux_sym__code_in_braces_token4),
+	9501:  uint16(aux_sym__code_in_braces_token5),
+	9502:  uint16(5),
+	9503:  uint16(3),
+	9504:  uint16(1),
+	9505:  uint16(aux_sym_comment_token1),
+	9506:  uint16(5),
+	9507:  uint16(1),
+	9508:  uint16(aux_sym_comment_token2),
+	9509:  uint16(619),
+	9510:  uint16(1),
+	9511:  uint16(anon_sym_SLASH),
+	9512:  uint16(176),
+	9513:  uint16(1),
+	9514:  uint16(sym_comment),
+	9515:  uint16(617),
+	9516:  uint16(7),
+	9517:  uint16(anon_sym_SEMI),
+	9518:  uint16(anon_sym_EQ_GT),
+	9519:  uint16(anon_sym_COLON_EQ_GT),
+	9520:  uint16(anon_sym_LBRACE),
+	9521:  uint16(anon_sym_PIPE),
+	9522:  uint16(anon_sym_BSLASH),
+	9523:  uint16(anon_sym_RPAREN),
+	9524:  uint16(4),
+	9525:  uint16(3),
+	9526:  uint16(1),
+	9527:  uint16(aux_sym_comment_token1),
+	9528:  uint16(45),
+	9529:  uint16(1),
+	9530:  uint16(aux_sym_comment_token2),
+	9531:  uint16(177),
+	9532:  uint16(1),
+	9533:  uint16(sym_comment),
+	9534:  uint16(621),
+	9535:  uint16(8),
+	9536:  uint16(anon_sym_DOT),
+	9537:  uint16(anon_sym_LPAREN),
+	9538:  uint16(anon_sym_LBRACK),
+	9539:  uint16(aux_sym_dstring_token1),
+	9540:  uint16(aux_sym_sstring_token1),
+	9541:  uint16(anon_sym_AT2),
+	9542:  uint16(anon_sym_POUND),
+	9543:  uint16(sym_identifier),
+	9544:  uint16(5),
+	9545:  uint16(3),
+	9546:  uint16(1),
+	9547:  uint16(aux_sym_comment_token1),
+	9548:  uint16(5),
+	9549:  uint16(1),
+	9550:  uint16(aux_sym_comment_token2),
+	9551:  uint16(213),
+	9552:  uint16(1),
+	9553:  uint16(anon_sym_SLASH),
+	9554:  uint16(178),
+	9555:  uint16(1),
+	9556:  uint16(sym_comment),
+	9557:  uint16(211),
+	9558:  uint16(7),
+	9559:  uint16(anon_sym_SEMI),
+	9560:  uint16(anon_sym_EQ_GT),
+	9561:  uint16(anon_sym_COLON_EQ_GT),
+	9562:  uint16(anon_sym_LBRACE),
+	9563:  uint16(anon_sym_PIPE),
+	9564:  uint16(anon_sym_BSLASH),
+	9565:  uint16(anon_sym_RPAREN),
+	9566:  uint16(5),
+	9567:  uint16(3),
+	9568:  uint16(1),
+	9569:  uint16(aux_sym_comment_token1),
+	9570:  uint16(5),
+	9571:  uint16(1),
+	9572:  uint16(aux_sym_comment_token2),
+	9573:  uint16(625),
+	9574:  uint16(1),
+	9575:  uint16(anon_sym_SLASH),
+	9576:  uint16(179),
+	9577:  uint16(1),
+	9578:  uint16(sym_comment),
+	9579:  uint16(623),
+	9580:  uint16(7),
+	9581:  uint16(anon_sym_SEMI),
+	9582:  uint16(anon_sym_EQ_GT),
+	9583:  uint16(anon_sym_COLON_EQ_GT),
+	9584:  uint16(anon_sym_LBRACE),
+	9585:  uint16(anon_sym_PIPE),
+	9586:  uint16(anon_sym_BSLASH),
+	9587:  uint16(anon_sym_RPAREN),
+	9588:  uint16(4),
+	9589:  uint16(5),
+	9590:  uint16(1),
+	9591:  uint16(aux_sym_comment_token2),
+	9592:  uint16(11),
+	9593:  uint16(1),
+	9594:  uint16(aux_sym_comment_token1),
+	9595:  uint16(180),
+	9596:  uint16(1),
+	9597:  uint16(sym_comment),
+	9598:  uint16(627),
+	9599:  uint16(7),
+	9600:  uint16(anon_sym_LBRACE),
+	9601:  uint16(anon_sym_RBRACE),
+	9602:  uint16(aux_sym__code_in_braces_token1),
+	9603:  uint16(aux_sym__code_in_braces_token2),
+	9604:  uint16(aux_sym__code_in_braces_token3),
+	9605:  uint16(aux_sym__code_in_braces_token4),
+	9606:  uint16(aux_sym__code_in_braces_token5),
+	9607:  uint16(9),
+	9608:  uint16(3),
+	9609:  uint16(1),
+	9610:  uint16(aux_sym_comment_token1),
+	9611:  uint16(45),
+	9612:  uint16(1),
+	9613:  uint16(aux_sym_comment_token2),
+	9614:  uint16(577),
+	9615:  uint16(1),
+	9616:  uint16(anon_sym_format),
+	9617:  uint16(579),
+	9618:  uint16(1),
+	9619:  uint16(anon_sym_separator),
+	9620:  uint16(629),
+	9621:  uint16(1),
+	9622:  uint16(anon_sym_STAR_SLASH),
+	9623:  uint16(181),
+	9624:  uint16(1),
+	9625:  uint16(sym_comment),
+	9626:  uint16(185),
+	9627:  uint16(1),
+	9628:  uint16(aux_sym_stags_block_repeat1),
+	9629:  uint16(230),
+	9630:  uint16(1),
+	9631:  uint16(sym__tag_directive),
+	9632:  uint16(231),
+	9633:  uint16(2),
+	9634:  uint16(sym_format_directive),
+	9635:  uint16(sym_separator_directive),
+	9636:  uint16(9),
+	9637:  uint16(3),
+	9638:  uint16(1),
+	9639:  uint16(aux_sym_comment_token1),
+	9640:  uint16(45),
+	9641:  uint16(1),
+	9642:  uint16(aux_sym_comment_token2),
+	9643:  uint16(577),
+	9644:  uint16(1),
+	9645:  uint16(anon_sym_format),
+	9646:  uint16(579),
+	9647:  uint16(1),
+	9648:  uint16(anon_sym_separator),
+	9649:  uint16(631),
+	9650:  uint16(1),
+	9651:  uint16(anon_sym_STAR_SLASH),
+	9652:  uint16(182),
+	9653:  uint16(1),
+	9654:  uint16(sym_comment),
+	9655:  uint16(185),
+	9656:  uint16(1),
+	9657:  uint16(aux_sym_stags_block_repeat1),
+	9658:  uint16(230),
+	9659:  uint16(1),
+	9660:  uint16(sym__tag_directive),
+	9661:  uint16(231),
+	9662:  uint16(2),
+	9663:  uint16(sym_format_directive),
+	9664:  uint16(sym_separator_directive),
+	9665:  uint16(9),
+	9666:  uint16(3),
+	9667:  uint16(1),
+	9668:  uint16(aux_sym_comment_token1),
+	9669:  uint16(45),
+	9670:  uint16(1),
+	9671:  uint16(aux_sym_comment_token2),
+	9672:  uint16(577),
+	9673:  uint16(1),
+	9674:  uint16(anon_sym_format),
+	9675:  uint16(579),
+	9676:  uint16(1),
+	9677:  uint16(anon_sym_separator),
+	9678:  uint16(633),
+	9679:  uint16(1),
+	9680:  uint16(anon_sym_STAR_SLASH),
+	9681:  uint16(183),
+	9682:  uint16(1),
+	9683:  uint16(sym_comment),
+	9684:  uint16(185),
+	9685:  uint16(1),
+	9686:  uint16(aux_sym_stags_block_repeat1),
+	9687:  uint16(230),
+	9688:  uint16(1),
+	9689:  uint16(sym__tag_directive),
+	9690:  uint16(231),
+	9691:  uint16(2),
+	9692:  uint16(sym_format_directive),
+	9693:  uint16(sym_separator_directive),
+	9694:  uint16(9),
+	9695:  uint16(3),
+	9696:  uint16(1),
+	9697:  uint16(aux_sym_comment_token1),
+	9698:  uint16(45),
+	9699:  uint16(1),
+	9700:  uint16(aux_sym_comment_token2),
+	9701:  uint16(577),
+	9702:  uint16(1),
+	9703:  uint16(anon_sym_format),
+	9704:  uint16(579),
+	9705:  uint16(1),
+	9706:  uint16(anon_sym_separator),
+	9707:  uint16(631),
+	9708:  uint16(1),
+	9709:  uint16(anon_sym_STAR_SLASH),
+	9710:  uint16(184),
+	9711:  uint16(1),
+	9712:  uint16(sym_comment),
+	9713:  uint16(186),
+	9714:  uint16(1),
+	9715:  uint16(aux_sym_stags_block_repeat1),
+	9716:  uint16(230),
+	9717:  uint16(1),
+	9718:  uint16(sym__tag_directive),
+	9719:  uint16(231),
+	9720:  uint16(2),
+	9721:  uint16(sym_format_directive),
+	9722:  uint16(sym_separator_directive),
+	9723:  uint16(8),
+	9724:  uint16(3),
+	9725:  uint16(1),
+	9726:  uint16(aux_sym_comment_token1),
+	9727:  uint16(45),
+	9728:  uint16(1),
+	9729:  uint16(aux_sym_comment_token2),
+	9730:  uint16(635),
+	9731:  uint16(1),
+	9732:  uint16(anon_sym_STAR_SLASH),
+	9733:  uint16(637),
+	9734:  uint16(1),
+	9735:  uint16(anon_sym_format),
+	9736:  uint16(640),
+	9737:  uint16(1),
+	9738:  uint16(anon_sym_separator),
+	9739:  uint16(230),
+	9740:  uint16(1),
+	9741:  uint16(sym__tag_directive),
+	9742:  uint16(185),
+	9743:  uint16(2),
+	9744:  uint16(sym_comment),
+	9745:  uint16(aux_sym_stags_block_repeat1),
+	9746:  uint16(231),
+	9747:  uint16(2),
+	9748:  uint16(sym_format_directive),
+	9749:  uint16(sym_separator_directive),
+	9750:  uint16(9),
+	9751:  uint16(3),
+	9752:  uint16(1),
+	9753:  uint16(aux_sym_comment_token1),
+	9754:  uint16(45),
+	9755:  uint16(1),
+	9756:  uint16(aux_sym_comment_token2),
+	9757:  uint16(577),
+	9758:  uint16(1),
+	9759:  uint16(anon_sym_format),
+	9760:  uint16(579),
+	9761:  uint16(1),
+	9762:  uint16(anon_sym_separator),
+	9763:  uint16(643),
+	9764:  uint16(1),
+	9765:  uint16(anon_sym_STAR_SLASH),
+	9766:  uint16(185),
+	9767:  uint16(1),
+	9768:  uint16(aux_sym_stags_block_repeat1),
+	9769:  uint16(186),
+	9770:  uint16(1),
+	9771:  uint16(sym_comment),
+	9772:  uint16(230),
+	9773:  uint16(1),
+	9774:  uint16(sym__tag_directive),
+	9775:  uint16(231),
+	9776:  uint16(2),
+	9777:  uint16(sym_format_directive),
+	9778:  uint16(sym_separator_directive),
+	9779:  uint16(9),
+	9780:  uint16(3),
+	9781:  uint16(1),
+	9782:  uint16(aux_sym_comment_token1),
+	9783:  uint16(45),
+	9784:  uint16(1),
+	9785:  uint16(aux_sym_comment_token2),
+	9786:  uint16(577),
+	9787:  uint16(1),
+	9788:  uint16(anon_sym_format),
+	9789:  uint16(579),
+	9790:  uint16(1),
+	9791:  uint16(anon_sym_separator),
+	9792:  uint16(633),
+	9793:  uint16(1),
+	9794:  uint16(anon_sym_STAR_SLASH),
+	9795:  uint16(181),
+	9796:  uint16(1),
+	9797:  uint16(aux_sym_stags_block_repeat1),
+	9798:  uint16(187),
+	9799:  uint16(1),
+	9800:  uint16(sym_comment),
+	9801:  uint16(230),
+	9802:  uint16(1),
+	9803:  uint16(sym__tag_directive),
+	9804:  uint16(231),
+	9805:  uint16(2),
+	9806:  uint16(sym_format_directive),
+	9807:  uint16(sym_separator_directive),
+	9808:  uint16(4),
+	9809:  uint16(5),
+	9810:  uint16(1),
+	9811:  uint16(aux_sym_comment_token2),
+	9812:  uint16(11),
+	9813:  uint16(1),
+	9814:  uint16(aux_sym_comment_token1),
+	9815:  uint16(188),
+	9816:  uint16(1),
+	9817:  uint16(sym_comment),
+	9818:  uint16(645),
+	9819:  uint16(7),
+	9820:  uint16(anon_sym_LBRACE),
+	9821:  uint16(anon_sym_RBRACE),
+	9822:  uint16(aux_sym__code_in_braces_token1),
+	9823:  uint16(aux_sym__code_in_braces_token2),
+	9824:  uint16(aux_sym__code_in_braces_token3),
+	9825:  uint16(aux_sym__code_in_braces_token4),
+	9826:  uint16(aux_sym__code_in_braces_token5),
+	9827:  uint16(4),
+	9828:  uint16(5),
+	9829:  uint16(1),
+	9830:  uint16(aux_sym_comment_token2),
+	9831:  uint16(11),
+	9832:  uint16(1),
+	9833:  uint16(aux_sym_comment_token1),
+	9834:  uint16(189),
+	9835:  uint16(1),
+	9836:  uint16(sym_comment),
+	9837:  uint16(647),
+	9838:  uint16(7),
+	9839:  uint16(anon_sym_LBRACE),
+	9840:  uint16(anon_sym_RBRACE),
+	9841:  uint16(aux_sym__code_in_braces_token1),
+	9842:  uint16(aux_sym__code_in_braces_token2),
+	9843:  uint16(aux_sym__code_in_braces_token3),
+	9844:  uint16(aux_sym__code_in_braces_token4),
+	9845:  uint16(aux_sym__code_in_braces_token5),
+	9846:  uint16(6),
+	9847:  uint16(3),
+	9848:  uint16(1),
+	9849:  uint16(aux_sym_comment_token1),
+	9850:  uint16(5),
+	9851:  uint16(1),
+	9852:  uint16(aux_sym_comment_token2),
+	9853:  uint16(651),
+	9854:  uint16(1),
+	9855:  uint16(anon_sym_SLASH),
+	9856:  uint16(653),
+	9857:  uint16(1),
+	9858:  uint16(anon_sym_PIPE),
+	9859:  uint16(190),
+	9860:  uint16(1),
+	9861:  uint16(sym_comment),
+	9862:  uint16(649),
+	9863:  uint16(5),
+	9864:  uint16(anon_sym_SEMI),
+	9865:  uint16(anon_sym_EQ_GT),
+	9866:  uint16(anon_sym_COLON_EQ_GT),
+	9867:  uint16(anon_sym_LBRACE),
+	9868:  uint16(anon_sym_RPAREN),
+	9869:  uint16(4),
+	9870:  uint16(5),
+	9871:  uint16(1),
+	9872:  uint16(aux_sym_comment_token2),
+	9873:  uint16(11),
+	9874:  uint16(1),
+	9875:  uint16(aux_sym_comment_token1),
+	9876:  uint16(191),
+	9877:  uint16(1),
+	9878:  uint16(sym_comment),
+	9879:  uint16(655),
+	9880:  uint16(7),
+	9881:  uint16(anon_sym_LBRACE),
+	9882:  uint16(anon_sym_RBRACE),
+	9883:  uint16(aux_sym__code_in_braces_token1),
+	9884:  uint16(aux_sym__code_in_braces_token2),
+	9885:  uint16(aux_sym__code_in_braces_token3),
+	9886:  uint16(aux_sym__code_in_braces_token4),
+	9887:  uint16(aux_sym__code_in_braces_token5),
+	9888:  uint16(6),
+	9889:  uint16(3),
+	9890:  uint16(1),
+	9891:  uint16(aux_sym_comment_token1),
+	9892:  uint16(5),
+	9893:  uint16(1),
+	9894:  uint16(aux_sym_comment_token2),
+	9895:  uint16(659),
+	9896:  uint16(1),
+	9897:  uint16(anon_sym_SLASH),
+	9898:  uint16(661),
+	9899:  uint16(1),
+	9900:  uint16(anon_sym_BSLASH),
+	9901:  uint16(192),
+	9902:  uint16(1),
+	9903:  uint16(sym_comment),
+	9904:  uint16(657),
+	9905:  uint16(4),
+	9906:  uint16(anon_sym_EQ_GT),
+	9907:  uint16(anon_sym_COLON_EQ_GT),
+	9908:  uint16(anon_sym_LBRACE),
+	9909:  uint16(anon_sym_PIPE),
+	9910:  uint16(5),
+	9911:  uint16(3),
+	9912:  uint16(1),
+	9913:  uint16(aux_sym_comment_token1),
+	9914:  uint16(5),
+	9915:  uint16(1),
+	9916:  uint16(aux_sym_comment_token2),
+	9917:  uint16(665),
+	9918:  uint16(1),
+	9919:  uint16(anon_sym_SLASH),
+	9920:  uint16(193),
+	9921:  uint16(1),
+	9922:  uint16(sym_comment),
+	9923:  uint16(663),
+	9924:  uint16(5),
+	9925:  uint16(anon_sym_SEMI),
+	9926:  uint16(anon_sym_EQ_GT),
+	9927:  uint16(anon_sym_COLON_EQ_GT),
+	9928:  uint16(anon_sym_LBRACE),
+	9929:  uint16(anon_sym_RPAREN),
+	9930:  uint16(7),
+	9931:  uint16(3),
+	9932:  uint16(1),
+	9933:  uint16(aux_sym_comment_token1),
+	9934:  uint16(5),
+	9935:  uint16(1),
+	9936:  uint16(aux_sym_comment_token2),
+	9937:  uint16(657),
+	9938:  uint16(1),
+	9939:  uint16(anon_sym_PIPE),
+	9940:  uint16(661),
+	9941:  uint16(1),
+	9942:  uint16(anon_sym_BSLASH),
+	9943:  uint16(665),
+	9944:  uint16(1),
+	9945:  uint16(anon_sym_SLASH),
+	9946:  uint16(194),
+	9947:  uint16(1),
+	9948:  uint16(sym_comment),
+	9949:  uint16(663),
+	9950:  uint16(3),
+	9951:  uint16(anon_sym_EQ_GT),
+	9952:  uint16(anon_sym_COLON_EQ_GT),
+	9953:  uint16(anon_sym_LBRACE),
+	9954:  uint16(7),
+	9955:  uint16(5),
+	9956:  uint16(1),
+	9957:  uint16(aux_sym_comment_token2),
+	9958:  uint16(11),
+	9959:  uint16(1),
+	9960:  uint16(aux_sym_comment_token1),
+	9961:  uint16(667),
+	9962:  uint16(1),
+	9964:  uint16(669),
+	9965:  uint16(1),
+	9966:  uint16(sym_host_lang),
+	9967:  uint16(672),
+	9968:  uint16(1),
+	9969:  uint16(anon_sym_SLASH_STAR_BANG),
+	9970:  uint16(233),
+	9971:  uint16(1),
+	9972:  uint16(sym__block),
+	9973:  uint16(195),
+	9974:  uint16(2),
+	9975:  uint16(sym_comment),
+	9976:  uint16(aux_sym_re2c_repeat1),
+	9977:  uint16(5),
+	9978:  uint16(3),
+	9979:  uint16(1),
+	9980:  uint16(aux_sym_comment_token1),
+	9981:  uint16(45),
+	9982:  uint16(1),
+	9983:  uint16(aux_sym_comment_token2),
+	9984:  uint16(677),
+	9985:  uint16(1),
+	9986:  uint16(anon_sym_COLON),
+	9987:  uint16(196),
+	9988:  uint16(2),
+	9989:  uint16(sym_comment),
+	9990:  uint16(aux_sym_block_list_repeat1),
+	9991:  uint16(675),
+	9992:  uint16(3),
+	9993:  uint16(anon_sym_STAR_SLASH),
+	9994:  uint16(anon_sym_format),
+	9995:  uint16(anon_sym_separator),
+	9996:  uint16(7),
+	9997:  uint16(3),
+	9998:  uint16(1),
+	9999:  uint16(aux_sym_comment_token1),
+	10000: uint16(45),
+	10001: uint16(1),
+	10002: uint16(aux_sym_comment_token2),
+	10003: uint16(177),
+	10004: uint16(1),
+	10005: uint16(anon_sym_LBRACE),
+	10006: uint16(131),
+	10007: uint16(1),
+	10008: uint16(sym_shortcut),
+	10009: uint16(159),
+	10010: uint16(1),
+	10011: uint16(sym_action),
+	10012: uint16(197),
+	10013: uint16(1),
+	10014: uint16(sym_comment),
+	10015: uint16(173),
+	10016: uint16(2),
+	10017: uint16(anon_sym_EQ_GT),
+	10018: uint16(anon_sym_COLON_EQ_GT),
+	10019: uint16(7),
+	10020: uint16(5),
+	10021: uint16(1),
+	10022: uint16(aux_sym_comment_token2),
+	10023: uint16(11),
+	10024: uint16(1),
+	10025: uint16(aux_sym_comment_token1),
+	10026: uint16(682),
+	10027: uint16(1),
+	10028: uint16(anon_sym_DASH),
+	10029: uint16(684),
+	10030: uint16(1),
+	10031: uint16(aux_sym_linedir_token1),
+	10032: uint16(198),
+	10033: uint16(1),
+	10034: uint16(sym_comment),
+	10035: uint16(362),
+	10036: uint16(1),
+	10037: uint16(sym_number),
+	10038: uint16(680),
+	10039: uint16(2),
+	10040: uint16(anon_sym_0),
+	10041: uint16(aux_sym_number_token2),
+	10042: uint16(7),
+	10043: uint16(9),
+	10044: uint16(1),
+	10045: uint16(anon_sym_SLASH_STAR_BANG),
+	10046: uint16(11),
+	10047: uint16(1),
+	10048: uint16(aux_sym_comment_token1),
+	10049: uint16(686),
+	10050: uint16(1),
+	10052: uint16(195),
+	10053: uint16(1),
+	10054: uint16(aux_sym_re2c_repeat1),
+	10055: uint16(199),
+	10056: uint16(1),
+	10057: uint16(sym_comment),
+	10058: uint16(233),
+	10059: uint16(1),
+	10060: uint16(sym__block),
+	10061: uint16(5),
+	10062: uint16(2),
+	10063: uint16(sym_host_lang),
+	10064: uint16(aux_sym_comment_token2),
+	10065: uint16(8),
+	10066: uint16(3),
+	10067: uint16(1),
+	10068: uint16(aux_sym_comment_token1),
+	10069: uint16(45),
+	10070: uint16(1),
+	10071: uint16(aux_sym_comment_token2),
+	10072: uint16(688),
+	10073: uint16(1),
+	10074: uint16(sym_identifier),
+	10075: uint16(690),
+	10076: uint16(1),
+	10077: uint16(anon_sym_GT),
+	10078: uint16(692),
+	10079: uint16(1),
+	10080: uint16(anon_sym_BANG),
+	10081: uint16(694),
+	10082: uint16(1),
+	10083: uint16(anon_sym_STAR),
+	10084: uint16(200),
+	10085: uint16(1),
+	10086: uint16(sym_comment),
+	10087: uint16(246),
+	10088: uint16(1),
+	10089: uint16(aux_sym__clist_repeat1),
+	10090: uint16(6),
+	10091: uint16(3),
+	10092: uint16(1),
+	10093: uint16(aux_sym_comment_token1),
+	10094: uint16(45),
+	10095: uint16(1),
+	10096: uint16(aux_sym_comment_token2),
+	10097: uint16(575),
+	10098: uint16(1),
+	10099: uint16(anon_sym_COLON),
+	10100: uint16(196),
+	10101: uint16(1),
+	10102: uint16(aux_sym_block_list_repeat1),
+	10103: uint16(201),
+	10104: uint16(1),
+	10105: uint16(sym_comment),
+	10106: uint16(696),
+	10107: uint16(3),
+	10108: uint16(anon_sym_STAR_SLASH),
+	10109: uint16(anon_sym_format),
+	10110: uint16(anon_sym_separator),
+	10111: uint16(5),
+	10112: uint16(3),
+	10113: uint16(1),
+	10114: uint16(aux_sym_comment_token1),
+	10115: uint16(45),
+	10116: uint16(1),
+	10117: uint16(aux_sym_comment_token2),
+	10118: uint16(698),
+	10119: uint16(1),
+	10120: uint16(anon_sym_BSLASH),
+	10121: uint16(202),
+	10122: uint16(1),
+	10123: uint16(sym_comment),
+	10124: uint16(657),
+	10125: uint16(4),
+	10126: uint16(anon_sym_EQ_GT),
+	10127: uint16(anon_sym_COLON_EQ_GT),
+	10128: uint16(anon_sym_LBRACE),
+	10129: uint16(anon_sym_PIPE),
+	10130: uint16(6),
+	10131: uint16(3),
+	10132: uint16(1),
+	10133: uint16(aux_sym_comment_token1),
+	10134: uint16(45),
+	10135: uint16(1),
+	10136: uint16(aux_sym_comment_token2),
+	10137: uint16(657),
+	10138: uint16(1),
+	10139: uint16(anon_sym_PIPE),
+	10140: uint16(698),
+	10141: uint16(1),
+	10142: uint16(anon_sym_BSLASH),
+	10143: uint16(203),
+	10144: uint16(1),
+	10145: uint16(sym_comment),
+	10146: uint16(663),
+	10147: uint16(3),
+	10148: uint16(anon_sym_EQ_GT),
+	10149: uint16(anon_sym_COLON_EQ_GT),
+	10150: uint16(anon_sym_LBRACE),
+	10151: uint16(7),
+	10152: uint16(3),
+	10153: uint16(1),
+	10154: uint16(aux_sym_comment_token1),
+	10155: uint16(5),
+	10156: uint16(1),
+	10157: uint16(aux_sym_comment_token2),
+	10158: uint16(657),
+	10159: uint16(1),
+	10160: uint16(anon_sym_PIPE),
+	10161: uint16(663),
+	10162: uint16(1),
+	10163: uint16(anon_sym_LBRACE),
+	10164: uint16(665),
+	10165: uint16(1),
+	10166: uint16(anon_sym_SLASH),
+	10167: uint16(700),
+	10168: uint16(1),
+	10169: uint16(anon_sym_BSLASH),
+	10170: uint16(204),
+	10171: uint16(1),
+	10172: uint16(sym_comment),
+	10173: uint16(5),
+	10174: uint16(3),
+	10175: uint16(1),
+	10176: uint16(aux_sym_comment_token1),
+	10177: uint16(5),
+	10178: uint16(1),
+	10179: uint16(aux_sym_comment_token2),
+	10180: uint16(704),
+	10181: uint16(1),
+	10182: uint16(anon_sym_SLASH),
+	10183: uint16(205),
+	10184: uint16(1),
+	10185: uint16(sym_comment),
+	10186: uint16(702),
+	10187: uint16(3),
+	10188: uint16(anon_sym_EQ_GT),
+	10189: uint16(anon_sym_COLON_EQ_GT),
+	10190: uint16(anon_sym_LBRACE),
+	10191: uint16(6),
+	10192: uint16(3),
+	10193: uint16(1),
+	10194: uint16(aux_sym_comment_token1),
+	10195: uint16(5),
+	10196: uint16(1),
+	10197: uint16(aux_sym_comment_token2),
+	10198: uint16(659),
+	10199: uint16(1),
+	10200: uint16(anon_sym_SLASH),
+	10201: uint16(700),
+	10202: uint16(1),
+	10203: uint16(anon_sym_BSLASH),
+	10204: uint16(206),
+	10205: uint16(1),
+	10206: uint16(sym_comment),
+	10207: uint16(657),
+	10208: uint16(2),
+	10209: uint16(anon_sym_LBRACE),
+	10210: uint16(anon_sym_PIPE),
+	10211: uint16(7),
+	10212: uint16(3),
+	10213: uint16(1),
+	10214: uint16(aux_sym_comment_token1),
+	10215: uint16(45),
+	10216: uint16(1),
+	10217: uint16(aux_sym_comment_token2),
+	10218: uint16(575),
+	10219: uint16(1),
+	10220: uint16(anon_sym_COLON),
+	10221: uint16(706),
+	10222: uint16(1),
+	10223: uint16(anon_sym_STAR_SLASH),
+	10224: uint16(201),
+	10225: uint16(1),
+	10226: uint16(aux_sym_block_list_repeat1),
+	10227: uint16(207),
+	10228: uint16(1),
+	10229: uint16(sym_comment),
+	10230: uint16(353),
+	10231: uint16(1),
+	10232: uint16(sym_block_list),
+	10233: uint16(7),
+	10234: uint16(3),
+	10235: uint16(1),
+	10236: uint16(aux_sym_comment_token1),
+	10237: uint16(45),
+	10238: uint16(1),
+	10239: uint16(aux_sym_comment_token2),
+	10240: uint16(575),
+	10241: uint16(1),
+	10242: uint16(anon_sym_COLON),
+	10243: uint16(708),
+	10244: uint16(1),
+	10245: uint16(anon_sym_STAR_SLASH),
+	10246: uint16(201),
+	10247: uint16(1),
+	10248: uint16(aux_sym_block_list_repeat1),
+	10249: uint16(208),
+	10250: uint16(1),
+	10251: uint16(sym_comment),
+	10252: uint16(356),
+	10253: uint16(1),
+	10254: uint16(sym_block_list),
+	10255: uint16(7),
+	10256: uint16(3),
+	10257: uint16(1),
+	10258: uint16(aux_sym_comment_token1),
+	10259: uint16(45),
+	10260: uint16(1),
+	10261: uint16(aux_sym_comment_token2),
+	10262: uint16(575),
+	10263: uint16(1),
+	10264: uint16(anon_sym_COLON),
+	10265: uint16(710),
+	10266: uint16(1),
+	10267: uint16(anon_sym_STAR_SLASH),
+	10268: uint16(201),
+	10269: uint16(1),
+	10270: uint16(aux_sym_block_list_repeat1),
+	10271: uint16(209),
+	10272: uint16(1),
+	10273: uint16(sym_comment),
+	10274: uint16(357),
+	10275: uint16(1),
+	10276: uint16(sym_block_list),
+	10277: uint16(4),
+	10278: uint16(3),
+	10279: uint16(1),
+	10280: uint16(aux_sym_comment_token1),
+	10281: uint16(45),
+	10282: uint16(1),
+	10283: uint16(aux_sym_comment_token2),
+	10284: uint16(210),
+	10285: uint16(1),
+	10286: uint16(sym_comment),
+	10287: uint16(712),
+	10288: uint16(4),
+	10289: uint16(anon_sym_STAR_SLASH),
+	10290: uint16(anon_sym_COLON),
+	10291: uint16(anon_sym_format),
+	10292: uint16(anon_sym_separator),
+	10293: uint16(6),
+	10294: uint16(3),
+	10295: uint16(1),
+	10296: uint16(aux_sym_comment_token1),
+	10297: uint16(37),
+	10298: uint16(1),
+	10299: uint16(aux_sym_dstring_token1),
+	10300: uint16(39),
+	10301: uint16(1),
+	10302: uint16(aux_sym_sstring_token1),
+	10303: uint16(45),
+	10304: uint16(1),
+	10305: uint16(aux_sym_comment_token2),
+	10306: uint16(211),
+	10307: uint16(1),
+	10308: uint16(sym_comment),
+	10309: uint16(284),
+	10310: uint16(2),
+	10311: uint16(sym_dstring),
+	10312: uint16(sym_sstring),
+	10313: uint16(6),
+	10314: uint16(3),
+	10315: uint16(1),
+	10316: uint16(aux_sym_comment_token1),
+	10317: uint16(37),
+	10318: uint16(1),
+	10319: uint16(aux_sym_dstring_token1),
+	10320: uint16(39),
+	10321: uint16(1),
+	10322: uint16(aux_sym_sstring_token1),
+	10323: uint16(45),
+	10324: uint16(1),
+	10325: uint16(aux_sym_comment_token2),
+	10326: uint16(212),
+	10327: uint16(1),
+	10328: uint16(sym_comment),
+	10329: uint16(285),
+	10330: uint16(2),
+	10331: uint16(sym_dstring),
+	10332: uint16(sym_sstring),
+	10333: uint16(4),
+	10334: uint16(5),
+	10335: uint16(1),
+	10336: uint16(aux_sym_comment_token2),
+	10337: uint16(11),
+	10338: uint16(1),
+	10339: uint16(aux_sym_comment_token1),
+	10340: uint16(213),
+	10341: uint16(1),
+	10342: uint16(sym_comment),
+	10343: uint16(358),
+	10344: uint16(4),
+	10345: uint16(anon_sym_0),
+	10346: uint16(anon_sym_DASH),
+	10347: uint16(aux_sym_number_token2),
+	10348: uint16(aux_sym_linedir_token1),
+	10349: uint16(4),
+	10350: uint16(5),
+	10351: uint16(1),
+	10352: uint16(aux_sym_comment_token2),
+	10353: uint16(11),
+	10354: uint16(1),
+	10355: uint16(aux_sym_comment_token1),
+	10356: uint16(214),
+	10357: uint16(1),
+	10358: uint16(sym_comment),
+	10359: uint16(406),
+	10360: uint16(4),
+	10361: uint16(anon_sym_0),
+	10362: uint16(anon_sym_DASH),
+	10363: uint16(aux_sym_number_token2),
+	10364: uint16(aux_sym_linedir_token1),
+	10365: uint16(6),
+	10366: uint16(3),
+	10367: uint16(1),
+	10368: uint16(aux_sym_comment_token1),
+	10369: uint16(37),
+	10370: uint16(1),
+	10371: uint16(aux_sym_dstring_token1),
+	10372: uint16(39),
+	10373: uint16(1),
+	10374: uint16(aux_sym_sstring_token1),
+	10375: uint16(45),
+	10376: uint16(1),
+	10377: uint16(aux_sym_comment_token2),
+	10378: uint16(215),
+	10379: uint16(1),
+	10380: uint16(sym_comment),
+	10381: uint16(325),
+	10382: uint16(2),
+	10383: uint16(sym_dstring),
+	10384: uint16(sym_sstring),
+	10385: uint16(7),
+	10386: uint16(3),
+	10387: uint16(1),
+	10388: uint16(aux_sym_comment_token1),
+	10389: uint16(45),
+	10390: uint16(1),
+	10391: uint16(aux_sym_comment_token2),
+	10392: uint16(714),
+	10393: uint16(1),
+	10394: uint16(sym_identifier),
+	10395: uint16(716),
+	10396: uint16(1),
+	10397: uint16(anon_sym_GT),
+	10398: uint16(718),
+	10399: uint16(1),
+	10400: uint16(anon_sym_STAR),
+	10401: uint16(216),
+	10402: uint16(1),
+	10403: uint16(sym_comment),
+	10404: uint16(265),
+	10405: uint16(1),
+	10406: uint16(aux_sym__clist_repeat1),
+	10407: uint16(4),
+	10408: uint16(3),
+	10409: uint16(1),
+	10410: uint16(aux_sym_comment_token1),
+	10411: uint16(45),
+	10412: uint16(1),
+	10413: uint16(aux_sym_comment_token2),
+	10414: uint16(217),
+	10415: uint16(1),
+	10416: uint16(sym_comment),
+	10417: uint16(720),
+	10418: uint16(4),
+	10419: uint16(anon_sym_SEMI),
+	10420: uint16(anon_sym_EQ_GT),
+	10421: uint16(anon_sym_COLON_EQ_GT),
+	10422: uint16(anon_sym_LBRACE),
+	10423: uint16(6),
+	10424: uint16(3),
+	10425: uint16(1),
+	10426: uint16(aux_sym_comment_token1),
+	10427: uint16(5),
+	10428: uint16(1),
+	10429: uint16(aux_sym_comment_token2),
+	10430: uint16(659),
+	10431: uint16(1),
+	10432: uint16(anon_sym_SLASH),
+	10433: uint16(722),
+	10434: uint16(1),
+	10435: uint16(anon_sym_BSLASH),
+	10436: uint16(218),
+	10437: uint16(1),
+	10438: uint16(sym_comment),
+	10439: uint16(657),
+	10440: uint16(2),
+	10441: uint16(anon_sym_SEMI),
+	10442: uint16(anon_sym_PIPE),
+	10443: uint16(4),
+	10444: uint16(3),
+	10445: uint16(1),
+	10446: uint16(aux_sym_comment_token1),
+	10447: uint16(45),
+	10448: uint16(1),
+	10449: uint16(aux_sym_comment_token2),
+	10450: uint16(219),
+	10451: uint16(1),
+	10452: uint16(sym_comment),
+	10453: uint16(702),
+	10454: uint16(4),
+	10455: uint16(anon_sym_SEMI),
+	10456: uint16(anon_sym_EQ_GT),
+	10457: uint16(anon_sym_COLON_EQ_GT),
+	10458: uint16(anon_sym_LBRACE),
+	10459: uint16(6),
+	10460: uint16(3),
+	10461: uint16(1),
+	10462: uint16(aux_sym_comment_token1),
+	10463: uint16(45),
+	10464: uint16(1),
+	10465: uint16(aux_sym_comment_token2),
+	10466: uint16(724),
+	10467: uint16(1),
+	10468: uint16(aux_sym_dstring_token1),
+	10469: uint16(726),
+	10470: uint16(1),
+	10471: uint16(aux_sym_sstring_token1),
+	10472: uint16(220),
+	10473: uint16(1),
+	10474: uint16(sym_comment),
+	10475: uint16(198),
+	10476: uint16(2),
+	10477: uint16(sym_dstring),
+	10478: uint16(sym_sstring),
+	10479: uint16(7),
+	10480: uint16(3),
+	10481: uint16(1),
+	10482: uint16(aux_sym_comment_token1),
+	10483: uint16(5),
+	10484: uint16(1),
+	10485: uint16(aux_sym_comment_token2),
+	10486: uint16(657),
+	10487: uint16(1),
+	10488: uint16(anon_sym_PIPE),
+	10489: uint16(663),
+	10490: uint16(1),
+	10491: uint16(anon_sym_SEMI),
+	10492: uint16(665),
+	10493: uint16(1),
+	10494: uint16(anon_sym_SLASH),
+	10495: uint16(722),
+	10496: uint16(1),
+	10497: uint16(anon_sym_BSLASH),
+	10498: uint16(221),
+	10499: uint16(1),
+	10500: uint16(sym_comment),
+	10501: uint16(4),
+	10502: uint16(3),
+	10503: uint16(1),
+	10504: uint16(aux_sym_comment_token1),
+	10505: uint16(45),
+	10506: uint16(1),
+	10507: uint16(aux_sym_comment_token2),
+	10508: uint16(222),
+	10509: uint16(1),
+	10510: uint16(sym_comment),
+	10511: uint16(728),
+	10512: uint16(3),
+	10513: uint16(anon_sym_STAR_SLASH),
+	10514: uint16(anon_sym_format),
+	10515: uint16(anon_sym_separator),
+	10516: uint16(4),
+	10517: uint16(3),
+	10518: uint16(1),
+	10519: uint16(aux_sym_comment_token1),
+	10520: uint16(45),
+	10521: uint16(1),
+	10522: uint16(aux_sym_comment_token2),
+	10523: uint16(223),
+	10524: uint16(1),
+	10525: uint16(sym_comment),
+	10526: uint16(730),
+	10527: uint16(3),
+	10528: uint16(anon_sym_EQ_GT),
+	10529: uint16(anon_sym_COLON_EQ_GT),
+	10530: uint16(anon_sym_LBRACE),
+	10531: uint16(5),
+	10532: uint16(5),
+	10533: uint16(1),
+	10534: uint16(aux_sym_comment_token2),
+	10535: uint16(11),
+	10536: uint16(1),
+	10537: uint16(aux_sym_comment_token1),
+	10538: uint16(732),
+	10539: uint16(1),
+	10541: uint16(224),
+	10542: uint16(1),
+	10543: uint16(sym_comment),
+	10544: uint16(734),
+	10545: uint16(2),
+	10546: uint16(sym_host_lang),
+	10547: uint16(anon_sym_SLASH_STAR_BANG),
+	10548: uint16(6),
+	10549: uint16(3),
+	10550: uint16(1),
+	10551: uint16(aux_sym_comment_token1),
+	10552: uint16(45),
+	10553: uint16(1),
+	10554: uint16(aux_sym_comment_token2),
+	10555: uint16(736),
+	10556: uint16(1),
+	10557: uint16(anon_sym_RBRACE2),
+	10558: uint16(738),
+	10559: uint16(1),
+	10560: uint16(aux_sym__mininum_token1),
+	10561: uint16(225),
+	10562: uint16(1),
+	10563: uint16(sym_comment),
+	10564: uint16(281),
+	10565: uint16(1),
+	10566: uint16(sym__maximum),
+	10567: uint16(5),
+	10568: uint16(3),
+	10569: uint16(1),
+	10570: uint16(aux_sym_comment_token1),
+	10571: uint16(45),
+	10572: uint16(1),
+	10573: uint16(aux_sym_comment_token2),
+	10574: uint16(740),
+	10575: uint16(1),
+	10576: uint16(anon_sym_SEMI),
+	10577: uint16(226),
+	10578: uint16(1),
+	10579: uint16(sym_comment),
+	10580: uint16(742),
+	10581: uint16(2),
+	10582: uint16(anon_sym_DOT),
+	10583: uint16(anon_sym_DASH_GT),
+	10584: uint16(5),
+	10585: uint16(3),
+	10586: uint16(1),
+	10587: uint16(aux_sym_comment_token1),
+	10588: uint16(45),
+	10589: uint16(1),
+	10590: uint16(aux_sym_comment_token2),
+	10591: uint16(744),
+	10592: uint16(1),
+	10593: uint16(anon_sym_BSLASH),
+	10594: uint16(227),
+	10595: uint16(1),
+	10596: uint16(sym_comment),
+	10597: uint16(657),
+	10598: uint16(2),
+	10599: uint16(anon_sym_PIPE),
+	10600: uint16(anon_sym_RPAREN),
+	10601: uint16(5),
+	10602: uint16(3),
+	10603: uint16(1),
+	10604: uint16(aux_sym_comment_token1),
+	10605: uint16(45),
+	10606: uint16(1),
+	10607: uint16(aux_sym_comment_token2),
+	10608: uint16(748),
+	10609: uint16(1),
+	10610: uint16(anon_sym_EQ),
+	10611: uint16(228),
+	10612: uint16(1),
+	10613: uint16(sym_comment),
+	10614: uint16(746),
+	10615: uint16(2),
+	10616: uint16(anon_sym_COLON),
+	10617: uint16(anon_sym_AT),
+	10618: uint16(6),
+	10619: uint16(3),
+	10620: uint16(1),
+	10621: uint16(aux_sym_comment_token1),
+	10622: uint16(45),
+	10623: uint16(1),
+	10624: uint16(aux_sym_comment_token2),
+	10625: uint16(750),
+	10626: uint16(1),
+	10627: uint16(anon_sym_COLON),
+	10628: uint16(752),
+	10629: uint16(1),
+	10630: uint16(anon_sym_EQ),
+	10631: uint16(229),
+	10632: uint16(1),
+	10633: uint16(sym_comment),
+	10634: uint16(381),
+	10635: uint16(1),
+	10636: uint16(sym__option_name),
+	10637: uint16(4),
+	10638: uint16(3),
+	10639: uint16(1),
+	10640: uint16(aux_sym_comment_token1),
+	10641: uint16(45),
+	10642: uint16(1),
+	10643: uint16(aux_sym_comment_token2),
+	10644: uint16(230),
+	10645: uint16(1),
+	10646: uint16(sym_comment),
+	10647: uint16(754),
+	10648: uint16(3),
+	10649: uint16(anon_sym_STAR_SLASH),
+	10650: uint16(anon_sym_format),
+	10651: uint16(anon_sym_separator),
+	10652: uint16(4),
+	10653: uint16(3),
+	10654: uint16(1),
+	10655: uint16(aux_sym_comment_token1),
+	10656: uint16(45),
+	10657: uint16(1),
+	10658: uint16(aux_sym_comment_token2),
+	10659: uint16(231),
+	10660: uint16(1),
+	10661: uint16(sym_comment),
+	10662: uint16(756),
+	10663: uint16(3),
+	10664: uint16(anon_sym_STAR_SLASH),
+	10665: uint16(anon_sym_format),
+	10666: uint16(anon_sym_separator),
+	10667: uint16(4),
+	10668: uint16(3),
+	10669: uint16(1),
+	10670: uint16(aux_sym_comment_token1),
+	10671: uint16(45),
+	10672: uint16(1),
+	10673: uint16(aux_sym_comment_token2),
+	10674: uint16(232),
+	10675: uint16(1),
+	10676: uint16(sym_comment),
+	10677: uint16(758),
+	10678: uint16(3),
+	10679: uint16(anon_sym_STAR_SLASH),
+	10680: uint16(anon_sym_format),
+	10681: uint16(anon_sym_separator),
+	10682: uint16(5),
+	10683: uint16(5),
+	10684: uint16(1),
+	10685: uint16(aux_sym_comment_token2),
+	10686: uint16(11),
+	10687: uint16(1),
+	10688: uint16(aux_sym_comment_token1),
+	10689: uint16(760),
+	10690: uint16(1),
+	10692: uint16(233),
+	10693: uint16(1),
+	10694: uint16(sym_comment),
+	10695: uint16(762),
+	10696: uint16(2),
+	10697: uint16(sym_host_lang),
+	10698: uint16(anon_sym_SLASH_STAR_BANG),
+	10699: uint16(6),
+	10700: uint16(3),
+	10701: uint16(1),
+	10702: uint16(aux_sym_comment_token1),
+	10703: uint16(45),
+	10704: uint16(1),
+	10705: uint16(aux_sym_comment_token2),
+	10706: uint16(657),
+	10707: uint16(1),
+	10708: uint16(anon_sym_PIPE),
+	10709: uint16(663),
+	10710: uint16(1),
+	10711: uint16(anon_sym_RPAREN),
+	10712: uint16(744),
+	10713: uint16(1),
+	10714: uint16(anon_sym_BSLASH),
+	10715: uint16(234),
+	10716: uint16(1),
+	10717: uint16(sym_comment),
+	10718: uint16(5),
+	10719: uint16(3),
+	10720: uint16(1),
+	10721: uint16(aux_sym_comment_token1),
+	10722: uint16(45),
+	10723: uint16(1),
+	10724: uint16(aux_sym_comment_token2),
+	10725: uint16(764),
+	10726: uint16(1),
+	10727: uint16(anon_sym_BSLASH),
+	10728: uint16(235),
+	10729: uint16(1),
+	10730: uint16(sym_comment),
+	10731: uint16(657),
+	10732: uint16(2),
+	10733: uint16(anon_sym_LBRACE),
+	10734: uint16(anon_sym_PIPE),
+	10735: uint16(4),
+	10736: uint16(3),
+	10737: uint16(1),
+	10738: uint16(aux_sym_comment_token1),
+	10739: uint16(45),
+	10740: uint16(1),
+	10741: uint16(aux_sym_comment_token2),
+	10742: uint16(236),
+	10743: uint16(1),
+	10744: uint16(sym_comment),
+	10745: uint16(766),
+	10746: uint16(3),
+	10747: uint16(anon_sym_EQ_GT),
+	10748: uint16(anon_sym_COLON_EQ_GT),
+	10749: uint16(anon_sym_LBRACE),
+	10750: uint16(5),
+	10751: uint16(3),
+	10752: uint16(1),
+	10753: uint16(aux_sym_comment_token1),
+	10754: uint16(45),
+	10755: uint16(1),
+	10756: uint16(aux_sym_comment_token2),
+	10757: uint16(768),
+	10758: uint16(1),
+	10759: uint16(anon_sym_BSLASH),
+	10760: uint16(237),
+	10761: uint16(1),
+	10762: uint16(sym_comment),
+	10763: uint16(657),
+	10764: uint16(2),
+	10765: uint16(anon_sym_SEMI),
+	10766: uint16(anon_sym_PIPE),
+	10767: uint16(6),
+	10768: uint16(3),
+	10769: uint16(1),
+	10770: uint16(aux_sym_comment_token1),
+	10771: uint16(45),
+	10772: uint16(1),
+	10773: uint16(aux_sym_comment_token2),
+	10774: uint16(657),
+	10775: uint16(1),
+	10776: uint16(anon_sym_PIPE),
+	10777: uint16(663),
+	10778: uint16(1),
+	10779: uint16(anon_sym_LBRACE),
+	10780: uint16(764),
+	10781: uint16(1),
+	10782: uint16(anon_sym_BSLASH),
+	10783: uint16(238),
+	10784: uint16(1),
+	10785: uint16(sym_comment),
+	10786: uint16(6),
+	10787: uint16(3),
+	10788: uint16(1),
+	10789: uint16(aux_sym_comment_token1),
+	10790: uint16(45),
+	10791: uint16(1),
+	10792: uint16(aux_sym_comment_token2),
+	10793: uint16(657),
+	10794: uint16(1),
+	10795: uint16(anon_sym_PIPE),
+	10796: uint16(663),
+	10797: uint16(1),
+	10798: uint16(anon_sym_SEMI),
+	10799: uint16(768),
+	10800: uint16(1),
+	10801: uint16(anon_sym_BSLASH),
+	10802: uint16(239),
+	10803: uint16(1),
+	10804: uint16(sym_comment),
+	10805: uint16(6),
+	10806: uint16(3),
+	10807: uint16(1),
+	10808: uint16(aux_sym_comment_token1),
+	10809: uint16(45),
+	10810: uint16(1),
+	10811: uint16(aux_sym_comment_token2),
+	10812: uint16(770),
+	10813: uint16(1),
+	10814: uint16(aux_sym__mininum_token1),
+	10815: uint16(240),
+	10816: uint16(1),
+	10817: uint16(sym_comment),
+	10818: uint16(344),
+	10819: uint16(1),
+	10820: uint16(sym__mininum),
+	10821: uint16(345),
+	10822: uint16(1),
+	10823: uint16(sym__exactly),
+	10824: uint16(5),
+	10825: uint16(3),
+	10826: uint16(1),
+	10827: uint16(aux_sym_comment_token1),
+	10828: uint16(45),
+	10829: uint16(1),
+	10830: uint16(aux_sym_comment_token2),
+	10831: uint16(750),
+	10832: uint16(1),
+	10833: uint16(anon_sym_COLON),
+	10834: uint16(241),
+	10835: uint16(1),
+	10836: uint16(sym_comment),
+	10837: uint16(385),
+	10838: uint16(1),
+	10839: uint16(sym__option_name),
+	10840: uint16(4),
+	10841: uint16(3),
+	10842: uint16(1),
+	10843: uint16(aux_sym_comment_token1),
+	10844: uint16(45),
+	10845: uint16(1),
+	10846: uint16(aux_sym_comment_token2),
+	10847: uint16(772),
+	10848: uint16(1),
+	10849: uint16(sym_identifier),
+	10850: uint16(242),
+	10851: uint16(2),
+	10852: uint16(sym_comment),
+	10853: uint16(aux_sym__clist_repeat1),
+	10854: uint16(5),
+	10855: uint16(3),
+	10856: uint16(1),
+	10857: uint16(aux_sym_comment_token1),
+	10858: uint16(45),
+	10859: uint16(1),
+	10860: uint16(aux_sym_comment_token2),
+	10861: uint16(750),
+	10862: uint16(1),
+	10863: uint16(anon_sym_COLON),
+	10864: uint16(243),
+	10865: uint16(1),
+	10866: uint16(sym_comment),
+	10867: uint16(372),
+	10868: uint16(1),
+	10869: uint16(sym__option_name),
+	10870: uint16(5),
+	10871: uint16(3),
+	10872: uint16(1),
+	10873: uint16(aux_sym_comment_token1),
+	10874: uint16(45),
+	10875: uint16(1),
+	10876: uint16(aux_sym_comment_token2),
+	10877: uint16(750),
+	10878: uint16(1),
+	10879: uint16(anon_sym_COLON),
+	10880: uint16(244),
+	10881: uint16(1),
+	10882: uint16(sym_comment),
+	10883: uint16(373),
+	10884: uint16(1),
+	10885: uint16(sym__option_name),
+	10886: uint16(5),
+	10887: uint16(3),
+	10888: uint16(1),
+	10889: uint16(aux_sym_comment_token1),
+	10890: uint16(45),
+	10891: uint16(1),
+	10892: uint16(aux_sym_comment_token2),
+	10893: uint16(775),
+	10894: uint16(1),
+	10895: uint16(anon_sym_GT),
+	10896: uint16(777),
+	10897: uint16(1),
+	10898: uint16(anon_sym_COMMA),
+	10899: uint16(245),
+	10900: uint16(1),
+	10901: uint16(sym_comment),
+	10902: uint16(5),
+	10903: uint16(3),
+	10904: uint16(1),
+	10905: uint16(aux_sym_comment_token1),
+	10906: uint16(45),
+	10907: uint16(1),
+	10908: uint16(aux_sym_comment_token2),
+	10909: uint16(714),
+	10910: uint16(1),
+	10911: uint16(sym_identifier),
+	10912: uint16(242),
+	10913: uint16(1),
+	10914: uint16(aux_sym__clist_repeat1),
+	10915: uint16(246),
+	10916: uint16(1),
+	10917: uint16(sym_comment),
+	10918: uint16(5),
+	10919: uint16(3),
+	10920: uint16(1),
+	10921: uint16(aux_sym_comment_token1),
+	10922: uint16(45),
+	10923: uint16(1),
+	10924: uint16(aux_sym_comment_token2),
+	10925: uint16(750),
+	10926: uint16(1),
+	10927: uint16(anon_sym_COLON),
+	10928: uint16(247),
+	10929: uint16(1),
+	10930: uint16(sym_comment),
+	10931: uint16(374),
+	10932: uint16(1),
+	10933: uint16(sym__option_name),
+	10934: uint16(5),
+	10935: uint16(3),
+	10936: uint16(1),
+	10937: uint16(aux_sym_comment_token1),
+	10938: uint16(45),
+	10939: uint16(1),
+	10940: uint16(aux_sym_comment_token2),
+	10941: uint16(779),
+	10942: uint16(1),
+	10943: uint16(aux_sym__block_name_token1),
+	10944: uint16(781),
+	10945: uint16(1),
+	10946: uint16(anon_sym_line),
+	10947: uint16(248),
+	10948: uint16(1),
+	10949: uint16(sym_comment),
+	10950: uint16(5),
+	10951: uint16(3),
+	10952: uint16(1),
+	10953: uint16(aux_sym_comment_token1),
+	10954: uint16(45),
+	10955: uint16(1),
+	10956: uint16(aux_sym_comment_token2),
+	10957: uint16(750),
+	10958: uint16(1),
+	10959: uint16(anon_sym_COLON),
+	10960: uint16(249),
+	10961: uint16(1),
+	10962: uint16(sym_comment),
+	10963: uint16(376),
+	10964: uint16(1),
+	10965: uint16(sym__option_name),
+	10966: uint16(5),
+	10967: uint16(3),
+	10968: uint16(1),
+	10969: uint16(aux_sym_comment_token1),
+	10970: uint16(45),
+	10971: uint16(1),
+	10972: uint16(aux_sym_comment_token2),
+	10973: uint16(783),
+	10974: uint16(1),
+	10975: uint16(anon_sym_COMMA2),
+	10976: uint16(785),
+	10977: uint16(1),
+	10978: uint16(anon_sym_RBRACE2),
+	10979: uint16(250),
+	10980: uint16(1),
+	10981: uint16(sym_comment),
+	10982: uint16(5),
+	10983: uint16(3),
+	10984: uint16(1),
+	10985: uint16(aux_sym_comment_token1),
+	10986: uint16(45),
+	10987: uint16(1),
+	10988: uint16(aux_sym_comment_token2),
+	10989: uint16(657),
+	10990: uint16(1),
+	10991: uint16(anon_sym_PIPE),
+	10992: uint16(787),
+	10993: uint16(1),
+	10994: uint16(anon_sym_BSLASH),
+	10995: uint16(251),
+	10996: uint16(1),
+	10997: uint16(sym_comment),
+	10998: uint16(5),
+	10999: uint16(3),
+	11000: uint16(1),
+	11001: uint16(aux_sym_comment_token1),
+	11002: uint16(45),
+	11003: uint16(1),
+	11004: uint16(aux_sym_comment_token2),
+	11005: uint16(750),
+	11006: uint16(1),
+	11007: uint16(anon_sym_COLON),
+	11008: uint16(252),
+	11009: uint16(1),
+	11010: uint16(sym_comment),
+	11011: uint16(378),
+	11012: uint16(1),
+	11013: uint16(sym__option_name),
+	11014: uint16(5),
+	11015: uint16(3),
+	11016: uint16(1),
+	11017: uint16(aux_sym_comment_token1),
+	11018: uint16(45),
+	11019: uint16(1),
+	11020: uint16(aux_sym_comment_token2),
+	11021: uint16(177),
+	11022: uint16(1),
+	11023: uint16(anon_sym_LBRACE),
+	11024: uint16(152),
+	11025: uint16(1),
+	11026: uint16(sym_action),
+	11027: uint16(253),
+	11028: uint16(1),
+	11029: uint16(sym_comment),
+	11030: uint16(5),
+	11031: uint16(3),
+	11032: uint16(1),
+	11033: uint16(aux_sym_comment_token1),
+	11034: uint16(45),
+	11035: uint16(1),
+	11036: uint16(aux_sym_comment_token2),
+	11037: uint16(750),
+	11038: uint16(1),
+	11039: uint16(anon_sym_COLON),
+	11040: uint16(254),
+	11041: uint16(1),
+	11042: uint16(sym_comment),
+	11043: uint16(379),
+	11044: uint16(1),
+	11045: uint16(sym__option_name),
+	11046: uint16(5),
+	11047: uint16(3),
+	11048: uint16(1),
+	11049: uint16(aux_sym_comment_token1),
+	11050: uint16(45),
+	11051: uint16(1),
+	11052: uint16(aux_sym_comment_token2),
+	11053: uint16(750),
+	11054: uint16(1),
+	11055: uint16(anon_sym_COLON),
+	11056: uint16(255),
+	11057: uint16(1),
+	11058: uint16(sym_comment),
+	11059: uint16(368),
+	11060: uint16(1),
+	11061: uint16(sym__option_name),
+	11062: uint16(5),
+	11063: uint16(3),
+	11064: uint16(1),
+	11065: uint16(aux_sym_comment_token1),
+	11066: uint16(5),
+	11067: uint16(1),
+	11068: uint16(aux_sym_comment_token2),
+	11069: uint16(702),
+	11070: uint16(1),
+	11071: uint16(anon_sym_SEMI),
+	11072: uint16(789),
+	11073: uint16(1),
+	11074: uint16(anon_sym_SLASH),
+	11075: uint16(256),
+	11076: uint16(1),
+	11077: uint16(sym_comment),
+	11078: uint16(5),
+	11079: uint16(3),
+	11080: uint16(1),
+	11081: uint16(aux_sym_comment_token1),
+	11082: uint16(45),
+	11083: uint16(1),
+	11084: uint16(aux_sym_comment_token2),
+	11085: uint16(750),
+	11086: uint16(1),
+	11087: uint16(anon_sym_COLON),
+	11088: uint16(257),
+	11089: uint16(1),
+	11090: uint16(sym_comment),
+	11091: uint16(304),
+	11092: uint16(1),
+	11093: uint16(sym__option_name),
+	11094: uint16(5),
+	11095: uint16(3),
+	11096: uint16(1),
+	11097: uint16(aux_sym_comment_token1),
+	11098: uint16(5),
+	11099: uint16(1),
+	11100: uint16(aux_sym_comment_token2),
+	11101: uint16(702),
+	11102: uint16(1),
+	11103: uint16(anon_sym_LBRACE),
+	11104: uint16(791),
+	11105: uint16(1),
+	11106: uint16(anon_sym_SLASH),
+	11107: uint16(258),
+	11108: uint16(1),
+	11109: uint16(sym_comment),
+	11110: uint16(5),
+	11111: uint16(3),
+	11112: uint16(1),
+	11113: uint16(aux_sym_comment_token1),
+	11114: uint16(45),
+	11115: uint16(1),
+	11116: uint16(aux_sym_comment_token2),
+	11117: uint16(793),
+	11118: uint16(1),
+	11119: uint16(anon_sym_on),
+	11120: uint16(795),
+	11121: uint16(1),
+	11122: uint16(anon_sym_off),
+	11123: uint16(259),
+	11124: uint16(1),
+	11125: uint16(sym_comment),
+	11126: uint16(5),
+	11127: uint16(3),
+	11128: uint16(1),
+	11129: uint16(aux_sym_comment_token1),
+	11130: uint16(45),
+	11131: uint16(1),
+	11132: uint16(aux_sym_comment_token2),
+	11133: uint16(750),
+	11134: uint16(1),
+	11135: uint16(anon_sym_COLON),
+	11136: uint16(260),
+	11137: uint16(1),
+	11138: uint16(sym_comment),
+	11139: uint16(369),
+	11140: uint16(1),
+	11141: uint16(sym__option_name),
+	11142: uint16(5),
+	11143: uint16(3),
+	11144: uint16(1),
+	11145: uint16(aux_sym_comment_token1),
+	11146: uint16(45),
+	11147: uint16(1),
+	11148: uint16(aux_sym_comment_token2),
+	11149: uint16(797),
+	11150: uint16(1),
+	11151: uint16(anon_sym_STAR_SLASH),
+	11152: uint16(799),
+	11153: uint16(1),
+	11154: uint16(anon_sym_COLON),
+	11155: uint16(261),
+	11156: uint16(1),
+	11157: uint16(sym_comment),
+	11158: uint16(5),
+	11159: uint16(3),
+	11160: uint16(1),
+	11161: uint16(aux_sym_comment_token1),
+	11162: uint16(45),
+	11163: uint16(1),
+	11164: uint16(aux_sym_comment_token2),
+	11165: uint16(777),
+	11166: uint16(1),
+	11167: uint16(anon_sym_COMMA),
+	11168: uint16(801),
+	11169: uint16(1),
+	11170: uint16(anon_sym_GT),
+	11171: uint16(262),
+	11172: uint16(1),
+	11173: uint16(sym_comment),
+	11174: uint16(5),
+	11175: uint16(3),
+	11176: uint16(1),
+	11177: uint16(aux_sym_comment_token1),
+	11178: uint16(45),
+	11179: uint16(1),
+	11180: uint16(aux_sym_comment_token2),
+	11181: uint16(750),
+	11182: uint16(1),
+	11183: uint16(anon_sym_COLON),
+	11184: uint16(263),
+	11185: uint16(1),
+	11186: uint16(sym_comment),
+	11187: uint16(370),
+	11188: uint16(1),
+	11189: uint16(sym__option_name),
+	11190: uint16(5),
+	11191: uint16(3),
+	11192: uint16(1),
+	11193: uint16(aux_sym_comment_token1),
+	11194: uint16(45),
+	11195: uint16(1),
+	11196: uint16(aux_sym_comment_token2),
+	11197: uint16(777),
+	11198: uint16(1),
+	11199: uint16(anon_sym_COMMA),
+	11200: uint16(803),
+	11201: uint16(1),
+	11202: uint16(anon_sym_GT),
+	11203: uint16(264),
+	11204: uint16(1),
+	11205: uint16(sym_comment),
+	11206: uint16(5),
+	11207: uint16(3),
+	11208: uint16(1),
+	11209: uint16(aux_sym_comment_token1),
+	11210: uint16(45),
+	11211: uint16(1),
+	11212: uint16(aux_sym_comment_token2),
+	11213: uint16(805),
+	11214: uint16(1),
+	11215: uint16(sym_identifier),
+	11216: uint16(242),
+	11217: uint16(1),
+	11218: uint16(aux_sym__clist_repeat1),
+	11219: uint16(265),
+	11220: uint16(1),
+	11221: uint16(sym_comment),
+	11222: uint16(5),
+	11223: uint16(3),
+	11224: uint16(1),
+	11225: uint16(aux_sym_comment_token1),
+	11226: uint16(45),
+	11227: uint16(1),
+	11228: uint16(aux_sym_comment_token2),
+	11229: uint16(750),
+	11230: uint16(1),
+	11231: uint16(anon_sym_COLON),
+	11232: uint16(266),
+	11233: uint16(1),
+	11234: uint16(sym_comment),
+	11235: uint16(371),
+	11236: uint16(1),
+	11237: uint16(sym__option_name),
+	11238: uint16(4),
+	11239: uint16(3),
+	11240: uint16(1),
+	11241: uint16(aux_sym_comment_token1),
+	11242: uint16(45),
+	11243: uint16(1),
+	11244: uint16(aux_sym_comment_token2),
+	11245: uint16(807),
+	11246: uint16(1),
+	11247: uint16(anon_sym_SEMI),
+	11248: uint16(267),
+	11249: uint16(1),
+	11250: uint16(sym_comment),
+	11251: uint16(4),
+	11252: uint16(3),
+	11253: uint16(1),
+	11254: uint16(aux_sym_comment_token1),
+	11255: uint16(45),
+	11256: uint16(1),
+	11257: uint16(aux_sym_comment_token2),
+	11258: uint16(809),
+	11259: uint16(1),
+	11260: uint16(anon_sym_SEMI),
+	11261: uint16(268),
+	11262: uint16(1),
+	11263: uint16(sym_comment),
+	11264: uint16(4),
+	11265: uint16(3),
+	11266: uint16(1),
+	11267: uint16(aux_sym_comment_token1),
+	11268: uint16(45),
+	11269: uint16(1),
+	11270: uint16(aux_sym_comment_token2),
+	11271: uint16(811),
+	11272: uint16(1),
+	11273: uint16(anon_sym_SEMI),
+	11274: uint16(269),
+	11275: uint16(1),
+	11276: uint16(sym_comment),
+	11277: uint16(4),
+	11278: uint16(3),
+	11279: uint16(1),
+	11280: uint16(aux_sym_comment_token1),
+	11281: uint16(45),
+	11282: uint16(1),
+	11283: uint16(aux_sym_comment_token2),
+	11284: uint16(813),
+	11285: uint16(1),
+	11286: uint16(anon_sym_SEMI),
+	11287: uint16(270),
+	11288: uint16(1),
+	11289: uint16(sym_comment),
+	11290: uint16(4),
+	11291: uint16(3),
+	11292: uint16(1),
+	11293: uint16(aux_sym_comment_token1),
+	11294: uint16(45),
+	11295: uint16(1),
+	11296: uint16(aux_sym_comment_token2),
+	11297: uint16(815),
+	11298: uint16(1),
+	11299: uint16(anon_sym_SEMI),
+	11300: uint16(271),
+	11301: uint16(1),
+	11302: uint16(sym_comment),
+	11303: uint16(4),
+	11304: uint16(3),
+	11305: uint16(1),
+	11306: uint16(aux_sym_comment_token1),
+	11307: uint16(45),
+	11308: uint16(1),
+	11309: uint16(aux_sym_comment_token2),
+	11310: uint16(817),
+	11311: uint16(1),
+	11312: uint16(anon_sym_SEMI),
+	11313: uint16(272),
+	11314: uint16(1),
+	11315: uint16(sym_comment),
+	11316: uint16(4),
+	11317: uint16(3),
+	11318: uint16(1),
+	11319: uint16(aux_sym_comment_token1),
+	11320: uint16(45),
+	11321: uint16(1),
+	11322: uint16(aux_sym_comment_token2),
+	11323: uint16(819),
+	11324: uint16(1),
+	11325: uint16(anon_sym_SEMI),
+	11326: uint16(273),
+	11327: uint16(1),
+	11328: uint16(sym_comment),
+	11329: uint16(4),
+	11330: uint16(3),
+	11331: uint16(1),
+	11332: uint16(aux_sym_comment_token1),
+	11333: uint16(45),
+	11334: uint16(1),
+	11335: uint16(aux_sym_comment_token2),
+	11336: uint16(821),
+	11337: uint16(1),
+	11338: uint16(anon_sym_EQ),
+	11339: uint16(274),
+	11340: uint16(1),
+	11341: uint16(sym_comment),
+	11342: uint16(4),
+	11343: uint16(3),
+	11344: uint16(1),
+	11345: uint16(aux_sym_comment_token1),
+	11346: uint16(45),
+	11347: uint16(1),
+	11348: uint16(aux_sym_comment_token2),
+	11349: uint16(823),
+	11350: uint16(1),
+	11351: uint16(anon_sym_EQ),
+	11352: uint16(275),
+	11353: uint16(1),
+	11354: uint16(sym_comment),
+	11355: uint16(4),
+	11356: uint16(5),
+	11357: uint16(1),
+	11358: uint16(aux_sym_comment_token2),
+	11359: uint16(11),
+	11360: uint16(1),
+	11361: uint16(aux_sym_comment_token1),
+	11362: uint16(825),
+	11363: uint16(1),
+	11364: uint16(aux_sym_linedir_token1),
+	11365: uint16(276),
+	11366: uint16(1),
+	11367: uint16(sym_comment),
+	11368: uint16(4),
+	11369: uint16(3),
+	11370: uint16(1),
+	11371: uint16(aux_sym_comment_token1),
+	11372: uint16(45),
+	11373: uint16(1),
+	11374: uint16(aux_sym_comment_token2),
+	11375: uint16(827),
+	11376: uint16(1),
+	11377: uint16(anon_sym_EQ),
+	11378: uint16(277),
+	11379: uint16(1),
+	11380: uint16(sym_comment),
+	11381: uint16(4),
+	11382: uint16(3),
+	11383: uint16(1),
+	11384: uint16(aux_sym_comment_token1),
+	11385: uint16(45),
+	11386: uint16(1),
+	11387: uint16(aux_sym_comment_token2),
+	11388: uint16(829),
+	11389: uint16(1),
+	11390: uint16(anon_sym_EQ),
+	11391: uint16(278),
+	11392: uint16(1),
+	11393: uint16(sym_comment),
+	11394: uint16(4),
+	11395: uint16(3),
+	11396: uint16(1),
+	11397: uint16(aux_sym_comment_token1),
+	11398: uint16(45),
+	11399: uint16(1),
+	11400: uint16(aux_sym_comment_token2),
+	11401: uint16(831),
+	11402: uint16(1),
+	11403: uint16(anon_sym_SEMI),
+	11404: uint16(279),
+	11405: uint16(1),
+	11406: uint16(sym_comment),
+	11407: uint16(4),
+	11408: uint16(3),
+	11409: uint16(1),
+	11410: uint16(aux_sym_comment_token1),
+	11411: uint16(45),
+	11412: uint16(1),
+	11413: uint16(aux_sym_comment_token2),
+	11414: uint16(833),
+	11415: uint16(1),
+	11416: uint16(anon_sym_RBRACE2),
+	11417: uint16(280),
+	11418: uint16(1),
+	11419: uint16(sym_comment),
+	11420: uint16(4),
+	11421: uint16(3),
+	11422: uint16(1),
+	11423: uint16(aux_sym_comment_token1),
+	11424: uint16(45),
+	11425: uint16(1),
+	11426: uint16(aux_sym_comment_token2),
+	11427: uint16(835),
+	11428: uint16(1),
+	11429: uint16(anon_sym_RBRACE2),
+	11430: uint16(281),
+	11431: uint16(1),
+	11432: uint16(sym_comment),
+	11433: uint16(4),
+	11434: uint16(3),
+	11435: uint16(1),
+	11436: uint16(aux_sym_comment_token1),
+	11437: uint16(45),
+	11438: uint16(1),
+	11439: uint16(aux_sym_comment_token2),
+	11440: uint16(837),
+	11441: uint16(1),
+	11442: uint16(anon_sym_STAR_SLASH),
+	11443: uint16(282),
+	11444: uint16(1),
+	11445: uint16(sym_comment),
+	11446: uint16(4),
+	11447: uint16(3),
+	11448: uint16(1),
+	11449: uint16(aux_sym_comment_token1),
+	11450: uint16(45),
+	11451: uint16(1),
+	11452: uint16(aux_sym_comment_token2),
+	11453: uint16(839),
+	11454: uint16(1),
+	11455: uint16(anon_sym_STAR_SLASH),
+	11456: uint16(283),
+	11457: uint16(1),
+	11458: uint16(sym_comment),
+	11459: uint16(4),
+	11460: uint16(3),
+	11461: uint16(1),
+	11462: uint16(aux_sym_comment_token1),
+	11463: uint16(45),
+	11464: uint16(1),
+	11465: uint16(aux_sym_comment_token2),
+	11466: uint16(841),
+	11467: uint16(1),
+	11468: uint16(anon_sym_SEMI),
+	11469: uint16(284),
+	11470: uint16(1),
+	11471: uint16(sym_comment),
+	11472: uint16(4),
+	11473: uint16(3),
+	11474: uint16(1),
+	11475: uint16(aux_sym_comment_token1),
+	11476: uint16(45),
+	11477: uint16(1),
+	11478: uint16(aux_sym_comment_token2),
+	11479: uint16(843),
+	11480: uint16(1),
+	11481: uint16(anon_sym_SEMI),
+	11482: uint16(285),
+	11483: uint16(1),
+	11484: uint16(sym_comment),
+	11485: uint16(4),
+	11486: uint16(3),
+	11487: uint16(1),
+	11488: uint16(aux_sym_comment_token1),
+	11489: uint16(45),
+	11490: uint16(1),
+	11491: uint16(aux_sym_comment_token2),
+	11492: uint16(845),
+	11493: uint16(1),
+	11494: uint16(sym_identifier),
+	11495: uint16(286),
+	11496: uint16(1),
+	11497: uint16(sym_comment),
+	11498: uint16(4),
+	11499: uint16(3),
+	11500: uint16(1),
+	11501: uint16(aux_sym_comment_token1),
+	11502: uint16(45),
+	11503: uint16(1),
+	11504: uint16(aux_sym_comment_token2),
+	11505: uint16(847),
+	11506: uint16(1),
+	11507: uint16(aux_sym__option_name_token1),
+	11508: uint16(287),
+	11509: uint16(1),
+	11510: uint16(sym_comment),
+	11511: uint16(4),
+	11512: uint16(3),
+	11513: uint16(1),
+	11514: uint16(aux_sym_comment_token1),
+	11515: uint16(45),
+	11516: uint16(1),
+	11517: uint16(aux_sym_comment_token2),
+	11518: uint16(849),
+	11519: uint16(1),
+	11520: uint16(anon_sym_SEMI),
+	11521: uint16(288),
+	11522: uint16(1),
+	11523: uint16(sym_comment),
+	11524: uint16(4),
+	11525: uint16(3),
+	11526: uint16(1),
+	11527: uint16(aux_sym_comment_token1),
+	11528: uint16(45),
+	11529: uint16(1),
+	11530: uint16(aux_sym_comment_token2),
+	11531: uint16(851),
+	11532: uint16(1),
+	11533: uint16(anon_sym_SEMI),
+	11534: uint16(289),
+	11535: uint16(1),
+	11536: uint16(sym_comment),
+	11537: uint16(4),
+	11538: uint16(3),
+	11539: uint16(1),
+	11540: uint16(aux_sym_comment_token1),
+	11541: uint16(45),
+	11542: uint16(1),
+	11543: uint16(aux_sym_comment_token2),
+	11544: uint16(853),
+	11545: uint16(1),
+	11546: uint16(anon_sym_SEMI),
+	11547: uint16(290),
+	11548: uint16(1),
+	11549: uint16(sym_comment),
+	11550: uint16(4),
+	11551: uint16(3),
+	11552: uint16(1),
+	11553: uint16(aux_sym_comment_token1),
+	11554: uint16(45),
+	11555: uint16(1),
+	11556: uint16(aux_sym_comment_token2),
+	11557: uint16(855),
+	11558: uint16(1),
+	11559: uint16(anon_sym_SEMI),
+	11560: uint16(291),
+	11561: uint16(1),
+	11562: uint16(sym_comment),
+	11563: uint16(4),
+	11564: uint16(3),
+	11565: uint16(1),
+	11566: uint16(aux_sym_comment_token1),
+	11567: uint16(45),
+	11568: uint16(1),
+	11569: uint16(aux_sym_comment_token2),
+	11570: uint16(857),
+	11571: uint16(1),
+	11572: uint16(anon_sym_SEMI),
+	11573: uint16(292),
+	11574: uint16(1),
+	11575: uint16(sym_comment),
+	11576: uint16(4),
+	11577: uint16(3),
+	11578: uint16(1),
+	11579: uint16(aux_sym_comment_token1),
+	11580: uint16(45),
+	11581: uint16(1),
+	11582: uint16(aux_sym_comment_token2),
+	11583: uint16(859),
+	11584: uint16(1),
+	11585: uint16(anon_sym_SEMI),
+	11586: uint16(293),
+	11587: uint16(1),
+	11588: uint16(sym_comment),
+	11589: uint16(4),
+	11590: uint16(3),
+	11591: uint16(1),
+	11592: uint16(aux_sym_comment_token1),
+	11593: uint16(45),
+	11594: uint16(1),
+	11595: uint16(aux_sym_comment_token2),
+	11596: uint16(861),
+	11597: uint16(1),
+	11598: uint16(anon_sym_SEMI),
+	11599: uint16(294),
+	11600: uint16(1),
+	11601: uint16(sym_comment),
+	11602: uint16(4),
+	11603: uint16(3),
+	11604: uint16(1),
+	11605: uint16(aux_sym_comment_token1),
+	11606: uint16(45),
+	11607: uint16(1),
+	11608: uint16(aux_sym_comment_token2),
+	11609: uint16(863),
+	11610: uint16(1),
+	11611: uint16(anon_sym_SEMI),
+	11612: uint16(295),
+	11613: uint16(1),
+	11614: uint16(sym_comment),
+	11615: uint16(4),
+	11616: uint16(3),
+	11617: uint16(1),
+	11618: uint16(aux_sym_comment_token1),
+	11619: uint16(45),
+	11620: uint16(1),
+	11621: uint16(aux_sym_comment_token2),
+	11622: uint16(865),
+	11623: uint16(1),
+	11624: uint16(anon_sym_SEMI),
+	11625: uint16(296),
+	11626: uint16(1),
+	11627: uint16(sym_comment),
+	11628: uint16(4),
+	11629: uint16(3),
+	11630: uint16(1),
+	11631: uint16(aux_sym_comment_token1),
+	11632: uint16(45),
+	11633: uint16(1),
+	11634: uint16(aux_sym_comment_token2),
+	11635: uint16(867),
+	11636: uint16(1),
+	11637: uint16(anon_sym_SEMI),
+	11638: uint16(297),
+	11639: uint16(1),
+	11640: uint16(sym_comment),
+	11641: uint16(4),
+	11642: uint16(3),
+	11643: uint16(1),
+	11644: uint16(aux_sym_comment_token1),
+	11645: uint16(45),
+	11646: uint16(1),
+	11647: uint16(aux_sym_comment_token2),
+	11648: uint16(869),
+	11649: uint16(1),
+	11650: uint16(anon_sym_SEMI),
+	11651: uint16(298),
+	11652: uint16(1),
+	11653: uint16(sym_comment),
+	11654: uint16(4),
+	11655: uint16(3),
+	11656: uint16(1),
+	11657: uint16(aux_sym_comment_token1),
+	11658: uint16(45),
+	11659: uint16(1),
+	11660: uint16(aux_sym_comment_token2),
+	11661: uint16(871),
+	11662: uint16(1),
+	11663: uint16(anon_sym_SEMI),
+	11664: uint16(299),
+	11665: uint16(1),
+	11666: uint16(sym_comment),
+	11667: uint16(4),
+	11668: uint16(3),
+	11669: uint16(1),
+	11670: uint16(aux_sym_comment_token1),
+	11671: uint16(45),
+	11672: uint16(1),
+	11673: uint16(aux_sym_comment_token2),
+	11674: uint16(873),
+	11675: uint16(1),
+	11676: uint16(anon_sym_SEMI),
+	11677: uint16(300),
+	11678: uint16(1),
+	11679: uint16(sym_comment),
+	11680: uint16(4),
+	11681: uint16(3),
+	11682: uint16(1),
+	11683: uint16(aux_sym_comment_token1),
+	11684: uint16(45),
+	11685: uint16(1),
+	11686: uint16(aux_sym_comment_token2),
+	11687: uint16(875),
+	11688: uint16(1),
+	11689: uint16(anon_sym_re2c),
+	11690: uint16(301),
+	11691: uint16(1),
+	11692: uint16(sym_comment),
+	11693: uint16(4),
+	11694: uint16(3),
+	11695: uint16(1),
+	11696: uint16(aux_sym_comment_token1),
+	11697: uint16(45),
+	11698: uint16(1),
+	11699: uint16(aux_sym_comment_token2),
+	11700: uint16(877),
+	11701: uint16(1),
+	11702: uint16(anon_sym_COLON),
+	11703: uint16(302),
+	11704: uint16(1),
+	11705: uint16(sym_comment),
+	11706: uint16(4),
+	11707: uint16(3),
+	11708: uint16(1),
+	11709: uint16(aux_sym_comment_token1),
+	11710: uint16(45),
+	11711: uint16(1),
+	11712: uint16(aux_sym_comment_token2),
+	11713: uint16(879),
+	11714: uint16(1),
+	11715: uint16(anon_sym_STAR_SLASH),
+	11716: uint16(303),
+	11717: uint16(1),
+	11718: uint16(sym_comment),
+	11719: uint16(4),
+	11720: uint16(3),
+	11721: uint16(1),
+	11722: uint16(aux_sym_comment_token1),
+	11723: uint16(45),
+	11724: uint16(1),
+	11725: uint16(aux_sym_comment_token2),
+	11726: uint16(881),
+	11727: uint16(1),
+	11728: uint16(anon_sym_EQ),
+	11729: uint16(304),
+	11730: uint16(1),
+	11731: uint16(sym_comment),
+	11732: uint16(4),
+	11733: uint16(3),
+	11734: uint16(1),
+	11735: uint16(aux_sym_comment_token1),
+	11736: uint16(45),
+	11737: uint16(1),
+	11738: uint16(aux_sym_comment_token2),
+	11739: uint16(883),
+	11740: uint16(1),
+	11741: uint16(anon_sym_EQ),
+	11742: uint16(305),
+	11743: uint16(1),
+	11744: uint16(sym_comment),
+	11745: uint16(4),
+	11746: uint16(3),
+	11747: uint16(1),
+	11748: uint16(aux_sym_comment_token1),
+	11749: uint16(45),
+	11750: uint16(1),
+	11751: uint16(aux_sym_comment_token2),
+	11752: uint16(885),
+	11753: uint16(1),
+	11754: uint16(anon_sym_COLON),
+	11755: uint16(306),
+	11756: uint16(1),
+	11757: uint16(sym_comment),
+	11758: uint16(4),
+	11759: uint16(3),
+	11760: uint16(1),
+	11761: uint16(aux_sym_comment_token1),
+	11762: uint16(45),
+	11763: uint16(1),
+	11764: uint16(aux_sym_comment_token2),
+	11765: uint16(887),
+	11766: uint16(1),
+	11767: uint16(anon_sym_STAR_SLASH),
+	11768: uint16(307),
+	11769: uint16(1),
+	11770: uint16(sym_comment),
+	11771: uint16(4),
+	11772: uint16(3),
+	11773: uint16(1),
+	11774: uint16(aux_sym_comment_token1),
+	11775: uint16(45),
+	11776: uint16(1),
+	11777: uint16(aux_sym_comment_token2),
+	11778: uint16(889),
+	11779: uint16(1),
+	11780: uint16(anon_sym_GT),
+	11781: uint16(308),
+	11782: uint16(1),
+	11783: uint16(sym_comment),
+	11784: uint16(4),
+	11785: uint16(3),
+	11786: uint16(1),
+	11787: uint16(aux_sym_comment_token1),
+	11788: uint16(45),
+	11789: uint16(1),
+	11790: uint16(aux_sym_comment_token2),
+	11791: uint16(891),
+	11792: uint16(1),
+	11793: uint16(anon_sym_re2c),
+	11794: uint16(309),
+	11795: uint16(1),
+	11796: uint16(sym_comment),
+	11797: uint16(4),
+	11798: uint16(3),
+	11799: uint16(1),
+	11800: uint16(aux_sym_comment_token1),
+	11801: uint16(45),
+	11802: uint16(1),
+	11803: uint16(aux_sym_comment_token2),
+	11804: uint16(893),
+	11805: uint16(1),
+	11806: uint16(anon_sym_SEMI),
+	11807: uint16(310),
+	11808: uint16(1),
+	11809: uint16(sym_comment),
+	11810: uint16(4),
+	11811: uint16(3),
+	11812: uint16(1),
+	11813: uint16(aux_sym_comment_token1),
+	11814: uint16(45),
+	11815: uint16(1),
+	11816: uint16(aux_sym_comment_token2),
+	11817: uint16(895),
+	11818: uint16(1),
+	11819: uint16(anon_sym_SEMI),
+	11820: uint16(311),
+	11821: uint16(1),
+	11822: uint16(sym_comment),
+	11823: uint16(4),
+	11824: uint16(3),
+	11825: uint16(1),
+	11826: uint16(aux_sym_comment_token1),
+	11827: uint16(45),
+	11828: uint16(1),
+	11829: uint16(aux_sym_comment_token2),
+	11830: uint16(897),
+	11831: uint16(1),
+	11832: uint16(anon_sym_re2c),
+	11833: uint16(312),
+	11834: uint16(1),
+	11835: uint16(sym_comment),
+	11836: uint16(4),
+	11837: uint16(3),
+	11838: uint16(1),
+	11839: uint16(aux_sym_comment_token1),
+	11840: uint16(45),
+	11841: uint16(1),
+	11842: uint16(aux_sym_comment_token2),
+	11843: uint16(899),
+	11844: uint16(1),
+	11845: uint16(anon_sym_EQ),
+	11846: uint16(313),
+	11847: uint16(1),
+	11848: uint16(sym_comment),
+	11849: uint16(4),
+	11850: uint16(3),
+	11851: uint16(1),
+	11852: uint16(aux_sym_comment_token1),
+	11853: uint16(45),
+	11854: uint16(1),
+	11855: uint16(aux_sym_comment_token2),
+	11856: uint16(901),
+	11857: uint16(1),
+	11858: uint16(sym_identifier),
+	11859: uint16(314),
+	11860: uint16(1),
+	11861: uint16(sym_comment),
+	11862: uint16(4),
+	11863: uint16(3),
+	11864: uint16(1),
+	11865: uint16(aux_sym_comment_token1),
+	11866: uint16(45),
+	11867: uint16(1),
+	11868: uint16(aux_sym_comment_token2),
+	11869: uint16(903),
+	11870: uint16(1),
+	11871: uint16(anon_sym_re2c),
+	11872: uint16(315),
+	11873: uint16(1),
+	11874: uint16(sym_comment),
+	11875: uint16(4),
+	11876: uint16(3),
+	11877: uint16(1),
+	11878: uint16(aux_sym_comment_token1),
+	11879: uint16(45),
+	11880: uint16(1),
+	11881: uint16(aux_sym_comment_token2),
+	11882: uint16(905),
+	11883: uint16(1),
+	11884: uint16(anon_sym_SEMI),
+	11885: uint16(316),
+	11886: uint16(1),
+	11887: uint16(sym_comment),
+	11888: uint16(4),
+	11889: uint16(3),
+	11890: uint16(1),
+	11891: uint16(aux_sym_comment_token1),
+	11892: uint16(45),
+	11893: uint16(1),
+	11894: uint16(aux_sym_comment_token2),
+	11895: uint16(907),
+	11896: uint16(1),
+	11897: uint16(anon_sym_COLON),
+	11898: uint16(317),
+	11899: uint16(1),
+	11900: uint16(sym_comment),
+	11901: uint16(4),
+	11902: uint16(3),
+	11903: uint16(1),
+	11904: uint16(aux_sym_comment_token1),
+	11905: uint16(45),
+	11906: uint16(1),
+	11907: uint16(aux_sym_comment_token2),
+	11908: uint16(909),
+	11909: uint16(1),
+	11910: uint16(anon_sym_COLON),
+	11911: uint16(318),
+	11912: uint16(1),
+	11913: uint16(sym_comment),
+	11914: uint16(4),
+	11915: uint16(3),
+	11916: uint16(1),
+	11917: uint16(aux_sym_comment_token1),
+	11918: uint16(45),
+	11919: uint16(1),
+	11920: uint16(aux_sym_comment_token2),
+	11921: uint16(911),
+	11922: uint16(1),
+	11923: uint16(anon_sym_COLON),
+	11924: uint16(319),
+	11925: uint16(1),
+	11926: uint16(sym_comment),
+	11927: uint16(4),
+	11928: uint16(3),
+	11929: uint16(1),
+	11930: uint16(aux_sym_comment_token1),
+	11931: uint16(45),
+	11932: uint16(1),
+	11933: uint16(aux_sym_comment_token2),
+	11934: uint16(913),
+	11935: uint16(1),
+	11936: uint16(anon_sym_STAR_SLASH),
+	11937: uint16(320),
+	11938: uint16(1),
+	11939: uint16(sym_comment),
+	11940: uint16(4),
+	11941: uint16(3),
+	11942: uint16(1),
+	11943: uint16(aux_sym_comment_token1),
+	11944: uint16(45),
+	11945: uint16(1),
+	11946: uint16(aux_sym_comment_token2),
+	11947: uint16(716),
+	11948: uint16(1),
+	11949: uint16(anon_sym_GT),
+	11950: uint16(321),
+	11951: uint16(1),
+	11952: uint16(sym_comment),
+	11953: uint16(4),
+	11954: uint16(3),
+	11955: uint16(1),
+	11956: uint16(aux_sym_comment_token1),
+	11957: uint16(45),
+	11958: uint16(1),
+	11959: uint16(aux_sym_comment_token2),
+	11960: uint16(915),
+	11961: uint16(1),
+	11962: uint16(anon_sym_STAR_SLASH),
+	11963: uint16(322),
+	11964: uint16(1),
+	11965: uint16(sym_comment),
+	11966: uint16(4),
+	11967: uint16(3),
+	11968: uint16(1),
+	11969: uint16(aux_sym_comment_token1),
+	11970: uint16(45),
+	11971: uint16(1),
+	11972: uint16(aux_sym_comment_token2),
+	11973: uint16(917),
+	11974: uint16(1),
+	11975: uint16(anon_sym_SEMI),
+	11976: uint16(323),
+	11977: uint16(1),
+	11978: uint16(sym_comment),
+	11979: uint16(4),
+	11980: uint16(3),
+	11981: uint16(1),
+	11982: uint16(aux_sym_comment_token1),
+	11983: uint16(45),
+	11984: uint16(1),
+	11985: uint16(aux_sym_comment_token2),
+	11986: uint16(919),
+	11987: uint16(1),
+	11988: uint16(aux_sym__block_name_token1),
+	11989: uint16(324),
+	11990: uint16(1),
+	11991: uint16(sym_comment),
+	11992: uint16(4),
+	11993: uint16(3),
+	11994: uint16(1),
+	11995: uint16(aux_sym_comment_token1),
+	11996: uint16(45),
+	11997: uint16(1),
+	11998: uint16(aux_sym_comment_token2),
+	11999: uint16(921),
+	12000: uint16(1),
+	12001: uint16(anon_sym_SEMI),
+	12002: uint16(325),
+	12003: uint16(1),
+	12004: uint16(sym_comment),
+	12005: uint16(4),
+	12006: uint16(3),
+	12007: uint16(1),
+	12008: uint16(aux_sym_comment_token1),
+	12009: uint16(45),
+	12010: uint16(1),
+	12011: uint16(aux_sym_comment_token2),
+	12012: uint16(923),
+	12013: uint16(1),
+	12014: uint16(aux_sym__block_name_token1),
+	12015: uint16(326),
+	12016: uint16(1),
+	12017: uint16(sym_comment),
+	12018: uint16(4),
+	12019: uint16(3),
+	12020: uint16(1),
+	12021: uint16(aux_sym_comment_token1),
+	12022: uint16(45),
+	12023: uint16(1),
+	12024: uint16(aux_sym_comment_token2),
+	12025: uint16(925),
+	12026: uint16(1),
+	12027: uint16(anon_sym_COLON),
+	12028: uint16(327),
+	12029: uint16(1),
+	12030: uint16(sym_comment),
+	12031: uint16(4),
+	12032: uint16(3),
+	12033: uint16(1),
+	12034: uint16(aux_sym_comment_token1),
+	12035: uint16(45),
+	12036: uint16(1),
+	12037: uint16(aux_sym_comment_token2),
+	12038: uint16(927),
+	12039: uint16(1),
+	12040: uint16(anon_sym_SEMI),
+	12041: uint16(328),
+	12042: uint16(1),
+	12043: uint16(sym_comment),
+	12044: uint16(4),
+	12045: uint16(3),
+	12046: uint16(1),
+	12047: uint16(aux_sym_comment_token1),
+	12048: uint16(45),
+	12049: uint16(1),
+	12050: uint16(aux_sym_comment_token2),
+	12051: uint16(929),
+	12052: uint16(1),
+	12053: uint16(anon_sym_RPAREN),
+	12054: uint16(329),
+	12055: uint16(1),
+	12056: uint16(sym_comment),
+	12057: uint16(4),
+	12058: uint16(3),
+	12059: uint16(1),
+	12060: uint16(aux_sym_comment_token1),
+	12061: uint16(45),
+	12062: uint16(1),
+	12063: uint16(aux_sym_comment_token2),
+	12064: uint16(931),
+	12065: uint16(1),
+	12066: uint16(anon_sym_SEMI),
+	12067: uint16(330),
+	12068: uint16(1),
+	12069: uint16(sym_comment),
+	12070: uint16(4),
+	12071: uint16(3),
+	12072: uint16(1),
+	12073: uint16(aux_sym_comment_token1),
+	12074: uint16(45),
+	12075: uint16(1),
+	12076: uint16(aux_sym_comment_token2),
+	12077: uint16(653),
+	12078: uint16(1),
+	12079: uint16(anon_sym_PIPE),
+	12080: uint16(331),
+	12081: uint16(1),
+	12082: uint16(sym_comment),
+	12083: uint16(4),
+	12084: uint16(3),
+	12085: uint16(1),
+	12086: uint16(aux_sym_comment_token1),
+	12087: uint16(45),
+	12088: uint16(1),
+	12089: uint16(aux_sym_comment_token2),
+	12090: uint16(933),
+	12091: uint16(1),
+	12092: uint16(aux_sym_number_token1),
+	12093: uint16(332),
+	12094: uint16(1),
+	12095: uint16(sym_comment),
+	12096: uint16(4),
+	12097: uint16(3),
+	12098: uint16(1),
+	12099: uint16(aux_sym_comment_token1),
+	12100: uint16(45),
+	12101: uint16(1),
+	12102: uint16(aux_sym_comment_token2),
+	12103: uint16(935),
+	12104: uint16(1),
+	12105: uint16(anon_sym_COLON),
+	12106: uint16(333),
+	12107: uint16(1),
+	12108: uint16(sym_comment),
+	12109: uint16(4),
+	12110: uint16(3),
+	12111: uint16(1),
+	12112: uint16(aux_sym_comment_token1),
+	12113: uint16(45),
+	12114: uint16(1),
+	12115: uint16(aux_sym_comment_token2),
+	12116: uint16(937),
+	12117: uint16(1),
+	12118: uint16(aux_sym__block_name_token1),
+	12119: uint16(334),
+	12120: uint16(1),
+	12121: uint16(sym_comment),
+	12122: uint16(4),
+	12123: uint16(3),
+	12124: uint16(1),
+	12125: uint16(aux_sym_comment_token1),
+	12126: uint16(45),
+	12127: uint16(1),
+	12128: uint16(aux_sym_comment_token2),
+	12129: uint16(939),
+	12130: uint16(1),
+	12131: uint16(anon_sym_RBRACE),
+	12132: uint16(335),
+	12133: uint16(1),
+	12134: uint16(sym_comment),
+	12135: uint16(4),
+	12136: uint16(3),
+	12137: uint16(1),
+	12138: uint16(aux_sym_comment_token1),
+	12139: uint16(45),
+	12140: uint16(1),
+	12141: uint16(aux_sym_comment_token2),
+	12142: uint16(941),
+	12143: uint16(1),
+	12144: uint16(anon_sym_SEMI),
+	12145: uint16(336),
+	12146: uint16(1),
+	12147: uint16(sym_comment),
+	12148: uint16(4),
+	12149: uint16(3),
+	12150: uint16(1),
+	12151: uint16(aux_sym_comment_token1),
+	12152: uint16(45),
+	12153: uint16(1),
+	12154: uint16(aux_sym_comment_token2),
+	12155: uint16(943),
+	12156: uint16(1),
+	12157: uint16(anon_sym_COLON),
+	12158: uint16(337),
+	12159: uint16(1),
+	12160: uint16(sym_comment),
+	12161: uint16(4),
+	12162: uint16(3),
+	12163: uint16(1),
+	12164: uint16(aux_sym_comment_token1),
+	12165: uint16(45),
+	12166: uint16(1),
+	12167: uint16(aux_sym_comment_token2),
+	12168: uint16(945),
+	12169: uint16(1),
+	12170: uint16(sym_hex_digit),
+	12171: uint16(338),
+	12172: uint16(1),
+	12173: uint16(sym_comment),
+	12174: uint16(4),
+	12175: uint16(3),
+	12176: uint16(1),
+	12177: uint16(aux_sym_comment_token1),
+	12178: uint16(45),
+	12179: uint16(1),
+	12180: uint16(aux_sym_comment_token2),
+	12181: uint16(945),
+	12182: uint16(1),
+	12183: uint16(sym_oct_digit),
+	12184: uint16(339),
+	12185: uint16(1),
+	12186: uint16(sym_comment),
+	12187: uint16(4),
+	12188: uint16(3),
+	12189: uint16(1),
+	12190: uint16(aux_sym_comment_token1),
+	12191: uint16(45),
+	12192: uint16(1),
+	12193: uint16(aux_sym_comment_token2),
+	12194: uint16(947),
+	12195: uint16(1),
+	12196: uint16(anon_sym_SEMI),
+	12197: uint16(340),
+	12198: uint16(1),
+	12199: uint16(sym_comment),
+	12200: uint16(4),
+	12201: uint16(3),
+	12202: uint16(1),
+	12203: uint16(aux_sym_comment_token1),
+	12204: uint16(45),
+	12205: uint16(1),
+	12206: uint16(aux_sym_comment_token2),
+	12207: uint16(949),
+	12208: uint16(1),
+	12209: uint16(anon_sym_STAR_SLASH),
+	12210: uint16(341),
+	12211: uint16(1),
+	12212: uint16(sym_comment),
+	12213: uint16(4),
+	12214: uint16(3),
+	12215: uint16(1),
+	12216: uint16(aux_sym_comment_token1),
+	12217: uint16(45),
+	12218: uint16(1),
+	12219: uint16(aux_sym_comment_token2),
+	12220: uint16(951),
+	12221: uint16(1),
+	12222: uint16(anon_sym_COLON),
+	12223: uint16(342),
+	12224: uint16(1),
+	12225: uint16(sym_comment),
+	12226: uint16(4),
+	12227: uint16(5),
+	12228: uint16(1),
+	12229: uint16(aux_sym_comment_token2),
+	12230: uint16(11),
+	12231: uint16(1),
+	12232: uint16(aux_sym_comment_token1),
+	12233: uint16(953),
+	12234: uint16(1),
+	12235: uint16(aux_sym_linedir_token1),
+	12236: uint16(343),
+	12237: uint16(1),
+	12238: uint16(sym_comment),
+	12239: uint16(4),
+	12240: uint16(3),
+	12241: uint16(1),
+	12242: uint16(aux_sym_comment_token1),
+	12243: uint16(45),
+	12244: uint16(1),
+	12245: uint16(aux_sym_comment_token2),
+	12246: uint16(955),
+	12247: uint16(1),
+	12248: uint16(anon_sym_COMMA2),
+	12249: uint16(344),
+	12250: uint16(1),
+	12251: uint16(sym_comment),
+	12252: uint16(4),
+	12253: uint16(3),
+	12254: uint16(1),
+	12255: uint16(aux_sym_comment_token1),
+	12256: uint16(45),
+	12257: uint16(1),
+	12258: uint16(aux_sym_comment_token2),
+	12259: uint16(957),
+	12260: uint16(1),
+	12261: uint16(anon_sym_RBRACE2),
+	12262: uint16(345),
+	12263: uint16(1),
+	12264: uint16(sym_comment),
+	12265: uint16(4),
+	12266: uint16(3),
+	12267: uint16(1),
+	12268: uint16(aux_sym_comment_token1),
+	12269: uint16(45),
+	12270: uint16(1),
+	12271: uint16(aux_sym_comment_token2),
+	12272: uint16(959),
+	12273: uint16(1),
+	12274: uint16(aux_sym__block_name_token1),
+	12275: uint16(346),
+	12276: uint16(1),
+	12277: uint16(sym_comment),
+	12278: uint16(4),
+	12279: uint16(3),
+	12280: uint16(1),
+	12281: uint16(aux_sym_comment_token1),
+	12282: uint16(45),
+	12283: uint16(1),
+	12284: uint16(aux_sym_comment_token2),
+	12285: uint16(961),
+	12286: uint16(1),
+	12287: uint16(anon_sym_SEMI),
+	12288: uint16(347),
+	12289: uint16(1),
+	12290: uint16(sym_comment),
+	12291: uint16(4),
+	12292: uint16(3),
+	12293: uint16(1),
+	12294: uint16(aux_sym_comment_token1),
+	12295: uint16(45),
+	12296: uint16(1),
+	12297: uint16(aux_sym_comment_token2),
+	12298: uint16(963),
+	12299: uint16(1),
+	12300: uint16(anon_sym_STAR_SLASH),
+	12301: uint16(348),
+	12302: uint16(1),
+	12303: uint16(sym_comment),
+	12304: uint16(4),
+	12305: uint16(3),
+	12306: uint16(1),
+	12307: uint16(aux_sym_comment_token1),
+	12308: uint16(45),
+	12309: uint16(1),
+	12310: uint16(aux_sym_comment_token2),
+	12311: uint16(965),
+	12312: uint16(1),
+	12313: uint16(aux_sym__block_name_token1),
+	12314: uint16(349),
+	12315: uint16(1),
+	12316: uint16(sym_comment),
+	12317: uint16(4),
+	12318: uint16(3),
+	12319: uint16(1),
+	12320: uint16(aux_sym_comment_token1),
+	12321: uint16(45),
+	12322: uint16(1),
+	12323: uint16(aux_sym_comment_token2),
+	12324: uint16(967),
+	12325: uint16(1),
+	12326: uint16(anon_sym_STAR_SLASH),
+	12327: uint16(350),
+	12328: uint16(1),
+	12329: uint16(sym_comment),
+	12330: uint16(4),
+	12331: uint16(3),
+	12332: uint16(1),
+	12333: uint16(aux_sym_comment_token1),
+	12334: uint16(45),
+	12335: uint16(1),
+	12336: uint16(aux_sym_comment_token2),
+	12337: uint16(969),
+	12338: uint16(1),
+	12339: uint16(aux_sym__block_name_token1),
+	12340: uint16(351),
+	12341: uint16(1),
+	12342: uint16(sym_comment),
+	12343: uint16(4),
+	12344: uint16(3),
+	12345: uint16(1),
+	12346: uint16(aux_sym_comment_token1),
+	12347: uint16(45),
+	12348: uint16(1),
+	12349: uint16(aux_sym_comment_token2),
+	12350: uint16(971),
+	12351: uint16(1),
+	12352: uint16(aux_sym__block_name_token1),
+	12353: uint16(352),
+	12354: uint16(1),
+	12355: uint16(sym_comment),
+	12356: uint16(4),
+	12357: uint16(3),
+	12358: uint16(1),
+	12359: uint16(aux_sym_comment_token1),
+	12360: uint16(45),
+	12361: uint16(1),
+	12362: uint16(aux_sym_comment_token2),
+	12363: uint16(973),
+	12364: uint16(1),
+	12365: uint16(anon_sym_STAR_SLASH),
+	12366: uint16(353),
+	12367: uint16(1),
+	12368: uint16(sym_comment),
+	12369: uint16(4),
+	12370: uint16(3),
+	12371: uint16(1),
+	12372: uint16(aux_sym_comment_token1),
+	12373: uint16(45),
+	12374: uint16(1),
+	12375: uint16(aux_sym_comment_token2),
+	12376: uint16(975),
+	12377: uint16(1),
+	12378: uint16(anon_sym_COLON),
+	12379: uint16(354),
+	12380: uint16(1),
+	12381: uint16(sym_comment),
+	12382: uint16(4),
+	12383: uint16(3),
+	12384: uint16(1),
+	12385: uint16(aux_sym_comment_token1),
+	12386: uint16(45),
+	12387: uint16(1),
+	12388: uint16(aux_sym_comment_token2),
+	12389: uint16(977),
+	12390: uint16(1),
+	12391: uint16(anon_sym_SEMI),
+	12392: uint16(355),
+	12393: uint16(1),
+	12394: uint16(sym_comment),
+	12395: uint16(4),
+	12396: uint16(3),
+	12397: uint16(1),
+	12398: uint16(aux_sym_comment_token1),
+	12399: uint16(45),
+	12400: uint16(1),
+	12401: uint16(aux_sym_comment_token2),
+	12402: uint16(979),
+	12403: uint16(1),
+	12404: uint16(anon_sym_STAR_SLASH),
+	12405: uint16(356),
+	12406: uint16(1),
+	12407: uint16(sym_comment),
+	12408: uint16(4),
+	12409: uint16(3),
+	12410: uint16(1),
+	12411: uint16(aux_sym_comment_token1),
+	12412: uint16(45),
+	12413: uint16(1),
+	12414: uint16(aux_sym_comment_token2),
+	12415: uint16(981),
+	12416: uint16(1),
+	12417: uint16(anon_sym_STAR_SLASH),
+	12418: uint16(357),
+	12419: uint16(1),
+	12420: uint16(sym_comment),
+	12421: uint16(4),
+	12422: uint16(3),
+	12423: uint16(1),
+	12424: uint16(aux_sym_comment_token1),
+	12425: uint16(45),
+	12426: uint16(1),
+	12427: uint16(aux_sym_comment_token2),
+	12428: uint16(983),
+	12429: uint16(1),
+	12430: uint16(anon_sym_EQ),
+	12431: uint16(358),
+	12432: uint16(1),
+	12433: uint16(sym_comment),
+	12434: uint16(4),
+	12435: uint16(3),
+	12436: uint16(1),
+	12437: uint16(aux_sym_comment_token1),
+	12438: uint16(45),
+	12439: uint16(1),
+	12440: uint16(aux_sym_comment_token2),
+	12441: uint16(985),
+	12442: uint16(1),
+	12443: uint16(anon_sym_EQ),
+	12444: uint16(359),
+	12445: uint16(1),
+	12446: uint16(sym_comment),
+	12447: uint16(4),
+	12448: uint16(3),
+	12449: uint16(1),
+	12450: uint16(aux_sym_comment_token1),
+	12451: uint16(45),
+	12452: uint16(1),
+	12453: uint16(aux_sym_comment_token2),
+	12454: uint16(987),
+	12455: uint16(1),
+	12456: uint16(aux_sym_number_token1),
+	12457: uint16(360),
+	12458: uint16(1),
+	12459: uint16(sym_comment),
+	12460: uint16(4),
+	12461: uint16(3),
+	12462: uint16(1),
+	12463: uint16(aux_sym_comment_token1),
+	12464: uint16(45),
+	12465: uint16(1),
+	12466: uint16(aux_sym_comment_token2),
+	12467: uint16(989),
+	12468: uint16(1),
+	12469: uint16(anon_sym_re2c),
+	12470: uint16(361),
+	12471: uint16(1),
+	12472: uint16(sym_comment),
+	12473: uint16(4),
+	12474: uint16(5),
+	12475: uint16(1),
+	12476: uint16(aux_sym_comment_token2),
+	12477: uint16(11),
+	12478: uint16(1),
+	12479: uint16(aux_sym_comment_token1),
+	12480: uint16(991),
+	12481: uint16(1),
+	12482: uint16(aux_sym_linedir_token1),
+	12483: uint16(362),
+	12484: uint16(1),
+	12485: uint16(sym_comment),
+	12486: uint16(4),
+	12487: uint16(3),
+	12488: uint16(1),
+	12489: uint16(aux_sym_comment_token1),
+	12490: uint16(45),
+	12491: uint16(1),
+	12492: uint16(aux_sym_comment_token2),
+	12493: uint16(993),
+	12494: uint16(1),
+	12495: uint16(anon_sym_re2c),
+	12496: uint16(363),
+	12497: uint16(1),
+	12498: uint16(sym_comment),
+	12499: uint16(4),
+	12500: uint16(3),
+	12501: uint16(1),
+	12502: uint16(aux_sym_comment_token1),
+	12503: uint16(45),
+	12504: uint16(1),
+	12505: uint16(aux_sym_comment_token2),
+	12506: uint16(995),
+	12507: uint16(1),
+	12508: uint16(anon_sym_re2c),
+	12509: uint16(364),
+	12510: uint16(1),
+	12511: uint16(sym_comment),
+	12512: uint16(4),
+	12513: uint16(3),
+	12514: uint16(1),
+	12515: uint16(aux_sym_comment_token1),
+	12516: uint16(45),
+	12517: uint16(1),
+	12518: uint16(aux_sym_comment_token2),
+	12519: uint16(997),
+	12520: uint16(1),
+	12521: uint16(anon_sym_STAR_SLASH),
+	12522: uint16(365),
+	12523: uint16(1),
+	12524: uint16(sym_comment),
+	12525: uint16(4),
+	12526: uint16(3),
+	12527: uint16(1),
+	12528: uint16(aux_sym_comment_token1),
+	12529: uint16(45),
+	12530: uint16(1),
+	12531: uint16(aux_sym_comment_token2),
+	12532: uint16(999),
+	12533: uint16(1),
+	12534: uint16(sym_identifier),
+	12535: uint16(366),
+	12536: uint16(1),
+	12537: uint16(sym_comment),
+	12538: uint16(4),
+	12539: uint16(3),
+	12540: uint16(1),
+	12541: uint16(aux_sym_comment_token1),
+	12542: uint16(45),
+	12543: uint16(1),
+	12544: uint16(aux_sym_comment_token2),
+	12545: uint16(1001),
+	12546: uint16(1),
+	12547: uint16(aux_sym__option_name_token1),
+	12548: uint16(367),
+	12549: uint16(1),
+	12550: uint16(sym_comment),
+	12551: uint16(4),
+	12552: uint16(3),
+	12553: uint16(1),
+	12554: uint16(aux_sym_comment_token1),
+	12555: uint16(45),
+	12556: uint16(1),
+	12557: uint16(aux_sym_comment_token2),
+	12558: uint16(1003),
+	12559: uint16(1),
+	12560: uint16(anon_sym_EQ),
+	12561: uint16(368),
+	12562: uint16(1),
+	12563: uint16(sym_comment),
+	12564: uint16(4),
+	12565: uint16(3),
+	12566: uint16(1),
+	12567: uint16(aux_sym_comment_token1),
+	12568: uint16(45),
+	12569: uint16(1),
+	12570: uint16(aux_sym_comment_token2),
+	12571: uint16(1005),
+	12572: uint16(1),
+	12573: uint16(anon_sym_EQ),
+	12574: uint16(369),
+	12575: uint16(1),
+	12576: uint16(sym_comment),
+	12577: uint16(4),
+	12578: uint16(3),
+	12579: uint16(1),
+	12580: uint16(aux_sym_comment_token1),
+	12581: uint16(45),
+	12582: uint16(1),
+	12583: uint16(aux_sym_comment_token2),
+	12584: uint16(1007),
+	12585: uint16(1),
+	12586: uint16(anon_sym_EQ),
+	12587: uint16(370),
+	12588: uint16(1),
+	12589: uint16(sym_comment),
+	12590: uint16(4),
+	12591: uint16(3),
+	12592: uint16(1),
+	12593: uint16(aux_sym_comment_token1),
+	12594: uint16(45),
+	12595: uint16(1),
+	12596: uint16(aux_sym_comment_token2),
+	12597: uint16(1009),
+	12598: uint16(1),
+	12599: uint16(anon_sym_EQ),
+	12600: uint16(371),
+	12601: uint16(1),
+	12602: uint16(sym_comment),
+	12603: uint16(4),
+	12604: uint16(3),
+	12605: uint16(1),
+	12606: uint16(aux_sym_comment_token1),
+	12607: uint16(45),
+	12608: uint16(1),
+	12609: uint16(aux_sym_comment_token2),
+	12610: uint16(1011),
+	12611: uint16(1),
+	12612: uint16(anon_sym_EQ),
+	12613: uint16(372),
+	12614: uint16(1),
+	12615: uint16(sym_comment),
+	12616: uint16(4),
+	12617: uint16(3),
+	12618: uint16(1),
+	12619: uint16(aux_sym_comment_token1),
+	12620: uint16(45),
+	12621: uint16(1),
+	12622: uint16(aux_sym_comment_token2),
+	12623: uint16(1013),
+	12624: uint16(1),
+	12625: uint16(anon_sym_EQ),
+	12626: uint16(373),
+	12627: uint16(1),
+	12628: uint16(sym_comment),
+	12629: uint16(4),
+	12630: uint16(3),
+	12631: uint16(1),
+	12632: uint16(aux_sym_comment_token1),
+	12633: uint16(45),
+	12634: uint16(1),
+	12635: uint16(aux_sym_comment_token2),
+	12636: uint16(1015),
+	12637: uint16(1),
+	12638: uint16(anon_sym_EQ),
+	12639: uint16(374),
+	12640: uint16(1),
+	12641: uint16(sym_comment),
+	12642: uint16(4),
+	12643: uint16(3),
+	12644: uint16(1),
+	12645: uint16(aux_sym_comment_token1),
+	12646: uint16(45),
+	12647: uint16(1),
+	12648: uint16(aux_sym_comment_token2),
+	12649: uint16(1017),
+	12650: uint16(1),
+	12652: uint16(375),
+	12653: uint16(1),
+	12654: uint16(sym_comment),
+	12655: uint16(4),
+	12656: uint16(3),
+	12657: uint16(1),
+	12658: uint16(aux_sym_comment_token1),
+	12659: uint16(45),
+	12660: uint16(1),
+	12661: uint16(aux_sym_comment_token2),
+	12662: uint16(1019),
+	12663: uint16(1),
+	12664: uint16(anon_sym_EQ),
+	12665: uint16(376),
+	12666: uint16(1),
+	12667: uint16(sym_comment),
+	12668: uint16(4),
+	12669: uint16(3),
+	12670: uint16(1),
+	12671: uint16(aux_sym_comment_token1),
+	12672: uint16(45),
+	12673: uint16(1),
+	12674: uint16(aux_sym_comment_token2),
+	12675: uint16(777),
+	12676: uint16(1),
+	12677: uint16(anon_sym_COMMA),
+	12678: uint16(377),
+	12679: uint16(1),
+	12680: uint16(sym_comment),
+	12681: uint16(4),
+	12682: uint16(3),
+	12683: uint16(1),
+	12684: uint16(aux_sym_comment_token1),
+	12685: uint16(45),
+	12686: uint16(1),
+	12687: uint16(aux_sym_comment_token2),
+	12688: uint16(1021),
+	12689: uint16(1),
+	12690: uint16(anon_sym_EQ),
+	12691: uint16(378),
+	12692: uint16(1),
+	12693: uint16(sym_comment),
+	12694: uint16(4),
+	12695: uint16(3),
+	12696: uint16(1),
+	12697: uint16(aux_sym_comment_token1),
+	12698: uint16(45),
+	12699: uint16(1),
+	12700: uint16(aux_sym_comment_token2),
+	12701: uint16(1023),
+	12702: uint16(1),
+	12703: uint16(anon_sym_EQ),
+	12704: uint16(379),
+	12705: uint16(1),
+	12706: uint16(sym_comment),
+	12707: uint16(4),
+	12708: uint16(3),
+	12709: uint16(1),
+	12710: uint16(aux_sym_comment_token1),
+	12711: uint16(45),
+	12712: uint16(1),
+	12713: uint16(aux_sym_comment_token2),
+	12714: uint16(1025),
+	12715: uint16(1),
+	12716: uint16(anon_sym_COLON),
+	12717: uint16(380),
+	12718: uint16(1),
+	12719: uint16(sym_comment),
+	12720: uint16(4),
+	12721: uint16(3),
+	12722: uint16(1),
+	12723: uint16(aux_sym_comment_token1),
+	12724: uint16(45),
+	12725: uint16(1),
+	12726: uint16(aux_sym_comment_token2),
+	12727: uint16(1027),
+	12728: uint16(1),
+	12729: uint16(anon_sym_EQ),
+	12730: uint16(381),
+	12731: uint16(1),
+	12732: uint16(sym_comment),
+	12733: uint16(4),
+	12734: uint16(3),
+	12735: uint16(1),
+	12736: uint16(aux_sym_comment_token1),
+	12737: uint16(45),
+	12738: uint16(1),
+	12739: uint16(aux_sym_comment_token2),
+	12740: uint16(1029),
+	12741: uint16(1),
+	12742: uint16(aux_sym__block_name_token1),
+	12743: uint16(382),
+	12744: uint16(1),
+	12745: uint16(sym_comment),
+	12746: uint16(4),
+	12747: uint16(3),
+	12748: uint16(1),
+	12749: uint16(aux_sym_comment_token1),
+	12750: uint16(45),
+	12751: uint16(1),
+	12752: uint16(aux_sym_comment_token2),
+	12753: uint16(1031),
+	12754: uint16(1),
+	12755: uint16(anon_sym_re2c),
+	12756: uint16(383),
+	12757: uint16(1),
+	12758: uint16(sym_comment),
+	12759: uint16(4),
+	12760: uint16(3),
+	12761: uint16(1),
+	12762: uint16(aux_sym_comment_token1),
+	12763: uint16(45),
+	12764: uint16(1),
+	12765: uint16(aux_sym_comment_token2),
+	12766: uint16(1033),
+	12767: uint16(1),
+	12768: uint16(anon_sym_SEMI),
+	12769: uint16(384),
+	12770: uint16(1),
+	12771: uint16(sym_comment),
+	12772: uint16(4),
+	12773: uint16(3),
+	12774: uint16(1),
+	12775: uint16(aux_sym_comment_token1),
+	12776: uint16(45),
+	12777: uint16(1),
+	12778: uint16(aux_sym_comment_token2),
+	12779: uint16(1035),
+	12780: uint16(1),
+	12781: uint16(anon_sym_EQ),
+	12782: uint16(385),
+	12783: uint16(1),
+	12784: uint16(sym_comment),
+	12785: uint16(4),
+	12786: uint16(3),
+	12787: uint16(1),
+	12788: uint16(aux_sym_comment_token1),
+	12789: uint16(45),
+	12790: uint16(1),
+	12791: uint16(aux_sym_comment_token2),
+	12792: uint16(1037),
+	12793: uint16(1),
+	12794: uint16(anon_sym_re2c),
+	12795: uint16(386),
+	12796: uint16(1),
+	12797: uint16(sym_comment),
+	12798: uint16(4),
+	12799: uint16(3),
+	12800: uint16(1),
+	12801: uint16(aux_sym_comment_token1),
+	12802: uint16(45),
+	12803: uint16(1),
+	12804: uint16(aux_sym_comment_token2),
+	12805: uint16(1039),
+	12806: uint16(1),
+	12807: uint16(anon_sym_EQ),
+	12808: uint16(387),
+	12809: uint16(1),
+	12810: uint16(sym_comment),
+	12811: uint16(4),
+	12812: uint16(3),
+	12813: uint16(1),
+	12814: uint16(aux_sym_comment_token1),
+	12815: uint16(45),
+	12816: uint16(1),
+	12817: uint16(aux_sym_comment_token2),
+	12818: uint16(1041),
+	12819: uint16(1),
+	12820: uint16(anon_sym_EQ),
+	12821: uint16(388),
+	12822: uint16(1),
+	12823: uint16(sym_comment),
+	12824: uint16(4),
+	12825: uint16(3),
+	12826: uint16(1),
+	12827: uint16(aux_sym_comment_token1),
+	12828: uint16(45),
+	12829: uint16(1),
+	12830: uint16(aux_sym_comment_token2),
+	12831: uint16(1043),
+	12832: uint16(1),
+	12833: uint16(anon_sym_COLON),
+	12834: uint16(389),
+	12835: uint16(1),
+	12836: uint16(sym_comment),
+	12837: uint16(1),
+	12838: uint16(1045),
+	12839: uint16(1),
+}
+
+var ts_small_parse_table_map = [389]uint32_t{
+	1:   uint32(125),
+	2:   uint32(250),
+	3:   uint32(375),
+	4:   uint32(497),
+	5:   uint32(619),
+	6:   uint32(741),
+	7:   uint32(858),
+	8:   uint32(977),
+	9:   uint32(1069),
+	10:  uint32(1143),
+	11:  uint32(1217),
+	12:  uint32(1290),
+	13:  uint32(1363),
+	14:  uint32(1435),
+	15:  uint32(1537),
+	16:  uint32(1609),
+	17:  uint32(1681),
+	18:  uint32(1753),
+	19:  uint32(1824),
+	20:  uint32(1895),
+	21:  uint32(1966),
+	22:  uint32(2037),
+	23:  uint32(2108),
+	24:  uint32(2179),
+	25:  uint32(2249),
+	26:  uint32(2319),
+	27:  uint32(2399),
+	28:  uint32(2473),
+	29:  uint32(2547),
+	30:  uint32(2621),
+	31:  uint32(2695),
+	32:  uint32(2756),
+	33:  uint32(2817),
+	34:  uint32(2878),
+	35:  uint32(2939),
+	36:  uint32(3000),
+	37:  uint32(3061),
+	38:  uint32(3122),
+	39:  uint32(3183),
+	40:  uint32(3244),
+	41:  uint32(3305),
+	42:  uint32(3366),
+	43:  uint32(3427),
+	44:  uint32(3488),
+	45:  uint32(3549),
+	46:  uint32(3610),
+	47:  uint32(3671),
+	48:  uint32(3732),
+	49:  uint32(3793),
+	50:  uint32(3858),
+	51:  uint32(3923),
+	52:  uint32(3986),
+	53:  uint32(4047),
+	54:  uint32(4108),
+	55:  uint32(4169),
+	56:  uint32(4231),
+	57:  uint32(4299),
+	58:  uint32(4367),
+	59:  uint32(4433),
+	60:  uint32(4501),
+	61:  uint32(4569),
+	62:  uint32(4637),
+	63:  uint32(4697),
+	64:  uint32(4759),
+	65:  uint32(4827),
+	66:  uint32(4895),
+	67:  uint32(4958),
+	68:  uint32(5019),
+	69:  uint32(5082),
+	70:  uint32(5145),
+	71:  uint32(5206),
+	72:  uint32(5269),
+	73:  uint32(5329),
+	74:  uint32(5387),
+	75:  uint32(5429),
+	76:  uint32(5487),
+	77:  uint32(5543),
+	78:  uint32(5605),
+	79:  uint32(5667),
+	80:  uint32(5727),
+	81:  uint32(5789),
+	82:  uint32(5849),
+	83:  uint32(5911),
+	84:  uint32(5969),
+	85:  uint32(6029),
+	86:  uint32(6091),
+	87:  uint32(6151),
+	88:  uint32(6213),
+	89:  uint32(6275),
+	90:  uint32(6335),
+	91:  uint32(6397),
+	92:  uint32(6452),
+	93:  uint32(6507),
+	94:  uint32(6562),
+	95:  uint32(6617),
+	96:  uint32(6676),
+	97:  uint32(6731),
+	98:  uint32(6790),
+	99:  uint32(6847),
+	100: uint32(6902),
+	101: uint32(6957),
+	102: uint32(7012),
+	103: uint32(7046),
+	104: uint32(7080),
+	105: uint32(7132),
+	106: uint32(7166),
+	107: uint32(7200),
+	108: uint32(7234),
+	109: uint32(7268),
+	110: uint32(7320),
+	111: uint32(7354),
+	112: uint32(7406),
+	113: uint32(7440),
+	114: uint32(7492),
+	115: uint32(7526),
+	116: uint32(7578),
+	117: uint32(7630),
+	118: uint32(7664),
+	119: uint32(7716),
+	120: uint32(7750),
+	121: uint32(7802),
+	122: uint32(7836),
+	123: uint32(7888),
+	124: uint32(7922),
+	125: uint32(7974),
+	126: uint32(8008),
+	127: uint32(8058),
+	128: uint32(8110),
+	129: uint32(8162),
+	130: uint32(8197),
+	131: uint32(8230),
+	132: uint32(8265),
+	133: uint32(8308),
+	134: uint32(8338),
+	135: uint32(8368),
+	136: uint32(8398),
+	137: uint32(8428),
+	138: uint32(8458),
+	139: uint32(8488),
+	140: uint32(8518),
+	141: uint32(8548),
+	142: uint32(8577),
+	143: uint32(8606),
+	144: uint32(8635),
+	145: uint32(8664),
+	146: uint32(8693),
+	147: uint32(8724),
+	148: uint32(8753),
+	149: uint32(8782),
+	150: uint32(8811),
+	151: uint32(8840),
+	152: uint32(8869),
+	153: uint32(8898),
+	154: uint32(8927),
+	155: uint32(8956),
+	156: uint32(8985),
+	157: uint32(9014),
+	158: uint32(9043),
+	159: uint32(9072),
+	160: uint32(9101),
+	161: uint32(9130),
+	162: uint32(9155),
+	163: uint32(9180),
+	164: uint32(9205),
+	165: uint32(9230),
+	166: uint32(9255),
+	167: uint32(9280),
+	168: uint32(9318),
+	169: uint32(9356),
+	170: uint32(9388),
+	171: uint32(9417),
+	172: uint32(9444),
+	173: uint32(9473),
+	174: uint32(9502),
+	175: uint32(9524),
+	176: uint32(9544),
+	177: uint32(9566),
+	178: uint32(9588),
+	179: uint32(9607),
+	180: uint32(9636),
+	181: uint32(9665),
+	182: uint32(9694),
+	183: uint32(9723),
+	184: uint32(9750),
+	185: uint32(9779),
+	186: uint32(9808),
+	187: uint32(9827),
+	188: uint32(9846),
+	189: uint32(9869),
+	190: uint32(9888),
+	191: uint32(9910),
+	192: uint32(9930),
+	193: uint32(9954),
+	194: uint32(9977),
+	195: uint32(9996),
+	196: uint32(10019),
+	197: uint32(10042),
+	198: uint32(10065),
+	199: uint32(10090),
+	200: uint32(10111),
+	201: uint32(10130),
+	202: uint32(10151),
+	203: uint32(10173),
+	204: uint32(10191),
+	205: uint32(10211),
+	206: uint32(10233),
+	207: uint32(10255),
+	208: uint32(10277),
+	209: uint32(10293),
+	210: uint32(10313),
+	211: uint32(10333),
+	212: uint32(10349),
+	213: uint32(10365),
+	214: uint32(10385),
+	215: uint32(10407),
+	216: uint32(10423),
+	217: uint32(10443),
+	218: uint32(10459),
+	219: uint32(10479),
+	220: uint32(10501),
+	221: uint32(10516),
+	222: uint32(10531),
+	223: uint32(10548),
+	224: uint32(10567),
+	225: uint32(10584),
+	226: uint32(10601),
+	227: uint32(10618),
+	228: uint32(10637),
+	229: uint32(10652),
+	230: uint32(10667),
+	231: uint32(10682),
+	232: uint32(10699),
+	233: uint32(10718),
+	234: uint32(10735),
+	235: uint32(10750),
+	236: uint32(10767),
+	237: uint32(10786),
+	238: uint32(10805),
+	239: uint32(10824),
+	240: uint32(10840),
+	241: uint32(10854),
+	242: uint32(10870),
+	243: uint32(10886),
+	244: uint32(10902),
+	245: uint32(10918),
+	246: uint32(10934),
+	247: uint32(10950),
+	248: uint32(10966),
+	249: uint32(10982),
+	250: uint32(10998),
+	251: uint32(11014),
+	252: uint32(11030),
+	253: uint32(11046),
+	254: uint32(11062),
+	255: uint32(11078),
+	256: uint32(11094),
+	257: uint32(11110),
+	258: uint32(11126),
+	259: uint32(11142),
+	260: uint32(11158),
+	261: uint32(11174),
+	262: uint32(11190),
+	263: uint32(11206),
+	264: uint32(11222),
+	265: uint32(11238),
+	266: uint32(11251),
+	267: uint32(11264),
+	268: uint32(11277),
+	269: uint32(11290),
+	270: uint32(11303),
+	271: uint32(11316),
+	272: uint32(11329),
+	273: uint32(11342),
+	274: uint32(11355),
+	275: uint32(11368),
+	276: uint32(11381),
+	277: uint32(11394),
+	278: uint32(11407),
+	279: uint32(11420),
+	280: uint32(11433),
+	281: uint32(11446),
+	282: uint32(11459),
+	283: uint32(11472),
+	284: uint32(11485),
+	285: uint32(11498),
+	286: uint32(11511),
+	287: uint32(11524),
+	288: uint32(11537),
+	289: uint32(11550),
+	290: uint32(11563),
+	291: uint32(11576),
+	292: uint32(11589),
+	293: uint32(11602),
+	294: uint32(11615),
+	295: uint32(11628),
+	296: uint32(11641),
+	297: uint32(11654),
+	298: uint32(11667),
+	299: uint32(11680),
+	300: uint32(11693),
+	301: uint32(11706),
+	302: uint32(11719),
+	303: uint32(11732),
+	304: uint32(11745),
+	305: uint32(11758),
+	306: uint32(11771),
+	307: uint32(11784),
+	308: uint32(11797),
+	309: uint32(11810),
+	310: uint32(11823),
+	311: uint32(11836),
+	312: uint32(11849),
+	313: uint32(11862),
+	314: uint32(11875),
+	315: uint32(11888),
+	316: uint32(11901),
+	317: uint32(11914),
+	318: uint32(11927),
+	319: uint32(11940),
+	320: uint32(11953),
+	321: uint32(11966),
+	322: uint32(11979),
+	323: uint32(11992),
+	324: uint32(12005),
+	325: uint32(12018),
+	326: uint32(12031),
+	327: uint32(12044),
+	328: uint32(12057),
+	329: uint32(12070),
+	330: uint32(12083),
+	331: uint32(12096),
+	332: uint32(12109),
+	333: uint32(12122),
+	334: uint32(12135),
+	335: uint32(12148),
+	336: uint32(12161),
+	337: uint32(12174),
+	338: uint32(12187),
+	339: uint32(12200),
+	340: uint32(12213),
+	341: uint32(12226),
+	342: uint32(12239),
+	343: uint32(12252),
+	344: uint32(12265),
+	345: uint32(12278),
+	346: uint32(12291),
+	347: uint32(12304),
+	348: uint32(12317),
+	349: uint32(12330),
+	350: uint32(12343),
+	351: uint32(12356),
+	352: uint32(12369),
+	353: uint32(12382),
+	354: uint32(12395),
+	355: uint32(12408),
+	356: uint32(12421),
+	357: uint32(12434),
+	358: uint32(12447),
+	359: uint32(12460),
+	360: uint32(12473),
+	361: uint32(12486),
+	362: uint32(12499),
+	363: uint32(12512),
+	364: uint32(12525),
+	365: uint32(12538),
+	366: uint32(12551),
+	367: uint32(12564),
+	368: uint32(12577),
+	369: uint32(12590),
+	370: uint32(12603),
+	371: uint32(12616),
+	372: uint32(12629),
+	373: uint32(12642),
+	374: uint32(12655),
+	375: uint32(12668),
+	376: uint32(12681),
+	377: uint32(12694),
+	378: uint32(12707),
+	379: uint32(12720),
+	380: uint32(12733),
+	381: uint32(12746),
+	382: uint32(12759),
+	383: uint32(12772),
+	384: uint32(12785),
+	385: uint32(12798),
+	386: uint32(12811),
+	387: uint32(12824),
+	388: uint32(12837),
+}
+
+var ts_parse_actions = [1047]TSParseActionEntry{
+	0: {},
+	1: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	2: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f uint8_t
+		_ [7]byte
+	}{f: uint8(TSParseActionTypeRecover)})),
+	3: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	4: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(390)),
+	}})))),
+	5: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	6: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(233)),
+	}})))),
+	7: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	8: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token: uint8(TSParseActionTypeReduce),
+		Fsymbol:     uint16(sym_re2c),
+	})))),
+	9: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	10: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(78)),
+	}})))),
+	11: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	12: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(390)),
+	}})))),
+	13: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	14: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(132)),
+	}})))),
+	15: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	16: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(3),
+		Fsymbol:      uint16(sym_rules_block),
+	})))),
+	17: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	18: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(349)),
+	}})))),
+	19: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	20: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(306)),
+	}})))),
+	21: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	22: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(110)),
+	}})))),
+	23: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	24: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(200)),
+	}})))),
+	25: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	26: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(223)),
+	}})))),
+	27: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	28: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(236)),
+	}})))),
+	29: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	30: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(317)),
+	}})))),
+	31: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	32: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(215)),
+	}})))),
+	33: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	34: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(30)),
+	}})))),
+	35: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	36: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(93)),
+	}})))),
+	37: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	38: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(104)),
+	}})))),
+	39: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	40: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(119)),
+	}})))),
+	41: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	42: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(334)),
+	}})))),
+	43: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	44: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(248)),
+	}})))),
+	45: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	46: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(233)),
+	}})))),
+	47: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	48: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(3),
+		Fsymbol:      uint16(sym_local_block),
+	})))),
+	49: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	50: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(346)),
+	}})))),
+	51: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	52: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(sym_global_block),
+	})))),
+	53: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	54: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(382)),
+	}})))),
+	55: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	56: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(5),
+		Fsymbol:        uint16(sym_rules_block),
+		Fproduction_id: uint16(24),
+	})))),
+	57: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	58: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(3),
+		Fsymbol:        uint16(sym_global_block),
+		Fproduction_id: uint16(5),
+	})))),
+	59: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	60: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(5),
+		Fsymbol:        uint16(sym_local_block),
+		Fproduction_id: uint16(24),
+	})))),
+	61: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(2),
+	}})),
+	62: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_body_repeat1),
+	})))),
+	63: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(132)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	64: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	65: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_body_repeat1),
+	})))),
+	66: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(2),
+	}})),
+	67: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_body_repeat1),
+	})))),
+	68: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(306)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	69: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(2),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	70: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_body_repeat1),
+	})))),
+	71: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(110)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	72: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(2),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	73: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_body_repeat1),
+	})))),
+	74: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(200)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	75: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(2),
+	}})),
+	76: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_body_repeat1),
+	})))),
+	77: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(223)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	78: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(2),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	79: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_body_repeat1),
+	})))),
+	80: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(236)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	81: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(2),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	82: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_body_repeat1),
+	})))),
+	83: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(317)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	84: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(2),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	85: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_body_repeat1),
+	})))),
+	86: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(215)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	87: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(2),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	88: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_body_repeat1),
+	})))),
+	89: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(30)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	90: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(2),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	91: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_body_repeat1),
+	})))),
+	92: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(93)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	93: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(2),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	94: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_body_repeat1),
+	})))),
+	95: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(104)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	96: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(2),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	97: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_body_repeat1),
+	})))),
+	98: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(119)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	99: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(2),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	100: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_body_repeat1),
+	})))),
+	101: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(334)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	102: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(2),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	103: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_body_repeat1),
+	})))),
+	104: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(248)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	105: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	106: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(sym_body),
+	})))),
+	107: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	108: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(313)),
+	}})))),
+	109: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	110: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(255)),
+	}})))),
+	111: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	112: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(260)),
+	}})))),
+	113: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	114: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(263)),
+	}})))),
+	115: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	116: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(266)),
+	}})))),
+	117: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	118: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(243)),
+	}})))),
+	119: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	120: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(244)),
+	}})))),
+	121: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	122: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(247)),
+	}})))),
+	123: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	124: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(249)),
+	}})))),
+	125: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	126: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(252)),
+	}})))),
+	127: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	128: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(254)),
+	}})))),
+	129: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	130: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(229)),
+	}})))),
+	131: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	132: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(241)),
+	}})))),
+	133: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	134: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(257)),
+	}})))),
+	135: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	136: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(387)),
+	}})))),
+	137: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	138: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(388)),
+	}})))),
+	139: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	140: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(274)),
+	}})))),
+	141: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	142: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(275)),
+	}})))),
+	143: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	144: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(277)),
+	}})))),
+	145: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	146: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(278)),
+	}})))),
+	147: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	148: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(sym_character_class),
+	})))),
+	149: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	150: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(sym_character_class),
+	})))),
+	151: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	152: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(116)),
+	}})))),
+	153: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	154: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(151)),
+	}})))),
+	155: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	156: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(151)),
+	}})))),
+	157: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	158: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(155)),
+	}})))),
+	159: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	160: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(154)),
+	}})))),
+	161: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	162: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(338)),
+	}})))),
+	163: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	164: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(339)),
+	}})))),
+	165: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	166: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(3),
+		Fsymbol:      uint16(sym_character_class),
+	})))),
+	167: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	168: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(3),
+		Fsymbol:      uint16(sym_character_class),
+	})))),
+	169: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	170: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(125)),
+	}})))),
+	171: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	172: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(121)),
+	}})))),
+	173: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	174: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(366)),
+	}})))),
+	175: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	176: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(223)),
+	}})))),
+	177: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	178: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(171)),
+	}})))),
+	179: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	180: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(94)),
+	}})))),
+	181: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	182: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(326)),
+	}})))),
+	183: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	184: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(96)),
+	}})))),
+	185: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	186: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(103)),
+	}})))),
+	187: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	188: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(95)),
+	}})))),
+	189: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	190: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(98)),
+	}})))),
+	191: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	192: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(101)),
+	}})))),
+	193: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	194: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(226)),
+	}})))),
+	195: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	196: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(323)),
+	}})))),
+	197: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	198: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(330)),
+	}})))),
+	199: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	200: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(336)),
+	}})))),
+	201: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	202: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(336)),
+	}})))),
+	203: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	204: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(340)),
+	}})))),
+	205: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	206: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(340)),
+	}})))),
+	207: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	208: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(310)),
+	}})))),
+	209: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	210: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(332)),
+	}})))),
+	211: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	212: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(sym__dif_expr),
+	})))),
+	213: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	214: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(sym__dif_expr),
+	})))),
+	215: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	216: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(sym_concat),
+	})))),
+	217: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	218: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(sym_concat),
+	})))),
+	219: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(2),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	220: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_concat_repeat1),
+	})))),
+	221: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(121)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	222: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(2),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	223: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_concat_repeat1),
+	})))),
+	224: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(110)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	225: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	226: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_concat_repeat1),
+	})))),
+	227: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	228: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_concat_repeat1),
+	})))),
+	229: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(2),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	230: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_concat_repeat1),
+	})))),
+	231: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(30)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	232: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(2),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	233: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_concat_repeat1),
+	})))),
+	234: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(94)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	235: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(2),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	236: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_concat_repeat1),
+	})))),
+	237: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(104)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	238: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(2),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	239: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_concat_repeat1),
+	})))),
+	240: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(119)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	241: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(2),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	242: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_concat_repeat1),
+	})))),
+	243: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(334)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	244: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(2),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	245: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_concat_repeat1),
+	})))),
+	246: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(326)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	247: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(2),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	248: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(2),
+		Fsymbol:        uint16(aux_sym_alternation_repeat1),
+		Fproduction_id: uint16(8),
+	})))),
+	249: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(121)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	250: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(2),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	251: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(2),
+		Fsymbol:        uint16(aux_sym_alternation_repeat1),
+		Fproduction_id: uint16(8),
+	})))),
+	252: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(110)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	253: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(2),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	254: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(2),
+		Fsymbol:        uint16(aux_sym_alternation_repeat1),
+		Fproduction_id: uint16(8),
+	})))),
+	255: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(30)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	256: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(2),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	257: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(2),
+		Fsymbol:        uint16(aux_sym_alternation_repeat1),
+		Fproduction_id: uint16(8),
+	})))),
+	258: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(102)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	259: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(2),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	260: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(2),
+		Fsymbol:        uint16(aux_sym_alternation_repeat1),
+		Fproduction_id: uint16(8),
+	})))),
+	261: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(104)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	262: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(2),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	263: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(2),
+		Fsymbol:        uint16(aux_sym_alternation_repeat1),
+		Fproduction_id: uint16(8),
+	})))),
+	264: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(119)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	265: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(2),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	266: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(2),
+		Fsymbol:        uint16(aux_sym_alternation_repeat1),
+		Fproduction_id: uint16(8),
+	})))),
+	267: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(334)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	268: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(2),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	269: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(2),
+		Fsymbol:        uint16(aux_sym_alternation_repeat1),
+		Fproduction_id: uint16(8),
+	})))),
+	270: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(326)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	271: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(2),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	272: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_concat_repeat1),
+	})))),
+	273: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(101)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	274: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(2),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	275: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_concat_repeat1),
+	})))),
+	276: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(96)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	277: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(2),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	278: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_concat_repeat1),
+	})))),
+	279: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(93)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	280: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(2),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	281: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_concat_repeat1),
+	})))),
+	282: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(103)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	283: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	284: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(sym__cat_expr),
+	})))),
+	285: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	286: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(sym__cat_expr),
+	})))),
+	287: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	288: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(137)),
+	}})))),
+	289: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	290: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(240)),
+	}})))),
+	291: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(2),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	292: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_concat_repeat1),
+	})))),
+	293: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(95)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	294: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	295: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(4)),
+	}})))),
+	296: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	297: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(319)),
+	}})))),
+	298: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	299: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(327)),
+	}})))),
+	300: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	301: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(389)),
+	}})))),
+	302: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	303: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(333)),
+	}})))),
+	304: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	305: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(337)),
+	}})))),
+	306: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	307: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(342)),
+	}})))),
+	308: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	309: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(354)),
+	}})))),
+	310: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	311: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(380)),
+	}})))),
+	312: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	313: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(318)),
+	}})))),
+	314: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	315: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(365)),
+	}})))),
+	316: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(2),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	317: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_concat_repeat1),
+	})))),
+	318: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(98)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	319: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	320: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(102)),
+	}})))),
+	321: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	322: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(122)),
+	}})))),
+	323: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	324: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(17)),
+	}})))),
+	325: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	326: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(130)),
+	}})))),
+	327: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	328: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(11)),
+	}})))),
+	329: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	330: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(111)),
+	}})))),
+	331: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	332: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(21)),
+	}})))),
+	333: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	334: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(117)),
+	}})))),
+	335: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	336: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(15)),
+	}})))),
+	337: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	338: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(120)),
+	}})))),
+	339: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	340: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(22)),
+	}})))),
+	341: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(2),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	342: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_concat_repeat1),
+	})))),
+	343: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(102)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	344: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	345: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(129)),
+	}})))),
+	346: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	347: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(14)),
+	}})))),
+	348: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	349: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(124)),
+	}})))),
+	350: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	351: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(27)),
+	}})))),
+	352: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	353: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(113)),
+	}})))),
+	354: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	355: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(23)),
+	}})))),
+	356: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	357: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(sym_dstring),
+	})))),
+	358: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	359: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(sym_dstring),
+	})))),
+	360: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	361: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(4),
+		Fsymbol:        uint16(sym_character_class),
+		Fproduction_id: uint16(12),
+	})))),
+	362: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	363: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(4),
+		Fsymbol:        uint16(sym_character_class),
+		Fproduction_id: uint16(12),
+	})))),
+	364: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	365: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(123)),
+	}})))),
+	366: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	367: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(sym_stag),
+	})))),
+	368: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	369: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(sym_stag),
+	})))),
+	370: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	371: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(sym_mtag),
+	})))),
+	372: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	373: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(sym_mtag),
+	})))),
+	374: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	375: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(5),
+		Fsymbol:        uint16(sym_character_class),
+		Fproduction_id: uint16(19),
+	})))),
+	376: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	377: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(5),
+		Fsymbol:        uint16(sym_character_class),
+		Fproduction_id: uint16(19),
+	})))),
+	378: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	379: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(1),
+		Fsymbol:        uint16(sym_wildcard),
+		Fproduction_id: uint16(1),
+	})))),
+	380: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	381: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(1),
+		Fsymbol:        uint16(sym_wildcard),
+		Fproduction_id: uint16(1),
+	})))),
+	382: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	383: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(20)),
+	}})))),
+	384: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	385: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(sym__atom),
+	})))),
+	386: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	387: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(sym__atom),
+	})))),
+	388: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	389: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(25)),
+	}})))),
+	390: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	391: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(3),
+		Fsymbol:      uint16(sym_parenthesized),
+	})))),
+	392: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	393: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(3),
+		Fsymbol:      uint16(sym_parenthesized),
+	})))),
+	394: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	395: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(127)),
+	}})))),
+	396: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	397: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(3),
+		Fsymbol:        uint16(sym_character_class),
+		Fproduction_id: uint16(12),
+	})))),
+	398: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	399: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(3),
+		Fsymbol:        uint16(sym_character_class),
+		Fproduction_id: uint16(12),
+	})))),
+	400: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	401: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(18)),
+	}})))),
+	402: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	403: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(105)),
+	}})))),
+	404: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	405: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(sym_sstring),
+	})))),
+	406: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	407: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(sym_sstring),
+	})))),
+	408: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	409: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(24)),
+	}})))),
+	410: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	411: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(1),
+		Fsymbol:        uint16(sym__atom),
+		Fproduction_id: uint16(3),
+	})))),
+	412: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	413: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(1),
+		Fsymbol:        uint16(sym__atom),
+		Fproduction_id: uint16(3),
+	})))),
+	414: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	415: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(19)),
+	}})))),
+	416: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	417: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(26)),
+	}})))),
+	418: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	419: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(4),
+		Fsymbol:        uint16(sym_character_class),
+		Fproduction_id: uint16(19),
+	})))),
+	420: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	421: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(4),
+		Fsymbol:        uint16(sym_character_class),
+		Fproduction_id: uint16(19),
+	})))),
+	422: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	423: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(109)),
+	}})))),
+	424: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	425: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(4),
+		Fsymbol:      uint16(sym_character_class),
+	})))),
+	426: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	427: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(4),
+		Fsymbol:      uint16(sym_character_class),
+	})))),
+	428: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	429: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_character_class_repeat1),
+	})))),
+	430: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(2),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	431: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_character_class_repeat1),
+	})))),
+	432: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(151)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	433: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(2),
+	}})),
+	434: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_character_class_repeat1),
+	})))),
+	435: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(151)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	436: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(2),
+	}})),
+	437: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_character_class_repeat1),
+	})))),
+	438: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(155)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	439: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(2),
+	}})),
+	440: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_character_class_repeat1),
+	})))),
+	441: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(154)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	442: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(2),
+	}})),
+	443: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_character_class_repeat1),
+	})))),
+	444: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(338)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	445: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(2),
+	}})),
+	446: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_character_class_repeat1),
+	})))),
+	447: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(339)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	448: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	449: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(13)),
+	}})))),
+	450: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	451: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(12)),
+	}})))),
+	452: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	453: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(3),
+		Fsymbol:      uint16(sym_conditional_rule),
+	})))),
+	454: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	455: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(3),
+		Fsymbol:      uint16(sym_conditional_rule),
+	})))),
+	456: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	457: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(28)),
+	}})))),
+	458: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	459: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(sym_conditional_rule),
+	})))),
+	460: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	461: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(sym_conditional_rule),
+	})))),
+	462: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	463: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(3),
+		Fsymbol:        uint16(sym_limits),
+		Fproduction_id: uint16(23),
+	})))),
+	464: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	465: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(3),
+		Fsymbol:        uint16(sym_limits),
+		Fproduction_id: uint16(23),
+	})))),
+	466: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	467: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(sym_close),
+	})))),
+	468: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	469: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(sym_close),
+	})))),
+	470: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	471: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(sym_repetition),
+	})))),
+	472: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	473: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(sym_repetition),
+	})))),
+	474: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	475: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(aux_sym_concat_repeat1),
+	})))),
+	476: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	477: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(aux_sym_concat_repeat1),
+	})))),
+	478: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	479: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(4),
+		Fsymbol:        uint16(sym_limits),
+		Fproduction_id: uint16(32),
+	})))),
+	480: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	481: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(4),
+		Fsymbol:        uint16(sym_limits),
+		Fproduction_id: uint16(32),
+	})))),
+	482: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	483: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(5),
+		Fsymbol:        uint16(sym_limits),
+		Fproduction_id: uint16(35),
+	})))),
+	484: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	485: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(5),
+		Fsymbol:        uint16(sym_limits),
+		Fproduction_id: uint16(35),
+	})))),
+	486: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	487: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(2),
+		Fsymbol:        uint16(sym_shortcut),
+		Fproduction_id: uint16(13),
+	})))),
+	488: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	489: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(2),
+		Fsymbol:        uint16(sym_shortcut),
+		Fproduction_id: uint16(13),
+	})))),
+	490: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	491: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(4),
+		Fsymbol:        uint16(sym_linedir),
+		Fproduction_id: uint16(21),
+	})))),
+	492: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	493: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(4),
+		Fsymbol:        uint16(sym_linedir),
+		Fproduction_id: uint16(21),
+	})))),
+	494: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	495: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:         uint8(TSParseActionTypeReduce),
+		Fchild_count:        uint8(2),
+		Fsymbol:             uint16(sym_action),
+		Fdynamic_precedence: int16(1),
+	})))),
+	496: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	497: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:         uint8(TSParseActionTypeReduce),
+		Fchild_count:        uint8(2),
+		Fsymbol:             uint16(sym_action),
+		Fdynamic_precedence: int16(1),
+	})))),
+	498: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	499: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:         uint8(TSParseActionTypeReduce),
+		Fchild_count:        uint8(3),
+		Fsymbol:             uint16(sym_action),
+		Fdynamic_precedence: int16(1),
+	})))),
+	500: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	501: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:         uint8(TSParseActionTypeReduce),
+		Fchild_count:        uint8(3),
+		Fsymbol:             uint16(sym_action),
+		Fdynamic_precedence: int16(1),
+	})))),
+	502: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	503: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(aux_sym_body_repeat1),
+	})))),
+	504: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	505: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(aux_sym_body_repeat1),
+	})))),
+	506: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	507: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(3),
+		Fsymbol:        uint16(sym_include),
+		Fproduction_id: uint16(11),
+	})))),
+	508: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	509: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(3),
+		Fsymbol:        uint16(sym_include),
+		Fproduction_id: uint16(11),
+	})))),
+	510: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	511: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(aux_sym_character_class_repeat1),
+	})))),
+	512: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(2),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	513: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(aux_sym_character_class_repeat1),
+	})))),
+	514: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(134)),
+	}})))),
+	515: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	516: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(aux_sym_character_class_repeat1),
+	})))),
+	517: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	518: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(4),
+		Fsymbol:      uint16(sym_conditional_rule),
+	})))),
+	519: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	520: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(4),
+		Fsymbol:      uint16(sym_conditional_rule),
+	})))),
+	521: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	522: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(sym_literal),
+	})))),
+	523: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	524: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(sym_literal),
+	})))),
+	525: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	526: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(sym_ordinary_rule),
+	})))),
+	527: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	528: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(sym_ordinary_rule),
+	})))),
+	529: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	530: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(sym_code_unit),
+	})))),
+	531: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	532: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(sym_code_unit),
+	})))),
+	533: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	534: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(sym_code_unit),
+	})))),
+	535: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	536: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(sym_code_unit),
+	})))),
+	537: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	538: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(sym__escape),
+	})))),
+	539: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	540: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(sym__escape),
+	})))),
+	541: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	542: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(5),
+		Fsymbol:        uint16(sym_linedir),
+		Fproduction_id: uint16(31),
+	})))),
+	543: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	544: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(5),
+		Fsymbol:        uint16(sym_linedir),
+		Fproduction_id: uint16(31),
+	})))),
+	545: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	546: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(4),
+		Fsymbol:      uint16(sym_configuration),
+	})))),
+	547: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	548: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(4),
+		Fsymbol:      uint16(sym_configuration),
+	})))),
+	549: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	550: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(4),
+		Fsymbol:        uint16(sym_use),
+		Fproduction_id: uint16(5),
+	})))),
+	551: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	552: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(4),
+		Fsymbol:        uint16(sym_use),
+		Fproduction_id: uint16(5),
+	})))),
+	553: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	554: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(3),
+		Fsymbol:        uint16(sym_range),
+		Fproduction_id: uint16(20),
+	})))),
+	555: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	556: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(3),
+		Fsymbol:        uint16(sym_range),
+		Fproduction_id: uint16(20),
+	})))),
+	557: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	558: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(4),
+		Fsymbol:        uint16(sym_named_definition),
+		Fproduction_id: uint16(22),
+	})))),
+	559: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	560: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(4),
+		Fsymbol:        uint16(sym_named_definition),
+		Fproduction_id: uint16(22),
+	})))),
+	561: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	562: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(3),
+		Fsymbol:      uint16(sym_condition),
+	})))),
+	563: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	564: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(3),
+		Fsymbol:        uint16(sym_condition),
+		Fproduction_id: uint16(9),
+	})))),
+	565: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	566: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(sym_condition),
+	})))),
+	567: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	568: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(5),
+		Fsymbol:        uint16(sym_condition),
+		Fproduction_id: uint16(30),
+	})))),
+	569: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	570: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(4),
+		Fsymbol:        uint16(sym_condition),
+		Fproduction_id: uint16(18),
+	})))),
+	571: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	572: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(4),
+		Fsymbol:      uint16(sym_condition),
+	})))),
+	573: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	574: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(3),
+		Fsymbol:      uint16(sym_mtags_block),
+	})))),
+	575: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	576: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(352)),
+	}})))),
+	577: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	578: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(358)),
+	}})))),
+	579: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	580: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(359)),
+	}})))),
+	581: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	582: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(3),
+		Fsymbol:      uint16(sym_stags_block),
+	})))),
+	583: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	584: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(175)),
+	}})))),
+	585: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	586: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(144)),
+	}})))),
+	587: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	588: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(189)),
+	}})))),
+	589: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	590: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(sym_code_block),
+	})))),
+	591: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(2),
+	}})),
+	592: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_code_block_repeat1),
+	})))),
+	593: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(175)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	594: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	595: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_code_block_repeat1),
+	})))),
+	596: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(2),
+	}})),
+	597: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_code_block_repeat1),
+	})))),
+	598: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(189)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	599: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(2),
+	}})),
+	600: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(sym__code_in_braces),
+	})))),
+	601: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(175)),
+	}})))),
+	602: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(2),
+	}})),
+	603: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(sym__code_in_braces),
+	})))),
+	604: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(180)),
+	}})))),
+	605: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(2),
+	}})),
+	606: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(sym__code_in_braces),
+	})))),
+	607: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(189)),
+	}})))),
+	608: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(2),
+	}})),
+	609: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(sym__code_in_braces),
+	})))),
+	610: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(175)),
+	}})))),
+	611: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(2),
+	}})),
+	612: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(sym__code_in_braces),
+	})))),
+	613: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(188)),
+	}})))),
+	614: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(2),
+	}})),
+	615: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(sym__code_in_braces),
+	})))),
+	616: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(189)),
+	}})))),
+	617: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	618: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(sym__alt_expr),
+	})))),
+	619: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	620: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(sym__alt_expr),
+	})))),
+	621: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	622: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(2),
+		Fsymbol:        uint16(aux_sym_alternation_repeat1),
+		Fproduction_id: uint16(6),
+	})))),
+	623: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	624: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(3),
+		Fsymbol:        uint16(sym_difference),
+		Fproduction_id: uint16(15),
+	})))),
+	625: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	626: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(3),
+		Fsymbol:        uint16(sym_difference),
+		Fproduction_id: uint16(15),
+	})))),
+	627: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	628: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(3),
+		Fsymbol:      uint16(sym__code_in_braces),
+	})))),
+	629: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	630: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(5),
+		Fsymbol:      uint16(sym_stags_block),
+	})))),
+	631: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	632: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(4),
+		Fsymbol:      uint16(sym_mtags_block),
+	})))),
+	633: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	634: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(4),
+		Fsymbol:      uint16(sym_stags_block),
+	})))),
+	635: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	636: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_stags_block_repeat1),
+	})))),
+	637: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(2),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	638: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_stags_block_repeat1),
+	})))),
+	639: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(358)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	640: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(2),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	641: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_stags_block_repeat1),
+	})))),
+	642: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(359)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	643: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	644: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(5),
+		Fsymbol:      uint16(sym_mtags_block),
+	})))),
+	645: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	646: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(sym__code_in_braces),
+	})))),
+	647: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	648: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(sym__code_in_braces),
+	})))),
+	649: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	650: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(2),
+		Fsymbol:        uint16(sym_alternation),
+		Fproduction_id: uint16(7),
+	})))),
+	651: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	652: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(2),
+		Fsymbol:        uint16(sym_alternation),
+		Fproduction_id: uint16(7),
+	})))),
+	653: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	654: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(177)),
+	}})))),
+	655: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	656: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(aux_sym_code_block_repeat1),
+	})))),
+	657: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	658: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(1),
+		Fsymbol:        uint16(sym__branch),
+		Fproduction_id: uint16(4),
+	})))),
+	659: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	660: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(1),
+		Fsymbol:        uint16(sym__branch),
+		Fproduction_id: uint16(4),
+	})))),
+	661: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	662: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(80)),
+	}})))),
+	663: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	664: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(sym__pattern_expr),
+	})))),
+	665: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	666: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(sym__pattern_expr),
+	})))),
+	667: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	668: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_re2c_repeat1),
+	})))),
+	669: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(2),
+	}})),
+	670: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_re2c_repeat1),
+	})))),
+	671: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(233)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	672: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(2),
+	}})),
+	673: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_re2c_repeat1),
+	})))),
+	674: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(78)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	675: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	676: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_block_list_repeat1),
+	})))),
+	677: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(2),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	678: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym_block_list_repeat1),
+	})))),
+	679: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(352)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	680: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	681: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(343)),
+	}})))),
+	682: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	683: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(360)),
+	}})))),
+	684: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	685: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(143)),
+	}})))),
+	686: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	687: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(sym_re2c),
+	})))),
+	688: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	689: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(245)),
+	}})))),
+	690: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	691: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(165)),
+	}})))),
+	692: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	693: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(216)),
+	}})))),
+	694: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	695: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(321)),
+	}})))),
+	696: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	697: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(sym_block_list),
+	})))),
+	698: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	699: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(90)),
+	}})))),
+	700: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	701: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(79)),
+	}})))),
+	702: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	703: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(sym_regex),
+	})))),
+	704: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	705: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(32)),
+	}})))),
+	706: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	707: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(3),
+		Fsymbol:      uint16(sym_max_block),
+	})))),
+	708: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	709: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(3),
+		Fsymbol:      uint16(sym_maxnmatch_block),
+	})))),
+	710: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	711: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(3),
+		Fsymbol:      uint16(sym_getstate_block),
+	})))),
+	712: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	713: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(2),
+		Fsymbol:        uint16(aux_sym_block_list_repeat1),
+		Fproduction_id: uint16(25),
+	})))),
+	714: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	715: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(264)),
+	}})))),
+	716: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	717: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(163)),
+	}})))),
+	718: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	719: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(308)),
+	}})))),
+	720: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	721: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(3),
+		Fsymbol:        uint16(sym_lookahead),
+		Fproduction_id: uint16(14),
+	})))),
+	722: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	723: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(84)),
+	}})))),
+	724: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	725: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(213)),
+	}})))),
+	726: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	727: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(214)),
+	}})))),
+	728: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	729: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(4),
+		Fsymbol:        uint16(sym_separator_directive),
+		Fproduction_id: uint16(37),
+	})))),
+	730: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	731: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(1),
+		Fsymbol:        uint16(sym_pattern),
+		Fproduction_id: uint16(2),
+	})))),
+	732: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	733: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(3),
+		Fsymbol:      uint16(sym__block),
+	})))),
+	734: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	735: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(3),
+		Fsymbol:      uint16(sym__block),
+	})))),
+	736: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	737: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(140)),
+	}})))),
+	738: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	739: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(280)),
+	}})))),
+	740: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	741: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(1),
+		Fsymbol:        uint16(sym__conf_value),
+		Fproduction_id: uint16(26),
+	})))),
+	742: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	743: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(286)),
+	}})))),
+	744: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	745: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(82)),
+	}})))),
+	746: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	747: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(287)),
+	}})))),
+	748: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	749: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(2),
+		Fsymbol:        uint16(sym__option_name),
+		Fproduction_id: uint16(29),
+	})))),
+	750: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	751: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(367)),
+	}})))),
+	752: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	753: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(42)),
+	}})))),
+	754: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	755: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(aux_sym_stags_block_repeat1),
+	})))),
+	756: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	757: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(sym__tag_directive),
+	})))),
+	758: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	759: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(4),
+		Fsymbol:        uint16(sym_format_directive),
+		Fproduction_id: uint16(36),
+	})))),
+	760: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	761: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(aux_sym_re2c_repeat1),
+	})))),
+	762: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	763: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(aux_sym_re2c_repeat1),
+	})))),
+	764: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	765: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(87)),
+	}})))),
+	766: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	767: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(sym_pattern),
+	})))),
+	768: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	769: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(92)),
+	}})))),
+	770: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	771: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(250)),
+	}})))),
+	772: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(2),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	773: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(aux_sym__clist_repeat1),
+	})))),
+	774: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate:      uint16(libc.Int32FromInt32(377)),
+		Frepetition: libc.BoolUint8(true1 != 0),
+	}})))),
+	775: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	776: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(164)),
+	}})))),
+	777: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	778: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(314)),
+	}})))),
+	779: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	780: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(108)),
+	}})))),
+	781: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	782: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(220)),
+	}})))),
+	783: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	784: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(1),
+		Fsymbol:        uint16(sym__mininum),
+		Fproduction_id: uint16(16),
+	})))),
+	785: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	786: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(1),
+		Fsymbol:        uint16(sym__exactly),
+		Fproduction_id: uint16(17),
+	})))),
+	787: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	788: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(89)),
+	}})))),
+	789: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	790: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(29)),
+	}})))),
+	791: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	792: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(31)),
+	}})))),
+	793: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	794: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(320)),
+	}})))),
+	795: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	796: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(322)),
+	}})))),
+	797: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	798: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(3),
+		Fsymbol:      uint16(sym_use_block),
+	})))),
+	799: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	800: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(351)),
+	}})))),
+	801: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	802: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(166)),
+	}})))),
+	803: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	804: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(167)),
+	}})))),
+	805: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	806: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(262)),
+	}})))),
+	807: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	808: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(3),
+		Fsymbol:        uint16(sym_field_expression),
+		Fproduction_id: uint16(38),
+	})))),
+	809: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	810: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(3),
+		Fsymbol:        uint16(sym_set_eof),
+		Fproduction_id: uint16(27),
+	})))),
+	811: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	812: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(3),
+		Fsymbol:        uint16(sym_set_sentinel),
+		Fproduction_id: uint16(27),
+	})))),
+	813: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	814: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(3),
+		Fsymbol:        uint16(sym_set_condprefix),
+		Fproduction_id: uint16(27),
+	})))),
+	815: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	816: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(3),
+		Fsymbol:        uint16(sym_set_condenumprefix),
+		Fproduction_id: uint16(27),
+	})))),
+	817: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	818: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(3),
+		Fsymbol:        uint16(sym_set_startlabel),
+		Fproduction_id: uint16(27),
+	})))),
+	819: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	820: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(3),
+		Fsymbol:        uint16(sym_set_posixcaptures),
+		Fproduction_id: uint16(27),
+	})))),
+	821: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	822: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(45)),
+	}})))),
+	823: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	824: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(46)),
+	}})))),
+	825: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	826: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(sym_number),
+	})))),
+	827: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	828: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(47)),
+	}})))),
+	829: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	830: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(48)),
+	}})))),
+	831: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	832: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(157)),
+	}})))),
+	833: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	834: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(1),
+		Fsymbol:        uint16(sym__maximum),
+		Fproduction_id: uint16(33),
+	})))),
+	835: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	836: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(141)),
+	}})))),
+	837: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	838: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(6),
+		Fsymbol:        uint16(sym_local_block),
+		Fproduction_id: uint16(24),
+	})))),
+	839: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	840: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(6),
+		Fsymbol:        uint16(sym_rules_block),
+		Fproduction_id: uint16(24),
+	})))),
+	841: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	842: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(232)),
+	}})))),
+	843: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	844: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(222)),
+	}})))),
+	845: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	846: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(267)),
+	}})))),
+	847: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	848: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(305)),
+	}})))),
+	849: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	850: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(4),
+		Fsymbol:        uint16(sym_set_flags),
+		Fproduction_id: uint16(34),
+	})))),
+	851: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	852: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(4),
+		Fsymbol:        uint16(sym_define),
+		Fproduction_id: uint16(34),
+	})))),
+	853: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	854: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(4),
+		Fsymbol:        uint16(sym_set_cond),
+		Fproduction_id: uint16(34),
+	})))),
+	855: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	856: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(4),
+		Fsymbol:        uint16(sym_set_label),
+		Fproduction_id: uint16(34),
+	})))),
+	857: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	858: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(4),
+		Fsymbol:        uint16(sym_set_variable),
+		Fproduction_id: uint16(34),
+	})))),
+	859: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	860: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(4),
+		Fsymbol:        uint16(sym_set_yych),
+		Fproduction_id: uint16(34),
+	})))),
+	861: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	862: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(4),
+		Fsymbol:        uint16(sym_set_state),
+		Fproduction_id: uint16(34),
+	})))),
+	863: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	864: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(4),
+		Fsymbol:        uint16(sym_set_yybm),
+		Fproduction_id: uint16(34),
+	})))),
+	865: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	866: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(4),
+		Fsymbol:        uint16(sym_set_cgoto),
+		Fproduction_id: uint16(34),
+	})))),
+	867: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	868: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(4),
+		Fsymbol:        uint16(sym_set_api),
+		Fproduction_id: uint16(34),
+	})))),
+	869: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	870: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(4),
+		Fsymbol:        uint16(sym_set_tags),
+		Fproduction_id: uint16(34),
+	})))),
+	871: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	872: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(4),
+		Fsymbol:        uint16(sym_set_indent),
+		Fproduction_id: uint16(34),
+	})))),
+	873: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	874: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(4),
+		Fsymbol:        uint16(sym_set_yyfill),
+		Fproduction_id: uint16(34),
+	})))),
+	875: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	876: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(302)),
+	}})))),
+	877: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	878: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(259)),
+	}})))),
+	879: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	880: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(5),
+		Fsymbol:        uint16(sym_use_block),
+		Fproduction_id: uint16(24),
+	})))),
+	881: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	882: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(40)),
+	}})))),
+	883: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	884: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(4),
+		Fsymbol:        uint16(sym__option_name),
+		Fproduction_id: uint16(39),
+	})))),
+	885: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	886: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(10)),
+	}})))),
+	887: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	888: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(4),
+		Fsymbol:        uint16(sym_global_block),
+		Fproduction_id: uint16(5),
+	})))),
+	889: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	890: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(168)),
+	}})))),
+	891: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	892: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(3)),
+	}})))),
+	893: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	894: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(sym_number),
+	})))),
+	895: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	896: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(sym_number),
+	})))),
+	897: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	898: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(2)),
+	}})))),
+	899: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	900: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(41)),
+	}})))),
+	901: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	902: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(2),
+		Fsymbol:        uint16(aux_sym__clist_repeat1),
+		Fproduction_id: uint16(10),
+	})))),
+	903: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	904: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(261)),
+	}})))),
+	905: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	906: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(160)),
+	}})))),
+	907: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	908: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(324)),
+	}})))),
+	909: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	910: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(301)),
+	}})))),
+	911: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	912: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(309)),
+	}})))),
+	913: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	914: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(5),
+		Fsymbol:      uint16(sym_header_on_block),
+	})))),
+	915: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	916: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(5),
+		Fsymbol:      uint16(sym_header_off_block),
+	})))),
+	917: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	918: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(sym_encoding_policy),
+	})))),
+	919: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	920: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(316)),
+	}})))),
+	921: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	922: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(147)),
+	}})))),
+	923: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	924: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(108)),
+	}})))),
+	925: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	926: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(312)),
+	}})))),
+	927: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	928: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(162)),
+	}})))),
+	929: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	930: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(114)),
+	}})))),
+	931: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	932: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(sym_input_conf),
+	})))),
+	933: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	934: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(311)),
+	}})))),
+	935: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	936: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(361)),
+	}})))),
+	937: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	938: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(107)),
+	}})))),
+	939: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	940: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(145)),
+	}})))),
+	941: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	942: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(sym_empty_class_conf),
+	})))),
+	943: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	944: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(363)),
+	}})))),
+	945: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	946: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(153)),
+	}})))),
+	947: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	948: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(sym_api_style),
+	})))),
+	949: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	950: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(2),
+		Fsymbol:      uint16(sym_global_block),
+	})))),
+	951: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	952: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(364)),
+	}})))),
+	953: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	954: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(sym_number),
+	})))),
+	955: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	956: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(225)),
+	}})))),
+	957: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	958: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(135)),
+	}})))),
+	959: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	960: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(7)),
+	}})))),
+	961: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	962: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(3),
+		Fsymbol:        uint16(sym_set_header),
+		Fproduction_id: uint16(27),
+	})))),
+	963: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	964: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(4),
+		Fsymbol:      uint16(sym_local_block),
+	})))),
+	965: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	966: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(5)),
+	}})))),
+	967: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	968: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(4),
+		Fsymbol:      uint16(sym_rules_block),
+	})))),
+	969: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	970: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(303)),
+	}})))),
+	971: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	972: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(210)),
+	}})))),
+	973: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	974: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(4),
+		Fsymbol:      uint16(sym_max_block),
+	})))),
+	975: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	976: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(383)),
+	}})))),
+	977: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	978: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(1),
+		Fsymbol:        uint16(sym__conf_value),
+		Fproduction_id: uint16(28),
+	})))),
+	979: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	980: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(4),
+		Fsymbol:      uint16(sym_maxnmatch_block),
+	})))),
+	981: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	982: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(4),
+		Fsymbol:      uint16(sym_getstate_block),
+	})))),
+	983: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	984: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(211)),
+	}})))),
+	985: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	986: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(212)),
+	}})))),
+	987: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	988: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(276)),
+	}})))),
+	989: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	990: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(207)),
+	}})))),
+	991: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount: uint8(1),
+	}})),
+	992: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(156)),
+	}})))),
+	993: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	994: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(208)),
+	}})))),
+	995: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	996: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(209)),
+	}})))),
+	997: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	998: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(224)),
+	}})))),
+	999: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	1000: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(142)),
+	}})))),
+	1001: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	1002: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(228)),
+	}})))),
+	1003: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	1004: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(49)),
+	}})))),
+	1005: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	1006: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(50)),
+	}})))),
+	1007: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	1008: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(55)),
+	}})))),
+	1009: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	1010: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(56)),
+	}})))),
+	1011: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	1012: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(54)),
+	}})))),
+	1013: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	1014: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(34)),
+	}})))),
+	1015: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	1016: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(35)),
+	}})))),
+	1017: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	1018: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f uint8_t
+		_ [7]byte
+	}{f: uint8(TSParseActionTypeAccept)})),
+	1019: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	1020: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(36)),
+	}})))),
+	1021: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	1022: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(37)),
+	}})))),
+	1023: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	1024: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(38)),
+	}})))),
+	1025: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	1026: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(386)),
+	}})))),
+	1027: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	1028: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(33)),
+	}})))),
+	1029: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	1030: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(6)),
+	}})))),
+	1031: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	1032: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(170)),
+	}})))),
+	1033: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	1034: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:    uint8(TSParseActionTypeReduce),
+		Fchild_count:   uint8(3),
+		Fsymbol:        uint16(sym_set_tags),
+		Fproduction_id: uint16(27),
+	})))),
+	1035: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	1036: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(39)),
+	}})))),
+	1037: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	1038: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(169)),
+	}})))),
+	1039: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	1040: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(43)),
+	}})))),
+	1041: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	1042: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(44)),
+	}})))),
+	1043: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	1044: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		f struct {
+			Ftype_token uint8_t
+			Fstate      TSStateId
+			Fextra      uint8
+			Frepetition uint8
+		}
+		_ [2]byte
+	}{f: struct {
+		Ftype_token uint8_t
+		Fstate      TSStateId
+		Fextra      uint8
+		Frepetition uint8
+	}{
+		Fstate: uint16(libc.Int32FromInt32(315)),
+	}})))),
+	1045: *(*TSParseActionEntry)(unsafe.Pointer(&struct {
+		f struct {
+			Fcount    uint8_t
+			Freusable uint8
+		}
+		_ [6]byte
+	}{f: struct {
+		Fcount    uint8_t
+		Freusable uint8
+	}{
+		Fcount:    uint8(1),
+		Freusable: libc.BoolUint8(true1 != 0),
+	}})),
+	1046: *(*TSParseActionEntry)(unsafe.Pointer(&*(*TSParseAction)(unsafe.Pointer(&struct {
+		Ftype_token         uint8_t
+		Fchild_count        uint8_t
+		Fsymbol             TSSymbol
+		Fdynamic_precedence int16_t
+		Fproduction_id      uint16_t
+	}{
+		Ftype_token:  uint8(TSParseActionTypeReduce),
+		Fchild_count: uint8(1),
+		Fsymbol:      uint16(sym_comment),
+	})))),
+}
+
+func tree_sitter_re2c(tls *libc.TLS) (r uintptr) {
+	return uintptr(unsafe.Pointer(&language))
+}
+
+var language = TSLanguage{
+	Fversion:                   uint32(LANGUAGE_VERSION),
+	Fsymbol_count:              uint32(SYMBOL_COUNT),
+	Falias_count:               uint32(ALIAS_COUNT),
+	Ftoken_count:               uint32(TOKEN_COUNT),
+	Fstate_count:               uint32(STATE_COUNT),
+	Flarge_state_count:         uint32(LARGE_STATE_COUNT),
+	Fproduction_id_count:       uint32(PRODUCTION_ID_COUNT),
+	Ffield_count:               uint32(FIELD_COUNT),
+	Fmax_alias_sequence_length: uint16(MAX_ALIAS_SEQUENCE_LENGTH),
+	Fparse_table:               uintptr(unsafe.Pointer(&ts_parse_table)),
+	Fsmall_parse_table:         uintptr(unsafe.Pointer(&ts_small_parse_table)),
+	Fsmall_parse_table_map:     uintptr(unsafe.Pointer(&ts_small_parse_table_map)),
+	Fparse_actions:             uintptr(unsafe.Pointer(&ts_parse_actions)),
+	Fsymbol_names:              uintptr(unsafe.Pointer(&ts_symbol_names)),
+	Ffield_names:               uintptr(unsafe.Pointer(&ts_field_names)),
+	Ffield_map_slices:          uintptr(unsafe.Pointer(&ts_field_map_slices)),
+	Ffield_map_entries:         uintptr(unsafe.Pointer(&ts_field_map_entries)),
+	Fsymbol_metadata:           uintptr(unsafe.Pointer(&ts_symbol_metadata)),
+	Fpublic_symbol_map:         uintptr(unsafe.Pointer(&ts_symbol_map)),
+	Falias_map:                 uintptr(unsafe.Pointer(&ts_non_terminal_alias_map)),
+	Falias_sequences:           uintptr(unsafe.Pointer(&ts_alias_sequences)),
+	Flex_modes:                 uintptr(unsafe.Pointer(&ts_lex_modes)),
+	Fkeyword_capture_token:     uint16(sym_identifier),
+	Fprimary_state_ids:         uintptr(unsafe.Pointer(&ts_primary_state_ids)),
+}
+
+func init() {
+	p := unsafe.Pointer(&language)
+	*(*uintptr)(unsafe.Add(p, 144)) = __ccgo_fp(ts_lex)
+	*(*uintptr)(unsafe.Add(p, 152)) = __ccgo_fp(ts_lex_keywords)
+}
+
+func __ccgo_fp(f interface{}) uintptr {
+	type iface [2]uintptr
+	return (*iface)(unsafe.Pointer(&f))[1]
+}
+
+var __ccgo_ts = (*reflect.StringHeader)(unsafe.Pointer(&__ccgo_ts1)).Data
+
+var __ccgo_ts1 = "end\x00identifier\x00host_lang\x00/*!\x00*/\x00re2c\x00local\x00:\x00rules\x00_block_name_token1\x00use\x00max\x00maxnmatch\x00types\x00getstate\x00stags\x00mtags\x00include\x00header\x00on\x00off\x00ignore_block\x00format\x00=\x00;\x00separator\x00option_name\x00@\x00flags\x00define\x00cond\x00label\x00variable\x00yych\x00state\x00yybm\x00cgoto\x00api\x00tags\x00indent\x00yyfill\x00eof\x00sentinel\x00condprefix\x00condenumprefix\x00labelprefix\x00startlabel\x00posix-captures\x00.\x00->\x00ignore\x00substitute\x00fail\x00default\x00custom\x00match-empty\x00match-none\x00error\x00functions\x00free-form\x00=>\x00:=>\x00<\x00>\x00!\x00,\x00any\x00end_of_input\x00{\x00}\x00_code_in_braces_token1\x00_code_in_braces_token2\x00_code_in_braces_token3\x00_code_in_braces_token4\x00_code_in_braces_token5\x00!use\x00!include\x00/\x00|\x00\\\x00*\x00+\x00?\x00number\x00(\x00)\x00[\x00^\x00]\x00range_token1\x00literal_token1\x00dstring_token1\x00sstring_token1\x00quote\x00ctrl_code\x00_esc_hex_token1\x00_esc_hex_token2\x00_esc_hex_token3\x00_esc_hex_token4\x00_esc_hex_token5\x00_esc_hex_token6\x00_esc_hex_token7\x00_esc_hex_token8\x00_esc_oct_token1\x00_esc_oct_token2\x00hex_digit\x00oct_digit\x00#\x000\x00-\x00number_token1\x00number_token2\x00comment_token1\x00comment_token2\x00line\x00linedir_token1\x00_block\x00global_block\x00local_block\x00rules_block\x00use_block\x00max_block\x00maxnmatch_block\x00getstate_block\x00stags_block\x00mtags_block\x00header_on_block\x00header_off_block\x00block_list\x00_tag_directive\x00format_directive\x00separator_directive\x00body\x00named_definition\x00configuration\x00_option_name\x00set_flags\x00set_cond\x00set_label\x00set_variable\x00set_yych\x00set_state\x00set_yybm\x00set_cgoto\x00set_api\x00set_tags\x00set_indent\x00set_yyfill\x00set_eof\x00set_sentinel\x00set_condprefix\x00set_condenumprefix\x00set_startlabel\x00set_posixcaptures\x00set_header\x00_conf_value\x00field_expression\x00encoding_policy\x00input_conf\x00empty_class_conf\x00api_style\x00ordinary_rule\x00conditional_rule\x00shortcut\x00condition\x00pattern\x00action\x00_code_in_braces\x00regex\x00lookahead\x00_pattern_expr\x00alternation\x00_branch\x00_alt_expr\x00difference\x00_dif_expr\x00concat\x00_cat_expr\x00repetition\x00close\x00limits\x00_mininum\x00_maximum\x00_exactly\x00_atom\x00parenthesized\x00character_class\x00range\x00wildcard\x00literal\x00dstring\x00sstring\x00_escape\x00code_unit\x00stag\x00mtag\x00comment\x00linedir\x00re2c_repeat1\x00stags_block_repeat1\x00block_list_repeat1\x00body_repeat1\x00_clist_repeat1\x00code_block_repeat1\x00alternation_repeat1\x00concat_repeat1\x00character_class_repeat1\x00block_name\x00field_identifier\x00name\x00argument\x00branch\x00exactly\x00expr\x00field\x00filename\x00from\x00left\x00linenum\x00maximum\x00minimum\x00operator\x00option\x00right\x00to\x00value\x00"

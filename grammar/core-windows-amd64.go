@@ -1,4 +1,4 @@
-// Code generated for windows/amd64 by 'ccgo -ignore-unsupported-alignment -ignore-unsupported-atomic-sizes -ignore-vector-functions --winapi-no-errno -ignore-link-errors -std=gnu11 -O0 -D__extension__= -D__forceinline=static inline -D__attribute__(...)= -D__declspec(x)= -D__cdecl= -D__stdcall= -D__fastcall= -D__thiscall= -D_cdecl= -D__restrict= -D__restrict__= -D__MINGW_EXTENSION= -D_X86INTRIN_H_INCLUDED -D_X86GPRINTRIN_H_INCLUDED -D_IMMINTRIN_H_INCLUDED -D_MMINTRIN_H_INCLUDED -D_XMMINTRIN_H_INCLUDED -D_EMMINTRIN_H_INCLUDED -D_PMMINTRIN_H_INCLUDED -D_MM3DNOW_H_INCLUDED -include atomic_stubs.h -I D:\a\ccgo-tree-sitter\ccgo-tree-sitter\third-party\tree-sitter\lib\include -I D:\a\ccgo-tree-sitter\ccgo-tree-sitter\third-party\tree-sitter\lib\src D:\a\ccgo-tree-sitter\ccgo-tree-sitter\third-party\tree-sitter\lib\src\lib.c -o core.go', DO NOT EDIT.
+// Code generated for windows/amd64 by 'ccgo -ignore-unsupported-alignment -ignore-unsupported-atomic-sizes -ignore-vector-functions --winapi-no-errno -ignore-link-errors -std=gnu11 -O0 -D__extension__= -D__forceinline=static inline -D__attribute__(...)= -D__declspec(x)= -D__cdecl= -D__stdcall= -D__fastcall= -D__thiscall= -D_cdecl= -D__restrict= -D__restrict__= -D__MINGW_EXTENSION= -D_X86INTRIN_H_INCLUDED -D_X86GPRINTRIN_H_INCLUDED -D_IMMINTRIN_H_INCLUDED -D_MMINTRIN_H_INCLUDED -D_XMMINTRIN_H_INCLUDED -D_EMMINTRIN_H_INCLUDED -D_PMMINTRIN_H_INCLUDED -D_MM3DNOW_H_INCLUDED -include atomic_stubs.h -I C:\Users\runneradmin\.cache\workspaced\sources\github\7349d53bdd4ab31f79a3eec0385f924117fa6d06f018e00aadd823c0dcd51ac2\lib\include -I C:\Users\runneradmin\.cache\workspaced\sources\github\7349d53bdd4ab31f79a3eec0385f924117fa6d06f018e00aadd823c0dcd51ac2\lib\src C:\Users\runneradmin\.cache\workspaced\sources\github\7349d53bdd4ab31f79a3eec0385f924117fa6d06f018e00aadd823c0dcd51ac2\lib\src\lib.c -o core.go', DO NOT EDIT.
 
 //go:build windows && amd64
 
@@ -16162,7 +16162,7 @@ func ts_range_array_intersects(tls *libc.TLS, self uintptr, start_index uint32, 
 			break
 		}
 		if v2 = !!(i < (*TSRangeArray)(unsafe.Pointer(self)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+220, __ccgo_ts+128, uint32(37))
+			libc.X_assert(tls, __ccgo_ts+276, __ccgo_ts+128, uint32(37))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		range1 = (*TSRangeArray)(unsafe.Pointer(self)).Fcontents + uintptr(i)*24
@@ -16521,7 +16521,7 @@ func iterator_start_position(tls *libc.TLS, self1 uintptr) (r Length) {
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self1+8)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+249, __ccgo_ts+128, uint32(174))
+		libc.X_assert(tls, __ccgo_ts+305, __ccgo_ts+128, uint32(174))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	entry = *(*TreeCursorEntry)(unsafe.Pointer((*struct {
@@ -16607,7 +16607,7 @@ func iterator_end_position(tls *libc.TLS, self2 uintptr) (r Length) {
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self2+8)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+249, __ccgo_ts+128, uint32(183))
+		libc.X_assert(tls, __ccgo_ts+305, __ccgo_ts+128, uint32(183))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	entry = *(*TreeCursorEntry)(unsafe.Pointer((*struct {
@@ -16745,7 +16745,7 @@ func iterator_tree_is_visible(tls *libc.TLS, self2 uintptr) (r uint8) {
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self2+8)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+249, __ccgo_ts+128, uint32(193))
+		libc.X_assert(tls, __ccgo_ts+305, __ccgo_ts+128, uint32(193))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	entry = *(*TreeCursorEntry)(unsafe.Pointer((*struct {
@@ -16777,7 +16777,7 @@ _4:
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self2+8)).Fsize); !v1 {
-			libc.X_assert(tls, __ccgo_ts+323, __ccgo_ts+128, uint32(196))
+			libc.X_assert(tls, __ccgo_ts+379, __ccgo_ts+128, uint32(196))
 		}
 		_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		*(*struct {
@@ -16831,7 +16831,7 @@ func iterator_get_visible_state(tls *libc.TLS, self2 uintptr, tree uintptr, alia
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self2+8)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+393, __ccgo_ts+128, uint32(220))
+			libc.X_assert(tls, __ccgo_ts+449, __ccgo_ts+128, uint32(220))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		entry = *(*TreeCursorEntry)(unsafe.Pointer((*struct {
@@ -16845,7 +16845,7 @@ func iterator_get_visible_state(tls *libc.TLS, self2 uintptr, tree uintptr, alia
 				Fsize     uint32_t
 				Fcapacity uint32_t
 			})(unsafe.Pointer(self2+8)).Fsize); !v3 {
-				libc.X_assert(tls, __ccgo_ts+437, __ccgo_ts+128, uint32(223))
+				libc.X_assert(tls, __ccgo_ts+493, __ccgo_ts+128, uint32(223))
 			}
 			_ = v3 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			parent = (*TreeCursorEntry)(unsafe.Pointer((*struct {
@@ -16906,7 +16906,7 @@ func iterator_ascend(tls *libc.TLS, self uintptr) {
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self+8)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+249, __ccgo_ts+128, uint32(242))
+		libc.X_assert(tls, __ccgo_ts+305, __ccgo_ts+128, uint32(242))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	if (*TreeCursorEntry)(unsafe.Pointer((*struct {
@@ -16954,7 +16954,7 @@ func iterator_descend(tls *libc.TLS, self4 uintptr, goal_position uint32_t) (r u
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self4+8)).Fsize); !v1 {
-			libc.X_assert(tls, __ccgo_ts+249, __ccgo_ts+128, uint32(252))
+			libc.X_assert(tls, __ccgo_ts+305, __ccgo_ts+128, uint32(252))
 		}
 		_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		entry = *(*TreeCursorEntry)(unsafe.Pointer((*struct {
@@ -17238,7 +17238,7 @@ func iterator_advance(tls *libc.TLS, self5 uintptr) {
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self5+8)).Fsize); !v4 {
-			libc.X_assert(tls, __ccgo_ts+249, __ccgo_ts+128, uint32(309))
+			libc.X_assert(tls, __ccgo_ts+305, __ccgo_ts+128, uint32(309))
 		}
 		_ = v4 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		parent = (*TreeCursorEntry)(unsafe.Pointer((*struct {
@@ -17852,7 +17852,7 @@ func ts_subtree_get_changed_ranges(tls *libc.TLS, old_tree uintptr, new_tree uin
 		// array in order to avoid scanning the entire array on each iteration.
 		for included_range_difference_index < (*TSRangeArray)(unsafe.Pointer(included_range_differences)).Fsize {
 			if v11 = !!(included_range_difference_index < (*TSRangeArray)(unsafe.Pointer(included_range_differences)).Fsize); !v11 {
-				libc.X_assert(tls, __ccgo_ts+485, __ccgo_ts+128, uint32(534))
+				libc.X_assert(tls, __ccgo_ts+541, __ccgo_ts+128, uint32(534))
 			}
 			_ = v11 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			range1 = (*TSRangeArray)(unsafe.Pointer(included_range_differences)).Fcontents + uintptr(included_range_difference_index)*24
@@ -18109,7 +18109,7 @@ func ts_language_table_entry(tls *libc.TLS, self1 uintptr, state1 TSStateId, sym
 		(*TableEntry)(unsafe.Pointer(result)).Factions = libc.UintptrFromInt32(0)
 	} else {
 		if v1 = !!(uint32(symbol1) < (*TSLanguage)(unsafe.Pointer(self1)).Ftoken_count); !v1 {
-			libc.X_assert(tls, __ccgo_ts+566, __ccgo_ts+593, uint32(79))
+			libc.X_assert(tls, __ccgo_ts+622, __ccgo_ts+649, uint32(79))
 		}
 		_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		v2 = self1
@@ -18333,10 +18333,10 @@ func ts_language_next_state(tls *libc.TLS, self2 uintptr, state2 TSStateId, symb
 
 func ts_language_symbol_name(tls *libc.TLS, self uintptr, symbol TSSymbol) (r uintptr) {
 	if int32(symbol) == int32(uint16(-libc.Int32FromInt32(1))) {
-		return __ccgo_ts + 675
+		return __ccgo_ts + 787
 	} else {
 		if int32(symbol) == int32(uint16(-libc.Int32FromInt32(1)))-libc.Int32FromInt32(1) {
-			return __ccgo_ts + 681
+			return __ccgo_ts + 793
 		} else {
 			if uint32(symbol) < ts_language_symbol_count(tls, self) {
 				return *(*uintptr)(unsafe.Pointer((*TSLanguage)(unsafe.Pointer(self)).Fsymbol_names + uintptr(symbol)*8))
@@ -18354,7 +18354,7 @@ func ts_language_symbol_for_name(tls *libc.TLS, self uintptr, string1 uintptr, l
 	var metadata TSSymbolMetadata
 	var symbol_name uintptr
 	_, _, _, _ = count, i, metadata, symbol_name
-	if is_named != 0 && !(libc.Xstrncmp(tls, string1, __ccgo_ts+675, uint64(length)) != 0) {
+	if is_named != 0 && !(libc.Xstrncmp(tls, string1, __ccgo_ts+787, uint64(length)) != 0) {
 		return uint16(-libc.Int32FromInt32(1))
 	}
 	count = uint16(ts_language_symbol_count(tls, self))
@@ -19052,9 +19052,9 @@ func ts_lexer__advance(tls *libc.TLS, _self uintptr, skip uint8) {
 	if skip != 0 {
 		if (*Lexer)(unsafe.Pointer(self)).Flogger.Flog != 0 {
 			if int32(32) <= (*Lexer)(unsafe.Pointer(self)).Fdata.Flookahead && (*Lexer)(unsafe.Pointer(self)).Fdata.Flookahead < int32(127) {
-				v1 = __ccgo_ts + 688
+				v1 = __ccgo_ts + 800
 			} else {
-				v1 = __ccgo_ts + 708
+				v1 = __ccgo_ts + 820
 			}
 			libc.X__builtin_snprintf(tls, self+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), v1, libc.VaList(bp+8, (*Lexer)(unsafe.Pointer(self)).Fdata.Flookahead))
 			(*(*func(*libc.TLS, uintptr, TSLogType1, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*Lexer)(unsafe.Pointer(self)).Flogger.Flog})))(tls, (*Lexer)(unsafe.Pointer(self)).Flogger.Fpayload, int32(TSLogTypeLex), self+192)
@@ -19062,9 +19062,9 @@ func ts_lexer__advance(tls *libc.TLS, _self uintptr, skip uint8) {
 	} else {
 		if (*Lexer)(unsafe.Pointer(self)).Flogger.Flog != 0 {
 			if int32(32) <= (*Lexer)(unsafe.Pointer(self)).Fdata.Flookahead && (*Lexer)(unsafe.Pointer(self)).Fdata.Flookahead < int32(127) {
-				v1 = __ccgo_ts + 726
+				v1 = __ccgo_ts + 838
 			} else {
-				v1 = __ccgo_ts + 749
+				v1 = __ccgo_ts + 861
 			}
 			libc.X__builtin_snprintf(tls, self+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), v1, libc.VaList(bp+8, (*Lexer)(unsafe.Pointer(self)).Fdata.Flookahead))
 			(*(*func(*libc.TLS, uintptr, TSLogType1, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*Lexer)(unsafe.Pointer(self)).Flogger.Flog})))(tls, (*Lexer)(unsafe.Pointer(self)).Flogger.Fpayload, int32(TSLogTypeLex), self+192)
@@ -21313,7 +21313,7 @@ func ts_string_input_read(tls *libc.TLS, _self uintptr, byte1 uint32_t, point TS
 	self = _self
 	if byte1 >= (*TSStringInput)(unsafe.Pointer(self)).Flength {
 		*(*uint32_t)(unsafe.Pointer(length)) = uint32(0)
-		return __ccgo_ts + 770
+		return __ccgo_ts + 882
 	} else {
 		*(*uint32_t)(unsafe.Pointer(length)) = (*TSStringInput)(unsafe.Pointer(self)).Flength - byte1
 		return (*TSStringInput)(unsafe.Pointer(self)).Fstring1 + uintptr(byte1)
@@ -21330,7 +21330,7 @@ func ts_parser__log(tls *libc.TLS, self uintptr) {
 		(*(*func(*libc.TLS, uintptr, TSLogType1, uintptr))(unsafe.Pointer(&struct{ uintptr }{(*TSParser)(unsafe.Pointer(self)).Flexer.Flogger.Flog})))(tls, (*TSParser)(unsafe.Pointer(self)).Flexer.Flogger.Fpayload, int32(TSLogTypeParse), self+192)
 	}
 	if (*TSParser)(unsafe.Pointer(self)).Fdot_graph_file != 0 {
-		libc.Xfprintf(tls, (*TSParser)(unsafe.Pointer(self)).Fdot_graph_file, __ccgo_ts+771, 0)
+		libc.Xfprintf(tls, (*TSParser)(unsafe.Pointer(self)).Fdot_graph_file, __ccgo_ts+883, 0)
 		chr = self + 192
 		for {
 			if !(int32(*(*int8)(unsafe.Pointer(chr))) != 0) {
@@ -21345,7 +21345,7 @@ func ts_parser__log(tls *libc.TLS, self uintptr) {
 			;
 			chr = chr + 1
 		}
-		libc.Xfprintf(tls, (*TSParser)(unsafe.Pointer(self)).Fdot_graph_file, __ccgo_ts+787, 0)
+		libc.Xfprintf(tls, (*TSParser)(unsafe.Pointer(self)).Fdot_graph_file, __ccgo_ts+899, 0)
 	}
 }
 
@@ -21380,14 +21380,14 @@ func ts_parser__breakdown_top_of_stack(tls *libc.TLS, self4 uintptr, version Sta
 				break
 			}
 			if v2 = !!(i < (*StackSliceArray)(unsafe.Pointer(bp+24)).Fsize); !v2 {
-				libc.X_assert(tls, __ccgo_ts+793, __ccgo_ts+822, uint32(190))
+				libc.X_assert(tls, __ccgo_ts+905, __ccgo_ts+934, uint32(190))
 			}
 			_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			*(*StackSlice)(unsafe.Pointer(bp + 40)) = *(*StackSlice)(unsafe.Pointer((*StackSliceArray)(unsafe.Pointer(bp+24)).Fcontents + uintptr(i)*24))
 			state = ts_stack_state(tls, (*TSParser)(unsafe.Pointer(self4)).Fstack, (*(*StackSlice)(unsafe.Pointer(bp + 40))).Fversion)
 			*(*Subtree)(unsafe.Pointer(bp + 64)) = Subtree{}
 			if v3 = !!(uint32(libc.Int32FromInt32(0)) < (*SubtreeArray)(unsafe.Pointer(bp+40)).Fsize); !v3 {
-				libc.X_assert(tls, __ccgo_ts+902, __ccgo_ts+822, uint32(192))
+				libc.X_assert(tls, __ccgo_ts+1070, __ccgo_ts+934, uint32(192))
 			}
 			_ = v3 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			*(*struct {
@@ -21480,7 +21480,7 @@ func ts_parser__breakdown_top_of_stack(tls *libc.TLS, self4 uintptr, version Sta
 					break
 				}
 				if v2 = !!(j1 < (*SubtreeArray)(unsafe.Pointer(bp+40)).Fsize); !v2 {
-					libc.X_assert(tls, __ccgo_ts+942, __ccgo_ts+822, uint32(209))
+					libc.X_assert(tls, __ccgo_ts+1110, __ccgo_ts+934, uint32(209))
 				}
 				_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 				tree = *(*Subtree)(unsafe.Pointer((*SubtreeArray)(unsafe.Pointer(bp+40)).Fcontents + uintptr(j1)*8))
@@ -21508,12 +21508,12 @@ func ts_parser__breakdown_top_of_stack(tls *libc.TLS, self4 uintptr, version Sta
 				v17 = uint16(v19)
 				goto _32
 			_32:
-				libc.X__builtin_snprintf(tls, self4+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+982, libc.VaList(bp+80, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self4)).Flanguage, v17)))
+				libc.X__builtin_snprintf(tls, self4+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+1150, libc.VaList(bp+80, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self4)).Flanguage, v17)))
 				ts_parser__log(tls, self4)
 			}
 			if (*TSParser)(unsafe.Pointer(self4)).Fdot_graph_file != 0 {
 				ts_stack_print_dot_graph(tls, (*TSParser)(unsafe.Pointer(self4)).Fstack, (*TSParser)(unsafe.Pointer(self4)).Flanguage, (*TSParser)(unsafe.Pointer(self4)).Fdot_graph_file)
-				libc.Xfputs(tls, __ccgo_ts+1013, (*TSParser)(unsafe.Pointer(self4)).Fdot_graph_file)
+				libc.Xfputs(tls, __ccgo_ts+1181, (*TSParser)(unsafe.Pointer(self4)).Fdot_graph_file)
 			}
 			goto _1
 		_1:
@@ -21588,7 +21588,7 @@ _3:
 			v15 = uint16(v17)
 			goto _16
 		_16:
-			libc.X__builtin_snprintf(tls, self5+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+1016, libc.VaList(bp+48, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self5)).Flanguage, v15)))
+			libc.X__builtin_snprintf(tls, self5+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+1184, libc.VaList(bp+48, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self5)).Flanguage, v15)))
 			ts_parser__log(tls, self5)
 		}
 		v1 = reusable_node
@@ -21601,7 +21601,7 @@ _3:
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(v1)).Fsize); !v13 {
-			libc.X_assert(tls, __ccgo_ts+1038, __ccgo_ts+1098, uint32(63))
+			libc.X_assert(tls, __ccgo_ts+1206, __ccgo_ts+1266, uint32(63))
 		}
 		_ = v13 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		*(*StackEntry)(unsafe.Pointer(bp + 24)) = StackEntry{}
@@ -21908,7 +21908,7 @@ func ts_parser__external_scanner_serialize(tls *libc.TLS, self uintptr) (r uint3
 		length = (*(*func(*libc.TLS, uintptr, uintptr) uint32)(unsafe.Pointer(&struct{ uintptr }{(*TSLanguage)(unsafe.Pointer((*TSParser)(unsafe.Pointer(self)).Flanguage)).Fexternal_scanner.Fserialize})))(tls, (*TSParser)(unsafe.Pointer(self)).Fexternal_scanner_payload, self+192)
 	}
 	if v1 = !!(length <= libc.Uint32FromInt32(TREE_SITTER_SERIALIZATION_BUFFER_SIZE)); !v1 {
-		libc.X_assert(tls, __ccgo_ts+1185, __ccgo_ts+822, uint32(409))
+		libc.X_assert(tls, __ccgo_ts+1409, __ccgo_ts+934, uint32(409))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	return length
@@ -22098,7 +22098,7 @@ func ts_parser__lex(tls *libc.TLS, self7 uintptr, version StackVersion, parse_st
 	lex_mode = ts_language_lex_mode_for_state(tls, (*TSParser)(unsafe.Pointer(self7)).Flanguage, parse_state)
 	if int32(lex_mode.Flex_state) == int32(uint16(-libc.Int32FromInt32(1))) {
 		if (*TSParser)(unsafe.Pointer(self7)).Flexer.Flogger.Flog != 0 || (*TSParser)(unsafe.Pointer(self7)).Fdot_graph_file != 0 {
-			libc.X__builtin_snprintf(tls, self7+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+1200, 0)
+			libc.X__builtin_snprintf(tls, self7+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+1424, 0)
 			ts_parser__log(tls, self7)
 		}
 		return Subtree{}
@@ -22130,7 +22130,7 @@ _4:
 		column_data = (*TSParser)(unsafe.Pointer(self7)).Flexer.Fcolumn_data
 		if int32(lex_mode.Fexternal_lex_state) != 0 {
 			if (*TSParser)(unsafe.Pointer(self7)).Flexer.Flogger.Flog != 0 || (*TSParser)(unsafe.Pointer(self7)).Fdot_graph_file != 0 {
-				libc.X__builtin_snprintf(tls, self7+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+1238, libc.VaList(bp+64, int32(lex_mode.Fexternal_lex_state), current_position.Fextent.Frow, current_position.Fextent.Fcolumn))
+				libc.X__builtin_snprintf(tls, self7+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+1462, libc.VaList(bp+64, int32(lex_mode.Fexternal_lex_state), current_position.Fextent.Frow, current_position.Fextent.Fcolumn))
 				ts_parser__log(tls, self7)
 			}
 			ts_lexer_start(tls, self7)
@@ -22158,7 +22158,7 @@ _4:
 					token_is_extra = libc.BoolUint8(int32(next_parse_state) == int32(parse_state))
 					if error_mode != 0 || !(ts_stack_has_advanced_since_error(tls, (*TSParser)(unsafe.Pointer(self7)).Fstack, version) != 0) || token_is_extra != 0 {
 						if (*TSParser)(unsafe.Pointer(self7)).Flexer.Flogger.Flog != 0 || (*TSParser)(unsafe.Pointer(self7)).Fdot_graph_file != 0 {
-							libc.X__builtin_snprintf(tls, self7+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+1279, libc.VaList(bp+64, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self7)).Flanguage, *(*TSSymbol)(unsafe.Pointer((*TSLanguage)(unsafe.Pointer((*TSParser)(unsafe.Pointer(self7)).Flanguage)).Fexternal_scanner.Fsymbol_map + uintptr((*TSParser)(unsafe.Pointer(self7)).Flexer.Fdata.Fresult_symbol)*2)))))
+							libc.X__builtin_snprintf(tls, self7+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+1503, libc.VaList(bp+64, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self7)).Flanguage, *(*TSSymbol)(unsafe.Pointer((*TSLanguage)(unsafe.Pointer((*TSParser)(unsafe.Pointer(self7)).Flanguage)).Fexternal_scanner.Fsymbol_map + uintptr((*TSParser)(unsafe.Pointer(self7)).Flexer.Fdata.Fresult_symbol)*2)))))
 							ts_parser__log(tls, self7)
 						}
 						found_token = libc.BoolUint8(false1 != 0)
@@ -22174,7 +22174,7 @@ _4:
 			(*TSParser)(unsafe.Pointer(self7)).Flexer.Fcolumn_data = column_data
 		}
 		if (*TSParser)(unsafe.Pointer(self7)).Flexer.Flogger.Flog != 0 || (*TSParser)(unsafe.Pointer(self7)).Fdot_graph_file != 0 {
-			libc.X__builtin_snprintf(tls, self7+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+1317, libc.VaList(bp+64, int32(lex_mode.Flex_state), current_position.Fextent.Frow, current_position.Fextent.Fcolumn))
+			libc.X__builtin_snprintf(tls, self7+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+1541, libc.VaList(bp+64, int32(lex_mode.Flex_state), current_position.Fextent.Frow, current_position.Fextent.Fcolumn))
 			ts_parser__log(tls, self7)
 		}
 		ts_lexer_start(tls, self7)
@@ -22191,7 +22191,7 @@ _4:
 		}
 		if !(skipped_error != 0) {
 			if (*TSParser)(unsafe.Pointer(self7)).Flexer.Flogger.Flog != 0 || (*TSParser)(unsafe.Pointer(self7)).Fdot_graph_file != 0 {
-				libc.X__builtin_snprintf(tls, self7+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+1358, 0)
+				libc.X__builtin_snprintf(tls, self7+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+1582, 0)
 				ts_parser__log(tls, self7)
 			}
 			skipped_error = libc.BoolUint8(true1 != 0)
@@ -22480,7 +22480,7 @@ _4:
 		goto _80
 	_80:
 		symbol4 = ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self7)).Flanguage, v66)
-		off = libc.X__builtin_snprintf(tls, buf, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+1386, 0)
+		off = libc.X__builtin_snprintf(tls, buf, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+1610, 0)
 		i1 = 0
 		for {
 			if !(int32(*(*int8)(unsafe.Pointer(symbol4 + uintptr(i1)))) != int32('\000') && off < int32(TREE_SITTER_SERIALIZATION_BUFFER_SIZE)) {
@@ -22608,7 +22608,7 @@ _4:
 		v1 = v20
 		goto _98
 	_98:
-		libc.X__builtin_snprintf(tls, buf+uintptr(off), uint64(int32(TREE_SITTER_SERIALIZATION_BUFFER_SIZE)-off), __ccgo_ts+1407, libc.VaList(bp+64, v1.Fbytes))
+		libc.X__builtin_snprintf(tls, buf+uintptr(off), uint64(int32(TREE_SITTER_SERIALIZATION_BUFFER_SIZE)-off), __ccgo_ts+1631, libc.VaList(bp+64, v1.Fbytes))
 		ts_parser__log(tls, self7)
 	}
 	return result7
@@ -22817,7 +22817,7 @@ func ts_parser__reuse_node(tls *libc.TLS, self19 uintptr, version StackVersion, 
 				v36 = uint16(v38)
 				goto _41
 			_41:
-				libc.X__builtin_snprintf(tls, self19+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+1417, libc.VaList(bp+112, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self19)).Flanguage, v36)))
+				libc.X__builtin_snprintf(tls, self19+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+1641, libc.VaList(bp+112, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self19)).Flanguage, v36)))
 				ts_parser__log(tls, self19)
 			}
 			break
@@ -22834,7 +22834,7 @@ func ts_parser__reuse_node(tls *libc.TLS, self19 uintptr, version StackVersion, 
 				v36 = uint16(v38)
 				goto _45
 			_45:
-				libc.X__builtin_snprintf(tls, self19+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+1448, libc.VaList(bp+112, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self19)).Flanguage, v36)))
+				libc.X__builtin_snprintf(tls, self19+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+1672, libc.VaList(bp+112, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self19)).Flanguage, v36)))
 				ts_parser__log(tls, self19)
 			}
 			if v68 = end_byte_offset <= position; !v68 {
@@ -22848,7 +22848,7 @@ func ts_parser__reuse_node(tls *libc.TLS, self19 uintptr, version StackVersion, 
 					Fsize     uint32_t
 					Fcapacity uint32_t
 				})(unsafe.Pointer(v2)).Fsize); !v48 {
-					libc.X_assert(tls, __ccgo_ts+1038, __ccgo_ts+1098, uint32(63))
+					libc.X_assert(tls, __ccgo_ts+1206, __ccgo_ts+1266, uint32(63))
 				}
 				_ = v48 || libc.Bool(libc.Int32FromInt32(0) != 0)
 				*(*StackEntry)(unsafe.Pointer(bp + 88)) = StackEntry{}
@@ -22960,7 +22960,7 @@ func ts_parser__reuse_node(tls *libc.TLS, self19 uintptr, version StackVersion, 
 					Fsize     uint32_t
 					Fcapacity uint32_t
 				})(unsafe.Pointer(v64)).Fsize); !v70 {
-					libc.X_assert(tls, __ccgo_ts+1038, __ccgo_ts+1098, uint32(40))
+					libc.X_assert(tls, __ccgo_ts+1206, __ccgo_ts+1266, uint32(40))
 				}
 				_ = v70 || libc.Bool(libc.Int32FromInt32(0) != 0)
 				last_entry = *(*StackEntry)(unsafe.Pointer((*struct {
@@ -23079,7 +23079,7 @@ func ts_parser__reuse_node(tls *libc.TLS, self19 uintptr, version StackVersion, 
 						Fsize     uint32_t
 						Fcapacity uint32_t
 					})(unsafe.Pointer(v64)).Fsize); !v106 {
-						libc.X_assert(tls, __ccgo_ts+1038, __ccgo_ts+1098, uint32(52))
+						libc.X_assert(tls, __ccgo_ts+1206, __ccgo_ts+1266, uint32(52))
 					}
 					_ = v106 || libc.Bool(libc.Int32FromInt32(0) != 0)
 					*(*Subtree)(unsafe.Pointer(bp + 80)) = (*StackEntry)(unsafe.Pointer((*struct {
@@ -23188,7 +23188,7 @@ func ts_parser__reuse_node(tls *libc.TLS, self19 uintptr, version StackVersion, 
 				v36 = uint16(v38)
 				goto _122
 			_122:
-				libc.X__builtin_snprintf(tls, self19+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+1477, libc.VaList(bp+112, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self19)).Flanguage, v36)))
+				libc.X__builtin_snprintf(tls, self19+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+1701, libc.VaList(bp+112, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self19)).Flanguage, v36)))
 				ts_parser__log(tls, self19)
 			}
 			v2 = self19 + 1368
@@ -23201,7 +23201,7 @@ func ts_parser__reuse_node(tls *libc.TLS, self19 uintptr, version StackVersion, 
 				Fsize     uint32_t
 				Fcapacity uint32_t
 			})(unsafe.Pointer(v2)).Fsize); !v48 {
-				libc.X_assert(tls, __ccgo_ts+1038, __ccgo_ts+1098, uint32(40))
+				libc.X_assert(tls, __ccgo_ts+1206, __ccgo_ts+1266, uint32(40))
 			}
 			_ = v48 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			last_entry = *(*StackEntry)(unsafe.Pointer((*struct {
@@ -23320,7 +23320,7 @@ func ts_parser__reuse_node(tls *libc.TLS, self19 uintptr, version StackVersion, 
 					Fsize     uint32_t
 					Fcapacity uint32_t
 				})(unsafe.Pointer(v2)).Fsize); !v68 {
-					libc.X_assert(tls, __ccgo_ts+1038, __ccgo_ts+1098, uint32(52))
+					libc.X_assert(tls, __ccgo_ts+1206, __ccgo_ts+1266, uint32(52))
 				}
 				_ = v68 || libc.Bool(libc.Int32FromInt32(0) != 0)
 				*(*Subtree)(unsafe.Pointer(bp + 80)) = (*StackEntry)(unsafe.Pointer((*struct {
@@ -23429,7 +23429,7 @@ func ts_parser__reuse_node(tls *libc.TLS, self19 uintptr, version StackVersion, 
 		goto _177
 	_177:
 		if v33 != 0 {
-			reason = __ccgo_ts + 1538
+			reason = __ccgo_ts + 1762
 		} else {
 			v1 = result4
 			*(*Subtree)(unsafe.Pointer(bp)) = v1
@@ -23445,7 +23445,7 @@ func ts_parser__reuse_node(tls *libc.TLS, self19 uintptr, version StackVersion, 
 			goto _180
 		_180:
 			if v33 != 0 {
-				reason = __ccgo_ts + 1550
+				reason = __ccgo_ts + 1774
 			} else {
 				v1 = result4
 				*(*Subtree)(unsafe.Pointer(bp + 16)) = v1
@@ -23458,7 +23458,7 @@ func ts_parser__reuse_node(tls *libc.TLS, self19 uintptr, version StackVersion, 
 				goto _187
 			_187:
 				if v33 != 0 {
-					reason = __ccgo_ts + 1559
+					reason = __ccgo_ts + 1783
 				} else {
 					v1 = result4
 					*(*Subtree)(unsafe.Pointer(bp + 72)) = v1
@@ -23471,7 +23471,7 @@ func ts_parser__reuse_node(tls *libc.TLS, self19 uintptr, version StackVersion, 
 					goto _191
 				_191:
 					if v33 != 0 {
-						reason = __ccgo_ts + 1570
+						reason = __ccgo_ts + 1794
 					} else {
 						v1 = result4
 						*(*Subtree)(unsafe.Pointer(bp)) = v1
@@ -23502,7 +23502,7 @@ func ts_parser__reuse_node(tls *libc.TLS, self19 uintptr, version StackVersion, 
 							v9 = end_byte_offset + v7
 						}
 						if ts_parser__has_included_range_difference(tls, self19, byte_offset1, v9) != 0 {
-							reason = __ccgo_ts + 1581
+							reason = __ccgo_ts + 1805
 						}
 					}
 				}
@@ -23520,7 +23520,7 @@ func ts_parser__reuse_node(tls *libc.TLS, self19 uintptr, version StackVersion, 
 				v36 = uint16(v38)
 				goto _206
 			_206:
-				libc.X__builtin_snprintf(tls, self19+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+1615, libc.VaList(bp+112, reason, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self19)).Flanguage, v36)))
+				libc.X__builtin_snprintf(tls, self19+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+1839, libc.VaList(bp+112, reason, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self19)).Flanguage, v36)))
 				ts_parser__log(tls, self19)
 			}
 			v2 = self19 + 1368
@@ -23533,7 +23533,7 @@ func ts_parser__reuse_node(tls *libc.TLS, self19 uintptr, version StackVersion, 
 				Fsize     uint32_t
 				Fcapacity uint32_t
 			})(unsafe.Pointer(v2)).Fsize); !v48 {
-				libc.X_assert(tls, __ccgo_ts+1038, __ccgo_ts+1098, uint32(63))
+				libc.X_assert(tls, __ccgo_ts+1206, __ccgo_ts+1266, uint32(63))
 			}
 			_ = v48 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			*(*StackEntry)(unsafe.Pointer(bp + 88)) = StackEntry{}
@@ -23644,7 +23644,7 @@ func ts_parser__reuse_node(tls *libc.TLS, self19 uintptr, version StackVersion, 
 					Fsize     uint32_t
 					Fcapacity uint32_t
 				})(unsafe.Pointer(v64)).Fsize); !v68 {
-					libc.X_assert(tls, __ccgo_ts+1038, __ccgo_ts+1098, uint32(40))
+					libc.X_assert(tls, __ccgo_ts+1206, __ccgo_ts+1266, uint32(40))
 				}
 				_ = v68 || libc.Bool(libc.Int32FromInt32(0) != 0)
 				last_entry = *(*StackEntry)(unsafe.Pointer((*struct {
@@ -23763,7 +23763,7 @@ func ts_parser__reuse_node(tls *libc.TLS, self19 uintptr, version StackVersion, 
 						Fsize     uint32_t
 						Fcapacity uint32_t
 					})(unsafe.Pointer(v64)).Fsize); !v70 {
-						libc.X_assert(tls, __ccgo_ts+1038, __ccgo_ts+1098, uint32(52))
+						libc.X_assert(tls, __ccgo_ts+1206, __ccgo_ts+1266, uint32(52))
 					}
 					_ = v70 || libc.Bool(libc.Int32FromInt32(0) != 0)
 					*(*Subtree)(unsafe.Pointer(bp + 80)) = (*StackEntry)(unsafe.Pointer((*struct {
@@ -23890,7 +23890,7 @@ func ts_parser__reuse_node(tls *libc.TLS, self19 uintptr, version StackVersion, 
 				v36 = uint16(v38)
 				goto _285
 			_285:
-				libc.X__builtin_snprintf(tls, self19+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+1642, libc.VaList(bp+112, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self19)).Flanguage, v36), ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self19)).Flanguage, leaf_symbol)))
+				libc.X__builtin_snprintf(tls, self19+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+1866, libc.VaList(bp+112, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self19)).Flanguage, v36), ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self19)).Flanguage, leaf_symbol)))
 				ts_parser__log(tls, self19)
 			}
 			v2 = self19 + 1368
@@ -23905,7 +23905,7 @@ func ts_parser__reuse_node(tls *libc.TLS, self19 uintptr, version StackVersion, 
 					Fsize     uint32_t
 					Fcapacity uint32_t
 				})(unsafe.Pointer(v6)).Fsize); !v48 {
-					libc.X_assert(tls, __ccgo_ts+1038, __ccgo_ts+1098, uint32(63))
+					libc.X_assert(tls, __ccgo_ts+1206, __ccgo_ts+1266, uint32(63))
 				}
 				_ = v48 || libc.Bool(libc.Int32FromInt32(0) != 0)
 				*(*StackEntry)(unsafe.Pointer(bp + 88)) = StackEntry{}
@@ -24019,7 +24019,7 @@ func ts_parser__reuse_node(tls *libc.TLS, self19 uintptr, version StackVersion, 
 				Fsize     uint32_t
 				Fcapacity uint32_t
 			})(unsafe.Pointer(v65)).Fsize); !v68 {
-				libc.X_assert(tls, __ccgo_ts+1038, __ccgo_ts+1098, uint32(40))
+				libc.X_assert(tls, __ccgo_ts+1206, __ccgo_ts+1266, uint32(40))
 			}
 			_ = v68 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			last_entry = *(*StackEntry)(unsafe.Pointer((*struct {
@@ -24138,7 +24138,7 @@ func ts_parser__reuse_node(tls *libc.TLS, self19 uintptr, version StackVersion, 
 					Fsize     uint32_t
 					Fcapacity uint32_t
 				})(unsafe.Pointer(v65)).Fsize); !v70 {
-					libc.X_assert(tls, __ccgo_ts+1038, __ccgo_ts+1098, uint32(52))
+					libc.X_assert(tls, __ccgo_ts+1206, __ccgo_ts+1266, uint32(52))
 				}
 				_ = v70 || libc.Bool(libc.Int32FromInt32(0) != 0)
 				*(*Subtree)(unsafe.Pointer(bp + 80)) = (*StackEntry)(unsafe.Pointer((*struct {
@@ -24246,7 +24246,7 @@ func ts_parser__reuse_node(tls *libc.TLS, self19 uintptr, version StackVersion, 
 			v36 = uint16(v38)
 			goto _362
 		_362:
-			libc.X__builtin_snprintf(tls, self19+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+1690, libc.VaList(bp+112, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self19)).Flanguage, v36)))
+			libc.X__builtin_snprintf(tls, self19+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+1914, libc.VaList(bp+112, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self19)).Flanguage, v36)))
 			ts_parser__log(tls, self19)
 		}
 		ts_subtree_retain(tls, result4)
@@ -24352,7 +24352,7 @@ _15:
 			v22 = uint16(v24)
 			goto _23
 		_23:
-			libc.X__builtin_snprintf(tls, self4+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+1711, libc.VaList(bp+56, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self4)).Flanguage, v18), ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self4)).Flanguage, v22)))
+			libc.X__builtin_snprintf(tls, self4+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+1935, libc.VaList(bp+56, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self4)).Flanguage, v18), ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self4)).Flanguage, v22)))
 			ts_parser__log(tls, self4)
 		}
 		return libc.BoolUint8(true1 != 0)
@@ -24429,7 +24429,7 @@ _39:
 			v22 = uint16(v24)
 			goto _47
 		_47:
-			libc.X__builtin_snprintf(tls, self4+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+1711, libc.VaList(bp+56, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self4)).Flanguage, v18), ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self4)).Flanguage, v22)))
+			libc.X__builtin_snprintf(tls, self4+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+1935, libc.VaList(bp+56, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self4)).Flanguage, v18), ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self4)).Flanguage, v22)))
 			ts_parser__log(tls, self4)
 		}
 		return libc.BoolUint8(false1 != 0)
@@ -24496,7 +24496,7 @@ _55:
 			v70 = v37
 			goto _71
 		_71:
-			libc.X__builtin_snprintf(tls, self4+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+1758, libc.VaList(bp+56, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self4)).Flanguage, v18), v62, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self4)).Flanguage, v22), v70))
+			libc.X__builtin_snprintf(tls, self4+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+1982, libc.VaList(bp+56, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self4)).Flanguage, v18), v62, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self4)).Flanguage, v22), v70))
 			ts_parser__log(tls, self4)
 		}
 		return libc.BoolUint8(true1 != 0)
@@ -24563,7 +24563,7 @@ _79:
 			v70 = v37
 			goto _95
 		_95:
-			libc.X__builtin_snprintf(tls, self4+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+1758, libc.VaList(bp+56, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self4)).Flanguage, v18), v62, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self4)).Flanguage, v22), v70))
+			libc.X__builtin_snprintf(tls, self4+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+1982, libc.VaList(bp+56, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self4)).Flanguage, v18), v62, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self4)).Flanguage, v22), v70))
 			ts_parser__log(tls, self4)
 		}
 		return libc.BoolUint8(false1 != 0)
@@ -24620,7 +24620,7 @@ _103:
 			v22 = uint16(v13)
 			goto _111
 		_111:
-			libc.X__builtin_snprintf(tls, self4+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+1833, libc.VaList(bp+56, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self4)).Flanguage, v18), ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self4)).Flanguage, v22)))
+			libc.X__builtin_snprintf(tls, self4+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+2057, libc.VaList(bp+56, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self4)).Flanguage, v18), ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self4)).Flanguage, v22)))
 			ts_parser__log(tls, self4)
 		}
 		return libc.BoolUint8(false1 != 0)
@@ -24646,7 +24646,7 @@ _103:
 			v22 = uint16(v13)
 			goto _119
 		_119:
-			libc.X__builtin_snprintf(tls, self4+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+1833, libc.VaList(bp+56, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self4)).Flanguage, v18), ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self4)).Flanguage, v22)))
+			libc.X__builtin_snprintf(tls, self4+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+2057, libc.VaList(bp+56, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self4)).Flanguage, v18), ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self4)).Flanguage, v22)))
 			ts_parser__log(tls, self4)
 		}
 		return libc.BoolUint8(true1 != 0)
@@ -24672,7 +24672,7 @@ _103:
 			v22 = uint16(v13)
 			goto _127
 		_127:
-			libc.X__builtin_snprintf(tls, self4+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+1874, libc.VaList(bp+56, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self4)).Flanguage, v18), ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self4)).Flanguage, v22)))
+			libc.X__builtin_snprintf(tls, self4+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+2098, libc.VaList(bp+56, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self4)).Flanguage, v18), ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self4)).Flanguage, v22)))
 			ts_parser__log(tls, self4)
 		}
 		return libc.BoolUint8(false1 != 0)
@@ -24850,7 +24850,7 @@ func ts_parser__reduce(tls *libc.TLS, self1 uintptr, version StackVersion, symbo
 			break
 		}
 		if v2 = !!(i < (*StackSliceArray)(unsafe.Pointer(bp+16)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+793, __ccgo_ts+822, uint32(958))
+			libc.X_assert(tls, __ccgo_ts+905, __ccgo_ts+934, uint32(958))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		*(*StackSlice)(unsafe.Pointer(bp + 32)) = *(*StackSlice)(unsafe.Pointer((*StackSliceArray)(unsafe.Pointer(bp+16)).Fcontents + uintptr(i)*24))
@@ -24865,11 +24865,11 @@ func ts_parser__reduce(tls *libc.TLS, self1 uintptr, version StackVersion, symbo
 			removed_version_count = removed_version_count + 1
 			for i+uint32(1) < (*(*StackSliceArray)(unsafe.Pointer(bp + 16))).Fsize {
 				if (*TSParser)(unsafe.Pointer(self1)).Flexer.Flogger.Flog != 0 || (*TSParser)(unsafe.Pointer(self1)).Fdot_graph_file != 0 {
-					libc.X__builtin_snprintf(tls, self1+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+1916, 0)
+					libc.X__builtin_snprintf(tls, self1+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+2140, 0)
 					ts_parser__log(tls, self1)
 				}
 				if v2 = !!(i+libc.Uint32FromInt32(1) < (*StackSliceArray)(unsafe.Pointer(bp+16)).Fsize); !v2 {
-					libc.X_assert(tls, __ccgo_ts+1955, __ccgo_ts+822, uint32(971))
+					libc.X_assert(tls, __ccgo_ts+2179, __ccgo_ts+934, uint32(971))
 				}
 				_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 				*(*StackSlice)(unsafe.Pointer(bp + 56)) = *(*StackSlice)(unsafe.Pointer((*StackSliceArray)(unsafe.Pointer(bp+16)).Fcontents + uintptr(i+uint32(1))*24))
@@ -24897,7 +24897,7 @@ func ts_parser__reduce(tls *libc.TLS, self1 uintptr, version StackVersion, symbo
 		// delete the rest of the tree arrays.
 		for i+uint32(1) < (*(*StackSliceArray)(unsafe.Pointer(bp + 16))).Fsize {
 			if v2 = !!(i+libc.Uint32FromInt32(1) < (*StackSliceArray)(unsafe.Pointer(bp+16)).Fsize); !v2 {
-				libc.X_assert(tls, __ccgo_ts+1955, __ccgo_ts+822, uint32(994))
+				libc.X_assert(tls, __ccgo_ts+2179, __ccgo_ts+934, uint32(994))
 			}
 			_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			*(*StackSlice)(unsafe.Pointer(bp + 104)) = *(*StackSlice)(unsafe.Pointer((*StackSliceArray)(unsafe.Pointer(bp+16)).Fcontents + uintptr(i+uint32(1))*24))
@@ -24966,7 +24966,7 @@ func ts_parser__reduce(tls *libc.TLS, self1 uintptr, version StackVersion, symbo
 				break
 			}
 			if v2 = !!(j < (*SubtreeArray)(unsafe.Pointer(self1+1296)).Fsize); !v2 {
-				libc.X_assert(tls, __ccgo_ts+1988, __ccgo_ts+822, uint32(1036))
+				libc.X_assert(tls, __ccgo_ts+2212, __ccgo_ts+934, uint32(1036))
 			}
 			_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			ts_stack_push(tls, (*TSParser)(unsafe.Pointer(self1)).Fstack, slice_version, *(*Subtree)(unsafe.Pointer((*SubtreeArray)(unsafe.Pointer(self1+1296)).Fcontents + uintptr(j)*8)), libc.BoolUint8(false1 != 0), next_state)
@@ -25039,7 +25039,7 @@ _5:
 _2:
 	;
 	if v7 = !!(v1 != 0); !v7 {
-		libc.X_assert(tls, __ccgo_ts+2035, __ccgo_ts+822, uint32(1059))
+		libc.X_assert(tls, __ccgo_ts+2259, __ccgo_ts+934, uint32(1059))
 	}
 	_ = v7 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	ts_stack_push(tls, (*TSParser)(unsafe.Pointer(self5)).Fstack, version, lookahead, libc.BoolUint8(false1 != 0), uint16(1))
@@ -25050,7 +25050,7 @@ _2:
 			break
 		}
 		if v7 = !!(i < (*StackSliceArray)(unsafe.Pointer(bp+40)).Fsize); !v7 {
-			libc.X_assert(tls, __ccgo_ts+793, __ccgo_ts+822, uint32(1064))
+			libc.X_assert(tls, __ccgo_ts+905, __ccgo_ts+934, uint32(1064))
 		}
 		_ = v7 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		*(*SubtreeArray)(unsafe.Pointer(bp + 56)) = (*StackSlice)(unsafe.Pointer((*StackSliceArray)(unsafe.Pointer(bp+40)).Fcontents + uintptr(i)*24)).Fsubtrees
@@ -25066,7 +25066,7 @@ _2:
 			}
 			*(*Subtree)(unsafe.Pointer(bp + 80)) = Subtree{}
 			if v9 = !!(j < (*SubtreeArray)(unsafe.Pointer(bp+56)).Fsize); !v9 {
-				libc.X_assert(tls, __ccgo_ts+2064, __ccgo_ts+822, uint32(1068))
+				libc.X_assert(tls, __ccgo_ts+2288, __ccgo_ts+934, uint32(1068))
 			}
 			_ = v9 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			*(*struct {
@@ -25085,7 +25085,7 @@ _2:
 		_14:
 			if !(v1 != 0) {
 				if v11 = !!!(int32(*(*uint8)(unsafe.Pointer(bp + 80 + 0))&0x1>>0) != 0); !v11 {
-					libc.X_assert(tls, __ccgo_ts+2095, __ccgo_ts+822, uint32(1070))
+					libc.X_assert(tls, __ccgo_ts+2319, __ccgo_ts+934, uint32(1070))
 				}
 				_ = v11 || libc.Bool(libc.Int32FromInt32(0) != 0)
 				v3 = *(*Subtree)(unsafe.Pointer(bp + 80))
@@ -25126,7 +25126,7 @@ _2:
 				old_end = v18 + v25
 				new_end = v18 + v26
 				if v7 = !!(old_end <= *(*uint32_t)(unsafe.Pointer(v21))); !v7 {
-					libc.X_assert(tls, __ccgo_ts+2116, __ccgo_ts+2133, uint32(263))
+					libc.X_assert(tls, __ccgo_ts+2340, __ccgo_ts+2357, uint32(263))
 				}
 				_ = v7 || libc.Bool(libc.Int32FromInt32(0) != 0)
 				v28 = (*SubtreeArray)(unsafe.Pointer(bp + 56)).Fcontents
@@ -25187,7 +25187,7 @@ _2:
 			j = j - 1
 		}
 		if v7 = !!(*(*uintptr)(unsafe.Pointer(bp + 72)) != 0); !v7 {
-			libc.X_assert(tls, __ccgo_ts+2212, __ccgo_ts+822, uint32(1088))
+			libc.X_assert(tls, __ccgo_ts+2492, __ccgo_ts+934, uint32(1088))
 		}
 		_ = v7 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		(*TSParser)(unsafe.Pointer(self5)).Faccept_count = (*TSParser)(unsafe.Pointer(self5)).Faccept_count + 1
@@ -25207,7 +25207,7 @@ _2:
 		i = i + 1
 	}
 	if v7 = !!(uint32(libc.Int32FromInt32(0)) < (*StackSliceArray)(unsafe.Pointer(bp+40)).Fsize); !v7 {
-		libc.X_assert(tls, __ccgo_ts+2221, __ccgo_ts+822, uint32(1103))
+		libc.X_assert(tls, __ccgo_ts+2501, __ccgo_ts+934, uint32(1103))
 	}
 	_ = v7 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	ts_stack_remove_version(tls, (*TSParser)(unsafe.Pointer(self5)).Fstack, (*StackSlice)(unsafe.Pointer((*StackSliceArray)(unsafe.Pointer(bp+40)).Fcontents)).Fversion)
@@ -25530,7 +25530,7 @@ func ts_parser__do_all_potential_reductions(tls *libc.TLS, self2 uintptr, starti
 				break
 			}
 			if v16 = !!(j2 < (*ReduceActionSet)(unsafe.Pointer(self2+1272)).Fsize); !v16 {
-				libc.X_assert(tls, __ccgo_ts+2250, __ccgo_ts+822, uint32(1194))
+				libc.X_assert(tls, __ccgo_ts+2530, __ccgo_ts+934, uint32(1194))
 			}
 			_ = v16 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			action = *(*ReduceAction)(unsafe.Pointer((*ReduceActionSet)(unsafe.Pointer(self2+1272)).Fcontents + uintptr(j2)*16))
@@ -25588,7 +25588,7 @@ func ts_parser__recover_to_state(tls *libc.TLS, self1 uintptr, version StackVers
 			break
 		}
 		if v2 = !!(i < (*StackSliceArray)(unsafe.Pointer(bp+8)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+793, __ccgo_ts+822, uint32(1232))
+			libc.X_assert(tls, __ccgo_ts+905, __ccgo_ts+934, uint32(1232))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		*(*StackSlice)(unsafe.Pointer(bp + 24)) = *(*StackSlice)(unsafe.Pointer((*StackSliceArray)(unsafe.Pointer(bp+8)).Fcontents + uintptr(i)*24))
@@ -25600,7 +25600,7 @@ func ts_parser__recover_to_state(tls *libc.TLS, self1 uintptr, version StackVers
 			v5 = libc.Uint64FromInt64(24)
 			v6 = v3
 			if v2 = !!(v6 < *(*uint32_t)(unsafe.Pointer(v4))); !v2 {
-				libc.X_assert(tls, __ccgo_ts+2296, __ccgo_ts+2133, uint32(199))
+				libc.X_assert(tls, __ccgo_ts+2576, __ccgo_ts+2357, uint32(199))
 			}
 			_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			contents = (*StackSliceArray)(unsafe.Pointer(bp + 8)).Fcontents
@@ -25617,7 +25617,7 @@ func ts_parser__recover_to_state(tls *libc.TLS, self1 uintptr, version StackVers
 			v5 = libc.Uint64FromInt64(24)
 			v6 = v3
 			if v2 = !!(v6 < *(*uint32_t)(unsafe.Pointer(v4))); !v2 {
-				libc.X_assert(tls, __ccgo_ts+2296, __ccgo_ts+2133, uint32(199))
+				libc.X_assert(tls, __ccgo_ts+2576, __ccgo_ts+2357, uint32(199))
 			}
 			_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			contents = (*StackSliceArray)(unsafe.Pointer(bp + 8)).Fcontents
@@ -25628,12 +25628,12 @@ func ts_parser__recover_to_state(tls *libc.TLS, self1 uintptr, version StackVers
 		*(*SubtreeArray)(unsafe.Pointer(bp + 48)) = ts_stack_pop_error(tls, (*TSParser)(unsafe.Pointer(self1)).Fstack, (*(*StackSlice)(unsafe.Pointer(bp + 24))).Fversion)
 		if (*(*SubtreeArray)(unsafe.Pointer(bp + 48))).Fsize > uint32(0) {
 			if v2 = !!((*(*SubtreeArray)(unsafe.Pointer(bp + 48))).Fsize == libc.Uint32FromInt32(1)); !v2 {
-				libc.X_assert(tls, __ccgo_ts+2310, __ccgo_ts+822, uint32(1249))
+				libc.X_assert(tls, __ccgo_ts+2590, __ccgo_ts+934, uint32(1249))
 			}
 			_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			*(*Subtree)(unsafe.Pointer(bp + 64)) = Subtree{}
 			if v2 = !!(uint32(libc.Int32FromInt32(0)) < (*SubtreeArray)(unsafe.Pointer(bp+48)).Fsize); !v2 {
-				libc.X_assert(tls, __ccgo_ts+2332, __ccgo_ts+822, uint32(1250))
+				libc.X_assert(tls, __ccgo_ts+2612, __ccgo_ts+934, uint32(1250))
 			}
 			_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			*(*struct {
@@ -25667,7 +25667,7 @@ func ts_parser__recover_to_state(tls *libc.TLS, self1 uintptr, version StackVers
 				old_end = v11 + v16
 				new_end = v11 + v22
 				if v7 = !!(old_end <= *(*uint32_t)(unsafe.Pointer(v9))); !v7 {
-					libc.X_assert(tls, __ccgo_ts+2116, __ccgo_ts+2133, uint32(263))
+					libc.X_assert(tls, __ccgo_ts+2340, __ccgo_ts+2357, uint32(263))
 				}
 				_ = v7 || libc.Bool(libc.Int32FromInt32(0) != 0)
 				v20 = (*SubtreeArray)(unsafe.Pointer(bp + 24)).Fcontents
@@ -25709,7 +25709,7 @@ func ts_parser__recover_to_state(tls *libc.TLS, self1 uintptr, version StackVers
 						break
 					}
 					if v2 = !!(j < (*SubtreeArray)(unsafe.Pointer(bp+24)).Fsize); !v2 {
-						libc.X_assert(tls, __ccgo_ts+942, __ccgo_ts+822, uint32(1255))
+						libc.X_assert(tls, __ccgo_ts+1110, __ccgo_ts+934, uint32(1255))
 					}
 					_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 					ts_subtree_retain(tls, *(*Subtree)(unsafe.Pointer((*SubtreeArray)(unsafe.Pointer(bp+24)).Fcontents + uintptr(j)*8)))
@@ -25739,7 +25739,7 @@ func ts_parser__recover_to_state(tls *libc.TLS, self1 uintptr, version StackVers
 				break
 			}
 			if v2 = !!(j1 < (*SubtreeArray)(unsafe.Pointer(self1+1296)).Fsize); !v2 {
-				libc.X_assert(tls, __ccgo_ts+1988, __ccgo_ts+822, uint32(1271))
+				libc.X_assert(tls, __ccgo_ts+2212, __ccgo_ts+934, uint32(1271))
 			}
 			_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			tree = *(*Subtree)(unsafe.Pointer((*SubtreeArray)(unsafe.Pointer(self1+1296)).Fcontents + uintptr(j1)*8))
@@ -25825,7 +25825,7 @@ func ts_parser__recover(tls *libc.TLS, self14 uintptr, version StackVersion, loo
 				break
 			}
 			if v9 = !!(i1 < (*StackSummary)(unsafe.Pointer(summary)).Fsize); !v9 {
-				libc.X_assert(tls, __ccgo_ts+2369, __ccgo_ts+822, uint32(1307))
+				libc.X_assert(tls, __ccgo_ts+2649, __ccgo_ts+934, uint32(1307))
 			}
 			_ = v9 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			entry1 = *(*StackSummaryEntry)(unsafe.Pointer((*StackSummary)(unsafe.Pointer(summary)).Fcontents + uintptr(i1)*20))
@@ -25930,12 +25930,12 @@ func ts_parser__recover(tls *libc.TLS, self14 uintptr, version StackVersion, loo
 				if ts_parser__recover_to_state(tls, self14, version, depth, entry1.Fstate) != 0 {
 					did_recover = libc.BoolUint8(true1 != 0)
 					if (*TSParser)(unsafe.Pointer(self14)).Flexer.Flogger.Flog != 0 || (*TSParser)(unsafe.Pointer(self14)).Fdot_graph_file != 0 {
-						libc.X__builtin_snprintf(tls, self14+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+2401, libc.VaList(bp+144, int32(entry1.Fstate), depth))
+						libc.X__builtin_snprintf(tls, self14+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+2681, libc.VaList(bp+144, int32(entry1.Fstate), depth))
 						ts_parser__log(tls, self14)
 					}
 					if (*TSParser)(unsafe.Pointer(self14)).Fdot_graph_file != 0 {
 						ts_stack_print_dot_graph(tls, (*TSParser)(unsafe.Pointer(self14)).Fstack, (*TSParser)(unsafe.Pointer(self14)).Flanguage, (*TSParser)(unsafe.Pointer(self14)).Fdot_graph_file)
-						libc.Xfputs(tls, __ccgo_ts+1013, (*TSParser)(unsafe.Pointer(self14)).Fdot_graph_file)
+						libc.Xfputs(tls, __ccgo_ts+1181, (*TSParser)(unsafe.Pointer(self14)).Fdot_graph_file)
 					}
 					break
 				}
@@ -25955,7 +25955,7 @@ func ts_parser__recover(tls *libc.TLS, self14 uintptr, version StackVersion, loo
 		}
 		if !(ts_stack_is_active(tls, (*TSParser)(unsafe.Pointer(self14)).Fstack, i2) != 0) {
 			if (*TSParser)(unsafe.Pointer(self14)).Flexer.Flogger.Flog != 0 || (*TSParser)(unsafe.Pointer(self14)).Fdot_graph_file != 0 {
-				libc.X__builtin_snprintf(tls, self14+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+2440, libc.VaList(bp+144, i2))
+				libc.X__builtin_snprintf(tls, self14+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+2720, libc.VaList(bp+144, i2))
 				ts_parser__log(tls, self14)
 			}
 			v29 = i2
@@ -25963,7 +25963,7 @@ func ts_parser__recover(tls *libc.TLS, self14 uintptr, version StackVersion, loo
 			ts_stack_remove_version(tls, (*TSParser)(unsafe.Pointer(self14)).Fstack, v29)
 			if (*TSParser)(unsafe.Pointer(self14)).Fdot_graph_file != 0 {
 				ts_stack_print_dot_graph(tls, (*TSParser)(unsafe.Pointer(self14)).Fstack, (*TSParser)(unsafe.Pointer(self14)).Flanguage, (*TSParser)(unsafe.Pointer(self14)).Fdot_graph_file)
-				libc.Xfputs(tls, __ccgo_ts+1013, (*TSParser)(unsafe.Pointer(self14)).Fdot_graph_file)
+				libc.Xfputs(tls, __ccgo_ts+1181, (*TSParser)(unsafe.Pointer(self14)).Fdot_graph_file)
 			}
 		}
 		goto _28
@@ -25988,7 +25988,7 @@ _34:
 _31:
 	if v1 != 0 {
 		if (*TSParser)(unsafe.Pointer(self14)).Flexer.Flogger.Flog != 0 || (*TSParser)(unsafe.Pointer(self14)).Fdot_graph_file != 0 {
-			libc.X__builtin_snprintf(tls, self14+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+2466, 0)
+			libc.X__builtin_snprintf(tls, self14+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+2746, 0)
 			ts_parser__log(tls, self14)
 		}
 		*(*SubtreeArray)(unsafe.Pointer(bp + 72)) = SubtreeArray{}
@@ -26217,7 +26217,7 @@ _90:
 		v4 = uint16(v6)
 		goto _97
 	_97:
-		libc.X__builtin_snprintf(tls, self14+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+2478, libc.VaList(bp+144, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self14)).Flanguage, v4)))
+		libc.X__builtin_snprintf(tls, self14+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+2758, libc.VaList(bp+144, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self14)).Flanguage, v4)))
 		ts_parser__log(tls, self14)
 	}
 	*(*SubtreeArray)(unsafe.Pointer(bp + 104)) = SubtreeArray{}
@@ -26293,7 +26293,7 @@ _114:
 					break
 				}
 				if v7 = !!(i3 < (*StackSliceArray)(unsafe.Pointer(bp+120)).Fsize); !v7 {
-					libc.X_assert(tls, __ccgo_ts+793, __ccgo_ts+822, uint32(1434))
+					libc.X_assert(tls, __ccgo_ts+905, __ccgo_ts+934, uint32(1434))
 				}
 				_ = v7 || libc.Bool(libc.Int32FromInt32(0) != 0)
 				ts_subtree_array_delete(tls, self14+1224, (*StackSliceArray)(unsafe.Pointer(bp+120)).Fcontents+uintptr(i3)*24)
@@ -26304,38 +26304,38 @@ _114:
 			}
 			for {
 				if v7 = !!(uint32(libc.Int32FromInt32(0)) < (*StackSliceArray)(unsafe.Pointer(bp+120)).Fsize); !v7 {
-					libc.X_assert(tls, __ccgo_ts+2221, __ccgo_ts+822, uint32(1436))
+					libc.X_assert(tls, __ccgo_ts+2501, __ccgo_ts+934, uint32(1436))
 				}
 				_ = v7 || libc.Bool(libc.Int32FromInt32(0) != 0)
 				if !(ts_stack_version_count(tls, (*TSParser)(unsafe.Pointer(self14)).Fstack) > (*StackSlice)(unsafe.Pointer((*StackSliceArray)(unsafe.Pointer(bp+120)).Fcontents)).Fversion+uint32(1)) {
 					break
 				}
 				if v9 = !!(uint32(libc.Int32FromInt32(0)) < (*StackSliceArray)(unsafe.Pointer(bp+120)).Fsize); !v9 {
-					libc.X_assert(tls, __ccgo_ts+2221, __ccgo_ts+822, uint32(1437))
+					libc.X_assert(tls, __ccgo_ts+2501, __ccgo_ts+934, uint32(1437))
 				}
 				_ = v9 || libc.Bool(libc.Int32FromInt32(0) != 0)
 				ts_stack_remove_version(tls, (*TSParser)(unsafe.Pointer(self14)).Fstack, (*StackSlice)(unsafe.Pointer((*StackSliceArray)(unsafe.Pointer(bp+120)).Fcontents)).Fversion+uint32(1))
 			}
 		}
 		if v7 = !!(uint32(libc.Int32FromInt32(0)) < (*StackSliceArray)(unsafe.Pointer(bp+120)).Fsize); !v7 {
-			libc.X_assert(tls, __ccgo_ts+2221, __ccgo_ts+822, uint32(1441))
+			libc.X_assert(tls, __ccgo_ts+2501, __ccgo_ts+934, uint32(1441))
 		}
 		_ = v7 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		ts_stack_renumber_version(tls, (*TSParser)(unsafe.Pointer(self14)).Fstack, (*StackSlice)(unsafe.Pointer((*StackSliceArray)(unsafe.Pointer(bp+120)).Fcontents)).Fversion, version)
 		if v7 = !!(uint32(libc.Int32FromInt32(0)) < (*StackSliceArray)(unsafe.Pointer(bp+120)).Fsize); !v7 {
-			libc.X_assert(tls, __ccgo_ts+2221, __ccgo_ts+822, uint32(1442))
+			libc.X_assert(tls, __ccgo_ts+2501, __ccgo_ts+934, uint32(1442))
 		}
 		_ = v7 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		if v9 = !!(uint32(libc.Int32FromInt32(0)) < (*StackSliceArray)(unsafe.Pointer(bp+120)).Fsize); !v9 {
-			libc.X_assert(tls, __ccgo_ts+2221, __ccgo_ts+822, uint32(1442))
+			libc.X_assert(tls, __ccgo_ts+2501, __ccgo_ts+934, uint32(1442))
 		}
 		_ = v9 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		if v40 = !!(uint32(libc.Int32FromInt32(0)) < (*StackSliceArray)(unsafe.Pointer(bp+120)).Fsize); !v40 {
-			libc.X_assert(tls, __ccgo_ts+2221, __ccgo_ts+822, uint32(1442))
+			libc.X_assert(tls, __ccgo_ts+2501, __ccgo_ts+934, uint32(1442))
 		}
 		_ = v40 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		if v118 = !!(uint32(libc.Int32FromInt32(0)) < (*StackSliceArray)(unsafe.Pointer(bp+120)).Fsize); !v118 {
-			libc.X_assert(tls, __ccgo_ts+2221, __ccgo_ts+822, uint32(1442))
+			libc.X_assert(tls, __ccgo_ts+2501, __ccgo_ts+934, uint32(1442))
 		}
 		_ = v118 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		v17 = (*SubtreeArray)(unsafe.Pointer((*StackSliceArray)(unsafe.Pointer(bp + 120)).Fcontents)).Fcontents
@@ -26373,11 +26373,11 @@ _114:
 	_135:
 		(*SubtreeArray)(unsafe.Pointer((*StackSliceArray)(unsafe.Pointer(bp + 120)).Fcontents)).Fcontents = v89
 		if v7 = !!(uint32(libc.Int32FromInt32(0)) < (*StackSliceArray)(unsafe.Pointer(bp+120)).Fsize); !v7 {
-			libc.X_assert(tls, __ccgo_ts+2221, __ccgo_ts+822, uint32(1442))
+			libc.X_assert(tls, __ccgo_ts+2501, __ccgo_ts+934, uint32(1442))
 		}
 		_ = v7 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		if v9 = !!(uint32(libc.Int32FromInt32(0)) < (*StackSliceArray)(unsafe.Pointer(bp+120)).Fsize); !v9 {
-			libc.X_assert(tls, __ccgo_ts+2221, __ccgo_ts+822, uint32(1442))
+			libc.X_assert(tls, __ccgo_ts+2501, __ccgo_ts+934, uint32(1442))
 		}
 		_ = v9 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		v17 = (*StackSliceArray)(unsafe.Pointer(bp+120)).Fcontents + 8
@@ -26390,7 +26390,7 @@ _114:
 	_141:
 		*(*Subtree)(unsafe.Pointer((*SubtreeArray)(unsafe.Pointer((*StackSliceArray)(unsafe.Pointer(bp+120)).Fcontents)).Fcontents + uintptr(v41)*8)) = v3
 		if v7 = !!(uint32(libc.Int32FromInt32(0)) < (*StackSliceArray)(unsafe.Pointer(bp+120)).Fsize); !v7 {
-			libc.X_assert(tls, __ccgo_ts+2221, __ccgo_ts+822, uint32(1445))
+			libc.X_assert(tls, __ccgo_ts+2501, __ccgo_ts+934, uint32(1445))
 		}
 		_ = v7 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		error_repeat = ts_subtree_new_node(tls, uint16(int32(uint16(-libc.Int32FromInt32(1)))-libc.Int32FromInt32(1)), (*StackSliceArray)(unsafe.Pointer(bp+120)).Fcontents, uint32(0), (*TSParser)(unsafe.Pointer(self14)).Flanguage)
@@ -26641,7 +26641,7 @@ func ts_parser__handle_error(tls *libc.TLS, self8 uintptr, version StackVersion,
 				_51:
 					if ts_parser__do_all_potential_reductions(tls, self8, version_with_missing_tree, v4) != 0 {
 						if (*TSParser)(unsafe.Pointer(self8)).Flexer.Flogger.Flog != 0 || (*TSParser)(unsafe.Pointer(self8)).Fdot_graph_file != 0 {
-							libc.X__builtin_snprintf(tls, self8+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+2499, libc.VaList(bp+72, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self8)).Flanguage, missing_symbol), int32(ts_stack_state(tls, (*TSParser)(unsafe.Pointer(self8)).Fstack, version_with_missing_tree))))
+							libc.X__builtin_snprintf(tls, self8+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+2779, libc.VaList(bp+72, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self8)).Flanguage, missing_symbol), int32(ts_stack_state(tls, (*TSParser)(unsafe.Pointer(self8)).Fstack, version_with_missing_tree))))
 							ts_parser__log(tls, self8)
 						}
 						did_insert_missing_token = libc.BoolUint8(true1 != 0)
@@ -26671,7 +26671,7 @@ func ts_parser__handle_error(tls *libc.TLS, self8 uintptr, version StackVersion,
 		}
 		did_merge = ts_stack_merge(tls, (*TSParser)(unsafe.Pointer(self8)).Fstack, version, previous_version_count)
 		if v54 = !!(did_merge != 0); !v54 {
-			libc.X_assert(tls, __ccgo_ts+2540, __ccgo_ts+822, uint32(1549))
+			libc.X_assert(tls, __ccgo_ts+2820, __ccgo_ts+934, uint32(1549))
 		}
 		_ = v54 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		goto _53
@@ -26701,7 +26701,7 @@ _57:
 	ts_parser__recover(tls, self8, version, *(*Subtree)(unsafe.Pointer(bp + 56)))
 	if (*TSParser)(unsafe.Pointer(self8)).Fdot_graph_file != 0 {
 		ts_stack_print_dot_graph(tls, (*TSParser)(unsafe.Pointer(self8)).Fstack, (*TSParser)(unsafe.Pointer(self8)).Flanguage, (*TSParser)(unsafe.Pointer(self8)).Fdot_graph_file)
-		libc.Xfputs(tls, __ccgo_ts+1013, (*TSParser)(unsafe.Pointer(self8)).Fdot_graph_file)
+		libc.Xfputs(tls, __ccgo_ts+1181, (*TSParser)(unsafe.Pointer(self8)).Fdot_graph_file)
 	}
 }
 
@@ -26838,13 +26838,13 @@ func ts_parser__advance(tls *libc.TLS, self11 uintptr, version StackVersion, all
 				if (*(*TSParseAction)(unsafe.Pointer(bp + 112))).Fshift.Fextra != 0 {
 					next_state = *(*TSStateId)(unsafe.Pointer(bp + 80))
 					if (*TSParser)(unsafe.Pointer(self11)).Flexer.Flogger.Flog != 0 || (*TSParser)(unsafe.Pointer(self11)).Fdot_graph_file != 0 {
-						libc.X__builtin_snprintf(tls, self11+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+2550, 0)
+						libc.X__builtin_snprintf(tls, self11+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+2830, 0)
 						ts_parser__log(tls, self11)
 					}
 				} else {
 					next_state = (*(*TSParseAction)(unsafe.Pointer(bp + 112))).Fshift.Fstate
 					if (*TSParser)(unsafe.Pointer(self11)).Flexer.Flogger.Flog != 0 || (*TSParser)(unsafe.Pointer(self11)).Fdot_graph_file != 0 {
-						libc.X__builtin_snprintf(tls, self11+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+2562, libc.VaList(bp+136, int32(next_state)))
+						libc.X__builtin_snprintf(tls, self11+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+2842, libc.VaList(bp+136, int32(next_state)))
 						ts_parser__log(tls, self11)
 					}
 				}
@@ -26884,7 +26884,7 @@ func ts_parser__advance(tls *libc.TLS, self11 uintptr, version StackVersion, all
 						Fsize     uint32_t
 						Fcapacity uint32_t
 					})(unsafe.Pointer(v15)).Fsize); !v16 {
-						libc.X_assert(tls, __ccgo_ts+1038, __ccgo_ts+1098, uint32(40))
+						libc.X_assert(tls, __ccgo_ts+1206, __ccgo_ts+1266, uint32(40))
 					}
 					_ = v16 || libc.Bool(libc.Int32FromInt32(0) != 0)
 					last_entry = *(*StackEntry)(unsafe.Pointer((*struct {
@@ -27003,7 +27003,7 @@ func ts_parser__advance(tls *libc.TLS, self11 uintptr, version StackVersion, all
 							Fsize     uint32_t
 							Fcapacity uint32_t
 						})(unsafe.Pointer(v15)).Fsize); !v52 {
-							libc.X_assert(tls, __ccgo_ts+1038, __ccgo_ts+1098, uint32(52))
+							libc.X_assert(tls, __ccgo_ts+1206, __ccgo_ts+1266, uint32(52))
 						}
 						_ = v52 || libc.Bool(libc.Int32FromInt32(0) != 0)
 						*(*Subtree)(unsafe.Pointer(bp + 72)) = (*StackEntry)(unsafe.Pointer((*struct {
@@ -27103,7 +27103,7 @@ func ts_parser__advance(tls *libc.TLS, self11 uintptr, version StackVersion, all
 				is_fragile = libc.BoolUint8((*(*TableEntry)(unsafe.Pointer(bp + 96))).Faction_count > uint32(1))
 				end_of_non_terminal_extra = libc.BoolUint8(*(*uintptr)(unsafe.Pointer(bp + 88)) == libc.UintptrFromInt32(0))
 				if (*TSParser)(unsafe.Pointer(self11)).Flexer.Flogger.Flog != 0 || (*TSParser)(unsafe.Pointer(self11)).Fdot_graph_file != 0 {
-					libc.X__builtin_snprintf(tls, self11+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+2577, libc.VaList(bp+136, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self11)).Flanguage, (*(*struct {
+					libc.X__builtin_snprintf(tls, self11+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+2857, libc.VaList(bp+136, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self11)).Flanguage, (*(*struct {
 						Ftype1              uint8_t
 						Fchild_count        uint8_t
 						Fsymbol             TSSymbol
@@ -27149,7 +27149,7 @@ func ts_parser__advance(tls *libc.TLS, self11 uintptr, version StackVersion, all
 				}
 			case int32(TSParseActionTypeAccept):
 				if (*TSParser)(unsafe.Pointer(self11)).Flexer.Flogger.Flog != 0 || (*TSParser)(unsafe.Pointer(self11)).Fdot_graph_file != 0 {
-					libc.X__builtin_snprintf(tls, self11+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+2607, 0)
+					libc.X__builtin_snprintf(tls, self11+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+2887, 0)
 					ts_parser__log(tls, self11)
 				}
 				ts_parser__accept(tls, self11, version, *(*Subtree)(unsafe.Pointer(bp + 88)))
@@ -27180,7 +27180,7 @@ func ts_parser__advance(tls *libc.TLS, self11 uintptr, version StackVersion, all
 						Fsize     uint32_t
 						Fcapacity uint32_t
 					})(unsafe.Pointer(v15)).Fsize); !v16 {
-						libc.X_assert(tls, __ccgo_ts+1038, __ccgo_ts+1098, uint32(40))
+						libc.X_assert(tls, __ccgo_ts+1206, __ccgo_ts+1266, uint32(40))
 					}
 					_ = v16 || libc.Bool(libc.Int32FromInt32(0) != 0)
 					last_entry = *(*StackEntry)(unsafe.Pointer((*struct {
@@ -27299,7 +27299,7 @@ func ts_parser__advance(tls *libc.TLS, self11 uintptr, version StackVersion, all
 							Fsize     uint32_t
 							Fcapacity uint32_t
 						})(unsafe.Pointer(v15)).Fsize); !v52 {
-							libc.X_assert(tls, __ccgo_ts+1038, __ccgo_ts+1098, uint32(52))
+							libc.X_assert(tls, __ccgo_ts+1206, __ccgo_ts+1266, uint32(52))
 						}
 						_ = v52 || libc.Bool(libc.Int32FromInt32(0) != 0)
 						*(*Subtree)(unsafe.Pointer(bp + 72)) = (*StackEntry)(unsafe.Pointer((*struct {
@@ -27408,7 +27408,7 @@ func ts_parser__advance(tls *libc.TLS, self11 uintptr, version StackVersion, all
 			ts_stack_renumber_version(tls, (*TSParser)(unsafe.Pointer(self11)).Fstack, last_reduction_version, version)
 			if (*TSParser)(unsafe.Pointer(self11)).Fdot_graph_file != 0 {
 				ts_stack_print_dot_graph(tls, (*TSParser)(unsafe.Pointer(self11)).Fstack, (*TSParser)(unsafe.Pointer(self11)).Flanguage, (*TSParser)(unsafe.Pointer(self11)).Fdot_graph_file)
-				libc.Xfputs(tls, __ccgo_ts+1013, (*TSParser)(unsafe.Pointer(self11)).Fdot_graph_file)
+				libc.Xfputs(tls, __ccgo_ts+1181, (*TSParser)(unsafe.Pointer(self11)).Fdot_graph_file)
 			}
 			*(*TSStateId)(unsafe.Pointer(bp + 80)) = ts_stack_state(tls, (*TSParser)(unsafe.Pointer(self11)).Fstack, version)
 			// At the end of a non-terminal extra rule, the lexer will return a
@@ -27497,7 +27497,7 @@ func ts_parser__advance(tls *libc.TLS, self11 uintptr, version StackVersion, all
 					v3 = uint16(v5)
 					goto _140
 				_140:
-					libc.X__builtin_snprintf(tls, self11+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+2614, libc.VaList(bp+136, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self11)).Flanguage, v3), ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self11)).Flanguage, (*TSLanguage)(unsafe.Pointer((*TSParser)(unsafe.Pointer(self11)).Flanguage)).Fkeyword_capture_token)))
+					libc.X__builtin_snprintf(tls, self11+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+2894, libc.VaList(bp+136, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self11)).Flanguage, v3), ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self11)).Flanguage, (*TSLanguage)(unsafe.Pointer((*TSParser)(unsafe.Pointer(self11)).Flanguage)).Fkeyword_capture_token)))
 					ts_parser__log(tls, self11)
 				}
 				*(*MutableSubtree)(unsafe.Pointer(bp + 120)) = MutableSubtree{}
@@ -27541,7 +27541,7 @@ func ts_parser__advance(tls *libc.TLS, self11 uintptr, version StackVersion, all
 			v3 = uint16(v5)
 			goto _146
 		_146:
-			libc.X__builtin_snprintf(tls, self11+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+2655, libc.VaList(bp+136, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self11)).Flanguage, v3)))
+			libc.X__builtin_snprintf(tls, self11+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+2935, libc.VaList(bp+136, ts_language_symbol_name(tls, (*TSParser)(unsafe.Pointer(self11)).Flanguage, v3)))
 			ts_parser__log(tls, self11)
 		}
 		ts_stack_pause(tls, (*TSParser)(unsafe.Pointer(self11)).Fstack, version, *(*Subtree)(unsafe.Pointer(bp + 88)))
@@ -27648,7 +27648,7 @@ func ts_parser__condense_stack(tls *libc.TLS, self uintptr) (r uint32) {
 			if ts_stack_is_paused(tls, (*TSParser)(unsafe.Pointer(self)).Fstack, i1) != 0 {
 				if !(has_unpaused_version != 0) && (*TSParser)(unsafe.Pointer(self)).Faccept_count < MAX_VERSION_COUNT {
 					if (*TSParser)(unsafe.Pointer(self)).Flexer.Flogger.Flog != 0 || (*TSParser)(unsafe.Pointer(self)).Fdot_graph_file != 0 {
-						libc.X__builtin_snprintf(tls, self+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+2681, libc.VaList(bp+8, i1))
+						libc.X__builtin_snprintf(tls, self+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+2961, libc.VaList(bp+8, i1))
 						ts_parser__log(tls, self)
 					}
 					min_error_cost = ts_stack_error_cost(tls, (*TSParser)(unsafe.Pointer(self)).Fstack, i1)
@@ -27672,12 +27672,12 @@ func ts_parser__condense_stack(tls *libc.TLS, self uintptr) (r uint32) {
 	}
 	if made_changes != 0 {
 		if (*TSParser)(unsafe.Pointer(self)).Flexer.Flogger.Flog != 0 || (*TSParser)(unsafe.Pointer(self)).Fdot_graph_file != 0 {
-			libc.X__builtin_snprintf(tls, self+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+2699, 0)
+			libc.X__builtin_snprintf(tls, self+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+2979, 0)
 			ts_parser__log(tls, self)
 		}
 		if (*TSParser)(unsafe.Pointer(self)).Fdot_graph_file != 0 {
 			ts_stack_print_dot_graph(tls, (*TSParser)(unsafe.Pointer(self)).Fstack, (*TSParser)(unsafe.Pointer(self)).Flanguage, (*TSParser)(unsafe.Pointer(self)).Fdot_graph_file)
-			libc.Xfputs(tls, __ccgo_ts+1013, (*TSParser)(unsafe.Pointer(self)).Fdot_graph_file)
+			libc.Xfputs(tls, __ccgo_ts+1181, (*TSParser)(unsafe.Pointer(self)).Fdot_graph_file)
 		}
 	}
 	return min_error_cost
@@ -27773,7 +27773,7 @@ func ts_parser__balance_subtree(tls *libc.TLS, self3 uintptr) (r uint8) {
 		}
 		*(*MutableSubtree)(unsafe.Pointer(bp + 40)) = MutableSubtree{}
 		if v19 = !!((*TSParser)(unsafe.Pointer(self3)).Ftree_pool.Ftree_stack.Fsize-libc.Uint32FromInt32(1) < (*MutableSubtreeArray)(unsafe.Pointer(self3+1224+16)).Fsize); !v19 {
-			libc.X_assert(tls, __ccgo_ts+2708, __ccgo_ts+822, uint32(1916))
+			libc.X_assert(tls, __ccgo_ts+2988, __ccgo_ts+934, uint32(1916))
 		}
 		_ = v19 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		*(*struct {
@@ -28098,7 +28098,7 @@ func ts_parser_print_dot_graphs(tls *libc.TLS, self uintptr, fd int32) {
 		libc.Xfclose(tls, (*TSParser)(unsafe.Pointer(self)).Fdot_graph_file)
 	}
 	if fd >= 0 {
-		(*TSParser)(unsafe.Pointer(self)).Fdot_graph_file = libc.Xfdopen(tls, fd, __ccgo_ts+2794)
+		(*TSParser)(unsafe.Pointer(self)).Fdot_graph_file = libc.Xfdopen(tls, fd, __ccgo_ts+3074)
 	} else {
 		(*TSParser)(unsafe.Pointer(self)).Fdot_graph_file = libc.UintptrFromInt32(0)
 	}
@@ -28180,7 +28180,7 @@ func ts_parser_parse(tls *libc.TLS, self6 uintptr, old_tree uintptr, input TSInp
 	(*TSParser)(unsafe.Pointer(self6)).Foperation_count = uint32(0)
 	if ts_parser_has_outstanding_parse(tls, self6) != 0 {
 		if (*TSParser)(unsafe.Pointer(self6)).Flexer.Flogger.Flog != 0 || (*TSParser)(unsafe.Pointer(self6)).Fdot_graph_file != 0 {
-			libc.X__builtin_snprintf(tls, self6+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+2796, 0)
+			libc.X__builtin_snprintf(tls, self6+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+3076, 0)
 			ts_parser__log(tls, self6)
 		}
 		if (*TSParser)(unsafe.Pointer(self6)).Fcanceled_balancing != 0 {
@@ -28269,7 +28269,7 @@ func ts_parser_parse(tls *libc.TLS, self6 uintptr, old_tree uintptr, input TSInp
 				Fsize     uint32_t
 				Fcapacity uint32_t
 			})(unsafe.Pointer(v15)).Fsize); !v16 {
-				libc.X_assert(tls, __ccgo_ts+1038, __ccgo_ts+1098, uint32(63))
+				libc.X_assert(tls, __ccgo_ts+1206, __ccgo_ts+1266, uint32(63))
 			}
 			_ = v16 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			*(*StackEntry)(unsafe.Pointer(bp + 24)) = StackEntry{}
@@ -28379,12 +28379,12 @@ func ts_parser_parse(tls *libc.TLS, self6 uintptr, old_tree uintptr, input TSInp
 				(*ReusableNode)(unsafe.Pointer(v36)).Flast_external_token = Subtree{}
 			}
 			if (*TSParser)(unsafe.Pointer(self6)).Flexer.Flogger.Flog != 0 || (*TSParser)(unsafe.Pointer(self6)).Fdot_graph_file != 0 {
-				libc.X__builtin_snprintf(tls, self6+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+2811, 0)
+				libc.X__builtin_snprintf(tls, self6+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+3091, 0)
 				ts_parser__log(tls, self6)
 			}
 			if (*TSParser)(unsafe.Pointer(self6)).Fdot_graph_file != 0 {
 				ts_subtree_print_dot_graph(tls, (*TSParser)(unsafe.Pointer(self6)).Fold_tree, (*TSParser)(unsafe.Pointer(self6)).Flanguage, (*TSParser)(unsafe.Pointer(self6)).Fdot_graph_file)
-				libc.Xfputs(tls, __ccgo_ts+2828, (*TSParser)(unsafe.Pointer(self6)).Fdot_graph_file)
+				libc.Xfputs(tls, __ccgo_ts+3108, (*TSParser)(unsafe.Pointer(self6)).Fdot_graph_file)
 			}
 			i = uint32(0)
 			for {
@@ -28392,12 +28392,12 @@ func ts_parser_parse(tls *libc.TLS, self6 uintptr, old_tree uintptr, input TSInp
 					break
 				}
 				if v16 = !!(i < (*TSRangeArray)(unsafe.Pointer(self6+1424)).Fsize); !v16 {
-					libc.X_assert(tls, __ccgo_ts+2830, __ccgo_ts+822, uint32(2143))
+					libc.X_assert(tls, __ccgo_ts+3110, __ccgo_ts+934, uint32(2143))
 				}
 				_ = v16 || libc.Bool(libc.Int32FromInt32(0) != 0)
 				range1 = (*TSRangeArray)(unsafe.Pointer(self6+1424)).Fcontents + uintptr(i)*24
 				if (*TSParser)(unsafe.Pointer(self6)).Flexer.Flogger.Flog != 0 || (*TSParser)(unsafe.Pointer(self6)).Fdot_graph_file != 0 {
-					libc.X__builtin_snprintf(tls, self6+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+2888, libc.VaList(bp+48, (*TSRange)(unsafe.Pointer(range1)).Fstart_byte, (*TSRange)(unsafe.Pointer(range1)).Fend_byte))
+					libc.X__builtin_snprintf(tls, self6+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+3168, libc.VaList(bp+48, (*TSRange)(unsafe.Pointer(range1)).Fstart_byte, (*TSRange)(unsafe.Pointer(range1)).Fend_byte))
 					ts_parser__log(tls, self6)
 				}
 				goto _37
@@ -28414,7 +28414,7 @@ func ts_parser_parse(tls *libc.TLS, self6 uintptr, old_tree uintptr, input TSInp
 			})(unsafe.Pointer(v1)).Fsize = uint32(0)
 			(*ReusableNode)(unsafe.Pointer(v1)).Flast_external_token = Subtree{}
 			if (*TSParser)(unsafe.Pointer(self6)).Flexer.Flogger.Flog != 0 || (*TSParser)(unsafe.Pointer(self6)).Fdot_graph_file != 0 {
-				libc.X__builtin_snprintf(tls, self6+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+2921, 0)
+				libc.X__builtin_snprintf(tls, self6+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+3201, 0)
 				ts_parser__log(tls, self6)
 			}
 		}
@@ -28432,7 +28432,7 @@ func ts_parser_parse(tls *libc.TLS, self6 uintptr, old_tree uintptr, input TSInp
 			allow_node_reuse = libc.BoolUint8(version_count == uint32(1))
 			for ts_stack_is_active(tls, (*TSParser)(unsafe.Pointer(self6)).Fstack, version) != 0 {
 				if (*TSParser)(unsafe.Pointer(self6)).Flexer.Flogger.Flog != 0 || (*TSParser)(unsafe.Pointer(self6)).Fdot_graph_file != 0 {
-					libc.X__builtin_snprintf(tls, self6+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+2931, libc.VaList(bp+48, version, ts_stack_version_count(tls, (*TSParser)(unsafe.Pointer(self6)).Fstack), int32(ts_stack_state(tls, (*TSParser)(unsafe.Pointer(self6)).Fstack, version)), ts_stack_position(tls, (*TSParser)(unsafe.Pointer(self6)).Fstack, version).Fextent.Frow, ts_stack_position(tls, (*TSParser)(unsafe.Pointer(self6)).Fstack, version).Fextent.Fcolumn))
+					libc.X__builtin_snprintf(tls, self6+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+3211, libc.VaList(bp+48, version, ts_stack_version_count(tls, (*TSParser)(unsafe.Pointer(self6)).Fstack), int32(ts_stack_state(tls, (*TSParser)(unsafe.Pointer(self6)).Fstack, version)), ts_stack_position(tls, (*TSParser)(unsafe.Pointer(self6)).Fstack, version).Fextent.Frow, ts_stack_position(tls, (*TSParser)(unsafe.Pointer(self6)).Fstack, version).Fextent.Fcolumn))
 					ts_parser__log(tls, self6)
 				}
 				if !(ts_parser__advance(tls, self6, version, allow_node_reuse) != 0) {
@@ -28443,7 +28443,7 @@ func ts_parser_parse(tls *libc.TLS, self6 uintptr, old_tree uintptr, input TSInp
 				}
 				if (*TSParser)(unsafe.Pointer(self6)).Fdot_graph_file != 0 {
 					ts_stack_print_dot_graph(tls, (*TSParser)(unsafe.Pointer(self6)).Fstack, (*TSParser)(unsafe.Pointer(self6)).Flanguage, (*TSParser)(unsafe.Pointer(self6)).Fdot_graph_file)
-					libc.Xfputs(tls, __ccgo_ts+1013, (*TSParser)(unsafe.Pointer(self6)).Fdot_graph_file)
+					libc.Xfputs(tls, __ccgo_ts+1181, (*TSParser)(unsafe.Pointer(self6)).Fdot_graph_file)
 				}
 				position = ts_stack_position(tls, (*TSParser)(unsafe.Pointer(self6)).Fstack, version).Fbytes
 				if position > last_position || version > uint32(0) && position == last_position {
@@ -28496,7 +28496,7 @@ func ts_parser_parse(tls *libc.TLS, self6 uintptr, old_tree uintptr, input TSInp
 		}
 		for (*TSParser)(unsafe.Pointer(self6)).Fincluded_range_difference_index < (*TSParser)(unsafe.Pointer(self6)).Fincluded_range_differences.Fsize {
 			if v16 = !!((*TSParser)(unsafe.Pointer(self6)).Fincluded_range_difference_index < (*TSRangeArray)(unsafe.Pointer(self6+1424)).Fsize); !v16 {
-				libc.X_assert(tls, __ccgo_ts+2994, __ccgo_ts+822, uint32(2200))
+				libc.X_assert(tls, __ccgo_ts+3274, __ccgo_ts+934, uint32(2200))
 			}
 			_ = v16 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			range11 = (*TSRangeArray)(unsafe.Pointer(self6+1424)).Fcontents + uintptr((*TSParser)(unsafe.Pointer(self6)).Fincluded_range_difference_index)*24
@@ -28511,7 +28511,7 @@ func ts_parser_parse(tls *libc.TLS, self6 uintptr, old_tree uintptr, input TSInp
 balance:
 	;
 	if v16 = !!(*(*uintptr)(unsafe.Pointer(self6 + 1288)) != 0); !v16 {
-		libc.X_assert(tls, __ccgo_ts+3088, __ccgo_ts+822, uint32(2210))
+		libc.X_assert(tls, __ccgo_ts+3368, __ccgo_ts+934, uint32(2210))
 	}
 	_ = v16 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	if !(ts_parser__balance_subtree(tls, self6) != 0) {
@@ -28520,12 +28520,12 @@ balance:
 	}
 	(*TSParser)(unsafe.Pointer(self6)).Fcanceled_balancing = libc.BoolUint8(false1 != 0)
 	if (*TSParser)(unsafe.Pointer(self6)).Flexer.Flogger.Flog != 0 || (*TSParser)(unsafe.Pointer(self6)).Fdot_graph_file != 0 {
-		libc.X__builtin_snprintf(tls, self6+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+3112, 0)
+		libc.X__builtin_snprintf(tls, self6+192, uint64(TREE_SITTER_SERIALIZATION_BUFFER_SIZE), __ccgo_ts+3392, 0)
 		ts_parser__log(tls, self6)
 	}
 	if (*TSParser)(unsafe.Pointer(self6)).Fdot_graph_file != 0 {
 		ts_subtree_print_dot_graph(tls, (*TSParser)(unsafe.Pointer(self6)).Ffinished_tree, (*TSParser)(unsafe.Pointer(self6)).Flanguage, (*TSParser)(unsafe.Pointer(self6)).Fdot_graph_file)
-		libc.Xfputs(tls, __ccgo_ts+2828, (*TSParser)(unsafe.Pointer(self6)).Fdot_graph_file)
+		libc.Xfputs(tls, __ccgo_ts+3108, (*TSParser)(unsafe.Pointer(self6)).Fdot_graph_file)
 	}
 	result = ts_tree_new(tls, (*TSParser)(unsafe.Pointer(self6)).Ffinished_tree, (*TSParser)(unsafe.Pointer(self6)).Flanguage, (*TSParser)(unsafe.Pointer(self6)).Flexer.Fincluded_ranges, (*TSParser)(unsafe.Pointer(self6)).Flexer.Fincluded_range_count)
 	(*TSParser)(unsafe.Pointer(self6)).Ffinished_tree = Subtree{}
@@ -29029,7 +29029,7 @@ func stream_advance(tls *libc.TLS, self uintptr) (r uint8) {
 						*(*int32_t)(unsafe.Pointer(v7)) &= int32(0xf)
 						v8 = *(*uint8_t)(unsafe.Pointer(v1 + uintptr(i)))
 						__t = v8
-						if v9 = int32(*(*int8)(unsafe.Pointer(__ccgo_ts + 3117 + uintptr(*(*int32_t)(unsafe.Pointer(v7))))))&(int32(1)<<(int32(v8)>>int32(5))) != 0; v9 {
+						if v9 = int32(*(*int8)(unsafe.Pointer(__ccgo_ts + 3397 + uintptr(*(*int32_t)(unsafe.Pointer(v7))))))&(int32(1)<<(int32(v8)>>int32(5))) != 0; v9 {
 							__t = uint8(int32(__t) & libc.Int32FromInt32(0x3f))
 						}
 						v6 = libc.BoolInt32(v9 && libc.Bool(libc.Int32FromInt32(1) != 0))
@@ -29040,7 +29040,7 @@ func stream_advance(tls *libc.TLS, self uintptr) (r uint8) {
 							v11 = *(*uint8_t)(unsafe.Pointer(v1 + uintptr(i)))
 							__t = v11
 						}
-						if v14 = v12 && int32(*(*int8)(unsafe.Pointer(__ccgo_ts + 3134 + uintptr(int32(v11)>>int32(4)))))&(int32(1)<<*(*int32_t)(unsafe.Pointer(v3))) != 0; v14 {
+						if v14 = v12 && int32(*(*int8)(unsafe.Pointer(__ccgo_ts + 3414 + uintptr(int32(v11)>>int32(4)))))&(int32(1)<<*(*int32_t)(unsafe.Pointer(v3))) != 0; v14 {
 							*(*int32_t)(unsafe.Pointer(v3)) = *(*int32_t)(unsafe.Pointer(v3))<<libc.Int32FromInt32(6) | int32(__t)&int32(0x3f)
 							i = i + 1
 							v13 = i
@@ -29176,7 +29176,7 @@ func capture_list_pool_reset(tls *libc.TLS, self uintptr) {
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+3151, __ccgo_ts+3187, uint32(455))
+			libc.X_assert(tls, __ccgo_ts+3431, __ccgo_ts+3467, uint32(455))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		(*CaptureList)(unsafe.Pointer((*struct {
@@ -29206,7 +29206,7 @@ func capture_list_pool_delete(tls *libc.TLS, self uintptr) {
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+3151, __ccgo_ts+3187, uint32(462))
+			libc.X_assert(tls, __ccgo_ts+3431, __ccgo_ts+3467, uint32(462))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		if (*CaptureList)(unsafe.Pointer((*struct {
@@ -29219,7 +29219,7 @@ func capture_list_pool_delete(tls *libc.TLS, self uintptr) {
 				Fsize     uint32_t
 				Fcapacity uint32_t
 			})(unsafe.Pointer(self)).Fsize); !v3 {
-				libc.X_assert(tls, __ccgo_ts+3151, __ccgo_ts+3187, uint32(462))
+				libc.X_assert(tls, __ccgo_ts+3431, __ccgo_ts+3467, uint32(462))
 			}
 			_ = v3 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{ts_current_free})))(tls, (*CaptureList)(unsafe.Pointer((*struct {
@@ -29233,7 +29233,7 @@ func capture_list_pool_delete(tls *libc.TLS, self uintptr) {
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+3151, __ccgo_ts+3187, uint32(462))
+			libc.X_assert(tls, __ccgo_ts+3431, __ccgo_ts+3467, uint32(462))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		(*CaptureList)(unsafe.Pointer((*struct {
@@ -29246,7 +29246,7 @@ func capture_list_pool_delete(tls *libc.TLS, self uintptr) {
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+3151, __ccgo_ts+3187, uint32(462))
+			libc.X_assert(tls, __ccgo_ts+3431, __ccgo_ts+3467, uint32(462))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		(*CaptureList)(unsafe.Pointer((*struct {
@@ -29259,7 +29259,7 @@ func capture_list_pool_delete(tls *libc.TLS, self uintptr) {
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+3151, __ccgo_ts+3187, uint32(462))
+			libc.X_assert(tls, __ccgo_ts+3431, __ccgo_ts+3467, uint32(462))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		(*CaptureList)(unsafe.Pointer((*struct {
@@ -29311,7 +29311,7 @@ func capture_list_pool_get(tls *libc.TLS, self uintptr, id uint32_t) (r uintptr)
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+3266, __ccgo_ts+3187, uint32(469))
+		libc.X_assert(tls, __ccgo_ts+3602, __ccgo_ts+3467, uint32(469))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	return (*struct {
@@ -29325,7 +29325,7 @@ func capture_list_pool_get_mut(tls *libc.TLS, self uintptr, id uint32_t) (r uint
 	var v1 bool
 	_ = v1
 	if v1 = !!(id < (*CaptureListPool)(unsafe.Pointer(self)).Flist.Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+3303, __ccgo_ts+3187, uint32(473))
+		libc.X_assert(tls, __ccgo_ts+3639, __ccgo_ts+3467, uint32(473))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	if v1 = !!(id < (*struct {
@@ -29333,7 +29333,7 @@ func capture_list_pool_get_mut(tls *libc.TLS, self uintptr, id uint32_t) (r uint
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+3266, __ccgo_ts+3187, uint32(474))
+		libc.X_assert(tls, __ccgo_ts+3602, __ccgo_ts+3467, uint32(474))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	return (*struct {
@@ -29370,7 +29370,7 @@ func capture_list_pool_acquire(tls *libc.TLS, self uintptr) (r uint32_t) {
 				Fsize     uint32_t
 				Fcapacity uint32_t
 			})(unsafe.Pointer(self)).Fsize); !v2 {
-				libc.X_assert(tls, __ccgo_ts+3151, __ccgo_ts+3187, uint32(487))
+				libc.X_assert(tls, __ccgo_ts+3431, __ccgo_ts+3467, uint32(487))
 			}
 			_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			if (*CaptureList)(unsafe.Pointer((*struct {
@@ -29383,7 +29383,7 @@ func capture_list_pool_acquire(tls *libc.TLS, self uintptr) (r uint32_t) {
 					Fsize     uint32_t
 					Fcapacity uint32_t
 				})(unsafe.Pointer(self)).Fsize); !v3 {
-					libc.X_assert(tls, __ccgo_ts+3151, __ccgo_ts+3187, uint32(488))
+					libc.X_assert(tls, __ccgo_ts+3431, __ccgo_ts+3467, uint32(488))
 				}
 				_ = v3 || libc.Bool(libc.Int32FromInt32(0) != 0)
 				(*CaptureList)(unsafe.Pointer((*struct {
@@ -29477,7 +29477,7 @@ func capture_list_pool_release(tls *libc.TLS, self uintptr, id uint32_t) {
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+3266, __ccgo_ts+3187, uint32(509))
+		libc.X_assert(tls, __ccgo_ts+3602, __ccgo_ts+3467, uint32(509))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	(*CaptureList)(unsafe.Pointer((*struct {
@@ -29504,21 +29504,21 @@ func finished_state_swap(tls *libc.TLS, states uintptr, a uint32_t, b uint32_t) 
 	var v1, v2, v3 bool
 	_, _, _, _ = tmp, v1, v2, v3
 	if v1 = !!(a < (*QueryStateList)(unsafe.Pointer(states)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+3324, __ccgo_ts+3187, uint32(525))
+		libc.X_assert(tls, __ccgo_ts+3660, __ccgo_ts+3467, uint32(525))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	tmp = *(*QueryState)(unsafe.Pointer((*QueryStateList)(unsafe.Pointer(states)).Fcontents + uintptr(a)*24))
 	if v2 = !!(a < (*QueryStateList)(unsafe.Pointer(states)).Fsize); !v2 {
-		libc.X_assert(tls, __ccgo_ts+3324, __ccgo_ts+3187, uint32(526))
+		libc.X_assert(tls, __ccgo_ts+3660, __ccgo_ts+3467, uint32(526))
 	}
 	_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	if v3 = !!(b < (*QueryStateList)(unsafe.Pointer(states)).Fsize); !v3 {
-		libc.X_assert(tls, __ccgo_ts+3355, __ccgo_ts+3187, uint32(526))
+		libc.X_assert(tls, __ccgo_ts+3691, __ccgo_ts+3467, uint32(526))
 	}
 	_ = v3 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	*(*QueryState)(unsafe.Pointer((*QueryStateList)(unsafe.Pointer(states)).Fcontents + uintptr(a)*24)) = *(*QueryState)(unsafe.Pointer((*QueryStateList)(unsafe.Pointer(states)).Fcontents + uintptr(b)*24))
 	if v1 = !!(b < (*QueryStateList)(unsafe.Pointer(states)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+3355, __ccgo_ts+3187, uint32(527))
+		libc.X_assert(tls, __ccgo_ts+3691, __ccgo_ts+3467, uint32(527))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	*(*QueryState)(unsafe.Pointer((*QueryStateList)(unsafe.Pointer(states)).Fcontents + uintptr(b)*24)) = tmp
@@ -29562,11 +29562,11 @@ func finished_state_sift_down(tls *libc.TLS, states uintptr, index uint32_t, poo
 		right = uint32(2)*index + uint32(2)
 		if v3 = left < size; v3 {
 			if v1 = !!(left < (*QueryStateList)(unsafe.Pointer(states)).Fsize); !v1 {
-				libc.X_assert(tls, __ccgo_ts+3386, __ccgo_ts+3187, uint32(559))
+				libc.X_assert(tls, __ccgo_ts+3722, __ccgo_ts+3467, uint32(559))
 			}
 			_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			if v2 = !!(smallest < (*QueryStateList)(unsafe.Pointer(states)).Fsize); !v2 {
-				libc.X_assert(tls, __ccgo_ts+3420, __ccgo_ts+3187, uint32(560))
+				libc.X_assert(tls, __ccgo_ts+3756, __ccgo_ts+3467, uint32(560))
 			}
 			_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		}
@@ -29575,11 +29575,11 @@ func finished_state_sift_down(tls *libc.TLS, states uintptr, index uint32_t, poo
 		}
 		if v3 = right < size; v3 {
 			if v1 = !!(right < (*QueryStateList)(unsafe.Pointer(states)).Fsize); !v1 {
-				libc.X_assert(tls, __ccgo_ts+3458, __ccgo_ts+3187, uint32(566))
+				libc.X_assert(tls, __ccgo_ts+3794, __ccgo_ts+3467, uint32(566))
 			}
 			_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			if v2 = !!(smallest < (*QueryStateList)(unsafe.Pointer(states)).Fsize); !v2 {
-				libc.X_assert(tls, __ccgo_ts+3420, __ccgo_ts+3187, uint32(567))
+				libc.X_assert(tls, __ccgo_ts+3756, __ccgo_ts+3467, uint32(567))
 			}
 			_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		}
@@ -29601,11 +29601,11 @@ func finished_state_sift_up(tls *libc.TLS, states uintptr, index uint32_t, pool 
 	for index > uint32(0) {
 		parent = (index - uint32(1)) / uint32(2)
 		if v1 = !!(index < (*QueryStateList)(unsafe.Pointer(states)).Fsize); !v1 {
-			libc.X_assert(tls, __ccgo_ts+3493, __ccgo_ts+3187, uint32(586))
+			libc.X_assert(tls, __ccgo_ts+3829, __ccgo_ts+3467, uint32(586))
 		}
 		_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		if v2 = !!(parent < (*QueryStateList)(unsafe.Pointer(states)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+3528, __ccgo_ts+3187, uint32(587))
+			libc.X_assert(tls, __ccgo_ts+3864, __ccgo_ts+3467, uint32(587))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		if finished_state_precedes(tls, (*QueryStateList)(unsafe.Pointer(states)).Fcontents+uintptr(index)*24, (*QueryStateList)(unsafe.Pointer(states)).Fcontents+uintptr(parent)*24, pool) != 0 {
@@ -29622,11 +29622,11 @@ func finished_state_pop(tls *libc.TLS, states uintptr, pool uintptr) {
 	_, _ = v1, v2
 	if (*QueryStateList)(unsafe.Pointer(states)).Fsize > uint32(1) {
 		if v1 = !!(uint32(libc.Int32FromInt32(0)) < (*QueryStateList)(unsafe.Pointer(states)).Fsize); !v1 {
-			libc.X_assert(tls, __ccgo_ts+3564, __ccgo_ts+3187, uint32(599))
+			libc.X_assert(tls, __ccgo_ts+3900, __ccgo_ts+3467, uint32(599))
 		}
 		_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		if v2 = !!((*QueryStateList)(unsafe.Pointer(states)).Fsize-libc.Uint32FromInt32(1) < (*QueryStateList)(unsafe.Pointer(states)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+3595, __ccgo_ts+3187, uint32(599))
+			libc.X_assert(tls, __ccgo_ts+3931, __ccgo_ts+3467, uint32(599))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		*(*QueryState)(unsafe.Pointer((*QueryStateList)(unsafe.Pointer(states)).Fcontents)) = *(*QueryState)(unsafe.Pointer((*QueryStateList)(unsafe.Pointer(states)).Fcontents + uintptr((*QueryStateList)(unsafe.Pointer(states)).Fsize-uint32(1))*24))
@@ -29648,11 +29648,11 @@ func finished_state_erase(tls *libc.TLS, states uintptr, index uint32_t, pool ui
 		return
 	}
 	if v1 = !!(index < (*QueryStateList)(unsafe.Pointer(states)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+3493, __ccgo_ts+3187, uint32(614))
+		libc.X_assert(tls, __ccgo_ts+3829, __ccgo_ts+3467, uint32(614))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	if v2 = !!((*QueryStateList)(unsafe.Pointer(states)).Fsize-libc.Uint32FromInt32(1) < (*QueryStateList)(unsafe.Pointer(states)).Fsize); !v2 {
-		libc.X_assert(tls, __ccgo_ts+3595, __ccgo_ts+3187, uint32(614))
+		libc.X_assert(tls, __ccgo_ts+3931, __ccgo_ts+3467, uint32(614))
 	}
 	_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	*(*QueryState)(unsafe.Pointer((*QueryStateList)(unsafe.Pointer(states)).Fcontents + uintptr(index)*24)) = *(*QueryState)(unsafe.Pointer((*QueryStateList)(unsafe.Pointer(states)).Fcontents + uintptr((*QueryStateList)(unsafe.Pointer(states)).Fsize-uint32(1))*24))
@@ -29660,11 +29660,11 @@ func finished_state_erase(tls *libc.TLS, states uintptr, index uint32_t, pool ui
 	// The replacement element may need to go up or down.
 	if v3 = index > uint32(0); v3 {
 		if v1 = !!(index < (*QueryStateList)(unsafe.Pointer(states)).Fsize); !v1 {
-			libc.X_assert(tls, __ccgo_ts+3493, __ccgo_ts+3187, uint32(618))
+			libc.X_assert(tls, __ccgo_ts+3829, __ccgo_ts+3467, uint32(618))
 		}
 		_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		if v2 = !!((index-libc.Uint32FromInt32(1))/libc.Uint32FromInt32(2) < (*QueryStateList)(unsafe.Pointer(states)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+3643, __ccgo_ts+3187, uint32(619))
+			libc.X_assert(tls, __ccgo_ts+3979, __ccgo_ts+3467, uint32(619))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	}
@@ -29942,7 +29942,7 @@ func capture_quantifiers_replace(tls *libc.TLS, self uintptr, quantifiers uintpt
 	old_end = v3 + v4
 	new_end = v3 + v5
 	if v7 = !!(old_end <= *(*uint32_t)(unsafe.Pointer(v1))); !v7 {
-		libc.X_assert(tls, __ccgo_ts+2116, __ccgo_ts+2133, uint32(263))
+		libc.X_assert(tls, __ccgo_ts+2340, __ccgo_ts+2357, uint32(263))
 	}
 	_ = v7 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	v8 = (*CaptureQuantifiers)(unsafe.Pointer(self)).Fcontents
@@ -29991,7 +29991,7 @@ func capture_quantifier_for_id(tls *libc.TLS, self uintptr, id uint16_t) (r TSQu
 		v1 = int32(TSQuantifierZero)
 	} else {
 		if v2 = !!(uint32(id) < (*CaptureQuantifiers)(unsafe.Pointer(self)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+3688, __ccgo_ts+3187, uint32(843))
+			libc.X_assert(tls, __ccgo_ts+4024, __ccgo_ts+3467, uint32(843))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		v1 = int32(*(*uint8_t)(unsafe.Pointer((*CaptureQuantifiers)(unsafe.Pointer(self)).Fcontents + uintptr(id))))
@@ -30056,7 +30056,7 @@ func capture_quantifiers_add_for_id(tls *libc.TLS, self uintptr, id uint16_t, qu
 		//
 	}
 	if v13 = !!(uint32(id) < (*CaptureQuantifiers)(unsafe.Pointer(self)).Fsize); !v13 {
-		libc.X_assert(tls, __ccgo_ts+3688, __ccgo_ts+3187, uint32(855))
+		libc.X_assert(tls, __ccgo_ts+4024, __ccgo_ts+3467, uint32(855))
 	}
 	_ = v13 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	own_quantifier = (*CaptureQuantifiers)(unsafe.Pointer(self)).Fcontents + uintptr(id)
@@ -30126,12 +30126,12 @@ func capture_quantifiers_add_all(tls *libc.TLS, self uintptr, quantifiers uintpt
 			break
 		}
 		if v14 = !!(uint32(id) < (*CaptureQuantifiers)(unsafe.Pointer(quantifiers)).Fsize); !v14 {
-			libc.X_assert(tls, __ccgo_ts+3718, __ccgo_ts+3187, uint32(868))
+			libc.X_assert(tls, __ccgo_ts+4054, __ccgo_ts+3467, uint32(868))
 		}
 		_ = v14 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		quantifier = (*CaptureQuantifiers)(unsafe.Pointer(quantifiers)).Fcontents + uintptr(id)
 		if v15 = !!(uint32(id) < (*CaptureQuantifiers)(unsafe.Pointer(self)).Fsize); !v15 {
-			libc.X_assert(tls, __ccgo_ts+3688, __ccgo_ts+3187, uint32(869))
+			libc.X_assert(tls, __ccgo_ts+4024, __ccgo_ts+3467, uint32(869))
 		}
 		_ = v15 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		own_quantifier = (*CaptureQuantifiers)(unsafe.Pointer(self)).Fcontents + uintptr(id)
@@ -30157,7 +30157,7 @@ func capture_quantifiers_mul(tls *libc.TLS, self uintptr, quantifier TSQuantifie
 			break
 		}
 		if v2 = !!(uint32(id) < (*CaptureQuantifiers)(unsafe.Pointer(self)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+3688, __ccgo_ts+3187, uint32(880))
+			libc.X_assert(tls, __ccgo_ts+4024, __ccgo_ts+3467, uint32(880))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		own_quantifier = (*CaptureQuantifiers)(unsafe.Pointer(self)).Fcontents + uintptr(id)
@@ -30231,12 +30231,12 @@ func capture_quantifiers_join_all(tls *libc.TLS, self uintptr, quantifiers uintp
 			break
 		}
 		if v14 = !!(id < (*CaptureQuantifiers)(unsafe.Pointer(quantifiers)).Fsize); !v14 {
-			libc.X_assert(tls, __ccgo_ts+3718, __ccgo_ts+3187, uint32(894))
+			libc.X_assert(tls, __ccgo_ts+4054, __ccgo_ts+3467, uint32(894))
 		}
 		_ = v14 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		quantifier = (*CaptureQuantifiers)(unsafe.Pointer(quantifiers)).Fcontents + uintptr(id)
 		if v15 = !!(id < (*CaptureQuantifiers)(unsafe.Pointer(self)).Fsize); !v15 {
-			libc.X_assert(tls, __ccgo_ts+3688, __ccgo_ts+3187, uint32(895))
+			libc.X_assert(tls, __ccgo_ts+4024, __ccgo_ts+3467, uint32(895))
 		}
 		_ = v15 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		own_quantifier = (*CaptureQuantifiers)(unsafe.Pointer(self)).Fcontents + uintptr(id)
@@ -30252,7 +30252,7 @@ func capture_quantifiers_join_all(tls *libc.TLS, self uintptr, quantifiers uintp
 			break
 		}
 		if v14 = !!(id1 < (*CaptureQuantifiers)(unsafe.Pointer(self)).Fsize); !v14 {
-			libc.X_assert(tls, __ccgo_ts+3688, __ccgo_ts+3187, uint32(899))
+			libc.X_assert(tls, __ccgo_ts+4024, __ccgo_ts+3467, uint32(899))
 		}
 		_ = v14 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		own_quantifier1 = (*CaptureQuantifiers)(unsafe.Pointer(self)).Fcontents + uintptr(id1)
@@ -30342,7 +30342,7 @@ func symbol_table_id_for_name(tls *libc.TLS, self uintptr, name uintptr, length 
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self+16)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+3755, __ccgo_ts+3187, uint32(926))
+			libc.X_assert(tls, __ccgo_ts+4091, __ccgo_ts+3467, uint32(926))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		slice = *(*Slice)(unsafe.Pointer((*struct {
@@ -30356,7 +30356,7 @@ func symbol_table_id_for_name(tls *libc.TLS, self uintptr, name uintptr, length 
 				Fsize     uint32_t
 				Fcapacity uint32_t
 			})(unsafe.Pointer(self)).Fsize); !v3 {
-				libc.X_assert(tls, __ccgo_ts+3793, __ccgo_ts+3187, uint32(929))
+				libc.X_assert(tls, __ccgo_ts+4129, __ccgo_ts+3467, uint32(929))
 			}
 			_ = v3 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		}
@@ -30384,7 +30384,7 @@ func symbol_table_name_for_id(tls *libc.TLS, self uintptr, id uint16_t, length u
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self+16)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+3846, __ccgo_ts+3187, uint32(940))
+		libc.X_assert(tls, __ccgo_ts+4182, __ccgo_ts+3467, uint32(940))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	slice = *(*Slice)(unsafe.Pointer((*struct {
@@ -30398,7 +30398,7 @@ func symbol_table_name_for_id(tls *libc.TLS, self uintptr, id uint16_t, length u
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+3793, __ccgo_ts+3187, uint32(942))
+		libc.X_assert(tls, __ccgo_ts+4129, __ccgo_ts+3467, uint32(942))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	return (*struct {
@@ -30494,7 +30494,7 @@ _1: /**/
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self)).Fsize); !v13 {
-		libc.X_assert(tls, __ccgo_ts+3793, __ccgo_ts+3187, uint32(957))
+		libc.X_assert(tls, __ccgo_ts+4129, __ccgo_ts+3467, uint32(957))
 	}
 	_ = v13 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	libc.Xmemcpy(tls, (*struct {
@@ -30507,7 +30507,7 @@ _1: /**/
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self)).Fsize); !v13 {
-		libc.X_assert(tls, __ccgo_ts+3885, __ccgo_ts+3187, uint32(958))
+		libc.X_assert(tls, __ccgo_ts+4221, __ccgo_ts+3467, uint32(958))
 	}
 	_ = v13 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	*(*int8)(unsafe.Pointer((*struct {
@@ -30889,7 +30889,7 @@ _1: /**/
 		old_end = v5 + v6
 		new_end = v5 + v7
 		if v9 = !!(old_end <= *(*uint32_t)(unsafe.Pointer(v3))); !v9 {
-			libc.X_assert(tls, __ccgo_ts+2116, __ccgo_ts+2133, uint32(263))
+			libc.X_assert(tls, __ccgo_ts+2340, __ccgo_ts+2357, uint32(263))
 		}
 		_ = v9 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		v10 = (*AnalysisStateSet)(unsafe.Pointer(self)).Fcontents
@@ -31003,7 +31003,7 @@ func analysis_state_set__clear(tls *libc.TLS, self uintptr, pool uintptr) {
 	old_end = v3 + v4
 	new_end = v3 + v5
 	if v7 = !!(old_end <= *(*uint32_t)(unsafe.Pointer(v1))); !v7 {
-		libc.X_assert(tls, __ccgo_ts+2116, __ccgo_ts+2133, uint32(263))
+		libc.X_assert(tls, __ccgo_ts+2340, __ccgo_ts+2357, uint32(263))
 	}
 	_ = v7 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	v8 = (*AnalysisStateSet)(unsafe.Pointer(pool)).Fcontents
@@ -31206,7 +31206,7 @@ func ts_query__pattern_map_search(tls *libc.TLS, self uintptr, needle TSSymbol, 
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self+96)).Fsize); !v1 {
-			libc.X_assert(tls, __ccgo_ts+3951, __ccgo_ts+3187, uint32(1253))
+			libc.X_assert(tls, __ccgo_ts+4287, __ccgo_ts+3467, uint32(1253))
 		}
 		_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		if v2 = !!(uint32((*PatternEntry)(unsafe.Pointer((*struct {
@@ -31218,7 +31218,7 @@ func ts_query__pattern_map_search(tls *libc.TLS, self uintptr, needle TSSymbol, 
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self+80)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+4002, __ccgo_ts+3187, uint32(1252))
+			libc.X_assert(tls, __ccgo_ts+4338, __ccgo_ts+3467, uint32(1252))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		if v3 = !!(mid_index < (*struct {
@@ -31226,7 +31226,7 @@ func ts_query__pattern_map_search(tls *libc.TLS, self uintptr, needle TSSymbol, 
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self+96)).Fsize); !v3 {
-			libc.X_assert(tls, __ccgo_ts+3951, __ccgo_ts+3187, uint32(1253))
+			libc.X_assert(tls, __ccgo_ts+4287, __ccgo_ts+3467, uint32(1253))
 		}
 		_ = v3 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		mid_symbol = (*QueryStep)(unsafe.Pointer((*struct {
@@ -31248,7 +31248,7 @@ func ts_query__pattern_map_search(tls *libc.TLS, self uintptr, needle TSSymbol, 
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self+96)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+4324, __ccgo_ts+3187, uint32(1260))
+		libc.X_assert(tls, __ccgo_ts+4718, __ccgo_ts+3467, uint32(1260))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	if v2 = !!(uint32((*PatternEntry)(unsafe.Pointer((*struct {
@@ -31260,7 +31260,7 @@ func ts_query__pattern_map_search(tls *libc.TLS, self uintptr, needle TSSymbol, 
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self+80)).Fsize); !v2 {
-		libc.X_assert(tls, __ccgo_ts+4376, __ccgo_ts+3187, uint32(1259))
+		libc.X_assert(tls, __ccgo_ts+4770, __ccgo_ts+3467, uint32(1259))
 	}
 	_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	if v3 = !!(base_index < (*struct {
@@ -31268,7 +31268,7 @@ func ts_query__pattern_map_search(tls *libc.TLS, self uintptr, needle TSSymbol, 
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self+96)).Fsize); !v3 {
-		libc.X_assert(tls, __ccgo_ts+4324, __ccgo_ts+3187, uint32(1260))
+		libc.X_assert(tls, __ccgo_ts+4718, __ccgo_ts+3467, uint32(1260))
 	}
 	_ = v3 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	symbol = (*QueryStep)(unsafe.Pointer((*struct {
@@ -31288,7 +31288,7 @@ func ts_query__pattern_map_search(tls *libc.TLS, self uintptr, needle TSSymbol, 
 				Fsize     uint32_t
 				Fcapacity uint32_t
 			})(unsafe.Pointer(self+96)).Fsize); !v1 {
-				libc.X_assert(tls, __ccgo_ts+4324, __ccgo_ts+3187, uint32(1267))
+				libc.X_assert(tls, __ccgo_ts+4718, __ccgo_ts+3467, uint32(1267))
 			}
 			_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			if v2 = !!(uint32((*PatternEntry)(unsafe.Pointer((*struct {
@@ -31300,7 +31300,7 @@ func ts_query__pattern_map_search(tls *libc.TLS, self uintptr, needle TSSymbol, 
 				Fsize     uint32_t
 				Fcapacity uint32_t
 			})(unsafe.Pointer(self+80)).Fsize); !v2 {
-				libc.X_assert(tls, __ccgo_ts+4701, __ccgo_ts+3187, uint32(1266))
+				libc.X_assert(tls, __ccgo_ts+5153, __ccgo_ts+3467, uint32(1266))
 			}
 			_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			if v3 = !!(base_index < (*struct {
@@ -31308,7 +31308,7 @@ func ts_query__pattern_map_search(tls *libc.TLS, self uintptr, needle TSSymbol, 
 				Fsize     uint32_t
 				Fcapacity uint32_t
 			})(unsafe.Pointer(self+96)).Fsize); !v3 {
-				libc.X_assert(tls, __ccgo_ts+4324, __ccgo_ts+3187, uint32(1267))
+				libc.X_assert(tls, __ccgo_ts+4718, __ccgo_ts+3467, uint32(1267))
 			}
 			_ = v3 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			symbol = (*QueryStep)(unsafe.Pointer((*struct {
@@ -31351,7 +31351,7 @@ func ts_query__pattern_map_insert(tls *libc.TLS, self uintptr, symbol TSSymbol, 
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self+96)).Fsize); !v1 {
-			libc.X_assert(tls, __ccgo_ts+5026, __ccgo_ts+3187, uint32(1291))
+			libc.X_assert(tls, __ccgo_ts+5536, __ccgo_ts+3467, uint32(1291))
 		}
 		_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		entry = (*struct {
@@ -31364,7 +31364,7 @@ func ts_query__pattern_map_insert(tls *libc.TLS, self uintptr, symbol TSSymbol, 
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self+80)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+5073, __ccgo_ts+3187, uint32(1293))
+			libc.X_assert(tls, __ccgo_ts+5583, __ccgo_ts+3467, uint32(1293))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		if int32((*QueryStep)(unsafe.Pointer((*struct {
@@ -31387,7 +31387,7 @@ func ts_query__pattern_map_insert(tls *libc.TLS, self uintptr, symbol TSSymbol, 
 	old_end = v5 + v6
 	new_end = v5 + v7
 	if v1 = !!(old_end <= *(*uint32_t)(unsafe.Pointer(v3))); !v1 {
-		libc.X_assert(tls, __ccgo_ts+2116, __ccgo_ts+2133, uint32(263))
+		libc.X_assert(tls, __ccgo_ts+2340, __ccgo_ts+2357, uint32(263))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	v10 = (*struct {
@@ -31508,7 +31508,7 @@ func ts_query__perform_analysis(tls *libc.TLS, self4 uintptr, subgraphs uintptr,
 				break
 			}
 			if v3 = !!(j < (*AnalysisStateSet)(unsafe.Pointer(analysis)).Fsize); !v3 {
-				libc.X_assert(tls, __ccgo_ts+5126, __ccgo_ts+3187, uint32(1373))
+				libc.X_assert(tls, __ccgo_ts+5636, __ccgo_ts+3467, uint32(1373))
 			}
 			_ = v3 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			*(*uintptr)(unsafe.Pointer(bp)) = *(*uintptr)(unsafe.Pointer((*AnalysisStateSet)(unsafe.Pointer(analysis)).Fcontents + uintptr(j)*8))
@@ -31519,7 +31519,7 @@ func ts_query__perform_analysis(tls *libc.TLS, self4 uintptr, subgraphs uintptr,
 			// made more progress.
 			if (*QueryAnalysis)(unsafe.Pointer(analysis)).Fnext_states.Fsize > uint32(0) {
 				if v4 = !!((*AnalysisStateSet)(unsafe.Pointer(analysis+16)).Fsize-libc.Uint32FromInt32(1) < (*AnalysisStateSet)(unsafe.Pointer(analysis+16)).Fsize); !v4 {
-					libc.X_assert(tls, __ccgo_ts+5168, __ccgo_ts+3187, uint32(1383))
+					libc.X_assert(tls, __ccgo_ts+5678, __ccgo_ts+3467, uint32(1383))
 				}
 				_ = v4 || libc.Bool(libc.Int32FromInt32(0) != 0)
 				comparison = analysis_state__compare(tls, bp, (*AnalysisStateSet)(unsafe.Pointer(analysis+16)).Fcontents+uintptr((*AnalysisStateSet)(unsafe.Pointer(analysis+16)).Fsize-uint32(1))*8)
@@ -31530,7 +31530,7 @@ func ts_query__perform_analysis(tls *libc.TLS, self4 uintptr, subgraphs uintptr,
 					if comparison > 0 {
 						for j < (*QueryAnalysis)(unsafe.Pointer(analysis)).Fstates.Fsize {
 							if v3 = !!(j < (*AnalysisStateSet)(unsafe.Pointer(analysis)).Fsize); !v3 {
-								libc.X_assert(tls, __ccgo_ts+5126, __ccgo_ts+3187, uint32(1396))
+								libc.X_assert(tls, __ccgo_ts+5636, __ccgo_ts+3467, uint32(1396))
 							}
 							_ = v3 || libc.Bool(libc.Int32FromInt32(0) != 0)
 							analysis_state_set__push(tls, analysis+16, analysis+48, *(*uintptr)(unsafe.Pointer((*AnalysisStateSet)(unsafe.Pointer(analysis)).Fcontents + uintptr(j)*8)))
@@ -31549,7 +31549,7 @@ func ts_query__perform_analysis(tls *libc.TLS, self4 uintptr, subgraphs uintptr,
 				Fsize     uint32_t
 				Fcapacity uint32_t
 			})(unsafe.Pointer(self4+80)).Fsize); !v3 {
-				libc.X_assert(tls, __ccgo_ts+5248, __ccgo_ts+3187, uint32(1408))
+				libc.X_assert(tls, __ccgo_ts+5758, __ccgo_ts+3467, uint32(1408))
 			}
 			_ = v3 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			step = (*struct {
@@ -31590,7 +31590,7 @@ func ts_query__perform_analysis(tls *libc.TLS, self4 uintptr, subgraphs uintptr,
 				goto _2
 			}
 			if v3 = !!(*(*uint32)(unsafe.Pointer(bp + 8)) < (*AnalysisSubgraphArray)(unsafe.Pointer(subgraphs)).Fsize); !v3 {
-				libc.X_assert(tls, __ccgo_ts+5301, __ccgo_ts+3187, uint32(1413))
+				libc.X_assert(tls, __ccgo_ts+5811, __ccgo_ts+3467, uint32(1413))
 			}
 			_ = v3 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			subgraph = (*AnalysisSubgraphArray)(unsafe.Pointer(subgraphs)).Fcontents + uintptr(*(*uint32)(unsafe.Pointer(bp + 8)))*40
@@ -31744,7 +31744,7 @@ func ts_query__perform_analysis(tls *libc.TLS, self4 uintptr, subgraphs uintptr,
 						Fsize     uint32_t
 						Fcapacity uint32_t
 					})(unsafe.Pointer(subgraph+24)).Fsize); !v3 {
-						libc.X_assert(tls, __ccgo_ts+5348, __ccgo_ts+3187, uint32(1449))
+						libc.X_assert(tls, __ccgo_ts+5858, __ccgo_ts+3467, uint32(1449))
 					}
 					_ = v3 || libc.Bool(libc.Int32FromInt32(0) != 0)
 					node = (*struct {
@@ -31881,7 +31881,7 @@ func ts_query__perform_analysis(tls *libc.TLS, self4 uintptr, subgraphs uintptr,
 								Fsize     uint32_t
 								Fcapacity uint32_t
 							})(unsafe.Pointer(self4+80)).Fsize); !v3 {
-								libc.X_assert(tls, __ccgo_ts+5398, __ccgo_ts+3187, uint32(1556))
+								libc.X_assert(tls, __ccgo_ts+5908, __ccgo_ts+3467, uint32(1556))
 							}
 							_ = v3 || libc.Bool(libc.Int32FromInt32(0) != 0)
 							next_step = (*struct {
@@ -31918,7 +31918,7 @@ func ts_query__perform_analysis(tls *libc.TLS, self4 uintptr, subgraphs uintptr,
 								Fsize     uint32_t
 								Fcapacity uint32_t
 							})(unsafe.Pointer(self4+80)).Fsize); !v3 {
-								libc.X_assert(tls, __ccgo_ts+5398, __ccgo_ts+3187, uint32(1580))
+								libc.X_assert(tls, __ccgo_ts+5908, __ccgo_ts+3467, uint32(1580))
 							}
 							_ = v3 || libc.Bool(libc.Int32FromInt32(0) != 0)
 							did_finish_pattern = libc.BoolUint8(int32((*QueryStep)(unsafe.Pointer((*struct {
@@ -31979,7 +31979,7 @@ func ts_query__perform_analysis(tls *libc.TLS, self4 uintptr, subgraphs uintptr,
 									old_end = v25 + v44
 									new_end = v25 + v45
 									if v3 = !!(old_end <= *(*uint32_t)(unsafe.Pointer(v10))); !v3 {
-										libc.X_assert(tls, __ccgo_ts+2116, __ccgo_ts+2133, uint32(263))
+										libc.X_assert(tls, __ccgo_ts+2340, __ccgo_ts+2357, uint32(263))
 									}
 									_ = v3 || libc.Bool(libc.Int32FromInt32(0) != 0)
 									v17 = (*struct {
@@ -32078,7 +32078,7 @@ func ts_query__perform_analysis(tls *libc.TLS, self4 uintptr, subgraphs uintptr,
 										old_end = v25 + v44
 										new_end = v25 + v45
 										if v3 = !!(old_end <= *(*uint32_t)(unsafe.Pointer(v10))); !v3 {
-											libc.X_assert(tls, __ccgo_ts+2116, __ccgo_ts+2133, uint32(263))
+											libc.X_assert(tls, __ccgo_ts+2340, __ccgo_ts+2357, uint32(263))
 										}
 										_ = v3 || libc.Bool(libc.Int32FromInt32(0) != 0)
 										v17 = (*struct {
@@ -32139,7 +32139,7 @@ func ts_query__perform_analysis(tls *libc.TLS, self4 uintptr, subgraphs uintptr,
 								Fsize     uint32_t
 								Fcapacity uint32_t
 							})(unsafe.Pointer(self4+80)).Fsize); !v3 {
-								libc.X_assert(tls, __ccgo_ts+5398, __ccgo_ts+3187, uint32(1600))
+								libc.X_assert(tls, __ccgo_ts+5908, __ccgo_ts+3467, uint32(1600))
 							}
 							_ = v3 || libc.Bool(libc.Int32FromInt32(0) != 0)
 							next_step = (*struct {
@@ -32261,7 +32261,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self4+96)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+5455, __ccgo_ts+3187, uint32(1656))
+			libc.X_assert(tls, __ccgo_ts+5965, __ccgo_ts+3467, uint32(1656))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		pattern = (*struct {
@@ -32275,7 +32275,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 				Fsize     uint32_t
 				Fcapacity uint32_t
 			})(unsafe.Pointer(self4+80)).Fsize); !v3 {
-				libc.X_assert(tls, __ccgo_ts+5498, __ccgo_ts+3187, uint32(1658))
+				libc.X_assert(tls, __ccgo_ts+6008, __ccgo_ts+3467, uint32(1658))
 			}
 			_ = v3 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			step = (*struct {
@@ -32368,7 +32368,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self4+80)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+5553, __ccgo_ts+3187, uint32(1671))
+			libc.X_assert(tls, __ccgo_ts+6063, __ccgo_ts+3467, uint32(1671))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		step1 = (*struct {
@@ -32394,7 +32394,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 				Fsize     uint32_t
 				Fcapacity uint32_t
 			})(unsafe.Pointer(self4+80)).Fsize); !v2 {
-				libc.X_assert(tls, __ccgo_ts+5590, __ccgo_ts+3187, uint32(1682))
+				libc.X_assert(tls, __ccgo_ts+6100, __ccgo_ts+3467, uint32(1682))
 			}
 			_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			next_step = (*struct {
@@ -32487,7 +32487,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 							Fsize     uint32_t
 							Fcapacity uint32_t
 						})(unsafe.Pointer(self4+80)).Fsize); !v2 {
-							libc.X_assert(tls, __ccgo_ts+5590, __ccgo_ts+3187, uint32(1710))
+							libc.X_assert(tls, __ccgo_ts+6100, __ccgo_ts+3467, uint32(1710))
 						}
 						_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 						child_step = (*struct {
@@ -32525,7 +32525,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 										Fsize     uint32_t
 										Fcapacity uint32_t
 									})(unsafe.Pointer(self4+144)).Fsize); !v2 {
-										libc.X_assert(tls, __ccgo_ts+5627, __ccgo_ts+3187, uint32(1725))
+										libc.X_assert(tls, __ccgo_ts+6137, __ccgo_ts+3467, uint32(1725))
 									}
 									_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 									step_offset = (*struct {
@@ -32581,7 +32581,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(bp+160)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+5680, __ccgo_ts+3187, uint32(1749))
+			libc.X_assert(tls, __ccgo_ts+6190, __ccgo_ts+3467, uint32(1749))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		parent_step_index = *(*uint32_t)(unsafe.Pointer((*struct {
@@ -32594,7 +32594,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self4+80)).Fsize); !v3 {
-			libc.X_assert(tls, __ccgo_ts+5725, __ccgo_ts+3187, uint32(1750))
+			libc.X_assert(tls, __ccgo_ts+6235, __ccgo_ts+3467, uint32(1750))
 		}
 		_ = v3 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		parent_symbol = (*QueryStep)(unsafe.Pointer((*struct {
@@ -32645,7 +32645,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 			old_end = v9 + v14
 			new_end = v9 + v25
 			if v2 = !!(old_end <= *(*uint32_t)(unsafe.Pointer(v4))); !v2 {
-				libc.X_assert(tls, __ccgo_ts+2116, __ccgo_ts+2133, uint32(263))
+				libc.X_assert(tls, __ccgo_ts+2340, __ccgo_ts+2357, uint32(263))
 			}
 			_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			v6 = (*AnalysisSubgraphArray)(unsafe.Pointer(bp + 184)).Fcontents
@@ -32736,7 +32736,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 				old_end = v9 + v14
 				new_end = v9 + v25
 				if v2 = !!(old_end <= *(*uint32_t)(unsafe.Pointer(v4))); !v2 {
-					libc.X_assert(tls, __ccgo_ts+2116, __ccgo_ts+2133, uint32(263))
+					libc.X_assert(tls, __ccgo_ts+2340, __ccgo_ts+2357, uint32(263))
 				}
 				_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 				v6 = (*AnalysisSubgraphArray)(unsafe.Pointer(bp + 184)).Fcontents
@@ -32945,7 +32945,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 							; //
 							if *(*uint32)(unsafe.Pointer(bp + 308)) != 0 {
 								if v2 = !!(*(*uint32)(unsafe.Pointer(bp + 304)) < (*AnalysisSubgraphArray)(unsafe.Pointer(bp+184)).Fsize); !v2 {
-									libc.X_assert(tls, __ccgo_ts+5778, __ccgo_ts+3187, uint32(1792))
+									libc.X_assert(tls, __ccgo_ts+6288, __ccgo_ts+3467, uint32(1792))
 								}
 								_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 								subgraph2 = (*AnalysisSubgraphArray)(unsafe.Pointer(bp+184)).Fcontents + uintptr(*(*uint32)(unsafe.Pointer(bp + 304)))*40
@@ -32959,7 +32959,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 										Fsize     uint32_t
 										Fcapacity uint32_t
 									})(unsafe.Pointer(subgraph2+24)).Fsize); !v3 {
-										libc.X_assert(tls, __ccgo_ts+5826, __ccgo_ts+3187, uint32(1793))
+										libc.X_assert(tls, __ccgo_ts+6336, __ccgo_ts+3467, uint32(1793))
 									}
 									_ = v3 || libc.Bool(libc.Int32FromInt32(0) != 0)
 								}
@@ -33138,7 +33138,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 							; //
 							if *(*uint32)(unsafe.Pointer(bp + 308)) != 0 {
 								if v2 = !!(*(*uint32)(unsafe.Pointer(bp + 304)) < (*AnalysisSubgraphArray)(unsafe.Pointer(bp+184)).Fsize); !v2 {
-									libc.X_assert(tls, __ccgo_ts+5778, __ccgo_ts+3187, uint32(1829))
+									libc.X_assert(tls, __ccgo_ts+6288, __ccgo_ts+3467, uint32(1829))
 								}
 								_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 								subgraph3 = (*AnalysisSubgraphArray)(unsafe.Pointer(bp+184)).Fcontents + uintptr(*(*uint32)(unsafe.Pointer(bp + 304)))*40
@@ -33152,7 +33152,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 										Fsize     uint32_t
 										Fcapacity uint32_t
 									})(unsafe.Pointer(subgraph3+8)).Fsize); !v3 {
-										libc.X_assert(tls, __ccgo_ts+5894, __ccgo_ts+3187, uint32(1832))
+										libc.X_assert(tls, __ccgo_ts+6404, __ccgo_ts+3467, uint32(1832))
 									}
 									_ = v3 || libc.Bool(libc.Int32FromInt32(0) != 0)
 								}
@@ -33252,7 +33252,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 			break
 		}
 		if v2 = !!(i4 < (*AnalysisSubgraphArray)(unsafe.Pointer(bp+184)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+5976, __ccgo_ts+3187, uint32(1846))
+			libc.X_assert(tls, __ccgo_ts+6486, __ccgo_ts+3467, uint32(1846))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		subgraph4 = (*AnalysisSubgraphArray)(unsafe.Pointer(bp+184)).Fcontents + uintptr(i4)*40
@@ -33287,7 +33287,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 			v8 = libc.Uint64FromInt64(40)
 			v9 = i4
 			if v2 = !!(v9 < *(*uint32_t)(unsafe.Pointer(v4))); !v2 {
-				libc.X_assert(tls, __ccgo_ts+2296, __ccgo_ts+2133, uint32(199))
+				libc.X_assert(tls, __ccgo_ts+2576, __ccgo_ts+2357, uint32(199))
 			}
 			_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			contents = (*AnalysisSubgraphArray)(unsafe.Pointer(bp + 184)).Fcontents
@@ -33415,7 +33415,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 						old_end = v9 + v14
 						new_end = v9 + v25
 						if v2 = !!(old_end <= *(*uint32_t)(unsafe.Pointer(v4))); !v2 {
-							libc.X_assert(tls, __ccgo_ts+2116, __ccgo_ts+2133, uint32(263))
+							libc.X_assert(tls, __ccgo_ts+2340, __ccgo_ts+2357, uint32(263))
 						}
 						_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 						v6 = (*struct {
@@ -33543,7 +33543,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(bp+160)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+5680, __ccgo_ts+3187, uint32(1910))
+			libc.X_assert(tls, __ccgo_ts+6190, __ccgo_ts+3467, uint32(1910))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		parent_step_index1 = uint16(*(*uint32_t)(unsafe.Pointer((*struct {
@@ -33556,7 +33556,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self4+80)).Fsize); !v3 {
-			libc.X_assert(tls, __ccgo_ts+5725, __ccgo_ts+3187, uint32(1911))
+			libc.X_assert(tls, __ccgo_ts+6235, __ccgo_ts+3467, uint32(1911))
 		}
 		_ = v3 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		parent_depth = (*QueryStep)(unsafe.Pointer((*struct {
@@ -33569,7 +33569,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self4+80)).Fsize); !v17 {
-			libc.X_assert(tls, __ccgo_ts+5725, __ccgo_ts+3187, uint32(1912))
+			libc.X_assert(tls, __ccgo_ts+6235, __ccgo_ts+3467, uint32(1912))
 		}
 		_ = v17 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		parent_symbol1 = (*QueryStep)(unsafe.Pointer((*struct {
@@ -33653,7 +33653,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 		_197: /**/
 			; //
 			if v2 = !!(*(*uint32_t)(unsafe.Pointer(bp + 564)) != 0); !v2 {
-				libc.X_assert(tls, __ccgo_ts+6011, __ccgo_ts+3187, uint32(1923))
+				libc.X_assert(tls, __ccgo_ts+6521, __ccgo_ts+3467, uint32(1923))
 			}
 			_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			if v2 = !!(*(*uint32_t)(unsafe.Pointer(bp + 560)) < (*struct {
@@ -33661,7 +33661,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 				Fsize     uint32_t
 				Fcapacity uint32_t
 			})(unsafe.Pointer(self4+144)).Fsize); !v2 {
-				libc.X_assert(tls, __ccgo_ts+6024, __ccgo_ts+3187, uint32(1924))
+				libc.X_assert(tls, __ccgo_ts+6534, __ccgo_ts+3467, uint32(1924))
 			}
 			_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			*(*uint32)(unsafe.Pointer(error_offset)) = (*StepOffset)(unsafe.Pointer((*struct {
@@ -33673,7 +33673,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 			break
 		}
 		if v2 = !!(*(*uint32)(unsafe.Pointer(bp + 552)) < (*AnalysisSubgraphArray)(unsafe.Pointer(bp+184)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+5778, __ccgo_ts+3187, uint32(1931))
+			libc.X_assert(tls, __ccgo_ts+6288, __ccgo_ts+3467, uint32(1931))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		// Initialize an analysis state at every parse state in the table where
@@ -33691,7 +33691,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 				Fsize     uint32_t
 				Fcapacity uint32_t
 			})(unsafe.Pointer(subgraph5+8)).Fsize); !v2 {
-				libc.X_assert(tls, __ccgo_ts+6068, __ccgo_ts+3187, uint32(1935))
+				libc.X_assert(tls, __ccgo_ts+6578, __ccgo_ts+3467, uint32(1935))
 			}
 			_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			parse_state = *(*TSStateId)(unsafe.Pointer((*struct {
@@ -33732,7 +33732,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 					Fsize     uint32_t
 					Fcapacity uint32_t
 				})(unsafe.Pointer(self4+80)).Fsize); !v2 {
-					libc.X_assert(tls, __ccgo_ts+5590, __ccgo_ts+3187, uint32(1966))
+					libc.X_assert(tls, __ccgo_ts+6100, __ccgo_ts+3467, uint32(1966))
 				}
 				_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 				step2 = (*struct {
@@ -33767,7 +33767,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 					Fsize     uint32_t
 					Fcapacity uint32_t
 				})(unsafe.Pointer(bp+448+64)).Fsize); !v2 {
-					libc.X_assert(tls, __ccgo_ts+6116, __ccgo_ts+3187, uint32(1984))
+					libc.X_assert(tls, __ccgo_ts+6626, __ccgo_ts+3467, uint32(1984))
 				}
 				_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 				impossible_step_index = *(*uint16_t)(unsafe.Pointer((*struct {
@@ -33832,7 +33832,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 				Fsize     uint32_t
 				Fcapacity uint32_t
 			})(unsafe.Pointer(self4+144)).Fsize); !v2 {
-				libc.X_assert(tls, __ccgo_ts+6024, __ccgo_ts+3187, uint32(1992))
+				libc.X_assert(tls, __ccgo_ts+6534, __ccgo_ts+3467, uint32(1992))
 			}
 			_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			*(*uint32)(unsafe.Pointer(error_offset)) = (*StepOffset)(unsafe.Pointer((*struct {
@@ -33855,7 +33855,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 				Fsize     uint32_t
 				Fcapacity uint32_t
 			})(unsafe.Pointer(bp+448+64)).Fsize); !v2 {
-				libc.X_assert(tls, __ccgo_ts+6208, __ccgo_ts+3187, uint32(2000))
+				libc.X_assert(tls, __ccgo_ts+6718, __ccgo_ts+3467, uint32(2000))
 			}
 			_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			final_step_index = uint32(*(*uint16_t)(unsafe.Pointer((*struct {
@@ -33868,7 +33868,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 				Fsize     uint32_t
 				Fcapacity uint32_t
 			})(unsafe.Pointer(self4+80)).Fsize); !v3 {
-				libc.X_assert(tls, __ccgo_ts+6261, __ccgo_ts+3187, uint32(2001))
+				libc.X_assert(tls, __ccgo_ts+6771, __ccgo_ts+3467, uint32(2001))
 			}
 			_ = v3 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			step3 = (*struct {
@@ -33910,7 +33910,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self4+128)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+6313, __ccgo_ts+3187, uint32(2016))
+			libc.X_assert(tls, __ccgo_ts+6823, __ccgo_ts+3467, uint32(2016))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		pattern1 = (*struct {
@@ -33936,7 +33936,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 				Fsize     uint32_t
 				Fcapacity uint32_t
 			})(unsafe.Pointer(self4+112)).Fsize); !v2 {
-				libc.X_assert(tls, __ccgo_ts+6353, __ccgo_ts+3187, uint32(2025))
+				libc.X_assert(tls, __ccgo_ts+6863, __ccgo_ts+3467, uint32(2025))
 			}
 			_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			step4 = (*struct {
@@ -33998,7 +33998,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 					old_end = v9 + v14
 					new_end = v9 + v25
 					if v2 = !!(old_end <= *(*uint32_t)(unsafe.Pointer(v4))); !v2 {
-						libc.X_assert(tls, __ccgo_ts+2116, __ccgo_ts+2133, uint32(263))
+						libc.X_assert(tls, __ccgo_ts+2340, __ccgo_ts+2357, uint32(263))
 					}
 					_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 					v6 = (*struct {
@@ -34062,7 +34062,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 				Fsize     uint32_t
 				Fcapacity uint32_t
 			})(unsafe.Pointer(self4+80)).Fsize); !v2 {
-				libc.X_assert(tls, __ccgo_ts+5590, __ccgo_ts+3187, uint32(2038))
+				libc.X_assert(tls, __ccgo_ts+6100, __ccgo_ts+3467, uint32(2038))
 			}
 			_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			step5 = (*struct {
@@ -34154,7 +34154,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 				Fsize     uint32_t
 				Fcapacity uint32_t
 			})(unsafe.Pointer(self4+80)).Fsize); !v2 {
-				libc.X_assert(tls, __ccgo_ts+5553, __ccgo_ts+3187, uint32(2058))
+				libc.X_assert(tls, __ccgo_ts+6063, __ccgo_ts+3467, uint32(2058))
 			}
 			_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			step6 = (*struct {
@@ -34180,7 +34180,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 					Fsize     uint32_t
 					Fcapacity uint32_t
 				})(unsafe.Pointer(self4+80)).Fsize); !v2 {
-					libc.X_assert(tls, __ccgo_ts+6400, __ccgo_ts+3187, uint32(2071))
+					libc.X_assert(tls, __ccgo_ts+6910, __ccgo_ts+3467, uint32(2071))
 				}
 				_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 				step6 = (*struct {
@@ -34198,7 +34198,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 					Fsize     uint32_t
 					Fcapacity uint32_t
 				})(unsafe.Pointer(self4+80)).Fsize); !v2 {
-					libc.X_assert(tls, __ccgo_ts+6459, __ccgo_ts+3187, uint32(2076))
+					libc.X_assert(tls, __ccgo_ts+6969, __ccgo_ts+3467, uint32(2076))
 				}
 				_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 				prev_step = (*struct {
@@ -34235,7 +34235,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(bp+144)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+6500, __ccgo_ts+3187, uint32(2098))
+			libc.X_assert(tls, __ccgo_ts+7010, __ccgo_ts+3467, uint32(2098))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		pattern_entry_index = *(*uint16_t)(unsafe.Pointer((*struct {
@@ -34248,7 +34248,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self4+96)).Fsize); !v3 {
-			libc.X_assert(tls, __ccgo_ts+6556, __ccgo_ts+3187, uint32(2099))
+			libc.X_assert(tls, __ccgo_ts+7066, __ccgo_ts+3467, uint32(2099))
 		}
 		_ = v3 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		pattern_entry = (*struct {
@@ -34264,7 +34264,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 				break
 			}
 			if v2 = !!(j10 < (*AnalysisSubgraphArray)(unsafe.Pointer(bp+184)).Fsize); !v2 {
-				libc.X_assert(tls, __ccgo_ts+6617, __ccgo_ts+3187, uint32(2104))
+				libc.X_assert(tls, __ccgo_ts+7127, __ccgo_ts+3467, uint32(2104))
 			}
 			_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			subgraph6 = (*AnalysisSubgraphArray)(unsafe.Pointer(bp+184)).Fcontents + uintptr(j10)*40
@@ -34282,7 +34282,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 					Fsize     uint32_t
 					Fcapacity uint32_t
 				})(unsafe.Pointer(subgraph6+8)).Fsize); !v2 {
-					libc.X_assert(tls, __ccgo_ts+6652, __ccgo_ts+3187, uint32(2109))
+					libc.X_assert(tls, __ccgo_ts+7162, __ccgo_ts+3467, uint32(2109))
 				}
 				_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 				parse_state1 = *(*TSStateId)(unsafe.Pointer((*struct {
@@ -34320,7 +34320,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 				Fsize     uint32_t
 				Fcapacity uint32_t
 			})(unsafe.Pointer(self4+128)).Fsize); !v2 {
-				libc.X_assert(tls, __ccgo_ts+6700, __ccgo_ts+3187, uint32(2138))
+				libc.X_assert(tls, __ccgo_ts+7210, __ccgo_ts+3467, uint32(2138))
 			}
 			_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			(*QueryPattern)(unsafe.Pointer((*struct {
@@ -34339,7 +34339,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 				Fsize     uint32_t
 				Fcapacity uint32_t
 			})(unsafe.Pointer(bp+448+80)).Fsize); !v2 {
-				libc.X_assert(tls, __ccgo_ts+6767, __ccgo_ts+3187, uint32(2142))
+				libc.X_assert(tls, __ccgo_ts+7277, __ccgo_ts+3467, uint32(2142))
 			}
 			_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			*(*TSSymbol)(unsafe.Pointer(bp + 612)) = *(*TSSymbol)(unsafe.Pointer((*struct {
@@ -34399,7 +34399,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 				old_end = v9 + v14
 				new_end = v9 + v25
 				if v2 = !!(old_end <= *(*uint32_t)(unsafe.Pointer(v4))); !v2 {
-					libc.X_assert(tls, __ccgo_ts+2116, __ccgo_ts+2133, uint32(263))
+					libc.X_assert(tls, __ccgo_ts+2340, __ccgo_ts+2357, uint32(263))
 				}
 				_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 				v6 = (*struct {
@@ -34461,7 +34461,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 			break
 		}
 		if v2 = !!(i9 < (*AnalysisSubgraphArray)(unsafe.Pointer(bp+184)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+5976, __ccgo_ts+3187, uint32(2161))
+			libc.X_assert(tls, __ccgo_ts+6486, __ccgo_ts+3467, uint32(2161))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		if (*struct {
@@ -34470,7 +34470,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 			Fcapacity uint32_t
 		})(unsafe.Pointer((*AnalysisSubgraphArray)(unsafe.Pointer(bp+184)).Fcontents+uintptr(i9)*40+8)).Fcontents != 0 {
 			if v3 = !!(i9 < (*AnalysisSubgraphArray)(unsafe.Pointer(bp+184)).Fsize); !v3 {
-				libc.X_assert(tls, __ccgo_ts+5976, __ccgo_ts+3187, uint32(2161))
+				libc.X_assert(tls, __ccgo_ts+6486, __ccgo_ts+3467, uint32(2161))
 			}
 			_ = v3 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{ts_current_free})))(tls, (*struct {
@@ -34480,7 +34480,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 			})(unsafe.Pointer((*AnalysisSubgraphArray)(unsafe.Pointer(bp+184)).Fcontents+uintptr(i9)*40+8)).Fcontents)
 		}
 		if v2 = !!(i9 < (*AnalysisSubgraphArray)(unsafe.Pointer(bp+184)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+5976, __ccgo_ts+3187, uint32(2161))
+			libc.X_assert(tls, __ccgo_ts+6486, __ccgo_ts+3467, uint32(2161))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		(*struct {
@@ -34489,7 +34489,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 			Fcapacity uint32_t
 		})(unsafe.Pointer((*AnalysisSubgraphArray)(unsafe.Pointer(bp+184)).Fcontents + uintptr(i9)*40 + 8)).Fcontents = libc.UintptrFromInt32(0)
 		if v2 = !!(i9 < (*AnalysisSubgraphArray)(unsafe.Pointer(bp+184)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+5976, __ccgo_ts+3187, uint32(2161))
+			libc.X_assert(tls, __ccgo_ts+6486, __ccgo_ts+3467, uint32(2161))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		(*struct {
@@ -34498,7 +34498,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 			Fcapacity uint32_t
 		})(unsafe.Pointer((*AnalysisSubgraphArray)(unsafe.Pointer(bp+184)).Fcontents + uintptr(i9)*40 + 8)).Fsize = uint32(0)
 		if v2 = !!(i9 < (*AnalysisSubgraphArray)(unsafe.Pointer(bp+184)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+5976, __ccgo_ts+3187, uint32(2161))
+			libc.X_assert(tls, __ccgo_ts+6486, __ccgo_ts+3467, uint32(2161))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		(*struct {
@@ -34507,7 +34507,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 			Fcapacity uint32_t
 		})(unsafe.Pointer((*AnalysisSubgraphArray)(unsafe.Pointer(bp+184)).Fcontents + uintptr(i9)*40 + 8)).Fcapacity = uint32(0)
 		if v2 = !!(i9 < (*AnalysisSubgraphArray)(unsafe.Pointer(bp+184)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+5976, __ccgo_ts+3187, uint32(2162))
+			libc.X_assert(tls, __ccgo_ts+6486, __ccgo_ts+3467, uint32(2162))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		if (*struct {
@@ -34516,7 +34516,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 			Fcapacity uint32_t
 		})(unsafe.Pointer((*AnalysisSubgraphArray)(unsafe.Pointer(bp+184)).Fcontents+uintptr(i9)*40+24)).Fcontents != 0 {
 			if v3 = !!(i9 < (*AnalysisSubgraphArray)(unsafe.Pointer(bp+184)).Fsize); !v3 {
-				libc.X_assert(tls, __ccgo_ts+5976, __ccgo_ts+3187, uint32(2162))
+				libc.X_assert(tls, __ccgo_ts+6486, __ccgo_ts+3467, uint32(2162))
 			}
 			_ = v3 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{ts_current_free})))(tls, (*struct {
@@ -34526,7 +34526,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 			})(unsafe.Pointer((*AnalysisSubgraphArray)(unsafe.Pointer(bp+184)).Fcontents+uintptr(i9)*40+24)).Fcontents)
 		}
 		if v2 = !!(i9 < (*AnalysisSubgraphArray)(unsafe.Pointer(bp+184)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+5976, __ccgo_ts+3187, uint32(2162))
+			libc.X_assert(tls, __ccgo_ts+6486, __ccgo_ts+3467, uint32(2162))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		(*struct {
@@ -34535,7 +34535,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 			Fcapacity uint32_t
 		})(unsafe.Pointer((*AnalysisSubgraphArray)(unsafe.Pointer(bp+184)).Fcontents + uintptr(i9)*40 + 24)).Fcontents = libc.UintptrFromInt32(0)
 		if v2 = !!(i9 < (*AnalysisSubgraphArray)(unsafe.Pointer(bp+184)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+5976, __ccgo_ts+3187, uint32(2162))
+			libc.X_assert(tls, __ccgo_ts+6486, __ccgo_ts+3467, uint32(2162))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		(*struct {
@@ -34544,7 +34544,7 @@ func ts_query__analyze_patterns(tls *libc.TLS, self4 uintptr, error_offset uintp
 			Fcapacity uint32_t
 		})(unsafe.Pointer((*AnalysisSubgraphArray)(unsafe.Pointer(bp+184)).Fcontents + uintptr(i9)*40 + 24)).Fsize = uint32(0)
 		if v2 = !!(i9 < (*AnalysisSubgraphArray)(unsafe.Pointer(bp+184)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+5976, __ccgo_ts+3187, uint32(2162))
+			libc.X_assert(tls, __ccgo_ts+6486, __ccgo_ts+3467, uint32(2162))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		(*struct {
@@ -34689,7 +34689,7 @@ func ts_query__add_negated_fields(tls *libc.TLS, self uintptr, step_index uint16
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self+80)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+6825, __ccgo_ts+3187, uint32(2183))
+		libc.X_assert(tls, __ccgo_ts+7335, __ccgo_ts+3467, uint32(2183))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	step = (*struct {
@@ -34712,7 +34712,7 @@ func ts_query__add_negated_fields(tls *libc.TLS, self uintptr, step_index uint16
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self+160)).Fsize); !v3 {
-			libc.X_assert(tls, __ccgo_ts+6871, __ccgo_ts+3187, uint32(2191))
+			libc.X_assert(tls, __ccgo_ts+7381, __ccgo_ts+3467, uint32(2191))
 		}
 		_ = v3 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		existing_field_id = *(*TSFieldId)(unsafe.Pointer((*struct {
@@ -34760,7 +34760,7 @@ func ts_query__add_negated_fields(tls *libc.TLS, self uintptr, step_index uint16
 	old_end = v6 + v7
 	new_end = v6 + v8
 	if v1 = !!(old_end <= *(*uint32_t)(unsafe.Pointer(v4))); !v1 {
-		libc.X_assert(tls, __ccgo_ts+2116, __ccgo_ts+2133, uint32(263))
+		libc.X_assert(tls, __ccgo_ts+2340, __ccgo_ts+2357, uint32(263))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	v11 = (*struct {
@@ -35150,7 +35150,7 @@ func ts_query__parse_string_literal(tls *libc.TLS, self uintptr, stream uintptr)
 			old_end = v16 + v21
 			new_end = v16 + v28
 			if v65 = !!(old_end <= *(*uint32_t)(unsafe.Pointer(v11))); !v65 {
-				libc.X_assert(tls, __ccgo_ts+2116, __ccgo_ts+2133, uint32(263))
+				libc.X_assert(tls, __ccgo_ts+2340, __ccgo_ts+2357, uint32(263))
 			}
 			_ = v65 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			v13 = (*struct {
@@ -35214,7 +35214,7 @@ func ts_query__parse_string_literal(tls *libc.TLS, self uintptr, stream uintptr)
 				old_end = v16 + v21
 				new_end = v16 + v28
 				if v65 = !!(old_end <= *(*uint32_t)(unsafe.Pointer(v11))); !v65 {
-					libc.X_assert(tls, __ccgo_ts+2116, __ccgo_ts+2133, uint32(263))
+					libc.X_assert(tls, __ccgo_ts+2340, __ccgo_ts+2357, uint32(263))
 				}
 				_ = v65 || libc.Bool(libc.Int32FromInt32(0) != 0)
 				v13 = (*struct {
@@ -35276,7 +35276,7 @@ func ts_query__parse_string_literal(tls *libc.TLS, self uintptr, stream uintptr)
 					old_end = v16 + v21
 					new_end = v16 + v28
 					if v65 = !!(old_end <= *(*uint32_t)(unsafe.Pointer(v11))); !v65 {
-						libc.X_assert(tls, __ccgo_ts+2116, __ccgo_ts+2133, uint32(263))
+						libc.X_assert(tls, __ccgo_ts+2340, __ccgo_ts+2357, uint32(263))
 					}
 					_ = v65 || libc.Bool(libc.Int32FromInt32(0) != 0)
 					v13 = (*struct {
@@ -35750,7 +35750,7 @@ func ts_query__parse_pattern(tls *libc.TLS, self uintptr, stream uintptr, depth 
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self+144)).Fsize); !v1 {
-			libc.X_assert(tls, __ccgo_ts+6917, __ccgo_ts+3187, uint32(2412))
+			libc.X_assert(tls, __ccgo_ts+7427, __ccgo_ts+3467, uint32(2412))
 		}
 		_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	}
@@ -36021,7 +36021,7 @@ func ts_query__parse_pattern(tls *libc.TLS, self uintptr, stream uintptr, depth 
 				Fsize     uint32_t
 				Fcapacity uint32_t
 			})(unsafe.Pointer(bp)).Fsize); !v1 {
-				libc.X_assert(tls, __ccgo_ts+6991, __ccgo_ts+3187, uint32(2467))
+				libc.X_assert(tls, __ccgo_ts+7501, __ccgo_ts+3467, uint32(2467))
 			}
 			_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			step_index = *(*uint32_t)(unsafe.Pointer((*struct {
@@ -36034,7 +36034,7 @@ func ts_query__parse_pattern(tls *libc.TLS, self uintptr, stream uintptr, depth 
 				Fsize     uint32_t
 				Fcapacity uint32_t
 			})(unsafe.Pointer(bp)).Fsize); !v2 {
-				libc.X_assert(tls, __ccgo_ts+7036, __ccgo_ts+3187, uint32(2468))
+				libc.X_assert(tls, __ccgo_ts+7546, __ccgo_ts+3467, uint32(2468))
 			}
 			_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			next_step_index = *(*uint32_t)(unsafe.Pointer((*struct {
@@ -36047,7 +36047,7 @@ func ts_query__parse_pattern(tls *libc.TLS, self uintptr, stream uintptr, depth 
 				Fsize     uint32_t
 				Fcapacity uint32_t
 			})(unsafe.Pointer(self+80)).Fsize); !v43 {
-				libc.X_assert(tls, __ccgo_ts+6825, __ccgo_ts+3187, uint32(2469))
+				libc.X_assert(tls, __ccgo_ts+7335, __ccgo_ts+3467, uint32(2469))
 			}
 			_ = v43 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			start_step = (*struct {
@@ -36060,7 +36060,7 @@ func ts_query__parse_pattern(tls *libc.TLS, self uintptr, stream uintptr, depth 
 				Fsize     uint32_t
 				Fcapacity uint32_t
 			})(unsafe.Pointer(self+80)).Fsize); !v44 {
-				libc.X_assert(tls, __ccgo_ts+7085, __ccgo_ts+3187, uint32(2470))
+				libc.X_assert(tls, __ccgo_ts+7595, __ccgo_ts+3467, uint32(2470))
 			}
 			_ = v44 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			end_step = (*struct {
@@ -36159,7 +36159,7 @@ func ts_query__parse_pattern(tls *libc.TLS, self uintptr, stream uintptr, depth 
 						if length == uint32(1) && int32(*(*int8)(unsafe.Pointer(node_name))) == int32('_') {
 							symbol = WILDCARD_SYMBOL
 						} else {
-							if !(libc.Xstrncmp(tls, node_name, __ccgo_ts+7140, uint64(length)) != 0) {
+							if !(libc.Xstrncmp(tls, node_name, __ccgo_ts+7650, uint64(length)) != 0) {
 								is_missing = libc.BoolUint8(true1 != 0)
 								stream_skip_whitespace(tls, stream)
 								if stream_is_ident_start(tls, stream) != 0 {
@@ -36267,7 +36267,7 @@ func ts_query__parse_pattern(tls *libc.TLS, self uintptr, stream uintptr, depth 
 						Fsize     uint32_t
 						Fcapacity uint32_t
 					})(unsafe.Pointer(self+80)).Fsize); !v1 {
-						libc.X_assert(tls, __ccgo_ts+7148, __ccgo_ts+3187, uint32(2619))
+						libc.X_assert(tls, __ccgo_ts+7658, __ccgo_ts+3467, uint32(2619))
 					}
 					_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 					step = (*struct {
@@ -36399,7 +36399,7 @@ func ts_query__parse_pattern(tls *libc.TLS, self uintptr, stream uintptr, depth 
 										Fsize     uint32_t
 										Fcapacity uint32_t
 									})(unsafe.Pointer(self+80)).Fsize); !v1 {
-										libc.X_assert(tls, __ccgo_ts+7208, __ccgo_ts+3187, uint32(2764))
+										libc.X_assert(tls, __ccgo_ts+7718, __ccgo_ts+3467, uint32(2764))
 									}
 									_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 									// Mark this step *and* its alternatives as the last child of the parent.
@@ -36415,7 +36415,7 @@ func ts_query__parse_pattern(tls *libc.TLS, self uintptr, stream uintptr, depth 
 											Fsize     uint32_t
 											Fcapacity uint32_t
 										})(unsafe.Pointer(self+80)).Fsize); !v1 {
-											libc.X_assert(tls, __ccgo_ts+7265, __ccgo_ts+3187, uint32(2770))
+											libc.X_assert(tls, __ccgo_ts+7775, __ccgo_ts+3467, uint32(2770))
 										}
 										_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 										alternative_step = (*struct {
@@ -36430,7 +36430,7 @@ func ts_query__parse_pattern(tls *libc.TLS, self uintptr, stream uintptr, depth 
 												Fsize     uint32_t
 												Fcapacity uint32_t
 											})(unsafe.Pointer(self+80)).Fsize); !v1 {
-												libc.X_assert(tls, __ccgo_ts+7335, __ccgo_ts+3187, uint32(2776))
+												libc.X_assert(tls, __ccgo_ts+7845, __ccgo_ts+3467, uint32(2776))
 											}
 											_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 											alternative_step = (*struct {
@@ -36625,7 +36625,7 @@ func ts_query__parse_pattern(tls *libc.TLS, self uintptr, stream uintptr, depth 
 							Fsize     uint32_t
 							Fcapacity uint32_t
 						})(unsafe.Pointer(self+80)).Fsize); !v1 {
-							libc.X_assert(tls, __ccgo_ts+6825, __ccgo_ts+3187, uint32(2883))
+							libc.X_assert(tls, __ccgo_ts+7335, __ccgo_ts+3467, uint32(2883))
 						}
 						_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 						step1 = (*struct {
@@ -36642,7 +36642,7 @@ func ts_query__parse_pattern(tls *libc.TLS, self uintptr, stream uintptr, depth 
 									Fsize     uint32_t
 									Fcapacity uint32_t
 								})(unsafe.Pointer(self+80)).Fsize); !v1 {
-									libc.X_assert(tls, __ccgo_ts+6825, __ccgo_ts+3187, uint32(2892))
+									libc.X_assert(tls, __ccgo_ts+7335, __ccgo_ts+3467, uint32(2892))
 								}
 								_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 								step1 = (*struct {
@@ -36705,7 +36705,7 @@ func ts_query__parse_pattern(tls *libc.TLS, self uintptr, stream uintptr, depth 
 								Fsize     uint32_t
 								Fcapacity uint32_t
 							})(unsafe.Pointer(self+80)).Fsize); !v1 {
-								libc.X_assert(tls, __ccgo_ts+6825, __ccgo_ts+3187, uint32(2956))
+								libc.X_assert(tls, __ccgo_ts+7335, __ccgo_ts+3467, uint32(2956))
 							}
 							_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 							step2 = (*struct {
@@ -36858,7 +36858,7 @@ func ts_query__parse_pattern(tls *libc.TLS, self uintptr, stream uintptr, depth 
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self+80)).Fsize); !v1 {
-			libc.X_assert(tls, __ccgo_ts+7406, __ccgo_ts+3187, uint32(2996))
+			libc.X_assert(tls, __ccgo_ts+7916, __ccgo_ts+3467, uint32(2996))
 		}
 		_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		step3 = (*struct {
@@ -36872,7 +36872,7 @@ func ts_query__parse_pattern(tls *libc.TLS, self uintptr, stream uintptr, depth 
 				Fsize     uint32_t
 				Fcapacity uint32_t
 			})(unsafe.Pointer(self+80)).Fsize); !v1 {
-				libc.X_assert(tls, __ccgo_ts+6400, __ccgo_ts+3187, uint32(2998))
+				libc.X_assert(tls, __ccgo_ts+6910, __ccgo_ts+3467, uint32(2998))
 			}
 			_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			step3 = (*struct {
@@ -36889,7 +36889,7 @@ func ts_query__parse_pattern(tls *libc.TLS, self uintptr, stream uintptr, depth 
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self+80)).Fsize); !v1 {
-			libc.X_assert(tls, __ccgo_ts+7406, __ccgo_ts+3187, uint32(3004))
+			libc.X_assert(tls, __ccgo_ts+7916, __ccgo_ts+3467, uint32(3004))
 		}
 		_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		step3 = (*struct {
@@ -36903,7 +36903,7 @@ func ts_query__parse_pattern(tls *libc.TLS, self uintptr, stream uintptr, depth 
 				Fsize     uint32_t
 				Fcapacity uint32_t
 			})(unsafe.Pointer(self+80)).Fsize); !v1 {
-				libc.X_assert(tls, __ccgo_ts+6400, __ccgo_ts+3187, uint32(3006))
+				libc.X_assert(tls, __ccgo_ts+6910, __ccgo_ts+3467, uint32(3006))
 			}
 			_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			step3 = (*struct {
@@ -37133,7 +37133,7 @@ _10:
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self+128)).Fsize); !v37 {
-			libc.X_assert(tls, __ccgo_ts+7461, __ccgo_ts+3187, uint32(3072))
+			libc.X_assert(tls, __ccgo_ts+7971, __ccgo_ts+3467, uint32(3072))
 		}
 		_ = v37 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		pattern = (*struct {
@@ -37222,7 +37222,7 @@ _10:
 				Fsize     uint32_t
 				Fcapacity uint32_t
 			})(unsafe.Pointer(self+80)).Fsize); !v37 {
-				libc.X_assert(tls, __ccgo_ts+7527, __ccgo_ts+3187, uint32(3093))
+				libc.X_assert(tls, __ccgo_ts+8037, __ccgo_ts+3467, uint32(3093))
 			}
 			_ = v37 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			step = (*struct {
@@ -37240,7 +37240,7 @@ _10:
 					Fsize     uint32_t
 					Fcapacity uint32_t
 				})(unsafe.Pointer(self+80)).Fsize); !v51 {
-					libc.X_assert(tls, __ccgo_ts+7579, __ccgo_ts+3187, uint32(3100))
+					libc.X_assert(tls, __ccgo_ts+8089, __ccgo_ts+3467, uint32(3100))
 				}
 				_ = v51 || libc.Bool(libc.Int32FromInt32(0) != 0)
 				second_step = (*struct {
@@ -37270,7 +37270,7 @@ _10:
 					Fsize     uint32_t
 					Fcapacity uint32_t
 				})(unsafe.Pointer(self+80)).Fsize); !v37 {
-					libc.X_assert(tls, __ccgo_ts+6825, __ccgo_ts+3187, uint32(3115))
+					libc.X_assert(tls, __ccgo_ts+7335, __ccgo_ts+3467, uint32(3115))
 				}
 				_ = v37 || libc.Bool(libc.Int32FromInt32(0) != 0)
 				child_step = (*struct {
@@ -37333,7 +37333,7 @@ _10:
 				Fsize     uint32_t
 				Fcapacity uint32_t
 			})(unsafe.Pointer(self+80)).Fsize); !v37 {
-				libc.X_assert(tls, __ccgo_ts+5553, __ccgo_ts+3187, uint32(3157))
+				libc.X_assert(tls, __ccgo_ts+6063, __ccgo_ts+3467, uint32(3157))
 			}
 			_ = v37 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			s = (*struct {
@@ -37351,7 +37351,7 @@ _10:
 				Fsize     uint32_t
 				Fcapacity uint32_t
 			})(unsafe.Pointer(self+80)).Fsize); !v37 {
-				libc.X_assert(tls, __ccgo_ts+7635, __ccgo_ts+3187, uint32(3163))
+				libc.X_assert(tls, __ccgo_ts+8145, __ccgo_ts+3467, uint32(3163))
 			}
 			_ = v37 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			target = (*struct {
@@ -37489,7 +37489,7 @@ _10:
 				Fsize     uint32_t
 				Fcapacity uint32_t
 			})(unsafe.Pointer(self+80)).Fsize); !v37 {
-				libc.X_assert(tls, __ccgo_ts+5553, __ccgo_ts+3187, uint32(3186))
+				libc.X_assert(tls, __ccgo_ts+6063, __ccgo_ts+3467, uint32(3186))
 			}
 			_ = v37 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			s = (*struct {
@@ -37765,7 +37765,7 @@ func ts_query_delete(tls *libc.TLS, self uintptr) {
 				Fsize     uint32_t
 				Fcapacity uint32_t
 			})(unsafe.Pointer(self+64)).Fsize); !v2 {
-				libc.X_assert(tls, __ccgo_ts+7681, __ccgo_ts+3187, uint32(3224))
+				libc.X_assert(tls, __ccgo_ts+8191, __ccgo_ts+3467, uint32(3224))
 			}
 			_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			capture_quantifiers = (*struct {
@@ -38378,7 +38378,7 @@ _143:
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(copy1+64)).Fsize); !v145 {
-			libc.X_assert(tls, __ccgo_ts+7736, __ccgo_ts+3187, uint32(3256))
+			libc.X_assert(tls, __ccgo_ts+8246, __ccgo_ts+3467, uint32(3256))
 		}
 		_ = v145 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		dst = (*struct {
@@ -38391,7 +38391,7 @@ _143:
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self+64)).Fsize); !v146 {
-			libc.X_assert(tls, __ccgo_ts+7787, __ccgo_ts+3187, uint32(3257))
+			libc.X_assert(tls, __ccgo_ts+8297, __ccgo_ts+3467, uint32(3257))
 		}
 		_ = v146 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		src = (*struct {
@@ -38459,7 +38459,7 @@ func ts_query_capture_quantifier_for_id(tls *libc.TLS, self uintptr, pattern_ind
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self+64)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+7838, __ccgo_ts+3187, uint32(3290))
+		libc.X_assert(tls, __ccgo_ts+8348, __ccgo_ts+3467, uint32(3290))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	capture_quantifiers = (*struct {
@@ -38483,7 +38483,7 @@ func ts_query_predicates_for_pattern(tls *libc.TLS, self uintptr, pattern_index 
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self+128)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+7901, __ccgo_ts+3187, uint32(3307))
+		libc.X_assert(tls, __ccgo_ts+8411, __ccgo_ts+3467, uint32(3307))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	slice = (*QueryPattern)(unsafe.Pointer((*struct {
@@ -38500,7 +38500,7 @@ func ts_query_predicates_for_pattern(tls *libc.TLS, self uintptr, pattern_index 
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self+112)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+7953, __ccgo_ts+3187, uint32(3310))
+		libc.X_assert(tls, __ccgo_ts+8463, __ccgo_ts+3467, uint32(3310))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	return (*struct {
@@ -38518,7 +38518,7 @@ func ts_query_start_byte_for_pattern(tls *libc.TLS, self uintptr, pattern_index 
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self+128)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+7901, __ccgo_ts+3187, uint32(3317))
+		libc.X_assert(tls, __ccgo_ts+8411, __ccgo_ts+3467, uint32(3317))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	return (*QueryPattern)(unsafe.Pointer((*struct {
@@ -38536,7 +38536,7 @@ func ts_query_end_byte_for_pattern(tls *libc.TLS, self uintptr, pattern_index ui
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self+128)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+7901, __ccgo_ts+3187, uint32(3324))
+		libc.X_assert(tls, __ccgo_ts+8411, __ccgo_ts+3467, uint32(3324))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	return (*QueryPattern)(unsafe.Pointer((*struct {
@@ -38561,7 +38561,7 @@ func ts_query_is_pattern_rooted(tls *libc.TLS, self uintptr, pattern_index uint3
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self+96)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+5455, __ccgo_ts+3187, uint32(3332))
+			libc.X_assert(tls, __ccgo_ts+5965, __ccgo_ts+3467, uint32(3332))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		entry = (*struct {
@@ -38591,7 +38591,7 @@ func ts_query_is_pattern_non_local(tls *libc.TLS, self uintptr, pattern_index ui
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self+128)).Fsize); !v1 {
-			libc.X_assert(tls, __ccgo_ts+7901, __ccgo_ts+3187, uint32(3345))
+			libc.X_assert(tls, __ccgo_ts+8411, __ccgo_ts+3467, uint32(3345))
 		}
 		_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		return (*QueryPattern)(unsafe.Pointer((*struct {
@@ -38622,7 +38622,7 @@ func ts_query_is_pattern_guaranteed_at_step(tls *libc.TLS, self uintptr, byte_of
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self+144)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+8011, __ccgo_ts+3187, uint32(3357))
+			libc.X_assert(tls, __ccgo_ts+8521, __ccgo_ts+3467, uint32(3357))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		step_offset = (*struct {
@@ -38645,7 +38645,7 @@ func ts_query_is_pattern_guaranteed_at_step(tls *libc.TLS, self uintptr, byte_of
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self+80)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+6825, __ccgo_ts+3187, uint32(3362))
+			libc.X_assert(tls, __ccgo_ts+7335, __ccgo_ts+3467, uint32(3362))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		return uint8(libc.BoolInt32(int32(*(*uint8)(unsafe.Pointer((*struct {
@@ -38670,7 +38670,7 @@ func ts_query__step_is_fallible(tls *libc.TLS, self uintptr, step_index uint16_t
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self+80)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+6825, __ccgo_ts+3187, uint32(3373))
+		libc.X_assert(tls, __ccgo_ts+7335, __ccgo_ts+3467, uint32(3373))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	step = (*struct {
@@ -38680,7 +38680,7 @@ func ts_query__step_is_fallible(tls *libc.TLS, self uintptr, step_index uint16_t
 	})(unsafe.Pointer(self+80)).Fcontents + uintptr(step_index)*20
 	for cond := true; cond; cond = int32(*(*uint8)(unsafe.Pointer(next_step + 18))&0x8>>3) != 0 {
 		if v2 = !!(uint32(step_index)+i < (*TSQuery)(unsafe.Pointer(self)).Fsteps.Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+8055, __ccgo_ts+3187, uint32(3376))
+			libc.X_assert(tls, __ccgo_ts+8565, __ccgo_ts+3467, uint32(3376))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		if v1 = !!(uint32(step_index)+i < (*struct {
@@ -38688,7 +38688,7 @@ func ts_query__step_is_fallible(tls *libc.TLS, self uintptr, step_index uint16_t
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self+80)).Fsize); !v1 {
-			libc.X_assert(tls, __ccgo_ts+8099, __ccgo_ts+3187, uint32(3377))
+			libc.X_assert(tls, __ccgo_ts+8609, __ccgo_ts+3467, uint32(3377))
 		}
 		_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		next_step = (*struct {
@@ -38721,7 +38721,7 @@ func ts_query_disable_capture(tls *libc.TLS, self uintptr, name uintptr, length 
 				Fsize     uint32_t
 				Fcapacity uint32_t
 			})(unsafe.Pointer(self+80)).Fsize); !v2 {
-				libc.X_assert(tls, __ccgo_ts+5553, __ccgo_ts+3187, uint32(3398))
+				libc.X_assert(tls, __ccgo_ts+6063, __ccgo_ts+3467, uint32(3398))
 			}
 			_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			step = (*struct {
@@ -38757,7 +38757,7 @@ func ts_query_disable_pattern(tls *libc.TLS, self uintptr, pattern_index uint32_
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self+96)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+5455, __ccgo_ts+3187, uint32(3411))
+			libc.X_assert(tls, __ccgo_ts+5965, __ccgo_ts+3467, uint32(3411))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		pattern = (*struct {
@@ -38770,7 +38770,7 @@ func ts_query_disable_pattern(tls *libc.TLS, self uintptr, pattern_index uint32_
 			v4 = libc.Uint64FromInt64(6)
 			v5 = i
 			if v6 = !!(v5 < *(*uint32_t)(unsafe.Pointer(v3))); !v6 {
-				libc.X_assert(tls, __ccgo_ts+2296, __ccgo_ts+2133, uint32(199))
+				libc.X_assert(tls, __ccgo_ts+2576, __ccgo_ts+2357, uint32(199))
 			}
 			_ = v6 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			contents = (*struct {
@@ -38900,7 +38900,7 @@ func ts_query_cursor_exec(tls *libc.TLS, self uintptr, query uintptr, node TSNod
 				Fsize     uint32_t
 				Fcapacity uint32_t
 			})(unsafe.Pointer(query+80)).Fsize); !v2 {
-				libc.X_assert(tls, __ccgo_ts+8149, __ccgo_ts+3187, uint32(3486))
+				libc.X_assert(tls, __ccgo_ts+8659, __ccgo_ts+3467, uint32(3486))
 			}
 			_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			step = (*struct {
@@ -39051,7 +39051,7 @@ func ts_query_cursor__first_in_progress_capture(tls *libc.TLS, self uintptr, sta
 			break
 		}
 		if v2 = !!(i < (*QueryStateList)(unsafe.Pointer(self+40)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+8187, __ccgo_ts+3187, uint32(3620))
+			libc.X_assert(tls, __ccgo_ts+8697, __ccgo_ts+3467, uint32(3620))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		state = (*QueryStateList)(unsafe.Pointer(self+40)).Fcontents + uintptr(i)*24
@@ -39063,7 +39063,7 @@ func ts_query_cursor__first_in_progress_capture(tls *libc.TLS, self uintptr, sta
 			goto _1
 		}
 		if v2 = !!(uint32(int32(*(*uint16)(unsafe.Pointer(state + 18))&0xfff>>0)) < (*CaptureList)(unsafe.Pointer(captures)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+8225, __ccgo_ts+3187, uint32(3631))
+			libc.X_assert(tls, __ccgo_ts+8735, __ccgo_ts+3467, uint32(3631))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		node = (*TSQueryCapture)(unsafe.Pointer((*CaptureList)(unsafe.Pointer(captures)).Fcontents + uintptr(int32(*(*uint16)(unsafe.Pointer(state + 18))&0xfff>>0))*40)).Fnode
@@ -39086,7 +39086,7 @@ func ts_query_cursor__first_in_progress_capture(tls *libc.TLS, self uintptr, sta
 				Fsize     uint32_t
 				Fcapacity uint32_t
 			})(unsafe.Pointer((*TSQueryCursor)(unsafe.Pointer(self)).Fquery+80)).Fsize); !v2 {
-				libc.X_assert(tls, __ccgo_ts+8286, __ccgo_ts+3187, uint32(3647))
+				libc.X_assert(tls, __ccgo_ts+8796, __ccgo_ts+3467, uint32(3647))
 			}
 			_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			step = (*struct {
@@ -39162,12 +39162,12 @@ func ts_query_cursor__compare_captures(tls *libc.TLS, self uintptr, left_state u
 		if i < (*CaptureList)(unsafe.Pointer(left_captures)).Fsize {
 			if j < (*CaptureList)(unsafe.Pointer(right_captures)).Fsize {
 				if v2 = !!(i < (*CaptureList)(unsafe.Pointer(left_captures)).Fsize); !v2 {
-					libc.X_assert(tls, __ccgo_ts+8346, __ccgo_ts+3187, uint32(3703))
+					libc.X_assert(tls, __ccgo_ts+8856, __ccgo_ts+3467, uint32(3703))
 				}
 				_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 				left = (*CaptureList)(unsafe.Pointer(left_captures)).Fcontents + uintptr(i)*40
 				if v3 = !!(j < (*CaptureList)(unsafe.Pointer(right_captures)).Fsize); !v3 {
-					libc.X_assert(tls, __ccgo_ts+8384, __ccgo_ts+3187, uint32(3704))
+					libc.X_assert(tls, __ccgo_ts+8894, __ccgo_ts+3467, uint32(3704))
 				}
 				_ = v3 || libc.Bool(libc.Int32FromInt32(0) != 0)
 				right = (*CaptureList)(unsafe.Pointer(right_captures)).Fcontents + uintptr(j)*40
@@ -39230,11 +39230,11 @@ func ts_query_cursor__state_precedes(tls *libc.TLS, self uintptr, a uintptr, b u
 		return libc.BoolUint8(false1 != 0)
 	}
 	if v1 = !!(uint32(libc.Int32FromInt32(0)) < (*CaptureList)(unsafe.Pointer(a_caps)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+8423, __ccgo_ts+3187, uint32(3755))
+		libc.X_assert(tls, __ccgo_ts+8933, __ccgo_ts+3467, uint32(3755))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	if v2 = !!(uint32(libc.Int32FromInt32(0)) < (*CaptureList)(unsafe.Pointer(b_caps)).Fsize); !v2 {
-		libc.X_assert(tls, __ccgo_ts+8454, __ccgo_ts+3187, uint32(3756))
+		libc.X_assert(tls, __ccgo_ts+8964, __ccgo_ts+3467, uint32(3756))
 	}
 	_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	return libc.BoolUint8(ts_node_start_byte(tls, (*TSQueryCapture)(unsafe.Pointer((*CaptureList)(unsafe.Pointer(a_caps)).Fcontents)).Fnode) < ts_node_start_byte(tls, (*TSQueryCapture)(unsafe.Pointer((*CaptureList)(unsafe.Pointer(b_caps)).Fcontents)).Fnode))
@@ -39261,29 +39261,29 @@ func ts_query_cursor__sort_states_by_capture(tls *libc.TLS, self uintptr) {
 		// Fast+common path: this state is already ordered after its predecessor, so it does not need
 		// to move.
 		if v2 = !!(i < (*QueryStateList)(unsafe.Pointer(states)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+8485, __ccgo_ts+3187, uint32(3767))
+			libc.X_assert(tls, __ccgo_ts+8995, __ccgo_ts+3467, uint32(3767))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		if v3 = !!(i-libc.Uint32FromInt32(1) < (*QueryStateList)(unsafe.Pointer(states)).Fsize); !v3 {
-			libc.X_assert(tls, __ccgo_ts+8516, __ccgo_ts+3187, uint32(3767))
+			libc.X_assert(tls, __ccgo_ts+9026, __ccgo_ts+3467, uint32(3767))
 		}
 		_ = v3 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		if !(ts_query_cursor__state_precedes(tls, self, (*QueryStateList)(unsafe.Pointer(states)).Fcontents+uintptr(i)*24, (*QueryStateList)(unsafe.Pointer(states)).Fcontents+uintptr(i-uint32(1))*24) != 0) {
 			goto _1
 		}
 		if v2 = !!(i < (*QueryStateList)(unsafe.Pointer(states)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+8485, __ccgo_ts+3187, uint32(3769))
+			libc.X_assert(tls, __ccgo_ts+8995, __ccgo_ts+3467, uint32(3769))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		*(*QueryState)(unsafe.Pointer(bp)) = *(*QueryState)(unsafe.Pointer((*QueryStateList)(unsafe.Pointer(states)).Fcontents + uintptr(i)*24))
 		j = i
 		for {
 			if v5 = !!(j < (*QueryStateList)(unsafe.Pointer(states)).Fsize); !v5 {
-				libc.X_assert(tls, __ccgo_ts+8551, __ccgo_ts+3187, uint32(3772))
+				libc.X_assert(tls, __ccgo_ts+9061, __ccgo_ts+3467, uint32(3772))
 			}
 			_ = v5 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			if v6 = !!(j-libc.Uint32FromInt32(1) < (*QueryStateList)(unsafe.Pointer(states)).Fsize); !v6 {
-				libc.X_assert(tls, __ccgo_ts+8582, __ccgo_ts+3187, uint32(3772))
+				libc.X_assert(tls, __ccgo_ts+9092, __ccgo_ts+3467, uint32(3772))
 			}
 			_ = v6 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			*(*QueryState)(unsafe.Pointer((*QueryStateList)(unsafe.Pointer(states)).Fcontents + uintptr(j)*24)) = *(*QueryState)(unsafe.Pointer((*QueryStateList)(unsafe.Pointer(states)).Fcontents + uintptr(j-uint32(1))*24))
@@ -39293,7 +39293,7 @@ func ts_query_cursor__sort_states_by_capture(tls *libc.TLS, self uintptr) {
 			;
 			if v4 = j > uint32(0); v4 {
 				if v3 = !!(j-libc.Uint32FromInt32(1) < (*QueryStateList)(unsafe.Pointer(states)).Fsize); !v3 {
-					libc.X_assert(tls, __ccgo_ts+8582, __ccgo_ts+3187, uint32(3774))
+					libc.X_assert(tls, __ccgo_ts+9092, __ccgo_ts+3467, uint32(3774))
 				}
 				_ = v3 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			}
@@ -39302,7 +39302,7 @@ func ts_query_cursor__sort_states_by_capture(tls *libc.TLS, self uintptr) {
 			}
 		}
 		if v2 = !!(j < (*QueryStateList)(unsafe.Pointer(states)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+8551, __ccgo_ts+3187, uint32(3775))
+			libc.X_assert(tls, __ccgo_ts+9061, __ccgo_ts+3467, uint32(3775))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		*(*QueryState)(unsafe.Pointer((*QueryStateList)(unsafe.Pointer(states)).Fcontents + uintptr(j)*24)) = *(*QueryState)(unsafe.Pointer(bp))
@@ -39326,7 +39326,7 @@ func ts_query_cursor__add_state(tls *libc.TLS, self uintptr, pattern uintptr) {
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer((*TSQueryCursor)(unsafe.Pointer(self)).Fquery+80)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+8617, __ccgo_ts+3187, uint32(3783))
+		libc.X_assert(tls, __ccgo_ts+9127, __ccgo_ts+3467, uint32(3783))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	step = (*struct {
@@ -39357,7 +39357,7 @@ func ts_query_cursor__add_state(tls *libc.TLS, self uintptr, pattern uintptr) {
 	index1 = (*TSQueryCursor)(unsafe.Pointer(self)).Fstates.Fsize
 	for index1 > uint32(0) {
 		if v2 = !!(index1-libc.Uint32FromInt32(1) < (*QueryStateList)(unsafe.Pointer(self+40)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+8679, __ccgo_ts+3187, uint32(3807))
+			libc.X_assert(tls, __ccgo_ts+9189, __ccgo_ts+3467, uint32(3807))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		prev_state = (*QueryStateList)(unsafe.Pointer(self+40)).Fcontents + uintptr(index1-uint32(1))*24
@@ -39396,7 +39396,7 @@ func ts_query_cursor__add_state(tls *libc.TLS, self uintptr, pattern uintptr) {
 	old_end = v5 + v6
 	new_end = v5 + v7
 	if v1 = !!(old_end <= *(*uint32_t)(unsafe.Pointer(v3))); !v1 {
-		libc.X_assert(tls, __ccgo_ts+2116, __ccgo_ts+2133, uint32(263))
+		libc.X_assert(tls, __ccgo_ts+2340, __ccgo_ts+2357, uint32(263))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	v10 = (*QueryStateList)(unsafe.Pointer(self + 40)).Fcontents
@@ -39457,7 +39457,7 @@ func ts_query_cursor__prepare_to_capture(tls *libc.TLS, self uintptr, state uint
 			(*TSQueryCursor)(unsafe.Pointer(self)).Fdid_exceed_match_limit = libc.BoolUint8(true1 != 0)
 			if ts_query_cursor__first_in_progress_capture(tls, self, bp, bp+4, bp+8, libc.UintptrFromInt32(0)) != 0 && *(*uint32_t)(unsafe.Pointer(bp)) != state_index_to_preserve {
 				if v1 = !!(*(*uint32_t)(unsafe.Pointer(bp)) < (*QueryStateList)(unsafe.Pointer(self+40)).Fsize); !v1 {
-					libc.X_assert(tls, __ccgo_ts+8725, __ccgo_ts+3187, uint32(3873))
+					libc.X_assert(tls, __ccgo_ts+9235, __ccgo_ts+3467, uint32(3873))
 				}
 				_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 				other_state = (*QueryStateList)(unsafe.Pointer(self+40)).Fcontents + uintptr(*(*uint32_t)(unsafe.Pointer(bp)))*24
@@ -39582,7 +39582,7 @@ func ts_query_cursor__copy_state(tls *libc.TLS, self uintptr, state_ref uintptr)
 		old_end = v3 + v4
 		new_end = v3 + v5
 		if v7 = !!(old_end <= *(*uint32_t)(unsafe.Pointer(v1))); !v7 {
-			libc.X_assert(tls, __ccgo_ts+2116, __ccgo_ts+2133, uint32(263))
+			libc.X_assert(tls, __ccgo_ts+2340, __ccgo_ts+2357, uint32(263))
 		}
 		_ = v7 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		v8 = (*CaptureList)(unsafe.Pointer(new_captures)).Fcontents
@@ -39629,7 +39629,7 @@ func ts_query_cursor__copy_state(tls *libc.TLS, self uintptr, state_ref uintptr)
 	old_end = v3 + v4
 	new_end = v3 + v5
 	if v7 = !!(old_end <= *(*uint32_t)(unsafe.Pointer(v1))); !v7 {
-		libc.X_assert(tls, __ccgo_ts+2116, __ccgo_ts+2133, uint32(263))
+		libc.X_assert(tls, __ccgo_ts+2340, __ccgo_ts+2357, uint32(263))
 	}
 	_ = v7 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	v8 = (*QueryStateList)(unsafe.Pointer(self + 40)).Fcontents
@@ -39666,12 +39666,12 @@ _28:
 _30:
 	(*QueryStateList)(unsafe.Pointer(self + 40)).Fcontents = v14
 	if v7 = !!(state_index < (*QueryStateList)(unsafe.Pointer(self+40)).Fsize); !v7 {
-		libc.X_assert(tls, __ccgo_ts+8725, __ccgo_ts+3187, uint32(3943))
+		libc.X_assert(tls, __ccgo_ts+9235, __ccgo_ts+3467, uint32(3943))
 	}
 	_ = v7 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	*(*uintptr)(unsafe.Pointer(state_ref)) = (*QueryStateList)(unsafe.Pointer(self+40)).Fcontents + uintptr(state_index)*24
 	if v7 = !!(state_index+libc.Uint32FromInt32(1) < (*QueryStateList)(unsafe.Pointer(self+40)).Fsize); !v7 {
-		libc.X_assert(tls, __ccgo_ts+8773, __ccgo_ts+3187, uint32(3944))
+		libc.X_assert(tls, __ccgo_ts+9283, __ccgo_ts+3467, uint32(3944))
 	}
 	_ = v7 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	return (*QueryStateList)(unsafe.Pointer(self+40)).Fcontents + uintptr(state_index+uint32(1))*24
@@ -39701,7 +39701,7 @@ func ts_query_cursor__should_descend(tls *libc.TLS, self3 uintptr, node_intersec
 			break
 		}
 		if v2 = !!(i < (*QueryStateList)(unsafe.Pointer(self3+40)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+8187, __ccgo_ts+3187, uint32(3959))
+			libc.X_assert(tls, __ccgo_ts+8697, __ccgo_ts+3467, uint32(3959))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		state = (*QueryStateList)(unsafe.Pointer(self3+40)).Fcontents + uintptr(i)*24
@@ -39710,7 +39710,7 @@ func ts_query_cursor__should_descend(tls *libc.TLS, self3 uintptr, node_intersec
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer((*TSQueryCursor)(unsafe.Pointer(self3)).Fquery+80)).Fsize); !v3 {
-			libc.X_assert(tls, __ccgo_ts+8286, __ccgo_ts+3187, uint32(3960))
+			libc.X_assert(tls, __ccgo_ts+8796, __ccgo_ts+3467, uint32(3960))
 		}
 		_ = v3 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		next_step = (*struct {
@@ -39743,7 +39743,7 @@ func ts_query_cursor__should_descend(tls *libc.TLS, self3 uintptr, node_intersec
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self2+8)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+1038, __ccgo_ts+8825, uint32(42))
+			libc.X_assert(tls, __ccgo_ts+1206, __ccgo_ts+9335, uint32(42))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		last_entry = (*struct {
@@ -39966,7 +39966,7 @@ func ts_query_cursor__advance(tls *libc.TLS, self uintptr, stop_on_definite_step
 						break
 					}
 					if v7 = !!(i < (*QueryStateList)(unsafe.Pointer(self+40)).Fsize); !v7 {
-						libc.X_assert(tls, __ccgo_ts+8187, __ccgo_ts+3187, uint32(4078))
+						libc.X_assert(tls, __ccgo_ts+8697, __ccgo_ts+3467, uint32(4078))
 					}
 					_ = v7 || libc.Bool(libc.Int32FromInt32(0) != 0)
 					state1 = (*QueryStateList)(unsafe.Pointer(self+40)).Fcontents + uintptr(i)*24
@@ -39975,7 +39975,7 @@ func ts_query_cursor__advance(tls *libc.TLS, self uintptr, stop_on_definite_step
 						Fsize     uint32_t
 						Fcapacity uint32_t
 					})(unsafe.Pointer((*TSQueryCursor)(unsafe.Pointer(self)).Fquery+80)).Fsize); !v8 {
-						libc.X_assert(tls, __ccgo_ts+8286, __ccgo_ts+3187, uint32(4079))
+						libc.X_assert(tls, __ccgo_ts+8796, __ccgo_ts+3467, uint32(4079))
 					}
 					_ = v8 || libc.Bool(libc.Int32FromInt32(0) != 0)
 					step = (*struct {
@@ -39996,7 +39996,7 @@ func ts_query_cursor__advance(tls *libc.TLS, self uintptr, stop_on_definite_step
 						} else {
 							if deleted_count > uint32(0) {
 								if v7 = !!(i-deleted_count < (*QueryStateList)(unsafe.Pointer(self+40)).Fsize); !v7 {
-									libc.X_assert(tls, __ccgo_ts+8910, __ccgo_ts+3187, uint32(4112))
+									libc.X_assert(tls, __ccgo_ts+9476, __ccgo_ts+3467, uint32(4112))
 								}
 								_ = v7 || libc.Bool(libc.Int32FromInt32(0) != 0)
 								*(*QueryState)(unsafe.Pointer((*QueryStateList)(unsafe.Pointer(self+40)).Fcontents + uintptr(i-deleted_count)*24)) = *(*QueryState)(unsafe.Pointer(state1))
@@ -40074,7 +40074,7 @@ func ts_query_cursor__advance(tls *libc.TLS, self uintptr, stop_on_definite_step
 							Fsize     uint32_t
 							Fcapacity uint32_t
 						})(unsafe.Pointer((*TSQueryCursor)(unsafe.Pointer(self)).Fquery+96)).Fsize); !v7 {
-							libc.X_assert(tls, __ccgo_ts+8964, __ccgo_ts+3187, uint32(4207))
+							libc.X_assert(tls, __ccgo_ts+9530, __ccgo_ts+3467, uint32(4207))
 						}
 						_ = v7 || libc.Bool(libc.Int32FromInt32(0) != 0)
 						pattern = (*struct {
@@ -40087,7 +40087,7 @@ func ts_query_cursor__advance(tls *libc.TLS, self uintptr, stop_on_definite_step
 							Fsize     uint32_t
 							Fcapacity uint32_t
 						})(unsafe.Pointer((*TSQueryCursor)(unsafe.Pointer(self)).Fquery+80)).Fsize); !v8 {
-							libc.X_assert(tls, __ccgo_ts+8617, __ccgo_ts+3187, uint32(4211))
+							libc.X_assert(tls, __ccgo_ts+9127, __ccgo_ts+3467, uint32(4211))
 						}
 						_ = v8 || libc.Bool(libc.Int32FromInt32(0) != 0)
 						// If this node matches the first step of the pattern, then add a new
@@ -40118,7 +40118,7 @@ func ts_query_cursor__advance(tls *libc.TLS, self uintptr, stop_on_definite_step
 						Fsize     uint32_t
 						Fcapacity uint32_t
 					})(unsafe.Pointer((*TSQueryCursor)(unsafe.Pointer(self)).Fquery+96)).Fsize); !v7 {
-						libc.X_assert(tls, __ccgo_ts+8964, __ccgo_ts+3187, uint32(4229))
+						libc.X_assert(tls, __ccgo_ts+9530, __ccgo_ts+3467, uint32(4229))
 					}
 					_ = v7 || libc.Bool(libc.Int32FromInt32(0) != 0)
 					pattern1 = (*struct {
@@ -40131,7 +40131,7 @@ func ts_query_cursor__advance(tls *libc.TLS, self uintptr, stop_on_definite_step
 						Fsize     uint32_t
 						Fcapacity uint32_t
 					})(unsafe.Pointer((*TSQueryCursor)(unsafe.Pointer(self)).Fquery+80)).Fsize); !v8 {
-						libc.X_assert(tls, __ccgo_ts+8617, __ccgo_ts+3187, uint32(4231))
+						libc.X_assert(tls, __ccgo_ts+9127, __ccgo_ts+3467, uint32(4231))
 					}
 					_ = v8 || libc.Bool(libc.Int32FromInt32(0) != 0)
 					step2 = (*struct {
@@ -40161,7 +40161,7 @@ func ts_query_cursor__advance(tls *libc.TLS, self uintptr, stop_on_definite_step
 							Fsize     uint32_t
 							Fcapacity uint32_t
 						})(unsafe.Pointer((*TSQueryCursor)(unsafe.Pointer(self)).Fquery+96)).Fsize); !v7 {
-							libc.X_assert(tls, __ccgo_ts+8964, __ccgo_ts+3187, uint32(4249))
+							libc.X_assert(tls, __ccgo_ts+9530, __ccgo_ts+3467, uint32(4249))
 						}
 						_ = v7 || libc.Bool(libc.Int32FromInt32(0) != 0)
 						pattern1 = (*struct {
@@ -40174,7 +40174,7 @@ func ts_query_cursor__advance(tls *libc.TLS, self uintptr, stop_on_definite_step
 							Fsize     uint32_t
 							Fcapacity uint32_t
 						})(unsafe.Pointer((*TSQueryCursor)(unsafe.Pointer(self)).Fquery+80)).Fsize); !v7 {
-							libc.X_assert(tls, __ccgo_ts+8617, __ccgo_ts+3187, uint32(4250))
+							libc.X_assert(tls, __ccgo_ts+9127, __ccgo_ts+3467, uint32(4250))
 						}
 						_ = v7 || libc.Bool(libc.Int32FromInt32(0) != 0)
 						step2 = (*struct {
@@ -40192,7 +40192,7 @@ func ts_query_cursor__advance(tls *libc.TLS, self uintptr, stop_on_definite_step
 						break
 					}
 					if v7 = !!(j < (*QueryStateList)(unsafe.Pointer(self+40)).Fsize); !v7 {
-						libc.X_assert(tls, __ccgo_ts+9014, __ccgo_ts+3187, uint32(4256))
+						libc.X_assert(tls, __ccgo_ts+9580, __ccgo_ts+3467, uint32(4256))
 					}
 					_ = v7 || libc.Bool(libc.Int32FromInt32(0) != 0)
 					*(*uintptr)(unsafe.Pointer(bp + 80)) = (*QueryStateList)(unsafe.Pointer(self+40)).Fcontents + uintptr(j)*24
@@ -40201,7 +40201,7 @@ func ts_query_cursor__advance(tls *libc.TLS, self uintptr, stop_on_definite_step
 						Fsize     uint32_t
 						Fcapacity uint32_t
 					})(unsafe.Pointer((*TSQueryCursor)(unsafe.Pointer(self)).Fquery+80)).Fsize); !v8 {
-						libc.X_assert(tls, __ccgo_ts+8286, __ccgo_ts+3187, uint32(4257))
+						libc.X_assert(tls, __ccgo_ts+8796, __ccgo_ts+3467, uint32(4257))
 					}
 					_ = v8 || libc.Bool(libc.Int32FromInt32(0) != 0)
 					step3 = (*struct {
@@ -40271,7 +40271,7 @@ func ts_query_cursor__advance(tls *libc.TLS, self uintptr, stop_on_definite_step
 							Fsize     uint32_t
 							Fcapacity uint32_t
 						})(unsafe.Pointer((*TSQueryCursor)(unsafe.Pointer(self)).Fquery+160)).Fsize); !v7 {
-							libc.X_assert(tls, __ccgo_ts+9052, __ccgo_ts+3187, uint32(4306))
+							libc.X_assert(tls, __ccgo_ts+9618, __ccgo_ts+3467, uint32(4306))
 						}
 						_ = v7 || libc.Bool(libc.Int32FromInt32(0) != 0)
 						negated_field_ids = (*struct {
@@ -40302,7 +40302,7 @@ func ts_query_cursor__advance(tls *libc.TLS, self uintptr, stop_on_definite_step
 							v27 = libc.Uint64FromInt64(24)
 							v2 = j
 							if v7 = !!(v2 < *(*uint32_t)(unsafe.Pointer(v3))); !v7 {
-								libc.X_assert(tls, __ccgo_ts+2296, __ccgo_ts+2133, uint32(199))
+								libc.X_assert(tls, __ccgo_ts+2576, __ccgo_ts+2357, uint32(199))
 							}
 							_ = v7 || libc.Bool(libc.Int32FromInt32(0) != 0)
 							contents = (*QueryStateList)(unsafe.Pointer(self + 40)).Fcontents
@@ -40349,7 +40349,7 @@ func ts_query_cursor__advance(tls *libc.TLS, self uintptr, stop_on_definite_step
 						v27 = libc.Uint64FromInt64(24)
 						v2 = j
 						if v7 = !!(v2 < *(*uint32_t)(unsafe.Pointer(v3))); !v7 {
-							libc.X_assert(tls, __ccgo_ts+2296, __ccgo_ts+2133, uint32(199))
+							libc.X_assert(tls, __ccgo_ts+2576, __ccgo_ts+2357, uint32(199))
 						}
 						_ = v7 || libc.Bool(libc.Int32FromInt32(0) != 0)
 						contents = (*QueryStateList)(unsafe.Pointer(self + 40)).Fcontents
@@ -40365,7 +40365,7 @@ func ts_query_cursor__advance(tls *libc.TLS, self uintptr, stop_on_definite_step
 						Fsize     uint32_t
 						Fcapacity uint32_t
 					})(unsafe.Pointer((*TSQueryCursor)(unsafe.Pointer(self)).Fquery+80)).Fsize); !v7 {
-						libc.X_assert(tls, __ccgo_ts+8286, __ccgo_ts+3187, uint32(4407))
+						libc.X_assert(tls, __ccgo_ts+8796, __ccgo_ts+3467, uint32(4407))
 					}
 					_ = v7 || libc.Bool(libc.Int32FromInt32(0) != 0)
 					next_step = (*struct {
@@ -40402,7 +40402,7 @@ func ts_query_cursor__advance(tls *libc.TLS, self uintptr, stop_on_definite_step
 							break
 						}
 						if v7 = !!(k1 < (*QueryStateList)(unsafe.Pointer(self+40)).Fsize); !v7 {
-							libc.X_assert(tls, __ccgo_ts+9131, __ccgo_ts+3187, uint32(4433))
+							libc.X_assert(tls, __ccgo_ts+9697, __ccgo_ts+3467, uint32(4433))
 						}
 						_ = v7 || libc.Bool(libc.Int32FromInt32(0) != 0)
 						*(*uintptr)(unsafe.Pointer(bp + 88)) = (*QueryStateList)(unsafe.Pointer(self+40)).Fcontents + uintptr(k1)*24
@@ -40411,7 +40411,7 @@ func ts_query_cursor__advance(tls *libc.TLS, self uintptr, stop_on_definite_step
 							Fsize     uint32_t
 							Fcapacity uint32_t
 						})(unsafe.Pointer((*TSQueryCursor)(unsafe.Pointer(self)).Fquery+80)).Fsize); !v8 {
-							libc.X_assert(tls, __ccgo_ts+9169, __ccgo_ts+3187, uint32(4434))
+							libc.X_assert(tls, __ccgo_ts+9735, __ccgo_ts+3467, uint32(4434))
 						}
 						_ = v8 || libc.Bool(libc.Int32FromInt32(0) != 0)
 						child_step = (*struct {
@@ -40475,7 +40475,7 @@ func ts_query_cursor__advance(tls *libc.TLS, self uintptr, stop_on_definite_step
 						break
 					}
 					if v7 = !!(j1 < (*QueryStateList)(unsafe.Pointer(self+40)).Fsize); !v7 {
-						libc.X_assert(tls, __ccgo_ts+9014, __ccgo_ts+3187, uint32(4495))
+						libc.X_assert(tls, __ccgo_ts+9580, __ccgo_ts+3467, uint32(4495))
 					}
 					_ = v7 || libc.Bool(libc.Int32FromInt32(0) != 0)
 					state3 = (*QueryStateList)(unsafe.Pointer(self+40)).Fcontents + uintptr(j1)*24
@@ -40484,7 +40484,7 @@ func ts_query_cursor__advance(tls *libc.TLS, self uintptr, stop_on_definite_step
 						v27 = libc.Uint64FromInt64(24)
 						v2 = j1
 						if v8 = !!(v2 < *(*uint32_t)(unsafe.Pointer(v3))); !v8 {
-							libc.X_assert(tls, __ccgo_ts+2296, __ccgo_ts+2133, uint32(199))
+							libc.X_assert(tls, __ccgo_ts+2576, __ccgo_ts+2357, uint32(199))
 						}
 						_ = v8 || libc.Bool(libc.Int32FromInt32(0) != 0)
 						contents = (*QueryStateList)(unsafe.Pointer(self + 40)).Fcontents
@@ -40503,7 +40503,7 @@ func ts_query_cursor__advance(tls *libc.TLS, self uintptr, stop_on_definite_step
 							break
 						}
 						if v7 = !!(k2 < (*QueryStateList)(unsafe.Pointer(self+40)).Fsize); !v7 {
-							libc.X_assert(tls, __ccgo_ts+9131, __ccgo_ts+3187, uint32(4507))
+							libc.X_assert(tls, __ccgo_ts+9697, __ccgo_ts+3467, uint32(4507))
 						}
 						_ = v7 || libc.Bool(libc.Int32FromInt32(0) != 0)
 						other_state = (*QueryStateList)(unsafe.Pointer(self+40)).Fcontents + uintptr(k2)*24
@@ -40527,11 +40527,11 @@ func ts_query_cursor__advance(tls *libc.TLS, self uintptr, stop_on_definite_step
 						other_captures = capture_list_pool_get(tls, self+80, (*QueryState)(unsafe.Pointer(other_state)).Fcapture_list_id)
 						if v9 = (*CaptureList)(unsafe.Pointer(state_captures)).Fsize > uint32(0) && (*CaptureList)(unsafe.Pointer(other_captures)).Fsize > uint32(0); v9 {
 							if v7 = !!(uint32(libc.Int32FromInt32(0)) < (*CaptureList)(unsafe.Pointer(other_captures)).Fsize); !v7 {
-								libc.X_assert(tls, __ccgo_ts+9235, __ccgo_ts+3187, uint32(4534))
+								libc.X_assert(tls, __ccgo_ts+9801, __ccgo_ts+3467, uint32(4534))
 							}
 							_ = v7 || libc.Bool(libc.Int32FromInt32(0) != 0)
 							if v8 = !!((*CaptureList)(unsafe.Pointer(state_captures)).Fsize-libc.Uint32FromInt32(1) < (*CaptureList)(unsafe.Pointer(state_captures)).Fsize); !v8 {
-								libc.X_assert(tls, __ccgo_ts+9274, __ccgo_ts+3187, uint32(4535))
+								libc.X_assert(tls, __ccgo_ts+9840, __ccgo_ts+3467, uint32(4535))
 							}
 							_ = v8 || libc.Bool(libc.Int32FromInt32(0) != 0)
 						}
@@ -40546,7 +40546,7 @@ func ts_query_cursor__advance(tls *libc.TLS, self uintptr, stop_on_definite_step
 								v27 = libc.Uint64FromInt64(24)
 								v2 = k2
 								if v7 = !!(v2 < *(*uint32_t)(unsafe.Pointer(v3))); !v7 {
-									libc.X_assert(tls, __ccgo_ts+2296, __ccgo_ts+2133, uint32(199))
+									libc.X_assert(tls, __ccgo_ts+2576, __ccgo_ts+2357, uint32(199))
 								}
 								_ = v7 || libc.Bool(libc.Int32FromInt32(0) != 0)
 								contents = (*QueryStateList)(unsafe.Pointer(self + 40)).Fcontents
@@ -40564,7 +40564,7 @@ func ts_query_cursor__advance(tls *libc.TLS, self uintptr, stop_on_definite_step
 								v27 = libc.Uint64FromInt64(24)
 								v2 = j1
 								if v7 = !!(v2 < *(*uint32_t)(unsafe.Pointer(v3))); !v7 {
-									libc.X_assert(tls, __ccgo_ts+2296, __ccgo_ts+2133, uint32(199))
+									libc.X_assert(tls, __ccgo_ts+2576, __ccgo_ts+2357, uint32(199))
 								}
 								_ = v7 || libc.Bool(libc.Int32FromInt32(0) != 0)
 								contents = (*QueryStateList)(unsafe.Pointer(self + 40)).Fcontents
@@ -40589,7 +40589,7 @@ func ts_query_cursor__advance(tls *libc.TLS, self uintptr, stop_on_definite_step
 							Fsize     uint32_t
 							Fcapacity uint32_t
 						})(unsafe.Pointer((*TSQueryCursor)(unsafe.Pointer(self)).Fquery+80)).Fsize); !v7 {
-							libc.X_assert(tls, __ccgo_ts+8286, __ccgo_ts+3187, uint32(4595))
+							libc.X_assert(tls, __ccgo_ts+8796, __ccgo_ts+3467, uint32(4595))
 						}
 						_ = v7 || libc.Bool(libc.Int32FromInt32(0) != 0)
 						next_step1 = (*struct {
@@ -40605,7 +40605,7 @@ func ts_query_cursor__advance(tls *libc.TLS, self uintptr, stop_on_definite_step
 								v27 = libc.Uint64FromInt64(24)
 								v2 = uint32((int64(state3) - int64((*TSQueryCursor)(unsafe.Pointer(self)).Fstates.Fcontents)) / 24)
 								if v7 = !!(v2 < *(*uint32_t)(unsafe.Pointer(v3))); !v7 {
-									libc.X_assert(tls, __ccgo_ts+2296, __ccgo_ts+2133, uint32(199))
+									libc.X_assert(tls, __ccgo_ts+2576, __ccgo_ts+2357, uint32(199))
 								}
 								_ = v7 || libc.Bool(libc.Int32FromInt32(0) != 0)
 								contents = (*QueryStateList)(unsafe.Pointer(self + 40)).Fcontents
@@ -40665,12 +40665,12 @@ func ts_query_cursor_next_match(tls *libc.TLS, self uintptr, match uintptr) (r u
 				break
 			}
 			if v2 = !!(i < (*QueryStateList)(unsafe.Pointer(self+56)).Fsize); !v2 {
-				libc.X_assert(tls, __ccgo_ts+9336, __ccgo_ts+3187, uint32(4646))
+				libc.X_assert(tls, __ccgo_ts+9902, __ccgo_ts+3467, uint32(4646))
 			}
 			_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			state = (*QueryStateList)(unsafe.Pointer(self+56)).Fcontents + uintptr(i)*24
 			if v3 = !!(state_index < (*QueryStateList)(unsafe.Pointer(self+56)).Fsize); !v3 {
-				libc.X_assert(tls, __ccgo_ts+9383, __ccgo_ts+3187, uint32(4647))
+				libc.X_assert(tls, __ccgo_ts+9949, __ccgo_ts+3467, uint32(4647))
 			}
 			_ = v3 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			earliest_state = (*QueryStateList)(unsafe.Pointer(self+56)).Fcontents + uintptr(state_index)*24
@@ -40684,7 +40684,7 @@ func ts_query_cursor_next_match(tls *libc.TLS, self uintptr, match uintptr) (r u
 		}
 	}
 	if v2 = !!(state_index < (*QueryStateList)(unsafe.Pointer(self+56)).Fsize); !v2 {
-		libc.X_assert(tls, __ccgo_ts+9383, __ccgo_ts+3187, uint32(4654))
+		libc.X_assert(tls, __ccgo_ts+9949, __ccgo_ts+3467, uint32(4654))
 	}
 	_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	state1 = (*QueryStateList)(unsafe.Pointer(self+56)).Fcontents + uintptr(state_index)*24
@@ -40708,7 +40708,7 @@ func ts_query_cursor_next_match(tls *libc.TLS, self uintptr, match uintptr) (r u
 		v8 = libc.Uint64FromInt64(24)
 		v5 = state_index
 		if v2 = !!(v5 < *(*uint32_t)(unsafe.Pointer(v6))); !v2 {
-			libc.X_assert(tls, __ccgo_ts+2296, __ccgo_ts+2133, uint32(199))
+			libc.X_assert(tls, __ccgo_ts+2576, __ccgo_ts+2357, uint32(199))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		contents = (*QueryStateList)(unsafe.Pointer(self + 56)).Fcontents
@@ -40734,7 +40734,7 @@ func ts_query_cursor_remove_match(tls *libc.TLS, self uintptr, match_id uint32_t
 			break
 		}
 		if v2 = !!(i < (*QueryStateList)(unsafe.Pointer(self+56)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+9336, __ccgo_ts+3187, uint32(4683))
+			libc.X_assert(tls, __ccgo_ts+9902, __ccgo_ts+3467, uint32(4683))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		state = (*QueryStateList)(unsafe.Pointer(self+56)).Fcontents + uintptr(i)*24
@@ -40748,7 +40748,7 @@ func ts_query_cursor_remove_match(tls *libc.TLS, self uintptr, match_id uint32_t
 				v4 = libc.Uint64FromInt64(24)
 				v5 = i
 				if v2 = !!(v5 < *(*uint32_t)(unsafe.Pointer(v3))); !v2 {
-					libc.X_assert(tls, __ccgo_ts+2296, __ccgo_ts+2133, uint32(199))
+					libc.X_assert(tls, __ccgo_ts+2576, __ccgo_ts+2357, uint32(199))
 				}
 				_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 				contents = (*QueryStateList)(unsafe.Pointer(self + 56)).Fcontents
@@ -40770,7 +40770,7 @@ func ts_query_cursor_remove_match(tls *libc.TLS, self uintptr, match_id uint32_t
 			break
 		}
 		if v2 = !!(i1 < (*QueryStateList)(unsafe.Pointer(self+40)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+8187, __ccgo_ts+3187, uint32(4702))
+			libc.X_assert(tls, __ccgo_ts+8697, __ccgo_ts+3467, uint32(4702))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		state1 = (*QueryStateList)(unsafe.Pointer(self+40)).Fcontents + uintptr(i1)*24
@@ -40780,7 +40780,7 @@ func ts_query_cursor_remove_match(tls *libc.TLS, self uintptr, match_id uint32_t
 			v4 = libc.Uint64FromInt64(24)
 			v5 = i1
 			if v2 = !!(v5 < *(*uint32_t)(unsafe.Pointer(v3))); !v2 {
-				libc.X_assert(tls, __ccgo_ts+2296, __ccgo_ts+2133, uint32(199))
+				libc.X_assert(tls, __ccgo_ts+2576, __ccgo_ts+2357, uint32(199))
 			}
 			_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			contents = (*QueryStateList)(unsafe.Pointer(self + 40)).Fcontents
@@ -40826,7 +40826,7 @@ func ts_query_cursor_next_capture(tls *libc.TLS, self uintptr, match uintptr, ca
 		first_finished_pattern_index = *(*uint32_t)(unsafe.Pointer(bp + 4))
 		for (*TSQueryCursor)(unsafe.Pointer(self)).Ffinished_states.Fsize > uint32(0) {
 			if v2 = !!(uint32(libc.Int32FromInt32(0)) < (*QueryStateList)(unsafe.Pointer(self+56)).Fsize); !v2 {
-				libc.X_assert(tls, __ccgo_ts+9440, __ccgo_ts+3187, uint32(4746))
+				libc.X_assert(tls, __ccgo_ts+10006, __ccgo_ts+3467, uint32(4746))
 			}
 			_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			state = (*QueryStateList)(unsafe.Pointer(self + 56)).Fcontents
@@ -40839,7 +40839,7 @@ func ts_query_cursor_next_capture(tls *libc.TLS, self uintptr, match uintptr, ca
 				continue
 			}
 			if v2 = !!(uint32(int32(*(*uint16)(unsafe.Pointer(state + 18))&0xfff>>0)) < (*CaptureList)(unsafe.Pointer(captures)).Fsize); !v2 {
-				libc.X_assert(tls, __ccgo_ts+8225, __ccgo_ts+3187, uint32(4763))
+				libc.X_assert(tls, __ccgo_ts+8735, __ccgo_ts+3467, uint32(4763))
 			}
 			_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			node = (*TSQueryCapture)(unsafe.Pointer((*CaptureList)(unsafe.Pointer(captures)).Fcontents + uintptr(int32(*(*uint16)(unsafe.Pointer(state + 18))&0xfff>>0))*40)).Fnode
@@ -40879,7 +40879,7 @@ func ts_query_cursor_next_capture(tls *libc.TLS, self uintptr, match uintptr, ca
 		} else {
 			if *(*uint8)(unsafe.Pointer(bp + 12)) != 0 {
 				if v2 = !!(*(*uint32_t)(unsafe.Pointer(bp + 8)) < (*QueryStateList)(unsafe.Pointer(self+40)).Fsize); !v2 {
-					libc.X_assert(tls, __ccgo_ts+9487, __ccgo_ts+3187, uint32(4804))
+					libc.X_assert(tls, __ccgo_ts+10053, __ccgo_ts+3467, uint32(4804))
 				}
 				_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 				state1 = (*QueryStateList)(unsafe.Pointer(self+40)).Fcontents + uintptr(*(*uint32_t)(unsafe.Pointer(bp + 8)))*24
@@ -40910,7 +40910,7 @@ func ts_query_cursor_next_capture(tls *libc.TLS, self uintptr, match uintptr, ca
 		}
 		if capture_list_pool_is_empty(tls, self+80) != 0 && found_unfinished_state != 0 {
 			if v2 = !!(*(*uint32_t)(unsafe.Pointer(bp + 8)) < (*QueryStateList)(unsafe.Pointer(self+40)).Fsize); !v2 {
-				libc.X_assert(tls, __ccgo_ts+9487, __ccgo_ts+3187, uint32(4838))
+				libc.X_assert(tls, __ccgo_ts+10053, __ccgo_ts+3467, uint32(4838))
 			}
 			_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			capture_list_pool_release(tls, self+80, (*QueryState)(unsafe.Pointer((*QueryStateList)(unsafe.Pointer(self+40)).Fcontents+uintptr(*(*uint32_t)(unsafe.Pointer(bp + 8)))*24)).Fcapture_list_id)
@@ -40918,7 +40918,7 @@ func ts_query_cursor_next_capture(tls *libc.TLS, self uintptr, match uintptr, ca
 			v19 = libc.Uint64FromInt64(24)
 			v15 = *(*uint32_t)(unsafe.Pointer(bp + 8))
 			if v2 = !!(v15 < *(*uint32_t)(unsafe.Pointer(v16))); !v2 {
-				libc.X_assert(tls, __ccgo_ts+2296, __ccgo_ts+2133, uint32(199))
+				libc.X_assert(tls, __ccgo_ts+2576, __ccgo_ts+2357, uint32(199))
 			}
 			_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			contents = (*QueryStateList)(unsafe.Pointer(self + 40)).Fcontents
@@ -41025,12 +41025,12 @@ func stack_node_retain(tls *libc.TLS, self uintptr) {
 		return
 	}
 	if v1 = !!((*StackNode)(unsafe.Pointer(self)).Fref_count > libc.Uint32FromInt32(0)); !v1 {
-		libc.X_assert(tls, __ccgo_ts+9552, __ccgo_ts+9572, uint32(85))
+		libc.X_assert(tls, __ccgo_ts+10118, __ccgo_ts+10138, uint32(85))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	(*StackNode)(unsafe.Pointer(self)).Fref_count = (*StackNode)(unsafe.Pointer(self)).Fref_count + 1
 	if v1 = !!((*StackNode)(unsafe.Pointer(self)).Fref_count != libc.Uint32FromInt32(0)); !v1 {
-		libc.X_assert(tls, __ccgo_ts+9651, __ccgo_ts+9572, uint32(87))
+		libc.X_assert(tls, __ccgo_ts+10273, __ccgo_ts+10138, uint32(87))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 }
@@ -41050,7 +41050,7 @@ func stack_node_release(tls *libc.TLS, self uintptr, pool uintptr, subtree_pool 
 recur:
 	;
 	if v1 = !!((*StackNode)(unsafe.Pointer(self)).Fref_count != libc.Uint32FromInt32(0)); !v1 {
-		libc.X_assert(tls, __ccgo_ts+9651, __ccgo_ts+9572, uint32(96))
+		libc.X_assert(tls, __ccgo_ts+10273, __ccgo_ts+10138, uint32(96))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	(*StackNode)(unsafe.Pointer(self)).Fref_count = (*StackNode)(unsafe.Pointer(self)).Fref_count - 1
@@ -41777,7 +41777,7 @@ func ts_stack__add_version(tls *libc.TLS, self uintptr, original_version StackVe
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+9672, __ccgo_ts+9572, uint32(293))
+		libc.X_assert(tls, __ccgo_ts+10294, __ccgo_ts+10138, uint32(293))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	if v2 = !!(original_version < (*struct {
@@ -41785,7 +41785,7 @@ func ts_stack__add_version(tls *libc.TLS, self uintptr, original_version StackVe
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self)).Fsize); !v2 {
-		libc.X_assert(tls, __ccgo_ts+9672, __ccgo_ts+9572, uint32(294))
+		libc.X_assert(tls, __ccgo_ts+10294, __ccgo_ts+10138, uint32(294))
 	}
 	_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	*(*StackHead)(unsafe.Pointer(bp)) = StackHead{}
@@ -41886,7 +41886,7 @@ func ts_stack__add_slice(tls *libc.TLS, self uintptr, original_version StackVers
 			break
 		}
 		if v2 = !!(i < (*StackSliceArray)(unsafe.Pointer(self+16)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+3755, __ccgo_ts+9572, uint32(311))
+			libc.X_assert(tls, __ccgo_ts+4091, __ccgo_ts+10138, uint32(311))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		version = (*StackSlice)(unsafe.Pointer((*StackSliceArray)(unsafe.Pointer(self+16)).Fcontents + uintptr(i)*24)).Fversion
@@ -41895,7 +41895,7 @@ func ts_stack__add_slice(tls *libc.TLS, self uintptr, original_version StackVers
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self)).Fsize); !v3 {
-			libc.X_assert(tls, __ccgo_ts+9724, __ccgo_ts+9572, uint32(312))
+			libc.X_assert(tls, __ccgo_ts+10346, __ccgo_ts+10138, uint32(312))
 		}
 		_ = v3 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		if (*StackHead)(unsafe.Pointer((*struct {
@@ -41917,7 +41917,7 @@ func ts_stack__add_slice(tls *libc.TLS, self uintptr, original_version StackVers
 			old_end = v6 + v7
 			new_end = v6 + v8
 			if v10 = !!(old_end <= *(*uint32_t)(unsafe.Pointer(v4))); !v10 {
-				libc.X_assert(tls, __ccgo_ts+2116, __ccgo_ts+2133, uint32(263))
+				libc.X_assert(tls, __ccgo_ts+2340, __ccgo_ts+2357, uint32(263))
 			}
 			_ = v10 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			v11 = (*StackSliceArray)(unsafe.Pointer(self + 16)).Fcontents
@@ -42032,7 +42032,7 @@ func stack__iter(tls *libc.TLS, self1 uintptr, version StackVersion, __ccgo_fp_c
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self1)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+9724, __ccgo_ts+9572, uint32(334))
+		libc.X_assert(tls, __ccgo_ts+10346, __ccgo_ts+10138, uint32(334))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	head = (*struct {
@@ -42134,7 +42134,7 @@ _19:
 				Fsize     uint32_t
 				Fcapacity uint32_t
 			})(unsafe.Pointer(self1+32)).Fsize); !v1 {
-				libc.X_assert(tls, __ccgo_ts+9767, __ccgo_ts+9572, uint32(352))
+				libc.X_assert(tls, __ccgo_ts+10389, __ccgo_ts+10138, uint32(352))
 			}
 			_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			iterator = (*struct {
@@ -42162,7 +42162,7 @@ _19:
 				v2 = libc.Uint64FromInt64(32)
 				v7 = i
 				if v1 = !!(v7 < *(*uint32_t)(unsafe.Pointer(v4))); !v1 {
-					libc.X_assert(tls, __ccgo_ts+2296, __ccgo_ts+2133, uint32(199))
+					libc.X_assert(tls, __ccgo_ts+2576, __ccgo_ts+2357, uint32(199))
 				}
 				_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 				contents = (*struct {
@@ -42188,7 +42188,7 @@ _19:
 						Fsize     uint32_t
 						Fcapacity uint32_t
 					})(unsafe.Pointer(self1+32)).Fsize); !v1 {
-						libc.X_assert(tls, __ccgo_ts+9767, __ccgo_ts+9572, uint32(387))
+						libc.X_assert(tls, __ccgo_ts+10389, __ccgo_ts+10138, uint32(387))
 					}
 					_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 					next_iterator = (*struct {
@@ -42206,7 +42206,7 @@ _19:
 						Fsize     uint32_t
 						Fcapacity uint32_t
 					})(unsafe.Pointer(self1+32)).Fsize); !v1 {
-						libc.X_assert(tls, __ccgo_ts+9767, __ccgo_ts+9572, uint32(391))
+						libc.X_assert(tls, __ccgo_ts+10389, __ccgo_ts+10138, uint32(391))
 					}
 					_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 					current_iterator = *(*StackIterator)(unsafe.Pointer((*struct {
@@ -42277,7 +42277,7 @@ _19:
 						Fsize     uint32_t
 						Fcapacity uint32_t
 					})(unsafe.Pointer(self1+32)).Fsize); !v1 {
-						libc.X_assert(tls, __ccgo_ts+9808, __ccgo_ts+9572, uint32(393))
+						libc.X_assert(tls, __ccgo_ts+10430, __ccgo_ts+10138, uint32(393))
 					}
 					_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 					next_iterator = (*struct {
@@ -42551,7 +42551,7 @@ func ts_stack_delete(tls *libc.TLS, self uintptr) {
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+9876, __ccgo_ts+9572, uint32(447))
+			libc.X_assert(tls, __ccgo_ts+10498, __ccgo_ts+10138, uint32(447))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		stack_head_delete(tls, (*struct {
@@ -42576,7 +42576,7 @@ func ts_stack_delete(tls *libc.TLS, self uintptr) {
 				break
 			}
 			if v2 = !!(i1 < (*StackNodeArray)(unsafe.Pointer(self+48)).Fsize); !v2 {
-				libc.X_assert(tls, __ccgo_ts+9913, __ccgo_ts+9572, uint32(452))
+				libc.X_assert(tls, __ccgo_ts+10535, __ccgo_ts+10138, uint32(452))
 			}
 			_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{ts_current_free})))(tls, *(*uintptr)(unsafe.Pointer((*StackNodeArray)(unsafe.Pointer(self+48)).Fcontents + uintptr(i1)*8)))
@@ -42641,7 +42641,7 @@ func ts_stack_halted_version_count(tls *libc.TLS, self uintptr) (r uint32_t) {
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+9876, __ccgo_ts+9572, uint32(466))
+			libc.X_assert(tls, __ccgo_ts+10498, __ccgo_ts+10138, uint32(466))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		head = (*struct {
@@ -42668,7 +42668,7 @@ func ts_stack_state(tls *libc.TLS, self uintptr, version StackVersion) (r TSStat
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+9724, __ccgo_ts+9572, uint32(475))
+		libc.X_assert(tls, __ccgo_ts+10346, __ccgo_ts+10138, uint32(475))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	return (*StackNode)(unsafe.Pointer((*StackHead)(unsafe.Pointer((*struct {
@@ -42686,7 +42686,7 @@ func ts_stack_position(tls *libc.TLS, self uintptr, version StackVersion) (r Len
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+9724, __ccgo_ts+9572, uint32(479))
+		libc.X_assert(tls, __ccgo_ts+10346, __ccgo_ts+10138, uint32(479))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	return (*StackNode)(unsafe.Pointer((*StackHead)(unsafe.Pointer((*struct {
@@ -42704,7 +42704,7 @@ func ts_stack_last_external_token(tls *libc.TLS, self uintptr, version StackVers
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+9724, __ccgo_ts+9572, uint32(483))
+		libc.X_assert(tls, __ccgo_ts+10346, __ccgo_ts+10138, uint32(483))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	return (*StackHead)(unsafe.Pointer((*struct {
@@ -42726,7 +42726,7 @@ func ts_stack_set_last_external_token(tls *libc.TLS, self uintptr, version Stack
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+9724, __ccgo_ts+9572, uint32(487))
+		libc.X_assert(tls, __ccgo_ts+10346, __ccgo_ts+10138, uint32(487))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	head = (*struct {
@@ -42753,7 +42753,7 @@ func ts_stack_error_cost(tls *libc.TLS, self uintptr, version StackVersion) (r u
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+9724, __ccgo_ts+9572, uint32(494))
+		libc.X_assert(tls, __ccgo_ts+10346, __ccgo_ts+10138, uint32(494))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	head = (*struct {
@@ -42777,7 +42777,7 @@ func ts_stack_node_count_since_error(tls *libc.TLS, self uintptr, version StackV
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+9724, __ccgo_ts+9572, uint32(505))
+		libc.X_assert(tls, __ccgo_ts+10346, __ccgo_ts+10138, uint32(505))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	head = (*struct {
@@ -42803,7 +42803,7 @@ func ts_stack_push(tls *libc.TLS, self uintptr, version StackVersion, _subtree S
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+9724, __ccgo_ts+9572, uint32(519))
+		libc.X_assert(tls, __ccgo_ts+10346, __ccgo_ts+10138, uint32(519))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	head = (*struct {
@@ -42860,12 +42860,12 @@ func ts_stack_pop_pending(tls *libc.TLS, self uintptr, version StackVersion) (r 
 	*(*StackSliceArray)(unsafe.Pointer(bp)) = stack__iter(tls, self, version, __ccgo_fp(pop_pending_callback), libc.UintptrFromInt32(0), 0)
 	if (*(*StackSliceArray)(unsafe.Pointer(bp))).Fsize > uint32(0) {
 		if v1 = !!(uint32(libc.Int32FromInt32(0)) < (*StackSliceArray)(unsafe.Pointer(bp)).Fsize); !v1 {
-			libc.X_assert(tls, __ccgo_ts+2221, __ccgo_ts+9572, uint32(555))
+			libc.X_assert(tls, __ccgo_ts+2501, __ccgo_ts+10138, uint32(555))
 		}
 		_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		ts_stack_renumber_version(tls, self, (*StackSlice)(unsafe.Pointer((*StackSliceArray)(unsafe.Pointer(bp)).Fcontents)).Fversion, version)
 		if v1 = !!(uint32(libc.Int32FromInt32(0)) < (*StackSliceArray)(unsafe.Pointer(bp)).Fsize); !v1 {
-			libc.X_assert(tls, __ccgo_ts+2221, __ccgo_ts+9572, uint32(556))
+			libc.X_assert(tls, __ccgo_ts+2501, __ccgo_ts+10138, uint32(556))
 		}
 		_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		(*StackSlice)(unsafe.Pointer((*StackSliceArray)(unsafe.Pointer(bp)).Fcontents)).Fversion = version
@@ -42887,7 +42887,7 @@ func pop_error_callback(tls *libc.TLS, payload uintptr, iterator uintptr) (r Sta
 		found_error = payload
 		if v8 = !(*(*uint8)(unsafe.Pointer(found_error)) != 0); v8 {
 			if v1 = !!(uint32(libc.Int32FromInt32(0)) < (*SubtreeArray)(unsafe.Pointer(iterator+8)).Fsize); !v1 {
-				libc.X_assert(tls, __ccgo_ts+9954, __ccgo_ts+9572, uint32(564))
+				libc.X_assert(tls, __ccgo_ts+10576, __ccgo_ts+10138, uint32(564))
 			}
 			_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			v4 = *(*Subtree)(unsafe.Pointer((*SubtreeArray)(unsafe.Pointer(iterator + 8)).Fcontents))
@@ -42934,7 +42934,7 @@ func ts_stack_pop_error(tls *libc.TLS, self2 uintptr, version StackVersion) (r S
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self2)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+9724, __ccgo_ts+9572, uint32(576))
+		libc.X_assert(tls, __ccgo_ts+10346, __ccgo_ts+10138, uint32(576))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	node = (*StackHead)(unsafe.Pointer((*struct {
@@ -42967,16 +42967,16 @@ func ts_stack_pop_error(tls *libc.TLS, self2 uintptr, version StackVersion) (r S
 			*(*StackSliceArray)(unsafe.Pointer(bp + 16)) = stack__iter(tls, self2, version, __ccgo_fp(pop_error_callback), bp+8, int32(1))
 			if (*(*StackSliceArray)(unsafe.Pointer(bp + 16))).Fsize > uint32(0) {
 				if v10 = !!((*(*StackSliceArray)(unsafe.Pointer(bp + 16))).Fsize == libc.Uint32FromInt32(1)); !v10 {
-					libc.X_assert(tls, __ccgo_ts+9998, __ccgo_ts+9572, uint32(582))
+					libc.X_assert(tls, __ccgo_ts+10620, __ccgo_ts+10138, uint32(582))
 				}
 				_ = v10 || libc.Bool(libc.Int32FromInt32(0) != 0)
 				if v1 = !!(uint32(libc.Int32FromInt32(0)) < (*StackSliceArray)(unsafe.Pointer(bp+16)).Fsize); !v1 {
-					libc.X_assert(tls, __ccgo_ts+2221, __ccgo_ts+9572, uint32(583))
+					libc.X_assert(tls, __ccgo_ts+2501, __ccgo_ts+10138, uint32(583))
 				}
 				_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 				ts_stack_renumber_version(tls, self2, (*StackSlice)(unsafe.Pointer((*StackSliceArray)(unsafe.Pointer(bp+16)).Fcontents)).Fversion, version)
 				if v1 = !!(uint32(libc.Int32FromInt32(0)) < (*StackSliceArray)(unsafe.Pointer(bp+16)).Fsize); !v1 {
-					libc.X_assert(tls, __ccgo_ts+2221, __ccgo_ts+9572, uint32(584))
+					libc.X_assert(tls, __ccgo_ts+2501, __ccgo_ts+10138, uint32(584))
 				}
 				_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 				return (*StackSlice)(unsafe.Pointer((*StackSliceArray)(unsafe.Pointer(bp + 16)).Fcontents)).Fsubtrees
@@ -43033,7 +43033,7 @@ func summarize_stack_callback(tls *libc.TLS, payload uintptr, iterator uintptr) 
 			break
 		}
 		if v2 = !!(i < (*StackSummary)(unsafe.Pointer((*SummarizeStackSession)(unsafe.Pointer(session)).Fsummary)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+10012, __ccgo_ts+9572, uint32(612))
+			libc.X_assert(tls, __ccgo_ts+10634, __ccgo_ts+10138, uint32(612))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		entry = *(*StackSummaryEntry)(unsafe.Pointer((*StackSummary)(unsafe.Pointer((*SummarizeStackSession)(unsafe.Pointer(session)).Fsummary)).Fcontents + uintptr(i)*20))
@@ -43113,7 +43113,7 @@ func ts_stack_record_summary(tls *libc.TLS, self uintptr, version StackVersion, 
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+9724, __ccgo_ts+9572, uint32(631))
+		libc.X_assert(tls, __ccgo_ts+10346, __ccgo_ts+10138, uint32(631))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	head = (*struct {
@@ -43141,7 +43141,7 @@ func ts_stack_get_summary(tls *libc.TLS, self uintptr, version StackVersion) (r 
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+9724, __ccgo_ts+9572, uint32(640))
+		libc.X_assert(tls, __ccgo_ts+10346, __ccgo_ts+10138, uint32(640))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	return (*StackHead)(unsafe.Pointer((*struct {
@@ -43159,7 +43159,7 @@ func ts_stack_dynamic_precedence(tls *libc.TLS, self uintptr, version StackVersi
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+9724, __ccgo_ts+9572, uint32(644))
+		libc.X_assert(tls, __ccgo_ts+10346, __ccgo_ts+10138, uint32(644))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	return (*StackNode)(unsafe.Pointer((*StackHead)(unsafe.Pointer((*struct {
@@ -43188,7 +43188,7 @@ func ts_stack_has_advanced_since_error(tls *libc.TLS, self6 uintptr, version Sta
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self6)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+9724, __ccgo_ts+9572, uint32(648))
+		libc.X_assert(tls, __ccgo_ts+10346, __ccgo_ts+10138, uint32(648))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	head = (*struct {
@@ -43332,7 +43332,7 @@ func ts_stack_remove_version(tls *libc.TLS, self uintptr, version StackVersion) 
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+9724, __ccgo_ts+9572, uint32(672))
+		libc.X_assert(tls, __ccgo_ts+10346, __ccgo_ts+10138, uint32(672))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	stack_head_delete(tls, (*struct {
@@ -43344,7 +43344,7 @@ func ts_stack_remove_version(tls *libc.TLS, self uintptr, version StackVersion) 
 	v3 = libc.Uint64FromInt64(48)
 	v4 = version
 	if v1 = !!(v4 < *(*uint32_t)(unsafe.Pointer(v2))); !v1 {
-		libc.X_assert(tls, __ccgo_ts+2296, __ccgo_ts+2133, uint32(199))
+		libc.X_assert(tls, __ccgo_ts+2576, __ccgo_ts+2357, uint32(199))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	contents = (*struct {
@@ -43366,11 +43366,11 @@ func ts_stack_renumber_version(tls *libc.TLS, self uintptr, v1 StackVersion, v2 
 		return
 	}
 	if v11 = !!(v2 < v1); !v11 {
-		libc.X_assert(tls, __ccgo_ts+10053, __ccgo_ts+9572, uint32(678))
+		libc.X_assert(tls, __ccgo_ts+10675, __ccgo_ts+10138, uint32(678))
 	}
 	_ = v11 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	if v11 = !!(v1 < (*Stack)(unsafe.Pointer(self)).Fheads.Fsize); !v11 {
-		libc.X_assert(tls, __ccgo_ts+10061, __ccgo_ts+9572, uint32(679))
+		libc.X_assert(tls, __ccgo_ts+10683, __ccgo_ts+10138, uint32(679))
 	}
 	_ = v11 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	if v11 = !!(v1 < (*struct {
@@ -43378,7 +43378,7 @@ func ts_stack_renumber_version(tls *libc.TLS, self uintptr, v1 StackVersion, v2 
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self)).Fsize); !v11 {
-		libc.X_assert(tls, __ccgo_ts+10093, __ccgo_ts+9572, uint32(680))
+		libc.X_assert(tls, __ccgo_ts+10715, __ccgo_ts+10138, uint32(680))
 	}
 	_ = v11 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	source_head = (*struct {
@@ -43391,7 +43391,7 @@ func ts_stack_renumber_version(tls *libc.TLS, self uintptr, v1 StackVersion, v2 
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self)).Fsize); !v21 {
-		libc.X_assert(tls, __ccgo_ts+10131, __ccgo_ts+9572, uint32(681))
+		libc.X_assert(tls, __ccgo_ts+10753, __ccgo_ts+10138, uint32(681))
 	}
 	_ = v21 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	target_head = (*struct {
@@ -43409,7 +43409,7 @@ func ts_stack_renumber_version(tls *libc.TLS, self uintptr, v1 StackVersion, v2 
 	v6 = libc.Uint64FromInt64(48)
 	v7 = v1
 	if v11 = !!(v7 < *(*uint32_t)(unsafe.Pointer(v5))); !v11 {
-		libc.X_assert(tls, __ccgo_ts+2296, __ccgo_ts+2133, uint32(199))
+		libc.X_assert(tls, __ccgo_ts+2576, __ccgo_ts+2357, uint32(199))
 	}
 	_ = v11 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	contents = (*struct {
@@ -43430,7 +43430,7 @@ func ts_stack_swap_versions(tls *libc.TLS, self uintptr, v1 StackVersion, v2 Sta
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self)).Fsize); !v11 {
-		libc.X_assert(tls, __ccgo_ts+10093, __ccgo_ts+9572, uint32(692))
+		libc.X_assert(tls, __ccgo_ts+10715, __ccgo_ts+10138, uint32(692))
 	}
 	_ = v11 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	temporary_head = *(*StackHead)(unsafe.Pointer((*struct {
@@ -43443,7 +43443,7 @@ func ts_stack_swap_versions(tls *libc.TLS, self uintptr, v1 StackVersion, v2 Sta
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self)).Fsize); !v21 {
-		libc.X_assert(tls, __ccgo_ts+10093, __ccgo_ts+9572, uint32(693))
+		libc.X_assert(tls, __ccgo_ts+10715, __ccgo_ts+10138, uint32(693))
 	}
 	_ = v21 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	if v3 = !!(v2 < (*struct {
@@ -43451,7 +43451,7 @@ func ts_stack_swap_versions(tls *libc.TLS, self uintptr, v1 StackVersion, v2 Sta
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self)).Fsize); !v3 {
-		libc.X_assert(tls, __ccgo_ts+10131, __ccgo_ts+9572, uint32(693))
+		libc.X_assert(tls, __ccgo_ts+10753, __ccgo_ts+10138, uint32(693))
 	}
 	_ = v3 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	*(*StackHead)(unsafe.Pointer((*struct {
@@ -43468,7 +43468,7 @@ func ts_stack_swap_versions(tls *libc.TLS, self uintptr, v1 StackVersion, v2 Sta
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self)).Fsize); !v11 {
-		libc.X_assert(tls, __ccgo_ts+10131, __ccgo_ts+9572, uint32(694))
+		libc.X_assert(tls, __ccgo_ts+10753, __ccgo_ts+10138, uint32(694))
 	}
 	_ = v11 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	*(*StackHead)(unsafe.Pointer((*struct {
@@ -43486,7 +43486,7 @@ func ts_stack_copy_version(tls *libc.TLS, self uintptr, version StackVersion) (r
 	var v7 size_t
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = head, new_capacity1, new_contents, new_contents1, new_size, version_head, v1, v11, v3, v4, v5, v6, v7, v8, v9
 	if v1 = !!(version < (*Stack)(unsafe.Pointer(self)).Fheads.Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+10169, __ccgo_ts+9572, uint32(698))
+		libc.X_assert(tls, __ccgo_ts+10791, __ccgo_ts+10138, uint32(698))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	if v1 = !!(version < (*struct {
@@ -43494,7 +43494,7 @@ func ts_stack_copy_version(tls *libc.TLS, self uintptr, version StackVersion) (r
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+9724, __ccgo_ts+9572, uint32(699))
+		libc.X_assert(tls, __ccgo_ts+10346, __ccgo_ts+10138, uint32(699))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	version_head = *(*StackHead)(unsafe.Pointer((*struct {
@@ -43565,7 +43565,7 @@ _12:
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+10196, __ccgo_ts+9572, uint32(701))
+		libc.X_assert(tls, __ccgo_ts+10818, __ccgo_ts+10138, uint32(701))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	head = (*struct {
@@ -43598,7 +43598,7 @@ func ts_stack_merge(tls *libc.TLS, self uintptr, version1 StackVersion, version2
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+10256, __ccgo_ts+9572, uint32(710))
+		libc.X_assert(tls, __ccgo_ts+10878, __ccgo_ts+10138, uint32(710))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	head1 = (*struct {
@@ -43611,7 +43611,7 @@ func ts_stack_merge(tls *libc.TLS, self uintptr, version1 StackVersion, version2
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self)).Fsize); !v2 {
-		libc.X_assert(tls, __ccgo_ts+10300, __ccgo_ts+9572, uint32(711))
+		libc.X_assert(tls, __ccgo_ts+10922, __ccgo_ts+10138, uint32(711))
 	}
 	_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	head2 = (*struct {
@@ -43646,7 +43646,7 @@ func ts_stack_can_merge(tls *libc.TLS, self uintptr, version1 StackVersion, vers
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+10256, __ccgo_ts+9572, uint32(723))
+		libc.X_assert(tls, __ccgo_ts+10878, __ccgo_ts+10138, uint32(723))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	head1 = (*struct {
@@ -43659,7 +43659,7 @@ func ts_stack_can_merge(tls *libc.TLS, self uintptr, version1 StackVersion, vers
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self)).Fsize); !v2 {
-		libc.X_assert(tls, __ccgo_ts+10300, __ccgo_ts+9572, uint32(724))
+		libc.X_assert(tls, __ccgo_ts+10922, __ccgo_ts+10138, uint32(724))
 	}
 	_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	head2 = (*struct {
@@ -43678,7 +43678,7 @@ func ts_stack_halt(tls *libc.TLS, self uintptr, version StackVersion) {
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+9724, __ccgo_ts+9572, uint32(735))
+		libc.X_assert(tls, __ccgo_ts+10346, __ccgo_ts+10138, uint32(735))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	(*StackHead)(unsafe.Pointer((*struct {
@@ -43697,7 +43697,7 @@ func ts_stack_pause(tls *libc.TLS, self uintptr, version StackVersion, lookahead
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+9724, __ccgo_ts+9572, uint32(739))
+		libc.X_assert(tls, __ccgo_ts+10346, __ccgo_ts+10138, uint32(739))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	head = (*struct {
@@ -43718,7 +43718,7 @@ func ts_stack_is_active(tls *libc.TLS, self uintptr, version StackVersion) (r ui
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+9724, __ccgo_ts+9572, uint32(746))
+		libc.X_assert(tls, __ccgo_ts+10346, __ccgo_ts+10138, uint32(746))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	return libc.BoolUint8((*StackHead)(unsafe.Pointer((*struct {
@@ -43736,7 +43736,7 @@ func ts_stack_is_halted(tls *libc.TLS, self uintptr, version StackVersion) (r ui
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+9724, __ccgo_ts+9572, uint32(750))
+		libc.X_assert(tls, __ccgo_ts+10346, __ccgo_ts+10138, uint32(750))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	return libc.BoolUint8((*StackHead)(unsafe.Pointer((*struct {
@@ -43754,7 +43754,7 @@ func ts_stack_is_paused(tls *libc.TLS, self uintptr, version StackVersion) (r ui
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+9724, __ccgo_ts+9572, uint32(754))
+		libc.X_assert(tls, __ccgo_ts+10346, __ccgo_ts+10138, uint32(754))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	return libc.BoolUint8((*StackHead)(unsafe.Pointer((*struct {
@@ -43774,7 +43774,7 @@ func ts_stack_resume(tls *libc.TLS, self uintptr, version StackVersion) (r Subtr
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+9724, __ccgo_ts+9572, uint32(758))
+		libc.X_assert(tls, __ccgo_ts+10346, __ccgo_ts+10138, uint32(758))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	head = (*struct {
@@ -43783,7 +43783,7 @@ func ts_stack_resume(tls *libc.TLS, self uintptr, version StackVersion) (r Subtr
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self)).Fcontents + uintptr(version)*48
 	if v2 = !!((*StackHead)(unsafe.Pointer(head)).Fstatus == int32(StackStatusPaused)); !v2 {
-		libc.X_assert(tls, __ccgo_ts+10344, __ccgo_ts+9572, uint32(759))
+		libc.X_assert(tls, __ccgo_ts+10966, __ccgo_ts+10138, uint32(759))
 	}
 	_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	result = (*StackHead)(unsafe.Pointer(head)).Flookahead_when_paused
@@ -43809,7 +43809,7 @@ func ts_stack_clear(tls *libc.TLS, self uintptr) {
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+9876, __ccgo_ts+9572, uint32(769))
+			libc.X_assert(tls, __ccgo_ts+10498, __ccgo_ts+10138, uint32(769))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		stack_head_delete(tls, (*struct {
@@ -43936,9 +43936,9 @@ _6:
 	if !(f1 != 0) {
 		f1 = libc.X__acrt_iob_func(tls, uint32(2))
 	}
-	libc.Xfprintf(tls, f1, __ccgo_ts+10378, 0)
-	libc.Xfprintf(tls, f1, __ccgo_ts+10395, 0)
-	libc.Xfprintf(tls, f1, __ccgo_ts+10410, 0)
+	libc.Xfprintf(tls, f1, __ccgo_ts+11000, 0)
+	libc.Xfprintf(tls, f1, __ccgo_ts+11017, 0)
+	libc.Xfprintf(tls, f1, __ccgo_ts+11032, 0)
 	*(*struct {
 		Fcontents uintptr
 		Fsize     uint32_t
@@ -43963,7 +43963,7 @@ _6:
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self8)).Fsize); !v8 {
-			libc.X_assert(tls, __ccgo_ts+9876, __ccgo_ts+9572, uint32(792))
+			libc.X_assert(tls, __ccgo_ts+10498, __ccgo_ts+10138, uint32(792))
 		}
 		_ = v8 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		head = (*struct {
@@ -43974,24 +43974,24 @@ _6:
 		if (*StackHead)(unsafe.Pointer(head)).Fstatus == int32(StackStatusHalted) {
 			goto _7
 		}
-		libc.Xfprintf(tls, f1, __ccgo_ts+10433, libc.VaList(bp+104, i))
-		libc.Xfprintf(tls, f1, __ccgo_ts+10470, libc.VaList(bp+104, i, (*StackHead)(unsafe.Pointer(head)).Fnode))
+		libc.Xfprintf(tls, f1, __ccgo_ts+11055, libc.VaList(bp+104, i))
+		libc.Xfprintf(tls, f1, __ccgo_ts+11092, libc.VaList(bp+104, i, (*StackHead)(unsafe.Pointer(head)).Fnode))
 		if (*StackHead)(unsafe.Pointer(head)).Fstatus == int32(StackStatusPaused) {
-			libc.Xfprintf(tls, f1, __ccgo_ts+10496, 0)
+			libc.Xfprintf(tls, f1, __ccgo_ts+11118, 0)
 		}
-		libc.Xfprintf(tls, f1, __ccgo_ts+10507, libc.VaList(bp+104, i, ts_stack_node_count_since_error(tls, self8, i), ts_stack_error_cost(tls, self8, i)))
+		libc.Xfprintf(tls, f1, __ccgo_ts+11129, libc.VaList(bp+104, i, ts_stack_node_count_since_error(tls, self8, i), ts_stack_error_cost(tls, self8, i)))
 		if (*StackHead)(unsafe.Pointer(head)).Fsummary != 0 {
-			libc.Xfprintf(tls, f1, __ccgo_ts+10591, 0)
+			libc.Xfprintf(tls, f1, __ccgo_ts+11213, 0)
 			j = uint32(0)
 			for {
 				if !(j < (*StackSummary)(unsafe.Pointer((*StackHead)(unsafe.Pointer(head)).Fsummary)).Fsize) {
 					break
 				}
 				if v8 = !!(j < (*StackSummary)(unsafe.Pointer((*StackHead)(unsafe.Pointer(head)).Fsummary)).Fsize); !v8 {
-					libc.X_assert(tls, __ccgo_ts+10601, __ccgo_ts+9572, uint32(810))
+					libc.X_assert(tls, __ccgo_ts+11223, __ccgo_ts+10138, uint32(810))
 				}
 				_ = v8 || libc.Bool(libc.Int32FromInt32(0) != 0)
-				libc.Xfprintf(tls, f1, __ccgo_ts+10639, libc.VaList(bp+104, int32((*StackSummaryEntry)(unsafe.Pointer((*StackSummary)(unsafe.Pointer((*StackHead)(unsafe.Pointer(head)).Fsummary)).Fcontents+uintptr(j)*20)).Fstate)))
+				libc.Xfprintf(tls, f1, __ccgo_ts+11261, libc.VaList(bp+104, int32((*StackSummaryEntry)(unsafe.Pointer((*StackSummary)(unsafe.Pointer((*StackHead)(unsafe.Pointer(head)).Fsummary)).Fcontents+uintptr(j)*20)).Fstate)))
 				goto _9
 			_9:
 				;
@@ -44001,20 +44001,20 @@ _6:
 		if *(*uintptr)(unsafe.Pointer(head + 24)) != 0 {
 			state = *(*uintptr)(unsafe.Pointer(head + 24)) + 48
 			data = ts_external_scanner_state_data(tls, state)
-			libc.Xfprintf(tls, f1, __ccgo_ts+10643, 0)
+			libc.Xfprintf(tls, f1, __ccgo_ts+11265, 0)
 			j1 = uint32(0)
 			for {
 				if !(j1 < (*ExternalScannerState)(unsafe.Pointer(state)).Flength) {
 					break
 				}
-				libc.Xfprintf(tls, f1, __ccgo_ts+10668, libc.VaList(bp+104, int32(*(*int8)(unsafe.Pointer(data + uintptr(j1))))))
+				libc.Xfprintf(tls, f1, __ccgo_ts+11290, libc.VaList(bp+104, int32(*(*int8)(unsafe.Pointer(data + uintptr(j1))))))
 				goto _11
 			_11:
 				;
 				j1 = j1 + 1
 			}
 		}
-		libc.Xfprintf(tls, f1, __ccgo_ts+10673, 0)
+		libc.Xfprintf(tls, f1, __ccgo_ts+11295, 0)
 		v1 = (*struct {
 			Fcontents uintptr
 			Fsize     uint32_t
@@ -44089,7 +44089,7 @@ _6:
 				Fsize     uint32_t
 				Fcapacity uint32_t
 			})(unsafe.Pointer(self8+32)).Fsize); !v8 {
-				libc.X_assert(tls, __ccgo_ts+9767, __ccgo_ts+9572, uint32(831))
+				libc.X_assert(tls, __ccgo_ts+10389, __ccgo_ts+10138, uint32(831))
 			}
 			_ = v8 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			iterator = *(*StackIterator)(unsafe.Pointer((*struct {
@@ -44112,7 +44112,7 @@ _6:
 					Fsize     uint32_t
 					Fcapacity uint32_t
 				})(unsafe.Pointer(bp+56)).Fsize); !v10 {
-					libc.X_assert(tls, __ccgo_ts+10677, __ccgo_ts+9572, uint32(835))
+					libc.X_assert(tls, __ccgo_ts+11299, __ccgo_ts+10138, uint32(835))
 				}
 				_ = v10 || libc.Bool(libc.Int32FromInt32(0) != 0)
 				if *(*uintptr)(unsafe.Pointer((*struct {
@@ -44132,9 +44132,9 @@ _6:
 				goto _24
 			}
 			all_iterators_done = libc.BoolUint8(false1 != 0)
-			libc.Xfprintf(tls, f1, __ccgo_ts+10716, libc.VaList(bp+104, node))
+			libc.Xfprintf(tls, f1, __ccgo_ts+11338, libc.VaList(bp+104, node))
 			if int32((*StackNode)(unsafe.Pointer(node)).Fstate) == ERROR_STATE {
-				libc.Xfprintf(tls, f1, __ccgo_ts+10726, 0)
+				libc.Xfprintf(tls, f1, __ccgo_ts+11348, 0)
 			} else {
 				if v8 = int32((*StackNode)(unsafe.Pointer(node)).Flink_count) == int32(1) && *(*uintptr)(unsafe.Pointer(node + 16 + 8)) != 0; v8 {
 					v28 = (*(*StackLink)(unsafe.Pointer(node + 16))).Fsubtree
@@ -44149,12 +44149,12 @@ _6:
 				_30:
 				}
 				if v8 && v29 != 0 {
-					libc.Xfprintf(tls, f1, __ccgo_ts+10736, 0)
+					libc.Xfprintf(tls, f1, __ccgo_ts+11358, 0)
 				} else {
-					libc.Xfprintf(tls, f1, __ccgo_ts+10766, libc.VaList(bp+104, int32((*StackNode)(unsafe.Pointer(node)).Fstate)))
+					libc.Xfprintf(tls, f1, __ccgo_ts+11388, libc.VaList(bp+104, int32((*StackNode)(unsafe.Pointer(node)).Fstate)))
 				}
 			}
-			libc.Xfprintf(tls, f1, __ccgo_ts+10777, libc.VaList(bp+104, (*StackNode)(unsafe.Pointer(node)).Fposition.Fextent.Frow+uint32(1), (*StackNode)(unsafe.Pointer(node)).Fposition.Fextent.Fcolumn, (*StackNode)(unsafe.Pointer(node)).Fnode_count, (*StackNode)(unsafe.Pointer(node)).Ferror_cost, (*StackNode)(unsafe.Pointer(node)).Fdynamic_precedence))
+			libc.Xfprintf(tls, f1, __ccgo_ts+11399, libc.VaList(bp+104, (*StackNode)(unsafe.Pointer(node)).Fposition.Fextent.Frow+uint32(1), (*StackNode)(unsafe.Pointer(node)).Fposition.Fextent.Fcolumn, (*StackNode)(unsafe.Pointer(node)).Fnode_count, (*StackNode)(unsafe.Pointer(node)).Ferror_cost, (*StackNode)(unsafe.Pointer(node)).Fdynamic_precedence))
 			j3 = 0
 			for {
 				if !(j3 < int32((*StackNode)(unsafe.Pointer(node)).Flink_count)) {
@@ -44169,9 +44169,9 @@ _6:
 					}
 					Fis_pending uint8
 				})(unsafe.Pointer(bp + 72)) = *(*StackLink)(unsafe.Pointer(node + 16 + uintptr(j3)*24))
-				libc.Xfprintf(tls, f1, __ccgo_ts+10859, libc.VaList(bp+104, node, (*(*StackLink)(unsafe.Pointer(bp + 72))).Fnode))
+				libc.Xfprintf(tls, f1, __ccgo_ts+11481, libc.VaList(bp+104, node, (*(*StackLink)(unsafe.Pointer(bp + 72))).Fnode))
 				if (*(*StackLink)(unsafe.Pointer(bp + 72))).Fis_pending != 0 {
-					libc.Xfprintf(tls, f1, __ccgo_ts+10880, 0)
+					libc.Xfprintf(tls, f1, __ccgo_ts+11502, 0)
 				}
 				if v8 = *(*uintptr)(unsafe.Pointer(bp + 72 + 8)) != 0; v8 {
 					v28 = (*(*StackLink)(unsafe.Pointer(bp + 72))).Fsubtree
@@ -44186,12 +44186,12 @@ _6:
 				_36:
 				}
 				if v8 && v29 != 0 {
-					libc.Xfprintf(tls, f1, __ccgo_ts+10894, 0)
+					libc.Xfprintf(tls, f1, __ccgo_ts+11516, 0)
 				}
 				if !(*(*uintptr)(unsafe.Pointer(bp + 72 + 8)) != 0) {
-					libc.Xfprintf(tls, f1, __ccgo_ts+10910, 0)
+					libc.Xfprintf(tls, f1, __ccgo_ts+11532, 0)
 				} else {
-					libc.Xfprintf(tls, f1, __ccgo_ts+10920, 0)
+					libc.Xfprintf(tls, f1, __ccgo_ts+11542, 0)
 					v28 = (*(*StackLink)(unsafe.Pointer(bp + 72))).Fsubtree
 					*(*Subtree)(unsafe.Pointer(bp + 8)) = v28
 					if int32(*(*uint8)(unsafe.Pointer(bp + 8 + 0))&0x1>>0) != 0 {
@@ -44217,7 +44217,7 @@ _6:
 					}
 					quoted = libc.BoolUint8(v8 && !(v35 != 0))
 					if quoted != 0 {
-						libc.Xfprintf(tls, f1, __ccgo_ts+10928, 0)
+						libc.Xfprintf(tls, f1, __ccgo_ts+11550, 0)
 					}
 					v28 = (*(*StackLink)(unsafe.Pointer(bp + 72))).Fsubtree
 					*(*Subtree)(unsafe.Pointer(bp)) = v28
@@ -44243,9 +44243,9 @@ _6:
 							libc.Xfputc(tls, int32('\\'), v1)
 							libc.Xfputc(tls, int32(*(*int8)(unsafe.Pointer(chr))), v1)
 						case int32('\n'):
-							libc.Xfputs(tls, __ccgo_ts+10930, v1)
+							libc.Xfputs(tls, __ccgo_ts+11552, v1)
 						case int32('\t'):
-							libc.Xfputs(tls, __ccgo_ts+10933, v1)
+							libc.Xfputs(tls, __ccgo_ts+11555, v1)
 						default:
 							libc.Xfputc(tls, int32(*(*int8)(unsafe.Pointer(chr))), v1)
 							break
@@ -44256,9 +44256,9 @@ _6:
 						chr = chr + 1
 					}
 					if quoted != 0 {
-						libc.Xfprintf(tls, f1, __ccgo_ts+10928, 0)
+						libc.Xfprintf(tls, f1, __ccgo_ts+11550, 0)
 					}
-					libc.Xfprintf(tls, f1, __ccgo_ts+10936, 0)
+					libc.Xfprintf(tls, f1, __ccgo_ts+11558, 0)
 					v28 = (*(*StackLink)(unsafe.Pointer(bp + 72))).Fsubtree
 					*(*Subtree)(unsafe.Pointer(bp + 40)) = v28
 					v34 = v28
@@ -44294,16 +44294,16 @@ _6:
 					v63 = v37
 					goto _64
 				_64:
-					libc.Xfprintf(tls, f1, __ccgo_ts+10938, libc.VaList(bp+104, v4, v63))
+					libc.Xfprintf(tls, f1, __ccgo_ts+11560, libc.VaList(bp+104, v4, v63))
 				}
-				libc.Xfprintf(tls, f1, __ccgo_ts+10991, 0)
+				libc.Xfprintf(tls, f1, __ccgo_ts+11613, 0)
 				if j3 == 0 {
 					if v8 = !!(i1 < (*struct {
 						Fcontents uintptr
 						Fsize     uint32_t
 						Fcapacity uint32_t
 					})(unsafe.Pointer(self8+32)).Fsize); !v8 {
-						libc.X_assert(tls, __ccgo_ts+9767, __ccgo_ts+9572, uint32(894))
+						libc.X_assert(tls, __ccgo_ts+10389, __ccgo_ts+10138, uint32(894))
 					}
 					_ = v8 || libc.Bool(libc.Int32FromInt32(0) != 0)
 					next_iterator = (*struct {
@@ -44375,7 +44375,7 @@ _6:
 						Fsize     uint32_t
 						Fcapacity uint32_t
 					})(unsafe.Pointer(self8+32)).Fsize); !v8 {
-						libc.X_assert(tls, __ccgo_ts+9808, __ccgo_ts+9572, uint32(897))
+						libc.X_assert(tls, __ccgo_ts+10430, __ccgo_ts+10138, uint32(897))
 					}
 					_ = v8 || libc.Bool(libc.Int32FromInt32(0) != 0)
 					next_iterator = (*struct {
@@ -44454,7 +44454,7 @@ _6:
 			i1 = i1 + 1
 		}
 	}
-	libc.Xfprintf(tls, f1, __ccgo_ts+10995, 0)
+	libc.Xfprintf(tls, f1, __ccgo_ts+11617, 0)
 	if (*struct {
 		Fcontents uintptr
 		Fsize     uint32_t
@@ -84868,7 +84868,7 @@ func ts_subtree_array_copy(tls *libc.TLS, self SubtreeArray, dest uintptr) {
 				break
 			}
 			if v2 = !!(i < (*SubtreeArray)(unsafe.Pointer(dest)).Fsize); !v2 {
-				libc.X_assert(tls, __ccgo_ts+10998, __ccgo_ts+11027, uint32(76))
+				libc.X_assert(tls, __ccgo_ts+11620, __ccgo_ts+11649, uint32(76))
 			}
 			_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			ts_subtree_retain(tls, *(*Subtree)(unsafe.Pointer((*SubtreeArray)(unsafe.Pointer(dest)).Fcontents + uintptr(i)*8)))
@@ -84890,7 +84890,7 @@ func ts_subtree_array_clear(tls *libc.TLS, pool uintptr, self uintptr) {
 			break
 		}
 		if v2 = !!(i < (*SubtreeArray)(unsafe.Pointer(self)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+220, __ccgo_ts+11027, uint32(83))
+			libc.X_assert(tls, __ccgo_ts+276, __ccgo_ts+11649, uint32(83))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		ts_subtree_release(tls, pool, *(*Subtree)(unsafe.Pointer((*SubtreeArray)(unsafe.Pointer(self)).Fcontents + uintptr(i)*8)))
@@ -84926,7 +84926,7 @@ func ts_subtree_array_remove_trailing_extras(tls *libc.TLS, self1 uintptr, desti
 	(*SubtreeArray)(unsafe.Pointer(destination)).Fsize = uint32(0)
 	for (*SubtreeArray)(unsafe.Pointer(self1)).Fsize > uint32(0) {
 		if v1 = !!((*SubtreeArray)(unsafe.Pointer(self1)).Fsize-libc.Uint32FromInt32(1) < (*SubtreeArray)(unsafe.Pointer(self1)).Fsize); !v1 {
-			libc.X_assert(tls, __ccgo_ts+11108, __ccgo_ts+11027, uint32(99))
+			libc.X_assert(tls, __ccgo_ts+11786, __ccgo_ts+11649, uint32(99))
 		}
 		_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		last = *(*Subtree)(unsafe.Pointer((*SubtreeArray)(unsafe.Pointer(self1)).Fcontents + uintptr((*SubtreeArray)(unsafe.Pointer(self1)).Fsize-uint32(1))*8))
@@ -85001,21 +85001,21 @@ func ts_subtree_array_reverse(tls *libc.TLS, self uintptr) {
 		}
 		reverse_index = uint64((*SubtreeArray)(unsafe.Pointer(self)).Fsize - uint32(1) - i)
 		if v2 = !!(i < (*SubtreeArray)(unsafe.Pointer(self)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+220, __ccgo_ts+11027, uint32(113))
+			libc.X_assert(tls, __ccgo_ts+276, __ccgo_ts+11649, uint32(113))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		swap = *(*Subtree)(unsafe.Pointer((*SubtreeArray)(unsafe.Pointer(self)).Fcontents + uintptr(i)*8))
 		if v3 = !!(i < (*SubtreeArray)(unsafe.Pointer(self)).Fsize); !v3 {
-			libc.X_assert(tls, __ccgo_ts+220, __ccgo_ts+11027, uint32(114))
+			libc.X_assert(tls, __ccgo_ts+276, __ccgo_ts+11649, uint32(114))
 		}
 		_ = v3 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		if v4 = !!(uint32(reverse_index) < (*SubtreeArray)(unsafe.Pointer(self)).Fsize); !v4 {
-			libc.X_assert(tls, __ccgo_ts+11150, __ccgo_ts+11027, uint32(114))
+			libc.X_assert(tls, __ccgo_ts+11828, __ccgo_ts+11649, uint32(114))
 		}
 		_ = v4 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		*(*Subtree)(unsafe.Pointer((*SubtreeArray)(unsafe.Pointer(self)).Fcontents + uintptr(i)*8)) = *(*Subtree)(unsafe.Pointer((*SubtreeArray)(unsafe.Pointer(self)).Fcontents + uintptr(reverse_index)*8))
 		if v2 = !!(uint32(reverse_index) < (*SubtreeArray)(unsafe.Pointer(self)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+11150, __ccgo_ts+11027, uint32(115))
+			libc.X_assert(tls, __ccgo_ts+11828, __ccgo_ts+11649, uint32(115))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		*(*Subtree)(unsafe.Pointer((*SubtreeArray)(unsafe.Pointer(self)).Fcontents + uintptr(reverse_index)*8)) = swap
@@ -85068,7 +85068,7 @@ func ts_subtree_pool_delete(tls *libc.TLS, self uintptr) {
 				break
 			}
 			if v2 = !!(i < (*MutableSubtreeArray)(unsafe.Pointer(self)).Fsize); !v2 {
-				libc.X_assert(tls, __ccgo_ts+11191, __ccgo_ts+11027, uint32(130))
+				libc.X_assert(tls, __ccgo_ts+11869, __ccgo_ts+11649, uint32(130))
 			}
 			_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			(*(*func(*libc.TLS, uintptr))(unsafe.Pointer(&struct{ uintptr }{ts_current_free})))(tls, *(*uintptr)(unsafe.Pointer((*MutableSubtreeArray)(unsafe.Pointer(self)).Fcontents + uintptr(i)*8)))
@@ -85206,7 +85206,7 @@ func ts_subtree_set_symbol(tls *libc.TLS, self uintptr, symbol TSSymbol, languag
 	metadata = ts_language_symbol_metadata(tls, language, symbol)
 	if int32(*(*uint8)(unsafe.Pointer(self + 0))&0x1>>0) != 0 {
 		if v1 = !!(int32(symbol) < libc.Int32FromInt32(UINT8_MAX)); !v1 {
-			libc.X_assert(tls, __ccgo_ts+11233, __ccgo_ts+11027, uint32(233))
+			libc.X_assert(tls, __ccgo_ts+11911, __ccgo_ts+11649, uint32(233))
 		}
 		_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		(*MutableSubtree)(unsafe.Pointer(self)).Fdata.Fsymbol = uint8(symbol)
@@ -85516,7 +85516,7 @@ func ts_subtree_summarize_children(tls *libc.TLS, _self MutableSubtree, language
 	var _ /* child at bp+168 */ Subtree
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = alias_sequence, child_lookahead_end_byte, children, first_child, grandchild_count, i, last_child, lookahead_end_byte, result, result1, result2, result3, structural_index, v1, v10, v12, v135, v14, v15, v17, v18, v19, v2, v21, v22, v25, v28, v3, v31, v33, v34, v35, v36, v37, v39, v4, v41, v43, v45, v47, v48, v49, v51, v53, v58, v6, v60, v62, v64, v67, v69, v7, v70, v9, v93
 	if v1 = !!!(int32(*(*uint8)(unsafe.Pointer(bp + 160 + 0))&0x1>>0) != 0); !v1 {
-		libc.X_assert(tls, __ccgo_ts+11246, __ccgo_ts+11027, uint32(343))
+		libc.X_assert(tls, __ccgo_ts+11924, __ccgo_ts+11649, uint32(343))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	(*SubtreeHeapData)(unsafe.Pointer(*(*uintptr)(unsafe.Pointer(bp + 160)))).F__ccgo19_48.F__ccgo0_0.Fnamed_child_count = uint32(0)
@@ -86235,7 +86235,7 @@ func ts_subtree_retain(tls *libc.TLS, _self Subtree) {
 		return
 	}
 	if v1 = !!(libc.AtomicLoadPUint32(*(*uintptr)(unsafe.Pointer(bp))) > libc.Uint32FromInt32(0)); !v1 {
-		libc.X_assert(tls, __ccgo_ts+11267, __ccgo_ts+11027, uint32(560))
+		libc.X_assert(tls, __ccgo_ts+11945, __ccgo_ts+11649, uint32(560))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	_ = _InterlockedIncrement(tls, *(*uintptr)(unsafe.Pointer(bp)))
@@ -86243,7 +86243,7 @@ func ts_subtree_retain(tls *libc.TLS, _self Subtree) {
 _2:
 	;
 	if v1 = !!(libc.AtomicLoadPUint32(*(*uintptr)(unsafe.Pointer(bp))) != libc.Uint32FromInt32(0)); !v1 {
-		libc.X_assert(tls, __ccgo_ts+11291, __ccgo_ts+11027, uint32(562))
+		libc.X_assert(tls, __ccgo_ts+11969, __ccgo_ts+11649, uint32(562))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 }
@@ -86266,7 +86266,7 @@ func ts_subtree_release(tls *libc.TLS, pool uintptr, _self Subtree) {
 	}
 	(*MutableSubtreeArray)(unsafe.Pointer(pool + 16)).Fsize = uint32(0)
 	if v1 = !!(libc.AtomicLoadPUint32(*(*uintptr)(unsafe.Pointer(bp + 16))) > libc.Uint32FromInt32(0)); !v1 {
-		libc.X_assert(tls, __ccgo_ts+11267, __ccgo_ts+11027, uint32(569))
+		libc.X_assert(tls, __ccgo_ts+11945, __ccgo_ts+11649, uint32(569))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	v2 = uint32(_InterlockedDecrement(tls, *(*uintptr)(unsafe.Pointer(bp + 16))))
@@ -86347,7 +86347,7 @@ _3:
 					goto _21
 				}
 				if v1 = !!(libc.AtomicLoadPUint32(*(*uintptr)(unsafe.Pointer(bp + 32))) > libc.Uint32FromInt32(0)); !v1 {
-					libc.X_assert(tls, __ccgo_ts+11316, __ccgo_ts+11027, uint32(581))
+					libc.X_assert(tls, __ccgo_ts+11994, __ccgo_ts+11649, uint32(581))
 				}
 				_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 				v2 = uint32(_InterlockedDecrement(tls, *(*uintptr)(unsafe.Pointer(bp + 32))))
@@ -87844,24 +87844,24 @@ func ts_subtree__write_char_to_string(tls *libc.TLS, str uintptr, n size_t, chr 
 	bp := tls.Alloc(16)
 	defer tls.Free(16)
 	if chr == -int32(1) {
-		return uint64(libc.X__builtin_snprintf(tls, str, n, __ccgo_ts+11341, 0))
+		return uint64(libc.X__builtin_snprintf(tls, str, n, __ccgo_ts+12019, 0))
 	} else {
 		if chr == int32('\000') {
-			return uint64(libc.X__builtin_snprintf(tls, str, n, __ccgo_ts+11349, 0))
+			return uint64(libc.X__builtin_snprintf(tls, str, n, __ccgo_ts+12027, 0))
 		} else {
 			if chr == int32('\n') {
-				return uint64(libc.X__builtin_snprintf(tls, str, n, __ccgo_ts+11354, 0))
+				return uint64(libc.X__builtin_snprintf(tls, str, n, __ccgo_ts+12032, 0))
 			} else {
 				if chr == int32('\t') {
-					return uint64(libc.X__builtin_snprintf(tls, str, n, __ccgo_ts+11359, 0))
+					return uint64(libc.X__builtin_snprintf(tls, str, n, __ccgo_ts+12037, 0))
 				} else {
 					if chr == int32('\r') {
-						return uint64(libc.X__builtin_snprintf(tls, str, n, __ccgo_ts+11364, 0))
+						return uint64(libc.X__builtin_snprintf(tls, str, n, __ccgo_ts+12042, 0))
 					} else {
 						if 0 < chr && chr < int32(128) && libc.Xisprint(tls, chr) != 0 {
-							return uint64(libc.X__builtin_snprintf(tls, str, n, __ccgo_ts+11369, libc.VaList(bp+8, chr)))
+							return uint64(libc.X__builtin_snprintf(tls, str, n, __ccgo_ts+12047, libc.VaList(bp+8, chr)))
 						} else {
-							return uint64(libc.X__builtin_snprintf(tls, str, n, __ccgo_ts+11374, libc.VaList(bp+8, chr)))
+							return uint64(libc.X__builtin_snprintf(tls, str, n, __ccgo_ts+12052, libc.VaList(bp+8, chr)))
 						}
 					}
 				}
@@ -87871,7 +87871,7 @@ func ts_subtree__write_char_to_string(tls *libc.TLS, str uintptr, n size_t, chr 
 	return r
 }
 
-var ROOT_FIELD = __ccgo_ts + 11377
+var ROOT_FIELD = __ccgo_ts + 12055
 
 type WriteToStringFrame = struct {
 	Fsubtree                Subtree
@@ -88001,7 +88001,7 @@ _11:
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(bp+64)).Fsize); !v14 {
-			libc.X_assert(tls, __ccgo_ts+11386, __ccgo_ts+11027, uint32(855))
+			libc.X_assert(tls, __ccgo_ts+12064, __ccgo_ts+11649, uint32(855))
 		}
 		_ = v14 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		frame = (*struct {
@@ -88020,12 +88020,12 @@ _11:
 		})(unsafe.Pointer(bp + 80)) = (*WriteToStringFrame)(unsafe.Pointer(frame)).Fsubtree
 		if !(*(*uintptr)(unsafe.Pointer(bp + 80)) != 0) {
 			if !((*WriteToStringFrame)(unsafe.Pointer(frame)).Fis_root != 0) {
-				*(*uintptr)(unsafe.Pointer(bp + 56)) = *(*uintptr)(unsafe.Pointer(bp + 56)) + uintptr(libc.X__builtin_snprintf(tls, *(*uintptr)(unsafe.Pointer(writer)), limit, __ccgo_ts+11434, 0))
+				*(*uintptr)(unsafe.Pointer(bp + 56)) = *(*uintptr)(unsafe.Pointer(bp + 56)) + uintptr(libc.X__builtin_snprintf(tls, *(*uintptr)(unsafe.Pointer(writer)), limit, __ccgo_ts+12112, 0))
 				if (*WriteToStringFrame)(unsafe.Pointer(frame)).Ffield_name != 0 {
-					*(*uintptr)(unsafe.Pointer(bp + 56)) = *(*uintptr)(unsafe.Pointer(bp + 56)) + uintptr(libc.X__builtin_snprintf(tls, *(*uintptr)(unsafe.Pointer(writer)), limit, __ccgo_ts+11436, libc.VaList(bp+96, (*WriteToStringFrame)(unsafe.Pointer(frame)).Ffield_name)))
+					*(*uintptr)(unsafe.Pointer(bp + 56)) = *(*uintptr)(unsafe.Pointer(bp + 56)) + uintptr(libc.X__builtin_snprintf(tls, *(*uintptr)(unsafe.Pointer(writer)), limit, __ccgo_ts+12114, libc.VaList(bp+96, (*WriteToStringFrame)(unsafe.Pointer(frame)).Ffield_name)))
 				}
 			}
-			*(*uintptr)(unsafe.Pointer(bp + 56)) = *(*uintptr)(unsafe.Pointer(bp + 56)) + uintptr(libc.X__builtin_snprintf(tls, *(*uintptr)(unsafe.Pointer(writer)), limit, __ccgo_ts+11441, 0))
+			*(*uintptr)(unsafe.Pointer(bp + 56)) = *(*uintptr)(unsafe.Pointer(bp + 56)) + uintptr(libc.X__builtin_snprintf(tls, *(*uintptr)(unsafe.Pointer(writer)), limit, __ccgo_ts+12119, 0))
 			v1 = bp + 64 + 8
 			*(*uint32_t)(unsafe.Pointer(v1)) = *(*uint32_t)(unsafe.Pointer(v1)) - 1
 			v7 = *(*uint32_t)(unsafe.Pointer(v1))
@@ -88082,9 +88082,9 @@ _11:
 			is_visible = libc.BoolUint8(v31 || v22 != 0)
 			if is_visible != 0 {
 				if !((*WriteToStringFrame)(unsafe.Pointer(frame)).Fis_root != 0) {
-					*(*uintptr)(unsafe.Pointer(bp + 56)) = *(*uintptr)(unsafe.Pointer(bp + 56)) + uintptr(libc.X__builtin_snprintf(tls, *(*uintptr)(unsafe.Pointer(writer)), limit, __ccgo_ts+11434, 0))
+					*(*uintptr)(unsafe.Pointer(bp + 56)) = *(*uintptr)(unsafe.Pointer(bp + 56)) + uintptr(libc.X__builtin_snprintf(tls, *(*uintptr)(unsafe.Pointer(writer)), limit, __ccgo_ts+12112, 0))
 					if (*WriteToStringFrame)(unsafe.Pointer(frame)).Ffield_name != 0 {
-						*(*uintptr)(unsafe.Pointer(bp + 56)) = *(*uintptr)(unsafe.Pointer(bp + 56)) + uintptr(libc.X__builtin_snprintf(tls, *(*uintptr)(unsafe.Pointer(writer)), limit, __ccgo_ts+11436, libc.VaList(bp+96, (*WriteToStringFrame)(unsafe.Pointer(frame)).Ffield_name)))
+						*(*uintptr)(unsafe.Pointer(bp + 56)) = *(*uintptr)(unsafe.Pointer(bp + 56)) + uintptr(libc.X__builtin_snprintf(tls, *(*uintptr)(unsafe.Pointer(writer)), limit, __ccgo_ts+12114, libc.VaList(bp+96, (*WriteToStringFrame)(unsafe.Pointer(frame)).Ffield_name)))
 					}
 				}
 				v17 = *(*Subtree)(unsafe.Pointer(bp + 80))
@@ -88114,7 +88114,7 @@ _11:
 				_41:
 				}
 				if v14 && v7 == uint32(0) && (*SubtreeHeapData)(unsafe.Pointer(*(*uintptr)(unsafe.Pointer(bp + 80)))).Fsize.Fbytes > uint32(0) {
-					*(*uintptr)(unsafe.Pointer(bp + 56)) = *(*uintptr)(unsafe.Pointer(bp + 56)) + uintptr(libc.X__builtin_snprintf(tls, *(*uintptr)(unsafe.Pointer(writer)), limit, __ccgo_ts+11448, 0))
+					*(*uintptr)(unsafe.Pointer(bp + 56)) = *(*uintptr)(unsafe.Pointer(bp + 56)) + uintptr(libc.X__builtin_snprintf(tls, *(*uintptr)(unsafe.Pointer(writer)), limit, __ccgo_ts+12126, 0))
 					*(*uintptr)(unsafe.Pointer(bp + 56)) = *(*uintptr)(unsafe.Pointer(bp + 56)) + uintptr(ts_subtree__write_char_to_string(tls, *(*uintptr)(unsafe.Pointer(writer)), limit, *(*int32_t)(unsafe.Add(unsafe.Pointer(*(*uintptr)(unsafe.Pointer(bp + 80))), 48))))
 				} else {
 					if (*WriteToStringFrame)(unsafe.Pointer(frame)).Falias_symbol != 0 {
@@ -88145,7 +88145,7 @@ _11:
 					goto _51
 				_51:
 					if v18 != 0 {
-						*(*uintptr)(unsafe.Pointer(bp + 56)) = *(*uintptr)(unsafe.Pointer(bp + 56)) + uintptr(libc.X__builtin_snprintf(tls, *(*uintptr)(unsafe.Pointer(writer)), limit, __ccgo_ts+11461, 0))
+						*(*uintptr)(unsafe.Pointer(bp + 56)) = *(*uintptr)(unsafe.Pointer(bp + 56)) + uintptr(libc.X__builtin_snprintf(tls, *(*uintptr)(unsafe.Pointer(writer)), limit, __ccgo_ts+12139, 0))
 						if v14 = (*WriteToStringFrame)(unsafe.Pointer(frame)).Falias_is_named != 0; !v14 {
 							v17 = *(*Subtree)(unsafe.Pointer(bp + 80))
 							*(*Subtree)(unsafe.Pointer(bp + 16)) = v17
@@ -88159,12 +88159,12 @@ _11:
 						_55:
 						}
 						if v14 || v18 != 0 {
-							*(*uintptr)(unsafe.Pointer(bp + 56)) = *(*uintptr)(unsafe.Pointer(bp + 56)) + uintptr(libc.X__builtin_snprintf(tls, *(*uintptr)(unsafe.Pointer(writer)), limit, __ccgo_ts+11471, libc.VaList(bp+96, symbol_name)))
+							*(*uintptr)(unsafe.Pointer(bp + 56)) = *(*uintptr)(unsafe.Pointer(bp + 56)) + uintptr(libc.X__builtin_snprintf(tls, *(*uintptr)(unsafe.Pointer(writer)), limit, __ccgo_ts+12149, libc.VaList(bp+96, symbol_name)))
 						} else {
-							*(*uintptr)(unsafe.Pointer(bp + 56)) = *(*uintptr)(unsafe.Pointer(bp + 56)) + uintptr(libc.X__builtin_snprintf(tls, *(*uintptr)(unsafe.Pointer(writer)), limit, __ccgo_ts+11474, libc.VaList(bp+96, symbol_name)))
+							*(*uintptr)(unsafe.Pointer(bp + 56)) = *(*uintptr)(unsafe.Pointer(bp + 56)) + uintptr(libc.X__builtin_snprintf(tls, *(*uintptr)(unsafe.Pointer(writer)), limit, __ccgo_ts+12152, libc.VaList(bp+96, symbol_name)))
 						}
 					} else {
-						*(*uintptr)(unsafe.Pointer(bp + 56)) = *(*uintptr)(unsafe.Pointer(bp + 56)) + uintptr(libc.X__builtin_snprintf(tls, *(*uintptr)(unsafe.Pointer(writer)), limit, __ccgo_ts+11479, libc.VaList(bp+96, symbol_name)))
+						*(*uintptr)(unsafe.Pointer(bp + 56)) = *(*uintptr)(unsafe.Pointer(bp + 56)) + uintptr(libc.X__builtin_snprintf(tls, *(*uintptr)(unsafe.Pointer(writer)), limit, __ccgo_ts+12157, libc.VaList(bp+96, symbol_name)))
 					}
 				}
 			} else {
@@ -88197,7 +88197,7 @@ _11:
 					goto _65
 				_65:
 					if v7 > uint32(0) {
-						*(*uintptr)(unsafe.Pointer(bp + 56)) = *(*uintptr)(unsafe.Pointer(bp + 56)) + uintptr(libc.X__builtin_snprintf(tls, *(*uintptr)(unsafe.Pointer(writer)), limit, __ccgo_ts+11479, libc.VaList(bp+96, symbol_name1)))
+						*(*uintptr)(unsafe.Pointer(bp + 56)) = *(*uintptr)(unsafe.Pointer(bp + 56)) + uintptr(libc.X__builtin_snprintf(tls, *(*uintptr)(unsafe.Pointer(writer)), limit, __ccgo_ts+12157, libc.VaList(bp+96, symbol_name1)))
 					} else {
 						v17 = *(*Subtree)(unsafe.Pointer(bp + 80))
 						*(*Subtree)(unsafe.Pointer(bp + 16)) = v17
@@ -88210,9 +88210,9 @@ _11:
 						goto _69
 					_69:
 						if v18 != 0 {
-							*(*uintptr)(unsafe.Pointer(bp + 56)) = *(*uintptr)(unsafe.Pointer(bp + 56)) + uintptr(libc.X__builtin_snprintf(tls, *(*uintptr)(unsafe.Pointer(writer)), limit, __ccgo_ts+11483, libc.VaList(bp+96, symbol_name1)))
+							*(*uintptr)(unsafe.Pointer(bp + 56)) = *(*uintptr)(unsafe.Pointer(bp + 56)) + uintptr(libc.X__builtin_snprintf(tls, *(*uintptr)(unsafe.Pointer(writer)), limit, __ccgo_ts+12161, libc.VaList(bp+96, symbol_name1)))
 						} else {
-							*(*uintptr)(unsafe.Pointer(bp + 56)) = *(*uintptr)(unsafe.Pointer(bp + 56)) + uintptr(libc.X__builtin_snprintf(tls, *(*uintptr)(unsafe.Pointer(writer)), limit, __ccgo_ts+11488, libc.VaList(bp+96, symbol_name1)))
+							*(*uintptr)(unsafe.Pointer(bp + 56)) = *(*uintptr)(unsafe.Pointer(bp + 56)) + uintptr(libc.X__builtin_snprintf(tls, *(*uintptr)(unsafe.Pointer(writer)), limit, __ccgo_ts+12166, libc.VaList(bp+96, symbol_name1)))
 						}
 					}
 				}
@@ -88386,7 +88386,7 @@ _11:
 			continue
 		}
 		if (*WriteToStringFrame)(unsafe.Pointer(frame)).Fis_visible != 0 {
-			*(*uintptr)(unsafe.Pointer(bp + 56)) = *(*uintptr)(unsafe.Pointer(bp + 56)) + uintptr(libc.X__builtin_snprintf(tls, *(*uintptr)(unsafe.Pointer(writer)), limit, __ccgo_ts+11495, 0))
+			*(*uintptr)(unsafe.Pointer(bp + 56)) = *(*uintptr)(unsafe.Pointer(bp + 56)) + uintptr(libc.X__builtin_snprintf(tls, *(*uintptr)(unsafe.Pointer(writer)), limit, __ccgo_ts+12173, 0))
 		}
 		v1 = bp + 64 + 8
 		*(*uint32_t)(unsafe.Pointer(v1)) = *(*uint32_t)(unsafe.Pointer(v1)) - 1
@@ -88544,7 +88544,7 @@ _10:
 	goto _7
 _7:
 	end_offset = start_offset + v6
-	libc.Xfprintf(tls, f1, __ccgo_ts+11497, libc.VaList(bp+120, self18))
+	libc.Xfprintf(tls, f1, __ccgo_ts+12175, libc.VaList(bp+120, self18))
 	v29 = f1
 	name = ts_language_symbol_name(tls, language, symbol1)
 	chr = name
@@ -88559,9 +88559,9 @@ _7:
 			libc.Xfputc(tls, int32('\\'), v29)
 			libc.Xfputc(tls, int32(*(*int8)(unsafe.Pointer(chr))), v29)
 		case int32('\n'):
-			libc.Xfputs(tls, __ccgo_ts+10930, v29)
+			libc.Xfputs(tls, __ccgo_ts+11552, v29)
 		case int32('\t'):
-			libc.Xfputs(tls, __ccgo_ts+10933, v29)
+			libc.Xfputs(tls, __ccgo_ts+11555, v29)
 		default:
 			libc.Xfputc(tls, int32(*(*int8)(unsafe.Pointer(chr))), v29)
 			break
@@ -88571,7 +88571,7 @@ _7:
 		;
 		chr = chr + 1
 	}
-	libc.Xfprintf(tls, f1, __ccgo_ts+10936, 0)
+	libc.Xfprintf(tls, f1, __ccgo_ts+11558, 0)
 	v1 = *(*Subtree)(unsafe.Pointer(self18))
 	*(*Subtree)(unsafe.Pointer(bp + 64)) = v1
 	if int32(*(*uint8)(unsafe.Pointer(bp + 64 + 0))&0x1>>0) != 0 {
@@ -88583,7 +88583,7 @@ _7:
 	goto _33
 _33:
 	if v6 == uint32(0) {
-		libc.Xfprintf(tls, f1, __ccgo_ts+11514, 0)
+		libc.Xfprintf(tls, f1, __ccgo_ts+12192, 0)
 	}
 	v1 = *(*Subtree)(unsafe.Pointer(self18))
 	*(*Subtree)(unsafe.Pointer(bp + 8)) = v1
@@ -88596,7 +88596,7 @@ _33:
 	goto _37
 _37:
 	if v36 != 0 {
-		libc.Xfprintf(tls, f1, __ccgo_ts+11532, 0)
+		libc.Xfprintf(tls, f1, __ccgo_ts+12210, 0)
 	}
 	v1 = *(*Subtree)(unsafe.Pointer(self18))
 	*(*Subtree)(unsafe.Pointer(bp + 16)) = v1
@@ -88609,7 +88609,7 @@ _37:
 	goto _41
 _41:
 	if v36 != 0 {
-		libc.Xfprintf(tls, f1, __ccgo_ts+11549, 0)
+		libc.Xfprintf(tls, f1, __ccgo_ts+12227, 0)
 	}
 	v1 = *(*Subtree)(unsafe.Pointer(self18))
 	*(*Subtree)(unsafe.Pointer(bp + 32)) = v1
@@ -88696,7 +88696,7 @@ _69:
 	v64 = v66
 	goto _73
 _73:
-	libc.Xfprintf(tls, f1, __ccgo_ts+11575, libc.VaList(bp+120, start_offset, end_offset, int32(v44), v6, int32(v40), int32(v49), v32, v52, v64))
+	libc.Xfprintf(tls, f1, __ccgo_ts+12253, libc.VaList(bp+120, start_offset, end_offset, int32(v44), v6, int32(v40), int32(v49), v32, v52, v64))
 	v1 = *(*Subtree)(unsafe.Pointer(self18))
 	*(*Subtree)(unsafe.Pointer(bp)) = v1
 	if int32(*(*uint8)(unsafe.Pointer(bp + 0))&0x1>>0) != 0 {
@@ -88724,9 +88724,9 @@ _76:
 	_83:
 	}
 	if v85 && v6 == uint32(0) && *(*int32_t)(unsafe.Add(unsafe.Pointer(*(*uintptr)(unsafe.Pointer(self18))), 48)) != 0 {
-		libc.Xfprintf(tls, f1, __ccgo_ts+11722, libc.VaList(bp+120, *(*int32_t)(unsafe.Add(unsafe.Pointer(*(*uintptr)(unsafe.Pointer(self18))), 48))))
+		libc.Xfprintf(tls, f1, __ccgo_ts+12400, libc.VaList(bp+120, *(*int32_t)(unsafe.Add(unsafe.Pointer(*(*uintptr)(unsafe.Pointer(self18))), 48))))
 	}
-	libc.Xfprintf(tls, f1, __ccgo_ts+10673, 0)
+	libc.Xfprintf(tls, f1, __ccgo_ts+11295, 0)
 	child_start_offset = start_offset
 	v1 = *(*Subtree)(unsafe.Pointer(self18))
 	*(*Subtree)(unsafe.Pointer(bp + 96)) = v1
@@ -88788,7 +88788,7 @@ _96:
 			child_info_offset = child_info_offset + 1
 		}
 		ts_subtree__print_dot_graph(tls, child, child_start_offset, language, subtree_alias_symbol, f1)
-		libc.Xfprintf(tls, f1, __ccgo_ts+11739, libc.VaList(bp+120, self18, child, i))
+		libc.Xfprintf(tls, f1, __ccgo_ts+12417, libc.VaList(bp+120, self18, child, i))
 		v1 = *(*Subtree)(unsafe.Pointer(child))
 		v8 = v1
 		*(*Subtree)(unsafe.Pointer(bp + 48)) = v8
@@ -88872,10 +88872,10 @@ func ts_subtree_print_dot_graph(tls *libc.TLS, _self Subtree, language uintptr, 
 	bp := tls.Alloc(16)
 	defer tls.Free(16)
 	*(*Subtree)(unsafe.Pointer(bp)) = _self
-	libc.Xfprintf(tls, f, __ccgo_ts+11772, 0)
-	libc.Xfprintf(tls, f, __ccgo_ts+10410, 0)
+	libc.Xfprintf(tls, f, __ccgo_ts+12450, 0)
+	libc.Xfprintf(tls, f, __ccgo_ts+11032, 0)
 	ts_subtree__print_dot_graph(tls, bp, uint32(0), language, uint16(0), f)
-	libc.Xfprintf(tls, f, __ccgo_ts+10995, 0)
+	libc.Xfprintf(tls, f, __ccgo_ts+11617, 0)
 }
 
 func ts_subtree_external_scanner_state(tls *libc.TLS, _self Subtree) (r uintptr) {
@@ -88928,7 +88928,7 @@ func ts_tree_cursor_is_entry_visible(tls *libc.TLS, self3 uintptr, index uint32_
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self3+8)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+11788, __ccgo_ts+11829, uint32(24))
+		libc.X_assert(tls, __ccgo_ts+12466, __ccgo_ts+12507, uint32(24))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	entry = (*struct {
@@ -88967,7 +88967,7 @@ func ts_tree_cursor_is_entry_visible(tls *libc.TLS, self3 uintptr, index uint32_
 				Fsize     uint32_t
 				Fcapacity uint32_t
 			})(unsafe.Pointer(self3+8)).Fsize); !v1 {
-				libc.X_assert(tls, __ccgo_ts+11914, __ccgo_ts+11829, uint32(28))
+				libc.X_assert(tls, __ccgo_ts+12648, __ccgo_ts+12507, uint32(28))
 			}
 			_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			parent_entry = (*struct {
@@ -89012,7 +89012,7 @@ func ts_tree_cursor_iterate_children(tls *libc.TLS, self2 uintptr) (r CursorChil
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self2+8)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+1038, __ccgo_ts+11829, uint32(40))
+		libc.X_assert(tls, __ccgo_ts+1206, __ccgo_ts+12507, uint32(40))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	last_entry = (*struct {
@@ -90323,7 +90323,7 @@ func ts_tree_cursor_goto_previous_sibling_internal(tls *libc.TLS, _self uintptr)
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self3+8)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+1038, __ccgo_ts+11829, uint32(380))
+		libc.X_assert(tls, __ccgo_ts+1206, __ccgo_ts+12507, uint32(380))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	v2 = (*TreeCursorEntry)(unsafe.Pointer((*struct {
@@ -90346,7 +90346,7 @@ _4:
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self3+8)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+11959, __ccgo_ts+11829, uint32(384))
+		libc.X_assert(tls, __ccgo_ts+12693, __ccgo_ts+12507, uint32(384))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	// restore position from the parent node
@@ -90365,7 +90365,7 @@ _4:
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self3+8)).Fsize); !v5 {
-		libc.X_assert(tls, __ccgo_ts+1038, __ccgo_ts+11829, uint32(386))
+		libc.X_assert(tls, __ccgo_ts+1206, __ccgo_ts+12507, uint32(386))
 	}
 	_ = v5 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	child_index = (*TreeCursorEntry)(unsafe.Pointer((*struct {
@@ -90602,7 +90602,7 @@ _4:
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self3+8)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+1038, __ccgo_ts+11829, uint32(398))
+		libc.X_assert(tls, __ccgo_ts+1206, __ccgo_ts+12507, uint32(398))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	(*TreeCursorEntry)(unsafe.Pointer((*struct {
@@ -90676,7 +90676,7 @@ func ts_tree_cursor_goto_descendant(tls *libc.TLS, _self uintptr, goal_descendan
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self1+8)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+12015, __ccgo_ts+11829, uint32(435))
+			libc.X_assert(tls, __ccgo_ts+12749, __ccgo_ts+12507, uint32(435))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		entry = (*struct {
@@ -90816,7 +90816,7 @@ func ts_tree_cursor_current_descendant_index(tls *libc.TLS, _self uintptr) (r ui
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self+8)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+1038, __ccgo_ts+11829, uint32(479))
+		libc.X_assert(tls, __ccgo_ts+1206, __ccgo_ts+12507, uint32(479))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	last_entry = (*struct {
@@ -90852,7 +90852,7 @@ func ts_tree_cursor_current_node(tls *libc.TLS, _self uintptr) (r TSNode) {
 		Fsize     uint32_t
 		Fcapacity uint32_t
 	})(unsafe.Pointer(self2+8)).Fsize); !v1 {
-		libc.X_assert(tls, __ccgo_ts+1038, __ccgo_ts+11829, uint32(485))
+		libc.X_assert(tls, __ccgo_ts+1206, __ccgo_ts+12507, uint32(485))
 	}
 	_ = v1 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	last_entry = (*struct {
@@ -90887,7 +90887,7 @@ _4:
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self2+8)).Fsize); !v7 {
-			libc.X_assert(tls, __ccgo_ts+11959, __ccgo_ts+11829, uint32(489))
+			libc.X_assert(tls, __ccgo_ts+12693, __ccgo_ts+12507, uint32(489))
 		}
 		_ = v7 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		parent_entry = (*struct {
@@ -90950,7 +90950,7 @@ func ts_tree_cursor_current_status(tls *libc.TLS, _self uintptr, field_id uintpt
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self6+8)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+12015, __ccgo_ts+11829, uint32(526))
+			libc.X_assert(tls, __ccgo_ts+12749, __ccgo_ts+12507, uint32(526))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		entry = (*struct {
@@ -90963,7 +90963,7 @@ func ts_tree_cursor_current_status(tls *libc.TLS, _self uintptr, field_id uintpt
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self6+8)).Fsize); !v3 {
-			libc.X_assert(tls, __ccgo_ts+12052, __ccgo_ts+11829, uint32(527))
+			libc.X_assert(tls, __ccgo_ts+12786, __ccgo_ts+12507, uint32(527))
 		}
 		_ = v3 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		parent_entry = (*struct {
@@ -91250,7 +91250,7 @@ func ts_tree_cursor_parent_node(tls *libc.TLS, _self uintptr) (r TSNode) {
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self2+8)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+12015, __ccgo_ts+11829, uint32(640))
+			libc.X_assert(tls, __ccgo_ts+12749, __ccgo_ts+12507, uint32(640))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		entry = (*struct {
@@ -91266,7 +91266,7 @@ func ts_tree_cursor_parent_node(tls *libc.TLS, _self uintptr) (r TSNode) {
 				Fsize     uint32_t
 				Fcapacity uint32_t
 			})(unsafe.Pointer(self2+8)).Fsize); !v3 {
-				libc.X_assert(tls, __ccgo_ts+12052, __ccgo_ts+11829, uint32(644))
+				libc.X_assert(tls, __ccgo_ts+12786, __ccgo_ts+12507, uint32(644))
 			}
 			_ = v3 || libc.Bool(libc.Int32FromInt32(0) != 0)
 			parent_entry = (*struct {
@@ -91339,7 +91339,7 @@ func ts_tree_cursor_current_field_id(tls *libc.TLS, _self uintptr) (r TSFieldId)
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self2+8)).Fsize); !v2 {
-			libc.X_assert(tls, __ccgo_ts+12015, __ccgo_ts+11829, uint32(669))
+			libc.X_assert(tls, __ccgo_ts+12749, __ccgo_ts+12507, uint32(669))
 		}
 		_ = v2 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		entry = (*struct {
@@ -91352,7 +91352,7 @@ func ts_tree_cursor_current_field_id(tls *libc.TLS, _self uintptr) (r TSFieldId)
 			Fsize     uint32_t
 			Fcapacity uint32_t
 		})(unsafe.Pointer(self2+8)).Fsize); !v3 {
-			libc.X_assert(tls, __ccgo_ts+12052, __ccgo_ts+11829, uint32(670))
+			libc.X_assert(tls, __ccgo_ts+12786, __ccgo_ts+12507, uint32(670))
 		}
 		_ = v3 || libc.Bool(libc.Int32FromInt32(0) != 0)
 		parent_entry = (*struct {
@@ -91476,7 +91476,7 @@ func ts_tree_cursor_copy(tls *libc.TLS, _cursor uintptr) (r TSTreeCursor) {
 	old_end = v3 + v4
 	new_end = v3 + v5
 	if v7 = !!(old_end <= *(*uint32_t)(unsafe.Pointer(v1))); !v7 {
-		libc.X_assert(tls, __ccgo_ts+2116, __ccgo_ts+2133, uint32(263))
+		libc.X_assert(tls, __ccgo_ts+2340, __ccgo_ts+2357, uint32(263))
 	}
 	_ = v7 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	v8 = (*struct {
@@ -91562,7 +91562,7 @@ func ts_tree_cursor_reset_to(tls *libc.TLS, _dst uintptr, _src uintptr) {
 	old_end = v3 + v4
 	new_end = v3 + v5
 	if v7 = !!(old_end <= *(*uint32_t)(unsafe.Pointer(v1))); !v7 {
-		libc.X_assert(tls, __ccgo_ts+2116, __ccgo_ts+2133, uint32(263))
+		libc.X_assert(tls, __ccgo_ts+2340, __ccgo_ts+2357, uint32(263))
 	}
 	_ = v7 || libc.Bool(libc.Int32FromInt32(0) != 0)
 	v8 = (*struct {
@@ -91931,7 +91931,7 @@ func _ts_dup(tls *libc.TLS, handle HANDLE) (r int32) {
 func ts_tree_print_dot_graph(tls *libc.TLS, self uintptr, fd int32) {
 	var file uintptr
 	_ = file
-	file = libc.Xfdopen(tls, _ts_dup(tls, uintptr(libc.Xget_osfhandle(tls, fd))), __ccgo_ts+2794)
+	file = libc.Xfdopen(tls, _ts_dup(tls, uintptr(libc.Xget_osfhandle(tls, fd))), __ccgo_ts+3074)
 	ts_subtree_print_dot_graph(tls, (*TSTree)(unsafe.Pointer(self)).Froot, (*TSTree)(unsafe.Pointer(self)).Flanguage, file)
 	libc.Xfclose(tls, file)
 }
@@ -92087,7 +92087,7 @@ func ts_decode_utf8(tls *libc.TLS, string1 uintptr, length uint32_t, code_point 
 					*(*int32_t)(unsafe.Pointer(v4)) &= int32(0xf)
 					v5 = *(*uint8_t)(unsafe.Pointer(string1 + uintptr(i)))
 					__t = v5
-					if v6 = int32(*(*int8)(unsafe.Pointer(__ccgo_ts + 3117 + uintptr(*(*int32_t)(unsafe.Pointer(v4))))))&(int32(1)<<(int32(v5)>>int32(5))) != 0; v6 {
+					if v6 = int32(*(*int8)(unsafe.Pointer(__ccgo_ts + 3397 + uintptr(*(*int32_t)(unsafe.Pointer(v4))))))&(int32(1)<<(int32(v5)>>int32(5))) != 0; v6 {
 						__t = uint8(int32(__t) & libc.Int32FromInt32(0x3f))
 					}
 					v3 = libc.BoolInt32(v6 && libc.Bool(libc.Int32FromInt32(1) != 0))
@@ -92098,7 +92098,7 @@ func ts_decode_utf8(tls *libc.TLS, string1 uintptr, length uint32_t, code_point 
 						v8 = *(*uint8_t)(unsafe.Pointer(string1 + uintptr(i)))
 						__t = v8
 					}
-					if v11 = v9 && int32(*(*int8)(unsafe.Pointer(__ccgo_ts + 3134 + uintptr(int32(v8)>>int32(4)))))&(int32(1)<<*(*int32_t)(unsafe.Pointer(code_point))) != 0; v11 {
+					if v11 = v9 && int32(*(*int8)(unsafe.Pointer(__ccgo_ts + 3414 + uintptr(int32(v8)>>int32(4)))))&(int32(1)<<*(*int32_t)(unsafe.Pointer(code_point))) != 0; v11 {
 						*(*int32_t)(unsafe.Pointer(code_point)) = *(*int32_t)(unsafe.Pointer(code_point))<<libc.Int32FromInt32(6) | int32(__t)&int32(0x3f)
 						i = i + 1
 						v1 = i
@@ -92267,4 +92267,15 @@ var ts_current_realloc = uintptr(0)
 
 var __ccgo_ts = (*reflect.StringHeader)(unsafe.Pointer(&__ccgo_ts1)).Data
 
-var __ccgo_ts1 = "tree-sitter failed to allocate %zu bytes\x00tree-sitter failed to reallocate %zu bytes\x00(uint32_t)((self)->size - 1) < (self)->size\x00D:\\a\\ccgo-tree-sitter\\ccgo-tree-sitter\\third-party\\tree-sitter\\lib\\src\\get_changed_ranges.c\x00(uint32_t)(i) < (self)->size\x00(uint32_t)((&self->cursor.stack)->size - 1) < (&self->cursor.stack)->size\x00(uint32_t)(self->cursor.stack.size - 2) < (&self->cursor.stack)->size\x00(uint32_t)(i) < (&self->cursor.stack)->size\x00(uint32_t)(i - 1) < (&self->cursor.stack)->size\x00(uint32_t)(included_range_difference_index) < (included_range_differences)->size\x00symbol < self->token_count\x00D:\\a\\ccgo-tree-sitter\\ccgo-tree-sitter\\third-party\\tree-sitter\\lib\\src\\language.c\x00ERROR\x00_ERROR\x00skip character:'%c'\x00skip character:%d\x00consume character:'%c'\x00consume character:%d\x00\x00graph {\nlabel=\"\x00\"\n}\n\n\x00(uint32_t)(i) < (&pop)->size\x00D:\\a\\ccgo-tree-sitter\\ccgo-tree-sitter\\third-party\\tree-sitter\\lib\\src\\parser.c\x00(uint32_t)(0) < (&slice.subtrees)->size\x00(uint32_t)(j) < (&slice.subtrees)->size\x00breakdown_top_of_stack tree:%s\x00\n\n\x00state_mismatch sym:%s\x00(uint32_t)((&self->stack)->size - 1) < (&self->stack)->size\x00D:\\a\\ccgo-tree-sitter\\ccgo-tree-sitter\\third-party\\tree-sitter\\lib\\src\\reusable_node.h\x00length <= 1024\x00no_lookahead_after_non_terminal_extra\x00lex_external state:%d, row:%u, column:%u\x00ignore_empty_external_token symbol:%s\x00lex_internal state:%d, row:%u, column:%u\x00skip_unrecognized_character\x00lexed_lookahead sym:\x00, size:%u\x00before_reusable_node symbol:%s\x00past_reusable_node symbol:%s\x00reusable_node_has_different_external_scanner_state symbol:%s\x00has_changes\x00is_error\x00is_missing\x00is_fragile\x00contains_different_included_range\x00cant_reuse_node_%s tree:%s\x00cant_reuse_node symbol:%s, first_leaf_symbol:%s\x00reuse_node symbol:%s\x00select_smaller_error symbol:%s, over_symbol:%s\x00select_higher_precedence symbol:%s, prec:%d, over_symbol:%s, other_prec:%d\x00select_earlier symbol:%s, over_symbol:%s\x00select_existing symbol:%s, over_symbol:%s\x00aborting reduce with too many versions\x00(uint32_t)(i + 1) < (&pop)->size\x00(uint32_t)(j) < (&self->trailing_extras)->size\x00ts_subtree_is_eof(lookahead)\x00(uint32_t)(j) < (&trees)->size\x00!tree.data.is_inline\x00old_end <= *size\x00D:\\a\\ccgo-tree-sitter\\ccgo-tree-sitter\\third-party\\tree-sitter\\lib\\src\\array.h\x00root.ptr\x00(uint32_t)(0) < (&pop)->size\x00(uint32_t)(j) < (&self->reduce_actions)->size\x00index < *size\x00error_trees.size == 1\x00(uint32_t)(0) < (&error_trees)->size\x00(uint32_t)(i) < (summary)->size\x00recover_to_previous state:%u, depth:%u\x00removed paused version:%u\x00recover_eof\x00skip_token symbol:%s\x00recover_with_missing symbol:%s, state:%u\x00did_merge\x00shift_extra\x00shift state:%u\x00reduce sym:%s, child_count:%u\x00accept\x00switch from_keyword:%s, to_word_token:%s\x00detect_error lookahead:%s\x00resume version:%u\x00condense\x00(uint32_t)(self->tree_pool.tree_stack.size - 1) < (&self->tree_pool.tree_stack)->size\x00a\x00resume_parsing\x00parse_after_edit\x00\n\x00(uint32_t)(i) < (&self->included_range_differences)->size\x00different_included_range %u - %u\x00new_parse\x00process version:%u, version_count:%u, state:%d, row:%u, col:%u\x00(uint32_t)(self->included_range_difference_index) < (&self->included_range_differences)->size\x00self->finished_tree.ptr\x00done\x00 000000000000\x1000\x00\x00\x00\x00\x00\x00\x00\x00\x00\x1e\x0f\x0f\x0f\x00\x00\x00\x00\x00(uint32_t)(i) < (&self->list)->size\x00D:\\a\\ccgo-tree-sitter\\ccgo-tree-sitter\\third-party\\tree-sitter\\lib\\src\\query.c\x00(uint32_t)(id) < (&self->list)->size\x00id < self->list.size\x00(uint32_t)(a) < (states)->size\x00(uint32_t)(b) < (states)->size\x00(uint32_t)(left) < (states)->size\x00(uint32_t)(smallest) < (states)->size\x00(uint32_t)(right) < (states)->size\x00(uint32_t)(index) < (states)->size\x00(uint32_t)(parent) < (states)->size\x00(uint32_t)(0) < (states)->size\x00(uint32_t)((states)->size - 1) < (states)->size\x00(uint32_t)((index - 1) / 2) < (states)->size\x00(uint32_t)(id) < (self)->size\x00(uint32_t)(id) < (quantifiers)->size\x00(uint32_t)(i) < (&self->slices)->size\x00(uint32_t)(slice.offset) < (&self->characters)->size\x00(uint32_t)(id) < (&self->slices)->size\x00(uint32_t)(self->characters.size - 1) < (&self->characters)->size\x00(uint32_t)(mid_index) < (&self->pattern_map)->size\x00(uint32_t)(((void) ((!!((uint32_t)(mid_index) < (&self->pattern_map)->size)) || (_assert(\"(uint32_t)(mid_index) < (&self->pattern_map)->size\",\"D:\\\\a\\\\ccgo-tree-sitter\\\\ccgo-tree-sitter\\\\third-party\\\\tree-sitter\\\\lib\\\\src\\\\query.c\",1253),0)), &(&self->pattern_map)->contents[mid_index])->step_index) < (&self->steps)->size\x00(uint32_t)(base_index) < (&self->pattern_map)->size\x00(uint32_t)(((void) ((!!((uint32_t)(base_index) < (&self->pattern_map)->size)) || (_assert(\"(uint32_t)(base_index) < (&self->pattern_map)->size\",\"D:\\\\a\\\\ccgo-tree-sitter\\\\ccgo-tree-sitter\\\\third-party\\\\tree-sitter\\\\lib\\\\src\\\\query.c\",1260),0)), &(&self->pattern_map)->contents[base_index])->step_index) < (&self->steps)->size\x00(uint32_t)(((void) ((!!((uint32_t)(base_index) < (&self->pattern_map)->size)) || (_assert(\"(uint32_t)(base_index) < (&self->pattern_map)->size\",\"D:\\\\a\\\\ccgo-tree-sitter\\\\ccgo-tree-sitter\\\\third-party\\\\tree-sitter\\\\lib\\\\src\\\\query.c\",1267),0)), &(&self->pattern_map)->contents[base_index])->step_index) < (&self->steps)->size\x00(uint32_t)(index) < (&self->pattern_map)->size\x00(uint32_t)(entry->step_index) < (&self->steps)->size\x00(uint32_t)(j) < (&analysis->states)->size\x00(uint32_t)((&analysis->next_states)->size - 1) < (&analysis->next_states)->size\x00(uint32_t)(state->step_index) < (&self->steps)->size\x00(uint32_t)(subgraph_index) < (subgraphs)->size\x00(uint32_t)(node_index) < (&subgraph->nodes)->size\x00(uint32_t)(next_state.step_index) < (&self->steps)->size\x00(uint32_t)(i) < (&self->pattern_map)->size\x00(uint32_t)(pattern->step_index) < (&self->steps)->size\x00(uint32_t)(i) < (&self->steps)->size\x00(uint32_t)(j) < (&self->steps)->size\x00(uint32_t)(offset_idx) < (&self->step_offsets)->size\x00(uint32_t)(i) < (&parent_step_indices)->size\x00(uint32_t)(parent_step_index) < (&self->steps)->size\x00(uint32_t)(subgraph_index) < (&subgraphs)->size\x00(uint32_t)((&subgraph->nodes)->size - 1) < (&subgraph->nodes)->size\x00(uint32_t)((&subgraph->start_states)->size - 1) < (&subgraph->start_states)->size\x00(uint32_t)(i) < (&subgraphs)->size\x00child_exists\x00(uint32_t)(j) < (&self->step_offsets)->size\x00(uint32_t)(j) < (&subgraph->start_states)->size\x00(uint32_t)((&analysis.final_step_indices)->size - 1) < (&analysis.final_step_indices)->size\x00(uint32_t)(j) < (&analysis.final_step_indices)->size\x00(uint32_t)(final_step_index) < (&self->steps)->size\x00(uint32_t)(i) < (&self->patterns)->size\x00(uint32_t)(j) < (&self->predicate_steps)->size\x00(uint32_t)(step->alternative_index) < (&self->steps)->size\x00(uint32_t)(i - 1) < (&self->steps)->size\x00(uint32_t)(i) < (&non_rooted_pattern_start_steps)->size\x00(uint32_t)(pattern_entry_index) < (&self->pattern_map)->size\x00(uint32_t)(j) < (&subgraphs)->size\x00(uint32_t)(k) < (&subgraph->start_states)->size\x00(uint32_t)(pattern_entry->pattern_index) < (&self->patterns)->size\x00(uint32_t)(k) < (&analysis.finished_parent_symbols)->size\x00(uint32_t)(step_index) < (&self->steps)->size\x00(uint32_t)(i) < (&self->negated_fields)->size\x00(uint32_t)((&self->step_offsets)->size - 1) < (&self->step_offsets)->size\x00(uint32_t)(i) < (&branch_step_indices)->size\x00(uint32_t)(i + 1) < (&branch_step_indices)->size\x00(uint32_t)(next_step_index - 1) < (&self->steps)->size\x00MISSING\x00(uint32_t)((&self->steps)->size - 1) < (&self->steps)->size\x00(uint32_t)(last_child_step_index) < (&self->steps)->size\x00(uint32_t)(last_child_step->alternative_index) < (&self->steps)->size\x00(uint32_t)(alternative_step->alternative_index) < (&self->steps)->size\x00(uint32_t)(starting_step_index) < (&self->steps)->size\x00(uint32_t)((&self->patterns)->size - 1) < (&self->patterns)->size\x00(uint32_t)(start_step_index) < (&self->steps)->size\x00(uint32_t)(start_step_index + 1) < (&self->steps)->size\x00(uint32_t)(target_idx) < (&self->steps)->size\x00(uint32_t)(index) < (&self->capture_quantifiers)->size\x00(uint32_t)(i) < (&copy->capture_quantifiers)->size\x00(uint32_t)(i) < (&self->capture_quantifiers)->size\x00(uint32_t)(pattern_index) < (&self->capture_quantifiers)->size\x00(uint32_t)(pattern_index) < (&self->patterns)->size\x00(uint32_t)(slice.offset) < (&self->predicate_steps)->size\x00(uint32_t)(i) < (&self->step_offsets)->size\x00(uint32_t)step_index + i < self->steps.size\x00(uint32_t)(step_index + i) < (&self->steps)->size\x00(uint32_t)(i) < (&query->steps)->size\x00(uint32_t)(i) < (&self->states)->size\x00(uint32_t)(state->consumed_capture_count) < (captures)->size\x00(uint32_t)(state->step_index) < (&self->query->steps)->size\x00(uint32_t)(i) < (left_captures)->size\x00(uint32_t)(j) < (right_captures)->size\x00(uint32_t)(0) < (a_caps)->size\x00(uint32_t)(0) < (b_caps)->size\x00(uint32_t)(i) < (states)->size\x00(uint32_t)(i - 1) < (states)->size\x00(uint32_t)(j) < (states)->size\x00(uint32_t)(j - 1) < (states)->size\x00(uint32_t)(pattern->step_index) < (&self->query->steps)->size\x00(uint32_t)(index - 1) < (&self->states)->size\x00(uint32_t)(state_index) < (&self->states)->size\x00(uint32_t)(state_index + 1) < (&self->states)->size\x00D:\\a\\ccgo-tree-sitter\\ccgo-tree-sitter\\third-party\\tree-sitter\\lib\\src\\tree_cursor.h\x00(uint32_t)(i - deleted_count) < (&self->states)->size\x00(uint32_t)(i) < (&self->query->pattern_map)->size\x00(uint32_t)(j) < (&self->states)->size\x00(uint32_t)(step->negated_field_list_id) < (&self->query->negated_fields)->size\x00(uint32_t)(k) < (&self->states)->size\x00(uint32_t)(child_state->step_index) < (&self->query->steps)->size\x00(uint32_t)(0) < (other_captures)->size\x00(uint32_t)(state_captures->size - 1) < (state_captures)->size\x00(uint32_t)(i) < (&self->finished_states)->size\x00(uint32_t)(state_index) < (&self->finished_states)->size\x00(uint32_t)(0) < (&self->finished_states)->size\x00(uint32_t)(first_unfinished_state_index) < (&self->states)->size\x00self->ref_count > 0\x00D:\\a\\ccgo-tree-sitter\\ccgo-tree-sitter\\third-party\\tree-sitter\\lib\\src\\stack.c\x00self->ref_count != 0\x00(uint32_t)(original_version) < (&self->heads)->size\x00(uint32_t)(version) < (&self->heads)->size\x00(uint32_t)(i) < (&self->iterators)->size\x00(uint32_t)((&self->iterators)->size - 1) < (&self->iterators)->size\x00(uint32_t)(i) < (&self->heads)->size\x00(uint32_t)(i) < (&self->node_pool)->size\x00(uint32_t)(0) < (&iterator->subtrees)->size\x00pop.size == 1\x00(uint32_t)(i) < (session->summary)->size\x00v2 < v1\x00(uint32_t)v1 < self->heads.size\x00(uint32_t)(v1) < (&self->heads)->size\x00(uint32_t)(v2) < (&self->heads)->size\x00version < self->heads.size\x00(uint32_t)((&self->heads)->size - 1) < (&self->heads)->size\x00(uint32_t)(version1) < (&self->heads)->size\x00(uint32_t)(version2) < (&self->heads)->size\x00head->status == StackStatusPaused\x00digraph stack {\n\x00rankdir=\"RL\";\n\x00edge [arrowhead=none]\n\x00node_head_%u [shape=none, label=\"\"]\n\x00node_head_%u -> node_%p [\x00color=red \x00label=%u, fontcolor=blue, weight=10000, labeltooltip=\"node_count: %u\nerror_cost: %u\x00\nsummary:\x00(uint32_t)(j) < (head->summary)->size\x00 %u\x00\nexternal_scanner_state:\x00 %2X\x00\"]\n\x00(uint32_t)(j) < (&visited_nodes)->size\x00node_%p [\x00label=\"?\"\x00shape=point margin=0 label=\"\"\x00label=\"%d\"\x00 tooltip=\"position: %u,%u\nnode_count:%u\nerror_cost: %u\ndynamic_precedence: %d\"];\n\x00node_%p -> node_%p [\x00style=dashed \x00fontcolor=gray \x00color=red\x00label=\"\x00'\x00\\n\x00\\t\x00\"\x00labeltooltip=\"error_cost: %u\ndynamic_precedence: %d\"\x00];\n\x00}\n\x00(uint32_t)(i) < (dest)->size\x00D:\\a\\ccgo-tree-sitter\\ccgo-tree-sitter\\third-party\\tree-sitter\\lib\\src\\subtree.c\x00(uint32_t)(self->size - 1) < (self)->size\x00(uint32_t)(reverse_index) < (self)->size\x00(uint32_t)(i) < (&self->free_trees)->size\x00symbol < 255\x00!self.data.is_inline\x00self.ptr->ref_count > 0\x00self.ptr->ref_count != 0\x00child.ptr->ref_count > 0\x00INVALID\x00'\\0'\x00'\\n'\x00'\\t'\x00'\\r'\x00'%c'\x00%d\x00__ROOT__\x00(uint32_t)((&stack)->size - 1) < (&stack)->size\x00 \x00%s: \x00(NULL)\x00(UNEXPECTED \x00(MISSING \x00%s\x00\"%s\"\x00(%s\x00(%s)\x00(\"%s\")\x00)\x00tree_%p [label=\"\x00, shape=plaintext\x00, fontcolor=gray\x00, color=green, penwidth=2\x00, tooltip=\"range: %u - %u\nstate: %d\nerror-cost: %u\nhas-changes: %u\ndepends-on-column: %u\ndescendant-count: %u\nrepeat-depth: %u\nlookahead-bytes: %u\x00\ncharacter: '%c'\x00tree_%p -> tree_%p [tooltip=%u]\n\x00digraph tree {\n\x00(uint32_t)(index) < (&self->stack)->size\x00D:\\a\\ccgo-tree-sitter\\ccgo-tree-sitter\\third-party\\tree-sitter\\lib\\src\\tree_cursor.c\x00(uint32_t)(index - 1) < (&self->stack)->size\x00(uint32_t)(self->stack.size - 2) < (&self->stack)->size\x00(uint32_t)(i) < (&self->stack)->size\x00(uint32_t)(i - 1) < (&self->stack)->size\x00"
+var __ccgo_ts1 = "tree-sitter failed to allocate %zu bytes\x00tree-sitter failed to reallocate %zu bytes\x00(uint32_t)((self)->size - 1) < (self)->size\x00C:\\Users\\runneradmin\\.cache\\workspaced\\sources\\github\\7349d53bdd4ab31f79a3eec0385f924117fa6d06f018e00aadd823c0dcd51ac2\\lib\\src\\get_changed_ranges.c\x00(uint32_t)(i) < (self)->size\x00(uint32_t)((&self->cursor.stack)->size - 1) < (&self->cursor.stack)->size\x00(uint32_t)(self->cursor.stack.size - 2) < (&self->cursor.stack)->size\x00(uint32_t)(i) < (&self->cursor.stack)->size\x00(uint32_t)(i - 1) < (&self->cursor.stack)->size\x00(uint32_t)(included_range_difference_index) < (included_range_differences)->size\x00symbol < self->token_count\x00C:\\Users\\runneradmin\\.cache\\workspaced\\sources\\github\\7349d53bdd4ab31f79a3eec0385f924117fa6d06f018e00aadd823c0dcd51ac2\\lib\\src\\language.c\x00ERROR\x00_ERROR\x00skip character:'%c'\x00skip character:%d\x00consume character:'%c'\x00consume character:%d\x00\x00graph {\nlabel=\"\x00\"\n}\n\n\x00(uint32_t)(i) < (&pop)->size\x00C:\\Users\\runneradmin\\.cache\\workspaced\\sources\\github\\7349d53bdd4ab31f79a3eec0385f924117fa6d06f018e00aadd823c0dcd51ac2\\lib\\src\\parser.c\x00(uint32_t)(0) < (&slice.subtrees)->size\x00(uint32_t)(j) < (&slice.subtrees)->size\x00breakdown_top_of_stack tree:%s\x00\n\n\x00state_mismatch sym:%s\x00(uint32_t)((&self->stack)->size - 1) < (&self->stack)->size\x00C:\\Users\\runneradmin\\.cache\\workspaced\\sources\\github\\7349d53bdd4ab31f79a3eec0385f924117fa6d06f018e00aadd823c0dcd51ac2\\lib\\src\\reusable_node.h\x00length <= 1024\x00no_lookahead_after_non_terminal_extra\x00lex_external state:%d, row:%u, column:%u\x00ignore_empty_external_token symbol:%s\x00lex_internal state:%d, row:%u, column:%u\x00skip_unrecognized_character\x00lexed_lookahead sym:\x00, size:%u\x00before_reusable_node symbol:%s\x00past_reusable_node symbol:%s\x00reusable_node_has_different_external_scanner_state symbol:%s\x00has_changes\x00is_error\x00is_missing\x00is_fragile\x00contains_different_included_range\x00cant_reuse_node_%s tree:%s\x00cant_reuse_node symbol:%s, first_leaf_symbol:%s\x00reuse_node symbol:%s\x00select_smaller_error symbol:%s, over_symbol:%s\x00select_higher_precedence symbol:%s, prec:%d, over_symbol:%s, other_prec:%d\x00select_earlier symbol:%s, over_symbol:%s\x00select_existing symbol:%s, over_symbol:%s\x00aborting reduce with too many versions\x00(uint32_t)(i + 1) < (&pop)->size\x00(uint32_t)(j) < (&self->trailing_extras)->size\x00ts_subtree_is_eof(lookahead)\x00(uint32_t)(j) < (&trees)->size\x00!tree.data.is_inline\x00old_end <= *size\x00C:\\Users\\runneradmin\\.cache\\workspaced\\sources\\github\\7349d53bdd4ab31f79a3eec0385f924117fa6d06f018e00aadd823c0dcd51ac2\\lib\\src\\array.h\x00root.ptr\x00(uint32_t)(0) < (&pop)->size\x00(uint32_t)(j) < (&self->reduce_actions)->size\x00index < *size\x00error_trees.size == 1\x00(uint32_t)(0) < (&error_trees)->size\x00(uint32_t)(i) < (summary)->size\x00recover_to_previous state:%u, depth:%u\x00removed paused version:%u\x00recover_eof\x00skip_token symbol:%s\x00recover_with_missing symbol:%s, state:%u\x00did_merge\x00shift_extra\x00shift state:%u\x00reduce sym:%s, child_count:%u\x00accept\x00switch from_keyword:%s, to_word_token:%s\x00detect_error lookahead:%s\x00resume version:%u\x00condense\x00(uint32_t)(self->tree_pool.tree_stack.size - 1) < (&self->tree_pool.tree_stack)->size\x00a\x00resume_parsing\x00parse_after_edit\x00\n\x00(uint32_t)(i) < (&self->included_range_differences)->size\x00different_included_range %u - %u\x00new_parse\x00process version:%u, version_count:%u, state:%d, row:%u, col:%u\x00(uint32_t)(self->included_range_difference_index) < (&self->included_range_differences)->size\x00self->finished_tree.ptr\x00done\x00 000000000000\x1000\x00\x00\x00\x00\x00\x00\x00\x00\x00\x1e\x0f\x0f\x0f\x00\x00\x00\x00\x00(uint32_t)(i) < (&self->list)->size\x00C:\\Users\\runneradmin\\.cache\\workspaced\\sources\\github\\7349d53bdd4ab31f79a3eec0385f924117fa6d06f018e00aadd823c0dcd51ac2\\lib\\src\\query.c\x00(uint32_t)(id) < (&self->list)->size\x00id < self->list.size\x00(uint32_t)(a) < (states)->size\x00(uint32_t)(b) < (states)->size\x00(uint32_t)(left) < (states)->size\x00(uint32_t)(smallest) < (states)->size\x00(uint32_t)(right) < (states)->size\x00(uint32_t)(index) < (states)->size\x00(uint32_t)(parent) < (states)->size\x00(uint32_t)(0) < (states)->size\x00(uint32_t)((states)->size - 1) < (states)->size\x00(uint32_t)((index - 1) / 2) < (states)->size\x00(uint32_t)(id) < (self)->size\x00(uint32_t)(id) < (quantifiers)->size\x00(uint32_t)(i) < (&self->slices)->size\x00(uint32_t)(slice.offset) < (&self->characters)->size\x00(uint32_t)(id) < (&self->slices)->size\x00(uint32_t)(self->characters.size - 1) < (&self->characters)->size\x00(uint32_t)(mid_index) < (&self->pattern_map)->size\x00(uint32_t)(((void) ((!!((uint32_t)(mid_index) < (&self->pattern_map)->size)) || (_assert(\"(uint32_t)(mid_index) < (&self->pattern_map)->size\",\"C:\\\\Users\\\\runneradmin\\\\.cache\\\\workspaced\\\\sources\\\\github\\\\7349d53bdd4ab31f79a3eec0385f924117fa6d06f018e00aadd823c0dcd51ac2\\\\lib\\\\src\\\\query.c\",1253),0)), &(&self->pattern_map)->contents[mid_index])->step_index) < (&self->steps)->size\x00(uint32_t)(base_index) < (&self->pattern_map)->size\x00(uint32_t)(((void) ((!!((uint32_t)(base_index) < (&self->pattern_map)->size)) || (_assert(\"(uint32_t)(base_index) < (&self->pattern_map)->size\",\"C:\\\\Users\\\\runneradmin\\\\.cache\\\\workspaced\\\\sources\\\\github\\\\7349d53bdd4ab31f79a3eec0385f924117fa6d06f018e00aadd823c0dcd51ac2\\\\lib\\\\src\\\\query.c\",1260),0)), &(&self->pattern_map)->contents[base_index])->step_index) < (&self->steps)->size\x00(uint32_t)(((void) ((!!((uint32_t)(base_index) < (&self->pattern_map)->size)) || (_assert(\"(uint32_t)(base_index) < (&self->pattern_map)->size\",\"C:\\\\Users\\\\runneradmin\\\\.cache\\\\workspaced\\\\sources\\\\github\\\\7349d53bdd4ab31f79a3eec0385f924117fa6d06f018e00aadd823c0dcd51ac2\\\\lib\\\\src\\\\query.c\",1267),0)), &(&self->pattern_map)->contents[base_index])->step_index) < (&self->steps)->size\x00(uint32_t)(index) < (&self->pattern_map)->size\x00(uint32_t)(entry->step_index) < (&self->steps)->size\x00(uint32_t)(j) < (&analysis->states)->size\x00(uint32_t)((&analysis->next_states)->size - 1) < (&analysis->next_states)->size\x00(uint32_t)(state->step_index) < (&self->steps)->size\x00(uint32_t)(subgraph_index) < (subgraphs)->size\x00(uint32_t)(node_index) < (&subgraph->nodes)->size\x00(uint32_t)(next_state.step_index) < (&self->steps)->size\x00(uint32_t)(i) < (&self->pattern_map)->size\x00(uint32_t)(pattern->step_index) < (&self->steps)->size\x00(uint32_t)(i) < (&self->steps)->size\x00(uint32_t)(j) < (&self->steps)->size\x00(uint32_t)(offset_idx) < (&self->step_offsets)->size\x00(uint32_t)(i) < (&parent_step_indices)->size\x00(uint32_t)(parent_step_index) < (&self->steps)->size\x00(uint32_t)(subgraph_index) < (&subgraphs)->size\x00(uint32_t)((&subgraph->nodes)->size - 1) < (&subgraph->nodes)->size\x00(uint32_t)((&subgraph->start_states)->size - 1) < (&subgraph->start_states)->size\x00(uint32_t)(i) < (&subgraphs)->size\x00child_exists\x00(uint32_t)(j) < (&self->step_offsets)->size\x00(uint32_t)(j) < (&subgraph->start_states)->size\x00(uint32_t)((&analysis.final_step_indices)->size - 1) < (&analysis.final_step_indices)->size\x00(uint32_t)(j) < (&analysis.final_step_indices)->size\x00(uint32_t)(final_step_index) < (&self->steps)->size\x00(uint32_t)(i) < (&self->patterns)->size\x00(uint32_t)(j) < (&self->predicate_steps)->size\x00(uint32_t)(step->alternative_index) < (&self->steps)->size\x00(uint32_t)(i - 1) < (&self->steps)->size\x00(uint32_t)(i) < (&non_rooted_pattern_start_steps)->size\x00(uint32_t)(pattern_entry_index) < (&self->pattern_map)->size\x00(uint32_t)(j) < (&subgraphs)->size\x00(uint32_t)(k) < (&subgraph->start_states)->size\x00(uint32_t)(pattern_entry->pattern_index) < (&self->patterns)->size\x00(uint32_t)(k) < (&analysis.finished_parent_symbols)->size\x00(uint32_t)(step_index) < (&self->steps)->size\x00(uint32_t)(i) < (&self->negated_fields)->size\x00(uint32_t)((&self->step_offsets)->size - 1) < (&self->step_offsets)->size\x00(uint32_t)(i) < (&branch_step_indices)->size\x00(uint32_t)(i + 1) < (&branch_step_indices)->size\x00(uint32_t)(next_step_index - 1) < (&self->steps)->size\x00MISSING\x00(uint32_t)((&self->steps)->size - 1) < (&self->steps)->size\x00(uint32_t)(last_child_step_index) < (&self->steps)->size\x00(uint32_t)(last_child_step->alternative_index) < (&self->steps)->size\x00(uint32_t)(alternative_step->alternative_index) < (&self->steps)->size\x00(uint32_t)(starting_step_index) < (&self->steps)->size\x00(uint32_t)((&self->patterns)->size - 1) < (&self->patterns)->size\x00(uint32_t)(start_step_index) < (&self->steps)->size\x00(uint32_t)(start_step_index + 1) < (&self->steps)->size\x00(uint32_t)(target_idx) < (&self->steps)->size\x00(uint32_t)(index) < (&self->capture_quantifiers)->size\x00(uint32_t)(i) < (&copy->capture_quantifiers)->size\x00(uint32_t)(i) < (&self->capture_quantifiers)->size\x00(uint32_t)(pattern_index) < (&self->capture_quantifiers)->size\x00(uint32_t)(pattern_index) < (&self->patterns)->size\x00(uint32_t)(slice.offset) < (&self->predicate_steps)->size\x00(uint32_t)(i) < (&self->step_offsets)->size\x00(uint32_t)step_index + i < self->steps.size\x00(uint32_t)(step_index + i) < (&self->steps)->size\x00(uint32_t)(i) < (&query->steps)->size\x00(uint32_t)(i) < (&self->states)->size\x00(uint32_t)(state->consumed_capture_count) < (captures)->size\x00(uint32_t)(state->step_index) < (&self->query->steps)->size\x00(uint32_t)(i) < (left_captures)->size\x00(uint32_t)(j) < (right_captures)->size\x00(uint32_t)(0) < (a_caps)->size\x00(uint32_t)(0) < (b_caps)->size\x00(uint32_t)(i) < (states)->size\x00(uint32_t)(i - 1) < (states)->size\x00(uint32_t)(j) < (states)->size\x00(uint32_t)(j - 1) < (states)->size\x00(uint32_t)(pattern->step_index) < (&self->query->steps)->size\x00(uint32_t)(index - 1) < (&self->states)->size\x00(uint32_t)(state_index) < (&self->states)->size\x00(uint32_t)(state_index + 1) < (&self->states)->size\x00C:\\Users\\runneradmin\\.cache\\workspaced\\sources\\github\\7349d53bdd4ab31f79a3eec0385f924117fa6d06f018e00aadd823c0dcd51ac2\\lib\\src\\tree_cursor.h\x00(uint32_t)(i - deleted_count) < (&self->states)->size\x00(uint32_t)(i) < (&self->query->pattern_map)->size\x00(uint32_t)(j) < (&self->states)->size\x00(uint32_t)(step->negated_field_list_id) < (&self->query->negated_fields)->size\x00(uint32_t)(k) < (&self->states)->size\x00(uint32_t)(child_state->step_index) < (&self->query->steps)->size\x00(uint32_t)(0) < (other_captures)->size\x00(uint32_t)(state_captures->size - 1) < (state_captures)->size\x00(uint32_t)(i) < (&self->finished_states)->size\x00(uint32_t)(state_index) < (&self->finished_states)->size\x00(uint32_t)(0) < (&self->finished_states)->size\x00(uint32_t)(first_unfinished_state_index) < (&self->states)->size\x00self->ref_count > 0\x00C:\\Users\\runneradmin\\.cache\\workspaced\\sources\\github\\7349d53bdd4ab31f79a3eec0385f924117fa6d06f018e00aadd823c0dcd51ac2\\lib\\src\\stack.c\x00self->ref_count != 0\x00(uint32_t)(original_version) < (&self->heads)->size\x00(uint32_t)(version) < (&self->heads)->size\x00(uint32_t)(i) < (&self->iterators)->size\x00(uint32_t)((&self->iterators)->size - 1) < (&self->iterators)->size\x00(uint32_t)(i) < (&self->heads)->size\x00(uint32_t)(i) < (&self->node_pool)->size\x00(uint32_t)(0) < (&iterator->subtrees)->size\x00pop.size == 1\x00(uint32_t)(i) < (session->summary)->size\x00v2 < v1\x00(uint32_t)v1 < self->heads.size\x00(uint32_t)(v1) < (&self->heads)->size\x00(uint32_t)(v2) < (&self->heads)->size\x00version < self->heads.size\x00(uint32_t)((&self->heads)->size - 1) < (&self->heads)->size\x00(uint32_t)(version1) < (&self->heads)->size\x00(uint32_t)(version2) < (&self->heads)->size\x00head->status == StackStatusPaused\x00digraph stack {\n\x00rankdir=\"RL\";\n\x00edge [arrowhead=none]\n\x00node_head_%u [shape=none, label=\"\"]\n\x00node_head_%u -> node_%p [\x00color=red \x00label=%u, fontcolor=blue, weight=10000, labeltooltip=\"node_count: %u\nerror_cost: %u\x00\nsummary:\x00(uint32_t)(j) < (head->summary)->size\x00 %u\x00\nexternal_scanner_state:\x00 %2X\x00\"]\n\x00(uint32_t)(j) < (&visited_nodes)->size\x00node_%p [\x00label=\"?\"\x00shape=point margin=0 label=\"\"\x00label=\"%d\"\x00 tooltip=\"position: %u,%u\nnode_count:%u\nerror_cost: %u\ndynamic_precedence: %d\"];\n\x00node_%p -> node_%p [\x00style=dashed \x00fontcolor=gray \x00color=red\x00label=\"\x00'\x00\\n\x00\\t\x00\"\x00labeltooltip=\"error_cost: %u\ndynamic_precedence: %d\"\x00];\n\x00}\n\x00(uint32_t)(i) < (dest)->size\x00C:\\Users\\runneradmin\\.cache\\workspaced\\sources\\github\\7349d53bdd4ab31f79a3eec0385f924117fa6d06f018e00aadd823c0dcd51ac2\\lib\\src\\subtree.c\x00(uint32_t)(self->size - 1) < (self)->size\x00(uint32_t)(reverse_index) < (self)->size\x00(uint32_t)(i) < (&self->free_trees)->size\x00symbol < 255\x00!self.data.is_inline\x00self.ptr->ref_count > 0\x00self.ptr->ref_count != 0\x00child.ptr->ref_count > 0\x00INVALID\x00'\\0'\x00'\\n'\x00'\\t'\x00'\\r'\x00'%c'\x00%d\x00__ROOT__\x00(uint32_t)((&stack)->size - 1) < (&stack)->size\x00 \x00%s: \x00(NULL)\x00(UNEXPECTED \x00(MISSING \x00%s\x00\"%s\"\x00(%s\x00(%s)\x00(\"%s\")\x00)\x00tree_%p [label=\"\x00, shape=plaintext\x00, fontcolor=gray\x00, color=green, penwidth=2\x00, tooltip=\"range: %u - %u\nstate: %d\nerror-cost: %u\nhas-changes: %u\ndepends-on-column: %u\ndescendant-count: %u\nrepeat-depth: %u\nlookahead-bytes: %u\x00\ncharacter: '%c'\x00tree_%p -> tree_%p [tooltip=%u]\n\x00digraph tree {\n\x00(uint32_t)(index) < (&self->stack)->size\x00C:\\Users\\runneradmin\\.cache\\workspaced\\sources\\github\\7349d53bdd4ab31f79a3eec0385f924117fa6d06f018e00aadd823c0dcd51ac2\\lib\\src\\tree_cursor.c\x00(uint32_t)(index - 1) < (&self->stack)->size\x00(uint32_t)(self->stack.size - 2) < (&self->stack)->size\x00(uint32_t)(i) < (&self->stack)->size\x00(uint32_t)(i - 1) < (&self->stack)->size\x00"
+
+// Injected by postProcessWindowsLibcCalls: MinGW left Interlocked*
+// call sites without emitting _Interlocked* bodies.
+func _InterlockedDecrement(tls *libc.TLS, Addend uintptr) (r int32) {
+	return int32(libc.X__sync_sub_and_fetch(tls, Addend, int32(1)))
+}
+
+func _InterlockedIncrement(tls *libc.TLS, Addend uintptr) (r int32) {
+	return int32(libc.X__sync_add_and_fetch(tls, Addend, int32(1)))
+}
+

@@ -93,3 +93,14 @@ On Windows, codegen prefers `x86_64-w64-mingw32-gcc` / `aarch64-w64-mingw32-gcc`
 `-ignore-unsupported-alignment` (and friends) to ccgo. On Darwin, availability
 macros are defined empty and the same ccgo ignores apply. Linux still drops
 `_Float*` typedefs after `-E`.
+
+### Freestanding grammar transpile
+
+Grammars are still **ccgo**’d from original `parser.c` / `scanner.c`. The default
+path uses **freestanding** stubs instead of host libc headers (smaller output,
+fewer OS failures). If that fails, codegen falls back to host headers. Unchanged
+inputs are hash-skipped. See [docs/freestanding-grammar.md](docs/freestanding-grammar.md).
+
+```bash
+mise run codegen:linux-amd64   # same entrypoint; freestanding is default for grammars
+```

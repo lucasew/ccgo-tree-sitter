@@ -2,18 +2,22 @@
 //
 // # Ownership
 //
-// Parser, Tree, Query, and QueryCursor free native state via runtime cleanup
-// when the Go value becomes unreachable. Delete is optional (eager free).
-// A Tree pins its *Parser; a QueryCursor pins its *Query. Keep the parent
-// reachable while using Nodes or other values derived from it.
+// Parser and Query free native state via runtime cleanup when the Go value
+// becomes unreachable. Delete is optional (eager free).
+//
+// ParseString/ParseBytes copy the syntax tree into an immutable pure-Go
+// snapshot (*Tree / *Node) and free the native tree before returning. Keep
+// the *Tree reachable while using Nodes from it. There is no native tree to
+// pin after Parse returns.
 //
 // # Concurrency
 //
 // Language values are immutable after load and may be shared across parsers
-// and goroutines. Parser and Query methods are safe for concurrent use: each
-// serializes access to its native handle and TLS with an internal mutex.
-// Callers need no external locking. For high parallel throughput, prefer one
-// Parser or Query per goroutine to avoid contention on that mutex.
+// and goroutines. Parser methods that touch the native parser serialize on an
+// internal mutex. Tree and Node methods only read the snapshot and need no
+// locking. Query methods serialize on the query's mutex; ExecuteMatches
+// re-parses temporarily to run the native query engine.
+// For high parallel throughput, prefer one Parser per goroutine.
 //
 // # Registry
 //

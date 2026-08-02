@@ -15,12 +15,13 @@ import (
 //
 // Query methods are safe for concurrent use. An internal mutex serializes
 // access to the native query and TLS; callers do not need external locking.
-// ExecuteMatches also coordinates with the root Node's lock when the node
-// comes from a different owner (e.g. a Parser tree).
+// ExecuteMatches re-parses source temporarily (Trees are pure-Go snapshots),
+// runs the query, and frees the native tree before return.
 type Query struct {
 	mu      sync.Mutex
 	ptr     uintptr
 	tls     *libc.TLS
+	lang    Language
 	cleanup runtime.Cleanup
 }
 
@@ -95,7 +96,7 @@ func NewQuery(lang Language, source string) (*Query, error) {
 		}
 	}
 
-	q := &Query{ptr: ptr, tls: tls}
+	q := &Query{ptr: ptr, tls: tls, lang: lang}
 	q.cleanup = runtime.AddCleanup(q, freeQuery, queryRes{ptr: ptr, tls: tls})
 	return q, nil
 }
@@ -140,6 +141,7 @@ func (q *Query) Delete() {
 	freeQuery(queryRes{ptr: q.ptr, tls: q.tls})
 	q.ptr = 0
 	q.tls = nil
+	q.lang = nil
 }
 
 // NewCursor creates a cursor for this query.
@@ -176,21 +178,56 @@ func (c *QueryCursor) Delete() {
 }
 
 // ExecuteMatches runs the query over root and returns all matches.
-// The temporary cursor is freed before return (no need to wait for GC).
-// Returns nil if the query is unusable or root is nil/null.
-// Safe for concurrent use; coordinates locks with the root node when needed.
+//
+// Trees are pure-Go snapshots, so this re-parses source with a temporary
+// parser, walks root's child-index path to the matching native node, runs the
+// query, then frees all native state before return.
+// Returns nil if the query is unusable, root is nil/null, or reparse fails.
+// Safe for concurrent use.
 func (q *Query) ExecuteMatches(root *Node, source []byte) []QueryMatch {
 	if q == nil || q.ptr == 0 {
 		return nil
 	}
-	var rootMu *sync.Mutex
-	if root != nil {
-		rootMu = root.mu
+	if root == nil || root.data == nil || root.IsNull() {
+		return nil
 	}
-	unlock := lockPair(rootMu, &q.mu)
-	defer unlock()
 
-	if q.tls == nil || root == nil || root.tls == nil || root.isNullUnlocked() {
+	var lang Language
+	if root.tree != nil {
+		lang = root.tree.lang
+	}
+	if lang == nil {
+		lang = q.lang
+	}
+	if lang == nil {
+		return nil
+	}
+
+	q.mu.Lock()
+	defer q.mu.Unlock()
+	if q.tls == nil || q.ptr == 0 {
+		return nil
+	}
+
+	// Temporary parser for a native tree (snapshot path cannot feed queries).
+	p := NewParser()
+	defer p.Delete()
+	if !p.SetLanguage(lang) {
+		return nil
+	}
+
+	p.mu.Lock()
+	defer p.mu.Unlock()
+
+	treePtr := p.parseNative(source)
+	if treePtr == 0 {
+		return nil
+	}
+	defer ts_tree_delete(p.tls, treePtr)
+
+	nativeRoot := ts_tree_root_node(p.tls, treePtr)
+	nativeNode := walkChildPath(p.tls, nativeRoot, root.data.path)
+	if ts_node_is_null(p.tls, nativeNode) != 0 {
 		return nil
 	}
 
@@ -198,8 +235,14 @@ func (q *Query) ExecuteMatches(root *Node, source []byte) []QueryMatch {
 	if cursor.ptr == 0 {
 		return nil
 	}
+	defer func() {
+		cursor.cleanup.Stop()
+		freeCursorUnlocked(cursorRes{ptr: cursor.ptr, query: q})
+		cursor.ptr = 0
+		cursor.query = nil
+	}()
 
-	ts_query_cursor_exec(q.tls, cursor.ptr, q.ptr, root.node)
+	ts_query_cursor_exec(q.tls, cursor.ptr, q.ptr, nativeNode)
 
 	matches := make([]QueryMatch, 0)
 	var rawMatch TSQueryMatch
@@ -208,7 +251,6 @@ func (q *Query) ExecuteMatches(root *Node, source []byte) []QueryMatch {
 		for i := uint16(0); i < rawMatch.Fcapture_count; i++ {
 			rawCapture := (*TSQueryCapture)(unsafe.Pointer(rawMatch.Fcaptures + uintptr(i)*unsafe.Sizeof(TSQueryCapture{})))
 			name := q.captureNameUnlocked(rawCapture.Findex)
-			// Capture nodes share the query TLS; we already hold q.mu.
 			start := ts_node_start_byte(q.tls, rawCapture.Fnode)
 			end := ts_node_end_byte(q.tls, rawCapture.Fnode)
 			typePtr := ts_node_type(q.tls, rawCapture.Fnode)
@@ -235,13 +277,19 @@ func (q *Query) ExecuteMatches(root *Node, source []byte) []QueryMatch {
 			Captures:     captures,
 		})
 	}
-
-	// Eager free under q.mu (already held); freeCursor would re-lock.
-	cursor.cleanup.Stop()
-	freeCursorUnlocked(cursorRes{ptr: cursor.ptr, query: q})
-	cursor.ptr = 0
-	cursor.query = nil
 	return matches
+}
+
+// walkChildPath follows child indices from root (empty path = root).
+func walkChildPath(tls *libc.TLS, root TSNode, path []uint32) TSNode {
+	n := root
+	for _, i := range path {
+		if ts_node_is_null(tls, n) != 0 {
+			return n
+		}
+		n = ts_node_child(tls, n, i)
+	}
+	return n
 }
 
 func (q *Query) captureNameUnlocked(captureIndex uint32) string {

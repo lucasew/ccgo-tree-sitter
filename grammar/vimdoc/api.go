@@ -1,16 +1,5 @@
 package grammar_vimdoc
 
-import (
-	"unsafe"
-	"github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar"
-)
-
-// Language returns the TSLanguage for vimdoc
-func Language() *grammar.TSLanguage {
-	ptr := tree_sitter_vimdoc(nil)
-	return (*grammar.TSLanguage)(unsafe.Pointer(ptr))
-}
-
-func init() {
-	grammar.Register("vimdoc", Language())
-}
+// Language package for vimdoc (leaven-generated grammar.go).
+// Registration against the hand-written grammar API is TODO once core types match.
+func init() {}

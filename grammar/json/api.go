@@ -1,16 +1,5 @@
 package grammar_json
 
-import (
-	"unsafe"
-	"github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar"
-)
-
-// Language returns the TSLanguage for json
-func Language() *grammar.TSLanguage {
-	ptr := tree_sitter_json(nil)
-	return (*grammar.TSLanguage)(unsafe.Pointer(ptr))
-}
-
-func init() {
-	grammar.Register("json", Language())
-}
+// Language package for json (leaven-generated grammar.go).
+// Registration against the hand-written grammar API is TODO once core types match.
+func init() {}

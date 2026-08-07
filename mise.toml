@@ -4,28 +4,21 @@ uv = "0.11.26"
 "go:golang.org/x/tools/gopls" = "0.22.0"
 # Places grammar C sources (core:place); also used by CI prepare / add-grammar.
 "github:lucasew/workspaced" = "0.14.1"
+# Clang 14 for leaven (typed LLVM pointers).
+"conda:clang" = "14.0.6"
 
-# Pure-Go default: parse/tests must not require a host C compiler.
-# Codegen tasks set CC=clang only where the probe needs it.
+# Pure-Go default: parse/tests must not require a host C compiler after codegen.
 [env]
 CGO_ENABLED = "0"
 
-# ---------------------------------------------------------------------------
-# Local: test against vendored third-party/tree-sitter-*/. Never transpile
-# on a laptop. CI: prepare packs the checkout; codegen:* only needs the tip
-# tree + tree-sitter core cache (not a full workspaced re-fetch of grammars).
-# ---------------------------------------------------------------------------
-
 [tasks."grammars:sync"]
-description = "Refresh vendored grammar C sources via workspaced core:place (local / lock bumps)"
+description = "Refresh vendored grammar C sources via workspaced core:place"
 run = "workspaced codebase apply"
 
 [tasks."grammars:lock"]
 description = "Refresh workspaced.lock.json pins for tree_sitter / #grammar / #fixture inputs"
 run = "workspaced mod lock"
 
-# Core tree-sitter is a workspaced *source* (not core:place). Path is the
-# workspaced github cache; first lock populates it, codegen re-fetches on miss.
 [tasks."tree-sitter:path"]
 description = "Print workspaced cache path for tree_sitter (ensure fetch if missing)"
 run = "go run ./cmd/codegen print-tree-sitter-path"
@@ -38,44 +31,8 @@ description = "Run unit tests against host grammars (pure Go, no CGO)"
 env = { CGO_ENABLED = "0" }
 run = "go test ./..."
 
-# Codegen is CI-only (native runner + preprocessor). Vendored grammar C is in
-# the tree; core is resolved via TREE_SITTER_PATH / workspaced cache (set
-# GITHUB_TOKEN in CI so codeload is not anonymous).
-
-[tasks."codegen:linux-amd64"]
-description = "CI-only: transpile for linux/amd64"
-env = { TARGET_GOOS = "linux", TARGET_GOARCH = "amd64", CC = "clang", CGO_ENABLED = "0" }
+# Leaven codegen: clang 14 -emit-llvm + go tool leaven (host IR, not multi-GOOS matrix).
+[tasks.codegen]
+description = "Transpile core + all grammars via clang IR + leaven"
+env = { CC = "clang", CGO_ENABLED = "0" }
 run = "go run -v ./cmd/codegen"
-
-[tasks."codegen:linux-arm64"]
-description = "CI-only: transpile for linux/arm64"
-env = { TARGET_GOOS = "linux", TARGET_GOARCH = "arm64", CC = "clang", CGO_ENABLED = "0" }
-run = "go run -v ./cmd/codegen"
-
-[tasks."codegen:linux-386"]
-description = "CI-only: transpile for linux/386"
-env = { TARGET_GOOS = "linux", TARGET_GOARCH = "386", CC = "clang", CGO_ENABLED = "0" }
-run = "go run -v ./cmd/codegen"
-
-[tasks."codegen:darwin-amd64"]
-description = "CI-only: transpile for darwin/amd64"
-env = { TARGET_GOOS = "darwin", TARGET_GOARCH = "amd64", CC = "clang", CGO_ENABLED = "0" }
-run = "go run -v ./cmd/codegen"
-
-[tasks."codegen:darwin-arm64"]
-description = "CI-only: transpile for darwin/arm64"
-env = { TARGET_GOOS = "darwin", TARGET_GOARCH = "arm64", CC = "clang", CGO_ENABLED = "0" }
-run = "go run -v ./cmd/codegen"
-
-[tasks."codegen:windows-amd64"]
-description = "CI-only: transpile for windows/amd64 (MinGW gcc -E)"
-env = { TARGET_GOOS = "windows", TARGET_GOARCH = "amd64", CGO_ENABLED = "0" }
-run = "go run -v ./cmd/codegen"
-
-[tasks."codegen:windows-arm64"]
-description = "CI-only: transpile for windows/arm64 (MinGW gcc -E)"
-env = { TARGET_GOOS = "windows", TARGET_GOARCH = "arm64", CGO_ENABLED = "0" }
-run = "go run -v ./cmd/codegen"
-
-# Intentionally no host `codegen` / `codegen:all` convenience — multi-platform
-# regen is the CI matrix only (see .github/workflows/ci.yml).

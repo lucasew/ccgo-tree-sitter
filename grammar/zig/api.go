@@ -1,16 +1,5 @@
 package grammar_zig
 
-import (
-	"unsafe"
-	"github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar"
-)
-
-// Language returns the TSLanguage for zig
-func Language() *grammar.TSLanguage {
-	ptr := tree_sitter_zig(nil)
-	return (*grammar.TSLanguage)(unsafe.Pointer(ptr))
-}
-
-func init() {
-	grammar.Register("zig", Language())
-}
+// Language package for zig (leaven-generated grammar.go).
+// Registration against the hand-written grammar API is TODO once core types match.
+func init() {}

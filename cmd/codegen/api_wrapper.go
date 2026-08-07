@@ -93,7 +93,8 @@ func findLiveCoreAPI(dest string) (string, error) {
 	return "", fmt.Errorf("core api.go missing at %s and hand-maintained grammar/api.go not found relative to outputDir or cwd; restore grammar/api.go before running codegen", dest)
 }
 
-// GenerateAPIWrapper creates API wrapper files for core and grammars (without external scanner)
+// GenerateAPIWrapper writes a minimal language package entry (no scanner).
+// Leaven emits tree_sitter_<name>() with no TLS arg.
 func GenerateAPIWrapper(outputDir, grammarName string) error {
 	if err := ensureCoreAPI(outputDir); err != nil {
 		return err
@@ -101,63 +102,15 @@ func GenerateAPIWrapper(outputDir, grammarName string) error {
 
 	grammarAPI := fmt.Sprintf(`package grammar_%s
 
-import (
-	"unsafe"
-	"github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar"
-)
+// Language package for %s (leaven-generated grammar.go).
+// Registration against the hand-written grammar API is TODO once core types match.
+func init() {}
+`, grammarName, grammarName)
 
-// Language returns the TSLanguage for %s
-func Language() *grammar.TSLanguage {
-	ptr := tree_sitter_%s(nil)
-	return (*grammar.TSLanguage)(unsafe.Pointer(ptr))
+	return os.WriteFile(filepath.Join(outputDir, grammarName, "api.go"), []byte(grammarAPI), 0644)
 }
 
-func init() {
-	grammar.Register("%s", Language())
-}
-`, grammarName, grammarName, grammarName, grammarName)
-
-	grammarAPIPath := filepath.Join(outputDir, grammarName, "api.go")
-	return os.WriteFile(grammarAPIPath, []byte(grammarAPI), 0644)
-}
-
-// GenerateAPIWrapperWithScanner creates API wrapper with external scanner support
+// GenerateAPIWrapperWithScanner is the same stub for grammars with scanners.
 func GenerateAPIWrapperWithScanner(outputDir, grammarName string) error {
-	if err := ensureCoreAPI(outputDir); err != nil {
-		return err
-	}
-
-	grammarAPI := fmt.Sprintf(`package grammar_%s
-
-import (
-	"unsafe"
-	"reflect"
-	"github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar"
-)
-
-// Language returns the TSLanguage for %s with external scanner properly connected
-func Language() *grammar.TSLanguage {
-	ptr := tree_sitter_%s(nil)
-	lang := (*grammar.TSLanguage)(unsafe.Pointer(ptr))
-
-	// WORKAROUND: ccgo doesn't properly initialize function pointers in struct literals
-	// Manually connect external scanner functions
-	if lang.Fexternal_scanner.Fcreate == 0 {
-		lang.Fexternal_scanner.Fcreate = reflect.ValueOf(tree_sitter_%s_external_scanner_create).Pointer()
-		lang.Fexternal_scanner.Fdestroy = reflect.ValueOf(tree_sitter_%s_external_scanner_destroy).Pointer()
-		lang.Fexternal_scanner.Fscan = reflect.ValueOf(tree_sitter_%s_external_scanner_scan).Pointer()
-		lang.Fexternal_scanner.Fserialize = reflect.ValueOf(tree_sitter_%s_external_scanner_serialize).Pointer()
-		lang.Fexternal_scanner.Fdeserialize = reflect.ValueOf(tree_sitter_%s_external_scanner_deserialize).Pointer()
-	}
-
-	return lang
-}
-
-func init() {
-	grammar.Register("%s", Language())
-}
-`, grammarName, grammarName, grammarName, grammarName, grammarName, grammarName, grammarName, grammarName, grammarName)
-
-	grammarAPIPath := filepath.Join(outputDir, grammarName, "api.go")
-	return os.WriteFile(grammarAPIPath, []byte(grammarAPI), 0644)
+	return GenerateAPIWrapper(outputDir, grammarName)
 }

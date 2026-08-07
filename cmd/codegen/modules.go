@@ -17,10 +17,6 @@ const (
 	grammarModulePath = rootModulePath + "/grammar"
 	moduleGoVersion   = "1.25.0"
 	localPseudoVer    = "v0.0.0"
-
-	// Forked libc with tree-sitter / Windows shims (not local submodule).
-	libcReplacePath = "github.com/modernc-tree-sitter/libc"
-	libcReplaceVer  = "v0.0.0-20260707203921-3c7a53d19f3f"
 )
 
 // ensureGrammarModules writes grammar/go.mod, grammar/<lang>/go.mod (with local
@@ -98,6 +94,7 @@ func runGo(dir string, args ...string) error {
 	return cmd.Run()
 }
 
+// listGrammarLangs lists language dirs that have leaven grammar.go.
 func listGrammarLangs(grammarDir string) ([]string, error) {
 	entries, err := os.ReadDir(grammarDir)
 	if err != nil {
@@ -109,7 +106,7 @@ func listGrammarLangs(grammarDir string) ([]string, error) {
 			continue
 		}
 		name := e.Name()
-		if _, err := os.Stat(filepath.Join(grammarDir, name, "api.go")); err != nil {
+		if _, err := os.Stat(filepath.Join(grammarDir, name, "grammar.go")); err != nil {
 			continue
 		}
 		langs = append(langs, name)
@@ -119,39 +116,22 @@ func listGrammarLangs(grammarDir string) ([]string, error) {
 }
 
 func writeCoreGoMod(grammarDir string) error {
-	libcVer, err := currentLibcVersion()
-	if err != nil {
-		return err
-	}
 	content := fmt.Sprintf(`module %s
 
 go %s
-
-require modernc.org/libc %s
-
-replace modernc.org/libc => %s %s
-`, grammarModulePath, moduleGoVersion, libcVer, libcReplacePath, libcReplaceVer)
+`, grammarModulePath, moduleGoVersion)
 	return os.WriteFile(filepath.Join(grammarDir, "go.mod"), []byte(content), 0644)
 }
 
 func writeLangGoMod(grammarDir, lang string) error {
-	libcVer, err := currentLibcVersion()
-	if err != nil {
-		return err
-	}
 	content := fmt.Sprintf(`module %s/%s
 
 go %s
 
-require (
-	%s %s
-	modernc.org/libc %s
-)
+require %s %s
 
 replace %s => ../
-
-replace modernc.org/libc => %s %s
-`, grammarModulePath, lang, moduleGoVersion, grammarModulePath, localPseudoVer, libcVer, grammarModulePath, libcReplacePath, libcReplaceVer)
+`, grammarModulePath, lang, moduleGoVersion, grammarModulePath, localPseudoVer, grammarModulePath)
 	return os.WriteFile(filepath.Join(grammarDir, lang, "go.mod"), []byte(content), 0644)
 }
 
@@ -195,7 +175,7 @@ func updateRootGoMod(outputDir string, langs []string) error {
 	// Drop every local grammar require/replace we manage, including stale
 	// languages removed since the last run (prefix match, not only current set).
 	isManaged := func(path string) bool {
-		if path == grammarModulePath || path == "modernc.org/libc" {
+		if path == grammarModulePath {
 			return true
 		}
 		return strings.HasPrefix(path, grammarModulePath+"/")
@@ -236,15 +216,6 @@ func updateRootGoMod(outputDir string, langs []string) error {
 		if err := f.AddReplace(m.path, "", m.dir, ""); err != nil {
 			return err
 		}
-	}
-	libcVer, err := currentLibcVersion()
-	if err != nil {
-		return err
-	}
-	f.AddNewRequire("modernc.org/libc", libcVer, false)
-	// Keep the modernc-tree-sitter libc fork (not a third-party submodule).
-	if err := f.AddReplace("modernc.org/libc", "", libcReplacePath, libcReplaceVer); err != nil {
-		return err
 	}
 
 	f.Cleanup()

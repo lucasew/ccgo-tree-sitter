@@ -1,16 +1,5 @@
 package grammar_diff
 
-import (
-	"unsafe"
-	"github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar"
-)
-
-// Language returns the TSLanguage for diff
-func Language() *grammar.TSLanguage {
-	ptr := tree_sitter_diff(nil)
-	return (*grammar.TSLanguage)(unsafe.Pointer(ptr))
-}
-
-func init() {
-	grammar.Register("diff", Language())
-}
+// Language package for diff (leaven-generated grammar.go).
+// Registration against the hand-written grammar API is TODO once core types match.
+func init() {}

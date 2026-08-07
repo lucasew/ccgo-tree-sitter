@@ -1,16 +1,5 @@
 package grammar_psv
 
-import (
-	"unsafe"
-	"github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar"
-)
-
-// Language returns the TSLanguage for psv
-func Language() *grammar.TSLanguage {
-	ptr := tree_sitter_psv(nil)
-	return (*grammar.TSLanguage)(unsafe.Pointer(ptr))
-}
-
-func init() {
-	grammar.Register("psv", Language())
-}
+// Language package for psv (leaven-generated grammar.go).
+// Registration against the hand-written grammar API is TODO once core types match.
+func init() {}

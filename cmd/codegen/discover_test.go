@@ -73,18 +73,12 @@ func TestDiscoverGrammarUnits_integration(t *testing.T) {
 		}
 	}
 
-	// fsharp (~55MB parser.c) stack-overflows ccgo — must not be scheduled.
-	if _, ok := byName["fsharp"]; ok {
-		t.Error("fsharp must be excluded (ccgo stack overflow on oversized tables)")
+	// No denylist / size gate: oversized grammars (e.g. fsharp) are scheduled.
+	if _, ok := byName["fsharp"]; !ok {
+		t.Error("expected fsharp to be discovered (no skip filters)")
 	}
-	if _, ok := byName["fsharp_signature"]; ok {
-		t.Error("fsharp_signature must be excluded with fsharp")
-	}
-}
-
-func TestSkipTranspileReasonCoversFsharp(t *testing.T) {
-	if _, ok := skipTranspileReason["fsharp"]; !ok {
-		t.Fatal("expected fsharp in skipTranspileReason")
+	if _, ok := byName["fsharp_signature"]; !ok {
+		t.Error("expected fsharp_signature to be discovered (no skip filters)")
 	}
 }
 

@@ -896,11 +896,11 @@ type anon_33 struct {
 }
 
 type MutableSubtree struct {
-	F0 *SubtreeHeapData
+	F0 uintptr
 }
 
 type Subtree struct {
-	F0 *SubtreeHeapData
+	F0 uintptr
 }
 
 type TSParseAction struct {
@@ -5176,7 +5176,6 @@ _return:
 func ts_subtree_get_changed_ranges(old_tree *Subtree, new_tree *Subtree, cursor1 *TreeCursor, cursor2 *TreeCursor, language *TSLanguage, included_range_differences *TSRangeArray, ranges **TSRange) int32 {
 	var ranges_addr ***TSRange
 	var old_tree_addr, new_tree_addr **Subtree
-	var coerce_dive, coerce_dive115 **SubtreeHeapData
 	var language_addr **TSLanguage
 	var _range, contents, contents132, v192 **TSRange
 	var included_range_differences_addr **TSRangeArray
@@ -5184,7 +5183,6 @@ func ts_subtree_get_changed_ranges(old_tree *Subtree, new_tree *Subtree, cursor1
 	var old_iter, new_iter *Iterator
 	var position, next_position, coerce, tmp, tmp29, tmp37, tmp41, agg_tmp, agg_tmp44, tmp52, agg_tmp53, agg_tmp56, coerce63, coerce72, old_size, new_size *Length
 	var v2, v5, v149, v153 *Subtree
-	var v150, v154 *SubtreeHeapData
 	var v3, v6 *TSLanguage
 	var v142, arrayidx, v144, v191 *TSRange
 	var results, v44, v136, v139, v141 *TSRangeArray
@@ -5196,6 +5194,7 @@ func ts_subtree_get_changed_ranges(old_tree *Subtree, new_tree *Subtree, cursor1
 	F0 int64
 	F1 int32
 }
+	var coerce_dive, coerce_dive115 *uintptr
 	var cmp, cmp6, cmp12, call17, call24, call27, call35, call61, cmp67, v110, call69, cmp76, v115, cmp82, cmp88, tobool, cmp96, cmp99, cmp104, call109, call111, lnot, v148, cmp120, cmp125 bool
 	var v120 byte
 	var v11, v12, v18, v24, v27, v28, v34, v40, call11, v43, v45, v46, v49, v50, v55, v56, v61, v75, v81, v95, v101, v108, v109, v113, v114, v116, v117, v118, v119, v126, v132, v135, v137, v138, v140, v143, v145, v146, v147, inc, v157, v158, v164, v170, v171, v172, v178, v184, v193 int32
@@ -5204,6 +5203,7 @@ func ts_subtree_get_changed_ranges(old_tree *Subtree, new_tree *Subtree, cursor1
 	F0 int64
 	F1 int32
 }
+	var v150, v154 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = old_tree_addr, new_tree_addr, cursor1_addr, cursor2_addr, language_addr, included_range_differences_addr, ranges_addr, results, old_iter, new_iter, included_range_difference_index, position, tmp_coerce, next_position, tmp_coerce2, position_coerce, next_position_coerce, next_position_coerce8, position_coerce9, comparison, coerce, tmp_coerce15, is_changed, tmp, tmp_coerce21, tmp29, tmp_coerce31, tmp37, tmp_coerce39, tmp41, agg_tmp, tmp_coerce43, agg_tmp44, tmp_coerce46, agg_tmp_coerce, agg_tmp44_coerce, tmp_coerce48, tmp52, agg_tmp53, tmp_coerce55, agg_tmp56, tmp_coerce58, agg_tmp53_coerce, agg_tmp56_coerce, tmp_coerce60, coerce63, tmp_coerce64, coerce72, tmp_coerce73, position_coerce92, next_position_coerce93, _range, old_size, tmp_coerce114, new_size, tmp_coerce117, old_size_coerce, new_size_coerce, new_size_coerce127, old_size_coerce128, v0, v1, v2, v3, v4, v5, v6, call, v7, v8, call1, v9, v10, bytes, v11, bytes3, v12, cmp, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, bytes4, v27, bytes5, v28, cmp6, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, call11, v43, cmp12, v44, v45, bytes13, v46, call14, v47, v48, bytes16, v49, call17, v50, call20, v51, v52, v53, v54, bytes23, v55, call24, bytes26, v56, call27, call30, v57, v58, v59, v60, bytes34, v61, call35, call38, v62, v63, v64, v65, call42, v66, v67, call45, v68, v69, v70, v71, v72, v73, v74, v75, v76, v77, v78, v79, v80, v81, call47, v82, v83, v84, v85, call54, v86, v87, call57, v88, v89, v90, v91, v92, v93, v94, v95, v96, v97, v98, v99, v100, v101, call59, v102, v103, v104, v105, call61, call62, v106, v107, bytes65, v108, bytes66, v109, cmp67, v110, call69, call71, v111, v112, bytes74, v113, bytes75, v114, cmp76, v115, visible_depth, v116, visible_depth81, v117, cmp82, visible_depth86, v118, visible_depth87, v119, cmp88, v120, tobool, v121, v122, v123, v124, v125, v126, v127, v128, v129, v130, v131, v132, v133, v134, v135, v136, size, v137, cmp96, v138, v139, size98, v140, cmp99, v141, contents, v142, v143, idxprom, arrayidx, v144, end_byte, v145, bytes103, v146, cmp104, v147, inc, call109, call111, lnot, v148, v149, coerce_dive, v150, call113, v151, v152, v153, coerce_dive115, v154, call116, v155, v156, bytes118, v157, bytes119, v158, cmp120, v159, v160, v161, v162, v163, v164, v165, v166, v167, v168, v169, v170, bytes123, v171, bytes124, v172, cmp125, v173, v174, v175, v176, v177, v178, v179, v180, v181, v182, v183, v184, v185, cursor, v186, v187, v188, cursor131, v189, v190, contents132, v191, v192, size133, v193
 
@@ -5983,7 +5983,6 @@ if_end130:
 
 func iterator_new(agg_result *Iterator, cursor *TreeCursor, tree *Subtree, language *TSLanguage) {
 	var tree_addr, subtree **Subtree
-	var ptr **SubtreeHeapData
 	var language_addr, language13 **TSLanguage
 	var cursor_addr **TreeCursor
 	var contents, contents6, contents8 **TreeCursorEntry
@@ -5999,6 +5998,7 @@ func iterator_new(agg_result *Iterator, cursor *TreeCursor, tree *Subtree, langu
 	F0 int64
 	F1 int32
 }
+	var ptr *uintptr
 	var v5, v12, inc int32
 	var idxprom int64
 	var call11 struct {
@@ -6090,8 +6090,8 @@ do_end:
 	in_padding = &agg_result.F3
 	*in_padding = 0
 	prev_external_token = &agg_result.F4
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(prev_external_token))
-	*ptr = nil
+	ptr = (*uintptr)(unsafe.Pointer(prev_external_token))
+	*ptr = 0
 }
 
 func iterator_start_position(self *Iterator) struct {
@@ -6100,12 +6100,10 @@ func iterator_start_position(self *Iterator) struct {
 } {
 	var self_addr **Iterator
 	var subtree **Subtree
-	var coerce_dive **SubtreeHeapData
 	var contents **TreeCursorEntry
 	var v0, v2, v4, v6, v10 *Iterator
 	var retval, agg_tmp, position, position13 *Length
 	var v14 *Subtree
-	var v15 *SubtreeHeapData
 	var cursor, cursor2, cursor5, cursor7 *TreeCursor
 	var entry1, v5, arrayidx *TreeCursorEntry
 	var stack, stack3, stack6, stack8 *anon_2
@@ -6116,6 +6114,7 @@ func iterator_start_position(self *Iterator) struct {
 	F0 int64
 	F1 int32
 }
+	var coerce_dive *uintptr
 	var cmp, tobool bool
 	var v11 byte
 	var v1, sub, v3, v7, sub10, v23, v29 int32
@@ -6124,6 +6123,7 @@ func iterator_start_position(self *Iterator) struct {
 	F0 int64
 	F1 int32
 }
+	var v15 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, self_addr, entry1, agg_tmp, tmp_coerce, position13_coerce, agg_tmp_coerce, tmp_coerce15, retval_coerce, v0, cursor, stack, size, v1, sub, v2, cursor2, stack3, size4, v3, cmp, v4, cursor5, stack6, contents, v5, v6, cursor7, stack8, size9, v7, sub10, idxprom, arrayidx, v8, v9, v10, in_padding, v11, tobool, position, v12, v13, position13, subtree, v14, coerce_dive, v15, call, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, v28, v29, call14, v30, v31, v32, v33, v34
 
@@ -6253,11 +6253,9 @@ _return:
 
 func iterator_compare(old_iter *Iterator, new_iter *Iterator) int32 {
 	var old_iter_addr, new_iter_addr **Iterator
-	var coerce_dive, coerce_dive1, ptr, ptr3, ptr5, ptr7, coerce_dive20, coerce_dive22, coerce_dive27, coerce_dive29, coerce_dive31, coerce_dive33, coerce_dive36, coerce_dive38, coerce_dive77, coerce_dive85, coerce_dive86 **SubtreeHeapData
 	var v2, v3, v43, v44 *Iterator
 	var coerce, coerce24 *Length
 	var old_tree, new_tree, prev_external_token, prev_external_token84 *Subtree
-	var v4, v5, v6, v7, v8, v9, v14, v18, v22, v23, v24, v25, v26, v27, v41, v45, v46 *SubtreeHeapData
 	var old_has_external_tokens, new_has_external_tokens, v0, v1, v15, v16, v19, v20 *byte
 	var old_alias_symbol, new_alias_symbol, old_symbol, new_symbol, old_state, new_state *int16
 	var retval, old_start, new_start, old_size, new_size, old_error_cost, new_error_cost, bytes, bytes26 *int32
@@ -6265,6 +6263,7 @@ func iterator_compare(old_iter *Iterator, new_iter *Iterator) int32 {
 	F0 int64
 	F1 int32
 }
+	var coerce_dive, coerce_dive1, ptr, ptr3, ptr5, ptr7, coerce_dive20, coerce_dive22, coerce_dive27, coerce_dive29, coerce_dive31, coerce_dive33, coerce_dive36, coerce_dive38, coerce_dive77, coerce_dive85, coerce_dive86 *uintptr
 	var tobool, tobool4, tobool6, tobool8, cmp, cmp16, call32, call34, cmp40, cmp44, cmp47, cmp51, cmp55, cmp59, cmp62, cmp64, cmp67, tobool70, tobool72, cmp74, call78, tobool81, call87 bool
 	var frombool, frombool35, v39, v40, v42 byte
 	var call, call2, v10, v11, v12, v13, call28, call30, v30, v33, v34, v35, v36 int16
@@ -6273,6 +6272,7 @@ func iterator_compare(old_iter *Iterator, new_iter *Iterator) int32 {
 	F0 int64
 	F1 int32
 }
+	var v4, v5, v6, v7, v8, v9, v14, v18, v22, v23, v24, v25, v26, v27, v41, v45, v46 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, old_iter_addr, new_iter_addr, old_tree, new_tree, old_start, new_start, old_alias_symbol, new_alias_symbol, old_symbol, new_symbol, old_size, coerce, tmp_coerce, new_size, coerce24, tmp_coerce25, old_state, new_state, old_has_external_tokens, new_has_external_tokens, old_error_cost, new_error_cost, v0, v1, v2, v3, coerce_dive, v4, call, coerce_dive1, v5, call2, ptr, v6, tobool, ptr3, v7, tobool4, ptr5, v8, tobool6, ptr7, v9, tobool8, v10, conv, v11, conv11, cmp, v12, conv14, v13, conv15, cmp16, coerce_dive20, v14, call21, v15, v16, bytes, v17, coerce_dive22, v18, call23, v19, v20, bytes26, v21, coerce_dive27, v22, call28, coerce_dive29, v23, call30, coerce_dive31, v24, call32, frombool, coerce_dive33, v25, call34, frombool35, coerce_dive36, v26, call37, coerce_dive38, v27, call39, v28, v29, cmp40, v30, conv43, cmp44, v31, v32, cmp47, v33, conv50, cmp51, v34, conv54, cmp55, v35, conv58, cmp59, conv60, v36, conv61, cmp62, conv63, cmp64, v37, v38, cmp67, v39, tobool70, conv71, v40, tobool72, conv73, cmp74, coerce_dive77, v41, call78, v42, tobool81, v43, prev_external_token, v44, prev_external_token84, coerce_dive85, v45, coerce_dive86, v46, call87, v47
 
@@ -6327,9 +6327,9 @@ func iterator_compare(old_iter *Iterator, new_iter *Iterator) int32 {
 	v5 = *coerce_dive1
 	call2 = ts_subtree_symbol(v5)
 	*new_symbol = call2
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(old_tree))
+	ptr = (*uintptr)(unsafe.Pointer(old_tree))
 	v6 = *ptr
-	tobool = v6 != nil
+	tobool = v6 != 0
 	if tobool {
 		goto if_end
 	} else {
@@ -6337,9 +6337,9 @@ func iterator_compare(old_iter *Iterator, new_iter *Iterator) int32 {
 	}
 
 land_lhs_true:
-	ptr3 = (**SubtreeHeapData)(unsafe.Pointer(new_tree))
+	ptr3 = (*uintptr)(unsafe.Pointer(new_tree))
 	v7 = *ptr3
-	tobool4 = v7 != nil
+	tobool4 = v7 != 0
 	if tobool4 {
 		goto if_end
 	} else {
@@ -6351,9 +6351,9 @@ if_then:
 	goto _return
 
 if_end:
-	ptr5 = (**SubtreeHeapData)(unsafe.Pointer(old_tree))
+	ptr5 = (*uintptr)(unsafe.Pointer(old_tree))
 	v8 = *ptr5
-	tobool6 = v8 != nil
+	tobool6 = v8 != 0
 	if tobool6 {
 		goto lor_lhs_false
 	} else {
@@ -6361,9 +6361,9 @@ if_end:
 	}
 
 lor_lhs_false:
-	ptr7 = (**SubtreeHeapData)(unsafe.Pointer(new_tree))
+	ptr7 = (*uintptr)(unsafe.Pointer(new_tree))
 	v9 = *ptr7
-	tobool8 = v9 != nil
+	tobool8 = v9 != 0
 	if tobool8 {
 		goto if_end10
 	} else {
@@ -6592,12 +6592,10 @@ func iterator_end_position(self *Iterator) struct {
 } {
 	var self_addr **Iterator
 	var subtree, subtree16 **Subtree
-	var coerce_dive, coerce_dive17 **SubtreeHeapData
 	var contents **TreeCursorEntry
 	var v0, v2, v4, v6, v28 *Iterator
 	var retval, result, agg_tmp, agg_tmp15, position *Length
 	var v10, v32 *Subtree
-	var v11, v33 *SubtreeHeapData
 	var cursor, cursor2, cursor5, cursor7 *TreeCursor
 	var entry1, v5, arrayidx *TreeCursorEntry
 	var stack, stack3, stack6, stack8 *anon_2
@@ -6608,6 +6606,7 @@ func iterator_end_position(self *Iterator) struct {
 	F0 int64
 	F1 int32
 }
+	var coerce_dive, coerce_dive17 *uintptr
 	var cmp, tobool bool
 	var v29 byte
 	var v1, sub, v3, v7, sub10, v19, v25, v41, v47 int32
@@ -6616,6 +6615,7 @@ func iterator_end_position(self *Iterator) struct {
 	F0 int64
 	F1 int32
 }
+	var v11, v33 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, self_addr, entry1, result, agg_tmp, tmp_coerce, position_coerce, agg_tmp_coerce, tmp_coerce12, agg_tmp15, tmp_coerce19, result_coerce, agg_tmp15_coerce, tmp_coerce21, retval_coerce, v0, cursor, stack, size, v1, sub, v2, cursor2, stack3, size4, v3, cmp, v4, cursor5, stack6, contents, v5, v6, cursor7, stack8, size9, v7, sub10, idxprom, arrayidx, v8, v9, position, subtree, v10, coerce_dive, v11, call, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, call11, v26, v27, v28, in_padding, v29, tobool, v30, v31, subtree16, v32, coerce_dive17, v33, call18, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, call20, v48, v49, v50, v51, v52
 
@@ -6791,12 +6791,10 @@ _return:
 func iterator_descend(self *Iterator, goal_position int32) bool {
 	var self_addr **Iterator
 	var child, subtree, subtree15, subtree16, subtree17, subtree54 **Subtree
-	var coerce_dive, ptr, ptr18, coerce_dive21, coerce_dive26, coerce_dive68, coerce_dive73, coerce_dive75, ptr76 **SubtreeHeapData
 	var contents, contents36, contents45, contents48 **TreeCursorEntry
 	var v0, v2, v4, v6, v8, v65, v68, v70, v72, v73, v75, v84, v87, v88, v98 *Iterator
 	var position, child_left, agg_tmp, child_right, agg_tmp25, position13, position55 *Length
 	var last_external_token, v14, v18, v20, v22, v23, add_ptr, cond, arrayidx20, v27, v45, v77, v92, v95, prev_external_token *Subtree
-	var v15, v21, v24, v28, v46, v93, v96, call74, v97 *SubtreeHeapData
 	var data *SubtreeInlineData
 	var cursor, cursor2, cursor7, cursor9, cursor34, cursor37, cursor40, cursor43, cursor46, cursor49 *TreeCursor
 	var entry1, _compoundliteral, v7, arrayidx, v66, v71, v74, arrayidx53 *TreeCursorEntry
@@ -6809,6 +6807,7 @@ func iterator_descend(self *Iterator, goal_position int32) bool {
 	F0 int64
 	F1 int32
 }
+	var coerce_dive, ptr, ptr18, coerce_dive21, coerce_dive26, coerce_dive68, coerce_dive73, coerce_dive75, ptr76 *uintptr
 	var tobool, cmp, cmp14, bf_cast, cmp31, call57, cmp60, call69, tobool77, tobool81, v103 bool
 	var v1, bf_load, bf_clear, v102 byte
 	var v3, sub, v5, v9, sub12, call, v16, v17, v25, v26, v36, v42, v54, v60, v63, v64, v69, v76, inc, v80, v81, v85, v86, v89, inc64, v94, inc71, v101, inc80 int32
@@ -6817,6 +6816,7 @@ func iterator_descend(self *Iterator, goal_position int32) bool {
 	F0 int64
 	F1 int32
 }
+	var v15, v21, v24, v28, v46, v93, v96, call74, v97 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, self_addr, goal_position_addr, did_descend, entry1, position, structural_child_index, i, n, child, child_left, agg_tmp, tmp_coerce, position_coerce, agg_tmp_coerce, tmp_coerce24, child_right, agg_tmp25, tmp_coerce28, child_left_coerce, agg_tmp25_coerce, tmp_coerce30, _compoundliteral, last_external_token, v0, in_padding, v1, tobool, v2, cursor, stack, size, v3, sub, v4, cursor2, stack3, size4, v5, cmp, v6, cursor7, stack8, contents, v7, v8, cursor9, stack10, size11, v9, sub12, idxprom, arrayidx, v10, v11, position13, v12, v13, subtree, v14, coerce_dive, v15, call, v16, v17, cmp14, subtree15, v18, data, v19, bf_load, bf_clear, bf_cast, subtree16, v20, ptr, v21, v22, subtree17, v23, ptr18, v24, child_count, v25, idx_ext, idx_neg, add_ptr, cond, v26, idxprom19, arrayidx20, v27, coerce_dive21, v28, call22, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, call23, v43, v44, v45, coerce_dive26, v46, call27, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59, v60, call29, v61, v62, bytes, v63, v64, cmp31, v65, cursor34, stack35, contents36, v66, v67, v68, cursor37, stack38, size39, v69, v70, cursor40, stack41, capacity, call42, v71, v72, cursor43, stack44, contents45, v73, cursor46, stack47, contents48, v74, v75, cursor49, stack50, size51, v76, inc, idxprom52, arrayidx53, subtree54, v77, position55, v78, v79, child_index, v80, structural_child_index56, v81, descendant_index, v82, v83, v84, call57, bytes59, v85, v86, cmp60, v87, in_padding62, v88, visible_depth, v89, inc64, v90, v91, v92, coerce_dive68, v93, call69, v94, inc71, v95, coerce_dive73, v96, call74, coerce_dive75, ptr76, v97, tobool77, v98, prev_external_token, v99, v100, v101, inc80, v102, tobool81, v103
 
@@ -6977,14 +6977,14 @@ cond_true:
 cond_false:
 	subtree16 = &entry1.F0
 	v20 = *subtree16
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(v20))
+	ptr = (*uintptr)(unsafe.Pointer(v20))
 	v21 = *ptr
 	v22 = (*Subtree)(unsafe.Pointer(v21))
 	subtree17 = &entry1.F0
 	v23 = *subtree17
-	ptr18 = (**SubtreeHeapData)(unsafe.Pointer(v23))
+	ptr18 = (*uintptr)(unsafe.Pointer(v23))
 	v24 = *ptr18
-	child_count = &v24.F5
+	child_count = &(*SubtreeHeapData)(unsafe.Pointer(v24)).F5
 	v25 = *child_count
 	idx_ext = int64(uint64(uint32(v25)))
 	idx_neg = int64(0) - idx_ext
@@ -7190,9 +7190,9 @@ if_end72:
 	call74 = ts_subtree_last_external_token(v96)
 	coerce_dive75 = &last_external_token.F0
 	*coerce_dive75 = call74
-	ptr76 = (**SubtreeHeapData)(unsafe.Pointer(last_external_token))
+	ptr76 = (*uintptr)(unsafe.Pointer(last_external_token))
 	v97 = *ptr76
-	tobool77 = v97 != nil
+	tobool77 = v97 != 0
 	if tobool77 {
 		goto if_then78
 	} else {
@@ -7343,12 +7343,10 @@ func iterator_done(self *Iterator) bool {
 func iterator_advance(self *Iterator) {
 	var self_addr **Iterator
 	var parent, next_child, subtree, subtree35, subtree46, subtree52, subtree83 **Subtree
-	var coerce_dive, coerce_dive37, ptr, coerce_dive41, coerce_dive47, coerce_dive53, ptr58, ptr59, coerce_dive89 **SubtreeHeapData
 	var contents, contents27, contents64, contents73, contents76 **TreeCursorEntry
 	var v0, v2, v3, v4, v6, v7, v8, v10, v12, v16, v17, v19, v21, v23, v30, v67, v70, v72, v74, v75, v77, v86, v92, v93, v95 *Iterator
 	var position, agg_tmp, coerce, position45, position84 *Length
 	var last_external_token, v25, v27, prev_external_token, v33, v36, v55, v58, v60, v62, v63, add_ptr, cond, arrayidx61, v79, v87 *Subtree
-	var v28, call36, v29, v34, v37, v56, v61, v64, v88 *SubtreeHeapData
 	var data *SubtreeInlineData
 	var cursor, cursor10, cursor16, cursor19, cursor25, cursor28, cursor62, cursor65, cursor68, cursor71, cursor74, cursor77 *TreeCursor
 	var entry9, _compoundliteral, v11, arrayidx, v22, arrayidx33, v68, v73, v76, arrayidx82 *TreeCursorEntry
@@ -7360,6 +7358,7 @@ func iterator_advance(self *Iterator) {
 	F0 int64
 	F1 int32
 }
+	var coerce_dive, coerce_dive37, ptr, coerce_dive41, coerce_dive47, coerce_dive53, ptr58, ptr59, coerce_dive89 *uintptr
 	var tobool, call, call3, call5, call13, cmp, tobool38, cmp43, call54, bf_cast, call87, cmp92, call100 bool
 	var v1, bf_load, bf_clear byte
 	var v5, inc, v9, dec, v13, dec12, v18, sub, v20, v24, sub31, v26, add, call42, v35, v45, v51, v54, v57, inc56, v65, v66, v71, v78, inc80, v82, v83, v91, v94, inc97 int32
@@ -7368,6 +7367,7 @@ func iterator_advance(self *Iterator) {
 	F0 int64
 	F1 int32
 }
+	var v28, call36, v29, v34, v37, v56, v61, v64, v88 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self_addr, entry9, parent, child_index, last_external_token, position, agg_tmp, tmp_coerce, position45_coerce, agg_tmp_coerce, tmp_coerce50, structural_child_index, next_child, _compoundliteral, coerce, tmp_coerce91, v0, in_padding, v1, tobool, v2, in_padding1, v3, call, v4, visible_depth, v5, inc, v6, call3, v7, call5, v8, visible_depth7, v9, dec, v10, cursor, stack, contents, v11, v12, cursor10, stack11, size, v13, dec12, idxprom, arrayidx, v14, v15, v16, call13, v17, cursor16, stack17, size18, v18, sub, v19, cursor19, stack20, size21, v20, cmp, v21, cursor25, stack26, contents27, v22, v23, cursor28, stack29, size30, v24, sub31, idxprom32, arrayidx33, subtree, v25, child_index34, v26, add, subtree35, v27, coerce_dive, v28, call36, coerce_dive37, ptr, v29, tobool38, v30, prev_external_token, v31, v32, v33, coerce_dive41, v34, call42, v35, cmp43, position45, subtree46, v36, coerce_dive47, v37, call48, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, call49, v52, v53, structural_child_index51, v54, subtree52, v55, coerce_dive53, v56, call54, v57, inc56, v58, data, v59, bf_load, bf_clear, bf_cast, v60, ptr58, v61, v62, v63, ptr59, v64, child_count, v65, idx_ext, idx_neg, add_ptr, cond, v66, idxprom60, arrayidx61, v67, cursor62, stack63, contents64, v68, v69, v70, cursor65, stack66, size67, v71, v72, cursor68, stack69, capacity, call70, v73, v74, cursor71, stack72, contents73, v75, cursor74, stack75, contents76, v76, v77, cursor77, stack78, size79, v78, inc80, idxprom81, arrayidx82, subtree83, v79, position84, v80, v81, child_index85, v82, structural_child_index86, v83, descendant_index, v84, v85, v86, call87, v87, coerce_dive89, v88, call90, v89, v90, bytes, v91, cmp92, v92, in_padding94, v93, visible_depth96, v94, inc97, v95, call100
 
@@ -7544,9 +7544,9 @@ if_end24:
 	call36 = ts_subtree_last_external_token(v28)
 	coerce_dive37 = &last_external_token.F0
 	*coerce_dive37 = call36
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(last_external_token))
+	ptr = (*uintptr)(unsafe.Pointer(last_external_token))
 	v29 = *ptr
-	tobool38 = v29 != nil
+	tobool38 = v29 != 0
 	if tobool38 {
 		goto if_then39
 	} else {
@@ -7643,13 +7643,13 @@ cond_true:
 
 cond_false:
 	v60 = *parent
-	ptr58 = (**SubtreeHeapData)(unsafe.Pointer(v60))
+	ptr58 = (*uintptr)(unsafe.Pointer(v60))
 	v61 = *ptr58
 	v62 = (*Subtree)(unsafe.Pointer(v61))
 	v63 = *parent
-	ptr59 = (**SubtreeHeapData)(unsafe.Pointer(v63))
+	ptr59 = (*uintptr)(unsafe.Pointer(v63))
 	v64 = *ptr59
-	child_count = &v64.F5
+	child_count = &(*SubtreeHeapData)(unsafe.Pointer(v64)).F5
 	v65 = *child_count
 	idx_ext = int64(uint64(uint32(v65)))
 	idx_neg = int64(0) - idx_ext
@@ -7904,14 +7904,12 @@ if_end18:
 _return:
 }
 
-func ts_subtree_total_size(self_coerce *SubtreeHeapData) struct {
+func ts_subtree_total_size(self_coerce uintptr) struct {
 	F0 int64
 	F1 int32
 } {
-	var coerce_dive, coerce_dive1, coerce_dive3 **SubtreeHeapData
 	var retval, agg_tmp, agg_tmp2 *Length
 	var self *Subtree
-	var v0, v3 *SubtreeHeapData
 	var v1, v2, v4, v5, v6, v7, v12, v13, v18, v19, v20, v21 *byte
 	var v10, v16 *int32
 	var v8, v14 *int64
@@ -7919,12 +7917,14 @@ func ts_subtree_total_size(self_coerce *SubtreeHeapData) struct {
 	F0 int64
 	F1 int32
 }
+	var coerce_dive, coerce_dive1, coerce_dive3 *uintptr
 	var v11, v17 int32
 	var v9, v15 int64
 	var call, call4, call6, v22 struct {
 	F0 int64
 	F1 int32
 }
+	var v0, v3 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, self, agg_tmp, tmp_coerce, agg_tmp2, tmp_coerce5, agg_tmp_coerce, agg_tmp2_coerce, tmp_coerce7, retval_coerce, coerce_dive, coerce_dive1, v0, call, v1, v2, coerce_dive3, v3, call4, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, call6, v18, v19, v20, v21, v22
 
@@ -12417,21 +12417,21 @@ func ts_node_start_point(self *TSNode) int64 {
 }
 
 func ts_node_end_byte(self *TSNode) int32 {
-	var coerce_dive, coerce_dive2 **SubtreeHeapData
 	var coerce *Length
 	var agg_tmp *Subtree
-	var call1, v0 *SubtreeHeapData
 	var v1, v2 *byte
 	var bytes *int32
 	var tmp_coerce *struct {
 	F0 int64
 	F1 int32
 }
+	var coerce_dive, coerce_dive2 *uintptr
 	var call, v3, add int32
 	var call3 struct {
 	F0 int64
 	F1 int32
 }
+	var call1, v0 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _ = agg_tmp, coerce, tmp_coerce, call, call1, coerce_dive, coerce_dive2, v0, call3, v1, v2, bytes, v3, add
 
@@ -12458,14 +12458,12 @@ func ts_node_end_byte(self *TSNode) int32 {
 	return add
 }
 
-func ts_subtree_size(self_coerce *SubtreeHeapData) struct {
+func ts_subtree_size(self_coerce uintptr) struct {
 	F0 int64
 	F1 int32
 } {
-	var coerce_dive, ptr **SubtreeHeapData
 	var retval, size *Length
 	var self *Subtree
-	var v3 *SubtreeHeapData
 	var data, data1, data2 *SubtreeInlineData
 	var extent *TSPoint
 	var v0, size_bytes, size_bytes3, v4, v5, v6, v7 *byte
@@ -12474,6 +12472,7 @@ func ts_subtree_size(self_coerce *SubtreeHeapData) struct {
 	F0 int64
 	F1 int32
 }
+	var coerce_dive, ptr *uintptr
 	var bf_cast bool
 	var bf_load, bf_clear, v1, v2 byte
 	var conv, conv4 int32
@@ -12481,6 +12480,7 @@ func ts_subtree_size(self_coerce *SubtreeHeapData) struct {
 	F0 int64
 	F1 int32
 }
+	var v3 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, self, retval_coerce, coerce_dive, data, v0, bf_load, bf_clear, bf_cast, bytes, data1, size_bytes, v1, conv, extent, row, column, data2, size_bytes3, v2, conv4, ptr, v3, size, v4, v5, v6, v7, v8
 
@@ -12522,9 +12522,9 @@ if_then:
 	goto _return
 
 if_else:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr = (*uintptr)(unsafe.Pointer(self))
 	v3 = *ptr
-	size = &v3.F2
+	size = &(*SubtreeHeapData)(unsafe.Pointer(v3)).F2
 	v4 = (*byte)(unsafe.Pointer(retval))
 	v5 = (*byte)(unsafe.Pointer(size))
 	libc.Memmove(v4, v5, int64(12))
@@ -12538,12 +12538,12 @@ _return:
 	return v8
 }
 
-func ts_node__subtree(self *TSNode) *SubtreeHeapData {
-	var coerce_dive **SubtreeHeapData
+func ts_node__subtree(self *TSNode) uintptr {
 	var id **byte
 	var retval, v1 *Subtree
-	var v4 *SubtreeHeapData
 	var v0, v2, v3 *byte
+	var coerce_dive *uintptr
+	var v4 uintptr
 
 	_, _, _, _, _, _, _, _ = retval, id, v0, v1, v2, v3, coerce_dive, v4
 
@@ -12560,10 +12560,8 @@ func ts_node__subtree(self *TSNode) *SubtreeHeapData {
 }
 
 func ts_node_end_point(self *TSNode) int64 {
-	var coerce_dive, coerce_dive4 **SubtreeHeapData
 	var coerce *Length
 	var agg_tmp2 *Subtree
-	var call3, v1 *SubtreeHeapData
 	var retval, agg_tmp, agg_tmp1, extent *TSPoint
 	var v2, v3, v4, v5 *byte
 	var v0, v6, v8, v10, v11 *int64
@@ -12571,11 +12569,13 @@ func ts_node_end_point(self *TSNode) int64 {
 	F0 int64
 	F1 int32
 }
+	var coerce_dive, coerce_dive4 *uintptr
 	var call, v7, v9, call6, v12 int64
 	var call5 struct {
 	F0 int64
 	F1 int32
 }
+	var call3, v1 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, agg_tmp, agg_tmp1, agg_tmp2, coerce, tmp_coerce, call, v0, call3, coerce_dive, coerce_dive4, v1, call5, v2, v3, extent, v4, v5, v6, v7, v8, v9, call6, v10, v11, v12
 
@@ -12618,17 +12618,17 @@ func ts_node_end_point(self *TSNode) int64 {
 }
 
 func ts_node_symbol(self *TSNode) int16 {
-	var coerce_dive, coerce_dive2 **SubtreeHeapData
 	var language **TSLanguage
 	var tree **TSTree
 	var agg_tmp *Subtree
-	var call1, v1 *SubtreeHeapData
 	var v3 *TSLanguage
 	var v2 *TSTree
 	var symbol *int16
+	var coerce_dive, coerce_dive2 *uintptr
 	var tobool bool
 	var conv, v0, call3, v4, call4 int16
 	var call int32
+	var call1, v1 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = symbol, agg_tmp, call, conv, v0, tobool, call1, coerce_dive, coerce_dive2, v1, call3, tree, v2, language, v3, v4, call4
 
@@ -12683,17 +12683,17 @@ func ts_node__alias(self *TSNode) int32 {
 	return v1
 }
 
-func ts_subtree_symbol(self_coerce *SubtreeHeapData) int16 {
-	var coerce_dive, ptr **SubtreeHeapData
+func ts_subtree_symbol(self_coerce uintptr) int16 {
 	var self *Subtree
-	var v2 *SubtreeHeapData
 	var data, data1 *SubtreeInlineData
 	var v0, symbol *byte
 	var symbol2 *int16
+	var coerce_dive, ptr *uintptr
 	var bf_cast bool
 	var bf_load, bf_clear, v1 byte
 	var v3, conv4 int16
 	var conv, conv3, cond int32
+	var v2 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self, coerce_dive, data, v0, bf_load, bf_clear, bf_cast, data1, symbol, v1, conv, ptr, v2, symbol2, v3, conv3, cond, conv4
 
@@ -12720,9 +12720,9 @@ cond_true:
 	goto cond_end
 
 cond_false:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr = (*uintptr)(unsafe.Pointer(self))
 	v2 = *ptr
-	symbol2 = &v2.F6
+	symbol2 = &(*SubtreeHeapData)(unsafe.Pointer(v2)).F6
 	v3 = *symbol2
 	conv3 = int32(uint32(uint16(v3)))
 	cond = conv3
@@ -12734,18 +12734,18 @@ cond_end:
 }
 
 func ts_node_type(self *TSNode) *byte {
-	var coerce_dive, coerce_dive2 **SubtreeHeapData
 	var language **TSLanguage
 	var tree **TSTree
 	var agg_tmp *Subtree
-	var call1, v1 *SubtreeHeapData
 	var v3 *TSLanguage
 	var v2 *TSTree
 	var call4 *byte
 	var symbol *int16
+	var coerce_dive, coerce_dive2 *uintptr
 	var tobool bool
 	var conv, v0, call3, v4 int16
 	var call int32
+	var call1, v1 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = symbol, agg_tmp, call, conv, v0, tobool, call1, coerce_dive, coerce_dive2, v1, call3, tree, v2, language, v3, v4, call4
 
@@ -12798,10 +12798,10 @@ func ts_node_language(self *TSNode) *TSLanguage {
 }
 
 func ts_node_grammar_symbol(self *TSNode) int16 {
-	var coerce_dive, coerce_dive1 **SubtreeHeapData
 	var agg_tmp *Subtree
-	var call, v0 *SubtreeHeapData
+	var coerce_dive, coerce_dive1 *uintptr
 	var call2 int16
+	var call, v0 uintptr
 
 	_, _, _, _, _, _ = agg_tmp, call, coerce_dive, coerce_dive1, v0, call2
 
@@ -12816,16 +12816,16 @@ func ts_node_grammar_symbol(self *TSNode) int16 {
 }
 
 func ts_node_grammar_type(self *TSNode) *byte {
-	var coerce_dive, coerce_dive1 **SubtreeHeapData
 	var language **TSLanguage
 	var tree **TSTree
 	var agg_tmp *Subtree
-	var call, v0 *SubtreeHeapData
 	var v2 *TSLanguage
 	var v1 *TSTree
 	var call3 *byte
 	var symbol *int16
+	var coerce_dive, coerce_dive1 *uintptr
 	var call2, v3 int16
+	var call, v0 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _ = symbol, agg_tmp, call, coerce_dive, coerce_dive1, v0, call2, tree, v1, language, v2, v3, call3
 
@@ -12848,21 +12848,21 @@ func ts_node_grammar_type(self *TSNode) *byte {
 }
 
 func ts_node_string(self *TSNode) *byte {
-	var coerce_dive, coerce_dive5 **SubtreeHeapData
 	var language, language4 **TSLanguage
 	var tree, tree3 **TSTree
 	var agg_tmp *Subtree
-	var call1, v9 *SubtreeHeapData
 	var v2, v8 *TSLanguage
 	var coerce *TSSymbolMetadata
 	var v1, v7 *TSTree
 	var v4, v5, visible, call6 *byte
 	var alias_symbol *int16
 	var tmp_coerce *int32
+	var coerce_dive, coerce_dive5 *uintptr
 	var tobool bool
 	var v6 byte
 	var conv, v0, v3 int16
 	var call, call2 int32
+	var call1, v9 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = alias_symbol, agg_tmp, coerce, tmp_coerce, call, conv, call1, coerce_dive, v0, tree, v1, language, v2, v3, call2, v4, v5, visible, v6, tobool, tree3, v7, language4, v8, coerce_dive5, v9, call6
 
@@ -12900,22 +12900,22 @@ func ts_node_string(self *TSNode) *byte {
 	return call6
 }
 
-func ts_subtree_string(self_coerce *SubtreeHeapData, alias_symbol int16, alias_is_named bool, language *TSLanguage, include_all bool) *byte {
-	var coerce_dive, coerce_dive3, coerce_dive7 **SubtreeHeapData
+func ts_subtree_string(self_coerce uintptr, alias_symbol int16, alias_is_named bool, language *TSLanguage, include_all bool) *byte {
 	var language_addr **TSLanguage
 	var result **byte
 	var self *Subtree
-	var v4, v13 *SubtreeHeapData
 	var v0, v9 *TSLanguage
 	var scratch_string *[1]byte
 	var alias_is_named_addr, include_all_addr, arraydecay, call4, v7, v14 *byte
 	var alias_symbol_addr *int16
 	var size *int64
+	var coerce_dive, coerce_dive3, coerce_dive7 *uintptr
 	var tobool, tobool2, tobool5, tobool6 bool
 	var frombool, frombool1, v1, v3, v10, v12 byte
 	var v5 func(int64) *byte
 	var v2, v11 int16
 	var call, add, v6, mul, v8, call8 int64
+	var v4, v13 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self, alias_symbol_addr, alias_is_named_addr, language_addr, include_all_addr, scratch_string, size, result, coerce_dive, frombool, frombool1, arraydecay, v0, v1, tobool, v2, v3, tobool2, coerce_dive3, v4, call, add, v5, v6, mul, call4, v7, v8, v9, v10, tobool5, v11, v12, tobool6, coerce_dive7, v13, call8, v14
 
@@ -13015,10 +13015,10 @@ func ts_node_is_null(self *TSNode) bool {
 }
 
 func ts_node_is_extra(self *TSNode) bool {
-	var coerce_dive, coerce_dive1 **SubtreeHeapData
 	var agg_tmp *Subtree
-	var call, v0 *SubtreeHeapData
+	var coerce_dive, coerce_dive1 *uintptr
 	var call2 bool
+	var call, v0 uintptr
 
 	_, _, _, _, _, _ = agg_tmp, call, coerce_dive, coerce_dive1, v0, call2
 
@@ -13032,17 +13032,17 @@ func ts_node_is_extra(self *TSNode) bool {
 	return call2
 }
 
-func ts_subtree_extra(self_coerce *SubtreeHeapData) bool {
-	var coerce_dive, ptr **SubtreeHeapData
+func ts_subtree_extra(self_coerce uintptr) bool {
 	var self *Subtree
-	var v2 *SubtreeHeapData
 	var data, data1 *SubtreeInlineData
 	var v0, v1 *byte
 	var extra *int16
+	var coerce_dive, ptr *uintptr
 	var bf_cast, bf_cast4, bf_cast8, tobool bool
 	var bf_load, bf_clear, bf_load2, bf_lshr, bf_clear3 byte
 	var bf_load5, bf_lshr6, bf_clear7 int16
 	var conv, conv9, cond int32
+	var v2 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self, coerce_dive, data, v0, bf_load, bf_clear, bf_cast, data1, v1, bf_load2, bf_lshr, bf_clear3, bf_cast4, conv, ptr, v2, extra, bf_load5, bf_lshr6, bf_clear7, bf_cast8, conv9, cond, tobool
 
@@ -13072,9 +13072,9 @@ cond_true:
 	goto cond_end
 
 cond_false:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr = (*uintptr)(unsafe.Pointer(self))
 	v2 = *ptr
-	extra = &v2.F8
+	extra = &(*SubtreeHeapData)(unsafe.Pointer(v2)).F8
 	bf_load5 = *extra
 	bf_lshr6 = int16(uint16(bf_load5) >> 2)
 	bf_clear7 = bf_lshr6 & 1
@@ -13089,21 +13089,21 @@ cond_end:
 }
 
 func ts_node_is_named(self *TSNode) bool {
-	var coerce_dive, coerce_dive6 **SubtreeHeapData
 	var language **TSLanguage
 	var tree **TSTree
 	var agg_tmp *Subtree
-	var call5, v7 *SubtreeHeapData
 	var v2 *TSLanguage
 	var coerce *TSSymbolMetadata
 	var v1 *TSTree
 	var v4, v5, named *byte
 	var alias *int16
 	var tmp_coerce *int32
+	var coerce_dive, coerce_dive6 *uintptr
 	var tobool, tobool3, call7, tobool9 bool
 	var v6 byte
 	var conv, v0, v3 int16
 	var call, conv1, call2, conv4, conv8, cond int32
+	var call5, v7 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = alias, coerce, tmp_coerce, agg_tmp, call, conv, v0, conv1, tobool, tree, v1, language, v2, v3, call2, v4, v5, named, v6, tobool3, conv4, call5, coerce_dive, coerce_dive6, v7, call7, conv8, cond, tobool9
 
@@ -13157,17 +13157,17 @@ cond_end:
 	return tobool9
 }
 
-func ts_subtree_named(self_coerce *SubtreeHeapData) bool {
-	var coerce_dive, ptr **SubtreeHeapData
+func ts_subtree_named(self_coerce uintptr) bool {
 	var self *Subtree
-	var v2 *SubtreeHeapData
 	var data, data1 *SubtreeInlineData
 	var v0, v1 *byte
 	var named *int16
+	var coerce_dive, ptr *uintptr
 	var bf_cast, bf_cast4, bf_cast8, tobool bool
 	var bf_load, bf_clear, bf_load2, bf_lshr, bf_clear3 byte
 	var bf_load5, bf_lshr6, bf_clear7 int16
 	var conv, conv9, cond int32
+	var v2 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self, coerce_dive, data, v0, bf_load, bf_clear, bf_cast, data1, v1, bf_load2, bf_lshr, bf_clear3, bf_cast4, conv, ptr, v2, named, bf_load5, bf_lshr6, bf_clear7, bf_cast8, conv9, cond, tobool
 
@@ -13197,9 +13197,9 @@ cond_true:
 	goto cond_end
 
 cond_false:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr = (*uintptr)(unsafe.Pointer(self))
 	v2 = *ptr
-	named = &v2.F8
+	named = &(*SubtreeHeapData)(unsafe.Pointer(v2)).F8
 	bf_load5 = *named
 	bf_lshr6 = int16(uint16(bf_load5) >> 1)
 	bf_clear7 = bf_lshr6 & 1
@@ -13214,10 +13214,10 @@ cond_end:
 }
 
 func ts_node_is_missing(self *TSNode) bool {
-	var coerce_dive, coerce_dive1 **SubtreeHeapData
 	var agg_tmp *Subtree
-	var call, v0 *SubtreeHeapData
+	var coerce_dive, coerce_dive1 *uintptr
 	var call2 bool
+	var call, v0 uintptr
 
 	_, _, _, _, _, _ = agg_tmp, call, coerce_dive, coerce_dive1, v0, call2
 
@@ -13231,17 +13231,17 @@ func ts_node_is_missing(self *TSNode) bool {
 	return call2
 }
 
-func ts_subtree_missing(self_coerce *SubtreeHeapData) bool {
-	var coerce_dive, ptr **SubtreeHeapData
+func ts_subtree_missing(self_coerce uintptr) bool {
 	var self *Subtree
-	var v2 *SubtreeHeapData
 	var data, data1 *SubtreeInlineData
 	var v0, v1 *byte
 	var is_missing *int16
+	var coerce_dive, ptr *uintptr
 	var bf_cast, bf_cast4, bf_cast8, tobool bool
 	var bf_load, bf_clear, bf_load2, bf_lshr, bf_clear3 byte
 	var bf_load5, bf_lshr6, bf_clear7 int16
 	var conv, conv9, cond int32
+	var v2 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self, coerce_dive, data, v0, bf_load, bf_clear, bf_cast, data1, v1, bf_load2, bf_lshr, bf_clear3, bf_cast4, conv, ptr, v2, is_missing, bf_load5, bf_lshr6, bf_clear7, bf_cast8, conv9, cond, tobool
 
@@ -13271,9 +13271,9 @@ cond_true:
 	goto cond_end
 
 cond_false:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr = (*uintptr)(unsafe.Pointer(self))
 	v2 = *ptr
-	is_missing = &v2.F8
+	is_missing = &(*SubtreeHeapData)(unsafe.Pointer(v2)).F8
 	bf_load5 = *is_missing
 	bf_lshr6 = int16(uint16(bf_load5) >> 9)
 	bf_clear7 = bf_lshr6 & 1
@@ -13288,10 +13288,10 @@ cond_end:
 }
 
 func ts_node_has_changes(self *TSNode) bool {
-	var coerce_dive, coerce_dive1 **SubtreeHeapData
 	var agg_tmp *Subtree
-	var call, v0 *SubtreeHeapData
+	var coerce_dive, coerce_dive1 *uintptr
 	var call2 bool
+	var call, v0 uintptr
 
 	_, _, _, _, _, _ = agg_tmp, call, coerce_dive, coerce_dive1, v0, call2
 
@@ -13305,17 +13305,17 @@ func ts_node_has_changes(self *TSNode) bool {
 	return call2
 }
 
-func ts_subtree_has_changes(self_coerce *SubtreeHeapData) bool {
-	var coerce_dive, ptr **SubtreeHeapData
+func ts_subtree_has_changes(self_coerce uintptr) bool {
 	var self *Subtree
-	var v2 *SubtreeHeapData
 	var data, data1 *SubtreeInlineData
 	var v0, v1 *byte
 	var has_changes *int16
+	var coerce_dive, ptr *uintptr
 	var bf_cast, bf_cast4, bf_cast8, tobool bool
 	var bf_load, bf_clear, bf_load2, bf_lshr, bf_clear3 byte
 	var bf_load5, bf_lshr6, bf_clear7 int16
 	var conv, conv9, cond int32
+	var v2 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self, coerce_dive, data, v0, bf_load, bf_clear, bf_cast, data1, v1, bf_load2, bf_lshr, bf_clear3, bf_cast4, conv, ptr, v2, has_changes, bf_load5, bf_lshr6, bf_clear7, bf_cast8, conv9, cond, tobool
 
@@ -13345,9 +13345,9 @@ cond_true:
 	goto cond_end
 
 cond_false:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr = (*uintptr)(unsafe.Pointer(self))
 	v2 = *ptr
-	has_changes = &v2.F8
+	has_changes = &(*SubtreeHeapData)(unsafe.Pointer(v2)).F8
 	bf_load5 = *has_changes
 	bf_lshr6 = int16(uint16(bf_load5) >> 5)
 	bf_clear7 = bf_lshr6 & 1
@@ -13362,11 +13362,11 @@ cond_end:
 }
 
 func ts_node_has_error(self *TSNode) bool {
-	var coerce_dive, coerce_dive1 **SubtreeHeapData
 	var agg_tmp *Subtree
-	var call, v0 *SubtreeHeapData
+	var coerce_dive, coerce_dive1 *uintptr
 	var cmp bool
 	var call2 int32
+	var call, v0 uintptr
 
 	_, _, _, _, _, _, _ = agg_tmp, call, coerce_dive, coerce_dive1, v0, call2, cmp
 
@@ -13381,16 +13381,16 @@ func ts_node_has_error(self *TSNode) bool {
 	return cmp
 }
 
-func ts_subtree_error_cost(self_coerce *SubtreeHeapData) int32 {
-	var coerce_dive, coerce_dive1, ptr **SubtreeHeapData
+func ts_subtree_error_cost(self_coerce uintptr) int32 {
 	var self *Subtree
-	var v0, v2 *SubtreeHeapData
 	var data *SubtreeInlineData
 	var v1 *byte
 	var retval, error_cost *int32
+	var coerce_dive, coerce_dive1, ptr *uintptr
 	var call, bf_cast bool
 	var bf_load, bf_clear byte
 	var v3, cond, v4 int32
+	var v0, v2 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, self, coerce_dive, coerce_dive1, v0, call, data, v1, bf_load, bf_clear, bf_cast, ptr, v2, error_cost, v3, cond, v4
 
@@ -13428,9 +13428,9 @@ cond_true:
 	goto cond_end
 
 cond_false:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr = (*uintptr)(unsafe.Pointer(self))
 	v2 = *ptr
-	error_cost = &v2.F4
+	error_cost = &(*SubtreeHeapData)(unsafe.Pointer(v2)).F4
 	v3 = *error_cost
 	cond = v3
 	goto cond_end
@@ -13462,10 +13462,10 @@ func ts_node_is_error(self *TSNode) bool {
 }
 
 func ts_node_descendant_count(self *TSNode) int32 {
-	var coerce_dive, coerce_dive1 **SubtreeHeapData
 	var agg_tmp *Subtree
-	var call, v0 *SubtreeHeapData
+	var coerce_dive, coerce_dive1 *uintptr
 	var call2, add int32
+	var call, v0 uintptr
 
 	_, _, _, _, _, _, _ = agg_tmp, call, coerce_dive, coerce_dive1, v0, call2, add
 
@@ -13480,10 +13480,8 @@ func ts_node_descendant_count(self *TSNode) int32 {
 	return add
 }
 
-func ts_subtree_visible_descendant_count(self_coerce *SubtreeHeapData) int32 {
-	var coerce_dive, ptr, ptr1 **SubtreeHeapData
+func ts_subtree_visible_descendant_count(self_coerce uintptr) int32 {
 	var self *Subtree
-	var v1, v3 *SubtreeHeapData
 	var data *SubtreeInlineData
 	var v0 *byte
 	var child_count, visible_descendant_count *int32
@@ -13499,9 +13497,11 @@ func ts_subtree_visible_descendant_count(self_coerce *SubtreeHeapData) int32 {
 	F5 int16
 	F6 anon_0
 }
+	var coerce_dive, ptr, ptr1 *uintptr
 	var bf_cast, cmp bool
 	var bf_load, bf_clear byte
 	var v2, v6, cond int32
+	var v1, v3 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self, coerce_dive, data, v0, bf_load, bf_clear, bf_cast, ptr, v1, child_count, v2, cmp, ptr1, v3, v4, v5, visible_descendant_count, v6, cond
 
@@ -13520,9 +13520,9 @@ func ts_subtree_visible_descendant_count(self_coerce *SubtreeHeapData) int32 {
 	}
 
 lor_lhs_false:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr = (*uintptr)(unsafe.Pointer(self))
 	v1 = *ptr
-	child_count = &v1.F5
+	child_count = &(*SubtreeHeapData)(unsafe.Pointer(v1)).F5
 	v2 = *child_count
 	cmp = v2 == 0
 	if cmp {
@@ -13536,9 +13536,9 @@ cond_true:
 	goto cond_end
 
 cond_false:
-	ptr1 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr1 = (*uintptr)(unsafe.Pointer(self))
 	v3 = *ptr1
-	v4 = &v3.F9
+	v4 = &(*SubtreeHeapData)(unsafe.Pointer(v3)).F9
 	v5 = (*struct {
 	F0 int32
 	F1 int32
@@ -13558,10 +13558,10 @@ cond_end:
 }
 
 func ts_node_parse_state(self *TSNode) int16 {
-	var coerce_dive, coerce_dive1 **SubtreeHeapData
 	var agg_tmp *Subtree
-	var call, v0 *SubtreeHeapData
+	var coerce_dive, coerce_dive1 *uintptr
 	var call2 int16
+	var call, v0 uintptr
 
 	_, _, _, _, _, _ = agg_tmp, call, coerce_dive, coerce_dive1, v0, call2
 
@@ -13575,17 +13575,17 @@ func ts_node_parse_state(self *TSNode) int16 {
 	return call2
 }
 
-func ts_subtree_parse_state(self_coerce *SubtreeHeapData) int16 {
-	var coerce_dive, ptr **SubtreeHeapData
+func ts_subtree_parse_state(self_coerce uintptr) int16 {
 	var self *Subtree
-	var v2 *SubtreeHeapData
 	var data, data1 *SubtreeInlineData
 	var v0 *byte
 	var parse_state, parse_state2 *int16
+	var coerce_dive, ptr *uintptr
 	var bf_cast bool
 	var bf_load, bf_clear byte
 	var v1, v3, conv4 int16
 	var conv, conv3, cond int32
+	var v2 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self, coerce_dive, data, v0, bf_load, bf_clear, bf_cast, data1, parse_state, v1, conv, ptr, v2, parse_state2, v3, conv3, cond, conv4
 
@@ -13612,9 +13612,9 @@ cond_true:
 	goto cond_end
 
 cond_false:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr = (*uintptr)(unsafe.Pointer(self))
 	v2 = *ptr
-	parse_state2 = &v2.F7
+	parse_state2 = &(*SubtreeHeapData)(unsafe.Pointer(v2)).F7
 	v3 = *parse_state2
 	conv3 = int32(uint32(uint16(v3)))
 	cond = conv3
@@ -13749,11 +13749,9 @@ _return:
 }
 
 func ts_tree_root_node(agg_result *TSNode, self *TSTree) {
-	var coerce_dive **SubtreeHeapData
 	var self_addr **TSTree
 	var agg_tmp *Length
 	var root, root1 *Subtree
-	var v3 *SubtreeHeapData
 	var v0, v1, v2 *TSTree
 	var v4, v5, v6, v7 *byte
 	var v10 *int32
@@ -13762,12 +13760,14 @@ func ts_tree_root_node(agg_result *TSNode, self *TSTree) {
 	F0 int64
 	F1 int32
 }
+	var coerce_dive *uintptr
 	var v11 int32
 	var v9 int64
 	var call struct {
 	F0 int64
 	F1 int32
 }
+	var v3 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self_addr, agg_tmp, tmp_coerce, agg_tmp_coerce, v0, v1, root, v2, root1, coerce_dive, v3, call, v4, v5, v6, v7, v8, v9, v10, v11
 
@@ -14057,14 +14057,12 @@ _return:
 }
 
 func ts_node_iterate_children(agg_result *NodeChildIterator, node *TSNode) {
-	var coerce_dive, coerce_dive1, ptr, ptr7 **SubtreeHeapData
 	var language **TSLanguage
 	var node_addr **TSNode
 	var tree, tree3, tree6, tree10, tree11 **TSTree
 	var alias_sequence5, alias_sequence, alias_sequence17 **int16
 	var position, position12 *Length
 	var subtree, parent, parent9 *Subtree
-	var call, v1, v9 *SubtreeHeapData
 	var v8 *TSLanguage
 	var v0, v2, v6, v15, v17, v18 *TSNode
 	var extent *TSPoint
@@ -14089,6 +14087,7 @@ func ts_node_iterate_children(agg_result *NodeChildIterator, node *TSNode) {
 	F0 int64
 	F1 int32
 }
+	var coerce_dive, coerce_dive1, ptr, ptr7 *uintptr
 	var cmp bool
 	var v12 int16
 	var call2, conv, call13 int32
@@ -14097,6 +14096,7 @@ func ts_node_iterate_children(agg_result *NodeChildIterator, node *TSNode) {
 	F0 int64
 	F1 int32
 }
+	var call, v1, v9 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = node_addr, subtree, tmp_coerce, alias_sequence5, v0, call, coerce_dive, coerce_dive1, v1, call2, cmp, parent, ptr, tree, v2, tree3, v3, position, call4, v4, v5, child_index, structural_child_index, alias_sequence, v6, tree6, v7, language, v8, ptr7, v9, v10, v11, production_id, v12, conv, call8, parent9, v13, v14, tree10, v15, tree11, v16, position12, bytes, v17, call13, extent, v18, call14, v19, child_index15, structural_child_index16, alias_sequence17, v20
 
@@ -14124,8 +14124,8 @@ func ts_node_iterate_children(agg_result *NodeChildIterator, node *TSNode) {
 
 if_then:
 	parent = &agg_result.F0
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(parent))
-	*ptr = nil
+	ptr = (*uintptr)(unsafe.Pointer(parent))
+	*ptr = 0
 	tree = &agg_result.F1
 	v2 = *node_addr
 	tree3 = &v2.F2
@@ -14151,9 +14151,9 @@ if_end:
 	v7 = *tree6
 	language = &v7.F1
 	v8 = *language
-	ptr7 = (**SubtreeHeapData)(unsafe.Pointer(subtree))
+	ptr7 = (*uintptr)(unsafe.Pointer(subtree))
 	v9 = *ptr7
-	v10 = &v9.F9
+	v10 = &(*SubtreeHeapData)(unsafe.Pointer(v9)).F9
 	v11 = (*struct {
 	F0 int32
 	F1 int32
@@ -14202,14 +14202,12 @@ _return:
 func ts_node_child_iterator_next(self *NodeChildIterator, result *TSNode) bool {
 	var self_addr **NodeChildIterator
 	var child **Subtree
-	var ptr, ptr3, ptr5, coerce_dive, coerce_dive19, coerce_dive30 **SubtreeHeapData
 	var result_addr **TSNode
 	var tree **TSTree
 	var alias_sequence, alias_sequence10 **int16
 	var tmp, agg_tmp, tmp27, agg_tmp29, position, position18, position25, position26, position28 *Length
 	var v0, v2, v3, v5, v8, v11, v15, v17, v19, v22, v24, v26, v27, v49, v52, v62, v63, v84 *NodeChildIterator
 	var parent, parent1, parent2, v7, parent4, add_ptr, cond, arrayidx, v13, v28, v51, v64 *Subtree
-	var v1, v6, v9, v14, v29, v65 *SubtreeHeapData
 	var data *SubtreeInlineData
 	var tmp24, v48 *TSNode
 	var v50 *TSTree
@@ -14222,6 +14220,7 @@ func ts_node_child_iterator_next(self *NodeChildIterator, result *TSNode) bool {
 	F0 int64
 	F1 int32
 }
+	var ptr, ptr3, ptr5, coerce_dive, coerce_dive19, coerce_dive30 *uintptr
 	var tobool, call, bf_cast, call6, tobool8, cmp, v86 bool
 	var bf_load, bf_clear byte
 	var v21, v53 int16
@@ -14231,6 +14230,7 @@ func ts_node_child_iterator_next(self *NodeChildIterator, result *TSNode) bool {
 	F0 int64
 	F1 int32
 }
+	var v1, v6, v9, v14, v29, v65 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, self_addr, result_addr, child, alias_symbol, tmp, agg_tmp, tmp_coerce, position18_coerce, agg_tmp_coerce, tmp_coerce22, tmp24, position25_coerce, tmp27, agg_tmp29, tmp_coerce32, position28_coerce, agg_tmp29_coerce, tmp_coerce34, v0, parent, ptr, v1, tobool, v2, call, v3, parent1, data, v4, bf_load, bf_clear, bf_cast, v5, parent2, ptr3, v6, v7, v8, parent4, ptr5, v9, child_count, v10, idx_ext, idx_neg, add_ptr, cond, v11, child_index, v12, idxprom, arrayidx, v13, coerce_dive, v14, call6, v15, alias_sequence, v16, tobool8, v17, alias_sequence10, v18, v19, structural_child_index, v20, idxprom11, arrayidx12, v21, v22, structural_child_index14, v23, inc, v24, child_index16, v25, cmp, v26, position, v27, position18, v28, coerce_dive19, v29, call20, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, call21, v44, v45, v46, v47, v48, v49, tree, v50, v51, v52, position25, v53, v54, v55, v56, v57, v58, v59, v60, v61, v62, position26, v63, position28, v64, coerce_dive30, v65, call31, v66, v67, v68, v69, v70, v71, v72, v73, v74, v75, v76, v77, v78, v79, call33, v80, v81, v82, v83, v84, child_index35, v85, inc36, v86
 
@@ -14284,9 +14284,9 @@ func ts_node_child_iterator_next(self *NodeChildIterator, result *TSNode) bool {
 	*result_addr = result
 	v0 = *self_addr
 	parent = &v0.F0
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(parent))
+	ptr = (*uintptr)(unsafe.Pointer(parent))
 	v1 = *ptr
-	tobool = v1 != nil
+	tobool = v1 != 0
 	if tobool {
 		goto lor_lhs_false
 	} else {
@@ -14327,14 +14327,14 @@ cond_true:
 cond_false:
 	v5 = *self_addr
 	parent2 = &v5.F0
-	ptr3 = (**SubtreeHeapData)(unsafe.Pointer(parent2))
+	ptr3 = (*uintptr)(unsafe.Pointer(parent2))
 	v6 = *ptr3
 	v7 = (*Subtree)(unsafe.Pointer(v6))
 	v8 = *self_addr
 	parent4 = &v8.F0
-	ptr5 = (**SubtreeHeapData)(unsafe.Pointer(parent4))
+	ptr5 = (*uintptr)(unsafe.Pointer(parent4))
 	v9 = *ptr5
-	child_count = &v9.F5
+	child_count = &(*SubtreeHeapData)(unsafe.Pointer(v9)).F5
 	v10 = *child_count
 	idx_ext = int64(uint64(uint32(v10)))
 	idx_neg = int64(0) - idx_ext
@@ -14508,9 +14508,7 @@ _return:
 }
 
 func ts_node_child_count(self *TSNode) int32 {
-	var coerce_dive, coerce_dive1, ptr **SubtreeHeapData
 	var tree *Subtree
-	var call, v0, v1 *SubtreeHeapData
 	var retval, visible_child_count *int32
 	var v2 *struct {
 	F0 ExternalScannerState
@@ -14524,8 +14522,10 @@ func ts_node_child_count(self *TSNode) int32 {
 	F5 int16
 	F6 anon_0
 }
+	var coerce_dive, coerce_dive1, ptr *uintptr
 	var cmp bool
 	var call2, v4, v5 int32
+	var call, v0, v1 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, tree, call, coerce_dive, coerce_dive1, v0, call2, cmp, ptr, v1, v2, v3, visible_child_count, v4, v5
 
@@ -14545,9 +14545,9 @@ func ts_node_child_count(self *TSNode) int32 {
 	}
 
 if_then:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(tree))
+	ptr = (*uintptr)(unsafe.Pointer(tree))
 	v1 = *ptr
-	v2 = &v1.F9
+	v2 = &(*SubtreeHeapData)(unsafe.Pointer(v1)).F9
 	v3 = (*struct {
 	F0 int32
 	F1 int32
@@ -14572,11 +14572,9 @@ _return:
 }
 
 func ts_node__is_relevant(self *TSNode, include_anonymous bool) bool {
-	var coerce_dive, coerce_dive1, coerce_dive12, coerce_dive15 **SubtreeHeapData
 	var language **TSLanguage
 	var tree8 **TSTree
 	var tree *Subtree
-	var call, v1, v10, v11 *SubtreeHeapData
 	var v5 *TSLanguage
 	var coerce *TSSymbolMetadata
 	var v4 *TSTree
@@ -14584,10 +14582,12 @@ func ts_node__is_relevant(self *TSNode, include_anonymous bool) bool {
 	var include_anonymous_addr, v7, v8, named *byte
 	var alias *int16
 	var tmp_coerce *int32
+	var coerce_dive, coerce_dive1, coerce_dive12, coerce_dive15 *uintptr
 	var tobool, call2, tobool4, v2, tobool6, tobool10, call13, call16, v12, v13 bool
 	var frombool, v0, v9 byte
 	var conv, v3, v6 int16
 	var call3, call5, call9 int32
+	var call, v1, v10, v11 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, include_anonymous_addr, tree, alias, coerce, tmp_coerce, frombool, call, coerce_dive, v0, tobool, coerce_dive1, v1, call2, call3, tobool4, v2, call5, conv, v3, tobool6, tree8, v4, language, v5, v6, call9, v7, v8, named, v9, tobool10, coerce_dive12, v10, call13, coerce_dive15, v11, call16, v12, v13
 
@@ -14839,14 +14839,12 @@ func ts_node_named_child(agg_result *TSNode, self *TSNode, child_index int32) {
 }
 
 func ts_node_child_by_field_id(agg_result *TSNode, self *TSNode, field_id int16) {
-	var coerce_dive, ptr, coerce_dive32, coerce_dive33 **SubtreeHeapData
 	var field_map, field_map_end **TSFieldMapEntry
 	var language **TSLanguage
 	var tree **TSTree
 	var id **byte
 	var iterator *NodeChildIterator
 	var coerce, agg_tmp *Subtree
-	var call1, v3, call31, v21 *SubtreeHeapData
 	var v7, v8, v9, v12, incdec_ptr, v13, v14, v15, arrayidx, v18, incdec_ptr22, v19, v20, v24, v26, v28, add_ptr, v29, v36, incdec_ptr49, v37, v38, v41, incdec_ptr64, v42, v43 *TSFieldMapEntry
 	var v2 *TSLanguage
 	var child, result *TSNode
@@ -14866,10 +14864,12 @@ func ts_node_child_by_field_id(agg_result *TSNode, self *TSNode, field_id int16)
 	F5 int16
 	F6 anon_0
 }
+	var coerce_dive, ptr, coerce_dive32, coerce_dive33 *uintptr
 	var tobool, cmp, cmp2, cmp9, cmp11, cmp19, cmp23, call29, call34, cmp37, tobool41, cmp43, tobool46, cmp50, call56, cmp60, cmp65 bool
 	var v25, v27 byte
 	var v0, v6, v10, v11, v16, v17, v32 int16
 	var call, conv, conv7, conv8, conv17, conv18, v22, sub, v23, conv36, call59 int32
+	var call1, v3, call31, v21 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = field_id_addr, field_map, field_map_end, coerce, child, iterator, agg_tmp, index, result, v0, tobool, call, cmp, tree, v1, language, v2, call1, coerce_dive, ptr, v3, v4, v5, production_id, v6, conv, v7, v8, cmp2, v9, field_id6, v10, conv7, v11, conv8, cmp9, v12, incdec_ptr, v13, v14, cmp11, v15, arrayidx, field_id16, v16, conv17, v17, conv18, cmp19, v18, incdec_ptr22, v19, v20, cmp23, call29, call31, coerce_dive32, coerce_dive33, v21, call34, structural_child_index, v22, sub, v23, v24, child_index, v25, conv36, cmp37, v26, inherited, v27, tobool41, v28, add_ptr, v29, cmp43, v30, v31, v32, id, v33, tobool46, v34, v35, v36, incdec_ptr49, v37, v38, cmp50, call56, v39, v40, call59, cmp60, v41, incdec_ptr64, v42, v43, cmp65
 
@@ -14915,9 +14915,9 @@ if_end:
 	call1 = ts_node__subtree(self)
 	coerce_dive = &coerce.F0
 	*coerce_dive = call1
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(coerce))
+	ptr = (*uintptr)(unsafe.Pointer(coerce))
 	v3 = *ptr
-	v4 = &v3.F9
+	v4 = &(*SubtreeHeapData)(unsafe.Pointer(v3)).F9
 	v5 = (*struct {
 	F0 int32
 	F1 int32
@@ -15464,13 +15464,11 @@ _return:
 
 func ts_node__field_name_from_language(self *TSNode, structural_child_index int32) *byte {
 	var field_names ***byte
-	var coerce_dive, ptr **SubtreeHeapData
 	var field_map, field_map_end **TSFieldMapEntry
 	var language, language6 **TSLanguage
 	var tree, tree5 **TSTree
 	var retval, v15, arrayidx **byte
 	var coerce *Subtree
-	var call, v2 *SubtreeHeapData
 	var v6, v7, v8, v10, v16, v19, incdec_ptr *TSFieldMapEntry
 	var v1, v14 *TSLanguage
 	var v0, v13 *TSTree
@@ -15489,11 +15487,13 @@ func ts_node__field_name_from_language(self *TSNode, structural_child_index int3
 	F5 int16
 	F6 anon_0
 }
+	var coerce_dive, ptr *uintptr
 	var cmp, tobool, cmp3 bool
 	var v9, v11 byte
 	var v5, v17 int16
 	var conv, conv2, v12 int32
 	var idxprom int64
+	var call, v2 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, structural_child_index_addr, field_map, field_map_end, coerce, tree, v0, language, v1, call, coerce_dive, ptr, v2, v3, v4, production_id, v5, conv, v6, v7, cmp, v8, inherited, v9, tobool, v10, child_index, v11, conv2, v12, cmp3, tree5, v13, language6, v14, field_names, v15, v16, field_id, v17, idxprom, arrayidx, v18, v19, incdec_ptr, v20
 
@@ -15510,9 +15510,9 @@ func ts_node__field_name_from_language(self *TSNode, structural_child_index int3
 	call = ts_node__subtree(self)
 	coerce_dive = &coerce.F0
 	*coerce_dive = call
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(coerce))
+	ptr = (*uintptr)(unsafe.Pointer(coerce))
 	v2 = *ptr
-	v3 = &v2.F9
+	v3 = &(*SubtreeHeapData)(unsafe.Pointer(v2)).F9
 	v4 = (*struct {
 	F0 int32
 	F1 int32
@@ -15597,9 +15597,7 @@ _return:
 }
 
 func ts_node__relevant_child_count(self *TSNode, include_anonymous bool) int32 {
-	var coerce_dive, coerce_dive1, ptr, ptr4 **SubtreeHeapData
 	var tree *Subtree
-	var call, v0, v2, v6 *SubtreeHeapData
 	var include_anonymous_addr *byte
 	var retval, visible_child_count, named_child_count *int32
 	var v3, v7 *struct {
@@ -15614,9 +15612,11 @@ func ts_node__relevant_child_count(self *TSNode, include_anonymous bool) int32 {
 	F5 int16
 	F6 anon_0
 }
+	var coerce_dive, coerce_dive1, ptr, ptr4 *uintptr
 	var cmp, tobool bool
 	var frombool, v1 byte
 	var call2, v5, v9, v10 int32
+	var call, v0, v2, v6 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, include_anonymous_addr, tree, frombool, call, coerce_dive, coerce_dive1, v0, call2, cmp, v1, tobool, ptr, v2, v3, v4, visible_child_count, v5, ptr4, v6, v7, v8, named_child_count, v9, v10
 
@@ -15648,9 +15648,9 @@ if_then:
 	}
 
 if_then3:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(tree))
+	ptr = (*uintptr)(unsafe.Pointer(tree))
 	v2 = *ptr
-	v3 = &v2.F9
+	v3 = &(*SubtreeHeapData)(unsafe.Pointer(v2)).F9
 	v4 = (*struct {
 	F0 int32
 	F1 int32
@@ -15666,9 +15666,9 @@ if_then3:
 	goto _return
 
 if_else:
-	ptr4 = (**SubtreeHeapData)(unsafe.Pointer(tree))
+	ptr4 = (*uintptr)(unsafe.Pointer(tree))
 	v6 = *ptr4
-	v7 = &v6.F9
+	v7 = &(*SubtreeHeapData)(unsafe.Pointer(v6)).F9
 	v8 = (*struct {
 	F0 int32
 	F1 int32
@@ -15904,16 +15904,16 @@ func ts_node_child_by_field_name(agg_result *TSNode, self *TSNode, name *byte, n
 	ts_node_child_by_field_id(agg_result, self, v4)
 }
 
-func ts_subtree_child_count(self_coerce *SubtreeHeapData) int32 {
-	var coerce_dive, ptr **SubtreeHeapData
+func ts_subtree_child_count(self_coerce uintptr) int32 {
 	var self *Subtree
-	var v1 *SubtreeHeapData
 	var data *SubtreeInlineData
 	var v0 *byte
 	var child_count *int32
+	var coerce_dive, ptr *uintptr
 	var bf_cast bool
 	var bf_load, bf_clear byte
 	var v2, cond int32
+	var v1 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _ = self, coerce_dive, data, v0, bf_load, bf_clear, bf_cast, ptr, v1, child_count, v2, cond
 
@@ -15936,9 +15936,9 @@ cond_true:
 	goto cond_end
 
 cond_false:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr = (*uintptr)(unsafe.Pointer(self))
 	v1 = *ptr
-	child_count = &v1.F5
+	child_count = &(*SubtreeHeapData)(unsafe.Pointer(v1)).F5
 	v2 = *child_count
 	cond = v2
 	goto cond_end
@@ -15948,9 +15948,7 @@ cond_end:
 }
 
 func ts_node_named_child_count(self *TSNode) int32 {
-	var coerce_dive, coerce_dive1, ptr **SubtreeHeapData
 	var tree *Subtree
-	var call, v0, v1 *SubtreeHeapData
 	var retval, named_child_count *int32
 	var v2 *struct {
 	F0 ExternalScannerState
@@ -15964,8 +15962,10 @@ func ts_node_named_child_count(self *TSNode) int32 {
 	F5 int16
 	F6 anon_0
 }
+	var coerce_dive, coerce_dive1, ptr *uintptr
 	var cmp bool
 	var call2, v4, v5 int32
+	var call, v0, v1 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, tree, call, coerce_dive, coerce_dive1, v0, call2, cmp, ptr, v1, v2, v3, named_child_count, v4, v5
 
@@ -15985,9 +15985,9 @@ func ts_node_named_child_count(self *TSNode) int32 {
 	}
 
 if_then:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(tree))
+	ptr = (*uintptr)(unsafe.Pointer(tree))
 	v1 = *ptr
-	v2 = &v1.F9
+	v2 = &(*SubtreeHeapData)(unsafe.Pointer(v1)).F9
 	v3 = (*struct {
 	F0 int32
 	F1 int32
@@ -16016,17 +16016,17 @@ func ts_node_next_sibling(agg_result *TSNode, self *TSNode) {
 }
 
 func ts_node__next_sibling(agg_result *TSNode, self *TSNode, include_anonymous bool) {
-	var coerce_dive, ptr, coerce_dive19, ptr20 **SubtreeHeapData
 	var position *Length
 	var iterator *NodeChildIterator
 	var coerce, coerce18 *Subtree
-	var call16, v10, call17, v11 *SubtreeHeapData
 	var node, later_node, later_child, child_containing_target, child *TSNode
 	var include_anonymous_addr, later_node_is_relevant, later_child_is_relevant, is_empty, contains_target, v12, v13, v15, v16, v18, v19, v20, v21, v23, v24, v26, v27, v28, v29, v31, v32, v33, v34 *byte
 	var target_end_byte, start_byte, child_start_byte, bytes *int32
+	var coerce_dive, ptr, coerce_dive19, ptr20 *uintptr
 	var call1, lnot, call3, cmp, cmp7, tobool, cmp9, cmp10, tobool12, tobool14, cmp21, tobool25, call26, tobool29, cmp31, call37, call39, tobool41, tobool45, call48, tobool51 bool
 	var frombool, frombool8, v4, frombool13, v9, v14, v17, v22, frombool42, v25, v30 byte
 	var call, v0, v1, call5, call6, v2, v3, v5, v6, conv, v7, v8, conv11, cond, call30 int32
+	var call16, v10, call17, v11 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = include_anonymous_addr, target_end_byte, node, later_node, later_node_is_relevant, later_child, later_child_is_relevant, child_containing_target, child, iterator, start_byte, child_start_byte, is_empty, contains_target, coerce, coerce18, frombool, call, call1, lnot, call3, position, bytes, v0, v1, cmp, call5, call6, v2, v3, cmp7, frombool8, v4, tobool, v5, v6, cmp9, conv, v7, v8, cmp10, conv11, cond, tobool12, frombool13, v9, tobool14, call16, coerce_dive, ptr, v10, call17, coerce_dive19, ptr20, v11, cmp21, v12, v13, v14, tobool25, call26, v15, v16, v17, tobool29, call30, cmp31, v18, v19, call37, call39, v20, v21, v22, tobool41, frombool42, v23, v24, v25, tobool45, v26, v27, call48, v28, v29, v30, tobool51, v31, v32, v33, v34
 
@@ -16144,12 +16144,12 @@ if_then15:
 	call16 = ts_node__subtree(child)
 	coerce_dive = &coerce.F0
 	*coerce_dive = call16
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(coerce))
+	ptr = (*uintptr)(unsafe.Pointer(coerce))
 	v10 = *ptr
 	call17 = ts_node__subtree(self)
 	coerce_dive19 = &coerce18.F0
 	*coerce_dive19 = call17
-	ptr20 = (**SubtreeHeapData)(unsafe.Pointer(coerce18))
+	ptr20 = (*uintptr)(unsafe.Pointer(coerce18))
 	v11 = *ptr20
 	cmp21 = v10 != v11
 	if cmp21 {
@@ -16321,18 +16321,18 @@ func ts_node_prev_sibling(agg_result *TSNode, self *TSNode) {
 }
 
 func ts_node__prev_sibling(agg_result *TSNode, self *TSNode, include_anonymous bool) {
-	var coerce_dive, coerce_dive1, coerce_dive18, coerce_dive19, coerce_dive20 **SubtreeHeapData
 	var id, id9 **byte
 	var position, position14 *Length
 	var iterator *NodeChildIterator
 	var self_subtree, agg_tmp *Subtree
-	var call, v0, call17, v8, v9 *SubtreeHeapData
 	var node, earlier_node, earlier_child, child, tmp *TSNode
 	var include_anonymous_addr, self_is_empty, earlier_node_is_relevant, earlier_child_is_relevant, found_child_containing_target, v1, v2, v11, v12, v14, v15, v17, v18, v20, v21, v23, v24, v25, v26, v28, v29, v30, v31, v32, v33 *byte
 	var target_end_byte, bytes, bytes15 *int32
+	var coerce_dive, coerce_dive1, coerce_dive18, coerce_dive19, coerce_dive20 *uintptr
 	var cmp, call5, lnot, call7, cmp10, cmp11, cmp16, tobool, call21, tobool24, call25, tobool27, cmp29, tobool33, call35, tobool37, tobool41, call44, tobool47 bool
 	var frombool, frombool3, v7, v10, v13, v16, v19, frombool38, v22, v27 byte
 	var call2, call4, v3, v4, v5, v6, call28 int32
+	var call, v0, call17, v8, v9 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = include_anonymous_addr, self_subtree, self_is_empty, target_end_byte, node, earlier_node, earlier_node_is_relevant, earlier_child, earlier_child_is_relevant, found_child_containing_target, child, iterator, agg_tmp, tmp, frombool, call, coerce_dive, coerce_dive1, v0, call2, cmp, frombool3, call4, call5, lnot, call7, id, v1, id9, v2, cmp10, position, bytes, v3, v4, cmp11, position14, bytes15, v5, v6, cmp16, v7, tobool, call17, coerce_dive18, coerce_dive19, v8, coerce_dive20, v9, call21, v10, tobool24, call25, v11, v12, v13, tobool27, call28, cmp29, v14, v15, v16, tobool33, call35, v17, v18, v19, tobool37, frombool38, v20, v21, v22, tobool41, v23, v24, call44, v25, v26, v27, tobool47, v28, v29, v30, v31, v32, v33
 
@@ -16628,16 +16628,16 @@ func ts_node_first_child_for_byte(agg_result *TSNode, self *TSNode, _byte int32)
 }
 
 func ts_node__first_child_for_byte(agg_result *TSNode, self *TSNode, goal int32, include_anonymous bool) {
-	var coerce_dive, coerce_dive11 **SubtreeHeapData
 	var last_iterator, iterator *NodeChildIterator
 	var agg_tmp *Subtree
-	var call10, v6 *SubtreeHeapData
 	var node *TSNode
 	var include_anonymous_addr, did_descend, has_last_iterator, v0, v1, v7, v8, v9, v10, v13, v14 *byte
 	var goal_addr, child_index *int32
+	var coerce_dive, coerce_dive11 *uintptr
 	var tobool, call, cmp, tobool4, call5, cmp8, cmp13, tobool18, tobool19 bool
 	var frombool, v2, v4, v11, v12 byte
 	var call3, v3, call7, v5, call12 int32
+	var call10, v6 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = goal_addr, include_anonymous_addr, node, did_descend, last_iterator, has_last_iterator, iterator, agg_tmp, frombool, v0, v1, v2, tobool, call, call3, v3, cmp, v4, tobool4, call5, call7, cmp8, child_index, v5, call10, coerce_dive, coerce_dive11, v6, call12, cmp13, v7, v8, v9, v10, v11, tobool18, v12, tobool19, v13, v14
 
@@ -17407,7 +17407,6 @@ if_end8:
 func ts_parser_new() *TSParser {
 	var contents, contents4, contents9 **ReduceAction
 	var stack **Stack
-	var ptr, ptr14, ptr20, ptr22, coerce_dive, coerce_dive23 **SubtreeHeapData
 	var language **TSLanguage
 	var self **TSParser
 	var contents16 **TSRange
@@ -17419,13 +17418,14 @@ func ts_parser_new() *TSParser {
 	var tmp12, reusable_node *ReusableNode
 	var call11 *Stack
 	var _compoundliteral, _compoundliteral13, _compoundliteral19, _compoundliteral21, finished_tree, old_tree *Subtree
-	var v38, v39 *SubtreeHeapData
 	var tmp, tree_pool, tree_pool10 *SubtreePool
 	var v1, v2, v3, v4, v5, v6, v9, v11, v12, v15, v16, v17, v20, v23, v24, v25, v26, v27, v28, v29, v30, v33, v36, v37, v40 *TSParser
 	var _compoundliteral15, included_range_differences *TSRangeArray
 	var call, v8, call7, v13, v14, v18, v19, v21, v22, has_scanner_error, has_error, canceled_balancing, v31, v32, v34, v35 *byte
 	var size, capacity, capacity6, operation_count, size17, capacity18, included_range_difference_index *int32
+	var ptr, ptr14, ptr20, ptr22, coerce_dive, coerce_dive23 *uintptr
 	var v0 func(int64, int64) *byte
+	var v38, v39 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self, tmp, _compoundliteral, tmp12, _compoundliteral13, _compoundliteral15, _compoundliteral19, _compoundliteral21, v0, call, v1, v2, lexer, v3, reduce_actions, size, v4, reduce_actions1, capacity, v5, reduce_actions2, contents, v6, reduce_actions3, contents4, v7, v8, v9, reduce_actions5, capacity6, call7, v10, v11, reduce_actions8, contents9, v12, tree_pool, v13, v14, v15, tree_pool10, call11, v16, stack, v17, finished_tree, ptr, v18, v19, v20, reusable_node, v21, v22, v23, dot_graph_file, v24, language, v25, has_scanner_error, v26, has_error, v27, canceled_balancing, v28, external_scanner_payload, v29, operation_count, v30, old_tree, ptr14, v31, v32, v33, included_range_differences, contents16, size17, capacity18, v34, v35, v36, included_range_difference_index, v37, ptr20, ptr22, coerce_dive, v38, coerce_dive23, v39, v40
 
@@ -17484,8 +17484,8 @@ func ts_parser_new() *TSParser {
 	*stack = call11
 	v17 = *self
 	finished_tree = &v17.F6
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(_compoundliteral))
-	*ptr = nil
+	ptr = (*uintptr)(unsafe.Pointer(_compoundliteral))
+	*ptr = 0
 	v18 = (*byte)(unsafe.Pointer(finished_tree))
 	v19 = (*byte)(unsafe.Pointer(_compoundliteral))
 	libc.Memmove(v18, v19, int64(8))
@@ -17518,8 +17518,8 @@ func ts_parser_new() *TSParser {
 	*operation_count = 0
 	v30 = *self
 	old_tree = &v30.F16
-	ptr14 = (**SubtreeHeapData)(unsafe.Pointer(_compoundliteral13))
-	*ptr14 = nil
+	ptr14 = (*uintptr)(unsafe.Pointer(_compoundliteral13))
+	*ptr14 = 0
 	v31 = (*byte)(unsafe.Pointer(old_tree))
 	v32 = (*byte)(unsafe.Pointer(_compoundliteral13))
 	libc.Memmove(v31, v32, int64(8))
@@ -17538,10 +17538,10 @@ func ts_parser_new() *TSParser {
 	included_range_difference_index = &v36.F20
 	*included_range_difference_index = 0
 	v37 = *self
-	ptr20 = (**SubtreeHeapData)(unsafe.Pointer(_compoundliteral19))
-	*ptr20 = nil
-	ptr22 = (**SubtreeHeapData)(unsafe.Pointer(_compoundliteral21))
-	*ptr22 = nil
+	ptr20 = (*uintptr)(unsafe.Pointer(_compoundliteral19))
+	*ptr20 = 0
+	ptr22 = (*uintptr)(unsafe.Pointer(_compoundliteral21))
+	*ptr22 = 0
 	coerce_dive = &_compoundliteral19.F0
 	v38 = *coerce_dive
 	coerce_dive23 = &_compoundliteral21.F0
@@ -17662,7 +17662,6 @@ func ts_stack_new(subtree_pool *SubtreePool) *Stack {
 	var contents12, contents33, contents38 **StackIterator
 	var v33, v36, base_node **StackNode
 	var contents7, contents26, contents31 **StackSlice
-	var ptr, coerce_dive **SubtreeHeapData
 	var subtree_pool_addr, subtree_pool46 **SubtreePool
 	var v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v17, v19, v20, v23, v25, v26, v29, v31, v32, v35, v37, v39, v40, v42, v43, v44 *Stack
 	var v15, v18 *StackHead
@@ -17672,13 +17671,14 @@ func ts_stack_new(subtree_pool *SubtreePool) *Stack {
 	var v21, v24 *StackSlice
 	var slices, slices4, slices6, slices25, slices27, slices30 *StackSliceArray
 	var _compoundliteral *Subtree
-	var v41 *SubtreeHeapData
 	var v38 *SubtreePool
 	var heads, heads1, heads2, heads18, heads20, heads23 *anon_20
 	var iterators, iterators9, iterators11, iterators32, iterators34, iterators37 *anon_21
 	var call, v16, call22, v22, call29, v28, call36, v34, call43 *byte
 	var size, capacity, size3, capacity5, size8, capacity10, size13, capacity15, capacity21, capacity28, capacity35, capacity42 *int32
+	var ptr, coerce_dive *uintptr
 	var v0 func(int64, int64) *byte
+	var v41 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = subtree_pool_addr, self, _compoundliteral, v0, call, v1, v2, heads, size, v3, heads1, capacity, v4, heads2, contents, v5, slices, size3, v6, slices4, capacity5, v7, slices6, contents7, v8, iterators, size8, v9, iterators9, capacity10, v10, iterators11, contents12, v11, node_pool, size13, v12, node_pool14, capacity15, v13, node_pool16, contents17, v14, heads18, contents19, v15, v16, v17, heads20, capacity21, call22, v18, v19, heads23, contents24, v20, slices25, contents26, v21, v22, v23, slices27, capacity28, call29, v24, v25, slices30, contents31, v26, iterators32, contents33, v27, v28, v29, iterators34, capacity35, call36, v30, v31, iterators37, contents38, v32, node_pool39, contents40, v33, v34, v35, node_pool41, capacity42, call43, v36, v37, node_pool44, contents45, v38, v39, subtree_pool46, ptr, v40, node_pool47, coerce_dive, v41, call48, v42, base_node, v43, v44
 
@@ -17798,8 +17798,8 @@ func ts_stack_new(subtree_pool *SubtreePool) *Stack {
 	v39 = *self
 	subtree_pool46 = &v39.F5
 	*subtree_pool46 = v38
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(_compoundliteral))
-	*ptr = nil
+	ptr = (*uintptr)(unsafe.Pointer(_compoundliteral))
+	*ptr = 0
 	v40 = *self
 	node_pool47 = &v40.F3
 	coerce_dive = &_compoundliteral.F0
@@ -17816,10 +17816,10 @@ func ts_stack_new(subtree_pool *SubtreePool) *Stack {
 
 func reusable_node_new(agg_result *ReusableNode) {
 	var contents **StackEntry
-	var ptr **SubtreeHeapData
 	var last_external_token *Subtree
 	var stack *anon_7
 	var size, capacity *int32
+	var ptr *uintptr
 
 	_, _, _, _, _, _ = stack, contents, size, capacity, last_external_token, ptr
 
@@ -17831,23 +17831,23 @@ func reusable_node_new(agg_result *ReusableNode) {
 	capacity = &stack.F2
 	*capacity = 0
 	last_external_token = &agg_result.F1
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(last_external_token))
-	*ptr = nil
+	ptr = (*uintptr)(unsafe.Pointer(last_external_token))
+	*ptr = 0
 }
 
-func ts_parser__set_cached_token(self *TSParser, byte_index int32, last_external_token_coerce *SubtreeHeapData, token_coerce *SubtreeHeapData) {
-	var coerce_dive, coerce_dive1, ptr, coerce_dive2, ptr3, coerce_dive6, ptr9, coerce_dive13, ptr16, coerce_dive21 **SubtreeHeapData
+func ts_parser__set_cached_token(self *TSParser, byte_index int32, last_external_token_coerce uintptr, token_coerce uintptr) {
 	var self_addr **TSParser
 	var cache **TokenCache
 	var last_external_token, token, token8, token12, last_external_token15, last_external_token20, token23, last_external_token25 *Subtree
-	var v1, v2, v3, v4, v6, v9, v11, v14 *SubtreeHeapData
 	var tree_pool, tree_pool19 *SubtreePool
 	var v0, v7, v12 *TSParser
 	var token_cache, v5, v8, v10, v13, v15, v19, v20 *TokenCache
 	var v16, v17, v21, v22 *byte
 	var byte_index_addr, byte_index24 *int32
+	var coerce_dive, coerce_dive1, ptr, coerce_dive2, ptr3, coerce_dive6, ptr9, coerce_dive13, ptr16, coerce_dive21 *uintptr
 	var tobool, tobool4, tobool10, tobool17 bool
 	var v18 int32
+	var v1, v2, v3, v4, v6, v9, v11, v14 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = last_external_token, token, self_addr, byte_index_addr, cache, coerce_dive, coerce_dive1, v0, token_cache, ptr, v1, tobool, coerce_dive2, v2, ptr3, v3, tobool4, coerce_dive6, v4, v5, token8, ptr9, v6, tobool10, v7, tree_pool, v8, token12, coerce_dive13, v9, v10, last_external_token15, ptr16, v11, tobool17, v12, tree_pool19, v13, last_external_token20, coerce_dive21, v14, v15, token23, v16, v17, v18, v19, byte_index24, v20, last_external_token25, v21, v22
 
@@ -17865,9 +17865,9 @@ func ts_parser__set_cached_token(self *TSParser, byte_index int32, last_external
 	v0 = *self_addr
 	token_cache = &v0.F10
 	*cache = token_cache
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(token))
+	ptr = (*uintptr)(unsafe.Pointer(token))
 	v1 = *ptr
-	tobool = v1 != nil
+	tobool = v1 != 0
 	if tobool {
 		goto if_then
 	} else {
@@ -17881,9 +17881,9 @@ if_then:
 	goto if_end
 
 if_end:
-	ptr3 = (**SubtreeHeapData)(unsafe.Pointer(last_external_token))
+	ptr3 = (*uintptr)(unsafe.Pointer(last_external_token))
 	v3 = *ptr3
-	tobool4 = v3 != nil
+	tobool4 = v3 != 0
 	if tobool4 {
 		goto if_then5
 	} else {
@@ -17899,9 +17899,9 @@ if_then5:
 if_end7:
 	v5 = *cache
 	token8 = &v5.F0
-	ptr9 = (**SubtreeHeapData)(unsafe.Pointer(token8))
+	ptr9 = (*uintptr)(unsafe.Pointer(token8))
 	v6 = *ptr9
-	tobool10 = v6 != nil
+	tobool10 = v6 != 0
 	if tobool10 {
 		goto if_then11
 	} else {
@@ -17921,9 +17921,9 @@ if_then11:
 if_end14:
 	v10 = *cache
 	last_external_token15 = &v10.F1
-	ptr16 = (**SubtreeHeapData)(unsafe.Pointer(last_external_token15))
+	ptr16 = (*uintptr)(unsafe.Pointer(last_external_token15))
 	v11 = *ptr16
-	tobool17 = v11 != nil
+	tobool17 = v11 != 0
 	if tobool17 {
 		goto if_then18
 	} else {
@@ -17961,7 +17961,6 @@ func ts_parser_delete(self *TSParser) {
 	var contents, contents4, contents8, contents11 **ReduceAction
 	var stack **Stack
 	var contents48, contents52, contents55, contents62, contents66, contents69, contents76, contents80, contents83 **Subtree
-	var ptr, coerce_dive, ptr38, ptr41, ptr43, coerce_dive44, coerce_dive45 **SubtreeHeapData
 	var self_addr **TSParser
 	var contents15, contents20, contents24, contents27 **TSRange
 	var wasm_store **TSWasmStore
@@ -17972,7 +17971,6 @@ func ts_parser_delete(self *TSParser) {
 	var v3 *Stack
 	var _compoundliteral, _compoundliteral40, _compoundliteral42, old_tree, old_tree36, old_tree37, v43, v46, v52, v55, v61, v64 *Subtree
 	var trailing_extras, trailing_extras51, trailing_extras54, trailing_extras56, trailing_extras58, trailing_extras2, trailing_extras265, trailing_extras268, trailing_extras270, trailing_extras272, scratch_trees, scratch_trees79, scratch_trees82, scratch_trees84, scratch_trees86 *SubtreeArray
-	var v27, v30, v38, v39 *SubtreeHeapData
 	var tree_pool, tree_pool46 *SubtreePool
 	var v0, v1, v2, v4, v6, v9, v12, v13, v14, v15, v17, v20, v23, v24, v25, v26, v28, v29, v31, v34, v36, v37, v40, v41, v42, v45, v48, v49, v50, v51, v54, v57, v58, v59, v60, v63, v66, v67, v68, v70 *TSParser
 	var v16, v18, v21 *TSRange
@@ -17980,8 +17978,10 @@ func ts_parser_delete(self *TSParser) {
 	var v35 *TSWasmStore
 	var v11, v22, v32, v33, v47, v56, v65, v71 *byte
 	var size, capacity, size29, capacity31, size57, capacity59, size71, capacity73, size85, capacity87 *int32
+	var ptr, coerce_dive, ptr38, ptr41, ptr43, coerce_dive44, coerce_dive45 *uintptr
 	var tobool, call, tobool1, tobool5, tobool16, tobool21, tobool34, tobool49, tobool63, tobool77 bool
 	var v8, v19, v44, v53, v62, v69 func(*byte)
+	var v27, v30, v38, v39 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self_addr, _compoundliteral, _compoundliteral40, _compoundliteral42, v0, tobool, v1, call, v2, stack, v3, v4, reduce_actions, contents, v5, tobool1, v6, reduce_actions3, contents4, v7, tobool5, v8, v9, reduce_actions7, contents8, v10, v11, v12, reduce_actions10, contents11, v13, reduce_actions12, size, v14, reduce_actions13, capacity, v15, included_range_differences, contents15, v16, tobool16, v17, included_range_differences19, contents20, v18, tobool21, v19, v20, included_range_differences23, contents24, v21, v22, v23, included_range_differences26, contents27, v24, included_range_differences28, size29, v25, included_range_differences30, capacity31, v26, old_tree, ptr, v27, tobool34, v28, tree_pool, v29, old_tree36, coerce_dive, v30, v31, old_tree37, ptr38, v32, v33, v34, wasm_store, v35, v36, lexer, v37, ptr41, ptr43, coerce_dive44, v38, coerce_dive45, v39, v40, tree_pool46, v41, reusable_node, v42, trailing_extras, contents48, v43, tobool49, v44, v45, trailing_extras51, contents52, v46, v47, v48, trailing_extras54, contents55, v49, trailing_extras56, size57, v50, trailing_extras58, capacity59, v51, trailing_extras2, contents62, v52, tobool63, v53, v54, trailing_extras265, contents66, v55, v56, v57, trailing_extras268, contents69, v58, trailing_extras270, size71, v59, trailing_extras272, capacity73, v60, scratch_trees, contents76, v61, tobool77, v62, v63, scratch_trees79, contents80, v64, v65, v66, scratch_trees82, contents83, v67, scratch_trees84, size85, v68, scratch_trees86, capacity87, v69, v70, v71
 
@@ -18120,9 +18120,9 @@ do_end32:
 if_end33:
 	v26 = *self_addr
 	old_tree = &v26.F16
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(old_tree))
+	ptr = (*uintptr)(unsafe.Pointer(old_tree))
 	v27 = *ptr
-	tobool34 = v27 != nil
+	tobool34 = v27 != 0
 	if tobool34 {
 		goto if_then35
 	} else {
@@ -18139,8 +18139,8 @@ if_then35:
 	ts_subtree_release(tree_pool, v30)
 	v31 = *self_addr
 	old_tree37 = &v31.F16
-	ptr38 = (**SubtreeHeapData)(unsafe.Pointer(_compoundliteral))
-	*ptr38 = nil
+	ptr38 = (*uintptr)(unsafe.Pointer(_compoundliteral))
+	*ptr38 = 0
 	v32 = (*byte)(unsafe.Pointer(old_tree37))
 	v33 = (*byte)(unsafe.Pointer(_compoundliteral))
 	libc.Memmove(v32, v33, int64(8))
@@ -18155,10 +18155,10 @@ if_end39:
 	lexer = &v36.F0
 	ts_lexer_delete(lexer)
 	v37 = *self_addr
-	ptr41 = (**SubtreeHeapData)(unsafe.Pointer(_compoundliteral40))
-	*ptr41 = nil
-	ptr43 = (**SubtreeHeapData)(unsafe.Pointer(_compoundliteral42))
-	*ptr43 = nil
+	ptr41 = (*uintptr)(unsafe.Pointer(_compoundliteral40))
+	*ptr41 = 0
+	ptr43 = (*uintptr)(unsafe.Pointer(_compoundliteral42))
+	*ptr43 = 0
 	coerce_dive44 = &_compoundliteral40.F0
 	v38 = *coerce_dive44
 	coerce_dive45 = &_compoundliteral42.F0
@@ -18793,16 +18793,14 @@ do_end96:
 	v74(v76)
 }
 
-func ts_subtree_release(pool *SubtreePool, self_coerce *SubtreeHeapData) {
+func ts_subtree_release(pool *SubtreePool, self_coerce uintptr) {
 	var contents, contents13, contents15, contents26, contents65, contents72, contents74 **MutableSubtree
 	var children **Subtree
-	var coerce_dive, ptr, ptr3, coerce_dive18, coerce_dive20, ptr31, ptr38, ptr39, ptr41, ptr52, ptr58, coerce_dive81, coerce_dive83, ptr88, ptr93, ptr95 **SubtreeHeapData
 	var pool_addr **SubtreePool
 	var external_scanner_state *ExternalScannerState
 	var tmp, tree, tmp80, v6, v11, v14, arrayidx, v23, arrayidx30, v47, v52, v55, arrayidx79 *MutableSubtree
 	var tree_stack, tree_stack7, tree_stack8, tree_stack10, tree_stack12, tree_stack14, tree_stack16, tree_stack22, tree_stack25, tree_stack27, tree_stack64, tree_stack66, tree_stack68, tree_stack71, tree_stack73, tree_stack75 *MutableSubtreeArray
 	var self, child, v32, add_ptr, cond, v38, arrayidx45, v63 *Subtree
-	var v2, v4, v17, call19, v28, v31, v33, v36, v43, v45, v58, call82, v65, v66, v69 *SubtreeHeapData
 	var data, data34, data46 *SubtreeInlineData
 	var v1, v5, v8, v10, v12, v13, v15, v20, v22, v24, v46, v49, v51, v53, v54, v56, v68 *SubtreePool
 	var v0, v7, call11, v18, v19, v26, v27, v30, v40, v41, v42, v48, call70, v59, v60, v64 *byte
@@ -18811,12 +18809,14 @@ func ts_subtree_release(pool *SubtreePool, self_coerce *SubtreeHeapData) {
 	var v67 *struct {
 	F0 ExternalScannerState
 }
+	var coerce_dive, ptr, ptr3, coerce_dive18, coerce_dive20, ptr31, ptr38, ptr39, ptr41, ptr52, ptr58, coerce_dive81, coerce_dive83, ptr88, ptr93, ptr95 *uintptr
 	var bf_cast, cmp, cmp5, cmp24, cmp32, bf_cast37, cmp43, bf_cast49, cmp54, cmp61, bf_cast91 bool
 	var bf_load, bf_clear, bf_load35, bf_clear36, bf_load47, bf_clear48 byte
 	var v62 func(*byte)
 	var bf_load89, bf_lshr, bf_clear90 int16
 	var v3, call, v9, v16, inc, v21, v25, dec, v29, v34, v35, v37, v39, v44, call60, v50, v57, inc77, v61, inc86 int32
 	var idxprom, idxprom29, idx_ext, idx_neg, idxprom44, idxprom78 int64
+	var v2, v4, v17, call19, v28, v31, v33, v36, v43, v45, v58, call82, v65, v66, v69 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self, pool_addr, tmp, tree, children, i, child, tmp80, coerce_dive, data, v0, bf_load, bf_clear, bf_cast, v1, tree_stack, size, ptr, v2, ref_count, v3, cmp, ptr3, v4, ref_count4, call, cmp5, v5, tree_stack7, contents, v6, v7, v8, tree_stack8, size9, v9, v10, tree_stack10, capacity, call11, v11, v12, tree_stack12, contents13, v13, tree_stack14, contents15, v14, v15, tree_stack16, size17, v16, inc, idxprom, arrayidx, coerce_dive18, v17, call19, coerce_dive20, v18, v19, v20, tree_stack22, size23, v21, cmp24, v22, tree_stack25, contents26, v23, v24, tree_stack27, size28, v25, dec, idxprom29, arrayidx30, v26, v27, ptr31, v28, child_count, v29, cmp32, data34, v30, bf_load35, bf_clear36, bf_cast37, ptr38, v31, v32, ptr39, v33, child_count40, v34, idx_ext, idx_neg, add_ptr, cond, v35, ptr41, v36, child_count42, v37, cmp43, v38, v39, idxprom44, arrayidx45, v40, v41, data46, v42, bf_load47, bf_clear48, bf_cast49, ptr52, v43, ref_count53, v44, cmp54, ptr58, v45, ref_count59, call60, cmp61, v46, tree_stack64, contents65, v47, v48, v49, tree_stack66, size67, v50, v51, tree_stack68, capacity69, call70, v52, v53, tree_stack71, contents72, v54, tree_stack73, contents74, v55, v56, tree_stack75, size76, v57, inc77, idxprom78, arrayidx79, coerce_dive81, v58, call82, coerce_dive83, v59, v60, v61, inc86, v62, v63, v64, ptr88, v65, has_external_tokens, bf_load89, bf_lshr, bf_clear90, bf_cast91, ptr93, v66, v67, external_scanner_state, v68, ptr95, v69
 
@@ -18850,9 +18850,9 @@ if_end:
 	tree_stack = &v1.F1
 	size = &tree_stack.F1
 	*size = 0
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr = (*uintptr)(unsafe.Pointer(self))
 	v2 = *ptr
-	ref_count = &v2.F0
+	ref_count = &(*SubtreeHeapData)(unsafe.Pointer(v2)).F0
 	v3 = *ref_count
 	cmp = uint32(v3) > 0
 	if cmp {
@@ -18869,9 +18869,9 @@ if_else:
 	panic("unreachable")
 
 if_end2:
-	ptr3 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr3 = (*uintptr)(unsafe.Pointer(self))
 	v4 = *ptr3
-	ref_count4 = &v4.F0
+	ref_count4 = &(*SubtreeHeapData)(unsafe.Pointer(v4)).F0
 	call = atomic_dec(ref_count4)
 	cmp5 = call == 0
 	if cmp5 {
@@ -18958,9 +18958,9 @@ while_body:
 	v26 = (*byte)(unsafe.Pointer(tree))
 	v27 = (*byte)(unsafe.Pointer(arrayidx30))
 	libc.Memmove(v26, v27, int64(8))
-	ptr31 = (**SubtreeHeapData)(unsafe.Pointer(tree))
+	ptr31 = (*uintptr)(unsafe.Pointer(tree))
 	v28 = *ptr31
-	child_count = &v28.F5
+	child_count = &(*SubtreeHeapData)(unsafe.Pointer(v28)).F5
 	v29 = *child_count
 	cmp32 = uint32(v29) > 0
 	if cmp32 {
@@ -18986,12 +18986,12 @@ cond_true:
 	goto cond_end
 
 cond_false:
-	ptr38 = (**SubtreeHeapData)(unsafe.Pointer(tree))
+	ptr38 = (*uintptr)(unsafe.Pointer(tree))
 	v31 = *ptr38
 	v32 = (*Subtree)(unsafe.Pointer(v31))
-	ptr39 = (**SubtreeHeapData)(unsafe.Pointer(tree))
+	ptr39 = (*uintptr)(unsafe.Pointer(tree))
 	v33 = *ptr39
-	child_count40 = &v33.F5
+	child_count40 = &(*SubtreeHeapData)(unsafe.Pointer(v33)).F5
 	v34 = *child_count40
 	idx_ext = int64(uint64(uint32(v34)))
 	idx_neg = int64(0) - idx_ext
@@ -19006,9 +19006,9 @@ cond_end:
 
 for_cond:
 	v35 = *i
-	ptr41 = (**SubtreeHeapData)(unsafe.Pointer(tree))
+	ptr41 = (*uintptr)(unsafe.Pointer(tree))
 	v36 = *ptr41
-	child_count42 = &v36.F5
+	child_count42 = &(*SubtreeHeapData)(unsafe.Pointer(v36)).F5
 	v37 = *child_count42
 	cmp43 = uint32(v35) < uint32(v37)
 	if cmp43 {
@@ -19040,9 +19040,9 @@ if_then50:
 	goto for_inc
 
 if_end51:
-	ptr52 = (**SubtreeHeapData)(unsafe.Pointer(child))
+	ptr52 = (*uintptr)(unsafe.Pointer(child))
 	v43 = *ptr52
-	ref_count53 = &v43.F0
+	ref_count53 = &(*SubtreeHeapData)(unsafe.Pointer(v43)).F0
 	v44 = *ref_count53
 	cmp54 = uint32(v44) > 0
 	if cmp54 {
@@ -19059,9 +19059,9 @@ if_else56:
 	panic("unreachable")
 
 if_end57:
-	ptr58 = (**SubtreeHeapData)(unsafe.Pointer(child))
+	ptr58 = (*uintptr)(unsafe.Pointer(child))
 	v45 = *ptr58
-	ref_count59 = &v45.F0
+	ref_count59 = &(*SubtreeHeapData)(unsafe.Pointer(v45)).F0
 	call60 = atomic_dec(ref_count59)
 	cmp61 = call60 == 0
 	if cmp61 {
@@ -19134,9 +19134,9 @@ for_end:
 	goto if_end96
 
 if_else87:
-	ptr88 = (**SubtreeHeapData)(unsafe.Pointer(tree))
+	ptr88 = (*uintptr)(unsafe.Pointer(tree))
 	v65 = *ptr88
-	has_external_tokens = &v65.F8
+	has_external_tokens = &(*SubtreeHeapData)(unsafe.Pointer(v65)).F8
 	bf_load89 = *has_external_tokens
 	bf_lshr = int16(uint16(bf_load89) >> 6)
 	bf_clear90 = bf_lshr & 1
@@ -19148,16 +19148,16 @@ if_else87:
 	}
 
 if_then92:
-	ptr93 = (**SubtreeHeapData)(unsafe.Pointer(tree))
+	ptr93 = (*uintptr)(unsafe.Pointer(tree))
 	v66 = *ptr93
-	v67 = &v66.F9
+	v67 = &(*SubtreeHeapData)(unsafe.Pointer(v66)).F9
 	external_scanner_state = (*ExternalScannerState)(unsafe.Pointer(v67))
 	ts_external_scanner_state_delete(external_scanner_state)
 	goto if_end94
 
 if_end94:
 	v68 = *pool_addr
-	ptr95 = (**SubtreeHeapData)(unsafe.Pointer(tree))
+	ptr95 = (*uintptr)(unsafe.Pointer(tree))
 	v69 = *ptr95
 	ts_subtree_pool_free(v68, v69)
 	goto if_end96
@@ -19181,18 +19181,18 @@ func ts_wasm_store_delete(self *TSWasmStore) {
 
 func ts_subtree_pool_delete(self *SubtreePool) {
 	var contents, contents7, contents9, contents13, contents16, contents21, contents26, contents30, contents33 **MutableSubtree
-	var ptr **SubtreeHeapData
 	var self_addr **SubtreePool
 	var v1, v10, arrayidx, v16, v19, v25, v27, v30 *MutableSubtree
 	var free_trees, free_trees1, free_trees2, free_trees6, free_trees8, free_trees12, free_trees15, free_trees17, free_trees19, tree_stack, tree_stack25, tree_stack29, tree_stack32, tree_stack34, tree_stack36 *MutableSubtreeArray
-	var v12 *SubtreeHeapData
 	var v0, v3, v7, v9, v15, v18, v21, v22, v23, v24, v26, v29, v32, v33, v34 *SubtreePool
 	var v13, v20, v31 *byte
 	var i, size, size3, size18, capacity, size35, capacity37 *int32
+	var ptr *uintptr
 	var tobool, cmp, cmp4, tobool10, tobool22, tobool27 bool
 	var v5, v17, v28 func(*byte)
 	var v2, v4, v6, v8, v11, v14, inc int32
 	var idxprom int64
+	var v12 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self_addr, i, v0, free_trees, contents, v1, tobool, v2, v3, free_trees1, size, v4, cmp, v5, v6, v7, free_trees2, size3, v8, cmp4, v9, free_trees6, contents7, v10, v11, idxprom, arrayidx, ptr, v12, v13, v14, inc, v15, free_trees8, contents9, v16, tobool10, v17, v18, free_trees12, contents13, v19, v20, v21, free_trees15, contents16, v22, free_trees17, size18, v23, free_trees19, capacity, v24, tree_stack, contents21, v25, tobool22, v26, tree_stack25, contents26, v27, tobool27, v28, v29, tree_stack29, contents30, v30, v31, v32, tree_stack32, contents33, v33, tree_stack34, size35, v34, tree_stack36, capacity37
 
@@ -19256,7 +19256,7 @@ if_end:
 	v11 = *i
 	idxprom = int64(uint64(uint32(v11)))
 	arrayidx = libc.AddPointer(v10, int(idxprom))
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(arrayidx))
+	ptr = (*uintptr)(unsafe.Pointer(arrayidx))
 	v12 = *ptr
 	v13 = (*byte)(unsafe.Pointer(v12))
 	v5(v13)
@@ -19444,7 +19444,6 @@ func ts_parser_language(self *TSParser) *TSLanguage {
 
 func ts_parser_reset(self *TSParser) {
 	var stack **Stack
-	var ptr, coerce_dive, ptr6, ptr9, ptr11, coerce_dive12, coerce_dive13, ptr14, coerce_dive19, ptr22 **SubtreeHeapData
 	var self_addr **TSParser
 	var wasm_store, wasm_store1 **TSWasmStore
 	var payload, payload26 **byte
@@ -19453,7 +19452,6 @@ func ts_parser_reset(self *TSParser) {
 	var reusable_node *ReusableNode
 	var v24 *Stack
 	var _compoundliteral, _compoundliteral8, _compoundliteral10, _compoundliteral21, old_tree, old_tree4, old_tree5, finished_tree, finished_tree18, finished_tree20 *Subtree
-	var v6, v9, v26, v27, v29, v32 *SubtreeHeapData
 	var tree_pool, tree_pool17 *SubtreePool
 	var _compoundliteral24, parse_options *TSParseOptions
 	var _compoundliteral25, parse_state *TSParseState
@@ -19467,6 +19465,7 @@ func ts_parser_reset(self *TSParser) {
 	F0 int64
 	F1 int32
 }
+	var ptr, coerce_dive, ptr6, ptr9, ptr11, coerce_dive12, coerce_dive13, ptr14, coerce_dive19, ptr22 *uintptr
 	var tobool, tobool2, tobool15 bool
 	var v22 int32
 	var v20 int64
@@ -19474,6 +19473,7 @@ func ts_parser_reset(self *TSParser) {
 	F0 int64
 	F1 int32
 }
+	var v6, v9, v26, v27, v29, v32 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self_addr, _compoundliteral, agg_tmp, tmp_coerce, agg_tmp_coerce, _compoundliteral8, _compoundliteral10, _compoundliteral21, _compoundliteral24, _compoundliteral25, v0, v1, wasm_store, v2, tobool, v3, wasm_store1, v4, v5, old_tree, ptr, v6, tobool2, v7, tree_pool, v8, old_tree4, coerce_dive, v9, v10, old_tree5, ptr6, v11, v12, v13, reusable_node, v14, lexer, call, v15, v16, v17, v18, v19, v20, v21, v22, v23, stack, v24, v25, ptr9, ptr11, coerce_dive12, v26, coerce_dive13, v27, v28, finished_tree, ptr14, v29, tobool15, v30, tree_pool17, v31, finished_tree18, coerce_dive19, v32, v33, finished_tree20, ptr22, v34, v35, v36, accept_count, v37, has_scanner_error, v38, has_error, v39, canceled_balancing, v40, parse_options, payload, progress_callback, v41, v42, v43, parse_state, payload26, current_byte_offset, has_error27, v44, v45
 
@@ -19516,9 +19516,9 @@ if_then:
 if_end:
 	v5 = *self_addr
 	old_tree = &v5.F16
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(old_tree))
+	ptr = (*uintptr)(unsafe.Pointer(old_tree))
 	v6 = *ptr
-	tobool2 = v6 != nil
+	tobool2 = v6 != 0
 	if tobool2 {
 		goto if_then3
 	} else {
@@ -19535,8 +19535,8 @@ if_then3:
 	ts_subtree_release(tree_pool, v9)
 	v10 = *self_addr
 	old_tree5 = &v10.F16
-	ptr6 = (**SubtreeHeapData)(unsafe.Pointer(_compoundliteral))
-	*ptr6 = nil
+	ptr6 = (*uintptr)(unsafe.Pointer(_compoundliteral))
+	*ptr6 = 0
 	v11 = (*byte)(unsafe.Pointer(old_tree5))
 	v12 = (*byte)(unsafe.Pointer(_compoundliteral))
 	libc.Memmove(v11, v12, int64(8))
@@ -19566,10 +19566,10 @@ if_end7:
 	v24 = *stack
 	ts_stack_clear(v24)
 	v25 = *self_addr
-	ptr9 = (**SubtreeHeapData)(unsafe.Pointer(_compoundliteral8))
-	*ptr9 = nil
-	ptr11 = (**SubtreeHeapData)(unsafe.Pointer(_compoundliteral10))
-	*ptr11 = nil
+	ptr9 = (*uintptr)(unsafe.Pointer(_compoundliteral8))
+	*ptr9 = 0
+	ptr11 = (*uintptr)(unsafe.Pointer(_compoundliteral10))
+	*ptr11 = 0
 	coerce_dive12 = &_compoundliteral8.F0
 	v26 = *coerce_dive12
 	coerce_dive13 = &_compoundliteral10.F0
@@ -19577,9 +19577,9 @@ if_end7:
 	ts_parser__set_cached_token(v25, 0, v26, v27)
 	v28 = *self_addr
 	finished_tree = &v28.F6
-	ptr14 = (**SubtreeHeapData)(unsafe.Pointer(finished_tree))
+	ptr14 = (*uintptr)(unsafe.Pointer(finished_tree))
 	v29 = *ptr14
-	tobool15 = v29 != nil
+	tobool15 = v29 != 0
 	if tobool15 {
 		goto if_then16
 	} else {
@@ -19596,8 +19596,8 @@ if_then16:
 	ts_subtree_release(tree_pool17, v32)
 	v33 = *self_addr
 	finished_tree20 = &v33.F6
-	ptr22 = (**SubtreeHeapData)(unsafe.Pointer(_compoundliteral21))
-	*ptr22 = nil
+	ptr22 = (*uintptr)(unsafe.Pointer(_compoundliteral21))
+	*ptr22 = 0
 	v34 = (*byte)(unsafe.Pointer(finished_tree20))
 	v35 = (*byte)(unsafe.Pointer(_compoundliteral21))
 	libc.Memmove(v34, v35, int64(8))
@@ -19930,12 +19930,12 @@ func ts_wasm_store_reset(self *TSWasmStore) {
 
 func reusable_node_clear(self *ReusableNode) {
 	var self_addr **ReusableNode
-	var ptr **SubtreeHeapData
 	var v0, v1 *ReusableNode
 	var _compoundliteral, last_external_token *Subtree
 	var stack *anon_7
 	var v2, v3 *byte
 	var size *int32
+	var ptr *uintptr
 
 	_, _, _, _, _, _, _, _, _, _ = self_addr, _compoundliteral, v0, stack, size, v1, last_external_token, ptr, v2, v3
 
@@ -19948,8 +19948,8 @@ func reusable_node_clear(self *ReusableNode) {
 	*size = 0
 	v1 = *self_addr
 	last_external_token = &v1.F1
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(_compoundliteral))
-	*ptr = nil
+	ptr = (*uintptr)(unsafe.Pointer(_compoundliteral))
+	*ptr = 0
 	v2 = (*byte)(unsafe.Pointer(last_external_token))
 	v3 = (*byte)(unsafe.Pointer(_compoundliteral))
 	libc.Memmove(v2, v3, int64(8))
@@ -19960,7 +19960,6 @@ func ts_stack_clear(self *Stack) {
 	var contents, contents8, contents13, contents15 **StackHead
 	var base_node, node, base_node21 **StackNode
 	var summary **StackSummary
-	var ptr, ptr22 **SubtreeHeapData
 	var subtree_pool **SubtreePool
 	var v0, v3, v6, v8, v11, v12, v15, v16, v19, v21, v23, v24, v26, v28 *Stack
 	var _compoundliteral, v9, arrayidx, v17, v22, v25, arrayidx20 *StackHead
@@ -19971,6 +19970,7 @@ func ts_stack_clear(self *Stack) {
 	var heads, heads1, heads4, heads5, heads7, heads9, heads11, heads12, heads14, heads16 *anon_20
 	var v18, call, v30, v31 *byte
 	var i, size, size2, size6, size10, capacity, size17, node_count_at_last_error, status *int32
+	var ptr, ptr22 *uintptr
 	var cmp, cmp3 bool
 	var v2, v4, v5, v7, v10, v14, inc, v20, v27, inc18 int32
 	var idxprom, idxprom19 int64
@@ -20091,11 +20091,11 @@ do_body:
 	node_count_at_last_error = &_compoundliteral.F2
 	*node_count_at_last_error = 0
 	last_external_token = &_compoundliteral.F3
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(last_external_token))
-	*ptr = nil
+	ptr = (*uintptr)(unsafe.Pointer(last_external_token))
+	*ptr = 0
 	lookahead_when_paused = &_compoundliteral.F4
-	ptr22 = (**SubtreeHeapData)(unsafe.Pointer(lookahead_when_paused))
-	*ptr22 = nil
+	ptr22 = (*uintptr)(unsafe.Pointer(lookahead_when_paused))
+	*ptr22 = 0
 	status = &_compoundliteral.F5
 	*status = 0
 	v30 = (*byte)(unsafe.Pointer(arrayidx20))
@@ -20108,7 +20108,6 @@ do_end:
 
 func ts_parser_parse(self *TSParser, old_tree *TSTree, input *TSInput) *TSTree {
 	var stack, stack106, stack119, stack121, stack123, stack125, stack143, stack150, stack175 **Stack
-	var coerce_dive, coerce_dive38, coerce_dive58, ptr, coerce_dive170, ptr210, coerce_dive239, coerce_dive249, ptr252 **SubtreeHeapData
 	var language, language2, language8, language56, language144, language237, language244 **TSLanguage
 	var self_addr **TSParser
 	var _range, range184, included_ranges, included_ranges33, contents, contents194, included_ranges246 **TSRange
@@ -20120,7 +20119,6 @@ func ts_parser_parse(self *TSParser, old_tree *TSTree, input *TSInput) *TSTree {
 	var reusable_node, reusable_node85 *ReusableNode
 	var v91, v96, v105, v107, v110, v116, v130, v138, v157 *Stack
 	var _compoundliteral, root, old_tree30, root31, root37, old_tree55, finished_tree, finished_tree169, finished_tree209, finished_tree236, finished_tree243, finished_tree251 *Subtree
-	var v30, v46, v60, v152, v154, v177, v194, v204 *SubtreeHeapData
 	var v1, v4, v11, v57, v132, v191, v199 *TSLanguage
 	var data *TSLexer
 	var logger, logger40, logger72, logger87, logger109, logger221 *TSLogger
@@ -20140,6 +20138,7 @@ func ts_parser_parse(self *TSParser, old_tree *TSTree, input *TSInput) *TSTree {
 	F0 int64
 	F1 int32
 }
+	var coerce_dive, coerce_dive38, coerce_dive58, ptr, coerce_dive170, ptr210, coerce_dive239, coerce_dive249, ptr252 *uintptr
 	var tobool, tobool1, call, tobool4, call9, call12, tobool15, tobool17, tobool22, tobool25, tobool28, tobool42, tobool45, tobool53, cmp, cmp66, tobool74, tobool77, tobool89, tobool92, cmp103, cmp105, call107, tobool111, tobool114, tobool132, call133, tobool136, tobool141, call146, cmp154, cmp157, cmp159, tobool167, cmp172, cmp181, cmp188, cmp199, cmp207, tobool211, call215, tobool223, tobool226, tobool234 bool
 	var v24, v27, frombool, v124, v126 byte
 	var v18, v48, v73, v85, v99, v182 func(*byte, int32, *byte)
@@ -20151,6 +20150,7 @@ func ts_parser_parse(self *TSParser, old_tree *TSTree, input *TSInput) *TSTree {
 	F0 int64
 	F1 int32
 }
+	var v30, v46, v60, v152, v154, v177, v194, v204 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, self_addr, old_tree_addr, result, i, _range, position, last_position, version_count, version, allow_node_reuse, coerce, tmp_coerce, coerce127, tmp_coerce128, coerce152, tmp_coerce153, min_error_cost, range184, _compoundliteral, v0, language, v1, tobool, read, v2, tobool1, v3, language2, v4, call, v5, wasm_store, v6, tobool4, v7, wasm_store7, v8, v9, lexer, data, v10, language8, v11, call9, v12, lexer11, v13, included_range_differences, size, v14, included_range_difference_index, v15, operation_count, v16, call12, v17, lexer14, logger, log, v18, tobool15, v19, dot_graph_file, v20, tobool17, v21, lexer19, debug_buffer, arraydecay, call20, v22, v23, canceled_balancing, v24, tobool22, v25, v26, has_scanner_error, v27, tobool25, v28, tobool28, v29, root, coerce_dive, v30, v31, old_tree30, v32, root31, v33, v34, v35, included_ranges, v36, v37, included_range_count, v38, v39, lexer32, included_ranges33, v40, v41, lexer34, included_range_count35, v42, v43, included_range_differences36, v44, reusable_node, v45, root37, coerce_dive38, v46, v47, lexer39, logger40, log41, v48, tobool42, v49, dot_graph_file44, v50, tobool45, v51, lexer47, debug_buffer48, arraydecay49, call50, v52, v53, dot_graph_file52, v54, tobool53, v55, old_tree55, v56, language56, v57, v58, dot_graph_file57, v59, coerce_dive58, v60, v61, dot_graph_file59, v62, call60, v63, v64, included_range_differences62, size63, v65, cmp, v66, v67, included_range_differences64, size65, v68, cmp66, v69, included_range_differences70, contents, v70, v71, idxprom, arrayidx, v72, lexer71, logger72, log73, v73, tobool74, v74, dot_graph_file76, v75, tobool77, v76, lexer79, debug_buffer80, arraydecay81, v77, start_byte, v78, v79, end_byte, v80, call82, v81, v82, inc, v83, reusable_node85, v84, lexer86, logger87, log88, v85, tobool89, v86, dot_graph_file91, v87, tobool92, v88, lexer94, debug_buffer95, arraydecay96, call97, v89, v90, stack, v91, call102, v92, v93, cmp103, v94, cmp105, frombool, v95, stack106, v96, v97, call107, v98, lexer108, logger109, log110, v99, tobool111, v100, dot_graph_file113, v101, tobool114, v102, lexer116, debug_buffer117, arraydecay118, v103, v104, stack119, v105, call120, v106, stack121, v107, v108, call122, conv, v109, stack123, v110, v111, call124, v112, v113, extent, row, v114, v115, stack125, v116, v117, call126, v118, v119, extent129, column, v120, call130, v121, v122, v123, v124, tobool132, call133, v125, has_scanner_error135, v126, tobool136, v127, dot_graph_file140, v128, tobool141, v129, stack143, v130, v131, language144, v132, v133, dot_graph_file145, v134, call146, v135, dot_graph_file147, v136, call148, v137, stack150, v138, v139, call151, v140, v141, bytes, v142, v143, v144, cmp154, v145, cmp157, v146, v147, cmp159, v148, v149, inc164, v150, call166, v151, finished_tree, ptr, v152, tobool167, v153, finished_tree169, coerce_dive170, v154, call171, v155, cmp172, v156, stack175, v157, v158, included_range_difference_index178, v159, v160, included_range_differences179, size180, v161, cmp181, v162, included_range_difference_index185, v163, v164, included_range_differences186, size187, v165, cmp188, v166, included_range_differences193, contents194, v167, v168, included_range_difference_index195, v169, idxprom196, arrayidx197, v170, end_byte198, v171, v172, cmp199, v173, included_range_difference_index202, v174, inc203, v175, cmp207, v176, finished_tree209, ptr210, v177, tobool211, v178, call215, v179, canceled_balancing217, v180, canceled_balancing219, v181, lexer220, logger221, log222, v182, tobool223, v183, dot_graph_file225, v184, tobool226, v185, lexer228, debug_buffer229, arraydecay230, call231, v186, v187, dot_graph_file233, v188, tobool234, v189, finished_tree236, v190, language237, v191, v192, dot_graph_file238, v193, coerce_dive239, v194, v195, dot_graph_file240, v196, call241, v197, finished_tree243, v198, language244, v199, v200, lexer245, included_ranges246, v201, v202, lexer247, included_range_count248, v203, coerce_dive249, v204, call250, v205, finished_tree251, ptr252, v206, v207, v208, v209, v210
 
@@ -20821,9 +20821,9 @@ for_end165:
 	*min_error_cost = call166
 	v151 = *self_addr
 	finished_tree = &v151.F6
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(finished_tree))
+	ptr = (*uintptr)(unsafe.Pointer(finished_tree))
 	v152 = *ptr
-	tobool167 = v152 != nil
+	tobool167 = v152 != 0
 	if tobool167 {
 		goto land_lhs_true168
 	} else {
@@ -20945,9 +20945,9 @@ do_end:
 balance:
 	v176 = *self_addr
 	finished_tree209 = &v176.F6
-	ptr210 = (**SubtreeHeapData)(unsafe.Pointer(finished_tree209))
+	ptr210 = (*uintptr)(unsafe.Pointer(finished_tree209))
 	v177 = *ptr210
-	tobool211 = v177 != nil
+	tobool211 = v177 != 0
 	if tobool211 {
 		goto if_then212
 	} else {
@@ -21063,8 +21063,8 @@ if_end242:
 	*result = call250
 	v205 = *self_addr
 	finished_tree251 = &v205.F6
-	ptr252 = (**SubtreeHeapData)(unsafe.Pointer(_compoundliteral))
-	*ptr252 = nil
+	ptr252 = (*uintptr)(unsafe.Pointer(_compoundliteral))
+	*ptr252 = 0
 	v206 = (*byte)(unsafe.Pointer(finished_tree251))
 	v207 = (*byte)(unsafe.Pointer(_compoundliteral))
 	libc.Memmove(v206, v207, int64(8))
@@ -21408,16 +21408,16 @@ if_end19:
 if_end20:
 }
 
-func ts_subtree_retain(self_coerce *SubtreeHeapData) {
-	var coerce_dive, ptr, ptr3, ptr5 **SubtreeHeapData
+func ts_subtree_retain(self_coerce uintptr) {
 	var self *Subtree
-	var v1, v3, v4 *SubtreeHeapData
 	var data *SubtreeInlineData
 	var v0 *byte
 	var ref_count, ref_count4, ref_count6 *int32
+	var coerce_dive, ptr, ptr3, ptr5 *uintptr
 	var bf_cast, cmp, cmp7 bool
 	var bf_load, bf_clear byte
 	var v2, call, v5 int32
+	var v1, v3, v4 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self, coerce_dive, data, v0, bf_load, bf_clear, bf_cast, ptr, v1, ref_count, v2, cmp, ptr3, v3, ref_count4, call, ptr5, v4, ref_count6, v5, cmp7
 
@@ -21439,9 +21439,9 @@ if_then:
 	goto if_end10
 
 if_end:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr = (*uintptr)(unsafe.Pointer(self))
 	v1 = *ptr
-	ref_count = &v1.F0
+	ref_count = &(*SubtreeHeapData)(unsafe.Pointer(v1)).F0
 	v2 = *ref_count
 	cmp = uint32(v2) > 0
 	if cmp {
@@ -21458,13 +21458,13 @@ if_else:
 	panic("unreachable")
 
 if_end2:
-	ptr3 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr3 = (*uintptr)(unsafe.Pointer(self))
 	v3 = *ptr3
-	ref_count4 = &v3.F0
+	ref_count4 = &(*SubtreeHeapData)(unsafe.Pointer(v3)).F0
 	call = atomic_inc(ref_count4)
-	ptr5 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr5 = (*uintptr)(unsafe.Pointer(self))
 	v4 = *ptr5
-	ref_count6 = &v4.F0
+	ref_count6 = &(*SubtreeHeapData)(unsafe.Pointer(v4)).F0
 	v5 = *ref_count6
 	cmp7 = v5 != 0
 	if cmp7 {
@@ -21483,16 +21483,16 @@ if_else9:
 if_end10:
 }
 
-func reusable_node_reset(self *ReusableNode, tree_coerce *SubtreeHeapData) {
+func reusable_node_reset(self *ReusableNode, tree_coerce uintptr) {
 	var self_addr **ReusableNode
 	var contents, contents4, contents6 **StackEntry
-	var coerce_dive **SubtreeHeapData
 	var v0, v1, v4, v6, v8, v9, v11, v17, v18 *ReusableNode
 	var _compoundliteral, v2, v7, v10, arrayidx *StackEntry
 	var tree, tree9 *Subtree
 	var stack, stack1, stack2, stack3, stack5, stack7 *anon_7
 	var v3, call, v13, v14, v15, v16 *byte
 	var size, capacity, size8, child_index, byte_offset *int32
+	var coerce_dive *uintptr
 	var call10 bool
 	var v5, v12, inc int32
 	var idxprom int64
@@ -21570,13 +21570,13 @@ if_then:
 if_end:
 }
 
-func ts_subtree_print_dot_graph(self_coerce *SubtreeHeapData, language *TSLanguage, f *os.File) {
-	var coerce_dive **SubtreeHeapData
+func ts_subtree_print_dot_graph(self_coerce uintptr, language *TSLanguage, f *os.File) {
 	var language_addr **TSLanguage
 	var f_addr **os.File
 	var self *Subtree
 	var v2 *TSLanguage
 	var v0, v1, v3, v4 *os.File
+	var coerce_dive *uintptr
 	var call, call1, call2 int32
 
 	_, _, _, _, _, _, _, _, _, _, _, _ = self, language_addr, f_addr, coerce_dive, v0, call, v1, call1, v2, v3, v4, call2
@@ -21801,7 +21801,6 @@ if_end:
 
 func ts_parser__advance(self *TSParser, version int32, allow_node_reuse bool) bool {
 	var stack, stack1, stack3, stack162, stack166, stack173, stack191, stack252, stack274 **Stack
-	var coerce_dive, coerce_dive5, coerce_dive7, ptr, coerce_dive11, coerce_dive13, ptr15, coerce_dive22, ptr26, coerce_dive29, coerce_dive30, coerce_dive31, coerce_dive72, coerce_dive78, coerce_dive85, ptr95, coerce_dive145, coerce_dive147, coerce_dive154, ptr175, coerce_dive180, ptr186, coerce_dive189, coerce_dive193, coerce_dive196, coerce_dive205, coerce_dive228, coerce_dive238, coerce_dive240, coerce_dive245, coerce_dive247, coerce_dive255, coerce_dive269, coerce_dive275 **SubtreeHeapData
 	var language, language33, language77, language110, language167, language179, language199, language204, language209, language210, language227, language231, language232, language241, language243, language268 **TSLanguage
 	var actions **TSParseAction
 	var self_addr **TSParser
@@ -21812,7 +21811,6 @@ func ts_parser__advance(self *TSParser, version int32, allow_node_reuse bool) bo
 	var reusable_node, reusable_node88, reusable_node152, reusable_node157 *ReusableNode
 	var v1, v4, v10, v131, v137, v145, v157, v202, v216 *Stack
 	var last_external_token, lookahead, tmp, tmp10, tmp20, tmp244 *Subtree
-	var call4, v18, call6, v21, v25, call12, v28, call21, v37, v40, v41, v45, v74, v81, v86, v90, v119, v120, v125, v147, v151, v153, v155, v159, v160, v167, v182, v190, call239, v196, call246, v205, v213, v218 *SubtreeHeapData
 	var tree_pool, tree_pool237, tree_pool254 *SubtreePool
 	var v43, v47, v79, v97, v139, v149, v162, v165, v169, v172, v181, v184, v186, v192, v195, v212 *TSLanguage
 	var logger, logger58, logger100, logger133, logger217, logger258 *TSLogger
@@ -21832,6 +21830,7 @@ func ts_parser__advance(self *TSParser, version int32, allow_node_reuse bool) bo
 	F0 int64
 	F1 int32
 }
+	var coerce_dive, coerce_dive5, coerce_dive7, ptr, coerce_dive11, coerce_dive13, ptr15, coerce_dive22, ptr26, coerce_dive29, coerce_dive30, coerce_dive31, coerce_dive72, coerce_dive78, coerce_dive85, ptr95, coerce_dive145, coerce_dive147, coerce_dive154, ptr175, coerce_dive180, ptr186, coerce_dive189, coerce_dive193, coerce_dive196, coerce_dive205, coerce_dive228, coerce_dive238, coerce_dive240, coerce_dive245, coerce_dive247, coerce_dive255, coerce_dive269, coerce_dive275 *uintptr
 	var tobool, tobool8, tobool16, lnot, tobool18, tobool23, tobool27, call36, cmp, tobool42, tobool46, tobool48, tobool49, tobool60, tobool63, cmp74, tobool84, tobool86, cmp92, cmp96, tobool102, tobool105, tobool124, tobool125, cmp127, tobool135, tobool138, cmp149, tobool155, cmp159, tobool164, call169, tobool176, tobool184, tobool187, call194, cmp201, call207, cmp213, tobool219, tobool222, call250, tobool260, tobool263, v219 bool
 	var frombool, v14, frombool17, v29, v36, v56, v57, v58, v85, v87, frombool94, frombool98, v99, v104, v107, v108, v126, v152 byte
 	var v61, v68, v92, v112, v176, v207 func(*byte, int32, *byte)
@@ -21842,6 +21841,7 @@ func ts_parser__advance(self *TSParser, version int32, allow_node_reuse bool) bo
 	F0 int64
 	F1 int32
 }
+	var call4, v18, call6, v21, v25, call12, v28, call21, v37, v40, v41, v45, v74, v81, v86, v90, v119, v120, v125, v147, v151, v153, v155, v159, v160, v167, v182, v190, call239, v196, call246, v205, v213, v218 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, self_addr, version_addr, allow_node_reuse_addr, state, position, coerce, tmp_coerce, last_external_token, did_reuse, lookahead, table_entry, tmp, tmp10, needs_lex, tmp20, did_reduce, last_reduction_version, i, action, next_state, is_fragile, end_of_non_terminal_extra, reduction_version, mutable_lookahead, tmp244, frombool, v0, stack, v1, v2, call, v3, stack1, v4, v5, call2, v6, v7, bytes, v8, v9, stack3, v10, v11, call4, coerce_dive, v12, v13, v14, tobool, v15, v16, v17, coerce_dive5, v18, call6, coerce_dive7, v19, v20, ptr, v21, tobool8, v22, v23, v24, conv, coerce_dive11, v25, call12, coerce_dive13, v26, v27, ptr15, v28, tobool16, lnot, frombool17, v29, tobool18, v30, v31, v32, call21, coerce_dive22, v33, v34, v35, has_scanner_error, v36, tobool23, ptr26, v37, tobool27, v38, v39, coerce_dive29, v40, coerce_dive30, v41, v42, language, v43, v44, coerce_dive31, v45, call32, v46, language33, v47, v48, v49, call36, v50, action_count, v51, cmp, actions, v52, v53, idxprom, arrayidx, v54, v55, _type, v56, conv41, shift, repetition, v57, tobool42, shift45, extra, v58, tobool46, v59, v60, lexer, logger, log, v61, tobool48, v62, dot_graph_file, v63, tobool49, v64, lexer51, debug_buffer, arraydecay, call52, v65, shift55, state56, v66, v67, lexer57, logger58, log59, v68, tobool60, v69, dot_graph_file62, v70, tobool63, v71, lexer65, debug_buffer66, arraydecay67, v72, conv68, call69, v73, coerce_dive72, v74, call73, cmp74, v75, v76, v77, reusable_node, v78, language77, v79, v80, coerce_dive78, v81, call79, call80, v82, v83, v84, shift82, extra83, v85, tobool84, coerce_dive85, v86, v87, tobool86, v88, reusable_node88, action_count91, v89, cmp92, frombool94, ptr95, v90, cmp96, frombool98, v91, lexer99, logger100, log101, v92, tobool102, v93, dot_graph_file104, v94, tobool105, v95, lexer107, debug_buffer108, arraydecay109, v96, language110, v97, reduce, symbol, v98, call111, reduce112, child_count, v99, conv113, call114, v100, v101, v102, reduce116, symbol117, v103, reduce118, child_count119, v104, conv120, reduce121, dynamic_precedence, v105, conv122, reduce123, production_id, v106, v107, tobool124, v108, tobool125, call126, v109, cmp127, v110, v111, lexer132, logger133, log134, v112, tobool135, v113, dot_graph_file137, v114, tobool138, v115, lexer140, debug_buffer141, arraydecay142, call143, v116, v117, v118, coerce_dive145, v119, coerce_dive147, v120, call148, cmp149, v121, v122, reusable_node152, v123, v124, coerce_dive154, v125, v126, tobool155, v127, reusable_node157, v128, inc, v129, cmp159, v130, stack162, v131, v132, v133, v134, dot_graph_file163, v135, tobool164, v136, stack166, v137, v138, language167, v139, v140, dot_graph_file168, v141, call169, v142, dot_graph_file170, v143, call171, v144, stack173, v145, v146, call174, ptr175, v147, tobool176, v148, language179, v149, v150, coerce_dive180, v151, call181, v152, tobool184, ptr186, v153, tobool187, v154, tree_pool, coerce_dive189, v155, v156, stack191, v157, v158, coerce_dive193, v159, call194, coerce_dive196, v160, call197, conv198, v161, language199, v162, keyword_capture_token, v163, conv200, cmp201, v164, language204, v165, v166, coerce_dive205, v167, call206, call207, v168, language209, v169, v170, v171, language210, v172, keyword_capture_token211, v173, action_count212, v174, cmp213, v175, lexer216, logger217, log218, v176, tobool219, v177, dot_graph_file221, v178, tobool222, v179, lexer224, debug_buffer225, arraydecay226, v180, language227, v181, coerce_dive228, v182, call229, call230, v183, language231, v184, v185, language232, v186, keyword_capture_token233, v187, call234, call235, v188, v189, tree_pool237, coerce_dive238, v190, call239, coerce_dive240, v191, language241, v192, keyword_capture_token242, v193, v194, language243, v195, coerce_dive245, v196, call246, coerce_dive247, v197, v198, v199, v200, call250, v201, stack252, v202, v203, call253, v204, tree_pool254, coerce_dive255, v205, v206, lexer257, logger258, log259, v207, tobool260, v208, dot_graph_file262, v209, tobool263, v210, lexer265, debug_buffer266, arraydecay267, v211, language268, v212, coerce_dive269, v213, call270, call271, call272, v214, v215, stack274, v216, v217, coerce_dive275, v218, v219
 
@@ -21931,9 +21931,9 @@ if_then:
 	goto if_end
 
 if_end:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(lookahead))
+	ptr = (*uintptr)(unsafe.Pointer(lookahead))
 	v21 = *ptr
-	tobool8 = v21 != nil
+	tobool8 = v21 != 0
 	if tobool8 {
 		goto if_end14
 	} else {
@@ -21957,9 +21957,9 @@ if_then9:
 	goto if_end14
 
 if_end14:
-	ptr15 = (**SubtreeHeapData)(unsafe.Pointer(lookahead))
+	ptr15 = (*uintptr)(unsafe.Pointer(lookahead))
 	v28 = *ptr15
-	tobool16 = v28 != nil
+	tobool16 = v28 != 0
 	lnot = tobool16 != true
 	if lnot { frombool17 = 1 } else { frombool17 = 0 }
 	*needs_lex = frombool17
@@ -22000,9 +22000,9 @@ if_then24:
 	goto _return
 
 if_end25:
-	ptr26 = (**SubtreeHeapData)(unsafe.Pointer(lookahead))
+	ptr26 = (*uintptr)(unsafe.Pointer(lookahead))
 	v37 = *ptr26
-	tobool27 = v37 != nil
+	tobool27 = v37 != 0
 	if tobool27 {
 		goto if_then28
 	} else {
@@ -22263,9 +22263,9 @@ sw_bb90:
 	cmp92 = uint32(v89) > 1
 	if cmp92 { frombool94 = 1 } else { frombool94 = 0 }
 	*is_fragile = frombool94
-	ptr95 = (**SubtreeHeapData)(unsafe.Pointer(lookahead))
+	ptr95 = (*uintptr)(unsafe.Pointer(lookahead))
 	v90 = *ptr95
-	cmp96 = v90 == nil
+	cmp96 = v90 == 0
 	if cmp96 { frombool98 = 1 } else { frombool98 = 0 }
 	*end_of_non_terminal_extra = frombool98
 	v91 = *self_addr
@@ -22496,9 +22496,9 @@ if_end172:
 	v146 = *version_addr
 	call174 = ts_stack_state(v145, v146)
 	*state = call174
-	ptr175 = (**SubtreeHeapData)(unsafe.Pointer(lookahead))
+	ptr175 = (*uintptr)(unsafe.Pointer(lookahead))
 	v147 = *ptr175
-	tobool176 = v147 != nil
+	tobool176 = v147 != 0
 	if tobool176 {
 		goto if_else178
 	} else {
@@ -22533,9 +22533,9 @@ if_end183:
 	}
 
 if_then185:
-	ptr186 = (**SubtreeHeapData)(unsafe.Pointer(lookahead))
+	ptr186 = (*uintptr)(unsafe.Pointer(lookahead))
 	v153 = *ptr186
-	tobool187 = v153 != nil
+	tobool187 = v153 != 0
 	if tobool187 {
 		goto if_then188
 	} else {
@@ -22793,7 +22793,6 @@ func ts_stack_print_dot_graph(self *Stack, language *TSLanguage, f *os.File) boo
 	var node110, node, node86, node87, node111, v109, arrayidx126, node178, node281, node282, v209, v212, v214, arrayidx296, v218, v220 **StackNode
 	var summary, summary33, summary37, summary43 **StackSummary
 	var contents44 **StackSummaryEntry
-	var ptr, ptr53, ptr149, coerce_dive, ptr185, coerce_dive189, ptr196, coerce_dive203, coerce_dive207, coerce_dive215, coerce_dive223, coerce_dive226 **SubtreeHeapData
 	var language_addr **TSLanguage
 	var data **byte
 	var f_addr **os.File
@@ -22807,7 +22806,6 @@ func ts_stack_print_dot_graph(self *Stack, language *TSLanguage, f *os.File) boo
 	var v41, v45, v50, v53 *StackSummary
 	var v54, arrayidx46 *StackSummaryEntry
 	var last_external_token, last_external_token52, subtree, subtree154, subtree184, subtree188, subtree195, subtree202, subtree206, subtree214, subtree222, subtree225 *Subtree
-	var v59, v61, v124, v126, v156, v157, v159, v162, v163, v169, v174, v175 *SubtreeHeapData
 	var v167 *TSLanguage
 	var extent, extent166 *TSPoint
 	var links, links152, links175 *[8]StackLink
@@ -22821,12 +22819,14 @@ func ts_stack_print_dot_graph(self *Stack, language *TSLanguage, f *os.File) boo
 	var v62 *struct {
 	F0 ExternalScannerState
 }
+	var ptr, ptr53, ptr149, coerce_dive, ptr185, coerce_dive189, ptr196, coerce_dive203, coerce_dive207, coerce_dive215, coerce_dive223, coerce_dive226 *uintptr
 	var tobool, cmp, cmp11, cmp16, cmp22, tobool29, cmp35, cmp39, tobool49, cmp58, tobool91, lnot, cmp96, cmp101, cmp115, cmp119, cmp127, tobool134, cmp140, cmp146, tobool150, call155, cmp172, tobool180, tobool186, call190, tobool197, call204, call208, lnot209, v164, tobool210, tobool217, cmp231, cmp236, cmp268, tobool304 bool
 	var v71, v92, v154, frombool, v165, v170 byte
 	var v219 func(*byte)
 	var v56, v119, v122, v130, v144, call216 int16
 	var call4, call5, call6, v13, v15, v16, v18, v21, v23, v25, call19, v27, call20, v32, call24, v35, v37, call26, v39, call27, call28, call31, v43, v46, v48, v51, v55, conv, call47, v57, inc, call55, v65, v67, v70, conv63, call64, v72, inc66, call69, v78, v85, inc83, v91, inc89, v93, v95, v96, v98, v101, v105, v106, v107, v108, v110, v113, inc132, call137, conv139, call143, conv145, call158, conv161, call162, v133, add, v135, v137, v139, v141, call167, v142, conv171, v146, call179, call182, call193, call199, call201, call212, call219, call221, call224, call227, call228, call230, v177, v178, v180, v183, v188, v195, inc260, v199, sub, v201, v205, sub277, v208, inc284, v211, v215, inc294, v216, inc299, call301 int32
 	var idxprom, idxprom45, idxprom61, idxprom84, idxprom108, idxprom125, idxprom176, idxprom243, idxprom261, idxprom278, idxprom295 int64
+	var v59, v61, v124, v126, v156, v157, v159, v162, v163, v169, v174, v175 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self_addr, language_addr, f_addr, visited_nodes, i, head, j, state51, data, j56, _compoundliteral, all_iterators_done, i92, iterator, node110, j112, j168, link, quoted, next_iterator, v0, iterators, contents, v1, v2, v3, iterators1, capacity, call, v4, v5, iterators2, contents3, v6, tobool, v7, v8, call4, v9, call5, v10, call6, v11, v12, iterators7, size, v13, v14, heads, size8, v15, cmp, v16, v17, heads9, size10, v18, cmp11, v19, heads14, contents15, v20, v21, idxprom, arrayidx, v22, status, v23, cmp16, v24, v25, call19, v26, v27, v28, node, v29, v30, call20, v31, status21, v32, cmp22, v33, call24, v34, v35, v36, v37, call26, v38, v39, call27, call28, v40, summary, v41, tobool29, v42, call31, v43, v44, summary33, v45, size34, v46, cmp35, v47, v48, v49, summary37, v50, size38, v51, cmp39, v52, summary43, v53, contents44, v54, v55, idxprom45, arrayidx46, state, v56, conv, call47, v57, inc, v58, last_external_token, ptr, v59, tobool49, v60, last_external_token52, ptr53, v61, v62, external_scanner_state, v63, call54, v64, call55, v65, v66, length, v67, cmp58, v68, v69, v70, idxprom61, arrayidx62, v71, conv63, call64, v72, inc66, v73, call69, v74, iterators70, contents71, v75, v76, v77, iterators72, size73, v78, v79, iterators74, capacity75, call76, v80, v81, iterators77, contents78, v82, iterators79, contents80, v83, v84, iterators81, size82, v85, inc83, idxprom84, arrayidx85, v86, node86, v87, node87, v88, v89, v90, v91, inc89, v92, tobool91, lnot, v93, v94, iterators94, size95, v95, cmp96, v96, v97, iterators99, size100, v98, cmp101, v99, iterators106, contents107, v100, v101, idxprom108, arrayidx109, v102, v103, node111, v104, v105, size114, v106, cmp115, v107, size118, v108, cmp119, contents124, v109, v110, idxprom125, arrayidx126, v111, v112, cmp127, v113, inc132, v114, tobool134, v115, v116, v117, call137, v118, state138, v119, conv139, cmp140, v120, call143, v121, link_count, v122, conv145, cmp146, v123, links, arrayidx148, subtree, ptr149, v124, tobool150, v125, links152, arrayidx153, subtree154, coerce_dive, v126, call155, v127, call158, v128, v129, state160, v130, conv161, call162, v131, v132, position, extent, row, v133, add, v134, position165, extent166, column, v135, v136, node_count, v137, v138, error_cost, v139, v140, dynamic_precedence, v141, call167, v142, v143, link_count170, v144, conv171, cmp172, v145, links175, v146, idxprom176, arrayidx177, v147, v148, v149, v150, v151, node178, v152, v153, call179, is_pending, v154, tobool180, v155, call182, subtree184, ptr185, v156, tobool186, subtree188, coerce_dive189, v157, call190, v158, call193, subtree195, ptr196, v159, tobool197, v160, call199, v161, call201, subtree202, coerce_dive203, v162, call204, subtree206, coerce_dive207, v163, call208, lnot209, v164, frombool, v165, tobool210, v166, call212, v167, v168, subtree214, coerce_dive215, v169, call216, v170, tobool217, v171, call219, v172, call221, v173, subtree222, coerce_dive223, v174, call224, subtree225, coerce_dive226, v175, call227, call228, v176, call230, v177, cmp231, v178, v179, iterators234, size235, v180, cmp236, v181, iterators241, contents242, v182, v183, idxprom243, arrayidx244, v184, iterators247, contents248, v185, v186, v187, iterators249, size250, v188, v189, iterators251, capacity252, call253, v190, v191, iterators254, contents255, v192, iterators256, contents257, v193, v194, iterators258, size259, v195, inc260, idxprom261, arrayidx262, v196, v197, v198, iterators264, size265, v199, sub, v200, iterators266, size267, v201, cmp268, v202, iterators273, contents274, v203, v204, iterators275, size276, v205, sub277, idxprom278, arrayidx279, node281, v206, v207, node282, v208, inc284, contents287, v209, v210, size288, v211, capacity289, call290, v212, contents291, v213, contents292, v214, size293, v215, inc294, idxprom295, arrayidx296, v216, inc299, v217, call301, contents303, v218, tobool304, v219, contents306, v220, v221, contents308, size309, capacity310
 
@@ -23066,9 +23066,9 @@ for_end:
 if_end48:
 	v58 = *head
 	last_external_token = &v58.F3
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(last_external_token))
+	ptr = (*uintptr)(unsafe.Pointer(last_external_token))
 	v59 = *ptr
-	tobool49 = v59 != nil
+	tobool49 = v59 != 0
 	if tobool49 {
 		goto if_then50
 	} else {
@@ -23078,9 +23078,9 @@ if_end48:
 if_then50:
 	v60 = *head
 	last_external_token52 = &v60.F3
-	ptr53 = (**SubtreeHeapData)(unsafe.Pointer(last_external_token52))
+	ptr53 = (*uintptr)(unsafe.Pointer(last_external_token52))
 	v61 = *ptr53
-	v62 = &v61.F9
+	v62 = &(*SubtreeHeapData)(unsafe.Pointer(v61)).F9
 	external_scanner_state = (*ExternalScannerState)(unsafe.Pointer(v62))
 	*state51 = external_scanner_state
 	v63 = *state51
@@ -23357,9 +23357,9 @@ land_lhs_true:
 	links = &v123.F2
 	arrayidx148 = &links[int64(0)]
 	subtree = &arrayidx148.F1
-	ptr149 = (**SubtreeHeapData)(unsafe.Pointer(subtree))
+	ptr149 = (*uintptr)(unsafe.Pointer(subtree))
 	v124 = *ptr149
-	tobool150 = v124 != nil
+	tobool150 = v124 != 0
 	if tobool150 {
 		goto land_lhs_true151
 	} else {
@@ -23468,9 +23468,9 @@ if_then181:
 
 if_end183:
 	subtree184 = &link.F1
-	ptr185 = (**SubtreeHeapData)(unsafe.Pointer(subtree184))
+	ptr185 = (*uintptr)(unsafe.Pointer(subtree184))
 	v156 = *ptr185
-	tobool186 = v156 != nil
+	tobool186 = v156 != 0
 	if tobool186 {
 		goto land_lhs_true187
 	} else {
@@ -23495,9 +23495,9 @@ if_then192:
 
 if_end194:
 	subtree195 = &link.F1
-	ptr196 = (**SubtreeHeapData)(unsafe.Pointer(subtree195))
+	ptr196 = (*uintptr)(unsafe.Pointer(subtree195))
 	v159 = *ptr196
-	tobool197 = v159 != nil
+	tobool197 = v159 != 0
 	if tobool197 {
 		goto if_else200
 	} else {
@@ -23794,7 +23794,6 @@ do_end311:
 
 func ts_parser__condense_stack(self *TSParser) int32 {
 	var stack, stack1, stack3, stack14, stack17, stack23, stack27, stack30, stack36, stack39, stack40, stack45, stack50, stack63, stack65, stack69, stack97 **Stack
-	var coerce_dive, coerce_dive67 **SubtreeHeapData
 	var language **TSLanguage
 	var self_addr **TSParser
 	var dot_graph_file, dot_graph_file86, dot_graph_file94, dot_graph_file98, dot_graph_file100 **os.File
@@ -23802,7 +23801,6 @@ func ts_parser__condense_stack(self *TSParser) int32 {
 	var lexer, lexer60, lexer81, lexer89 *Lexer
 	var v2, v4, v7, v42, v47, v53, v59, v63, v70, v72, v74, v76, v80, v93, v96, v102, v117 *Stack
 	var lookahead *Subtree
-	var call66, v100 *SubtreeHeapData
 	var v119 *TSLanguage
 	var logger, logger82 *TSLogger
 	var v1, v3, v6, v10, v23, v30, v41, v46, v52, v58, v62, v69, v71, v73, v75, v79, v83, v85, v87, v89, v91, v92, v95, v98, v101, v108, v110, v112, v113, v114, v116, v118, v120, v122 *TSParser
@@ -23816,6 +23814,7 @@ func ts_parser__condense_stack(self *TSParser) int32 {
 	F0 int64
 	F1 int64
 }
+	var coerce_dive, coerce_dive67 *uintptr
 	var cmp, call2, tobool, cmp5, cmp10, call18, call24, cmp38, cmp42, cmp48, call51, tobool53, cmp55, tobool57, tobool58, tobool79, tobool84, tobool87, tobool95, call99 bool
 	var v17, v82, v107 byte
 	var v86, v109 func(*byte, int32, *byte)
@@ -23825,6 +23824,7 @@ func ts_parser__condense_stack(self *TSParser) int32 {
 	F0 int64
 	F1 int64
 }
+	var call66, v100 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self_addr, made_changes, min_error_cost, i, status_i, j, status_j, has_unpaused_version, i44, n, lookahead, v0, v1, stack, v2, call, cmp, v3, stack1, v4, v5, call2, v6, stack3, v7, v8, v9, dec, v10, v11, call4, v12, v13, v14, v15, v16, is_in_error, v17, tobool, cost, v18, v19, cmp5, cost7, v20, v21, v22, cmp10, v23, v24, call12, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, call13, v41, stack14, v42, v43, v44, dec15, v45, v46, stack17, v47, v48, v49, call18, v50, dec20, v51, v52, stack23, v53, v54, v55, call24, v56, dec26, v57, v58, stack27, v59, v60, v61, v62, stack30, v63, v64, v65, dec31, v66, dec32, v67, inc, v68, inc34, v69, stack36, v70, call37, cmp38, v71, stack39, v72, v73, stack40, v74, call41, cmp42, v75, stack45, v76, call46, v77, v78, cmp48, v79, stack50, v80, v81, call51, v82, tobool53, v83, accept_count, v84, cmp55, v85, lexer, logger, log, v86, tobool57, v87, dot_graph_file, v88, tobool58, v89, lexer60, debug_buffer, arraydecay, v90, call61, v91, v92, stack63, v93, v94, call64, v95, stack65, v96, v97, call66, coerce_dive, v98, v99, coerce_dive67, v100, v101, stack69, v102, v103, v104, dec70, v105, dec71, v106, inc76, v107, tobool79, v108, lexer81, logger82, log83, v109, tobool84, v110, dot_graph_file86, v111, tobool87, v112, lexer89, debug_buffer90, arraydecay91, call92, v113, v114, dot_graph_file94, v115, tobool95, v116, stack97, v117, v118, language, v119, v120, dot_graph_file98, v121, call99, v122, dot_graph_file100, v123, call101, v124
 
@@ -24347,13 +24347,11 @@ if_end103:
 
 func ts_parser__balance_subtree(self *TSParser) bool {
 	var contents, contents14, contents17, contents43, contents112, contents155, contents165, contents168 **MutableSubtree
-	var coerce_dive, ptr, coerce_dive21, coerce_dive23, ptr50, ptr55, ptr56, ptr65, ptr66, ptr73, coerce_dive78, coerce_dive81, coerce_dive93, ptr120, ptr132, ptr133, coerce_dive142, ptr147, coerce_dive176, coerce_dive178 **SubtreeHeapData
 	var language **TSLanguage
 	var self_addr **TSParser
 	var tmp, tree, tmp175, v10, v15, v18, arrayidx, v32, arrayidx49, v76, arrayidx117, v94, v99, v102, arrayidx174 *MutableSubtree
 	var tree_stack, tree_stack5, tree_stack7, tree_stack10, tree_stack13, tree_stack16, tree_stack19, tree_stack26, tree_stack33, tree_stack36, tree_stack42, tree_stack45, tree_stack92, tree_stack111, tree_stack114, tree_stack154, tree_stack157, tree_stack160, tree_stack164, tree_stack167, tree_stack170 *MutableSubtreeArray
 	var finished_tree, child1, child2, child, finished_tree1, v43, add_ptr, cond, arrayidx57, v50, add_ptr70, cond72, arrayidx77, v84, add_ptr137, cond139, arrayidx141 *Subtree
-	var v6, v7, v21, call22, v37, v42, v44, v49, v51, v53, v57, v58, v67, v80, v83, v85, v90, v91, v105, call177 *SubtreeHeapData
 	var data, data58, data125 *SubtreeInlineData
 	var tree_pool, tree_pool4, tree_pool6, tree_pool9, tree_pool12, tree_pool15, tree_pool18, tree_pool25, tree_pool32, tree_pool35, tree_pool41, tree_pool44, tree_pool91, tree_pool110, tree_pool113, tree_pool153, tree_pool156, tree_pool159, tree_pool163, tree_pool166, tree_pool169 *SubtreePool
 	var v65 *TSLanguage
@@ -24375,11 +24373,13 @@ func ts_parser__balance_subtree(self *TSParser) bool {
 	F5 int16
 	F6 anon_0
 }
+	var coerce_dive, ptr, coerce_dive21, coerce_dive23, ptr50, ptr55, ptr56, ptr65, ptr66, ptr73, coerce_dive78, coerce_dive81, coerce_dive93, ptr120, ptr132, ptr133, coerce_dive142, ptr147, coerce_dive176, coerce_dive178 *uintptr
 	var tobool, cmp, cmp2, cmp28, call29, cmp38, cmp51, bf_cast, bf_cast61, cmp85, cmp89, cmp95, call104, cmp122, bf_cast128, cmp144, cmp149, v109 bool
 	var v4, bf_load, bf_clear, bf_load59, bf_clear60, conv102, v73, bf_load126, bf_clear127 byte
 	var v40 int16
 	var call, v8, v13, v20, inc, v25, v28, sub, v30, v34, sub47, conv, v45, v52, v54, sub75, call79, call82, conv88, v61, div, v62, v63, v68, v69, sub94, v70, shr, v71, shr98, cond101, conv103, v74, div107, v78, dec, v79, v81, v86, v87, call143, v92, v97, v104, inc172, v108, inc182 int32
 	var idxprom, idxprom48, idx_ext, idx_neg, idx_ext68, idx_neg69, idxprom76, conv80, conv83, sub84, v59, v60, idxprom116, idx_ext135, idx_neg136, idxprom140, idxprom173 int64
+	var v6, v7, v21, call22, v37, v42, v44, v49, v51, v53, v57, v58, v67, v80, v83, v85, v90, v91, v105, call177 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, self_addr, finished_tree, tmp, tree, child1, child2, repeat_delta, n, i, operations, i118, child, tmp175, v0, finished_tree1, v1, v2, v3, canceled_balancing, v4, tobool, v5, tree_pool, tree_stack, size, coerce_dive, v6, call, cmp, ptr, v7, ref_count, v8, cmp2, v9, tree_pool4, tree_stack5, contents, v10, v11, v12, tree_pool6, tree_stack7, size8, v13, v14, tree_pool9, tree_stack10, capacity, call11, v15, v16, tree_pool12, tree_stack13, contents14, v17, tree_pool15, tree_stack16, contents17, v18, v19, tree_pool18, tree_stack19, size20, v20, inc, idxprom, arrayidx, coerce_dive21, v21, call22, coerce_dive23, v22, v23, v24, tree_pool25, tree_stack26, size27, v25, cmp28, v26, call29, v27, tree_pool32, tree_stack33, size34, v28, sub, v29, tree_pool35, tree_stack36, size37, v30, cmp38, v31, tree_pool41, tree_stack42, contents43, v32, v33, tree_pool44, tree_stack45, size46, v34, sub47, idxprom48, arrayidx49, v35, v36, ptr50, v37, v38, v39, repeat_depth, v40, conv, cmp51, data, v41, bf_load, bf_clear, bf_cast, ptr55, v42, v43, ptr56, v44, child_count, v45, idx_ext, idx_neg, add_ptr, cond, arrayidx57, v46, v47, data58, v48, bf_load59, bf_clear60, bf_cast61, ptr65, v49, v50, ptr66, v51, child_count67, v52, idx_ext68, idx_neg69, add_ptr70, cond72, ptr73, v53, child_count74, v54, sub75, idxprom76, arrayidx77, v55, v56, coerce_dive78, v57, call79, conv80, coerce_dive81, v58, call82, conv83, sub84, v59, cmp85, v60, conv88, v61, div, v62, cmp89, v63, v64, language, v65, v66, tree_pool91, tree_stack92, coerce_dive93, v67, v68, v69, sub94, v70, shr, cmp95, v71, shr98, cond101, conv102, v72, v73, conv103, call104, v74, div107, v75, tree_pool110, tree_stack111, contents112, v76, v77, tree_pool113, tree_stack114, size115, v78, dec, idxprom116, arrayidx117, v79, ptr120, v80, child_count121, v81, cmp122, data125, v82, bf_load126, bf_clear127, bf_cast128, ptr132, v83, v84, ptr133, v85, child_count134, v86, idx_ext135, idx_neg136, add_ptr137, cond139, v87, idxprom140, arrayidx141, v88, v89, coerce_dive142, v90, call143, cmp144, ptr147, v91, ref_count148, v92, cmp149, v93, tree_pool153, tree_stack154, contents155, v94, v95, v96, tree_pool156, tree_stack157, size158, v97, v98, tree_pool159, tree_stack160, capacity161, call162, v99, v100, tree_pool163, tree_stack164, contents165, v101, tree_pool166, tree_stack167, contents168, v102, v103, tree_pool169, tree_stack170, size171, v104, inc172, idxprom173, arrayidx174, coerce_dive176, v105, call177, coerce_dive178, v106, v107, v108, inc182, v109
 
@@ -24430,9 +24430,9 @@ if_then:
 	}
 
 land_lhs_true:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(finished_tree))
+	ptr = (*uintptr)(unsafe.Pointer(finished_tree))
 	v7 = *ptr
-	ref_count = &v7.F0
+	ref_count = &(*SubtreeHeapData)(unsafe.Pointer(v7)).F0
 	v8 = *ref_count
 	cmp2 = v8 == 1
 	if cmp2 {
@@ -24569,9 +24569,9 @@ if_end40:
 	v35 = (*byte)(unsafe.Pointer(tree))
 	v36 = (*byte)(unsafe.Pointer(arrayidx49))
 	libc.Memmove(v35, v36, int64(8))
-	ptr50 = (**SubtreeHeapData)(unsafe.Pointer(tree))
+	ptr50 = (*uintptr)(unsafe.Pointer(tree))
 	v37 = *ptr50
-	v38 = &v37.F9
+	v38 = &(*SubtreeHeapData)(unsafe.Pointer(v37)).F9
 	v39 = (*struct {
 	F0 int32
 	F1 int32
@@ -24608,12 +24608,12 @@ cond_true:
 	goto cond_end
 
 cond_false:
-	ptr55 = (**SubtreeHeapData)(unsafe.Pointer(tree))
+	ptr55 = (*uintptr)(unsafe.Pointer(tree))
 	v42 = *ptr55
 	v43 = (*Subtree)(unsafe.Pointer(v42))
-	ptr56 = (**SubtreeHeapData)(unsafe.Pointer(tree))
+	ptr56 = (*uintptr)(unsafe.Pointer(tree))
 	v44 = *ptr56
-	child_count = &v44.F5
+	child_count = &(*SubtreeHeapData)(unsafe.Pointer(v44)).F5
 	v45 = *child_count
 	idx_ext = int64(uint64(uint32(v45)))
 	idx_neg = int64(0) - idx_ext
@@ -24642,12 +24642,12 @@ cond_true63:
 	goto cond_end71
 
 cond_false64:
-	ptr65 = (**SubtreeHeapData)(unsafe.Pointer(tree))
+	ptr65 = (*uintptr)(unsafe.Pointer(tree))
 	v49 = *ptr65
 	v50 = (*Subtree)(unsafe.Pointer(v49))
-	ptr66 = (**SubtreeHeapData)(unsafe.Pointer(tree))
+	ptr66 = (*uintptr)(unsafe.Pointer(tree))
 	v51 = *ptr66
-	child_count67 = &v51.F5
+	child_count67 = &(*SubtreeHeapData)(unsafe.Pointer(v51)).F5
 	v52 = *child_count67
 	idx_ext68 = int64(uint64(uint32(v52)))
 	idx_neg69 = int64(0) - idx_ext68
@@ -24656,9 +24656,9 @@ cond_false64:
 	goto cond_end71
 
 cond_end71:
-	ptr73 = (**SubtreeHeapData)(unsafe.Pointer(tree))
+	ptr73 = (*uintptr)(unsafe.Pointer(tree))
 	v53 = *ptr73
-	child_count74 = &v53.F5
+	child_count74 = &(*SubtreeHeapData)(unsafe.Pointer(v53)).F5
 	v54 = *child_count74
 	sub75 = v54 - 1
 	idxprom76 = int64(uint64(uint32(sub75)))
@@ -24788,9 +24788,9 @@ if_end109:
 
 for_cond119:
 	v79 = *i118
-	ptr120 = (**SubtreeHeapData)(unsafe.Pointer(tree))
+	ptr120 = (*uintptr)(unsafe.Pointer(tree))
 	v80 = *ptr120
-	child_count121 = &v80.F5
+	child_count121 = &(*SubtreeHeapData)(unsafe.Pointer(v80)).F5
 	v81 = *child_count121
 	cmp122 = uint32(v79) < uint32(v81)
 	if cmp122 {
@@ -24816,12 +24816,12 @@ cond_true130:
 	goto cond_end138
 
 cond_false131:
-	ptr132 = (**SubtreeHeapData)(unsafe.Pointer(tree))
+	ptr132 = (*uintptr)(unsafe.Pointer(tree))
 	v83 = *ptr132
 	v84 = (*Subtree)(unsafe.Pointer(v83))
-	ptr133 = (**SubtreeHeapData)(unsafe.Pointer(tree))
+	ptr133 = (*uintptr)(unsafe.Pointer(tree))
 	v85 = *ptr133
-	child_count134 = &v85.F5
+	child_count134 = &(*SubtreeHeapData)(unsafe.Pointer(v85)).F5
 	v86 = *child_count134
 	idx_ext135 = int64(uint64(uint32(v86)))
 	idx_neg136 = int64(0) - idx_ext135
@@ -24847,9 +24847,9 @@ cond_end138:
 	}
 
 land_lhs_true146:
-	ptr147 = (**SubtreeHeapData)(unsafe.Pointer(child))
+	ptr147 = (*uintptr)(unsafe.Pointer(child))
 	v91 = *ptr147
-	ref_count148 = &v91.F0
+	ref_count148 = &(*SubtreeHeapData)(unsafe.Pointer(v91)).F0
 	v92 = *ref_count148
 	cmp149 = v92 == 1
 	if cmp149 {
@@ -24932,8 +24932,7 @@ _return:
 	return v109
 }
 
-func ts_tree_new(root_coerce *SubtreeHeapData, language *TSLanguage, included_ranges *TSRange, included_range_count int32) *TSTree {
-	var coerce_dive **SubtreeHeapData
+func ts_tree_new(root_coerce uintptr, language *TSLanguage, included_ranges *TSRange, included_range_count int32) *TSTree {
 	var language_addr, language3 **TSLanguage
 	var included_ranges_addr, included_ranges5, included_ranges6 **TSRange
 	var result **TSTree
@@ -24943,6 +24942,7 @@ func ts_tree_new(root_coerce *SubtreeHeapData, language *TSLanguage, included_ra
 	var v1, v2, v6, v10, v11, v18, v19 *TSTree
 	var call, v3, v4, call4, v13, v15 *byte
 	var included_range_count_addr, included_range_count8 *int32
+	var coerce_dive *uintptr
 	var v0 func(int64) *byte
 	var v7 func(int64, int64) *byte
 	var v8, v16, v17 int32
@@ -46356,17 +46356,15 @@ func ts_query_cursor_set_max_start_depth(self *TSQueryCursor, max_start_depth in
 	*max_start_depth1 = v0
 }
 
-func stack_node_new(previous_node *StackNode, subtree_coerce *SubtreeHeapData, is_pending bool, state int16, pool *StackNodeArray) *StackNode {
+func stack_node_new(previous_node *StackNode, subtree_coerce uintptr, is_pending bool, state int16, pool *StackNodeArray) *StackNode {
 	var contents ***StackNode
 	var previous_node_addr, node, v3, arrayidx, node5 **StackNode
 	var pool_addr **StackNodeArray
-	var coerce_dive, ptr, coerce_dive16, coerce_dive21, coerce_dive25, coerce_dive29 **SubtreeHeapData
 	var tmp, agg_tmp, tmp34, position, position10, position19, position20, position33 *Length
 	var _compoundliteral4, arrayidx3 *StackLink
 	var _compoundliteral, v6, v9, v10, v15, v16, v17, v18, v24, v25, v28, v30, v31, v33, v34, v36, v39, v41, v42, v63, v66, v68, v73, v74 *StackNode
 	var v0, v2, v4 *StackNodeArray
 	var subtree, subtree6 *Subtree
-	var v37, v38, v43, v62, v65 *SubtreeHeapData
 	var links *[8]StackLink
 	var is_pending_addr, v7, call, cond, v11, v13, v14, v19, v20, is_pending7, v22, v23, v26, v27, v44, v45, v46, v47, v52, v53, v58, v59, v60, v61, v69, v70, v71, v72 *byte
 	var state_addr, state2, link_count *int16
@@ -46376,6 +46374,7 @@ func stack_node_new(previous_node *StackNode, subtree_coerce *SubtreeHeapData, i
 	F0 int64
 	F1 int32
 }
+	var coerce_dive, ptr, coerce_dive16, coerce_dive21, coerce_dive25, coerce_dive29 *uintptr
 	var cmp, tobool, tobool8, tobool14 bool
 	var frombool, v21, frombool9 byte
 	var v8 func(int64) *byte
@@ -46386,6 +46385,7 @@ func stack_node_new(previous_node *StackNode, subtree_coerce *SubtreeHeapData, i
 	F0 int64
 	F1 int32
 }
+	var v37, v38, v43, v62, v65 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = subtree, previous_node_addr, is_pending_addr, state_addr, pool_addr, node, _compoundliteral, _compoundliteral4, tmp, agg_tmp, tmp_coerce, position20_coerce, agg_tmp_coerce, tmp_coerce24, tmp34, tmp_coerce36, coerce_dive, frombool, v0, size, v1, cmp, v2, contents, v3, v4, size1, v5, dec, idxprom, arrayidx, v6, v7, v8, call, cond, v9, v10, v11, state2, v12, ref_count, v13, v14, v15, tobool, v16, link_count, v17, links, arrayidx3, node5, v18, subtree6, v19, v20, is_pending7, v21, tobool8, frombool9, v22, v23, v24, position, v25, position10, v26, v27, v28, error_cost, v29, v30, error_cost11, v31, dynamic_precedence, v32, v33, dynamic_precedence12, v34, node_count, v35, v36, node_count13, ptr, v37, tobool14, coerce_dive16, v38, call17, v39, error_cost18, v40, add, v41, position19, v42, position20, coerce_dive21, v43, call22, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, call23, v58, v59, v60, v61, coerce_dive25, v62, call26, v63, node_count27, v64, add28, coerce_dive29, v65, call30, v66, dynamic_precedence31, v67, add32, v68, position33, call35, v69, v70, v71, v72, v73, error_cost37, v74
 
@@ -46528,9 +46528,9 @@ if_then:
 	v36 = *node
 	node_count13 = &v36.F6
 	*node_count13 = v35
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(subtree))
+	ptr = (*uintptr)(unsafe.Pointer(subtree))
 	v37 = *ptr
-	tobool14 = v37 != nil
+	tobool14 = v37 != 0
 	if tobool14 {
 		goto if_then15
 	} else {
@@ -46625,23 +46625,23 @@ func stack_node_release(self *StackNode, pool *StackNodeArray, subtree_pool *Sub
 	var contents, contents35, contents36 ***StackNode
 	var self_addr, first_predecessor, node, node29, v33, v38, v42, arrayidx39 **StackNode
 	var pool_addr **StackNodeArray
-	var ptr, coerce_dive, ptr21, coerce_dive25 **SubtreeHeapData
 	var subtree_pool_addr **SubtreePool
 	var link, link17, arrayidx, arrayidx19, arrayidx28 *StackLink
 	var v0, v2, v4, v6, v8, v11, v18, v22, v28, v29, v40, v46, v48, v49 *StackNode
 	var v19, v30, v32, v35, v37, v39, v41, v43 *StackNodeArray
 	var subtree, subtree14, subtree20, subtree24 *Subtree
-	var v15, v17, v25, v27 *SubtreeHeapData
 	var v16, v20, v26 *SubtreePool
 	var links, links18, links27 *[8]StackLink
 	var v13, v14, v23, v24, v34, call, v47 *byte
 	var link_count, link_count9 *int16
 	var i, ref_count, ref_count1, ref_count2, size, size34, capacity, size37 *int32
+	var ptr, coerce_dive, ptr21, coerce_dive25 *uintptr
 	var cmp, cmp3, cmp6, cmp11, tobool, tobool22, cmp31, tobool42 bool
 	var v45 func(*byte)
 	var v7, v9 int16
 	var v1, v3, dec, v5, conv, conv10, sub, v10, v12, v21, dec16, v31, v36, v44, inc int32
 	var idxprom, idxprom38 int64
+	var v15, v17, v25, v27 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self_addr, pool_addr, subtree_pool_addr, first_predecessor, i, link, link17, v0, ref_count, v1, cmp, v2, ref_count1, v3, dec, v4, ref_count2, v5, cmp3, v6, link_count, v7, conv, cmp6, v8, link_count9, v9, conv10, sub, v10, cmp11, v11, links, v12, idxprom, arrayidx, v13, v14, subtree, ptr, v15, tobool, v16, subtree14, coerce_dive, v17, node, v18, v19, v20, v21, dec16, v22, links18, arrayidx19, v23, v24, subtree20, ptr21, v25, tobool22, v26, subtree24, coerce_dive25, v27, v28, links27, arrayidx28, node29, v29, v30, size, v31, cmp31, v32, contents, v33, v34, v35, size34, v36, v37, capacity, call, v38, v39, contents35, v40, v41, contents36, v42, v43, size37, v44, inc, idxprom38, arrayidx39, v45, v46, v47, v48, tobool42, v49
 
@@ -46735,9 +46735,9 @@ for_body:
 	v14 = (*byte)(unsafe.Pointer(arrayidx))
 	libc.Memmove(v13, v14, int64(24))
 	subtree = &link.F1
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(subtree))
+	ptr = (*uintptr)(unsafe.Pointer(subtree))
 	v15 = *ptr
-	tobool = v15 != nil
+	tobool = v15 != 0
 	if tobool {
 		goto if_then13
 	} else {
@@ -46774,9 +46774,9 @@ for_end:
 	v24 = (*byte)(unsafe.Pointer(arrayidx19))
 	libc.Memmove(v23, v24, int64(24))
 	subtree20 = &link17.F1
-	ptr21 = (**SubtreeHeapData)(unsafe.Pointer(subtree20))
+	ptr21 = (*uintptr)(unsafe.Pointer(subtree20))
 	v25 = *ptr21
-	tobool22 = v25 != nil
+	tobool22 = v25 != 0
 	if tobool22 {
 		goto if_then23
 	} else {
@@ -46876,7 +46876,6 @@ func stack_head_delete(self *StackHead, pool *StackNodeArray, subtree_pool *Subt
 	var pool_addr **StackNodeArray
 	var summary, summary12, summary15, summary18, summary20, summary21, summary22 **StackSummary
 	var contents, contents16, contents19 **StackSummaryEntry
-	var ptr, coerce_dive, ptr4, coerce_dive8 **SubtreeHeapData
 	var subtree_pool_addr **SubtreePool
 	var v0, v2, v5, v7, v10, v12, v14, v18, v22, v24, v26, v29, v32 *StackHead
 	var v1, v33 *StackNode
@@ -46884,12 +46883,13 @@ func stack_head_delete(self *StackHead, pool *StackNodeArray, subtree_pool *Subt
 	var v13, v15, v19, v23, v25, v27, v30 *StackSummary
 	var v16, v20 *StackSummaryEntry
 	var last_external_token, last_external_token3, lookahead_when_paused, lookahead_when_paused7 *Subtree
-	var v3, v6, v8, v11 *SubtreeHeapData
 	var v4, v9, v35 *SubtreePool
 	var v21, v31 *byte
 	var size, capacity *int32
+	var ptr, coerce_dive, ptr4, coerce_dive8 *uintptr
 	var tobool, tobool1, tobool5, tobool10, tobool13 bool
 	var v17, v28 func(*byte)
+	var v3, v6, v8, v11 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self_addr, pool_addr, subtree_pool_addr, v0, node, v1, tobool, v2, last_external_token, ptr, v3, tobool1, v4, v5, last_external_token3, coerce_dive, v6, v7, lookahead_when_paused, ptr4, v8, tobool5, v9, v10, lookahead_when_paused7, coerce_dive8, v11, v12, summary, v13, tobool10, v14, summary12, v15, contents, v16, tobool13, v17, v18, summary15, v19, contents16, v20, v21, v22, summary18, v23, contents19, v24, summary20, v25, size, v26, summary21, v27, capacity, v28, v29, summary22, v30, v31, v32, node24, v33, v34, v35
 
@@ -46912,9 +46912,9 @@ func stack_head_delete(self *StackHead, pool *StackNodeArray, subtree_pool *Subt
 if_then:
 	v2 = *self_addr
 	last_external_token = &v2.F3
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(last_external_token))
+	ptr = (*uintptr)(unsafe.Pointer(last_external_token))
 	v3 = *ptr
-	tobool1 = v3 != nil
+	tobool1 = v3 != 0
 	if tobool1 {
 		goto if_then2
 	} else {
@@ -46933,9 +46933,9 @@ if_then2:
 if_end:
 	v7 = *self_addr
 	lookahead_when_paused = &v7.F4
-	ptr4 = (**SubtreeHeapData)(unsafe.Pointer(lookahead_when_paused))
+	ptr4 = (*uintptr)(unsafe.Pointer(lookahead_when_paused))
 	v8 = *ptr4
-	tobool5 = v8 != nil
+	tobool5 = v8 != 0
 	if tobool5 {
 		goto if_then6
 	} else {
@@ -47122,20 +47122,20 @@ for_end:
 	return v13
 }
 
-func ts_stack_last_external_token(self *Stack, version int32) *SubtreeHeapData {
+func ts_stack_last_external_token(self *Stack, version int32) uintptr {
 	var self_addr **Stack
 	var contents **StackHead
-	var coerce_dive **SubtreeHeapData
 	var v1, v3 *Stack
 	var v4, arrayidx *StackHead
 	var retval, last_external_token *Subtree
-	var v8 *SubtreeHeapData
 	var heads, heads1 *anon_20
 	var v6, v7 *byte
 	var version_addr, size *int32
+	var coerce_dive *uintptr
 	var cmp bool
 	var v0, v2, v5 int32
 	var idxprom int64
+	var v8 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, self_addr, version_addr, v0, v1, heads, size, v2, cmp, v3, heads1, contents, v4, v5, idxprom, arrayidx, last_external_token, v6, v7, coerce_dive, v8
 
@@ -47180,22 +47180,22 @@ if_end:
 	return v8
 }
 
-func ts_stack_set_last_external_token(self *Stack, version int32, token_coerce *SubtreeHeapData) {
+func ts_stack_set_last_external_token(self *Stack, version int32, token_coerce uintptr) {
 	var self_addr **Stack
 	var head, contents **StackHead
-	var coerce_dive, ptr, coerce_dive3, ptr5, coerce_dive9 **SubtreeHeapData
 	var subtree_pool **SubtreePool
 	var v1, v3, v10 *Stack
 	var v4, arrayidx, v8, v12, v14 *StackHead
 	var token, last_external_token, last_external_token8, last_external_token11 *Subtree
-	var v6, v7, v9, v13 *SubtreeHeapData
 	var v11 *SubtreePool
 	var heads, heads1 *anon_20
 	var v15, v16 *byte
 	var version_addr, size *int32
+	var coerce_dive, ptr, coerce_dive3, ptr5, coerce_dive9 *uintptr
 	var cmp, tobool, tobool6 bool
 	var v0, v2, v5 int32
 	var idxprom int64
+	var v6, v7, v9, v13 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = token, self_addr, version_addr, head, coerce_dive, v0, v1, heads, size, v2, cmp, v3, heads1, contents, v4, v5, idxprom, arrayidx, ptr, v6, tobool, coerce_dive3, v7, v8, last_external_token, ptr5, v9, tobool6, v10, subtree_pool, v11, v12, last_external_token8, coerce_dive9, v13, v14, last_external_token11, v15, v16
 
@@ -47235,9 +47235,9 @@ if_end:
 	idxprom = int64(uint64(uint32(v5)))
 	arrayidx = libc.AddPointer(v4, int(idxprom))
 	*head = arrayidx
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(token))
+	ptr = (*uintptr)(unsafe.Pointer(token))
 	v6 = *ptr
-	tobool = v6 != nil
+	tobool = v6 != 0
 	if tobool {
 		goto if_then2
 	} else {
@@ -47253,9 +47253,9 @@ if_then2:
 if_end4:
 	v8 = *head
 	last_external_token = &v8.F3
-	ptr5 = (**SubtreeHeapData)(unsafe.Pointer(last_external_token))
+	ptr5 = (*uintptr)(unsafe.Pointer(last_external_token))
 	v9 = *ptr5
-	tobool6 = v9 != nil
+	tobool6 = v9 != 0
 	if tobool6 {
 		goto if_then7
 	} else {
@@ -47285,21 +47285,21 @@ func ts_stack_error_cost(self *Stack, version int32) int32 {
 	var self_addr **Stack
 	var head, contents **StackHead
 	var node, node3, node6 **StackNode
-	var ptr **SubtreeHeapData
 	var v1, v3 *Stack
 	var v4, arrayidx, v6, v9, v11, v14 *StackHead
 	var arrayidx7 *StackLink
 	var v7, v12, v15 *StackNode
 	var subtree *Subtree
-	var v16 *SubtreeHeapData
 	var links *[8]StackLink
 	var heads, heads1 *anon_20
 	var state *int16
 	var version_addr, result, size, error_cost, status *int32
+	var ptr *uintptr
 	var cmp, cmp2, cmp4, tobool bool
 	var v13 int16
 	var v0, v2, v5, v8, v10, conv, v17, add, v18 int32
 	var idxprom int64
+	var v16 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self_addr, version_addr, head, result, v0, v1, heads, size, v2, cmp, v3, heads1, contents, v4, v5, idxprom, arrayidx, v6, node, v7, error_cost, v8, v9, status, v10, cmp2, v11, node3, v12, state, v13, conv, cmp4, v14, node6, v15, links, arrayidx7, subtree, ptr, v16, tobool, v17, add, v18
 
@@ -47374,9 +47374,9 @@ land_lhs_true:
 	links = &v15.F2
 	arrayidx7 = &links[int64(0)]
 	subtree = &arrayidx7.F1
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(subtree))
+	ptr = (*uintptr)(unsafe.Pointer(subtree))
 	v16 = *ptr
-	tobool = v16 != nil
+	tobool = v16 != 0
 	if tobool {
 		goto if_end9
 	} else {
@@ -47481,26 +47481,26 @@ if_end7:
 	return sub
 }
 
-func ts_stack_push(self *Stack, version int32, subtree_coerce *SubtreeHeapData, pending bool, state int16) {
+func ts_stack_push(self *Stack, version int32, subtree_coerce uintptr, pending bool, state int16) {
 	var self_addr **Stack
 	var head, contents **StackHead
 	var new_node, node, node6 **StackNode
-	var coerce_dive, coerce_dive2, ptr **SubtreeHeapData
 	var v1, v3, v10 *Stack
 	var v4, arrayidx, v6, v15, v17 *StackHead
 	var v7, call, v13, v16 *StackNode
 	var node_pool *StackNodeArray
 	var subtree *Subtree
-	var v11, v12 *SubtreeHeapData
 	var heads, heads1 *anon_20
 	var pending_addr *byte
 	var state_addr *int16
 	var version_addr, size, node_count, node_count_at_last_error *int32
+	var coerce_dive, coerce_dive2, ptr *uintptr
 	var cmp, tobool, tobool3 bool
 	var frombool, v8 byte
 	var v9 int16
 	var v0, v2, v5, v14 int32
 	var idxprom int64
+	var v11, v12 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = subtree, self_addr, version_addr, pending_addr, state_addr, head, new_node, coerce_dive, frombool, v0, v1, heads, size, v2, cmp, v3, heads1, contents, v4, v5, idxprom, arrayidx, v6, node, v7, v8, tobool, v9, v10, node_pool, coerce_dive2, v11, call, ptr, v12, tobool3, v13, node_count, v14, v15, node_count_at_last_error, v16, v17, node6
 
@@ -47558,9 +47558,9 @@ if_end:
 	v11 = *coerce_dive2
 	call = stack_node_new(v7, v11, tobool, v9, node_pool)
 	*new_node = call
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(subtree))
+	ptr = (*uintptr)(unsafe.Pointer(subtree))
 	v12 = *ptr
-	tobool3 = v12 != nil
+	tobool3 = v12 != 0
 	if tobool3 {
 		goto if_end5
 	} else {
@@ -47647,7 +47647,6 @@ func stack__iter(self *Stack, version int32, callback func(*byte, *StackIterator
 	var iterator, next_iterator, contents20, contents27, contents29, contents51, contents78, contents103, contents124, contents129, contents136, contents138, contents155 **StackIterator
 	var node54, node, node4, node55, node164, node165 **StackNode
 	var contents5, contents10, contents17, v57, v130, contents172, contents179, contents181 **Subtree
-	var ptr, coerce_dive, coerce_dive192 **SubtreeHeapData
 	var subtree_pool **SubtreePool
 	var payload_addr **byte
 	var v0, v1, v3, v5, v15, v18, v20, v22, v23, v25, v29, v31, v36, v38, v61, v66, v69, v72, v86, v88, v91, v98, v100, v105, v108, v110, v112, v113, v115, v119, v121, v123, v125, v163 *Stack
@@ -47658,7 +47657,6 @@ func stack__iter(self *Stack, version int32, callback func(*byte, *StackIterator
 	var retval, slices, slices212 *StackSliceArray
 	var v11, v14, v58, v131, subtree, v139, v144, v147, arrayidx186, subtree187, subtree189, subtree191 *Subtree
 	var subtrees65, subtrees, subtrees9, subtrees11, subtrees16, subtrees66, subtrees75, subtrees161, subtrees162, subtrees171, subtrees173, subtrees175, subtrees178, subtrees180, subtrees182 *SubtreeArray
-	var v136, v152, v153 *SubtreeHeapData
 	var v67 *SubtreePool
 	var links, links113 *[8]StackLink
 	var heads, heads3 *anon_20
@@ -47676,6 +47674,7 @@ func stack__iter(self *Stack, version int32, callback func(*byte, *StackIterator
 	F0 *Subtree
 	F1 int64
 }
+	var ptr, coerce_dive, coerce_dive192 *uintptr
 	var cmp, cmp7, cmp36, cmp41, cmp45, tobool, tobool58, cmp60, v50, tobool63, tobool67, tobool71, tobool73, cmp86, cmp91, cmp97, cmp109, cmp118, cmp149, tobool166, tobool168, call193, tobool198 bool
 	var frombool, frombool62, v51, v55, v64, v65, v137, v156 byte
 	var v43 func(*byte, *StackIterator) int32
@@ -47686,6 +47685,7 @@ func stack__iter(self *Stack, version int32, callback func(*byte, *StackIterator
 	F0 *StackSlice
 	F1 int64
 }
+	var v136, v152, v153 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, self_addr, version_addr, callback_addr, payload_addr, goal_subtree_count_addr, head, new_iterator, include_subtrees, i, size38, iterator, node54, action, should_pop, should_stop, subtrees65, j, next_iterator, link, current_iterator, v0, slices, size, v1, iterators, size1, v2, v3, heads, size2, v4, cmp, v5, heads3, contents, v6, v7, idxprom, arrayidx, node, v8, node4, v9, subtrees, contents5, size6, capacity, subtree_count, is_pending, v10, cmp7, subtrees9, contents10, v11, v12, subtrees11, capacity12, v13, call, conv, conv13, div, conv14, call15, v14, subtrees16, contents17, v15, iterators19, contents20, v16, v17, v18, iterators21, size22, v19, v20, iterators23, capacity24, call25, v21, v22, iterators26, contents27, v23, iterators28, contents29, v24, v25, iterators30, size31, v26, inc, idxprom32, arrayidx33, v27, v28, v29, iterators34, size35, v30, cmp36, v31, iterators39, size40, v32, v33, v34, cmp41, v35, v36, iterators43, size44, v37, cmp45, v38, iterators50, contents51, v39, v40, idxprom52, arrayidx53, v41, node55, v42, v43, v44, v45, call56, v46, and, tobool, frombool, v47, and57, tobool58, v48, link_count, v49, conv59, cmp60, v50, frombool62, v51, tobool63, v52, subtrees66, v53, v54, v55, tobool67, v56, v57, v58, v59, v60, v61, v62, v63, v64, tobool71, v65, tobool73, v66, subtree_pool, v67, v68, subtrees75, v69, iterators77, contents78, v70, v71, v72, iterators79, size80, v73, v74, dec, v75, dec81, v76, v77, link_count84, v78, conv85, cmp86, v79, v80, link_count89, v81, conv90, cmp91, v82, links, arrayidx94, v83, v84, v85, v86, iterators95, size96, v87, cmp97, v88, iterators102, contents103, v89, v90, idxprom104, arrayidx105, v91, iterators107, size108, v92, cmp109, v93, links113, v94, idxprom114, arrayidx115, v95, v96, v97, v98, iterators116, size117, v99, cmp118, v100, iterators123, contents124, v101, v102, idxprom125, arrayidx126, v103, v104, v105, iterators128, contents129, v106, v107, v108, iterators130, size131, v109, v110, iterators132, capacity133, call134, v111, v112, iterators135, contents136, v113, iterators137, contents138, v114, v115, iterators139, size140, v116, inc141, idxprom142, arrayidx143, v117, v118, v119, iterators145, size146, v120, sub, v121, iterators147, size148, v122, cmp149, v123, iterators154, contents155, v124, v125, iterators156, size157, v126, sub158, idxprom159, arrayidx160, v127, subtrees161, v128, subtrees162, v129, v130, v131, v132, v133, node164, v134, v135, node165, subtree, ptr, v136, tobool166, v137, tobool168, v138, subtrees171, contents172, v139, v140, v141, subtrees173, size174, v142, v143, subtrees175, capacity176, call177, v144, v145, subtrees178, contents179, v146, subtrees180, contents181, v147, v148, subtrees182, size183, v149, inc184, idxprom185, arrayidx186, subtree187, v150, v151, subtree189, coerce_dive, v152, subtree191, coerce_dive192, v153, call193, v154, subtree_count195, v155, inc196, is_pending197, v156, tobool198, v157, is_pending200, v158, subtree_count204, v159, inc205, v160, is_pending206, v161, inc208, v162, inc210, v163, slices212, v164, v165, v166, v167
 
@@ -48241,9 +48241,9 @@ if_end163:
 	node165 = &v135.F0
 	*node165 = v134
 	subtree = &link.F1
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(subtree))
+	ptr = (*uintptr)(unsafe.Pointer(subtree))
 	v136 = *ptr
-	tobool166 = v136 != nil
+	tobool166 = v136 != 0
 	if tobool166 {
 		goto if_then167
 	} else {
@@ -48807,7 +48807,6 @@ func ts_stack_pop_error(self *Stack, version int32) struct {
 	var node, node2 **StackNode
 	var v19, contents30, contents39 **StackSlice
 	var contents43 **Subtree
-	var ptr, coerce_dive **SubtreeHeapData
 	var v1, v3, v16, v25 *Stack
 	var v4, arrayidx *StackHead
 	var arrayidx6, arrayidx9 *StackLink
@@ -48816,7 +48815,6 @@ func ts_stack_pop_error(self *Stack, version int32) struct {
 	var pop *StackSliceArray
 	var subtree, subtree10 *Subtree
 	var retval, subtrees *SubtreeArray
-	var v12, v15 *SubtreeHeapData
 	var links, links7 *[8]StackLink
 	var heads, heads1 *anon_20
 	var found_error, v32, v33 *byte
@@ -48831,6 +48829,7 @@ func ts_stack_pop_error(self *Stack, version int32) struct {
 	F0 *Subtree
 	F1 int64
 }
+	var ptr, coerce_dive *uintptr
 	var cmp, cmp3, tobool, call, cmp15, cmp19, cmp25, cmp34 bool
 	var v9 int16
 	var v0, v2, v5, v7, conv, v11, v14, v17, v23, v24, v26, v28, v29, v30, v34, inc int32
@@ -48843,6 +48842,7 @@ func ts_stack_pop_error(self *Stack, version int32) struct {
 	F0 *Subtree
 	F1 int64
 }
+	var v12, v15 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, self_addr, version_addr, node, i, found_error, pop, v0, v1, heads, size, v2, cmp, v3, heads1, contents, v4, v5, idxprom, arrayidx, node2, v6, v7, v8, link_count, v9, conv, cmp3, v10, links, v11, idxprom5, arrayidx6, subtree, ptr, v12, tobool, v13, links7, v14, idxprom8, arrayidx9, subtree10, coerce_dive, v15, call, v16, v17, call13, v18, v19, v20, v21, v22, size14, v23, cmp15, size18, v24, cmp19, v25, size24, v26, cmp25, contents30, v27, arrayidx31, version32, v28, v29, size33, v30, cmp34, contents39, v31, arrayidx40, subtrees, v32, v33, v34, inc, contents43, size44, capacity, v35, v36
 
@@ -48908,9 +48908,9 @@ for_body:
 	idxprom5 = int64(uint64(uint32(v11)))
 	arrayidx6 = &links[idxprom5]
 	subtree = &arrayidx6.F1
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(subtree))
+	ptr = (*uintptr)(unsafe.Pointer(subtree))
 	v12 = *ptr
-	tobool = v12 != nil
+	tobool = v12 != 0
 	if tobool {
 		goto land_lhs_true
 	} else {
@@ -49056,13 +49056,13 @@ _return:
 	return v36
 }
 
-func ts_subtree_is_error(self_coerce *SubtreeHeapData) bool {
-	var coerce_dive, coerce_dive1 **SubtreeHeapData
+func ts_subtree_is_error(self_coerce uintptr) bool {
 	var self *Subtree
-	var v0 *SubtreeHeapData
+	var coerce_dive, coerce_dive1 *uintptr
 	var cmp bool
 	var call int16
 	var conv int32
+	var v0 uintptr
 
 	_, _, _, _, _, _, _ = self, coerce_dive, coerce_dive1, v0, call, conv, cmp
 
@@ -49080,17 +49080,17 @@ func ts_subtree_is_error(self_coerce *SubtreeHeapData) bool {
 func pop_error_callback(payload *byte, iterator *StackIterator) int32 {
 	var iterator_addr **StackIterator
 	var contents **Subtree
-	var coerce_dive **SubtreeHeapData
 	var payload_addr, found_error **byte
 	var v0, v5, v7 *StackIterator
 	var v8, arrayidx *Subtree
 	var subtrees, subtrees1, subtrees5 *SubtreeArray
-	var v9 *SubtreeHeapData
 	var v2, v3, v10 *byte
 	var retval, size, size2 *int32
+	var coerce_dive *uintptr
 	var cmp, tobool, cmp3, call bool
 	var v4 byte
 	var v1, v6, v11 int32
+	var v9 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, payload_addr, iterator_addr, found_error, v0, subtrees, size, v1, cmp, v2, v3, v4, tobool, v5, subtrees1, size2, v6, cmp3, v7, subtrees5, contents, v8, arrayidx, coerce_dive, v9, call, v10, v11
 
@@ -49775,23 +49775,23 @@ func ts_stack_has_advanced_since_error(self *Stack, version int32) bool {
 	var self_addr **Stack
 	var head, contents **StackHead
 	var node, node2, node26 **StackNode
-	var ptr, coerce_dive, coerce_dive19 **SubtreeHeapData
 	var v1, v3 *Stack
 	var v4, arrayidx, v6, v20 *StackHead
 	var arrayidx9, arrayidx25 *StackLink
 	var v7, v8, v10, v11, v13, v18, v23, v24 *StackNode
 	var subtree, subtree10 *Subtree
-	var v16, v17, v22 *SubtreeHeapData
 	var links, links24 *[8]StackLink
 	var heads, heads1 *anon_20
 	var retval *bool
 	var v14, v15 *byte
 	var link_count *int16
 	var version_addr, size, error_cost, node_count, node_count_at_last_error *int32
+	var ptr, coerce_dive, coerce_dive19 *uintptr
 	var cmp, cmp3, tobool, cmp6, tobool11, cmp13, cmp17, cmp21, v25 bool
 	var v12 int16
 	var v0, v2, v5, v9, conv, call, v19, v21, call20 int32
 	var idxprom int64
+	var v16, v17, v22 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, self_addr, version_addr, head, node, subtree, v0, v1, heads, size, v2, cmp, v3, heads1, contents, v4, v5, idxprom, arrayidx, v6, node2, v7, v8, error_cost, v9, cmp3, v10, tobool, v11, link_count, v12, conv, cmp6, v13, links, arrayidx9, subtree10, v14, v15, ptr, v16, tobool11, coerce_dive, v17, call, cmp13, v18, node_count, v19, v20, node_count_at_last_error, v21, cmp17, coerce_dive19, v22, call20, cmp21, v23, links24, arrayidx25, node26, v24, v25
 
@@ -49881,9 +49881,9 @@ if_then8:
 	v14 = (*byte)(unsafe.Pointer(subtree))
 	v15 = (*byte)(unsafe.Pointer(subtree10))
 	libc.Memmove(v14, v15, int64(8))
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(subtree))
+	ptr = (*uintptr)(unsafe.Pointer(subtree))
 	v16 = *ptr
-	tobool11 = v16 != nil
+	tobool11 = v16 != 0
 	if tobool11 {
 		goto if_then12
 	} else {
@@ -49960,22 +49960,22 @@ _return:
 	return v25
 }
 
-func ts_subtree_total_bytes(self_coerce *SubtreeHeapData) int32 {
-	var coerce_dive, coerce_dive1 **SubtreeHeapData
+func ts_subtree_total_bytes(self_coerce uintptr) int32 {
 	var coerce *Length
 	var self *Subtree
-	var v0 *SubtreeHeapData
 	var v1, v2 *byte
 	var bytes *int32
 	var tmp_coerce *struct {
 	F0 int64
 	F1 int32
 }
+	var coerce_dive, coerce_dive1 *uintptr
 	var v3 int32
 	var call struct {
 	F0 int64
 	F1 int32
 }
+	var v0 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _ = self, coerce, tmp_coerce, coerce_dive, coerce_dive1, v0, call, v1, v2, bytes, v3
 
@@ -50210,18 +50210,18 @@ func ts_stack_copy_version(self *Stack, version int32) int32 {
 	var head, contents, contents9, contents14, contents16, contents30 **StackHead
 	var node **StackNode
 	var summary **StackSummary
-	var ptr, coerce_dive **SubtreeHeapData
 	var v1, v4, v6, v11, v14, v16, v18, v19, v21, v25, v27, v29, v31, v40 *Stack
 	var version_head, v7, arrayidx, v12, v17, v20, arrayidx20, v30, arrayidx35, v33, v35, v37, v39 *StackHead
 	var v34 *StackNode
 	var last_external_token, last_external_token37 *Subtree
-	var v36, v38 *SubtreeHeapData
 	var heads, heads1, heads7, heads8, heads10, heads12, heads13, heads15, heads17, heads21, heads23, heads29, heads31, heads39 *anon_20
 	var v9, v10, v13, call, v23, v24 *byte
 	var version_addr, size, size2, size11, capacity, size18, size22, size24, size32, size40 *int32
+	var ptr, coerce_dive *uintptr
 	var cmp, cmp3, cmp25, tobool bool
 	var v0, v2, v3, v5, v8, v15, v22, inc, v26, sub, v28, v32, sub33, v41, sub41 int32
 	var idxprom, idxprom19, idxprom34 int64
+	var v36, v38 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self_addr, version_addr, version_head, head, v0, v1, heads, size, v2, cmp, v3, v4, heads1, size2, v5, cmp3, v6, heads7, contents, v7, v8, idxprom, arrayidx, v9, v10, v11, heads8, contents9, v12, v13, v14, heads10, size11, v15, v16, heads12, capacity, call, v17, v18, heads13, contents14, v19, heads15, contents16, v20, v21, heads17, size18, v22, inc, idxprom19, arrayidx20, v23, v24, v25, heads21, size22, v26, sub, v27, heads23, size24, v28, cmp25, v29, heads29, contents30, v30, v31, heads31, size32, v32, sub33, idxprom34, arrayidx35, v33, node, v34, v35, last_external_token, ptr, v36, tobool, v37, last_external_token37, coerce_dive, v38, v39, summary, v40, heads39, size40, v41, sub41
 
@@ -50362,9 +50362,9 @@ if_end28:
 	stack_node_retain(v34)
 	v35 = *head
 	last_external_token = &v35.F3
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(last_external_token))
+	ptr = (*uintptr)(unsafe.Pointer(last_external_token))
 	v36 = *ptr
-	tobool = v36 != nil
+	tobool = v36 != 0
 	if tobool {
 		goto if_then36
 	} else {
@@ -50642,20 +50642,20 @@ func ts_stack_can_merge(self *Stack, version1 int32, version2 int32) bool {
 	var self_addr **Stack
 	var head1, head2, contents, contents9 **StackHead
 	var node, node16, node22, node23, node29, node30 **StackNode
-	var coerce_dive, coerce_dive35 **SubtreeHeapData
 	var position, position24 *Length
 	var v1, v3, v7, v9 *Stack
 	var v4, arrayidx, v10, arrayidx11, v12, v14, v16, v19, v22, v25, v28, v31, v34, v35 *StackHead
 	var v17, v20, v23, v26, v29, v32 *StackNode
 	var last_external_token, last_external_token34 *Subtree
-	var v36, v37 *SubtreeHeapData
 	var heads, heads1, heads2, heads8 *anon_20
 	var state, state17 *int16
 	var version1_addr, version2_addr, size, size3, status, status13, bytes, bytes25, error_cost, error_cost31 *int32
+	var coerce_dive, coerce_dive35 *uintptr
 	var cmp, cmp4, cmp12, cmp14, cmp19, cmp26, cmp32, call, v38 bool
 	var v18, v21 int16
 	var v0, v2, v5, v6, v8, v11, v13, v15, conv, conv18, v24, v27, v30, v33 int32
 	var idxprom, idxprom10 int64
+	var v36, v37 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self_addr, version1_addr, version2_addr, head1, head2, v0, v1, heads, size, v2, cmp, v3, heads1, contents, v4, v5, idxprom, arrayidx, v6, v7, heads2, size3, v8, cmp4, v9, heads8, contents9, v10, v11, idxprom10, arrayidx11, v12, status, v13, cmp12, v14, status13, v15, cmp14, v16, node, v17, state, v18, conv, v19, node16, v20, state17, v21, conv18, cmp19, v22, node22, v23, position, bytes, v24, v25, node23, v26, position24, bytes25, v27, cmp26, v28, node29, v29, error_cost, v30, v31, node30, v32, error_cost31, v33, cmp32, v34, last_external_token, v35, last_external_token34, coerce_dive, v36, coerce_dive35, v37, call, v38
 
@@ -50827,22 +50827,22 @@ land_end:
 func stack_node_add_link(self *StackNode, link *StackLink, subtree_pool *SubtreePool) {
 	var existing_link **StackLink
 	var self_addr, node, node6, node7, node26, node33, node35, node40, node41, node47, node48, node54, node60, node61, node66, node92, node93, node96 **StackNode
-	var coerce_dive, coerce_dive4, coerce_dive12, coerce_dive15, coerce_dive21, coerce_dive23, coerce_dive28, ptr, coerce_dive71, ptr104, coerce_dive108, coerce_dive110, coerce_dive114 **SubtreeHeapData
 	var subtree_pool_addr **SubtreePool
 	var position, position42 *Length
 	var arrayidx, v7, v10, v14, v18, v20, v27, v32, v37, v45, arrayidx64, arrayidx102 *StackLink
 	var v0, v1, v3, v5, v11, v12, v23, v26, v28, v30, v33, v35, v38, v40, v43, v46, v47, v51, v57, v60, v62, v64, v65, v67, v69, v70, v81, v84, v86, v89 *StackNode
 	var subtree, subtree3, subtree11, subtree14, subtree20, subtree22, subtree24, subtree25, subtree27, subtree68, subtree70, subtree103, subtree107, subtree109, subtree113 *Subtree
-	var v8, v9, v13, v15, v16, v19, v25, v53, v54, v74, v75, v76, v78 *SubtreeHeapData
 	var v17, v49 *SubtreePool
 	var links, links62, links98 *[8]StackLink
 	var v21, v22, v72, v73 *byte
 	var link_count, state, state36, link_count55, link_count86, link_count99 *int16
 	var i, j, dynamic_precedence65, node_count, dynamic_precedence95, dynamic_precedence, dynamic_precedence30, bytes, bytes43, error_cost, error_cost49, dynamic_precedence67, dynamic_precedence75, dynamic_precedence79, node_count94, dynamic_precedence97, node_count118, node_count122, dynamic_precedence124, dynamic_precedence128 *int32
+	var coerce_dive, coerce_dive4, coerce_dive12, coerce_dive15, coerce_dive21, coerce_dive23, coerce_dive28, ptr, coerce_dive71, ptr104, coerce_dive108, coerce_dive110, coerce_dive114 *uintptr
 	var cmp, cmp1, call, cmp8, cmp17, cmp38, cmp44, cmp50, cmp57, tobool, cmp76, cmp88, tobool105, cmp119, cmp125 bool
 	var v4, v29, v31, v44, v63, v71, inc100 int16
 	var v2, conv, v6, call13, call16, v24, call29, add, conv34, conv37, v34, v36, v39, v41, v42, conv56, v48, v50, inc, v52, call72, v55, add73, v56, v58, v59, v61, inc84, conv87, v66, v68, call111, v77, add112, call115, v79, add116, v80, v82, v83, v85, v87, v88 int32
 	var idxprom, idxprom63, idxprom101 int64
+	var v8, v9, v13, v15, v16, v19, v25, v53, v54, v74, v75, v76, v78 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self_addr, subtree_pool_addr, i, existing_link, j, dynamic_precedence65, node_count, dynamic_precedence95, node, v0, v1, cmp, v2, v3, link_count, v4, conv, cmp1, v5, links, v6, idxprom, arrayidx, v7, subtree, subtree3, coerce_dive, v8, coerce_dive4, v9, call, v10, node6, v11, node7, v12, cmp8, subtree11, coerce_dive12, v13, call13, v14, subtree14, coerce_dive15, v15, call16, cmp17, subtree20, coerce_dive21, v16, v17, v18, subtree22, coerce_dive23, v19, v20, subtree24, subtree25, v21, v22, node26, v23, dynamic_precedence, v24, subtree27, coerce_dive28, v25, call29, add, v26, dynamic_precedence30, v27, node33, v28, state, v29, conv34, node35, v30, state36, v31, conv37, cmp38, v32, node40, v33, position, bytes, v34, node41, v35, position42, bytes43, v36, cmp44, v37, node47, v38, error_cost, v39, node48, v40, error_cost49, v41, cmp50, v42, node54, v43, link_count55, v44, conv56, cmp57, v45, node60, v46, node61, v47, links62, v48, idxprom63, arrayidx64, v49, v50, inc, node66, v51, dynamic_precedence67, v52, subtree68, ptr, v53, tobool, subtree70, coerce_dive71, v54, call72, v55, add73, v56, v57, dynamic_precedence75, v58, cmp76, v59, v60, dynamic_precedence79, v61, inc84, v62, link_count86, v63, conv87, cmp88, node92, v64, node93, v65, node_count94, v66, node96, v67, dynamic_precedence97, v68, v69, links98, v70, link_count99, v71, inc100, idxprom101, arrayidx102, v72, v73, subtree103, ptr104, v74, tobool105, subtree107, coerce_dive108, v75, subtree109, coerce_dive110, v76, call111, v77, add112, subtree113, coerce_dive114, v78, call115, v79, add116, v80, v81, node_count118, v82, cmp119, v83, v84, node_count122, v85, v86, dynamic_precedence124, v87, cmp125, v88, v89, dynamic_precedence128
 
@@ -51071,9 +51071,9 @@ for_end:
 	v52 = *dynamic_precedence67
 	*dynamic_precedence65 = v52
 	subtree68 = &link.F1
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(subtree68))
+	ptr = (*uintptr)(unsafe.Pointer(subtree68))
 	v53 = *ptr
-	tobool = v53 != nil
+	tobool = v53 != 0
 	if tobool {
 		goto if_then69
 	} else {
@@ -51166,9 +51166,9 @@ if_end91:
 	v73 = (*byte)(unsafe.Pointer(link))
 	libc.Memmove(v72, v73, int64(24))
 	subtree103 = &link.F1
-	ptr104 = (**SubtreeHeapData)(unsafe.Pointer(subtree103))
+	ptr104 = (*uintptr)(unsafe.Pointer(subtree103))
 	v74 = *ptr104
-	tobool105 = v74 != nil
+	tobool105 = v74 != 0
 	if tobool105 {
 		goto if_then106
 	} else {
@@ -51237,16 +51237,16 @@ if_then127:
 if_end129:
 }
 
-func ts_subtree_external_scanner_state_eq(self_coerce *SubtreeHeapData, other_coerce *SubtreeHeapData) bool {
+func ts_subtree_external_scanner_state_eq(self_coerce uintptr, other_coerce uintptr) bool {
 	var state_self, state_other **ExternalScannerState
-	var coerce_dive, coerce_dive1, coerce_dive2, coerce_dive3 **SubtreeHeapData
 	var call, call4, v2, v3, v4 *ExternalScannerState
 	var self, other *Subtree
-	var v0, v1 *SubtreeHeapData
 	var call5 *byte
 	var length *int32
+	var coerce_dive, coerce_dive1, coerce_dive2, coerce_dive3 *uintptr
 	var call6 bool
 	var v5 int32
+	var v0, v1 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self, other, state_self, state_other, coerce_dive, coerce_dive1, coerce_dive2, v0, call, coerce_dive3, v1, call4, v2, v3, call5, v4, length, v5, call6
 
@@ -51324,11 +51324,10 @@ if_end:
 	*status = 2
 }
 
-func ts_stack_pause(self *Stack, version int32, lookahead_coerce *SubtreeHeapData) {
+func ts_stack_pause(self *Stack, version int32, lookahead_coerce uintptr) {
 	var self_addr **Stack
 	var head, contents **StackHead
 	var node **StackNode
-	var coerce_dive **SubtreeHeapData
 	var v1, v3 *Stack
 	var v4, arrayidx, v6, v7, v10, v13 *StackHead
 	var v11 *StackNode
@@ -51336,6 +51335,7 @@ func ts_stack_pause(self *Stack, version int32, lookahead_coerce *SubtreeHeapDat
 	var heads, heads1 *anon_20
 	var v8, v9 *byte
 	var version_addr, size, status, node_count, node_count_at_last_error *int32
+	var coerce_dive *uintptr
 	var cmp bool
 	var v0, v2, v5, v12 int32
 	var idxprom int64
@@ -51496,20 +51496,20 @@ if_end:
 	return cmp2
 }
 
-func ts_stack_resume(self *Stack, version int32) *SubtreeHeapData {
+func ts_stack_resume(self *Stack, version int32) uintptr {
 	var self_addr **Stack
 	var head, contents **StackHead
-	var ptr, coerce_dive **SubtreeHeapData
 	var v1, v3 *Stack
 	var v4, arrayidx, v6, v8, v11, v12 *StackHead
 	var retval, _compoundliteral, lookahead_when_paused, lookahead_when_paused7 *Subtree
-	var v15 *SubtreeHeapData
 	var heads, heads1 *anon_20
 	var v9, v10, v13, v14 *byte
 	var version_addr, size, status, status6 *int32
+	var ptr, coerce_dive *uintptr
 	var cmp, cmp2 bool
 	var v0, v2, v5, v7 int32
 	var idxprom int64
+	var v15 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, self_addr, version_addr, head, _compoundliteral, v0, v1, heads, size, v2, cmp, v3, heads1, contents, v4, v5, idxprom, arrayidx, v6, status, v7, cmp2, v8, lookahead_when_paused, v9, v10, v11, status6, v12, lookahead_when_paused7, ptr, v13, v14, coerce_dive, v15
 
@@ -51576,8 +51576,8 @@ if_end5:
 	*status6 = 0
 	v12 = *head
 	lookahead_when_paused7 = &v12.F4
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(_compoundliteral))
-	*ptr = nil
+	ptr = (*uintptr)(unsafe.Pointer(_compoundliteral))
+	*ptr = 0
 	v13 = (*byte)(unsafe.Pointer(lookahead_when_paused7))
 	v14 = (*byte)(unsafe.Pointer(_compoundliteral))
 	libc.Memmove(v13, v14, int64(8))
@@ -51635,17 +51635,17 @@ _return:
 	return v7
 }
 
-func ts_subtree_visible(self_coerce *SubtreeHeapData) bool {
-	var coerce_dive, ptr **SubtreeHeapData
+func ts_subtree_visible(self_coerce uintptr) bool {
 	var self *Subtree
-	var v2 *SubtreeHeapData
 	var data, data1 *SubtreeInlineData
 	var v0, v1 *byte
 	var visible *int16
+	var coerce_dive, ptr *uintptr
 	var bf_cast, bf_cast4, bf_cast7, tobool bool
 	var bf_load, bf_clear, bf_load2, bf_lshr, bf_clear3 byte
 	var bf_load5, bf_clear6 int16
 	var conv, conv8, cond int32
+	var v2 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self, coerce_dive, data, v0, bf_load, bf_clear, bf_cast, data1, v1, bf_load2, bf_lshr, bf_clear3, bf_cast4, conv, ptr, v2, visible, bf_load5, bf_clear6, bf_cast7, conv8, cond, tobool
 
@@ -51675,9 +51675,9 @@ cond_true:
 	goto cond_end
 
 cond_false:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr = (*uintptr)(unsafe.Pointer(self))
 	v2 = *ptr
-	visible = &v2.F8
+	visible = &(*SubtreeHeapData)(unsafe.Pointer(v2)).F8
 	bf_load5 = *visible
 	bf_clear6 = bf_load5 & 1
 	bf_cast7 = (bf_clear6 & 1) != 0
@@ -51788,10 +51788,8 @@ for_inc:
 for_end:
 }
 
-func ts_subtree_dynamic_precedence(self_coerce *SubtreeHeapData) int32 {
-	var coerce_dive, ptr, ptr1 **SubtreeHeapData
+func ts_subtree_dynamic_precedence(self_coerce uintptr) int32 {
 	var self *Subtree
-	var v1, v3 *SubtreeHeapData
 	var data *SubtreeInlineData
 	var v0 *byte
 	var child_count, dynamic_precedence *int32
@@ -51807,9 +51805,11 @@ func ts_subtree_dynamic_precedence(self_coerce *SubtreeHeapData) int32 {
 	F5 int16
 	F6 anon_0
 }
+	var coerce_dive, ptr, ptr1 *uintptr
 	var bf_cast, cmp bool
 	var bf_load, bf_clear byte
 	var v2, v6, cond int32
+	var v1, v3 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self, coerce_dive, data, v0, bf_load, bf_clear, bf_cast, ptr, v1, child_count, v2, cmp, ptr1, v3, v4, v5, dynamic_precedence, v6, cond
 
@@ -51828,9 +51828,9 @@ func ts_subtree_dynamic_precedence(self_coerce *SubtreeHeapData) int32 {
 	}
 
 lor_lhs_false:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr = (*uintptr)(unsafe.Pointer(self))
 	v1 = *ptr
-	child_count = &v1.F5
+	child_count = &(*SubtreeHeapData)(unsafe.Pointer(v1)).F5
 	v2 = *child_count
 	cmp = v2 == 0
 	if cmp {
@@ -51844,9 +51844,9 @@ cond_true:
 	goto cond_end
 
 cond_false:
-	ptr1 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr1 = (*uintptr)(unsafe.Pointer(self))
 	v3 = *ptr1
-	v4 = &v3.F9
+	v4 = &(*SubtreeHeapData)(unsafe.Pointer(v3)).F9
 	v5 = (*struct {
 	F0 int32
 	F1 int32
@@ -52077,10 +52077,8 @@ land_end:
 func ts_subtree_array_copy(self_coerce0 *Subtree, self_coerce1 int64, dest *SubtreeArray) {
 	var v1, contents, contents3, contents6, contents7, contents8, contents18 **Subtree
 	var dest_addr **SubtreeArray
-	var coerce_dive **SubtreeHeapData
 	var v7, v12, v15, v17, v26, arrayidx *Subtree
 	var self, v4, v6, v8, v13, v14, v23, v25 *SubtreeArray
-	var v28 *SubtreeHeapData
 	var call, v16, v18 *byte
 	var i, size, size1, capacity, capacity2, capacity4, capacity5, size9, size11, size14 *int32
 	var v2 *int64
@@ -52088,10 +52086,12 @@ func ts_subtree_array_copy(self_coerce0 *Subtree, self_coerce1 int64, dest *Subt
 	F0 *Subtree
 	F1 int64
 }
+	var coerce_dive *uintptr
 	var cmp, cmp12, cmp15 bool
 	var v10 func(int64, int64) *byte
 	var v3, v5, v9, v11, v19, v20, v21, v22, v24, v27, v29, inc int32
 	var conv, conv10, mul, idxprom int64
+	var v28 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self, dest_addr, i, v0, v1, v2, size, v3, v4, size1, capacity, v5, v6, capacity2, contents, v7, v8, contents3, capacity4, v9, cmp, v10, capacity5, v11, conv, call, v12, v13, contents6, v14, contents7, v15, v16, contents8, v17, v18, size9, v19, conv10, mul, v20, size11, v21, cmp12, v22, v23, size14, v24, cmp15, v25, contents18, v26, v27, idxprom, arrayidx, coerce_dive, v28, v29, inc
 
@@ -52213,16 +52213,16 @@ if_end19:
 func ts_subtree_array_clear(pool *SubtreePool, self *SubtreeArray) {
 	var contents **Subtree
 	var self_addr **SubtreeArray
-	var coerce_dive **SubtreeHeapData
 	var pool_addr **SubtreePool
 	var v8, arrayidx *Subtree
 	var v1, v5, v7, v12 *SubtreeArray
-	var v10 *SubtreeHeapData
 	var v3 *SubtreePool
 	var i, size, size1, size3 *int32
+	var coerce_dive *uintptr
 	var cmp, cmp2 bool
 	var v0, v2, v4, v6, v9, v11, inc int32
 	var idxprom int64
+	var v10 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = pool_addr, self_addr, i, v0, v1, size, v2, cmp, v3, v4, v5, size1, v6, cmp2, v7, contents, v8, v9, idxprom, arrayidx, coerce_dive, v10, v11, inc, v12, size3
 
@@ -52351,15 +52351,15 @@ do_end:
 func ts_subtree_array_remove_trailing_extras(self *SubtreeArray, destination *SubtreeArray) {
 	var contents, contents9, contents12, contents13 **Subtree
 	var self_addr, destination_addr **SubtreeArray
-	var coerce_dive **SubtreeHeapData
 	var last, v8, arrayidx, v17, v22, v25, arrayidx16 *Subtree
 	var v0, v1, v3, v5, v7, v9, v14, v16, v19, v21, v23, v24, v26, v30 *SubtreeArray
-	var v13 *SubtreeHeapData
 	var v11, v12, v18, call11, v28, v29 *byte
 	var size, size1, size2, size3, size5, size8, size10, capacity, size14 *int32
+	var coerce_dive *uintptr
 	var cmp, cmp4, call bool
 	var v2, v4, sub, v6, v10, sub6, v15, dec, v20, v27, inc int32
 	var idxprom, idxprom15 int64
+	var v13 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self_addr, destination_addr, last, v0, size, v1, size1, v2, cmp, v3, size2, v4, sub, v5, size3, v6, cmp4, v7, contents, v8, v9, size5, v10, sub6, idxprom, arrayidx, v11, v12, coerce_dive, v13, call, v14, size8, v15, dec, v16, contents9, v17, v18, v19, size10, v20, v21, capacity, call11, v22, v23, contents12, v24, contents13, v25, v26, size14, v27, inc, idxprom15, arrayidx16, v28, v29, v30
 
@@ -52647,13 +52647,11 @@ for_inc:
 for_end:
 }
 
-func ts_subtree_new_leaf(pool *SubtreePool, symbol int16, padding_coerce0 int64, padding_coerce1 int32, size_coerce0 int64, size_coerce1 int32, lookahead_bytes int32, parse_state int16, has_external_tokens bool, depends_on_column bool, is_keyword bool, language *TSLanguage) *SubtreeHeapData {
-	var data57, ptr, coerce_dive **SubtreeHeapData
+func ts_subtree_new_leaf(pool *SubtreePool, symbol int16, padding_coerce0 int64, padding_coerce1 int32, size_coerce0 int64, size_coerce1 int32, lookahead_bytes int32, parse_state int16, has_external_tokens bool, depends_on_column bool, is_keyword bool, language *TSLanguage) uintptr {
 	var pool_addr **SubtreePool
 	var language_addr **TSLanguage
 	var padding, size, padding59, size60 *Length
 	var retval *Subtree
-	var _compoundliteral, call58, v53, v78, v79 *SubtreeHeapData
 	var data *SubtreeInlineData
 	var v52 *SubtreePool
 	var v8 *TSLanguage
@@ -52679,11 +52677,13 @@ func ts_subtree_new_leaf(pool *SubtreePool, symbol int16, padding_coerce0 int64,
 	F0 int64
 	F1 int32
 }
+	var data57, ptr, coerce_dive *uintptr
 	var cmp, cmp7, tobool, call9, v28, tobool12, tobool13, tobool17, tobool22, tobool33, tobool66, tobool72, tobool78, tobool93, tobool102, tobool111 bool
 	var frombool, frombool2, frombool3, frombool5, v14, frombool11, v29, bf_load, bf_clear, bf_set, v32, v33, bf_load14, bf_shl, bf_clear15, bf_set16, v35, v36, bf_load18, bf_shl19, bf_clear20, bf_set21, v38, v39, bf_load23, bf_shl24, bf_clear25, bf_set26, bf_load27, bf_clear28, bf_set29, bf_load30, bf_clear31, bf_set32, v43, v44, bf_load34, bf_shl35, bf_clear36, bf_set37, conv39, conv41, conv43, bf_load44, bf_value, bf_clear45, bf_set46, conv48, bf_load49, bf_value50, bf_shl51, bf_clear52, bf_set53, conv54, conv56, v61, v63, v65, v67, v69, v71 byte
 	var v9, v12, v13, v45, v46, v59, v60, v62, bf_load67, bf_clear68, bf_set69, v64, bf_load73, bf_shl74, bf_clear75, bf_set76, v66, bf_load79, bf_shl80, bf_clear81, bf_set82, bf_load83, bf_clear84, bf_set85, bf_load86, bf_clear87, bf_set88, bf_load89, bf_clear90, bf_set91, v68, bf_load94, bf_shl95, bf_clear96, bf_set97, bf_load98, bf_clear99, bf_set100, v70, bf_load103, bf_shl104, bf_clear105, bf_set106, bf_load107, bf_clear108, bf_set109, v72, bf_load112, bf_shl113, bf_clear114, bf_set115 int16
 	var call, conv, conv6, v15, v21, v27, v47, v48, v49, v50, v51, v58 int32
 	var v19, v25 int64
+	var _compoundliteral, call58, v53, v78, v79 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, padding, coerce, size, coerce1, pool_addr, symbol_addr, lookahead_bytes_addr, parse_state_addr, has_external_tokens_addr, depends_on_column_addr, is_keyword_addr, language_addr, metadata, tmp_coerce, extra, is_inline, padding_coerce, size_coerce, data57, _compoundliteral, v0, v1, v2, v3, v4, v5, v6, v7, frombool, frombool2, frombool3, v8, v9, call, v10, v11, v12, conv, cmp, frombool5, v13, conv6, cmp7, v14, tobool, v15, v16, v17, v18, v19, v20, v21, v22, v23, v24, v25, v26, v27, call9, v28, frombool11, v29, tobool12, data, v30, bf_load, bf_clear, bf_set, v31, visible, v32, tobool13, v33, bf_load14, bf_shl, bf_clear15, bf_set16, v34, named, v35, tobool17, v36, bf_load18, bf_shl19, bf_clear20, bf_set21, v37, v38, tobool22, v39, bf_load23, bf_shl24, bf_clear25, bf_set26, v40, bf_load27, bf_clear28, bf_set29, v41, bf_load30, bf_clear31, bf_set32, v42, v43, tobool33, v44, bf_load34, bf_shl35, bf_clear36, bf_set37, symbol38, v45, conv39, parse_state40, v46, padding_columns, extent, column, v47, conv41, padding_rows, extent42, row, v48, conv43, bf_load44, bf_value, bf_clear45, bf_set46, lookahead_bytes47, v49, conv48, bf_load49, bf_value50, bf_shl51, bf_clear52, bf_set53, padding_bytes, bytes, v50, conv54, size_bytes, bytes55, v51, conv56, v52, call58, v53, ref_count, padding59, v54, v55, size60, v56, v57, lookahead_bytes61, v58, error_cost, child_count, symbol62, v59, parse_state63, v60, visible64, visible65, v61, tobool66, v62, bf_load67, bf_clear68, bf_set69, named70, named71, v63, tobool72, v64, bf_load73, bf_shl74, bf_clear75, bf_set76, extra77, v65, tobool78, v66, bf_load79, bf_shl80, bf_clear81, bf_set82, fragile_left, bf_load83, bf_clear84, bf_set85, fragile_right, bf_load86, bf_clear87, bf_set88, has_changes, bf_load89, bf_clear90, bf_set91, has_external_tokens92, v67, tobool93, v68, bf_load94, bf_shl95, bf_clear96, bf_set97, has_external_scanner_state_change, bf_load98, bf_clear99, bf_set100, depends_on_column101, v69, tobool102, v70, bf_load103, bf_shl104, bf_clear105, bf_set106, is_missing, bf_load107, bf_clear108, bf_set109, is_keyword110, v71, tobool111, v72, bf_load112, bf_shl113, bf_clear114, bf_set115, v73, v74, v75, v76, v77, ptr, v78, coerce_dive, v79
 
@@ -52718,8 +52718,8 @@ func ts_subtree_new_leaf(pool *SubtreePool, symbol int16, padding_coerce0 int64,
 	F0 int64
 	F1 int32
 })
-	data57 = new(*SubtreeHeapData)
-	_compoundliteral = new(SubtreeHeapData)
+	data57 = new(uintptr)
+	_compoundliteral = uintptr(unsafe.Pointer(libc.Retain(new(SubtreeHeapData))))
 	v0 = &coerce.F0
 	*v0 = padding_coerce0
 	v1 = &coerce.F1
@@ -52912,30 +52912,30 @@ if_else:
 	call58 = ts_subtree_pool_allocate(v52)
 	*data57 = call58
 	v53 = *data57
-	ref_count = &_compoundliteral.F0
+	ref_count = &(*SubtreeHeapData)(unsafe.Pointer(_compoundliteral)).F0
 	*ref_count = 1
-	padding59 = &_compoundliteral.F1
+	padding59 = &(*SubtreeHeapData)(unsafe.Pointer(_compoundliteral)).F1
 	v54 = (*byte)(unsafe.Pointer(padding59))
 	v55 = (*byte)(unsafe.Pointer(padding))
 	libc.Memmove(v54, v55, int64(12))
-	size60 = &_compoundliteral.F2
+	size60 = &(*SubtreeHeapData)(unsafe.Pointer(_compoundliteral)).F2
 	v56 = (*byte)(unsafe.Pointer(size60))
 	v57 = (*byte)(unsafe.Pointer(size))
 	libc.Memmove(v56, v57, int64(12))
-	lookahead_bytes61 = &_compoundliteral.F3
+	lookahead_bytes61 = &(*SubtreeHeapData)(unsafe.Pointer(_compoundliteral)).F3
 	v58 = *lookahead_bytes_addr
 	*lookahead_bytes61 = v58
-	error_cost = &_compoundliteral.F4
+	error_cost = &(*SubtreeHeapData)(unsafe.Pointer(_compoundliteral)).F4
 	*error_cost = 0
-	child_count = &_compoundliteral.F5
+	child_count = &(*SubtreeHeapData)(unsafe.Pointer(_compoundliteral)).F5
 	*child_count = 0
-	symbol62 = &_compoundliteral.F6
+	symbol62 = &(*SubtreeHeapData)(unsafe.Pointer(_compoundliteral)).F6
 	v59 = *symbol_addr
 	*symbol62 = v59
-	parse_state63 = &_compoundliteral.F7
+	parse_state63 = &(*SubtreeHeapData)(unsafe.Pointer(_compoundliteral)).F7
 	v60 = *parse_state_addr
 	*parse_state63 = v60
-	visible64 = &_compoundliteral.F8
+	visible64 = &(*SubtreeHeapData)(unsafe.Pointer(_compoundliteral)).F8
 	visible65 = &metadata.F0
 	v61 = *visible65
 	tobool66 = (v61 & 1) != 0
@@ -52944,7 +52944,7 @@ if_else:
 	bf_clear68 = bf_load67 & -2
 	bf_set69 = bf_clear68 | v62
 	*visible64 = bf_set69
-	named70 = &_compoundliteral.F8
+	named70 = &(*SubtreeHeapData)(unsafe.Pointer(_compoundliteral)).F8
 	named71 = &metadata.F1
 	v63 = *named71
 	tobool72 = (v63 & 1) != 0
@@ -52954,7 +52954,7 @@ if_else:
 	bf_clear75 = bf_load73 & -3
 	bf_set76 = bf_clear75 | bf_shl74
 	*named70 = bf_set76
-	extra77 = &_compoundliteral.F8
+	extra77 = &(*SubtreeHeapData)(unsafe.Pointer(_compoundliteral)).F8
 	v65 = *extra
 	tobool78 = (v65 & 1) != 0
 	if tobool78 { v66 = 1 } else { v66 = 0 }
@@ -52963,22 +52963,22 @@ if_else:
 	bf_clear81 = bf_load79 & -5
 	bf_set82 = bf_clear81 | bf_shl80
 	*extra77 = bf_set82
-	fragile_left = &_compoundliteral.F8
+	fragile_left = &(*SubtreeHeapData)(unsafe.Pointer(_compoundliteral)).F8
 	bf_load83 = *fragile_left
 	bf_clear84 = bf_load83 & -9
 	bf_set85 = bf_clear84 | 0
 	*fragile_left = bf_set85
-	fragile_right = &_compoundliteral.F8
+	fragile_right = &(*SubtreeHeapData)(unsafe.Pointer(_compoundliteral)).F8
 	bf_load86 = *fragile_right
 	bf_clear87 = bf_load86 & -17
 	bf_set88 = bf_clear87 | 0
 	*fragile_right = bf_set88
-	has_changes = &_compoundliteral.F8
+	has_changes = &(*SubtreeHeapData)(unsafe.Pointer(_compoundliteral)).F8
 	bf_load89 = *has_changes
 	bf_clear90 = bf_load89 & -33
 	bf_set91 = bf_clear90 | 0
 	*has_changes = bf_set91
-	has_external_tokens92 = &_compoundliteral.F8
+	has_external_tokens92 = &(*SubtreeHeapData)(unsafe.Pointer(_compoundliteral)).F8
 	v67 = *has_external_tokens_addr
 	tobool93 = (v67 & 1) != 0
 	if tobool93 { v68 = 1 } else { v68 = 0 }
@@ -52987,12 +52987,12 @@ if_else:
 	bf_clear96 = bf_load94 & -65
 	bf_set97 = bf_clear96 | bf_shl95
 	*has_external_tokens92 = bf_set97
-	has_external_scanner_state_change = &_compoundliteral.F8
+	has_external_scanner_state_change = &(*SubtreeHeapData)(unsafe.Pointer(_compoundliteral)).F8
 	bf_load98 = *has_external_scanner_state_change
 	bf_clear99 = bf_load98 & -129
 	bf_set100 = bf_clear99 | 0
 	*has_external_scanner_state_change = bf_set100
-	depends_on_column101 = &_compoundliteral.F8
+	depends_on_column101 = &(*SubtreeHeapData)(unsafe.Pointer(_compoundliteral)).F8
 	v69 = *depends_on_column_addr
 	tobool102 = (v69 & 1) != 0
 	if tobool102 { v70 = 1 } else { v70 = 0 }
@@ -53001,12 +53001,12 @@ if_else:
 	bf_clear105 = bf_load103 & -257
 	bf_set106 = bf_clear105 | bf_shl104
 	*depends_on_column101 = bf_set106
-	is_missing = &_compoundliteral.F8
+	is_missing = &(*SubtreeHeapData)(unsafe.Pointer(_compoundliteral)).F8
 	bf_load107 = *is_missing
 	bf_clear108 = bf_load107 & -513
 	bf_set109 = bf_clear108 | 0
 	*is_missing = bf_set109
-	is_keyword110 = &_compoundliteral.F8
+	is_keyword110 = &(*SubtreeHeapData)(unsafe.Pointer(_compoundliteral)).F8
 	v71 = *is_keyword_addr
 	tobool111 = (v71 & 1) != 0
 	if tobool111 { v72 = 1 } else { v72 = 0 }
@@ -53015,7 +53015,7 @@ if_else:
 	bf_clear114 = bf_load112 & -1025
 	bf_set115 = bf_clear114 | bf_shl113
 	*is_keyword110 = bf_set115
-	v73 = &_compoundliteral.F9
+	v73 = &(*SubtreeHeapData)(unsafe.Pointer(_compoundliteral)).F9
 	v74 = (*byte)(unsafe.Pointer(v73))
 	libc.Memset(v74, 0, int64(32))
 	v75 = (*struct {
@@ -53030,7 +53030,7 @@ if_else:
 	v76 = (*byte)(unsafe.Pointer(v53))
 	v77 = (*byte)(unsafe.Pointer(_compoundliteral))
 	libc.Memmove(v76, v77, int64(80))
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(retval))
+	ptr = (*uintptr)(unsafe.Pointer(retval))
 	v78 = *data57
 	*ptr = v78
 	goto _return
@@ -53161,24 +53161,24 @@ land_end:
 	return v15
 }
 
-func ts_subtree_pool_allocate(self *SubtreePool) *SubtreeHeapData {
+func ts_subtree_pool_allocate(self *SubtreePool) uintptr {
 	var contents **MutableSubtree
-	var retval, ptr **SubtreeHeapData
 	var self_addr **SubtreePool
 	var v3, arrayidx *MutableSubtree
 	var free_trees, free_trees1, free_trees2 *MutableSubtreeArray
-	var v6, v8, v9 *SubtreeHeapData
 	var v0, v2, v4 *SubtreePool
 	var call *byte
 	var size, size3 *int32
+	var retval, ptr *uintptr
 	var cmp bool
 	var v7 func(int64) *byte
 	var v1, v5, dec int32
 	var idxprom int64
+	var v6, v8, v9 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, self_addr, v0, free_trees, size, v1, cmp, v2, free_trees1, contents, v3, v4, free_trees2, size3, v5, dec, idxprom, arrayidx, ptr, v6, v7, call, v8, v9
 
-	retval = new(*SubtreeHeapData)
+	retval = new(uintptr)
 	self_addr = new(*SubtreePool)
 	*self_addr = self
 	v0 = *self_addr
@@ -53205,7 +53205,7 @@ if_then:
 	*size3 = dec
 	idxprom = int64(uint64(uint32(dec)))
 	arrayidx = libc.AddPointer(v3, int(idxprom))
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(arrayidx))
+	ptr = (*uintptr)(unsafe.Pointer(arrayidx))
 	v6 = *ptr
 	*retval = v6
 	goto _return
@@ -53213,7 +53213,7 @@ if_then:
 if_else:
 	v7 = ts_current_malloc
 	call = v7(int64(80))
-	v8 = (*SubtreeHeapData)(unsafe.Pointer(call))
+	v8 = uintptr(unsafe.Pointer(call))
 	*retval = v8
 	goto _return
 
@@ -53224,20 +53224,20 @@ _return:
 
 func ts_subtree_set_symbol(self *MutableSubtree, symbol int16, language *TSLanguage) {
 	var self_addr **MutableSubtree
-	var ptr, ptr21, ptr30 **SubtreeHeapData
 	var language_addr **TSLanguage
 	var v4, v8, v10, v14, v18, v21, v25 *MutableSubtree
-	var v19, v22, v26 *SubtreeHeapData
 	var data, data4, data6, data11 *SubtreeInlineData
 	var v0 *TSLanguage
 	var metadata *TSSymbolMetadata
 	var v2, v3, v5, symbol5, named, v11, visible, v15, named19, visible28 *byte
 	var symbol_addr, symbol18, named22, visible31 *int16
 	var tmp_coerce *int32
+	var ptr, ptr21, ptr30 *uintptr
 	var bf_cast, cmp, tobool, tobool9, tobool10, tobool16, tobool20, tobool27, tobool29, tobool36 bool
 	var bf_load, bf_clear, conv3, v9, v12, bf_load7, bf_shl, bf_clear8, bf_set, v13, v16, bf_load12, bf_shl13, bf_clear14, bf_set15, v20, bf_result_cast, v24, bf_result_cast35 byte
 	var v1, v6, v7, v17, v23, bf_load23, bf_shl24, bf_clear25, bf_set26, v27, bf_load32, bf_clear33, bf_set34 int16
 	var call, conv int32
+	var v19, v22, v26 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self_addr, symbol_addr, language_addr, metadata, tmp_coerce, v0, v1, call, v2, v3, v4, data, v5, bf_load, bf_clear, bf_cast, v6, conv, cmp, v7, conv3, v8, data4, symbol5, named, v9, tobool, v10, data6, v11, v12, bf_load7, bf_shl, bf_clear8, bf_set, tobool9, visible, v13, tobool10, v14, data11, v15, v16, bf_load12, bf_shl13, bf_clear14, bf_set15, tobool16, v17, v18, ptr, v19, symbol18, named19, v20, tobool20, v21, ptr21, v22, named22, v23, bf_load23, bf_shl24, bf_clear25, bf_set26, bf_result_cast, tobool27, visible28, v24, tobool29, v25, ptr30, v26, visible31, v27, bf_load32, bf_clear33, bf_set34, bf_result_cast35, tobool36
 
@@ -53323,17 +53323,17 @@ if_end:
 if_else17:
 	v17 = *symbol_addr
 	v18 = *self_addr
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(v18))
+	ptr = (*uintptr)(unsafe.Pointer(v18))
 	v19 = *ptr
-	symbol18 = &v19.F6
+	symbol18 = &(*SubtreeHeapData)(unsafe.Pointer(v19)).F6
 	*symbol18 = v17
 	named19 = &metadata.F1
 	v20 = *named19
 	tobool20 = (v20 & 1) != 0
 	v21 = *self_addr
-	ptr21 = (**SubtreeHeapData)(unsafe.Pointer(v21))
+	ptr21 = (*uintptr)(unsafe.Pointer(v21))
 	v22 = *ptr21
-	named22 = &v22.F8
+	named22 = &(*SubtreeHeapData)(unsafe.Pointer(v22)).F8
 	if tobool20 { v23 = 1 } else { v23 = 0 }
 	bf_load23 = *named22
 	bf_shl24 = v23 << 1
@@ -53346,9 +53346,9 @@ if_else17:
 	v24 = *visible28
 	tobool29 = (v24 & 1) != 0
 	v25 = *self_addr
-	ptr30 = (**SubtreeHeapData)(unsafe.Pointer(v25))
+	ptr30 = (*uintptr)(unsafe.Pointer(v25))
 	v26 = *ptr30
-	visible31 = &v26.F8
+	visible31 = &(*SubtreeHeapData)(unsafe.Pointer(v26)).F8
 	if tobool29 { v27 = 1 } else { v27 = 0 }
 	bf_load32 = *visible31
 	bf_clear33 = bf_load32 & -2
@@ -53361,13 +53361,11 @@ if_else17:
 if_end37:
 }
 
-func ts_subtree_new_error(pool *SubtreePool, lookahead_char int32, padding_coerce0 int64, padding_coerce1 int32, size_coerce0 int64, size_coerce1 int32, bytes_scanned int32, parse_state int16, language *TSLanguage) *SubtreeHeapData {
-	var data, coerce_dive, ptr, coerce_dive6 **SubtreeHeapData
+func ts_subtree_new_error(pool *SubtreePool, lookahead_char int32, padding_coerce0 int64, padding_coerce1 int32, size_coerce0 int64, size_coerce1 int32, bytes_scanned int32, parse_state int16, language *TSLanguage) uintptr {
 	var pool_addr **SubtreePool
 	var language_addr **TSLanguage
 	var padding, size *Length
 	var retval *Subtree
-	var call, v24, v25, v26, v28, v30 *SubtreeHeapData
 	var v8 *SubtreePool
 	var v11 *TSLanguage
 	var v2, v3, v6, v7, v12, v13, v18, v19 *byte
@@ -53381,9 +53379,11 @@ func ts_subtree_new_error(pool *SubtreePool, lookahead_char int32, padding_coerc
 	F0 int64
 	F1 int32
 }
+	var data, coerce_dive, ptr, coerce_dive6 *uintptr
 	var v10, bf_load, bf_clear, bf_set, bf_load2, bf_clear3, bf_set4 int16
 	var v9, v17, v23, v27 int32
 	var v15, v21 int64
+	var call, v24, v25, v26, v28, v30 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, padding, coerce, size, coerce1, pool_addr, lookahead_char_addr, bytes_scanned_addr, parse_state_addr, language_addr, padding_coerce, size_coerce, data, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22, v23, call, coerce_dive, ptr, v24, v25, fragile_left, bf_load, bf_clear, bf_set, v26, fragile_right, bf_load2, bf_clear3, bf_set4, v27, v28, v29, lookahead_char5, coerce_dive6, v30
 
@@ -53411,7 +53411,7 @@ func ts_subtree_new_error(pool *SubtreePool, lookahead_char int32, padding_coerc
 	F0 int64
 	F1 int32
 })
-	data = new(*SubtreeHeapData)
+	data = new(uintptr)
 	v0 = &coerce.F0
 	*v0 = padding_coerce0
 	v1 = &coerce.F1
@@ -53452,24 +53452,24 @@ func ts_subtree_new_error(pool *SubtreePool, lookahead_char int32, padding_coerc
 	call = ts_subtree_new_leaf(v8, -1, v15, v17, v21, v23, v9, v10, false, false, false, v11)
 	coerce_dive = &retval.F0
 	*coerce_dive = call
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(retval))
+	ptr = (*uintptr)(unsafe.Pointer(retval))
 	v24 = *ptr
 	*data = v24
 	v25 = *data
-	fragile_left = &v25.F8
+	fragile_left = &(*SubtreeHeapData)(unsafe.Pointer(v25)).F8
 	bf_load = *fragile_left
 	bf_clear = bf_load & -9
 	bf_set = bf_clear | 8
 	*fragile_left = bf_set
 	v26 = *data
-	fragile_right = &v26.F8
+	fragile_right = &(*SubtreeHeapData)(unsafe.Pointer(v26)).F8
 	bf_load2 = *fragile_right
 	bf_clear3 = bf_load2 & -17
 	bf_set4 = bf_clear3 | 16
 	*fragile_right = bf_set4
 	v27 = *lookahead_char_addr
 	v28 = *data
-	v29 = &v28.F9
+	v29 = &(*SubtreeHeapData)(unsafe.Pointer(v28)).F9
 	lookahead_char5 = (*int32)(unsafe.Pointer(v29))
 	*lookahead_char5 = v27
 	coerce_dive6 = &retval.F0
@@ -53477,13 +53477,11 @@ func ts_subtree_new_error(pool *SubtreePool, lookahead_char int32, padding_coerc
 	return v30
 }
 
-func ts_subtree_clone(self_coerce *SubtreeHeapData) *SubtreeHeapData {
+func ts_subtree_clone(self_coerce uintptr) uintptr {
 	var new_children, old_children **Subtree
-	var result, coerce_dive, ptr, ptr2, ptr3, ptr5, ptr7, ptr9, coerce_dive14, ptr15, ptr20, ptr23, coerce_dive24 **SubtreeHeapData
 	var tmp, external_scanner_state, external_scanner_state21 *ExternalScannerState
 	var retval *MutableSubtree
 	var self, v4, v7, add_ptr, cond, v10, v12, v15, arrayidx, v24, arrayidx13 *Subtree
-	var v0, v6, v8, v16, v18, v19, v22, v26, v28, v29, v31, v35, v36, v37 *SubtreeHeapData
 	var data *SubtreeInlineData
 	var call1, v5, v11, v13, v33, v34 *byte
 	var has_external_tokens *int16
@@ -53492,12 +53490,14 @@ func ts_subtree_clone(self_coerce *SubtreeHeapData) *SubtreeHeapData {
 	var v30, v32 *struct {
 	F0 ExternalScannerState
 }
+	var result, coerce_dive, ptr, ptr2, ptr3, ptr5, ptr7, ptr9, coerce_dive14, ptr15, ptr20, ptr23, coerce_dive24 *uintptr
 	var bf_cast, cmp, cmp11, bf_cast18 bool
 	var bf_load, bf_clear byte
 	var v2 func(int64) *byte
 	var bf_load16, bf_lshr, bf_clear17 int16
 	var v1, v9, v17, v20, v21, v23, v25, v27, inc int32
 	var call, v3, idx_ext, idx_neg, v14, idxprom, idxprom12 int64
+	var v0, v6, v8, v16, v18, v19, v22, v26, v28, v29, v31, v35, v36, v37 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, self, alloc_size, new_children, old_children, result, i, tmp, coerce_dive, ptr, v0, child_count, v1, call, v2, v3, call1, v4, data, v5, bf_load, bf_clear, bf_cast, ptr2, v6, v7, ptr3, v8, child_count4, v9, idx_ext, idx_neg, add_ptr, cond, v10, v11, v12, v13, v14, v15, ptr5, v16, child_count6, v17, idxprom, arrayidx, v18, ptr7, v19, child_count8, v20, cmp, v21, ptr9, v22, child_count10, v23, cmp11, v24, v25, idxprom12, arrayidx13, coerce_dive14, v26, v27, inc, ptr15, v28, has_external_tokens, bf_load16, bf_lshr, bf_clear17, bf_cast18, v29, v30, external_scanner_state, ptr20, v31, v32, external_scanner_state21, v33, v34, v35, ref_count, ptr23, v36, coerce_dive24, v37
 
@@ -53506,14 +53506,14 @@ func ts_subtree_clone(self_coerce *SubtreeHeapData) *SubtreeHeapData {
 	alloc_size = new(int64)
 	new_children = new(*Subtree)
 	old_children = new(*Subtree)
-	result = new(*SubtreeHeapData)
+	result = new(uintptr)
 	i = new(int32)
 	tmp = new(ExternalScannerState)
 	coerce_dive = &self.F0
 	*coerce_dive = self_coerce
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr = (*uintptr)(unsafe.Pointer(self))
 	v0 = *ptr
-	child_count = &v0.F5
+	child_count = &(*SubtreeHeapData)(unsafe.Pointer(v0)).F5
 	v1 = *child_count
 	call = ts_subtree_alloc_size(v1)
 	*alloc_size = call
@@ -53538,12 +53538,12 @@ cond_true:
 	goto cond_end
 
 cond_false:
-	ptr2 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr2 = (*uintptr)(unsafe.Pointer(self))
 	v6 = *ptr2
 	v7 = (*Subtree)(unsafe.Pointer(v6))
-	ptr3 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr3 = (*uintptr)(unsafe.Pointer(self))
 	v8 = *ptr3
-	child_count4 = &v8.F5
+	child_count4 = &(*SubtreeHeapData)(unsafe.Pointer(v8)).F5
 	v9 = *child_count4
 	idx_ext = int64(uint64(uint32(v9)))
 	idx_neg = int64(0) - idx_ext
@@ -53560,17 +53560,17 @@ cond_end:
 	v14 = *alloc_size
 	libc.Memmove(v11, v13, v14)
 	v15 = *new_children
-	ptr5 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr5 = (*uintptr)(unsafe.Pointer(self))
 	v16 = *ptr5
-	child_count6 = &v16.F5
+	child_count6 = &(*SubtreeHeapData)(unsafe.Pointer(v16)).F5
 	v17 = *child_count6
 	idxprom = int64(uint64(uint32(v17)))
 	arrayidx = libc.AddPointer(v15, int(idxprom))
-	v18 = (*SubtreeHeapData)(unsafe.Pointer(arrayidx))
+	v18 = uintptr(unsafe.Pointer(arrayidx))
 	*result = v18
-	ptr7 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr7 = (*uintptr)(unsafe.Pointer(self))
 	v19 = *ptr7
-	child_count8 = &v19.F5
+	child_count8 = &(*SubtreeHeapData)(unsafe.Pointer(v19)).F5
 	v20 = *child_count8
 	cmp = uint32(v20) > 0
 	if cmp {
@@ -53585,9 +53585,9 @@ if_then:
 
 for_cond:
 	v21 = *i
-	ptr9 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr9 = (*uintptr)(unsafe.Pointer(self))
 	v22 = *ptr9
-	child_count10 = &v22.F5
+	child_count10 = &(*SubtreeHeapData)(unsafe.Pointer(v22)).F5
 	v23 = *child_count10
 	cmp11 = uint32(v21) < uint32(v23)
 	if cmp11 {
@@ -53616,9 +53616,9 @@ for_end:
 	goto if_end22
 
 if_else:
-	ptr15 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr15 = (*uintptr)(unsafe.Pointer(self))
 	v28 = *ptr15
-	has_external_tokens = &v28.F8
+	has_external_tokens = &(*SubtreeHeapData)(unsafe.Pointer(v28)).F8
 	bf_load16 = *has_external_tokens
 	bf_lshr = int16(uint16(bf_load16) >> 6)
 	bf_clear17 = bf_lshr & 1
@@ -53631,11 +53631,11 @@ if_else:
 
 if_then19:
 	v29 = *result
-	v30 = &v29.F9
+	v30 = &(*SubtreeHeapData)(unsafe.Pointer(v29)).F9
 	external_scanner_state = (*ExternalScannerState)(unsafe.Pointer(v30))
-	ptr20 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr20 = (*uintptr)(unsafe.Pointer(self))
 	v31 = *ptr20
-	v32 = &v31.F9
+	v32 = &(*SubtreeHeapData)(unsafe.Pointer(v31)).F9
 	external_scanner_state21 = (*ExternalScannerState)(unsafe.Pointer(v32))
 	ts_external_scanner_state_copy(tmp, external_scanner_state21)
 	v33 = (*byte)(unsafe.Pointer(external_scanner_state))
@@ -53648,9 +53648,9 @@ if_end:
 
 if_end22:
 	v35 = *result
-	ref_count = &v35.F0
+	ref_count = &(*SubtreeHeapData)(unsafe.Pointer(v35)).F0
 	*ref_count = 1
-	ptr23 = (**SubtreeHeapData)(unsafe.Pointer(retval))
+	ptr23 = (*uintptr)(unsafe.Pointer(retval))
 	v36 = *result
 	*ptr23 = v36
 	coerce_dive24 = &retval.F0
@@ -53674,19 +53674,19 @@ func ts_subtree_alloc_size(child_count int32) int64 {
 	return add
 }
 
-func ts_subtree_make_mut(pool *SubtreePool, self_coerce *SubtreeHeapData) *SubtreeHeapData {
-	var coerce_dive, ptr, coerce_dive4, coerce_dive5, coerce_dive7, coerce_dive9, coerce_dive10, coerce_dive11 **SubtreeHeapData
+func ts_subtree_make_mut(pool *SubtreePool, self_coerce uintptr) uintptr {
 	var pool_addr **SubtreePool
 	var retval, result *MutableSubtree
 	var self *Subtree
-	var v3, v5, call, v6, call8, v8, v11 *SubtreeHeapData
 	var data, data1, data2 *SubtreeInlineData
 	var v7 *SubtreePool
 	var v0, v1, v2, v9, v10 *byte
 	var ref_count *int32
+	var coerce_dive, ptr, coerce_dive4, coerce_dive5, coerce_dive7, coerce_dive9, coerce_dive10, coerce_dive11 *uintptr
 	var bf_cast, cmp bool
 	var bf_load, bf_clear byte
 	var v4 int32
+	var v3, v5, call, v6, call8, v8, v11 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, self, pool_addr, result, coerce_dive, data, v0, bf_load, bf_clear, bf_cast, data1, data2, v1, v2, ptr, v3, ref_count, v4, cmp, coerce_dive4, v5, call, coerce_dive5, coerce_dive7, v6, call8, coerce_dive9, v7, coerce_dive10, v8, v9, v10, coerce_dive11, v11
 
@@ -53717,9 +53717,9 @@ if_then:
 	goto _return
 
 if_end:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr = (*uintptr)(unsafe.Pointer(self))
 	v3 = *ptr
-	ref_count = &v3.F0
+	ref_count = &(*SubtreeHeapData)(unsafe.Pointer(v3)).F0
 	v4 = *ref_count
 	cmp = v4 == 1
 	if cmp {
@@ -53757,13 +53757,13 @@ _return:
 	return v11
 }
 
-func ts_subtree_to_mut_unsafe(self_coerce *SubtreeHeapData) *SubtreeHeapData {
-	var coerce_dive, coerce_dive2 **SubtreeHeapData
+func ts_subtree_to_mut_unsafe(self_coerce uintptr) uintptr {
 	var retval *MutableSubtree
 	var self *Subtree
-	var v2 *SubtreeHeapData
 	var data, data1 *SubtreeInlineData
 	var v0, v1 *byte
+	var coerce_dive, coerce_dive2 *uintptr
+	var v2 uintptr
 
 	_, _, _, _, _, _, _, _, _ = retval, self, coerce_dive, data, data1, v0, v1, coerce_dive2, v2
 
@@ -53781,25 +53781,25 @@ func ts_subtree_to_mut_unsafe(self_coerce *SubtreeHeapData) *SubtreeHeapData {
 	return v2
 }
 
-func ts_subtree_compress(self_coerce *SubtreeHeapData, count int32, language *TSLanguage, stack *MutableSubtreeArray) {
+func ts_subtree_compress(self_coerce uintptr, count int32, language *TSLanguage, stack *MutableSubtreeArray) {
 	var contents, contents153, contents154, contents162 **MutableSubtree
 	var stack_addr **MutableSubtreeArray
-	var coerce_dive, ptr, ptr2, ptr4, ptr6, ptr7, coerce_dive9, coerce_dive10, ptr16, ptr20, ptr24, ptr38, ptr39, coerce_dive47, coerce_dive49, ptr56, ptr61, ptr66, ptr81, ptr82, coerce_dive90, coerce_dive92, ptr100, ptr101, ptr116, ptr117, ptr124, ptr134, ptr135, ptr142, coerce_dive148, coerce_dive150, ptr174, ptr175, coerce_dive183, coerce_dive185, ptr194, ptr195, ptr202, coerce_dive207, coerce_dive209, coerce_dive210, coerce_dive211, coerce_dive212 **SubtreeHeapData
 	var language_addr **TSLanguage
 	var self, tree, child, grandchild, child166, grandchild186, v73, v78, v81, arrayidx157, v93, arrayidx165 *MutableSubtree
 	var v0, v72, v75, v77, v79, v80, v82, v89, v92, v94 *MutableSubtreeArray
 	var tmp, tmp147, v14, add_ptr, cond, arrayidx, v28, add_ptr43, cond45, arrayidx46, v42, add_ptr86, cond88, arrayidx89, v50, add_ptr105, cond107, arrayidx108, v55, add_ptr121, cond123, arrayidx126, v64, add_ptr139, cond141, arrayidx146, v100, add_ptr179, cond181, arrayidx182, v106, add_ptr199, cond201, arrayidx206 *Subtree
-	var v4, v8, v10, v13, v15, v17, call, v19, v21, v23, v27, v29, v31, call48, v33, v35, v37, v41, v43, v45, call91, v49, v51, v54, v56, v58, v63, v65, v67, v69, call149, v99, v101, v103, call184, v105, v107, v109, v111, call208, v113, v115, v117 *SubtreeHeapData
 	var data, data11, data31, data50, data74, data93, data109, data127, data167, data187 *SubtreeInlineData
 	var v112, v114, v116 *TSLanguage
 	var v2, v3, v12, v18, v26, v32, v40, v46, v47, v48, v53, v60, v61, v62, v70, v71, v74, call152, v84, v85, v86, v87, v96, v97, v98, v104 *byte
 	var symbol, symbol1, symbol25, symbol67 *int16
 	var count_addr, initial_stack_size, i, size, ref_count, child_count, child_count8, child_count17, ref_count21, child_count40, child_count57, ref_count62, child_count83, child_count102, child_count118, child_count125, child_count136, child_count143, size151, capacity, size155, size159, size163, child_count176, child_count196, child_count203 *int32
+	var coerce_dive, ptr, ptr2, ptr4, ptr6, ptr7, coerce_dive9, coerce_dive10, ptr16, ptr20, ptr24, ptr38, ptr39, coerce_dive47, coerce_dive49, ptr56, ptr61, ptr66, ptr81, ptr82, coerce_dive90, coerce_dive92, ptr100, ptr101, ptr116, ptr117, ptr124, ptr134, ptr135, ptr142, coerce_dive148, coerce_dive150, ptr174, ptr175, coerce_dive183, coerce_dive185, ptr194, ptr195, ptr202, coerce_dive207, coerce_dive209, coerce_dive210, coerce_dive211, coerce_dive212 *uintptr
 	var cmp, cmp3, cmp5, bf_cast, bf_cast14, cmp18, cmp22, cmp27, bf_cast34, bf_cast53, cmp58, cmp63, cmp70, bf_cast77, bf_cast96, bf_cast112, bf_cast130, cmp160, bf_cast170, bf_cast190 bool
 	var bf_load, bf_clear, bf_load12, bf_clear13, bf_load32, bf_clear33, bf_load51, bf_clear52, bf_load75, bf_clear76, bf_load94, bf_clear95, bf_load110, bf_clear111, bf_load128, bf_clear129, bf_load168, bf_clear169, bf_load188, bf_clear189 byte
 	var v5, v24, v25, v38, v39 int16
 	var v1, v6, v7, v9, v11, v16, v20, v22, conv, conv26, v30, v34, v36, conv68, conv69, v44, v52, v57, v59, sub, v66, v68, sub144, v76, v83, inc, v88, inc158, v90, v91, v95, dec, v102, v108, v110, sub204 int32
 	var idx_ext, idx_neg, idx_ext41, idx_neg42, idx_ext84, idx_neg85, idx_ext103, idx_neg104, idx_ext119, idx_neg120, idxprom, idx_ext137, idx_neg138, idxprom145, idxprom156, idxprom164, idx_ext177, idx_neg178, idx_ext197, idx_neg198, idxprom205 int64
+	var v4, v8, v10, v13, v15, v17, call, v19, v21, v23, v27, v29, v31, call48, v33, v35, v37, v41, v43, v45, call91, v49, v51, v54, v56, v58, v63, v65, v67, v69, call149, v99, v101, v103, call184, v105, v107, v109, v111, call208, v113, v115, v117 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self, count_addr, language_addr, stack_addr, initial_stack_size, tree, symbol, i, child, grandchild, tmp, tmp147, child166, grandchild186, coerce_dive, v0, size, v1, v2, v3, ptr, v4, symbol1, v5, v6, v7, cmp, ptr2, v8, ref_count, v9, cmp3, ptr4, v10, child_count, v11, cmp5, data, v12, bf_load, bf_clear, bf_cast, ptr6, v13, v14, ptr7, v15, child_count8, v16, idx_ext, idx_neg, add_ptr, cond, arrayidx, coerce_dive9, v17, call, coerce_dive10, data11, v18, bf_load12, bf_clear13, bf_cast14, ptr16, v19, child_count17, v20, cmp18, ptr20, v21, ref_count21, v22, cmp22, ptr24, v23, symbol25, v24, conv, v25, conv26, cmp27, data31, v26, bf_load32, bf_clear33, bf_cast34, ptr38, v27, v28, ptr39, v29, child_count40, v30, idx_ext41, idx_neg42, add_ptr43, cond45, arrayidx46, coerce_dive47, v31, call48, coerce_dive49, data50, v32, bf_load51, bf_clear52, bf_cast53, ptr56, v33, child_count57, v34, cmp58, ptr61, v35, ref_count62, v36, cmp63, ptr66, v37, symbol67, v38, conv68, v39, conv69, cmp70, data74, v40, bf_load75, bf_clear76, bf_cast77, ptr81, v41, v42, ptr82, v43, child_count83, v44, idx_ext84, idx_neg85, add_ptr86, cond88, arrayidx89, coerce_dive90, v45, call91, coerce_dive92, v46, v47, data93, v48, bf_load94, bf_clear95, bf_cast96, ptr100, v49, v50, ptr101, v51, child_count102, v52, idx_ext103, idx_neg104, add_ptr105, cond107, arrayidx108, data109, v53, bf_load110, bf_clear111, bf_cast112, ptr116, v54, v55, ptr117, v56, child_count118, v57, idx_ext119, idx_neg120, add_ptr121, cond123, ptr124, v58, child_count125, v59, sub, idxprom, arrayidx126, v60, v61, data127, v62, bf_load128, bf_clear129, bf_cast130, ptr134, v63, v64, ptr135, v65, child_count136, v66, idx_ext137, idx_neg138, add_ptr139, cond141, ptr142, v67, child_count143, v68, sub144, idxprom145, arrayidx146, coerce_dive148, v69, call149, coerce_dive150, v70, v71, v72, contents, v73, v74, v75, size151, v76, v77, capacity, call152, v78, v79, contents153, v80, contents154, v81, v82, size155, v83, inc, idxprom156, arrayidx157, v84, v85, v86, v87, v88, inc158, v89, size159, v90, v91, cmp160, v92, contents162, v93, v94, size163, v95, dec, idxprom164, arrayidx165, v96, v97, data167, v98, bf_load168, bf_clear169, bf_cast170, ptr174, v99, v100, ptr175, v101, child_count176, v102, idx_ext177, idx_neg178, add_ptr179, cond181, arrayidx182, coerce_dive183, v103, call184, coerce_dive185, data187, v104, bf_load188, bf_clear189, bf_cast190, ptr194, v105, v106, ptr195, v107, child_count196, v108, idx_ext197, idx_neg198, add_ptr199, cond201, ptr202, v109, child_count203, v110, sub204, idxprom205, arrayidx206, coerce_dive207, v111, call208, coerce_dive209, v112, coerce_dive210, v113, v114, coerce_dive211, v115, v116, coerce_dive212, v117
 
@@ -53829,9 +53829,9 @@ func ts_subtree_compress(self_coerce *SubtreeHeapData, count int32, language *TS
 	v2 = (*byte)(unsafe.Pointer(tree))
 	v3 = (*byte)(unsafe.Pointer(self))
 	libc.Memmove(v2, v3, int64(8))
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(tree))
+	ptr = (*uintptr)(unsafe.Pointer(tree))
 	v4 = *ptr
-	symbol1 = &v4.F6
+	symbol1 = &(*SubtreeHeapData)(unsafe.Pointer(v4)).F6
 	v5 = *symbol1
 	*symbol = v5
 	*i = 0
@@ -53848,9 +53848,9 @@ for_cond:
 	}
 
 for_body:
-	ptr2 = (**SubtreeHeapData)(unsafe.Pointer(tree))
+	ptr2 = (*uintptr)(unsafe.Pointer(tree))
 	v8 = *ptr2
-	ref_count = &v8.F0
+	ref_count = &(*SubtreeHeapData)(unsafe.Pointer(v8)).F0
 	v9 = *ref_count
 	cmp3 = uint32(v9) > 1
 	if cmp3 {
@@ -53860,9 +53860,9 @@ for_body:
 	}
 
 lor_lhs_false:
-	ptr4 = (**SubtreeHeapData)(unsafe.Pointer(tree))
+	ptr4 = (*uintptr)(unsafe.Pointer(tree))
 	v10 = *ptr4
-	child_count = &v10.F5
+	child_count = &(*SubtreeHeapData)(unsafe.Pointer(v10)).F5
 	v11 = *child_count
 	cmp5 = uint32(v11) < 2
 	if cmp5 {
@@ -53891,12 +53891,12 @@ cond_true:
 	goto cond_end
 
 cond_false:
-	ptr6 = (**SubtreeHeapData)(unsafe.Pointer(tree))
+	ptr6 = (*uintptr)(unsafe.Pointer(tree))
 	v13 = *ptr6
 	v14 = (*Subtree)(unsafe.Pointer(v13))
-	ptr7 = (**SubtreeHeapData)(unsafe.Pointer(tree))
+	ptr7 = (*uintptr)(unsafe.Pointer(tree))
 	v15 = *ptr7
-	child_count8 = &v15.F5
+	child_count8 = &(*SubtreeHeapData)(unsafe.Pointer(v15)).F5
 	v16 = *child_count8
 	idx_ext = int64(uint64(uint32(v16)))
 	idx_neg = int64(0) - idx_ext
@@ -53923,9 +53923,9 @@ cond_end:
 	}
 
 lor_lhs_false15:
-	ptr16 = (**SubtreeHeapData)(unsafe.Pointer(child))
+	ptr16 = (*uintptr)(unsafe.Pointer(child))
 	v19 = *ptr16
-	child_count17 = &v19.F5
+	child_count17 = &(*SubtreeHeapData)(unsafe.Pointer(v19)).F5
 	v20 = *child_count17
 	cmp18 = uint32(v20) < 2
 	if cmp18 {
@@ -53935,9 +53935,9 @@ lor_lhs_false15:
 	}
 
 lor_lhs_false19:
-	ptr20 = (**SubtreeHeapData)(unsafe.Pointer(child))
+	ptr20 = (*uintptr)(unsafe.Pointer(child))
 	v21 = *ptr20
-	ref_count21 = &v21.F0
+	ref_count21 = &(*SubtreeHeapData)(unsafe.Pointer(v21)).F0
 	v22 = *ref_count21
 	cmp22 = uint32(v22) > 1
 	if cmp22 {
@@ -53947,9 +53947,9 @@ lor_lhs_false19:
 	}
 
 lor_lhs_false23:
-	ptr24 = (**SubtreeHeapData)(unsafe.Pointer(child))
+	ptr24 = (*uintptr)(unsafe.Pointer(child))
 	v23 = *ptr24
-	symbol25 = &v23.F6
+	symbol25 = &(*SubtreeHeapData)(unsafe.Pointer(v23)).F6
 	v24 = *symbol25
 	conv = int32(uint32(uint16(v24)))
 	v25 = *symbol
@@ -53981,12 +53981,12 @@ cond_true36:
 	goto cond_end44
 
 cond_false37:
-	ptr38 = (**SubtreeHeapData)(unsafe.Pointer(child))
+	ptr38 = (*uintptr)(unsafe.Pointer(child))
 	v27 = *ptr38
 	v28 = (*Subtree)(unsafe.Pointer(v27))
-	ptr39 = (**SubtreeHeapData)(unsafe.Pointer(child))
+	ptr39 = (*uintptr)(unsafe.Pointer(child))
 	v29 = *ptr39
-	child_count40 = &v29.F5
+	child_count40 = &(*SubtreeHeapData)(unsafe.Pointer(v29)).F5
 	v30 = *child_count40
 	idx_ext41 = int64(uint64(uint32(v30)))
 	idx_neg42 = int64(0) - idx_ext41
@@ -54013,9 +54013,9 @@ cond_end44:
 	}
 
 lor_lhs_false55:
-	ptr56 = (**SubtreeHeapData)(unsafe.Pointer(grandchild))
+	ptr56 = (*uintptr)(unsafe.Pointer(grandchild))
 	v33 = *ptr56
-	child_count57 = &v33.F5
+	child_count57 = &(*SubtreeHeapData)(unsafe.Pointer(v33)).F5
 	v34 = *child_count57
 	cmp58 = uint32(v34) < 2
 	if cmp58 {
@@ -54025,9 +54025,9 @@ lor_lhs_false55:
 	}
 
 lor_lhs_false60:
-	ptr61 = (**SubtreeHeapData)(unsafe.Pointer(grandchild))
+	ptr61 = (*uintptr)(unsafe.Pointer(grandchild))
 	v35 = *ptr61
-	ref_count62 = &v35.F0
+	ref_count62 = &(*SubtreeHeapData)(unsafe.Pointer(v35)).F0
 	v36 = *ref_count62
 	cmp63 = uint32(v36) > 1
 	if cmp63 {
@@ -54037,9 +54037,9 @@ lor_lhs_false60:
 	}
 
 lor_lhs_false65:
-	ptr66 = (**SubtreeHeapData)(unsafe.Pointer(grandchild))
+	ptr66 = (*uintptr)(unsafe.Pointer(grandchild))
 	v37 = *ptr66
-	symbol67 = &v37.F6
+	symbol67 = &(*SubtreeHeapData)(unsafe.Pointer(v37)).F6
 	v38 = *symbol67
 	conv68 = int32(uint32(uint16(v38)))
 	v39 = *symbol
@@ -54071,12 +54071,12 @@ cond_true79:
 	goto cond_end87
 
 cond_false80:
-	ptr81 = (**SubtreeHeapData)(unsafe.Pointer(tree))
+	ptr81 = (*uintptr)(unsafe.Pointer(tree))
 	v41 = *ptr81
 	v42 = (*Subtree)(unsafe.Pointer(v41))
-	ptr82 = (**SubtreeHeapData)(unsafe.Pointer(tree))
+	ptr82 = (*uintptr)(unsafe.Pointer(tree))
 	v43 = *ptr82
-	child_count83 = &v43.F5
+	child_count83 = &(*SubtreeHeapData)(unsafe.Pointer(v43)).F5
 	v44 = *child_count83
 	idx_ext84 = int64(uint64(uint32(v44)))
 	idx_neg85 = int64(0) - idx_ext84
@@ -54110,12 +54110,12 @@ cond_true98:
 	goto cond_end106
 
 cond_false99:
-	ptr100 = (**SubtreeHeapData)(unsafe.Pointer(child))
+	ptr100 = (*uintptr)(unsafe.Pointer(child))
 	v49 = *ptr100
 	v50 = (*Subtree)(unsafe.Pointer(v49))
-	ptr101 = (**SubtreeHeapData)(unsafe.Pointer(child))
+	ptr101 = (*uintptr)(unsafe.Pointer(child))
 	v51 = *ptr101
-	child_count102 = &v51.F5
+	child_count102 = &(*SubtreeHeapData)(unsafe.Pointer(v51)).F5
 	v52 = *child_count102
 	idx_ext103 = int64(uint64(uint32(v52)))
 	idx_neg104 = int64(0) - idx_ext103
@@ -54141,12 +54141,12 @@ cond_true114:
 	goto cond_end122
 
 cond_false115:
-	ptr116 = (**SubtreeHeapData)(unsafe.Pointer(grandchild))
+	ptr116 = (*uintptr)(unsafe.Pointer(grandchild))
 	v54 = *ptr116
 	v55 = (*Subtree)(unsafe.Pointer(v54))
-	ptr117 = (**SubtreeHeapData)(unsafe.Pointer(grandchild))
+	ptr117 = (*uintptr)(unsafe.Pointer(grandchild))
 	v56 = *ptr117
-	child_count118 = &v56.F5
+	child_count118 = &(*SubtreeHeapData)(unsafe.Pointer(v56)).F5
 	v57 = *child_count118
 	idx_ext119 = int64(uint64(uint32(v57)))
 	idx_neg120 = int64(0) - idx_ext119
@@ -54155,9 +54155,9 @@ cond_false115:
 	goto cond_end122
 
 cond_end122:
-	ptr124 = (**SubtreeHeapData)(unsafe.Pointer(grandchild))
+	ptr124 = (*uintptr)(unsafe.Pointer(grandchild))
 	v58 = *ptr124
-	child_count125 = &v58.F5
+	child_count125 = &(*SubtreeHeapData)(unsafe.Pointer(v58)).F5
 	v59 = *child_count125
 	sub = v59 - 1
 	idxprom = int64(uint64(uint32(sub)))
@@ -54181,12 +54181,12 @@ cond_true132:
 	goto cond_end140
 
 cond_false133:
-	ptr134 = (**SubtreeHeapData)(unsafe.Pointer(grandchild))
+	ptr134 = (*uintptr)(unsafe.Pointer(grandchild))
 	v63 = *ptr134
 	v64 = (*Subtree)(unsafe.Pointer(v63))
-	ptr135 = (**SubtreeHeapData)(unsafe.Pointer(grandchild))
+	ptr135 = (*uintptr)(unsafe.Pointer(grandchild))
 	v65 = *ptr135
-	child_count136 = &v65.F5
+	child_count136 = &(*SubtreeHeapData)(unsafe.Pointer(v65)).F5
 	v66 = *child_count136
 	idx_ext137 = int64(uint64(uint32(v66)))
 	idx_neg138 = int64(0) - idx_ext137
@@ -54195,9 +54195,9 @@ cond_false133:
 	goto cond_end140
 
 cond_end140:
-	ptr142 = (**SubtreeHeapData)(unsafe.Pointer(grandchild))
+	ptr142 = (*uintptr)(unsafe.Pointer(grandchild))
 	v67 = *ptr142
-	child_count143 = &v67.F5
+	child_count143 = &(*SubtreeHeapData)(unsafe.Pointer(v67)).F5
 	v68 = *child_count143
 	sub144 = v68 - 1
 	idxprom145 = int64(uint64(uint32(sub144)))
@@ -54299,12 +54299,12 @@ cond_true172:
 	goto cond_end180
 
 cond_false173:
-	ptr174 = (**SubtreeHeapData)(unsafe.Pointer(tree))
+	ptr174 = (*uintptr)(unsafe.Pointer(tree))
 	v99 = *ptr174
 	v100 = (*Subtree)(unsafe.Pointer(v99))
-	ptr175 = (**SubtreeHeapData)(unsafe.Pointer(tree))
+	ptr175 = (*uintptr)(unsafe.Pointer(tree))
 	v101 = *ptr175
-	child_count176 = &v101.F5
+	child_count176 = &(*SubtreeHeapData)(unsafe.Pointer(v101)).F5
 	v102 = *child_count176
 	idx_ext177 = int64(uint64(uint32(v102)))
 	idx_neg178 = int64(0) - idx_ext177
@@ -54335,12 +54335,12 @@ cond_true192:
 	goto cond_end200
 
 cond_false193:
-	ptr194 = (**SubtreeHeapData)(unsafe.Pointer(child166))
+	ptr194 = (*uintptr)(unsafe.Pointer(child166))
 	v105 = *ptr194
 	v106 = (*Subtree)(unsafe.Pointer(v105))
-	ptr195 = (**SubtreeHeapData)(unsafe.Pointer(child166))
+	ptr195 = (*uintptr)(unsafe.Pointer(child166))
 	v107 = *ptr195
-	child_count196 = &v107.F5
+	child_count196 = &(*SubtreeHeapData)(unsafe.Pointer(v107)).F5
 	v108 = *child_count196
 	idx_ext197 = int64(uint64(uint32(v108)))
 	idx_neg198 = int64(0) - idx_ext197
@@ -54349,9 +54349,9 @@ cond_false193:
 	goto cond_end200
 
 cond_end200:
-	ptr202 = (**SubtreeHeapData)(unsafe.Pointer(child166))
+	ptr202 = (*uintptr)(unsafe.Pointer(child166))
 	v109 = *ptr202
-	child_count203 = &v109.F5
+	child_count203 = &(*SubtreeHeapData)(unsafe.Pointer(v109)).F5
 	v110 = *child_count203
 	sub204 = v110 - 1
 	idxprom205 = int64(uint64(uint32(sub204)))
@@ -54378,13 +54378,13 @@ cond_end200:
 while_end:
 }
 
-func ts_subtree_from_mut(self_coerce *SubtreeHeapData) *SubtreeHeapData {
-	var coerce_dive, coerce_dive2 **SubtreeHeapData
+func ts_subtree_from_mut(self_coerce uintptr) uintptr {
 	var self *MutableSubtree
 	var retval *Subtree
-	var v2 *SubtreeHeapData
 	var data, data1 *SubtreeInlineData
 	var v0, v1 *byte
+	var coerce_dive, coerce_dive2 *uintptr
+	var v2 uintptr
 
 	_, _, _, _, _, _, _, _, _ = retval, self, coerce_dive, data, data1, v0, v1, coerce_dive2, v2
 
@@ -54402,15 +54402,13 @@ func ts_subtree_from_mut(self_coerce *SubtreeHeapData) *SubtreeHeapData {
 	return v2
 }
 
-func ts_subtree_summarize_children(self_coerce *SubtreeHeapData, language *TSLanguage) {
+func ts_subtree_summarize_children(self_coerce uintptr, language *TSLanguage) {
 	var children **Subtree
-	var coerce_dive, ptr, ptr1, ptr2, ptr3, ptr4, ptr5, ptr8, ptr12, ptr16, ptr17, ptr23, ptr24, ptr25, ptr28, coerce_dive31, ptr35, coerce_dive41, ptr44, ptr53, coerce_dive54, ptr56, coerce_dive59, ptr63, ptr66, coerce_dive68, ptr74, ptr76, coerce_dive79, coerce_dive86, coerce_dive92, ptr94, coerce_dive98, ptr100, ptr104, coerce_dive110, coerce_dive113, coerce_dive120, ptr123, ptr130, ptr132, coerce_dive139, ptr141, coerce_dive144, ptr146, coerce_dive149, coerce_dive152, ptr165, ptr167, ptr176, coerce_dive181, ptr184, ptr187, coerce_dive190, ptr193, ptr201, ptr203, ptr206, ptr208, coerce_dive214, ptr217, coerce_dive223, ptr226, ptr230, ptr234, coerce_dive236, ptr242, ptr245, ptr249, ptr250, ptr256, ptr262, ptr267, ptr273, ptr277, ptr283, coerce_dive288, ptr290, coerce_dive292, ptr294, coerce_dive297, ptr300, coerce_dive306, ptr309, ptr315, ptr320, ptr325, coerce_dive331, ptr334, coerce_dive340, coerce_dive342, coerce_dive347, ptr351, coerce_dive354, ptr358 **SubtreeHeapData
 	var language_addr **TSLanguage
 	var alias_sequence **int16
 	var tmp, tmp58, tmp65, agg_tmp, size, padding, size57, size64, size67, padding75, size77, size243, padding246, size263, size268 *Length
 	var self *MutableSubtree
 	var child, first_child, last_child, v27, add_ptr, cond, v33, arrayidx, v200, arrayidx282, v203, arrayidx287 *Subtree
-	var v1, v4, v7, v8, v11, v14, v15, v16, v17, v21, v26, v28, v31, v37, v39, v40, v41, v42, v44, v45, v50, v51, v56, v57, v58, v77, v79, v81, v85, v86, v87, v89, v90, v92, v94, v95, v97, v98, v101, v105, v107, v108, v112, v113, v117, v118, v123, v127, v138, v142, v143, v147, v151, v152, v157, v161, v165, v169, v173, v174, v175, v176, v177, v178, v179, v183, v185, v187, v188, v190, v192, v194, v196, v198, v204, v208, v209, v212, v213, v216, v217, v218, v219, v220, v222, v223, v224, v225, v227, v228, v229, v230, v233, v234 *SubtreeHeapData
 	var data, data18 *SubtreeInlineData
 	var v20, v131 *TSLanguage
 	var extent, extent269 *TSPoint
@@ -54436,6 +54434,7 @@ func ts_subtree_summarize_children(self_coerce *SubtreeHeapData, language *TSLan
 	F0 int64
 	F1 int32
 }
+	var coerce_dive, ptr, ptr1, ptr2, ptr3, ptr4, ptr5, ptr8, ptr12, ptr16, ptr17, ptr23, ptr24, ptr25, ptr28, coerce_dive31, ptr35, coerce_dive41, ptr44, ptr53, coerce_dive54, ptr56, coerce_dive59, ptr63, ptr66, coerce_dive68, ptr74, ptr76, coerce_dive79, coerce_dive86, coerce_dive92, ptr94, coerce_dive98, ptr100, ptr104, coerce_dive110, coerce_dive113, coerce_dive120, ptr123, ptr130, ptr132, coerce_dive139, ptr141, coerce_dive144, ptr146, coerce_dive149, coerce_dive152, ptr165, ptr167, ptr176, coerce_dive181, ptr184, ptr187, coerce_dive190, ptr193, ptr201, ptr203, ptr206, ptr208, coerce_dive214, ptr217, coerce_dive223, ptr226, ptr230, ptr234, coerce_dive236, ptr242, ptr245, ptr249, ptr250, ptr256, ptr262, ptr267, ptr273, ptr277, ptr283, coerce_dive288, ptr290, coerce_dive292, ptr294, coerce_dive297, ptr300, coerce_dive306, ptr309, ptr315, ptr320, ptr325, coerce_dive331, ptr334, coerce_dive340, coerce_dive342, coerce_dive347, ptr351, coerce_dive354, ptr358 *uintptr
 	var bf_cast, bf_cast21, cmp, cmp29, call32, call42, cmp50, cmp82, cmp89, cmp102, cmp107, call111, call114, cmp117, call121, cmp127, call150, cmp155, tobool, cmp162, tobool174, call182, call191, cmp198, call215, call224, call237, cmp253, cmp259, cmp279, call298, call307, cmp317, bf_cast323, bf_cast329, cmp337, cmp344 bool
 	var bf_load, bf_clear, bf_load19, bf_clear20, v137 byte
 	var bf_load6, bf_clear7, bf_set, bf_load9, bf_clear10, bf_set11, bf_load13, bf_clear14, bf_set15, v24, bf_load37, bf_clear38, bf_set39, bf_load46, bf_clear47, bf_set48, call87, v91, v93, call153, v122, v134, bf_load219, bf_clear220, bf_set221, bf_load227, bf_clear228, bf_set229, bf_load231, bf_clear232, bf_set233, v189, v191, call289, call293, bf_load302, bf_clear303, bf_set304, bf_load311, bf_clear312, bf_set313, bf_load321, bf_clear322, bf_load327, bf_lshr, bf_clear328, call332, v226, conv350, conv357 int16
@@ -54445,6 +54444,7 @@ func ts_subtree_summarize_children(self_coerce *SubtreeHeapData, language *TSLan
 	F0 int64
 	F1 int32
 }
+	var v1, v4, v7, v8, v11, v14, v15, v16, v17, v21, v26, v28, v31, v37, v39, v40, v41, v42, v44, v45, v50, v51, v56, v57, v58, v77, v79, v81, v85, v86, v87, v89, v90, v92, v94, v95, v97, v98, v101, v105, v107, v108, v112, v113, v117, v118, v123, v127, v138, v142, v143, v147, v151, v152, v157, v161, v165, v169, v173, v174, v175, v176, v177, v178, v179, v183, v185, v187, v188, v190, v192, v194, v196, v198, v204, v208, v209, v212, v213, v216, v217, v218, v219, v220, v222, v223, v224, v225, v227, v228, v229, v230, v233, v234 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self, language_addr, structural_index, alias_sequence, lookahead_end_byte, children, i, child, tmp, tmp_coerce, tmp58, tmp_coerce61, tmp65, agg_tmp, tmp_coerce70, size67_coerce, agg_tmp_coerce, tmp_coerce72, child_lookahead_end_byte, grandchild_count, coerce, tmp_coerce173, first_child, last_child, coerce_dive, data, v0, bf_load, bf_clear, bf_cast, ptr, v1, v2, v3, named_child_count, ptr1, v4, v5, v6, visible_child_count, ptr2, v7, error_cost, ptr3, v8, v9, v10, repeat_depth, ptr4, v11, v12, v13, visible_descendant_count, ptr5, v14, has_external_tokens, bf_load6, bf_clear7, bf_set, ptr8, v15, depends_on_column, bf_load9, bf_clear10, bf_set11, ptr12, v16, has_external_scanner_state_change, bf_load13, bf_clear14, bf_set15, ptr16, v17, v18, v19, dynamic_precedence, v20, ptr17, v21, v22, v23, production_id, v24, conv, call, data18, v25, bf_load19, bf_clear20, bf_cast21, ptr23, v26, v27, ptr24, v28, child_count, v29, idx_ext, idx_neg, add_ptr, cond, v30, ptr25, v31, child_count26, v32, cmp, v33, v34, idxprom, arrayidx, v35, v36, ptr28, v37, size, extent, row, v38, cmp29, coerce_dive31, v39, call32, ptr35, v40, depends_on_column36, bf_load37, bf_clear38, bf_set39, coerce_dive41, v41, call42, ptr44, v42, has_external_scanner_state_change45, bf_load46, bf_clear47, bf_set48, v43, cmp50, ptr53, v44, padding, coerce_dive54, v45, call55, v46, v47, v48, v49, ptr56, v50, size57, coerce_dive59, v51, call60, v52, v53, v54, v55, ptr63, v56, size64, ptr66, v57, size67, coerce_dive68, v58, call69, v59, v60, v61, v62, v63, v64, v65, v66, v67, v68, v69, v70, v71, v72, call71, v73, v74, v75, v76, ptr74, v77, padding75, bytes, v78, ptr76, v79, size77, bytes78, v80, add, coerce_dive79, v81, call80, add81, v82, v83, cmp82, v84, coerce_dive86, v85, call87, conv88, cmp89, coerce_dive92, v86, call93, ptr94, v87, error_cost95, v88, add96, coerce_dive98, v89, call99, ptr100, v90, symbol, v91, conv101, cmp102, ptr104, v92, symbol105, v93, conv106, cmp107, coerce_dive110, v94, call111, coerce_dive113, v95, call114, v96, cmp117, coerce_dive120, v97, call121, ptr123, v98, error_cost124, v99, add125, v100, cmp127, ptr130, v101, v102, v103, visible_child_count131, v104, mul, ptr132, v105, error_cost133, v106, add134, coerce_dive139, v107, call140, ptr141, v108, v109, v110, dynamic_precedence142, v111, add143, coerce_dive144, v112, call145, ptr146, v113, v114, v115, visible_descendant_count147, v116, add148, coerce_dive149, v117, call150, coerce_dive152, v118, call153, conv154, cmp155, v119, tobool, v120, v121, idxprom159, arrayidx160, v122, conv161, cmp162, ptr165, v123, v124, v125, visible_descendant_count166, v126, inc, ptr167, v127, v128, v129, visible_child_count168, v130, inc169, v131, v132, v133, idxprom170, arrayidx171, v134, call172, v135, v136, named, v137, tobool174, ptr176, v138, v139, v140, named_child_count177, v141, inc178, coerce_dive181, v142, call182, ptr184, v143, v144, v145, visible_descendant_count185, v146, inc186, ptr187, v147, v148, v149, visible_child_count188, v150, inc189, coerce_dive190, v151, call191, ptr193, v152, v153, v154, named_child_count194, v155, inc195, v156, cmp198, ptr201, v157, v158, v159, visible_child_count202, v160, ptr203, v161, v162, v163, visible_child_count204, v164, add205, ptr206, v165, v166, v167, named_child_count207, v168, ptr208, v169, v170, v171, named_child_count209, v172, add210, coerce_dive214, v173, call215, ptr217, v174, has_external_tokens218, bf_load219, bf_clear220, bf_set221, coerce_dive223, v175, call224, ptr226, v176, fragile_right, bf_load227, bf_clear228, bf_set229, ptr230, v177, fragile_left, bf_load231, bf_clear232, bf_set233, ptr234, v178, parse_state, coerce_dive236, v179, call237, v180, inc239, v181, inc241, v182, ptr242, v183, size243, bytes244, v184, sub, ptr245, v185, padding246, bytes247, v186, sub248, ptr249, v187, lookahead_bytes, ptr250, v188, symbol251, v189, conv252, cmp253, ptr256, v190, symbol257, v191, conv258, cmp259, ptr262, v192, size263, bytes264, v193, mul265, add266, ptr267, v194, size268, extent269, row270, v195, mul271, add272, ptr273, v196, error_cost274, v197, add275, ptr277, v198, child_count278, v199, cmp279, v200, arrayidx282, v201, v202, v203, ptr283, v204, child_count284, v205, sub285, idxprom286, arrayidx287, v206, v207, coerce_dive288, v208, call289, ptr290, v209, v210, v211, first_leaf, symbol291, coerce_dive292, v212, call293, ptr294, v213, v214, v215, first_leaf295, parse_state296, coerce_dive297, v216, call298, ptr300, v217, fragile_left301, bf_load302, bf_clear303, bf_set304, coerce_dive306, v218, call307, ptr309, v219, fragile_right310, bf_load311, bf_clear312, bf_set313, ptr315, v220, child_count316, v221, cmp317, ptr320, v222, visible, bf_load321, bf_clear322, bf_cast323, ptr325, v223, named326, bf_load327, bf_lshr, bf_clear328, bf_cast329, coerce_dive331, v224, call332, conv333, ptr334, v225, symbol335, v226, conv336, cmp337, coerce_dive340, v227, call341, coerce_dive342, v228, call343, cmp344, coerce_dive347, v229, call348, add349, conv350, ptr351, v230, v231, v232, repeat_depth352, coerce_dive354, v233, call355, add356, conv357, ptr358, v234, v235, v236, repeat_depth359
 
@@ -54512,9 +54512,9 @@ if_else:
 	panic("unreachable")
 
 if_end:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr = (*uintptr)(unsafe.Pointer(self))
 	v1 = *ptr
-	v2 = &v1.F9
+	v2 = &(*SubtreeHeapData)(unsafe.Pointer(v1)).F9
 	v3 = (*struct {
 	F0 int32
 	F1 int32
@@ -54526,9 +54526,9 @@ if_end:
 })(unsafe.Pointer(v2))
 	named_child_count = &v3.F1
 	*named_child_count = 0
-	ptr1 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr1 = (*uintptr)(unsafe.Pointer(self))
 	v4 = *ptr1
-	v5 = &v4.F9
+	v5 = &(*SubtreeHeapData)(unsafe.Pointer(v4)).F9
 	v6 = (*struct {
 	F0 int32
 	F1 int32
@@ -54540,13 +54540,13 @@ if_end:
 })(unsafe.Pointer(v5))
 	visible_child_count = &v6.F0
 	*visible_child_count = 0
-	ptr2 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr2 = (*uintptr)(unsafe.Pointer(self))
 	v7 = *ptr2
-	error_cost = &v7.F4
+	error_cost = &(*SubtreeHeapData)(unsafe.Pointer(v7)).F4
 	*error_cost = 0
-	ptr3 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr3 = (*uintptr)(unsafe.Pointer(self))
 	v8 = *ptr3
-	v9 = &v8.F9
+	v9 = &(*SubtreeHeapData)(unsafe.Pointer(v8)).F9
 	v10 = (*struct {
 	F0 int32
 	F1 int32
@@ -54558,9 +54558,9 @@ if_end:
 })(unsafe.Pointer(v9))
 	repeat_depth = &v10.F4
 	*repeat_depth = 0
-	ptr4 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr4 = (*uintptr)(unsafe.Pointer(self))
 	v11 = *ptr4
-	v12 = &v11.F9
+	v12 = &(*SubtreeHeapData)(unsafe.Pointer(v11)).F9
 	v13 = (*struct {
 	F0 int32
 	F1 int32
@@ -54572,30 +54572,30 @@ if_end:
 })(unsafe.Pointer(v12))
 	visible_descendant_count = &v13.F2
 	*visible_descendant_count = 0
-	ptr5 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr5 = (*uintptr)(unsafe.Pointer(self))
 	v14 = *ptr5
-	has_external_tokens = &v14.F8
+	has_external_tokens = &(*SubtreeHeapData)(unsafe.Pointer(v14)).F8
 	bf_load6 = *has_external_tokens
 	bf_clear7 = bf_load6 & -65
 	bf_set = bf_clear7 | 0
 	*has_external_tokens = bf_set
-	ptr8 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr8 = (*uintptr)(unsafe.Pointer(self))
 	v15 = *ptr8
-	depends_on_column = &v15.F8
+	depends_on_column = &(*SubtreeHeapData)(unsafe.Pointer(v15)).F8
 	bf_load9 = *depends_on_column
 	bf_clear10 = bf_load9 & -257
 	bf_set11 = bf_clear10 | 0
 	*depends_on_column = bf_set11
-	ptr12 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr12 = (*uintptr)(unsafe.Pointer(self))
 	v16 = *ptr12
-	has_external_scanner_state_change = &v16.F8
+	has_external_scanner_state_change = &(*SubtreeHeapData)(unsafe.Pointer(v16)).F8
 	bf_load13 = *has_external_scanner_state_change
 	bf_clear14 = bf_load13 & -129
 	bf_set15 = bf_clear14 | 0
 	*has_external_scanner_state_change = bf_set15
-	ptr16 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr16 = (*uintptr)(unsafe.Pointer(self))
 	v17 = *ptr16
-	v18 = &v17.F9
+	v18 = &(*SubtreeHeapData)(unsafe.Pointer(v17)).F9
 	v19 = (*struct {
 	F0 int32
 	F1 int32
@@ -54609,9 +54609,9 @@ if_end:
 	*dynamic_precedence = 0
 	*structural_index = 0
 	v20 = *language_addr
-	ptr17 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr17 = (*uintptr)(unsafe.Pointer(self))
 	v21 = *ptr17
-	v22 = &v21.F9
+	v22 = &(*SubtreeHeapData)(unsafe.Pointer(v21)).F9
 	v23 = (*struct {
 	F0 int32
 	F1 int32
@@ -54643,12 +54643,12 @@ cond_true:
 	goto cond_end
 
 cond_false:
-	ptr23 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr23 = (*uintptr)(unsafe.Pointer(self))
 	v26 = *ptr23
 	v27 = (*Subtree)(unsafe.Pointer(v26))
-	ptr24 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr24 = (*uintptr)(unsafe.Pointer(self))
 	v28 = *ptr24
-	child_count = &v28.F5
+	child_count = &(*SubtreeHeapData)(unsafe.Pointer(v28)).F5
 	v29 = *child_count
 	idx_ext = int64(uint64(uint32(v29)))
 	idx_neg = int64(0) - idx_ext
@@ -54663,9 +54663,9 @@ cond_end:
 
 for_cond:
 	v30 = *i
-	ptr25 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr25 = (*uintptr)(unsafe.Pointer(self))
 	v31 = *ptr25
-	child_count26 = &v31.F5
+	child_count26 = &(*SubtreeHeapData)(unsafe.Pointer(v31)).F5
 	v32 = *child_count26
 	cmp = uint32(v30) < uint32(v32)
 	if cmp {
@@ -54682,9 +54682,9 @@ for_body:
 	v35 = (*byte)(unsafe.Pointer(child))
 	v36 = (*byte)(unsafe.Pointer(arrayidx))
 	libc.Memmove(v35, v36, int64(8))
-	ptr28 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr28 = (*uintptr)(unsafe.Pointer(self))
 	v37 = *ptr28
-	size = &v37.F2
+	size = &(*SubtreeHeapData)(unsafe.Pointer(v37)).F2
 	extent = &size.F1
 	row = &extent.F0
 	v38 = *row
@@ -54706,9 +54706,9 @@ land_lhs_true:
 	}
 
 if_then34:
-	ptr35 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr35 = (*uintptr)(unsafe.Pointer(self))
 	v40 = *ptr35
-	depends_on_column36 = &v40.F8
+	depends_on_column36 = &(*SubtreeHeapData)(unsafe.Pointer(v40)).F8
 	bf_load37 = *depends_on_column36
 	bf_clear38 = bf_load37 & -257
 	bf_set39 = bf_clear38 | 256
@@ -54726,9 +54726,9 @@ if_end40:
 	}
 
 if_then43:
-	ptr44 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr44 = (*uintptr)(unsafe.Pointer(self))
 	v42 = *ptr44
-	has_external_scanner_state_change45 = &v42.F8
+	has_external_scanner_state_change45 = &(*SubtreeHeapData)(unsafe.Pointer(v42)).F8
 	bf_load46 = *has_external_scanner_state_change45
 	bf_clear47 = bf_load46 & -129
 	bf_set48 = bf_clear47 | 128
@@ -54745,9 +54745,9 @@ if_end49:
 	}
 
 if_then52:
-	ptr53 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr53 = (*uintptr)(unsafe.Pointer(self))
 	v44 = *ptr53
-	padding = &v44.F1
+	padding = &(*SubtreeHeapData)(unsafe.Pointer(v44)).F1
 	coerce_dive54 = &child.F0
 	v45 = *coerce_dive54
 	call55 = ts_subtree_padding(v45)
@@ -54758,9 +54758,9 @@ if_then52:
 	v48 = (*byte)(unsafe.Pointer(padding))
 	v49 = (*byte)(unsafe.Pointer(tmp))
 	libc.Memmove(v48, v49, int64(12))
-	ptr56 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr56 = (*uintptr)(unsafe.Pointer(self))
 	v50 = *ptr56
-	size57 = &v50.F2
+	size57 = &(*SubtreeHeapData)(unsafe.Pointer(v50)).F2
 	coerce_dive59 = &child.F0
 	v51 = *coerce_dive59
 	call60 = ts_subtree_size(v51)
@@ -54774,12 +54774,12 @@ if_then52:
 	goto if_end73
 
 if_else62:
-	ptr63 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr63 = (*uintptr)(unsafe.Pointer(self))
 	v56 = *ptr63
-	size64 = &v56.F2
-	ptr66 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	size64 = &(*SubtreeHeapData)(unsafe.Pointer(v56)).F2
+	ptr66 = (*uintptr)(unsafe.Pointer(self))
 	v57 = *ptr66
-	size67 = &v57.F2
+	size67 = &(*SubtreeHeapData)(unsafe.Pointer(v57)).F2
 	coerce_dive68 = &child.F0
 	v58 = *coerce_dive68
 	call69 = ts_subtree_total_size(v58)
@@ -54812,14 +54812,14 @@ if_else62:
 	goto if_end73
 
 if_end73:
-	ptr74 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr74 = (*uintptr)(unsafe.Pointer(self))
 	v77 = *ptr74
-	padding75 = &v77.F1
+	padding75 = &(*SubtreeHeapData)(unsafe.Pointer(v77)).F1
 	bytes = &padding75.F0
 	v78 = *bytes
-	ptr76 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr76 = (*uintptr)(unsafe.Pointer(self))
 	v79 = *ptr76
-	size77 = &v79.F2
+	size77 = &(*SubtreeHeapData)(unsafe.Pointer(v79)).F2
 	bytes78 = &size77.F0
 	v80 = *bytes78
 	add = v78 + v80
@@ -54858,9 +54858,9 @@ if_then91:
 	coerce_dive92 = &child.F0
 	v86 = *coerce_dive92
 	call93 = ts_subtree_error_cost(v86)
-	ptr94 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr94 = (*uintptr)(unsafe.Pointer(self))
 	v87 = *ptr94
-	error_cost95 = &v87.F4
+	error_cost95 = &(*SubtreeHeapData)(unsafe.Pointer(v87)).F4
 	v88 = *error_cost95
 	add96 = v88 + call93
 	*error_cost95 = add96
@@ -54871,9 +54871,9 @@ if_end97:
 	v89 = *coerce_dive98
 	call99 = ts_subtree_child_count(v89)
 	*grandchild_count = call99
-	ptr100 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr100 = (*uintptr)(unsafe.Pointer(self))
 	v90 = *ptr100
-	symbol = &v90.F6
+	symbol = &(*SubtreeHeapData)(unsafe.Pointer(v90)).F6
 	v91 = *symbol
 	conv101 = int32(uint32(uint16(v91)))
 	cmp102 = conv101 == 65535
@@ -54884,9 +54884,9 @@ if_end97:
 	}
 
 lor_lhs_false:
-	ptr104 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr104 = (*uintptr)(unsafe.Pointer(self))
 	v92 = *ptr104
-	symbol105 = &v92.F6
+	symbol105 = &(*SubtreeHeapData)(unsafe.Pointer(v92)).F6
 	v93 = *symbol105
 	conv106 = int32(uint32(uint16(v93)))
 	cmp107 = conv106 == 65534
@@ -54936,9 +54936,9 @@ if_then119:
 	}
 
 if_then122:
-	ptr123 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr123 = (*uintptr)(unsafe.Pointer(self))
 	v98 = *ptr123
-	error_cost124 = &v98.F4
+	error_cost124 = &(*SubtreeHeapData)(unsafe.Pointer(v98)).F4
 	v99 = *error_cost124
 	add125 = v99 + 100
 	*error_cost124 = add125
@@ -54954,9 +54954,9 @@ if_else126:
 	}
 
 if_then129:
-	ptr130 = (**SubtreeHeapData)(unsafe.Pointer(child))
+	ptr130 = (*uintptr)(unsafe.Pointer(child))
 	v101 = *ptr130
-	v102 = &v101.F9
+	v102 = &(*SubtreeHeapData)(unsafe.Pointer(v101)).F9
 	v103 = (*struct {
 	F0 int32
 	F1 int32
@@ -54969,9 +54969,9 @@ if_then129:
 	visible_child_count131 = &v103.F0
 	v104 = *visible_child_count131
 	mul = 100 * v104
-	ptr132 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr132 = (*uintptr)(unsafe.Pointer(self))
 	v105 = *ptr132
-	error_cost133 = &v105.F4
+	error_cost133 = &(*SubtreeHeapData)(unsafe.Pointer(v105)).F4
 	v106 = *error_cost133
 	add134 = v106 + mul
 	*error_cost133 = add134
@@ -54990,9 +54990,9 @@ if_end138:
 	coerce_dive139 = &child.F0
 	v107 = *coerce_dive139
 	call140 = ts_subtree_dynamic_precedence(v107)
-	ptr141 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr141 = (*uintptr)(unsafe.Pointer(self))
 	v108 = *ptr141
-	v109 = &v108.F9
+	v109 = &(*SubtreeHeapData)(unsafe.Pointer(v108)).F9
 	v110 = (*struct {
 	F0 int32
 	F1 int32
@@ -55009,9 +55009,9 @@ if_end138:
 	coerce_dive144 = &child.F0
 	v112 = *coerce_dive144
 	call145 = ts_subtree_visible_descendant_count(v112)
-	ptr146 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr146 = (*uintptr)(unsafe.Pointer(self))
 	v113 = *ptr146
-	v114 = &v113.F9
+	v114 = &(*SubtreeHeapData)(unsafe.Pointer(v113)).F9
 	v115 = (*struct {
 	F0 int32
 	F1 int32
@@ -55070,9 +55070,9 @@ land_lhs_true158:
 	}
 
 if_then164:
-	ptr165 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr165 = (*uintptr)(unsafe.Pointer(self))
 	v123 = *ptr165
-	v124 = &v123.F9
+	v124 = &(*SubtreeHeapData)(unsafe.Pointer(v123)).F9
 	v125 = (*struct {
 	F0 int32
 	F1 int32
@@ -55086,9 +55086,9 @@ if_then164:
 	v126 = *visible_descendant_count166
 	inc = v126 + 1
 	*visible_descendant_count166 = inc
-	ptr167 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr167 = (*uintptr)(unsafe.Pointer(self))
 	v127 = *ptr167
-	v128 = &v127.F9
+	v128 = &(*SubtreeHeapData)(unsafe.Pointer(v127)).F9
 	v129 = (*struct {
 	F0 int32
 	F1 int32
@@ -55123,9 +55123,9 @@ if_then164:
 	}
 
 if_then175:
-	ptr176 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr176 = (*uintptr)(unsafe.Pointer(self))
 	v138 = *ptr176
-	v139 = &v138.F9
+	v139 = &(*SubtreeHeapData)(unsafe.Pointer(v138)).F9
 	v140 = (*struct {
 	F0 int32
 	F1 int32
@@ -55155,9 +55155,9 @@ if_else180:
 	}
 
 if_then183:
-	ptr184 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr184 = (*uintptr)(unsafe.Pointer(self))
 	v143 = *ptr184
-	v144 = &v143.F9
+	v144 = &(*SubtreeHeapData)(unsafe.Pointer(v143)).F9
 	v145 = (*struct {
 	F0 int32
 	F1 int32
@@ -55171,9 +55171,9 @@ if_then183:
 	v146 = *visible_descendant_count185
 	inc186 = v146 + 1
 	*visible_descendant_count185 = inc186
-	ptr187 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr187 = (*uintptr)(unsafe.Pointer(self))
 	v147 = *ptr187
-	v148 = &v147.F9
+	v148 = &(*SubtreeHeapData)(unsafe.Pointer(v147)).F9
 	v149 = (*struct {
 	F0 int32
 	F1 int32
@@ -55197,9 +55197,9 @@ if_then183:
 	}
 
 if_then192:
-	ptr193 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr193 = (*uintptr)(unsafe.Pointer(self))
 	v152 = *ptr193
-	v153 = &v152.F9
+	v153 = &(*SubtreeHeapData)(unsafe.Pointer(v152)).F9
 	v154 = (*struct {
 	F0 int32
 	F1 int32
@@ -55228,9 +55228,9 @@ if_else197:
 	}
 
 if_then200:
-	ptr201 = (**SubtreeHeapData)(unsafe.Pointer(child))
+	ptr201 = (*uintptr)(unsafe.Pointer(child))
 	v157 = *ptr201
-	v158 = &v157.F9
+	v158 = &(*SubtreeHeapData)(unsafe.Pointer(v157)).F9
 	v159 = (*struct {
 	F0 int32
 	F1 int32
@@ -55242,9 +55242,9 @@ if_then200:
 })(unsafe.Pointer(v158))
 	visible_child_count202 = &v159.F0
 	v160 = *visible_child_count202
-	ptr203 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr203 = (*uintptr)(unsafe.Pointer(self))
 	v161 = *ptr203
-	v162 = &v161.F9
+	v162 = &(*SubtreeHeapData)(unsafe.Pointer(v161)).F9
 	v163 = (*struct {
 	F0 int32
 	F1 int32
@@ -55258,9 +55258,9 @@ if_then200:
 	v164 = *visible_child_count204
 	add205 = v164 + v160
 	*visible_child_count204 = add205
-	ptr206 = (**SubtreeHeapData)(unsafe.Pointer(child))
+	ptr206 = (*uintptr)(unsafe.Pointer(child))
 	v165 = *ptr206
-	v166 = &v165.F9
+	v166 = &(*SubtreeHeapData)(unsafe.Pointer(v165)).F9
 	v167 = (*struct {
 	F0 int32
 	F1 int32
@@ -55272,9 +55272,9 @@ if_then200:
 })(unsafe.Pointer(v166))
 	named_child_count207 = &v167.F1
 	v168 = *named_child_count207
-	ptr208 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr208 = (*uintptr)(unsafe.Pointer(self))
 	v169 = *ptr208
-	v170 = &v169.F9
+	v170 = &(*SubtreeHeapData)(unsafe.Pointer(v169)).F9
 	v171 = (*struct {
 	F0 int32
 	F1 int32
@@ -55307,9 +55307,9 @@ if_end213:
 	}
 
 if_then216:
-	ptr217 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr217 = (*uintptr)(unsafe.Pointer(self))
 	v174 = *ptr217
-	has_external_tokens218 = &v174.F8
+	has_external_tokens218 = &(*SubtreeHeapData)(unsafe.Pointer(v174)).F8
 	bf_load219 = *has_external_tokens218
 	bf_clear220 = bf_load219 & -65
 	bf_set221 = bf_clear220 | 64
@@ -55327,23 +55327,23 @@ if_end222:
 	}
 
 if_then225:
-	ptr226 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr226 = (*uintptr)(unsafe.Pointer(self))
 	v176 = *ptr226
-	fragile_right = &v176.F8
+	fragile_right = &(*SubtreeHeapData)(unsafe.Pointer(v176)).F8
 	bf_load227 = *fragile_right
 	bf_clear228 = bf_load227 & -17
 	bf_set229 = bf_clear228 | 16
 	*fragile_right = bf_set229
-	ptr230 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr230 = (*uintptr)(unsafe.Pointer(self))
 	v177 = *ptr230
-	fragile_left = &v177.F8
+	fragile_left = &(*SubtreeHeapData)(unsafe.Pointer(v177)).F8
 	bf_load231 = *fragile_left
 	bf_clear232 = bf_load231 & -9
 	bf_set233 = bf_clear232 | 8
 	*fragile_left = bf_set233
-	ptr234 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr234 = (*uintptr)(unsafe.Pointer(self))
 	v178 = *ptr234
-	parse_state = &v178.F7
+	parse_state = &(*SubtreeHeapData)(unsafe.Pointer(v178)).F7
 	*parse_state = -1
 	goto if_end235
 
@@ -55374,25 +55374,25 @@ for_inc:
 
 for_end:
 	v182 = *lookahead_end_byte
-	ptr242 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr242 = (*uintptr)(unsafe.Pointer(self))
 	v183 = *ptr242
-	size243 = &v183.F2
+	size243 = &(*SubtreeHeapData)(unsafe.Pointer(v183)).F2
 	bytes244 = &size243.F0
 	v184 = *bytes244
 	sub = v182 - v184
-	ptr245 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr245 = (*uintptr)(unsafe.Pointer(self))
 	v185 = *ptr245
-	padding246 = &v185.F1
+	padding246 = &(*SubtreeHeapData)(unsafe.Pointer(v185)).F1
 	bytes247 = &padding246.F0
 	v186 = *bytes247
 	sub248 = sub - v186
-	ptr249 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr249 = (*uintptr)(unsafe.Pointer(self))
 	v187 = *ptr249
-	lookahead_bytes = &v187.F3
+	lookahead_bytes = &(*SubtreeHeapData)(unsafe.Pointer(v187)).F3
 	*lookahead_bytes = sub248
-	ptr250 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr250 = (*uintptr)(unsafe.Pointer(self))
 	v188 = *ptr250
-	symbol251 = &v188.F6
+	symbol251 = &(*SubtreeHeapData)(unsafe.Pointer(v188)).F6
 	v189 = *symbol251
 	conv252 = int32(uint32(uint16(v189)))
 	cmp253 = conv252 == 65535
@@ -55403,9 +55403,9 @@ for_end:
 	}
 
 lor_lhs_false255:
-	ptr256 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr256 = (*uintptr)(unsafe.Pointer(self))
 	v190 = *ptr256
-	symbol257 = &v190.F6
+	symbol257 = &(*SubtreeHeapData)(unsafe.Pointer(v190)).F6
 	v191 = *symbol257
 	conv258 = int32(uint32(uint16(v191)))
 	cmp259 = conv258 == 65534
@@ -55416,33 +55416,33 @@ lor_lhs_false255:
 	}
 
 if_then261:
-	ptr262 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr262 = (*uintptr)(unsafe.Pointer(self))
 	v192 = *ptr262
-	size263 = &v192.F2
+	size263 = &(*SubtreeHeapData)(unsafe.Pointer(v192)).F2
 	bytes264 = &size263.F0
 	v193 = *bytes264
 	mul265 = 1 * v193
 	add266 = 500 + mul265
-	ptr267 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr267 = (*uintptr)(unsafe.Pointer(self))
 	v194 = *ptr267
-	size268 = &v194.F2
+	size268 = &(*SubtreeHeapData)(unsafe.Pointer(v194)).F2
 	extent269 = &size268.F1
 	row270 = &extent269.F0
 	v195 = *row270
 	mul271 = 30 * v195
 	add272 = add266 + mul271
-	ptr273 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr273 = (*uintptr)(unsafe.Pointer(self))
 	v196 = *ptr273
-	error_cost274 = &v196.F4
+	error_cost274 = &(*SubtreeHeapData)(unsafe.Pointer(v196)).F4
 	v197 = *error_cost274
 	add275 = v197 + add272
 	*error_cost274 = add275
 	goto if_end276
 
 if_end276:
-	ptr277 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr277 = (*uintptr)(unsafe.Pointer(self))
 	v198 = *ptr277
-	child_count278 = &v198.F5
+	child_count278 = &(*SubtreeHeapData)(unsafe.Pointer(v198)).F5
 	v199 = *child_count278
 	cmp279 = uint32(v199) > 0
 	if cmp279 {
@@ -55458,9 +55458,9 @@ if_then281:
 	v202 = (*byte)(unsafe.Pointer(arrayidx282))
 	libc.Memmove(v201, v202, int64(8))
 	v203 = *children
-	ptr283 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr283 = (*uintptr)(unsafe.Pointer(self))
 	v204 = *ptr283
-	child_count284 = &v204.F5
+	child_count284 = &(*SubtreeHeapData)(unsafe.Pointer(v204)).F5
 	v205 = *child_count284
 	sub285 = v205 - 1
 	idxprom286 = int64(uint64(uint32(sub285)))
@@ -55471,9 +55471,9 @@ if_then281:
 	coerce_dive288 = &first_child.F0
 	v208 = *coerce_dive288
 	call289 = ts_subtree_leaf_symbol(v208)
-	ptr290 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr290 = (*uintptr)(unsafe.Pointer(self))
 	v209 = *ptr290
-	v210 = &v209.F9
+	v210 = &(*SubtreeHeapData)(unsafe.Pointer(v209)).F9
 	v211 = (*struct {
 	F0 int32
 	F1 int32
@@ -55489,9 +55489,9 @@ if_then281:
 	coerce_dive292 = &first_child.F0
 	v212 = *coerce_dive292
 	call293 = ts_subtree_leaf_parse_state(v212)
-	ptr294 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr294 = (*uintptr)(unsafe.Pointer(self))
 	v213 = *ptr294
-	v214 = &v213.F9
+	v214 = &(*SubtreeHeapData)(unsafe.Pointer(v213)).F9
 	v215 = (*struct {
 	F0 int32
 	F1 int32
@@ -55514,9 +55514,9 @@ if_then281:
 	}
 
 if_then299:
-	ptr300 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr300 = (*uintptr)(unsafe.Pointer(self))
 	v217 = *ptr300
-	fragile_left301 = &v217.F8
+	fragile_left301 = &(*SubtreeHeapData)(unsafe.Pointer(v217)).F8
 	bf_load302 = *fragile_left301
 	bf_clear303 = bf_load302 & -9
 	bf_set304 = bf_clear303 | 8
@@ -55534,9 +55534,9 @@ if_end305:
 	}
 
 if_then308:
-	ptr309 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr309 = (*uintptr)(unsafe.Pointer(self))
 	v219 = *ptr309
-	fragile_right310 = &v219.F8
+	fragile_right310 = &(*SubtreeHeapData)(unsafe.Pointer(v219)).F8
 	bf_load311 = *fragile_right310
 	bf_clear312 = bf_load311 & -17
 	bf_set313 = bf_clear312 | 16
@@ -55544,9 +55544,9 @@ if_then308:
 	goto if_end314
 
 if_end314:
-	ptr315 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr315 = (*uintptr)(unsafe.Pointer(self))
 	v220 = *ptr315
-	child_count316 = &v220.F5
+	child_count316 = &(*SubtreeHeapData)(unsafe.Pointer(v220)).F5
 	v221 = *child_count316
 	cmp317 = uint32(v221) >= 2
 	if cmp317 {
@@ -55556,9 +55556,9 @@ if_end314:
 	}
 
 land_lhs_true319:
-	ptr320 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr320 = (*uintptr)(unsafe.Pointer(self))
 	v222 = *ptr320
-	visible = &v222.F8
+	visible = &(*SubtreeHeapData)(unsafe.Pointer(v222)).F8
 	bf_load321 = *visible
 	bf_clear322 = bf_load321 & 1
 	bf_cast323 = (bf_clear322 & 1) != 0
@@ -55569,9 +55569,9 @@ land_lhs_true319:
 	}
 
 land_lhs_true324:
-	ptr325 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr325 = (*uintptr)(unsafe.Pointer(self))
 	v223 = *ptr325
-	named326 = &v223.F8
+	named326 = &(*SubtreeHeapData)(unsafe.Pointer(v223)).F8
 	bf_load327 = *named326
 	bf_lshr = int16(uint16(bf_load327) >> 1)
 	bf_clear328 = bf_lshr & 1
@@ -55587,9 +55587,9 @@ land_lhs_true330:
 	v224 = *coerce_dive331
 	call332 = ts_subtree_symbol(v224)
 	conv333 = int32(uint32(uint16(call332)))
-	ptr334 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr334 = (*uintptr)(unsafe.Pointer(self))
 	v225 = *ptr334
-	symbol335 = &v225.F6
+	symbol335 = &(*SubtreeHeapData)(unsafe.Pointer(v225)).F6
 	v226 = *symbol335
 	conv336 = int32(uint32(uint16(v226)))
 	cmp337 = conv333 == conv336
@@ -55619,9 +55619,9 @@ if_then346:
 	call348 = ts_subtree_repeat_depth(v229)
 	add349 = call348 + 1
 	conv350 = int16(add349)
-	ptr351 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr351 = (*uintptr)(unsafe.Pointer(self))
 	v230 = *ptr351
-	v231 = &v230.F9
+	v231 = &(*SubtreeHeapData)(unsafe.Pointer(v230)).F9
 	v232 = (*struct {
 	F0 int32
 	F1 int32
@@ -55641,9 +55641,9 @@ if_else353:
 	call355 = ts_subtree_repeat_depth(v233)
 	add356 = call355 + 1
 	conv357 = int16(add356)
-	ptr358 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr358 = (*uintptr)(unsafe.Pointer(self))
 	v234 = *ptr358
-	v235 = &v234.F9
+	v235 = &(*SubtreeHeapData)(unsafe.Pointer(v234)).F9
 	v236 = (*struct {
 	F0 int32
 	F1 int32
@@ -55714,17 +55714,17 @@ cond_end:
 	return cond
 }
 
-func ts_subtree_depends_on_column(self_coerce *SubtreeHeapData) bool {
-	var coerce_dive, ptr **SubtreeHeapData
+func ts_subtree_depends_on_column(self_coerce uintptr) bool {
 	var self *Subtree
-	var v1 *SubtreeHeapData
 	var data *SubtreeInlineData
 	var v0 *byte
 	var depends_on_column *int16
+	var coerce_dive, ptr *uintptr
 	var bf_cast, bf_cast3, tobool bool
 	var bf_load, bf_clear byte
 	var bf_load1, bf_lshr, bf_clear2 int16
 	var conv, cond int32
+	var v1 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self, coerce_dive, data, v0, bf_load, bf_clear, bf_cast, ptr, v1, depends_on_column, bf_load1, bf_lshr, bf_clear2, bf_cast3, conv, cond, tobool
 
@@ -55747,9 +55747,9 @@ cond_true:
 	goto cond_end
 
 cond_false:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr = (*uintptr)(unsafe.Pointer(self))
 	v1 = *ptr
-	depends_on_column = &v1.F8
+	depends_on_column = &(*SubtreeHeapData)(unsafe.Pointer(v1)).F8
 	bf_load1 = *depends_on_column
 	bf_lshr = int16(uint16(bf_load1) >> 8)
 	bf_clear2 = bf_lshr & 1
@@ -55763,17 +55763,17 @@ cond_end:
 	return tobool
 }
 
-func ts_subtree_has_external_scanner_state_change(self_coerce *SubtreeHeapData) bool {
-	var coerce_dive, ptr **SubtreeHeapData
+func ts_subtree_has_external_scanner_state_change(self_coerce uintptr) bool {
 	var self *Subtree
-	var v1 *SubtreeHeapData
 	var data *SubtreeInlineData
 	var v0 *byte
 	var has_external_scanner_state_change *int16
+	var coerce_dive, ptr *uintptr
 	var bf_cast, bf_cast3, tobool bool
 	var bf_load, bf_clear byte
 	var bf_load1, bf_lshr, bf_clear2 int16
 	var conv, cond int32
+	var v1 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self, coerce_dive, data, v0, bf_load, bf_clear, bf_cast, ptr, v1, has_external_scanner_state_change, bf_load1, bf_lshr, bf_clear2, bf_cast3, conv, cond, tobool
 
@@ -55796,9 +55796,9 @@ cond_true:
 	goto cond_end
 
 cond_false:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr = (*uintptr)(unsafe.Pointer(self))
 	v1 = *ptr
-	has_external_scanner_state_change = &v1.F8
+	has_external_scanner_state_change = &(*SubtreeHeapData)(unsafe.Pointer(v1)).F8
 	bf_load1 = *has_external_scanner_state_change
 	bf_lshr = int16(uint16(bf_load1) >> 7)
 	bf_clear2 = bf_lshr & 1
@@ -55812,14 +55812,12 @@ cond_end:
 	return tobool
 }
 
-func ts_subtree_padding(self_coerce *SubtreeHeapData) struct {
+func ts_subtree_padding(self_coerce uintptr) struct {
 	F0 int64
 	F1 int32
 } {
-	var coerce_dive, ptr **SubtreeHeapData
 	var retval, padding *Length
 	var self *Subtree
-	var v3 *SubtreeHeapData
 	var data, data1, data2, data6 *SubtreeInlineData
 	var extent *TSPoint
 	var v0, padding_bytes, padding_rows, padding_columns, v4, v5, v6, v7 *byte
@@ -55828,6 +55826,7 @@ func ts_subtree_padding(self_coerce *SubtreeHeapData) struct {
 	F0 int64
 	F1 int32
 }
+	var coerce_dive, ptr *uintptr
 	var bf_cast bool
 	var bf_load, bf_clear, v1, bf_load3, bf_clear4, v2 byte
 	var conv, conv5, conv7 int32
@@ -55835,6 +55834,7 @@ func ts_subtree_padding(self_coerce *SubtreeHeapData) struct {
 	F0 int64
 	F1 int32
 }
+	var v3 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, self, retval_coerce, coerce_dive, data, v0, bf_load, bf_clear, bf_cast, bytes, data1, padding_bytes, v1, conv, extent, row, data2, padding_rows, bf_load3, bf_clear4, conv5, column, data6, padding_columns, v2, conv7, ptr, v3, padding, v4, v5, v6, v7, v8
 
@@ -55881,9 +55881,9 @@ if_then:
 	goto _return
 
 if_else:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr = (*uintptr)(unsafe.Pointer(self))
 	v3 = *ptr
-	padding = &v3.F1
+	padding = &(*SubtreeHeapData)(unsafe.Pointer(v3)).F1
 	v4 = (*byte)(unsafe.Pointer(retval))
 	v5 = (*byte)(unsafe.Pointer(padding))
 	libc.Memmove(v4, v5, int64(12))
@@ -55976,16 +55976,16 @@ func length_add(len1_coerce0 int64, len1_coerce1 int32, len2_coerce0 int64, len2
 	return v19
 }
 
-func ts_subtree_lookahead_bytes(self_coerce *SubtreeHeapData) int32 {
-	var coerce_dive, ptr **SubtreeHeapData
+func ts_subtree_lookahead_bytes(self_coerce uintptr) int32 {
 	var self *Subtree
-	var v1 *SubtreeHeapData
 	var data, data1 *SubtreeInlineData
 	var v0, lookahead_bytes *byte
 	var lookahead_bytes3 *int32
+	var coerce_dive, ptr *uintptr
 	var bf_cast bool
 	var bf_load, bf_clear, bf_load2, bf_lshr byte
 	var conv, v2, cond int32
+	var v1 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self, coerce_dive, data, v0, bf_load, bf_clear, bf_cast, data1, lookahead_bytes, bf_load2, bf_lshr, conv, ptr, v1, lookahead_bytes3, v2, cond
 
@@ -56013,9 +56013,9 @@ cond_true:
 	goto cond_end
 
 cond_false:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr = (*uintptr)(unsafe.Pointer(self))
 	v1 = *ptr
-	lookahead_bytes3 = &v1.F3
+	lookahead_bytes3 = &(*SubtreeHeapData)(unsafe.Pointer(v1)).F3
 	v2 = *lookahead_bytes3
 	cond = v2
 	goto cond_end
@@ -56024,17 +56024,17 @@ cond_end:
 	return cond
 }
 
-func ts_subtree_has_external_tokens(self_coerce *SubtreeHeapData) bool {
-	var coerce_dive, ptr **SubtreeHeapData
+func ts_subtree_has_external_tokens(self_coerce uintptr) bool {
 	var self *Subtree
-	var v1 *SubtreeHeapData
 	var data *SubtreeInlineData
 	var v0 *byte
 	var has_external_tokens *int16
+	var coerce_dive, ptr *uintptr
 	var bf_cast, bf_cast3, tobool bool
 	var bf_load, bf_clear byte
 	var bf_load1, bf_lshr, bf_clear2 int16
 	var conv, cond int32
+	var v1 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self, coerce_dive, data, v0, bf_load, bf_clear, bf_cast, ptr, v1, has_external_tokens, bf_load1, bf_lshr, bf_clear2, bf_cast3, conv, cond, tobool
 
@@ -56057,9 +56057,9 @@ cond_true:
 	goto cond_end
 
 cond_false:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr = (*uintptr)(unsafe.Pointer(self))
 	v1 = *ptr
-	has_external_tokens = &v1.F8
+	has_external_tokens = &(*SubtreeHeapData)(unsafe.Pointer(v1)).F8
 	bf_load1 = *has_external_tokens
 	bf_lshr = int16(uint16(bf_load1) >> 6)
 	bf_clear2 = bf_lshr & 1
@@ -56073,10 +56073,8 @@ cond_end:
 	return tobool
 }
 
-func ts_subtree_leaf_symbol(self_coerce *SubtreeHeapData) int16 {
-	var coerce_dive, ptr, ptr4, ptr7 **SubtreeHeapData
+func ts_subtree_leaf_symbol(self_coerce uintptr) int16 {
 	var self *Subtree
-	var v2, v4, v6 *SubtreeHeapData
 	var data, data1 *SubtreeInlineData
 	var first_leaf *anon_0
 	var v0, symbol *byte
@@ -56094,10 +56092,12 @@ func ts_subtree_leaf_symbol(self_coerce *SubtreeHeapData) int16 {
 	F5 int16
 	F6 anon_0
 }
+	var coerce_dive, ptr, ptr4, ptr7 *uintptr
 	var bf_cast, cmp bool
 	var bf_load, bf_clear, v1 byte
 	var conv, v5, v9, v10 int16
 	var v3 int32
+	var v2, v4, v6 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, self, coerce_dive, data, v0, bf_load, bf_clear, bf_cast, data1, symbol, v1, conv, ptr, v2, child_count, v3, cmp, ptr4, v4, symbol5, v5, ptr7, v6, v7, v8, first_leaf, symbol8, v9, v10
 
@@ -56125,9 +56125,9 @@ if_then:
 	goto _return
 
 if_end:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr = (*uintptr)(unsafe.Pointer(self))
 	v2 = *ptr
-	child_count = &v2.F5
+	child_count = &(*SubtreeHeapData)(unsafe.Pointer(v2)).F5
 	v3 = *child_count
 	cmp = v3 == 0
 	if cmp {
@@ -56137,17 +56137,17 @@ if_end:
 	}
 
 if_then3:
-	ptr4 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr4 = (*uintptr)(unsafe.Pointer(self))
 	v4 = *ptr4
-	symbol5 = &v4.F6
+	symbol5 = &(*SubtreeHeapData)(unsafe.Pointer(v4)).F6
 	v5 = *symbol5
 	*retval = v5
 	goto _return
 
 if_end6:
-	ptr7 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr7 = (*uintptr)(unsafe.Pointer(self))
 	v6 = *ptr7
-	v7 = &v6.F9
+	v7 = &(*SubtreeHeapData)(unsafe.Pointer(v6)).F9
 	v8 = (*struct {
 	F0 int32
 	F1 int32
@@ -56168,10 +56168,8 @@ _return:
 	return v10
 }
 
-func ts_subtree_leaf_parse_state(self_coerce *SubtreeHeapData) int16 {
-	var coerce_dive, ptr, ptr3, ptr6 **SubtreeHeapData
+func ts_subtree_leaf_parse_state(self_coerce uintptr) int16 {
 	var self *Subtree
-	var v2, v4, v6 *SubtreeHeapData
 	var data, data1 *SubtreeInlineData
 	var first_leaf *anon_0
 	var v0 *byte
@@ -56189,10 +56187,12 @@ func ts_subtree_leaf_parse_state(self_coerce *SubtreeHeapData) int16 {
 	F5 int16
 	F6 anon_0
 }
+	var coerce_dive, ptr, ptr3, ptr6 *uintptr
 	var bf_cast, cmp bool
 	var bf_load, bf_clear byte
 	var v1, v5, v9, v10 int16
 	var v3 int32
+	var v2, v4, v6 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, self, coerce_dive, data, v0, bf_load, bf_clear, bf_cast, data1, parse_state, v1, ptr, v2, child_count, v3, cmp, ptr3, v4, parse_state4, v5, ptr6, v6, v7, v8, first_leaf, parse_state7, v9, v10
 
@@ -56219,9 +56219,9 @@ if_then:
 	goto _return
 
 if_end:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr = (*uintptr)(unsafe.Pointer(self))
 	v2 = *ptr
-	child_count = &v2.F5
+	child_count = &(*SubtreeHeapData)(unsafe.Pointer(v2)).F5
 	v3 = *child_count
 	cmp = v3 == 0
 	if cmp {
@@ -56231,17 +56231,17 @@ if_end:
 	}
 
 if_then2:
-	ptr3 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr3 = (*uintptr)(unsafe.Pointer(self))
 	v4 = *ptr3
-	parse_state4 = &v4.F7
+	parse_state4 = &(*SubtreeHeapData)(unsafe.Pointer(v4)).F7
 	v5 = *parse_state4
 	*retval = v5
 	goto _return
 
 if_end5:
-	ptr6 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr6 = (*uintptr)(unsafe.Pointer(self))
 	v6 = *ptr6
-	v7 = &v6.F9
+	v7 = &(*SubtreeHeapData)(unsafe.Pointer(v6)).F9
 	v8 = (*struct {
 	F0 int32
 	F1 int32
@@ -56262,17 +56262,17 @@ _return:
 	return v10
 }
 
-func ts_subtree_fragile_left(self_coerce *SubtreeHeapData) bool {
-	var coerce_dive, ptr **SubtreeHeapData
+func ts_subtree_fragile_left(self_coerce uintptr) bool {
 	var self *Subtree
-	var v1 *SubtreeHeapData
 	var data *SubtreeInlineData
 	var v0 *byte
 	var fragile_left *int16
+	var coerce_dive, ptr *uintptr
 	var bf_cast, bf_cast3, tobool bool
 	var bf_load, bf_clear byte
 	var bf_load1, bf_lshr, bf_clear2 int16
 	var conv, cond int32
+	var v1 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self, coerce_dive, data, v0, bf_load, bf_clear, bf_cast, ptr, v1, fragile_left, bf_load1, bf_lshr, bf_clear2, bf_cast3, conv, cond, tobool
 
@@ -56295,9 +56295,9 @@ cond_true:
 	goto cond_end
 
 cond_false:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr = (*uintptr)(unsafe.Pointer(self))
 	v1 = *ptr
-	fragile_left = &v1.F8
+	fragile_left = &(*SubtreeHeapData)(unsafe.Pointer(v1)).F8
 	bf_load1 = *fragile_left
 	bf_lshr = int16(uint16(bf_load1) >> 3)
 	bf_clear2 = bf_lshr & 1
@@ -56311,17 +56311,17 @@ cond_end:
 	return tobool
 }
 
-func ts_subtree_fragile_right(self_coerce *SubtreeHeapData) bool {
-	var coerce_dive, ptr **SubtreeHeapData
+func ts_subtree_fragile_right(self_coerce uintptr) bool {
 	var self *Subtree
-	var v1 *SubtreeHeapData
 	var data *SubtreeInlineData
 	var v0 *byte
 	var fragile_right *int16
+	var coerce_dive, ptr *uintptr
 	var bf_cast, bf_cast3, tobool bool
 	var bf_load, bf_clear byte
 	var bf_load1, bf_lshr, bf_clear2 int16
 	var conv, cond int32
+	var v1 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self, coerce_dive, data, v0, bf_load, bf_clear, bf_cast, ptr, v1, fragile_right, bf_load1, bf_lshr, bf_clear2, bf_cast3, conv, cond, tobool
 
@@ -56344,9 +56344,9 @@ cond_true:
 	goto cond_end
 
 cond_false:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr = (*uintptr)(unsafe.Pointer(self))
 	v1 = *ptr
-	fragile_right = &v1.F8
+	fragile_right = &(*SubtreeHeapData)(unsafe.Pointer(v1)).F8
 	bf_load1 = *fragile_right
 	bf_lshr = int16(uint16(bf_load1) >> 4)
 	bf_clear2 = bf_lshr & 1
@@ -56360,10 +56360,8 @@ cond_end:
 	return tobool
 }
 
-func ts_subtree_repeat_depth(self_coerce *SubtreeHeapData) int32 {
-	var coerce_dive, ptr **SubtreeHeapData
+func ts_subtree_repeat_depth(self_coerce uintptr) int32 {
 	var self *Subtree
-	var v1 *SubtreeHeapData
 	var data *SubtreeInlineData
 	var v0 *byte
 	var repeat_depth *int16
@@ -56379,10 +56377,12 @@ func ts_subtree_repeat_depth(self_coerce *SubtreeHeapData) int32 {
 	F5 int16
 	F6 anon_0
 }
+	var coerce_dive, ptr *uintptr
 	var bf_cast bool
 	var bf_load, bf_clear byte
 	var v4 int16
 	var conv, cond int32
+	var v1 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self, coerce_dive, data, v0, bf_load, bf_clear, bf_cast, ptr, v1, v2, v3, repeat_depth, v4, conv, cond
 
@@ -56405,9 +56405,9 @@ cond_true:
 	goto cond_end
 
 cond_false:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr = (*uintptr)(unsafe.Pointer(self))
 	v1 = *ptr
-	v2 = &v1.F9
+	v2 = &(*SubtreeHeapData)(unsafe.Pointer(v1)).F9
 	v3 = (*struct {
 	F0 int32
 	F1 int32
@@ -56427,15 +56427,13 @@ cond_end:
 	return cond
 }
 
-func ts_subtree_new_node(symbol int16, children *SubtreeArray, production_id int32, language *TSLanguage) *SubtreeHeapData {
+func ts_subtree_new_node(symbol int16, children *SubtreeArray, production_id int32, language *TSLanguage) uintptr {
 	var contents, contents10, contents13 **Subtree
 	var children_addr **SubtreeArray
-	var data, ptr, coerce_dive, coerce_dive37 **SubtreeHeapData
 	var language_addr **TSLanguage
 	var retval *MutableSubtree
 	var v14, v17, v22, arrayidx *Subtree
 	var v7, v9, v13, v18, v20, v21, v23, v28 *SubtreeArray
-	var _compoundliteral, v25, v26, v44, v46, v47 *SubtreeHeapData
 	var v0, v45 *TSLanguage
 	var metadata *TSSymbolMetadata
 	var fragile, v2, v3, v15, call9, v27, visible18, named19, v42, v43 *byte
@@ -56454,12 +56452,14 @@ func ts_subtree_new_node(symbol int16, children *SubtreeArray, production_id int
 	F5 int16
 	F6 anon_0
 }
+	var data, ptr, coerce_dive, coerce_dive37 *uintptr
 	var cmp, cmp3, v6, cmp7, tobool, tobool20, tobool24, tobool29 bool
 	var frombool, v31, v33, v35, v37 byte
 	var v12 func(*byte, int64) *byte
 	var v1, v4, v5, v30, v32, bf_load, bf_clear, bf_set, v34, bf_load21, bf_shl, bf_clear22, bf_set23, v36, bf_load25, bf_shl26, bf_clear27, bf_set28, v38, bf_load30, bf_shl31, bf_clear32, bf_set33, conv35 int16
 	var call, conv, conv2, v8, v10, conv11, v24, v29, v41 int32
 	var call5, conv6, mul, v11, v16, v19, div, idxprom int64
+	var _compoundliteral, v25, v26, v44, v46, v47 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, symbol_addr, children_addr, production_id_addr, language_addr, metadata, tmp_coerce, fragile, new_byte_size, data, _compoundliteral, v0, v1, call, v2, v3, v4, conv, cmp, v5, conv2, cmp3, v6, frombool, v7, size, v8, call5, v9, capacity, v10, conv6, mul, v11, cmp7, v12, v13, contents, v14, v15, v16, call9, v17, v18, contents10, v19, div, conv11, v20, capacity12, v21, contents13, v22, v23, size14, v24, idxprom, arrayidx, v25, v26, v27, ref_count, child_count, v28, size16, v29, symbol17, v30, visible, visible18, v31, tobool, v32, bf_load, bf_clear, bf_set, named, named19, v33, tobool20, v34, bf_load21, bf_shl, bf_clear22, bf_set23, extra, fragile_left, v35, tobool24, v36, bf_load25, bf_shl26, bf_clear27, bf_set28, fragile_right, v37, tobool29, v38, bf_load30, bf_shl31, bf_clear32, bf_set33, has_changes, has_external_tokens, has_external_scanner_state_change, depends_on_column, is_missing, is_keyword, v39, v40, production_id34, v41, conv35, v42, v43, ptr, v44, v45, coerce_dive, v46, coerce_dive37, v47
 
@@ -56472,8 +56472,8 @@ func ts_subtree_new_node(symbol int16, children *SubtreeArray, production_id int
 	tmp_coerce = new(int32)
 	fragile = new(byte)
 	new_byte_size = new(int64)
-	data = new(*SubtreeHeapData)
-	_compoundliteral = new(SubtreeHeapData)
+	data = new(uintptr)
+	_compoundliteral = uintptr(unsafe.Pointer(libc.Retain(new(SubtreeHeapData))))
 	*symbol_addr = symbol
 	*children_addr = children
 	*production_id_addr = production_id
@@ -56552,22 +56552,22 @@ if_end:
 	v24 = *size14
 	idxprom = int64(uint64(uint32(v24)))
 	arrayidx = libc.AddPointer(v22, int(idxprom))
-	v25 = (*SubtreeHeapData)(unsafe.Pointer(arrayidx))
+	v25 = uintptr(unsafe.Pointer(arrayidx))
 	*data = v25
 	v26 = *data
 	v27 = (*byte)(unsafe.Pointer(_compoundliteral))
 	libc.Memset(v27, 0, int64(80))
-	ref_count = &_compoundliteral.F0
+	ref_count = &(*SubtreeHeapData)(unsafe.Pointer(_compoundliteral)).F0
 	*ref_count = 1
-	child_count = &_compoundliteral.F5
+	child_count = &(*SubtreeHeapData)(unsafe.Pointer(_compoundliteral)).F5
 	v28 = *children_addr
 	size16 = &v28.F1
 	v29 = *size16
 	*child_count = v29
-	symbol17 = &_compoundliteral.F6
+	symbol17 = &(*SubtreeHeapData)(unsafe.Pointer(_compoundliteral)).F6
 	v30 = *symbol_addr
 	*symbol17 = v30
-	visible = &_compoundliteral.F8
+	visible = &(*SubtreeHeapData)(unsafe.Pointer(_compoundliteral)).F8
 	visible18 = &metadata.F0
 	v31 = *visible18
 	tobool = (v31 & 1) != 0
@@ -56576,7 +56576,7 @@ if_end:
 	bf_clear = bf_load & -2
 	bf_set = bf_clear | v32
 	*visible = bf_set
-	named = &_compoundliteral.F8
+	named = &(*SubtreeHeapData)(unsafe.Pointer(_compoundliteral)).F8
 	named19 = &metadata.F1
 	v33 = *named19
 	tobool20 = (v33 & 1) != 0
@@ -56586,8 +56586,8 @@ if_end:
 	bf_clear22 = bf_load21 & -3
 	bf_set23 = bf_clear22 | bf_shl
 	*named = bf_set23
-	extra = &_compoundliteral.F8
-	fragile_left = &_compoundliteral.F8
+	extra = &(*SubtreeHeapData)(unsafe.Pointer(_compoundliteral)).F8
+	fragile_left = &(*SubtreeHeapData)(unsafe.Pointer(_compoundliteral)).F8
 	v35 = *fragile
 	tobool24 = (v35 & 1) != 0
 	if tobool24 { v36 = 1 } else { v36 = 0 }
@@ -56596,7 +56596,7 @@ if_end:
 	bf_clear27 = bf_load25 & -9
 	bf_set28 = bf_clear27 | bf_shl26
 	*fragile_left = bf_set28
-	fragile_right = &_compoundliteral.F8
+	fragile_right = &(*SubtreeHeapData)(unsafe.Pointer(_compoundliteral)).F8
 	v37 = *fragile
 	tobool29 = (v37 & 1) != 0
 	if tobool29 { v38 = 1 } else { v38 = 0 }
@@ -56605,13 +56605,13 @@ if_end:
 	bf_clear32 = bf_load30 & -17
 	bf_set33 = bf_clear32 | bf_shl31
 	*fragile_right = bf_set33
-	has_changes = &_compoundliteral.F8
-	has_external_tokens = &_compoundliteral.F8
-	has_external_scanner_state_change = &_compoundliteral.F8
-	depends_on_column = &_compoundliteral.F8
-	is_missing = &_compoundliteral.F8
-	is_keyword = &_compoundliteral.F8
-	v39 = &_compoundliteral.F9
+	has_changes = &(*SubtreeHeapData)(unsafe.Pointer(_compoundliteral)).F8
+	has_external_tokens = &(*SubtreeHeapData)(unsafe.Pointer(_compoundliteral)).F8
+	has_external_scanner_state_change = &(*SubtreeHeapData)(unsafe.Pointer(_compoundliteral)).F8
+	depends_on_column = &(*SubtreeHeapData)(unsafe.Pointer(_compoundliteral)).F8
+	is_missing = &(*SubtreeHeapData)(unsafe.Pointer(_compoundliteral)).F8
+	is_keyword = &(*SubtreeHeapData)(unsafe.Pointer(_compoundliteral)).F8
+	v39 = &(*SubtreeHeapData)(unsafe.Pointer(_compoundliteral)).F9
 	v40 = (*struct {
 	F0 int32
 	F1 int32
@@ -56628,7 +56628,7 @@ if_end:
 	v42 = (*byte)(unsafe.Pointer(v26))
 	v43 = (*byte)(unsafe.Pointer(_compoundliteral))
 	libc.Memmove(v42, v43, int64(80))
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(retval))
+	ptr = (*uintptr)(unsafe.Pointer(retval))
 	v44 = *data
 	*ptr = v44
 	v45 = *language_addr
@@ -56640,20 +56640,20 @@ if_end:
 	return v47
 }
 
-func ts_subtree_new_error_node(children *SubtreeArray, extra bool, language *TSLanguage) *SubtreeHeapData {
+func ts_subtree_new_error_node(children *SubtreeArray, extra bool, language *TSLanguage) uintptr {
 	var children_addr **SubtreeArray
-	var coerce_dive, ptr, coerce_dive3, coerce_dive5, coerce_dive6 **SubtreeHeapData
 	var language_addr **TSLanguage
 	var result *MutableSubtree
 	var retval *Subtree
 	var v0 *SubtreeArray
-	var call, v3, v5, call4, v6 *SubtreeHeapData
 	var v1 *TSLanguage
 	var extra_addr *byte
 	var extra1 *int16
+	var coerce_dive, ptr, coerce_dive3, coerce_dive5, coerce_dive6 *uintptr
 	var tobool, tobool2 bool
 	var frombool, v2, bf_result_cast byte
 	var v4, bf_load, bf_shl, bf_clear, bf_set int16
+	var call, v3, v5, call4, v6 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, children_addr, extra_addr, language_addr, result, frombool, v0, v1, call, coerce_dive, v2, tobool, ptr, v3, extra1, v4, bf_load, bf_shl, bf_clear, bf_set, bf_result_cast, tobool2, coerce_dive3, v5, call4, coerce_dive5, coerce_dive6, v6
 
@@ -56673,9 +56673,9 @@ func ts_subtree_new_error_node(children *SubtreeArray, extra bool, language *TSL
 	*coerce_dive = call
 	v2 = *extra_addr
 	tobool = (v2 & 1) != 0
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(result))
+	ptr = (*uintptr)(unsafe.Pointer(result))
 	v3 = *ptr
-	extra1 = &v3.F8
+	extra1 = &(*SubtreeHeapData)(unsafe.Pointer(v3)).F8
 	if tobool { v4 = 1 } else { v4 = 0 }
 	bf_load = *extra1
 	bf_shl = v4 << 2
@@ -56694,13 +56694,11 @@ func ts_subtree_new_error_node(children *SubtreeArray, extra bool, language *TSL
 	return v6
 }
 
-func ts_subtree_new_missing_leaf(pool *SubtreePool, symbol int16, padding_coerce0 int64, padding_coerce1 int32, lookahead_bytes int32, language *TSLanguage) *SubtreeHeapData {
-	var coerce_dive, ptr, coerce_dive8 **SubtreeHeapData
+func ts_subtree_new_missing_leaf(pool *SubtreePool, symbol int16, padding_coerce0 int64, padding_coerce1 int32, lookahead_bytes int32, language *TSLanguage) uintptr {
 	var pool_addr **SubtreePool
 	var language_addr **TSLanguage
 	var padding, agg_tmp *Length
 	var retval *Subtree
-	var call1, v24, v25 *SubtreeHeapData
 	var data, data2 *SubtreeInlineData
 	var v4 *SubtreePool
 	var v9 *TSLanguage
@@ -56712,6 +56710,7 @@ func ts_subtree_new_missing_leaf(pool *SubtreePool, symbol int16, padding_coerce
 	F0 int64
 	F1 int32
 }
+	var coerce_dive, ptr, coerce_dive8 *uintptr
 	var bf_cast bool
 	var bf_load, bf_clear, bf_load3, bf_clear4, bf_set byte
 	var v5, bf_load5, bf_clear6, bf_set7 int16
@@ -56721,6 +56720,7 @@ func ts_subtree_new_missing_leaf(pool *SubtreePool, symbol int16, padding_coerce
 	F0 int64
 	F1 int32
 }
+	var call1, v24, v25 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, padding, coerce, pool_addr, symbol_addr, lookahead_bytes_addr, language_addr, agg_tmp, tmp_coerce, padding_coerce, agg_tmp_coerce, v0, v1, v2, v3, v4, v5, call, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, call1, coerce_dive, data, v22, bf_load, bf_clear, bf_cast, data2, v23, bf_load3, bf_clear4, bf_set, ptr, v24, is_missing, bf_load5, bf_clear6, bf_set7, coerce_dive8, v25
 
@@ -56805,9 +56805,9 @@ if_then:
 	goto if_end
 
 if_else:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(retval))
+	ptr = (*uintptr)(unsafe.Pointer(retval))
 	v24 = *ptr
-	is_missing = &v24.F8
+	is_missing = &(*SubtreeHeapData)(unsafe.Pointer(v24)).F8
 	bf_load5 = *is_missing
 	bf_clear6 = bf_load5 & -513
 	bf_set7 = bf_clear6 | 512
@@ -56862,25 +56862,25 @@ func atomic_dec(p *int32) int32 {
 	return v4
 }
 
-func ts_subtree_pool_free(self *SubtreePool, tree *SubtreeHeapData) {
+func ts_subtree_pool_free(self *SubtreePool, tree uintptr) {
 	var contents, contents9, contents11 **MutableSubtree
-	var tree_addr, ptr **SubtreeHeapData
 	var self_addr **SubtreePool
 	var _compoundliteral, v5, v10, v13, arrayidx *MutableSubtree
 	var free_trees, free_trees1, free_trees3, free_trees4, free_trees6, free_trees8, free_trees10, free_trees12 *MutableSubtreeArray
-	var v16, v20 *SubtreeHeapData
 	var v0, v2, v4, v7, v9, v11, v12, v14 *SubtreePool
 	var v6, call, v17, v18, v21 *byte
 	var capacity, size, size5, capacity7, size13 *int32
+	var tree_addr, ptr *uintptr
 	var cmp, cmp2 bool
 	var v19 func(*byte)
 	var v1, v3, add, v8, v15, inc int32
 	var idxprom int64
+	var v16, v20 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self_addr, tree_addr, _compoundliteral, v0, free_trees, capacity, v1, cmp, v2, free_trees1, size, v3, add, cmp2, v4, free_trees3, contents, v5, v6, v7, free_trees4, size5, v8, v9, free_trees6, capacity7, call, v10, v11, free_trees8, contents9, v12, free_trees10, contents11, v13, v14, free_trees12, size13, v15, inc, idxprom, arrayidx, ptr, v16, v17, v18, v19, v20, v21
 
 	self_addr = new(*SubtreePool)
-	tree_addr = new(*SubtreeHeapData)
+	tree_addr = new(uintptr)
 	_compoundliteral = new(MutableSubtree)
 	*self_addr = self
 	*tree_addr = tree
@@ -56942,7 +56942,7 @@ do_body:
 	*size13 = inc
 	idxprom = int64(uint64(uint32(v15)))
 	arrayidx = libc.AddPointer(v13, int(idxprom))
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(_compoundliteral))
+	ptr = (*uintptr)(unsafe.Pointer(_compoundliteral))
 	v16 = *tree_addr
 	*ptr = v16
 	v17 = (*byte)(unsafe.Pointer(arrayidx))
@@ -56963,23 +56963,23 @@ if_else:
 if_end:
 }
 
-func ts_subtree_compare(left_coerce *SubtreeHeapData, right_coerce *SubtreeHeapData, pool *SubtreePool) int32 {
+func ts_subtree_compare(left_coerce uintptr, right_coerce uintptr, pool *SubtreePool) int32 {
 	var contents, contents5, contents7, contents15, contents22, contents24, contents39, contents49, contents127, contents134, contents136, contents149, contents156, contents158 **MutableSubtree
-	var coerce_dive, coerce_dive1, coerce_dive10, coerce_dive12, coerce_dive31, coerce_dive33, coerce_dive44, coerce_dive46, coerce_dive55, coerce_dive57, coerce_dive58, coerce_dive60, coerce_dive65, coerce_dive68, coerce_dive75, coerce_dive77, coerce_dive83, coerce_dive85, coerce_dive99, ptr, ptr104, ptr114, ptr115, coerce_dive143, coerce_dive145, coerce_dive165, coerce_dive167 **SubtreeHeapData
 	var pool_addr **SubtreePool
 	var tmp, tmp30, tmp142, tmp164, v1, v6, v9, arrayidx, v16, v21, v24, arrayidx29, v33, arrayidx43, v40, arrayidx54, v76, v81, v84, arrayidx141, v91, v96, v99, arrayidx163 *MutableSubtree
 	var tree_stack, tree_stack2, tree_stack3, tree_stack4, tree_stack6, tree_stack8, tree_stack14, tree_stack16, tree_stack18, tree_stack21, tree_stack23, tree_stack25, tree_stack35, tree_stack38, tree_stack40, tree_stack48, tree_stack50, tree_stack96, tree_stack126, tree_stack128, tree_stack130, tree_stack133, tree_stack135, tree_stack137, tree_stack148, tree_stack150, tree_stack152, tree_stack155, tree_stack157, tree_stack159 *MutableSubtreeArray
 	var left, right, tmp37, tmp47, left_child, right_child, v61, add_ptr, cond, arrayidx106, v69, add_ptr119, cond121, arrayidx124 *Subtree
-	var v12, call11, v27, call32, v36, call45, v43, call56, v46, v47, v48, v49, v50, v51, v52, v53, v57, v60, v62, v68, v70, v87, call144, v102, call166 *SubtreeHeapData
 	var data, data107 *SubtreeInlineData
 	var v0, v3, v5, v7, v8, v10, v15, v18, v20, v22, v23, v25, v30, v32, v34, v39, v41, v55, v75, v78, v80, v82, v83, v85, v90, v93, v95, v97, v98, v100 *SubtreePool
 	var v2, call, v13, v14, v17, call20, v28, v29, v37, v38, v44, v45, v59, v65, v66, v67, v73, v74, v77, call132, v88, v89, v92, call154, v103, v104 *byte
 	var retval, result, i, size, capacity, size9, size17, capacity19, size26, size36, size41, size51, size97, child_count, child_count116, size129, capacity131, size138, size151, capacity153, size160 *int32
+	var coerce_dive, coerce_dive1, coerce_dive10, coerce_dive12, coerce_dive31, coerce_dive33, coerce_dive44, coerce_dive46, coerce_dive55, coerce_dive57, coerce_dive58, coerce_dive60, coerce_dive65, coerce_dive68, coerce_dive75, coerce_dive77, coerce_dive83, coerce_dive85, coerce_dive99, ptr, ptr104, ptr114, ptr115, coerce_dive143, coerce_dive145, coerce_dive165, coerce_dive167 *uintptr
 	var cmp, cmp63, cmp71, cmp79, cmp87, cmp93, cmp101, bf_cast, bf_cast110 bool
 	var bf_load, bf_clear, bf_load108, bf_clear109 byte
 	var call59, call61, call66, call69 int16
 	var v4, v11, inc, v19, v26, inc27, v31, v35, dec, v42, dec52, conv, conv62, conv67, conv70, call76, call78, call84, call86, v54, v56, call100, v58, v63, v64, sub, v71, v72, sub122, v79, v86, inc139, v94, v101, inc161, v105, dec169, v106 int32
 	var idxprom, idxprom28, idxprom42, idxprom53, idx_ext, idx_neg, idxprom105, idx_ext117, idx_neg118, idxprom123, idxprom140, idxprom162 int64
+	var v12, call11, v27, call32, v36, call45, v43, call56, v46, v47, v48, v49, v50, v51, v52, v53, v57, v60, v62, v68, v70, v87, call144, v102, call166 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, left, right, pool_addr, tmp, tmp30, tmp37, tmp47, result, i, left_child, right_child, tmp142, tmp164, coerce_dive, coerce_dive1, v0, tree_stack, contents, v1, v2, v3, tree_stack2, size, v4, v5, tree_stack3, capacity, call, v6, v7, tree_stack4, contents5, v8, tree_stack6, contents7, v9, v10, tree_stack8, size9, v11, inc, idxprom, arrayidx, coerce_dive10, v12, call11, coerce_dive12, v13, v14, v15, tree_stack14, contents15, v16, v17, v18, tree_stack16, size17, v19, v20, tree_stack18, capacity19, call20, v21, v22, tree_stack21, contents22, v23, tree_stack23, contents24, v24, v25, tree_stack25, size26, v26, inc27, idxprom28, arrayidx29, coerce_dive31, v27, call32, coerce_dive33, v28, v29, v30, tree_stack35, size36, v31, cmp, v32, tree_stack38, contents39, v33, v34, tree_stack40, size41, v35, dec, idxprom42, arrayidx43, coerce_dive44, v36, call45, coerce_dive46, v37, v38, v39, tree_stack48, contents49, v40, v41, tree_stack50, size51, v42, dec52, idxprom53, arrayidx54, coerce_dive55, v43, call56, coerce_dive57, v44, v45, coerce_dive58, v46, call59, conv, coerce_dive60, v47, call61, conv62, cmp63, coerce_dive65, v48, call66, conv67, coerce_dive68, v49, call69, conv70, cmp71, coerce_dive75, v50, call76, coerce_dive77, v51, call78, cmp79, coerce_dive83, v52, call84, coerce_dive85, v53, call86, cmp87, v54, cmp93, v55, tree_stack96, size97, v56, coerce_dive99, v57, call100, v58, cmp101, data, v59, bf_load, bf_clear, bf_cast, ptr, v60, v61, ptr104, v62, child_count, v63, idx_ext, idx_neg, add_ptr, cond, v64, sub, idxprom105, arrayidx106, v65, v66, data107, v67, bf_load108, bf_clear109, bf_cast110, ptr114, v68, v69, ptr115, v70, child_count116, v71, idx_ext117, idx_neg118, add_ptr119, cond121, v72, sub122, idxprom123, arrayidx124, v73, v74, v75, tree_stack126, contents127, v76, v77, v78, tree_stack128, size129, v79, v80, tree_stack130, capacity131, call132, v81, v82, tree_stack133, contents134, v83, tree_stack135, contents136, v84, v85, tree_stack137, size138, v86, inc139, idxprom140, arrayidx141, coerce_dive143, v87, call144, coerce_dive145, v88, v89, v90, tree_stack148, contents149, v91, v92, v93, tree_stack150, size151, v94, v95, tree_stack152, capacity153, call154, v96, v97, tree_stack155, contents156, v98, tree_stack157, contents158, v99, v100, tree_stack159, size160, v101, inc161, idxprom162, arrayidx163, coerce_dive165, v102, call166, coerce_dive167, v103, v104, v105, dec169, v106
 
@@ -57281,12 +57281,12 @@ cond_true:
 	goto cond_end
 
 cond_false:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(left))
+	ptr = (*uintptr)(unsafe.Pointer(left))
 	v60 = *ptr
 	v61 = (*Subtree)(unsafe.Pointer(v60))
-	ptr104 = (**SubtreeHeapData)(unsafe.Pointer(left))
+	ptr104 = (*uintptr)(unsafe.Pointer(left))
 	v62 = *ptr104
-	child_count = &v62.F5
+	child_count = &(*SubtreeHeapData)(unsafe.Pointer(v62)).F5
 	v63 = *child_count
 	idx_ext = int64(uint64(uint32(v63)))
 	idx_neg = int64(0) - idx_ext
@@ -57318,12 +57318,12 @@ cond_true112:
 	goto cond_end120
 
 cond_false113:
-	ptr114 = (**SubtreeHeapData)(unsafe.Pointer(right))
+	ptr114 = (*uintptr)(unsafe.Pointer(right))
 	v68 = *ptr114
 	v69 = (*Subtree)(unsafe.Pointer(v68))
-	ptr115 = (**SubtreeHeapData)(unsafe.Pointer(right))
+	ptr115 = (*uintptr)(unsafe.Pointer(right))
 	v70 = *ptr115
-	child_count116 = &v70.F5
+	child_count116 = &(*SubtreeHeapData)(unsafe.Pointer(v70)).F5
 	v71 = *child_count116
 	idx_ext117 = int64(uint64(uint32(v71)))
 	idx_neg118 = int64(0) - idx_ext117
@@ -57447,10 +57447,9 @@ _return:
 	return v106
 }
 
-func ts_subtree_edit(self_coerce *SubtreeHeapData, input_edit *TSInputEdit, pool *SubtreePool) *SubtreeHeapData {
+func ts_subtree_edit(self_coerce uintptr, input_edit *TSInputEdit, pool *SubtreePool) uintptr {
 	var contents, contents1, contents2, contents10, contents347, contents351, contents352, contents363, contents366, contents368 **EditEntry
 	var child, tree, tree31, tree43, tree46, tree52, tree118, tree225, tree232, tree237, tree243, tree245, tree358 **Subtree
-	var data142, coerce_dive, coerce_dive32, coerce_dive44, coerce_dive47, coerce_dive53, coerce_dive119, coerce_dive121, ptr, ptr220, ptr222, coerce_dive227, coerce_dive229, coerce_dive233, ptr244, ptr246, coerce_dive250, coerce_dive257, coerce_dive294, coerce_dive372 **SubtreeHeapData
 	var pool_addr **SubtreePool
 	var input_edit_addr **TSInputEdit
 	var edit14, child_edit, edit, edit15, edit359 *Edit
@@ -57458,7 +57457,6 @@ func ts_subtree_edit(self_coerce *SubtreeHeapData, input_edit *TSInputEdit, pool
 	var size42, padding, total_size, tmp, agg_tmp, tmp80, agg_tmp81, tmp103, agg_tmp104, agg_tmp109, child_left, child_right, child_size, tmp253, start, old_end, new_end, old_end16, start18, new_end20, start22, old_end25, start27, new_end35, old_end37, start56, start60, old_end63, new_end68, old_end69, start75, old_end82, new_end89, start91, start96, new_end105, old_end110, padding144, size145, padding221, size223, start260, old_end267, old_end273, old_end301, start308, start309, old_end313, old_end314, new_end318, new_end319, start324, start330, new_end338, start339, old_end341, start342, new_end343, start344 *Length
 	var result *MutableSubtree
 	var retval, self, tmp226, v38, v42, v46, v64, v189, v252, v258, v262, v264, v266, v267, add_ptr, cond, arrayidx249, v271, v294, v306, v370 *Subtree
-	var v39, v43, v47, v65, v190, call120, call143, v210, v211, v214, v218, v219, v220, v222, v224, v226, v229, v232, v234, v235, v236, v237, v238, v240, v243, v245, v246, v249, v253, call228, v259, v265, v268, v272, v295, v307, v382 *SubtreeHeapData
 	var data, data128, data131, data137, data140, data147, data150, data152, data160, data170, data196, data207, data238 *SubtreeInlineData
 	var v188, v209 *SubtreePool
 	var v7, v9, v12, v14, v17, v19 *TSInputEdit
@@ -57472,6 +57470,7 @@ func ts_subtree_edit(self_coerce *SubtreeHeapData, input_edit *TSInputEdit, pool
 	F0 int64
 	F1 int32
 }
+	var data142, coerce_dive, coerce_dive32, coerce_dive44, coerce_dive47, coerce_dive53, coerce_dive119, coerce_dive121, ptr, ptr220, ptr222, coerce_dive227, coerce_dive229, coerce_dive233, ptr244, ptr246, coerce_dive250, coerce_dive257, coerce_dive294, coerce_dive372 *uintptr
 	var tobool, cmp, cmp24, v35, cmp29, call33, cmp40, cmp58, tobool59, cmp62, cmp66, cmp78, cmp94, cmp99, tobool101, bf_cast, call125, bf_cast155, tobool159, bf_cast164, tobool169, bf_cast174, tobool180, bf_cast200, tobool206, bf_cast211, tobool217, cmp235, bf_cast241, cmp262, cmp269, cmp275, cmp279, cmp282, tobool285, cmp291, call295, tobool297, cmp304, cmp326, cmp332, tobool335, tobool364 bool
 	var frombool, frombool30, frombool34, frombool41, v70, v143, bf_load, bf_clear, conv, conv130, bf_load132, bf_value, bf_clear133, bf_set, conv136, conv139, v221, bf_load153, bf_lshr, bf_clear154, bf_result_cast, bf_load161, bf_lshr162, bf_clear163, bf_result_cast168, bf_load171, bf_lshr172, bf_clear173, bf_result_cast179, bf_load197, bf_lshr198, bf_clear199, bf_result_cast205, bf_load208, bf_lshr209, bf_clear210, bf_result_cast216, bf_load239, bf_clear240, v303, v308, v357 byte
 	var v377 func(*byte)
@@ -57482,6 +57481,7 @@ func ts_subtree_edit(self_coerce *SubtreeHeapData, input_edit *TSInputEdit, pool
 	F0 int64
 	F1 int32
 }
+	var v39, v43, v47, v65, v190, call120, call143, v210, v211, v214, v218, v219, v220, v222, v224, v226, v229, v232, v234, v235, v236, v237, v238, v240, v243, v245, v246, v249, v253, call228, v259, v265, v268, v272, v295, v307, v382 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, self, input_edit_addr, pool_addr, stack, _compoundliteral, entry9, edit14, is_noop, is_pure_insertion, parent_depends_on_column, column_shifted, size42, tmp_coerce, padding, tmp_coerce49, total_size, padding_coerce, size42_coerce, tmp_coerce51, lookahead_bytes, end_byte, tmp, agg_tmp, padding_coerce70, old_end69_coerce, tmp_coerce72, new_end68_coerce, agg_tmp_coerce, tmp_coerce74, tmp80, agg_tmp81, old_end82_coerce, padding_coerce83, tmp_coerce85, size42_coerce86, agg_tmp81_coerce, tmp_coerce88, tmp103, agg_tmp104, new_end105_coerce, padding_coerce106, tmp_coerce108, agg_tmp109, total_size_coerce, old_end110_coerce, tmp_coerce112, agg_tmp104_coerce, agg_tmp109_coerce, tmp_coerce114, result, padding_coerce123, size42_coerce124, data142, tmp226, child_left, child_right, tmp_coerce231, i, n, child, child_size, tmp_coerce252, tmp253, child_left_coerce, child_size_coerce, tmp_coerce255, child_edit, start309_coerce, child_left_coerce310, tmp_coerce312, old_end314_coerce, child_left_coerce315, tmp_coerce317, new_end319_coerce, child_left_coerce320, tmp_coerce322, _compoundliteral357, coerce_dive, v0, contents, v1, v2, size, v3, capacity, call, v4, contents1, contents2, v5, size3, v6, inc, idxprom, arrayidx, tree, edit, start, bytes, v7, start_byte, v8, extent, v9, start_point, v10, v11, old_end, bytes4, v12, old_end_byte, v13, extent5, v14, old_end_point, v15, v16, new_end, bytes6, v17, new_end_byte, v18, extent7, v19, new_end_point, v20, v21, v22, v23, size8, v24, tobool, contents10, v25, size11, v26, dec, idxprom12, arrayidx13, v27, v28, edit15, v29, v30, old_end16, bytes17, v31, start18, bytes19, v32, cmp, new_end20, bytes21, v33, start22, bytes23, v34, cmp24, v35, frombool, old_end25, bytes26, v36, start27, bytes28, v37, cmp29, frombool30, tree31, v38, coerce_dive32, v39, call33, frombool34, new_end35, extent36, column, v40, old_end37, extent38, column39, v41, cmp40, frombool41, tree43, v42, coerce_dive44, v43, call45, v44, v45, tree46, v46, coerce_dive47, v47, call48, v48, v49, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59, v60, v61, call50, v62, v63, tree52, v64, coerce_dive53, v65, call54, bytes55, v66, v67, add, start56, bytes57, v68, v69, cmp58, v70, tobool59, start60, bytes61, v71, v72, cmp62, old_end63, bytes64, v73, bytes65, v74, cmp66, new_end68, old_end69, v75, v76, v77, v78, v79, v80, v81, v82, v83, v84, v85, v86, call71, v87, v88, v89, v90, v91, v92, v93, v94, v95, v96, v97, v98, v99, v100, call73, v101, v102, v103, v104, start75, bytes76, v105, bytes77, v106, cmp78, old_end82, v107, v108, v109, v110, v111, v112, v113, v114, v115, v116, v117, v118, call84, v119, v120, v121, v122, v123, v124, v125, v126, v127, v128, v129, v130, v131, v132, call87, v133, v134, v135, v136, new_end89, v137, v138, start91, bytes92, v139, bytes93, v140, cmp94, start96, bytes97, v141, bytes98, v142, cmp99, v143, tobool101, new_end105, v144, v145, v146, v147, v148, v149, v150, v151, v152, v153, v154, v155, call107, v156, v157, old_end110, v158, v159, v160, v161, v162, v163, v164, v165, v166, v167, v168, v169, call111, v170, v171, v172, v173, v174, v175, v176, v177, v178, v179, v180, v181, v182, v183, call113, v184, v185, v186, v187, v188, tree118, v189, coerce_dive119, v190, call120, coerce_dive121, data, v191, bf_load, bf_clear, bf_cast, v192, v193, v194, v195, v196, v197, v198, v199, v200, v201, v202, v203, v204, call125, bytes127, v205, conv, data128, padding_bytes, extent129, row, v206, conv130, data131, padding_rows, bf_load132, bf_value, bf_clear133, bf_set, extent134, column135, v207, conv136, data137, padding_columns, bytes138, v208, conv139, data140, size_bytes, v209, call143, v210, ref_count, v211, padding144, v212, v213, v214, size145, v215, v216, v217, v218, lookahead_bytes146, v219, error_cost, v220, child_count, data147, symbol, v221, conv148, v222, symbol149, data150, parse_state, v223, v224, parse_state151, data152, v225, bf_load153, bf_lshr, bf_clear154, bf_cast155, v226, visible, v227, bf_load156, bf_clear157, bf_set158, bf_result_cast, tobool159, data160, v228, bf_load161, bf_lshr162, bf_clear163, bf_cast164, v229, named, v230, bf_load165, bf_shl, bf_clear166, bf_set167, bf_result_cast168, tobool169, data170, v231, bf_load171, bf_lshr172, bf_clear173, bf_cast174, v232, extra, v233, bf_load175, bf_shl176, bf_clear177, bf_set178, bf_result_cast179, tobool180, v234, fragile_left, bf_load181, bf_clear182, bf_set183, v235, fragile_right, bf_load184, bf_clear185, bf_set186, v236, has_changes, bf_load187, bf_clear188, bf_set189, v237, has_external_tokens, bf_load190, bf_clear191, bf_set192, v238, depends_on_column, bf_load193, bf_clear194, bf_set195, data196, v239, bf_load197, bf_lshr198, bf_clear199, bf_cast200, v240, is_missing, v241, bf_load201, bf_shl202, bf_clear203, bf_set204, bf_result_cast205, tobool206, data207, v242, bf_load208, bf_lshr209, bf_clear210, bf_cast211, v243, is_keyword, v244, bf_load212, bf_shl213, bf_clear214, bf_set215, bf_result_cast216, tobool217, v245, ptr, ptr220, v246, padding221, v247, v248, ptr222, v249, size223, v250, v251, tree225, v252, coerce_dive227, v253, call228, coerce_dive229, v254, v255, call230, v256, v257, tree232, v258, coerce_dive233, v259, call234, v260, v261, cmp235, tree237, v262, data238, v263, bf_load239, bf_clear240, bf_cast241, tree243, v264, ptr244, v265, v266, tree245, v267, ptr246, v268, child_count247, v269, idx_ext, idx_neg, add_ptr, cond, v270, idxprom248, arrayidx249, v271, coerce_dive250, v272, call251, v273, v274, v275, v276, v277, v278, v279, v280, v281, v282, v283, v284, v285, v286, v287, v288, call254, v289, v290, v291, v292, bytes256, v293, v294, coerce_dive257, v295, call258, add259, start260, bytes261, v296, cmp262, bytes266, v297, old_end267, bytes268, v298, cmp269, bytes272, v299, old_end273, bytes274, v300, cmp275, bytes278, v301, cmp279, v302, cmp282, v303, tobool285, extent287, row288, v304, extent289, row290, v305, cmp291, v306, coerce_dive294, v307, call295, v308, tobool297, extent299, row300, v309, old_end301, extent302, row303, v310, cmp304, start308, start309, v311, v312, v313, v314, v315, v316, v317, v318, v319, v320, v321, v322, call311, v323, v324, old_end313, old_end314, v325, v326, v327, v328, v329, v330, v331, v332, v333, v334, v335, v336, call316, v337, v338, new_end318, new_end319, v339, v340, v341, v342, v343, v344, v345, v346, v347, v348, v349, v350, call321, v351, v352, bytes323, v353, start324, bytes325, v354, cmp326, bytes329, v355, start330, bytes331, v356, cmp332, v357, tobool335, new_end338, start339, v358, v359, old_end341, start342, v360, v361, new_end343, start344, v362, v363, contents347, v364, v365, size348, v366, capacity349, call350, v367, contents351, contents352, v368, size353, v369, inc354, idxprom355, arrayidx356, tree358, v370, edit359, v371, v372, v373, v374, v375, inc361, contents363, v376, tobool364, v377, contents366, v378, v379, contents368, size369, capacity370, v380, v381, coerce_dive372, v382
 
@@ -57622,7 +57622,7 @@ func ts_subtree_edit(self_coerce *SubtreeHeapData, input_edit *TSInputEdit, pool
 	F0 int64
 	F1 int32
 })
-	data142 = new(*SubtreeHeapData)
+	data142 = new(uintptr)
 	tmp226 = new(Subtree)
 	child_left = new(Length)
 	child_right = new(Length)
@@ -58235,40 +58235,40 @@ if_else141:
 	call143 = ts_subtree_pool_allocate(v209)
 	*data142 = call143
 	v210 = *data142
-	ref_count = &v210.F0
+	ref_count = &(*SubtreeHeapData)(unsafe.Pointer(v210)).F0
 	*ref_count = 1
 	v211 = *data142
-	padding144 = &v211.F1
+	padding144 = &(*SubtreeHeapData)(unsafe.Pointer(v211)).F1
 	v212 = (*byte)(unsafe.Pointer(padding144))
 	v213 = (*byte)(unsafe.Pointer(padding))
 	libc.Memmove(v212, v213, int64(12))
 	v214 = *data142
-	size145 = &v214.F2
+	size145 = &(*SubtreeHeapData)(unsafe.Pointer(v214)).F2
 	v215 = (*byte)(unsafe.Pointer(size145))
 	v216 = (*byte)(unsafe.Pointer(size42))
 	libc.Memmove(v215, v216, int64(12))
 	v217 = *lookahead_bytes
 	v218 = *data142
-	lookahead_bytes146 = &v218.F3
+	lookahead_bytes146 = &(*SubtreeHeapData)(unsafe.Pointer(v218)).F3
 	*lookahead_bytes146 = v217
 	v219 = *data142
-	error_cost = &v219.F4
+	error_cost = &(*SubtreeHeapData)(unsafe.Pointer(v219)).F4
 	*error_cost = 0
 	v220 = *data142
-	child_count = &v220.F5
+	child_count = &(*SubtreeHeapData)(unsafe.Pointer(v220)).F5
 	*child_count = 0
 	data147 = (*SubtreeInlineData)(unsafe.Pointer(result))
 	symbol = &data147.F1
 	v221 = *symbol
 	conv148 = int16(uint16(v221))
 	v222 = *data142
-	symbol149 = &v222.F6
+	symbol149 = &(*SubtreeHeapData)(unsafe.Pointer(v222)).F6
 	*symbol149 = conv148
 	data150 = (*SubtreeInlineData)(unsafe.Pointer(result))
 	parse_state = &data150.F2
 	v223 = *parse_state
 	v224 = *data142
-	parse_state151 = &v224.F7
+	parse_state151 = &(*SubtreeHeapData)(unsafe.Pointer(v224)).F7
 	*parse_state151 = v223
 	data152 = (*SubtreeInlineData)(unsafe.Pointer(result))
 	v225 = (*byte)(unsafe.Pointer(data152))
@@ -58277,7 +58277,7 @@ if_else141:
 	bf_clear154 = bf_lshr & 1
 	bf_cast155 = (bf_clear154 & 1) != 0
 	v226 = *data142
-	visible = &v226.F8
+	visible = &(*SubtreeHeapData)(unsafe.Pointer(v226)).F8
 	if bf_cast155 { v227 = 1 } else { v227 = 0 }
 	bf_load156 = *visible
 	bf_clear157 = bf_load156 & -2
@@ -58292,7 +58292,7 @@ if_else141:
 	bf_clear163 = bf_lshr162 & 1
 	bf_cast164 = (bf_clear163 & 1) != 0
 	v229 = *data142
-	named = &v229.F8
+	named = &(*SubtreeHeapData)(unsafe.Pointer(v229)).F8
 	if bf_cast164 { v230 = 1 } else { v230 = 0 }
 	bf_load165 = *named
 	bf_shl = v230 << 1
@@ -58308,7 +58308,7 @@ if_else141:
 	bf_clear173 = bf_lshr172 & 1
 	bf_cast174 = (bf_clear173 & 1) != 0
 	v232 = *data142
-	extra = &v232.F8
+	extra = &(*SubtreeHeapData)(unsafe.Pointer(v232)).F8
 	if bf_cast174 { v233 = 1 } else { v233 = 0 }
 	bf_load175 = *extra
 	bf_shl176 = v233 << 2
@@ -58318,31 +58318,31 @@ if_else141:
 	bf_result_cast179 = byte(v233)
 	tobool180 = (bf_result_cast179 & 1) != 0
 	v234 = *data142
-	fragile_left = &v234.F8
+	fragile_left = &(*SubtreeHeapData)(unsafe.Pointer(v234)).F8
 	bf_load181 = *fragile_left
 	bf_clear182 = bf_load181 & -9
 	bf_set183 = bf_clear182 | 0
 	*fragile_left = bf_set183
 	v235 = *data142
-	fragile_right = &v235.F8
+	fragile_right = &(*SubtreeHeapData)(unsafe.Pointer(v235)).F8
 	bf_load184 = *fragile_right
 	bf_clear185 = bf_load184 & -17
 	bf_set186 = bf_clear185 | 0
 	*fragile_right = bf_set186
 	v236 = *data142
-	has_changes = &v236.F8
+	has_changes = &(*SubtreeHeapData)(unsafe.Pointer(v236)).F8
 	bf_load187 = *has_changes
 	bf_clear188 = bf_load187 & -33
 	bf_set189 = bf_clear188 | 0
 	*has_changes = bf_set189
 	v237 = *data142
-	has_external_tokens = &v237.F8
+	has_external_tokens = &(*SubtreeHeapData)(unsafe.Pointer(v237)).F8
 	bf_load190 = *has_external_tokens
 	bf_clear191 = bf_load190 & -65
 	bf_set192 = bf_clear191 | 0
 	*has_external_tokens = bf_set192
 	v238 = *data142
-	depends_on_column = &v238.F8
+	depends_on_column = &(*SubtreeHeapData)(unsafe.Pointer(v238)).F8
 	bf_load193 = *depends_on_column
 	bf_clear194 = bf_load193 & -257
 	bf_set195 = bf_clear194 | 0
@@ -58354,7 +58354,7 @@ if_else141:
 	bf_clear199 = bf_lshr198 & 1
 	bf_cast200 = (bf_clear199 & 1) != 0
 	v240 = *data142
-	is_missing = &v240.F8
+	is_missing = &(*SubtreeHeapData)(unsafe.Pointer(v240)).F8
 	if bf_cast200 { v241 = 1 } else { v241 = 0 }
 	bf_load201 = *is_missing
 	bf_shl202 = v241 << 9
@@ -58370,7 +58370,7 @@ if_else141:
 	bf_clear210 = bf_lshr209 & 1
 	bf_cast211 = (bf_clear210 & 1) != 0
 	v243 = *data142
-	is_keyword = &v243.F8
+	is_keyword = &(*SubtreeHeapData)(unsafe.Pointer(v243)).F8
 	if bf_cast211 { v244 = 1 } else { v244 = 0 }
 	bf_load212 = *is_keyword
 	bf_shl213 = v244 << 10
@@ -58380,7 +58380,7 @@ if_else141:
 	bf_result_cast216 = byte(v244)
 	tobool217 = (bf_result_cast216 & 1) != 0
 	v245 = *data142
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(result))
+	ptr = (*uintptr)(unsafe.Pointer(result))
 	*ptr = v245
 	goto if_end218
 
@@ -58388,15 +58388,15 @@ if_end218:
 	goto if_end224
 
 if_else219:
-	ptr220 = (**SubtreeHeapData)(unsafe.Pointer(result))
+	ptr220 = (*uintptr)(unsafe.Pointer(result))
 	v246 = *ptr220
-	padding221 = &v246.F1
+	padding221 = &(*SubtreeHeapData)(unsafe.Pointer(v246)).F1
 	v247 = (*byte)(unsafe.Pointer(padding221))
 	v248 = (*byte)(unsafe.Pointer(padding))
 	libc.Memmove(v247, v248, int64(12))
-	ptr222 = (**SubtreeHeapData)(unsafe.Pointer(result))
+	ptr222 = (*uintptr)(unsafe.Pointer(result))
 	v249 = *ptr222
-	size223 = &v249.F2
+	size223 = &(*SubtreeHeapData)(unsafe.Pointer(v249)).F2
 	v250 = (*byte)(unsafe.Pointer(size223))
 	v251 = (*byte)(unsafe.Pointer(size42))
 	libc.Memmove(v250, v251, int64(12))
@@ -58459,14 +58459,14 @@ cond_true:
 cond_false:
 	tree243 = &entry9.F0
 	v264 = *tree243
-	ptr244 = (**SubtreeHeapData)(unsafe.Pointer(v264))
+	ptr244 = (*uintptr)(unsafe.Pointer(v264))
 	v265 = *ptr244
 	v266 = (*Subtree)(unsafe.Pointer(v265))
 	tree245 = &entry9.F0
 	v267 = *tree245
-	ptr246 = (**SubtreeHeapData)(unsafe.Pointer(v267))
+	ptr246 = (*uintptr)(unsafe.Pointer(v267))
 	v268 = *ptr246
-	child_count247 = &v268.F5
+	child_count247 = &(*SubtreeHeapData)(unsafe.Pointer(v268)).F5
 	v269 = *child_count247
 	idx_ext = int64(uint64(uint32(v269)))
 	idx_neg = int64(0) - idx_ext
@@ -59060,15 +59060,15 @@ _return:
 
 func ts_subtree_set_has_changes(self *MutableSubtree) {
 	var self_addr **MutableSubtree
-	var ptr **SubtreeHeapData
 	var v0, v2, v4 *MutableSubtree
-	var v5 *SubtreeHeapData
 	var data, data1 *SubtreeInlineData
 	var v1, v3 *byte
 	var has_changes *int16
+	var ptr *uintptr
 	var bf_cast bool
 	var bf_load, bf_clear, bf_load2, bf_clear3, bf_set byte
 	var bf_load4, bf_clear5, bf_set6 int16
+	var v5 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self_addr, v0, data, v1, bf_load, bf_clear, bf_cast, v2, data1, v3, bf_load2, bf_clear3, bf_set, v4, ptr, v5, has_changes, bf_load4, bf_clear5, bf_set6
 
@@ -59098,9 +59098,9 @@ if_then:
 
 if_else:
 	v4 = *self_addr
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(v4))
+	ptr = (*uintptr)(unsafe.Pointer(v4))
 	v5 = *ptr
-	has_changes = &v5.F8
+	has_changes = &(*SubtreeHeapData)(unsafe.Pointer(v5)).F8
 	bf_load4 = *has_changes
 	bf_clear5 = bf_load4 & -33
 	bf_set6 = bf_clear5 | 32
@@ -59110,17 +59110,17 @@ if_else:
 if_end:
 }
 
-func ts_subtree_last_external_token(tree_coerce *SubtreeHeapData) *SubtreeHeapData {
-	var coerce_dive, coerce_dive1, ptr, ptr2, ptr3, ptr6, ptr7, coerce_dive9, coerce_dive13 **SubtreeHeapData
+func ts_subtree_last_external_token(tree_coerce uintptr) uintptr {
 	var retval, tree, child, v8, add_ptr, cond, arrayidx *Subtree
-	var v0, v1, v3, v7, v9, v14, v20 *SubtreeHeapData
 	var data *SubtreeInlineData
 	var v6, v12, v13, v15, v16, v18, v19 *byte
 	var i, child_count, child_count4, child_count8 *int32
+	var coerce_dive, coerce_dive1, ptr, ptr2, ptr3, ptr6, ptr7, coerce_dive9, coerce_dive13 *uintptr
 	var call, cmp, cmp5, bf_cast, call10 bool
 	var bf_load, bf_clear byte
 	var v2, v4, sub, v5, add, v10, v11, v17, dec int32
 	var idx_ext, idx_neg, idxprom int64
+	var v0, v1, v3, v7, v9, v14, v20 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, tree, i, child, coerce_dive, coerce_dive1, v0, call, ptr, ptr2, v1, child_count, v2, cmp, ptr3, v3, child_count4, v4, sub, v5, add, cmp5, data, v6, bf_load, bf_clear, bf_cast, ptr6, v7, v8, ptr7, v9, child_count8, v10, idx_ext, idx_neg, add_ptr, cond, v11, idxprom, arrayidx, v12, v13, coerce_dive9, v14, call10, v15, v16, v17, dec, v18, v19, coerce_dive13, v20
 
@@ -59140,17 +59140,17 @@ func ts_subtree_last_external_token(tree_coerce *SubtreeHeapData) *SubtreeHeapDa
 	}
 
 if_then:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(retval))
-	*ptr = nil
+	ptr = (*uintptr)(unsafe.Pointer(retval))
+	*ptr = 0
 	goto _return
 
 if_end:
 	goto while_cond
 
 while_cond:
-	ptr2 = (**SubtreeHeapData)(unsafe.Pointer(tree))
+	ptr2 = (*uintptr)(unsafe.Pointer(tree))
 	v1 = *ptr2
-	child_count = &v1.F5
+	child_count = &(*SubtreeHeapData)(unsafe.Pointer(v1)).F5
 	v2 = *child_count
 	cmp = uint32(v2) > 0
 	if cmp {
@@ -59160,9 +59160,9 @@ while_cond:
 	}
 
 while_body:
-	ptr3 = (**SubtreeHeapData)(unsafe.Pointer(tree))
+	ptr3 = (*uintptr)(unsafe.Pointer(tree))
 	v3 = *ptr3
-	child_count4 = &v3.F5
+	child_count4 = &(*SubtreeHeapData)(unsafe.Pointer(v3)).F5
 	v4 = *child_count4
 	sub = v4 - 1
 	*i = sub
@@ -59195,12 +59195,12 @@ cond_true:
 	goto cond_end
 
 cond_false:
-	ptr6 = (**SubtreeHeapData)(unsafe.Pointer(tree))
+	ptr6 = (*uintptr)(unsafe.Pointer(tree))
 	v7 = *ptr6
 	v8 = (*Subtree)(unsafe.Pointer(v7))
-	ptr7 = (**SubtreeHeapData)(unsafe.Pointer(tree))
+	ptr7 = (*uintptr)(unsafe.Pointer(tree))
 	v9 = *ptr7
-	child_count8 = &v9.F5
+	child_count8 = &(*SubtreeHeapData)(unsafe.Pointer(v9)).F5
 	v10 = *child_count8
 	idx_ext = int64(uint64(uint32(v10)))
 	idx_neg = int64(0) - idx_ext
@@ -59254,9 +59254,8 @@ _return:
 	return v20
 }
 
-func ts_subtree__write_to_string(self_coerce *SubtreeHeapData, _string *byte, limit int64, language *TSLanguage, include_all bool, root_alias_symbol int16, root_alias_is_named bool, root_field_name *byte) int64 {
+func ts_subtree__write_to_string(self_coerce uintptr, _string *byte, limit int64, language *TSLanguage, include_all bool, root_alias_symbol int16, root_alias_is_named bool, root_field_name *byte) int64 {
 	var writer, field_names ***byte
-	var coerce_dive, ptr, coerce_dive47, coerce_dive56, coerce_dive59, coerce_dive83, coerce_dive86, ptr91, ptr99, coerce_dive110, coerce_dive117, coerce_dive127, coerce_dive157, coerce_dive165, coerce_dive174, coerce_dive188, ptr192, ptr196, coerce_dive208, ptr216, ptr217, coerce_dive237 **SubtreeHeapData
 	var _map, field_map, field_map_end, field_map199, field_map_end200, field_map272, field_map_end273 **TSFieldMapEntry
 	var language_addr **TSLanguage
 	var frame, contents, contents2, contents3, contents13, contents37, contents298, contents302, contents303, contents317, contents323, contents326, contents328 **WriteToStringFrame
@@ -59264,7 +59263,6 @@ func ts_subtree__write_to_string(self_coerce *SubtreeHeapData, _string *byte, li
 	var alias_sequence, alias_sequence195, alias_sequence241, alias_sequence244 **int16
 	var size92 *Length
 	var self, node, child, subtree, subtree18, v166, add_ptr219, cond221, arrayidx224, subtree225 *Subtree
-	var v25, v49, v54, v55, v73, v74, v75, v84, v92, v95, v102, v124, v127, v133, v144, v146, v152, v163, v165, v167, v176 *SubtreeHeapData
 	var data *SubtreeInlineData
 	var v195, v196, v198, v199, v201, v207, v210, incdec_ptr *TSFieldMapEntry
 	var v93, v125, v145, v151, v185, v205 *TSLanguage
@@ -59287,12 +59285,14 @@ func ts_subtree__write_to_string(self_coerce *SubtreeHeapData, _string *byte, li
 	F5 int16
 	F6 anon_0
 }
+	var coerce_dive, ptr, coerce_dive47, coerce_dive56, coerce_dive59, coerce_dive83, coerce_dive86, ptr91, ptr99, coerce_dive110, coerce_dive117, coerce_dive127, coerce_dive157, coerce_dive165, coerce_dive174, coerce_dive188, ptr192, ptr196, coerce_dive208, ptr216, ptr217, coerce_dive237 *uintptr
 	var cmp, tobool, cmp6, tobool9, cmp12, tobool19, tobool22, tobool26, tobool43, tobool46, call48, tobool50, tobool53, call57, call60, v56, tobool64, v57, tobool66, tobool69, tobool75, call84, cmp88, cmp93, tobool105, call118, tobool124, call128, tobool147, tobool152, cmp167, call175, tobool190, tobool202, cmp210, bf_cast, call238, tobool242, tobool254, tobool257, tobool262, tobool265, cmp274, tobool276, cmp281, tobool288, tobool311, tobool324 bool
 	var frombool, frombool1, v12, frombool5, frombool7, v27, v47, v48, v53, frombool65, v58, v60, v101, v119, v158, frombool204, bf_load, bf_clear, v189, frombool263, v191, v200, v202, v212, frombool290, v227 byte
 	var v235 func(*byte)
 	var v11, v51, v89, v91, call111, conv115, v94, v121, v123, call158, conv162, v126, v149, v155, v183, conv252, v184, v186, v208, v211 int16
 	var v5, v8, inc, v17, v18, sub, v19, v21, sub15, call24, call29, call34, v45, dec, conv, conv54, land_ext, cond63, call71, call78, call87, v76, call96, v86, conv104, conv108, conv112, cond114, call120, call131, call135, call140, conv151, conv155, conv159, cond161, call166, call170, call177, call181, call189, conv193, conv198, v162, call209, v168, v170, v182, conv248, cond251, conv253, call256, conv258, cond261, conv279, v204, v215, inc293, v217, inc296, v220, v223, inc305, call313, v233, dec319 int32
 	var v1, idxprom, idxprom16, v30, idx_ext, v36, idx_ext30, v42, idx_ext35, idxprom39, v63, idx_ext72, v69, idx_ext79, v79, idx_ext97, v83, call100, v98, idx_ext121, v105, idx_ext132, v110, idx_ext136, v115, idx_ext141, v130, idx_ext171, v136, idx_ext178, v141, idx_ext182, idx_ext218, idx_neg, idxprom223, idxprom246, idxprom284, idxprom306, v230, idx_ext314, idxprom320, sub_ptr_lhs_cast, sub_ptr_rhs_cast, sub_ptr_sub int64
+	var v25, v49, v54, v55, v73, v74, v75, v84, v92, v95, v102, v124, v127, v133, v144, v146, v152, v163, v165, v167, v176 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self, string_addr, limit_addr, language_addr, include_all_addr, root_alias_symbol_addr, root_alias_is_named_addr, root_field_name_addr, cursor, writer, stack, _compoundliteral, frame, node, is_visible45, symbol, symbol_name, symbol149, symbol_name163, child, child_frame, subtree_alias_symbol, subtree_alias_is_named, coerce, tmp_coerce, child_field_name, _map, coerce_dive, frombool, frombool1, v0, v1, cmp, cond, v2, contents, v3, v4, size, v5, capacity, call, v6, contents2, contents3, v7, size4, v8, inc, idxprom, arrayidx, subtree, v9, v10, alias_symbol, v11, alias_is_named, v12, tobool, frombool5, field_name, v13, is_root, v14, cmp6, frombool7, pre_written, is_visible, child_index, structural_child_index, alias_sequence, field_map, field_map_end, v15, v16, size8, v17, tobool9, size10, v18, sub, size11, v19, cmp12, contents13, v20, size14, v21, sub15, idxprom16, arrayidx17, v22, subtree18, v23, v24, ptr, v25, tobool19, v26, is_root21, v27, tobool22, v28, v29, v30, call24, v31, idx_ext, add_ptr, v32, field_name25, v33, tobool26, v34, v35, v36, v37, field_name28, v38, call29, v39, idx_ext30, add_ptr31, v40, v41, v42, call34, v43, idx_ext35, add_ptr36, contents37, v44, size38, v45, dec, idxprom39, arrayidx40, v46, pre_written42, v47, tobool43, v48, tobool46, coerce_dive47, v49, call48, v50, alias_symbol49, v51, conv, tobool50, v52, alias_is_named52, v53, tobool53, conv54, coerce_dive56, v54, call57, coerce_dive59, v55, call60, v56, land_ext, cond63, tobool64, v57, frombool65, v58, tobool66, v59, is_root68, v60, tobool69, v61, v62, v63, call71, v64, idx_ext72, add_ptr73, v65, field_name74, v66, tobool75, v67, v68, v69, v70, field_name77, v71, call78, v72, idx_ext79, add_ptr80, coerce_dive83, v73, call84, coerce_dive86, v74, call87, cmp88, ptr91, v75, size92, bytes, v76, cmp93, v77, v78, v79, call96, v80, idx_ext97, add_ptr98, v81, v82, v83, ptr99, v84, v85, lookahead_char, v86, call100, v87, add_ptr101, v88, alias_symbol103, v89, conv104, tobool105, v90, alias_symbol107, v91, conv108, coerce_dive110, v92, call111, conv112, cond114, conv115, v93, v94, call116, coerce_dive117, v95, call118, v96, v97, v98, call120, v99, idx_ext121, add_ptr122, v100, alias_is_named123, v101, tobool124, coerce_dive127, v102, call128, v103, v104, v105, v106, call131, v107, idx_ext132, add_ptr133, v108, v109, v110, v111, call135, v112, idx_ext136, add_ptr137, v113, v114, v115, v116, call140, v117, idx_ext141, add_ptr142, v118, is_root146, v119, tobool147, v120, alias_symbol150, v121, conv151, tobool152, v122, alias_symbol154, v123, conv155, coerce_dive157, v124, call158, conv159, cond161, conv162, v125, v126, call164, coerce_dive165, v127, call166, cmp167, v128, v129, v130, v131, call170, v132, idx_ext171, add_ptr172, coerce_dive174, v133, call175, v134, v135, v136, v137, call177, v138, idx_ext178, add_ptr179, v139, v140, v141, v142, call181, v143, idx_ext182, add_ptr183, coerce_dive188, v144, call189, tobool190, v145, ptr192, v146, v147, v148, production_id, v149, conv193, call194, v150, alias_sequence195, v151, ptr196, v152, v153, v154, production_id197, v155, conv198, v156, field_map199, v157, field_map_end200, v158, tobool202, v159, is_visible203, frombool204, v160, pre_written205, v161, child_index207, v162, coerce_dive208, v163, call209, cmp210, data, v164, bf_load, bf_clear, bf_cast, ptr216, v165, v166, ptr217, v167, child_count, v168, idx_ext218, idx_neg, add_ptr219, cond221, v169, child_index222, v170, idxprom223, arrayidx224, v171, v172, v173, subtree225, v174, v175, coerce_dive237, v176, call238, v177, alias_sequence241, v178, tobool242, v179, alias_sequence244, v180, v181, structural_child_index245, v182, idxprom246, arrayidx247, v183, conv248, cond251, conv252, v184, conv253, tobool254, v185, v186, call256, v187, v188, named, v189, tobool257, conv258, cond261, tobool262, frombool263, v190, is_visible264, v191, tobool265, v192, field_name269, v193, cond271, v194, field_map272, v195, v196, v197, field_map_end273, v198, cmp274, v199, inherited, v200, tobool276, v201, child_index278, v202, conv279, v203, structural_child_index280, v204, cmp281, v205, field_names, v206, v207, field_id, v208, idxprom284, arrayidx285, v209, v210, incdec_ptr, v211, alias_symbol287, v212, tobool288, alias_is_named289, frombool290, v213, field_name291, v214, structural_child_index292, v215, inc293, v216, child_index295, v217, inc296, contents298, v218, v219, size299, v220, capacity300, call301, v221, contents302, contents303, v222, size304, v223, inc305, idxprom306, arrayidx307, v224, v225, v226, is_visible310, v227, tobool311, v228, v229, v230, call313, v231, idx_ext314, add_ptr315, contents317, v232, size318, v233, dec319, idxprom320, arrayidx321, contents323, v234, tobool324, v235, contents326, v236, v237, contents328, size329, capacity330, v238, v239, sub_ptr_lhs_cast, sub_ptr_rhs_cast, sub_ptr_sub
 
@@ -59463,9 +59463,9 @@ if_end:
 	v23 = (*byte)(unsafe.Pointer(node))
 	v24 = (*byte)(unsafe.Pointer(subtree18))
 	libc.Memmove(v23, v24, int64(8))
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(node))
+	ptr = (*uintptr)(unsafe.Pointer(node))
 	v25 = *ptr
-	tobool19 = v25 != nil
+	tobool19 = v25 != 0
 	if tobool19 {
 		goto if_end41
 	} else {
@@ -59699,9 +59699,9 @@ land_lhs_true:
 	}
 
 land_lhs_true90:
-	ptr91 = (**SubtreeHeapData)(unsafe.Pointer(node))
+	ptr91 = (*uintptr)(unsafe.Pointer(node))
 	v75 = *ptr91
-	size92 = &v75.F2
+	size92 = &(*SubtreeHeapData)(unsafe.Pointer(v75)).F2
 	bytes = &size92.F0
 	v76 = *bytes
 	cmp93 = uint32(v76) > 0
@@ -59723,9 +59723,9 @@ if_then95:
 	v81 = *writer
 	v82 = *v81
 	v83 = *limit_addr
-	ptr99 = (**SubtreeHeapData)(unsafe.Pointer(node))
+	ptr99 = (*uintptr)(unsafe.Pointer(node))
 	v84 = *ptr99
-	v85 = &v84.F9
+	v85 = &(*SubtreeHeapData)(unsafe.Pointer(v84)).F9
 	lookahead_char = (*int32)(unsafe.Pointer(v85))
 	v86 = *lookahead_char
 	call100 = ts_subtree__write_char_to_string(v82, v83, v86)
@@ -59976,9 +59976,9 @@ if_end187:
 
 if_then191:
 	v145 = *language_addr
-	ptr192 = (**SubtreeHeapData)(unsafe.Pointer(node))
+	ptr192 = (*uintptr)(unsafe.Pointer(node))
 	v146 = *ptr192
-	v147 = &v146.F9
+	v147 = &(*SubtreeHeapData)(unsafe.Pointer(v146)).F9
 	v148 = (*struct {
 	F0 int32
 	F1 int32
@@ -59996,9 +59996,9 @@ if_then191:
 	alias_sequence195 = &v150.F9
 	*alias_sequence195 = call194
 	v151 = *language_addr
-	ptr196 = (**SubtreeHeapData)(unsafe.Pointer(node))
+	ptr196 = (*uintptr)(unsafe.Pointer(node))
 	v152 = *ptr196
-	v153 = &v152.F9
+	v153 = &(*SubtreeHeapData)(unsafe.Pointer(v152)).F9
 	v154 = (*struct {
 	F0 int32
 	F1 int32
@@ -60061,12 +60061,12 @@ cond_true214:
 	goto cond_end220
 
 cond_false215:
-	ptr216 = (**SubtreeHeapData)(unsafe.Pointer(node))
+	ptr216 = (*uintptr)(unsafe.Pointer(node))
 	v165 = *ptr216
 	v166 = (*Subtree)(unsafe.Pointer(v165))
-	ptr217 = (**SubtreeHeapData)(unsafe.Pointer(node))
+	ptr217 = (*uintptr)(unsafe.Pointer(node))
 	v167 = *ptr217
-	child_count = &v167.F5
+	child_count = &(*SubtreeHeapData)(unsafe.Pointer(v167)).F5
 	v168 = *child_count
 	idx_ext218 = int64(uint64(uint32(v168)))
 	idx_neg = int64(0) - idx_ext218
@@ -60382,12 +60382,10 @@ do_end331:
 
 func ts_subtree__print_dot_graph(self *Subtree, start_offset int32, language *TSLanguage, alias_symbol int16, f *os.File) {
 	var self_addr, child **Subtree
-	var coerce_dive, coerce_dive4, coerce_dive8, coerce_dive12, coerce_dive17, coerce_dive22, coerce_dive25, coerce_dive27, coerce_dive30, coerce_dive33, coerce_dive35, coerce_dive37, coerce_dive40, coerce_dive43, ptr, ptr51, coerce_dive57, coerce_dive60, ptr67, ptr68, coerce_dive71, coerce_dive80 **SubtreeHeapData
 	var language_addr **TSLanguage
 	var alias_sequences **int16
 	var f_addr **os.File
 	var v0, v6, v9, v15, v18, v21, v27, v29, v31, v33, v35, v37, v39, v41, v43, v45, v50, v58, v60, v64, v66, v68, v69, add_ptr, cond70, arrayidx, v73, v81, v87, v89, v92 *Subtree
-	var v1, v7, v16, v19, v22, v28, v30, v32, v34, v36, v38, v40, v42, v44, v46, v51, v59, v61, v67, v70, v74, v93 *SubtreeHeapData
 	var data *SubtreeInlineData
 	var v11, v56, v76, v83 *TSLanguage
 	var v10, v65, v88, v90 *byte
@@ -60397,11 +60395,13 @@ func ts_subtree__print_dot_graph(self *Subtree, start_offset int32, language *TS
 	var v47, v52 *struct {
 	F0 ExternalScannerState
 }
+	var coerce_dive, coerce_dive4, coerce_dive8, coerce_dive12, coerce_dive17, coerce_dive22, coerce_dive25, coerce_dive27, coerce_dive30, coerce_dive33, coerce_dive35, coerce_dive37, coerce_dive40, coerce_dive43, ptr, ptr51, coerce_dive57, coerce_dive60, ptr67, ptr68, coerce_dive71, coerce_dive80 *uintptr
 	var tobool, cmp, call13, call18, call28, call31, call41, cmp45, cmp48, cmp62, bf_cast, call72, tobool74 bool
 	var bf_load, bf_clear byte
 	var call, v2, v3, v4, conv3, v13, call23, v57, call58, v79, v84 int16
 	var conv, conv1, conv2, cond, v5, call5, add, call6, call7, call9, call11, call15, call20, v25, v26, conv24, call26, conv29, conv32, call34, call36, call38, call39, call44, v48, v53, call53, call55, v55, conv56, conv59, mul, call61, v62, v63, v71, v72, v75, v78, v80, inc, v82, v91, call79, call81, v94, add82, v95, inc83 int32
 	var idx_ext, idx_neg, idxprom, idxprom76 int64
+	var v1, v7, v16, v19, v22, v28, v30, v32, v34, v36, v38, v40, v42, v44, v46, v51, v59, v61, v67, v70, v74, v93 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self_addr, start_offset_addr, language_addr, alias_symbol_addr, f_addr, subtree_symbol, symbol, end_offset, child_start_offset, child_info_offset, i, n, child, subtree_alias_symbol, v0, coerce_dive, v1, call, v2, conv, tobool, v3, conv1, v4, conv2, cond, conv3, v5, v6, coerce_dive4, v7, call5, add, v8, v9, v10, call6, v11, v12, v13, v14, call7, v15, coerce_dive8, v16, call9, cmp, v17, call11, v18, coerce_dive12, v19, call13, v20, call15, v21, coerce_dive17, v22, call18, v23, call20, v24, v25, v26, v27, coerce_dive22, v28, call23, conv24, v29, coerce_dive25, v30, call26, v31, coerce_dive27, v32, call28, conv29, v33, coerce_dive30, v34, call31, conv32, v35, coerce_dive33, v36, call34, v37, coerce_dive35, v38, call36, v39, coerce_dive37, v40, call38, call39, v41, coerce_dive40, v42, call41, v43, coerce_dive43, v44, call44, cmp45, v45, ptr, v46, v47, lookahead_char, v48, cmp48, v49, v50, ptr51, v51, v52, lookahead_char52, v53, call53, v54, call55, v55, v56, max_alias_sequence_length, v57, conv56, v58, coerce_dive57, v59, call58, conv59, mul, v60, coerce_dive60, v61, call61, v62, v63, cmp62, v64, data, v65, bf_load, bf_clear, bf_cast, v66, ptr67, v67, v68, v69, ptr68, v70, child_count, v71, idx_ext, idx_neg, add_ptr, cond70, v72, idxprom, arrayidx, v73, coerce_dive71, v74, call72, v75, tobool74, v76, alias_sequences, v77, v78, idxprom76, arrayidx77, v79, v80, inc, v81, v82, v83, v84, v85, v86, v87, v88, v89, v90, v91, call79, v92, coerce_dive80, v93, call81, v94, add82, v95, inc83
 
@@ -60578,9 +60578,9 @@ land_lhs_true:
 
 land_lhs_true47:
 	v45 = *self_addr
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(v45))
+	ptr = (*uintptr)(unsafe.Pointer(v45))
 	v46 = *ptr
-	v47 = &v46.F9
+	v47 = &(*SubtreeHeapData)(unsafe.Pointer(v46)).F9
 	lookahead_char = (*int32)(unsafe.Pointer(v47))
 	v48 = *lookahead_char
 	cmp48 = v48 != 0
@@ -60593,9 +60593,9 @@ land_lhs_true47:
 if_then50:
 	v49 = *f_addr
 	v50 = *self_addr
-	ptr51 = (**SubtreeHeapData)(unsafe.Pointer(v50))
+	ptr51 = (*uintptr)(unsafe.Pointer(v50))
 	v51 = *ptr51
-	v52 = &v51.F9
+	v52 = &(*SubtreeHeapData)(unsafe.Pointer(v51)).F9
 	lookahead_char52 = (*int32)(unsafe.Pointer(v52))
 	v53 = *lookahead_char52
 	call53 = libc.Fprintf(v49, &_str_108[int64(0)], v53)
@@ -60654,13 +60654,13 @@ cond_true65:
 
 cond_false66:
 	v66 = *self_addr
-	ptr67 = (**SubtreeHeapData)(unsafe.Pointer(v66))
+	ptr67 = (*uintptr)(unsafe.Pointer(v66))
 	v67 = *ptr67
 	v68 = (*Subtree)(unsafe.Pointer(v67))
 	v69 = *self_addr
-	ptr68 = (**SubtreeHeapData)(unsafe.Pointer(v69))
+	ptr68 = (*uintptr)(unsafe.Pointer(v69))
 	v70 = *ptr68
-	child_count = &v70.F5
+	child_count = &(*SubtreeHeapData)(unsafe.Pointer(v70)).F5
 	v71 = *child_count
 	idx_ext = int64(uint64(uint32(v71)))
 	idx_neg = int64(0) - idx_ext
@@ -60739,10 +60739,8 @@ for_inc:
 for_end:
 }
 
-func ts_subtree_production_id(self_coerce *SubtreeHeapData) int16 {
-	var coerce_dive, coerce_dive1, ptr **SubtreeHeapData
+func ts_subtree_production_id(self_coerce uintptr) int16 {
 	var self *Subtree
-	var v0, v1 *SubtreeHeapData
 	var retval, production_id *int16
 	var v2 *struct {
 	F0 ExternalScannerState
@@ -60756,9 +60754,11 @@ func ts_subtree_production_id(self_coerce *SubtreeHeapData) int16 {
 	F5 int16
 	F6 anon_0
 }
+	var coerce_dive, coerce_dive1, ptr *uintptr
 	var cmp bool
 	var v4, v5 int16
 	var call int32
+	var v0, v1 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, self, coerce_dive, coerce_dive1, v0, call, cmp, ptr, v1, v2, v3, production_id, v4, v5
 
@@ -60777,9 +60777,9 @@ func ts_subtree_production_id(self_coerce *SubtreeHeapData) int16 {
 	}
 
 if_then:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr = (*uintptr)(unsafe.Pointer(self))
 	v1 = *ptr
-	v2 = &v1.F9
+	v2 = &(*SubtreeHeapData)(unsafe.Pointer(v1)).F9
 	v3 = (*struct {
 	F0 int32
 	F1 int32
@@ -60803,12 +60803,10 @@ _return:
 	return v5
 }
 
-func ts_subtree_external_scanner_state(self_coerce *SubtreeHeapData) *ExternalScannerState {
+func ts_subtree_external_scanner_state(self_coerce uintptr) *ExternalScannerState {
 	var retval **ExternalScannerState
-	var coerce_dive, ptr, ptr2, ptr7, ptr8 **SubtreeHeapData
 	var external_scanner_state, v7 *ExternalScannerState
 	var self *Subtree
-	var v0, v2, v3, v5 *SubtreeHeapData
 	var data *SubtreeInlineData
 	var v1 *byte
 	var has_external_tokens *int16
@@ -60816,10 +60814,12 @@ func ts_subtree_external_scanner_state(self_coerce *SubtreeHeapData) *ExternalSc
 	var v6 *struct {
 	F0 ExternalScannerState
 }
+	var coerce_dive, ptr, ptr2, ptr7, ptr8 *uintptr
 	var tobool, bf_cast, bf_cast5, cmp bool
 	var bf_load, bf_clear byte
 	var bf_load3, bf_lshr, bf_clear4 int16
 	var v4 int32
+	var v0, v2, v3, v5 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, self, coerce_dive, ptr, v0, tobool, data, v1, bf_load, bf_clear, bf_cast, ptr2, v2, has_external_tokens, bf_load3, bf_lshr, bf_clear4, bf_cast5, ptr7, v3, child_count, v4, cmp, ptr8, v5, v6, external_scanner_state, v7
 
@@ -60827,9 +60827,9 @@ func ts_subtree_external_scanner_state(self_coerce *SubtreeHeapData) *ExternalSc
 	self = new(Subtree)
 	coerce_dive = &self.F0
 	*coerce_dive = self_coerce
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr = (*uintptr)(unsafe.Pointer(self))
 	v0 = *ptr
-	tobool = v0 != nil
+	tobool = v0 != 0
 	if tobool {
 		goto land_lhs_true
 	} else {
@@ -60849,9 +60849,9 @@ land_lhs_true:
 	}
 
 land_lhs_true1:
-	ptr2 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr2 = (*uintptr)(unsafe.Pointer(self))
 	v2 = *ptr2
-	has_external_tokens = &v2.F8
+	has_external_tokens = &(*SubtreeHeapData)(unsafe.Pointer(v2)).F8
 	bf_load3 = *has_external_tokens
 	bf_lshr = int16(uint16(bf_load3) >> 6)
 	bf_clear4 = bf_lshr & 1
@@ -60863,9 +60863,9 @@ land_lhs_true1:
 	}
 
 land_lhs_true6:
-	ptr7 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr7 = (*uintptr)(unsafe.Pointer(self))
 	v3 = *ptr7
-	child_count = &v3.F5
+	child_count = &(*SubtreeHeapData)(unsafe.Pointer(v3)).F5
 	v4 = *child_count
 	cmp = v4 == 0
 	if cmp {
@@ -60875,9 +60875,9 @@ land_lhs_true6:
 	}
 
 if_then:
-	ptr8 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr8 = (*uintptr)(unsafe.Pointer(self))
 	v5 = *ptr8
-	v6 = &v5.F9
+	v6 = &(*SubtreeHeapData)(unsafe.Pointer(v5)).F9
 	external_scanner_state = (*ExternalScannerState)(unsafe.Pointer(v6))
 	*retval = external_scanner_state
 	goto _return
@@ -61013,23 +61013,23 @@ do_end:
 
 func ts_tree_cursor_goto_first_child_internal(_self *TSTreeCursor) int32 {
 	var subtree **Subtree
-	var coerce_dive **SubtreeHeapData
 	var _self_addr **TSTreeCursor
 	var self **TreeCursor
 	var contents, contents6, contents8, contents15, contents22, contents24 **TreeCursorEntry
 	var iterator *CursorChildIterator
 	var v18 *Subtree
-	var v19 *SubtreeHeapData
 	var v0 *TSTreeCursor
 	var v1, v2, v4, v7, v9, v11, v12, v14, v20, v23, v25, v27, v28, v30 *TreeCursor
 	var entry1, v5, v10, v13, arrayidx, v21, v26, v29, arrayidx29 *TreeCursorEntry
 	var stack, stack2, stack3, stack5, stack7, stack9, stack14, stack16, stack18, stack21, stack23, stack25 *anon_2
 	var visible, v6, call4, v16, v17, v22, call20, v32, v33 *byte
 	var retval, size, capacity, size10, size17, capacity19, size26 *int32
+	var coerce_dive *uintptr
 	var call, tobool, cmp bool
 	var v3 byte
 	var v8, v15, inc, call11, v24, v31, inc27, v34 int32
 	var idxprom, idxprom28 int64
+	var v19 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, _self_addr, self, visible, entry1, iterator, v0, v1, v2, call, v3, tobool, v4, stack, contents, v5, v6, v7, stack2, size, v8, v9, stack3, capacity, call4, v10, v11, stack5, contents6, v12, stack7, contents8, v13, v14, stack9, size10, v15, inc, idxprom, arrayidx, v16, v17, subtree, v18, coerce_dive, v19, call11, cmp, v20, stack14, contents15, v21, v22, v23, stack16, size17, v24, v25, stack18, capacity19, call20, v26, v27, stack21, contents22, v28, stack23, contents24, v29, v30, stack25, size26, v31, inc27, idxprom28, arrayidx29, v32, v33, v34
 
@@ -61177,7 +61177,6 @@ _return:
 
 func ts_tree_cursor_iterate_children(agg_result *CursorChildIterator, self *TreeCursor) {
 	var subtree, subtree14, subtree26 **Subtree
-	var coerce_dive, ptr, ptr15 **SubtreeHeapData
 	var language **TSLanguage
 	var tree, tree9, tree13, tree27, tree28 **TSTree
 	var self_addr **TreeCursor
@@ -61185,7 +61184,6 @@ func ts_tree_cursor_iterate_children(agg_result *CursorChildIterator, self *Tree
 	var alias_sequence12, alias_sequence, alias_sequence34 **int16
 	var position, position29, position30 *Length
 	var v9, parent, v19, parent25, v31 *Subtree
-	var v10, v20 *SubtreeHeapData
 	var v17 *TSLanguage
 	var v12, v16, v35 *TSTree
 	var v0, v2, v4, v6, v11, v15, v26, v27, v34 *TreeCursor
@@ -61210,6 +61208,7 @@ func ts_tree_cursor_iterate_children(agg_result *CursorChildIterator, self *Tree
 	F0 int64
 	F1 int32
 }
+	var coerce_dive, ptr, ptr15 *uintptr
 	var cmp, cmp7, call22 bool
 	var v23 int16
 	var v1, sub, v3, v7, sub6, call, conv, v25, v28, sub21, v29, add, v39 int32
@@ -61218,6 +61217,7 @@ func ts_tree_cursor_iterate_children(agg_result *CursorChildIterator, self *Tree
 	F0 int64
 	F1 int32
 }
+	var v10, v20 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self_addr, last_entry, tmp_coerce, alias_sequence12, descendant_index17, v0, stack, size, v1, sub, v2, stack1, size2, v3, cmp, v4, stack3, contents, v5, v6, stack4, size5, v7, sub6, idxprom, arrayidx, v8, subtree, v9, coerce_dive, v10, call, cmp7, parent, ptr, tree, v11, tree9, v12, position, call10, v13, v14, child_index, structural_child_index, descendant_index, alias_sequence, v15, tree13, v16, language, v17, v18, subtree14, v19, ptr15, v20, v21, v22, production_id, v23, conv, call16, v24, descendant_index18, v25, v26, v27, stack19, size20, v28, sub21, call22, v29, add, parent25, v30, subtree26, v31, v32, v33, tree27, v34, tree28, v35, position29, v36, position30, v37, v38, child_index31, structural_child_index32, descendant_index33, v39, alias_sequence34, v40
 
@@ -61281,8 +61281,8 @@ if_end:
 
 if_then8:
 	parent = &agg_result.F0
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(parent))
-	*ptr = nil
+	ptr = (*uintptr)(unsafe.Pointer(parent))
+	*ptr = 0
 	tree = &agg_result.F1
 	v11 = *self_addr
 	tree9 = &v11.F0
@@ -61313,9 +61313,9 @@ if_end11:
 	v18 = *last_entry
 	subtree14 = &v18.F0
 	v19 = *subtree14
-	ptr15 = (**SubtreeHeapData)(unsafe.Pointer(v19))
+	ptr15 = (*uintptr)(unsafe.Pointer(v19))
 	v20 = *ptr15
-	v21 = &v20.F9
+	v21 = &(*SubtreeHeapData)(unsafe.Pointer(v20)).F9
 	v22 = (*struct {
 	F0 int32
 	F1 int32
@@ -61390,14 +61390,12 @@ _return:
 func ts_tree_cursor_child_iterator_next(self *CursorChildIterator, result *TreeCursorEntry, visible *byte) bool {
 	var self_addr **CursorChildIterator
 	var child, subtree **Subtree
-	var ptr, ptr2, ptr5, ptr7, coerce_dive, coerce_dive15, coerce_dive33, coerce_dive43, ptr51, ptr65, ptr67, coerce_dive81 **SubtreeHeapData
 	var result_addr **TreeCursorEntry
 	var visible_addr **byte
 	var alias_sequence, alias_sequence22 **int16
 	var v0, v2, v4, v7, v9, v12, v15, v19, v22, v24, v26, v36, v38, v40, v45, v49, v53, v55, v56, v77, v79, v81, v84, v86, v89, v92, v96, v97 *CursorChildIterator
 	var tmp, agg_tmp, tmp78, agg_tmp80, position, position10, position41, position42, position77, position79 *Length
 	var next_child, parent, parent1, parent3, parent4, v11, parent6, add_ptr, cond, arrayidx, v18, v30, v33, v47, v57, parent50, parent56, parent64, v88, parent66, add_ptr71, cond73, arrayidx76 *Subtree
-	var v1, v5, v10, v13, v31, v34, v48, v58, v82, v87, v90, v98 *SubtreeHeapData
 	var data, data57 *SubtreeInlineData
 	var _compoundliteral, v17 *TreeCursorEntry
 	var retval *bool
@@ -61409,6 +61407,7 @@ func ts_tree_cursor_child_iterator_next(self *CursorChildIterator, result *TreeC
 	F0 int64
 	F1 int32
 }
+	var ptr, ptr2, ptr5, ptr7, coerce_dive, coerce_dive15, coerce_dive33, coerce_dive43, ptr51, ptr65, ptr67, coerce_dive81 *uintptr
 	var tobool, cmp, bf_cast, call, call16, tobool18, tobool20, tobool26, tobool28, tobool36, cmp53, bf_cast60, v117 bool
 	var bf_load, bf_clear, frombool, frombool17, v35, v44, frombool29, v52, bf_load58, bf_clear59 byte
 	var v42 int16
@@ -61418,6 +61417,7 @@ func ts_tree_cursor_child_iterator_next(self *CursorChildIterator, result *TreeC
 	F0 int64
 	F1 int32
 }
+	var v1, v5, v10, v13, v31, v34, v48, v58, v82, v87, v90, v98 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, self_addr, result_addr, visible_addr, child, _compoundliteral, extra, tmp, agg_tmp, tmp_coerce, position42_coerce, agg_tmp_coerce, tmp_coerce46, next_child, tmp78, agg_tmp80, tmp_coerce83, position79_coerce, agg_tmp80_coerce, tmp_coerce85, v0, parent, ptr, v1, tobool, v2, child_index, v3, v4, parent1, ptr2, v5, child_count, v6, cmp, v7, parent3, data, v8, bf_load, bf_clear, bf_cast, v9, parent4, ptr5, v10, v11, v12, parent6, ptr7, v13, child_count8, v14, idx_ext, idx_neg, add_ptr, cond, v15, child_index9, v16, idxprom, arrayidx, v17, subtree, v18, position, v19, position10, v20, v21, child_index11, v22, child_index12, v23, structural_child_index, v24, structural_child_index13, v25, descendant_index, v26, descendant_index14, v27, v28, v29, v30, coerce_dive, v31, call, v32, frombool, v33, coerce_dive15, v34, call16, frombool17, v35, tobool18, v36, alias_sequence, v37, tobool20, v38, alias_sequence22, v39, v40, structural_child_index23, v41, idxprom24, arrayidx25, v42, conv, v43, v44, tobool26, conv27, or, tobool28, frombool29, v45, structural_child_index31, v46, inc, v47, coerce_dive33, v48, call34, v49, descendant_index35, v50, add, v51, v52, tobool36, v53, descendant_index38, v54, add39, v55, position41, v56, position42, v57, coerce_dive43, v58, call44, v59, v60, v61, v62, v63, v64, v65, v66, v67, v68, v69, v70, v71, v72, call45, v73, v74, v75, v76, v77, child_index47, v78, inc48, v79, child_index49, v80, v81, parent50, ptr51, v82, child_count52, v83, cmp53, v84, parent56, data57, v85, bf_load58, bf_clear59, bf_cast60, v86, parent64, ptr65, v87, v88, v89, parent66, ptr67, v90, child_count68, v91, idx_ext69, idx_neg70, add_ptr71, cond73, v92, child_index74, v93, idxprom75, arrayidx76, v94, v95, v96, position77, v97, position79, coerce_dive81, v98, call82, v99, v100, v101, v102, v103, v104, v105, v106, v107, v108, v109, v110, v111, v112, call84, v113, v114, v115, v116, v117
 
@@ -61470,9 +61470,9 @@ func ts_tree_cursor_child_iterator_next(self *CursorChildIterator, result *TreeC
 	*visible_addr = visible
 	v0 = *self_addr
 	parent = &v0.F0
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(parent))
+	ptr = (*uintptr)(unsafe.Pointer(parent))
 	v1 = *ptr
-	tobool = v1 != nil
+	tobool = v1 != 0
 	if tobool {
 		goto lor_lhs_false
 	} else {
@@ -61485,9 +61485,9 @@ lor_lhs_false:
 	v3 = *child_index
 	v4 = *self_addr
 	parent1 = &v4.F0
-	ptr2 = (**SubtreeHeapData)(unsafe.Pointer(parent1))
+	ptr2 = (*uintptr)(unsafe.Pointer(parent1))
 	v5 = *ptr2
-	child_count = &v5.F5
+	child_count = &(*SubtreeHeapData)(unsafe.Pointer(v5)).F5
 	v6 = *child_count
 	cmp = v3 == v6
 	if cmp {
@@ -61521,14 +61521,14 @@ cond_true:
 cond_false:
 	v9 = *self_addr
 	parent4 = &v9.F0
-	ptr5 = (**SubtreeHeapData)(unsafe.Pointer(parent4))
+	ptr5 = (*uintptr)(unsafe.Pointer(parent4))
 	v10 = *ptr5
 	v11 = (*Subtree)(unsafe.Pointer(v10))
 	v12 = *self_addr
 	parent6 = &v12.F0
-	ptr7 = (**SubtreeHeapData)(unsafe.Pointer(parent6))
+	ptr7 = (*uintptr)(unsafe.Pointer(parent6))
 	v13 = *ptr7
-	child_count8 = &v13.F5
+	child_count8 = &(*SubtreeHeapData)(unsafe.Pointer(v13)).F5
 	v14 = *child_count8
 	idx_ext = int64(uint64(uint32(v14)))
 	idx_neg = int64(0) - idx_ext
@@ -61704,9 +61704,9 @@ if_end40:
 	v80 = *child_index49
 	v81 = *self_addr
 	parent50 = &v81.F0
-	ptr51 = (**SubtreeHeapData)(unsafe.Pointer(parent50))
+	ptr51 = (*uintptr)(unsafe.Pointer(parent50))
 	v82 = *ptr51
-	child_count52 = &v82.F5
+	child_count52 = &(*SubtreeHeapData)(unsafe.Pointer(v82)).F5
 	v83 = *child_count52
 	cmp53 = uint32(v80) < uint32(v83)
 	if cmp53 {
@@ -61736,14 +61736,14 @@ cond_true62:
 cond_false63:
 	v86 = *self_addr
 	parent64 = &v86.F0
-	ptr65 = (**SubtreeHeapData)(unsafe.Pointer(parent64))
+	ptr65 = (*uintptr)(unsafe.Pointer(parent64))
 	v87 = *ptr65
 	v88 = (*Subtree)(unsafe.Pointer(v87))
 	v89 = *self_addr
 	parent66 = &v89.F0
-	ptr67 = (**SubtreeHeapData)(unsafe.Pointer(parent66))
+	ptr67 = (*uintptr)(unsafe.Pointer(parent66))
 	v90 = *ptr67
-	child_count68 = &v90.F5
+	child_count68 = &(*SubtreeHeapData)(unsafe.Pointer(v90)).F5
 	v91 = *child_count68
 	idx_ext69 = int64(uint64(uint32(v91)))
 	idx_neg70 = int64(0) - idx_ext69
@@ -61804,10 +61804,8 @@ _return:
 	return v117
 }
 
-func ts_subtree_visible_child_count(self_coerce *SubtreeHeapData) int32 {
-	var coerce_dive, coerce_dive1, ptr **SubtreeHeapData
+func ts_subtree_visible_child_count(self_coerce uintptr) int32 {
 	var self *Subtree
-	var v0, v1 *SubtreeHeapData
 	var retval, visible_child_count *int32
 	var v2 *struct {
 	F0 ExternalScannerState
@@ -61821,8 +61819,10 @@ func ts_subtree_visible_child_count(self_coerce *SubtreeHeapData) int32 {
 	F5 int16
 	F6 anon_0
 }
+	var coerce_dive, coerce_dive1, ptr *uintptr
 	var cmp bool
 	var call, v4, v5 int32
+	var v0, v1 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, self, coerce_dive, coerce_dive1, v0, call, cmp, ptr, v1, v2, v3, visible_child_count, v4, v5
 
@@ -61841,9 +61841,9 @@ func ts_subtree_visible_child_count(self_coerce *SubtreeHeapData) int32 {
 	}
 
 if_then:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr = (*uintptr)(unsafe.Pointer(self))
 	v1 = *ptr
-	v2 = &v1.F9
+	v2 = &(*SubtreeHeapData)(unsafe.Pointer(v1)).F9
 	v3 = (*struct {
 	F0 int32
 	F1 int32
@@ -61911,23 +61911,23 @@ _return:
 
 func ts_tree_cursor_goto_last_child_internal(_self *TSTreeCursor) int32 {
 	var subtree, subtree11 **Subtree
-	var ptr, ptr3, coerce_dive **SubtreeHeapData
 	var _self_addr **TSTreeCursor
 	var self **TreeCursor
 	var contents, contents18, contents20 **TreeCursorEntry
 	var iterator *CursorChildIterator
 	var parent, parent2, v10, v14 *Subtree
-	var v3, v4, v11 *SubtreeHeapData
 	var v0 *TSTreeCursor
 	var v1, v2, v15, v18, v20, v22, v23, v25 *TreeCursor
 	var entry1, last_entry, v16, v21, v24, arrayidx *TreeCursorEntry
 	var stack, stack14, stack15, stack17, stack19, stack21 *anon_2
 	var visible, v6, v8, v9, v12, v13, v17, call16, v27, v28 *byte
 	var retval, last_step, child_count, size, capacity, size22 *int32
+	var ptr, ptr3, coerce_dive *uintptr
 	var tobool, cmp, call, tobool4, cmp7, tobool12 bool
 	var v7 byte
 	var v5, call6, v19, v26, inc, v29, v30 int32
 	var idxprom int64
+	var v3, v4, v11 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, _self_addr, self, visible, entry1, iterator, last_entry, last_step, v0, v1, v2, parent, ptr, v3, tobool, parent2, ptr3, v4, child_count, v5, cmp, v6, call, v7, tobool4, v8, v9, subtree, v10, coerce_dive, v11, call6, cmp7, v12, v13, subtree11, v14, tobool12, v15, stack, contents, v16, v17, v18, stack14, size, v19, v20, stack15, capacity, call16, v21, v22, stack17, contents18, v23, stack19, contents20, v24, v25, stack21, size22, v26, inc, idxprom, arrayidx, v27, v28, v29, v30
 
@@ -61946,9 +61946,9 @@ func ts_tree_cursor_goto_last_child_internal(_self *TSTreeCursor) int32 {
 	v2 = *self
 	ts_tree_cursor_iterate_children(iterator, v2)
 	parent = &iterator.F0
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(parent))
+	ptr = (*uintptr)(unsafe.Pointer(parent))
 	v3 = *ptr
-	tobool = v3 != nil
+	tobool = v3 != 0
 	if tobool {
 		goto lor_lhs_false
 	} else {
@@ -61957,9 +61957,9 @@ func ts_tree_cursor_goto_last_child_internal(_self *TSTreeCursor) int32 {
 
 lor_lhs_false:
 	parent2 = &iterator.F0
-	ptr3 = (**SubtreeHeapData)(unsafe.Pointer(parent2))
+	ptr3 = (*uintptr)(unsafe.Pointer(parent2))
 	v4 = *ptr3
-	child_count = &v4.F5
+	child_count = &(*SubtreeHeapData)(unsafe.Pointer(v4)).F5
 	v5 = *child_count
 	cmp = v5 == 0
 	if cmp {
@@ -62163,14 +62163,12 @@ func ts_tree_cursor_goto_first_child_for_byte(self *TSTreeCursor, goal_byte int3
 
 func ts_tree_cursor_goto_first_child_for_byte_and_point(_self *TSTreeCursor, goal_byte int32, goal_point_coerce int64) int64 {
 	var subtree, subtree6 **Subtree
-	var coerce_dive, coerce_dive7 **SubtreeHeapData
 	var _self_addr **TSTreeCursor
 	var self **TreeCursor
 	var contents, contents18, contents20, contents28, contents35, contents37 **TreeCursorEntry
 	var iterator *CursorChildIterator
 	var entry_end, agg_tmp, position *Length
 	var v6, v31 *Subtree
-	var v7, v32 *SubtreeHeapData
 	var goal_point, extent *TSPoint
 	var v1 *TSTreeCursor
 	var v2, v3, v5, v35, v38, v40, v42, v43, v45, v51, v54, v56, v58, v59, v61, v71 *TreeCursor
@@ -62183,6 +62181,7 @@ func ts_tree_cursor_goto_first_child_for_byte_and_point(_self *TSTreeCursor, goa
 	F0 int64
 	F1 int32
 }
+	var coerce_dive, coerce_dive7 *uintptr
 	var call, cmp, call5, v30, tobool, tobool9, cmp23, tobool45, tobool51 bool
 	var frombool, v33, v34, v65, v69 byte
 	var v4, v15, v21, v24, v25, call8, v39, v46, inc, v49, v50, v55, v62, inc40, v66, inc47, v67, v68, add, v70 int32
@@ -62191,6 +62190,7 @@ func ts_tree_cursor_goto_first_child_for_byte_and_point(_self *TSTreeCursor, goa
 	F0 int64
 	F1 int32
 }
+	var v7, v32 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, goal_point, _self_addr, goal_byte_addr, self, initial_size, visible_child_index, did_descend, visible, entry1, iterator, entry_end, agg_tmp, tmp_coerce, position_coerce, agg_tmp_coerce, tmp_coerce4, at_goal, visible_child_count, v0, v1, v2, v3, stack, size, v4, v5, call, position, subtree, v6, coerce_dive, v7, call2, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, call3, v22, v23, bytes, v24, v25, cmp, extent, v26, v27, v28, v29, call5, v30, frombool, subtree6, v31, coerce_dive7, v32, call8, v33, tobool, v34, tobool9, v35, stack12, contents, v36, v37, v38, stack13, size14, v39, v40, stack15, capacity, call16, v41, v42, stack17, contents18, v43, stack19, contents20, v44, v45, stack21, size22, v46, inc, idxprom, arrayidx, v47, v48, v49, conv, v50, cmp23, v51, stack27, contents28, v52, v53, v54, stack29, size30, v55, v56, stack31, capacity32, call33, v57, v58, stack34, contents35, v59, stack36, contents37, v60, v61, stack38, size39, v62, inc40, idxprom41, arrayidx42, v63, v64, v65, tobool45, v66, inc47, v67, v68, add, v69, tobool51, v70, v71, stack53, size54, v72
 
@@ -62508,14 +62508,12 @@ func ts_tree_cursor_goto_first_child_for_point(self *TSTreeCursor, goal_point_co
 
 func ts_tree_cursor_goto_sibling_internal(_self *TSTreeCursor, advance func(*CursorChildIterator, *TreeCursorEntry, *byte) bool) int32 {
 	var subtree **Subtree
-	var coerce_dive **SubtreeHeapData
 	var _self_addr **TSTreeCursor
 	var self **TreeCursor
 	var contents, contents20, contents26, contents28, contents39, contents46, contents48 **TreeCursorEntry
 	var iterator *CursorChildIterator
 	var position, position9 *Length
 	var v39 *Subtree
-	var v40 *SubtreeHeapData
 	var v0 *TSTreeCursor
 	var v1, v2, v4, v6, v8, v12, v20, v25, v28, v30, v32, v33, v35, v41, v44, v46, v48, v49, v51, v56 *TreeCursor
 	var entry3, v7, arrayidx, v26, v31, v34, arrayidx32, v42, v47, v50, arrayidx53 *TreeCursorEntry
@@ -62523,11 +62521,13 @@ func ts_tree_cursor_goto_sibling_internal(_self *TSTreeCursor, advance func(*Cur
 	var visible, v10, v11, v15, v16, v27, call24, v37, v38, v43, call44, v53, v54 *byte
 	var advance_addr *func(*CursorChildIterator, *TreeCursorEntry, *byte) bool
 	var retval, initial_size, size, size2, size6, child_index, child_index7, structural_child_index, structural_child_index8, descendant_index, descendant_index10, size12, size22, capacity, size30, size41, capacity43, size50, size58 *int32
+	var coerce_dive *uintptr
 	var cmp, call, tobool, cmp13, call15, tobool17, tobool35 bool
 	var v19, v24 byte
 	var v18, v23 func(*CursorChildIterator, *TreeCursorEntry, *byte) bool
 	var v3, v5, v9, dec, v13, v14, v17, v21, add, v22, v29, v36, inc, call34, v45, v52, inc51, v55, v57 int32
 	var idxprom, idxprom31, idxprom52 int64
+	var v40 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, _self_addr, advance_addr, self, initial_size, entry3, iterator, visible, v0, v1, v2, stack, size, v3, v4, stack1, size2, v5, cmp, v6, stack4, contents, v7, v8, stack5, size6, v9, dec, idxprom, arrayidx, v10, v11, v12, child_index, v13, child_index7, structural_child_index, v14, structural_child_index8, position, position9, v15, v16, descendant_index, v17, descendant_index10, v18, call, v19, tobool, v20, stack11, size12, v21, add, v22, cmp13, v23, call15, v24, tobool17, v25, stack19, contents20, v26, v27, v28, stack21, size22, v29, v30, stack23, capacity, call24, v31, v32, stack25, contents26, v33, stack27, contents28, v34, v35, stack29, size30, v36, inc, idxprom31, arrayidx32, v37, v38, subtree, v39, coerce_dive, v40, call34, tobool35, v41, stack38, contents39, v42, v43, v44, stack40, size41, v45, v46, stack42, capacity43, call44, v47, v48, stack45, contents46, v49, stack47, contents48, v50, v51, stack49, size50, v52, inc51, idxprom52, arrayidx53, v53, v54, v55, v56, stack57, size58, v57
 
@@ -62824,13 +62824,11 @@ _return:
 
 func ts_tree_cursor_goto_previous_sibling_internal(_self *TSTreeCursor) int32 {
 	var children, subtree, subtree48, subtree49 **Subtree
-	var ptr, ptr50, coerce_dive, coerce_dive62, coerce_dive72 **SubtreeHeapData
 	var _self_addr **TSTreeCursor
 	var self **TreeCursor
 	var parent, contents, contents23, contents41, contents89 **TreeCursorEntry
 	var position29, tmp, agg_tmp, tmp58, agg_tmp59, tmp68, agg_tmp69, position, position30, position95 *Length
 	var v41, v44, v46, v48, add_ptr, cond, v52, arrayidx53, v74, arrayidx61, v96, arrayidx71 *Subtree
-	var v45, v49, v53, v76, v98 *SubtreeHeapData
 	var data *SubtreeInlineData
 	var v0, v2 *TSTreeCursor
 	var v1, v5, v7, v9, v11, v20, v22, v24, v26, v31, v33, v35, v37, v117, v119, v121, v123 *TreeCursor
@@ -62843,6 +62841,7 @@ func ts_tree_cursor_goto_previous_sibling_internal(_self *TSTreeCursor) int32 {
 	F0 int64
 	F1 int32
 }
+	var ptr, ptr50, coerce_dive, coerce_dive62, coerce_dive72 *uintptr
 	var cmp, cmp3, call10, cmp18, cmp36, bf_cast, cmp51, cmp57, cmp84 bool
 	var bf_load, bf_clear byte
 	var call, v3, v4, v6, sub, v8, v12, sub9, v18, v19, v21, sub15, v23, v27, sub26, v32, sub33, v34, v38, sub44, v39, v50, v51, v61, v67, v72, v73, v75, v84, v90, v95, inc, v97, v106, v112, v118, sub81, v120, v124, sub92, v127, v128 int32
@@ -62851,6 +62850,7 @@ func ts_tree_cursor_goto_previous_sibling_internal(_self *TSTreeCursor) int32 {
 	F0 int64
 	F1 int32
 }
+	var v45, v49, v53, v76, v98 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, _self_addr, self, step, position_coerce, parent, position29, child_index, children, tmp, agg_tmp, tmp_coerce, position29_coerce, agg_tmp_coerce, tmp_coerce56, i, tmp58, agg_tmp59, tmp_coerce64, position29_coerce65, agg_tmp59_coerce, tmp_coerce67, tmp68, agg_tmp69, tmp_coerce74, position29_coerce75, agg_tmp69_coerce, tmp_coerce77, v0, v1, v2, call, v3, cmp, v4, v5, stack, size, v6, sub, v7, stack1, size2, v8, cmp3, v9, stack6, contents, v10, v11, stack7, size8, v12, sub9, idxprom, arrayidx, position, v13, v14, v15, v16, v17, v18, call10, v19, v20, stack13, size14, v21, sub15, v22, stack16, size17, v23, cmp18, v24, stack22, contents23, v25, v26, stack24, size25, v27, sub26, idxprom27, arrayidx28, v28, position30, v29, v30, v31, stack31, size32, v32, sub33, v33, stack34, size35, v34, cmp36, v35, stack40, contents41, v36, v37, stack42, size43, v38, sub44, idxprom45, arrayidx46, child_index47, v39, v40, subtree, v41, data, v42, bf_load, bf_clear, bf_cast, v43, subtree48, v44, ptr, v45, v46, v47, subtree49, v48, ptr50, v49, child_count, v50, idx_ext, idx_neg, add_ptr, cond, v51, cmp51, v52, arrayidx53, coerce_dive, v53, call54, v54, v55, v56, v57, v58, v59, v60, v61, v62, v63, v64, v65, v66, v67, call55, v68, v69, v70, v71, v72, v73, cmp57, v74, v75, idxprom60, arrayidx61, coerce_dive62, v76, call63, v77, v78, v79, v80, v81, v82, v83, v84, v85, v86, v87, v88, v89, v90, call66, v91, v92, v93, v94, v95, inc, v96, v97, idxprom70, arrayidx71, coerce_dive72, v98, call73, v99, v100, v101, v102, v103, v104, v105, v106, v107, v108, v109, v110, v111, v112, call76, v113, v114, v115, v116, v117, stack79, size80, v118, sub81, v119, stack82, size83, v120, cmp84, v121, stack88, contents89, v122, v123, stack90, size91, v124, sub92, idxprom93, arrayidx94, position95, v125, v126, v127, v128
 
@@ -63099,15 +63099,15 @@ cond_false:
 	v43 = *parent
 	subtree48 = &v43.F0
 	v44 = *subtree48
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(v44))
+	ptr = (*uintptr)(unsafe.Pointer(v44))
 	v45 = *ptr
 	v46 = (*Subtree)(unsafe.Pointer(v45))
 	v47 = *parent
 	subtree49 = &v47.F0
 	v48 = *subtree49
-	ptr50 = (**SubtreeHeapData)(unsafe.Pointer(v48))
+	ptr50 = (*uintptr)(unsafe.Pointer(v48))
 	v49 = *ptr50
-	child_count = &v49.F5
+	child_count = &(*SubtreeHeapData)(unsafe.Pointer(v49)).F5
 	v50 = *child_count
 	idx_ext = int64(uint64(uint32(v50)))
 	idx_neg = int64(0) - idx_ext
@@ -63300,14 +63300,12 @@ _return:
 func ts_tree_cursor_child_iterator_previous(self *CursorChildIterator, result *TreeCursorEntry, visible *byte) bool {
 	var self_addr **CursorChildIterator
 	var child, subtree **Subtree
-	var ptr, ptr6, ptr8, coerce_dive, coerce_dive14, coerce_dive19, ptr46, ptr60, ptr62, coerce_dive72 **SubtreeHeapData
 	var result_addr **TreeCursorEntry
 	var visible_addr **byte
 	var alias_sequence, alias_sequence27 **int16
 	var v0, v2, v4, v6, v9, v12, v16, v19, v21, v30, v31, v52, v55, v57, v59, v64, v66, v68, v70, v73, v75, v78, v81, v88, v89 *CursorChildIterator
 	var tmp, agg_tmp, size, tmp76, position, position10, position17, position18, position75, position77 *Length
 	var previous_child, parent, parent3, parent5, v8, parent7, add_ptr, cond, arrayidx, v15, v25, v28, v32, parent45, parent51, parent59, v77, parent61, add_ptr66, cond68, arrayidx71 *Subtree
-	var v1, v7, v10, v26, v29, v33, v71, v76, v79, v85 *SubtreeHeapData
 	var data, data52 *SubtreeInlineData
 	var _compoundliteral, v14 *TreeCursorEntry
 	var retval *bool
@@ -63319,6 +63317,7 @@ func ts_tree_cursor_child_iterator_previous(self *CursorChildIterator, result *T
 	F0 int64
 	F1 int32
 }
+	var ptr, ptr6, ptr8, coerce_dive, coerce_dive14, coerce_dive19, ptr46, ptr60, ptr62, coerce_dive72 *uintptr
 	var tobool, cmp, bf_cast, call, call15, tobool24, tobool25, tobool32, tobool34, cmp37, cmp48, bf_cast55, v106 bool
 	var conv, bf_load, bf_clear, frombool, frombool16, v54, v63, frombool35, bf_load53, bf_clear54 byte
 	var v61 int16
@@ -63328,6 +63327,7 @@ func ts_tree_cursor_child_iterator_previous(self *CursorChildIterator, result *T
 	F0 int64
 	F1 int32
 }
+	var v1, v7, v10, v26, v29, v33, v71, v76, v79, v85 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, self_addr, result_addr, visible_addr, child, _compoundliteral, extra, tmp, agg_tmp, tmp_coerce, position18_coerce, agg_tmp_coerce, tmp_coerce22, previous_child, size, tmp_coerce74, tmp76, position77_coerce, size_coerce, tmp_coerce79, v0, parent, ptr, v1, tobool, v2, child_index, v3, conv, conv1, cmp, v4, parent3, data, v5, bf_load, bf_clear, bf_cast, v6, parent5, ptr6, v7, v8, v9, parent7, ptr8, v10, child_count, v11, idx_ext, idx_neg, add_ptr, cond, v12, child_index9, v13, idxprom, arrayidx, v14, subtree, v15, position, v16, position10, v17, v18, child_index11, v19, child_index12, v20, structural_child_index, v21, structural_child_index13, v22, descendant_index, v23, v24, v25, coerce_dive, v26, call, v27, frombool, v28, coerce_dive14, v29, call15, frombool16, v30, position17, v31, position18, v32, coerce_dive19, v33, call20, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, call21, v48, v49, v50, v51, v52, child_index23, v53, dec, v54, tobool24, v55, alias_sequence, v56, tobool25, v57, alias_sequence27, v58, v59, structural_child_index28, v60, idxprom29, arrayidx30, v61, conv31, v62, v63, tobool32, conv33, or, tobool34, frombool35, v64, structural_child_index36, v65, cmp37, v66, structural_child_index40, v67, dec41, v68, child_index44, v69, v70, parent45, ptr46, v71, child_count47, v72, cmp48, v73, parent51, data52, v74, bf_load53, bf_clear54, bf_cast55, v75, parent59, ptr60, v76, v77, v78, parent61, ptr62, v79, child_count63, v80, idx_ext64, idx_neg65, add_ptr66, cond68, v81, child_index69, v82, idxprom70, arrayidx71, v83, v84, coerce_dive72, v85, call73, v86, v87, v88, position75, v89, position77, v90, v91, v92, v93, v94, v95, v96, v97, v98, v99, v100, v101, call78, v102, v103, v104, v105, v106
 
@@ -63380,9 +63380,9 @@ func ts_tree_cursor_child_iterator_previous(self *CursorChildIterator, result *T
 	*visible_addr = visible
 	v0 = *self_addr
 	parent = &v0.F0
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(parent))
+	ptr = (*uintptr)(unsafe.Pointer(parent))
 	v1 = *ptr
-	tobool = v1 != nil
+	tobool = v1 != 0
 	if tobool {
 		goto lor_lhs_false
 	} else {
@@ -63427,14 +63427,14 @@ cond_true:
 cond_false:
 	v6 = *self_addr
 	parent5 = &v6.F0
-	ptr6 = (**SubtreeHeapData)(unsafe.Pointer(parent5))
+	ptr6 = (*uintptr)(unsafe.Pointer(parent5))
 	v7 = *ptr6
 	v8 = (*Subtree)(unsafe.Pointer(v7))
 	v9 = *self_addr
 	parent7 = &v9.F0
-	ptr8 = (**SubtreeHeapData)(unsafe.Pointer(parent7))
+	ptr8 = (*uintptr)(unsafe.Pointer(parent7))
 	v10 = *ptr8
-	child_count = &v10.F5
+	child_count = &(*SubtreeHeapData)(unsafe.Pointer(v10)).F5
 	v11 = *child_count
 	idx_ext = int64(uint64(uint32(v11)))
 	idx_neg = int64(0) - idx_ext
@@ -63591,9 +63591,9 @@ if_end43:
 	v69 = *child_index44
 	v70 = *self_addr
 	parent45 = &v70.F0
-	ptr46 = (**SubtreeHeapData)(unsafe.Pointer(parent45))
+	ptr46 = (*uintptr)(unsafe.Pointer(parent45))
 	v71 = *ptr46
-	child_count47 = &v71.F5
+	child_count47 = &(*SubtreeHeapData)(unsafe.Pointer(v71)).F5
 	v72 = *child_count47
 	cmp48 = uint32(v69) < uint32(v72)
 	if cmp48 {
@@ -63623,14 +63623,14 @@ cond_true57:
 cond_false58:
 	v75 = *self_addr
 	parent59 = &v75.F0
-	ptr60 = (**SubtreeHeapData)(unsafe.Pointer(parent59))
+	ptr60 = (*uintptr)(unsafe.Pointer(parent59))
 	v76 = *ptr60
 	v77 = (*Subtree)(unsafe.Pointer(v76))
 	v78 = *self_addr
 	parent61 = &v78.F0
-	ptr62 = (**SubtreeHeapData)(unsafe.Pointer(parent61))
+	ptr62 = (*uintptr)(unsafe.Pointer(parent61))
 	v79 = *ptr62
-	child_count63 = &v79.F5
+	child_count63 = &(*SubtreeHeapData)(unsafe.Pointer(v79)).F5
 	v80 = *child_count63
 	idx_ext64 = int64(uint64(uint32(v80)))
 	idx_neg65 = int64(0) - idx_ext64
@@ -63812,13 +63812,11 @@ _return:
 
 func ts_tree_cursor_is_entry_visible(self *TreeCursor, index int32) bool {
 	var subtree, subtree6, subtree21 **Subtree
-	var coerce_dive, coerce_dive7, ptr **SubtreeHeapData
 	var language **TSLanguage
 	var tree **TSTree
 	var self_addr **TreeCursor
 	var entry1, parent_entry, contents, contents17 **TreeCursorEntry
 	var v8, v11, v23 *Subtree
-	var v9, v12, v24 *SubtreeHeapData
 	var v21 *TSLanguage
 	var v20 *TSTree
 	var v1, v3, v14, v16, v19 *TreeCursor
@@ -63839,10 +63837,12 @@ func ts_tree_cursor_is_entry_visible(self *TreeCursor, index int32) bool {
 	F5 int16
 	F6 anon_0
 }
+	var coerce_dive, coerce_dive7, ptr *uintptr
 	var cmp, cmp3, call, call8, cmp12, tobool, v30 bool
 	var v27, call22 int16
 	var v0, v2, v5, v6, v13, sub, v15, v18, sub18, conv, v29 int32
 	var idxprom, idxprom19 int64
+	var v9, v12, v24 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, self_addr, index_addr, entry1, parent_entry, v0, v1, stack, size, v2, cmp, v3, stack2, contents, v4, v5, idxprom, arrayidx, v6, cmp3, v7, subtree, v8, coerce_dive, v9, call, v10, subtree6, v11, coerce_dive7, v12, call8, v13, sub, v14, stack10, size11, v15, cmp12, v16, stack16, contents17, v17, v18, sub18, idxprom19, arrayidx20, v19, tree, v20, language, v21, v22, subtree21, v23, ptr, v24, v25, v26, production_id, v27, conv, v28, structural_child_index, v29, call22, tobool, v30
 
@@ -63958,9 +63958,9 @@ if_end15:
 	v22 = *parent_entry
 	subtree21 = &v22.F0
 	v23 = *subtree21
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(v23))
+	ptr = (*uintptr)(unsafe.Pointer(v23))
 	v24 = *ptr
-	v25 = &v24.F9
+	v25 = &(*SubtreeHeapData)(unsafe.Pointer(v24)).F9
 	v26 = (*struct {
 	F0 int32
 	F1 int32
@@ -63992,23 +63992,23 @@ _return:
 
 func ts_tree_cursor_goto_descendant(_self *TSTreeCursor, goal_descendant_index int32) {
 	var subtree **Subtree
-	var coerce_dive **SubtreeHeapData
 	var _self_addr **TSTreeCursor
 	var self **TreeCursor
 	var entry1, contents, contents32, contents38, contents40 **TreeCursorEntry
 	var iterator *CursorChildIterator
 	var v16 *Subtree
-	var v17 *SubtreeHeapData
 	var v0 *TSTreeCursor
 	var v1, v2, v5, v7, v12, v23, v25, v27, v32, v35, v37, v39, v40, v42 *TreeCursor
 	var entry21, v8, arrayidx, v10, v15, v18, v33, v38, v41, arrayidx44 *TreeCursorEntry
 	var stack, stack2, stack4, stack12, stack17, stack31, stack33, stack35, stack37, stack39, stack41 *anon_2
 	var did_descend, visible, v34, call36, v44, v45 *byte
 	var goal_descendant_index_addr, i, next_descendant_index, size, size3, descendant_index, descendant_index7, size13, size18, descendant_index22, descendant_index27, size34, capacity, size42, descendant_index46 *int32
+	var coerce_dive *uintptr
 	var cmp, call, cmp8, cmp9, cmp14, cmp23, call26, cmp28, tobool, cmp47, tobool51 bool
 	var v46, v49 byte
 	var v3, sub, v4, v6, v9, v11, v13, cond, add, call5, add6, v19, v20, v21, v22, v24, v26, dec, v28, v29, v30, v31, v36, v43, inc, v47, v48 int32
 	var idxprom, v14, idxprom43 int64
+	var v17 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = _self_addr, goal_descendant_index_addr, self, i, entry1, next_descendant_index, did_descend, visible, entry21, iterator, v0, v1, v2, stack, size, v3, sub, v4, v5, stack2, size3, v6, cmp, v7, stack4, contents, v8, v9, idxprom, arrayidx, v10, descendant_index, v11, v12, v13, call, v14, cond, add, v15, subtree, v16, coerce_dive, v17, call5, add6, v18, descendant_index7, v19, v20, cmp8, v21, v22, cmp9, v23, stack12, size13, v24, cmp14, v25, stack17, size18, v26, dec, v27, descendant_index22, v28, v29, cmp23, call26, descendant_index27, v30, v31, cmp28, v32, stack31, contents32, v33, v34, v35, stack33, size34, v36, v37, stack35, capacity, call36, v38, v39, stack37, contents38, v40, stack39, contents40, v41, v42, stack41, size42, v43, inc, idxprom43, arrayidx44, v44, v45, v46, tobool, descendant_index46, v47, v48, cmp47, v49, tobool51
 
@@ -64328,7 +64328,6 @@ if_end:
 
 func ts_tree_cursor_current_node(agg_result *TSNode, _self *TSTreeCursor) {
 	var subtree, subtree31, subtree36 **Subtree
-	var coerce_dive, ptr **SubtreeHeapData
 	var language **TSLanguage
 	var tree, tree35 **TSTree
 	var _self_addr **TSTreeCursor
@@ -64336,7 +64335,6 @@ func ts_tree_cursor_current_node(agg_result *TSNode, _self *TSTreeCursor) {
 	var last_entry, parent_entry, contents, contents25 **TreeCursorEntry
 	var position *Length
 	var v11, v31, v41 *Subtree
-	var v12, v32 *SubtreeHeapData
 	var v29 *TSLanguage
 	var v28, v39 *TSTree
 	var v0 *TSTreeCursor
@@ -64363,11 +64361,13 @@ func ts_tree_cursor_current_node(agg_result *TSNode, _self *TSTreeCursor) {
 	F0 int64
 	F1 int32
 }
+	var coerce_dive, ptr *uintptr
 	var cmp, call, tobool, cmp10, tobool12, cmp19 bool
 	var frombool, v13, v18 byte
 	var v15, conv7, v35, call33, v43 int16
 	var v3, sub, v5, v9, sub6, conv, cond, v17, v20, sub16, v22, v26, sub28, conv32, v37, v49 int32
 	var idxprom, idxprom29, v47 int64
+	var v12, v32 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = _self_addr, self, last_entry, is_extra, alias_symbol, parent_entry, position_coerce, v0, v1, v2, stack, size, v3, sub, v4, stack1, size2, v5, cmp, v6, stack3, contents, v7, v8, stack4, size5, v9, sub6, idxprom, arrayidx, v10, subtree, v11, coerce_dive, v12, call, frombool, v13, tobool, v14, root_alias_symbol, v15, conv, cond, conv7, v16, stack8, size9, v17, cmp10, v18, tobool12, v19, stack14, size15, v20, sub16, v21, stack17, size18, v22, cmp19, v23, stack24, contents25, v24, v25, stack26, size27, v26, sub28, idxprom29, arrayidx30, v27, tree, v28, language, v29, v30, subtree31, v31, ptr, v32, v33, v34, production_id, v35, conv32, v36, structural_child_index, v37, call33, v38, tree35, v39, v40, subtree36, v41, v42, position, v43, v44, v45, v46, v47, v48, v49
 
@@ -64517,9 +64517,9 @@ if_end23:
 	v30 = *parent_entry
 	subtree31 = &v30.F0
 	v31 = *subtree31
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(v31))
+	ptr = (*uintptr)(unsafe.Pointer(v31))
 	v32 = *ptr
-	v33 = &v32.F9
+	v33 = &(*SubtreeHeapData)(unsafe.Pointer(v32)).F9
 	v34 = (*struct {
 	F0 int32
 	F1 int32
@@ -64616,7 +64616,6 @@ cond_end:
 
 func ts_tree_cursor_current_status(_self *TSTreeCursor, field_id *int16, has_later_siblings *byte, has_later_named_siblings *byte, can_have_later_siblings_with_this_field *byte, supertypes *int16, supertype_count *int32) {
 	var subtree, subtree18, subtree29, subtree58, subtree62, subtree72, subtree76, subtree78, subtree141, subtree147 **Subtree
-	var ptr, coerce_dive, coerce_dive30, ptr59, coerce_dive63, ptr77, ptr79, coerce_dive87, coerce_dive101, coerce_dive119, ptr127, coerce_dive134, coerce_dive142, ptr148 **SubtreeHeapData
 	var field_map, field_map_end, _map, map172 **TSFieldMapEntry
 	var language, language35, language86, language146 **TSLanguage
 	var tree, tree34, tree85, tree145 **TSTree
@@ -64627,7 +64626,6 @@ func ts_tree_cursor_current_status(_self *TSTreeCursor, field_id *int16, has_lat
 	var field_id_addr, supertypes_addr, alias_sequence **int16
 	var supertype_count_addr **int32
 	var sibling, v28, v34, v46, v71, v77, v85, v88, v90, v92, add_ptr, cond82, arrayidx84, v131, v137 *Subtree
-	var v29, v35, v47, v72, v78, v89, v93, v101, v109, v118, v122, v127, v132, v138 *SubtreeHeapData
 	var data *SubtreeInlineData
 	var v144, v145, v146, v147, v149, v153, v156, incdec_ptr, v159, v160, v161, v162, v166, v171, incdec_ptr191 *TSFieldMapEntry
 	var v26, v50, v100, v135 *TSLanguage
@@ -64652,11 +64650,13 @@ func ts_tree_cursor_current_status(_self *TSTreeCursor, field_id *int16, has_lat
 	F5 int16
 	F6 anon_0
 }
+	var ptr, coerce_dive, coerce_dive30, ptr59, coerce_dive63, ptr77, ptr79, coerce_dive87, coerce_dive101, coerce_dive119, ptr127, coerce_dive134, coerce_dive142, ptr148 *uintptr
 	var cmp, cmp4, cmp9, call19, tobool, tobool24, cmp40, tobool43, tobool47, cmp50, tobool56, call64, cmp69, bf_cast, call88, tobool90, tobool95, tobool110, tobool112, tobool115, cmp121, tobool124, cmp128, call135, call143, tobool151, cmp154, tobool157, cmp162, tobool170, cmp174, cmp180, cmp186 bool
 	var v57, v58, v69, bf_load, bf_clear, v112, v115, v116, v121, v148, v150, v167 byte
 	var v32, v40, v44, call31, conv33, v51, v62, v105, v108, call102, conv106, v141, v143, v154, v158, v163, v165 int16
 	var v3, v10, sub, v11, v12, v14, v17, v18, sub6, v20, v23, sub15, conv, v39, conv23, v43, conv28, conv32, cond, call36, v54, v56, sub39, v60, v61, v65, v67, inc, v73, v75, v79, inc66, v81, add, v82, v83, v94, v95, v104, conv94, v107, conv99, conv103, cond105, call107, call120, v125, v128, inc137, v129, inc139, conv150, conv160, v152, conv178, conv179, conv184, v169, v172, dec int32
 	var idxprom, idxprom16, idxprom21, idxprom26, idxprom53, idx_ext, idx_neg, idxprom83, idxprom92, idxprom97 int64
+	var v29, v35, v47, v72, v78, v89, v93, v101, v109, v118, v122, v127, v132, v138 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = _self_addr, field_id_addr, has_later_siblings_addr, has_later_named_siblings_addr, can_have_later_siblings_with_this_field_addr, supertypes_addr, supertype_count_addr, self, max_supertypes, i, entry1, parent_entry, alias_sequence, entry_symbol, entry_metadata, tmp_coerce, sibling_count, structural_child_index60, j, sibling, sibling_metadata, tmp_coerce108, field_map, field_map_end, _map, map172, v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, stack, size, v10, sub, v11, cmp, v12, v13, stack2, size3, v14, cmp4, v15, stack5, contents, v16, v17, idxprom, arrayidx, v18, sub6, v19, stack7, size8, v20, cmp9, v21, stack13, contents14, v22, v23, sub15, idxprom16, arrayidx17, v24, tree, v25, language, v26, v27, subtree, v28, ptr, v29, v30, v31, production_id, v32, conv, call, v33, subtree18, v34, coerce_dive, v35, call19, v36, tobool, v37, v38, structural_child_index, v39, idxprom21, arrayidx22, v40, conv23, tobool24, v41, v42, structural_child_index25, v43, idxprom26, arrayidx27, v44, conv28, v45, subtree29, v46, coerce_dive30, v47, call31, conv32, cond, conv33, v48, tree34, v49, language35, v50, v51, call36, v52, v53, v54, v55, stack37, size38, v56, sub39, cmp40, visible, v57, tobool43, supertype, v58, tobool47, v59, v60, v61, cmp50, v62, v63, v64, v65, idxprom53, arrayidx54, v66, v67, inc, v68, v69, tobool56, v70, subtree58, v71, ptr59, v72, child_count, v73, v74, structural_child_index61, v75, v76, subtree62, v77, coerce_dive63, v78, call64, v79, inc66, v80, child_index, v81, add, v82, v83, cmp69, v84, subtree72, v85, data, v86, bf_load, bf_clear, bf_cast, v87, subtree76, v88, ptr77, v89, v90, v91, subtree78, v92, ptr79, v93, child_count80, v94, idx_ext, idx_neg, add_ptr, cond82, v95, idxprom83, arrayidx84, v96, v97, v98, tree85, v99, language86, v100, coerce_dive87, v101, call88, v102, tobool90, v103, v104, idxprom92, arrayidx93, v105, conv94, tobool95, v106, v107, idxprom97, arrayidx98, v108, conv99, coerce_dive101, v109, call102, conv103, cond105, conv106, call107, v110, v111, visible109, v112, tobool110, v113, v114, v115, tobool112, named, v116, tobool115, v117, coerce_dive119, v118, call120, cmp121, v119, v120, v121, tobool124, ptr127, v122, v123, v124, named_child_count, v125, cmp128, v126, coerce_dive134, v127, call135, v128, inc137, v129, inc139, v130, subtree141, v131, coerce_dive142, v132, call143, v133, tree145, v134, language146, v135, v136, subtree147, v137, ptr148, v138, v139, v140, production_id149, v141, conv150, v142, v143, tobool151, v144, v145, v146, cmp154, v147, inherited, v148, tobool157, v149, child_index159, v150, conv160, v151, structural_child_index161, v152, cmp162, v153, field_id165, v154, v155, v156, incdec_ptr, v157, v158, tobool170, v159, v160, v161, cmp174, v162, field_id177, v163, conv178, v164, v165, conv179, cmp180, v166, child_index183, v167, conv184, v168, structural_child_index185, v169, cmp186, v170, v171, incdec_ptr191, v172, dec
 
@@ -64793,9 +64793,9 @@ if_end12:
 	v27 = *parent_entry
 	subtree = &v27.F0
 	v28 = *subtree
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(v28))
+	ptr = (*uintptr)(unsafe.Pointer(v28))
 	v29 = *ptr
-	v30 = &v29.F9
+	v30 = &(*SubtreeHeapData)(unsafe.Pointer(v29)).F9
 	v31 = (*struct {
 	F0 int32
 	F1 int32
@@ -64959,9 +64959,9 @@ if_then57:
 	v70 = *parent_entry
 	subtree58 = &v70.F0
 	v71 = *subtree58
-	ptr59 = (**SubtreeHeapData)(unsafe.Pointer(v71))
+	ptr59 = (*uintptr)(unsafe.Pointer(v71))
 	v72 = *ptr59
-	child_count = &v72.F5
+	child_count = &(*SubtreeHeapData)(unsafe.Pointer(v72)).F5
 	v73 = *child_count
 	*sibling_count = v73
 	v74 = *entry1
@@ -65027,15 +65027,15 @@ cond_false75:
 	v87 = *parent_entry
 	subtree76 = &v87.F0
 	v88 = *subtree76
-	ptr77 = (**SubtreeHeapData)(unsafe.Pointer(v88))
+	ptr77 = (*uintptr)(unsafe.Pointer(v88))
 	v89 = *ptr77
 	v90 = (*Subtree)(unsafe.Pointer(v89))
 	v91 = *parent_entry
 	subtree78 = &v91.F0
 	v92 = *subtree78
-	ptr79 = (**SubtreeHeapData)(unsafe.Pointer(v92))
+	ptr79 = (*uintptr)(unsafe.Pointer(v92))
 	v93 = *ptr79
-	child_count80 = &v93.F5
+	child_count80 = &(*SubtreeHeapData)(unsafe.Pointer(v93)).F5
 	v94 = *child_count80
 	idx_ext = int64(uint64(uint32(v94)))
 	idx_neg = int64(0) - idx_ext
@@ -65181,9 +65181,9 @@ if_then125:
 	goto for_end
 
 if_end126:
-	ptr127 = (**SubtreeHeapData)(unsafe.Pointer(sibling))
+	ptr127 = (*uintptr)(unsafe.Pointer(sibling))
 	v122 = *ptr127
-	v123 = &v122.F9
+	v123 = &(*SubtreeHeapData)(unsafe.Pointer(v122)).F9
 	v124 = (*struct {
 	F0 int32
 	F1 int32
@@ -65263,9 +65263,9 @@ if_then144:
 	v136 = *parent_entry
 	subtree147 = &v136.F0
 	v137 = *subtree147
-	ptr148 = (**SubtreeHeapData)(unsafe.Pointer(v137))
+	ptr148 = (*uintptr)(unsafe.Pointer(v137))
 	v138 = *ptr148
-	v139 = &v138.F9
+	v139 = &(*SubtreeHeapData)(unsafe.Pointer(v138)).F9
 	v140 = (*struct {
 	F0 int32
 	F1 int32
@@ -65505,7 +65505,6 @@ for_end:
 
 func ts_tree_cursor_parent_node(agg_result *TSNode, _self *TSTreeCursor) {
 	var subtree, subtree23, subtree29 **Subtree
-	var ptr, coerce_dive **SubtreeHeapData
 	var language **TSLanguage
 	var tree, tree28 **TSTree
 	var _self_addr **TSTreeCursor
@@ -65513,7 +65512,6 @@ func ts_tree_cursor_parent_node(agg_result *TSNode, _self *TSTreeCursor) {
 	var entry1, parent_entry, contents, contents16 **TreeCursorEntry
 	var agg_tmp, position *Length
 	var v22, v31, v38 *Subtree
-	var v23, v32 *SubtreeHeapData
 	var v20 *TSLanguage
 	var v19, v36 *TSTree
 	var v0 *TSTreeCursor
@@ -65540,6 +65538,7 @@ func ts_tree_cursor_parent_node(agg_result *TSNode, _self *TSTreeCursor) {
 	F0 int64
 	F1 int32
 }
+	var ptr, coerce_dive *uintptr
 	var cmp, cmp4, cmp6, cmp11, cmp21, call24, v33, tobool bool
 	var frombool, v34 byte
 	var v26, call, v29, v40 int16
@@ -65549,6 +65548,7 @@ func ts_tree_cursor_parent_node(agg_result *TSNode, _self *TSTreeCursor) {
 	F0 int64
 	F1 int32
 }
+	var v23, v32 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = _self_addr, self, i, entry1, is_visible, alias_symbol, parent_entry, position_coerce, agg_tmp, tmp_coerce, agg_tmp_coerce, v0, v1, v2, stack, size, v3, sub, v4, cmp, v5, v6, stack2, size3, v7, cmp4, v8, stack5, contents, v9, v10, idxprom, arrayidx, v11, cmp6, v12, sub8, v13, stack9, size10, v14, cmp11, v15, stack15, contents16, v16, v17, sub17, idxprom18, arrayidx19, v18, tree, v19, language, v20, v21, subtree, v22, ptr, v23, v24, v25, production_id, v26, conv, v27, structural_child_index, v28, call, v29, conv20, cmp21, v30, subtree23, v31, coerce_dive, v32, call24, v33, frombool, v34, tobool, v35, tree28, v36, v37, subtree29, v38, v39, position, v40, v41, v42, v43, v44, v45, v46, v47, dec, call31, v48, v49, v50, v51, v52, v53, v54, v55
 
@@ -65671,9 +65671,9 @@ if_end14:
 	v21 = *parent_entry
 	subtree = &v21.F0
 	v22 = *subtree
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(v22))
+	ptr = (*uintptr)(unsafe.Pointer(v22))
 	v23 = *ptr
-	v24 = &v23.F9
+	v24 = &(*SubtreeHeapData)(unsafe.Pointer(v23)).F9
 	v25 = (*struct {
 	F0 int32
 	F1 int32
@@ -65775,7 +65775,6 @@ _return:
 
 func ts_tree_cursor_current_field_id(_self *TSTreeCursor) int16 {
 	var subtree, subtree27 **Subtree
-	var coerce_dive, ptr **SubtreeHeapData
 	var field_map, field_map_end, _map **TSFieldMapEntry
 	var language **TSLanguage
 	var tree **TSTree
@@ -65783,7 +65782,6 @@ func ts_tree_cursor_current_field_id(_self *TSTreeCursor) int16 {
 	var self **TreeCursor
 	var entry1, parent_entry, contents, contents14 **TreeCursorEntry
 	var v23, v29 *Subtree
-	var v24, v30 *SubtreeHeapData
 	var v34, v35, v36, v37, v39, v43, v45, incdec_ptr *TSFieldMapEntry
 	var v27 *TSLanguage
 	var v26 *TSTree
@@ -65806,11 +65804,13 @@ func ts_tree_cursor_current_field_id(_self *TSTreeCursor) int16 {
 	F5 int16
 	F6 anon_0
 }
+	var coerce_dive, ptr *uintptr
 	var cmp, cmp4, cmp9, cmp21, call, call24, cmp29, tobool, cmp34 bool
 	var v38, v40 byte
 	var v33, v44, v47 int16
 	var v3, sub, v4, v5, v7, v10, v11, sub6, v13, v16, sub15, v17, v19, sub20, v21, conv, conv33, v42, v46, dec int32
 	var idxprom, idxprom16 int64
+	var v24, v30 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, _self_addr, self, i, entry1, parent_entry, field_map, field_map_end, _map, v0, v1, v2, stack, size, v3, sub, v4, cmp, v5, v6, stack2, size3, v7, cmp4, v8, stack5, contents, v9, v10, idxprom, arrayidx, v11, sub6, v12, stack7, size8, v13, cmp9, v14, stack13, contents14, v15, v16, sub15, idxprom16, arrayidx17, v17, v18, stack18, size19, v19, sub20, cmp21, v20, v21, call, v22, subtree, v23, coerce_dive, v24, call24, v25, tree, v26, language, v27, v28, subtree27, v29, ptr, v30, v31, v32, production_id, v33, conv, v34, v35, v36, cmp29, v37, inherited, v38, tobool, v39, child_index, v40, conv33, v41, structural_child_index, v42, cmp34, v43, field_id, v44, v45, incdec_ptr, v46, dec, v47
 
@@ -65954,9 +65954,9 @@ if_end26:
 	v28 = *parent_entry
 	subtree27 = &v28.F0
 	v29 = *subtree27
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(v29))
+	ptr = (*uintptr)(unsafe.Pointer(v29))
 	v30 = *ptr
-	v31 = &v30.F9
+	v31 = &(*SubtreeHeapData)(unsafe.Pointer(v30)).F9
 	v32 = (*struct {
 	F0 int32
 	F1 int32
@@ -66432,17 +66432,17 @@ func ts_tree_cursor_reset_to(_dst *TSTreeCursor, _src *TSTreeCursor) {
 }
 
 func ts_tree_copy(self *TSTree) *TSTree {
-	var coerce_dive, coerce_dive2 **SubtreeHeapData
 	var language **TSLanguage
 	var included_ranges **TSRange
 	var self_addr **TSTree
 	var root, root1 *Subtree
-	var v1, v9 *SubtreeHeapData
 	var v4 *TSLanguage
 	var v6 *TSRange
 	var v0, v2, v3, v5, v7, call *TSTree
 	var included_range_count *int32
+	var coerce_dive, coerce_dive2 *uintptr
 	var v8 int32
+	var v1, v9 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self_addr, v0, root, coerce_dive, v1, v2, root1, v3, language, v4, v5, included_ranges, v6, v7, included_range_count, v8, coerce_dive2, v9, call
 
@@ -66471,19 +66471,19 @@ func ts_tree_copy(self *TSTree) *TSTree {
 }
 
 func ts_tree_delete(self *TSTree) {
-	var coerce_dive **SubtreeHeapData
 	var language **TSLanguage
 	var included_ranges **TSRange
 	var self_addr **TSTree
 	var root *Subtree
-	var v2 *SubtreeHeapData
 	var pool *SubtreePool
 	var v4 *TSLanguage
 	var v7 *TSRange
 	var v0, v1, v3, v6, v10 *TSTree
 	var v8, v11 *byte
+	var coerce_dive *uintptr
 	var tobool bool
 	var v5, v9 func(*byte)
+	var v2 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self_addr, pool, v0, tobool, v1, root, coerce_dive, v2, v3, language, v4, v5, v6, included_ranges, v7, v8, v9, v10, v11
 
@@ -66529,11 +66529,9 @@ _return:
 }
 
 func ts_tree_root_node_with_offset(agg_result *TSNode, self *TSTree, offset_bytes int32, offset_extent_coerce int64) {
-	var coerce_dive **SubtreeHeapData
 	var self_addr **TSTree
 	var offset, agg_tmp, agg_tmp1 *Length
 	var root, root2 *Subtree
-	var v7 *SubtreeHeapData
 	var offset_extent, extent *TSPoint
 	var v4, v5, v6 *TSTree
 	var v2, v3, v8, v9, v10, v11, v16, v17, v22, v23, v24, v25 *byte
@@ -66543,12 +66541,14 @@ func ts_tree_root_node_with_offset(agg_result *TSNode, self *TSTree, offset_byte
 	F0 int64
 	F1 int32
 }
+	var coerce_dive *uintptr
 	var v1, v15, v21, v29 int32
 	var v13, v19, v27 int64
 	var call, call3 struct {
 	F0 int64
 	F1 int32
 }
+	var v7 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = offset_extent, self_addr, offset_bytes_addr, offset, agg_tmp, agg_tmp1, tmp_coerce, offset_coerce, agg_tmp1_coerce, tmp_coerce4, agg_tmp_coerce, v0, bytes, v1, extent, v2, v3, v4, v5, root, v6, root2, coerce_dive, v7, call, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19, v20, v21, call3, v22, v23, v24, v25, v26, v27, v28, v29
 
@@ -66647,21 +66647,21 @@ func ts_tree_language(self *TSTree) *TSLanguage {
 }
 
 func ts_tree_edit(self *TSTree, edit *TSInputEdit) {
-	var coerce_dive, coerce_dive2 **SubtreeHeapData
 	var edit_addr **TSInputEdit
 	var included_ranges **TSRange
 	var self_addr **TSTree
 	var tmp, root, root1 *Subtree
-	var v11, call *SubtreeHeapData
 	var pool *SubtreePool
 	var v6, v10 *TSInputEdit
 	var v4, arrayidx *TSRange
 	var v1, v3, v8, v9 *TSTree
 	var v12, v13 *byte
 	var i, included_range_count *int32
+	var coerce_dive, coerce_dive2 *uintptr
 	var cmp bool
 	var v0, v2, v5, v7, inc int32
 	var idxprom int64
+	var v11, call uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self_addr, edit_addr, i, pool, tmp, v0, v1, included_range_count, v2, cmp, v3, included_ranges, v4, v5, idxprom, arrayidx, v6, v7, inc, v8, root, v9, root1, v10, coerce_dive, v11, call, coerce_dive2, v12, v13
 
@@ -66958,17 +66958,17 @@ func _ts_dup(file_descriptor int32) int32 {
 }
 
 func ts_tree_print_dot_graph(self *TSTree, file_descriptor int32) {
-	var coerce_dive **SubtreeHeapData
 	var language **TSLanguage
 	var self_addr **TSTree
 	var file **os.File
 	var root *Subtree
-	var v5 *SubtreeHeapData
 	var v3 *TSLanguage
 	var v1, v2 *TSTree
 	var file_descriptor_addr *int32
 	var call1, v4, v6 *os.File
+	var coerce_dive *uintptr
 	var v0, call, call2 int32
+	var v5 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self_addr, file_descriptor_addr, file, v0, call, call1, v1, root, v2, language, v3, v4, coerce_dive, v5, v6, call2
 
@@ -67162,7 +67162,6 @@ func point__new(row int32, column int32) int64 {
 func iterator_get_visible_state(self *Iterator, tree *Subtree, alias_symbol *int16, start_byte *int32) {
 	var self_addr **Iterator
 	var tree_addr, parent, subtree, subtree30, subtree36 **Subtree
-	var ptr, coerce_dive **SubtreeHeapData
 	var language **TSLanguage
 	var contents, contents25 **TreeCursorEntry
 	var alias_symbol_addr **int16
@@ -67170,7 +67169,6 @@ func iterator_get_visible_state(self *Iterator, tree *Subtree, alias_symbol *int
 	var v0, v2, v8, v10, v17, v19, v23 *Iterator
 	var position *Length
 	var v22, v25, v32, v36, v37 *Subtree
-	var v26, v33 *SubtreeHeapData
 	var v24 *TSLanguage
 	var cursor, cursor5, cursor11, cursor16, cursor23 *TreeCursor
 	var entry4, v11, arrayidx, v20, arrayidx28 *TreeCursorEntry
@@ -67190,11 +67188,13 @@ func iterator_get_visible_state(self *Iterator, tree *Subtree, alias_symbol *int
 	F5 int16
 	F6 anon_0
 }
+	var ptr, coerce_dive *uintptr
 	var tobool, cmp, cmp3, cmp8, cmp13, cmp19, call31, tobool34 bool
 	var v3 byte
 	var v29, call, v35 int16
 	var v1, sub, v4, v5, dec, v6, add, v7, v9, v12, v15, v16, sub15, v18, v21, sub26, conv, v30, conv33, v40, v42, dec38 int32
 	var idxprom, idxprom27 int64
+	var v26, v33 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self_addr, tree_addr, alias_symbol_addr, start_byte_addr, i, entry4, parent, v0, cursor, stack, size, v1, sub, v2, in_padding, v3, tobool, v4, cmp, v5, dec, v6, add, cmp3, v7, v8, cursor5, stack6, size7, v9, cmp8, v10, cursor11, stack12, contents, v11, v12, idxprom, arrayidx, v13, v14, v15, cmp13, v16, sub15, v17, cursor16, stack17, size18, v18, cmp19, v19, cursor23, stack24, contents25, v20, v21, sub26, idxprom27, arrayidx28, subtree, v22, v23, language, v24, v25, ptr, v26, v27, v28, production_id, v29, conv, structural_child_index, v30, call, v31, subtree30, v32, coerce_dive, v33, call31, v34, v35, conv33, tobool34, v36, subtree36, v37, v38, v39, position, bytes, v40, v41, v42, dec38
 
@@ -67337,9 +67337,9 @@ if_end22:
 	language = &v23.F1
 	v24 = *language
 	v25 = *parent
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(v25))
+	ptr = (*uintptr)(unsafe.Pointer(v25))
 	v26 = *ptr
-	v27 = &v26.F9
+	v27 = &(*SubtreeHeapData)(unsafe.Pointer(v26)).F9
 	v28 = (*struct {
 	F0 int32
 	F1 int32
@@ -67411,12 +67411,10 @@ for_end:
 func iterator_tree_is_visible(self *Iterator) bool {
 	var self_addr **Iterator
 	var subtree, subtree38 **Subtree
-	var coerce_dive, ptr **SubtreeHeapData
 	var language **TSLanguage
 	var contents, contents31 **TreeCursorEntry
 	var v0, v2, v4, v6, v12, v14, v16, v18, v20, v25 *Iterator
 	var parent, v10, v22 *Subtree
-	var v11, v27 *SubtreeHeapData
 	var v26 *TSLanguage
 	var cursor, cursor2, cursor5, cursor7, cursor13, cursor18, cursor22, cursor29, cursor32 *TreeCursor
 	var entry1, v5, arrayidx, v19, arrayidx37 *TreeCursorEntry
@@ -67437,10 +67435,12 @@ func iterator_tree_is_visible(self *Iterator) bool {
 	F5 int16
 	F6 anon_0
 }
+	var coerce_dive, ptr *uintptr
 	var cmp, call, cmp16, cmp25, cmp41, v32 bool
 	var v30, call39 int16
 	var v1, sub, v3, v7, sub10, v13, v15, sub21, v17, v21, sub35, conv, v31, conv40 int32
 	var idxprom, idxprom36 int64
+	var v11, v27 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, self_addr, entry1, parent, v0, cursor, stack, size, v1, sub, v2, cursor2, stack3, size4, v3, cmp, v4, cursor5, stack6, contents, v5, v6, cursor7, stack8, size9, v7, sub10, idxprom, arrayidx, v8, v9, subtree, v10, coerce_dive, v11, call, v12, cursor13, stack14, size15, v13, cmp16, v14, cursor18, stack19, size20, v15, sub21, v16, cursor22, stack23, size24, v17, cmp25, v18, cursor29, stack30, contents31, v19, v20, cursor32, stack33, size34, v21, sub35, idxprom36, arrayidx37, subtree38, v22, v23, v24, v25, language, v26, ptr, v27, v28, v29, production_id, v30, conv, structural_child_index, v31, call39, conv40, cmp41, v32
 
@@ -67567,9 +67567,9 @@ if_end28:
 	v25 = *self_addr
 	language = &v25.F1
 	v26 = *language
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(parent))
+	ptr = (*uintptr)(unsafe.Pointer(parent))
 	v27 = *ptr
-	v28 = &v27.F9
+	v28 = &(*SubtreeHeapData)(unsafe.Pointer(v27)).F9
 	v29 = (*struct {
 	F0 int32
 	F1 int32
@@ -68550,13 +68550,13 @@ func __bswap_16(__bsx int16) int16 {
 
 func ts_node_child_iterator_done(self *NodeChildIterator) bool {
 	var self_addr **NodeChildIterator
-	var ptr **SubtreeHeapData
 	var v0, v2 *NodeChildIterator
 	var parent *Subtree
-	var v3 *SubtreeHeapData
 	var child_index, child_count *int32
+	var ptr *uintptr
 	var cmp bool
 	var v1, v4 int32
+	var v3 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _ = self_addr, v0, child_index, v1, v2, parent, ptr, v3, child_count, v4, cmp
 
@@ -68567,26 +68567,26 @@ func ts_node_child_iterator_done(self *NodeChildIterator) bool {
 	v1 = *child_index
 	v2 = *self_addr
 	parent = &v2.F0
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(parent))
+	ptr = (*uintptr)(unsafe.Pointer(parent))
 	v3 = *ptr
-	child_count = &v3.F5
+	child_count = &(*SubtreeHeapData)(unsafe.Pointer(v3)).F5
 	v4 = *child_count
 	cmp = v1 == v4
 	return cmp
 }
 
-func ts_subtree_has_trailing_empty_descendant(self_coerce *SubtreeHeapData, other_coerce *SubtreeHeapData) bool {
-	var coerce_dive, coerce_dive1, coerce_dive2, ptr, ptr3, coerce_dive4, ptr7, ptr8, coerce_dive10, coerce_dive11 **SubtreeHeapData
+func ts_subtree_has_trailing_empty_descendant(self_coerce uintptr, other_coerce uintptr) bool {
 	var self, other, child, v4, add_ptr, cond, arrayidx *Subtree
-	var v0, v3, v5, v10, v11, v12, v13, v14 *SubtreeHeapData
 	var data *SubtreeInlineData
 	var retval *bool
 	var v2, v8, v9 *byte
 	var i, child_count *int32
+	var coerce_dive, coerce_dive1, coerce_dive2, ptr, ptr3, coerce_dive4, ptr7, ptr8, coerce_dive10, coerce_dive11 *uintptr
 	var cmp, bf_cast, cmp6, cmp9, call12, v16 bool
 	var bf_load, bf_clear byte
 	var call, sub, v1, add, v6, v7, call5, v15, dec int32
 	var idx_ext, idx_neg, idxprom int64
+	var v0, v3, v5, v10, v11, v12, v13, v14 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, self, other, i, child, coerce_dive, coerce_dive1, coerce_dive2, v0, call, sub, v1, add, cmp, data, v2, bf_load, bf_clear, bf_cast, ptr, v3, v4, ptr3, v5, child_count, v6, idx_ext, idx_neg, add_ptr, cond, v7, idxprom, arrayidx, v8, v9, coerce_dive4, v10, call5, cmp6, ptr7, v11, ptr8, v12, cmp9, coerce_dive10, v13, coerce_dive11, v14, call12, v15, dec, v16
 
@@ -68633,12 +68633,12 @@ cond_true:
 	goto cond_end
 
 cond_false:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr = (*uintptr)(unsafe.Pointer(self))
 	v3 = *ptr
 	v4 = (*Subtree)(unsafe.Pointer(v3))
-	ptr3 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr3 = (*uintptr)(unsafe.Pointer(self))
 	v5 = *ptr3
-	child_count = &v5.F5
+	child_count = &(*SubtreeHeapData)(unsafe.Pointer(v5)).F5
 	v6 = *child_count
 	idx_ext = int64(uint64(uint32(v6)))
 	idx_neg = int64(0) - idx_ext
@@ -68667,9 +68667,9 @@ if_then:
 	goto for_end
 
 if_end:
-	ptr7 = (**SubtreeHeapData)(unsafe.Pointer(child))
+	ptr7 = (*uintptr)(unsafe.Pointer(child))
 	v11 = *ptr7
-	ptr8 = (**SubtreeHeapData)(unsafe.Pointer(other))
+	ptr8 = (*uintptr)(unsafe.Pointer(other))
 	v12 = *ptr8
 	cmp9 = v11 == v12
 	if cmp9 {
@@ -68715,20 +68715,20 @@ _return:
 func reusable_node_descend(self *ReusableNode) bool {
 	var self_addr **ReusableNode
 	var contents, contents10, contents16, contents18 **StackEntry
-	var coerce_dive, ptr, ptr27 **SubtreeHeapData
 	var v0, v2, v4, v6, v11, v14, v16, v18, v19, v21 *ReusableNode
 	var last_entry, _compoundliteral, v5, arrayidx, v12, v17, v20, arrayidx22 *StackEntry
 	var tree, tree23, tree24, tree25, v25, tree26, add_ptr, cond, arrayidx28 *Subtree
-	var v10, v24, v26 *SubtreeHeapData
 	var data *SubtreeInlineData
 	var stack, stack1, stack3, stack4, stack9, stack11, stack13, stack15, stack17, stack19 *anon_7
 	var retval *bool
 	var v8, v9, v13, call14, v23, v28, v29, v31, v32 *byte
 	var size, size2, size5, size12, capacity, size20, child_count, child_index, byte_offset, byte_offset29 *int32
+	var coerce_dive, ptr, ptr27 *uintptr
 	var cmp, cmp7, bf_cast, v33 bool
 	var bf_load, bf_clear byte
 	var v1, sub, v3, v7, sub6, call, v15, v22, inc, v27, v30 int32
 	var idxprom, idxprom21, idx_ext, idx_neg int64
+	var v10, v24, v26 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, self_addr, last_entry, _compoundliteral, v0, stack, size, v1, sub, v2, stack1, size2, v3, cmp, v4, stack3, contents, v5, v6, stack4, size5, v7, sub6, idxprom, arrayidx, v8, v9, tree, coerce_dive, v10, call, cmp7, v11, stack9, contents10, v12, v13, v14, stack11, size12, v15, v16, stack13, capacity, call14, v17, v18, stack15, contents16, v19, stack17, contents18, v20, v21, stack19, size20, v22, inc, idxprom21, arrayidx22, tree23, tree24, data, v23, bf_load, bf_clear, bf_cast, tree25, ptr, v24, v25, tree26, ptr27, v26, child_count, v27, idx_ext, idx_neg, add_ptr, cond, arrayidx28, v28, v29, child_index, byte_offset, byte_offset29, v30, v31, v32, v33
 
@@ -68839,13 +68839,13 @@ cond_true:
 
 cond_false:
 	tree25 = &last_entry.F0
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(tree25))
+	ptr = (*uintptr)(unsafe.Pointer(tree25))
 	v24 = *ptr
 	v25 = (*Subtree)(unsafe.Pointer(v24))
 	tree26 = &last_entry.F0
-	ptr27 = (**SubtreeHeapData)(unsafe.Pointer(tree26))
+	ptr27 = (*uintptr)(unsafe.Pointer(tree26))
 	v26 = *ptr27
-	child_count = &v26.F5
+	child_count = &(*SubtreeHeapData)(unsafe.Pointer(v26)).F5
 	v27 = *child_count
 	idx_ext = int64(uint64(uint32(v27)))
 	idx_neg = int64(0) - idx_ext
@@ -68882,9 +68882,8 @@ _return:
 	return v33
 }
 
-func ts_parser__reuse_node(self *TSParser, version int32, state *int16, position int32, last_external_token_coerce *SubtreeHeapData, table_entry *TableEntry) *SubtreeHeapData {
+func ts_parser__reuse_node(self *TSParser, version int32, state *int16, position int32, last_external_token_coerce uintptr, table_entry *TableEntry) uintptr {
 	var stack **Stack
-	var coerce_dive, coerce_dive2, ptr, coerce_dive5, coerce_dive7, coerce_dive14, coerce_dive34, coerce_dive49, coerce_dive50, coerce_dive65, coerce_dive72, coerce_dive75, coerce_dive79, coerce_dive83, coerce_dive87, coerce_dive89, coerce_dive113, coerce_dive126, coerce_dive129, coerce_dive144, coerce_dive165, coerce_dive170, ptr171, coerce_dive172 **SubtreeHeapData
 	var language, language33, language64, language112, language128, language143, language147, language164 **TSLanguage
 	var self_addr **TSParser
 	var table_entry_addr **TableEntry
@@ -68895,7 +68894,6 @@ func ts_parser__reuse_node(self *TSParser, version int32, state *int16, position
 	var reusable_node, reusable_node3, reusable_node41, reusable_node44, reusable_node47, reusable_node70, reusable_node118, reusable_node121, reusable_node151 *ReusableNode
 	var v75 *Stack
 	var retval, last_external_token, result, tmp, tmp1, last_external_token48 *Subtree
-	var call, v5, v8, v9, v19, v30, v37, v38, v46, v49, v50, v51, v52, v55, v58, v68, v78, v89, v97, v110, v112, v115 *SubtreeHeapData
 	var v18, v29, v45, v67, v80, v96, v99, v109 *TSLanguage
 	var logger, logger23, logger54, logger102, logger133, logger154 *TSLogger
 	var v0, v6, v12, v14, v16, v17, v20, v23, v25, v27, v28, v31, v34, v35, v36, v39, v41, v43, v44, v47, v48, v53, v60, v62, v64, v66, v69, v70, v71, v72, v74, v79, v85, v90, v92, v94, v95, v98, v101, v102, v103, v105, v107, v108, v111 *TSParser
@@ -68906,10 +68904,12 @@ func ts_parser__reuse_node(self *TSParser, version int32, state *int16, position
 	var leaf_symbol, v77, v81, v86 *int16
 	var version_addr, position_addr, byte_offset, end_byte_offset *int32
 	var v15, v26, v42, v63, v93, v106 *os.File
+	var coerce_dive, coerce_dive2, ptr, coerce_dive5, coerce_dive7, coerce_dive14, coerce_dive34, coerce_dive49, coerce_dive50, coerce_dive65, coerce_dive72, coerce_dive75, coerce_dive79, coerce_dive83, coerce_dive87, coerce_dive89, coerce_dive113, coerce_dive126, coerce_dive129, coerce_dive144, coerce_dive165, coerce_dive170, ptr171, coerce_dive172 *uintptr
 	var tobool, call8, cmp, tobool10, tobool11, cmp20, tobool25, tobool28, cmp39, call42, call51, tobool56, tobool59, call73, call76, call80, call84, call88, call92, tobool99, tobool104, tobool107, call119, call122, call130, tobool135, tobool138, tobool156, tobool159 bool
 	var v13, v24, v40, v61, v91, v104 func(*byte, int32, *byte)
 	var call15, call35, call66, call114, call123, call127, v82, v83, v87, call145, v100, call166 int16
 	var call4, v7, call6, add, v10, v11, call17, v21, v22, call37, v32, v33, call68, v54, v56, v57, call90, add91, cond, call116, v73, v76, call149, call168 int32
+	var call, v5, v8, v9, v19, v30, v37, v38, v46, v49, v50, v51, v52, v55, v58, v68, v78, v89, v97, v110, v112, v115 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, last_external_token, self_addr, version_addr, state_addr, position_addr, table_entry_addr, result, tmp, tmp1, byte_offset, end_byte_offset, reason, leaf_symbol, coerce_dive, v0, reusable_node, call, coerce_dive2, v1, v2, v3, v4, ptr, v5, tobool, v6, reusable_node3, call4, v7, coerce_dive5, v8, call6, add, coerce_dive7, v9, call8, v10, v11, cmp, v12, lexer, logger, log, v13, tobool10, v14, dot_graph_file, v15, tobool11, v16, lexer13, debug_buffer, arraydecay, v17, language, v18, coerce_dive14, v19, call15, call16, call17, v20, v21, v22, cmp20, v23, lexer22, logger23, log24, v24, tobool25, v25, dot_graph_file27, v26, tobool28, v27, lexer30, debug_buffer31, arraydecay32, v28, language33, v29, coerce_dive34, v30, call35, call36, call37, v31, v32, v33, cmp39, v34, reusable_node41, call42, v35, reusable_node44, v36, reusable_node47, last_external_token48, coerce_dive49, v37, coerce_dive50, v38, call51, v39, lexer53, logger54, log55, v40, tobool56, v41, dot_graph_file58, v42, tobool59, v43, lexer61, debug_buffer62, arraydecay63, v44, language64, v45, coerce_dive65, v46, call66, call67, call68, v47, v48, reusable_node70, coerce_dive72, v49, call73, coerce_dive75, v50, call76, coerce_dive79, v51, call80, coerce_dive83, v52, call84, v53, v54, coerce_dive87, v55, call88, v56, v57, coerce_dive89, v58, call90, add91, cond, call92, v59, tobool99, v60, lexer101, logger102, log103, v61, tobool104, v62, dot_graph_file106, v63, tobool107, v64, lexer109, debug_buffer110, arraydecay111, v65, v66, language112, v67, coerce_dive113, v68, call114, call115, call116, v69, v70, reusable_node118, call119, v71, reusable_node121, v72, v73, call122, v74, stack, v75, v76, call123, v77, coerce_dive126, v78, call127, v79, language128, v80, v81, v82, v83, v84, v85, v86, v87, v88, coerce_dive129, v89, call130, v90, lexer132, logger133, log134, v91, tobool135, v92, dot_graph_file137, v93, tobool138, v94, lexer140, debug_buffer141, arraydecay142, v95, language143, v96, coerce_dive144, v97, call145, call146, v98, language147, v99, v100, call148, call149, v101, v102, reusable_node151, v103, lexer153, logger154, log155, v104, tobool156, v105, dot_graph_file158, v106, tobool159, v107, lexer161, debug_buffer162, arraydecay163, v108, language164, v109, coerce_dive165, v110, call166, call167, call168, v111, coerce_dive170, v112, v113, v114, ptr171, coerce_dive172, v115
 
@@ -68948,9 +68948,9 @@ while_cond:
 	v3 = (*byte)(unsafe.Pointer(tmp))
 	v4 = (*byte)(unsafe.Pointer(result))
 	libc.Memmove(v3, v4, int64(8))
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(tmp))
+	ptr = (*uintptr)(unsafe.Pointer(tmp))
 	v5 = *ptr
-	tobool = v5 != nil
+	tobool = v5 != 0
 	if tobool {
 		goto while_body
 	} else {
@@ -69493,8 +69493,8 @@ if_end169:
 	goto _return
 
 while_end:
-	ptr171 = (**SubtreeHeapData)(unsafe.Pointer(retval))
-	*ptr171 = nil
+	ptr171 = (*uintptr)(unsafe.Pointer(retval))
+	*ptr171 = 0
 	goto _return
 
 _return:
@@ -69503,14 +69503,12 @@ _return:
 	return v115
 }
 
-func ts_parser__get_cached_token(self *TSParser, state int16, position int64, last_external_token_coerce *SubtreeHeapData, table_entry *TableEntry) *SubtreeHeapData {
-	var coerce_dive, ptr, coerce_dive4, coerce_dive5, coerce_dive8, coerce_dive11, coerce_dive15, ptr18, coerce_dive19 **SubtreeHeapData
+func ts_parser__get_cached_token(self *TSParser, state int16, position int64, last_external_token_coerce uintptr, table_entry *TableEntry) uintptr {
 	var language **TSLanguage
 	var self_addr **TSParser
 	var table_entry_addr **TableEntry
 	var cache **TokenCache
 	var retval, last_external_token, token, last_external_token3, token7, token10, token14, token16 *Subtree
-	var v2, v7, v8, v13, v19, v21, v25 *SubtreeHeapData
 	var v10 *TSLanguage
 	var v0, v9, v15 *TSParser
 	var v14, v18 *TableEntry
@@ -69519,10 +69517,12 @@ func ts_parser__get_cached_token(self *TSParser, state int16, position int64, la
 	var state_addr *int16
 	var byte_index *int32
 	var position_addr *int64
+	var coerce_dive, ptr, coerce_dive4, coerce_dive5, coerce_dive8, coerce_dive11, coerce_dive15, ptr18, coerce_dive19 *uintptr
 	var tobool, cmp, call, call12 bool
 	var v11, call9, v16 int16
 	var v4 int32
 	var conv, v5 int64
+	var v2, v7, v8, v13, v19, v21, v25 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, last_external_token, self_addr, state_addr, position_addr, table_entry_addr, cache, coerce_dive, v0, token_cache, v1, token, ptr, v2, tobool, v3, byte_index, v4, conv, v5, cmp, v6, last_external_token3, coerce_dive4, v7, coerce_dive5, v8, call, v9, language, v10, v11, v12, token7, coerce_dive8, v13, call9, v14, v15, v16, v17, token10, v18, coerce_dive11, v19, call12, v20, token14, coerce_dive15, v21, v22, token16, v23, v24, ptr18, coerce_dive19, v25
 
@@ -69544,9 +69544,9 @@ func ts_parser__get_cached_token(self *TSParser, state int16, position int64, la
 	*cache = token_cache
 	v1 = *cache
 	token = &v1.F0
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(token))
+	ptr = (*uintptr)(unsafe.Pointer(token))
 	v2 = *ptr
-	tobool = v2 != nil
+	tobool = v2 != 0
 	if tobool {
 		goto land_lhs_true
 	} else {
@@ -69623,8 +69623,8 @@ if_end:
 	goto if_end17
 
 if_end17:
-	ptr18 = (**SubtreeHeapData)(unsafe.Pointer(retval))
-	*ptr18 = nil
+	ptr18 = (*uintptr)(unsafe.Pointer(retval))
+	*ptr18 = 0
 	goto _return
 
 _return:
@@ -69633,9 +69633,8 @@ _return:
 	return v25
 }
 
-func ts_parser__lex(self *TSParser, version int32, parse_state int16) *SubtreeHeapData {
+func ts_parser__lex(self *TSParser, version int32, parse_state int16) uintptr {
 	var stack, stack9, stack81 **Stack
-	var ptr, coerce_dive, coerce_dive44, ptr50, coerce_dive56, coerce_dive214, coerce_dive300, coerce_dive303, coerce_dive305, ptr306, ptr311, coerce_dive328, coerce_dive392, coerce_dive398 **SubtreeHeapData
 	var language, language69, language71, language98, language99, language151, language212, language239, language246, language273, language280, language298, language327 **TSLanguage
 	var self_addr **TSParser
 	var buf, symbol326 **byte
@@ -69648,7 +69647,6 @@ func ts_parser__lex(self *TSParser, version int32, parse_state int16) *SubtreeHe
 	var mut_result *MutableSubtree
 	var v13, v18, v79 *Stack
 	var retval, external_token, result, tmp211, tmp293 *Subtree
-	var call10, v50, v58, call213, call299, v317, call304, v318, v323, v332, v375, v382 *SubtreeHeapData
 	var tree_pool, tree_pool294 *SubtreePool
 	var v1, v66, v72, v88, v90, v127, v203, v256, v262, v282, v287, v301, v331 *TSLanguage
 	var data, data103, data176, data186, data188, data192, data196, data198, data217, data275, data282, data288 *TSLexer
@@ -69673,6 +69671,7 @@ func ts_parser__lex(self *TSParser, version int32, parse_state int16) *SubtreeHe
 	F0 int64
 	F1 int32
 }
+	var ptr, coerce_dive, coerce_dive44, ptr50, coerce_dive56, coerce_dive214, coerce_dive300, coerce_dive303, coerce_dive305, ptr306, ptr311, coerce_dive328, coerce_dive392, coerce_dive398 *uintptr
 	var cmp, tobool, tobool2, cmp12, cmp24, tobool30, tobool33, call46, tobool48, tobool53, call61, lnot, cmp65, tobool67, cmp75, tobool78, call82, tobool84, tobool90, tobool93, tobool113, tobool116, tobool126, tobool129, call143, tobool146, tobool149, tobool157, tobool162, tobool165, cmp182, call189, tobool202, tobool237, cmp248, cmp252, call262, tobool264, cmp270, call277, call284, tobool295, tobool296, tobool297, tobool301, tobool310, tobool312, tobool318, tobool321, cmp336, cmp338, v338 bool
 	var frombool, frombool47, v54, v56, frombool62, v64, frombool77, v77, v81, v96, v98, frombool117, frombool144, v124, v125, v139, v167, v254, frombool263, v277, v297, v298, v299, v316, v322, bf_result_cast, v336, v341, v368 byte
 	var v158 func(*TSLexer) bool
@@ -69685,6 +69684,7 @@ func ts_parser__lex(self *TSParser, version int32, parse_state int16) *SubtreeHe
 	F0 int64
 	F1 int32
 }
+	var call10, v50, v58, call213, call299, v317, call304, v318, v323, v332, v375, v382 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, self_addr, version_addr, parse_state_addr, lex_mode, tmp_coerce, start_position, tmp_coerce8, external_token, found_external_token, error_mode, skipped_error, called_get_column, first_error_character, error_start_position, tmp_coerce15, error_end_position, tmp_coerce17, lookahead_end_byte, external_scanner_state_len, external_scanner_state_changed, start_position_coerce, found_token, current_position, column_data, symbol, next_parse_state, token_is_extra, current_position_coerce, lex_mode_coerce, tmp, tmp_coerce153, start_position_coerce155, result, padding, error_start_position_coerce, start_position_coerce204, tmp_coerce206, size, error_end_position_coerce, error_start_position_coerce207, tmp_coerce209, lookahead_bytes, tmp211, padding_coerce, size_coerce, is_keyword, symbol215, padding219, token_start_position221_coerce, start_position_coerce222, tmp_coerce224, size225, token_end_position227_coerce, token_start_position229_coerce, tmp_coerce231, lookahead_bytes232, end_byte, token_start_position260_coerce, tmp293, padding219_coerce, size225_coerce, mut_result, buf, symbol326, off, i, coerce, tmp_coerce394, v0, language, v1, v2, call, v3, v4, lex_state, v5, conv, cmp, v6, lexer, logger, log, v7, tobool, v8, dot_graph_file, v9, tobool2, v10, lexer4, debug_buffer, arraydecay, call5, v11, ptr, v12, stack, v13, v14, call7, v15, v16, v17, stack9, v18, v19, call10, coerce_dive, v20, conv11, cmp12, frombool, call14, v21, v22, call16, v23, v24, v25, lexer18, v26, v27, v28, v29, v30, v31, v32, lexer19, current_position20, v33, v34, v35, lexer21, column_data22, v36, v37, external_lex_state, v38, conv23, cmp24, v39, lexer27, logger28, log29, v40, tobool30, v41, dot_graph_file32, v42, tobool33, v43, lexer35, debug_buffer36, arraydecay37, external_lex_state38, v44, conv39, extent, row, v45, extent40, column, v46, call41, v47, v48, lexer43, v49, coerce_dive44, v50, v51, external_lex_state45, v52, call46, frombool47, v53, has_scanner_error, v54, tobool48, ptr50, v55, lexer52, v56, tobool53, v57, call55, coerce_dive56, v58, call57, v59, lexer58, debug_buffer59, arraydecay60, v60, call61, lnot, frombool62, v61, lexer63, token_end_position, bytes, v62, bytes64, v63, cmp65, v64, tobool67, v65, language69, v66, external_scanner, symbol_map, v67, v68, lexer70, data, result_symbol, v69, idxprom, arrayidx, v70, v71, language71, v72, v73, v74, call72, v75, conv73, v76, conv74, cmp75, frombool77, v77, tobool78, v78, stack81, v79, v80, call82, v81, tobool84, v82, lexer87, logger88, log89, v83, tobool90, v84, dot_graph_file92, v85, tobool93, v86, lexer95, debug_buffer96, arraydecay97, v87, language98, v88, v89, language99, v90, external_scanner100, symbol_map101, v91, v92, lexer102, data103, result_symbol104, v93, idxprom105, arrayidx106, v94, call107, call108, v95, v96, tobool113, v97, lexer115, did_get_column, v98, tobool116, frombool117, v99, lexer119, v100, v101, v102, v103, v104, v105, v106, lexer120, column_data121, v107, v108, v109, lexer123, logger124, log125, v110, tobool126, v111, dot_graph_file128, v112, tobool129, v113, lexer131, debug_buffer132, arraydecay133, lex_state134, v114, conv135, extent136, row137, v115, extent138, column139, v116, call140, v117, v118, lexer142, v119, v120, v121, v122, call143, frombool144, v123, lexer145, v124, tobool146, v125, tobool149, v126, language151, v127, call152, v128, v129, v130, v131, v132, lexer154, v133, v134, v135, v136, v137, v138, v139, tobool157, v140, lexer159, logger160, log161, v141, tobool162, v142, dot_graph_file164, v143, tobool165, v144, lexer167, debug_buffer168, arraydecay169, call170, v145, v146, lexer172, token_start_position, v147, v148, v149, lexer173, token_start_position174, v150, v151, v152, lexer175, data176, lookahead, v153, v154, lexer178, current_position179, bytes180, v155, bytes181, v156, cmp182, v157, lexer185, data186, eof, v158, v159, lexer187, data188, call189, v160, lexer191, data192, result_symbol193, v161, lexer195, data196, advance, v162, v163, lexer197, data198, v164, lexer200, current_position201, v165, v166, v167, tobool202, v168, v169, v170, v171, v172, v173, v174, v175, v176, v177, v178, v179, call205, v180, v181, v182, v183, v184, v185, v186, v187, v188, v189, v190, v191, v192, v193, call208, v194, v195, v196, bytes210, v197, sub, v198, tree_pool, v199, v200, v201, v202, language212, v203, v204, v205, v206, v207, v208, v209, v210, v211, v212, v213, v214, v215, call213, coerce_dive214, v216, v217, v218, lexer216, data217, result_symbol218, v219, v220, lexer220, token_start_position221, v221, v222, v223, v224, v225, v226, v227, v228, v229, v230, v231, v232, call223, v233, v234, v235, lexer226, token_end_position227, v236, lexer228, token_start_position229, v237, v238, v239, v240, v241, v242, v243, v244, v245, v246, v247, v248, call230, v249, v250, v251, v252, lexer233, token_end_position234, bytes235, v253, sub236, v254, tobool237, v255, language239, v256, external_scanner240, symbol_map241, v257, v258, idxprom242, arrayidx243, v259, v260, conv245, v261, language246, v262, keyword_capture_token, v263, conv247, cmp248, v264, conv251, cmp252, v265, lexer255, token_end_position256, bytes257, v266, v267, lexer258, v268, lexer259, token_start_position260, v269, v270, v271, v272, v273, v274, v275, lexer261, v276, call262, frombool263, v277, tobool264, v278, lexer267, token_end_position268, bytes269, v279, v280, cmp270, v281, language273, v282, v283, v284, lexer274, data275, result_symbol276, v285, call277, v286, language280, v287, v288, v289, lexer281, data282, result_symbol283, v290, call284, v291, lexer287, data288, result_symbol289, v292, v293, tree_pool294, v294, v295, v296, v297, tobool295, v298, tobool296, v299, tobool297, v300, language298, v301, v302, v303, v304, v305, v306, v307, v308, v309, v310, v311, v312, v313, call299, coerce_dive300, v314, v315, v316, tobool301, coerce_dive303, v317, call304, coerce_dive305, ptr306, v318, v319, external_scanner_state, v320, lexer307, debug_buffer308, arraydecay309, v321, v322, tobool310, ptr311, v323, has_external_scanner_state_change, v324, bf_load, bf_shl, bf_clear, bf_set, bf_result_cast, tobool312, v325, lexer315, logger316, log317, v326, tobool318, v327, dot_graph_file320, v328, tobool321, v329, lexer323, debug_buffer324, arraydecay325, v330, language327, v331, coerce_dive328, v332, call329, call330, v333, call331, v334, v335, idxprom333, arrayidx334, v336, conv335, cmp336, v337, cmp338, v338, v339, v340, idxprom340, arrayidx341, v341, conv342, v342, v343, inc, idxprom343, arrayidx344, v344, v345, inc345, idxprom346, arrayidx347, v346, v347, inc349, idxprom350, arrayidx351, v348, v349, inc352, idxprom353, arrayidx354, v350, v351, inc356, idxprom357, arrayidx358, v352, v353, inc359, idxprom360, arrayidx361, v354, v355, inc363, idxprom364, arrayidx365, v356, v357, inc366, idxprom367, arrayidx368, v358, v359, inc370, idxprom371, arrayidx372, v360, v361, inc373, idxprom374, arrayidx375, v362, v363, inc377, idxprom378, arrayidx379, v364, v365, inc380, idxprom381, arrayidx382, v366, v367, idxprom383, arrayidx384, v368, v369, v370, inc385, idxprom386, arrayidx387, v371, inc388, v372, v373, idx_ext, add_ptr, v374, sub390, conv391, coerce_dive392, v375, call393, v376, v377, bytes395, v378, call396, v379, v380, v381, coerce_dive398, v382
 
@@ -69886,8 +69886,8 @@ if_then3:
 	goto if_end
 
 if_end:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(retval))
-	*ptr = nil
+	ptr = (*uintptr)(unsafe.Pointer(retval))
+	*ptr = 0
 	goto _return
 
 if_end6:
@@ -70033,8 +70033,8 @@ if_end42:
 	}
 
 if_then49:
-	ptr50 = (**SubtreeHeapData)(unsafe.Pointer(retval))
-	*ptr50 = nil
+	ptr50 = (*uintptr)(unsafe.Pointer(retval))
+	*ptr50 = 0
 	goto _return
 
 if_end51:
@@ -70817,9 +70817,9 @@ if_then302:
 	call304 = ts_subtree_to_mut_unsafe(v317)
 	coerce_dive305 = &mut_result.F0
 	*coerce_dive305 = call304
-	ptr306 = (**SubtreeHeapData)(unsafe.Pointer(mut_result))
+	ptr306 = (*uintptr)(unsafe.Pointer(mut_result))
 	v318 = *ptr306
-	v319 = &v318.F9
+	v319 = &(*SubtreeHeapData)(unsafe.Pointer(v318)).F9
 	external_scanner_state = (*ExternalScannerState)(unsafe.Pointer(v319))
 	v320 = *self_addr
 	lexer307 = &v320.F0
@@ -70829,9 +70829,9 @@ if_then302:
 	ts_external_scanner_state_init(external_scanner_state, arraydecay309, v321)
 	v322 = *external_scanner_state_changed
 	tobool310 = (v322 & 1) != 0
-	ptr311 = (**SubtreeHeapData)(unsafe.Pointer(mut_result))
+	ptr311 = (*uintptr)(unsafe.Pointer(mut_result))
 	v323 = *ptr311
-	has_external_scanner_state_change = &v323.F8
+	has_external_scanner_state_change = &(*SubtreeHeapData)(unsafe.Pointer(v323)).F8
 	if tobool310 { v324 = 1 } else { v324 = 0 }
 	bf_load = *has_external_scanner_state_change
 	bf_shl = v324 << 7
@@ -71103,11 +71103,9 @@ _return:
 
 func ts_parser__check_progress(self *TSParser, lookahead *Subtree, position *int32, operations int32) bool {
 	var lookahead_addr **Subtree
-	var ptr, coerce_dive **SubtreeHeapData
 	var self_addr **TSParser
 	var position_addr **int32
 	var v20, v21, v24 *Subtree
-	var v22, v25 *SubtreeHeapData
 	var tree_pool *SubtreePool
 	var parse_options, parse_options12 *TSParseOptions
 	var parse_state, parse_state5, parse_state14 *TSParseState
@@ -71116,10 +71114,12 @@ func ts_parser__check_progress(self *TSParser, lookahead *Subtree, position *int
 	var has_error, has_error6 *byte
 	var progress_callback, progress_callback13 *func(*TSParseState) bool
 	var operations_addr, operation_count, operation_count1, operation_count2, v6, v7, current_byte_offset, operation_count8 *int32
+	var ptr, coerce_dive *uintptr
 	var cmp, cmp3, tobool, cmp9, tobool10, call, tobool16, tobool18, v26 bool
 	var v11, frombool byte
 	var v16, v18 func(*TSParseState) bool
 	var v0, v2, add, v4, v8, v14 int32
+	var v22, v25 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, self_addr, lookahead_addr, position_addr, operations_addr, v0, v1, operation_count, v2, add, v3, operation_count1, v4, cmp, v5, operation_count2, v6, cmp3, v7, v8, v9, parse_state, current_byte_offset, v10, has_error, v11, tobool, v12, parse_state5, has_error6, frombool, v13, operation_count8, v14, cmp9, v15, parse_options, progress_callback, v16, tobool10, v17, parse_options12, progress_callback13, v18, v19, parse_state14, call, v20, tobool16, v21, ptr, v22, tobool18, v23, tree_pool, v24, coerce_dive, v25, v26
 
@@ -71229,9 +71229,9 @@ if_then15:
 
 land_lhs_true17:
 	v21 = *lookahead_addr
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(v21))
+	ptr = (*uintptr)(unsafe.Pointer(v21))
 	v22 = *ptr
-	tobool18 = v22 != nil
+	tobool18 = v22 != 0
 	if tobool18 {
 		goto if_then19
 	} else {
@@ -71263,14 +71263,12 @@ _return:
 func ts_parser__breakdown_lookahead(self *TSParser, lookahead *Subtree, state int16, reusable_node *ReusableNode) {
 	var reusable_node_addr **ReusableNode
 	var lookahead_addr **Subtree
-	var coerce_dive, coerce_dive1, coerce_dive3, coerce_dive10, coerce_dive16, coerce_dive19, coerce_dive20 **SubtreeHeapData
 	var language **TSLanguage
 	var self_addr **TSParser
 	var dot_graph_file **os.File
 	var lexer, lexer9 *Lexer
 	var v0, v14, v15 *ReusableNode
 	var tree, tmp, v20, v22, v25 *Subtree
-	var call, v1, v2, v12, call15, v21, v26 *SubtreeHeapData
 	var tree_pool *SubtreePool
 	var v11 *TSLanguage
 	var logger *TSLogger
@@ -71280,11 +71278,13 @@ func ts_parser__breakdown_lookahead(self *TSParser, lookahead *Subtree, state in
 	var log *func(*byte, int32, *byte)
 	var state_addr *int16
 	var v8 *os.File
+	var coerce_dive, coerce_dive1, coerce_dive3, coerce_dive10, coerce_dive16, coerce_dive19, coerce_dive20 *uintptr
 	var cmp, cmp6, v4, tobool, tobool8, call14, tobool17 bool
 	var v18 byte
 	var v6 func(*byte, int32, *byte)
 	var call4, v3, call11 int16
 	var call2, conv, conv5, call13 int32
+	var call, v1, v2, v12, call15, v21, v26 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self_addr, lookahead_addr, state_addr, reusable_node_addr, did_descend, tree, tmp, v0, call, coerce_dive, coerce_dive1, v1, call2, cmp, coerce_dive3, v2, call4, conv, v3, conv5, cmp6, v4, v5, lexer, logger, log, v6, tobool, v7, dot_graph_file, v8, tobool8, v9, lexer9, debug_buffer, arraydecay, v10, language, v11, coerce_dive10, v12, call11, call12, call13, v13, v14, call14, v15, call15, coerce_dive16, v16, v17, v18, tobool17, v19, tree_pool, v20, coerce_dive19, v21, v22, v23, v24, v25, coerce_dive20, v26
 
@@ -71419,23 +71419,23 @@ if_then18:
 if_end21:
 }
 
-func ts_parser__shift(self *TSParser, version int32, state int16, lookahead_coerce *SubtreeHeapData, extra bool) {
+func ts_parser__shift(self *TSParser, version int32, state int16, lookahead_coerce uintptr, extra bool) {
 	var stack, stack22 **Stack
-	var coerce_dive, coerce_dive1, coerce_dive3, coerce_dive10, coerce_dive12, coerce_dive14, coerce_dive16, coerce_dive18, coerce_dive19, coerce_dive23, coerce_dive25, coerce_dive26 **SubtreeHeapData
 	var self_addr **TSParser
 	var result *MutableSubtree
 	var v13, v20 *Stack
 	var lookahead, subtree_to_push, tmp, agg_tmp *Subtree
-	var v0, v4, v7, call11, v9, call15, v17, v18, v22, call24, v23 *SubtreeHeapData
 	var tree_pool *SubtreePool
 	var v6, v12, v19 *TSParser
 	var extra_addr, is_leaf, v1, v2, v10, v11 *byte
 	var state_addr *int16
 	var version_addr *int32
+	var coerce_dive, coerce_dive1, coerce_dive3, coerce_dive10, coerce_dive12, coerce_dive14, coerce_dive16, coerce_dive18, coerce_dive19, coerce_dive23, coerce_dive25, coerce_dive26 *uintptr
 	var cmp, tobool, call4, cmp6, tobool8, tobool13, tobool17, lnot, call20 bool
 	var frombool, frombool2, v3, v5, v8, v15 byte
 	var v16 int16
 	var call, conv, conv5, v14, v21 int32
+	var v0, v4, v7, call11, v9, call15, v17, v18, v22, call24, v23 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = lookahead, self_addr, version_addr, state_addr, extra_addr, is_leaf, subtree_to_push, result, tmp, agg_tmp, coerce_dive, frombool, coerce_dive1, v0, call, cmp, frombool2, v1, v2, v3, tobool, conv, coerce_dive3, v4, call4, conv5, cmp6, v5, tobool8, v6, tree_pool, coerce_dive10, v7, call11, coerce_dive12, v8, tobool13, coerce_dive14, v9, call15, coerce_dive16, v10, v11, v12, stack, v13, v14, v15, tobool17, lnot, v16, coerce_dive18, v17, coerce_dive19, v18, call20, v19, stack22, v20, v21, coerce_dive23, v22, call24, coerce_dive25, coerce_dive26, v23
 
@@ -71551,19 +71551,19 @@ if_end27:
 func reusable_node_advance(self *ReusableNode) {
 	var self_addr **ReusableNode
 	var contents, contents19, contents40, contents52, contents58, contents60 **StackEntry
-	var coerce_dive, coerce_dive9, coerce_dive13, coerce_dive15, coerce_dive47, ptr, ptr66 **SubtreeHeapData
 	var v0, v2, v4, v6, v13, v17, v19, v24, v26, v28, v30, v32, v38, v41, v43, v45, v46, v48 *ReusableNode
 	var last_entry, popped_entry, _compoundliteral, v5, arrayidx, v18, arrayidx23, v31, arrayidx45, v39, v44, v47, arrayidx64 *StackEntry
 	var tmp, tree17, tree, tree8, last_external_token, tree12, tree46, tree65, v52, add_ptr, cond, arrayidx68 *Subtree
-	var v11, v12, v14, call14, v36, v51, v53 *SubtreeHeapData
 	var data *SubtreeInlineData
 	var stack, stack1, stack3, stack4, stack18, stack20, stack25, stack30, stack33, stack39, stack41, stack51, stack53, stack55, stack57, stack59, stack61 *anon_7
 	var v8, v9, v15, v16, v21, v22, v34, v35, v40, call56, v50, v56, v57, v60, v61 *byte
 	var byte_offset, next_index, size, size2, size5, byte_offset7, size21, child_index, size26, size31, size34, size42, size54, capacity, size62, child_count, child_index69, byte_offset70 *int32
+	var coerce_dive, coerce_dive9, coerce_dive13, coerce_dive15, coerce_dive47, ptr, ptr66 *uintptr
 	var cmp, call10, cmp27, cmp35, cmp49, bf_cast bool
 	var bf_load, bf_clear byte
 	var v1, sub, v3, v7, sub6, v10, call, add, v20, dec, v23, add24, v25, v27, sub32, v29, v33, sub43, call48, v37, v42, v49, inc, v54, v55, v58, v59 int32
 	var idxprom, idxprom22, idxprom44, idxprom63, idx_ext, idx_neg, idxprom67 int64
+	var v11, v12, v14, call14, v36, v51, v53 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self_addr, last_entry, byte_offset, tmp, tree17, next_index, popped_entry, _compoundliteral, v0, stack, size, v1, sub, v2, stack1, size2, v3, cmp, v4, stack3, contents, v5, v6, stack4, size5, v7, sub6, idxprom, arrayidx, v8, v9, byte_offset7, v10, tree, coerce_dive, v11, call, add, tree8, coerce_dive9, v12, call10, v13, last_external_token, tree12, coerce_dive13, v14, call14, coerce_dive15, v15, v16, v17, stack18, contents19, v18, v19, stack20, size21, v20, dec, idxprom22, arrayidx23, v21, v22, child_index, v23, add24, v24, stack25, size26, v25, cmp27, v26, stack30, size31, v27, sub32, v28, stack33, size34, v29, cmp35, v30, stack39, contents40, v31, v32, stack41, size42, v33, sub43, idxprom44, arrayidx45, tree46, v34, v35, coerce_dive47, v36, call48, v37, cmp49, v38, stack51, contents52, v39, v40, v41, stack53, size54, v42, v43, stack55, capacity, call56, v44, v45, stack57, contents58, v46, stack59, contents60, v47, v48, stack61, size62, v49, inc, idxprom63, arrayidx64, tree65, data, v50, bf_load, bf_clear, bf_cast, ptr, v51, v52, ptr66, v53, child_count, v54, idx_ext, idx_neg, add_ptr, cond, v55, idxprom67, arrayidx68, v56, v57, child_index69, v58, byte_offset70, v59, v60, v61
 
@@ -71788,12 +71788,12 @@ cond_true:
 	goto cond_end
 
 cond_false:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(tree17))
+	ptr = (*uintptr)(unsafe.Pointer(tree17))
 	v51 = *ptr
 	v52 = (*Subtree)(unsafe.Pointer(v51))
-	ptr66 = (**SubtreeHeapData)(unsafe.Pointer(tree17))
+	ptr66 = (*uintptr)(unsafe.Pointer(tree17))
 	v53 = *ptr66
-	child_count = &v53.F5
+	child_count = &(*SubtreeHeapData)(unsafe.Pointer(v53)).F5
 	v54 = *child_count
 	idx_ext = int64(uint64(uint32(v54)))
 	idx_neg = int64(0) - idx_ext
@@ -71826,7 +71826,6 @@ func ts_parser__reduce(self *TSParser, version int32, symbol int16, count int32,
 	var stack, stack2, stack4, stack11, stack107, stack145, stack157, stack180, stack191 **Stack
 	var v7, contents, contents26, contents55 **StackSlice
 	var contents82, contents84, contents86, contents88, contents166 **Subtree
-	var coerce_dive, coerce_dive67, coerce_dive69, coerce_dive70, coerce_dive77, coerce_dive79, coerce_dive80, coerce_dive99, ptr, ptr129, ptr133, ptr137, ptr139, ptr142, coerce_dive147, coerce_dive149, coerce_dive150, coerce_dive169 **SubtreeHeapData
 	var language, language97, language109 **TSLanguage
 	var self_addr **TSParser
 	var _array_swap_tmp **byte
@@ -71838,7 +71837,6 @@ func ts_parser__reduce(self *TSParser, version int32, symbol int16, count int32,
 	var pop *StackSliceArray
 	var agg_tmp, agg_tmp76, agg_tmp146, v78, v81, v84, v138, arrayidx168 *Subtree
 	var children, next_slice_children, subtrees, subtrees36, subtrees39, trailing_extras, subtrees66, trailing_extras2, trailing_extras74, trailing_extras81, trailing_extras283, trailing_extras85, trailing_extras287, trailing_extras89, trailing_extras91, trailing_extras292, trailing_extras294, trailing_extras2101, subtrees104, trailing_extras152, trailing_extras158, trailing_extras165 *SubtreeArray
-	var call40, v70, call68, v71, v75, call78, v76, call98, v108, v112, v113, v114, v116, v118, v125, call148, v127, v141 *SubtreeHeapData
 	var tree_pool, tree_pool35, tree_pool73, tree_pool75, tree_pool103 *SubtreePool
 	var v54, v93, v102 *TSLanguage
 	var logger *TSLogger
@@ -71866,6 +71864,7 @@ func ts_parser__reduce(self *TSParser, version int32, symbol int16, count int32,
 	F5 int16
 	F6 anon_0
 }
+	var coerce_dive, coerce_dive67, coerce_dive69, coerce_dive70, coerce_dive77, coerce_dive79, coerce_dive80, coerce_dive99, ptr, ptr129, ptr133, ptr137, ptr139, ptr142, coerce_dive147, coerce_dive149, coerce_dive150, coerce_dive169 *uintptr
 	var cmp, cmp7, cmp9, cmp14, tobool, tobool15, cmp22, cmp32, cmp44, cmp50, cmp61, call71, tobool111, cmp115, tobool119, cmp123, cmp126, cmp154, cmp160, cmp173, cmp176, call181, cmp193 bool
 	var frombool, frombool1, v105, v109 byte
 	var v33 func(*byte, int32, *byte)
@@ -71876,6 +71875,7 @@ func ts_parser__reduce(self *TSParser, version int32, symbol int16, count int32,
 	F0 *StackSlice
 	F1 int64
 }
+	var call40, v70, call68, v71, v75, call78, v76, call98, v108, v112, v113, v114, v116, v118, v125, call148, v127, v141 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self_addr, version_addr, symbol_addr, count_addr, dynamic_precedence_addr, production_id_addr, is_fragile_addr, end_of_non_terminal_extra_addr, initial_version_count, pop, removed_version_count, halted_version_count, i, slice, slice_version, next_slice, children, parent, next_slice47, next_slice_children, agg_tmp, agg_tmp76, _array_swap_tmp, tmp, state, next_state, agg_tmp146, j, j171, frombool, frombool1, v0, stack, v1, call, v2, stack2, v3, v4, v5, call3, v6, v7, v8, v9, v10, v11, stack4, v12, call5, v13, size, v14, cmp, v15, size6, v16, cmp7, contents, v17, v18, idxprom, arrayidx, v19, v20, version8, v21, v22, sub, v23, v24, add, cmp9, v25, stack11, v26, v27, v28, tree_pool, subtrees, v29, inc, v30, add12, size13, v31, cmp14, v32, lexer, logger, log, v33, tobool, v34, dot_graph_file, v35, tobool15, v36, lexer17, debug_buffer, arraydecay, call18, v37, v38, add20, size21, v39, cmp22, contents26, v40, v41, add27, idxprom28, arrayidx29, v42, v43, version30, v44, version31, v45, cmp32, v46, tree_pool35, subtrees36, v47, inc37, subtrees39, v48, v49, v50, trailing_extras, v51, v52, conv, v53, language, v54, call40, coerce_dive, v55, add42, size43, v56, cmp44, v57, add48, size49, v58, cmp50, contents55, v59, v60, add56, idxprom57, arrayidx58, v61, v62, version59, v63, version60, v64, cmp61, v65, inc65, subtrees66, v66, v67, v68, trailing_extras2, v69, coerce_dive67, v70, call68, coerce_dive69, coerce_dive70, v71, call71, v72, tree_pool73, v73, trailing_extras74, v74, tree_pool75, coerce_dive77, v75, call78, coerce_dive79, coerce_dive80, v76, v77, trailing_extras81, contents82, v78, v79, v80, trailing_extras283, contents84, v81, v82, trailing_extras85, contents86, v83, v84, v85, trailing_extras287, contents88, v86, trailing_extras89, size90, v87, trailing_extras91, capacity, v88, trailing_extras292, size93, v89, trailing_extras294, capacity95, v90, v91, conv96, v92, language97, v93, call98, coerce_dive99, v94, v95, v96, trailing_extras2101, size102, v97, tree_pool103, subtrees104, v98, stack107, v99, v100, call108, v101, language109, v102, v103, v104, call110, v105, tobool111, v106, conv113, v107, conv114, cmp115, ptr, v108, extra, bf_load, bf_clear, bf_set, v109, tobool119, size122, v110, cmp123, v111, cmp126, ptr129, v112, fragile_left, bf_load130, bf_clear131, bf_set132, ptr133, v113, fragile_right, bf_load134, bf_clear135, bf_set136, ptr137, v114, parse_state, v115, ptr139, v116, parse_state140, v117, ptr142, v118, v119, v120, dynamic_precedence143, v121, add144, v122, stack145, v123, v124, coerce_dive147, v125, call148, coerce_dive149, v126, coerce_dive150, v127, v128, v129, trailing_extras152, size153, v130, cmp154, v131, stack157, v132, v133, v134, v135, trailing_extras158, size159, v136, cmp160, v137, trailing_extras165, contents166, v138, v139, idxprom167, arrayidx168, v140, coerce_dive169, v141, v142, inc170, v143, v144, cmp173, v145, v146, cmp176, v147, stack180, v148, v149, v150, call181, v151, inc183, v152, inc186, v153, inc189, v154, stack191, v155, call192, v156, cmp193, v157, cond
 
@@ -72336,9 +72336,9 @@ land_lhs_true:
 	}
 
 if_then117:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(parent))
+	ptr = (*uintptr)(unsafe.Pointer(parent))
 	v108 = *ptr
-	extra = &v108.F8
+	extra = &(*SubtreeHeapData)(unsafe.Pointer(v108)).F8
 	bf_load = *extra
 	bf_clear = bf_load & -5
 	bf_set = bf_clear | 4
@@ -72374,39 +72374,39 @@ lor_lhs_false125:
 	}
 
 if_then128:
-	ptr129 = (**SubtreeHeapData)(unsafe.Pointer(parent))
+	ptr129 = (*uintptr)(unsafe.Pointer(parent))
 	v112 = *ptr129
-	fragile_left = &v112.F8
+	fragile_left = &(*SubtreeHeapData)(unsafe.Pointer(v112)).F8
 	bf_load130 = *fragile_left
 	bf_clear131 = bf_load130 & -9
 	bf_set132 = bf_clear131 | 8
 	*fragile_left = bf_set132
-	ptr133 = (**SubtreeHeapData)(unsafe.Pointer(parent))
+	ptr133 = (*uintptr)(unsafe.Pointer(parent))
 	v113 = *ptr133
-	fragile_right = &v113.F8
+	fragile_right = &(*SubtreeHeapData)(unsafe.Pointer(v113)).F8
 	bf_load134 = *fragile_right
 	bf_clear135 = bf_load134 & -17
 	bf_set136 = bf_clear135 | 16
 	*fragile_right = bf_set136
-	ptr137 = (**SubtreeHeapData)(unsafe.Pointer(parent))
+	ptr137 = (*uintptr)(unsafe.Pointer(parent))
 	v114 = *ptr137
-	parse_state = &v114.F7
+	parse_state = &(*SubtreeHeapData)(unsafe.Pointer(v114)).F7
 	*parse_state = -1
 	goto if_end141
 
 if_else138:
 	v115 = *state
-	ptr139 = (**SubtreeHeapData)(unsafe.Pointer(parent))
+	ptr139 = (*uintptr)(unsafe.Pointer(parent))
 	v116 = *ptr139
-	parse_state140 = &v116.F7
+	parse_state140 = &(*SubtreeHeapData)(unsafe.Pointer(v116)).F7
 	*parse_state140 = v115
 	goto if_end141
 
 if_end141:
 	v117 = *dynamic_precedence_addr
-	ptr142 = (**SubtreeHeapData)(unsafe.Pointer(parent))
+	ptr142 = (*uintptr)(unsafe.Pointer(parent))
 	v118 = *ptr142
-	v119 = &v118.F9
+	v119 = &(*SubtreeHeapData)(unsafe.Pointer(v118)).F9
 	v120 = (*struct {
 	F0 int32
 	F1 int32
@@ -72583,11 +72583,10 @@ cond_end:
 	return cond
 }
 
-func ts_parser__accept(self *TSParser, version int32, lookahead_coerce *SubtreeHeapData) {
+func ts_parser__accept(self *TSParser, version int32, lookahead_coerce uintptr) {
 	var stack, stack3, stack85, stack95 **Stack
 	var v9, contents, contents92 **StackSlice
 	var children, contents19, contents42, contents45 **Subtree
-	var coerce_dive, coerce_dive1, coerce_dive2, coerce_dive22, coerce_dive28, ptr, ptr34, coerce_dive41, coerce_dive46, ptr48, coerce_dive50, coerce_dive51, coerce_dive53, coerce_dive54, ptr58, ptr63, coerce_dive67, coerce_dive68, coerce_dive73, coerce_dive77 **SubtreeHeapData
 	var language **TSLanguage
 	var self_addr **TSParser
 	var agg_tmp *MutableSubtree
@@ -72596,7 +72595,6 @@ func ts_parser__accept(self *TSParser, version int32, lookahead_coerce *SubtreeH
 	var pop *StackSliceArray
 	var lookahead, root, tree, tmp, v26, arrayidx21, v35, add_ptr, cond, v40, arrayidx40, v44, v48, v50, finished_tree, finished_tree66, finished_tree72, finished_tree74, finished_tree80 *Subtree
 	var trees, subtrees *SubtreeArray
-	var v0, v4, v30, v32, v34, v36, v42, v51, v52, call49, v58, call52, v62, v64, v68, v71, v72, v75, v80 *SubtreeHeapData
 	var data, data30 *SubtreeInlineData
 	var tree_pool, tree_pool71, tree_pool76 *SubtreePool
 	var v57 *TSLanguage
@@ -72621,6 +72619,7 @@ func ts_parser__accept(self *TSParser, version int32, lookahead_coerce *SubtreeH
 	F5 int16
 	F6 anon_0
 }
+	var coerce_dive, coerce_dive1, coerce_dive2, coerce_dive22, coerce_dive28, ptr, ptr34, coerce_dive41, coerce_dive46, ptr48, coerce_dive50, coerce_dive51, coerce_dive53, coerce_dive54, ptr58, ptr63, coerce_dive67, coerce_dive68, coerce_dive73, coerce_dive77 *uintptr
 	var call, cmp, cmp6, cmp12, cmp15, call23, bf_cast, bf_cast33, cmp37, tobool, tobool64, call69, cmp87 bool
 	var bf_load, bf_clear, bf_load31, bf_clear32 byte
 	var call47, v55 int16
@@ -72630,6 +72629,7 @@ func ts_parser__accept(self *TSParser, version int32, lookahead_coerce *SubtreeH
 	F0 *StackSlice
 	F1 int64
 }
+	var v0, v4, v30, v32, v34, v36, v42, v51, v52, call49, v58, call52, v62, v64, v68, v71, v72, v75, v80 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = lookahead, self_addr, version_addr, pop, i, trees, root, j, tree, child_count, children, k, tmp, agg_tmp, coerce_dive, coerce_dive1, v0, call, v1, stack, v2, v3, coerce_dive2, v4, v5, stack3, v6, v7, call4, v8, v9, v10, v11, v12, v13, size, v14, cmp, v15, size5, v16, cmp6, contents, v17, v18, idxprom, arrayidx, subtrees, v19, v20, v21, size10, v22, sub, v23, add, cmp12, v24, size14, v25, cmp15, contents19, v26, v27, idxprom20, arrayidx21, v28, v29, coerce_dive22, v30, call23, data, v31, bf_load, bf_clear, bf_cast, coerce_dive28, v32, call29, data30, v33, bf_load31, bf_clear32, bf_cast33, ptr, v34, v35, ptr34, v36, child_count35, v37, idx_ext, idx_neg, add_ptr, cond, v38, v39, cmp37, v40, v41, idxprom39, arrayidx40, coerce_dive41, v42, v43, inc, contents42, v44, v45, size43, capacity, v46, v47, v48, v49, call44, v50, contents45, coerce_dive46, v51, call47, ptr48, v52, v53, v54, production_id, v55, conv, v56, language, v57, call49, coerce_dive50, coerce_dive51, v58, call52, coerce_dive53, v59, v60, v61, tree_pool, coerce_dive54, v62, v63, dec, ptr58, v64, tobool, v65, accept_count, v66, inc62, v67, finished_tree, ptr63, v68, tobool64, v69, v70, finished_tree66, coerce_dive67, v71, coerce_dive68, v72, call69, v73, tree_pool71, v74, finished_tree72, coerce_dive73, v75, v76, finished_tree74, v77, v78, v79, tree_pool76, coerce_dive77, v80, v81, finished_tree80, v82, v83, v84, inc83, v85, stack85, v86, size86, v87, cmp87, contents92, v88, arrayidx93, version94, v89, v90, stack95, v91, v92
 
@@ -72826,12 +72826,12 @@ cond_true:
 	goto cond_end
 
 cond_false:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(tree))
+	ptr = (*uintptr)(unsafe.Pointer(tree))
 	v34 = *ptr
 	v35 = (*Subtree)(unsafe.Pointer(v34))
-	ptr34 = (**SubtreeHeapData)(unsafe.Pointer(tree))
+	ptr34 = (*uintptr)(unsafe.Pointer(tree))
 	v36 = *ptr34
-	child_count35 = &v36.F5
+	child_count35 = &(*SubtreeHeapData)(unsafe.Pointer(v36)).F5
 	v37 = *child_count35
 	idx_ext = int64(uint64(uint32(v37)))
 	idx_neg = int64(0) - idx_ext
@@ -72887,9 +72887,9 @@ for_end:
 	coerce_dive46 = &tree.F0
 	v51 = *coerce_dive46
 	call47 = ts_subtree_symbol(v51)
-	ptr48 = (**SubtreeHeapData)(unsafe.Pointer(tree))
+	ptr48 = (*uintptr)(unsafe.Pointer(tree))
 	v52 = *ptr48
-	v53 = &v52.F9
+	v53 = &(*SubtreeHeapData)(unsafe.Pointer(v52)).F9
 	v54 = (*struct {
 	F0 int32
 	F1 int32
@@ -72933,9 +72933,9 @@ for_inc56:
 	goto for_cond11
 
 for_end57:
-	ptr58 = (**SubtreeHeapData)(unsafe.Pointer(root))
+	ptr58 = (*uintptr)(unsafe.Pointer(root))
 	v64 = *ptr58
-	tobool = v64 != nil
+	tobool = v64 != 0
 	if tobool {
 		goto if_then59
 	} else {
@@ -72957,9 +72957,9 @@ if_end61:
 	*accept_count = inc62
 	v67 = *self_addr
 	finished_tree = &v67.F6
-	ptr63 = (**SubtreeHeapData)(unsafe.Pointer(finished_tree))
+	ptr63 = (*uintptr)(unsafe.Pointer(finished_tree))
 	v68 = *ptr63
-	tobool64 = v68 != nil
+	tobool64 = v68 != 0
 	if tobool64 {
 		goto if_then65
 	} else {
@@ -73058,13 +73058,12 @@ if_end91:
 	ts_stack_halt(v91, v92)
 }
 
-func ts_parser__recover(self *TSParser, version int32, lookahead_coerce *SubtreeHeapData) {
+func ts_parser__recover(self *TSParser, version int32, lookahead_coerce uintptr) {
 	var stack, stack1, stack3, stack5, stack7, stack34, stack42, stack89, stack104, stack109, stack125, stack129, stack159, stack166, stack171, stack181, stack201, stack270, stack295, stack309, stack321, stack415, stack423, stack432 **Stack
 	var v203, contents289, contents303, contents316, contents328, contents338, contents348, contents358, contents369, contents379, contents389, contents408 **StackSlice
 	var summary **StackSummary
 	var contents **StackSummaryEntry
 	var contents251, contents253, contents254, contents258, contents259, contents341, contents372, contents382 **Subtree
-	var coerce_dive, coerce_dive9, coerce_dive71, coerce_dive140, coerce_dive158, coerce_dive160, coerce_dive161, coerce_dive172, coerce_dive177, coerce_dive183, coerce_dive187, coerce_dive191, coerce_dive203, coerce_dive206, coerce_dive226, coerce_dive228, coerce_dive229, coerce_dive231, coerce_dive245, coerce_dive266, coerce_dive397, coerce_dive399, coerce_dive413, coerce_dive416, coerce_dive418, coerce_dive419, coerce_dive420, coerce_dive425, coerce_dive427, coerce_dive428 **SubtreeHeapData
 	var language, language90, language130, language156, language205, language244, language264, language411 **TSLanguage
 	var actions **TSParseAction
 	var self_addr **TSParser
@@ -73080,7 +73079,6 @@ func ts_parser__recover(self *TSParser, version int32, lookahead_coerce *Subtree
 	var entry11, v25, arrayidx *StackSummaryEntry
 	var lookahead, parent, tmp, tmp396, agg_tmp, agg_tmp424, v185, v187, v188, v191, v192, arrayidx263, v234, v241, v246, arrayidx395 *Subtree
 	var children, children250, subtrees, subtrees340, subtrees350, subtrees360, subtrees371, subtrees381, subtrees391, subtrees410 *SubtreeArray
-	var v17, v62, v114, call157, v127, v130, v138, v140, v145, v147, v148, v159, v162, v171, call227, v172, call230, v182, call265, v250, call398, call412, v262, call417, v263, v264, v268, call426, v269 *SubtreeHeapData
 	var tree_pool, tree_pool182, tree_pool202, tree_pool225, tree_pool282 *SubtreePool
 	var v60, v80, v108, v123, v161, v181, v197, v256 *TSLanguage
 	var logger, logger113, logger144, logger234 *TSLogger
@@ -73107,6 +73105,7 @@ func ts_parser__recover(self *TSParser, version int32, lookahead_coerce *Subtree
 	F0 int64
 	F1 int64
 }
+	var coerce_dive, coerce_dive9, coerce_dive71, coerce_dive140, coerce_dive158, coerce_dive160, coerce_dive161, coerce_dive172, coerce_dive177, coerce_dive183, coerce_dive187, coerce_dive191, coerce_dive203, coerce_dive206, coerce_dive226, coerce_dive228, coerce_dive229, coerce_dive231, coerce_dive245, coerce_dive266, coerce_dive397, coerce_dive399, coerce_dive413, coerce_dive416, coerce_dive418, coerce_dive419, coerce_dive420, coerce_dive425, coerce_dive427, coerce_dive428 *uintptr
 	var tobool, call10, cmp, cmp13, cmp15, cmp21, cmp26, cmp31, cmp39, cmp47, tobool52, call67, call73, call76, tobool78, tobool79, tobool87, call92, cmp106, call110, tobool115, tobool118, tobool127, call132, call141, tobool146, tobool149, tobool163, cmp168, tobool174, call178, call199, cmp209, cmp216, tobool222, tobool236, tobool239, cmp267, cmp273, cmp279, cmp284, cmp298, cmp307, cmp311, cmp323, cmp333, cmp343, cmp353, cmp364, cmp374, cmp384, cmp403, call421, cmp434, tobool438, tobool444 bool
 	var v49, v131, v139, v166, v169, v280, v282, frombool byte
 	var v68, v94, v116, v176 func(*byte, int32, *byte)
@@ -73125,6 +73124,7 @@ func ts_parser__recover(self *TSParser, version int32, lookahead_coerce *Subtree
 	F0 int64
 	F1 int64
 }
+	var v17, v62, v114, call157, v127, v130, v138, v140, v145, v147, v148, v159, v162, v171, call227, v172, call230, v182, call265, v250, call398, call412, v262, call417, v263, v264, v268, call426, v269 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = lookahead, self_addr, version_addr, did_recover, previous_version_count, position, tmp_coerce, summary, node_count_since_error, current_error_cost, i, entry11, depth, would_merge, j, coerce, tmp_coerce44, new_cost, i102, children, parent, new_cost185, coerce193, tmp_coerce194, n, actions, mutable_lookahead, tmp, children250, error_repeat, pop, i276, tmp396, tmp401, agg_tmp, agg_tmp424, has_error, i430, status, coerce_dive, v0, stack, v1, call, v2, stack1, v3, v4, call2, v5, v6, v7, stack3, v8, v9, call4, v10, stack5, v11, v12, call6, v13, stack7, v14, v15, call8, v16, tobool, coerce_dive9, v17, call10, v18, v19, size, v20, cmp, v21, v22, size12, v23, cmp13, v24, contents, v25, v26, idxprom, arrayidx, v27, v28, state, v29, conv, cmp15, position19, bytes, v30, bytes20, v31, cmp21, depth25, v32, v33, cmp26, v34, inc, v35, v36, cmp31, v37, stack34, v38, v39, call35, conv36, state37, v40, conv38, cmp39, v41, stack42, v42, v43, call43, v44, v45, bytes45, v46, bytes46, v47, cmp47, v48, inc51, v49, tobool52, v50, depth55, v51, mul, add, bytes56, v52, position57, bytes58, v53, sub, mul59, add60, extent, row, v54, position61, extent62, row63, v55, sub64, mul65, add66, v56, v57, v58, call67, v59, language, v60, state70, v61, coerce_dive71, v62, call72, call73, v63, v64, v65, state75, v66, call76, v67, lexer, logger, log, v68, tobool78, v69, dot_graph_file, v70, tobool79, v71, lexer81, debug_buffer, arraydecay, state82, v72, conv83, v73, call84, v74, v75, dot_graph_file86, v76, tobool87, v77, stack89, v78, v79, language90, v80, v81, dot_graph_file91, v82, call92, v83, dot_graph_file93, v84, call94, v85, inc99, v86, v87, v88, stack104, v89, call105, cmp106, v90, stack109, v91, v92, call110, v93, lexer112, logger113, log114, v94, tobool115, v95, dot_graph_file117, v96, tobool118, v97, lexer120, debug_buffer121, arraydecay122, v98, call123, v99, v100, stack125, v101, v102, dec, v103, dot_graph_file126, v104, tobool127, v105, stack129, v106, v107, language130, v108, v109, dot_graph_file131, v110, call132, v111, dot_graph_file133, v112, call134, v113, inc138, coerce_dive140, v114, call141, v115, lexer143, logger144, log145, v116, tobool146, v117, dot_graph_file148, v118, tobool149, v119, lexer151, debug_buffer152, arraydecay153, call154, v120, v121, v122, language156, v123, call157, coerce_dive158, v124, stack159, v125, v126, coerce_dive160, v127, v128, v129, coerce_dive161, v130, v131, tobool163, v132, stack166, v133, call167, cmp168, v134, stack171, v135, v136, v137, tree_pool, coerce_dive172, v138, v139, tobool174, coerce_dive177, v140, call178, v141, stack181, v142, v143, v144, tree_pool182, coerce_dive183, v145, v146, add186, coerce_dive187, v147, call188, mul189, add190, coerce_dive191, v148, call192, v149, v150, extent195, row196, v151, mul197, add198, v152, v153, v154, call199, v155, stack201, v156, v157, v158, tree_pool202, coerce_dive203, v159, v160, language205, v161, coerce_dive206, v162, call207, call208, v163, cmp209, v164, v165, sub212, idxprom213, arrayidx214, _type, v166, conv215, cmp216, v167, v168, sub219, idxprom220, arrayidx221, shift, extra, v169, tobool222, v170, tree_pool225, coerce_dive226, v171, call227, coerce_dive228, coerce_dive229, v172, call230, coerce_dive231, v173, v174, v175, lexer233, logger234, log235, v176, tobool236, v177, dot_graph_file238, v178, tobool239, v179, lexer241, debug_buffer242, arraydecay243, v180, language244, v181, coerce_dive245, v182, call246, call247, call248, v183, v184, contents251, v185, v186, capacity, call252, v187, contents253, contents254, v188, v189, size255, v190, capacity256, call257, v191, contents258, contents259, v192, size260, v193, inc261, idxprom262, arrayidx263, v194, v195, v196, language264, v197, call265, coerce_dive266, v198, cmp267, v199, stack270, v200, v201, call271, v202, v203, v204, v205, v206, size272, v207, cmp273, v208, size278, v209, cmp279, v210, tree_pool282, v211, size283, v212, cmp284, contents289, v213, v214, idxprom290, arrayidx291, subtrees, v215, inc293, v216, stack295, v217, call296, size297, v218, cmp298, contents303, v219, arrayidx304, version305, v220, add306, cmp307, v221, stack309, v222, size310, v223, cmp311, contents316, v224, arrayidx317, version318, v225, add319, v226, stack321, v227, size322, v228, cmp323, contents328, v229, arrayidx329, version330, v230, v231, size332, v232, cmp333, contents338, v233, arrayidx339, subtrees340, contents341, v234, v235, size342, v236, cmp343, contents348, v237, arrayidx349, subtrees350, size351, v238, size352, v239, cmp353, contents358, v240, arrayidx359, subtrees360, capacity361, call362, v241, size363, v242, cmp364, contents369, v243, arrayidx370, subtrees371, contents372, size373, v244, cmp374, contents379, v245, arrayidx380, subtrees381, contents382, v246, size383, v247, cmp384, contents389, v248, arrayidx390, subtrees391, size392, v249, inc393, idxprom394, arrayidx395, coerce_dive397, v250, call398, coerce_dive399, v251, v252, size402, v253, cmp403, contents408, v254, arrayidx409, subtrees410, v255, language411, v256, call412, coerce_dive413, v257, v258, v259, stack415, v260, v261, coerce_dive416, v262, call417, coerce_dive418, coerce_dive419, v263, coerce_dive420, v264, call421, v265, stack423, v266, v267, coerce_dive425, v268, call426, coerce_dive427, coerce_dive428, v269, v270, v271, stack432, v272, call433, cmp434, v273, v274, call437, v275, v276, v277, v278, v279, is_in_error, v280, tobool438, v281, inc442, v282, tobool444, v283, has_error445, frombool
 
@@ -74471,17 +74471,17 @@ for_end443:
 _return:
 }
 
-func ts_subtree_is_keyword(self_coerce *SubtreeHeapData) bool {
-	var coerce_dive, ptr **SubtreeHeapData
+func ts_subtree_is_keyword(self_coerce uintptr) bool {
 	var self *Subtree
-	var v2 *SubtreeHeapData
 	var data, data1 *SubtreeInlineData
 	var v0, v1 *byte
 	var is_keyword *int16
+	var coerce_dive, ptr *uintptr
 	var bf_cast, bf_cast4, bf_cast8, tobool bool
 	var bf_load, bf_clear, bf_load2, bf_lshr, bf_clear3 byte
 	var bf_load5, bf_lshr6, bf_clear7 int16
 	var conv, conv9, cond int32
+	var v2 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self, coerce_dive, data, v0, bf_load, bf_clear, bf_cast, data1, v1, bf_load2, bf_lshr, bf_clear3, bf_cast4, conv, ptr, v2, is_keyword, bf_load5, bf_lshr6, bf_clear7, bf_cast8, conv9, cond, tobool
 
@@ -74511,9 +74511,9 @@ cond_true:
 	goto cond_end
 
 cond_false:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr = (*uintptr)(unsafe.Pointer(self))
 	v2 = *ptr
-	is_keyword = &v2.F8
+	is_keyword = &(*SubtreeHeapData)(unsafe.Pointer(v2)).F8
 	bf_load5 = *is_keyword
 	bf_lshr6 = int16(uint16(bf_load5) >> 10)
 	bf_clear7 = bf_lshr6 & 1
@@ -74531,7 +74531,6 @@ func ts_parser__breakdown_top_of_stack(self *TSParser, version int32) bool {
 	var stack, stack6, stack40, stack60, stack93 **Stack
 	var v4, contents **StackSlice
 	var contents15, contents57, contents69, contents73, contents76 **Subtree
-	var coerce_dive, ptr, ptr21, coerce_dive24, coerce_dive27, coerce_dive31, coerce_dive34, coerce_dive39, coerce_dive43, coerce_dive62, coerce_dive66, coerce_dive85 **SubtreeHeapData
 	var language, language84, language94 **TSLanguage
 	var self_addr **TSParser
 	var dot_graph_file, dot_graph_file90, dot_graph_file95, dot_graph_file97 **os.File
@@ -74541,7 +74540,6 @@ func ts_parser__breakdown_top_of_stack(self *TSParser, version int32) bool {
 	var pop *StackSliceArray
 	var parent, child, tree, v21, arrayidx16, v29, add_ptr, cond, arrayidx23, v54, arrayidx59, v66, v68 *Subtree
 	var subtrees, subtrees14, subtrees46, subtrees50, subtrees56, subtrees68, subtrees72, subtrees75, subtrees77, subtrees79 *SubtreeArray
-	var v24, v28, v30, v35, v36, v37, v41, v42, v48, v62, v65, v77 *SubtreeHeapData
 	var data *SubtreeInlineData
 	var tree_pool *SubtreePool
 	var v39, v76, v84 *TSLanguage
@@ -74558,6 +74556,7 @@ func ts_parser__breakdown_top_of_stack(self *TSParser, version int32) bool {
 	F0 *StackSlice
 	F1 int64
 }
+	var coerce_dive, ptr, ptr21, coerce_dive24, coerce_dive27, coerce_dive31, coerce_dive34, coerce_dive39, coerce_dive43, coerce_dive62, coerce_dive66, coerce_dive85 *uintptr
 	var tobool, cmp, cmp3, cmp10, cmp19, bf_cast, cmp26, call28, call32, tobool42, cmp48, cmp52, tobool70, tobool80, tobool81, tobool91, call96, tobool103, tobool105 bool
 	var bf_load, bf_clear, frombool, v46, v90, v91 byte
 	var v67 func(*byte)
@@ -74569,6 +74568,7 @@ func ts_parser__breakdown_top_of_stack(self *TSParser, version int32) bool {
 	F0 *StackSlice
 	F1 int64
 }
+	var v24, v28, v30, v35, v36, v37, v41, v42, v48, v62, v65, v77 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self_addr, version_addr, did_break_down, pending, pop, i, slice, state, parent, j, n, child, j44, tree, v0, stack, v1, v2, call, v3, v4, v5, v6, v7, size, v8, tobool, v9, size1, v10, cmp, v11, size2, v12, cmp3, contents, v13, v14, idxprom, arrayidx, v15, v16, v17, stack6, v18, version7, v19, call8, subtrees, size9, v20, cmp10, subtrees14, contents15, v21, arrayidx16, v22, v23, coerce_dive, v24, call17, v25, v26, cmp19, data, v27, bf_load, bf_clear, bf_cast, ptr, v28, v29, ptr21, v30, child_count, v31, idx_ext, idx_neg, add_ptr, cond, v32, idxprom22, arrayidx23, v33, v34, coerce_dive24, v35, call25, cmp26, frombool, coerce_dive27, v36, call28, coerce_dive31, v37, call32, v38, language, v39, v40, coerce_dive34, v41, call35, call36, coerce_dive39, v42, v43, stack40, v44, version41, v45, v46, tobool42, v47, coerce_dive43, v48, v49, inc, v50, subtrees46, size47, v51, cmp48, v52, subtrees50, size51, v53, cmp52, subtrees56, contents57, v54, v55, idxprom58, arrayidx59, v56, v57, v58, stack60, v59, version61, v60, v61, coerce_dive62, v62, v63, inc64, v64, tree_pool, coerce_dive66, v65, subtrees68, contents69, v66, tobool70, v67, subtrees72, contents73, v68, v69, subtrees75, contents76, subtrees77, size78, subtrees79, capacity, v70, lexer, logger, log, v71, tobool80, v72, dot_graph_file, v73, tobool81, v74, lexer83, debug_buffer, arraydecay, v75, language84, v76, coerce_dive85, v77, call86, call87, call88, v78, v79, dot_graph_file90, v80, tobool91, v81, stack93, v82, v83, language94, v84, v85, dot_graph_file95, v86, call96, v87, dot_graph_file97, v88, call98, v89, inc101, v90, tobool103, v91, tobool105
 
@@ -74730,12 +74730,12 @@ cond_true:
 	goto cond_end
 
 cond_false:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(parent))
+	ptr = (*uintptr)(unsafe.Pointer(parent))
 	v28 = *ptr
 	v29 = (*Subtree)(unsafe.Pointer(v28))
-	ptr21 = (**SubtreeHeapData)(unsafe.Pointer(parent))
+	ptr21 = (*uintptr)(unsafe.Pointer(parent))
 	v30 = *ptr21
-	child_count = &v30.F5
+	child_count = &(*SubtreeHeapData)(unsafe.Pointer(v30)).F5
 	v31 = *child_count
 	idx_ext = int64(uint64(uint32(v31)))
 	idx_neg = int64(0) - idx_ext
@@ -75015,20 +75015,20 @@ do_end104:
 	return tobool105
 }
 
-func reusable_node_tree(self *ReusableNode) *SubtreeHeapData {
+func reusable_node_tree(self *ReusableNode) uintptr {
 	var self_addr **ReusableNode
 	var contents **StackEntry
-	var ptr, coerce_dive **SubtreeHeapData
 	var v0, v2, v4 *ReusableNode
 	var v3, arrayidx *StackEntry
 	var retval, tree *Subtree
-	var v8 *SubtreeHeapData
 	var stack, stack1, stack2 *anon_7
 	var v6, v7 *byte
 	var size, size3 *int32
+	var ptr, coerce_dive *uintptr
 	var cmp bool
 	var v1, v5, sub int32
 	var idxprom int64
+	var v8 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, self_addr, v0, stack, size, v1, cmp, v2, stack1, contents, v3, v4, stack2, size3, v5, sub, idxprom, arrayidx, tree, v6, v7, ptr, coerce_dive, v8
 
@@ -75065,8 +75065,8 @@ cond_true:
 	goto cond_end
 
 cond_false:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(retval))
-	*ptr = nil
+	ptr = (*uintptr)(unsafe.Pointer(retval))
+	*ptr = 0
 	goto cond_end
 
 cond_end:
@@ -75126,13 +75126,13 @@ cond_end:
 	return cond
 }
 
-func ts_subtree_is_eof(self_coerce *SubtreeHeapData) bool {
-	var coerce_dive, coerce_dive1 **SubtreeHeapData
+func ts_subtree_is_eof(self_coerce uintptr) bool {
 	var self *Subtree
-	var v0 *SubtreeHeapData
+	var coerce_dive, coerce_dive1 *uintptr
 	var cmp bool
 	var call int16
 	var conv int32
+	var v0 uintptr
 
 	_, _, _, _, _, _, _ = self, coerce_dive, coerce_dive1, v0, call, conv, cmp
 
@@ -75147,17 +75147,17 @@ func ts_subtree_is_eof(self_coerce *SubtreeHeapData) bool {
 	return cmp
 }
 
-func ts_subtree_is_fragile(self_coerce *SubtreeHeapData) bool {
-	var coerce_dive, ptr, ptr4 **SubtreeHeapData
+func ts_subtree_is_fragile(self_coerce uintptr) bool {
 	var self *Subtree
-	var v1, v2 *SubtreeHeapData
 	var data *SubtreeInlineData
 	var v0 *byte
 	var fragile_left, fragile_right *int16
+	var coerce_dive, ptr, ptr4 *uintptr
 	var bf_cast, bf_cast3, bf_cast8, v3, tobool bool
 	var bf_load, bf_clear byte
 	var bf_load1, bf_lshr, bf_clear2, bf_load5, bf_lshr6, bf_clear7 int16
 	var lor_ext, cond int32
+	var v1, v2 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self, coerce_dive, data, v0, bf_load, bf_clear, bf_cast, ptr, v1, fragile_left, bf_load1, bf_lshr, bf_clear2, bf_cast3, ptr4, v2, fragile_right, bf_load5, bf_lshr6, bf_clear7, bf_cast8, v3, lor_ext, cond, tobool
 
@@ -75180,9 +75180,9 @@ cond_true:
 	goto cond_end
 
 cond_false:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr = (*uintptr)(unsafe.Pointer(self))
 	v1 = *ptr
-	fragile_left = &v1.F8
+	fragile_left = &(*SubtreeHeapData)(unsafe.Pointer(v1)).F8
 	bf_load1 = *fragile_left
 	bf_lshr = int16(uint16(bf_load1) >> 3)
 	bf_clear2 = bf_lshr & 1
@@ -75195,9 +75195,9 @@ cond_false:
 	}
 
 lor_rhs:
-	ptr4 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr4 = (*uintptr)(unsafe.Pointer(self))
 	v2 = *ptr4
-	fragile_right = &v2.F8
+	fragile_right = &(*SubtreeHeapData)(unsafe.Pointer(v2)).F8
 	bf_load5 = *fragile_right
 	bf_lshr6 = int16(uint16(bf_load5) >> 4)
 	bf_clear7 = bf_lshr6 & 1
@@ -75242,14 +75242,12 @@ func ts_parser__has_included_range_difference(self *TSParser, start_position int
 	return call
 }
 
-func ts_parser__can_reuse_first_leaf(self *TSParser, state int16, tree_coerce *SubtreeHeapData, table_entry *TableEntry) bool {
-	var coerce_dive, coerce_dive1, coerce_dive2, coerce_dive20, coerce_dive23, coerce_dive31 **SubtreeHeapData
+func ts_parser__can_reuse_first_leaf(self *TSParser, state int16, tree_coerce uintptr, table_entry *TableEntry) bool {
 	var language, language5, language16 **TSLanguage
 	var self_addr **TSParser
 	var table_entry_addr **TableEntry
 	var coerce *Length
 	var tree *Subtree
-	var v0, v1, v21, v22, v24 *SubtreeHeapData
 	var v3, v8, v19 *TSLanguage
 	var current_lex_mode, leaf_lex_mode *TSLexerMode
 	var v2, v7, v18 *TSParser
@@ -75263,6 +75261,7 @@ func ts_parser__can_reuse_first_leaf(self *TSParser, state int16, tree_coerce *S
 	F0 int64
 	F1 int32
 }
+	var coerce_dive, coerce_dive1, coerce_dive2, coerce_dive20, coerce_dive23, coerce_dive31 *uintptr
 	var cmp, cmp9, cmp12, cmp18, call21, cmp27, cmp34, cmp38, cmp43, tobool, v32, v33 bool
 	var v31 byte
 	var call, call3, v4, v9, v12, v17, v20, call24, v23, v28, v29 int16
@@ -75272,6 +75271,7 @@ func ts_parser__can_reuse_first_leaf(self *TSParser, state int16, tree_coerce *S
 	F0 int64
 	F1 int32
 }
+	var v0, v1, v21, v22, v24 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, tree, self_addr, state_addr, table_entry_addr, leaf_symbol, leaf_state, current_lex_mode, tmp_coerce, leaf_lex_mode, tmp_coerce7, coerce, tmp_coerce33, coerce_dive, coerce_dive1, v0, call, coerce_dive2, v1, call3, v2, language, v3, v4, call4, v5, v6, v7, language5, v8, v9, call6, v10, v11, lex_state, v12, conv, cmp, v13, action_count, v14, cmp9, v15, v16, call11, cmp12, v17, conv15, v18, language16, v19, keyword_capture_token, v20, conv17, cmp18, coerce_dive20, v21, call21, coerce_dive23, v22, call24, conv25, v23, conv26, cmp27, coerce_dive31, v24, call32, v25, v26, bytes, v27, cmp34, v28, conv37, cmp38, external_lex_state, v29, conv42, cmp43, v30, is_reusable, v31, tobool, v32, v33
 
@@ -75490,15 +75490,13 @@ while_end:
 	reusable_node_advance(v1)
 }
 
-func ts_parser__external_scanner_deserialize(self *TSParser, external_token_coerce *SubtreeHeapData) {
-	var coerce_dive, ptr, ptr1, ptr2 **SubtreeHeapData
+func ts_parser__external_scanner_deserialize(self *TSParser, external_token_coerce uintptr) {
 	var language, language11 **TSLanguage
 	var self_addr **TSParser
 	var wasm_store, wasm_store7 **TSWasmStore
 	var data, external_scanner_payload, external_scanner_payload12 **byte
 	var external_scanner_state, external_scanner_state3 *ExternalScannerState
 	var external_token *Subtree
-	var v0, v1, v3 *SubtreeHeapData
 	var v7, v19 *TSLanguage
 	var v6, v8, v10, v15, v17, v18, v21 *TSParser
 	var v9, v16 *TSWasmStore
@@ -75509,10 +75507,12 @@ func ts_parser__external_scanner_deserialize(self *TSParser, external_token_coer
 	var v2, v4 *struct {
 	F0 ExternalScannerState
 }
+	var coerce_dive, ptr, ptr1, ptr2 *uintptr
 	var tobool, call5, call8 bool
 	var v20 func(*byte, *byte, int32)
 	var v5, conv, v14, v24 int32
 	var v12 int64
+	var v0, v1, v3 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = external_token, self_addr, data, length, coerce_dive, ptr, v0, tobool, ptr1, v1, v2, external_scanner_state, call, ptr2, v3, v4, external_scanner_state3, length4, v5, v6, language, v7, call5, v8, wasm_store, v9, v10, external_scanner_payload, v11, v12, conv, v13, v14, v15, wasm_store7, v16, call8, v17, has_scanner_error, v18, language11, v19, external_scanner, deserialize, v20, v21, external_scanner_payload12, v22, v23, v24
 
@@ -75525,9 +75525,9 @@ func ts_parser__external_scanner_deserialize(self *TSParser, external_token_coer
 	*self_addr = self
 	*data = nil
 	*length = 0
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(external_token))
+	ptr = (*uintptr)(unsafe.Pointer(external_token))
 	v0 = *ptr
-	tobool = v0 != nil
+	tobool = v0 != 0
 	if tobool {
 		goto if_then
 	} else {
@@ -75535,15 +75535,15 @@ func ts_parser__external_scanner_deserialize(self *TSParser, external_token_coer
 	}
 
 if_then:
-	ptr1 = (**SubtreeHeapData)(unsafe.Pointer(external_token))
+	ptr1 = (*uintptr)(unsafe.Pointer(external_token))
 	v1 = *ptr1
-	v2 = &v1.F9
+	v2 = &(*SubtreeHeapData)(unsafe.Pointer(v1)).F9
 	external_scanner_state = (*ExternalScannerState)(unsafe.Pointer(v2))
 	call = ts_external_scanner_state_data(external_scanner_state)
 	*data = call
-	ptr2 = (**SubtreeHeapData)(unsafe.Pointer(external_token))
+	ptr2 = (*uintptr)(unsafe.Pointer(external_token))
 	v3 = *ptr2
-	v4 = &v3.F9
+	v4 = &(*SubtreeHeapData)(unsafe.Pointer(v3)).F9
 	external_scanner_state3 = (*ExternalScannerState)(unsafe.Pointer(v4))
 	length4 = &external_scanner_state3.F1
 	v5 = *length4
@@ -76033,15 +76033,15 @@ _return:
 
 func ts_subtree_set_extra(self *MutableSubtree, is_extra bool) {
 	var self_addr **MutableSubtree
-	var ptr **SubtreeHeapData
 	var v0, v3, v7 *MutableSubtree
-	var v8 *SubtreeHeapData
 	var data, data1 *SubtreeInlineData
 	var is_extra_addr, v1, v4 *byte
 	var extra *int16
+	var ptr *uintptr
 	var bf_cast, tobool, tobool4, tobool5, tobool10 bool
 	var frombool, bf_load, bf_clear, v2, v5, bf_load2, bf_shl, bf_clear3, bf_set, v6, bf_result_cast byte
 	var v9, bf_load6, bf_shl7, bf_clear8, bf_set9 int16
+	var v8 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self_addr, is_extra_addr, frombool, v0, data, v1, bf_load, bf_clear, bf_cast, v2, tobool, v3, data1, v4, v5, bf_load2, bf_shl, bf_clear3, bf_set, tobool4, v6, tobool5, v7, ptr, v8, extra, v9, bf_load6, bf_shl7, bf_clear8, bf_set9, bf_result_cast, tobool10
 
@@ -76081,9 +76081,9 @@ if_else:
 	v6 = *is_extra_addr
 	tobool5 = (v6 & 1) != 0
 	v7 = *self_addr
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(v7))
+	ptr = (*uintptr)(unsafe.Pointer(v7))
 	v8 = *ptr
-	extra = &v8.F8
+	extra = &(*SubtreeHeapData)(unsafe.Pointer(v8)).F8
 	if tobool5 { v9 = 1 } else { v9 = 0 }
 	bf_load6 = *extra
 	bf_shl7 = v9 << 2
@@ -76097,23 +76097,23 @@ if_else:
 if_end:
 }
 
-func ts_parser__select_children(self *TSParser, left_coerce *SubtreeHeapData, children *SubtreeArray) bool {
+func ts_parser__select_children(self *TSParser, left_coerce uintptr, children *SubtreeArray) bool {
 	var contents, contents3, contents6 **Subtree
 	var children_addr **SubtreeArray
-	var coerce_dive, coerce_dive7, coerce_dive11, coerce_dive12, coerce_dive14, coerce_dive15, coerce_dive16 **SubtreeHeapData
 	var language **TSLanguage
 	var self_addr **TSParser
 	var scratch_tree *MutableSubtree
 	var left, agg_tmp, v1, v6, v10 *Subtree
 	var scratch_trees, scratch_trees1, scratch_trees2, v5, v8, scratch_trees5, scratch_trees9 *SubtreeArray
-	var v12, call10, v17, call13, v18, v19 *SubtreeHeapData
 	var v15 *TSLanguage
 	var v0, v3, v4, v11, v13, v14, v16 *TSParser
 	var v2, v7, call *byte
 	var size, capacity, size4 *int32
+	var coerce_dive, coerce_dive7, coerce_dive11, coerce_dive12, coerce_dive14, coerce_dive15, coerce_dive16 *uintptr
 	var call17 bool
 	var call8 int16
 	var v9 int32
+	var v12, call10, v17, call13, v18, v19 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = left, self_addr, children_addr, scratch_tree, agg_tmp, coerce_dive, v0, scratch_trees, contents, v1, v2, v3, scratch_trees1, size, v4, scratch_trees2, capacity, v5, contents3, v6, v7, v8, size4, v9, call, v10, v11, scratch_trees5, contents6, coerce_dive7, v12, call8, v13, scratch_trees9, v14, language, v15, call10, coerce_dive11, v16, coerce_dive12, v17, call13, coerce_dive14, coerce_dive15, v18, coerce_dive16, v19, call17
 
@@ -76214,14 +76214,12 @@ func _array__swap(self_size *int32, self_capacity *int32, other_size *int32, oth
 	*v13 = v12
 }
 
-func ts_parser__select_tree(self *TSParser, left_coerce *SubtreeHeapData, right_coerce *SubtreeHeapData) bool {
-	var coerce_dive, coerce_dive1, ptr, ptr2, coerce_dive6, coerce_dive7, coerce_dive14, coerce_dive18, coerce_dive24, coerce_dive26, coerce_dive42, coerce_dive46, coerce_dive52, coerce_dive54, coerce_dive70, coerce_dive73, coerce_dive76, coerce_dive79, coerce_dive84, coerce_dive86, coerce_dive102, coerce_dive105, coerce_dive108, coerce_dive111, coerce_dive116, coerce_dive121, coerce_dive122, coerce_dive136, coerce_dive140, coerce_dive158, coerce_dive162, coerce_dive179, coerce_dive183 **SubtreeHeapData
+func ts_parser__select_tree(self *TSParser, left_coerce uintptr, right_coerce uintptr) bool {
 	var language, language17, language41, language45, language69, language75, language101, language107, language135, language139, language157, language161, language178, language182 **TSLanguage
 	var self_addr **TSParser
 	var dot_graph_file, dot_graph_file35, dot_graph_file63, dot_graph_file95, dot_graph_file129, dot_graph_file151, dot_graph_file172 **os.File
 	var lexer, lexer13, lexer30, lexer38, lexer58, lexer66, lexer90, lexer98, lexer124, lexer132, lexer146, lexer154, lexer167, lexer175 *Lexer
 	var left, right *Subtree
-	var v0, v1, v2, v3, v11, v14, v16, v17, v25, v28, v30, v31, v39, v40, v43, v44, v46, v47, v55, v56, v59, v60, v62, v64, v65, v74, v77, v86, v89, v98, v101 *SubtreeHeapData
 	var tree_pool *SubtreePool
 	var v10, v13, v24, v27, v38, v42, v54, v58, v73, v76, v85, v88, v97, v100 *TSLanguage
 	var logger, logger31, logger59, logger91, logger125, logger147, logger168 *TSLogger
@@ -76232,10 +76230,12 @@ func ts_parser__select_tree(self *TSParser, left_coerce *SubtreeHeapData, right_
 	var log, log32, log60, log92, log126, log148, log169 *func(*byte, int32, *byte)
 	var comparison *int32
 	var v7, v21, v35, v51, v70, v82, v94 *os.File
+	var coerce_dive, coerce_dive1, ptr, ptr2, coerce_dive6, coerce_dive7, coerce_dive14, coerce_dive18, coerce_dive24, coerce_dive26, coerce_dive42, coerce_dive46, coerce_dive52, coerce_dive54, coerce_dive70, coerce_dive73, coerce_dive76, coerce_dive79, coerce_dive84, coerce_dive86, coerce_dive102, coerce_dive105, coerce_dive108, coerce_dive111, coerce_dive116, coerce_dive121, coerce_dive122, coerce_dive136, coerce_dive140, coerce_dive158, coerce_dive162, coerce_dive179, coerce_dive183 *uintptr
 	var tobool, tobool3, cmp, tobool10, tobool11, cmp28, tobool33, tobool36, cmp56, tobool61, tobool64, cmp88, tobool93, tobool96, cmp118, tobool127, tobool130, tobool149, tobool152, tobool170, tobool173, v103 bool
 	var v5, v19, v33, v49, v68, v80, v92 func(*byte, int32, *byte)
 	var call15, call19, call43, call47, call71, call77, call103, call109, call137, call141, call159, call163, call180, call184 int16
 	var call, call8, call21, call25, call27, call49, call53, call55, call74, call80, call81, call85, call87, call106, call112, call113, call117, call123, v66, call143, call165, call186 int32
+	var v0, v1, v2, v3, v11, v14, v16, v17, v25, v28, v30, v31, v39, v40, v43, v44, v46, v47, v55, v56, v59, v60, v62, v64, v65, v74, v77, v86, v89, v98, v101 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, left, right, self_addr, comparison, coerce_dive, coerce_dive1, ptr, v0, tobool, ptr2, v1, tobool3, coerce_dive6, v2, call, coerce_dive7, v3, call8, cmp, v4, lexer, logger, log, v5, tobool10, v6, dot_graph_file, v7, tobool11, v8, lexer13, debug_buffer, arraydecay, v9, language, v10, coerce_dive14, v11, call15, call16, v12, language17, v13, coerce_dive18, v14, call19, call20, call21, v15, coerce_dive24, v16, call25, coerce_dive26, v17, call27, cmp28, v18, lexer30, logger31, log32, v19, tobool33, v20, dot_graph_file35, v21, tobool36, v22, lexer38, debug_buffer39, arraydecay40, v23, language41, v24, coerce_dive42, v25, call43, call44, v26, language45, v27, coerce_dive46, v28, call47, call48, call49, v29, coerce_dive52, v30, call53, coerce_dive54, v31, call55, cmp56, v32, lexer58, logger59, log60, v33, tobool61, v34, dot_graph_file63, v35, tobool64, v36, lexer66, debug_buffer67, arraydecay68, v37, language69, v38, coerce_dive70, v39, call71, call72, coerce_dive73, v40, call74, v41, language75, v42, coerce_dive76, v43, call77, call78, coerce_dive79, v44, call80, call81, v45, coerce_dive84, v46, call85, coerce_dive86, v47, call87, cmp88, v48, lexer90, logger91, log92, v49, tobool93, v50, dot_graph_file95, v51, tobool96, v52, lexer98, debug_buffer99, arraydecay100, v53, language101, v54, coerce_dive102, v55, call103, call104, coerce_dive105, v56, call106, v57, language107, v58, coerce_dive108, v59, call109, call110, coerce_dive111, v60, call112, call113, v61, coerce_dive116, v62, call117, cmp118, v63, tree_pool, coerce_dive121, v64, coerce_dive122, v65, call123, v66, v67, lexer124, logger125, log126, v68, tobool127, v69, dot_graph_file129, v70, tobool130, v71, lexer132, debug_buffer133, arraydecay134, v72, language135, v73, coerce_dive136, v74, call137, call138, v75, language139, v76, coerce_dive140, v77, call141, call142, call143, v78, v79, lexer146, logger147, log148, v80, tobool149, v81, dot_graph_file151, v82, tobool152, v83, lexer154, debug_buffer155, arraydecay156, v84, language157, v85, coerce_dive158, v86, call159, call160, v87, language161, v88, coerce_dive162, v89, call163, call164, call165, v90, v91, lexer167, logger168, log169, v92, tobool170, v93, dot_graph_file172, v94, tobool173, v95, lexer175, debug_buffer176, arraydecay177, v96, language178, v97, coerce_dive179, v98, call180, call181, v99, language182, v100, coerce_dive183, v101, call184, call185, call186, v102, v103
 
@@ -76249,9 +76249,9 @@ func ts_parser__select_tree(self *TSParser, left_coerce *SubtreeHeapData, right_
 	coerce_dive1 = &right.F0
 	*coerce_dive1 = right_coerce
 	*self_addr = self
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(left))
+	ptr = (*uintptr)(unsafe.Pointer(left))
 	v0 = *ptr
-	tobool = v0 != nil
+	tobool = v0 != 0
 	if tobool {
 		goto if_end
 	} else {
@@ -76263,9 +76263,9 @@ if_then:
 	goto _return
 
 if_end:
-	ptr2 = (**SubtreeHeapData)(unsafe.Pointer(right))
+	ptr2 = (*uintptr)(unsafe.Pointer(right))
 	v1 = *ptr2
-	tobool3 = v1 != nil
+	tobool3 = v1 != 0
 	if tobool3 {
 		goto if_end5
 	} else {
@@ -76749,13 +76749,11 @@ _return:
 
 func ts_parser__better_version_exists(self *TSParser, version int32, is_in_error bool, cost int32) bool {
 	var stack, stack4, stack6, stack11, stack15, stack18, stack28 **Stack
-	var ptr, coerce_dive **SubtreeHeapData
 	var self_addr **TSParser
 	var status, status_i *ErrorStatus
 	var position, coerce *Length
 	var v6, v12, v15, v19, v25, v28, v53 *Stack
 	var finished_tree, finished_tree1 *Subtree
-	var v1, v3 *SubtreeHeapData
 	var v0, v2, v5, v11, v14, v18, v24, v27, v34, v41, v52 *TSParser
 	var retval *bool
 	var is_in_error_addr, v8, v9, is_in_error8, v30, v31 *byte
@@ -76769,6 +76767,7 @@ func ts_parser__better_version_exists(self *TSParser, version int32, is_in_error
 	F0 int64
 	F1 int64
 }
+	var ptr, coerce_dive *uintptr
 	var tobool, cmp, tobool9, cmp13, cmp14, call16, cmp22, call29, v57 bool
 	var frombool, v17, frombool10 byte
 	var call, v4, v7, v10, v13, call5, v16, call7, call12, v20, v21, v22, v23, v26, v29, v32, v33, v35, call26, v54, v55, v56, inc int32
@@ -76781,6 +76780,7 @@ func ts_parser__better_version_exists(self *TSParser, version int32, is_in_error
 	F0 int64
 	F1 int64
 }
+	var v1, v3 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, self_addr, version_addr, is_in_error_addr, cost_addr, position, tmp_coerce, status, i, n, coerce, tmp_coerce20, status_i, frombool, v0, finished_tree, ptr, v1, tobool, v2, finished_tree1, coerce_dive, v3, call, v4, cmp, v5, stack, v6, v7, call2, v8, v9, cost3, v10, node_count, v11, stack4, v12, v13, call5, dynamic_precedence, v14, stack6, v15, v16, call7, is_in_error8, v17, tobool9, frombool10, v18, stack11, v19, call12, v20, v21, cmp13, v22, v23, cmp14, v24, stack15, v25, v26, call16, v27, stack18, v28, v29, call19, v30, v31, bytes, v32, bytes21, v33, cmp22, v34, v35, call25, v36, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, call26, v52, stack28, v53, v54, v55, call29, v56, inc, v57
 
@@ -76810,9 +76810,9 @@ func ts_parser__better_version_exists(self *TSParser, version int32, is_in_error
 	*cost_addr = cost
 	v0 = *self_addr
 	finished_tree = &v0.F6
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(finished_tree))
+	ptr = (*uintptr)(unsafe.Pointer(finished_tree))
 	v1 = *ptr
-	tobool = v1 != nil
+	tobool = v1 != 0
 	if tobool {
 		goto land_lhs_true
 	} else {
@@ -77023,7 +77023,6 @@ func ts_parser__recover_to_state(self *TSParser, version int32, depth int32, goa
 	var stack, stack9, stack16, stack24, stack87, stack122 **Stack
 	var v5, contents, contents6, contents20 **StackSlice
 	var v38, contents43, contents50, contents58, contents71, contents92, contents95, contents98, contents119 **Subtree
-	var coerce_dive, ptr, ptr55, coerce_dive74, coerce_dive86, coerce_dive89, coerce_dive124 **SubtreeHeapData
 	var language **TSLanguage
 	var self_addr **TSParser
 	var v1, v24, v28, v35, v74, v94 *Stack
@@ -77031,7 +77030,6 @@ func ts_parser__recover_to_state(self *TSParser, version int32, depth int32, goa
 	var pop *StackSliceArray
 	var error_tree, _error, tree, v39, v45, arrayidx44, v50, v55, add_ptr, cond, v59, v64, arrayidx73, v78, v80, v89, arrayidx121 *Subtree
 	var error_trees, subtrees, subtrees19, subtrees49, subtrees51, subtrees53, subtrees57, subtrees63, subtrees70, subtrees78, trailing_extras, subtrees79, subtrees84, subtrees91, subtrees94, subtrees97, subtrees99, subtrees101, trailing_extras106, trailing_extras111, trailing_extras118 *SubtreeArray
-	var v48, v54, v56, v66, call85, v77, v97 *SubtreeHeapData
 	var data *SubtreeInlineData
 	var tree_pool, tree_pool18, tree_pool76 *SubtreePool
 	var v72 *TSLanguage
@@ -77048,6 +77046,7 @@ func ts_parser__recover_to_state(self *TSParser, version int32, depth int32, goa
 	F0 *Subtree
 	F1 int64
 }
+	var coerce_dive, ptr, ptr55, coerce_dive74, coerce_dive86, coerce_dive89, coerce_dive124 *uintptr
 	var cmp, cmp2, cmp4, cmp13, cmp28, cmp32, cmp38, cmp46, bf_cast, cmp60, cmp65, cmp81, tobool, cmp108, cmp113, cmp132 bool
 	var bf_load, bf_clear byte
 	var v79 func(*byte)
@@ -77062,6 +77061,7 @@ func ts_parser__recover_to_state(self *TSParser, version int32, depth int32, goa
 	F0 *Subtree
 	F1 int64
 }
+	var v48, v54, v56, v66, call85, v77, v97 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self_addr, version_addr, depth_addr, goal_state_addr, pop, previous_version, i, slice, error_trees, error_tree, error_child_count, j, _error, j104, tree, v0, stack, v1, v2, v3, call, v4, v5, v6, v7, v8, v9, size, v10, cmp, v11, size1, v12, cmp2, contents, v13, v14, idxprom, arrayidx, v15, v16, version3, v17, v18, cmp4, v19, tree_pool, subtrees, contents6, v20, v21, size7, v22, dec, v23, stack9, v24, version10, v25, call11, conv, v26, conv12, cmp13, v27, stack16, v28, version17, v29, v30, tree_pool18, subtrees19, contents20, v31, v32, size21, v33, dec22, v34, stack24, v35, version25, v36, call26, v37, v38, v39, v40, v41, size27, v42, cmp28, size31, v43, cmp32, size37, v44, cmp38, contents43, v45, arrayidx44, v46, v47, coerce_dive, v48, call45, v49, cmp46, subtrees49, contents50, v50, v51, subtrees51, size52, subtrees53, capacity, v52, data, v53, bf_load, bf_clear, bf_cast, ptr, v54, v55, ptr55, v56, child_count, v57, idx_ext, idx_neg, add_ptr, cond, v58, call56, v59, subtrees57, contents58, v60, v61, cmp60, v62, subtrees63, size64, v63, cmp65, subtrees70, contents71, v64, v65, idxprom72, arrayidx73, coerce_dive74, v66, v67, inc, v68, tree_pool76, subtrees78, v69, trailing_extras, subtrees79, size80, v70, cmp81, subtrees84, v71, language, v72, call85, coerce_dive86, v73, stack87, v74, version88, v75, v76, coerce_dive89, v77, subtrees91, contents92, v78, tobool, v79, subtrees94, contents95, v80, v81, subtrees97, contents98, subtrees99, size100, subtrees101, capacity102, v82, v83, trailing_extras106, size107, v84, cmp108, v85, v86, trailing_extras111, size112, v87, cmp113, v88, trailing_extras118, contents119, v89, v90, idxprom120, arrayidx121, v91, v92, v93, stack122, v94, version123, v95, v96, coerce_dive124, v97, v98, inc126, version128, v99, v100, inc130, v101, cmp132
 
@@ -77310,12 +77310,12 @@ cond_true:
 	goto cond_end
 
 cond_false:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(error_tree))
+	ptr = (*uintptr)(unsafe.Pointer(error_tree))
 	v54 = *ptr
 	v55 = (*Subtree)(unsafe.Pointer(v54))
-	ptr55 = (**SubtreeHeapData)(unsafe.Pointer(error_tree))
+	ptr55 = (*uintptr)(unsafe.Pointer(error_tree))
 	v56 = *ptr55
-	child_count = &v56.F5
+	child_count = &(*SubtreeHeapData)(unsafe.Pointer(v56)).F5
 	v57 = *child_count
 	idx_ext = int64(uint64(uint32(v57)))
 	idx_neg = int64(0) - idx_ext
@@ -77887,9 +77887,8 @@ _return:
 	return v29
 }
 
-func ts_parser__handle_error(self *TSParser, version int32, lookahead_coerce *SubtreeHeapData) {
+func ts_parser__handle_error(self *TSParser, version int32, lookahead_coerce uintptr) {
 	var stack, stack2, stack4, stack6, stack38, stack43, stack57, stack65, stack75, stack83, stack94 **Stack
-	var coerce_dive, coerce_dive25, coerce_dive34, coerce_dive36, coerce_dive42, coerce_dive44, coerce_dive45, ptr, coerce_dive66, coerce_dive84, coerce_dive90 **SubtreeHeapData
 	var language, language14, language24, language40, language55, language95 **TSLanguage
 	var self_addr **TSParser
 	var dot_graph_file, dot_graph_file91, dot_graph_file96, dot_graph_file98 **os.File
@@ -77898,7 +77897,6 @@ func ts_parser__handle_error(self *TSParser, version int32, lookahead_coerce *Su
 	var reusable_node *ReusableNode
 	var v1, v5, v7, v16, v59, v73, v89, v94, v105, v111, v122 *Stack
 	var lookahead, missing_tree, _compoundliteral *Subtree
-	var v32, v56, v57, call41, v76, v79, v96, v113, v118 *SubtreeHeapData
 	var tree_pool *SubtreePool
 	var v20, v23, v30, v65, v86, v124 *TSLanguage
 	var logger *TSLogger
@@ -77914,6 +77912,7 @@ func ts_parser__handle_error(self *TSParser, version int32, lookahead_coerce *Su
 	F0 int64
 	F1 int32
 }
+	var coerce_dive, coerce_dive25, coerce_dive34, coerce_dive36, coerce_dive42, coerce_dive44, coerce_dive45, ptr, coerce_dive66, coerce_dive84, coerce_dive90 *uintptr
 	var call1, cmp, tobool, cmp11, cmp17, cmp21, call27, call47, tobool50, tobool52, cmp67, cmp72, call76, tobool77, cmp86, tobool92, call97 bool
 	var v14, frombool, v108 byte
 	var v81 func(*byte, int32, *byte)
@@ -77924,6 +77923,7 @@ func ts_parser__handle_error(self *TSParser, version int32, lookahead_coerce *Su
 	F0 int64
 	F1 int32
 }
+	var v32, v56, v57, call41, v76, v79, v96, v113, v118 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = lookahead, self_addr, version_addr, previous_version_count, version_count, position, tmp_coerce, did_insert_missing_token, v, state, missing_symbol, state_after_missing_symbol, position_coerce, padding, token_end_position_coerce, position_coerce31, tmp_coerce33, lookahead_bytes, version_with_missing_tree, missing_tree, padding_coerce, _compoundliteral, i, did_merge, coerce_dive, v0, stack, v1, call, v2, v3, call1, v4, stack2, v5, call3, v6, stack4, v7, v8, call5, v9, v10, v11, v12, v13, cmp, v14, tobool, v15, stack6, v16, v17, call7, v18, conv, v19, language, v20, token_count, v21, conv9, conv10, cmp11, v22, language14, v23, v24, v25, call15, v26, conv16, cmp17, v27, conv19, v28, conv20, cmp21, v29, language24, v30, v31, coerce_dive25, v32, call26, call27, v33, lexer, v34, v35, v36, v37, v38, v39, v40, lexer29, v41, lexer30, token_end_position, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, call32, v54, v55, coerce_dive34, v56, call35, coerce_dive36, v57, call37, add, v58, stack38, v59, v60, call39, v61, tree_pool, v62, v63, v64, language40, v65, v66, v67, v68, v69, v70, v71, call41, coerce_dive42, v72, stack43, v73, v74, v75, coerce_dive44, v76, v77, v78, coerce_dive45, v79, call46, call47, v80, lexer49, logger, log, v81, tobool50, v82, dot_graph_file, v83, tobool52, v84, lexer54, debug_buffer, arraydecay, v85, language55, v86, v87, call56, v88, stack57, v89, v90, call58, conv59, call60, v91, v92, inc, v93, stack65, v94, v95, ptr, coerce_dive66, v96, v97, v98, cmp67, v99, v100, add69, cond, v101, v102, v103, cmp72, v104, stack75, v105, v106, v107, call76, frombool, v108, tobool77, v109, inc81, v110, stack83, v111, v112, coerce_dive84, v113, call85, cmp86, v114, v115, reusable_node, v116, v117, coerce_dive90, v118, v119, dot_graph_file91, v120, tobool92, v121, stack94, v122, v123, language95, v124, v125, dot_graph_file96, v126, call97, v127, dot_graph_file98, v128, call99
 
@@ -78249,8 +78249,8 @@ if_end64:
 	stack65 = &v93.F1
 	v94 = *stack65
 	v95 = *v
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(_compoundliteral))
-	*ptr = nil
+	ptr = (*uintptr)(unsafe.Pointer(_compoundliteral))
+	*ptr = 0
 	coerce_dive66 = &_compoundliteral.F0
 	v96 = *coerce_dive66
 	ts_stack_push(v94, v95, v96, false, 0)
@@ -87432,7 +87432,6 @@ for_end:
 func ts_query_cursor__should_descend(self *TSQueryCursor, node_intersects_range bool) bool {
 	var state, contents **QueryState
 	var next_step, contents16 **QueryStep
-	var coerce_dive, coerce_dive41, coerce_dive61, coerce_dive76 **SubtreeHeapData
 	var query, query14, query46, query55, query70 **TSQuery
 	var self_addr **TSQueryCursor
 	var contents57, contents72 **int16
@@ -87440,7 +87439,6 @@ func ts_query_cursor__should_descend(self *TSQueryCursor, node_intersects_range 
 	var states, states2, states7 *QueryStateList
 	var v21, arrayidx19, v24, v28 *QueryStep
 	var subtree *Subtree
-	var call, v40, v55, v65 *SubtreeHeapData
 	var v17, v20, v42, v51, v61 *TSQuery
 	var v1, v3, v6, v9, v11, v16, v19, v30, v33, v35, v37, v39, v41, v50, v60 *TSQueryCursor
 	var cursor *TSTreeCursor
@@ -87450,11 +87448,13 @@ func ts_query_cursor__should_descend(self *TSQueryCursor, node_intersects_range 
 	var node_intersects_range_addr, exists, on_visible_node *byte
 	var step_index, step_index17, depth20, start_depth, depth26, v52, arrayidx59, v62, arrayidx74 *int16
 	var i, index, size45, comparison, half_size, mid_index, depth, max_start_depth, size, size3, size8, depth28, depth33, max_start_depth34, size47 *int32
+	var coerce_dive, coerce_dive41, coerce_dive61, coerce_dive76 *uintptr
 	var tobool, cmp, cmp1, cmp4, cmp9, cmp22, cmp29, cmp35, tobool39, tobool43, cmp48, cmp52, cmp65, cmp80, cmp84, tobool90, v70 bool
 	var frombool, v0, v38, v69 byte
 	var v15, v23, v25, v27, v29, v54, call62, v64, call77 int16
 	var v2, v4, v5, v7, v8, v10, v13, conv, v18, conv21, conv25, conv27, add, v31, v32, inc, v34, v36, call42, v43, v44, sub, v45, v46, v47, div, v48, v49, add54, v53, conv60, conv63, sub64, v56, v57, v58, v59, sub69, v63, conv75, conv78, sub79, v66, v67, v68, add87 int32
 	var idxprom, idxprom18, idxprom58, idxprom73 int64
+	var call, v40, v55, v65 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, self_addr, node_intersects_range_addr, i, state, next_step, subtree, exists, index, size45, comparison, half_size, mid_index, frombool, v0, tobool, v1, depth, v2, v3, max_start_depth, v4, cmp, v5, v6, states, size, v7, cmp1, v8, v9, states2, size3, v10, cmp4, v11, states7, contents, v12, v13, idxprom, arrayidx, v14, step_index, v15, conv, v16, query, v17, steps, size8, v18, cmp9, v19, query14, v20, steps15, contents16, v21, v22, step_index17, v23, idxprom18, arrayidx19, v24, depth20, v25, conv21, cmp22, v26, start_depth, v27, conv25, v28, depth26, v29, conv27, add, v30, depth28, v31, cmp29, v32, inc, v33, depth33, v34, v35, max_start_depth34, v36, cmp35, v37, on_visible_node, v38, tobool39, v39, cursor, call, coerce_dive, coerce_dive41, v40, call42, tobool43, v41, query46, v42, repeat_symbols_with_rootless_patterns, size47, v43, v44, sub, v45, cmp48, v46, cmp52, v47, div, v48, v49, add54, v50, query55, v51, repeat_symbols_with_rootless_patterns56, contents57, v52, v53, idxprom58, arrayidx59, v54, conv60, coerce_dive61, v55, call62, conv63, sub64, v56, cmp65, v57, v58, v59, sub69, v60, query70, v61, repeat_symbols_with_rootless_patterns71, contents72, v62, v63, idxprom73, arrayidx74, v64, conv75, coerce_dive76, v65, call77, conv78, sub79, v66, cmp80, v67, cmp84, v68, add87, v69, tobool90, v70
 
@@ -88462,23 +88462,23 @@ _return:
 	return v38
 }
 
-func ts_tree_cursor_current_subtree(_self *TSTreeCursor) *SubtreeHeapData {
+func ts_tree_cursor_current_subtree(_self *TSTreeCursor) uintptr {
 	var subtree **Subtree
-	var coerce_dive **SubtreeHeapData
 	var _self_addr **TSTreeCursor
 	var self **TreeCursor
 	var last_entry, contents **TreeCursorEntry
 	var retval, v11 *Subtree
-	var v14 *SubtreeHeapData
 	var v0 *TSTreeCursor
 	var v1, v2, v4, v6, v8 *TreeCursor
 	var v7, arrayidx, v10 *TreeCursorEntry
 	var stack, stack1, stack3, stack4 *anon_2
 	var v12, v13 *byte
 	var size, size2, size5 *int32
+	var coerce_dive *uintptr
 	var cmp bool
 	var v3, sub, v5, v9, sub6 int32
 	var idxprom int64
+	var v14 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, _self_addr, self, last_entry, v0, v1, v2, stack, size, v3, sub, v4, stack1, size2, v5, cmp, v6, stack3, contents, v7, v8, stack4, size5, v9, sub6, idxprom, arrayidx, v10, subtree, v11, v12, v13, coerce_dive, v14
 
@@ -88537,18 +88537,18 @@ if_end:
 	return v14
 }
 
-func ts_subtree_is_repetition(self_coerce *SubtreeHeapData) int32 {
-	var coerce_dive, ptr, ptr4, ptr8 **SubtreeHeapData
+func ts_subtree_is_repetition(self_coerce uintptr) int32 {
 	var self *Subtree
-	var v1, v2, v3 *SubtreeHeapData
 	var data *SubtreeInlineData
 	var v0 *byte
 	var named, visible *int16
 	var child_count *int32
+	var coerce_dive, ptr, ptr4, ptr8 *uintptr
 	var bf_cast, bf_cast3, bf_cast7, cmp, v5 bool
 	var bf_load, bf_clear byte
 	var bf_load1, bf_lshr, bf_clear2, bf_load5, bf_clear6 int16
 	var v4, land_ext, cond int32
+	var v1, v2, v3 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self, coerce_dive, data, v0, bf_load, bf_clear, bf_cast, ptr, v1, named, bf_load1, bf_lshr, bf_clear2, bf_cast3, ptr4, v2, visible, bf_load5, bf_clear6, bf_cast7, ptr8, v3, child_count, v4, cmp, v5, land_ext, cond
 
@@ -88571,9 +88571,9 @@ cond_true:
 	goto cond_end
 
 cond_false:
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr = (*uintptr)(unsafe.Pointer(self))
 	v1 = *ptr
-	named = &v1.F8
+	named = &(*SubtreeHeapData)(unsafe.Pointer(v1)).F8
 	bf_load1 = *named
 	bf_lshr = int16(uint16(bf_load1) >> 1)
 	bf_clear2 = bf_lshr & 1
@@ -88586,9 +88586,9 @@ cond_false:
 	}
 
 land_lhs_true:
-	ptr4 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr4 = (*uintptr)(unsafe.Pointer(self))
 	v2 = *ptr4
-	visible = &v2.F8
+	visible = &(*SubtreeHeapData)(unsafe.Pointer(v2)).F8
 	bf_load5 = *visible
 	bf_clear6 = bf_load5 & 1
 	bf_cast7 = (bf_clear6 & 1) != 0
@@ -88600,9 +88600,9 @@ land_lhs_true:
 	}
 
 land_rhs:
-	ptr8 = (**SubtreeHeapData)(unsafe.Pointer(self))
+	ptr8 = (*uintptr)(unsafe.Pointer(self))
 	v3 = *ptr8
-	child_count = &v3.F5
+	child_count = &(*SubtreeHeapData)(unsafe.Pointer(v3)).F5
 	v4 = *child_count
 	cmp = v4 != 0
 	v5 = cmp
@@ -89037,14 +89037,14 @@ if_end21:
 	libc.Memmove(v28, v29, int64(24))
 }
 
-func stack__subtree_node_count(subtree_coerce *SubtreeHeapData) int32 {
-	var coerce_dive, coerce_dive1, coerce_dive2, coerce_dive4 **SubtreeHeapData
+func stack__subtree_node_count(subtree_coerce uintptr) int32 {
 	var subtree *Subtree
-	var v0, v1, v3 *SubtreeHeapData
 	var count *int32
+	var coerce_dive, coerce_dive1, coerce_dive2, coerce_dive4 *uintptr
 	var call3, cmp bool
 	var call5 int16
 	var call, v2, inc, conv, v4, inc8, v5 int32
+	var v0, v1, v3 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = subtree, count, coerce_dive, coerce_dive1, v0, call, coerce_dive2, v1, call3, v2, inc, coerce_dive4, v3, call5, conv, cmp, v4, inc8, v5
 
@@ -89314,18 +89314,18 @@ func ts_stack__add_version(self *Stack, original_version int32, node *StackNode)
 	var contents, contents11, contents16, contents21, contents23 **StackHead
 	var node_addr, node1 **StackNode
 	var summary **StackSummary
-	var ptr, ptr29, coerce_dive **SubtreeHeapData
 	var v2, v4, v9, v11, v16, v19, v21, v23, v24, v26, v33 *Stack
 	var head, v5, arrayidx, v12, arrayidx13, v17, v22, v25, arrayidx27 *StackHead
 	var v0, v30 *StackNode
 	var last_external_token, last_external_token14, lookahead_when_paused, last_external_token28, last_external_token31 *Subtree
-	var v31, v32 *SubtreeHeapData
 	var heads, heads2, heads4, heads10, heads15, heads17, heads19, heads20, heads22, heads24, heads33 *anon_20
 	var v14, v15, v18, call, v28, v29 *byte
 	var original_version_addr, node_count_at_last_error, size, node_count_at_last_error3, size5, status, size18, capacity, size25, size34 *int32
+	var ptr, ptr29, coerce_dive *uintptr
 	var cmp, cmp6, tobool bool
 	var v1, v3, v6, v7, v8, v10, v13, v20, v27, inc, v34, sub int32
 	var idxprom, idxprom12, idxprom26 int64
+	var v31, v32 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self_addr, original_version_addr, node_addr, head, node1, v0, summary, node_count_at_last_error, v1, v2, heads, size, v3, cmp, v4, heads2, contents, v5, v6, idxprom, arrayidx, node_count_at_last_error3, v7, last_external_token, v8, v9, heads4, size5, v10, cmp6, v11, heads10, contents11, v12, v13, idxprom12, arrayidx13, last_external_token14, v14, v15, lookahead_when_paused, ptr, status, v16, heads15, contents16, v17, v18, v19, heads17, size18, v20, v21, heads19, capacity, call, v22, v23, heads20, contents21, v24, heads22, contents23, v25, v26, heads24, size25, v27, inc, idxprom26, arrayidx27, v28, v29, v30, last_external_token28, ptr29, v31, tobool, last_external_token31, coerce_dive, v32, v33, heads33, size34, v34, sub
 
@@ -89405,8 +89405,8 @@ if_end9:
 	v15 = (*byte)(unsafe.Pointer(last_external_token14))
 	libc.Memmove(v14, v15, int64(8))
 	lookahead_when_paused = &head.F4
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(lookahead_when_paused))
-	*ptr = nil
+	ptr = (*uintptr)(unsafe.Pointer(lookahead_when_paused))
+	*ptr = 0
 	status = &head.F5
 	*status = 0
 	goto do_body
@@ -89451,9 +89451,9 @@ do_end:
 	v30 = *node_addr
 	stack_node_retain(v30)
 	last_external_token28 = &head.F3
-	ptr29 = (**SubtreeHeapData)(unsafe.Pointer(last_external_token28))
+	ptr29 = (*uintptr)(unsafe.Pointer(last_external_token28))
 	v31 = *ptr29
-	tobool = v31 != nil
+	tobool = v31 != 0
 	if tobool {
 		goto if_then30
 	} else {
@@ -89476,11 +89476,9 @@ if_end32:
 	return sub
 }
 
-func stack__subtree_is_equivalent(left_coerce *SubtreeHeapData, right_coerce *SubtreeHeapData) bool {
-	var coerce_dive, coerce_dive1, ptr, ptr2, ptr3, ptr4, coerce_dive8, coerce_dive9, coerce_dive16, coerce_dive20, coerce_dive26, coerce_dive28, coerce_dive36, coerce_dive41, coerce_dive49, coerce_dive51, coerce_dive56, coerce_dive59, coerce_dive64, coerce_dive65 **SubtreeHeapData
+func stack__subtree_is_equivalent(left_coerce uintptr, right_coerce uintptr) bool {
 	var coerce, coerce30, coerce38, coerce43 *Length
 	var left, right *Subtree
-	var v0, v1, v2, v3, v4, v5, v6, v7, v8, v12, v16, v20, v24, v25, v26, v27, v28, v29 *SubtreeHeapData
 	var retval *bool
 	var v9, v10, v13, v14, v17, v18, v21, v22 *byte
 	var bytes, bytes32, bytes40, bytes45 *int32
@@ -89488,6 +89486,7 @@ func stack__subtree_is_equivalent(left_coerce *SubtreeHeapData, right_coerce *Su
 	F0 int64
 	F1 int32
 }
+	var coerce_dive, coerce_dive1, ptr, ptr2, ptr3, ptr4, coerce_dive8, coerce_dive9, coerce_dive16, coerce_dive20, coerce_dive26, coerce_dive28, coerce_dive36, coerce_dive41, coerce_dive49, coerce_dive51, coerce_dive56, coerce_dive59, coerce_dive64, coerce_dive65 *uintptr
 	var cmp, tobool, tobool5, cmp12, cmp18, cmp22, cmp33, cmp46, cmp53, call57, call60, cmp62, call66, v30, v31 bool
 	var call, call10 int16
 	var conv, conv11, call17, call21, v11, v15, v19, v23, call50, call52, conv58, conv61 int32
@@ -89495,6 +89494,7 @@ func stack__subtree_is_equivalent(left_coerce *SubtreeHeapData, right_coerce *Su
 	F0 int64
 	F1 int32
 }
+	var v0, v1, v2, v3, v4, v5, v6, v7, v8, v12, v16, v20, v24, v25, v26, v27, v28, v29 uintptr
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, left, right, coerce, tmp_coerce, coerce30, tmp_coerce31, coerce38, tmp_coerce39, coerce43, tmp_coerce44, coerce_dive, coerce_dive1, ptr, v0, ptr2, v1, cmp, ptr3, v2, tobool, ptr4, v3, tobool5, coerce_dive8, v4, call, conv, coerce_dive9, v5, call10, conv11, cmp12, coerce_dive16, v6, call17, cmp18, coerce_dive20, v7, call21, cmp22, coerce_dive26, v8, call27, v9, v10, bytes, v11, coerce_dive28, v12, call29, v13, v14, bytes32, v15, cmp33, coerce_dive36, v16, call37, v17, v18, bytes40, v19, coerce_dive41, v20, call42, v21, v22, bytes45, v23, cmp46, coerce_dive49, v24, call50, coerce_dive51, v25, call52, cmp53, coerce_dive56, v26, call57, conv58, coerce_dive59, v27, call60, conv61, cmp62, coerce_dive64, v28, coerce_dive65, v29, call66, v30, v31
 
@@ -89525,9 +89525,9 @@ func stack__subtree_is_equivalent(left_coerce *SubtreeHeapData, right_coerce *Su
 	*coerce_dive = left_coerce
 	coerce_dive1 = &right.F0
 	*coerce_dive1 = right_coerce
-	ptr = (**SubtreeHeapData)(unsafe.Pointer(left))
+	ptr = (*uintptr)(unsafe.Pointer(left))
 	v0 = *ptr
-	ptr2 = (**SubtreeHeapData)(unsafe.Pointer(right))
+	ptr2 = (*uintptr)(unsafe.Pointer(right))
 	v1 = *ptr2
 	cmp = v0 == v1
 	if cmp {
@@ -89541,9 +89541,9 @@ if_then:
 	goto _return
 
 if_end:
-	ptr3 = (**SubtreeHeapData)(unsafe.Pointer(left))
+	ptr3 = (*uintptr)(unsafe.Pointer(left))
 	v2 = *ptr3
-	tobool = v2 != nil
+	tobool = v2 != 0
 	if tobool {
 		goto lor_lhs_false
 	} else {
@@ -89551,9 +89551,9 @@ if_end:
 	}
 
 lor_lhs_false:
-	ptr4 = (**SubtreeHeapData)(unsafe.Pointer(right))
+	ptr4 = (*uintptr)(unsafe.Pointer(right))
 	v3 = *ptr4
-	tobool5 = v3 != nil
+	tobool5 = v3 != 0
 	if tobool5 {
 		goto if_end7
 	} else {

@@ -19,7 +19,7 @@ const (
 	localPseudoVer    = "v0.0.0"
 	// leavenModuleVer must match the root go.mod require (lewtec replace).
 	leavenModulePath = "github.com/andybalholm/leaven"
-	leavenModuleVer  = "v0.0.0-20260807161919-d7e0c93ee95b"
+	leavenModuleVer  = "v0.0.0-20260807170836-8cfdbf31b930"
 )
 
 // ensureGrammarModules writes grammar/go.mod, grammar/<lang>/go.mod (with local

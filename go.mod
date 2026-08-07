@@ -5,7 +5,7 @@ go 1.25.0
 require github.com/spf13/cobra v1.10.2
 
 require (
-	github.com/andybalholm/leaven v0.0.0-20220410004729-a028d744e063 // indirect
+	github.com/andybalholm/leaven v0.0.0-20260807014845-f2df5085d5b0 // indirect
 	github.com/llir/ll v0.0.0-20210719001141-246f2b6b1fa9 // indirect
 	github.com/llir/llvm v0.3.5-0.20220120022543-ad080cea55b7 // indirect
 	github.com/mewmew/float v0.0.0-20201204173432-505706aa38fa // indirect
@@ -16,7 +16,6 @@ require (
 require (
 	github.com/dustin/go-humanize v1.0.1 // indirect
 	github.com/google/uuid v1.6.0 // indirect
-	github.com/hashicorp/golang-lru/v2 v2.0.7 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar v0.0.0
@@ -118,15 +117,9 @@ require (
 	golang.org/x/sync v0.21.0 // indirect
 	golang.org/x/sys v0.46.0 // indirect
 	golang.org/x/tools v0.47.0 // indirect
-	modernc.org/cc/v4 v4.27.1 // indirect
-	modernc.org/gc/v2 v2.6.5 // indirect
 	modernc.org/gc/v3 v3.1.2 // indirect
 	modernc.org/mathutil v1.7.1 // indirect
 	modernc.org/memory v1.11.0 // indirect
-	modernc.org/opt v0.1.4 // indirect
-	modernc.org/sortutil v1.2.1 // indirect
-	modernc.org/strutil v1.2.1 // indirect
-	modernc.org/token v1.1.0 // indirect
 )
 
 replace modernc.org/ccgo/v4 => github.com/modernc-tree-sitter/ccgo/v4 v4.0.0-20260711120204-5fee9207d50b
@@ -316,3 +309,5 @@ replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/xcompose => ./gr
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/yuck => ./grammar/yuck
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/zig => ./grammar/zig
+
+replace github.com/andybalholm/leaven => github.com/lewtec/leaven v0.0.0-20260807014845-f2df5085d5b0

@@ -5,4 +5,5 @@
 - **Core tree-sitter** is a workspaced *source* only (`inputs.tree_sitter` / `#tree_sitter`) — not placed into the repo. Pins in `workspaced.lock.json`; on-disk path is the workspaced github cache (`mise run tree-sitter:path` or `TREE_SITTER_PATH`).
 - Run codegen: `mise run codegen` (or `go run ./cmd/codegen [lang...]`). No multi-GOOS matrix.
 - `leaven` is a Go module tool (`go get -tool` / `go tool leaven`), not a global install.
+  Source of truth: **`github.com/lewtec/leaven`** (replace of `github.com/andybalholm/leaven` module path).
 - Do not reintroduce modernc.org/ccgo or platform-split `grammar-*-*.go` / `core-*-*.go`.

@@ -1,6 +1,6 @@
 # ccgo-tree-sitter
 
-Tree-sitter in pure Go via **clang → LLVM IR → [leaven](https://github.com/andybalholm/leaven)** (no CGO, no ccgo).
+Tree-sitter in pure Go via **clang → LLVM IR → [leaven](https://github.com/lewtec/leaven)** (no CGO, no ccgo).
 
 Extremely experimental mid-migration: leaven output is raw and often not yet valid Go; the hand-written `grammar` API still needs rewiring onto leaven symbols.
 

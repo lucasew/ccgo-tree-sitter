@@ -10545,7 +10545,7 @@ land_end:
 	data8 = &v14.F0
 	lookahead9 = &data8.F0
 	v15 = *lookahead9
-	call = snprintf(arraydecay, int64(1024), cond, v15)
+	call = libc.Snprintf(arraydecay, int64(1024), cond, v15)
 	v16 = *self
 	logger10 = &v16.F7
 	log11 = &logger10.F1
@@ -10607,7 +10607,7 @@ land_end29:
 	data31 = &v30.F0
 	lookahead32 = &data31.F0
 	v31 = *lookahead32
-	call33 = snprintf(arraydecay21, int64(1024), cond30, v31)
+	call33 = libc.Snprintf(arraydecay21, int64(1024), cond30, v31)
 	v32 = *self
 	logger34 = &v32.F7
 	log35 = &logger34.F1
@@ -11039,7 +11039,7 @@ func ts_lexer__log(_self *TSLexer, fmt *byte, varargs ...interface{}) {
 	*self = v1
 	arraydecay = &args[int64(0)]
 	arraydecay1 = (*byte)(unsafe.Pointer(arraydecay))
-	llvm_va_start(arraydecay1)
+	*(*unsafe.Pointer)(unsafe.Add(unsafe.Pointer(arraydecay1), 8)) = unsafe.Pointer(&varargs)
 	v2 = *self
 	logger = &v2.F7
 	log = &logger.F1
@@ -11057,7 +11057,7 @@ if_then:
 	arraydecay2 = &debug_buffer[int64(0)]
 	v5 = *fmt_addr
 	arraydecay3 = &args[int64(0)]
-	call = vsnprintf(arraydecay2, int64(1024), v5, arraydecay3)
+	call = libc.Vsnprintf(arraydecay2, int64(1024), v5, (*byte)(unsafe.Pointer(arraydecay3)))
 	v6 = *self
 	logger4 = &v6.F7
 	log5 = &logger4.F1
@@ -11075,7 +11075,7 @@ if_then:
 if_end:
 	arraydecay9 = &args[int64(0)]
 	arraydecay910 = (*byte)(unsafe.Pointer(arraydecay9))
-	llvm_va_end(arraydecay910)
+	;
 }
 
 func ts_lexer_set_included_ranges(self *Lexer, ranges *TSRange, count int32) bool {
@@ -19760,7 +19760,7 @@ if_then:
 	v2 = *self_addr
 	dot_graph_file1 = &v2.F13
 	v3 = *dot_graph_file1
-	call = fclose(v3)
+	call = libc.Fclose(v3)
 	goto if_end
 
 if_end:
@@ -19774,7 +19774,7 @@ if_end:
 
 if_then2:
 	v5 = *fd_addr
-	call3 = fdopen(v5, &_str_7[int64(0)])
+	call3 = libc.Fdopen(v5, &_str_7[int64(0)])
 	v6 = *self_addr
 	dot_graph_file4 = &v6.F13
 	*dot_graph_file4 = call3
@@ -20300,7 +20300,7 @@ if_then18:
 	lexer19 = &v21.F0
 	debug_buffer = &lexer19.F15
 	arraydecay = &debug_buffer[int64(0)]
-	call20 = snprintf(arraydecay, int64(1024), &_str_8[int64(0)])
+	call20 = libc.Snprintf(arraydecay, int64(1024), &_str_8[int64(0)])
 	v22 = *self_addr
 	ts_parser__log(v22)
 	goto if_end21
@@ -20412,7 +20412,7 @@ if_then46:
 	lexer47 = &v51.F0
 	debug_buffer48 = &lexer47.F15
 	arraydecay49 = &debug_buffer48[int64(0)]
-	call50 = snprintf(arraydecay49, int64(1024), &_str_9[int64(0)])
+	call50 = libc.Snprintf(arraydecay49, int64(1024), &_str_9[int64(0)])
 	v52 = *self_addr
 	ts_parser__log(v52)
 	goto if_end51
@@ -20526,7 +20526,7 @@ if_then78:
 	v79 = *_range
 	end_byte = &v79.F3
 	v80 = *end_byte
-	call82 = snprintf(arraydecay81, int64(1024), &_str_13[int64(0)], v78, v80)
+	call82 = libc.Snprintf(arraydecay81, int64(1024), &_str_13[int64(0)], v78, v80)
 	v81 = *self_addr
 	ts_parser__log(v81)
 	goto if_end83
@@ -20575,7 +20575,7 @@ if_then93:
 	lexer94 = &v88.F0
 	debug_buffer95 = &lexer94.F15
 	arraydecay96 = &debug_buffer95[int64(0)]
-	call97 = snprintf(arraydecay96, int64(1024), &_str_14[int64(0)])
+	call97 = libc.Snprintf(arraydecay96, int64(1024), &_str_14[int64(0)])
 	v89 = *self_addr
 	ts_parser__log(v89)
 	goto if_end98
@@ -20694,7 +20694,7 @@ if_then115:
 	extent129 = &coerce127.F1
 	column = &extent129.F1
 	v120 = *column
-	call130 = snprintf(arraydecay118, int64(1024), &_str_15[int64(0)], v103, call120, conv, v114, v120)
+	call130 = libc.Snprintf(arraydecay118, int64(1024), &_str_15[int64(0)], v103, call120, conv, v114, v120)
 	v121 = *self_addr
 	ts_parser__log(v121)
 	goto if_end131
@@ -21009,7 +21009,7 @@ if_then227:
 	lexer228 = &v185.F0
 	debug_buffer229 = &lexer228.F15
 	arraydecay230 = &debug_buffer229[int64(0)]
-	call231 = snprintf(arraydecay230, int64(1024), &_str_19[int64(0)])
+	call231 = libc.Snprintf(arraydecay230, int64(1024), &_str_19[int64(0)])
 	v186 = *self_addr
 	ts_parser__log(v186)
 	goto if_end232
@@ -22149,7 +22149,7 @@ if_then50:
 	lexer51 = &v64.F0
 	debug_buffer = &lexer51.F15
 	arraydecay = &debug_buffer[int64(0)]
-	call52 = snprintf(arraydecay, int64(1024), &_str_132[int64(0)])
+	call52 = libc.Snprintf(arraydecay, int64(1024), &_str_132[int64(0)])
 	v65 = *self_addr
 	ts_parser__log(v65)
 	goto if_end53
@@ -22192,7 +22192,7 @@ if_then64:
 	arraydecay67 = &debug_buffer66[int64(0)]
 	v72 = *next_state
 	conv68 = int32(uint32(uint16(v72)))
-	call69 = snprintf(arraydecay67, int64(1024), &_str_133[int64(0)], conv68)
+	call69 = libc.Snprintf(arraydecay67, int64(1024), &_str_133[int64(0)], conv68)
 	v73 = *self_addr
 	ts_parser__log(v73)
 	goto if_end70
@@ -22307,7 +22307,7 @@ if_then106:
 	child_count = &reduce112.F1
 	v99 = *child_count
 	conv113 = int32(uint32(v99))
-	call114 = snprintf(arraydecay109, int64(1024), &_str_134[int64(0)], call111, conv113)
+	call114 = libc.Snprintf(arraydecay109, int64(1024), &_str_134[int64(0)], call111, conv113)
 	v100 = *self_addr
 	ts_parser__log(v100)
 	goto if_end115
@@ -22381,7 +22381,7 @@ if_then139:
 	lexer140 = &v115.F0
 	debug_buffer141 = &lexer140.F15
 	arraydecay142 = &debug_buffer141[int64(0)]
-	call143 = snprintf(arraydecay142, int64(1024), &_str_135[int64(0)])
+	call143 = libc.Snprintf(arraydecay142, int64(1024), &_str_135[int64(0)])
 	v116 = *self_addr
 	ts_parser__log(v116)
 	goto if_end144
@@ -22667,7 +22667,7 @@ if_then223:
 	keyword_capture_token233 = &v186.F25
 	v187 = *keyword_capture_token233
 	call234 = ts_language_symbol_name(v184, v187)
-	call235 = snprintf(arraydecay226, int64(1024), &_str_136[int64(0)], call230, call234)
+	call235 = libc.Snprintf(arraydecay226, int64(1024), &_str_136[int64(0)], call230, call234)
 	v188 = *self_addr
 	ts_parser__log(v188)
 	goto if_end236
@@ -22763,7 +22763,7 @@ if_then264:
 	v213 = *coerce_dive269
 	call270 = ts_subtree_symbol(v213)
 	call271 = ts_language_symbol_name(v212, call270)
-	call272 = snprintf(arraydecay267, int64(1024), &_str_137[int64(0)], call271)
+	call272 = libc.Snprintf(arraydecay267, int64(1024), &_str_137[int64(0)], call271)
 	v214 = *self_addr
 	ts_parser__log(v214)
 	goto if_end273
@@ -24205,7 +24205,7 @@ if_then59:
 	debug_buffer = &lexer60.F15
 	arraydecay = &debug_buffer[int64(0)]
 	v90 = *i44
-	call61 = snprintf(arraydecay, int64(1024), &_str_180[int64(0)], v90)
+	call61 = libc.Snprintf(arraydecay, int64(1024), &_str_180[int64(0)], v90)
 	v91 = *self_addr
 	ts_parser__log(v91)
 	goto if_end62
@@ -24304,7 +24304,7 @@ if_then88:
 	lexer89 = &v112.F0
 	debug_buffer90 = &lexer89.F15
 	arraydecay91 = &debug_buffer90[int64(0)]
-	call92 = snprintf(arraydecay91, int64(1024), &_str_181[int64(0)])
+	call92 = libc.Snprintf(arraydecay91, int64(1024), &_str_181[int64(0)])
 	v113 = *self_addr
 	ts_parser__log(v113)
 	goto if_end93
@@ -59487,7 +59487,7 @@ if_then23:
 	v28 = *writer
 	v29 = *v28
 	v30 = *limit_addr
-	call24 = snprintf(v29, v30, &_str_285[int64(0)])
+	call24 = libc.Snprintf(v29, v30, &_str_285[int64(0)])
 	v31 = *cursor
 	idx_ext = int64(call24)
 	add_ptr = libc.AddPointer(v31, int(idx_ext))
@@ -59509,7 +59509,7 @@ if_then27:
 	v37 = *frame
 	field_name28 = &v37.F3
 	v38 = *field_name28
-	call29 = snprintf(v35, v36, &_str_286[int64(0)], v38)
+	call29 = libc.Snprintf(v35, v36, &_str_286[int64(0)], v38)
 	v39 = *cursor
 	idx_ext30 = int64(call29)
 	add_ptr31 = libc.AddPointer(v39, int(idx_ext30))
@@ -59523,7 +59523,7 @@ if_end33:
 	v40 = *writer
 	v41 = *v40
 	v42 = *limit_addr
-	call34 = snprintf(v41, v42, &_str_287[int64(0)])
+	call34 = libc.Snprintf(v41, v42, &_str_287[int64(0)])
 	v43 = *cursor
 	idx_ext35 = int64(call34)
 	add_ptr36 = libc.AddPointer(v43, int(idx_ext35))
@@ -59645,7 +59645,7 @@ if_then70:
 	v61 = *writer
 	v62 = *v61
 	v63 = *limit_addr
-	call71 = snprintf(v62, v63, &_str_285[int64(0)])
+	call71 = libc.Snprintf(v62, v63, &_str_285[int64(0)])
 	v64 = *cursor
 	idx_ext72 = int64(call71)
 	add_ptr73 = libc.AddPointer(v64, int(idx_ext72))
@@ -59667,7 +59667,7 @@ if_then76:
 	v70 = *frame
 	field_name77 = &v70.F3
 	v71 = *field_name77
-	call78 = snprintf(v68, v69, &_str_286[int64(0)], v71)
+	call78 = libc.Snprintf(v68, v69, &_str_286[int64(0)], v71)
 	v72 = *cursor
 	idx_ext79 = int64(call78)
 	add_ptr80 = libc.AddPointer(v72, int(idx_ext79))
@@ -59715,7 +59715,7 @@ if_then95:
 	v77 = *writer
 	v78 = *v77
 	v79 = *limit_addr
-	call96 = snprintf(v78, v79, &_str_288[int64(0)])
+	call96 = libc.Snprintf(v78, v79, &_str_288[int64(0)])
 	v80 = *cursor
 	idx_ext97 = int64(call96)
 	add_ptr98 = libc.AddPointer(v80, int(idx_ext97))
@@ -59782,7 +59782,7 @@ if_then119:
 	v96 = *writer
 	v97 = *v96
 	v98 = *limit_addr
-	call120 = snprintf(v97, v98, &_str_289[int64(0)])
+	call120 = libc.Snprintf(v97, v98, &_str_289[int64(0)])
 	v99 = *cursor
 	idx_ext121 = int64(call120)
 	add_ptr122 = libc.AddPointer(v99, int(idx_ext121))
@@ -59812,7 +59812,7 @@ if_then130:
 	v104 = *v103
 	v105 = *limit_addr
 	v106 = *symbol_name
-	call131 = snprintf(v104, v105, &_str_290[int64(0)], v106)
+	call131 = libc.Snprintf(v104, v105, &_str_290[int64(0)], v106)
 	v107 = *cursor
 	idx_ext132 = int64(call131)
 	add_ptr133 = libc.AddPointer(v107, int(idx_ext132))
@@ -59824,7 +59824,7 @@ if_else134:
 	v109 = *v108
 	v110 = *limit_addr
 	v111 = *symbol_name
-	call135 = snprintf(v109, v110, &_str_291[int64(0)], v111)
+	call135 = libc.Snprintf(v109, v110, &_str_291[int64(0)], v111)
 	v112 = *cursor
 	idx_ext136 = int64(call135)
 	add_ptr137 = libc.AddPointer(v112, int(idx_ext136))
@@ -59839,7 +59839,7 @@ if_else139:
 	v114 = *v113
 	v115 = *limit_addr
 	v116 = *symbol_name
-	call140 = snprintf(v114, v115, &_str_292[int64(0)], v116)
+	call140 = libc.Snprintf(v114, v115, &_str_292[int64(0)], v116)
 	v117 = *cursor
 	idx_ext141 = int64(call140)
 	add_ptr142 = libc.AddPointer(v117, int(idx_ext141))
@@ -59913,7 +59913,7 @@ if_then169:
 	v129 = *v128
 	v130 = *limit_addr
 	v131 = *symbol_name163
-	call170 = snprintf(v129, v130, &_str_292[int64(0)], v131)
+	call170 = libc.Snprintf(v129, v130, &_str_292[int64(0)], v131)
 	v132 = *cursor
 	idx_ext171 = int64(call170)
 	add_ptr172 = libc.AddPointer(v132, int(idx_ext171))
@@ -59935,7 +59935,7 @@ if_then176:
 	v135 = *v134
 	v136 = *limit_addr
 	v137 = *symbol_name163
-	call177 = snprintf(v135, v136, &_str_293[int64(0)], v137)
+	call177 = libc.Snprintf(v135, v136, &_str_293[int64(0)], v137)
 	v138 = *cursor
 	idx_ext178 = int64(call177)
 	add_ptr179 = libc.AddPointer(v138, int(idx_ext178))
@@ -59947,7 +59947,7 @@ if_else180:
 	v140 = *v139
 	v141 = *limit_addr
 	v142 = *symbol_name163
-	call181 = snprintf(v140, v141, &_str_294[int64(0)], v142)
+	call181 = libc.Snprintf(v140, v141, &_str_294[int64(0)], v142)
 	v143 = *cursor
 	idx_ext182 = int64(call181)
 	add_ptr183 = libc.AddPointer(v143, int(idx_ext182))
@@ -60323,7 +60323,7 @@ if_then312:
 	v228 = *writer
 	v229 = *v228
 	v230 = *limit_addr
-	call313 = snprintf(v229, v230, &_str_295[int64(0)])
+	call313 = libc.Snprintf(v229, v230, &_str_295[int64(0)])
 	v231 = *cursor
 	idx_ext314 = int64(call313)
 	add_ptr315 = libc.AddPointer(v231, int(idx_ext314))
@@ -66979,7 +66979,7 @@ func ts_tree_print_dot_graph(self *TSTree, file_descriptor int32) {
 	*file_descriptor_addr = file_descriptor
 	v0 = *file_descriptor_addr
 	call = _ts_dup(v0)
-	call1 = fdopen(call, &_str_7[int64(0)])
+	call1 = libc.Fdopen(call, &_str_7[int64(0)])
 	*file = call1
 	v1 = *self_addr
 	root = &v1.F0
@@ -66991,7 +66991,7 @@ func ts_tree_print_dot_graph(self *TSTree, file_descriptor int32) {
 	v5 = *coerce_dive
 	ts_subtree_print_dot_graph(v5, v3, v4)
 	v6 = *file
-	call2 = fclose(v6)
+	call2 = libc.Fclose(v6)
 }
 
 func ts_wasm_store_call_lex_main(self *TSWasmStore, state int16) bool {
@@ -69027,7 +69027,7 @@ if_then12:
 	v19 = *coerce_dive14
 	call15 = ts_subtree_symbol(v19)
 	call16 = ts_language_symbol_name(v18, call15)
-	call17 = snprintf(arraydecay, int64(1024), &_str_138[int64(0)], call16)
+	call17 = libc.Snprintf(arraydecay, int64(1024), &_str_138[int64(0)], call16)
 	v20 = *self_addr
 	ts_parser__log(v20)
 	goto if_end18
@@ -69081,7 +69081,7 @@ if_then29:
 	v30 = *coerce_dive34
 	call35 = ts_subtree_symbol(v30)
 	call36 = ts_language_symbol_name(v29, call35)
-	call37 = snprintf(arraydecay32, int64(1024), &_str_139[int64(0)], call36)
+	call37 = libc.Snprintf(arraydecay32, int64(1024), &_str_139[int64(0)], call36)
 	v31 = *self_addr
 	ts_parser__log(v31)
 	goto if_end38
@@ -69166,7 +69166,7 @@ if_then60:
 	v46 = *coerce_dive65
 	call66 = ts_subtree_symbol(v46)
 	call67 = ts_language_symbol_name(v45, call66)
-	call68 = snprintf(arraydecay63, int64(1024), &_str_140[int64(0)], call67)
+	call68 = libc.Snprintf(arraydecay63, int64(1024), &_str_140[int64(0)], call67)
 	v47 = *self_addr
 	ts_parser__log(v47)
 	goto if_end69
@@ -69330,7 +69330,7 @@ if_then108:
 	v68 = *coerce_dive113
 	call114 = ts_subtree_symbol(v68)
 	call115 = ts_language_symbol_name(v67, call114)
-	call116 = snprintf(arraydecay111, int64(1024), &_str_146[int64(0)], v65, call115)
+	call116 = libc.Snprintf(arraydecay111, int64(1024), &_str_146[int64(0)], v65, call115)
 	v69 = *self_addr
 	ts_parser__log(v69)
 	goto if_end117
@@ -69431,7 +69431,7 @@ if_then139:
 	v99 = *language147
 	v100 = *leaf_symbol
 	call148 = ts_language_symbol_name(v99, v100)
-	call149 = snprintf(arraydecay142, int64(1024), &_str_147[int64(0)], call146, call148)
+	call149 = libc.Snprintf(arraydecay142, int64(1024), &_str_147[int64(0)], call146, call148)
 	v101 = *self_addr
 	ts_parser__log(v101)
 	goto if_end150
@@ -69478,7 +69478,7 @@ if_then160:
 	v110 = *coerce_dive165
 	call166 = ts_subtree_symbol(v110)
 	call167 = ts_language_symbol_name(v109, call166)
-	call168 = snprintf(arraydecay163, int64(1024), &_str_148[int64(0)], call167)
+	call168 = libc.Snprintf(arraydecay163, int64(1024), &_str_148[int64(0)], call167)
 	v111 = *self_addr
 	ts_parser__log(v111)
 	goto if_end169
@@ -69880,7 +69880,7 @@ if_then3:
 	lexer4 = &v10.F0
 	debug_buffer = &lexer4.F15
 	arraydecay = &debug_buffer[int64(0)]
-	call5 = snprintf(arraydecay, int64(1024), &_str_149[int64(0)])
+	call5 = libc.Snprintf(arraydecay, int64(1024), &_str_149[int64(0)])
 	v11 = *self_addr
 	ts_parser__log(v11)
 	goto if_end
@@ -70003,7 +70003,7 @@ if_then34:
 	extent40 = &current_position.F1
 	column = &extent40.F1
 	v46 = *column
-	call41 = snprintf(arraydecay37, int64(1024), &_str_150[int64(0)], conv39, v45, v46)
+	call41 = libc.Snprintf(arraydecay37, int64(1024), &_str_150[int64(0)], conv39, v45, v46)
 	v47 = *self_addr
 	ts_parser__log(v47)
 	goto if_end42
@@ -70194,7 +70194,7 @@ if_then94:
 	arrayidx106 = libc.AddPointer(v91, int(idxprom105))
 	v94 = *arrayidx106
 	call107 = ts_language_symbol_name(v88, v94)
-	call108 = snprintf(arraydecay97, int64(1024), &_str_151[int64(0)], call107)
+	call108 = libc.Snprintf(arraydecay97, int64(1024), &_str_151[int64(0)], call107)
 	v95 = *self_addr
 	ts_parser__log(v95)
 	goto if_end109
@@ -70286,7 +70286,7 @@ if_then130:
 	extent138 = &current_position.F1
 	column139 = &extent138.F1
 	v116 = *column139
-	call140 = snprintf(arraydecay133, int64(1024), &_str_152[int64(0)], conv135, v115, v116)
+	call140 = libc.Snprintf(arraydecay133, int64(1024), &_str_152[int64(0)], conv135, v115, v116)
 	v117 = *self_addr
 	ts_parser__log(v117)
 	goto if_end141
@@ -70389,7 +70389,7 @@ if_then166:
 	lexer167 = &v144.F0
 	debug_buffer168 = &lexer167.F15
 	arraydecay169 = &debug_buffer168[int64(0)]
-	call170 = snprintf(arraydecay169, int64(1024), &_str_153[int64(0)])
+	call170 = libc.Snprintf(arraydecay169, int64(1024), &_str_153[int64(0)])
 	v145 = *self_addr
 	ts_parser__log(v145)
 	goto if_end171
@@ -70884,7 +70884,7 @@ if_then322:
 	call330 = ts_language_symbol_name(v331, call329)
 	*symbol326 = call330
 	v333 = *buf
-	call331 = snprintf(v333, int64(1024), &_str_154[int64(0)])
+	call331 = libc.Snprintf(v333, int64(1024), &_str_154[int64(0)])
 	*off = call331
 	*i = 0
 	goto for_cond332
@@ -71084,7 +71084,7 @@ for_end389:
 	libc.Memmove(v376, v377, int64(12))
 	bytes395 = &coerce.F0
 	v378 = *bytes395
-	call396 = snprintf(add_ptr, conv391, &_str_155[int64(0)], v378)
+	call396 = libc.Snprintf(add_ptr, conv391, &_str_155[int64(0)], v378)
 	v379 = *self_addr
 	ts_parser__log(v379)
 	goto if_end397
@@ -71372,7 +71372,7 @@ if_then:
 	v12 = *coerce_dive10
 	call11 = ts_subtree_symbol(v12)
 	call12 = ts_language_symbol_name(v11, call11)
-	call13 = snprintf(arraydecay, int64(1024), &_str_157[int64(0)], call12)
+	call13 = libc.Snprintf(arraydecay, int64(1024), &_str_157[int64(0)], call12)
 	v13 = *self_addr
 	ts_parser__log(v13)
 	goto if_end
@@ -72057,7 +72057,7 @@ if_then16:
 	lexer17 = &v36.F0
 	debug_buffer = &lexer17.F15
 	arraydecay = &debug_buffer[int64(0)]
-	call18 = snprintf(arraydecay, int64(1024), &_str_159[int64(0)])
+	call18 = libc.Snprintf(arraydecay, int64(1024), &_str_159[int64(0)])
 	v37 = *self_addr
 	ts_parser__log(v37)
 	goto if_end19
@@ -73502,7 +73502,7 @@ if_then80:
 	v72 = *state82
 	conv83 = int32(uint32(uint16(v72)))
 	v73 = *depth
-	call84 = snprintf(arraydecay, int64(1024), &_str_171[int64(0)], conv83, v73)
+	call84 = libc.Snprintf(arraydecay, int64(1024), &_str_171[int64(0)], conv83, v73)
 	v74 = *self_addr
 	ts_parser__log(v74)
 	goto if_end85
@@ -73613,7 +73613,7 @@ if_then119:
 	debug_buffer121 = &lexer120.F15
 	arraydecay122 = &debug_buffer121[int64(0)]
 	v98 = *i102
-	call123 = snprintf(arraydecay122, int64(1024), &_str_172[int64(0)], v98)
+	call123 = libc.Snprintf(arraydecay122, int64(1024), &_str_172[int64(0)], v98)
 	v99 = *self_addr
 	ts_parser__log(v99)
 	goto if_end124
@@ -73704,7 +73704,7 @@ if_then150:
 	lexer151 = &v119.F0
 	debug_buffer152 = &lexer151.F15
 	arraydecay153 = &debug_buffer152[int64(0)]
-	call154 = snprintf(arraydecay153, int64(1024), &_str_173[int64(0)])
+	call154 = libc.Snprintf(arraydecay153, int64(1024), &_str_173[int64(0)])
 	v120 = *self_addr
 	ts_parser__log(v120)
 	goto if_end155
@@ -73946,7 +73946,7 @@ if_then240:
 	v182 = *coerce_dive245
 	call246 = ts_subtree_symbol(v182)
 	call247 = ts_language_symbol_name(v181, call246)
-	call248 = snprintf(arraydecay243, int64(1024), &_str_174[int64(0)], call247)
+	call248 = libc.Snprintf(arraydecay243, int64(1024), &_str_174[int64(0)], call247)
 	v183 = *self_addr
 	ts_parser__log(v183)
 	goto if_end249
@@ -74955,7 +74955,7 @@ if_then82:
 	v77 = *coerce_dive85
 	call86 = ts_subtree_symbol(v77)
 	call87 = ts_language_symbol_name(v76, call86)
-	call88 = snprintf(arraydecay, int64(1024), &_str_179[int64(0)], call87)
+	call88 = libc.Snprintf(arraydecay, int64(1024), &_str_179[int64(0)], call87)
 	v78 = *self_addr
 	ts_parser__log(v78)
 	goto if_end89
@@ -76333,7 +76333,7 @@ if_then12:
 	v14 = *coerce_dive18
 	call19 = ts_subtree_symbol(v14)
 	call20 = ts_language_symbol_name(v13, call19)
-	call21 = snprintf(arraydecay, int64(1024), &_str_162[int64(0)], call16, call20)
+	call21 = libc.Snprintf(arraydecay, int64(1024), &_str_162[int64(0)], call16, call20)
 	v15 = *self_addr
 	ts_parser__log(v15)
 	goto if_end22
@@ -76399,7 +76399,7 @@ if_then37:
 	v28 = *coerce_dive46
 	call47 = ts_subtree_symbol(v28)
 	call48 = ts_language_symbol_name(v27, call47)
-	call49 = snprintf(arraydecay40, int64(1024), &_str_162[int64(0)], call44, call48)
+	call49 = libc.Snprintf(arraydecay40, int64(1024), &_str_162[int64(0)], call44, call48)
 	v29 = *self_addr
 	ts_parser__log(v29)
 	goto if_end50
@@ -76471,7 +76471,7 @@ if_then65:
 	coerce_dive79 = &left.F0
 	v44 = *coerce_dive79
 	call80 = ts_subtree_dynamic_precedence(v44)
-	call81 = snprintf(arraydecay68, int64(1024), &_str_163[int64(0)], call72, call74, call78, call80)
+	call81 = libc.Snprintf(arraydecay68, int64(1024), &_str_163[int64(0)], call72, call74, call78, call80)
 	v45 = *self_addr
 	ts_parser__log(v45)
 	goto if_end82
@@ -76543,7 +76543,7 @@ if_then97:
 	coerce_dive111 = &right.F0
 	v60 = *coerce_dive111
 	call112 = ts_subtree_dynamic_precedence(v60)
-	call113 = snprintf(arraydecay100, int64(1024), &_str_163[int64(0)], call104, call106, call110, call112)
+	call113 = libc.Snprintf(arraydecay100, int64(1024), &_str_163[int64(0)], call104, call106, call110, call112)
 	v61 = *self_addr
 	ts_parser__log(v61)
 	goto if_end114
@@ -76629,7 +76629,7 @@ if_then131:
 	v77 = *coerce_dive140
 	call141 = ts_subtree_symbol(v77)
 	call142 = ts_language_symbol_name(v76, call141)
-	call143 = snprintf(arraydecay134, int64(1024), &_str_164[int64(0)], call138, call142)
+	call143 = libc.Snprintf(arraydecay134, int64(1024), &_str_164[int64(0)], call138, call142)
 	v78 = *self_addr
 	ts_parser__log(v78)
 	goto if_end144
@@ -76681,7 +76681,7 @@ if_then153:
 	v89 = *coerce_dive162
 	call163 = ts_subtree_symbol(v89)
 	call164 = ts_language_symbol_name(v88, call163)
-	call165 = snprintf(arraydecay156, int64(1024), &_str_164[int64(0)], call160, call164)
+	call165 = libc.Snprintf(arraydecay156, int64(1024), &_str_164[int64(0)], call160, call164)
 	v90 = *self_addr
 	ts_parser__log(v90)
 	goto if_end166
@@ -76733,7 +76733,7 @@ if_then174:
 	v101 = *coerce_dive183
 	call184 = ts_subtree_symbol(v101)
 	call185 = ts_language_symbol_name(v100, call184)
-	call186 = snprintf(arraydecay177, int64(1024), &_str_165[int64(0)], call181, call185)
+	call186 = libc.Snprintf(arraydecay177, int64(1024), &_str_165[int64(0)], call181, call185)
 	v102 = *self_addr
 	ts_parser__log(v102)
 	goto if_end187
@@ -78220,7 +78220,7 @@ if_then53:
 	v90 = *version_with_missing_tree
 	call58 = ts_stack_state(v89, v90)
 	conv59 = int32(uint32(uint16(call58)))
-	call60 = snprintf(arraydecay, int64(1024), &_str_182[int64(0)], call56, conv59)
+	call60 = libc.Snprintf(arraydecay, int64(1024), &_str_182[int64(0)], call56, conv59)
 	v91 = *self_addr
 	ts_parser__log(v91)
 	goto if_end61
@@ -89746,7 +89746,7 @@ func ts_subtree__write_char_to_string(str *byte, n int64, chr int32) int64 {
 if_then:
 	v1 = *str_addr
 	v2 = *n_addr
-	call = snprintf(v1, v2, &_str_296[int64(0)])
+	call = libc.Snprintf(v1, v2, &_str_296[int64(0)])
 	conv = int64(call)
 	*retval = conv
 	goto _return
@@ -89763,7 +89763,7 @@ if_else:
 if_then3:
 	v4 = *str_addr
 	v5 = *n_addr
-	call4 = snprintf(v4, v5, &_str_297[int64(0)])
+	call4 = libc.Snprintf(v4, v5, &_str_297[int64(0)])
 	conv5 = int64(call4)
 	*retval = conv5
 	goto _return
@@ -89780,7 +89780,7 @@ if_else6:
 if_then9:
 	v7 = *str_addr
 	v8 = *n_addr
-	call10 = snprintf(v7, v8, &_str_298[int64(0)])
+	call10 = libc.Snprintf(v7, v8, &_str_298[int64(0)])
 	conv11 = int64(call10)
 	*retval = conv11
 	goto _return
@@ -89797,7 +89797,7 @@ if_else12:
 if_then15:
 	v10 = *str_addr
 	v11 = *n_addr
-	call16 = snprintf(v10, v11, &_str_299[int64(0)])
+	call16 = libc.Snprintf(v10, v11, &_str_299[int64(0)])
 	conv17 = int64(call16)
 	*retval = conv17
 	goto _return
@@ -89814,7 +89814,7 @@ if_else18:
 if_then21:
 	v13 = *str_addr
 	v14 = *n_addr
-	call22 = snprintf(v13, v14, &_str_300[int64(0)])
+	call22 = libc.Snprintf(v13, v14, &_str_300[int64(0)])
 	conv23 = int64(call22)
 	*retval = conv23
 	goto _return
@@ -89857,7 +89857,7 @@ if_then32:
 	v20 = *str_addr
 	v21 = *n_addr
 	v22 = *chr_addr
-	call33 = snprintf(v20, v21, &_str_301[int64(0)], v22)
+	call33 = libc.Snprintf(v20, v21, &_str_301[int64(0)], v22)
 	conv34 = int64(call33)
 	*retval = conv34
 	goto _return
@@ -89866,7 +89866,7 @@ if_else35:
 	v23 = *str_addr
 	v24 = *n_addr
 	v25 = *chr_addr
-	call36 = snprintf(v23, v24, &_str_302[int64(0)], v25)
+	call36 = libc.Snprintf(v23, v24, &_str_302[int64(0)], v25)
 	conv37 = int64(call36)
 	*retval = conv37
 	goto _return

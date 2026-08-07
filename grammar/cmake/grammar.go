@@ -1,4 +1,4 @@
-package main
+package grammar_cmake
 
 type TSFieldMapEntry struct {
 	F0 int16
@@ -38724,7 +38724,7 @@ func tree_sitter_cmake_external_scanner_create() *byte {
 
 	_ = call
 
-	call = libc.Malloc[byte](8)
+	call = libc.Malloc[byte](int64(8))
 	return call
 }
 
@@ -38751,7 +38751,7 @@ func tree_sitter_cmake_external_scanner_serialize(payload *byte, buffer *byte) i
 	*buffer_addr = buffer
 	v0 = *buffer_addr
 	v1 = *payload_addr
-	libc.Memmove(v0, v1, 8)
+	libc.Memmove(v0, v1, int64(8))
 	return 8
 }
 
@@ -38776,7 +38776,7 @@ func tree_sitter_cmake_external_scanner_deserialize(payload *byte, buffer *byte,
 	*length_addr = length
 	v0 = *length_addr
 	conv = int64(uint64(uint32(v0)))
-	cmp = conv == 8
+	cmp = conv == int64(8)
 	if cmp {
 		goto if_then
 	} else {
@@ -38868,7 +38868,7 @@ if_end:
 
 if_end2:
 	v10 = *valid_symbols_addr
-	arrayidx3 = libc.AddPointer(v10, int(1))
+	arrayidx3 = libc.AddPointer(v10, int(int64(1)))
 	v11 = *arrayidx3
 	tobool4 = byte(v11 & 1)
 	if tobool4 {
@@ -38904,7 +38904,7 @@ if_then6:
 
 if_end9:
 	v19 = *valid_symbols_addr
-	arrayidx10 = libc.AddPointer(v19, int(2))
+	arrayidx10 = libc.AddPointer(v19, int(int64(2)))
 	v20 = *arrayidx10
 	tobool11 = byte(v20 & 1)
 	if tobool11 {
@@ -38958,7 +38958,7 @@ if_end20:
 
 if_then22:
 	v29 = *valid_symbols_addr
-	arrayidx23 = libc.AddPointer(v29, int(3))
+	arrayidx23 = libc.AddPointer(v29, int(int64(3)))
 	v30 = *arrayidx23
 	tobool24 = byte(v30 & 1)
 	if tobool24 {
@@ -38969,7 +38969,7 @@ if_then22:
 
 land_lhs_true25:
 	v31 = *valid_symbols_addr
-	arrayidx26 = libc.AddPointer(v31, int(6))
+	arrayidx26 = libc.AddPointer(v31, int(int64(6)))
 	v32 = *arrayidx26
 	tobool27 = byte(v32 & 1)
 	if tobool27 {
@@ -39063,7 +39063,7 @@ while_end:
 
 if_end43:
 	v49 = *valid_symbols_addr
-	arrayidx44 = libc.AddPointer(v49, int(4))
+	arrayidx44 = libc.AddPointer(v49, int(int64(4)))
 	v50 = *arrayidx44
 	tobool45 = byte(v50 & 1)
 	if tobool45 {
@@ -39099,7 +39099,7 @@ if_then49:
 
 if_end52:
 	v58 = *valid_symbols_addr
-	arrayidx53 = libc.AddPointer(v58, int(5))
+	arrayidx53 = libc.AddPointer(v58, int(int64(5)))
 	v59 = *arrayidx53
 	tobool54 = byte(v59 & 1)
 	if tobool54 {
@@ -39875,7 +39875,7 @@ if_end:
 for_cond:
 	v11 = *i
 	conv4 = int64(uint64(uint32(v11)))
-	cmp = uint64(conv4) < 22
+	cmp = uint64(conv4) < uint64(22)
 	if cmp {
 		goto for_body
 	} else {
@@ -39980,7 +39980,7 @@ sw_bb30:
 for_cond32:
 	v24 = *i31
 	conv33 = int64(uint64(uint32(v24)))
-	cmp34 = uint64(conv33) < 18
+	cmp34 = uint64(conv33) < uint64(18)
 	if cmp34 {
 		goto for_body36
 	} else {
@@ -41057,7 +41057,7 @@ sw_bb375:
 for_cond377:
 	v126 = *i376
 	conv378 = int64(uint64(uint32(v126)))
-	cmp379 = uint64(conv378) < 24
+	cmp379 = uint64(conv378) < uint64(24)
 	if cmp379 {
 		goto for_body381
 	} else {
@@ -41189,7 +41189,7 @@ sw_bb422:
 for_cond424:
 	v142 = *i423
 	conv425 = int64(uint64(uint32(v142)))
-	cmp426 = uint64(conv425) < 24
+	cmp426 = uint64(conv425) < uint64(24)
 	if cmp426 {
 		goto for_body428
 	} else {
@@ -41321,7 +41321,7 @@ sw_bb469:
 for_cond471:
 	v158 = *i470
 	conv472 = int64(uint64(uint32(v158)))
-	cmp473 = uint64(conv472) < 24
+	cmp473 = uint64(conv472) < uint64(24)
 	if cmp473 {
 		goto for_body475
 	} else {
@@ -41453,7 +41453,7 @@ sw_bb516:
 for_cond518:
 	v174 = *i517
 	conv519 = int64(uint64(uint32(v174)))
-	cmp520 = uint64(conv519) < 24
+	cmp520 = uint64(conv519) < uint64(24)
 	if cmp520 {
 		goto for_body522
 	} else {
@@ -41585,7 +41585,7 @@ sw_bb563:
 for_cond565:
 	v190 = *i564
 	conv566 = int64(uint64(uint32(v190)))
-	cmp567 = uint64(conv566) < 24
+	cmp567 = uint64(conv566) < uint64(24)
 	if cmp567 {
 		goto for_body569
 	} else {
@@ -41717,7 +41717,7 @@ sw_bb610:
 for_cond612:
 	v206 = *i611
 	conv613 = int64(uint64(uint32(v206)))
-	cmp614 = uint64(conv613) < 24
+	cmp614 = uint64(conv613) < uint64(24)
 	if cmp614 {
 		goto for_body616
 	} else {
@@ -41862,7 +41862,7 @@ if_end660:
 for_cond662:
 	v223 = *i661
 	conv663 = int64(uint64(uint32(v223)))
-	cmp664 = uint64(conv663) < 22
+	cmp664 = uint64(conv663) < uint64(22)
 	if cmp664 {
 		goto for_body666
 	} else {

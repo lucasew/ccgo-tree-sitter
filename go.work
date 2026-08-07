@@ -6,54 +6,93 @@ use (
 	./grammar/COBOL
 	./grammar/ada
 	./grammar/asm
+	./grammar/beancount
+	./grammar/bibtex
 	./grammar/bicep
+	./grammar/c
 	./grammar/capnp
 	./grammar/chatito
 	./grammar/clojure
 	./grammar/cmake
+	./grammar/comment
+	./grammar/commonlisp
 	./grammar/core_schema
 	./grammar/cpon
+	./grammar/css
 	./grammar/cst
 	./grammar/csv
+	./grammar/cue
 	./grammar/cyberchef
 	./grammar/dart
 	./grammar/diff
+	./grammar/dockerfile
+	./grammar/dtd
 	./grammar/eex
+	./grammar/elixir
 	./grammar/embedded_template
 	./grammar/erlang
 	./grammar/fish
+	./grammar/fluent
 	./grammar/func
+	./grammar/git_config
 	./grammar/git_rebase
+	./grammar/gitattributes
 	./grammar/gitcommit
 	./grammar/gitignore
 	./grammar/gleam
+	./grammar/glsl
 	./grammar/gn
+	./grammar/go
 	./grammar/godot_resource
 	./grammar/gosum
+	./grammar/gpg
 	./grammar/graphql
+	./grammar/groovy
 	./grammar/gstlaunch
 	./grammar/hare
+	./grammar/heex
+	./grammar/http
 	./grammar/hyprlang
 	./grammar/ini
+	./grammar/ispc
+	./grammar/java
+	./grammar/javascript
 	./grammar/jsdoc
 	./grammar/json
+	./grammar/json5
 	./grammar/json_schema
+	./grammar/julia
+	./grammar/kconfig
+	./grammar/kdl
 	./grammar/legacy_schema
 	./grammar/linkerscript
 	./grammar/llvm
+	./grammar/lua
 	./grammar/luadoc
+	./grammar/luap
 	./grammar/luau
+	./grammar/make
 	./grammar/markdown_inline
+	./grammar/matlab
 	./grammar/meson
 	./grammar/move
 	./grammar/nasm
 	./grammar/nix
 	./grammar/nqc
+	./grammar/objc
 	./grammar/objdump
+	./grammar/ocaml
+	./grammar/ocaml_interface
+	./grammar/ocaml_type
+	./grammar/odin
 	./grammar/pascal
 	./grammar/pem
+	./grammar/pkl
 	./grammar/po
+	./grammar/poe_filter
+	./grammar/powershell
 	./grammar/printf
+	./grammar/prisma
 	./grammar/properties
 	./grammar/proto
 	./grammar/psv
@@ -65,24 +104,39 @@ use (
 	./grammar/query
 	./grammar/rasi
 	./grammar/re2c
+	./grammar/readline
 	./grammar/regex
+	./grammar/rego
 	./grammar/requirements
 	./grammar/rescript
+	./grammar/ron
+	./grammar/rust
+	./grammar/scheme
 	./grammar/scss
 	./grammar/smali
 	./grammar/smithy
+	./grammar/sml
 	./grammar/solidity
+	./grammar/sparql
 	./grammar/squirrel
 	./grammar/ssh_config
 	./grammar/surface
 	./grammar/tablegen
+	./grammar/tcl
+	./grammar/templ
 	./grammar/test
 	./grammar/thrift
 	./grammar/toml
 	./grammar/tsv
+	./grammar/tsx
+	./grammar/turtle
 	./grammar/twig
+	./grammar/typescript
+	./grammar/typst
+	./grammar/udev
 	./grammar/ungrammar
 	./grammar/uxntal
+	./grammar/verilog
 	./grammar/vhdl
 	./grammar/vimdoc
 	./grammar/wast

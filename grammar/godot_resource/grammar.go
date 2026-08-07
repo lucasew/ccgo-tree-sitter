@@ -1,4 +1,4 @@
-package main
+package grammar_godot_resource
 
 type TSFieldMapEntry struct {
 	F0 int16
@@ -5361,7 +5361,7 @@ if_end:
 for_cond:
 	v11 = *i
 	conv4 = int64(uint64(uint32(v11)))
-	cmp = uint64(conv4) < 22
+	cmp = uint64(conv4) < uint64(22)
 	if cmp {
 		goto for_body
 	} else {
@@ -6931,7 +6931,7 @@ sw_bb478:
 for_cond482:
 	v191 = *i481
 	conv483 = int64(uint64(uint32(v191)))
-	cmp484 = uint64(conv483) < 22
+	cmp484 = uint64(conv483) < uint64(22)
 	if cmp484 {
 		goto for_body486
 	} else {

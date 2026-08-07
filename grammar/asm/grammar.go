@@ -1,4 +1,4 @@
-package main
+package grammar_asm
 
 type TSFieldMapEntry struct {
 	F0 int16
@@ -7277,7 +7277,7 @@ if_end:
 for_cond:
 	v11 = *i
 	conv4 = int64(uint64(uint32(v11)))
-	cmp = uint64(conv4) < 68
+	cmp = uint64(conv4) < uint64(68)
 	if cmp {
 		goto for_body
 	} else {
@@ -7464,7 +7464,7 @@ sw_bb56:
 for_cond58:
 	v32 = *i57
 	conv59 = int64(uint64(uint32(v32)))
-	cmp60 = uint64(conv59) < 16
+	cmp60 = uint64(conv59) < uint64(16)
 	if cmp60 {
 		goto for_body62
 	} else {
@@ -8826,7 +8826,7 @@ if_end493:
 for_cond495:
 	v168 = *i494
 	conv496 = int64(uint64(uint32(v168)))
-	cmp497 = uint64(conv496) < 42
+	cmp497 = uint64(conv496) < uint64(42)
 	if cmp497 {
 		goto for_body499
 	} else {
@@ -8998,7 +8998,7 @@ if_end551:
 for_cond553:
 	v187 = *i552
 	conv554 = int64(uint64(uint32(v187)))
-	cmp555 = uint64(conv554) < 26
+	cmp555 = uint64(conv554) < uint64(26)
 	if cmp555 {
 		goto for_body557
 	} else {
@@ -9170,7 +9170,7 @@ if_end609:
 for_cond611:
 	v206 = *i610
 	conv612 = int64(uint64(uint32(v206)))
-	cmp613 = uint64(conv612) < 38
+	cmp613 = uint64(conv612) < uint64(38)
 	if cmp613 {
 		goto for_body615
 	} else {
@@ -9342,7 +9342,7 @@ if_end667:
 for_cond669:
 	v225 = *i668
 	conv670 = int64(uint64(uint32(v225)))
-	cmp671 = uint64(conv670) < 38
+	cmp671 = uint64(conv670) < uint64(38)
 	if cmp671 {
 		goto for_body673
 	} else {
@@ -9506,7 +9506,7 @@ if_end723:
 for_cond725:
 	v244 = *i724
 	conv726 = int64(uint64(uint32(v244)))
-	cmp727 = uint64(conv726) < 20
+	cmp727 = uint64(conv726) < uint64(20)
 	if cmp727 {
 		goto for_body729
 	} else {

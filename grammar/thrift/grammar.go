@@ -1,4 +1,4 @@
-package main
+package grammar_thrift
 
 type TSFieldMapEntry struct {
 	F0 int16
@@ -41744,7 +41744,7 @@ if_end:
 for_cond:
 	v11 = *i
 	conv4 = int64(uint64(uint32(v11)))
-	cmp = uint64(conv4) < 58
+	cmp = uint64(conv4) < uint64(58)
 	if cmp {
 		goto for_body
 	} else {
@@ -41931,7 +41931,7 @@ sw_bb56:
 for_cond58:
 	v32 = *i57
 	conv59 = int64(uint64(uint32(v32)))
-	cmp60 = uint64(conv59) < 26
+	cmp60 = uint64(conv59) < uint64(26)
 	if cmp60 {
 		goto for_body62
 	} else {
@@ -42064,7 +42064,7 @@ sw_bb103:
 for_cond105:
 	v48 = *i104
 	conv106 = int64(uint64(uint32(v48)))
-	cmp107 = uint64(conv106) < 30
+	cmp107 = uint64(conv106) < uint64(30)
 	if cmp107 {
 		goto for_body109
 	} else {
@@ -44824,7 +44824,7 @@ if_end988:
 for_cond990:
 	v334 = *i989
 	conv991 = int64(uint64(uint32(v334)))
-	cmp992 = uint64(conv991) < 56
+	cmp992 = uint64(conv991) < uint64(56)
 	if cmp992 {
 		goto for_body994
 	} else {
@@ -44992,7 +44992,7 @@ if_end1045:
 for_cond1047:
 	v353 = *i1046
 	conv1048 = int64(uint64(uint32(v353)))
-	cmp1049 = uint64(conv1048) < 38
+	cmp1049 = uint64(conv1048) < uint64(38)
 	if cmp1049 {
 		goto for_body1051
 	} else {
@@ -45989,7 +45989,7 @@ sw_bb1343:
 for_cond1347:
 	v556 = *i1346
 	conv1348 = int64(uint64(uint32(v556)))
-	cmp1349 = uint64(conv1348) < 18
+	cmp1349 = uint64(conv1348) < uint64(18)
 	if cmp1349 {
 		goto for_body1351
 	} else {
@@ -50788,7 +50788,7 @@ sw_bb:
 for_cond:
 	v10 = *i
 	conv3 = int64(uint64(uint32(v10)))
-	cmp = uint64(conv3) < 44
+	cmp = uint64(conv3) < uint64(44)
 	if cmp {
 		goto for_body
 	} else {
@@ -51594,7 +51594,7 @@ sw_bb242:
 for_cond244:
 	v89 = *i243
 	conv245 = int64(uint64(uint32(v89)))
-	cmp246 = uint64(conv245) < 16
+	cmp246 = uint64(conv245) < uint64(16)
 	if cmp246 {
 		goto for_body248
 	} else {

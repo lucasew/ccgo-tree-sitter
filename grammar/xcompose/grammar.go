@@ -1,4 +1,4 @@
-package main
+package grammar_xcompose
 
 type TSFieldMapEntry struct {
 	F0 int16
@@ -5154,7 +5154,7 @@ if_end:
 for_cond:
 	v11 = *i
 	conv4 = int64(uint64(uint32(v11)))
-	cmp = uint64(conv4) < 16
+	cmp = uint64(conv4) < uint64(16)
 	if cmp {
 		goto for_body
 	} else {
@@ -6132,7 +6132,7 @@ if_end307:
 for_cond309:
 	v114 = *i308
 	conv310 = int64(uint64(uint32(v114)))
-	cmp311 = uint64(conv310) < 34
+	cmp311 = uint64(conv310) < uint64(34)
 	if cmp311 {
 		goto for_body313
 	} else {

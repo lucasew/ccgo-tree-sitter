@@ -1,4 +1,4 @@
-package main
+package grammar_properties
 
 type TSFieldMapEntry struct {
 	F0 int16
@@ -6952,7 +6952,7 @@ if_end:
 for_cond:
 	v11 = *i
 	conv4 = int64(uint64(uint32(v11)))
-	cmp = uint64(conv4) < 30
+	cmp = uint64(conv4) < uint64(30)
 	if cmp {
 		goto for_body
 	} else {
@@ -7017,7 +7017,7 @@ sw_bb19:
 for_cond21:
 	v20 = *i20
 	conv22 = int64(uint64(uint32(v20)))
-	cmp23 = uint64(conv22) < 22
+	cmp23 = uint64(conv22) < uint64(22)
 	if cmp23 {
 		goto for_body25
 	} else {
@@ -7082,7 +7082,7 @@ sw_bb44:
 for_cond46:
 	v29 = *i45
 	conv47 = int64(uint64(uint32(v29)))
-	cmp48 = uint64(conv47) < 18
+	cmp48 = uint64(conv47) < uint64(18)
 	if cmp48 {
 		goto for_body50
 	} else {
@@ -7905,7 +7905,7 @@ if_end306:
 for_cond308:
 	v109 = *i307
 	conv309 = int64(uint64(uint32(v109)))
-	cmp310 = uint64(conv309) < 20
+	cmp310 = uint64(conv309) < uint64(20)
 	if cmp310 {
 		goto for_body312
 	} else {

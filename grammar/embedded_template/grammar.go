@@ -1,4 +1,4 @@
-package main
+package grammar_embedded_template
 
 type TSFieldMapEntry struct {
 	F0 int16
@@ -4588,7 +4588,7 @@ sw_bb332:
 for_cond:
 	v164 = *i
 	conv335 = int64(uint64(uint32(v164)))
-	cmp336 = uint64(conv335) < 16
+	cmp336 = uint64(conv335) < uint64(16)
 	if cmp336 {
 		goto for_body
 	} else {

@@ -1,4 +1,4 @@
-package main
+package grammar_fish
 
 type TSFieldMapEntry struct {
 	F0 int16
@@ -28652,7 +28652,7 @@ func tree_sitter_fish_external_scanner_scan(payload *byte, lexer *TSLexer, valid
 	*lexer_addr = lexer
 	*valid_symbols_addr = valid_symbols
 	v0 = *valid_symbols_addr
-	arrayidx = libc.AddPointer(v0, int(3))
+	arrayidx = libc.AddPointer(v0, int(int64(3)))
 	v1 = *arrayidx
 	tobool = byte(v1 & 1)
 	if tobool {
@@ -28743,7 +28743,7 @@ if_end11:
 
 if_end12:
 	v20 = *valid_symbols_addr
-	arrayidx13 = libc.AddPointer(v20, int(2))
+	arrayidx13 = libc.AddPointer(v20, int(int64(2)))
 	v21 = *arrayidx13
 	tobool14 = byte(v21 & 1)
 	if tobool14 {
@@ -28896,7 +28896,7 @@ if_end54:
 
 if_end55:
 	v46 = *valid_symbols_addr
-	arrayidx56 = libc.AddPointer(v46, int(1))
+	arrayidx56 = libc.AddPointer(v46, int(int64(1)))
 	v47 = *arrayidx56
 	tobool57 = byte(v47 & 1)
 	if tobool57 {

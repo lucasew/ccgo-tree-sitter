@@ -1,4 +1,4 @@
-package main
+package grammar_nqc
 
 type TSFieldMapEntry struct {
 	F0 int16

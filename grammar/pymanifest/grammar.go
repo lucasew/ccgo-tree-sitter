@@ -1,4 +1,4 @@
-package main
+package grammar_pymanifest
 
 type TSFieldMapEntry struct {
 	F0 int16
@@ -7665,7 +7665,7 @@ if_end:
 for_cond:
 	v11 = *i
 	conv4 = int64(uint64(uint32(v11)))
-	cmp = uint64(conv4) < 26
+	cmp = uint64(conv4) < uint64(26)
 	if cmp {
 		goto for_body
 	} else {
@@ -7767,7 +7767,7 @@ sw_bb29:
 for_cond31:
 	v24 = *i30
 	conv32 = int64(uint64(uint32(v24)))
-	cmp33 = uint64(conv32) < 20
+	cmp33 = uint64(conv32) < uint64(20)
 	if cmp33 {
 		goto for_body35
 	} else {
@@ -7850,7 +7850,7 @@ sw_bb60:
 for_cond62:
 	v35 = *i61
 	conv63 = int64(uint64(uint32(v35)))
-	cmp64 = uint64(conv63) < 20
+	cmp64 = uint64(conv63) < uint64(20)
 	if cmp64 {
 		goto for_body66
 	} else {
@@ -9395,7 +9395,7 @@ if_end553:
 for_cond555:
 	v197 = *i554
 	conv556 = int64(uint64(uint32(v197)))
-	cmp557 = uint64(conv556) < 24
+	cmp557 = uint64(conv556) < uint64(24)
 	if cmp557 {
 		goto for_body559
 	} else {

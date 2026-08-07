@@ -78,6 +78,7 @@ require (
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/gstlaunch v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/hare v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/heex v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/http v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/hyprlang v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/ini v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/ispc v0.0.0
@@ -105,11 +106,20 @@ require (
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/nasm v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/nix v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/nqc v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/objc v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/objdump v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/ocaml v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/ocaml_interface v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/ocaml_type v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/odin v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/pascal v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/pem v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/pkl v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/po v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/poe_filter v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/powershell v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/printf v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/prisma v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/properties v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/proto v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/psv v0.0.0
@@ -121,24 +131,39 @@ require (
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/query v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/rasi v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/re2c v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/readline v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/regex v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/rego v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/requirements v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/rescript v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/ron v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/rust v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/scheme v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/scss v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/smali v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/smithy v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/sml v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/solidity v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/sparql v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/squirrel v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/ssh_config v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/surface v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/tablegen v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/tcl v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/templ v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/test v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/thrift v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/toml v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/tsv v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/tsx v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/turtle v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/twig v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/typescript v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/typst v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/udev v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/ungrammar v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/uxntal v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/verilog v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/vhdl v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/vimdoc v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/wast v0.0.0
@@ -257,6 +282,8 @@ replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/hare => ./gramma
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/heex => ./grammar/heex
 
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/http => ./grammar/http
+
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/hyprlang => ./grammar/hyprlang
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/ini => ./grammar/ini
@@ -311,15 +338,33 @@ replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/nix => ./grammar
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/nqc => ./grammar/nqc
 
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/objc => ./grammar/objc
+
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/objdump => ./grammar/objdump
+
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/ocaml => ./grammar/ocaml
+
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/ocaml_interface => ./grammar/ocaml_interface
+
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/ocaml_type => ./grammar/ocaml_type
+
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/odin => ./grammar/odin
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/pascal => ./grammar/pascal
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/pem => ./grammar/pem
 
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/pkl => ./grammar/pkl
+
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/po => ./grammar/po
 
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/poe_filter => ./grammar/poe_filter
+
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/powershell => ./grammar/powershell
+
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/printf => ./grammar/printf
+
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/prisma => ./grammar/prisma
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/properties => ./grammar/properties
 
@@ -343,11 +388,21 @@ replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/rasi => ./gramma
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/re2c => ./grammar/re2c
 
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/readline => ./grammar/readline
+
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/regex => ./grammar/regex
+
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/rego => ./grammar/rego
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/requirements => ./grammar/requirements
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/rescript => ./grammar/rescript
+
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/ron => ./grammar/ron
+
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/rust => ./grammar/rust
+
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/scheme => ./grammar/scheme
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/scss => ./grammar/scss
 
@@ -355,7 +410,11 @@ replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/smali => ./gramm
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/smithy => ./grammar/smithy
 
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/sml => ./grammar/sml
+
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/solidity => ./grammar/solidity
+
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/sparql => ./grammar/sparql
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/squirrel => ./grammar/squirrel
 
@@ -365,6 +424,10 @@ replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/surface => ./gra
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/tablegen => ./grammar/tablegen
 
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/tcl => ./grammar/tcl
+
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/templ => ./grammar/templ
+
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/test => ./grammar/test
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/thrift => ./grammar/thrift
@@ -373,11 +436,23 @@ replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/toml => ./gramma
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/tsv => ./grammar/tsv
 
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/tsx => ./grammar/tsx
+
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/turtle => ./grammar/turtle
+
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/twig => ./grammar/twig
+
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/typescript => ./grammar/typescript
+
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/typst => ./grammar/typst
+
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/udev => ./grammar/udev
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/ungrammar => ./grammar/ungrammar
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/uxntal => ./grammar/uxntal
+
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/verilog => ./grammar/verilog
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/vhdl => ./grammar/vhdl
 

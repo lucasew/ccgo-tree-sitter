@@ -1,4 +1,4 @@
-package main
+package grammar_luau
 
 type Scanner struct {
 	F0 byte
@@ -27995,7 +27995,7 @@ func tree_sitter_luau_external_scanner_create() *byte {
 	_, _, _, _ = scanner, call, v1, v2
 
 	scanner = new(*Scanner)
-	call = libc.Calloc[Scanner](1, 2)
+	call = libc.Calloc[Scanner](int64(1), int64(2))
 	*scanner = call
 	v1 = *scanner
 	v2 = (*byte)(unsafe.Pointer(v1))
@@ -28047,7 +28047,7 @@ func tree_sitter_luau_external_scanner_serialize(payload *byte, buffer *byte) in
 	level_count = &v5.F1
 	v6 = *level_count
 	v7 = *buffer_addr
-	arrayidx1 = libc.AddPointer(v7, int(1))
+	arrayidx1 = libc.AddPointer(v7, int(int64(1)))
 	*arrayidx1 = v6
 	return 2
 }
@@ -28105,7 +28105,7 @@ if_then2:
 
 if_end3:
 	v7 = *buffer_addr
-	arrayidx4 = libc.AddPointer(v7, int(1))
+	arrayidx4 = libc.AddPointer(v7, int(int64(1)))
 	v8 = *arrayidx4
 	v9 = *scanner
 	level_count = &v9.F1
@@ -28142,7 +28142,7 @@ func tree_sitter_luau_external_scanner_scan(payload *byte, lexer *TSLexer, valid
 	v1 = (*Scanner)(unsafe.Pointer(v0))
 	*scanner = v1
 	v2 = *valid_symbols_addr
-	arrayidx = libc.AddPointer(v2, int(5))
+	arrayidx = libc.AddPointer(v2, int(int64(5)))
 	v3 = *arrayidx
 	tobool = byte(v3 & 1)
 	if tobool {
@@ -28172,7 +28172,7 @@ if_then:
 
 if_end:
 	v8 = *valid_symbols_addr
-	arrayidx1 = libc.AddPointer(v8, int(4))
+	arrayidx1 = libc.AddPointer(v8, int(int64(4)))
 	v9 = *arrayidx1
 	tobool2 = byte(v9 & 1)
 	if tobool2 {
@@ -28200,7 +28200,7 @@ if_then5:
 
 if_end7:
 	v13 = *valid_symbols_addr
-	arrayidx8 = libc.AddPointer(v13, int(2))
+	arrayidx8 = libc.AddPointer(v13, int(int64(2)))
 	v14 = *arrayidx8
 	tobool9 = byte(v14 & 1)
 	if tobool9 {
@@ -28242,7 +28242,7 @@ if_then15:
 
 if_end17:
 	v21 = *valid_symbols_addr
-	arrayidx18 = libc.AddPointer(v21, int(1))
+	arrayidx18 = libc.AddPointer(v21, int(int64(1)))
 	v22 = *arrayidx18
 	tobool19 = byte(v22 & 1)
 	if tobool19 {
@@ -28269,7 +28269,7 @@ if_end25:
 	v25 = *lexer_addr
 	skip_whitespaces(v25)
 	v26 = *valid_symbols_addr
-	arrayidx26 = libc.AddPointer(v26, int(3))
+	arrayidx26 = libc.AddPointer(v26, int(int64(3)))
 	v27 = *arrayidx26
 	tobool27 = byte(v27 & 1)
 	if tobool27 {
@@ -29273,7 +29273,7 @@ if_end:
 for_cond:
 	v11 = *i
 	conv4 = int64(uint64(uint32(v11)))
-	cmp = uint64(conv4) < 58
+	cmp = uint64(conv4) < uint64(58)
 	if cmp {
 		goto for_body
 	} else {
@@ -29410,7 +29410,7 @@ sw_bb40:
 for_cond42:
 	v27 = *i41
 	conv43 = int64(uint64(uint32(v27)))
-	cmp44 = uint64(conv43) < 42
+	cmp44 = uint64(conv43) < uint64(42)
 	if cmp44 {
 		goto for_body46
 	} else {
@@ -31252,7 +31252,7 @@ if_end635:
 for_cond637:
 	v216 = *i636
 	conv638 = int64(uint64(uint32(v216)))
-	cmp639 = uint64(conv638) < 58
+	cmp639 = uint64(conv638) < uint64(58)
 	if cmp639 {
 		goto for_body641
 	} else {
@@ -31402,7 +31402,7 @@ if_end686:
 for_cond688:
 	v233 = *i687
 	conv689 = int64(uint64(uint32(v233)))
-	cmp690 = uint64(conv689) < 38
+	cmp690 = uint64(conv689) < uint64(38)
 	if cmp690 {
 		goto for_body692
 	} else {
@@ -31588,7 +31588,7 @@ if_end749:
 for_cond751:
 	v254 = *i750
 	conv752 = int64(uint64(uint32(v254)))
-	cmp753 = uint64(conv752) < 48
+	cmp753 = uint64(conv752) < uint64(48)
 	if cmp753 {
 		goto for_body755
 	} else {
@@ -31752,7 +31752,7 @@ if_end805:
 for_cond807:
 	v273 = *i806
 	conv808 = int64(uint64(uint32(v273)))
-	cmp809 = uint64(conv808) < 46
+	cmp809 = uint64(conv808) < uint64(46)
 	if cmp809 {
 		goto for_body811
 	} else {
@@ -31934,7 +31934,7 @@ if_end867:
 for_cond869:
 	v294 = *i868
 	conv870 = int64(uint64(uint32(v294)))
-	cmp871 = uint64(conv870) < 42
+	cmp871 = uint64(conv870) < uint64(42)
 	if cmp871 {
 		goto for_body873
 	} else {
@@ -35593,7 +35593,7 @@ sw_bb:
 for_cond:
 	v10 = *i
 	conv3 = int64(uint64(uint32(v10)))
-	cmp = uint64(conv3) < 30
+	cmp = uint64(conv3) < uint64(30)
 	if cmp {
 		goto for_body
 	} else {

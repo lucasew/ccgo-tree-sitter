@@ -1,4 +1,4 @@
-package main
+package grammar_jsdoc
 
 type TSFieldMapEntry struct {
 	F0 int16
@@ -12528,7 +12528,7 @@ sw_bb1746:
 for_cond:
 	v505 = *i
 	conv1747 = int64(uint64(uint32(v505)))
-	cmp1748 = uint64(conv1747) < 24
+	cmp1748 = uint64(conv1747) < uint64(24)
 	if cmp1748 {
 		goto for_body
 	} else {
@@ -24493,7 +24493,7 @@ sw_bb5451:
 for_cond5455:
 	v2198 = *i5454
 	conv5456 = int64(uint64(uint32(v2198)))
-	cmp5457 = uint64(conv5456) < 24
+	cmp5457 = uint64(conv5456) < uint64(24)
 	if cmp5457 {
 		goto for_body5459
 	} else {
@@ -24674,7 +24674,7 @@ sw_bb5511:
 for_cond5515:
 	v2224 = *i5514
 	conv5516 = int64(uint64(uint32(v2224)))
-	cmp5517 = uint64(conv5516) < 24
+	cmp5517 = uint64(conv5516) < uint64(24)
 	if cmp5517 {
 		goto for_body5519
 	} else {

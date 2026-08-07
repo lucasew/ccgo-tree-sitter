@@ -1,4 +1,4 @@
-package main
+package grammar_uxntal
 
 type TSFieldMapEntry struct {
 	F0 int16
@@ -6242,7 +6242,7 @@ if_end:
 for_cond:
 	v11 = *i
 	conv4 = int64(uint64(uint32(v11)))
-	cmp = uint64(conv4) < 40
+	cmp = uint64(conv4) < uint64(40)
 	if cmp {
 		goto for_body
 	} else {
@@ -6437,7 +6437,7 @@ sw_bb59:
 for_cond61:
 	v33 = *i60
 	conv62 = int64(uint64(uint32(v33)))
-	cmp63 = uint64(conv62) < 20
+	cmp63 = uint64(conv62) < uint64(20)
 	if cmp63 {
 		goto for_body65
 	} else {
@@ -7664,7 +7664,7 @@ if_end459:
 for_cond461:
 	v162 = *i460
 	conv462 = int64(uint64(uint32(v162)))
-	cmp463 = uint64(conv462) < 36
+	cmp463 = uint64(conv462) < uint64(36)
 	if cmp463 {
 		goto for_body465
 	} else {
@@ -11000,7 +11000,7 @@ sw_bb:
 for_cond:
 	v10 = *i
 	conv3 = int64(uint64(uint32(v10)))
-	cmp = uint64(conv3) < 30
+	cmp = uint64(conv3) < uint64(30)
 	if cmp {
 		goto for_body
 	} else {

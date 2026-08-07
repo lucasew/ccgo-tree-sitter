@@ -1,4 +1,4 @@
-package main
+package grammar_printf
 
 type TSFieldMapEntry struct {
 	F0 int16
@@ -2025,7 +2025,7 @@ if_end:
 for_cond:
 	v11 = *i
 	conv4 = int64(uint64(uint32(v11)))
-	cmp = uint64(conv4) < 24
+	cmp = uint64(conv4) < uint64(24)
 	if cmp {
 		goto for_body
 	} else {
@@ -2171,7 +2171,7 @@ sw_bb43:
 for_cond45:
 	v28 = *i44
 	conv46 = int64(uint64(uint32(v28)))
-	cmp47 = uint64(conv46) < 32
+	cmp47 = uint64(conv46) < uint64(32)
 	if cmp47 {
 		goto for_body49
 	} else {
@@ -2597,7 +2597,7 @@ sw_bb173:
 for_cond177:
 	v93 = *i176
 	conv178 = int64(uint64(uint32(v93)))
-	cmp179 = uint64(conv178) < 28
+	cmp179 = uint64(conv178) < uint64(28)
 	if cmp179 {
 		goto for_body181
 	} else {

@@ -1,4 +1,4 @@
-package main
+package grammar_objdump
 
 type TSFieldMapEntry struct {
 	F0 int16
@@ -4351,7 +4351,7 @@ func tree_sitter_objdump_external_scanner_scan(payload *byte, lexer *TSLexer, va
 	*lexer_addr = lexer
 	*valid_symbols_addr = valid_symbols
 	v0 = *valid_symbols_addr
-	arrayidx = libc.AddPointer(v0, int(2))
+	arrayidx = libc.AddPointer(v0, int(int64(2)))
 	v1 = *arrayidx
 	tobool = byte(v1 & 1)
 	if tobool {
@@ -4366,7 +4366,7 @@ if_then:
 
 if_end:
 	v2 = *valid_symbols_addr
-	arrayidx1 = libc.AddPointer(v2, int(1))
+	arrayidx1 = libc.AddPointer(v2, int(int64(1)))
 	v3 = *arrayidx1
 	tobool2 = byte(v3 & 1)
 	if tobool2 {
@@ -4541,7 +4541,7 @@ func scan_code_identifier(lexer *TSLexer) bool {
 	*possibly_in_next_hexadecimal_token = 0
 	*possibly_in_next_file_offset_token = 0
 	v0 = (*byte)(unsafe.Pointer(next_token_text))
-	libc.Memmove(v0, &__const_scan_code_identifier_next_token_text[0], 13)
+	libc.Memmove(v0, &__const_scan_code_identifier_next_token_text[0], int64(13))
 	*size = 12
 	goto while_body
 

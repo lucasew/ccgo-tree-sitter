@@ -1,4 +1,4 @@
-package main
+package grammar_squirrel
 
 type TSFieldMapEntry struct {
 	F0 int16
@@ -101314,7 +101314,7 @@ if_end:
 for_cond:
 	v11 = *i
 	conv4 = int64(uint64(uint32(v11)))
-	cmp = uint64(conv4) < 60
+	cmp = uint64(conv4) < uint64(60)
 	if cmp {
 		goto for_body
 	} else {
@@ -101460,7 +101460,7 @@ sw_bb43:
 for_cond45:
 	v28 = *i44
 	conv46 = int64(uint64(uint32(v28)))
-	cmp47 = uint64(conv46) < 54
+	cmp47 = uint64(conv46) < uint64(54)
 	if cmp47 {
 		goto for_body49
 	} else {
@@ -101615,7 +101615,7 @@ sw_bb97:
 for_cond99:
 	v46 = *i98
 	conv100 = int64(uint64(uint32(v46)))
-	cmp101 = uint64(conv100) < 40
+	cmp101 = uint64(conv100) < uint64(40)
 	if cmp101 {
 		goto for_body103
 	} else {
@@ -101780,7 +101780,7 @@ sw_bb154:
 for_cond156:
 	v65 = *i155
 	conv157 = int64(uint64(uint32(v65)))
-	cmp158 = uint64(conv157) < 54
+	cmp158 = uint64(conv157) < uint64(54)
 	if cmp158 {
 		goto for_body160
 	} else {
@@ -101935,7 +101935,7 @@ sw_bb208:
 for_cond210:
 	v83 = *i209
 	conv211 = int64(uint64(uint32(v83)))
-	cmp212 = uint64(conv211) < 48
+	cmp212 = uint64(conv211) < uint64(48)
 	if cmp212 {
 		goto for_body214
 	} else {
@@ -102068,7 +102068,7 @@ sw_bb255:
 for_cond257:
 	v99 = *i256
 	conv258 = int64(uint64(uint32(v99)))
-	cmp259 = uint64(conv258) < 40
+	cmp259 = uint64(conv258) < uint64(40)
 	if cmp259 {
 		goto for_body261
 	} else {
@@ -103786,7 +103786,7 @@ if_end808:
 for_cond810:
 	v273 = *i809
 	conv811 = int64(uint64(uint32(v273)))
-	cmp812 = uint64(conv811) < 58
+	cmp812 = uint64(conv811) < uint64(58)
 	if cmp812 {
 		goto for_body814
 	} else {
@@ -103954,7 +103954,7 @@ if_end865:
 for_cond867:
 	v292 = *i866
 	conv868 = int64(uint64(uint32(v292)))
-	cmp869 = uint64(conv868) < 58
+	cmp869 = uint64(conv868) < uint64(58)
 	if cmp869 {
 		goto for_body871
 	} else {
@@ -107221,7 +107221,7 @@ sw_bb:
 for_cond:
 	v10 = *i
 	conv3 = int64(uint64(uint32(v10)))
-	cmp = uint64(conv3) < 28
+	cmp = uint64(conv3) < uint64(28)
 	if cmp {
 		goto for_body
 	} else {

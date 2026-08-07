@@ -1,4 +1,4 @@
-package main
+package grammar_solidity
 
 type TSFieldMapEntry struct {
 	F0 int16
@@ -69636,7 +69636,7 @@ if_end:
 for_cond:
 	v11 = *i
 	conv4 = int64(uint64(uint32(v11)))
-	cmp = uint64(conv4) < 58
+	cmp = uint64(conv4) < uint64(58)
 	if cmp {
 		goto for_body
 	} else {
@@ -70291,7 +70291,7 @@ sw_bb204:
 for_cond206:
 	v75 = *i205
 	conv207 = int64(uint64(uint32(v75)))
-	cmp208 = uint64(conv207) < 24
+	cmp208 = uint64(conv207) < uint64(24)
 	if cmp208 {
 		goto for_body210
 	} else {
@@ -70596,7 +70596,7 @@ sw_bb306:
 for_cond308:
 	v108 = *i307
 	conv309 = int64(uint64(uint32(v108)))
-	cmp310 = uint64(conv309) < 50
+	cmp310 = uint64(conv309) < uint64(50)
 	if cmp310 {
 		goto for_body312
 	} else {
@@ -70774,7 +70774,7 @@ sw_bb368:
 for_cond370:
 	v129 = *i369
 	conv371 = int64(uint64(uint32(v129)))
-	cmp372 = uint64(conv371) < 48
+	cmp372 = uint64(conv371) < uint64(48)
 	if cmp372 {
 		goto for_body374
 	} else {
@@ -70952,7 +70952,7 @@ sw_bb430:
 for_cond432:
 	v150 = *i431
 	conv433 = int64(uint64(uint32(v150)))
-	cmp434 = uint64(conv433) < 42
+	cmp434 = uint64(conv433) < uint64(42)
 	if cmp434 {
 		goto for_body436
 	} else {
@@ -71130,7 +71130,7 @@ sw_bb492:
 for_cond494:
 	v171 = *i493
 	conv495 = int64(uint64(uint32(v171)))
-	cmp496 = uint64(conv495) < 40
+	cmp496 = uint64(conv495) < uint64(40)
 	if cmp496 {
 		goto for_body498
 	} else {
@@ -73185,7 +73185,7 @@ if_end1156:
 for_cond1158:
 	v384 = *i1157
 	conv1159 = int64(uint64(uint32(v384)))
-	cmp1160 = uint64(conv1159) < 56
+	cmp1160 = uint64(conv1159) < uint64(56)
 	if cmp1160 {
 		goto for_body1162
 	} else {
@@ -73389,7 +73389,7 @@ if_end1225:
 for_cond1227:
 	v407 = *i1226
 	conv1228 = int64(uint64(uint32(v407)))
-	cmp1229 = uint64(conv1228) < 52
+	cmp1229 = uint64(conv1228) < uint64(52)
 	if cmp1229 {
 		goto for_body1231
 	} else {
@@ -79915,7 +79915,7 @@ sw_bb:
 for_cond:
 	v10 = *i
 	conv3 = int64(uint64(uint32(v10)))
-	cmp = uint64(conv3) < 46
+	cmp = uint64(conv3) < uint64(46)
 	if cmp {
 		goto for_body
 	} else {
@@ -80293,7 +80293,7 @@ sw_bb112:
 for_cond114:
 	v47 = *i113
 	conv115 = int64(uint64(uint32(v47)))
-	cmp116 = uint64(conv115) < 16
+	cmp116 = uint64(conv115) < uint64(16)
 	if cmp116 {
 		goto for_body118
 	} else {
@@ -80654,7 +80654,7 @@ sw_bb229:
 for_cond231:
 	v82 = *i230
 	conv232 = int64(uint64(uint32(v82)))
-	cmp233 = uint64(conv232) < 16
+	cmp233 = uint64(conv232) < uint64(16)
 	if cmp233 {
 		goto for_body235
 	} else {
@@ -80860,7 +80860,7 @@ sw_bb298:
 for_cond300:
 	v104 = *i299
 	conv301 = int64(uint64(uint32(v104)))
-	cmp302 = uint64(conv301) < 28
+	cmp302 = uint64(conv301) < uint64(28)
 	if cmp302 {
 		goto for_body304
 	} else {
@@ -84249,7 +84249,7 @@ sw_bb1351:
 for_cond1355:
 	v503 = *i1354
 	conv1356 = int64(uint64(uint32(v503)))
-	cmp1357 = uint64(conv1356) < 20
+	cmp1357 = uint64(conv1356) < uint64(20)
 	if cmp1357 {
 		goto for_body1359
 	} else {
@@ -86641,7 +86641,7 @@ sw_bb2092:
 for_cond2094:
 	v840 = *i2093
 	conv2095 = int64(uint64(uint32(v840)))
-	cmp2096 = uint64(conv2095) < 20
+	cmp2096 = uint64(conv2095) < uint64(20)
 	if cmp2096 {
 		goto for_body2098
 	} else {
@@ -87968,7 +87968,7 @@ sw_bb2503:
 for_cond2507:
 	v1023 = *i2506
 	conv2508 = int64(uint64(uint32(v1023)))
-	cmp2509 = uint64(conv2508) < 18
+	cmp2509 = uint64(conv2508) < uint64(18)
 	if cmp2509 {
 		goto for_body2511
 	} else {
@@ -88401,7 +88401,7 @@ sw_bb2642:
 for_cond2646:
 	v1081 = *i2645
 	conv2647 = int64(uint64(uint32(v1081)))
-	cmp2648 = uint64(conv2647) < 18
+	cmp2648 = uint64(conv2647) < uint64(18)
 	if cmp2648 {
 		goto for_body2650
 	} else {
@@ -90417,7 +90417,7 @@ sw_bb3266:
 for_cond3268:
 	v1378 = *i3267
 	conv3269 = int64(uint64(uint32(v1378)))
-	cmp3270 = uint64(conv3269) < 20
+	cmp3270 = uint64(conv3269) < uint64(20)
 	if cmp3270 {
 		goto for_body3272
 	} else {
@@ -91052,7 +91052,7 @@ sw_bb3463:
 for_cond3467:
 	v1468 = *i3466
 	conv3468 = int64(uint64(uint32(v1468)))
-	cmp3469 = uint64(conv3468) < 20
+	cmp3469 = uint64(conv3468) < uint64(20)
 	if cmp3469 {
 		goto for_body3471
 	} else {
@@ -91113,7 +91113,7 @@ sw_bb3486:
 for_cond3490:
 	v1480 = *i3489
 	conv3491 = int64(uint64(uint32(v1480)))
-	cmp3492 = uint64(conv3491) < 20
+	cmp3492 = uint64(conv3491) < uint64(20)
 	if cmp3492 {
 		goto for_body3494
 	} else {

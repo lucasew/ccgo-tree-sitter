@@ -1,4 +1,4 @@
-package main
+package grammar_legacy_schema
 
 type TSFieldMapEntry struct {
 	F0 int16
@@ -625,7 +625,7 @@ if_end:
 for_cond:
 	v11 = *i
 	conv4 = int64(uint64(uint32(v11)))
-	cmp = uint64(conv4) < 30
+	cmp = uint64(conv4) < uint64(30)
 	if cmp {
 		goto for_body
 	} else {

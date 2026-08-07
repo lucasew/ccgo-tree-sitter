@@ -1,4 +1,4 @@
-package main
+package grammar_wit
 
 type BlockCommentProcessing struct {
 	F0 int32
@@ -18744,7 +18744,7 @@ func tree_sitter_wit_external_scanner_scan(payload *byte, lexer *TSLexer, valid_
 	*lexer_addr = lexer
 	*valid_symbols_addr = valid_symbols
 	v0 = *valid_symbols_addr
-	arrayidx = libc.AddPointer(v0, int(2))
+	arrayidx = libc.AddPointer(v0, int(int64(2)))
 	v1 = *arrayidx
 	tobool = byte(v1 & 1)
 	if tobool {
@@ -18770,7 +18770,7 @@ if_end:
 
 lor_lhs_false:
 	v4 = *valid_symbols_addr
-	arrayidx3 = libc.AddPointer(v4, int(1))
+	arrayidx3 = libc.AddPointer(v4, int(int64(1)))
 	v5 = *arrayidx3
 	tobool4 = byte(v5 & 1)
 	if tobool4 {
@@ -18788,7 +18788,7 @@ if_then5:
 
 if_end6:
 	v8 = *valid_symbols_addr
-	arrayidx7 = libc.AddPointer(v8, int(3))
+	arrayidx7 = libc.AddPointer(v8, int(int64(3)))
 	v9 = *arrayidx7
 	tobool8 = byte(v9 & 1)
 	if tobool8 {
@@ -18864,7 +18864,7 @@ func process_block_comment(lexer *TSLexer, valid_symbols *byte) bool {
 	conv = byte(v1)
 	*first = conv
 	v2 = *valid_symbols_addr
-	arrayidx = libc.AddPointer(v2, int(1))
+	arrayidx = libc.AddPointer(v2, int(int64(1)))
 	v3 = *arrayidx
 	tobool = byte(v3 & 1)
 	if tobool {
@@ -18930,7 +18930,7 @@ if_end8:
 
 if_then11:
 	v15 = (*byte)(unsafe.Pointer(processing))
-	libc.Memmove(v15, (*byte)(unsafe.Pointer(&__const_process_block_comment_processing)), 8)
+	libc.Memmove(v15, (*byte)(unsafe.Pointer(&__const_process_block_comment_processing)), int64(8))
 	v16 = *first
 	conv12 = int32(int8(v16))
 	switch conv12 {
@@ -19383,7 +19383,7 @@ if_end:
 for_cond:
 	v11 = *i
 	conv4 = int64(uint64(uint32(v11)))
-	cmp = uint64(conv4) < 38
+	cmp = uint64(conv4) < uint64(38)
 	if cmp {
 		goto for_body
 	} else {
@@ -20454,7 +20454,7 @@ if_end340:
 for_cond342:
 	v123 = *i341
 	conv343 = int64(uint64(uint32(v123)))
-	cmp344 = uint64(conv343) < 38
+	cmp344 = uint64(conv343) < uint64(38)
 	if cmp344 {
 		goto for_body346
 	} else {
@@ -20617,7 +20617,7 @@ if_end395:
 for_cond397:
 	v141 = *i396
 	conv398 = int64(uint64(uint32(v141)))
-	cmp399 = uint64(conv398) < 36
+	cmp399 = uint64(conv398) < uint64(36)
 	if cmp399 {
 		goto for_body401
 	} else {
@@ -22837,7 +22837,7 @@ sw_bb:
 for_cond:
 	v10 = *i
 	conv3 = int64(uint64(uint32(v10)))
-	cmp = uint64(conv3) < 34
+	cmp = uint64(conv3) < uint64(34)
 	if cmp {
 		goto for_body
 	} else {

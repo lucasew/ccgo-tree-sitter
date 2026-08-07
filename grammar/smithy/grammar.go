@@ -1,4 +1,4 @@
-package main
+package grammar_smithy
 
 type TSFieldMapEntry struct {
 	F0 int16
@@ -15701,7 +15701,7 @@ if_end:
 for_cond:
 	v11 = *i
 	conv4 = int64(uint64(uint32(v11)))
-	cmp = uint64(conv4) < 64
+	cmp = uint64(conv4) < uint64(64)
 	if cmp {
 		goto for_body
 	} else {
@@ -15807,7 +15807,7 @@ sw_bb30:
 for_cond32:
 	v24 = *i31
 	conv33 = int64(uint64(uint32(v24)))
-	cmp34 = uint64(conv33) < 26
+	cmp34 = uint64(conv33) < uint64(26)
 	if cmp34 {
 		goto for_body36
 	} else {
@@ -15940,7 +15940,7 @@ sw_bb77:
 for_cond79:
 	v40 = *i78
 	conv80 = int64(uint64(uint32(v40)))
-	cmp81 = uint64(conv80) < 28
+	cmp81 = uint64(conv80) < uint64(28)
 	if cmp81 {
 		goto for_body83
 	} else {
@@ -19829,7 +19829,7 @@ if_end1313:
 for_cond1315:
 	v440 = *i1314
 	conv1316 = int64(uint64(uint32(v440)))
-	cmp1317 = uint64(conv1316) < 62
+	cmp1317 = uint64(conv1316) < uint64(62)
 	if cmp1317 {
 		goto for_body1319
 	} else {

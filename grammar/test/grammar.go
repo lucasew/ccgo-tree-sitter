@@ -1,4 +1,4 @@
-package main
+package grammar_test
 
 type Scanner struct {
 	F0 int32
@@ -2324,7 +2324,7 @@ func tree_sitter_test_external_scanner_create() *byte {
 	_, _, _, _, _, _, _, _, _, _ = scanner, call, v1, length, v2, suffix, v3, initialized, v4, v5
 
 	scanner = new(*Scanner)
-	call = libc.Malloc[Scanner](12)
+	call = libc.Malloc[Scanner](int64(12))
 	*scanner = call
 	v1 = *scanner
 	length = &v1.F0
@@ -2379,9 +2379,9 @@ if_then:
 
 if_end:
 	v4 = *buffer_addr
-	libc.Memset(v4, 1, 1)
+	libc.Memset(v4, 1, int64(1))
 	v5 = *buffer_addr
-	add_ptr = libc.AddPointer(v5, int(1))
+	add_ptr = libc.AddPointer(v5, int(int64(1)))
 	v6 = *scanner
 	suffix = &v6.F1
 	v7 = *suffix
@@ -2443,7 +2443,7 @@ if_end:
 	length1 = &v4.F0
 	*length1 = sub
 	v5 = *buffer_addr
-	arrayidx = libc.AddPointer(v5, int(1))
+	arrayidx = libc.AddPointer(v5, int(int64(1)))
 	v6 = *arrayidx
 	conv = int32(int8(v6))
 	v7 = *scanner
@@ -2505,7 +2505,7 @@ if_then:
 
 if_end:
 	v6 = *valid_symbols_addr
-	arrayidx1 = libc.AddPointer(v6, int(1))
+	arrayidx1 = libc.AddPointer(v6, int(int64(1)))
 	v7 = *arrayidx1
 	tobool2 = byte(v7 & 1)
 	if tobool2 {
@@ -2523,7 +2523,7 @@ if_then3:
 
 if_end5:
 	v10 = *valid_symbols_addr
-	arrayidx6 = libc.AddPointer(v10, int(2))
+	arrayidx6 = libc.AddPointer(v10, int(int64(2)))
 	v11 = *arrayidx6
 	tobool7 = byte(v11 & 1)
 	if tobool7 {
@@ -3208,7 +3208,7 @@ if_end:
 for_cond:
 	v11 = *i
 	conv4 = int64(uint64(uint32(v11)))
-	cmp = uint64(conv4) < 30
+	cmp = uint64(conv4) < uint64(30)
 	if cmp {
 		goto for_body
 	} else {
@@ -3440,7 +3440,7 @@ sw_bb71:
 for_cond73:
 	v38 = *i72
 	conv74 = int64(uint64(uint32(v38)))
-	cmp75 = uint64(conv74) < 20
+	cmp75 = uint64(conv74) < uint64(20)
 	if cmp75 {
 		goto for_body77
 	} else {

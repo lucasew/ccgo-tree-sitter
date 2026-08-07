@@ -1,4 +1,4 @@
-package main
+package grammar_rasi
 
 type TSFieldMapEntry struct {
 	F0 int16
@@ -16901,7 +16901,7 @@ if_end:
 for_cond:
 	v11 = *i
 	conv4 = int64(uint64(uint32(v11)))
-	cmp = uint64(conv4) < 40
+	cmp = uint64(conv4) < uint64(40)
 	if cmp {
 		goto for_body
 	} else {
@@ -17057,7 +17057,7 @@ sw_bb46:
 for_cond48:
 	v29 = *i47
 	conv49 = int64(uint64(uint32(v29)))
-	cmp50 = uint64(conv49) < 30
+	cmp50 = uint64(conv49) < uint64(30)
 	if cmp50 {
 		goto for_body52
 	} else {
@@ -17203,7 +17203,7 @@ sw_bb97:
 for_cond99:
 	v46 = *i98
 	conv100 = int64(uint64(uint32(v46)))
-	cmp101 = uint64(conv100) < 28
+	cmp101 = uint64(conv100) < uint64(28)
 	if cmp101 {
 		goto for_body103
 	} else {
@@ -18276,7 +18276,7 @@ if_end443:
 for_cond445:
 	v158 = *i444
 	conv446 = int64(uint64(uint32(v158)))
-	cmp447 = uint64(conv446) < 40
+	cmp447 = uint64(conv446) < uint64(40)
 	if cmp447 {
 		goto for_body449
 	} else {
@@ -18413,7 +18413,7 @@ if_end490:
 for_cond492:
 	v174 = *i491
 	conv493 = int64(uint64(uint32(v174)))
-	cmp494 = uint64(conv493) < 24
+	cmp494 = uint64(conv493) < uint64(24)
 	if cmp494 {
 		goto for_body496
 	} else {
@@ -21003,7 +21003,7 @@ sw_bb:
 for_cond:
 	v10 = *i
 	conv3 = int64(uint64(uint32(v10)))
-	cmp = uint64(conv3) < 40
+	cmp = uint64(conv3) < uint64(40)
 	if cmp {
 		goto for_body
 	} else {

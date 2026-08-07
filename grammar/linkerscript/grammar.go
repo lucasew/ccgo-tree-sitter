@@ -1,4 +1,4 @@
-package main
+package grammar_linkerscript
 
 type TSFieldMapEntry struct {
 	F0 int16

@@ -1,4 +1,4 @@
-package main
+package grammar_query
 
 type TSFieldMapEntry struct {
 	F0 int16
@@ -7002,7 +7002,7 @@ if_end:
 for_cond:
 	v11 = *i
 	conv4 = int64(uint64(uint32(v11)))
-	cmp = uint64(conv4) < 36
+	cmp = uint64(conv4) < uint64(36)
 	if cmp {
 		goto for_body
 	} else {
@@ -7405,7 +7405,7 @@ sw_bb125:
 for_cond127:
 	v53 = *i126
 	conv128 = int64(uint64(uint32(v53)))
-	cmp129 = uint64(conv128) < 20
+	cmp129 = uint64(conv128) < uint64(20)
 	if cmp129 {
 		goto for_body131
 	} else {
@@ -7556,7 +7556,7 @@ sw_bb178:
 for_cond180:
 	v71 = *i179
 	conv181 = int64(uint64(uint32(v71)))
-	cmp182 = uint64(conv181) < 16
+	cmp182 = uint64(conv181) < uint64(16)
 	if cmp182 {
 		goto for_body184
 	} else {
@@ -7983,7 +7983,7 @@ if_end318:
 for_cond320:
 	v116 = *i319
 	conv321 = int64(uint64(uint32(v116)))
-	cmp322 = uint64(conv321) < 32
+	cmp322 = uint64(conv321) < uint64(32)
 	if cmp322 {
 		goto for_body324
 	} else {
@@ -8147,7 +8147,7 @@ if_end374:
 for_cond376:
 	v135 = *i375
 	conv377 = int64(uint64(uint32(v135)))
-	cmp378 = uint64(conv377) < 30
+	cmp378 = uint64(conv377) < uint64(30)
 	if cmp378 {
 		goto for_body380
 	} else {
@@ -8302,7 +8302,7 @@ if_end427:
 for_cond429:
 	v153 = *i428
 	conv430 = int64(uint64(uint32(v153)))
-	cmp431 = uint64(conv430) < 28
+	cmp431 = uint64(conv430) < uint64(28)
 	if cmp431 {
 		goto for_body433
 	} else {

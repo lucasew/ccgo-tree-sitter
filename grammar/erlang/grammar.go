@@ -1,4 +1,4 @@
-package main
+package grammar_erlang
 
 type TSFieldMapEntry struct {
 	F0 int16
@@ -74496,7 +74496,7 @@ func tree_sitter_erlang_external_scanner_scan(unused_payload *byte, lexer *TSLex
 
 lor_lhs_false:
 	v3 = *valid_symbols_addr
-	arrayidx1 = libc.AddPointer(v3, int(1))
+	arrayidx1 = libc.AddPointer(v3, int(int64(1)))
 	v4 = *arrayidx1
 	tobool2 = byte(v4 & 1)
 	if tobool2 {
@@ -74525,7 +74525,7 @@ while_body:
 while_end:
 	*is_sigil_string = 0
 	v7 = *valid_symbols_addr
-	arrayidx3 = libc.AddPointer(v7, int(1))
+	arrayidx3 = libc.AddPointer(v7, int(int64(1)))
 	v8 = *arrayidx3
 	tobool4 = byte(v8 & 1)
 	if tobool4 {
@@ -76014,7 +76014,7 @@ if_end:
 for_cond:
 	v11 = *i
 	conv4 = int64(uint64(uint32(v11)))
-	cmp = uint64(conv4) < 54
+	cmp = uint64(conv4) < uint64(54)
 	if cmp {
 		goto for_body
 	} else {
@@ -76254,7 +76254,7 @@ sw_bb74:
 for_cond76:
 	v38 = *i75
 	conv77 = int64(uint64(uint32(v38)))
-	cmp78 = uint64(conv77) < 44
+	cmp78 = uint64(conv77) < uint64(44)
 	if cmp78 {
 		goto for_body80
 	} else {
@@ -76472,7 +76472,7 @@ sw_bb149:
 for_cond151:
 	v63 = *i150
 	conv152 = int64(uint64(uint32(v63)))
-	cmp153 = uint64(conv152) < 40
+	cmp153 = uint64(conv152) < uint64(40)
 	if cmp153 {
 		goto for_body155
 	} else {
@@ -76623,7 +76623,7 @@ sw_bb202:
 for_cond204:
 	v81 = *i203
 	conv205 = int64(uint64(uint32(v81)))
-	cmp206 = uint64(conv205) < 28
+	cmp206 = uint64(conv205) < uint64(28)
 	if cmp206 {
 		goto for_body208
 	} else {
@@ -77534,7 +77534,7 @@ sw_bb495:
 for_cond497:
 	v169 = *i496
 	conv498 = int64(uint64(uint32(v169)))
-	cmp499 = uint64(conv498) < 20
+	cmp499 = uint64(conv498) < uint64(20)
 	if cmp499 {
 		goto for_body501
 	} else {
@@ -77586,7 +77586,7 @@ sw_bb516:
 for_cond518:
 	v177 = *i517
 	conv519 = int64(uint64(uint32(v177)))
-	cmp520 = uint64(conv519) < 28
+	cmp520 = uint64(conv519) < uint64(28)
 	if cmp520 {
 		goto for_body522
 	} else {
@@ -77638,7 +77638,7 @@ sw_bb537:
 for_cond539:
 	v185 = *i538
 	conv540 = int64(uint64(uint32(v185)))
-	cmp541 = uint64(conv540) < 20
+	cmp541 = uint64(conv540) < uint64(20)
 	if cmp541 {
 		goto for_body543
 	} else {
@@ -78344,7 +78344,7 @@ sw_bb764:
 for_cond766:
 	v253 = *i765
 	conv767 = int64(uint64(uint32(v253)))
-	cmp768 = uint64(conv767) < 22
+	cmp768 = uint64(conv767) < uint64(22)
 	if cmp768 {
 		goto for_body770
 	} else {
@@ -78514,7 +78514,7 @@ sw_bb823:
 for_cond825:
 	v273 = *i824
 	conv826 = int64(uint64(uint32(v273)))
-	cmp827 = uint64(conv826) < 32
+	cmp827 = uint64(conv826) < uint64(32)
 	if cmp827 {
 		goto for_body829
 	} else {
@@ -79243,7 +79243,7 @@ sw_bb1054:
 for_cond1056:
 	v339 = *i1055
 	conv1057 = int64(uint64(uint32(v339)))
-	cmp1058 = uint64(conv1057) < 30
+	cmp1058 = uint64(conv1057) < uint64(30)
 	if cmp1058 {
 		goto for_body1060
 	} else {
@@ -94036,7 +94036,7 @@ if_end5689:
 for_cond5691:
 	v1671 = *i5690
 	conv5692 = int64(uint64(uint32(v1671)))
-	cmp5693 = uint64(conv5692) < 50
+	cmp5693 = uint64(conv5692) < uint64(50)
 	if cmp5693 {
 		goto for_body5695
 	} else {
@@ -94289,7 +94289,7 @@ if_end5774:
 for_cond5776:
 	v1699 = *i5775
 	conv5777 = int64(uint64(uint32(v1699)))
-	cmp5778 = uint64(conv5777) < 48
+	cmp5778 = uint64(conv5777) < uint64(48)
 	if cmp5778 {
 		goto for_body5780
 	} else {
@@ -94542,7 +94542,7 @@ if_end5859:
 for_cond5861:
 	v1727 = *i5860
 	conv5862 = int64(uint64(uint32(v1727)))
-	cmp5863 = uint64(conv5862) < 44
+	cmp5863 = uint64(conv5862) < uint64(44)
 	if cmp5863 {
 		goto for_body5865
 	} else {
@@ -94773,7 +94773,7 @@ if_end5937:
 for_cond5939:
 	v1753 = *i5938
 	conv5940 = int64(uint64(uint32(v1753)))
-	cmp5941 = uint64(conv5940) < 50
+	cmp5941 = uint64(conv5940) < uint64(50)
 	if cmp5941 {
 		goto for_body5943
 	} else {
@@ -95026,7 +95026,7 @@ if_end6022:
 for_cond6024:
 	v1781 = *i6023
 	conv6025 = int64(uint64(uint32(v1781)))
-	cmp6026 = uint64(conv6025) < 50
+	cmp6026 = uint64(conv6025) < uint64(50)
 	if cmp6026 {
 		goto for_body6028
 	} else {
@@ -100274,7 +100274,7 @@ sw_bb:
 for_cond:
 	v10 = *i
 	conv3 = int64(uint64(uint32(v10)))
-	cmp = uint64(conv3) < 32
+	cmp = uint64(conv3) < uint64(32)
 	if cmp {
 		goto for_body
 	} else {

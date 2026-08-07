@@ -1,4 +1,4 @@
-package main
+package grammar_wgsl_bevy
 
 type TSFieldMapEntry struct {
 	F0 int16
@@ -25416,7 +25416,7 @@ if_end:
 for_cond:
 	v11 = *i
 	conv4 = int64(uint64(uint32(v11)))
-	cmp = uint64(conv4) < 54
+	cmp = uint64(conv4) < uint64(54)
 	if cmp {
 		goto for_body
 	} else {
@@ -25777,7 +25777,7 @@ sw_bb112:
 for_cond114:
 	v49 = *i113
 	conv115 = int64(uint64(uint32(v49)))
-	cmp116 = uint64(conv115) < 42
+	cmp116 = uint64(conv115) < uint64(42)
 	if cmp116 {
 		goto for_body118
 	} else {
@@ -25897,7 +25897,7 @@ sw_bb155:
 for_cond157:
 	v64 = *i156
 	conv158 = int64(uint64(uint32(v64)))
-	cmp159 = uint64(conv158) < 34
+	cmp159 = uint64(conv158) < uint64(34)
 	if cmp159 {
 		goto for_body161
 	} else {
@@ -27807,7 +27807,7 @@ if_end766:
 for_cond768:
 	v261 = *i767
 	conv769 = int64(uint64(uint32(v261)))
-	cmp770 = uint64(conv769) < 40
+	cmp770 = uint64(conv769) < uint64(40)
 	if cmp770 {
 		goto for_body772
 	} else {
@@ -28759,7 +28759,7 @@ sw_bb1046:
 for_cond1050:
 	v469 = *i1049
 	conv1051 = int64(uint64(uint32(v469)))
-	cmp1052 = uint64(conv1051) < 16
+	cmp1052 = uint64(conv1051) < uint64(16)
 	if cmp1052 {
 		goto for_body1054
 	} else {
@@ -31519,7 +31519,7 @@ sw_bb:
 for_cond:
 	v10 = *i
 	conv3 = int64(uint64(uint32(v10)))
-	cmp = uint64(conv3) < 34
+	cmp = uint64(conv3) < uint64(34)
 	if cmp {
 		goto for_body
 	} else {

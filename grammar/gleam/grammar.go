@@ -1,4 +1,4 @@
-package main
+package grammar_gleam
 
 type TSFieldMapEntry struct {
 	F0 int16
@@ -100452,7 +100452,7 @@ while_end:
 
 if_end9:
 	v13 = *valid_symbols_addr
-	arrayidx10 = libc.AddPointer(v13, int(1))
+	arrayidx10 = libc.AddPointer(v13, int(int64(1)))
 	v14 = *arrayidx10
 	tobool11 = byte(v14 & 1)
 	if tobool11 {

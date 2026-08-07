@@ -1,4 +1,4 @@
-package main
+package grammar_bicep
 
 type Scanner struct {
 	F0 byte
@@ -37987,7 +37987,7 @@ func tree_sitter_bicep_external_scanner_create() *byte {
 
 	_ = call
 
-	call = libc.Calloc[byte](1, 1)
+	call = libc.Calloc[byte](int64(1), int64(1))
 	return call
 }
 
@@ -38176,7 +38176,7 @@ if_end7:
 
 if_end8:
 	v16 = *valid_symbols_addr
-	arrayidx9 = libc.AddPointer(v16, int(1))
+	arrayidx9 = libc.AddPointer(v16, int(int64(1)))
 	v17 = *arrayidx9
 	tobool10 = byte(v17 & 1)
 	if tobool10 {
@@ -38999,7 +38999,7 @@ if_end:
 for_cond:
 	v11 = *i
 	conv4 = int64(uint64(uint32(v11)))
-	cmp = uint64(conv4) < 72
+	cmp = uint64(conv4) < uint64(72)
 	if cmp {
 		goto for_body
 	} else {
@@ -39186,7 +39186,7 @@ sw_bb56:
 for_cond58:
 	v32 = *i57
 	conv59 = int64(uint64(uint32(v32)))
-	cmp60 = uint64(conv59) < 58
+	cmp60 = uint64(conv59) < uint64(58)
 	if cmp60 {
 		goto for_body62
 	} else {
@@ -39341,7 +39341,7 @@ sw_bb110:
 for_cond112:
 	v50 = *i111
 	conv113 = int64(uint64(uint32(v50)))
-	cmp114 = uint64(conv113) < 56
+	cmp114 = uint64(conv113) < uint64(56)
 	if cmp114 {
 		goto for_body116
 	} else {
@@ -39474,7 +39474,7 @@ sw_bb157:
 for_cond159:
 	v66 = *i158
 	conv160 = int64(uint64(uint32(v66)))
-	cmp161 = uint64(conv160) < 50
+	cmp161 = uint64(conv160) < uint64(50)
 	if cmp161 {
 		goto for_body163
 	} else {
@@ -39753,7 +39753,7 @@ sw_bb250:
 for_cond252:
 	v95 = *i251
 	conv253 = int64(uint64(uint32(v95)))
-	cmp254 = uint64(conv253) < 18
+	cmp254 = uint64(conv253) < uint64(18)
 	if cmp254 {
 		goto for_body256
 	} else {
@@ -42101,7 +42101,7 @@ if_end1000:
 for_cond1002:
 	v339 = *i1001
 	conv1003 = int64(uint64(uint32(v339)))
-	cmp1004 = uint64(conv1003) < 70
+	cmp1004 = uint64(conv1003) < uint64(70)
 	if cmp1004 {
 		goto for_body1006
 	} else {
@@ -42269,7 +42269,7 @@ if_end1057:
 for_cond1059:
 	v358 = *i1058
 	conv1060 = int64(uint64(uint32(v358)))
-	cmp1061 = uint64(conv1060) < 68
+	cmp1061 = uint64(conv1060) < uint64(68)
 	if cmp1061 {
 		goto for_body1063
 	} else {
@@ -42366,7 +42366,7 @@ if_end1091:
 for_cond1093:
 	v370 = *i1092
 	conv1094 = int64(uint64(uint32(v370)))
-	cmp1095 = uint64(conv1094) < 64
+	cmp1095 = uint64(conv1094) < uint64(64)
 	if cmp1095 {
 		goto for_body1097
 	} else {
@@ -42512,7 +42512,7 @@ if_end1141:
 for_cond1143:
 	v387 = *i1142
 	conv1144 = int64(uint64(uint32(v387)))
-	cmp1145 = uint64(conv1144) < 42
+	cmp1145 = uint64(conv1144) < uint64(42)
 	if cmp1145 {
 		goto for_body1147
 	} else {
@@ -42689,7 +42689,7 @@ if_end1201:
 for_cond1203:
 	v407 = *i1202
 	conv1204 = int64(uint64(uint32(v407)))
-	cmp1205 = uint64(conv1204) < 42
+	cmp1205 = uint64(conv1204) < uint64(42)
 	if cmp1205 {
 		goto for_body1207
 	} else {
@@ -42786,7 +42786,7 @@ if_end1235:
 for_cond1237:
 	v419 = *i1236
 	conv1238 = int64(uint64(uint32(v419)))
-	cmp1239 = uint64(conv1238) < 26
+	cmp1239 = uint64(conv1238) < uint64(26)
 	if cmp1239 {
 		goto for_body1241
 	} else {
@@ -53040,7 +53040,7 @@ sw_bb:
 for_cond:
 	v10 = *i
 	conv3 = int64(uint64(uint32(v10)))
-	cmp = uint64(conv3) < 20
+	cmp = uint64(conv3) < uint64(20)
 	if cmp {
 		goto for_body
 	} else {

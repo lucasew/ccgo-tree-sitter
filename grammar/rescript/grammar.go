@@ -1,4 +1,4 @@
-package main
+package grammar_rescript
 
 type ScannerState struct {
 	F0 int32
@@ -184616,10 +184616,10 @@ func tree_sitter_rescript_external_scanner_create() *byte {
 	_, _, _, _ = state, call, v0, v1
 
 	state = new(*byte)
-	call = libc.Malloc[byte](8)
+	call = libc.Malloc[byte](int64(8))
 	*state = call
 	v0 = *state
-	libc.Memset(v0, 0, 8)
+	libc.Memset(v0, 0, int64(8))
 	v1 = *state
 	return v1
 }
@@ -184644,7 +184644,7 @@ func tree_sitter_rescript_external_scanner_reset(state *byte) {
 	state_addr = new(*byte)
 	*state_addr = state
 	v0 = *state_addr
-	libc.Memset(v0, 0, 8)
+	libc.Memset(v0, 0, int64(8))
 }
 
 func tree_sitter_rescript_external_scanner_serialize(state *byte, buffer *byte) int32 {
@@ -184659,7 +184659,7 @@ func tree_sitter_rescript_external_scanner_serialize(state *byte, buffer *byte) 
 	*buffer_addr = buffer
 	v0 = *buffer_addr
 	v1 = *state_addr
-	libc.Memmove(v0, v1, 8)
+	libc.Memmove(v0, v1, int64(8))
 	return 8
 }
 
@@ -184780,7 +184780,7 @@ while_body:
 
 while_end:
 	v12 = *valid_symbols_addr
-	arrayidx = libc.AddPointer(v12, int(5))
+	arrayidx = libc.AddPointer(v12, int(int64(5)))
 	v13 = *arrayidx
 	tobool3 = byte(v13 & 1)
 	if tobool3 {
@@ -185061,7 +185061,7 @@ if_then63:
 
 land_lhs_true:
 	v66 = *valid_symbols_addr
-	arrayidx67 = libc.AddPointer(v66, int(2))
+	arrayidx67 = libc.AddPointer(v66, int(int64(2)))
 	v67 = *arrayidx67
 	tobool68 = byte(v67 & 1)
 	if tobool68 {
@@ -185196,7 +185196,7 @@ if_then106:
 
 land_lhs_true109:
 	v89 = *valid_symbols_addr
-	arrayidx110 = libc.AddPointer(v89, int(1))
+	arrayidx110 = libc.AddPointer(v89, int(int64(1)))
 	v90 = *arrayidx110
 	tobool111 = byte(v90 & 1)
 	if tobool111 {
@@ -185242,7 +185242,7 @@ if_then121:
 
 if_end122:
 	v94 = *valid_symbols_addr
-	arrayidx123 = libc.AddPointer(v94, int(2))
+	arrayidx123 = libc.AddPointer(v94, int(int64(2)))
 	v95 = *arrayidx123
 	tobool124 = byte(v95 & 1)
 	if tobool124 {
@@ -185300,7 +185300,7 @@ if_end137:
 
 if_end138:
 	v105 = *valid_symbols_addr
-	arrayidx139 = libc.AddPointer(v105, int(3))
+	arrayidx139 = libc.AddPointer(v105, int(int64(3)))
 	v106 = *arrayidx139
 	tobool140 = byte(v106 & 1)
 	if tobool140 {
@@ -185348,7 +185348,7 @@ if_then146:
 
 if_end154:
 	v119 = *valid_symbols_addr
-	arrayidx155 = libc.AddPointer(v119, int(4))
+	arrayidx155 = libc.AddPointer(v119, int(int64(4)))
 	v120 = *arrayidx155
 	tobool156 = byte(v120 & 1)
 	if tobool156 {
@@ -185396,7 +185396,7 @@ if_then162:
 
 if_end171:
 	v133 = *valid_symbols_addr
-	arrayidx172 = libc.AddPointer(v133, int(6))
+	arrayidx172 = libc.AddPointer(v133, int(int64(6)))
 	v134 = *arrayidx172
 	tobool173 = byte(v134 & 1)
 	if tobool173 {
@@ -185440,7 +185440,7 @@ if_then179:
 
 if_end183:
 	v146 = *valid_symbols_addr
-	arrayidx184 = libc.AddPointer(v146, int(7))
+	arrayidx184 = libc.AddPointer(v146, int(int64(7)))
 	v147 = *arrayidx184
 	tobool185 = byte(v147 & 1)
 	if tobool185 {
@@ -185484,7 +185484,7 @@ if_then191:
 
 if_end196:
 	v159 = *valid_symbols_addr
-	arrayidx197 = libc.AddPointer(v159, int(8))
+	arrayidx197 = libc.AddPointer(v159, int(int64(8)))
 	v160 = *arrayidx197
 	tobool198 = byte(v160 & 1)
 	if tobool198 {
@@ -185585,7 +185585,7 @@ if_end226:
 
 if_end227:
 	v179 = *valid_symbols_addr
-	arrayidx228 = libc.AddPointer(v179, int(9))
+	arrayidx228 = libc.AddPointer(v179, int(int64(9)))
 	v180 = *arrayidx228
 	tobool229 = byte(v180 & 1)
 	if tobool229 {
@@ -185686,7 +185686,7 @@ if_end257:
 
 if_end258:
 	v199 = *valid_symbols_addr
-	arrayidx259 = libc.AddPointer(v199, int(10))
+	arrayidx259 = libc.AddPointer(v199, int(int64(10)))
 	v200 = *arrayidx259
 	tobool260 = byte(v200 & 1)
 	if tobool260 {
@@ -185697,7 +185697,7 @@ if_end258:
 
 land_lhs_true262:
 	v201 = *valid_symbols_addr
-	arrayidx263 = libc.AddPointer(v201, int(11))
+	arrayidx263 = libc.AddPointer(v201, int(int64(11)))
 	v202 = *arrayidx263
 	tobool264 = byte(v202 & 1)
 	if tobool264 {
@@ -186352,19 +186352,19 @@ sw_bb1:
 
 sw_bb3:
 	v5 = *lexer_addr
-	call = scan_keyword(v5, &_str_1[0])
+	call = scan_keyword(v5, &_str_1[int64(0)])
 	*retval = call
 	goto _return
 
 sw_bb4:
 	v6 = *lexer_addr
-	call5 = scan_keyword(v6, &_str_2[0])
+	call5 = scan_keyword(v6, &_str_2[int64(0)])
 	*retval = call5
 	goto _return
 
 sw_bb6:
 	v7 = *lexer_addr
-	call7 = scan_keyword(v7, &_str_3[0])
+	call7 = scan_keyword(v7, &_str_3[int64(0)])
 	*retval = call7
 	goto _return
 
@@ -187250,7 +187250,7 @@ if_end:
 for_cond:
 	v11 = *i
 	conv4 = int64(uint64(uint32(v11)))
-	cmp = uint64(conv4) < 62
+	cmp = uint64(conv4) < uint64(62)
 	if cmp {
 		goto for_body
 	} else {
@@ -187593,7 +187593,7 @@ sw_bb106:
 for_cond108:
 	v47 = *i107
 	conv109 = int64(uint64(uint32(v47)))
-	cmp110 = uint64(conv109) < 40
+	cmp110 = uint64(conv109) < uint64(40)
 	if cmp110 {
 		goto for_body112
 	} else {
@@ -187779,7 +187779,7 @@ sw_bb170:
 for_cond172:
 	v68 = *i171
 	conv173 = int64(uint64(uint32(v68)))
-	cmp174 = uint64(conv173) < 38
+	cmp174 = uint64(conv173) < uint64(38)
 	if cmp174 {
 		goto for_body176
 	} else {
@@ -187965,7 +187965,7 @@ sw_bb234:
 for_cond236:
 	v89 = *i235
 	conv237 = int64(uint64(uint32(v89)))
-	cmp238 = uint64(conv237) < 50
+	cmp238 = uint64(conv237) < uint64(50)
 	if cmp238 {
 		goto for_body240
 	} else {
@@ -188129,7 +188129,7 @@ sw_bb291:
 for_cond293:
 	v108 = *i292
 	conv294 = int64(uint64(uint32(v108)))
-	cmp295 = uint64(conv294) < 48
+	cmp295 = uint64(conv294) < uint64(48)
 	if cmp295 {
 		goto for_body297
 	} else {
@@ -188315,7 +188315,7 @@ sw_bb355:
 for_cond357:
 	v129 = *i356
 	conv358 = int64(uint64(uint32(v129)))
-	cmp359 = uint64(conv358) < 48
+	cmp359 = uint64(conv358) < uint64(48)
 	if cmp359 {
 		goto for_body361
 	} else {
@@ -188501,7 +188501,7 @@ sw_bb419:
 for_cond421:
 	v150 = *i420
 	conv422 = int64(uint64(uint32(v150)))
-	cmp423 = uint64(conv422) < 50
+	cmp423 = uint64(conv422) < uint64(50)
 	if cmp423 {
 		goto for_body425
 	} else {
@@ -188687,7 +188687,7 @@ sw_bb483:
 for_cond485:
 	v171 = *i484
 	conv486 = int64(uint64(uint32(v171)))
-	cmp487 = uint64(conv486) < 48
+	cmp487 = uint64(conv486) < uint64(48)
 	if cmp487 {
 		goto for_body489
 	} else {
@@ -188873,7 +188873,7 @@ sw_bb547:
 for_cond549:
 	v192 = *i548
 	conv550 = int64(uint64(uint32(v192)))
-	cmp551 = uint64(conv550) < 50
+	cmp551 = uint64(conv550) < uint64(50)
 	if cmp551 {
 		goto for_body553
 	} else {
@@ -189024,7 +189024,7 @@ sw_bb600:
 for_cond602:
 	v210 = *i601
 	conv603 = int64(uint64(uint32(v210)))
-	cmp604 = uint64(conv603) < 50
+	cmp604 = uint64(conv603) < uint64(50)
 	if cmp604 {
 		goto for_body606
 	} else {
@@ -189175,7 +189175,7 @@ sw_bb653:
 for_cond655:
 	v228 = *i654
 	conv656 = int64(uint64(uint32(v228)))
-	cmp657 = uint64(conv656) < 38
+	cmp657 = uint64(conv656) < uint64(38)
 	if cmp657 {
 		goto for_body659
 	} else {
@@ -189295,7 +189295,7 @@ sw_bb696:
 for_cond698:
 	v243 = *i697
 	conv699 = int64(uint64(uint32(v243)))
-	cmp700 = uint64(conv699) < 38
+	cmp700 = uint64(conv699) < uint64(38)
 	if cmp700 {
 		goto for_body702
 	} else {
@@ -189437,7 +189437,7 @@ sw_bb746:
 for_cond748:
 	v260 = *i747
 	conv749 = int64(uint64(uint32(v260)))
-	cmp750 = uint64(conv749) < 46
+	cmp750 = uint64(conv749) < uint64(46)
 	if cmp750 {
 		goto for_body752
 	} else {
@@ -189557,7 +189557,7 @@ sw_bb789:
 for_cond791:
 	v275 = *i790
 	conv792 = int64(uint64(uint32(v275)))
-	cmp793 = uint64(conv792) < 46
+	cmp793 = uint64(conv792) < uint64(46)
 	if cmp793 {
 		goto for_body795
 	} else {
@@ -189699,7 +189699,7 @@ sw_bb839:
 for_cond841:
 	v292 = *i840
 	conv842 = int64(uint64(uint32(v292)))
-	cmp843 = uint64(conv842) < 44
+	cmp843 = uint64(conv842) < uint64(44)
 	if cmp843 {
 		goto for_body845
 	} else {
@@ -189841,7 +189841,7 @@ sw_bb889:
 for_cond891:
 	v309 = *i890
 	conv892 = int64(uint64(uint32(v309)))
-	cmp893 = uint64(conv892) < 42
+	cmp893 = uint64(conv892) < uint64(42)
 	if cmp893 {
 		goto for_body895
 	} else {
@@ -189992,7 +189992,7 @@ sw_bb942:
 for_cond944:
 	v327 = *i943
 	conv945 = int64(uint64(uint32(v327)))
-	cmp946 = uint64(conv945) < 46
+	cmp946 = uint64(conv945) < uint64(46)
 	if cmp946 {
 		goto for_body948
 	} else {
@@ -190134,7 +190134,7 @@ sw_bb992:
 for_cond994:
 	v344 = *i993
 	conv995 = int64(uint64(uint32(v344)))
-	cmp996 = uint64(conv995) < 44
+	cmp996 = uint64(conv995) < uint64(44)
 	if cmp996 {
 		goto for_body998
 	} else {
@@ -190285,7 +190285,7 @@ sw_bb1045:
 for_cond1047:
 	v362 = *i1046
 	conv1048 = int64(uint64(uint32(v362)))
-	cmp1049 = uint64(conv1048) < 40
+	cmp1049 = uint64(conv1048) < uint64(40)
 	if cmp1049 {
 		goto for_body1051
 	} else {
@@ -190436,7 +190436,7 @@ sw_bb1098:
 for_cond1100:
 	v380 = *i1099
 	conv1101 = int64(uint64(uint32(v380)))
-	cmp1102 = uint64(conv1101) < 26
+	cmp1102 = uint64(conv1101) < uint64(26)
 	if cmp1102 {
 		goto for_body1104
 	} else {
@@ -191538,7 +191538,7 @@ sw_bb1455:
 for_cond1457:
 	v491 = *i1456
 	conv1458 = int64(uint64(uint32(v491)))
-	cmp1459 = uint64(conv1458) < 40
+	cmp1459 = uint64(conv1458) < uint64(40)
 	if cmp1459 {
 		goto for_body1461
 	} else {
@@ -191832,7 +191832,7 @@ sw_bb1554:
 for_cond1556:
 	v523 = *i1555
 	conv1557 = int64(uint64(uint32(v523)))
-	cmp1558 = uint64(conv1557) < 22
+	cmp1558 = uint64(conv1557) < uint64(22)
 	if cmp1558 {
 		goto for_body1560
 	} else {
@@ -191974,7 +191974,7 @@ sw_bb1604:
 for_cond1606:
 	v540 = *i1605
 	conv1607 = int64(uint64(uint32(v540)))
-	cmp1608 = uint64(conv1607) < 20
+	cmp1608 = uint64(conv1607) < uint64(20)
 	if cmp1608 {
 		goto for_body1610
 	} else {
@@ -194711,7 +194711,7 @@ if_end2489:
 for_cond2491:
 	v825 = *i2490
 	conv2492 = int64(uint64(uint32(v825)))
-	cmp2493 = uint64(conv2492) < 62
+	cmp2493 = uint64(conv2492) < uint64(62)
 	if cmp2493 {
 		goto for_body2495
 	} else {
@@ -194910,7 +194910,7 @@ if_end2556:
 for_cond2558:
 	v847 = *i2557
 	conv2559 = int64(uint64(uint32(v847)))
-	cmp2560 = uint64(conv2559) < 54
+	cmp2560 = uint64(conv2559) < uint64(54)
 	if cmp2560 {
 		goto for_body2562
 	} else {
@@ -198594,7 +198594,7 @@ sw_bb3648:
 for_cond3652:
 	v1554 = *i3651
 	conv3653 = int64(uint64(uint32(v1554)))
-	cmp3654 = uint64(conv3653) < 28
+	cmp3654 = uint64(conv3653) < uint64(28)
 	if cmp3654 {
 		goto for_body3656
 	} else {
@@ -198677,7 +198677,7 @@ sw_bb3678:
 for_cond3682:
 	v1568 = *i3681
 	conv3683 = int64(uint64(uint32(v1568)))
-	cmp3684 = uint64(conv3683) < 28
+	cmp3684 = uint64(conv3683) < uint64(28)
 	if cmp3684 {
 		goto for_body3686
 	} else {
@@ -198760,7 +198760,7 @@ sw_bb3708:
 for_cond3712:
 	v1582 = *i3711
 	conv3713 = int64(uint64(uint32(v1582)))
-	cmp3714 = uint64(conv3713) < 16
+	cmp3714 = uint64(conv3713) < uint64(16)
 	if cmp3714 {
 		goto for_body3716
 	} else {
@@ -201125,7 +201125,7 @@ sw_bb:
 for_cond:
 	v10 = *i
 	conv3 = int64(uint64(uint32(v10)))
-	cmp = uint64(conv3) < 30
+	cmp = uint64(conv3) < uint64(30)
 	if cmp {
 		goto for_body
 	} else {

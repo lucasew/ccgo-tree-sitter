@@ -1,4 +1,4 @@
-package main
+package grammar_chatito
 
 type TSFieldMapEntry struct {
 	F0 int16
@@ -9432,7 +9432,7 @@ if_end:
 for_cond:
 	v11 = *i
 	conv4 = int64(uint64(uint32(v11)))
-	cmp = uint64(conv4) < 32
+	cmp = uint64(conv4) < uint64(32)
 	if cmp {
 		goto for_body
 	} else {
@@ -9516,7 +9516,7 @@ sw_bb25:
 for_cond27:
 	v22 = *i26
 	conv28 = int64(uint64(uint32(v22)))
-	cmp29 = uint64(conv28) < 26
+	cmp29 = uint64(conv28) < uint64(26)
 	if cmp29 {
 		goto for_body31
 	} else {
@@ -10712,7 +10712,7 @@ if_end408:
 for_cond410:
 	v144 = *i409
 	conv411 = int64(uint64(uint32(v144)))
-	cmp412 = uint64(conv411) < 36
+	cmp412 = uint64(conv411) < uint64(36)
 	if cmp412 {
 		goto for_body414
 	} else {
@@ -11424,7 +11424,7 @@ sw_bb613:
 for_cond617:
 	v313 = *i616
 	conv618 = int64(uint64(uint32(v313)))
-	cmp619 = uint64(conv618) < 20
+	cmp619 = uint64(conv618) < uint64(20)
 	if cmp619 {
 		goto for_body621
 	} else {
@@ -11515,7 +11515,7 @@ sw_bb644:
 for_cond648:
 	v335 = *i647
 	conv649 = int64(uint64(uint32(v335)))
-	cmp650 = uint64(conv649) < 20
+	cmp650 = uint64(conv649) < uint64(20)
 	if cmp650 {
 		goto for_body652
 	} else {

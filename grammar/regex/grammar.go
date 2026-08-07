@@ -1,4 +1,4 @@
-package main
+package grammar_regex
 
 type TSFieldMapEntry struct {
 	F0 int16
@@ -11342,7 +11342,7 @@ sw_bb346:
 for_cond:
 	v106 = *i
 	conv347 = int64(uint64(uint32(v106)))
-	cmp348 = uint64(conv347) < 42
+	cmp348 = uint64(conv347) < uint64(42)
 	if cmp348 {
 		goto for_body
 	} else {
@@ -11429,7 +11429,7 @@ sw_bb370:
 for_cond372:
 	v117 = *i371
 	conv373 = int64(uint64(uint32(v117)))
-	cmp374 = uint64(conv373) < 38
+	cmp374 = uint64(conv373) < uint64(38)
 	if cmp374 {
 		goto for_body376
 	} else {
@@ -11553,7 +11553,7 @@ sw_bb414:
 for_cond416:
 	v132 = *i415
 	conv417 = int64(uint64(uint32(v132)))
-	cmp418 = uint64(conv417) < 40
+	cmp418 = uint64(conv417) < uint64(40)
 	if cmp418 {
 		goto for_body420
 	} else {
@@ -11659,7 +11659,7 @@ sw_bb452:
 for_cond454:
 	v145 = *i453
 	conv455 = int64(uint64(uint32(v145)))
-	cmp456 = uint64(conv455) < 34
+	cmp456 = uint64(conv455) < uint64(34)
 	if cmp456 {
 		goto for_body458
 	} else {

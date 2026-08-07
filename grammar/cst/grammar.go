@@ -1,4 +1,4 @@
-package main
+package grammar_cst
 
 type TSFieldMapEntry struct {
 	F0 int16
@@ -3680,7 +3680,7 @@ if_end:
 for_cond:
 	v11 = *i
 	conv4 = int64(uint64(uint32(v11)))
-	cmp = uint64(conv4) < 18
+	cmp = uint64(conv4) < uint64(18)
 	if cmp {
 		goto for_body
 	} else {
@@ -4682,7 +4682,7 @@ sw_bb305:
 for_cond309:
 	v147 = *i308
 	conv310 = int64(uint64(uint32(v147)))
-	cmp311 = uint64(conv310) < 18
+	cmp311 = uint64(conv310) < uint64(18)
 	if cmp311 {
 		goto for_body313
 	} else {

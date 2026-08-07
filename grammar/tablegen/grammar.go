@@ -1,4 +1,4 @@
-package main
+package grammar_tablegen
 
 type TSFieldMapEntry struct {
 	F0 int16
@@ -28149,7 +28149,7 @@ if_end:
 for_cond:
 	v11 = *i
 	conv4 = int64(uint64(uint32(v11)))
-	cmp = uint64(conv4) < 46
+	cmp = uint64(conv4) < uint64(46)
 	if cmp {
 		goto for_body
 	} else {
@@ -28565,7 +28565,7 @@ sw_bb128:
 for_cond130:
 	v53 = *i129
 	conv131 = int64(uint64(uint32(v53)))
-	cmp132 = uint64(conv131) < 28
+	cmp132 = uint64(conv131) < uint64(28)
 	if cmp132 {
 		goto for_body134
 	} else {
@@ -30382,7 +30382,7 @@ if_end717:
 for_cond719:
 	v244 = *i718
 	conv720 = int64(uint64(uint32(v244)))
-	cmp721 = uint64(conv720) < 44
+	cmp721 = uint64(conv720) < uint64(44)
 	if cmp721 {
 		goto for_body723
 	} else {
@@ -30550,7 +30550,7 @@ if_end774:
 for_cond776:
 	v263 = *i775
 	conv777 = int64(uint64(uint32(v263)))
-	cmp778 = uint64(conv777) < 30
+	cmp778 = uint64(conv777) < uint64(30)
 	if cmp778 {
 		goto for_body780
 	} else {
@@ -34803,7 +34803,7 @@ sw_bb:
 for_cond:
 	v10 = *i
 	conv3 = int64(uint64(uint32(v10)))
-	cmp = uint64(conv3) < 32
+	cmp = uint64(conv3) < uint64(32)
 	if cmp {
 		goto for_body
 	} else {

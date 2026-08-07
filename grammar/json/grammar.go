@@ -1,4 +1,4 @@
-package main
+package grammar_json
 
 type TSFieldMapEntry struct {
 	F0 int16
@@ -2214,7 +2214,7 @@ if_end:
 for_cond:
 	v11 = *i
 	conv4 = int64(uint64(uint32(v11)))
-	cmp = uint64(conv4) < 28
+	cmp = uint64(conv4) < uint64(28)
 	if cmp {
 		goto for_body
 	} else {
@@ -2868,7 +2868,7 @@ sw_bb202:
 for_cond204:
 	v77 = *i203
 	conv205 = int64(uint64(uint32(v77)))
-	cmp206 = uint64(conv205) < 18
+	cmp206 = uint64(conv205) < uint64(18)
 	if cmp206 {
 		goto for_body208
 	} else {
@@ -2961,7 +2961,7 @@ if_end235:
 for_cond237:
 	v89 = *i236
 	conv238 = int64(uint64(uint32(v89)))
-	cmp239 = uint64(conv238) < 26
+	cmp239 = uint64(conv238) < uint64(26)
 	if cmp239 {
 		goto for_body241
 	} else {

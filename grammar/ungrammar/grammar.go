@@ -1,4 +1,4 @@
-package main
+package grammar_ungrammar
 
 type TSFieldMapEntry struct {
 	F0 int16
@@ -2878,16 +2878,6 @@ func ts_lex_keywords(lexer *TSLexer, state int16) bool {
 	*result = 0
 	*skip = 0
 	*eof = 0
-	goto start
-
-next_state:
-	v0 = *lexer_addr
-	advance = &v0.F2
-	v1 = *advance
-	v2 = *lexer_addr
-	v3 = *skip
-	tobool = byte(v3 & 1)
-	v1(v2, tobool)
 	goto start
 
 start:

@@ -1,4 +1,4 @@
-package main
+package grammar_cpon
 
 type TSFieldMapEntry struct {
 	F0 int16
@@ -6995,7 +6995,7 @@ if_end:
 for_cond:
 	v11 = *i
 	conv4 = int64(uint64(uint32(v11)))
-	cmp = uint64(conv4) < 44
+	cmp = uint64(conv4) < uint64(44)
 	if cmp {
 		goto for_body
 	} else {
@@ -9261,7 +9261,7 @@ if_end721:
 for_cond723:
 	v246 = *i722
 	conv724 = int64(uint64(uint32(v246)))
-	cmp725 = uint64(conv724) < 42
+	cmp725 = uint64(conv724) < uint64(42)
 	if cmp725 {
 		goto for_body727
 	} else {

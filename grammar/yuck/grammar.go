@@ -1,4 +1,4 @@
-package main
+package grammar_yuck
 
 type TSFieldMapEntry struct {
 	F0 int16
@@ -8130,7 +8130,7 @@ func tree_sitter_yuck_external_scanner_scan(payload *byte, lexer *TSLexer, valid
 	*lexer_addr = lexer
 	*valid_symbols_addr = valid_symbols
 	v0 = *valid_symbols_addr
-	arrayidx = libc.AddPointer(v0, int(1))
+	arrayidx = libc.AddPointer(v0, int(int64(1)))
 	v1 = *arrayidx
 	tobool = byte(v1 & 1)
 	if tobool {
@@ -8170,7 +8170,7 @@ if_then3:
 
 if_end6:
 	v8 = *valid_symbols_addr
-	arrayidx7 = libc.AddPointer(v8, int(2))
+	arrayidx7 = libc.AddPointer(v8, int(int64(2)))
 	v9 = *arrayidx7
 	tobool8 = byte(v9 & 1)
 	if tobool8 {
@@ -8613,7 +8613,7 @@ if_end:
 for_cond:
 	v11 = *i
 	conv4 = int64(uint64(uint32(v11)))
-	cmp = uint64(conv4) < 58
+	cmp = uint64(conv4) < uint64(58)
 	if cmp {
 		goto for_body
 	} else {
@@ -8759,7 +8759,7 @@ sw_bb43:
 for_cond45:
 	v28 = *i44
 	conv46 = int64(uint64(uint32(v28)))
-	cmp47 = uint64(conv46) < 30
+	cmp47 = uint64(conv46) < uint64(30)
 	if cmp47 {
 		goto for_body49
 	} else {
@@ -8905,7 +8905,7 @@ sw_bb94:
 for_cond96:
 	v45 = *i95
 	conv97 = int64(uint64(uint32(v45)))
-	cmp98 = uint64(conv97) < 42
+	cmp98 = uint64(conv97) < uint64(42)
 	if cmp98 {
 		goto for_body100
 	} else {
@@ -10055,7 +10055,7 @@ if_end469:
 for_cond471:
 	v166 = *i470
 	conv472 = int64(uint64(uint32(v166)))
-	cmp473 = uint64(conv472) < 56
+	cmp473 = uint64(conv472) < uint64(56)
 	if cmp473 {
 		goto for_body475
 	} else {
@@ -10214,7 +10214,7 @@ if_end523:
 for_cond525:
 	v184 = *i524
 	conv526 = int64(uint64(uint32(v184)))
-	cmp527 = uint64(conv526) < 24
+	cmp527 = uint64(conv526) < uint64(24)
 	if cmp527 {
 		goto for_body529
 	} else {

@@ -1,4 +1,4 @@
-package main
+package grammar_nix
 
 type TSFieldMapEntry struct {
 	F0 int16
@@ -26972,7 +26972,7 @@ func tree_sitter_nix_external_scanner_scan(payload *byte, lexer *TSLexer, valid_
 
 land_lhs_true:
 	v2 = *valid_symbols_addr
-	arrayidx1 = libc.AddPointer(v2, int(1))
+	arrayidx1 = libc.AddPointer(v2, int(int64(1)))
 	v3 = *arrayidx1
 	tobool2 = byte(v3 & 1)
 	if tobool2 {
@@ -26983,7 +26983,7 @@ land_lhs_true:
 
 land_lhs_true3:
 	v4 = *valid_symbols_addr
-	arrayidx4 = libc.AddPointer(v4, int(2))
+	arrayidx4 = libc.AddPointer(v4, int(int64(2)))
 	v5 = *arrayidx4
 	tobool5 = byte(v5 & 1)
 	if tobool5 {
@@ -26994,7 +26994,7 @@ land_lhs_true3:
 
 land_lhs_true6:
 	v6 = *valid_symbols_addr
-	arrayidx7 = libc.AddPointer(v6, int(3))
+	arrayidx7 = libc.AddPointer(v6, int(int64(3)))
 	v7 = *arrayidx7
 	tobool8 = byte(v7 & 1)
 	if tobool8 {
@@ -27005,7 +27005,7 @@ land_lhs_true6:
 
 land_lhs_true9:
 	v8 = *valid_symbols_addr
-	arrayidx10 = libc.AddPointer(v8, int(4))
+	arrayidx10 = libc.AddPointer(v8, int(int64(4)))
 	v9 = *arrayidx10
 	tobool11 = byte(v9 & 1)
 	if tobool11 {
@@ -27016,7 +27016,7 @@ land_lhs_true9:
 
 land_lhs_true12:
 	v10 = *valid_symbols_addr
-	arrayidx13 = libc.AddPointer(v10, int(5))
+	arrayidx13 = libc.AddPointer(v10, int(int64(5)))
 	v11 = *arrayidx13
 	tobool14 = byte(v11 & 1)
 	if tobool14 {
@@ -27065,7 +27065,7 @@ if_end:
 
 if_else20:
 	v18 = *valid_symbols_addr
-	arrayidx21 = libc.AddPointer(v18, int(1))
+	arrayidx21 = libc.AddPointer(v18, int(int64(1)))
 	v19 = *arrayidx21
 	tobool22 = byte(v19 & 1)
 	if tobool22 {
@@ -27120,7 +27120,7 @@ if_end32:
 
 if_else34:
 	v30 = *valid_symbols_addr
-	arrayidx35 = libc.AddPointer(v30, int(3))
+	arrayidx35 = libc.AddPointer(v30, int(int64(3)))
 	v31 = *arrayidx35
 	tobool36 = byte(v31 & 1)
 	if tobool36 {
@@ -27148,7 +27148,7 @@ if_then40:
 
 if_else42:
 	v35 = *valid_symbols_addr
-	arrayidx43 = libc.AddPointer(v35, int(2))
+	arrayidx43 = libc.AddPointer(v35, int(int64(2)))
 	v36 = *arrayidx43
 	tobool44 = byte(v36 & 1)
 	if tobool44 {

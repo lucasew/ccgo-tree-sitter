@@ -1,4 +1,4 @@
-package main
+package grammar_zig
 
 type TSFieldMapEntry struct {
 	F0 int16
@@ -87066,7 +87066,7 @@ if_end:
 for_cond:
 	v11 = *i
 	conv4 = int64(uint64(uint32(v11)))
-	cmp = uint64(conv4) < 58
+	cmp = uint64(conv4) < uint64(58)
 	if cmp {
 		goto for_body
 	} else {
@@ -87414,7 +87414,7 @@ sw_bb106:
 for_cond108:
 	v46 = *i107
 	conv109 = int64(uint64(uint32(v46)))
-	cmp110 = uint64(conv109) < 50
+	cmp110 = uint64(conv109) < uint64(50)
 	if cmp110 {
 		goto for_body112
 	} else {
@@ -88814,7 +88814,7 @@ if_end560:
 for_cond562:
 	v192 = *i561
 	conv563 = int64(uint64(uint32(v192)))
-	cmp564 = uint64(conv563) < 58
+	cmp564 = uint64(conv563) < uint64(58)
 	if cmp564 {
 		goto for_body566
 	} else {
@@ -88973,7 +88973,7 @@ if_end614:
 for_cond616:
 	v210 = *i615
 	conv617 = int64(uint64(uint32(v210)))
-	cmp618 = uint64(conv617) < 48
+	cmp618 = uint64(conv617) < uint64(48)
 	if cmp618 {
 		goto for_body620
 	} else {
@@ -93243,7 +93243,7 @@ sw_bb:
 for_cond:
 	v10 = *i
 	conv3 = int64(uint64(uint32(v10)))
-	cmp = uint64(conv3) < 34
+	cmp = uint64(conv3) < uint64(34)
 	if cmp {
 		goto for_body
 	} else {

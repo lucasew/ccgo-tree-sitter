@@ -1,4 +1,4 @@
-package main
+package grammar_hyprlang
 
 type TSFieldMapEntry struct {
 	F0 int16
@@ -7497,7 +7497,7 @@ if_end:
 for_cond:
 	v11 = *i
 	conv4 = int64(uint64(uint32(v11)))
-	cmp = uint64(conv4) < 62
+	cmp = uint64(conv4) < uint64(62)
 	if cmp {
 		goto for_body
 	} else {
@@ -7584,7 +7584,7 @@ sw_bb25:
 for_cond27:
 	v22 = *i26
 	conv28 = int64(uint64(uint32(v22)))
-	cmp29 = uint64(conv28) < 34
+	cmp29 = uint64(conv28) < uint64(34)
 	if cmp29 {
 		goto for_body31
 	} else {
@@ -7671,7 +7671,7 @@ sw_bb57:
 for_cond59:
 	v33 = *i58
 	conv60 = int64(uint64(uint32(v33)))
-	cmp61 = uint64(conv60) < 34
+	cmp61 = uint64(conv60) < uint64(34)
 	if cmp61 {
 		goto for_body63
 	} else {
@@ -7758,7 +7758,7 @@ sw_bb89:
 for_cond91:
 	v44 = *i90
 	conv92 = int64(uint64(uint32(v44)))
-	cmp93 = uint64(conv92) < 18
+	cmp93 = uint64(conv92) < uint64(18)
 	if cmp93 {
 		goto for_body95
 	} else {
@@ -7855,7 +7855,7 @@ sw_bb123:
 for_cond125:
 	v56 = *i124
 	conv126 = int64(uint64(uint32(v56)))
-	cmp127 = uint64(conv126) < 30
+	cmp127 = uint64(conv126) < uint64(30)
 	if cmp127 {
 		goto for_body129
 	} else {
@@ -8087,7 +8087,7 @@ sw_bb201:
 for_cond203:
 	v81 = *i202
 	conv204 = int64(uint64(uint32(v81)))
-	cmp205 = uint64(conv204) < 28
+	cmp205 = uint64(conv204) < uint64(28)
 	if cmp205 {
 		goto for_body207
 	} else {
@@ -10299,7 +10299,7 @@ if_end908:
 for_cond910:
 	v304 = *i909
 	conv911 = int64(uint64(uint32(v304)))
-	cmp912 = uint64(conv911) < 28
+	cmp912 = uint64(conv911) < uint64(28)
 	if cmp912 {
 		goto for_body914
 	} else {
@@ -13065,7 +13065,7 @@ sw_bb1746:
 for_cond1750:
 	v810 = *i1749
 	conv1751 = int64(uint64(uint32(v810)))
-	cmp1752 = uint64(conv1751) < 62
+	cmp1752 = uint64(conv1751) < uint64(62)
 	if cmp1752 {
 		goto for_body1754
 	} else {
@@ -13161,7 +13161,7 @@ sw_bb1780:
 for_cond1784:
 	v825 = *i1783
 	conv1785 = int64(uint64(uint32(v825)))
-	cmp1786 = uint64(conv1785) < 34
+	cmp1786 = uint64(conv1785) < uint64(34)
 	if cmp1786 {
 		goto for_body1788
 	} else {
@@ -13257,7 +13257,7 @@ sw_bb1814:
 for_cond1818:
 	v840 = *i1817
 	conv1819 = int64(uint64(uint32(v840)))
-	cmp1820 = uint64(conv1819) < 34
+	cmp1820 = uint64(conv1819) < uint64(34)
 	if cmp1820 {
 		goto for_body1822
 	} else {
@@ -18090,7 +18090,7 @@ sw_bb3283:
 for_cond3287:
 	v1474 = *i3286
 	conv3288 = int64(uint64(uint32(v1474)))
-	cmp3289 = uint64(conv3288) < 28
+	cmp3289 = uint64(conv3288) < uint64(28)
 	if cmp3289 {
 		goto for_body3291
 	} else {

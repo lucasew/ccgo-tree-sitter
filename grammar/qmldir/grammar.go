@@ -1,4 +1,4 @@
-package main
+package grammar_qmldir
 
 type TSFieldMapEntry struct {
 	F0 int16
@@ -1330,7 +1330,7 @@ if_end:
 for_cond:
 	v11 = *i
 	conv4 = int64(uint64(uint32(v11)))
-	cmp = uint64(conv4) < 22
+	cmp = uint64(conv4) < uint64(22)
 	if cmp {
 		goto for_body
 	} else {

@@ -1,4 +1,4 @@
-package main
+package grammar_capnp
 
 type TSFieldMapEntry struct {
 	F0 int16
@@ -28096,7 +28096,7 @@ if_end:
 for_cond:
 	v11 = *i
 	conv4 = int64(uint64(uint32(v11)))
-	cmp = uint64(conv4) < 34
+	cmp = uint64(conv4) < uint64(34)
 	if cmp {
 		goto for_body
 	} else {
@@ -28969,7 +28969,7 @@ sw_bb268:
 for_cond270:
 	v95 = *i269
 	conv271 = int64(uint64(uint32(v95)))
-	cmp272 = uint64(conv271) < 32
+	cmp272 = uint64(conv271) < uint64(32)
 	if cmp272 {
 		goto for_body274
 	} else {
@@ -29273,7 +29273,7 @@ sw_bb368:
 for_cond370:
 	v125 = *i369
 	conv371 = int64(uint64(uint32(v125)))
-	cmp372 = uint64(conv371) < 28
+	cmp372 = uint64(conv371) < uint64(28)
 	if cmp372 {
 		goto for_body374
 	} else {
@@ -29477,7 +29477,7 @@ sw_bb437:
 for_cond439:
 	v147 = *i438
 	conv440 = int64(uint64(uint32(v147)))
-	cmp441 = uint64(conv440) < 22
+	cmp441 = uint64(conv440) < uint64(22)
 	if cmp441 {
 		goto for_body443
 	} else {
@@ -30413,7 +30413,7 @@ sw_bb738:
 for_cond740:
 	v238 = *i739
 	conv741 = int64(uint64(uint32(v238)))
-	cmp742 = uint64(conv741) < 16
+	cmp742 = uint64(conv741) < uint64(16)
 	if cmp742 {
 		goto for_body744
 	} else {
@@ -32029,7 +32029,7 @@ if_end1254:
 for_cond1256:
 	v404 = *i1255
 	conv1257 = int64(uint64(uint32(v404)))
-	cmp1258 = uint64(conv1257) < 26
+	cmp1258 = uint64(conv1257) < uint64(26)
 	if cmp1258 {
 		goto for_body1260
 	} else {
@@ -42250,7 +42250,7 @@ sw_bb:
 for_cond:
 	v10 = *i
 	conv3 = int64(uint64(uint32(v10)))
-	cmp = uint64(conv3) < 18
+	cmp = uint64(conv3) < uint64(18)
 	if cmp {
 		goto for_body
 	} else {

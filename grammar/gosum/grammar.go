@@ -1,4 +1,4 @@
-package main
+package grammar_gosum
 
 type TSFieldMapEntry struct {
 	F0 int16
@@ -3649,7 +3649,7 @@ if_end:
 for_cond:
 	v11 = *i
 	conv4 = int64(uint64(uint32(v11)))
-	cmp = uint64(conv4) < 26
+	cmp = uint64(conv4) < uint64(26)
 	if cmp {
 		goto for_body
 	} else {

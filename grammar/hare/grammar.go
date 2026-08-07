@@ -1,4 +1,4 @@
-package main
+package grammar_hare
 
 type TSFieldMapEntry struct {
 	F0 int16
@@ -35304,7 +35304,7 @@ if_end:
 for_cond:
 	v11 = *i
 	conv4 = int64(uint64(uint32(v11)))
-	cmp = uint64(conv4) < 60
+	cmp = uint64(conv4) < uint64(60)
 	if cmp {
 		goto for_body
 	} else {
@@ -35464,7 +35464,7 @@ sw_bb47:
 for_cond49:
 	v29 = *i48
 	conv50 = int64(uint64(uint32(v29)))
-	cmp51 = uint64(conv50) < 48
+	cmp51 = uint64(conv50) < uint64(48)
 	if cmp51 {
 		goto for_body53
 	} else {
@@ -38496,7 +38496,7 @@ if_end1019:
 for_cond1021:
 	v340 = *i1020
 	conv1022 = int64(uint64(uint32(v340)))
-	cmp1023 = uint64(conv1022) < 58
+	cmp1023 = uint64(conv1022) < uint64(58)
 	if cmp1023 {
 		goto for_body1025
 	} else {
@@ -42319,7 +42319,7 @@ sw_bb:
 for_cond:
 	v10 = *i
 	conv3 = int64(uint64(uint32(v10)))
-	cmp = uint64(conv3) < 36
+	cmp = uint64(conv3) < uint64(36)
 	if cmp {
 		goto for_body
 	} else {

@@ -1,4 +1,4 @@
-package main
+package grammar_ql_dbscheme
 
 type TSFieldMapEntry struct {
 	F0 int16
@@ -5459,7 +5459,7 @@ if_end:
 for_cond:
 	v11 = *i
 	conv4 = int64(uint64(uint32(v11)))
-	cmp = uint64(conv4) < 26
+	cmp = uint64(conv4) < uint64(26)
 	if cmp {
 		goto for_body
 	} else {
@@ -6005,7 +6005,7 @@ if_end167:
 for_cond169:
 	v65 = *i168
 	conv170 = int64(uint64(uint32(v65)))
-	cmp171 = uint64(conv170) < 22
+	cmp171 = uint64(conv170) < uint64(22)
 	if cmp171 {
 		goto for_body173
 	} else {
@@ -6915,7 +6915,7 @@ sw_bb:
 for_cond:
 	v10 = *i
 	conv3 = int64(uint64(uint32(v10)))
-	cmp = uint64(conv3) < 20
+	cmp = uint64(conv3) < uint64(20)
 	if cmp {
 		goto for_body
 	} else {

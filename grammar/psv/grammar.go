@@ -1,4 +1,4 @@
-package main
+package grammar_psv
 
 type TSFieldMapEntry struct {
 	F0 int16
@@ -3101,7 +3101,7 @@ sw_bb437:
 for_cond:
 	v212 = *i
 	conv440 = int64(uint64(uint32(v212)))
-	cmp441 = uint64(conv440) < 18
+	cmp441 = uint64(conv440) < uint64(18)
 	if cmp441 {
 		goto for_body
 	} else {
@@ -4126,7 +4126,7 @@ if_end752:
 for_cond754:
 	v362 = *i753
 	conv755 = int64(uint64(uint32(v362)))
-	cmp756 = uint64(conv755) < 18
+	cmp756 = uint64(conv755) < uint64(18)
 	if cmp756 {
 		goto for_body758
 	} else {

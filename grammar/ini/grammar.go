@@ -1,4 +1,4 @@
-package main
+package grammar_ini
 
 type TSFieldMapEntry struct {
 	F0 int16

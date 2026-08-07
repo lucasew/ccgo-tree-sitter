@@ -459,7 +459,7 @@ type TSLexer struct {
 	F4 func(*TSLexer) int32
 	F5 func(*TSLexer) bool
 	F6 func(*TSLexer) bool
-	F7 func(*TSLexer, *byte)
+	F7 func(*TSLexer, *byte, ...interface{})
 }
 
 type TSLexerMode struct {
@@ -10419,7 +10419,7 @@ func ts_lexer_init(self *Lexer) {
 	var mark_end *func(*TSLexer)
 	var is_at_included_range_start, eof *func(*TSLexer) bool
 	var get_column *func(*TSLexer) int32
-	var log *func(*TSLexer, *byte)
+	var log *func(*TSLexer, *byte, ...interface{})
 	var advance *func(*TSLexer, bool)
 	var call bool
 
@@ -20443,7 +20443,7 @@ if_then54:
 	v61 = *self_addr
 	dot_graph_file59 = &v61.F13
 	v62 = *dot_graph_file59
-	call60 = fputs(&_str_10[int64(0)], v62)
+	call60 = libc.Fputs(&_str_10[int64(0)], v62)
 	goto if_end61
 
 if_end61:
@@ -20754,7 +20754,7 @@ if_then142:
 	v135 = *self_addr
 	dot_graph_file147 = &v135.F13
 	v136 = *dot_graph_file147
-	call148 = fputs(&_str_16[int64(0)], v136)
+	call148 = libc.Fputs(&_str_16[int64(0)], v136)
 	goto if_end149
 
 if_end149:
@@ -21040,7 +21040,7 @@ if_then235:
 	v195 = *self_addr
 	dot_graph_file240 = &v195.F13
 	v196 = *dot_graph_file240
-	call241 = fputs(&_str_10[int64(0)], v196)
+	call241 = libc.Fputs(&_str_10[int64(0)], v196)
 	goto if_end242
 
 if_end242:
@@ -21259,7 +21259,7 @@ if_then19:
 	v18 = *self_addr
 	dot_graph_file20 = &v18.F13
 	v19 = *dot_graph_file20
-	call21 = fputc(92, v19)
+	call21 = libc.Fputc(92, v19)
 	goto if_end22
 
 if_end22:
@@ -21269,7 +21269,7 @@ if_end22:
 	v22 = *self_addr
 	dot_graph_file24 = &v22.F13
 	v23 = *dot_graph_file24
-	call25 = fputc(conv23, v23)
+	call25 = libc.Fputc(conv23, v23)
 	goto for_inc
 
 for_inc:
@@ -22486,7 +22486,7 @@ if_then165:
 	v142 = *self_addr
 	dot_graph_file170 = &v142.F13
 	v143 = *dot_graph_file170
-	call171 = fputs(&_str_16[int64(0)], v143)
+	call171 = libc.Fputs(&_str_16[int64(0)], v143)
 	goto if_end172
 
 if_end172:
@@ -24334,7 +24334,7 @@ if_then96:
 	v122 = *self_addr
 	dot_graph_file100 = &v122.F13
 	v123 = *dot_graph_file100
-	call101 = fputs(&_str_16[int64(0)], v123)
+	call101 = libc.Fputs(&_str_16[int64(0)], v123)
 	goto if_end102
 
 if_end102:
@@ -26727,7 +26727,7 @@ for_cond:
 	v0 = *self_addr
 	next = &v0.F3
 	v1 = *next
-	call = iswspace(v1)
+	call = libc.Iswspace(v1)
 	tobool = call != 0
 	if tobool {
 		goto if_then
@@ -38621,7 +38621,7 @@ if_end:
 	conv5 = int64(uint64(uint32(sub4)))
 	v13 = *element_size_addr
 	mul6 = conv5 * v13
-	llvm_memmove_p0i8_p0i8_i64(add_ptr, add_ptr3, mul6, false)
+	libc.Memmove(add_ptr, add_ptr3, mul6)
 	v14 = *size_addr
 	v15 = *v14
 	dec = v15 -1
@@ -48604,7 +48604,7 @@ _return:
 	return v5
 }
 
-func ts_stack_renumber_version(self *Stack, v1 int32, v2 int32) {
+func ts_stack_renumber_version(self *Stack, arg_v1 int32, arg_v2 int32) {
 	var self_addr **Stack
 	var source_head, target_head, contents, contents22, contents33 **StackHead
 	var summary, summary25, summary28, summary29, summary30 **StackSummary
@@ -48629,8 +48629,8 @@ func ts_stack_renumber_version(self *Stack, v1 int32, v2 int32) {
 	source_head = new(*StackHead)
 	target_head = new(*StackHead)
 	*self_addr = self
-	*v1_addr = v1
-	*v2_addr = v2
+	*v1_addr = arg_v1
+	*v2_addr = arg_v2
 	v0 = *v1_addr
 	v1 = *v2_addr
 	cmp = v0 == v1
@@ -50065,7 +50065,7 @@ if_end:
 	_array__erase(v11, size5, int64(48), v13)
 }
 
-func ts_stack_swap_versions(self *Stack, v1 int32, v2 int32) {
+func ts_stack_swap_versions(self *Stack, arg_v1 int32, arg_v2 int32) {
 	var self_addr **Stack
 	var contents, contents9, contents19, contents29 **StackHead
 	var v1, v3, v9, v11, v15, v17, v23, v25 *Stack
@@ -50084,8 +50084,8 @@ func ts_stack_swap_versions(self *Stack, v1 int32, v2 int32) {
 	v2_addr = new(int32)
 	temporary_head = new(StackHead)
 	*self_addr = self
-	*v1_addr = v1
-	*v2_addr = v2
+	*v1_addr = arg_v1
+	*v2_addr = arg_v2
 	v0 = *v1_addr
 	v1 = *self_addr
 	heads = &v1.F0
@@ -51750,22 +51750,22 @@ for_body:
 
 sw_bb:
 	v7 = *f_addr
-	call1 = fputc(92, v7)
+	call1 = libc.Fputc(92, v7)
 	v8 = *chr
 	v9 = *v8
 	conv2 = int32(int8(v9))
 	v10 = *f_addr
-	call3 = fputc(conv2, v10)
+	call3 = libc.Fputc(conv2, v10)
 	goto sw_epilog
 
 sw_bb4:
 	v11 = *f_addr
-	call5 = fputs(&_str_282[int64(0)], v11)
+	call5 = libc.Fputs(&_str_282[int64(0)], v11)
 	goto sw_epilog
 
 sw_bb6:
 	v12 = *f_addr
-	call7 = fputs(&_str_283[int64(0)], v12)
+	call7 = libc.Fputs(&_str_283[int64(0)], v12)
 	goto sw_epilog
 
 sw_default:
@@ -51773,7 +51773,7 @@ sw_default:
 	v14 = *v13
 	conv8 = int32(int8(v14))
 	v15 = *f_addr
-	call9 = fputc(conv8, v15)
+	call9 = libc.Fputc(conv8, v15)
 	goto sw_epilog
 
 sw_epilog:
@@ -66288,7 +66288,7 @@ if_then4:
 	conv9 = int64(uint64(uint32(sub8)))
 	v28 = *element_size_addr
 	mul10 = conv9 * v28
-	llvm_memmove_p0i8_p0i8_i64(add_ptr, add_ptr7, mul10, false)
+	libc.Memmove(add_ptr, add_ptr7, mul10)
 	goto if_end11
 
 if_end11:
@@ -66953,7 +66953,7 @@ func _ts_dup(file_descriptor int32) int32 {
 	file_descriptor_addr = new(int32)
 	*file_descriptor_addr = file_descriptor
 	v0 = *file_descriptor_addr
-	call = dup(v0)
+	call = libc.Dup(v0)
 	return call
 }
 
@@ -73532,7 +73532,7 @@ if_then88:
 	v83 = *self_addr
 	dot_graph_file93 = &v83.F13
 	v84 = *dot_graph_file93
-	call94 = fputs(&_str_16[int64(0)], v84)
+	call94 = libc.Fputs(&_str_16[int64(0)], v84)
 	goto if_end95
 
 if_end95:
@@ -73650,7 +73650,7 @@ if_then128:
 	v111 = *self_addr
 	dot_graph_file133 = &v111.F13
 	v112 = *dot_graph_file133
-	call134 = fputs(&_str_16[int64(0)], v112)
+	call134 = libc.Fputs(&_str_16[int64(0)], v112)
 	goto if_end135
 
 if_end135:
@@ -74985,7 +74985,7 @@ if_then92:
 	v87 = *self_addr
 	dot_graph_file97 = &v87.F13
 	v88 = *dot_graph_file97
-	call98 = fputs(&_str_16[int64(0)], v88)
+	call98 = libc.Fputs(&_str_16[int64(0)], v88)
 	goto if_end99
 
 if_end99:
@@ -78379,7 +78379,7 @@ if_then93:
 	v127 = *self_addr
 	dot_graph_file98 = &v127.F13
 	v128 = *dot_graph_file98
-	call99 = fputs(&_str_16[int64(0)], v128)
+	call99 = libc.Fputs(&_str_16[int64(0)], v128)
 	goto if_end100
 
 if_end100:
@@ -80438,7 +80438,7 @@ func stream_is_ident_start(self *Stream) bool {
 	v0 = *self_addr
 	next = &v0.F3
 	v1 = *next
-	call = iswalnum(v1)
+	call = libc.Iswalnum(v1)
 	tobool = call != 0
 	if tobool {
 		v6 = true
@@ -80493,7 +80493,7 @@ do_cond:
 	v1 = *stream_addr
 	next = &v1.F3
 	v2 = *next
-	call1 = iswalnum(v2)
+	call1 = libc.Iswalnum(v2)
 	tobool = call1 != 0
 	if tobool {
 		v9 = true
@@ -89838,7 +89838,7 @@ land_lhs_true:
 	}
 
 land_lhs_true29:
-	call30 = __ctype_b_loc()
+	call30 = libc.CtypeBLoc()
 	v17 = *call30
 	v18 = *chr_addr
 	idxprom = int64(v18)

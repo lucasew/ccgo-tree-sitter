@@ -429,7 +429,7 @@ var _str [64]byte = [64]byte{
 
 var _str_1 [40]byte = [40]byte{
 	47, 116, 109, 112, 47, 108, 101, 97, 118, 101, 110, 45, 97, 115, 116, 114,
-	111, 45, 51, 48, 56, 50, 49, 55, 52, 55, 56, 55, 47, 99, 111, 109,
+	111, 45, 49, 50, 56, 54, 52, 55, 55, 56, 56, 49, 47, 99, 111, 109,
 	98, 105, 110, 101, 100, 46, 99, 0,
 }
 
@@ -13444,7 +13444,7 @@ if_then13:
 	v21 = *delimiter_index
 	conv14 = int64(uint64(uint32(v21)))
 	v22 = *end_delimiter
-	call = strlen(v22)
+	call = libc.Strlen(v22)
 	cmp15 = conv14 == call
 	if cmp15 {
 		goto if_then17
@@ -15830,7 +15830,7 @@ for_body:
 	v2 = *entry1
 	tag_name2 = &v2.F0
 	arraydecay = &tag_name2[int64(0)]
-	call = strlen(arraydecay)
+	call = libc.Strlen(arraydecay)
 	v3 = *tag_name_addr
 	size = &v3.F1
 	v4 = *size

@@ -183,7 +183,7 @@ var _str [41]byte = [41]byte{
 
 var _str_1 [42]byte = [42]byte{
 	47, 116, 109, 112, 47, 108, 101, 97, 118, 101, 110, 45, 99, 114, 121, 115,
-	116, 97, 108, 45, 51, 57, 56, 56, 55, 56, 56, 51, 52, 53, 47, 99,
+	116, 97, 108, 45, 51, 49, 55, 50, 52, 50, 56, 51, 50, 51, 47, 99,
 	111, 109, 98, 105, 110, 101, 100, 46, 99, 0,
 }
 
@@ -638147,7 +638147,7 @@ func match_macro_keyword(lexer *TSLexer, keyword *byte) bool {
 	*lexer_addr = lexer
 	*keyword_addr = keyword
 	v0 = *keyword_addr
-	call = strlen(v0)
+	call = libc.Strlen(v0)
 	*keyword_size = call
 	*found_match = 1
 	*i = int64(0)

@@ -74,7 +74,7 @@ type TSParseActionEntry struct {
 	F0 TSParseAction
 }
 
-var tree_sitter_fluent_language TSLanguage = TSLanguage{8, 42, 6, 21, 2, &ts_symbol_names[0], &ts_symbol_metadata[0], &(*[119][42]int16)(unsafe.Pointer(&ts_parse_table))[0][0], &(*[319]TSParseActionEntry)(unsafe.Pointer(&ts_parse_actions))[0], &ts_lex_modes[0], &ts_alias_sequences[0][0], 5, ts_lex, nil, 0, anon_2{&ts_external_scanner_states[0][0], &ts_external_scanner_symbol_map[0], (func(...interface{}) *byte)(unsafe.Pointer(tree_sitter_fluent_external_scanner_create)), tree_sitter_fluent_external_scanner_destroy, tree_sitter_fluent_external_scanner_scan, tree_sitter_fluent_external_scanner_serialize, tree_sitter_fluent_external_scanner_deserialize}}
+var tree_sitter_fluent_language TSLanguage = TSLanguage{8, 42, 6, 21, 2, &ts_symbol_names[0], &ts_symbol_metadata[0], &(*[119][42]int16)(unsafe.Pointer(&ts_parse_table))[0][0], &(*[319]TSParseActionEntry)(unsafe.Pointer(&ts_parse_actions))[0], &ts_lex_modes[0], &ts_alias_sequences[0][0], 5, ts_lex, nil, 0, anon_2{&ts_external_scanner_states[0][0], &ts_external_scanner_symbol_map[0], func() func(...interface{}) *byte { tmp := tree_sitter_fluent_external_scanner_create; return *(*func(...interface{}) *byte)(unsafe.Pointer(&tmp)) }(), tree_sitter_fluent_external_scanner_destroy, tree_sitter_fluent_external_scanner_scan, tree_sitter_fluent_external_scanner_serialize, tree_sitter_fluent_external_scanner_deserialize}}
 
 var ts_symbol_names [48]*byte = [48]*byte{
 	&_str[0], &_str_1[0], &_str_2[0], &_str_3[0], &_str_4[0], &_str_5[0], &_str_6[0], &_str_7[0], &_str_8[0], &_str_9[0], &_str_10[0], &_str_11[0], &_str_12[0], &_str_13[0], &_str_14[0], &_str_15[0],

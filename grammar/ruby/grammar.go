@@ -164,7 +164,7 @@ var _str [48]byte = [48]byte{
 
 var _str_1 [39]byte = [39]byte{
 	47, 116, 109, 112, 47, 108, 101, 97, 118, 101, 110, 45, 114, 117, 98, 121,
-	45, 50, 53, 49, 56, 53, 57, 54, 57, 48, 57, 47, 99, 111, 109, 98,
+	45, 51, 57, 56, 57, 53, 49, 54, 52, 48, 53, 47, 99, 111, 109, 98,
 	105, 110, 101, 100, 46, 99, 0,
 }
 
@@ -208769,7 +208769,7 @@ land_lhs_true284:
 	v175 = *lexer_addr
 	lookahead285 = &v175.F0
 	v176 = *lookahead285
-	call286 = iswupper(v176)
+	call286 = libc.Iswupper(v176)
 	tobool287 = call286 != 0
 	if tobool287 {
 		goto if_then288
@@ -208781,7 +208781,7 @@ if_then288:
 	v177 = *lexer_addr
 	lookahead289 = &v177.F0
 	v178 = *lookahead289
-	call290 = iswupper(v178)
+	call290 = libc.Iswupper(v178)
 	tobool291 = call290 != 0
 	if tobool291 { v179 = 1 } else { v179 = 0 }
 	if tobool291 { cond = 25 } else { cond = 24 }
@@ -239194,7 +239194,7 @@ while_cond:
 	v35 = *lexer_addr
 	lookahead29 = &v35.F0
 	v36 = *lookahead29
-	call30 = iswlower(v36)
+	call30 = libc.Iswlower(v36)
 	tobool31 = call30 != 0
 	if tobool31 {
 		goto while_body

@@ -143933,7 +143933,7 @@ func lookahead_buffer_find_keyword(buffer *LookaheadBuffer, lexer *TSLexer, str 
 	*lexer_addr = lexer
 	*str_addr = str
 	v0 = *str_addr
-	call = strlen(v0)
+	call = libc.Strlen(v0)
 	*length = call
 	*i = int64(0)
 	goto for_cond

@@ -129079,7 +129079,7 @@ while_body:
 for_cond:
 	v45 = *i
 	v46 = *valid_tokens
-	call46 = strlen(v46)
+	call46 = libc.Strlen(v46)
 	cmp47 = uint64(v45) < uint64(call46)
 	if cmp47 {
 		goto for_body

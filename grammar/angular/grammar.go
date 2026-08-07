@@ -2098,10 +2098,10 @@ var _str_1 [64]byte = [64]byte{
 	101, 114, 45, 62, 116, 97, 103, 115, 41, 45, 62, 115, 105, 122, 101, 0,
 }
 
-var _str_2 [42]byte = [42]byte{
+var _str_2 [41]byte = [41]byte{
 	47, 116, 109, 112, 47, 108, 101, 97, 118, 101, 110, 45, 97, 110, 103, 117,
-	108, 97, 114, 45, 49, 50, 51, 56, 57, 50, 56, 49, 50, 57, 47, 99,
-	111, 109, 98, 105, 110, 101, 100, 46, 99, 0,
+	108, 97, 114, 45, 51, 51, 55, 50, 50, 48, 49, 48, 57, 47, 99, 111,
+	109, 98, 105, 110, 101, 100, 46, 99, 0,
 }
 
 var __PRETTY_FUNCTION___scan [48]byte = [48]byte{
@@ -45319,7 +45319,7 @@ if_then18:
 	v23 = *delimiter_index
 	conv19 = int64(uint64(uint32(v23)))
 	v24 = *end_delimiter
-	call20 = strlen(v24)
+	call20 = libc.Strlen(v24)
 	cmp21 = conv19 == call20
 	if cmp21 {
 		goto if_then23
@@ -46999,7 +46999,7 @@ for_body:
 	v2 = *entry1
 	tag_name2 = &v2.F0
 	arraydecay = &tag_name2[int64(0)]
-	call = strlen(arraydecay)
+	call = libc.Strlen(arraydecay)
 	v3 = *tag_name_addr
 	size = &v3.F1
 	v4 = *size

@@ -471,7 +471,7 @@ var _str_163 [34]byte = [34]byte{
 
 var _str_164 [38]byte = [38]byte{
 	47, 116, 109, 112, 47, 108, 101, 97, 118, 101, 110, 45, 118, 105, 109, 45,
-	51, 56, 54, 50, 57, 51, 55, 52, 57, 48, 47, 99, 111, 109, 98, 105,
+	52, 49, 50, 49, 50, 50, 48, 50, 52, 52, 47, 99, 111, 109, 98, 105,
 	110, 101, 100, 46, 99, 0,
 }
 
@@ -203991,7 +203991,7 @@ if_end240:
 	v157 = *lexer_addr
 	lookahead241 = &v157.F0
 	v158 = *lookahead241
-	call242 = iswlower(v158)
+	call242 = libc.Iswlower(v158)
 	tobool243 = call242 != 0
 	if tobool243 {
 		goto if_then244
@@ -204719,7 +204719,7 @@ func try_lex_heredoc_marker(scanner *Scanner, lexer *TSLexer) bool {
 	v1 = *lexer_addr
 	lookahead = &v1.F0
 	v2 = *lookahead
-	call = iswlower(v2)
+	call = libc.Iswlower(v2)
 	tobool = call != 0
 	if tobool {
 		goto if_then
@@ -204971,13 +204971,13 @@ func try_lex_keyword(possible *byte, keyword *keyword) bool {
 	i24 = new(int64)
 	*possible_addr = possible
 	v0 = *possible_addr
-	call = strlen(v0)
+	call = libc.Strlen(v0)
 	mandat = &keyword.F0
 	v1 = *mandat
-	call1 = strlen(v1)
+	call1 = libc.Strlen(v1)
 	opt = &keyword.F1
 	v2 = *opt
-	call2 = strlen(v2)
+	call2 = libc.Strlen(v2)
 	add = call1 + call2
 	cmp = uint64(call) > uint64(add)
 	if cmp {

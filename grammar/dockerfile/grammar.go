@@ -22469,7 +22469,7 @@ for_body:
 	idxprom7 = int64(uint64(uint32(v14)))
 	arrayidx8 = &heredocs[idxprom7]
 	v15 = *arrayidx8
-	call = strlen(v15)
+	call = libc.Strlen(v15)
 	add = call + int64(1)
 	conv9 = int32(add)
 	*len = conv9
@@ -22657,7 +22657,7 @@ for_body20:
 	v25 = *pos
 	idxprom21 = int64(uint64(uint32(v25)))
 	arrayidx22 = libc.AddPointer(v24, int(idxprom21))
-	call = strlen(arrayidx22)
+	call = libc.Strlen(arrayidx22)
 	conv = int32(call)
 	*len = conv
 	v26 = *len

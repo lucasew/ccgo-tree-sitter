@@ -1,4 +1,4 @@
-// Package grammar binds tree-sitter for pure Go (leaven, no CGO, no modernc).
+// Package grammar binds tree-sitter as pure Go (leaven only: no CGO, no modernc).
 //
 // # Generated files
 //
@@ -8,12 +8,9 @@
 // # Hand-written API
 //
 // api.go, query.go, parse.go, and registry.go wrap leaven symbols with a
-// thread-safe Go API (no modernc, no CGO): Parser/Query serialize native work
-// under a mutex; Tree and Node are immutable pure-Go snapshots safe for
-// concurrent reads.
-//
-// Live parse still depends on leaven correctly modeling tree-sitter's tagged
-// Subtree union. LiveParseReady(lang) probes once (sync.Once) and caches.
+// thread-safe Go API: Parser/Query serialize native work under a mutex; Tree
+// and Node are immutable pure-Go snapshots safe for concurrent reads.
+// LiveParseReady(lang) probes once (sync.Once) that parse completes.
 //
 // # Registry
 //

@@ -5,22 +5,17 @@ import (
 	"runtime"
 	"sync"
 	"unsafe"
-
-	"modernc.org/libc"
 )
 
-// Query wraps a compiled tree-sitter query.
+// Query wraps a compiled tree-sitter query (leaven core).
 //
-// Ownership is GC-managed via runtime cleanup. Explicit Delete is optional.
-//
-// Query methods are safe for concurrent use. An internal mutex serializes
-// access to the native query and TLS; callers do not need external locking.
-// ExecuteMatches re-parses source temporarily (Trees are pure-Go snapshots),
-// runs the query, and frees the native tree before return.
+// Ownership is GC-managed; Delete is optional.
+// Methods are safe for concurrent use via an internal mutex.
+// ExecuteMatches re-parses source (Trees are pure-Go snapshots), runs the
+// query, and frees native state before return.
 type Query struct {
 	mu      sync.Mutex
-	ptr     uintptr
-	tls     *libc.TLS
+	q       *TSQuery
 	lang    Language
 	cleanup runtime.Cleanup
 }
@@ -28,11 +23,26 @@ type Query struct {
 // QueryCursor wraps a query cursor. Cleanup pins the parent *Query.
 // Methods are safe for concurrent use; they lock the parent Query.
 type QueryCursor struct {
-	ptr     uintptr
+	c       *TSQueryCursor
 	query   *Query
 	cleanup runtime.Cleanup
 }
 
+// TSQueryError is the tree-sitter query compile error code (api.h).
+// Leaven does not emit this enum as a named type; values match C.
+type TSQueryError int32
+
+const (
+	TSQueryErrorNone TSQueryError = iota
+	TSQueryErrorSyntax
+	TSQueryErrorNodeType
+	TSQueryErrorField
+	TSQueryErrorCapture
+	TSQueryErrorStructure
+	TSQueryErrorLanguage
+)
+
+// QueryCompileError is returned when NewQuery fails to compile.
 type QueryCompileError struct {
 	Offset uint32
 	Type   TSQueryError
@@ -42,6 +52,7 @@ func (e *QueryCompileError) Error() string {
 	return fmt.Sprintf("query compile error at offset %d: %s", e.Offset, queryErrorName(e.Type))
 }
 
+// QueryCapture is one capture in a QueryMatch.
 type QueryCapture struct {
 	Index     uint32 `json:"index"`
 	Name      string `json:"name"`
@@ -51,67 +62,41 @@ type QueryCapture struct {
 	Text      string `json:"text,omitempty"`
 }
 
+// QueryMatch is one match from ExecuteMatches.
 type QueryMatch struct {
 	ID           uint32         `json:"id"`
 	PatternIndex uint16         `json:"pattern_index"`
 	Captures     []QueryCapture `json:"captures"`
 }
 
-type queryRes struct {
-	ptr uintptr
-	tls *libc.TLS
-}
-
-type cursorRes struct {
-	ptr   uintptr
-	query *Query // pins query until cursor cleanup runs
-}
-
 // NewQuery compiles a query. Callers need not Delete; the GC will free it.
 func NewQuery(lang Language, source string) (*Query, error) {
-	tls := libc.NewTLS()
-
-	cstr, err := libc.CString(source)
-	if err != nil {
-		tls.Close()
-		return nil, err
+	if lang == nil {
+		return nil, &QueryCompileError{Type: TSQueryErrorLanguage}
 	}
-	defer libc.Xfree(nil, cstr)
-
-	var errOffset uint32
-	var errType TSQueryError1
-	ptr := ts_query_new(
-		tls,
-		uintptr(unsafe.Pointer(lang)),
-		cstr,
-		uint32(len(source)),
-		uintptr(unsafe.Pointer(&errOffset)),
-		uintptr(unsafe.Pointer(&errType)),
-	)
-	if ptr == 0 {
-		tls.Close()
+	buf := nulTerminate([]byte(source))
+	var errOffset int32
+	var errType int32
+	q := ts_query_new(lang, &buf[0], int32(len(source)), &errOffset, &errType)
+	if q == nil {
 		return nil, &QueryCompileError{
-			Offset: errOffset,
+			Offset: uint32(errOffset),
 			Type:   TSQueryError(errType),
 		}
 	}
-
-	q := &Query{ptr: ptr, tls: tls, lang: lang}
-	q.cleanup = runtime.AddCleanup(q, freeQuery, queryRes{ptr: ptr, tls: tls})
-	return q, nil
+	out := &Query{q: q, lang: lang}
+	out.cleanup = runtime.AddCleanup(out, freeQuery, q)
+	return out, nil
 }
 
-func freeQuery(r queryRes) {
-	if r.ptr != 0 && r.tls != nil {
-		ts_query_delete(r.tls, r.ptr)
-	}
-	if r.tls != nil {
-		r.tls.Close()
+func freeQuery(q *TSQuery) {
+	if q != nil {
+		ts_query_delete(q)
 	}
 }
 
 func freeCursor(r cursorRes) {
-	if r.ptr == 0 || r.query == nil {
+	if r.c == nil || r.query == nil {
 		return
 	}
 	r.query.mu.Lock()
@@ -119,12 +104,17 @@ func freeCursor(r cursorRes) {
 	freeCursorUnlocked(r)
 }
 
+type cursorRes struct {
+	c     *TSQueryCursor
+	query *Query
+}
+
 // freeCursorUnlocked deletes the native cursor. Caller must hold r.query.mu.
 func freeCursorUnlocked(r cursorRes) {
-	if r.ptr == 0 || r.query == nil || r.query.tls == nil {
+	if r.c == nil {
 		return
 	}
-	ts_query_cursor_delete(r.query.tls, r.ptr)
+	ts_query_cursor_delete(r.c)
 }
 
 // Delete eagerly frees the query. Optional: the GC will free it if omitted.
@@ -134,13 +124,12 @@ func (q *Query) Delete() {
 	}
 	q.mu.Lock()
 	defer q.mu.Unlock()
-	if q.ptr == 0 {
+	if q.q == nil {
 		return
 	}
 	q.cleanup.Stop()
-	freeQuery(queryRes{ptr: q.ptr, tls: q.tls})
-	q.ptr = 0
-	q.tls = nil
+	freeQuery(q.q)
+	q.q = nil
 	q.lang = nil
 }
 
@@ -155,25 +144,25 @@ func (q *Query) NewCursor() *QueryCursor {
 }
 
 func (q *Query) newCursorUnlocked() *QueryCursor {
-	if q.ptr == 0 || q.tls == nil {
+	if q.q == nil {
 		return &QueryCursor{}
 	}
-	ptr := ts_query_cursor_new(q.tls)
-	c := &QueryCursor{ptr: ptr, query: q}
-	if ptr != 0 {
-		c.cleanup = runtime.AddCleanup(c, freeCursor, cursorRes{ptr: ptr, query: q})
+	c := ts_query_cursor_new()
+	out := &QueryCursor{c: c, query: q}
+	if c != nil {
+		out.cleanup = runtime.AddCleanup(out, freeCursor, cursorRes{c: c, query: q})
 	}
-	return c
+	return out
 }
 
 // Delete eagerly frees the cursor. Optional: the GC will free it if omitted.
 func (c *QueryCursor) Delete() {
-	if c == nil || c.ptr == 0 || c.query == nil {
+	if c == nil || c.c == nil || c.query == nil {
 		return
 	}
 	c.cleanup.Stop()
-	freeCursor(cursorRes{ptr: c.ptr, query: c.query})
-	c.ptr = 0
+	freeCursor(cursorRes{c: c.c, query: c.query})
+	c.c = nil
 	c.query = nil
 }
 
@@ -185,7 +174,7 @@ func (c *QueryCursor) Delete() {
 // Returns nil if the query is unusable, root is nil/null, or reparse fails.
 // Safe for concurrent use.
 func (q *Query) ExecuteMatches(root *Node, source []byte) []QueryMatch {
-	if q == nil || q.ptr == 0 {
+	if q == nil || q.q == nil {
 		return nil
 	}
 	if root == nil || root.data == nil || root.IsNull() {
@@ -205,11 +194,10 @@ func (q *Query) ExecuteMatches(root *Node, source []byte) []QueryMatch {
 
 	q.mu.Lock()
 	defer q.mu.Unlock()
-	if q.tls == nil || q.ptr == 0 {
+	if q.q == nil {
 		return nil
 	}
 
-	// Temporary parser for a native tree (snapshot path cannot feed queries).
 	p := NewParser()
 	defer p.Delete()
 	if !p.SetLanguage(lang) {
@@ -219,61 +207,61 @@ func (q *Query) ExecuteMatches(root *Node, source []byte) []QueryMatch {
 	p.mu.Lock()
 	defer p.mu.Unlock()
 
-	treePtr := p.parseNative(source)
-	if treePtr == 0 {
+	tree := p.parseNativeLocked(source)
+	if tree == nil {
 		return nil
 	}
-	defer ts_tree_delete(p.tls, treePtr)
+	defer ts_tree_delete(tree)
 
-	nativeRoot := ts_tree_root_node(p.tls, treePtr)
-	nativeNode := walkChildPath(p.tls, nativeRoot, root.data.path)
-	if ts_node_is_null(p.tls, nativeNode) != 0 {
+	var nativeRoot TSNode
+	ts_tree_root_node(&nativeRoot, tree)
+	nativeNode := walkChildPath(&nativeRoot, root.data.path)
+	if ts_node_is_null(nativeNode) {
 		return nil
 	}
 
 	cursor := q.newCursorUnlocked()
-	if cursor.ptr == 0 {
+	if cursor.c == nil {
 		return nil
 	}
 	defer func() {
 		cursor.cleanup.Stop()
-		freeCursorUnlocked(cursorRes{ptr: cursor.ptr, query: q})
-		cursor.ptr = 0
+		freeCursorUnlocked(cursorRes{c: cursor.c, query: q})
+		cursor.c = nil
 		cursor.query = nil
 	}()
 
-	ts_query_cursor_exec(q.tls, cursor.ptr, q.ptr, nativeNode)
+	ts_query_cursor_exec(cursor.c, q.q, nativeNode)
 
 	matches := make([]QueryMatch, 0)
 	var rawMatch TSQueryMatch
-	for ts_query_cursor_next_match(q.tls, cursor.ptr, uintptr(unsafe.Pointer(&rawMatch))) != 0 {
-		captures := make([]QueryCapture, 0, rawMatch.Fcapture_count)
-		for i := uint16(0); i < rawMatch.Fcapture_count; i++ {
-			rawCapture := (*TSQueryCapture)(unsafe.Pointer(rawMatch.Fcaptures + uintptr(i)*unsafe.Sizeof(TSQueryCapture{})))
-			name := q.captureNameUnlocked(rawCapture.Findex)
-			start := ts_node_start_byte(q.tls, rawCapture.Fnode)
-			end := ts_node_end_byte(q.tls, rawCapture.Fnode)
-			typePtr := ts_node_type(q.tls, rawCapture.Fnode)
-			typeName := ""
-			if typePtr != 0 {
-				typeName = libc.GoString(typePtr)
+	for ts_query_cursor_next_match(cursor.c, &rawMatch) {
+		nCap := int(rawMatch.F2) // capture_count
+		captures := make([]QueryCapture, 0, nCap)
+		if nCap > 0 && rawMatch.F3 != nil {
+			rawCaps := unsafe.Slice(rawMatch.F3, nCap)
+			for i := range rawCaps {
+				cap := &rawCaps[i]
+				node := &cap.F0
+				idx := uint32(cap.F1)
+				start := uint32(ts_node_start_byte(node))
+				end := uint32(ts_node_end_byte(node))
+				qc := QueryCapture{
+					Index:     idx,
+					Name:      q.captureNameUnlocked(idx),
+					Type:      cString(ts_node_type(node)),
+					StartByte: start,
+					EndByte:   end,
+				}
+				if int(end) <= len(source) && start <= end {
+					qc.Text = string(source[start:end])
+				}
+				captures = append(captures, qc)
 			}
-			capture := QueryCapture{
-				Index:     rawCapture.Findex,
-				Name:      name,
-				Type:      typeName,
-				StartByte: start,
-				EndByte:   end,
-			}
-			if int(end) <= len(source) && start <= end {
-				capture.Text = string(source[start:end])
-			}
-			captures = append(captures, capture)
 		}
-
 		matches = append(matches, QueryMatch{
-			ID:           rawMatch.Fid,
-			PatternIndex: rawMatch.Fpattern_index,
+			ID:           uint32(rawMatch.F0),
+			PatternIndex: uint16(rawMatch.F1),
 			Captures:     captures,
 		})
 	}
@@ -281,26 +269,32 @@ func (q *Query) ExecuteMatches(root *Node, source []byte) []QueryMatch {
 }
 
 // walkChildPath follows child indices from root (empty path = root).
-func walkChildPath(tls *libc.TLS, root TSNode, path []uint32) TSNode {
-	n := root
-	for _, i := range path {
-		if ts_node_is_null(tls, n) != 0 {
-			return n
-		}
-		n = ts_node_child(tls, n, i)
+// The returned *TSNode points at a heap copy valid for the caller.
+func walkChildPath(root *TSNode, path []uint32) *TSNode {
+	if root == nil {
+		return nil
 	}
-	return n
+	cur := *root
+	for _, i := range path {
+		if ts_node_is_null(&cur) {
+			out := cur
+			return &out
+		}
+		var child TSNode
+		ts_node_child(&child, &cur, int32(i))
+		cur = child
+	}
+	out := cur
+	return &out
 }
 
 func (q *Query) captureNameUnlocked(captureIndex uint32) string {
-	var length uint32
-	ptr := ts_query_capture_name_for_id(q.tls, q.ptr, captureIndex, uintptr(unsafe.Pointer(&length)))
-	if ptr == 0 || length == 0 {
+	var length int32
+	ptr := ts_query_capture_name_for_id(q.q, int32(captureIndex), &length)
+	if ptr == nil || length == 0 {
 		return ""
 	}
-
-	data := unsafe.Slice((*byte)(unsafe.Pointer(ptr)), int(length))
-	return string(data)
+	return string(unsafe.Slice(ptr, int(length)))
 }
 
 func queryErrorName(errType TSQueryError) string {

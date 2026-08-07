@@ -1,5 +1,16 @@
 package grammar_meson
 
-// Language package for meson (leaven-generated grammar.go).
-// Registration against the hand-written grammar API is TODO once core types match.
-func init() {}
+import (
+	"unsafe"
+
+	"github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar"
+)
+
+// Language returns the TSLanguage for meson (leaven-generated).
+func Language() grammar.Language {
+	return (*grammar.TSLanguage)(unsafe.Pointer(tree_sitter_meson()))
+}
+
+func init() {
+	grammar.Register("meson", Language())
+}

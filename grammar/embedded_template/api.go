@@ -1,5 +1,16 @@
 package grammar_embedded_template
 
-// Language package for embedded_template (leaven-generated grammar.go).
-// Registration against the hand-written grammar API is TODO once core types match.
-func init() {}
+import (
+	"unsafe"
+
+	"github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar"
+)
+
+// Language returns the TSLanguage for embedded_template (leaven-generated).
+func Language() grammar.Language {
+	return (*grammar.TSLanguage)(unsafe.Pointer(tree_sitter_embedded_template()))
+}
+
+func init() {
+	grammar.Register("embedded_template", Language())
+}

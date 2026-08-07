@@ -1,5 +1,16 @@
 package grammar_ssh_config
 
-// Language package for ssh_config (leaven-generated grammar.go).
-// Registration against the hand-written grammar API is TODO once core types match.
-func init() {}
+import (
+	"unsafe"
+
+	"github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar"
+)
+
+// Language returns the TSLanguage for ssh_config (leaven-generated).
+func Language() grammar.Language {
+	return (*grammar.TSLanguage)(unsafe.Pointer(tree_sitter_ssh_config()))
+}
+
+func init() {
+	grammar.Register("ssh_config", Language())
+}

@@ -1,5 +1,16 @@
 package grammar_fluent
 
-// Language package for fluent (leaven-generated grammar.go).
-// Registration against the hand-written grammar API is TODO once core types match.
-func init() {}
+import (
+	"unsafe"
+
+	"github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar"
+)
+
+// Language returns the TSLanguage for fluent (leaven-generated).
+func Language() grammar.Language {
+	return (*grammar.TSLanguage)(unsafe.Pointer(tree_sitter_fluent()))
+}
+
+func init() {
+	grammar.Register("fluent", Language())
+}

@@ -1,5 +1,16 @@
 package grammar_ispc
 
-// Language package for ispc (leaven-generated grammar.go).
-// Registration against the hand-written grammar API is TODO once core types match.
-func init() {}
+import (
+	"unsafe"
+
+	"github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar"
+)
+
+// Language returns the TSLanguage for ispc (leaven-generated).
+func Language() grammar.Language {
+	return (*grammar.TSLanguage)(unsafe.Pointer(tree_sitter_ispc()))
+}
+
+func init() {
+	grammar.Register("ispc", Language())
+}

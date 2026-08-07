@@ -93,8 +93,8 @@ func findLiveCoreAPI(dest string) (string, error) {
 	return "", fmt.Errorf("core api.go missing at %s and hand-maintained grammar/api.go not found relative to outputDir or cwd; restore grammar/api.go before running codegen", dest)
 }
 
-// GenerateAPIWrapper writes a minimal language package entry (no scanner).
-// Leaven emits tree_sitter_<name>() with no TLS arg.
+// GenerateAPIWrapper writes the language package entry that registers with the
+// hand-written grammar API. Leaven emits tree_sitter_<name>() with no TLS arg.
 func GenerateAPIWrapper(outputDir, grammarName string) error {
 	if err := ensureCoreAPI(outputDir); err != nil {
 		return err
@@ -102,15 +102,26 @@ func GenerateAPIWrapper(outputDir, grammarName string) error {
 
 	grammarAPI := fmt.Sprintf(`package grammar_%s
 
-// Language package for %s (leaven-generated grammar.go).
-// Registration against the hand-written grammar API is TODO once core types match.
-func init() {}
-`, grammarName, grammarName)
+import (
+	"unsafe"
+
+	"github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar"
+)
+
+// Language returns the TSLanguage for %s (leaven-generated).
+func Language() grammar.Language {
+	return (*grammar.TSLanguage)(unsafe.Pointer(tree_sitter_%s()))
+}
+
+func init() {
+	grammar.Register(%q, Language())
+}
+`, grammarName, grammarName, grammarName, grammarName)
 
 	return os.WriteFile(filepath.Join(outputDir, grammarName, "api.go"), []byte(grammarAPI), 0644)
 }
 
-// GenerateAPIWrapperWithScanner is the same stub for grammars with scanners.
+// GenerateAPIWrapperWithScanner is the same wrapper for grammars with scanners.
 func GenerateAPIWrapperWithScanner(outputDir, grammarName string) error {
 	return GenerateAPIWrapper(outputDir, grammarName)
 }

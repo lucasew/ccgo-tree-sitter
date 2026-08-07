@@ -1,18 +1,10 @@
 package grammar
 
-import (
-	"testing"
-
-	"modernc.org/libc"
-)
+import "testing"
 
 func TestExecuteMatchesNilGuards(t *testing.T) {
-	tls := libc.NewTLS()
-	t.Cleanup(tls.Close)
-
-	// Non-zero ptr with real TLS: NewCursor can allocate, but root checks
-	// must prevent ts_query_cursor_exec on a fake query pointer.
-	fakeQ := &Query{ptr: 1, tls: tls}
+	// Non-nil query with garbage pointer: root checks must prevent native use.
+	fakeQ := &Query{q: new(TSQuery)}
 
 	cases := []struct {
 		name string

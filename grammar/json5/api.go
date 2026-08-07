@@ -1,5 +1,16 @@
 package grammar_json5
 
-// Language package for json5 (leaven-generated grammar.go).
-// Registration against the hand-written grammar API is TODO once core types match.
-func init() {}
+import (
+	"unsafe"
+
+	"github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar"
+)
+
+// Language returns the TSLanguage for json5 (leaven-generated).
+func Language() grammar.Language {
+	return (*grammar.TSLanguage)(unsafe.Pointer(tree_sitter_json5()))
+}
+
+func init() {
+	grammar.Register("json5", Language())
+}

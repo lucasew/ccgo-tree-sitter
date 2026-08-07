@@ -1,5 +1,16 @@
 package grammar_fsharp_signature
 
-// Language package for fsharp_signature (leaven-generated grammar.go).
-// Registration against the hand-written grammar API is TODO once core types match.
-func init() {}
+import (
+	"unsafe"
+
+	"github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar"
+)
+
+// Language returns the TSLanguage for fsharp_signature (leaven-generated).
+func Language() grammar.Language {
+	return (*grammar.TSLanguage)(unsafe.Pointer(tree_sitter_fsharp_signature()))
+}
+
+func init() {
+	grammar.Register("fsharp_signature", Language())
+}

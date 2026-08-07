@@ -1,5 +1,16 @@
 package grammar_c_sharp
 
-// Language package for c_sharp (leaven-generated grammar.go).
-// Registration against the hand-written grammar API is TODO once core types match.
-func init() {}
+import (
+	"unsafe"
+
+	"github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar"
+)
+
+// Language returns the TSLanguage for c_sharp (leaven-generated).
+func Language() grammar.Language {
+	return (*grammar.TSLanguage)(unsafe.Pointer(tree_sitter_c_sharp()))
+}
+
+func init() {
+	grammar.Register("c_sharp", Language())
+}

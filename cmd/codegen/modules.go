@@ -17,6 +17,9 @@ const (
 	grammarModulePath = rootModulePath + "/grammar"
 	moduleGoVersion   = "1.25.0"
 	localPseudoVer    = "v0.0.0"
+	// leavenModuleVer must match the root go.mod require (lewtec replace).
+	leavenModulePath = "github.com/andybalholm/leaven"
+	leavenModuleVer  = "v0.0.0-20260807161919-d7e0c93ee95b"
 )
 
 // ensureGrammarModules writes grammar/go.mod, grammar/<lang>/go.mod (with local
@@ -119,7 +122,9 @@ func writeCoreGoMod(grammarDir string) error {
 	content := fmt.Sprintf(`module %s
 
 go %s
-`, grammarModulePath, moduleGoVersion)
+
+require %s %s
+`, grammarModulePath, moduleGoVersion, leavenModulePath, leavenModuleVer)
 	return os.WriteFile(filepath.Join(grammarDir, "go.mod"), []byte(content), 0644)
 }
 
@@ -128,10 +133,16 @@ func writeLangGoMod(grammarDir, lang string) error {
 
 go %s
 
-require %s %s
+require (
+	%s %s
+	%s %s
+)
 
 replace %s => ../
-`, grammarModulePath, lang, moduleGoVersion, grammarModulePath, localPseudoVer, grammarModulePath)
+`, grammarModulePath, lang, moduleGoVersion,
+		grammarModulePath, localPseudoVer,
+		leavenModulePath, leavenModuleVer,
+		grammarModulePath)
 	return os.WriteFile(filepath.Join(grammarDir, lang, "go.mod"), []byte(content), 0644)
 }
 

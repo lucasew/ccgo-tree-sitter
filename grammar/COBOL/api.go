@@ -1,5 +1,16 @@
 package grammar_COBOL
 
-// Language package for COBOL (leaven-generated grammar.go).
-// Registration against the hand-written grammar API is TODO once core types match.
-func init() {}
+import (
+	"unsafe"
+
+	"github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar"
+)
+
+// Language returns the TSLanguage for COBOL (leaven-generated).
+func Language() grammar.Language {
+	return (*grammar.TSLanguage)(unsafe.Pointer(tree_sitter_COBOL()))
+}
+
+func init() {
+	grammar.Register("COBOL", Language())
+}

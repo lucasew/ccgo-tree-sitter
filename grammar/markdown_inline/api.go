@@ -1,5 +1,16 @@
 package grammar_markdown_inline
 
-// Language package for markdown_inline (leaven-generated grammar.go).
-// Registration against the hand-written grammar API is TODO once core types match.
-func init() {}
+import (
+	"unsafe"
+
+	"github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar"
+)
+
+// Language returns the TSLanguage for markdown_inline (leaven-generated).
+func Language() grammar.Language {
+	return (*grammar.TSLanguage)(unsafe.Pointer(tree_sitter_markdown_inline()))
+}
+
+func init() {
+	grammar.Register("markdown_inline", Language())
+}

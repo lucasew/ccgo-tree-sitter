@@ -1,5 +1,16 @@
 package grammar_gosum
 
-// Language package for gosum (leaven-generated grammar.go).
-// Registration against the hand-written grammar API is TODO once core types match.
-func init() {}
+import (
+	"unsafe"
+
+	"github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar"
+)
+
+// Language returns the TSLanguage for gosum (leaven-generated).
+func Language() grammar.Language {
+	return (*grammar.TSLanguage)(unsafe.Pointer(tree_sitter_gosum()))
+}
+
+func init() {
+	grammar.Register("gosum", Language())
+}

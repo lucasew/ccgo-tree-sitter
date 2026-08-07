@@ -64,7 +64,7 @@ type TSLexer struct {
 	F4 func(*TSLexer) int32
 	F5 func(*TSLexer) bool
 	F6 func(*TSLexer) bool
-	F7 func(*TSLexer, *byte)
+	F7 func(*TSLexer, *byte, ...interface{})
 }
 
 type TSLexerMode struct {
@@ -190340,7 +190340,7 @@ while_cond:
 	v10 = *lexer_addr
 	lookahead = &v10.F0
 	v11 = *lookahead
-	call9 = iswspace(v11)
+	call9 = libc.Iswspace(v11)
 	tobool10 = call9 != 0
 	if tobool10 {
 		goto while_body

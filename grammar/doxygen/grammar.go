@@ -74,38 +74,6 @@ type TSSymbolMetadata struct {
 	F2 byte
 }
 
-type _IO_FILE struct {
-	F0 int32
-	F1 *byte
-	F2 *byte
-	F3 *byte
-	F4 *byte
-	F5 *byte
-	F6 *byte
-	F7 *byte
-	F8 *byte
-	F9 *byte
-	F10 *byte
-	F11 *byte
-	F12 *_IO_marker
-	F13 *_IO_FILE
-	F14 int32
-	F15 int32
-	F16 int64
-	F17 int16
-	F18 byte
-	F19 [1]byte
-	F20 *byte
-	F21 int64
-	F22 *_IO_codecvt
-	F23 *_IO_wide_data
-	F24 *_IO_FILE
-	F25 *byte
-	F26 int64
-	F27 int32
-	F28 [20]byte
-}
-
 type _IO_codecvt struct {
 }
 
@@ -12601,9 +12569,9 @@ func tree_sitter_doxygen_external_scanner_deserialize(payload *byte, buffer *byt
 	var scanner **Scanner
 	var payload_addr, buffer_addr **byte
 	var v1, v5, v8 *Scanner
-	var v11 *_IO_FILE
 	var v0, v3, arrayidx, v6, arrayidx1 *byte
 	var length_addr, codeblock_delimiter_length, codeblock_start_column *int32
+	var v11 *os.File
 	var cmp, cmp3, cmp5 bool
 	var v4, v7 byte
 	var v2, conv, conv2, v9, v10, v12, call int32
@@ -12666,8 +12634,8 @@ land_lhs_true:
 if_then7:
 	v11 = os.Stderr
 	v12 = *length_addr
-	call = fprintf(v11, &_str[int64(0)], v12)
-	abort()
+	call = libc.Fprintf(v11, &_str[int64(0)], v12)
+	libc.Abort()
 	panic("unreachable")
 
 if_end:
@@ -12748,7 +12716,7 @@ while_cond:
 	v6 = *lexer_addr
 	lookahead = &v6.F0
 	v7 = *lookahead
-	call = iswspace(v7)
+	call = libc.Iswspace(v7)
 	tobool3 = call != 0
 	if tobool3 {
 		goto land_lhs_true5
@@ -12986,7 +12954,7 @@ land_rhs48:
 	v56 = *lexer_addr
 	lookahead49 = &v56.F0
 	v57 = *lookahead49
-	call50 = iswspace(v57)
+	call50 = libc.Iswspace(v57)
 	tobool51 = call50 != 0
 	if tobool51 {
 		v62 = true
@@ -13101,7 +13069,7 @@ while_cond77:
 	v76 = *lexer_addr
 	lookahead78 = &v76.F0
 	v77 = *lookahead78
-	call79 = iswspace(v77)
+	call79 = libc.Iswspace(v77)
 	tobool80 = call79 != 0
 	if tobool80 {
 		goto land_rhs81
@@ -13197,7 +13165,7 @@ while_body100:
 	goto while_cond97
 
 while_end102:
-	call103 = __ctype_b_loc()
+	call103 = libc.CtypeBLoc()
 	v99 = *call103
 	v100 = *lexer_addr
 	lookahead104 = &v100.F0
@@ -13245,7 +13213,7 @@ if_end112:
 	}
 
 land_lhs_true116:
-	call117 = __ctype_b_loc()
+	call117 = libc.CtypeBLoc()
 	v109 = *call117
 	v110 = *lexer_addr
 	lookahead118 = &v110.F0
@@ -13266,7 +13234,7 @@ if_then124:
 	goto while_cond125
 
 while_cond125:
-	call126 = __ctype_b_loc()
+	call126 = libc.CtypeBLoc()
 	v113 = *call126
 	v114 = *lexer_addr
 	lookahead127 = &v114.F0
@@ -13300,7 +13268,7 @@ while_cond136:
 	v121 = *lexer_addr
 	lookahead137 = &v121.F0
 	v122 = *lookahead137
-	call138 = iswspace(v122)
+	call138 = libc.Iswspace(v122)
 	tobool139 = call138 != 0
 	if tobool139 {
 		goto land_rhs140
@@ -13389,7 +13357,7 @@ while_cond165:
 	v137 = *lexer_addr
 	lookahead166 = &v137.F0
 	v138 = *lookahead166
-	call167 = iswspace(v138)
+	call167 = libc.Iswspace(v138)
 	tobool168 = call167 != 0
 	if tobool168 {
 		goto while_body169
@@ -13781,6 +13749,7 @@ func tree_sitter_doxygen_external_scanner_destroy(payload *byte) {
 	*scanner = v1
 	v2 = *scanner
 	v3 = (*byte)(unsafe.Pointer(v2))
+	libc.Free(v3)
 }
 
 func tree_sitter_doxygen() *TSLanguage {

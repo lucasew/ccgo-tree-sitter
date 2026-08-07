@@ -73,7 +73,7 @@ type TSLexer struct {
 	F4 func(*TSLexer) int32
 	F5 func(*TSLexer) bool
 	F6 func(*TSLexer) bool
-	F7 func(*TSLexer, *byte)
+	F7 func(*TSLexer, *byte, ...interface{})
 }
 
 type TSLexerMode struct {
@@ -132,10 +132,10 @@ type TSParseActionEntry struct {
 
 var _str [12]byte = [12]byte{116, 109, 112, 32, 33, 61, 32, 78, 85, 76, 76, 0}
 
-var _str_1 [39]byte = [39]byte{
+var _str_1 [40]byte = [40]byte{
 	47, 116, 109, 112, 47, 108, 101, 97, 118, 101, 110, 45, 110, 103, 105, 110,
-	120, 45, 55, 55, 53, 55, 53, 50, 57, 53, 55, 47, 99, 111, 109, 98,
-	105, 110, 101, 100, 46, 99, 0,
+	120, 45, 51, 55, 51, 52, 48, 57, 50, 49, 54, 49, 47, 99, 111, 109,
+	98, 105, 110, 101, 100, 46, 99, 0,
 }
 
 var __PRETTY_FUNCTION___tree_sitter_nginx_external_scanner_deserialize [88]byte = [88]byte{
@@ -13517,7 +13517,7 @@ cond_false:
 cond_end:
 	conv = int64(uint64(uint32(cond)))
 	mul11 = conv * int64(2)
-	call = realloc(v9, mul11)
+	call = libc.Realloc(v9, mul11)
 	*tmp = call
 	v14 = *tmp
 	cmp12 = v14 != nil
@@ -13531,7 +13531,7 @@ if_then14:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 81, &__PRETTY_FUNCTION___tree_sitter_nginx_external_scanner_deserialize[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 81, &__PRETTY_FUNCTION___tree_sitter_nginx_external_scanner_deserialize[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -13660,7 +13660,7 @@ cond_false58:
 cond_end62:
 	conv64 = int64(uint64(uint32(cond63)))
 	mul65 = conv64 * int64(2)
-	call66 = realloc(v36, mul65)
+	call66 = libc.Realloc(v36, mul65)
 	*tmp49 = call66
 	v41 = *tmp49
 	cmp67 = v41 != nil
@@ -13674,7 +13674,7 @@ if_then69:
 	goto if_end71
 
 if_else70:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 85, &__PRETTY_FUNCTION___tree_sitter_nginx_external_scanner_deserialize[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 85, &__PRETTY_FUNCTION___tree_sitter_nginx_external_scanner_deserialize[int64(0)])
 	panic("unreachable")
 
 if_end71:
@@ -14031,7 +14031,7 @@ cond_false:
 cond_end:
 	conv40 = int64(uint64(uint32(cond)))
 	mul41 = conv40 * int64(2)
-	call42 = realloc(v38, mul41)
+	call42 = libc.Realloc(v38, mul41)
 	*tmp = call42
 	v43 = *tmp
 	cmp43 = v43 != nil
@@ -14045,7 +14045,7 @@ if_then45:
 	goto if_end47
 
 if_else46:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 130, &__PRETTY_FUNCTION___tree_sitter_nginx_external_scanner_scan[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 130, &__PRETTY_FUNCTION___tree_sitter_nginx_external_scanner_scan[int64(0)])
 	panic("unreachable")
 
 if_end47:
@@ -14219,11 +14219,13 @@ if_then:
 	data2 = &indents1.F2
 	v5 = *data2
 	v6 = (*byte)(unsafe.Pointer(v5))
+	libc.Free(v6)
 	goto if_end
 
 if_end:
 	v7 = *scanner
 	v8 = (*byte)(unsafe.Pointer(v7))
+	libc.Free(v8)
 }
 
 func tree_sitter_nginx() *TSLanguage {

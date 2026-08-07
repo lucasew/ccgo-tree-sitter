@@ -110,7 +110,7 @@ var _str [26]byte = [26]byte{
 
 var _str_1 [39]byte = [39]byte{
 	47, 116, 109, 112, 47, 108, 101, 97, 118, 101, 110, 45, 112, 111, 110, 121,
-	45, 51, 56, 56, 56, 53, 55, 56, 52, 51, 52, 47, 99, 111, 109, 98,
+	45, 49, 48, 56, 49, 53, 52, 48, 53, 52, 52, 47, 99, 111, 109, 98,
 	105, 110, 101, 100, 46, 99, 0,
 }
 
@@ -122882,6 +122882,7 @@ func tree_sitter_pony_external_scanner_destroy(payload *byte) {
 	*scanner = v1
 	v2 = *scanner
 	v3 = (*byte)(unsafe.Pointer(v2))
+	libc.Free(v3)
 }
 
 func tree_sitter_pony_external_scanner_serialize(payload *byte, buffer *byte) int32 {
@@ -122948,7 +122949,7 @@ if_then3:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 41, &__PRETTY_FUNCTION___tree_sitter_pony_external_scanner_deserialize[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 41, &__PRETTY_FUNCTION___tree_sitter_pony_external_scanner_deserialize[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -123016,7 +123017,7 @@ while_cond:
 	v4 = *lexer_addr
 	lookahead = &v4.F0
 	v5 = *lookahead
-	call = iswspace(v5)
+	call = libc.Iswspace(v5)
 	tobool1 = call != 0
 	if tobool1 {
 		goto land_lhs_true
@@ -123087,7 +123088,7 @@ while_cond9:
 	v16 = *lexer_addr
 	lookahead10 = &v16.F0
 	v17 = *lookahead10
-	call11 = iswspace(v17)
+	call11 = libc.Iswspace(v17)
 	tobool12 = call11 != 0
 	if tobool12 {
 		goto while_body13
@@ -123349,7 +123350,7 @@ while_cond66:
 	v68 = *lexer_addr
 	lookahead67 = &v68.F0
 	v69 = *lookahead67
-	call68 = iswspace(v69)
+	call68 = libc.Iswspace(v69)
 	tobool69 = call68 != 0
 	if tobool69 {
 		goto while_body70

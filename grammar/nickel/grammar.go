@@ -68,7 +68,7 @@ type TSLexer struct {
 	F4 func(*TSLexer) int32
 	F5 func(*TSLexer) bool
 	F6 func(*TSLexer) bool
-	F7 func(*TSLexer, *byte)
+	F7 func(*TSLexer, *byte, ...interface{})
 }
 
 type TSLexerMode struct {
@@ -3894,7 +3894,7 @@ var _str_1 [12]byte = [12]byte{116, 109, 112, 32, 33, 61, 32, 78, 85, 76, 76, 0}
 
 var _str_2 [41]byte = [41]byte{
 	47, 116, 109, 112, 47, 108, 101, 97, 118, 101, 110, 45, 110, 105, 99, 107,
-	101, 108, 45, 50, 56, 55, 55, 50, 57, 52, 55, 53, 50, 47, 99, 111,
+	101, 108, 45, 50, 48, 56, 48, 48, 56, 56, 57, 48, 57, 47, 99, 111,
 	109, 98, 105, 110, 101, 100, 46, 99, 0,
 }
 
@@ -56859,7 +56859,7 @@ if_end:
 while_cond:
 	v16 = *lexer_addr
 	call = lookahead(v16)
-	call21 = iswspace(call)
+	call21 = libc.Iswspace(call)
 	tobool22 = call21 != 0
 	if tobool22 {
 		goto while_body
@@ -57319,7 +57319,7 @@ if_then6:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_3[int64(0)], &_str_2[int64(0)], 102, &__PRETTY_FUNCTION___deserialize[int64(0)])
+	libc.AssertFail(&_str_3[int64(0)], &_str_2[int64(0)], 102, &__PRETTY_FUNCTION___deserialize[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -57387,7 +57387,7 @@ cond_false:
 cond_end:
 	conv25 = int64(uint64(uint32(cond)))
 	mul26 = conv25 * int64(1)
-	call = realloc(v13, mul26)
+	call = libc.Realloc(v13, mul26)
 	*tmp = call
 	v18 = *tmp
 	cmp27 = v18 != nil
@@ -57401,7 +57401,7 @@ if_then29:
 	goto if_end31
 
 if_else30:
-	__assert_fail(&_str_1[int64(0)], &_str_2[int64(0)], 104, &__PRETTY_FUNCTION___deserialize[int64(0)])
+	libc.AssertFail(&_str_1[int64(0)], &_str_2[int64(0)], 104, &__PRETTY_FUNCTION___deserialize[int64(0)])
 	panic("unreachable")
 
 if_end31:
@@ -57507,11 +57507,13 @@ if_then:
 	expected_percent_count1 = &v4.F0
 	data2 = &expected_percent_count1.F2
 	v5 = *data2
+	libc.Free(v5)
 	goto if_end
 
 if_end:
 	v6 = *scanner
 	v7 = (*byte)(unsafe.Pointer(v6))
+	libc.Free(v7)
 }
 
 func tree_sitter_nickel() *TSLanguage {
@@ -76908,7 +76910,7 @@ cond_false:
 cond_end:
 	conv = int64(uint64(uint32(cond)))
 	mul9 = conv * int64(1)
-	call = realloc(v6, mul9)
+	call = libc.Realloc(v6, mul9)
 	*tmp = call
 	v11 = *tmp
 	cmp10 = v11 != nil
@@ -76922,7 +76924,7 @@ if_then12:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_1[int64(0)], &_str_2[int64(0)], 242, &__PRETTY_FUNCTION___scan_str_start[int64(0)])
+	libc.AssertFail(&_str_1[int64(0)], &_str_2[int64(0)], 242, &__PRETTY_FUNCTION___scan_str_start[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -77219,7 +77221,7 @@ cond_false:
 cond_end:
 	conv = int64(uint64(uint32(cond)))
 	mul9 = conv * int64(1)
-	call = realloc(v6, mul9)
+	call = libc.Realloc(v6, mul9)
 	*tmp = call
 	v11 = *tmp
 	cmp10 = v11 != nil
@@ -77233,7 +77235,7 @@ if_then12:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_1[int64(0)], &_str_2[int64(0)], 300, &__PRETTY_FUNCTION___scan_quoted_enum_tag_start[int64(0)])
+	libc.AssertFail(&_str_1[int64(0)], &_str_2[int64(0)], 300, &__PRETTY_FUNCTION___scan_quoted_enum_tag_start[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -77550,7 +77552,7 @@ cond_false:
 cond_end:
 	conv = int64(uint64(uint32(cond)))
 	mul25 = conv * int64(1)
-	call26 = realloc(v18, mul25)
+	call26 = libc.Realloc(v18, mul25)
 	*tmp = call26
 	v23 = *tmp
 	cmp27 = v23 != nil
@@ -77564,7 +77566,7 @@ if_then29:
 	goto if_end31
 
 if_else30:
-	__assert_fail(&_str_1[int64(0)], &_str_2[int64(0)], 209, &__PRETTY_FUNCTION___scan_multstr_start[int64(0)])
+	libc.AssertFail(&_str_1[int64(0)], &_str_2[int64(0)], 209, &__PRETTY_FUNCTION___scan_multstr_start[int64(0)])
 	panic("unreachable")
 
 if_end31:

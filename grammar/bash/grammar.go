@@ -119,7 +119,7 @@ type TSLexer struct {
 	F4 func(*TSLexer) int32
 	F5 func(*TSLexer) bool
 	F6 func(*TSLexer) bool
-	F7 func(*TSLexer, *byte)
+	F7 func(*TSLexer, *byte, ...interface{})
 }
 
 type TSLexerMode struct {
@@ -185,7 +185,7 @@ var _str [43]byte = [43]byte{
 
 var _str_1 [39]byte = [39]byte{
 	47, 116, 109, 112, 47, 108, 101, 97, 118, 101, 110, 45, 98, 97, 115, 104,
-	45, 50, 50, 51, 54, 51, 53, 49, 57, 48, 48, 47, 99, 111, 109, 98,
+	45, 49, 56, 51, 53, 57, 53, 55, 49, 56, 50, 47, 99, 111, 109, 98,
 	105, 110, 101, 100, 46, 99, 0,
 }
 
@@ -273864,7 +273864,7 @@ lor_lhs_false:
 	v5 = *lexer_addr
 	lookahead1 = &v5.F0
 	v6 = *lookahead1
-	call2 = iswspace(v6)
+	call2 = libc.Iswspace(v6)
 	tobool3 = call2 != 0
 	if tobool3 {
 		goto if_end76
@@ -274087,7 +274087,7 @@ if_end50:
 	v49 = *lexer_addr
 	lookahead51 = &v49.F0
 	v50 = *lookahead51
-	call52 = iswspace(v50)
+	call52 = libc.Iswspace(v50)
 	tobool53 = call52 != 0
 	if tobool53 {
 		v54 = true
@@ -274194,7 +274194,7 @@ if_end76:
 	v70 = *lexer_addr
 	lookahead77 = &v70.F0
 	v71 = *lookahead77
-	call78 = iswspace(v71)
+	call78 = libc.Iswspace(v71)
 	tobool79 = call78 != 0
 	if tobool79 {
 		goto land_lhs_true80
@@ -274460,7 +274460,7 @@ while_cond147:
 	v122 = *lexer_addr
 	lookahead148 = &v122.F0
 	v123 = *lookahead148
-	call149 = iswspace(v123)
+	call149 = libc.Iswspace(v123)
 	tobool150 = call149 != 0
 	if tobool150 {
 		goto while_body151
@@ -274510,7 +274510,7 @@ if_then162:
 	v129 = *lexer_addr
 	lookahead163 = &v129.F0
 	v130 = *lookahead163
-	call164 = iswspace(v130)
+	call164 = libc.Iswspace(v130)
 	tobool165 = call164 != 0
 	if tobool165 {
 		goto if_then178
@@ -274617,7 +274617,7 @@ if_then199:
 	goto if_end201
 
 if_else200:
-	__assert_fail(&_str_3[int64(0)], &_str_1[int64(0)], 439, &__PRETTY_FUNCTION___scan[int64(0)])
+	libc.AssertFail(&_str_3[int64(0)], &_str_1[int64(0)], 439, &__PRETTY_FUNCTION___scan[int64(0)])
 	panic("unreachable")
 
 if_end201:
@@ -274701,7 +274701,7 @@ if_then229:
 	goto if_end231
 
 if_else230:
-	__assert_fail(&_str_3[int64(0)], &_str_1[int64(0)], 444, &__PRETTY_FUNCTION___scan[int64(0)])
+	libc.AssertFail(&_str_3[int64(0)], &_str_1[int64(0)], 444, &__PRETTY_FUNCTION___scan[int64(0)])
 	panic("unreachable")
 
 if_end231:
@@ -274800,7 +274800,7 @@ if_then266:
 	goto if_end268
 
 if_else267:
-	__assert_fail(&_str_3[int64(0)], &_str_1[int64(0)], 454, &__PRETTY_FUNCTION___scan[int64(0)])
+	libc.AssertFail(&_str_3[int64(0)], &_str_1[int64(0)], 454, &__PRETTY_FUNCTION___scan[int64(0)])
 	panic("unreachable")
 
 if_end268:
@@ -274893,7 +274893,7 @@ if_then302:
 	goto if_end304
 
 if_else303:
-	__assert_fail(&_str_3[int64(0)], &_str_1[int64(0)], 460, &__PRETTY_FUNCTION___scan[int64(0)])
+	libc.AssertFail(&_str_3[int64(0)], &_str_1[int64(0)], 460, &__PRETTY_FUNCTION___scan[int64(0)])
 	panic("unreachable")
 
 if_end304:
@@ -274942,7 +274942,7 @@ while_cond321:
 	v214 = *lexer_addr
 	lookahead322 = &v214.F0
 	v215 = *lookahead322
-	call323 = iswspace(v215)
+	call323 = libc.Iswspace(v215)
 	tobool324 = call323 != 0
 	if tobool324 {
 		goto land_rhs325
@@ -275090,7 +275090,7 @@ while_cond365:
 	v239 = *lexer_addr
 	lookahead366 = &v239.F0
 	v240 = *lookahead366
-	call367 = iswspace(v240)
+	call367 = libc.Iswspace(v240)
 	tobool368 = call367 != 0
 	if tobool368 {
 		goto while_body369
@@ -275137,7 +275137,7 @@ while_cond379:
 	v247 = *lexer_addr
 	lookahead380 = &v247.F0
 	v248 = *lookahead380
-	call381 = iswspace(v248)
+	call381 = libc.Iswspace(v248)
 	tobool382 = call381 != 0
 	if tobool382 {
 		goto while_body383
@@ -275192,7 +275192,7 @@ while_end395:
 	v256 = *lexer_addr
 	lookahead396 = &v256.F0
 	v257 = *lookahead396
-	call397 = iswspace(v257)
+	call397 = libc.Iswspace(v257)
 	tobool398 = call397 != 0
 	if tobool398 {
 		goto land_lhs_true399
@@ -275276,7 +275276,7 @@ if_end420:
 	v274 = *lexer_addr
 	lookahead421 = &v274.F0
 	v275 = *lookahead421
-	call422 = iswspace(v275)
+	call422 = libc.Iswspace(v275)
 	tobool423 = call422 != 0
 	if tobool423 {
 		goto land_lhs_true424
@@ -275758,7 +275758,7 @@ land_lhs_true576:
 	v359 = *lexer_addr
 	lookahead577 = &v359.F0
 	v360 = *lookahead577
-	call578 = iswspace(v360)
+	call578 = libc.Iswspace(v360)
 	tobool579 = call578 != 0
 	if tobool579 {
 		goto if_then580
@@ -276490,7 +276490,7 @@ while_cond813:
 	v496 = *lexer_addr
 	lookahead814 = &v496.F0
 	v497 = *lookahead814
-	call815 = iswspace(v497)
+	call815 = libc.Iswspace(v497)
 	tobool816 = call815 != 0
 	if tobool816 {
 		goto while_body817
@@ -276892,7 +276892,7 @@ land_rhs939:
 	v553 = *lexer_addr
 	lookahead940 = &v553.F0
 	v554 = *lookahead940
-	call941 = iswspace(v554)
+	call941 = libc.Iswspace(v554)
 	tobool942 = call941 != 0
 	v555 = tobool942
 	goto land_end943
@@ -277047,7 +277047,7 @@ land_rhs989:
 	v586 = *lexer_addr
 	lookahead990 = &v586.F0
 	v587 = *lookahead990
-	call991 = iswspace(v587)
+	call991 = libc.Iswspace(v587)
 	tobool992 = call991 != 0
 	v588 = tobool992
 	goto land_end993
@@ -277164,7 +277164,7 @@ if_end1023:
 	v611 = *lexer_addr
 	lookahead1024 = &v611.F0
 	v612 = *lookahead1024
-	call1025 = iswspace(v612)
+	call1025 = libc.Iswspace(v612)
 	tobool1026 = call1025 != 0
 	if tobool1026 {
 		goto if_then1027
@@ -277202,7 +277202,7 @@ land_rhs1035:
 	v618 = *lexer_addr
 	lookahead1036 = &v618.F0
 	v619 = *lookahead1036
-	call1037 = iswspace(v619)
+	call1037 = libc.Iswspace(v619)
 	tobool1038 = call1037 != 0
 	v620 = tobool1038
 	goto land_end1039
@@ -277247,7 +277247,7 @@ if_end1052:
 	v628 = *lexer_addr
 	lookahead1053 = &v628.F0
 	v629 = *lookahead1053
-	call1054 = iswalnum(v629)
+	call1054 = libc.Iswalnum(v629)
 	tobool1055 = call1054 != 0
 	if tobool1055 {
 		goto if_end1070
@@ -277407,7 +277407,7 @@ while_cond1107:
 	v649 = *lexer_addr
 	lookahead1108 = &v649.F0
 	v650 = *lookahead1108
-	call1109 = iswspace(v650)
+	call1109 = libc.Iswspace(v650)
 	tobool1110 = call1109 != 0
 	if tobool1110 {
 		goto while_body1111
@@ -277559,7 +277559,7 @@ if_then1160:
 	v677 = *lexer_addr
 	lookahead1161 = &v677.F0
 	v678 = *lookahead1161
-	call1162 = iswspace(v678)
+	call1162 = libc.Iswspace(v678)
 	tobool1163 = call1162 != 0
 	if tobool1163 {
 		goto land_lhs_true1168
@@ -277646,7 +277646,7 @@ if_then1187:
 	v694 = *lexer_addr
 	lookahead1189 = &v694.F0
 	v695 = *lookahead1189
-	call1190 = iswspace(v695)
+	call1190 = libc.Iswspace(v695)
 	tobool1191 = call1190 != 0
 	if tobool1191 {
 		goto if_then1192
@@ -277746,7 +277746,7 @@ if_then1221:
 	v718 = *lexer_addr
 	lookahead1222 = &v718.F0
 	v719 = *lookahead1222
-	call1223 = iswspace(v719)
+	call1223 = libc.Iswspace(v719)
 	tobool1224 = call1223 != 0
 	if tobool1224 {
 		goto if_then1225
@@ -277803,7 +277803,7 @@ while_cond1238:
 	v727 = *lexer_addr
 	lookahead1239 = &v727.F0
 	v728 = *lookahead1239
-	call1240 = iswalnum(v728)
+	call1240 = libc.Iswalnum(v728)
 	tobool1241 = call1240 != 0
 	if tobool1241 {
 		goto while_body1242
@@ -277895,7 +277895,7 @@ if_then1267:
 	v747 = *lexer_addr
 	lookahead1269 = &v747.F0
 	v748 = *lookahead1269
-	call1270 = iswspace(v748)
+	call1270 = libc.Iswspace(v748)
 	tobool1271 = call1270 != 0
 	if tobool1271 {
 		goto if_then1272
@@ -277919,7 +277919,7 @@ if_end1276:
 	v751 = *lexer_addr
 	lookahead1277 = &v751.F0
 	v752 = *lookahead1277
-	call1278 = iswspace(v752)
+	call1278 = libc.Iswspace(v752)
 	tobool1279 = call1278 != 0
 	if tobool1279 {
 		goto if_then1280
@@ -278021,7 +278021,7 @@ if_end1307:
 	v776 = *lexer_addr
 	lookahead1308 = &v776.F0
 	v777 = *lookahead1308
-	call1309 = iswalnum(v777)
+	call1309 = libc.Iswalnum(v777)
 	tobool1310 = call1309 != 0
 	if tobool1310 {
 		goto if_end1344
@@ -278338,7 +278338,7 @@ if_then1420:
 	v820 = *lexer_addr
 	lookahead1422 = &v820.F0
 	v821 = *lookahead1422
-	call1423 = iswspace(v821)
+	call1423 = libc.Iswspace(v821)
 	tobool1424 = call1423 != 0
 	if tobool1424 { frombool1425 = 1 } else { frombool1425 = 0 }
 	*was_space1421 = frombool1425
@@ -278551,7 +278551,7 @@ if_end1496:
 	v866 = *lexer_addr
 	lookahead1497 = &v866.F0
 	v867 = *lookahead1497
-	call1498 = iswspace(v867)
+	call1498 = libc.Iswspace(v867)
 	tobool1499 = call1498 != 0
 	if tobool1499 {
 		goto if_then1504
@@ -278754,7 +278754,7 @@ lor_lhs_false1561:
 	v902 = *lexer_addr
 	lookahead1562 = &v902.F0
 	v903 = *lookahead1562
-	call1563 = iswalnum(v903)
+	call1563 = libc.Iswalnum(v903)
 	tobool1564 = call1563 != 0
 	if tobool1564 {
 		goto if_then1565
@@ -278937,7 +278937,7 @@ lor_lhs_false1620:
 	v941 = *lexer_addr
 	lookahead1621 = &v941.F0
 	v942 = *lookahead1621
-	call1622 = iswalnum(v942)
+	call1622 = libc.Iswalnum(v942)
 	tobool1623 = call1622 != 0
 	if tobool1623 {
 		goto if_then1624
@@ -278972,7 +278972,7 @@ lor_rhs1631:
 	v946 = *lexer_addr
 	lookahead1632 = &v946.F0
 	v947 = *lookahead1632
-	call1633 = iswspace(v947)
+	call1633 = libc.Iswspace(v947)
 	tobool1634 = call1633 != 0
 	lnot1635 = tobool1634 != true
 	v948 = lnot1635
@@ -278994,7 +278994,7 @@ lor_rhs1640:
 	v950 = *lexer_addr
 	lookahead1641 = &v950.F0
 	v951 = *lookahead1641
-	call1642 = iswspace(v951)
+	call1642 = libc.Iswspace(v951)
 	tobool1643 = call1642 != 0
 	v952 = tobool1643
 	goto lor_end1644
@@ -279103,7 +279103,7 @@ lor_rhs1673:
 	v971 = *lexer_addr
 	lookahead1674 = &v971.F0
 	v972 = *lookahead1674
-	call1675 = iswspace(v972)
+	call1675 = libc.Iswspace(v972)
 	tobool1676 = call1675 != 0
 	lnot1677 = tobool1676 != true
 	v973 = lnot1677
@@ -279125,7 +279125,7 @@ lor_rhs1682:
 	v975 = *lexer_addr
 	lookahead1683 = &v975.F0
 	v976 = *lookahead1683
-	call1684 = iswspace(v976)
+	call1684 = libc.Iswspace(v976)
 	tobool1685 = call1684 != 0
 	v977 = tobool1685
 	goto lor_end1686
@@ -279167,7 +279167,7 @@ while_cond1695:
 	v982 = *lexer_addr
 	lookahead1696 = &v982.F0
 	v983 = *lookahead1696
-	call1697 = iswspace(v983)
+	call1697 = libc.Iswspace(v983)
 	tobool1698 = call1697 != 0
 	if tobool1698 {
 		goto while_body1699
@@ -279206,7 +279206,7 @@ if_end1705:
 	goto while_cond1707
 
 while_cond1707:
-	call1708 = __ctype_b_loc()
+	call1708 = libc.CtypeBLoc()
 	v991 = *call1708
 	v992 = *lexer_addr
 	lookahead1709 = &v992.F0
@@ -279266,7 +279266,7 @@ if_end1725:
 	goto while_cond1726
 
 while_cond1726:
-	call1727 = __ctype_b_loc()
+	call1727 = libc.CtypeBLoc()
 	v1002 = *call1727
 	v1003 = *lexer_addr
 	lookahead1728 = &v1003.F0
@@ -279451,7 +279451,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 102, &__PRETTY_FUNCTION___serialize[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 102, &__PRETTY_FUNCTION___serialize[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -279750,7 +279750,7 @@ if_then22:
 	goto if_end
 
 if_else23:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 133, &__PRETTY_FUNCTION___deserialize[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 133, &__PRETTY_FUNCTION___deserialize[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -279806,7 +279806,7 @@ if_then42:
 	goto if_end44
 
 if_else43:
-	__assert_fail(&_str_3[int64(0)], &_str_1[int64(0)], 137, &__PRETTY_FUNCTION___deserialize[int64(0)])
+	libc.AssertFail(&_str_3[int64(0)], &_str_1[int64(0)], 137, &__PRETTY_FUNCTION___deserialize[int64(0)])
 	panic("unreachable")
 
 if_end44:
@@ -279941,7 +279941,7 @@ if_then95:
 	goto if_end97
 
 if_else96:
-	__assert_fail(&_str_5[int64(0)], &_str_1[int64(0)], 153, &__PRETTY_FUNCTION___deserialize[int64(0)])
+	libc.AssertFail(&_str_5[int64(0)], &_str_1[int64(0)], 153, &__PRETTY_FUNCTION___deserialize[int64(0)])
 	panic("unreachable")
 
 if_end97:
@@ -280015,7 +280015,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 1211, &__PRETTY_FUNCTION___tree_sitter_bash_external_scanner_destroy[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 1211, &__PRETTY_FUNCTION___tree_sitter_bash_external_scanner_destroy[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -280049,6 +280049,7 @@ for_end:
 	_array__delete(v17)
 	v18 = *scanner
 	v19 = (*byte)(unsafe.Pointer(v18))
+	libc.Free(v19)
 }
 
 func _array__delete(self *Array) {
@@ -280077,6 +280078,7 @@ if_then:
 	v2 = *self_addr
 	contents1 = &v2.F0
 	v3 = *contents1
+	libc.Free(v3)
 	v4 = *self_addr
 	contents2 = &v4.F0
 	*contents2 = nil
@@ -357709,7 +357711,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_3[int64(0)], &_str_1[int64(0)], 249, &__PRETTY_FUNCTION___scan_heredoc_content[int64(0)])
+	libc.AssertFail(&_str_3[int64(0)], &_str_1[int64(0)], 249, &__PRETTY_FUNCTION___scan_heredoc_content[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -357946,7 +357948,7 @@ while_cond:
 	v48 = *lexer_addr
 	lookahead49 = &v48.F0
 	v49 = *lookahead49
-	call50 = iswspace(v49)
+	call50 = libc.Iswspace(v49)
 	tobool51 = call50 != 0
 	if tobool51 {
 		goto while_body
@@ -358056,7 +358058,7 @@ while_cond79:
 	v70 = *lexer_addr
 	lookahead80 = &v70.F0
 	v71 = *lookahead80
-	call81 = iswspace(v71)
+	call81 = libc.Iswspace(v71)
 	tobool82 = call81 != 0
 	if tobool82 {
 		goto while_body83
@@ -358251,7 +358253,7 @@ if_then9:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_4[int64(0)], &_str_1[int64(0)], 233, &__PRETTY_FUNCTION___scan_heredoc_end_identifier[int64(0)])
+	libc.AssertFail(&_str_4[int64(0)], &_str_1[int64(0)], 233, &__PRETTY_FUNCTION___scan_heredoc_end_identifier[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -358408,7 +358410,7 @@ while_cond:
 	v0 = *lexer_addr
 	lookahead = &v0.F0
 	v1 = *lookahead
-	call = iswspace(v1)
+	call = libc.Iswspace(v1)
 	tobool = call != 0
 	if tobool {
 		goto while_body
@@ -358517,7 +358519,7 @@ while_cond:
 	v0 = *lexer_addr
 	lookahead = &v0.F0
 	v1 = *lookahead
-	call = iswspace(v1)
+	call = libc.Iswspace(v1)
 	tobool = call != 0
 	if tobool {
 		goto land_lhs_true
@@ -358585,7 +358587,7 @@ if_then:
 	v16 = *lexer_addr
 	lookahead5 = &v16.F0
 	v17 = *lookahead5
-	call6 = iswspace(v17)
+	call6 = libc.Iswspace(v17)
 	tobool7 = call6 != 0
 	if tobool7 {
 		v23 = true
@@ -358894,7 +358896,7 @@ cond_false:
 	v18 = *lexer_addr
 	lookahead13 = &v18.F0
 	v19 = *lookahead13
-	call = iswspace(v19)
+	call = libc.Iswspace(v19)
 	cond = call
 	goto cond_end
 
@@ -359067,7 +359069,7 @@ if_then1:
 	conv = int64(uint64(uint32(v7)))
 	v8 = *element_size_addr
 	mul = conv * v8
-	call = realloc(v6, mul)
+	call = libc.Realloc(v6, mul)
 	v9 = *self_addr
 	contents3 = &v9.F0
 	*contents3 = call
@@ -359147,7 +359149,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 89, &__PRETTY_FUNCTION___reset[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 89, &__PRETTY_FUNCTION___reset[int64(0)])
 	panic("unreachable")
 
 if_end:

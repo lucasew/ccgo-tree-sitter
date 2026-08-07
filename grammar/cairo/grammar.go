@@ -118,10 +118,10 @@ var _str_1 [59]byte = [59]byte{
 	114, 32, 115, 99, 97, 110, 110, 101, 114, 34, 0,
 }
 
-var _str_2 [39]byte = [39]byte{
+var _str_2 [40]byte = [40]byte{
 	47, 116, 109, 112, 47, 108, 101, 97, 118, 101, 110, 45, 99, 97, 105, 114,
-	111, 45, 55, 51, 56, 53, 55, 56, 48, 55, 57, 47, 99, 111, 109, 98,
-	105, 110, 101, 100, 46, 99, 0,
+	111, 45, 51, 56, 56, 54, 54, 57, 50, 50, 53, 55, 47, 99, 111, 109,
+	98, 105, 110, 101, 100, 46, 99, 0,
 }
 
 var __PRETTY_FUNCTION___tree_sitter_cairo_external_scanner_create [50]byte = [50]byte{
@@ -112401,7 +112401,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_1[int64(0)], &_str_2[int64(0)], 210, &__PRETTY_FUNCTION___tree_sitter_cairo_external_scanner_create[int64(0)])
+	libc.AssertFail(&_str_1[int64(0)], &_str_2[int64(0)], 210, &__PRETTY_FUNCTION___tree_sitter_cairo_external_scanner_create[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -112677,7 +112677,7 @@ if_end41:
 	v45 = *lexer_addr
 	lookahead42 = &v45.F0
 	v46 = *lookahead42
-	call43 = iswspace(v46)
+	call43 = libc.Iswspace(v46)
 	tobool44 = call43 != 0
 	if tobool44 {
 		goto if_then45
@@ -113288,7 +113288,7 @@ if_then3:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_4[int64(0)], &_str_2[int64(0)], 232, &__PRETTY_FUNCTION___tree_sitter_cairo_external_scanner_deserialize[int64(0)])
+	libc.AssertFail(&_str_4[int64(0)], &_str_2[int64(0)], 232, &__PRETTY_FUNCTION___tree_sitter_cairo_external_scanner_deserialize[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -113317,6 +113317,7 @@ func tree_sitter_cairo_external_scanner_destroy(payload *byte) {
 	*scanner = v1
 	v2 = *scanner
 	v3 = (*byte)(unsafe.Pointer(v2))
+	libc.Free(v3)
 }
 
 func tree_sitter_cairo() *TSLanguage {

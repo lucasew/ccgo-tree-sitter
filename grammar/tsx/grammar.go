@@ -65,7 +65,7 @@ type TSLexer struct {
 	F4 func(*TSLexer) int32
 	F5 func(*TSLexer) bool
 	F6 func(*TSLexer) bool
-	F7 func(*TSLexer, *byte)
+	F7 func(*TSLexer, *byte, ...interface{})
 }
 
 type TSSymbolMetadata struct {
@@ -296030,7 +296030,7 @@ while_body:
 	v13 = *lexer_addr
 	lookahead14 = &v13.F0
 	v14 = *lookahead14
-	call = iswspace(v14)
+	call = libc.Iswspace(v14)
 	tobool = call != 0
 	if tobool { frombool = 1 } else { frombool = 0 }
 	*is_wspace = frombool
@@ -296161,7 +296161,7 @@ do_cond:
 	v9 = *lexer_addr
 	lookahead4 = &v9.F0
 	v10 = *lookahead4
-	call = iswspace(v10)
+	call = libc.Iswspace(v10)
 	tobool = call != 0
 	if tobool {
 		goto do_body
@@ -296196,7 +296196,7 @@ if_end10:
 	v15 = *lexer_addr
 	lookahead11 = &v15.F0
 	v16 = *lookahead11
-	call12 = iswspace(v16)
+	call12 = libc.Iswspace(v16)
 	tobool13 = call12 != 0
 	if tobool13 {
 		goto if_end15
@@ -296495,7 +296495,7 @@ for_cond:
 	v0 = *lexer_addr
 	lookahead = &v0.F0
 	v1 = *lookahead
-	call = iswspace(v1)
+	call = libc.Iswspace(v1)
 	tobool = call != 0
 	if tobool {
 		goto if_end
@@ -296565,7 +296565,7 @@ for_cond9:
 	v14 = *lexer_addr
 	lookahead10 = &v14.F0
 	v15 = *lookahead10
-	call11 = iswspace(v15)
+	call11 = libc.Iswspace(v15)
 	tobool12 = call11 != 0
 	if tobool12 {
 		goto if_end14
@@ -296694,7 +296694,7 @@ while_cond:
 	v0 = *lexer_addr
 	lookahead = &v0.F0
 	v1 = *lookahead
-	call = iswspace(v1)
+	call = libc.Iswspace(v1)
 	tobool = call != 0
 	if tobool {
 		v6 = true
@@ -296998,7 +296998,7 @@ while_cond:
 	v0 = *lexer_addr
 	lookahead = &v0.F0
 	v1 = *lookahead
-	call = iswspace(v1)
+	call = libc.Iswspace(v1)
 	tobool = call != 0
 	if tobool {
 		goto while_body

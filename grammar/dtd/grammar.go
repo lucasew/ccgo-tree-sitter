@@ -74,7 +74,7 @@ type TSLexer struct {
 	F4 func(*TSLexer) int32
 	F5 func(*TSLexer) bool
 	F6 func(*TSLexer) bool
-	F7 func(*TSLexer, *byte)
+	F7 func(*TSLexer, *byte, ...interface{})
 }
 
 type TSLexerMode struct {
@@ -31872,7 +31872,7 @@ func is_valid_name_char(chr int32) bool {
 	chr_addr = new(int32)
 	*chr_addr = chr
 	v0 = *chr_addr
-	call = iswalnum(v0)
+	call = libc.Iswalnum(v0)
 	tobool = call != 0
 	if tobool {
 		v6 = true

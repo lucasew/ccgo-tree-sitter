@@ -1,6 +1,9 @@
 package grammar_wgsl
 
-import "unsafe"
+import (
+	"unsafe"
+	"github.com/andybalholm/leaven/libc"
+)
 
 type TSFieldMapEntry struct {
 	F0 int16
@@ -20138,7 +20141,7 @@ while_cond:
 	v0 = *lexer_addr
 	lookahead = &v0.F0
 	v1 = *lookahead
-	call = iswspace(v1)
+	call = libc.Iswspace(v1)
 	tobool = call != 0
 	if tobool {
 		goto while_body

@@ -72,45 +72,13 @@ type TSLexer struct {
 	F4 func(*TSLexer) int32
 	F5 func(*TSLexer) bool
 	F6 func(*TSLexer) bool
-	F7 func(*TSLexer, *byte)
+	F7 func(*TSLexer, *byte, ...interface{})
 }
 
 type TSSymbolMetadata struct {
 	F0 byte
 	F1 byte
 	F2 byte
-}
-
-type _IO_FILE struct {
-	F0 int32
-	F1 *byte
-	F2 *byte
-	F3 *byte
-	F4 *byte
-	F5 *byte
-	F6 *byte
-	F7 *byte
-	F8 *byte
-	F9 *byte
-	F10 *byte
-	F11 *byte
-	F12 *_IO_marker
-	F13 *_IO_FILE
-	F14 int32
-	F15 int32
-	F16 int64
-	F17 int16
-	F18 byte
-	F19 [1]byte
-	F20 *byte
-	F21 int64
-	F22 *_IO_codecvt
-	F23 *_IO_wide_data
-	F24 *_IO_FILE
-	F25 *byte
-	F26 int64
-	F27 int32
-	F28 [20]byte
 }
 
 type _IO_codecvt struct {
@@ -60011,6 +59979,7 @@ if_then:
 	v2 = *str_addr
 	data1 = &v2.F2
 	v3 = *data1
+	libc.Free(v3)
 	v4 = *str_addr
 	data2 = &v4.F2
 	*data2 = nil
@@ -60069,8 +60038,8 @@ func string_clear(str *String) {
 
 func check_alloc(ptr *byte) {
 	var ptr_addr **byte
-	var v1 *_IO_FILE
 	var v0 *byte
+	var v1 *os.File
 	var cmp bool
 	var call int32
 
@@ -60088,8 +60057,8 @@ func check_alloc(ptr *byte) {
 
 if_then:
 	v1 = os.Stderr
-	call = fprintf(v1, &_str[int64(0)])
-	abort()
+	call = libc.Fprintf(v1, &_str[int64(0)])
+	libc.Abort()
 	panic("unreachable")
 
 if_end:
@@ -60203,7 +60172,7 @@ func string_resize(str *String, new_cap int64) {
 	v1 = *data
 	v2 = *new_cap_addr
 	mul = v2 * int64(1)
-	call = realloc(v1, mul)
+	call = libc.Realloc(v1, mul)
 	*block = call
 	v3 = *block
 	check_alloc(v3)

@@ -60,7 +60,7 @@ type TSLexer struct {
 	F4 func(*TSLexer) int32
 	F5 func(*TSLexer) bool
 	F6 func(*TSLexer) bool
-	F7 func(*TSLexer, *byte)
+	F7 func(*TSLexer, *byte, ...interface{})
 }
 
 type TSSymbolMetadata struct {
@@ -22376,6 +22376,7 @@ if_then2:
 	idxprom4 = int64(uint64(uint32(v8)))
 	arrayidx5 = &heredocs3[idxprom4]
 	v9 = *arrayidx5
+	libc.Free(v9)
 	goto if_end6
 
 if_end6:
@@ -22390,6 +22391,7 @@ for_inc:
 for_end:
 	v11 = *state
 	v12 = (*byte)(unsafe.Pointer(v11))
+	libc.Free(v12)
 	goto _return
 
 _return:
@@ -22575,6 +22577,7 @@ for_body:
 	idxprom = int64(uint64(uint32(v6)))
 	arrayidx = &heredocs[idxprom]
 	v7 = *arrayidx
+	libc.Free(v7)
 	v8 = *state
 	heredocs1 = &v8.F3
 	v9 = *i
@@ -23058,6 +23061,7 @@ if_then27:
 	heredocs28 = &v31.F3
 	arrayidx29 = &heredocs28[int64(0)]
 	v32 = *arrayidx29
+	libc.Free(v32)
 	*i = 1
 	goto for_cond
 
@@ -23396,7 +23400,7 @@ cond_false:
 	v31 = *lexer_addr
 	lookahead23 = &v31.F0
 	v32 = *lookahead23
-	call = iswspace(v32)
+	call = libc.Iswspace(v32)
 	tobool24 = call != 0
 	lnot = tobool24 != true
 	if lnot { lnot_ext = 1 } else { lnot_ext = 0 }
@@ -23604,6 +23608,7 @@ if_else:
 
 if_then81:
 	v73 = *del_copy
+	libc.Free(v73)
 	goto if_end88
 
 if_else82:
@@ -41152,7 +41157,7 @@ land_rhs:
 	v4 = *lexer_addr
 	lookahead3 = &v4.F0
 	v5 = *lookahead3
-	call = iswspace(v5)
+	call = libc.Iswspace(v5)
 	tobool = call != 0
 	v6 = tobool
 	goto land_end

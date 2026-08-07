@@ -1,6 +1,9 @@
 package grammar_gitcommit
 
-import "unsafe"
+import (
+	"unsafe"
+	"github.com/andybalholm/leaven/libc"
+)
 
 type TSFieldMapEntry struct {
 	F0 int16
@@ -61,7 +64,7 @@ type TSLexer struct {
 	F4 func(*TSLexer) int32
 	F5 func(*TSLexer) bool
 	F6 func(*TSLexer) bool
-	F7 func(*TSLexer, *byte)
+	F7 func(*TSLexer, *byte, ...interface{})
 }
 
 type TSLexerMode struct {
@@ -19739,7 +19742,7 @@ lor_lhs_false:
 	v5 = *lexer_addr
 	lookahead2 = &v5.F0
 	v6 = *lookahead2
-	call3 = iswspace(v6)
+	call3 = libc.Iswspace(v6)
 	tobool4 = call3 != 0
 	if tobool4 {
 		goto if_then13
@@ -19809,7 +19812,7 @@ land_lhs_true:
 	v18 = *lexer_addr
 	lookahead17 = &v18.F0
 	v19 = *lookahead17
-	call18 = iswspace(v19)
+	call18 = libc.Iswspace(v19)
 	tobool19 = call18 != 0
 	if tobool19 {
 		v30 = false

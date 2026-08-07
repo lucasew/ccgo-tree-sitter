@@ -133,7 +133,7 @@ var _str_2 [12]byte = [12]byte{116, 109, 112, 32, 33, 61, 32, 78, 85, 76, 76, 0}
 
 var _str_3 [43]byte = [43]byte{
 	47, 116, 109, 112, 47, 108, 101, 97, 118, 101, 110, 45, 103, 100, 115, 99,
-	114, 105, 112, 116, 45, 49, 48, 56, 53, 55, 55, 53, 55, 57, 54, 47,
+	114, 105, 112, 116, 45, 51, 48, 48, 56, 55, 52, 48, 57, 53, 55, 47,
 	99, 111, 109, 98, 105, 110, 101, 100, 46, 99, 0,
 }
 
@@ -96734,7 +96734,7 @@ cond_false:
 cond_end:
 	conv265 = int64(uint64(uint32(cond)))
 	mul266 = conv265 * int64(2)
-	call267 = realloc(v207, mul266)
+	call267 = libc.Realloc(v207, mul266)
 	*tmp = call267
 	v214 = *tmp
 	cmp268 = v214 != nil
@@ -96748,7 +96748,7 @@ if_then270:
 	goto if_end272
 
 if_else271:
-	__assert_fail(&_str_2[int64(0)], &_str_3[int64(0)], 453, &__PRETTY_FUNCTION___tree_sitter_gdscript_external_scanner_scan[int64(0)])
+	libc.AssertFail(&_str_2[int64(0)], &_str_3[int64(0)], 453, &__PRETTY_FUNCTION___tree_sitter_gdscript_external_scanner_scan[int64(0)])
 	panic("unreachable")
 
 if_end272:
@@ -97222,7 +97222,7 @@ cond_false424:
 cond_end428:
 	conv430 = int64(uint64(uint32(cond429)))
 	mul431 = conv430 * int64(1)
-	call432 = realloc(v301, mul431)
+	call432 = libc.Realloc(v301, mul431)
 	*tmp415 = call432
 	v308 = *tmp415
 	cmp433 = v308 != nil
@@ -97236,7 +97236,7 @@ if_then435:
 	goto if_end437
 
 if_else436:
-	__assert_fail(&_str_2[int64(0)], &_str_3[int64(0)], 526, &__PRETTY_FUNCTION___tree_sitter_gdscript_external_scanner_scan[int64(0)])
+	libc.AssertFail(&_str_2[int64(0)], &_str_3[int64(0)], 526, &__PRETTY_FUNCTION___tree_sitter_gdscript_external_scanner_scan[int64(0)])
 	panic("unreachable")
 
 if_end437:
@@ -98144,7 +98144,7 @@ cond_false:
 cond_end:
 	conv = int64(uint64(uint32(cond)))
 	mul12 = conv * int64(2)
-	call = realloc(v15, mul12)
+	call = libc.Realloc(v15, mul12)
 	*tmp = call
 	v22 = *tmp
 	cmp13 = v22 != nil
@@ -98158,7 +98158,7 @@ if_then15:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_2[int64(0)], &_str_3[int64(0)], 580, &__PRETTY_FUNCTION___tree_sitter_gdscript_external_scanner_deserialize[int64(0)])
+	libc.AssertFail(&_str_2[int64(0)], &_str_3[int64(0)], 580, &__PRETTY_FUNCTION___tree_sitter_gdscript_external_scanner_deserialize[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -98270,7 +98270,7 @@ if_then51:
 	v53 = (*byte)(unsafe.Pointer(v52))
 	v54 = *delimiter_count
 	mul55 = v54 * int64(1)
-	call56 = realloc(v53, mul55)
+	call56 = libc.Realloc(v53, mul55)
 	*tmp52 = call56
 	v55 = *tmp52
 	cmp57 = v55 != nil
@@ -98284,7 +98284,7 @@ if_then59:
 	goto if_end61
 
 if_else60:
-	__assert_fail(&_str_2[int64(0)], &_str_3[int64(0)], 587, &__PRETTY_FUNCTION___tree_sitter_gdscript_external_scanner_deserialize[int64(0)])
+	libc.AssertFail(&_str_2[int64(0)], &_str_3[int64(0)], 587, &__PRETTY_FUNCTION___tree_sitter_gdscript_external_scanner_deserialize[int64(0)])
 	panic("unreachable")
 
 if_end61:
@@ -98398,7 +98398,7 @@ cond_false94:
 cond_end98:
 	conv100 = int64(uint64(uint32(cond99)))
 	mul101 = conv100 * int64(2)
-	call102 = realloc(v86, mul101)
+	call102 = libc.Realloc(v86, mul101)
 	*tmp85 = call102
 	v93 = *tmp85
 	cmp103 = v93 != nil
@@ -98412,7 +98412,7 @@ if_then105:
 	goto if_end107
 
 if_else106:
-	__assert_fail(&_str_2[int64(0)], &_str_3[int64(0)], 595, &__PRETTY_FUNCTION___tree_sitter_gdscript_external_scanner_deserialize[int64(0)])
+	libc.AssertFail(&_str_2[int64(0)], &_str_3[int64(0)], 595, &__PRETTY_FUNCTION___tree_sitter_gdscript_external_scanner_deserialize[int64(0)])
 	panic("unreachable")
 
 if_end107:
@@ -98502,7 +98502,7 @@ if_then138:
 	goto if_end140
 
 if_else139:
-	__assert_fail(&_str_4[int64(0)], &_str_3[int64(0)], 598, &__PRETTY_FUNCTION___tree_sitter_gdscript_external_scanner_deserialize[int64(0)])
+	libc.AssertFail(&_str_4[int64(0)], &_str_3[int64(0)], 598, &__PRETTY_FUNCTION___tree_sitter_gdscript_external_scanner_deserialize[int64(0)])
 	panic("unreachable")
 
 if_end140:
@@ -98604,6 +98604,7 @@ if_then:
 	data2 = &v6.F2
 	v7 = *data2
 	v8 = (*byte)(unsafe.Pointer(v7))
+	libc.Free(v8)
 	goto if_end
 
 if_end:
@@ -98626,6 +98627,7 @@ if_then5:
 	data7 = &v13.F2
 	v14 = *data7
 	v15 = (*byte)(unsafe.Pointer(v14))
+	libc.Free(v15)
 	goto if_end8
 
 if_end8:
@@ -98633,12 +98635,15 @@ if_end8:
 	indents9 = &v16.F0
 	v17 = *indents9
 	v18 = (*byte)(unsafe.Pointer(v17))
+	libc.Free(v18)
 	v19 = *scanner
 	delimiters10 = &v19.F1
 	v20 = *delimiters10
 	v21 = (*byte)(unsafe.Pointer(v20))
+	libc.Free(v21)
 	v22 = *scanner
 	v23 = (*byte)(unsafe.Pointer(v22))
+	libc.Free(v23)
 }
 
 func tree_sitter_gdscript() *TSLanguage {
@@ -108714,7 +108719,7 @@ sw_bb2:
 	goto sw_epilog
 
 sw_default:
-	__assert_fail(&_str_5[int64(0)], &_str_3[int64(0)], 125, &__PRETTY_FUNCTION___set_end_character[int64(0)])
+	libc.AssertFail(&_str_5[int64(0)], &_str_3[int64(0)], 125, &__PRETTY_FUNCTION___set_end_character[int64(0)])
 	panic("unreachable")
 
 sw_epilog:

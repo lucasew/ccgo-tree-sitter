@@ -84,7 +84,7 @@ type TSLexer struct {
 	F4 func(*TSLexer) int32
 	F5 func(*TSLexer) bool
 	F6 func(*TSLexer) bool
-	F7 func(*TSLexer, *byte)
+	F7 func(*TSLexer, *byte, ...interface{})
 }
 
 type TSLexerMode struct {
@@ -1880,7 +1880,7 @@ var _str_1 [12]byte = [12]byte{116, 109, 112, 32, 33, 61, 32, 78, 85, 76, 76, 0}
 
 var _str_2 [38]byte = [38]byte{
 	47, 116, 109, 112, 47, 108, 101, 97, 118, 101, 110, 45, 104, 99, 108, 45,
-	51, 55, 57, 55, 51, 52, 55, 49, 57, 54, 47, 99, 111, 109, 98, 105,
+	49, 50, 57, 51, 50, 56, 56, 57, 48, 49, 47, 99, 111, 109, 98, 105,
 	110, 101, 100, 46, 99, 0,
 }
 
@@ -26982,6 +26982,7 @@ if_then:
 	heredoc_identifier8 = &arrayidx7.F1
 	data9 = &heredoc_identifier8.F2
 	v10 = *data9
+	libc.Free(v10)
 	goto if_end
 
 if_end:
@@ -27112,7 +27113,7 @@ if_then45:
 	add49 = v42 + 1
 	conv50 = int64(uint64(uint32(add49)))
 	mul = conv50 * int64(1)
-	call51 = realloc(v41, mul)
+	call51 = libc.Realloc(v41, mul)
 	*tmp46 = call51
 	v43 = *tmp46
 	cmp52 = v43 != nil
@@ -27126,7 +27127,7 @@ if_then54:
 	goto if_end55
 
 if_else:
-	__assert_fail(&_str_1[int64(0)], &_str_2[int64(0)], 172, &__PRETTY_FUNCTION___deserialize[int64(0)])
+	libc.AssertFail(&_str_1[int64(0)], &_str_2[int64(0)], 172, &__PRETTY_FUNCTION___deserialize[int64(0)])
 	panic("unreachable")
 
 if_end55:
@@ -27228,7 +27229,7 @@ cond_false:
 cond_end:
 	conv97 = int64(uint64(uint32(cond)))
 	mul98 = conv97 * int64(24)
-	call99 = realloc(v63, mul98)
+	call99 = libc.Realloc(v63, mul98)
 	*tmp86 = call99
 	v68 = *tmp86
 	cmp100 = v68 != nil
@@ -27242,7 +27243,7 @@ if_then102:
 	goto if_end104
 
 if_else103:
-	__assert_fail(&_str_1[int64(0)], &_str_2[int64(0)], 177, &__PRETTY_FUNCTION___deserialize[int64(0)])
+	libc.AssertFail(&_str_1[int64(0)], &_str_2[int64(0)], 177, &__PRETTY_FUNCTION___deserialize[int64(0)])
 	panic("unreachable")
 
 if_end104:
@@ -27267,7 +27268,7 @@ if_then111:
 	goto if_end113
 
 if_else112:
-	__assert_fail(&_str_3[int64(0)], &_str_2[int64(0)], 177, &__PRETTY_FUNCTION___deserialize[int64(0)])
+	libc.AssertFail(&_str_3[int64(0)], &_str_2[int64(0)], 177, &__PRETTY_FUNCTION___deserialize[int64(0)])
 	panic("unreachable")
 
 if_end113:
@@ -27341,7 +27342,7 @@ if_then141:
 	goto if_end143
 
 if_else142:
-	__assert_fail(&_str_4[int64(0)], &_str_2[int64(0)], 179, &__PRETTY_FUNCTION___deserialize[int64(0)])
+	libc.AssertFail(&_str_4[int64(0)], &_str_2[int64(0)], 179, &__PRETTY_FUNCTION___deserialize[int64(0)])
 	panic("unreachable")
 
 if_end143:
@@ -27438,7 +27439,7 @@ while_cond:
 	v0 = *lexer_addr
 	lookahead = &v0.F0
 	v1 = *lookahead
-	call = iswspace(v1)
+	call = libc.Iswspace(v1)
 	tobool = call != 0
 	if tobool {
 		goto while_body
@@ -27579,7 +27580,7 @@ cond_false:
 cond_end:
 	conv = int64(uint64(uint32(cond)))
 	mul24 = conv * int64(24)
-	call25 = realloc(v25, mul24)
+	call25 = libc.Realloc(v25, mul24)
 	*tmp16 = call25
 	v30 = *tmp16
 	cmp26 = v30 != nil
@@ -27593,7 +27594,7 @@ if_then28:
 	goto if_end29
 
 if_else:
-	__assert_fail(&_str_1[int64(0)], &_str_2[int64(0)], 251, &__PRETTY_FUNCTION___scan[int64(0)])
+	libc.AssertFail(&_str_1[int64(0)], &_str_2[int64(0)], 251, &__PRETTY_FUNCTION___scan[int64(0)])
 	panic("unreachable")
 
 if_end29:
@@ -27618,7 +27619,7 @@ if_then36:
 	goto if_end38
 
 if_else37:
-	__assert_fail(&_str_3[int64(0)], &_str_2[int64(0)], 251, &__PRETTY_FUNCTION___scan[int64(0)])
+	libc.AssertFail(&_str_3[int64(0)], &_str_2[int64(0)], 251, &__PRETTY_FUNCTION___scan[int64(0)])
 	panic("unreachable")
 
 if_end38:
@@ -27743,6 +27744,7 @@ if_then82:
 	heredoc_identifier90 = &arrayidx89.F1
 	data91 = &heredoc_identifier90.F2
 	v62 = *data91
+	libc.Free(v62)
 	goto if_end92
 
 if_end92:
@@ -27893,7 +27895,7 @@ cond_false145:
 cond_end149:
 	conv151 = int64(uint64(uint32(cond150)))
 	mul152 = conv151 * int64(24)
-	call153 = realloc(v93, mul152)
+	call153 = libc.Realloc(v93, mul152)
 	*tmp136 = call153
 	v98 = *tmp136
 	cmp154 = v98 != nil
@@ -27907,7 +27909,7 @@ if_then156:
 	goto if_end158
 
 if_else157:
-	__assert_fail(&_str_1[int64(0)], &_str_2[int64(0)], 267, &__PRETTY_FUNCTION___scan[int64(0)])
+	libc.AssertFail(&_str_1[int64(0)], &_str_2[int64(0)], 267, &__PRETTY_FUNCTION___scan[int64(0)])
 	panic("unreachable")
 
 if_end158:
@@ -27932,7 +27934,7 @@ if_then165:
 	goto if_end167
 
 if_else166:
-	__assert_fail(&_str_3[int64(0)], &_str_2[int64(0)], 267, &__PRETTY_FUNCTION___scan[int64(0)])
+	libc.AssertFail(&_str_3[int64(0)], &_str_2[int64(0)], 267, &__PRETTY_FUNCTION___scan[int64(0)])
 	panic("unreachable")
 
 if_end167:
@@ -28096,6 +28098,7 @@ if_then227:
 	heredoc_identifier235 = &arrayidx234.F1
 	data236 = &heredoc_identifier235.F2
 	v137 = *data236
+	libc.Free(v137)
 	goto if_end237
 
 if_end237:
@@ -28246,7 +28249,7 @@ cond_false291:
 cond_end295:
 	conv297 = int64(uint64(uint32(cond296)))
 	mul298 = conv297 * int64(24)
-	call299 = realloc(v168, mul298)
+	call299 = libc.Realloc(v168, mul298)
 	*tmp282 = call299
 	v173 = *tmp282
 	cmp300 = v173 != nil
@@ -28260,7 +28263,7 @@ if_then302:
 	goto if_end304
 
 if_else303:
-	__assert_fail(&_str_1[int64(0)], &_str_2[int64(0)], 293, &__PRETTY_FUNCTION___scan[int64(0)])
+	libc.AssertFail(&_str_1[int64(0)], &_str_2[int64(0)], 293, &__PRETTY_FUNCTION___scan[int64(0)])
 	panic("unreachable")
 
 if_end304:
@@ -28285,7 +28288,7 @@ if_then311:
 	goto if_end313
 
 if_else312:
-	__assert_fail(&_str_3[int64(0)], &_str_2[int64(0)], 293, &__PRETTY_FUNCTION___scan[int64(0)])
+	libc.AssertFail(&_str_3[int64(0)], &_str_2[int64(0)], 293, &__PRETTY_FUNCTION___scan[int64(0)])
 	panic("unreachable")
 
 if_end313:
@@ -28449,6 +28452,7 @@ if_then373:
 	heredoc_identifier381 = &arrayidx380.F1
 	data382 = &heredoc_identifier381.F2
 	v212 = *data382
+	libc.Free(v212)
 	goto if_end383
 
 if_end383:
@@ -28515,7 +28519,7 @@ while_cond405:
 	v228 = *lexer_addr
 	lookahead406 = &v228.F0
 	v229 = *lookahead406
-	call407 = iswalnum(v229)
+	call407 = libc.Iswalnum(v229)
 	tobool408 = call407 != 0
 	if tobool408 {
 		v234 = true
@@ -28591,7 +28595,7 @@ cond_end431:
 	add = cond432 + 1
 	conv433 = int64(uint64(uint32(add)))
 	mul434 = conv433 * int64(1)
-	call435 = realloc(v237, mul434)
+	call435 = libc.Realloc(v237, mul434)
 	*tmp421 = call435
 	v240 = *tmp421
 	cmp436 = v240 != nil
@@ -28605,7 +28609,7 @@ if_then438:
 	goto if_end440
 
 if_else439:
-	__assert_fail(&_str_1[int64(0)], &_str_2[int64(0)], 316, &__PRETTY_FUNCTION___scan[int64(0)])
+	libc.AssertFail(&_str_1[int64(0)], &_str_2[int64(0)], 316, &__PRETTY_FUNCTION___scan[int64(0)])
 	panic("unreachable")
 
 if_end440:
@@ -28747,7 +28751,7 @@ cond_false498:
 cond_end502:
 	conv504 = int64(uint64(uint32(cond503)))
 	mul505 = conv504 * int64(24)
-	call506 = realloc(v262, mul505)
+	call506 = libc.Realloc(v262, mul505)
 	*tmp489 = call506
 	v267 = *tmp489
 	cmp507 = v267 != nil
@@ -28761,7 +28765,7 @@ if_then509:
 	goto if_end511
 
 if_else510:
-	__assert_fail(&_str_1[int64(0)], &_str_2[int64(0)], 322, &__PRETTY_FUNCTION___scan[int64(0)])
+	libc.AssertFail(&_str_1[int64(0)], &_str_2[int64(0)], 322, &__PRETTY_FUNCTION___scan[int64(0)])
 	panic("unreachable")
 
 if_end511:
@@ -28786,7 +28790,7 @@ if_then518:
 	goto if_end520
 
 if_else519:
-	__assert_fail(&_str_3[int64(0)], &_str_2[int64(0)], 322, &__PRETTY_FUNCTION___scan[int64(0)])
+	libc.AssertFail(&_str_3[int64(0)], &_str_2[int64(0)], 322, &__PRETTY_FUNCTION___scan[int64(0)])
 	panic("unreachable")
 
 if_end520:
@@ -28952,7 +28956,7 @@ while_cond578:
 	v308 = *lexer_addr
 	lookahead579 = &v308.F0
 	v309 = *lookahead579
-	call580 = iswspace(v309)
+	call580 = libc.Iswspace(v309)
 	tobool581 = call580 != 0
 	if tobool581 {
 		goto land_rhs
@@ -29029,6 +29033,7 @@ if_then602:
 	heredoc_identifier610 = &arrayidx609.F1
 	data611 = &heredoc_identifier610.F2
 	v325 = *data611
+	libc.Free(v325)
 	goto if_end612
 
 if_end612:
@@ -29324,6 +29329,7 @@ if_then:
 	heredoc_identifier8 = &arrayidx7.F1
 	data9 = &heredoc_identifier8.F2
 	v12 = *data9
+	libc.Free(v12)
 	goto if_end
 
 if_end:
@@ -29363,6 +29369,7 @@ if_then19:
 	data21 = &context_stack20.F2
 	v20 = *data21
 	v21 = (*byte)(unsafe.Pointer(v20))
+	libc.Free(v21)
 	goto if_end22
 
 if_end22:
@@ -29372,6 +29379,7 @@ if_end22:
 	*data24 = nil
 	v23 = *scanner
 	v24 = (*byte)(unsafe.Pointer(v23))
+	libc.Free(v24)
 }
 
 func tree_sitter_hcl() *TSLanguage {

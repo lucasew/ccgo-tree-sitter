@@ -78,7 +78,7 @@ type TSLexer struct {
 	F4 func(*TSLexer) int32
 	F5 func(*TSLexer) bool
 	F6 func(*TSLexer) bool
-	F7 func(*TSLexer, *byte)
+	F7 func(*TSLexer, *byte, ...interface{})
 }
 
 type TSLexerMode struct {
@@ -120407,7 +120407,7 @@ land_rhs:
 	v3 = *lexer_addr
 	lookahead = &v3.F0
 	v4 = *lookahead
-	call1 = iswspace(v4)
+	call1 = libc.Iswspace(v4)
 	tobool = call1 != 0
 	v5 = tobool
 	goto land_end
@@ -120686,6 +120686,7 @@ func tree_sitter_templ_external_scanner_destroy(payload *byte) {
 	*scanner = v1
 	v2 = *scanner
 	v3 = (*byte)(unsafe.Pointer(v2))
+	libc.Free(v3)
 }
 
 func tree_sitter_templ() *TSLanguage {

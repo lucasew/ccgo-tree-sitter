@@ -91,7 +91,7 @@ type TSLexer struct {
 	F4 func(*TSLexer) int32
 	F5 func(*TSLexer) bool
 	F6 func(*TSLexer) bool
-	F7 func(*TSLexer, *byte)
+	F7 func(*TSLexer, *byte, ...interface{})
 }
 
 type TSLexerMode struct {
@@ -3235,7 +3235,7 @@ var _str_1 [15]byte = [15]byte{115, 105, 122, 101, 32, 61, 61, 32, 108, 101, 110
 
 var _str_2 [39]byte = [39]byte{
 	47, 116, 109, 112, 47, 108, 101, 97, 118, 101, 110, 45, 121, 97, 109, 108,
-	45, 50, 55, 48, 52, 55, 55, 56, 51, 49, 51, 47, 99, 111, 109, 98,
+	45, 50, 54, 52, 51, 57, 56, 48, 55, 55, 57, 47, 99, 111, 109, 98,
 	105, 110, 101, 100, 46, 99, 0,
 }
 
@@ -40817,7 +40817,7 @@ if_then52:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_1[int64(0)], &_str_2[int64(0)], 219, &__PRETTY_FUNCTION___deserialize[int64(0)])
+	libc.AssertFail(&_str_1[int64(0)], &_str_2[int64(0)], 219, &__PRETTY_FUNCTION___deserialize[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -40857,6 +40857,7 @@ func tree_sitter_yaml_external_scanner_destroy(payload *byte) {
 	_array__delete(v5)
 	v6 = *scanner
 	v7 = (*byte)(unsafe.Pointer(v6))
+	libc.Free(v7)
 }
 
 func _array__delete(self *Array) {
@@ -40885,6 +40886,7 @@ if_then:
 	v2 = *self_addr
 	contents1 = &v2.F0
 	v3 = *contents1
+	libc.Free(v3)
 	v4 = *self_addr
 	contents2 = &v4.F0
 	*contents2 = nil
@@ -41344,7 +41346,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_3[int64(0)], &_str_2[int64(0)], 837, &__PRETTY_FUNCTION___scan[int64(0)])
+	libc.AssertFail(&_str_3[int64(0)], &_str_2[int64(0)], 837, &__PRETTY_FUNCTION___scan[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -47318,7 +47320,7 @@ if_then1:
 	conv = int64(uint64(uint32(v7)))
 	v8 = *element_size_addr
 	mul = conv * v8
-	call = realloc(v6, mul)
+	call = libc.Realloc(v6, mul)
 	v9 = *self_addr
 	contents3 = &v9.F0
 	*contents3 = call
@@ -49584,7 +49586,7 @@ if_then6:
 	goto if_end7
 
 if_else:
-	__assert_fail(&_str_4[int64(0)], &_str_2[int64(0)], 696, &__PRETTY_FUNCTION___scn_blk_str_bgn[int64(0)])
+	libc.AssertFail(&_str_4[int64(0)], &_str_2[int64(0)], 696, &__PRETTY_FUNCTION___scn_blk_str_bgn[int64(0)])
 	panic("unreachable")
 
 if_end7:
@@ -51552,7 +51554,7 @@ if_end300:
 	goto sw_epilog
 
 sw_bb301:
-	abort()
+	libc.Abort()
 	panic("unreachable")
 
 sw_bb302:

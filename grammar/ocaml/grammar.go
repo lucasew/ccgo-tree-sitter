@@ -76,7 +76,7 @@ type TSLexer struct {
 	F4 func(*TSLexer) int32
 	F5 func(*TSLexer) bool
 	F6 func(*TSLexer) bool
-	F7 func(*TSLexer, *byte)
+	F7 func(*TSLexer, *byte, ...interface{})
 }
 
 type TSLexerMode struct {
@@ -447281,8 +447281,10 @@ func destroy(scanner *Scanner) {
 	quoted_string_id = &v0.F3
 	v1 = *quoted_string_id
 	v2 = (*byte)(unsafe.Pointer(v1))
+	libc.Free(v2)
 	v3 = *scanner_addr
 	v4 = (*byte)(unsafe.Pointer(v3))
+	libc.Free(v4)
 }
 
 func tree_sitter_ocaml_external_scanner_serialize(payload *byte, buffer *byte) int32 {
@@ -447649,7 +447651,7 @@ while_cond:
 	v30 = *lexer_addr
 	lookahead29 = &v30.F0
 	v31 = *lookahead29
-	call30 = iswspace(v31)
+	call30 = libc.Iswspace(v31)
 	tobool31 = call30 != 0
 	if tobool31 {
 		goto while_body
@@ -480885,7 +480887,7 @@ while_end:
 	v12 = (*byte)(unsafe.Pointer(v11))
 	v13 = *capacity
 	mul = v13 * int64(4)
-	call = realloc(v12, mul)
+	call = libc.Realloc(v12, mul)
 	v14 = (*int32)(unsafe.Pointer(call))
 	v15 = *scanner_addr
 	quoted_string_id6 = &v15.F3
@@ -481408,7 +481410,7 @@ while_cond:
 	v31 = *lexer_addr
 	lookahead39 = &v31.F0
 	v32 = *lookahead39
-	call40 = iswspace(v32)
+	call40 = libc.Iswspace(v32)
 	tobool41 = call40 != 0
 	if tobool41 {
 		goto while_body

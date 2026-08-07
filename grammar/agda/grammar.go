@@ -71,7 +71,7 @@ type TSLexer struct {
 	F4 func(*TSLexer) int32
 	F5 func(*TSLexer) bool
 	F6 func(*TSLexer) bool
-	F7 func(*TSLexer, *byte)
+	F7 func(*TSLexer, *byte, ...interface{})
 }
 
 type TSSymbolMetadata struct {
@@ -128,7 +128,7 @@ var _str [12]byte = [12]byte{116, 109, 112, 32, 33, 61, 32, 78, 85, 76, 76, 0}
 
 var _str_1 [39]byte = [39]byte{
 	47, 116, 109, 112, 47, 108, 101, 97, 118, 101, 110, 45, 97, 103, 100, 97,
-	45, 51, 54, 48, 52, 48, 50, 53, 51, 50, 54, 47, 99, 111, 109, 98,
+	45, 50, 55, 49, 52, 57, 48, 52, 48, 53, 50, 47, 99, 111, 109, 98,
 	105, 110, 101, 100, 46, 99, 0,
 }
 
@@ -622736,7 +622736,7 @@ if_then10:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 151, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 151, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -622814,6 +622814,7 @@ if_then27:
 	data29 = &tokens28.F3
 	v36 = *data29
 	v37 = (*byte)(unsafe.Pointer(v36))
+	libc.Free(v37)
 	goto if_end30
 
 if_end30:
@@ -622886,7 +622887,7 @@ if_then56:
 	goto if_end58
 
 if_else57:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 151, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 151, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
 	panic("unreachable")
 
 if_end58:
@@ -622964,6 +622965,7 @@ if_then89:
 	data91 = &tokens90.F3
 	v75 = *data91
 	v76 = (*byte)(unsafe.Pointer(v75))
+	libc.Free(v76)
 	goto if_end92
 
 if_end92:
@@ -623057,7 +623059,7 @@ if_then131:
 	goto if_end133
 
 if_else132:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 152, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 152, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
 	panic("unreachable")
 
 if_end133:
@@ -623135,6 +623137,7 @@ if_then164:
 	data166 = &tokens165.F3
 	v118 = *data166
 	v119 = (*byte)(unsafe.Pointer(v118))
+	libc.Free(v119)
 	goto if_end167
 
 if_end167:
@@ -623207,7 +623210,7 @@ if_then197:
 	goto if_end199
 
 if_else198:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 152, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 152, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
 	panic("unreachable")
 
 if_end199:
@@ -623285,6 +623288,7 @@ if_then230:
 	data232 = &tokens231.F3
 	v157 = *data232
 	v158 = (*byte)(unsafe.Pointer(v157))
+	libc.Free(v158)
 	goto if_end233
 
 if_end233:
@@ -623502,7 +623506,7 @@ if_then303:
 	goto if_end305
 
 if_else304:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 169, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 169, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
 	panic("unreachable")
 
 if_end305:
@@ -623580,6 +623584,7 @@ if_then336:
 	data338 = &tokens337.F3
 	v222 = *data338
 	v223 = (*byte)(unsafe.Pointer(v222))
+	libc.Free(v223)
 	goto if_end339
 
 if_end339:
@@ -623652,7 +623657,7 @@ if_then369:
 	goto if_end371
 
 if_else370:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 169, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 169, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
 	panic("unreachable")
 
 if_end371:
@@ -623730,6 +623735,7 @@ if_then402:
 	data404 = &tokens403.F3
 	v261 = *data404
 	v262 = (*byte)(unsafe.Pointer(v261))
+	libc.Free(v262)
 	goto if_end405
 
 if_end405:
@@ -623823,7 +623829,7 @@ if_then444:
 	goto if_end446
 
 if_else445:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 170, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 170, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
 	panic("unreachable")
 
 if_end446:
@@ -623901,6 +623907,7 @@ if_then477:
 	data479 = &tokens478.F3
 	v304 = *data479
 	v305 = (*byte)(unsafe.Pointer(v304))
+	libc.Free(v305)
 	goto if_end480
 
 if_end480:
@@ -623973,7 +623980,7 @@ if_then510:
 	goto if_end512
 
 if_else511:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 170, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 170, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
 	panic("unreachable")
 
 if_end512:
@@ -624051,6 +624058,7 @@ if_then543:
 	data545 = &tokens544.F3
 	v343 = *data545
 	v344 = (*byte)(unsafe.Pointer(v343))
+	libc.Free(v344)
 	goto if_end546
 
 if_end546:
@@ -624158,7 +624166,7 @@ if_then589:
 	goto if_end591
 
 if_else590:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 172, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 172, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
 	panic("unreachable")
 
 if_end591:
@@ -624236,6 +624244,7 @@ if_then622:
 	data624 = &tokens623.F3
 	v388 = *data624
 	v389 = (*byte)(unsafe.Pointer(v388))
+	libc.Free(v389)
 	goto if_end625
 
 if_end625:
@@ -624308,7 +624317,7 @@ if_then655:
 	goto if_end657
 
 if_else656:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 172, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 172, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
 	panic("unreachable")
 
 if_end657:
@@ -624386,6 +624395,7 @@ if_then688:
 	data690 = &tokens689.F3
 	v427 = *data690
 	v428 = (*byte)(unsafe.Pointer(v427))
+	libc.Free(v428)
 	goto if_end691
 
 if_end691:
@@ -624593,7 +624603,7 @@ cond_false:
 cond_end:
 	conv776 = int64(uint64(uint32(cond)))
 	mul777 = conv776 * int64(2)
-	call778 = realloc(v472, mul777)
+	call778 = libc.Realloc(v472, mul777)
 	*tmp765 = call778
 	v477 = *tmp765
 	cmp779 = v477 != nil
@@ -624607,7 +624617,7 @@ if_then781:
 	goto if_end783
 
 if_else782:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 186, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 186, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
 	panic("unreachable")
 
 if_end783:
@@ -624702,7 +624712,7 @@ if_then821:
 	goto if_end823
 
 if_else822:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 187, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 187, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
 	panic("unreachable")
 
 if_end823:
@@ -624780,6 +624790,7 @@ if_then854:
 	data856 = &tokens855.F3
 	v515 = *data856
 	v516 = (*byte)(unsafe.Pointer(v515))
+	libc.Free(v516)
 	goto if_end857
 
 if_end857:
@@ -624852,7 +624863,7 @@ if_then887:
 	goto if_end889
 
 if_else888:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 187, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 187, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
 	panic("unreachable")
 
 if_end889:
@@ -624930,6 +624941,7 @@ if_then920:
 	data922 = &tokens921.F3
 	v554 = *data922
 	v555 = (*byte)(unsafe.Pointer(v554))
+	libc.Free(v555)
 	goto if_end923
 
 if_end923:
@@ -625049,7 +625061,7 @@ if_then969:
 	goto if_end971
 
 if_else970:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 191, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 191, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
 	panic("unreachable")
 
 if_end971:
@@ -625127,6 +625139,7 @@ if_then1002:
 	data1004 = &tokens1003.F3
 	v600 = *data1004
 	v601 = (*byte)(unsafe.Pointer(v600))
+	libc.Free(v601)
 	goto if_end1005
 
 if_end1005:
@@ -625199,7 +625212,7 @@ if_then1035:
 	goto if_end1037
 
 if_else1036:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 191, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 191, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
 	panic("unreachable")
 
 if_end1037:
@@ -625277,6 +625290,7 @@ if_then1068:
 	data1070 = &tokens1069.F3
 	v639 = *data1070
 	v640 = (*byte)(unsafe.Pointer(v639))
+	libc.Free(v640)
 	goto if_end1071
 
 if_end1071:
@@ -625387,7 +625401,7 @@ if_then1115:
 	goto if_end1117
 
 if_else1116:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 195, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 195, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
 	panic("unreachable")
 
 if_end1117:
@@ -625465,6 +625479,7 @@ if_then1148:
 	data1150 = &tokens1149.F3
 	v684 = *data1150
 	v685 = (*byte)(unsafe.Pointer(v684))
+	libc.Free(v685)
 	goto if_end1151
 
 if_end1151:
@@ -625537,7 +625552,7 @@ if_then1181:
 	goto if_end1183
 
 if_else1182:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 195, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 195, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
 	panic("unreachable")
 
 if_end1183:
@@ -625615,6 +625630,7 @@ if_then1214:
 	data1216 = &tokens1215.F3
 	v723 = *data1216
 	v724 = (*byte)(unsafe.Pointer(v723))
+	libc.Free(v724)
 	goto if_end1217
 
 if_end1217:
@@ -625763,7 +625779,7 @@ cond_false1272:
 cond_end1276:
 	conv1278 = int64(uint64(uint32(cond1277)))
 	mul1279 = conv1278 * int64(2)
-	call1280 = realloc(v751, mul1279)
+	call1280 = libc.Realloc(v751, mul1279)
 	*tmp1263 = call1280
 	v756 = *tmp1263
 	cmp1281 = v756 != nil
@@ -625777,7 +625793,7 @@ if_then1283:
 	goto if_end1285
 
 if_else1284:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 201, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 201, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
 	panic("unreachable")
 
 if_end1285:
@@ -625872,7 +625888,7 @@ if_then1323:
 	goto if_end1325
 
 if_else1324:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 202, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 202, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
 	panic("unreachable")
 
 if_end1325:
@@ -625950,6 +625966,7 @@ if_then1356:
 	data1358 = &tokens1357.F3
 	v794 = *data1358
 	v795 = (*byte)(unsafe.Pointer(v794))
+	libc.Free(v795)
 	goto if_end1359
 
 if_end1359:
@@ -626022,7 +626039,7 @@ if_then1389:
 	goto if_end1391
 
 if_else1390:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 202, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 202, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
 	panic("unreachable")
 
 if_end1391:
@@ -626100,6 +626117,7 @@ if_then1422:
 	data1424 = &tokens1423.F3
 	v833 = *data1424
 	v834 = (*byte)(unsafe.Pointer(v833))
+	libc.Free(v834)
 	goto if_end1425
 
 if_end1425:
@@ -626265,7 +626283,7 @@ if_then1493:
 	goto if_end1495
 
 if_else1494:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 211, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 211, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
 	panic("unreachable")
 
 if_end1495:
@@ -626343,6 +626361,7 @@ if_then1526:
 	data1528 = &tokens1527.F3
 	v891 = *data1528
 	v892 = (*byte)(unsafe.Pointer(v891))
+	libc.Free(v892)
 	goto if_end1529
 
 if_end1529:
@@ -626415,7 +626434,7 @@ if_then1559:
 	goto if_end1561
 
 if_else1560:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 211, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 211, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
 	panic("unreachable")
 
 if_end1561:
@@ -626493,6 +626512,7 @@ if_then1592:
 	data1594 = &tokens1593.F3
 	v930 = *data1594
 	v931 = (*byte)(unsafe.Pointer(v930))
+	libc.Free(v931)
 	goto if_end1595
 
 if_end1595:
@@ -626586,7 +626606,7 @@ if_then1634:
 	goto if_end1636
 
 if_else1635:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 212, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 212, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
 	panic("unreachable")
 
 if_end1636:
@@ -626664,6 +626684,7 @@ if_then1667:
 	data1669 = &tokens1668.F3
 	v973 = *data1669
 	v974 = (*byte)(unsafe.Pointer(v973))
+	libc.Free(v974)
 	goto if_end1670
 
 if_end1670:
@@ -626736,7 +626757,7 @@ if_then1700:
 	goto if_end1702
 
 if_else1701:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 212, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 212, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
 	panic("unreachable")
 
 if_end1702:
@@ -626814,6 +626835,7 @@ if_then1733:
 	data1735 = &tokens1734.F3
 	v1012 = *data1735
 	v1013 = (*byte)(unsafe.Pointer(v1012))
+	libc.Free(v1013)
 	goto if_end1736
 
 if_end1736:
@@ -626968,7 +626990,7 @@ if_then1799:
 	goto if_end1801
 
 if_else1800:
-	__assert_fail(&_str_2[int64(0)], &_str_1[int64(0)], 228, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
+	libc.AssertFail(&_str_2[int64(0)], &_str_1[int64(0)], 228, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_scan[int64(0)])
 	panic("unreachable")
 
 if_end1801:
@@ -627208,7 +627230,7 @@ cond_false:
 cond_end:
 	conv = int64(uint64(uint32(cond)))
 	mul16 = conv * int64(2)
-	call = realloc(v12, mul16)
+	call = libc.Realloc(v12, mul16)
 	*tmp = call
 	v17 = *tmp
 	cmp17 = v17 != nil
@@ -627222,7 +627244,7 @@ if_then19:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 262, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_deserialize[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 262, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_deserialize[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -627340,7 +627362,7 @@ do_body57:
 	conv62 = int64(uint64(uint32(sub61)))
 	div63 = int64(uint64(conv62) / uint64(2))
 	mul64 = div63 * int64(2)
-	call65 = realloc(v41, mul64)
+	call65 = libc.Realloc(v41, mul64)
 	*tmp58 = call65
 	v44 = *tmp58
 	cmp66 = v44 != nil
@@ -627354,7 +627376,7 @@ if_then68:
 	goto if_end70
 
 if_else69:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 273, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_deserialize[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 273, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_deserialize[int64(0)])
 	panic("unreachable")
 
 if_end70:
@@ -627486,7 +627508,7 @@ cond_false124:
 cond_end128:
 	conv130 = int64(uint64(uint32(cond129)))
 	mul131 = conv130 * int64(2)
-	call132 = realloc(v72, mul131)
+	call132 = libc.Realloc(v72, mul131)
 	*tmp115 = call132
 	v77 = *tmp115
 	cmp133 = v77 != nil
@@ -627500,7 +627522,7 @@ if_then135:
 	goto if_end137
 
 if_else136:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 281, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_deserialize[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 281, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_deserialize[int64(0)])
 	panic("unreachable")
 
 if_end137:
@@ -627578,7 +627600,7 @@ if_then167:
 	goto if_end169
 
 if_else168:
-	__assert_fail(&_str_3[int64(0)], &_str_1[int64(0)], 285, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_deserialize[int64(0)])
+	libc.AssertFail(&_str_3[int64(0)], &_str_1[int64(0)], 285, &__PRETTY_FUNCTION___tree_sitter_agda_external_scanner_deserialize[int64(0)])
 	panic("unreachable")
 
 if_end169:
@@ -627676,6 +627698,7 @@ if_then:
 	data2 = &indents1.F2
 	v5 = *data2
 	v6 = (*byte)(unsafe.Pointer(v5))
+	libc.Free(v6)
 	goto if_end
 
 if_end:
@@ -627699,6 +627722,7 @@ if_then5:
 	data7 = &tokens6.F3
 	v10 = *data7
 	v11 = (*byte)(unsafe.Pointer(v10))
+	libc.Free(v11)
 	goto if_end8
 
 if_end8:
@@ -627707,6 +627731,7 @@ if_end8:
 do_end:
 	v12 = *scanner
 	v13 = (*byte)(unsafe.Pointer(v12))
+	libc.Free(v13)
 }
 
 func tree_sitter_agda() *TSLanguage {

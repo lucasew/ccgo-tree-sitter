@@ -86,7 +86,7 @@ type TSLexer struct {
 	F4 func(*TSLexer) int32
 	F5 func(*TSLexer) bool
 	F6 func(*TSLexer) bool
-	F7 func(*TSLexer, *byte)
+	F7 func(*TSLexer, *byte, ...interface{})
 }
 
 type TSLexerMode struct {
@@ -148,10 +148,10 @@ var _str [29]byte = [29]byte{
 	40, 116, 97, 103, 115, 41, 45, 62, 115, 105, 122, 101, 0,
 }
 
-var _str_1 [37]byte = [37]byte{
+var _str_1 [38]byte = [38]byte{
 	47, 116, 109, 112, 47, 108, 101, 97, 118, 101, 110, 45, 120, 109, 108, 45,
-	56, 51, 49, 51, 54, 53, 50, 55, 52, 47, 99, 111, 109, 98, 105, 110,
-	101, 100, 46, 99, 0,
+	50, 53, 53, 52, 52, 56, 54, 53, 57, 53, 47, 99, 111, 109, 98, 105,
+	110, 101, 100, 46, 99, 0,
 }
 
 var __PRETTY_FUNCTION___tree_sitter_xml_external_scanner_destroy [54]byte = [54]byte{
@@ -29039,7 +29039,7 @@ if_then6:
 	goto if_end7
 
 if_else:
-	__assert_fail(&_str_5[int64(0)], &_str_1[int64(0)], 50, &__PRETTY_FUNCTION___scan_end_tag_name[int64(0)])
+	libc.AssertFail(&_str_5[int64(0)], &_str_1[int64(0)], 50, &__PRETTY_FUNCTION___scan_end_tag_name[int64(0)])
 	panic("unreachable")
 
 if_end7:
@@ -29124,7 +29124,7 @@ func tree_sitter_xml_external_scanner_create() *byte {
 	}
 
 if_then:
-	abort()
+	libc.Abort()
 	panic("unreachable")
 
 if_end:
@@ -29195,7 +29195,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 200, &__PRETTY_FUNCTION___tree_sitter_xml_external_scanner_destroy[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 200, &__PRETTY_FUNCTION___tree_sitter_xml_external_scanner_destroy[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -29221,6 +29221,7 @@ for_end:
 	_array__delete(v14)
 	v15 = *tags
 	v16 = (*byte)(unsafe.Pointer(v15))
+	libc.Free(v16)
 }
 
 func _array__delete(self *Array) {
@@ -29249,6 +29250,7 @@ if_then:
 	v2 = *self_addr
 	contents1 = &v2.F0
 	v3 = *contents1
+	libc.Free(v3)
 	v4 = *self_addr
 	contents2 = &v4.F0
 	*contents2 = nil
@@ -29358,7 +29360,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_2[int64(0)], &_str_1[int64(0)], 215, &__PRETTY_FUNCTION___tree_sitter_xml_external_scanner_serialize[int64(0)])
+	libc.AssertFail(&_str_2[int64(0)], &_str_1[int64(0)], 215, &__PRETTY_FUNCTION___tree_sitter_xml_external_scanner_serialize[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -29520,7 +29522,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 239, &__PRETTY_FUNCTION___tree_sitter_xml_external_scanner_deserialize[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 239, &__PRETTY_FUNCTION___tree_sitter_xml_external_scanner_deserialize[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -29772,7 +29774,7 @@ if_then1:
 	conv = int64(uint64(uint32(v7)))
 	v8 = *element_size_addr
 	mul = conv * v8
-	call = realloc(v6, mul)
+	call = libc.Realloc(v6, mul)
 	v9 = *self_addr
 	contents3 = &v9.F0
 	*contents3 = call
@@ -42402,7 +42404,7 @@ func is_valid_name_char(chr int32) bool {
 	chr_addr = new(int32)
 	*chr_addr = chr
 	v0 = *chr_addr
-	call = iswalnum(v0)
+	call = libc.Iswalnum(v0)
 	tobool = call != 0
 	if tobool {
 		v6 = true

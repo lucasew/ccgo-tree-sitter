@@ -1,6 +1,9 @@
 package grammar_godot_resource
 
-import "unsafe"
+import (
+	"unsafe"
+	"github.com/andybalholm/leaven/libc"
+)
 
 type TSFieldMapEntry struct {
 	F0 int16
@@ -57,7 +60,7 @@ type TSLexer struct {
 	F4 func(*TSLexer) int32
 	F5 func(*TSLexer) bool
 	F6 func(*TSLexer) bool
-	F7 func(*TSLexer, *byte)
+	F7 func(*TSLexer, *byte, ...interface{})
 }
 
 type TSSymbolMetadata struct {
@@ -5068,7 +5071,7 @@ while_cond:
 	v2 = *lexer_addr
 	lookahead = &v2.F0
 	v3 = *lookahead
-	call = iswspace(v3)
+	call = libc.Iswspace(v3)
 	tobool1 = call != 0
 	if tobool1 {
 		goto while_body

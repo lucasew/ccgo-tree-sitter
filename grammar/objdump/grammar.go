@@ -4623,7 +4623,7 @@ land_lhs_true:
 	v12 = *lexer_addr
 	lookahead3 = &v12.F0
 	v13 = *lookahead3
-	call4 = iswspace(v13)
+	call4 = libc.Iswspace(v13)
 	tobool = call4 != 0
 	if tobool {
 		goto if_then5

@@ -91,7 +91,7 @@ type TSLexer struct {
 	F4 func(*TSLexer) int32
 	F5 func(*TSLexer) bool
 	F6 func(*TSLexer) bool
-	F7 func(*TSLexer, *byte)
+	F7 func(*TSLexer, *byte, ...interface{})
 }
 
 type TSLexerMode struct {
@@ -151,10 +151,10 @@ type TSParseActionEntry struct {
 
 var _str [15]byte = [15]byte{115, 105, 122, 101, 32, 61, 61, 32, 108, 101, 110, 103, 116, 104, 0}
 
-var _str_1 [41]byte = [41]byte{
+var _str_1 [42]byte = [42]byte{
 	47, 116, 109, 112, 47, 108, 101, 97, 118, 101, 110, 45, 99, 95, 115, 104,
-	97, 114, 112, 45, 52, 56, 54, 57, 48, 48, 55, 51, 54, 47, 99, 111,
-	109, 98, 105, 110, 101, 100, 46, 99, 0,
+	97, 114, 112, 45, 50, 57, 52, 52, 55, 51, 51, 55, 52, 52, 47, 99,
+	111, 109, 98, 105, 110, 101, 100, 46, 99, 0,
 }
 
 var __PRETTY_FUNCTION___tree_sitter_c_sharp_external_scanner_deserialize [90]byte = [90]byte{
@@ -393724,6 +393724,7 @@ func tree_sitter_c_sharp_external_scanner_destroy(payload *byte) {
 	_array__delete(v3)
 	v4 = *scanner
 	v5 = (*byte)(unsafe.Pointer(v4))
+	libc.Free(v5)
 }
 
 func _array__delete(self *Array) {
@@ -393752,6 +393753,7 @@ if_then:
 	v2 = *self_addr
 	contents1 = &v2.F0
 	v3 = *contents1
+	libc.Free(v3)
 	v4 = *self_addr
 	contents2 = &v4.F0
 	*contents2 = nil
@@ -394093,7 +394095,7 @@ if_then35:
 	goto if_end36
 
 if_else:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 174, &__PRETTY_FUNCTION___tree_sitter_c_sharp_external_scanner_deserialize[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 174, &__PRETTY_FUNCTION___tree_sitter_c_sharp_external_scanner_deserialize[int64(0)])
 	panic("unreachable")
 
 if_end36:
@@ -394148,7 +394150,7 @@ if_then1:
 	conv = int64(uint64(uint32(v7)))
 	v8 = *element_size_addr
 	mul = conv * v8
-	call = realloc(v6, mul)
+	call = libc.Realloc(v6, mul)
 	v9 = *self_addr
 	contents3 = &v9.F0
 	*contents3 = call
@@ -394345,7 +394347,7 @@ while_cond:
 	v17 = *lexer_addr
 	lookahead18 = &v17.F0
 	v18 = *lookahead18
-	call19 = iswspace(v18)
+	call19 = libc.Iswspace(v18)
 	tobool20 = call19 != 0
 	if tobool20 {
 		goto while_body
@@ -394640,7 +394642,7 @@ while_cond107:
 	v72 = *lexer_addr
 	lookahead108 = &v72.F0
 	v73 = *lookahead108
-	call109 = iswspace(v73)
+	call109 = libc.Iswspace(v73)
 	tobool110 = call109 != 0
 	if tobool110 {
 		goto while_body111
@@ -394947,7 +394949,7 @@ if_then203:
 	goto if_end205
 
 if_else204:
-	__assert_fail(&_str_2[int64(0)], &_str_1[int64(0)], 467, &__PRETTY_FUNCTION___tree_sitter_c_sharp_external_scanner_scan[int64(0)])
+	libc.AssertFail(&_str_2[int64(0)], &_str_1[int64(0)], 467, &__PRETTY_FUNCTION___tree_sitter_c_sharp_external_scanner_scan[int64(0)])
 	panic("unreachable")
 
 if_end205:
@@ -395087,7 +395089,7 @@ if_then259:
 	goto if_end261
 
 if_else260:
-	__assert_fail(&_str_2[int64(0)], &_str_1[int64(0)], 486, &__PRETTY_FUNCTION___tree_sitter_c_sharp_external_scanner_scan[int64(0)])
+	libc.AssertFail(&_str_2[int64(0)], &_str_1[int64(0)], 486, &__PRETTY_FUNCTION___tree_sitter_c_sharp_external_scanner_scan[int64(0)])
 	panic("unreachable")
 
 if_end261:
@@ -395209,7 +395211,7 @@ if_then312:
 	goto if_end314
 
 if_else313:
-	__assert_fail(&_str_2[int64(0)], &_str_1[int64(0)], 503, &__PRETTY_FUNCTION___tree_sitter_c_sharp_external_scanner_scan[int64(0)])
+	libc.AssertFail(&_str_2[int64(0)], &_str_1[int64(0)], 503, &__PRETTY_FUNCTION___tree_sitter_c_sharp_external_scanner_scan[int64(0)])
 	panic("unreachable")
 
 if_end314:
@@ -395369,7 +395371,7 @@ if_then376:
 	goto if_end378
 
 if_else377:
-	__assert_fail(&_str_2[int64(0)], &_str_1[int64(0)], 520, &__PRETTY_FUNCTION___tree_sitter_c_sharp_external_scanner_scan[int64(0)])
+	libc.AssertFail(&_str_2[int64(0)], &_str_1[int64(0)], 520, &__PRETTY_FUNCTION___tree_sitter_c_sharp_external_scanner_scan[int64(0)])
 	panic("unreachable")
 
 if_end378:
@@ -395391,7 +395393,7 @@ while_cond386:
 	v221 = *lexer_addr
 	lookahead387 = &v221.F0
 	v222 = *lookahead387
-	call388 = iswspace(v222)
+	call388 = libc.Iswspace(v222)
 	tobool389 = call388 != 0
 	if tobool389 {
 		goto while_body390
@@ -395501,7 +395503,7 @@ if_then427:
 	goto if_end429
 
 if_else428:
-	__assert_fail(&_str_2[int64(0)], &_str_1[int64(0)], 542, &__PRETTY_FUNCTION___tree_sitter_c_sharp_external_scanner_scan[int64(0)])
+	libc.AssertFail(&_str_2[int64(0)], &_str_1[int64(0)], 542, &__PRETTY_FUNCTION___tree_sitter_c_sharp_external_scanner_scan[int64(0)])
 	panic("unreachable")
 
 if_end429:
@@ -396114,7 +396116,7 @@ while_cond:
 	v0 = *lexer_addr
 	lookahead = &v0.F0
 	v1 = *lookahead
-	call = iswspace(v1)
+	call = libc.Iswspace(v1)
 	tobool = call != 0
 	if tobool {
 		goto while_body
@@ -431935,7 +431937,7 @@ func is_id_continue(c int32) bool {
 
 lor_rhs:
 	v1 = *c_addr
-	call = iswalnum(v1)
+	call = libc.Iswalnum(v1)
 	tobool = call != 0
 	v2 = tobool
 	goto lor_end

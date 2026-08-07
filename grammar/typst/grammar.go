@@ -65,7 +65,7 @@ type TSLexer struct {
 	F4 func(*TSLexer) int32
 	F5 func(*TSLexer) bool
 	F6 func(*TSLexer) bool
-	F7 func(*TSLexer, *byte)
+	F7 func(*TSLexer, *byte, ...interface{})
 }
 
 type TSSymbolMetadata struct {
@@ -259881,6 +259881,7 @@ func tree_sitter_typst_external_scanner_destroy(payload *byte) {
 	vec_u32_drop(worker)
 	v5 = *self
 	v6 = (*byte)(unsafe.Pointer(v5))
+	libc.Free(v6)
 }
 
 func vec_u32_drop(self *vec_u32) {
@@ -259904,6 +259905,7 @@ if_then:
 	vec1 = &self.F2
 	v1 = *vec1
 	v2 = (*byte)(unsafe.Pointer(v1))
+	libc.Free(v2)
 	goto if_end
 
 if_end:
@@ -260270,7 +260272,7 @@ if_then:
 	cap4 = &v14.F0
 	v15 = *cap4
 	mul = int64(4) * v15
-	call = realloc(v13, mul)
+	call = libc.Realloc(v13, mul)
 	v16 = (*int32)(unsafe.Pointer(call))
 	v17 = *self_addr
 	vec5 = &v17.F2
@@ -260388,7 +260390,7 @@ if_then:
 	cap4 = &v10.F0
 	v11 = *cap4
 	mul = int64(4) * v11
-	call = realloc(v9, mul)
+	call = libc.Realloc(v9, mul)
 	v12 = (*int32)(unsafe.Pointer(call))
 	v13 = *self_addr
 	vec5 = &v13.F2

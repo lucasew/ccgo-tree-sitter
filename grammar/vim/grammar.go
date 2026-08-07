@@ -71,7 +71,7 @@ type TSLexer struct {
 	F4 func(*TSLexer) int32
 	F5 func(*TSLexer) bool
 	F6 func(*TSLexer) bool
-	F7 func(*TSLexer, *byte)
+	F7 func(*TSLexer, *byte, ...interface{})
 }
 
 type TSLexerMode struct {
@@ -471,7 +471,7 @@ var _str_163 [34]byte = [34]byte{
 
 var _str_164 [38]byte = [38]byte{
 	47, 116, 109, 112, 47, 108, 101, 97, 118, 101, 110, 45, 118, 105, 109, 45,
-	49, 49, 52, 56, 55, 52, 48, 54, 49, 55, 47, 99, 111, 109, 98, 105,
+	52, 49, 53, 51, 49, 54, 50, 52, 54, 53, 47, 99, 111, 109, 98, 105,
 	110, 101, 100, 46, 99, 0,
 }
 
@@ -202923,6 +202923,7 @@ func tree_sitter_vim_external_scanner_destroy(payload *byte) {
 	*s = v1
 	v2 = *s
 	v3 = (*byte)(unsafe.Pointer(v2))
+	libc.Free(v3)
 }
 
 func tree_sitter_vim_external_scanner_serialize(payload *byte, buffer *byte) int32 {
@@ -203057,7 +203058,7 @@ if_then6:
 	goto if_end7
 
 if_else:
-	__assert_fail(&_str_163[int64(0)], &_str_164[int64(0)], 107, &__PRETTY_FUNCTION___tree_sitter_vim_external_scanner_deserialize[int64(0)])
+	libc.AssertFail(&_str_163[int64(0)], &_str_164[int64(0)], 107, &__PRETTY_FUNCTION___tree_sitter_vim_external_scanner_deserialize[int64(0)])
 	panic("unreachable")
 
 if_end7:
@@ -203076,7 +203077,7 @@ if_then12:
 	goto if_end14
 
 if_else13:
-	__assert_fail(&_str_165[int64(0)], &_str_164[int64(0)], 108, &__PRETTY_FUNCTION___tree_sitter_vim_external_scanner_deserialize[int64(0)])
+	libc.AssertFail(&_str_165[int64(0)], &_str_164[int64(0)], 108, &__PRETTY_FUNCTION___tree_sitter_vim_external_scanner_deserialize[int64(0)])
 	panic("unreachable")
 
 if_end14:
@@ -203161,7 +203162,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_166[int64(0)], &_str_164[int64(0)], 338, &__PRETTY_FUNCTION___tree_sitter_vim_external_scanner_scan[int64(0)])
+	libc.AssertFail(&_str_166[int64(0)], &_str_164[int64(0)], 338, &__PRETTY_FUNCTION___tree_sitter_vim_external_scanner_scan[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -204635,7 +204636,7 @@ if_end15:
 	v21 = *lexer_addr
 	lookahead16 = &v21.F0
 	v22 = *lookahead16
-	call17 = iswalnum(v22)
+	call17 = libc.Iswalnum(v22)
 	tobool18 = call17 != 0
 	if tobool18 {
 		goto if_then26
@@ -204943,7 +204944,7 @@ sw_bb5:
 	goto _return
 
 sw_default:
-	__assert_fail(&_str_172[int64(0)], &_str_164[int64(0)], 258, &__PRETTY_FUNCTION___lex_string[int64(0)])
+	libc.AssertFail(&_str_172[int64(0)], &_str_164[int64(0)], 258, &__PRETTY_FUNCTION___lex_string[int64(0)])
 	panic("unreachable")
 
 _return:

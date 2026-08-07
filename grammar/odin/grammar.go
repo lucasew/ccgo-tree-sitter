@@ -65,7 +65,7 @@ type TSLexer struct {
 	F4 func(*TSLexer) int32
 	F5 func(*TSLexer) bool
 	F6 func(*TSLexer) bool
-	F7 func(*TSLexer, *byte)
+	F7 func(*TSLexer, *byte, ...interface{})
 }
 
 type TSSymbolMetadata struct {
@@ -488788,7 +488788,7 @@ while_cond:
 	v2 = *lexer_addr
 	lookahead = &v2.F0
 	v3 = *lookahead
-	call = iswspace(v3)
+	call = libc.Iswspace(v3)
 	tobool1 = call != 0
 	if tobool1 {
 		goto land_rhs
@@ -488835,7 +488835,7 @@ while_cond6:
 	v10 = *lexer_addr
 	lookahead7 = &v10.F0
 	v11 = *lookahead7
-	call8 = iswspace(v11)
+	call8 = libc.Iswspace(v11)
 	tobool9 = call8 != 0
 	if tobool9 {
 		goto while_body10
@@ -488963,7 +488963,7 @@ if_end23:
 	v31 = *mark_end24
 	v32 = *lexer_addr
 	v31(v32)
-	call25 = __ctype_b_loc()
+	call25 = libc.CtypeBLoc()
 	v33 = *call25
 	v34 = *lexer_addr
 	lookahead26 = &v34.F0
@@ -489198,7 +489198,7 @@ sw_default:
 	}
 
 land_lhs_true94:
-	call95 = __ctype_b_loc()
+	call95 = libc.CtypeBLoc()
 	v66 = *call95
 	v67 = *lexer_addr
 	lookahead96 = &v67.F0
@@ -489353,7 +489353,7 @@ while_cond137:
 	v86 = *lexer_addr
 	lookahead138 = &v86.F0
 	v87 = *lookahead138
-	call139 = iswspace(v87)
+	call139 = libc.Iswspace(v87)
 	tobool140 = call139 != 0
 	if tobool140 {
 		goto land_rhs141
@@ -489410,7 +489410,7 @@ while_cond154:
 	v99 = *lexer_addr
 	lookahead155 = &v99.F0
 	v100 = *lookahead155
-	call156 = iswspace(v100)
+	call156 = libc.Iswspace(v100)
 	tobool157 = call156 != 0
 	if tobool157 {
 		goto land_rhs158
@@ -489457,7 +489457,7 @@ while_cond169:
 	v107 = *lexer_addr
 	lookahead170 = &v107.F0
 	v108 = *lookahead170
-	call171 = iswspace(v108)
+	call171 = libc.Iswspace(v108)
 	tobool172 = call171 != 0
 	if tobool172 {
 		goto while_body173
@@ -489505,7 +489505,7 @@ while_cond184:
 	v114 = *lexer_addr
 	lookahead185 = &v114.F0
 	v115 = *lookahead185
-	call186 = iswspace(v115)
+	call186 = libc.Iswspace(v115)
 	tobool187 = call186 != 0
 	if tobool187 {
 		goto land_rhs188
@@ -489563,7 +489563,7 @@ while_cond201:
 	v127 = *lexer_addr
 	lookahead202 = &v127.F0
 	v128 = *lookahead202
-	call203 = iswspace(v128)
+	call203 = libc.Iswspace(v128)
 	tobool204 = call203 != 0
 	if tobool204 {
 		goto while_body205
@@ -489615,7 +489615,7 @@ for_body:
 	v135 = *lexer_addr
 	lookahead217 = &v135.F0
 	v136 = *lookahead217
-	call218 = iswspace(v136)
+	call218 = libc.Iswspace(v136)
 	tobool219 = call218 != 0
 	if tobool219 {
 		goto if_then220
@@ -489671,7 +489671,7 @@ if_then236:
 	v144 = *lexer_addr
 	lookahead237 = &v144.F0
 	v145 = *lookahead237
-	call238 = iswspace(v145)
+	call238 = libc.Iswspace(v145)
 	tobool239 = call238 != 0
 	if tobool239 {
 		goto if_end241
@@ -489775,7 +489775,7 @@ while_cond270:
 	v158 = *lexer_addr
 	lookahead271 = &v158.F0
 	v159 = *lookahead271
-	call272 = iswspace(v159)
+	call272 = libc.Iswspace(v159)
 	tobool273 = call272 != 0
 	if tobool273 {
 		goto while_body274
@@ -489805,7 +489805,7 @@ while_cond279:
 	v162 = *lexer_addr
 	lookahead280 = &v162.F0
 	v163 = *lookahead280
-	call281 = iswspace(v163)
+	call281 = libc.Iswspace(v163)
 	tobool282 = call281 != 0
 	if tobool282 {
 		goto while_body283

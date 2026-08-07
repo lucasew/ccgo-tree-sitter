@@ -89,7 +89,7 @@ type TSLexer struct {
 	F4 func(*TSLexer) int32
 	F5 func(*TSLexer) bool
 	F6 func(*TSLexer) bool
-	F7 func(*TSLexer, *byte)
+	F7 func(*TSLexer, *byte, ...interface{})
 }
 
 type TSLexerMode struct {
@@ -407954,7 +407954,7 @@ if_then362:
 	goto if_end364
 
 if_else363:
-	__assert_fail(&_str_1[int64(0)], &_str_2[int64(0)], 771, &__PRETTY_FUNCTION___scan[int64(0)])
+	libc.AssertFail(&_str_1[int64(0)], &_str_2[int64(0)], 771, &__PRETTY_FUNCTION___scan[int64(0)])
 	panic("unreachable")
 
 if_end364:
@@ -413179,7 +413179,7 @@ if_then1990:
 	goto if_end1992
 
 if_else1991:
-	__assert_fail(&_str_9[int64(0)], &_str_2[int64(0)], 1764, &__PRETTY_FUNCTION___scan[int64(0)])
+	libc.AssertFail(&_str_9[int64(0)], &_str_2[int64(0)], 1764, &__PRETTY_FUNCTION___scan[int64(0)])
 	panic("unreachable")
 
 if_end1992:
@@ -413970,7 +413970,7 @@ if_then2231:
 	goto if_end2233
 
 if_else2232:
-	__assert_fail(&_str_10[int64(0)], &_str_2[int64(0)], 1911, &__PRETTY_FUNCTION___scan[int64(0)])
+	libc.AssertFail(&_str_10[int64(0)], &_str_2[int64(0)], 1911, &__PRETTY_FUNCTION___scan[int64(0)])
 	panic("unreachable")
 
 if_end2233:
@@ -414108,7 +414108,7 @@ if_then2282:
 	goto if_end2284
 
 if_else2283:
-	__assert_fail(&_str_11[int64(0)], &_str_2[int64(0)], 1956, &__PRETTY_FUNCTION___scan[int64(0)])
+	libc.AssertFail(&_str_11[int64(0)], &_str_2[int64(0)], 1956, &__PRETTY_FUNCTION___scan[int64(0)])
 	panic("unreachable")
 
 if_end2284:
@@ -414168,7 +414168,7 @@ if_then2306:
 	goto if_end2308
 
 if_else2307:
-	__assert_fail(&_str_12[int64(0)], &_str_2[int64(0)], 1961, &__PRETTY_FUNCTION___scan[int64(0)])
+	libc.AssertFail(&_str_12[int64(0)], &_str_2[int64(0)], 1961, &__PRETTY_FUNCTION___scan[int64(0)])
 	panic("unreachable")
 
 if_end2308:
@@ -414492,7 +414492,7 @@ if_then19:
 	goto if_end20
 
 if_else:
-	__assert_fail(&_str_19[int64(0)], &_str_2[int64(0)], 2014, &__PRETTY_FUNCTION___serialize[int64(0)])
+	libc.AssertFail(&_str_19[int64(0)], &_str_2[int64(0)], 2014, &__PRETTY_FUNCTION___serialize[int64(0)])
 	panic("unreachable")
 
 if_end20:
@@ -414614,7 +414614,7 @@ if_then54:
 	goto if_end56
 
 if_else55:
-	__assert_fail(&_str_20[int64(0)], &_str_2[int64(0)], 2026, &__PRETTY_FUNCTION___serialize[int64(0)])
+	libc.AssertFail(&_str_20[int64(0)], &_str_2[int64(0)], 2026, &__PRETTY_FUNCTION___serialize[int64(0)])
 	panic("unreachable")
 
 if_end56:
@@ -414687,7 +414687,7 @@ if_then78:
 	goto if_end80
 
 if_else79:
-	__assert_fail(&_str_21[int64(0)], &_str_2[int64(0)], 2032, &__PRETTY_FUNCTION___serialize[int64(0)])
+	libc.AssertFail(&_str_21[int64(0)], &_str_2[int64(0)], 2032, &__PRETTY_FUNCTION___serialize[int64(0)])
 	panic("unreachable")
 
 if_end80:
@@ -414798,7 +414798,7 @@ if_then117:
 	goto if_end119
 
 if_else118:
-	__assert_fail(&_str_22[int64(0)], &_str_2[int64(0)], 2045, &__PRETTY_FUNCTION___serialize[int64(0)])
+	libc.AssertFail(&_str_22[int64(0)], &_str_2[int64(0)], 2045, &__PRETTY_FUNCTION___serialize[int64(0)])
 	panic("unreachable")
 
 if_end119:
@@ -415566,6 +415566,7 @@ if_then:
 	contents2 = &indents1.F0
 	v3 = *contents2
 	v4 = (*byte)(unsafe.Pointer(v3))
+	libc.Free(v4)
 	goto if_end
 
 if_end:
@@ -415603,6 +415604,7 @@ if_then10:
 	indent_kinds11 = &v10.F1
 	contents12 = &indent_kinds11.F0
 	v11 = *contents12
+	libc.Free(v11)
 	goto if_end13
 
 if_end13:
@@ -415641,6 +415643,7 @@ if_then24:
 	contents26 = &preprocessor_indents25.F0
 	v18 = *contents26
 	v19 = (*byte)(unsafe.Pointer(v18))
+	libc.Free(v19)
 	goto if_end27
 
 if_end27:
@@ -415678,6 +415681,7 @@ if_then38:
 	preproc_kinds39 = &v25.F3
 	contents40 = &preproc_kinds39.F0
 	v26 = *contents40
+	libc.Free(v26)
 	goto if_end41
 
 if_end41:
@@ -415698,6 +415702,7 @@ if_end41:
 do_end48:
 	v30 = *scanner_addr
 	v31 = (*byte)(unsafe.Pointer(v30))
+	libc.Free(v31)
 }
 
 func tree_sitter_fsharp_signature() *TSLanguage {
@@ -473372,7 +473377,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_13[int64(0)], &_str_2[int64(0)], 159, &__PRETTY_FUNCTION___top_preproc_is_stray[int64(0)])
+	libc.AssertFail(&_str_13[int64(0)], &_str_2[int64(0)], 159, &__PRETTY_FUNCTION___top_preproc_is_stray[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -474070,7 +474075,7 @@ if_then8:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_10[int64(0)], &_str_2[int64(0)], 470, &__PRETTY_FUNCTION___try_dedent_for_preproc[int64(0)])
+	libc.AssertFail(&_str_10[int64(0)], &_str_2[int64(0)], 470, &__PRETTY_FUNCTION___try_dedent_for_preproc[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -474232,7 +474237,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_1[int64(0)], &_str_2[int64(0)], 144, &__PRETTY_FUNCTION___peek_indent_length[int64(0)])
+	libc.AssertFail(&_str_1[int64(0)], &_str_2[int64(0)], 144, &__PRETTY_FUNCTION___peek_indent_length[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -474334,7 +474339,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_13[int64(0)], &_str_2[int64(0)], 164, &__PRETTY_FUNCTION___top_preproc_is_structured[int64(0)])
+	libc.AssertFail(&_str_13[int64(0)], &_str_2[int64(0)], 164, &__PRETTY_FUNCTION___top_preproc_is_structured[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -475035,7 +475040,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_14[int64(0)], &_str_2[int64(0)], 234, &__PRETTY_FUNCTION___top_indent_is_midline_anchor[int64(0)])
+	libc.AssertFail(&_str_14[int64(0)], &_str_2[int64(0)], 234, &__PRETTY_FUNCTION___top_indent_is_midline_anchor[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -475110,7 +475115,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_14[int64(0)], &_str_2[int64(0)], 239, &__PRETTY_FUNCTION___top_indent_is_stranded_line[int64(0)])
+	libc.AssertFail(&_str_14[int64(0)], &_str_2[int64(0)], 239, &__PRETTY_FUNCTION___top_indent_is_stranded_line[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -475598,7 +475603,7 @@ if_then6:
 	goto if_end7
 
 if_else:
-	__assert_fail(&_str_14[int64(0)], &_str_2[int64(0)], 228, &__PRETTY_FUNCTION___peek_indent_kind[int64(0)])
+	libc.AssertFail(&_str_14[int64(0)], &_str_2[int64(0)], 228, &__PRETTY_FUNCTION___peek_indent_kind[int64(0)])
 	panic("unreachable")
 
 if_end7:
@@ -475672,7 +475677,7 @@ if_then1:
 	conv = int64(uint64(uint32(v6)))
 	v7 = *element_size_addr
 	mul = conv * v7
-	call = realloc(v5, mul)
+	call = libc.Realloc(v5, mul)
 	*new_contents = call
 	goto if_end
 

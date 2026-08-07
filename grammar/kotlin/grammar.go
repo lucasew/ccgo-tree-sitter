@@ -77,7 +77,7 @@ type TSLexer struct {
 	F4 func(*TSLexer) int32
 	F5 func(*TSLexer) bool
 	F6 func(*TSLexer) bool
-	F7 func(*TSLexer, *byte)
+	F7 func(*TSLexer, *byte, ...interface{})
 }
 
 type TSSymbolMetadata struct {
@@ -489868,7 +489868,7 @@ while_cond:
 	v13 = *lexer_addr
 	lookahead = &v13.F0
 	v14 = *lookahead
-	call17 = iswspace(v14)
+	call17 = libc.Iswspace(v14)
 	tobool18 = call17 != 0
 	if tobool18 {
 		goto while_body
@@ -490036,7 +490036,7 @@ while_cond52:
 	v43 = *lexer_addr
 	lookahead53 = &v43.F0
 	v44 = *lookahead53
-	call54 = iswspace(v44)
+	call54 = libc.Iswspace(v44)
 	tobool55 = call54 != 0
 	if tobool55 {
 		goto while_body56
@@ -490194,7 +490194,7 @@ if_end3:
 	v13 = *lexer_addr
 	lookahead4 = &v13.F0
 	v14 = *lookahead4
-	call5 = iswspace(v14)
+	call5 = libc.Iswspace(v14)
 	tobool = call5 != 0
 	if tobool {
 		goto if_end7
@@ -490835,7 +490835,7 @@ while_cond116:
 	v92 = *lexer_addr
 	lookahead117 = &v92.F0
 	v93 = *lookahead117
-	call118 = iswspace(v93)
+	call118 = libc.Iswspace(v93)
 	tobool119 = call118 != 0
 	if tobool119 {
 		goto while_body120
@@ -491450,7 +491450,7 @@ while_cond:
 	v6 = *lexer_addr
 	lookahead1 = &v6.F0
 	v7 = *lookahead1
-	call = iswspace(v7)
+	call = libc.Iswspace(v7)
 	tobool = call != 0
 	if tobool {
 		goto while_body
@@ -491586,7 +491586,7 @@ func is_word_char(c int32) bool {
 	c_addr = new(int32)
 	*c_addr = c
 	v0 = *c_addr
-	call = iswalnum(v0)
+	call = libc.Iswalnum(v0)
 	tobool = call != 0
 	if tobool {
 		v2 = true
@@ -492642,7 +492642,7 @@ func tree_sitter_kotlin_external_scanner_create() *byte {
 	}
 
 if_then:
-	abort()
+	libc.Abort()
 	panic("unreachable")
 
 if_end:
@@ -492680,6 +492680,7 @@ func tree_sitter_kotlin_external_scanner_destroy(payload *byte) {
 	_array__delete(v3)
 	v4 = *stack
 	v5 = (*byte)(unsafe.Pointer(v4))
+	libc.Free(v5)
 }
 
 func _array__delete(self *Array) {
@@ -492708,6 +492709,7 @@ if_then:
 	v2 = *self_addr
 	contents1 = &v2.F0
 	v3 = *contents1
+	libc.Free(v3)
 	v4 = *self_addr
 	contents2 = &v4.F0
 	*contents2 = nil
@@ -492900,7 +492902,7 @@ if_then1:
 	conv = int64(uint64(uint32(v7)))
 	v8 = *element_size_addr
 	mul = conv * v8
-	call = realloc(v6, mul)
+	call = libc.Realloc(v6, mul)
 	v9 = *self_addr
 	contents3 = &v9.F0
 	*contents3 = call
@@ -553879,7 +553881,7 @@ while_cond:
 	v0 = *lexer_addr
 	lookahead = &v0.F0
 	v1 = *lookahead
-	call = iswspace(v1)
+	call = libc.Iswspace(v1)
 	tobool = call != 0
 	if tobool {
 		goto while_body
@@ -554014,7 +554016,7 @@ while_cond:
 	v0 = *lexer_addr
 	lookahead = &v0.F0
 	v1 = *lookahead
-	call = iswspace(v1)
+	call = libc.Iswspace(v1)
 	tobool = call != 0
 	if tobool {
 		goto while_body
@@ -554788,7 +554790,7 @@ while_cond65:
 	v51 = *lexer_addr
 	lookahead66 = &v51.F0
 	v52 = *lookahead66
-	call67 = iswspace(v52)
+	call67 = libc.Iswspace(v52)
 	tobool = call67 != 0
 	if tobool {
 		goto while_body68
@@ -554946,7 +554948,7 @@ func stack_pop(stack *Stack) {
 	}
 
 if_then:
-	abort()
+	libc.Abort()
 	panic("unreachable")
 
 if_end:
@@ -554992,7 +554994,7 @@ func stack_push(stack *Stack, chr byte, triple bool, prefix_len byte) {
 	}
 
 if_then:
-	abort()
+	libc.Abort()
 	panic("unreachable")
 
 if_end:

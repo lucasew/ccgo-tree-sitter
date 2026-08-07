@@ -1,6 +1,9 @@
 package grammar_tablegen
 
-import "unsafe"
+import (
+	"unsafe"
+	"github.com/andybalholm/leaven/libc"
+)
 
 type TSFieldMapEntry struct {
 	F0 int16
@@ -27670,7 +27673,7 @@ while_cond:
 	v2 = *lexer_addr
 	lookahead = &v2.F0
 	v3 = *lookahead
-	call = iswspace(v3)
+	call = libc.Iswspace(v3)
 	tobool1 = call != 0
 	if tobool1 {
 		goto while_body

@@ -69,7 +69,7 @@ type TSLexer struct {
 	F4 func(*TSLexer) int32
 	F5 func(*TSLexer) bool
 	F6 func(*TSLexer) bool
-	F7 func(*TSLexer, *byte)
+	F7 func(*TSLexer, *byte, ...interface{})
 }
 
 type TSLexerMode struct {
@@ -36797,7 +36797,7 @@ func tree_sitter_tcl_external_scanner_scan(payload *byte, lexer *TSLexer, valid_
 
 land_lhs_true:
 	v4 = *c
-	call = iswspace(v4)
+	call = libc.Iswspace(v4)
 	tobool1 = call != 0
 	if tobool1 {
 		goto if_end
@@ -36825,7 +36825,7 @@ if_end:
 
 land_lhs_true4:
 	v8 = *c
-	call5 = iswspace(v8)
+	call5 = libc.Iswspace(v8)
 	tobool6 = call5 != 0
 	if tobool6 {
 		goto if_end16

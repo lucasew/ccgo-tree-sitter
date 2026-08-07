@@ -128,10 +128,10 @@ type TSParseActionEntry struct {
 
 var _str [12]byte = [12]byte{116, 109, 112, 32, 33, 61, 32, 78, 85, 76, 76, 0}
 
-var _str_1 [42]byte = [42]byte{
+var _str_1 [41]byte = [41]byte{
 	47, 116, 109, 112, 47, 108, 101, 97, 118, 101, 110, 45, 98, 105, 116, 98,
-	97, 107, 101, 45, 49, 50, 56, 56, 51, 51, 54, 49, 52, 54, 47, 99,
-	111, 109, 98, 105, 110, 101, 100, 46, 99, 0,
+	97, 107, 101, 45, 50, 53, 50, 56, 54, 51, 53, 52, 49, 47, 99, 111,
+	109, 98, 105, 110, 101, 100, 46, 99, 0,
 }
 
 var __PRETTY_FUNCTION___tree_sitter_bitbake_external_scanner_scan [82]byte = [82]byte{
@@ -121818,7 +121818,7 @@ lor_lhs_false13:
 	v19 = *lexer_addr
 	lookahead14 = &v19.F0
 	v20 = *lookahead14
-	call = iswspace(v20)
+	call = libc.Iswspace(v20)
 	tobool15 = call != 0
 	if tobool15 {
 		goto if_end
@@ -122935,7 +122935,7 @@ cond_false:
 cond_end:
 	conv302 = int64(uint64(uint32(cond)))
 	mul303 = conv302 * int64(2)
-	call304 = realloc(v233, mul303)
+	call304 = libc.Realloc(v233, mul303)
 	*tmp = call304
 	v238 = *tmp
 	cmp305 = v238 != nil
@@ -122949,7 +122949,7 @@ if_then307:
 	goto if_end309
 
 if_else308:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 353, &__PRETTY_FUNCTION___tree_sitter_bitbake_external_scanner_scan[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 353, &__PRETTY_FUNCTION___tree_sitter_bitbake_external_scanner_scan[int64(0)])
 	panic("unreachable")
 
 if_end309:
@@ -123540,7 +123540,7 @@ cond_false506:
 cond_end510:
 	conv512 = int64(uint64(uint32(cond511)))
 	mul513 = conv512 * int64(1)
-	call514 = realloc(v345, mul513)
+	call514 = libc.Realloc(v345, mul513)
 	*tmp497 = call514
 	v350 = *tmp497
 	cmp515 = v350 != nil
@@ -123554,7 +123554,7 @@ if_then517:
 	goto if_end519
 
 if_else518:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 431, &__PRETTY_FUNCTION___tree_sitter_bitbake_external_scanner_scan[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 431, &__PRETTY_FUNCTION___tree_sitter_bitbake_external_scanner_scan[int64(0)])
 	panic("unreachable")
 
 if_end519:
@@ -123666,7 +123666,7 @@ while_cond559:
 	v371 = *lexer_addr
 	lookahead560 = &v371.F0
 	v372 = *lookahead560
-	call561 = iswspace(v372)
+	call561 = libc.Iswspace(v372)
 	tobool562 = call561 != 0
 	if tobool562 {
 		goto while_body563
@@ -124253,7 +124253,7 @@ sw_bb7:
 	goto sw_epilog
 
 sw_default:
-	__assert_fail(&_str_2[int64(0)], &_str_1[int64(0)], 117, &__PRETTY_FUNCTION___set_end_character[int64(0)])
+	libc.AssertFail(&_str_2[int64(0)], &_str_1[int64(0)], 117, &__PRETTY_FUNCTION___set_end_character[int64(0)])
 	panic("unreachable")
 
 sw_epilog:
@@ -124529,7 +124529,7 @@ cond_false:
 cond_end:
 	conv = int64(uint64(uint32(cond)))
 	mul12 = conv * int64(2)
-	call = realloc(v10, mul12)
+	call = libc.Realloc(v10, mul12)
 	*tmp = call
 	v15 = *tmp
 	cmp13 = v15 != nil
@@ -124543,7 +124543,7 @@ if_then15:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 546, &__PRETTY_FUNCTION___tree_sitter_bitbake_external_scanner_deserialize[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 546, &__PRETTY_FUNCTION___tree_sitter_bitbake_external_scanner_deserialize[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -124658,7 +124658,7 @@ if_then53:
 	v42 = (*byte)(unsafe.Pointer(v41))
 	v43 = *delimiter_count
 	mul57 = v43 * int64(1)
-	call58 = realloc(v42, mul57)
+	call58 = libc.Realloc(v42, mul57)
 	*tmp54 = call58
 	v44 = *tmp54
 	cmp59 = v44 != nil
@@ -124672,7 +124672,7 @@ if_then61:
 	goto if_end63
 
 if_else62:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 555, &__PRETTY_FUNCTION___tree_sitter_bitbake_external_scanner_deserialize[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 555, &__PRETTY_FUNCTION___tree_sitter_bitbake_external_scanner_deserialize[int64(0)])
 	panic("unreachable")
 
 if_end63:
@@ -124777,7 +124777,7 @@ cond_false96:
 cond_end100:
 	conv102 = int64(uint64(uint32(cond101)))
 	mul103 = conv102 * int64(2)
-	call104 = realloc(v68, mul103)
+	call104 = libc.Realloc(v68, mul103)
 	*tmp87 = call104
 	v73 = *tmp87
 	cmp105 = v73 != nil
@@ -124791,7 +124791,7 @@ if_then107:
 	goto if_end109
 
 if_else108:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 562, &__PRETTY_FUNCTION___tree_sitter_bitbake_external_scanner_deserialize[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 562, &__PRETTY_FUNCTION___tree_sitter_bitbake_external_scanner_deserialize[int64(0)])
 	panic("unreachable")
 
 if_end109:
@@ -124980,6 +124980,7 @@ if_then:
 	data2 = &indents1.F2
 	v5 = *data2
 	v6 = (*byte)(unsafe.Pointer(v5))
+	libc.Free(v6)
 	goto if_end
 
 if_end:
@@ -125000,11 +125001,13 @@ if_then5:
 	data7 = &delimiters6.F2
 	v10 = *data7
 	v11 = (*byte)(unsafe.Pointer(v10))
+	libc.Free(v11)
 	goto if_end8
 
 if_end8:
 	v12 = *scanner
 	v13 = (*byte)(unsafe.Pointer(v12))
+	libc.Free(v13)
 }
 
 func tree_sitter_bitbake() *TSLanguage {

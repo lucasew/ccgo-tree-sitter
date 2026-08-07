@@ -78,7 +78,7 @@ type TSLexer struct {
 	F4 func(*TSLexer) int32
 	F5 func(*TSLexer) bool
 	F6 func(*TSLexer) bool
-	F7 func(*TSLexer, *byte)
+	F7 func(*TSLexer, *byte, ...interface{})
 }
 
 type TSLexerMode struct {
@@ -1529,10 +1529,10 @@ var _str [9]byte = [9]byte{109, 97, 114, 107, 100, 111, 119, 110, 0}
 
 var _str_1 [12]byte = [12]byte{116, 109, 112, 32, 33, 61, 32, 78, 85, 76, 76, 0}
 
-var _str_2 [43]byte = [43]byte{
+var _str_2 [42]byte = [42]byte{
 	47, 116, 109, 112, 47, 108, 101, 97, 118, 101, 110, 45, 109, 97, 114, 107,
-	100, 111, 119, 110, 45, 51, 53, 49, 49, 56, 56, 48, 55, 51, 57, 47,
-	99, 111, 109, 98, 105, 110, 101, 100, 46, 99, 0,
+	100, 111, 119, 110, 45, 57, 54, 57, 51, 50, 55, 49, 52, 51, 47, 99,
+	111, 109, 98, 105, 110, 101, 100, 46, 99, 0,
 }
 
 var __PRETTY_FUNCTION___deserialize [56]byte = [56]byte{
@@ -47399,7 +47399,7 @@ if_then23:
 	v38 = (*byte)(unsafe.Pointer(v37))
 	v39 = *capacity24
 	mul = int64(4) * v39
-	call26 = realloc(v38, mul)
+	call26 = libc.Realloc(v38, mul)
 	*tmp = call26
 	v40 = *tmp
 	cmp27 = v40 != nil
@@ -47413,7 +47413,7 @@ if_then29:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_1[int64(0)], &_str_2[int64(0)], 281, &__PRETTY_FUNCTION___deserialize[int64(0)])
+	libc.AssertFail(&_str_1[int64(0)], &_str_2[int64(0)], 281, &__PRETTY_FUNCTION___deserialize[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -48867,8 +48867,10 @@ func tree_sitter_markdown_external_scanner_destroy(payload *byte) {
 	items = &open_blocks.F2
 	v3 = *items
 	v4 = (*byte)(unsafe.Pointer(v3))
+	libc.Free(v4)
 	v5 = *scanner
 	v6 = (*byte)(unsafe.Pointer(v5))
+	libc.Free(v6)
 }
 
 func tree_sitter_markdown() *TSLanguage {
@@ -110543,7 +110545,7 @@ cond_end:
 	capacity10 = &open_blocks9.F1
 	v13 = *capacity10
 	mul = int64(4) * v13
-	call = realloc(v11, mul)
+	call = libc.Realloc(v11, mul)
 	*tmp = call
 	v14 = *tmp
 	cmp11 = v14 != nil
@@ -110557,7 +110559,7 @@ if_then12:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_1[int64(0)], &_str_2[int64(0)], 227, &__PRETTY_FUNCTION___push_block[int64(0)])
+	libc.AssertFail(&_str_1[int64(0)], &_str_2[int64(0)], 227, &__PRETTY_FUNCTION___push_block[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -112768,7 +112770,7 @@ lor_lhs_false10:
 
 if_then:
 	*digits = int64(1)
-	call = __ctype_b_loc()
+	call = libc.CtypeBLoc()
 	v10 = *call
 	v11 = *lexer_addr
 	lookahead = &v11.F0
@@ -112788,7 +112790,7 @@ if_then:
 	goto while_cond
 
 while_cond:
-	call18 = __ctype_b_loc()
+	call18 = libc.CtypeBLoc()
 	v16 = *call18
 	v17 = *lexer_addr
 	lookahead19 = &v17.F0
@@ -114989,7 +114991,7 @@ while_cond238:
 	v158 = *lexer_addr
 	lookahead239 = &v158.F0
 	v159 = *lookahead239
-	call240 = iswalnum(v159)
+	call240 = libc.Iswalnum(v159)
 	tobool241 = call240 != 0
 	if tobool241 {
 		v162 = true
@@ -115162,7 +115164,7 @@ while_cond293:
 	v188 = *lexer_addr
 	lookahead294 = &v188.F0
 	v189 = *lookahead294
-	call295 = iswalnum(v189)
+	call295 = libc.Iswalnum(v189)
 	tobool296 = call295 != 0
 	if tobool296 {
 		v198 = true

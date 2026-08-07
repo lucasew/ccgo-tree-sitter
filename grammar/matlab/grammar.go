@@ -72,7 +72,7 @@ type TSLexer struct {
 	F4 func(*TSLexer) int32
 	F5 func(*TSLexer) bool
 	F6 func(*TSLexer) bool
-	F7 func(*TSLexer, *byte)
+	F7 func(*TSLexer, *byte, ...interface{})
 }
 
 type TSLexerMode struct {
@@ -124537,6 +124537,7 @@ func tree_sitter_matlab_external_scanner_destroy(payload *byte) {
 
 if_then:
 	v1 = *payload_addr
+	libc.Free(v1)
 	goto if_end
 
 if_end:
@@ -125155,7 +125156,7 @@ land_rhs:
 	v3 = *lexer_addr
 	lookahead = &v3.F0
 	v4 = *lookahead
-	call1 = iswspace(v4)
+	call1 = libc.Iswspace(v4)
 	tobool = call1 != 0
 	v5 = tobool
 	goto land_end
@@ -138688,7 +138689,7 @@ while_cond:
 	v0 = *lexer_addr
 	lookahead = &v0.F0
 	v1 = *lookahead
-	call = iswspace(v1)
+	call = libc.Iswspace(v1)
 	tobool = call != 0
 	if tobool {
 		goto while_body
@@ -138753,7 +138754,7 @@ func iswspace_matlab(chr int32) bool {
 	chr_addr = new(int32)
 	*chr_addr = chr
 	v0 = *chr_addr
-	call = iswspace(v0)
+	call = libc.Iswspace(v0)
 	tobool = call != 0
 	if tobool {
 		goto land_lhs_true
@@ -138814,7 +138815,7 @@ land_rhs:
 	v3 = *lexer_addr
 	lookahead = &v3.F0
 	v4 = *lookahead
-	call1 = iswspace(v4)
+	call1 = libc.Iswspace(v4)
 	tobool = call1 != 0
 	v5 = tobool
 	goto land_end

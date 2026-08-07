@@ -11769,7 +11769,7 @@ sw_bb12:
 	}
 
 lor_lhs_false16:
-	call17 = __ctype_b_loc()
+	call17 = libc.CtypeBLoc()
 	v26 = *call17
 	v27 = *lexer_addr
 	lookahead18 = &v27.F0

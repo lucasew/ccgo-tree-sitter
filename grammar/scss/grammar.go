@@ -43299,7 +43299,7 @@ if_then3:
 	v4 = *lexer_addr
 	lookahead = &v4.F0
 	v5 = *lookahead
-	call = iswalnum(v5)
+	call = libc.Iswalnum(v5)
 	tobool4 = call != 0
 	if tobool4 {
 		goto if_then9
@@ -43369,7 +43369,7 @@ if_end17:
 	v19 = *lexer_addr
 	lookahead18 = &v19.F0
 	v20 = *lookahead18
-	call19 = iswspace(v20)
+	call19 = libc.Iswspace(v20)
 	tobool20 = call19 != 0
 	if tobool20 {
 		goto land_lhs_true
@@ -43400,7 +43400,7 @@ while_cond:
 	v25 = *lexer_addr
 	lookahead25 = &v25.F0
 	v26 = *lookahead25
-	call26 = iswspace(v26)
+	call26 = libc.Iswspace(v26)
 	tobool27 = call26 != 0
 	if tobool27 {
 		goto while_body
@@ -43488,7 +43488,7 @@ lor_lhs_false46:
 	v43 = *lexer_addr
 	lookahead47 = &v43.F0
 	v44 = *lookahead47
-	call48 = iswalnum(v44)
+	call48 = libc.Iswalnum(v44)
 	tobool49 = call48 != 0
 	if tobool49 {
 		goto if_then50
@@ -43517,7 +43517,7 @@ if_then54:
 	v48 = *lexer_addr
 	lookahead55 = &v48.F0
 	v49 = *lookahead55
-	call56 = iswspace(v49)
+	call56 = libc.Iswspace(v49)
 	tobool57 = call56 != 0
 	if tobool57 {
 		goto if_then58
@@ -43611,7 +43611,7 @@ while_cond78:
 	v62 = *lexer_addr
 	lookahead79 = &v62.F0
 	v63 = *lookahead79
-	call80 = iswspace(v63)
+	call80 = libc.Iswspace(v63)
 	tobool81 = call80 != 0
 	if tobool81 {
 		goto while_body82

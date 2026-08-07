@@ -71,7 +71,7 @@ type TSLexer struct {
 	F4 func(*TSLexer) int32
 	F5 func(*TSLexer) bool
 	F6 func(*TSLexer) bool
-	F7 func(*TSLexer, *byte)
+	F7 func(*TSLexer, *byte, ...interface{})
 }
 
 type TSLexerMode struct {
@@ -89,38 +89,6 @@ type TSSymbolMetadata struct {
 	F0 byte
 	F1 byte
 	F2 byte
-}
-
-type _IO_FILE struct {
-	F0 int32
-	F1 *byte
-	F2 *byte
-	F3 *byte
-	F4 *byte
-	F5 *byte
-	F6 *byte
-	F7 *byte
-	F8 *byte
-	F9 *byte
-	F10 *byte
-	F11 *byte
-	F12 *_IO_marker
-	F13 *_IO_FILE
-	F14 int32
-	F15 int32
-	F16 int64
-	F17 int16
-	F18 byte
-	F19 [1]byte
-	F20 *byte
-	F21 int64
-	F22 *_IO_codecvt
-	F23 *_IO_wide_data
-	F24 *_IO_FILE
-	F25 *byte
-	F26 int64
-	F27 int32
-	F28 [20]byte
 }
 
 type _IO_codecvt struct {
@@ -21028,8 +20996,8 @@ var ts_lex_map_142 [36]int16 = [36]int16{
 func tree_sitter_just_external_scanner_create() *byte {
 	var ptr **Scanner
 	var call, v1, v5 *Scanner
-	var v2, v3, v4 *_IO_FILE
 	var v6 *byte
+	var v2, v3, v4 *os.File
 	var tobool, lnot, tobool1 bool
 	var lnot_ext, call3, call4, call5 int32
 	var conv int64
@@ -21059,11 +21027,11 @@ if_then:
 
 do_body2:
 	v2 = os.Stderr
-	call3 = fprintf(v2, &_str[int64(0)], &_str_1[int64(0)], 91)
+	call3 = libc.Fprintf(v2, &_str[int64(0)], &_str_1[int64(0)], 91)
 	v3 = os.Stderr
-	call4 = fprintf(v3, &_str_2[int64(0)])
+	call4 = libc.Fprintf(v3, &_str_2[int64(0)])
 	v4 = os.Stderr
-	call5 = fprintf(v4, &_str_3[int64(0)])
+	call5 = libc.Fprintf(v4, &_str_3[int64(0)])
 	exit(1)
 	panic("unreachable")
 
@@ -21078,8 +21046,8 @@ do_end6:
 
 func tree_sitter_just_external_scanner_destroy(payload *byte) {
 	var payload_addr **byte
-	var v1, v2, v3 *_IO_FILE
 	var v0, v4 *byte
+	var v1, v2, v3 *os.File
 	var tobool, lnot, tobool1 bool
 	var lnot_ext, call, call3, call4 int32
 	var conv int64
@@ -21108,11 +21076,11 @@ if_then:
 
 do_body2:
 	v1 = os.Stderr
-	call = fprintf(v1, &_str[int64(0)], &_str_1[int64(0)], 100)
+	call = libc.Fprintf(v1, &_str[int64(0)], &_str_1[int64(0)], 100)
 	v2 = os.Stderr
-	call3 = fprintf(v2, &_str_4[int64(0)])
+	call3 = libc.Fprintf(v2, &_str_4[int64(0)])
 	v3 = os.Stderr
-	call4 = fprintf(v3, &_str_3[int64(0)])
+	call4 = libc.Fprintf(v3, &_str_3[int64(0)])
 	exit(1)
 	panic("unreachable")
 
@@ -21121,6 +21089,7 @@ if_end:
 
 do_end5:
 	v4 = *payload_addr
+	libc.Free(v4)
 }
 
 func tree_sitter_just_external_scanner_serialize(payload *byte, buffer *byte) int32 {
@@ -21289,7 +21258,7 @@ while_cond:
 	v13 = *lexer_addr
 	lookahead5 = &v13.F0
 	v14 = *lookahead5
-	call6 = iswspace(v14)
+	call6 = libc.Iswspace(v14)
 	tobool7 = call6 != 0
 	if tobool7 {
 		goto while_body
@@ -21386,7 +21355,7 @@ while_cond22:
 	}
 
 land_rhs:
-	call25 = __ctype_b_loc()
+	call25 = libc.CtypeBLoc()
 	v29 = *call25
 	v30 = *lexer_addr
 	lookahead26 = &v30.F0
@@ -22075,12 +22044,12 @@ func handle_eof(lexer *TSLexer, state *Scanner, valid_symbols *byte) bool {
 	var valid_symbols_addr **byte
 	var v14, v17 *Scanner
 	var v0, v2, v6, v8, v11, v16 *TSLexer
-	var v3, v4, v5 *_IO_FILE
 	var retval *bool
 	var v9, arrayidx, v12, arrayidx9, has_seen_eof, has_seen_eof16 *byte
 	var mark_end *func(*TSLexer)
 	var eof *func(*TSLexer) bool
 	var result_symbol, result_symbol15 *int16
+	var v3, v4, v5 *os.File
 	var call, lnot, tobool, tobool6, tobool10, tobool12, v18 bool
 	var v10, v13, v15 byte
 	var v7 func(*TSLexer)
@@ -22120,11 +22089,11 @@ if_then:
 
 do_body1:
 	v3 = os.Stderr
-	call2 = fprintf(v3, &_str[int64(0)], &_str_1[int64(0)], 138)
+	call2 = libc.Fprintf(v3, &_str[int64(0)], &_str_1[int64(0)], 138)
 	v4 = os.Stderr
-	call3 = fprintf(v4, &_str_6[int64(0)])
+	call3 = libc.Fprintf(v4, &_str_6[int64(0)])
 	v5 = os.Stderr
-	call4 = fprintf(v5, &_str_3[int64(0)])
+	call4 = libc.Fprintf(v5, &_str_3[int64(0)])
 	exit(1)
 	panic("unreachable")
 

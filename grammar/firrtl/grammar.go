@@ -111,10 +111,10 @@ type TSParseActionEntry struct {
 
 var _str [12]byte = [12]byte{116, 109, 112, 32, 33, 61, 32, 78, 85, 76, 76, 0}
 
-var _str_1 [39]byte = [39]byte{
+var _str_1 [41]byte = [41]byte{
 	47, 116, 109, 112, 47, 108, 101, 97, 118, 101, 110, 45, 102, 105, 114, 114,
-	116, 108, 45, 52, 56, 52, 52, 49, 56, 52, 50, 47, 99, 111, 109, 98,
-	105, 110, 101, 100, 46, 99, 0,
+	116, 108, 45, 51, 57, 55, 57, 50, 56, 57, 53, 50, 48, 47, 99, 111,
+	109, 98, 105, 110, 101, 100, 46, 99, 0,
 }
 
 var __PRETTY_FUNCTION___tree_sitter_firrtl_external_scanner_scan [81]byte = [81]byte{
@@ -25283,7 +25283,7 @@ cond_false:
 cond_end:
 	conv72 = int64(uint64(uint32(cond)))
 	mul73 = conv72 * int64(2)
-	call74 = realloc(v69, mul73)
+	call74 = libc.Realloc(v69, mul73)
 	*tmp = call74
 	v76 = *tmp
 	cmp75 = v76 != nil
@@ -25297,7 +25297,7 @@ if_then77:
 	goto if_end79
 
 if_else78:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 108, &__PRETTY_FUNCTION___tree_sitter_firrtl_external_scanner_scan[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 108, &__PRETTY_FUNCTION___tree_sitter_firrtl_external_scanner_scan[int64(0)])
 	panic("unreachable")
 
 if_end79:
@@ -25647,7 +25647,7 @@ cond_false:
 cond_end:
 	conv = int64(uint64(uint32(cond)))
 	mul11 = conv * int64(2)
-	call = realloc(v13, mul11)
+	call = libc.Realloc(v13, mul11)
 	*tmp = call
 	v20 = *tmp
 	cmp12 = v20 != nil
@@ -25661,7 +25661,7 @@ if_then14:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 149, &__PRETTY_FUNCTION___tree_sitter_firrtl_external_scanner_deserialize[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 149, &__PRETTY_FUNCTION___tree_sitter_firrtl_external_scanner_deserialize[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -25801,7 +25801,7 @@ cond_false58:
 cond_end62:
 	conv64 = int64(uint64(uint32(cond63)))
 	mul65 = conv64 * int64(2)
-	call66 = realloc(v51, mul65)
+	call66 = libc.Realloc(v51, mul65)
 	*tmp49 = call66
 	v58 = *tmp49
 	cmp67 = v58 != nil
@@ -25815,7 +25815,7 @@ if_then69:
 	goto if_end71
 
 if_else70:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 154, &__PRETTY_FUNCTION___tree_sitter_firrtl_external_scanner_deserialize[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 154, &__PRETTY_FUNCTION___tree_sitter_firrtl_external_scanner_deserialize[int64(0)])
 	panic("unreachable")
 
 if_end71:
@@ -25905,7 +25905,7 @@ if_then102:
 	goto if_end104
 
 if_else103:
-	__assert_fail(&_str_2[int64(0)], &_str_1[int64(0)], 156, &__PRETTY_FUNCTION___tree_sitter_firrtl_external_scanner_deserialize[int64(0)])
+	libc.AssertFail(&_str_2[int64(0)], &_str_1[int64(0)], 156, &__PRETTY_FUNCTION___tree_sitter_firrtl_external_scanner_deserialize[int64(0)])
 	panic("unreachable")
 
 if_end104:
@@ -25976,6 +25976,7 @@ if_then:
 	data2 = &v6.F2
 	v7 = *data2
 	v8 = (*byte)(unsafe.Pointer(v7))
+	libc.Free(v8)
 	goto if_end
 
 if_end:
@@ -25983,8 +25984,10 @@ if_end:
 	indents3 = &v9.F0
 	v10 = *indents3
 	v11 = (*byte)(unsafe.Pointer(v10))
+	libc.Free(v11)
 	v12 = *scanner
 	v13 = (*byte)(unsafe.Pointer(v12))
+	libc.Free(v13)
 }
 
 func tree_sitter_firrtl() *TSLanguage {

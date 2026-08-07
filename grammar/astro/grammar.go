@@ -427,10 +427,10 @@ var _str [64]byte = [64]byte{
 	101, 114, 45, 62, 116, 97, 103, 115, 41, 45, 62, 115, 105, 122, 101, 0,
 }
 
-var _str_1 [39]byte = [39]byte{
+var _str_1 [40]byte = [40]byte{
 	47, 116, 109, 112, 47, 108, 101, 97, 118, 101, 110, 45, 97, 115, 116, 114,
-	111, 45, 54, 54, 49, 51, 53, 55, 56, 51, 48, 47, 99, 111, 109, 98,
-	105, 110, 101, 100, 46, 99, 0,
+	111, 45, 52, 49, 57, 48, 51, 48, 51, 50, 49, 56, 47, 99, 111, 109,
+	98, 105, 110, 101, 100, 46, 99, 0,
 }
 
 var __PRETTY_FUNCTION___scan [48]byte = [48]byte{
@@ -6311,7 +6311,7 @@ if_then18:
 	v20 = *lexer_addr
 	lookahead = &v20.F0
 	v21 = *lookahead
-	call19 = iswspace(v21)
+	call19 = libc.Iswspace(v21)
 	tobool20 = call19 != 0
 	if tobool20 {
 		goto if_then21
@@ -6335,7 +6335,7 @@ while_cond:
 	v23 = *lexer_addr
 	lookahead24 = &v23.F0
 	v24 = *lookahead24
-	call25 = iswspace(v24)
+	call25 = libc.Iswspace(v24)
 	tobool26 = call25 != 0
 	if tobool26 {
 		goto while_body
@@ -6679,7 +6679,7 @@ if_then105:
 	goto if_end107
 
 if_else106:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 650, &__PRETTY_FUNCTION___scan[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 650, &__PRETTY_FUNCTION___scan[int64(0)])
 	panic("unreachable")
 
 if_end107:
@@ -7473,6 +7473,7 @@ for_end:
 	_array__delete(v10)
 	v11 = *scanner
 	v12 = (*byte)(unsafe.Pointer(v11))
+	libc.Free(v12)
 }
 
 func tag_free(tag *Tag) {
@@ -7534,6 +7535,7 @@ if_then:
 	v2 = *self_addr
 	contents1 = &v2.F0
 	v3 = *contents1
+	libc.Free(v3)
 	v4 = *self_addr
 	contents2 = &v4.F0
 	*contents2 = nil
@@ -13383,7 +13385,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 315, &__PRETTY_FUNCTION___scan_raw_text[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 315, &__PRETTY_FUNCTION___scan_raw_text[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -14119,7 +14121,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 343, &__PRETTY_FUNCTION___scan_implicit_end_tag[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 343, &__PRETTY_FUNCTION___scan_implicit_end_tag[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -14277,7 +14279,7 @@ if_then35:
 	goto if_end37
 
 if_else36:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 367, &__PRETTY_FUNCTION___scan_implicit_end_tag[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 367, &__PRETTY_FUNCTION___scan_implicit_end_tag[int64(0)])
 	panic("unreachable")
 
 if_end37:
@@ -14992,7 +14994,7 @@ if_then10:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 437, &__PRETTY_FUNCTION___scan_end_tag_name[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 437, &__PRETTY_FUNCTION___scan_end_tag_name[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -15078,7 +15080,7 @@ if_then31:
 	goto if_end33
 
 if_else32:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 452, &__PRETTY_FUNCTION___scan_end_tag_name[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 452, &__PRETTY_FUNCTION___scan_end_tag_name[int64(0)])
 	panic("unreachable")
 
 if_end33:
@@ -15329,7 +15331,7 @@ while_cond:
 	v1 = *lexer_addr
 	lookahead = &v1.F0
 	v2 = *lookahead
-	call = iswalnum(v2)
+	call = libc.Iswalnum(v2)
 	tobool = call != 0
 	if tobool {
 		v9 = true
@@ -15956,7 +15958,7 @@ if_then1:
 	conv = int64(uint64(uint32(v7)))
 	v8 = *element_size_addr
 	mul = conv * v8
-	call = realloc(v6, mul)
+	call = libc.Realloc(v6, mul)
 	v9 = *self_addr
 	contents3 = &v9.F0
 	*contents3 = call

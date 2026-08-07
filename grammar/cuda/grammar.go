@@ -74,7 +74,7 @@ type TSLexer struct {
 	F4 func(*TSLexer) int32
 	F5 func(*TSLexer) bool
 	F6 func(*TSLexer) bool
-	F7 func(*TSLexer, *byte)
+	F7 func(*TSLexer, *byte, ...interface{})
 }
 
 type TSLexerMode struct {
@@ -141,7 +141,7 @@ var _str_1 [70]byte = [70]byte{
 
 var _str_2 [39]byte = [39]byte{
 	47, 116, 109, 112, 47, 108, 101, 97, 118, 101, 110, 45, 99, 117, 100, 97,
-	45, 49, 51, 51, 53, 52, 48, 52, 53, 49, 56, 47, 99, 111, 109, 98,
+	45, 50, 54, 50, 54, 50, 49, 57, 53, 53, 51, 47, 99, 111, 109, 98,
 	105, 110, 101, 100, 46, 99, 0,
 }
 
@@ -481312,7 +481312,7 @@ lor_lhs_false20:
 	v20 = *lexer_addr
 	lookahead21 = &v20.F0
 	v21 = *lookahead21
-	call22 = iswspace(v21)
+	call22 = libc.Iswspace(v21)
 	tobool = call22 != 0
 	if tobool {
 		goto if_then23
@@ -481613,7 +481613,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_1[int64(0)], &_str_2[int64(0)], 136, &__PRETTY_FUNCTION___tree_sitter_cuda_external_scanner_deserialize[int64(0)])
+	libc.AssertFail(&_str_1[int64(0)], &_str_2[int64(0)], 136, &__PRETTY_FUNCTION___tree_sitter_cuda_external_scanner_deserialize[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -481665,6 +481665,7 @@ func tree_sitter_cuda_external_scanner_destroy(payload *byte) {
 	*scanner = v1
 	v2 = *scanner
 	v3 = (*byte)(unsafe.Pointer(v2))
+	libc.Free(v3)
 }
 
 func tree_sitter_cuda() *TSLanguage {

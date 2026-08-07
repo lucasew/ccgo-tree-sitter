@@ -69,7 +69,7 @@ type TSLexer struct {
 	F4 func(*TSLexer) int32
 	F5 func(*TSLexer) bool
 	F6 func(*TSLexer) bool
-	F7 func(*TSLexer, *byte)
+	F7 func(*TSLexer, *byte, ...interface{})
 }
 
 type TSLexerMode struct {
@@ -30317,7 +30317,7 @@ if_end:
 	v2 = *lexer_addr
 	lookahead = &v2.F0
 	v3 = *lookahead
-	call = iswspace(v3)
+	call = libc.Iswspace(v3)
 	tobool1 = call != 0
 	if tobool1 {
 		goto land_lhs_true
@@ -30348,7 +30348,7 @@ while_cond:
 	v8 = *lexer_addr
 	lookahead5 = &v8.F0
 	v9 = *lookahead5
-	call6 = iswspace(v9)
+	call6 = libc.Iswspace(v9)
 	tobool7 = call6 != 0
 	if tobool7 {
 		goto while_body
@@ -30425,7 +30425,7 @@ lor_lhs_false20:
 	v24 = *lexer_addr
 	lookahead21 = &v24.F0
 	v25 = *lookahead21
-	call22 = iswalnum(v25)
+	call22 = libc.Iswalnum(v25)
 	tobool23 = call22 != 0
 	if tobool23 {
 		goto if_then24
@@ -30454,7 +30454,7 @@ if_then28:
 	v29 = *lexer_addr
 	lookahead29 = &v29.F0
 	v30 = *lookahead29
-	call30 = iswspace(v30)
+	call30 = libc.Iswspace(v30)
 	tobool31 = call30 != 0
 	if tobool31 {
 		goto if_then32
@@ -30548,7 +30548,7 @@ while_cond52:
 	v43 = *lexer_addr
 	lookahead53 = &v43.F0
 	v44 = *lookahead53
-	call54 = iswspace(v44)
+	call54 = libc.Iswspace(v44)
 	tobool55 = call54 != 0
 	if tobool55 {
 		goto while_body56

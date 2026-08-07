@@ -72,7 +72,7 @@ type TSLexer struct {
 	F4 func(*TSLexer) int32
 	F5 func(*TSLexer) bool
 	F6 func(*TSLexer) bool
-	F7 func(*TSLexer, *byte)
+	F7 func(*TSLexer, *byte, ...interface{})
 }
 
 type TSLexerMode struct {
@@ -184661,6 +184661,7 @@ func tree_sitter_rescript_external_scanner_destroy(state *byte) {
 	state_addr = new(*byte)
 	*state_addr = state
 	v0 = *state_addr
+	libc.Free(v0)
 }
 
 func tree_sitter_rescript_external_scanner_reset(state *byte) {
@@ -184950,7 +184951,7 @@ while_cond29:
 	v40 = *lexer_addr
 	lookahead30 = &v40.F0
 	v41 = *lookahead30
-	call31 = iswspace(v41)
+	call31 = libc.Iswspace(v41)
 	tobool32 = call31 != 0
 	if tobool32 {
 		goto land_rhs33
@@ -185976,7 +185977,7 @@ if_end334:
 	v255 = *lexer_addr
 	lookahead336 = &v255.F0
 	v256 = *lookahead336
-	call337 = iswspace(v256)
+	call337 = libc.Iswspace(v256)
 	tobool338 = call337 != 0
 	v253(v254, tobool338)
 	*retval = false
@@ -186431,7 +186432,7 @@ while_cond:
 	v0 = *lexer_addr
 	lookahead = &v0.F0
 	v1 = *lookahead
-	call = iswspace(v1)
+	call = libc.Iswspace(v1)
 	tobool = call != 0
 	if tobool {
 		goto land_rhs

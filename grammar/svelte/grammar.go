@@ -85,7 +85,7 @@ type TSLexer struct {
 	F4 func(*TSLexer) int32
 	F5 func(*TSLexer) bool
 	F6 func(*TSLexer) bool
-	F7 func(*TSLexer, *byte)
+	F7 func(*TSLexer, *byte, ...interface{})
 }
 
 type TSSymbolMetadata struct {
@@ -148,10 +148,10 @@ var _str [39]byte = [39]byte{
 	45, 62, 115, 105, 122, 101, 0,
 }
 
-var _str_1 [40]byte = [40]byte{
+var _str_1 [41]byte = [41]byte{
 	47, 116, 109, 112, 47, 108, 101, 97, 118, 101, 110, 45, 115, 118, 101, 108,
-	116, 101, 45, 54, 55, 49, 50, 50, 52, 54, 57, 55, 47, 99, 111, 109,
-	98, 105, 110, 101, 100, 46, 99, 0,
+	116, 101, 45, 52, 50, 48, 51, 52, 50, 53, 55, 52, 55, 47, 99, 111,
+	109, 98, 105, 110, 101, 100, 46, 99, 0,
 }
 
 var __PRETTY_FUNCTION___tree_sitter_svelte_external_scanner_destroy [57]byte = [57]byte{
@@ -10307,7 +10307,7 @@ while_cond:
 	v17 = *lexer_addr
 	lookahead = &v17.F0
 	v18 = *lookahead
-	call18 = iswspace(v18)
+	call18 = libc.Iswspace(v18)
 	tobool19 = call18 != 0
 	if tobool19 {
 		goto while_body
@@ -11108,7 +11108,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 705, &__PRETTY_FUNCTION___tree_sitter_svelte_external_scanner_destroy[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 705, &__PRETTY_FUNCTION___tree_sitter_svelte_external_scanner_destroy[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -11135,6 +11135,7 @@ for_end:
 	_array__delete(v13)
 	v14 = *scanner
 	v15 = (*byte)(unsafe.Pointer(v14))
+	libc.Free(v15)
 }
 
 func tag_free(self *Tag) {
@@ -11196,6 +11197,7 @@ if_then:
 	v2 = *self_addr
 	contents1 = &v2.F0
 	v3 = *contents1
+	libc.Free(v3)
 	v4 = *self_addr
 	contents2 = &v4.F0
 	*contents2 = nil
@@ -17794,7 +17796,7 @@ if_then6:
 	goto if_end7
 
 if_else:
-	__assert_fail(&_str_2[int64(0)], &_str_1[int64(0)], 319, &__PRETTY_FUNCTION___scan_raw_text[int64(0)])
+	libc.AssertFail(&_str_2[int64(0)], &_str_1[int64(0)], 319, &__PRETTY_FUNCTION___scan_raw_text[int64(0)])
 	panic("unreachable")
 
 if_end7:
@@ -17926,7 +17928,7 @@ while_cond:
 	v0 = *lexer_addr
 	lookahead = &v0.F0
 	v1 = *lookahead
-	call = iswspace(v1)
+	call = libc.Iswspace(v1)
 	tobool = call != 0
 	if tobool {
 		goto while_body
@@ -18130,7 +18132,7 @@ while_cond:
 	v0 = *lexer_addr
 	lookahead = &v0.F0
 	v1 = *lookahead
-	call = iswspace(v1)
+	call = libc.Iswspace(v1)
 	tobool = call != 0
 	if tobool {
 		goto while_body
@@ -18511,7 +18513,7 @@ if_then82:
 	v72 = *lexer_addr
 	lookahead83 = &v72.F0
 	v73 = *lookahead83
-	call84 = iswspace(v73)
+	call84 = libc.Iswspace(v73)
 	tobool85 = call84 != 0
 	if tobool85 {
 		goto if_then86
@@ -18804,7 +18806,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_2[int64(0)], &_str_1[int64(0)], 517, &__PRETTY_FUNCTION___scan_implicit_end_tag[int64(0)])
+	libc.AssertFail(&_str_2[int64(0)], &_str_1[int64(0)], 517, &__PRETTY_FUNCTION___scan_implicit_end_tag[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -18962,7 +18964,7 @@ if_then35:
 	goto if_end37
 
 if_else36:
-	__assert_fail(&_str_2[int64(0)], &_str_1[int64(0)], 541, &__PRETTY_FUNCTION___scan_implicit_end_tag[int64(0)])
+	libc.AssertFail(&_str_2[int64(0)], &_str_1[int64(0)], 541, &__PRETTY_FUNCTION___scan_implicit_end_tag[int64(0)])
 	panic("unreachable")
 
 if_end37:
@@ -19449,7 +19451,7 @@ if_then8:
 	goto if_end9
 
 if_else:
-	__assert_fail(&_str_2[int64(0)], &_str_1[int64(0)], 603, &__PRETTY_FUNCTION___scan_end_tag_name[int64(0)])
+	libc.AssertFail(&_str_2[int64(0)], &_str_1[int64(0)], 603, &__PRETTY_FUNCTION___scan_end_tag_name[int64(0)])
 	panic("unreachable")
 
 if_end9:
@@ -20103,7 +20105,7 @@ while_cond:
 	v1 = *lexer_addr
 	lookahead = &v1.F0
 	v2 = *lookahead
-	call = iswalnum(v2)
+	call = libc.Iswalnum(v2)
 	tobool = call != 0
 	if tobool {
 		v9 = true
@@ -20676,7 +20678,7 @@ if_then1:
 	conv = int64(uint64(uint32(v7)))
 	v8 = *element_size_addr
 	mul = conv * v8
-	call = realloc(v6, mul)
+	call = libc.Realloc(v6, mul)
 	v9 = *self_addr
 	contents3 = &v9.F0
 	*contents3 = call

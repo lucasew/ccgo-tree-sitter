@@ -78,7 +78,7 @@ type TSLexer struct {
 	F4 func(*TSLexer) int32
 	F5 func(*TSLexer) bool
 	F6 func(*TSLexer) bool
-	F7 func(*TSLexer, *byte)
+	F7 func(*TSLexer, *byte, ...interface{})
 }
 
 type TSLexerMode struct {
@@ -198986,6 +198986,7 @@ func tree_sitter_rust_external_scanner_destroy(payload *byte) {
 	v0 = *payload_addr
 	v1 = (*Scanner)(unsafe.Pointer(v0))
 	v2 = (*byte)(unsafe.Pointer(v1))
+	libc.Free(v2)
 }
 
 func tree_sitter_rust_external_scanner_serialize(payload *byte, buffer *byte) int32 {
@@ -199244,7 +199245,7 @@ while_cond:
 	v29 = *lexer_addr
 	lookahead29 = &v29.F0
 	v30 = *lookahead29
-	call30 = iswspace(v30)
+	call30 = libc.Iswspace(v30)
 	tobool31 = call30 != 0
 	if tobool31 {
 		goto while_body

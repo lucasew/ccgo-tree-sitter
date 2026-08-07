@@ -86,7 +86,7 @@ type TSLexer struct {
 	F4 func(*TSLexer) int32
 	F5 func(*TSLexer) bool
 	F6 func(*TSLexer) bool
-	F7 func(*TSLexer, *byte)
+	F7 func(*TSLexer, *byte, ...interface{})
 }
 
 type TSLexerMode struct {
@@ -245,7 +245,7 @@ var _str_26 [15]byte = [15]byte{115, 105, 122, 101, 32, 61, 61, 32, 108, 101, 11
 
 var _str_27 [40]byte = [40]byte{
 	47, 116, 109, 112, 47, 108, 101, 97, 118, 101, 110, 45, 115, 99, 97, 108,
-	97, 45, 50, 57, 52, 49, 52, 55, 53, 49, 49, 51, 47, 99, 111, 109,
+	97, 45, 50, 49, 55, 57, 56, 52, 54, 52, 54, 55, 47, 99, 111, 109,
 	98, 105, 110, 101, 100, 46, 99, 0,
 }
 
@@ -576032,6 +576032,7 @@ if_then:
 	contents2 = &indents1.F0
 	v5 = *contents2
 	v6 = (*byte)(unsafe.Pointer(v5))
+	libc.Free(v6)
 	goto if_end
 
 if_end:
@@ -576052,6 +576053,7 @@ if_end:
 do_end:
 	v10 = *scanner
 	v11 = (*byte)(unsafe.Pointer(v10))
+	libc.Free(v11)
 }
 
 func tree_sitter_scala_external_scanner_serialize(payload *byte, buffer *byte) int32 {
@@ -576377,7 +576379,7 @@ if_then30:
 	goto if_end31
 
 if_else:
-	__assert_fail(&_str_26[int64(0)], &_str_27[int64(0)], 150, &__PRETTY_FUNCTION___tree_sitter_scala_external_scanner_deserialize[int64(0)])
+	libc.AssertFail(&_str_26[int64(0)], &_str_27[int64(0)], 150, &__PRETTY_FUNCTION___tree_sitter_scala_external_scanner_deserialize[int64(0)])
 	panic("unreachable")
 
 if_end31:
@@ -576654,7 +576656,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_29[int64(0)], &_str_27[int64(0)], 779, &__PRETTY_FUNCTION___scan_impl[int64(0)])
+	libc.AssertFail(&_str_29[int64(0)], &_str_27[int64(0)], 779, &__PRETTY_FUNCTION___scan_impl[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -576692,7 +576694,7 @@ while_cond:
 	v14 = *lexer_addr
 	lookahead = &v14.F0
 	v15 = *lookahead
-	call11 = iswspace(v15)
+	call11 = libc.Iswspace(v15)
 	tobool = call11 != 0
 	if tobool {
 		goto while_body
@@ -578570,7 +578572,7 @@ while_cond622:
 	v351 = *lexer_addr
 	lookahead623 = &v351.F0
 	v352 = *lookahead623
-	call624 = iswspace(v352)
+	call624 = libc.Iswspace(v352)
 	tobool625 = call624 != 0
 	if tobool625 {
 		goto while_body626
@@ -619484,7 +619486,7 @@ if_then1:
 	conv = int64(uint64(uint32(v6)))
 	v7 = *element_size_addr
 	mul = conv * v7
-	call = realloc(v5, mul)
+	call = libc.Realloc(v5, mul)
 	*new_contents = call
 	goto if_end
 
@@ -620007,7 +620009,7 @@ while_cond:
 	v0 = *lexer_addr
 	lookahead = &v0.F0
 	v1 = *lookahead
-	call = iswalnum(v1)
+	call = libc.Iswalnum(v1)
 	tobool = call != 0
 	if tobool {
 		v6 = true
@@ -621134,7 +621136,7 @@ for_end:
 	v10 = *lexer_addr
 	lookahead7 = &v10.F0
 	v11 = *lookahead7
-	call = iswalnum(v11)
+	call = libc.Iswalnum(v11)
 	tobool = call != 0
 	if tobool {
 		v16 = true
@@ -621652,7 +621654,7 @@ if_end:
 	v3 = *lexer_addr
 	lookahead = &v3.F0
 	v4 = *lookahead
-	call1 = iswspace(v4)
+	call1 = libc.Iswspace(v4)
 	tobool = call1 != 0
 	if tobool {
 		goto if_then2
@@ -621932,7 +621934,7 @@ sw_bb16:
 	goto sw_epilog
 
 sw_default:
-	__assert_fail(&_str_78[int64(0)], &_str_27[int64(0)], 232, &__PRETTY_FUNCTION___scan_string_content[int64(0)])
+	libc.AssertFail(&_str_78[int64(0)], &_str_27[int64(0)], 232, &__PRETTY_FUNCTION___scan_string_content[int64(0)])
 	panic("unreachable")
 
 sw_epilog:

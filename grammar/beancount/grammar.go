@@ -75,7 +75,7 @@ type TSLexer struct {
 	F4 func(*TSLexer) int32
 	F5 func(*TSLexer) bool
 	F6 func(*TSLexer) bool
-	F7 func(*TSLexer, *byte)
+	F7 func(*TSLexer, *byte, ...interface{})
 }
 
 type TSLexerMode struct {
@@ -38826,6 +38826,7 @@ if_then17:
 	data19 = &indent_length_stack18.F2
 	v17 = *data19
 	v18 = (*byte)(unsafe.Pointer(v17))
+	libc.Free(v18)
 	v19 = *scanner_addr
 	indent_length_stack20 = &v19.F0
 	data21 = &indent_length_stack20.F2
@@ -38845,7 +38846,7 @@ if_end:
 	v24 = *new_cap
 	conv = int64(uint64(uint32(v24)))
 	mul26 = conv * int64(2)
-	call = realloc(v23, mul26)
+	call = libc.Realloc(v23, mul26)
 	*tmp = call
 	v25 = *tmp
 	cmp27 = v25 == nil
@@ -38971,6 +38972,7 @@ if_then71:
 	data73 = &org_section_stack72.F2
 	v48 = *data73
 	v49 = (*byte)(unsafe.Pointer(v48))
+	libc.Free(v49)
 	v50 = *scanner_addr
 	org_section_stack74 = &v50.F1
 	data75 = &org_section_stack74.F2
@@ -38990,7 +38992,7 @@ if_end78:
 	v55 = *new_cap55
 	conv82 = int64(uint64(uint32(v55)))
 	mul83 = conv82 * int64(2)
-	call84 = realloc(v54, mul83)
+	call84 = libc.Realloc(v54, mul83)
 	*tmp79 = call84
 	v56 = *tmp79
 	cmp85 = v56 == nil
@@ -39622,6 +39624,7 @@ if_then14:
 	data = &org_section_stack15.F2
 	v12 = *data
 	v13 = (*byte)(unsafe.Pointer(v12))
+	libc.Free(v13)
 	v14 = *scanner_addr
 	org_section_stack16 = &v14.F1
 	data17 = &org_section_stack16.F2
@@ -39641,7 +39644,7 @@ if_end:
 	v19 = *new_cap
 	conv = int64(uint64(uint32(v19)))
 	mul22 = conv * int64(2)
-	call = realloc(v18, mul22)
+	call = libc.Realloc(v18, mul22)
 	*tmp = call
 	v20 = *tmp
 	cmp23 = v20 == nil
@@ -39767,6 +39770,7 @@ if_then67:
 	data69 = &indent_length_stack68.F2
 	v43 = *data69
 	v44 = (*byte)(unsafe.Pointer(v43))
+	libc.Free(v44)
 	v45 = *scanner_addr
 	indent_length_stack70 = &v45.F0
 	data71 = &indent_length_stack70.F2
@@ -39786,7 +39790,7 @@ if_end74:
 	v50 = *new_cap51
 	conv78 = int64(uint64(uint32(v50)))
 	mul79 = conv78 * int64(2)
-	call80 = realloc(v49, mul79)
+	call80 = libc.Realloc(v49, mul79)
 	*tmp75 = call80
 	v51 = *tmp75
 	cmp81 = v51 == nil
@@ -39995,6 +39999,7 @@ if_then152:
 	data154 = &indent_length_stack153.F2
 	v92 = *data154
 	v93 = (*byte)(unsafe.Pointer(v92))
+	libc.Free(v93)
 	v94 = *scanner_addr
 	indent_length_stack155 = &v94.F0
 	data156 = &indent_length_stack155.F2
@@ -40014,7 +40019,7 @@ if_end159:
 	v99 = *new_cap136
 	conv163 = int64(uint64(uint32(v99)))
 	mul164 = conv163 * int64(2)
-	call165 = realloc(v98, mul164)
+	call165 = libc.Realloc(v98, mul164)
 	*tmp160 = call165
 	v100 = *tmp160
 	cmp166 = v100 == nil
@@ -40209,6 +40214,7 @@ if_then235:
 	data237 = &org_section_stack236.F2
 	v139 = *data237
 	v140 = (*byte)(unsafe.Pointer(v139))
+	libc.Free(v140)
 	v141 = *scanner_addr
 	org_section_stack238 = &v141.F1
 	data239 = &org_section_stack238.F2
@@ -40228,7 +40234,7 @@ if_end242:
 	v146 = *new_cap219
 	conv246 = int64(uint64(uint32(v146)))
 	mul247 = conv246 * int64(2)
-	call248 = realloc(v145, mul247)
+	call248 = libc.Realloc(v145, mul247)
 	*tmp243 = call248
 	v147 = *tmp243
 	cmp249 = v147 == nil
@@ -40342,6 +40348,7 @@ if_then:
 	data2 = &indent_length_stack1.F2
 	v5 = *data2
 	v6 = (*byte)(unsafe.Pointer(v5))
+	libc.Free(v6)
 	goto if_end
 
 if_end:
@@ -40362,11 +40369,13 @@ if_then5:
 	data7 = &org_section_stack6.F2
 	v10 = *data7
 	v11 = (*byte)(unsafe.Pointer(v10))
+	libc.Free(v11)
 	goto if_end8
 
 if_end8:
 	v12 = *scanner
 	v13 = (*byte)(unsafe.Pointer(v12))
+	libc.Free(v13)
 }
 
 func tree_sitter_beancount() *TSLanguage {
@@ -61878,7 +61887,7 @@ while_end:
 	v10 = *lexer_addr
 	lookahead4 = &v10.F0
 	v11 = *lookahead4
-	call5 = iswspace(v11)
+	call5 = libc.Iswspace(v11)
 	tobool = call5 != 0
 	if tobool {
 		goto if_end7
@@ -62034,6 +62043,7 @@ if_then46:
 	data48 = &org_section_stack47.F2
 	v38 = *data48
 	v39 = (*byte)(unsafe.Pointer(v38))
+	libc.Free(v39)
 	v40 = *scanner_addr
 	org_section_stack49 = &v40.F1
 	data50 = &org_section_stack49.F2
@@ -62053,7 +62063,7 @@ if_end53:
 	v45 = *new_cap
 	conv56 = int64(uint64(uint32(v45)))
 	mul57 = conv56 * int64(2)
-	call58 = realloc(v44, mul57)
+	call58 = libc.Realloc(v44, mul57)
 	*tmp = call58
 	v46 = *tmp
 	cmp59 = v46 == nil

@@ -65,7 +65,7 @@ type TSLexer struct {
 	F4 func(*TSLexer) int32
 	F5 func(*TSLexer) bool
 	F6 func(*TSLexer) bool
-	F7 func(*TSLexer, *byte)
+	F7 func(*TSLexer, *byte, ...interface{})
 }
 
 type TSSymbolMetadata struct {
@@ -28046,6 +28046,7 @@ func tree_sitter_luau_external_scanner_destroy(payload *byte) {
 	*scanner = v1
 	v2 = *scanner
 	v3 = (*byte)(unsafe.Pointer(v2))
+	libc.Free(v3)
 }
 
 func tree_sitter_luau_external_scanner_serialize(payload *byte, buffer *byte) int32 {
@@ -28546,7 +28547,7 @@ while_cond18:
 	v15 = *lexer_addr
 	lookahead19 = &v15.F0
 	v16 = *lookahead19
-	call20 = iswspace(v16)
+	call20 = libc.Iswspace(v16)
 	tobool = call20 != 0
 	if tobool {
 		goto while_body21
@@ -28781,7 +28782,7 @@ while_cond:
 	v0 = *lexer_addr
 	lookahead = &v0.F0
 	v1 = *lookahead
-	call = iswspace(v1)
+	call = libc.Iswspace(v1)
 	tobool = call != 0
 	if tobool {
 		goto while_body

@@ -105,7 +105,7 @@ type TSLexer struct {
 	F4 func(*TSLexer) int32
 	F5 func(*TSLexer) bool
 	F6 func(*TSLexer) bool
-	F7 func(*TSLexer, *byte)
+	F7 func(*TSLexer, *byte, ...interface{})
 }
 
 type TSLexerMode struct {
@@ -183,7 +183,7 @@ var _str [41]byte = [41]byte{
 
 var _str_1 [42]byte = [42]byte{
 	47, 116, 109, 112, 47, 108, 101, 97, 118, 101, 110, 45, 99, 114, 121, 115,
-	116, 97, 108, 45, 51, 52, 55, 56, 51, 56, 48, 49, 53, 54, 47, 99,
+	116, 97, 108, 45, 49, 48, 53, 53, 50, 54, 57, 48, 57, 55, 47, 99,
 	111, 109, 98, 105, 110, 101, 100, 46, 99, 0,
 }
 
@@ -585237,7 +585237,7 @@ if_then76:
 	goto if_end77
 
 if_else:
-	__assert_fail(&_str_5[int64(0)], &_str_1[int64(0)], 1876, &__PRETTY_FUNCTION___inner_scan[int64(0)])
+	libc.AssertFail(&_str_5[int64(0)], &_str_1[int64(0)], 1876, &__PRETTY_FUNCTION___inner_scan[int64(0)])
 	panic("unreachable")
 
 if_end77:
@@ -585333,7 +585333,7 @@ if_then113:
 	goto if_end115
 
 if_else114:
-	__assert_fail(&_str_5[int64(0)], &_str_1[int64(0)], 1885, &__PRETTY_FUNCTION___inner_scan[int64(0)])
+	libc.AssertFail(&_str_5[int64(0)], &_str_1[int64(0)], 1885, &__PRETTY_FUNCTION___inner_scan[int64(0)])
 	panic("unreachable")
 
 if_end115:
@@ -585429,7 +585429,7 @@ if_then155:
 	goto if_end157
 
 if_else156:
-	__assert_fail(&_str_5[int64(0)], &_str_1[int64(0)], 1894, &__PRETTY_FUNCTION___inner_scan[int64(0)])
+	libc.AssertFail(&_str_5[int64(0)], &_str_1[int64(0)], 1894, &__PRETTY_FUNCTION___inner_scan[int64(0)])
 	panic("unreachable")
 
 if_end157:
@@ -585632,7 +585632,7 @@ if_then218:
 	goto if_end220
 
 if_else219:
-	__assert_fail(&_str_6[int64(0)], &_str_1[int64(0)], 1921, &__PRETTY_FUNCTION___inner_scan[int64(0)])
+	libc.AssertFail(&_str_6[int64(0)], &_str_1[int64(0)], 1921, &__PRETTY_FUNCTION___inner_scan[int64(0)])
 	panic("unreachable")
 
 if_end220:
@@ -585819,7 +585819,7 @@ if_then284:
 	goto if_end286
 
 if_else285:
-	__assert_fail(&_str_7[int64(0)], &_str_1[int64(0)], 1936, &__PRETTY_FUNCTION___inner_scan[int64(0)])
+	libc.AssertFail(&_str_7[int64(0)], &_str_1[int64(0)], 1936, &__PRETTY_FUNCTION___inner_scan[int64(0)])
 	panic("unreachable")
 
 if_end286:
@@ -585921,7 +585921,7 @@ if_then315:
 	goto if_end317
 
 if_else316:
-	__assert_fail(&_str_8[int64(0)], &_str_1[int64(0)], 1965, &__PRETTY_FUNCTION___inner_scan[int64(0)])
+	libc.AssertFail(&_str_8[int64(0)], &_str_1[int64(0)], 1965, &__PRETTY_FUNCTION___inner_scan[int64(0)])
 	panic("unreachable")
 
 if_end317:
@@ -586003,7 +586003,7 @@ if_then339:
 	goto if_end341
 
 if_else340:
-	__assert_fail(&_str_9[int64(0)], &_str_1[int64(0)], 1987, &__PRETTY_FUNCTION___inner_scan[int64(0)])
+	libc.AssertFail(&_str_9[int64(0)], &_str_1[int64(0)], 1987, &__PRETTY_FUNCTION___inner_scan[int64(0)])
 	panic("unreachable")
 
 if_end341:
@@ -586076,7 +586076,7 @@ if_then360:
 	goto if_end362
 
 if_else361:
-	__assert_fail(&_str_10[int64(0)], &_str_1[int64(0)], 2004, &__PRETTY_FUNCTION___inner_scan[int64(0)])
+	libc.AssertFail(&_str_10[int64(0)], &_str_1[int64(0)], 2004, &__PRETTY_FUNCTION___inner_scan[int64(0)])
 	panic("unreachable")
 
 if_end362:
@@ -586175,7 +586175,7 @@ if_then393:
 	goto if_end395
 
 if_else394:
-	__assert_fail(&_str_8[int64(0)], &_str_1[int64(0)], 2031, &__PRETTY_FUNCTION___inner_scan[int64(0)])
+	libc.AssertFail(&_str_8[int64(0)], &_str_1[int64(0)], 2031, &__PRETTY_FUNCTION___inner_scan[int64(0)])
 	panic("unreachable")
 
 if_end395:
@@ -586206,7 +586206,7 @@ if_then400:
 	goto if_end402
 
 if_else401:
-	__assert_fail(&_str_10[int64(0)], &_str_1[int64(0)], 2035, &__PRETTY_FUNCTION___inner_scan[int64(0)])
+	libc.AssertFail(&_str_10[int64(0)], &_str_1[int64(0)], 2035, &__PRETTY_FUNCTION___inner_scan[int64(0)])
 	panic("unreachable")
 
 if_end402:
@@ -586231,7 +586231,7 @@ if_then407:
 	goto if_end409
 
 if_else408:
-	__assert_fail(&_str_11[int64(0)], &_str_1[int64(0)], 2043, &__PRETTY_FUNCTION___inner_scan[int64(0)])
+	libc.AssertFail(&_str_11[int64(0)], &_str_1[int64(0)], 2043, &__PRETTY_FUNCTION___inner_scan[int64(0)])
 	panic("unreachable")
 
 if_end409:
@@ -586256,7 +586256,7 @@ if_then414:
 	goto if_end416
 
 if_else415:
-	__assert_fail(&_str_12[int64(0)], &_str_1[int64(0)], 2048, &__PRETTY_FUNCTION___inner_scan[int64(0)])
+	libc.AssertFail(&_str_12[int64(0)], &_str_1[int64(0)], 2048, &__PRETTY_FUNCTION___inner_scan[int64(0)])
 	panic("unreachable")
 
 if_end416:
@@ -586434,7 +586434,7 @@ if_then466:
 	goto if_end468
 
 if_else467:
-	__assert_fail(&_str_13[int64(0)], &_str_1[int64(0)], 2086, &__PRETTY_FUNCTION___inner_scan[int64(0)])
+	libc.AssertFail(&_str_13[int64(0)], &_str_1[int64(0)], 2086, &__PRETTY_FUNCTION___inner_scan[int64(0)])
 	panic("unreachable")
 
 if_end468:
@@ -586459,7 +586459,7 @@ if_then473:
 	goto if_end475
 
 if_else474:
-	__assert_fail(&_str_10[int64(0)], &_str_1[int64(0)], 2091, &__PRETTY_FUNCTION___inner_scan[int64(0)])
+	libc.AssertFail(&_str_10[int64(0)], &_str_1[int64(0)], 2091, &__PRETTY_FUNCTION___inner_scan[int64(0)])
 	panic("unreachable")
 
 if_end475:
@@ -586488,7 +586488,7 @@ if_then480:
 	goto _return
 
 if_else482:
-	__assert_fail(&_str_14[int64(0)], &_str_1[int64(0)], 2100, &__PRETTY_FUNCTION___inner_scan[int64(0)])
+	libc.AssertFail(&_str_14[int64(0)], &_str_1[int64(0)], 2100, &__PRETTY_FUNCTION___inner_scan[int64(0)])
 	panic("unreachable")
 
 if_end483:
@@ -586980,7 +586980,7 @@ land_lhs_true628:
 	v357 = *lexer_addr
 	lookahead629 = &v357.F0
 	v358 = *lookahead629
-	call630 = iswspace(v358)
+	call630 = libc.Iswspace(v358)
 	tobool631 = call630 != 0
 	if tobool631 {
 		goto lor_rhs
@@ -587123,7 +587123,7 @@ land_lhs_true676:
 	v381 = *lexer_addr
 	lookahead677 = &v381.F0
 	v382 = *lookahead677
-	call678 = iswspace(v382)
+	call678 = libc.Iswspace(v382)
 	tobool679 = call678 != 0
 	if tobool679 {
 		goto lor_rhs680
@@ -587346,7 +587346,7 @@ land_rhs:
 	v419 = *lexer_addr
 	lookahead752 = &v419.F0
 	v420 = *lookahead752
-	call753 = iswspace(v420)
+	call753 = libc.Iswspace(v420)
 	tobool754 = call753 != 0
 	lnot755 = tobool754 != true
 	v421 = lnot755
@@ -587414,7 +587414,7 @@ land_lhs_true774:
 	v431 = *lexer_addr
 	lookahead775 = &v431.F0
 	v432 = *lookahead775
-	call776 = iswspace(v432)
+	call776 = libc.Iswspace(v432)
 	tobool777 = call776 != 0
 	if tobool777 {
 		goto if_end780
@@ -587455,7 +587455,7 @@ land_rhs788:
 	v436 = *lexer_addr
 	lookahead789 = &v436.F0
 	v437 = *lookahead789
-	call790 = iswspace(v437)
+	call790 = libc.Iswspace(v437)
 	tobool791 = call790 != 0
 	lnot792 = tobool791 != true
 	v438 = lnot792
@@ -587523,7 +587523,7 @@ land_lhs_true812:
 	v448 = *lexer_addr
 	lookahead813 = &v448.F0
 	v449 = *lookahead813
-	call814 = iswspace(v449)
+	call814 = libc.Iswspace(v449)
 	tobool815 = call814 != 0
 	if tobool815 {
 		goto if_end818
@@ -587955,7 +587955,7 @@ land_rhs949:
 	v528 = *lexer_addr
 	lookahead950 = &v528.F0
 	v529 = *lookahead950
-	call951 = iswspace(v529)
+	call951 = libc.Iswspace(v529)
 	tobool952 = call951 != 0
 	lnot953 = tobool952 != true
 	v530 = lnot953
@@ -588314,7 +588314,7 @@ if_then1066:
 	goto if_end1068
 
 if_else1067:
-	__assert_fail(&_str_15[int64(0)], &_str_1[int64(0)], 2500, &__PRETTY_FUNCTION___inner_scan[int64(0)])
+	libc.AssertFail(&_str_15[int64(0)], &_str_1[int64(0)], 2500, &__PRETTY_FUNCTION___inner_scan[int64(0)])
 	panic("unreachable")
 
 if_end1068:
@@ -588441,7 +588441,7 @@ if_then1108:
 	goto if_end1110
 
 if_else1109:
-	__assert_fail(&_str_16[int64(0)], &_str_1[int64(0)], 2549, &__PRETTY_FUNCTION___inner_scan[int64(0)])
+	libc.AssertFail(&_str_16[int64(0)], &_str_1[int64(0)], 2549, &__PRETTY_FUNCTION___inner_scan[int64(0)])
 	panic("unreachable")
 
 if_end1110:
@@ -588971,7 +588971,7 @@ if_then1265:
 	goto if_end1267
 
 if_else1266:
-	__assert_fail(&_str_17[int64(0)], &_str_1[int64(0)], 2713, &__PRETTY_FUNCTION___inner_scan[int64(0)])
+	libc.AssertFail(&_str_17[int64(0)], &_str_1[int64(0)], 2713, &__PRETTY_FUNCTION___inner_scan[int64(0)])
 	panic("unreachable")
 
 if_end1267:
@@ -589026,7 +589026,7 @@ if_then1287:
 	goto if_end1289
 
 if_else1288:
-	__assert_fail(&_str_5[int64(0)], &_str_1[int64(0)], 2719, &__PRETTY_FUNCTION___inner_scan[int64(0)])
+	libc.AssertFail(&_str_5[int64(0)], &_str_1[int64(0)], 2719, &__PRETTY_FUNCTION___inner_scan[int64(0)])
 	panic("unreachable")
 
 if_end1289:
@@ -589159,7 +589159,7 @@ if_then1324:
 
 land_lhs_true1330:
 	v728 = *lookahead1325
-	call1331 = iswspace(v728)
+	call1331 = libc.Iswspace(v728)
 	tobool1332 = call1331 != 0
 	if tobool1332 {
 		goto land_lhs_true1333
@@ -589593,7 +589593,7 @@ if_then1453:
 	goto if_end1455
 
 if_else1454:
-	__assert_fail(&_str_18[int64(0)], &_str_1[int64(0)], 2837, &__PRETTY_FUNCTION___inner_scan[int64(0)])
+	libc.AssertFail(&_str_18[int64(0)], &_str_1[int64(0)], 2837, &__PRETTY_FUNCTION___inner_scan[int64(0)])
 	panic("unreachable")
 
 if_end1455:
@@ -589744,7 +589744,7 @@ if_then1500:
 	goto if_end1502
 
 if_else1501:
-	__assert_fail(&_str_19[int64(0)], &_str_1[int64(0)], 2867, &__PRETTY_FUNCTION___inner_scan[int64(0)])
+	libc.AssertFail(&_str_19[int64(0)], &_str_1[int64(0)], 2867, &__PRETTY_FUNCTION___inner_scan[int64(0)])
 	panic("unreachable")
 
 if_end1502:
@@ -589963,7 +589963,7 @@ if_then1567:
 	goto if_end1569
 
 if_else1568:
-	__assert_fail(&_str_20[int64(0)], &_str_1[int64(0)], 2904, &__PRETTY_FUNCTION___inner_scan[int64(0)])
+	libc.AssertFail(&_str_20[int64(0)], &_str_1[int64(0)], 2904, &__PRETTY_FUNCTION___inner_scan[int64(0)])
 	panic("unreachable")
 
 if_end1569:
@@ -590182,7 +590182,7 @@ if_then1634:
 	goto if_end1636
 
 if_else1635:
-	__assert_fail(&_str_21[int64(0)], &_str_1[int64(0)], 2940, &__PRETTY_FUNCTION___inner_scan[int64(0)])
+	libc.AssertFail(&_str_21[int64(0)], &_str_1[int64(0)], 2940, &__PRETTY_FUNCTION___inner_scan[int64(0)])
 	panic("unreachable")
 
 if_end1636:
@@ -590442,6 +590442,7 @@ func tree_sitter_crystal_external_scanner_destroy(payload *byte) {
 	_array__delete(v6)
 	v7 = *state
 	v8 = (*byte)(unsafe.Pointer(v7))
+	libc.Free(v8)
 }
 
 func free_old_heredoc_identifiers(state *State) {
@@ -590499,7 +590500,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 3104, &__PRETTY_FUNCTION___free_old_heredoc_identifiers[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 3104, &__PRETTY_FUNCTION___free_old_heredoc_identifiers[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -590551,6 +590552,7 @@ if_then:
 	v2 = *self_addr
 	contents1 = &v2.F0
 	v3 = *contents1
+	libc.Free(v3)
 	v4 = *self_addr
 	contents2 = &v4.F0
 	*contents2 = nil
@@ -590728,7 +590730,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 3143, &__PRETTY_FUNCTION___tree_sitter_crystal_external_scanner_serialize[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 3143, &__PRETTY_FUNCTION___tree_sitter_crystal_external_scanner_serialize[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -590815,7 +590817,7 @@ if_then63:
 	goto if_end65
 
 if_else64:
-	__assert_fail(&_str_2[int64(0)], &_str_1[int64(0)], 3156, &__PRETTY_FUNCTION___tree_sitter_crystal_external_scanner_serialize[int64(0)])
+	libc.AssertFail(&_str_2[int64(0)], &_str_1[int64(0)], 3156, &__PRETTY_FUNCTION___tree_sitter_crystal_external_scanner_serialize[int64(0)])
 	panic("unreachable")
 
 if_end65:
@@ -591078,7 +591080,7 @@ if_then56:
 	goto if_end57
 
 if_else:
-	__assert_fail(&_str_3[int64(0)], &_str_1[int64(0)], 3225, &__PRETTY_FUNCTION___tree_sitter_crystal_external_scanner_deserialize[int64(0)])
+	libc.AssertFail(&_str_3[int64(0)], &_str_1[int64(0)], 3225, &__PRETTY_FUNCTION___tree_sitter_crystal_external_scanner_deserialize[int64(0)])
 	panic("unreachable")
 
 if_end57:
@@ -591144,7 +591146,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_60[int64(0)], &_str_28[int64(0)], 226, &__PRETTY_FUNCTION____array__splice[int64(0)])
+	libc.AssertFail(&_str_60[int64(0)], &_str_28[int64(0)], 226, &__PRETTY_FUNCTION____array__splice[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -591188,7 +591190,7 @@ if_then7:
 	conv13 = int64(uint64(uint32(sub12)))
 	v28 = *element_size_addr
 	mul14 = conv13 * v28
-	llvm_memmove_p0i8_p0i8_i64(add_ptr, add_ptr10, mul14, false)
+	libc.Memmove(add_ptr, add_ptr10, mul14)
 	goto if_end15
 
 if_end15:
@@ -630777,7 +630779,7 @@ if_then8:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_22[int64(0)], &_str_1[int64(0)], 349, &__PRETTY_FUNCTION___check_for_heredoc_start[int64(0)])
+	libc.AssertFail(&_str_22[int64(0)], &_str_1[int64(0)], 349, &__PRETTY_FUNCTION___check_for_heredoc_start[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -630796,7 +630798,7 @@ if_then12:
 	goto if_end14
 
 if_else13:
-	__assert_fail(&_str_17[int64(0)], &_str_1[int64(0)], 350, &__PRETTY_FUNCTION___check_for_heredoc_start[int64(0)])
+	libc.AssertFail(&_str_17[int64(0)], &_str_1[int64(0)], 350, &__PRETTY_FUNCTION___check_for_heredoc_start[int64(0)])
 	panic("unreachable")
 
 if_end14:
@@ -630818,7 +630820,7 @@ if_then18:
 	goto if_end20
 
 if_else19:
-	__assert_fail(&_str_23[int64(0)], &_str_1[int64(0)], 350, &__PRETTY_FUNCTION___check_for_heredoc_start[int64(0)])
+	libc.AssertFail(&_str_23[int64(0)], &_str_1[int64(0)], 350, &__PRETTY_FUNCTION___check_for_heredoc_start[int64(0)])
 	panic("unreachable")
 
 if_end20:
@@ -630837,7 +630839,7 @@ if_then24:
 	goto if_end26
 
 if_else25:
-	__assert_fail(&_str_17[int64(0)], &_str_1[int64(0)], 352, &__PRETTY_FUNCTION___check_for_heredoc_start[int64(0)])
+	libc.AssertFail(&_str_17[int64(0)], &_str_1[int64(0)], 352, &__PRETTY_FUNCTION___check_for_heredoc_start[int64(0)])
 	panic("unreachable")
 
 if_end26:
@@ -630955,7 +630957,7 @@ if_then4:
 	goto if_end6
 
 if_else5:
-	__assert_fail(&_str_5[int64(0)], &_str_1[int64(0)], 453, &__PRETTY_FUNCTION___scan_string_contents[int64(0)])
+	libc.AssertFail(&_str_5[int64(0)], &_str_1[int64(0)], 453, &__PRETTY_FUNCTION___scan_string_contents[int64(0)])
 	panic("unreachable")
 
 if_end6:
@@ -631075,7 +631077,7 @@ sw_bb17:
 	v23 = *lexer_addr
 	lookahead18 = &v23.F0
 	v24 = *lookahead18
-	call19 = iswspace(v24)
+	call19 = libc.Iswspace(v24)
 	tobool20 = call19 != 0
 	if tobool20 {
 		goto if_then42
@@ -631104,7 +631106,7 @@ if_then28:
 	goto if_end30
 
 if_else29:
-	__assert_fail(&_str_5[int64(0)], &_str_1[int64(0)], 479, &__PRETTY_FUNCTION___scan_string_contents[int64(0)])
+	libc.AssertFail(&_str_5[int64(0)], &_str_1[int64(0)], 479, &__PRETTY_FUNCTION___scan_string_contents[int64(0)])
 	panic("unreachable")
 
 if_end30:
@@ -631282,7 +631284,7 @@ if_then87:
 	goto if_end89
 
 if_else88:
-	__assert_fail(&_str_24[int64(0)], &_str_1[int64(0)], 519, &__PRETTY_FUNCTION___scan_string_contents[int64(0)])
+	libc.AssertFail(&_str_24[int64(0)], &_str_1[int64(0)], 519, &__PRETTY_FUNCTION___scan_string_contents[int64(0)])
 	panic("unreachable")
 
 if_end89:
@@ -631346,7 +631348,7 @@ if_then108:
 	goto if_end110
 
 if_else109:
-	__assert_fail(&_str_5[int64(0)], &_str_1[int64(0)], 535, &__PRETTY_FUNCTION___scan_string_contents[int64(0)])
+	libc.AssertFail(&_str_5[int64(0)], &_str_1[int64(0)], 535, &__PRETTY_FUNCTION___scan_string_contents[int64(0)])
 	panic("unreachable")
 
 if_end110:
@@ -631433,7 +631435,7 @@ if_then141:
 	goto if_end143
 
 if_else142:
-	__assert_fail(&_str_5[int64(0)], &_str_1[int64(0)], 553, &__PRETTY_FUNCTION___scan_string_contents[int64(0)])
+	libc.AssertFail(&_str_5[int64(0)], &_str_1[int64(0)], 553, &__PRETTY_FUNCTION___scan_string_contents[int64(0)])
 	panic("unreachable")
 
 if_end143:
@@ -631482,7 +631484,7 @@ if_then163:
 	goto if_end165
 
 if_else164:
-	__assert_fail(&_str_5[int64(0)], &_str_1[int64(0)], 554, &__PRETTY_FUNCTION___scan_string_contents[int64(0)])
+	libc.AssertFail(&_str_5[int64(0)], &_str_1[int64(0)], 554, &__PRETTY_FUNCTION___scan_string_contents[int64(0)])
 	panic("unreachable")
 
 if_end165:
@@ -631527,7 +631529,7 @@ if_then182:
 	goto if_end184
 
 if_else183:
-	__assert_fail(&_str_5[int64(0)], &_str_1[int64(0)], 561, &__PRETTY_FUNCTION___scan_string_contents[int64(0)])
+	libc.AssertFail(&_str_5[int64(0)], &_str_1[int64(0)], 561, &__PRETTY_FUNCTION___scan_string_contents[int64(0)])
 	panic("unreachable")
 
 if_end184:
@@ -631576,7 +631578,7 @@ if_then205:
 	goto if_end207
 
 if_else206:
-	__assert_fail(&_str_5[int64(0)], &_str_1[int64(0)], 562, &__PRETTY_FUNCTION___scan_string_contents[int64(0)])
+	libc.AssertFail(&_str_5[int64(0)], &_str_1[int64(0)], 562, &__PRETTY_FUNCTION___scan_string_contents[int64(0)])
 	panic("unreachable")
 
 if_end207:
@@ -631657,7 +631659,7 @@ if_then236:
 	goto if_end238
 
 if_else237:
-	__assert_fail(&_str_5[int64(0)], &_str_1[int64(0)], 576, &__PRETTY_FUNCTION___scan_string_contents[int64(0)])
+	libc.AssertFail(&_str_5[int64(0)], &_str_1[int64(0)], 576, &__PRETTY_FUNCTION___scan_string_contents[int64(0)])
 	panic("unreachable")
 
 if_end238:
@@ -631782,7 +631784,7 @@ if_then1:
 	goto if_end2
 
 if_else:
-	__assert_fail(&_str_22[int64(0)], &_str_1[int64(0)], 595, &__PRETTY_FUNCTION___scan_heredoc_contents[int64(0)])
+	libc.AssertFail(&_str_22[int64(0)], &_str_1[int64(0)], 595, &__PRETTY_FUNCTION___scan_heredoc_contents[int64(0)])
 	panic("unreachable")
 
 if_end2:
@@ -631798,7 +631800,7 @@ if_then4:
 	goto if_end6
 
 if_else5:
-	__assert_fail(&_str_25[int64(0)], &_str_1[int64(0)], 596, &__PRETTY_FUNCTION___scan_heredoc_contents[int64(0)])
+	libc.AssertFail(&_str_25[int64(0)], &_str_1[int64(0)], 596, &__PRETTY_FUNCTION___scan_heredoc_contents[int64(0)])
 	panic("unreachable")
 
 if_end6:
@@ -631818,7 +631820,7 @@ if_then10:
 	goto if_end12
 
 if_else11:
-	__assert_fail(&_str_17[int64(0)], &_str_1[int64(0)], 600, &__PRETTY_FUNCTION___scan_heredoc_contents[int64(0)])
+	libc.AssertFail(&_str_17[int64(0)], &_str_1[int64(0)], 600, &__PRETTY_FUNCTION___scan_heredoc_contents[int64(0)])
 	panic("unreachable")
 
 if_end12:
@@ -631879,7 +631881,7 @@ if_then27:
 	goto if_end29
 
 if_else28:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 610, &__PRETTY_FUNCTION___scan_heredoc_contents[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 610, &__PRETTY_FUNCTION___scan_heredoc_contents[int64(0)])
 	panic("unreachable")
 
 if_end29:
@@ -631917,7 +631919,7 @@ if_then41:
 	goto if_end43
 
 if_else42:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 611, &__PRETTY_FUNCTION___scan_heredoc_contents[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 611, &__PRETTY_FUNCTION___scan_heredoc_contents[int64(0)])
 	panic("unreachable")
 
 if_end43:
@@ -632498,7 +632500,7 @@ if_then5:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_29[int64(0)], &_str_1[int64(0)], 811, &__PRETTY_FUNCTION___scan_macro_contents[int64(0)])
+	libc.AssertFail(&_str_29[int64(0)], &_str_1[int64(0)], 811, &__PRETTY_FUNCTION___scan_macro_contents[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -632685,7 +632687,7 @@ while_cond:
 	v31 = *lexer_addr
 	lookahead27 = &v31.F0
 	v32 = *lookahead27
-	call28 = iswspace(v32)
+	call28 = libc.Iswspace(v32)
 	tobool29 = call28 != 0
 	if tobool29 {
 		goto while_body
@@ -633222,7 +633224,7 @@ if_then164:
 	v130 = *lexer_addr
 	lookahead165 = &v130.F0
 	v131 = *lookahead165
-	call166 = iswspace(v131)
+	call166 = libc.Iswspace(v131)
 	tobool167 = call166 != 0
 	if tobool167 {
 		goto if_then168
@@ -635139,7 +635141,7 @@ sw_bb663:
 	v415 = *lexer_addr
 	lookahead665 = &v415.F0
 	v416 = *lookahead665
-	call666 = iswspace(v416)
+	call666 = libc.Iswspace(v416)
 	tobool667 = call666 != 0
 	if tobool667 {
 		goto if_then668
@@ -635449,7 +635451,7 @@ if_then2:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_22[int64(0)], &_str_1[int64(0)], 373, &__PRETTY_FUNCTION___scan_whitespace[int64(0)])
+	libc.AssertFail(&_str_22[int64(0)], &_str_1[int64(0)], 373, &__PRETTY_FUNCTION___scan_whitespace[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -635468,7 +635470,7 @@ if_then6:
 	goto if_end8
 
 if_else7:
-	__assert_fail(&_str_17[int64(0)], &_str_1[int64(0)], 374, &__PRETTY_FUNCTION___scan_whitespace[int64(0)])
+	libc.AssertFail(&_str_17[int64(0)], &_str_1[int64(0)], 374, &__PRETTY_FUNCTION___scan_whitespace[int64(0)])
 	panic("unreachable")
 
 if_end8:
@@ -635492,7 +635494,7 @@ if_then12:
 	goto if_end14
 
 if_else13:
-	__assert_fail(&_str_55[int64(0)], &_str_1[int64(0)], 375, &__PRETTY_FUNCTION___scan_whitespace[int64(0)])
+	libc.AssertFail(&_str_55[int64(0)], &_str_1[int64(0)], 375, &__PRETTY_FUNCTION___scan_whitespace[int64(0)])
 	panic("unreachable")
 
 if_end14:
@@ -635660,7 +635662,7 @@ if_then50:
 	v47 = *lexer_addr
 	lookahead51 = &v47.F0
 	v48 = *lookahead51
-	call52 = iswspace(v48)
+	call52 = libc.Iswspace(v48)
 	tobool53 = call52 != 0
 	if tobool53 {
 		goto if_then54
@@ -636744,7 +636746,7 @@ sw_bb:
 	v88 = *lexer_addr
 	lookahead103 = &v88.F0
 	v89 = *lookahead103
-	call104 = iswalnum(v89)
+	call104 = libc.Iswalnum(v89)
 	tobool = call104 != 0
 	if tobool {
 		goto if_end106
@@ -636889,7 +636891,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 234, &__PRETTY_FUNCTION___heredoc_current_buffer_size[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 234, &__PRETTY_FUNCTION___heredoc_current_buffer_size[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -637297,7 +637299,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_57[int64(0)], &_str_1[int64(0)], 264, &__PRETTY_FUNCTION___push_heredoc[int64(0)])
+	libc.AssertFail(&_str_57[int64(0)], &_str_1[int64(0)], 264, &__PRETTY_FUNCTION___push_heredoc[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -637345,7 +637347,7 @@ if_then11:
 	goto if_end13
 
 if_else12:
-	__assert_fail(&_str_58[int64(0)], &_str_1[int64(0)], 270, &__PRETTY_FUNCTION___push_heredoc[int64(0)])
+	libc.AssertFail(&_str_58[int64(0)], &_str_1[int64(0)], 270, &__PRETTY_FUNCTION___push_heredoc[int64(0)])
 	panic("unreachable")
 
 if_end13:
@@ -637394,7 +637396,7 @@ if_then22:
 	goto if_end24
 
 if_else23:
-	__assert_fail(&_str_59[int64(0)], &_str_1[int64(0)], 274, &__PRETTY_FUNCTION___push_heredoc[int64(0)])
+	libc.AssertFail(&_str_59[int64(0)], &_str_1[int64(0)], 274, &__PRETTY_FUNCTION___push_heredoc[int64(0)])
 	panic("unreachable")
 
 if_end24:
@@ -637487,7 +637489,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 214, &__PRETTY_FUNCTION___has_active_heredoc[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 214, &__PRETTY_FUNCTION___has_active_heredoc[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -637546,7 +637548,7 @@ func next_char_is_identifier(lexer *TSLexer) bool {
 	v1 = *lookahead1
 	*lookahead = v1
 	v2 = *lookahead
-	call = iswalnum(v2)
+	call = libc.Iswalnum(v2)
 	tobool = call != 0
 	if tobool {
 		v7 = true
@@ -637644,7 +637646,7 @@ if_then4:
 	goto if_end5
 
 if_else:
-	__assert_fail(&_str_17[int64(0)], &_str_1[int64(0)], 227, &__PRETTY_FUNCTION___has_unstarted_heredoc[int64(0)])
+	libc.AssertFail(&_str_17[int64(0)], &_str_1[int64(0)], 227, &__PRETTY_FUNCTION___has_unstarted_heredoc[int64(0)])
 	panic("unreachable")
 
 if_end5:
@@ -637925,7 +637927,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_22[int64(0)], &_str_1[int64(0)], 241, &__PRETTY_FUNCTION___pop_heredoc[int64(0)])
+	libc.AssertFail(&_str_22[int64(0)], &_str_1[int64(0)], 241, &__PRETTY_FUNCTION___pop_heredoc[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -637944,7 +637946,7 @@ if_then4:
 	goto if_end6
 
 if_else5:
-	__assert_fail(&_str_17[int64(0)], &_str_1[int64(0)], 243, &__PRETTY_FUNCTION___pop_heredoc[int64(0)])
+	libc.AssertFail(&_str_17[int64(0)], &_str_1[int64(0)], 243, &__PRETTY_FUNCTION___pop_heredoc[int64(0)])
 	panic("unreachable")
 
 if_end6:
@@ -637968,7 +637970,7 @@ if_then8:
 	goto if_end10
 
 if_else9:
-	__assert_fail(&_str_26[int64(0)], &_str_1[int64(0)], 244, &__PRETTY_FUNCTION___pop_heredoc[int64(0)])
+	libc.AssertFail(&_str_26[int64(0)], &_str_1[int64(0)], 244, &__PRETTY_FUNCTION___pop_heredoc[int64(0)])
 	panic("unreachable")
 
 if_end10:
@@ -638083,7 +638085,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_27[int64(0)], &_str_28[int64(0)], 175, &__PRETTY_FUNCTION____array__erase[int64(0)])
+	libc.AssertFail(&_str_27[int64(0)], &_str_28[int64(0)], 175, &__PRETTY_FUNCTION____array__erase[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -638113,7 +638115,7 @@ if_end:
 	conv7 = int64(uint64(uint32(sub6)))
 	v14 = *element_size_addr
 	mul8 = conv7 * v14
-	llvm_memmove_p0i8_p0i8_i64(add_ptr, add_ptr4, mul8, false)
+	libc.Memmove(add_ptr, add_ptr4, mul8)
 	v15 = *self_addr
 	size9 = &v15.F1
 	v16 = *size9
@@ -638512,7 +638514,7 @@ if_then35:
 	goto if_end37
 
 if_else36:
-	__assert_fail(&_str_56[int64(0)], &_str_1[int64(0)], 1534, &__PRETTY_FUNCTION___consume_string_literal[int64(0)])
+	libc.AssertFail(&_str_56[int64(0)], &_str_1[int64(0)], 1534, &__PRETTY_FUNCTION___consume_string_literal[int64(0)])
 	panic("unreachable")
 
 if_end37:
@@ -638962,7 +638964,7 @@ if_then1:
 	conv = int64(uint64(uint32(v7)))
 	v8 = *element_size_addr
 	mul = conv * v8
-	call = realloc(v6, mul)
+	call = libc.Realloc(v6, mul)
 	v9 = *self_addr
 	contents3 = &v9.F0
 	*contents3 = call

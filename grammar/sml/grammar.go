@@ -69,7 +69,7 @@ type TSLexer struct {
 	F4 func(*TSLexer) int32
 	F5 func(*TSLexer) bool
 	F6 func(*TSLexer) bool
-	F7 func(*TSLexer, *byte)
+	F7 func(*TSLexer, *byte, ...interface{})
 }
 
 type TSLexerMode struct {
@@ -87032,7 +87032,7 @@ land_rhs:
 	v3 = *lexer_addr
 	lookahead = &v3.F0
 	v4 = *lookahead
-	call2 = iswspace(v4)
+	call2 = libc.Iswspace(v4)
 	tobool = call2 != 0
 	v5 = tobool
 	goto land_end

@@ -25736,7 +25736,7 @@ while_cond:
 	v2 = *lexer_addr
 	lookahead = &v2.F0
 	v3 = *lookahead
-	call = iswspace(v3)
+	call = libc.Iswspace(v3)
 	tobool1 = call != 0
 	if tobool1 {
 		goto while_body
@@ -25793,7 +25793,7 @@ while_cond9:
 	v12 = *lexer_addr
 	lookahead10 = &v12.F0
 	v13 = *lookahead10
-	call11 = iswalnum(v13)
+	call11 = libc.Iswalnum(v13)
 	tobool12 = call11 != 0
 	if tobool12 {
 		v20 = true

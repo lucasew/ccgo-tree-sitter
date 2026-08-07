@@ -85,7 +85,7 @@ type TSLexer struct {
 	F4 func(*TSLexer) int32
 	F5 func(*TSLexer) bool
 	F6 func(*TSLexer) bool
-	F7 func(*TSLexer, *byte)
+	F7 func(*TSLexer, *byte, ...interface{})
 }
 
 type TSSymbolMetadata struct {
@@ -148,7 +148,7 @@ var _str [76]byte = [76]byte{
 
 var _str_1 [43]byte = [43]byte{
 	47, 116, 109, 112, 47, 108, 101, 97, 118, 101, 110, 45, 115, 116, 97, 114,
-	108, 97, 114, 107, 45, 50, 53, 49, 56, 49, 51, 52, 53, 53, 48, 47,
+	108, 97, 114, 107, 45, 51, 51, 49, 49, 56, 54, 52, 56, 50, 53, 47,
 	99, 111, 109, 98, 105, 110, 101, 100, 46, 99, 0,
 }
 
@@ -64295,7 +64295,7 @@ if_then24:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 104, &__PRETTY_FUNCTION___tree_sitter_starlark_external_scanner_scan[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 104, &__PRETTY_FUNCTION___tree_sitter_starlark_external_scanner_scan[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -64447,7 +64447,7 @@ if_then64:
 	goto if_end66
 
 if_else65:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 121, &__PRETTY_FUNCTION___tree_sitter_starlark_external_scanner_scan[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 121, &__PRETTY_FUNCTION___tree_sitter_starlark_external_scanner_scan[int64(0)])
 	panic("unreachable")
 
 if_end66:
@@ -65307,7 +65307,7 @@ if_then288:
 	goto if_end290
 
 if_else289:
-	__assert_fail(&_str_2[int64(0)], &_str_1[int64(0)], 269, &__PRETTY_FUNCTION___tree_sitter_starlark_external_scanner_scan[int64(0)])
+	libc.AssertFail(&_str_2[int64(0)], &_str_1[int64(0)], 269, &__PRETTY_FUNCTION___tree_sitter_starlark_external_scanner_scan[int64(0)])
 	panic("unreachable")
 
 if_end290:
@@ -66298,7 +66298,7 @@ sw_bb7:
 	goto sw_epilog
 
 sw_default:
-	__assert_fail(&_str_4[int64(0)], &_str_1[int64(0)], 81, &__PRETTY_FUNCTION___set_end_character[int64(0)])
+	libc.AssertFail(&_str_4[int64(0)], &_str_1[int64(0)], 81, &__PRETTY_FUNCTION___set_end_character[int64(0)])
 	panic("unreachable")
 
 sw_epilog:
@@ -66472,7 +66472,7 @@ if_then22:
 	goto if_end23
 
 if_else:
-	__assert_fail(&_str_3[int64(0)], &_str_1[int64(0)], 383, &__PRETTY_FUNCTION___tree_sitter_starlark_external_scanner_serialize[int64(0)])
+	libc.AssertFail(&_str_3[int64(0)], &_str_1[int64(0)], 383, &__PRETTY_FUNCTION___tree_sitter_starlark_external_scanner_serialize[int64(0)])
 	panic("unreachable")
 
 if_end23:
@@ -66711,6 +66711,7 @@ if_then:
 	v2 = *self_addr
 	contents1 = &v2.F0
 	v3 = *contents1
+	libc.Free(v3)
 	v4 = *self_addr
 	contents2 = &v4.F0
 	*contents2 = nil
@@ -66774,7 +66775,7 @@ if_then1:
 	conv = int64(uint64(uint32(v7)))
 	v8 = *element_size_addr
 	mul = conv * v8
-	call = realloc(v6, mul)
+	call = libc.Realloc(v6, mul)
 	v9 = *self_addr
 	contents3 = &v9.F0
 	*contents3 = call
@@ -66883,6 +66884,7 @@ func tree_sitter_starlark_external_scanner_destroy(payload *byte) {
 	_array__delete(v5)
 	v6 = *scanner
 	v7 = (*byte)(unsafe.Pointer(v6))
+	libc.Free(v7)
 }
 
 func tree_sitter_starlark() *TSLanguage {

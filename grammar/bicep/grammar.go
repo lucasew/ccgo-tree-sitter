@@ -64,7 +64,7 @@ type TSLexer struct {
 	F4 func(*TSLexer) int32
 	F5 func(*TSLexer) bool
 	F6 func(*TSLexer) bool
-	F7 func(*TSLexer, *byte)
+	F7 func(*TSLexer, *byte, ...interface{})
 }
 
 type TSSymbolMetadata struct {
@@ -38028,6 +38028,7 @@ func tree_sitter_bicep_external_scanner_destroy(payload *byte) {
 	payload_addr = new(*byte)
 	*payload_addr = payload
 	v0 = *payload_addr
+	libc.Free(v0)
 }
 
 func tree_sitter_bicep_external_scanner_serialize(payload *byte, buffer *byte) int32 {
@@ -38147,7 +38148,7 @@ while_cond:
 	v4 = *lexer_addr
 	lookahead = &v4.F0
 	v5 = *lookahead
-	call = iswspace(v5)
+	call = libc.Iswspace(v5)
 	tobool1 = call != 0
 	if tobool1 {
 		goto while_body

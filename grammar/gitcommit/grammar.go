@@ -19730,7 +19730,7 @@ if_then:
 	v3 = *lexer_addr
 	lookahead = &v3.F0
 	v4 = *lookahead
-	call = iswcntrl(v4)
+	call = libc.Iswcntrl(v4)
 	tobool1 = call != 0
 	if tobool1 {
 		goto if_then13
@@ -19799,7 +19799,7 @@ while_cond:
 	v16 = *lexer_addr
 	lookahead14 = &v16.F0
 	v17 = *lookahead14
-	call15 = iswcntrl(v17)
+	call15 = libc.Iswcntrl(v17)
 	tobool16 = call15 != 0
 	if tobool16 {
 		v30 = false
@@ -19935,7 +19935,7 @@ while_cond43:
 	v44 = *lexer_addr
 	lookahead44 = &v44.F0
 	v45 = *lookahead44
-	call45 = iswcntrl(v45)
+	call45 = libc.Iswcntrl(v45)
 	tobool46 = call45 != 0
 	if tobool46 {
 		v52 = false

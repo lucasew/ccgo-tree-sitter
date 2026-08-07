@@ -3892,10 +3892,10 @@ var _str [7]byte = [7]byte{110, 105, 99, 107, 101, 108, 0}
 
 var _str_1 [12]byte = [12]byte{116, 109, 112, 32, 33, 61, 32, 78, 85, 76, 76, 0}
 
-var _str_2 [41]byte = [41]byte{
+var _str_2 [40]byte = [40]byte{
 	47, 116, 109, 112, 47, 108, 101, 97, 118, 101, 110, 45, 110, 105, 99, 107,
-	101, 108, 45, 51, 57, 54, 52, 50, 49, 53, 49, 52, 50, 47, 99, 111,
-	109, 98, 105, 110, 101, 100, 46, 99, 0,
+	101, 108, 45, 55, 51, 56, 54, 52, 52, 50, 53, 50, 47, 99, 111, 109,
+	98, 105, 110, 101, 100, 46, 99, 0,
 }
 
 var __PRETTY_FUNCTION___scan_str_start [43]byte = [43]byte{
@@ -57524,12 +57524,12 @@ func ts_lex(lexer *TSLexer, state int16) bool {
 	var lexer_addr **TSLexer
 	var v0, v2, v4, v6, v8, v472, v473, v475, v477, v478, v480, v482, v483, v485, v496, v497, v499, v509, v510, v512, v519, v520, v522, v528, v529, v531, v535, v536, v538, v542, v543, v545, v549, v550, v552, v560, v561, v563, v573, v574, v576, v583, v584, v586, v592, v593, v595, v599, v600, v602, v606, v607, v609, v613, v614, v616, v624, v625, v627, v638, v639, v641, v655, v656, v658, v670, v671, v673, v686, v687, v689, v701, v702, v704, v716, v717, v719, v731, v732, v734, v746, v747, v749, v761, v762, v764, v776, v777, v779, v791, v792, v794, v806, v807, v809, v821, v822, v824, v837, v838, v840, v852, v853, v855, v867, v868, v870, v882, v883, v885, v897, v898, v900, v912, v913, v915, v927, v928, v930, v942, v943, v945, v957, v958, v960, v972, v973, v975, v987, v988, v990, v1002, v1003, v1005, v1018, v1019, v1021, v1033, v1034, v1036, v1048, v1049, v1051, v1063, v1064, v1066, v1078, v1079, v1081, v1093, v1094, v1096, v1108, v1109, v1111, v1123, v1124, v1126, v1138, v1139, v1141, v1153, v1154, v1156, v1168, v1169, v1171, v1185, v1186, v1188, v1200, v1201, v1203, v1215, v1216, v1218, v1230, v1231, v1233, v1245, v1246, v1248, v1260, v1261, v1263, v1275, v1276, v1278, v1290, v1291, v1293, v1305, v1306, v1308, v1321, v1322, v1324, v1336, v1337, v1339, v1351, v1352, v1354, v1366, v1367, v1369, v1381, v1382, v1384, v1396, v1397, v1399, v1412, v1413, v1415, v1427, v1428, v1430, v1442, v1443, v1445, v1457, v1458, v1460, v1472, v1473, v1475, v1487, v1488, v1490, v1502, v1503, v1505, v1517, v1518, v1520, v1532, v1533, v1535, v1547, v1548, v1550, v1562, v1563, v1565, v1577, v1578, v1580, v1592, v1593, v1595, v1607, v1608, v1610, v1622, v1623, v1625, v1637, v1638, v1640, v1652, v1653, v1655, v1667, v1668, v1670, v1682, v1683, v1685, v1697, v1698, v1700, v1712, v1713, v1715, v1727, v1728, v1730, v1742, v1743, v1745, v1757, v1758, v1760, v1772, v1773, v1775, v1787, v1788, v1790, v1802, v1803, v1805, v1817, v1818, v1820, v1831, v1832, v1834, v1845, v1846, v1848, v1850, v1851, v1853, v1858, v1859, v1861, v1865, v1866, v1868, v1871, v1872, v1874, v1876, v1877, v1879, v1881, v1882, v1884, v1888, v1889, v1891, v1894, v1895, v1897, v1899, v1900, v1902, v1904, v1905, v1907, v1909, v1910, v1912, v1914, v1915, v1917, v1919, v1920, v1922, v1926, v1927, v1929, v1940, v1941, v1943, v1954, v1955, v1957, v1959, v1960, v1962, v1964, v1965, v1967, v1969, v1970, v1972, v1974, v1975, v1977, v1980, v1981, v1983, v1985, v1986, v1988, v1999, v2000, v2002, v2004, v2005, v2007, v2009, v2010, v2012, v2019, v2020, v2022, v2024, v2025, v2027, v2038, v2039, v2041, v2043, v2044, v2046, v2048, v2049, v2051, v2053, v2054, v2056, v2065, v2066, v2068, v2074, v2075, v2077, v2083, v2084, v2086, v2095, v2096, v2098, v2103, v2104, v2106, v2108, v2109, v2111, v2121, v2122, v2124, v2126, v2127, v2129, v2131, v2132, v2134, v2136, v2137, v2139, v2142, v2143, v2145, v2148, v2149, v2151, v2154, v2155, v2157, v2160, v2161, v2163, v2165, v2166, v2168, v2171, v2172, v2174, v2176, v2177, v2179, v2182, v2183, v2185, v2187, v2188, v2190, v2192, v2193, v2195, v2197, v2198, v2200, v2202, v2203, v2205, v2207, v2208, v2210, v2212, v2213, v2215, v2226, v2227, v2229, v2240, v2241, v2243, v2254, v2255, v2257, v2259, v2260, v2262 *TSLexer
 	var retval *bool
-	var result, skip, eof *byte
+	var result, local_skip, local_eof *byte
 	var mark_end, mark_end1409, mark_end1413, mark_end1445, mark_end1479, mark_end1501, mark_end1519, mark_end1530, mark_end1541, mark_end1552, mark_end1575, mark_end1609, mark_end1631, mark_end1649, mark_end1660, mark_end1671, mark_end1682, mark_end1705, mark_end1738, mark_end1782, mark_end1818, mark_end1858, mark_end1894, mark_end1930, mark_end1966, mark_end2002, mark_end2038, mark_end2074, mark_end2110, mark_end2146, mark_end2182, mark_end2222, mark_end2258, mark_end2294, mark_end2330, mark_end2366, mark_end2402, mark_end2438, mark_end2474, mark_end2510, mark_end2546, mark_end2582, mark_end2618, mark_end2658, mark_end2694, mark_end2730, mark_end2766, mark_end2802, mark_end2838, mark_end2874, mark_end2910, mark_end2946, mark_end2982, mark_end3018, mark_end3061, mark_end3097, mark_end3133, mark_end3169, mark_end3205, mark_end3241, mark_end3277, mark_end3313, mark_end3349, mark_end3389, mark_end3425, mark_end3461, mark_end3497, mark_end3533, mark_end3569, mark_end3609, mark_end3645, mark_end3681, mark_end3717, mark_end3753, mark_end3789, mark_end3825, mark_end3861, mark_end3897, mark_end3933, mark_end3969, mark_end4005, mark_end4041, mark_end4077, mark_end4113, mark_end4149, mark_end4185, mark_end4221, mark_end4257, mark_end4293, mark_end4329, mark_end4365, mark_end4401, mark_end4437, mark_end4473, mark_end4509, mark_end4545, mark_end4581, mark_end4613, mark_end4645, mark_end4649, mark_end4665, mark_end4677, mark_end4685, mark_end4689, mark_end4693, mark_end4705, mark_end4713, mark_end4717, mark_end4721, mark_end4725, mark_end4729, mark_end4733, mark_end4744, mark_end4776, mark_end4808, mark_end4812, mark_end4816, mark_end4820, mark_end4824, mark_end4832, mark_end4836, mark_end4868, mark_end4872, mark_end4876, mark_end4897, mark_end4901, mark_end4933, mark_end4937, mark_end4941, mark_end4945, mark_end4972, mark_end4989, mark_end5008, mark_end5036, mark_end5050, mark_end5054, mark_end5083, mark_end5087, mark_end5091, mark_end5095, mark_end5103, mark_end5111, mark_end5119, mark_end5127, mark_end5131, mark_end5139, mark_end5143, mark_end5151, mark_end5155, mark_end5159, mark_end5163, mark_end5167, mark_end5171, mark_end5175, mark_end5207, mark_end5239, mark_end5271, mark_end5275 *func(*TSLexer)
 	var eof2 *func(*TSLexer) bool
-	var advance *func(*TSLexer, bool)
+	var local_advance *func(*TSLexer, bool)
 	var state_addr, arrayidx, arrayidx11, arrayidx51, arrayidx58, arrayidx130, arrayidx137, arrayidx208, arrayidx215, arrayidx259, arrayidx266, arrayidx310, arrayidx317, arrayidx361, arrayidx368, arrayidx425, arrayidx432, arrayidx456, arrayidx463, arrayidx500, arrayidx507, arrayidx1274, arrayidx1281, arrayidx1328, arrayidx1335, arrayidx1382, arrayidx1389, result_symbol, result_symbol1408, result_symbol1412, result_symbol1444, result_symbol1478, result_symbol1500, result_symbol1518, result_symbol1529, result_symbol1540, result_symbol1551, result_symbol1574, result_symbol1608, result_symbol1630, result_symbol1648, result_symbol1659, result_symbol1670, result_symbol1681, result_symbol1704, result_symbol1737, result_symbol1781, result_symbol1817, result_symbol1857, result_symbol1893, result_symbol1929, result_symbol1965, result_symbol2001, result_symbol2037, result_symbol2073, result_symbol2109, result_symbol2145, result_symbol2181, result_symbol2221, result_symbol2257, result_symbol2293, result_symbol2329, result_symbol2365, result_symbol2401, result_symbol2437, result_symbol2473, result_symbol2509, result_symbol2545, result_symbol2581, result_symbol2617, result_symbol2657, result_symbol2693, result_symbol2729, result_symbol2765, result_symbol2801, result_symbol2837, result_symbol2873, result_symbol2909, result_symbol2945, result_symbol2981, result_symbol3017, result_symbol3060, result_symbol3096, result_symbol3132, result_symbol3168, result_symbol3204, result_symbol3240, result_symbol3276, result_symbol3312, result_symbol3348, result_symbol3388, result_symbol3424, result_symbol3460, result_symbol3496, result_symbol3532, result_symbol3568, result_symbol3608, result_symbol3644, result_symbol3680, result_symbol3716, result_symbol3752, result_symbol3788, result_symbol3824, result_symbol3860, result_symbol3896, result_symbol3932, result_symbol3968, result_symbol4004, result_symbol4040, result_symbol4076, result_symbol4112, result_symbol4148, result_symbol4184, result_symbol4220, result_symbol4256, result_symbol4292, result_symbol4328, result_symbol4364, result_symbol4400, result_symbol4436, result_symbol4472, result_symbol4508, result_symbol4544, result_symbol4580, result_symbol4612, result_symbol4644, result_symbol4648, result_symbol4664, result_symbol4676, result_symbol4684, result_symbol4688, result_symbol4692, result_symbol4704, result_symbol4712, result_symbol4716, result_symbol4720, result_symbol4724, result_symbol4728, result_symbol4732, result_symbol4743, result_symbol4775, result_symbol4807, result_symbol4811, result_symbol4815, result_symbol4819, result_symbol4823, result_symbol4831, result_symbol4835, result_symbol4867, result_symbol4871, result_symbol4875, result_symbol4896, result_symbol4900, result_symbol4932, result_symbol4936, result_symbol4940, result_symbol4944, result_symbol4971, result_symbol4988, result_symbol5007, result_symbol5035, result_symbol5049, result_symbol5053, result_symbol5082, result_symbol5086, result_symbol5090, result_symbol5094, result_symbol5102, result_symbol5110, result_symbol5118, result_symbol5126, result_symbol5130, result_symbol5138, result_symbol5142, result_symbol5150, result_symbol5154, result_symbol5158, result_symbol5162, result_symbol5166, result_symbol5170, result_symbol5174, result_symbol5206, result_symbol5238, result_symbol5270, result_symbol5274 *int16
-	var lookahead, i, i44, i123, i201, i252, i303, i354, i418, i449, i493, i1267, i1321, i1375, lookahead1 *int32
+	var local_lookahead, i, i44, i123, i201, i252, i303, i354, i418, i449, i493, i1267, i1321, i1375, lookahead1 *int32
 	var tobool, call, tobool3, cmp, cmp7, cmp14, cmp16, cmp18, cmp22, cmp25, cmp29, cmp32, cmp35, cmp38, tobool42, cmp47, cmp53, cmp63, cmp66, cmp69, cmp73, cmp76, cmp80, cmp83, cmp86, cmp89, tobool93, cmp95, cmp99, cmp103, cmp107, cmp110, cmp113, cmp117, tobool121, cmp126, cmp132, cmp142, cmp145, cmp148, cmp152, cmp155, cmp159, cmp162, cmp165, cmp168, tobool172, cmp174, cmp178, cmp182, cmp185, cmp188, cmp192, cmp195, tobool199, cmp204, cmp210, cmp220, cmp223, cmp226, cmp230, cmp233, cmp237, cmp240, cmp243, cmp246, tobool250, cmp255, cmp261, cmp271, cmp274, cmp277, cmp281, cmp284, cmp288, cmp291, cmp294, cmp297, tobool301, cmp306, cmp312, cmp322, cmp325, cmp328, cmp332, cmp335, cmp339, cmp342, cmp345, cmp348, tobool352, cmp357, cmp363, cmp373, cmp376, cmp379, tobool383, cmp385, cmp389, cmp393, cmp396, cmp399, cmp403, cmp406, cmp409, cmp412, tobool416, cmp421, cmp427, cmp437, cmp440, cmp443, tobool447, cmp452, cmp458, cmp468, cmp471, cmp474, cmp478, cmp481, cmp484, cmp487, tobool491, cmp496, cmp502, cmp512, cmp515, cmp518, tobool522, cmp524, tobool528, cmp530, cmp534, cmp537, tobool541, cmp543, cmp547, cmp551, cmp555, cmp559, cmp563, cmp566, cmp569, cmp573, cmp576, cmp579, cmp582, tobool586, cmp588, cmp592, cmp596, cmp600, cmp603, cmp606, cmp610, cmp613, cmp616, cmp619, tobool623, cmp625, cmp629, cmp633, cmp636, tobool640, cmp642, tobool646, cmp648, tobool652, cmp654, cmp658, cmp662, cmp665, cmp668, cmp672, cmp675, cmp678, cmp681, tobool685, cmp687, tobool691, cmp693, cmp697, cmp700, cmp703, cmp706, tobool710, cmp712, cmp716, cmp719, cmp722, cmp725, tobool729, cmp731, cmp735, cmp738, cmp741, cmp744, tobool748, cmp750, tobool754, cmp756, cmp760, cmp764, tobool768, cmp770, cmp774, tobool778, cmp780, tobool784, cmp786, tobool790, cmp792, tobool796, cmp798, tobool802, cmp804, tobool808, cmp810, tobool814, cmp816, cmp820, tobool824, cmp826, tobool830, cmp832, tobool836, cmp838, tobool842, cmp844, tobool848, cmp850, tobool854, cmp856, tobool860, cmp862, tobool866, cmp868, tobool872, cmp874, cmp878, tobool882, cmp884, tobool888, cmp890, tobool894, cmp896, tobool900, cmp902, tobool906, cmp908, tobool912, cmp914, tobool918, cmp920, tobool924, cmp926, cmp930, cmp933, tobool937, cmp939, tobool943, cmp945, tobool949, cmp951, tobool955, cmp957, tobool961, cmp963, cmp967, tobool971, cmp973, tobool977, cmp979, tobool983, cmp985, tobool989, cmp991, cmp995, tobool999, cmp1001, tobool1005, cmp1007, tobool1011, cmp1013, tobool1017, cmp1019, tobool1023, cmp1025, tobool1029, cmp1031, tobool1035, cmp1037, tobool1041, cmp1043, tobool1047, cmp1049, tobool1053, cmp1055, tobool1059, cmp1061, tobool1065, cmp1067, tobool1071, cmp1073, tobool1077, cmp1079, tobool1083, cmp1085, tobool1089, cmp1091, tobool1095, cmp1097, tobool1101, cmp1103, tobool1107, cmp1109, cmp1112, cmp1116, cmp1119, tobool1123, cmp1125, cmp1128, cmp1132, cmp1135, tobool1139, cmp1141, cmp1144, tobool1148, cmp1150, cmp1153, tobool1157, cmp1159, cmp1162, tobool1166, cmp1168, cmp1171, tobool1175, cmp1177, cmp1180, tobool1184, cmp1186, cmp1189, tobool1193, cmp1195, cmp1198, tobool1202, cmp1204, cmp1207, tobool1211, cmp1213, cmp1216, cmp1219, cmp1222, cmp1225, cmp1228, tobool1232, cmp1234, cmp1237, cmp1240, cmp1243, cmp1246, cmp1249, tobool1253, cmp1255, cmp1258, tobool1262, tobool1264, cmp1270, cmp1276, cmp1286, cmp1289, cmp1292, cmp1296, cmp1299, cmp1303, cmp1306, cmp1309, cmp1312, tobool1316, tobool1318, cmp1324, cmp1330, cmp1340, cmp1343, cmp1346, cmp1350, cmp1353, cmp1357, cmp1360, cmp1363, cmp1366, tobool1370, tobool1372, cmp1378, cmp1384, cmp1394, cmp1397, cmp1400, tobool1404, tobool1406, tobool1410, cmp1414, cmp1417, cmp1420, cmp1423, cmp1426, cmp1429, cmp1432, cmp1435, cmp1438, tobool1442, cmp1446, cmp1450, cmp1454, cmp1458, cmp1462, cmp1465, cmp1469, cmp1472, tobool1476, cmp1480, cmp1484, cmp1487, cmp1491, cmp1494, tobool1498, cmp1502, cmp1505, cmp1509, cmp1512, tobool1516, cmp1520, cmp1523, tobool1527, cmp1531, cmp1534, tobool1538, cmp1542, cmp1545, tobool1549, cmp1553, cmp1556, cmp1559, cmp1562, cmp1565, cmp1568, tobool1572, cmp1576, cmp1580, cmp1584, cmp1588, cmp1592, cmp1595, cmp1599, cmp1602, tobool1606, cmp1610, cmp1614, cmp1617, cmp1621, cmp1624, tobool1628, cmp1632, cmp1635, cmp1639, cmp1642, tobool1646, cmp1650, cmp1653, tobool1657, cmp1661, cmp1664, tobool1668, cmp1672, cmp1675, tobool1679, cmp1683, cmp1686, cmp1689, cmp1692, cmp1695, cmp1698, tobool1702, cmp1706, cmp1710, cmp1713, cmp1716, cmp1719, cmp1722, cmp1725, cmp1728, cmp1731, tobool1735, cmp1739, cmp1743, cmp1747, cmp1751, cmp1754, cmp1757, cmp1760, cmp1763, cmp1766, cmp1769, cmp1772, cmp1775, tobool1779, cmp1783, cmp1787, cmp1790, cmp1793, cmp1796, cmp1799, cmp1802, cmp1805, cmp1808, cmp1811, tobool1815, cmp1819, cmp1823, cmp1827, cmp1830, cmp1833, cmp1836, cmp1839, cmp1842, cmp1845, cmp1848, cmp1851, tobool1855, cmp1859, cmp1863, cmp1866, cmp1869, cmp1872, cmp1875, cmp1878, cmp1881, cmp1884, cmp1887, tobool1891, cmp1895, cmp1899, cmp1902, cmp1905, cmp1908, cmp1911, cmp1914, cmp1917, cmp1920, cmp1923, tobool1927, cmp1931, cmp1935, cmp1938, cmp1941, cmp1944, cmp1947, cmp1950, cmp1953, cmp1956, cmp1959, tobool1963, cmp1967, cmp1971, cmp1974, cmp1977, cmp1980, cmp1983, cmp1986, cmp1989, cmp1992, cmp1995, tobool1999, cmp2003, cmp2007, cmp2010, cmp2013, cmp2016, cmp2019, cmp2022, cmp2025, cmp2028, cmp2031, tobool2035, cmp2039, cmp2043, cmp2046, cmp2049, cmp2052, cmp2055, cmp2058, cmp2061, cmp2064, cmp2067, tobool2071, cmp2075, cmp2079, cmp2082, cmp2085, cmp2088, cmp2091, cmp2094, cmp2097, cmp2100, cmp2103, tobool2107, cmp2111, cmp2115, cmp2118, cmp2121, cmp2124, cmp2127, cmp2130, cmp2133, cmp2136, cmp2139, tobool2143, cmp2147, cmp2151, cmp2154, cmp2157, cmp2160, cmp2163, cmp2166, cmp2169, cmp2172, cmp2175, tobool2179, cmp2183, cmp2187, cmp2191, cmp2194, cmp2197, cmp2200, cmp2203, cmp2206, cmp2209, cmp2212, cmp2215, tobool2219, cmp2223, cmp2227, cmp2230, cmp2233, cmp2236, cmp2239, cmp2242, cmp2245, cmp2248, cmp2251, tobool2255, cmp2259, cmp2263, cmp2266, cmp2269, cmp2272, cmp2275, cmp2278, cmp2281, cmp2284, cmp2287, tobool2291, cmp2295, cmp2299, cmp2302, cmp2305, cmp2308, cmp2311, cmp2314, cmp2317, cmp2320, cmp2323, tobool2327, cmp2331, cmp2335, cmp2338, cmp2341, cmp2344, cmp2347, cmp2350, cmp2353, cmp2356, cmp2359, tobool2363, cmp2367, cmp2371, cmp2374, cmp2377, cmp2380, cmp2383, cmp2386, cmp2389, cmp2392, cmp2395, tobool2399, cmp2403, cmp2407, cmp2410, cmp2413, cmp2416, cmp2419, cmp2422, cmp2425, cmp2428, cmp2431, tobool2435, cmp2439, cmp2443, cmp2446, cmp2449, cmp2452, cmp2455, cmp2458, cmp2461, cmp2464, cmp2467, tobool2471, cmp2475, cmp2479, cmp2482, cmp2485, cmp2488, cmp2491, cmp2494, cmp2497, cmp2500, cmp2503, tobool2507, cmp2511, cmp2515, cmp2518, cmp2521, cmp2524, cmp2527, cmp2530, cmp2533, cmp2536, cmp2539, tobool2543, cmp2547, cmp2551, cmp2554, cmp2557, cmp2560, cmp2563, cmp2566, cmp2569, cmp2572, cmp2575, tobool2579, cmp2583, cmp2587, cmp2590, cmp2593, cmp2596, cmp2599, cmp2602, cmp2605, cmp2608, cmp2611, tobool2615, cmp2619, cmp2623, cmp2627, cmp2630, cmp2633, cmp2636, cmp2639, cmp2642, cmp2645, cmp2648, cmp2651, tobool2655, cmp2659, cmp2663, cmp2666, cmp2669, cmp2672, cmp2675, cmp2678, cmp2681, cmp2684, cmp2687, tobool2691, cmp2695, cmp2699, cmp2702, cmp2705, cmp2708, cmp2711, cmp2714, cmp2717, cmp2720, cmp2723, tobool2727, cmp2731, cmp2735, cmp2738, cmp2741, cmp2744, cmp2747, cmp2750, cmp2753, cmp2756, cmp2759, tobool2763, cmp2767, cmp2771, cmp2774, cmp2777, cmp2780, cmp2783, cmp2786, cmp2789, cmp2792, cmp2795, tobool2799, cmp2803, cmp2807, cmp2810, cmp2813, cmp2816, cmp2819, cmp2822, cmp2825, cmp2828, cmp2831, tobool2835, cmp2839, cmp2843, cmp2846, cmp2849, cmp2852, cmp2855, cmp2858, cmp2861, cmp2864, cmp2867, tobool2871, cmp2875, cmp2879, cmp2882, cmp2885, cmp2888, cmp2891, cmp2894, cmp2897, cmp2900, cmp2903, tobool2907, cmp2911, cmp2915, cmp2918, cmp2921, cmp2924, cmp2927, cmp2930, cmp2933, cmp2936, cmp2939, tobool2943, cmp2947, cmp2951, cmp2954, cmp2957, cmp2960, cmp2963, cmp2966, cmp2969, cmp2972, cmp2975, tobool2979, cmp2983, cmp2987, cmp2990, cmp2993, cmp2996, cmp2999, cmp3002, cmp3005, cmp3008, cmp3011, tobool3015, cmp3019, cmp3023, cmp3026, cmp3030, cmp3033, cmp3036, cmp3039, cmp3042, cmp3045, cmp3048, cmp3051, cmp3054, tobool3058, cmp3062, cmp3066, cmp3069, cmp3072, cmp3075, cmp3078, cmp3081, cmp3084, cmp3087, cmp3090, tobool3094, cmp3098, cmp3102, cmp3105, cmp3108, cmp3111, cmp3114, cmp3117, cmp3120, cmp3123, cmp3126, tobool3130, cmp3134, cmp3138, cmp3141, cmp3144, cmp3147, cmp3150, cmp3153, cmp3156, cmp3159, cmp3162, tobool3166, cmp3170, cmp3174, cmp3177, cmp3180, cmp3183, cmp3186, cmp3189, cmp3192, cmp3195, cmp3198, tobool3202, cmp3206, cmp3210, cmp3213, cmp3216, cmp3219, cmp3222, cmp3225, cmp3228, cmp3231, cmp3234, tobool3238, cmp3242, cmp3246, cmp3249, cmp3252, cmp3255, cmp3258, cmp3261, cmp3264, cmp3267, cmp3270, tobool3274, cmp3278, cmp3282, cmp3285, cmp3288, cmp3291, cmp3294, cmp3297, cmp3300, cmp3303, cmp3306, tobool3310, cmp3314, cmp3318, cmp3321, cmp3324, cmp3327, cmp3330, cmp3333, cmp3336, cmp3339, cmp3342, tobool3346, cmp3350, cmp3354, cmp3358, cmp3361, cmp3364, cmp3367, cmp3370, cmp3373, cmp3376, cmp3379, cmp3382, tobool3386, cmp3390, cmp3394, cmp3397, cmp3400, cmp3403, cmp3406, cmp3409, cmp3412, cmp3415, cmp3418, tobool3422, cmp3426, cmp3430, cmp3433, cmp3436, cmp3439, cmp3442, cmp3445, cmp3448, cmp3451, cmp3454, tobool3458, cmp3462, cmp3466, cmp3469, cmp3472, cmp3475, cmp3478, cmp3481, cmp3484, cmp3487, cmp3490, tobool3494, cmp3498, cmp3502, cmp3505, cmp3508, cmp3511, cmp3514, cmp3517, cmp3520, cmp3523, cmp3526, tobool3530, cmp3534, cmp3538, cmp3541, cmp3544, cmp3547, cmp3550, cmp3553, cmp3556, cmp3559, cmp3562, tobool3566, cmp3570, cmp3574, cmp3578, cmp3581, cmp3584, cmp3587, cmp3590, cmp3593, cmp3596, cmp3599, cmp3602, tobool3606, cmp3610, cmp3614, cmp3617, cmp3620, cmp3623, cmp3626, cmp3629, cmp3632, cmp3635, cmp3638, tobool3642, cmp3646, cmp3650, cmp3653, cmp3656, cmp3659, cmp3662, cmp3665, cmp3668, cmp3671, cmp3674, tobool3678, cmp3682, cmp3686, cmp3689, cmp3692, cmp3695, cmp3698, cmp3701, cmp3704, cmp3707, cmp3710, tobool3714, cmp3718, cmp3722, cmp3725, cmp3728, cmp3731, cmp3734, cmp3737, cmp3740, cmp3743, cmp3746, tobool3750, cmp3754, cmp3758, cmp3761, cmp3764, cmp3767, cmp3770, cmp3773, cmp3776, cmp3779, cmp3782, tobool3786, cmp3790, cmp3794, cmp3797, cmp3800, cmp3803, cmp3806, cmp3809, cmp3812, cmp3815, cmp3818, tobool3822, cmp3826, cmp3830, cmp3833, cmp3836, cmp3839, cmp3842, cmp3845, cmp3848, cmp3851, cmp3854, tobool3858, cmp3862, cmp3866, cmp3869, cmp3872, cmp3875, cmp3878, cmp3881, cmp3884, cmp3887, cmp3890, tobool3894, cmp3898, cmp3902, cmp3905, cmp3908, cmp3911, cmp3914, cmp3917, cmp3920, cmp3923, cmp3926, tobool3930, cmp3934, cmp3938, cmp3941, cmp3944, cmp3947, cmp3950, cmp3953, cmp3956, cmp3959, cmp3962, tobool3966, cmp3970, cmp3974, cmp3977, cmp3980, cmp3983, cmp3986, cmp3989, cmp3992, cmp3995, cmp3998, tobool4002, cmp4006, cmp4010, cmp4013, cmp4016, cmp4019, cmp4022, cmp4025, cmp4028, cmp4031, cmp4034, tobool4038, cmp4042, cmp4046, cmp4049, cmp4052, cmp4055, cmp4058, cmp4061, cmp4064, cmp4067, cmp4070, tobool4074, cmp4078, cmp4082, cmp4085, cmp4088, cmp4091, cmp4094, cmp4097, cmp4100, cmp4103, cmp4106, tobool4110, cmp4114, cmp4118, cmp4121, cmp4124, cmp4127, cmp4130, cmp4133, cmp4136, cmp4139, cmp4142, tobool4146, cmp4150, cmp4154, cmp4157, cmp4160, cmp4163, cmp4166, cmp4169, cmp4172, cmp4175, cmp4178, tobool4182, cmp4186, cmp4190, cmp4193, cmp4196, cmp4199, cmp4202, cmp4205, cmp4208, cmp4211, cmp4214, tobool4218, cmp4222, cmp4226, cmp4229, cmp4232, cmp4235, cmp4238, cmp4241, cmp4244, cmp4247, cmp4250, tobool4254, cmp4258, cmp4262, cmp4265, cmp4268, cmp4271, cmp4274, cmp4277, cmp4280, cmp4283, cmp4286, tobool4290, cmp4294, cmp4298, cmp4301, cmp4304, cmp4307, cmp4310, cmp4313, cmp4316, cmp4319, cmp4322, tobool4326, cmp4330, cmp4334, cmp4337, cmp4340, cmp4343, cmp4346, cmp4349, cmp4352, cmp4355, cmp4358, tobool4362, cmp4366, cmp4370, cmp4373, cmp4376, cmp4379, cmp4382, cmp4385, cmp4388, cmp4391, cmp4394, tobool4398, cmp4402, cmp4406, cmp4409, cmp4412, cmp4415, cmp4418, cmp4421, cmp4424, cmp4427, cmp4430, tobool4434, cmp4438, cmp4442, cmp4445, cmp4448, cmp4451, cmp4454, cmp4457, cmp4460, cmp4463, cmp4466, tobool4470, cmp4474, cmp4478, cmp4481, cmp4484, cmp4487, cmp4490, cmp4493, cmp4496, cmp4499, cmp4502, tobool4506, cmp4510, cmp4514, cmp4517, cmp4520, cmp4523, cmp4526, cmp4529, cmp4532, cmp4535, cmp4538, tobool4542, cmp4546, cmp4550, cmp4553, cmp4556, cmp4559, cmp4562, cmp4565, cmp4568, cmp4571, cmp4574, tobool4578, cmp4582, cmp4585, cmp4588, cmp4591, cmp4594, cmp4597, cmp4600, cmp4603, cmp4606, tobool4610, cmp4614, cmp4617, cmp4620, cmp4623, cmp4626, cmp4629, cmp4632, cmp4635, cmp4638, tobool4642, tobool4646, cmp4650, cmp4654, cmp4658, tobool4662, cmp4666, cmp4670, tobool4674, cmp4678, tobool4682, tobool4686, tobool4690, cmp4694, cmp4698, tobool4702, cmp4706, tobool4710, tobool4714, tobool4718, tobool4722, tobool4726, tobool4730, cmp4734, cmp4737, tobool4741, cmp4745, cmp4748, cmp4751, cmp4754, cmp4757, cmp4760, cmp4763, cmp4766, cmp4769, tobool4773, cmp4777, cmp4780, cmp4783, cmp4786, cmp4789, cmp4792, cmp4795, cmp4798, cmp4801, tobool4805, tobool4809, tobool4813, tobool4817, tobool4821, cmp4825, tobool4829, tobool4833, cmp4837, cmp4840, cmp4843, cmp4846, cmp4849, cmp4852, cmp4855, cmp4858, cmp4861, tobool4865, tobool4869, tobool4873, cmp4877, cmp4881, cmp4884, cmp4887, cmp4890, tobool4894, tobool4898, cmp4902, cmp4905, cmp4908, cmp4911, cmp4914, cmp4917, cmp4920, cmp4923, cmp4926, tobool4930, tobool4934, tobool4938, tobool4942, cmp4946, cmp4949, cmp4952, cmp4956, cmp4959, cmp4962, cmp4965, tobool4969, cmp4973, cmp4976, cmp4979, cmp4982, tobool4986, cmp4990, cmp4994, cmp4997, cmp5001, tobool5005, cmp5009, cmp5013, cmp5016, cmp5019, cmp5023, cmp5026, cmp5029, tobool5033, cmp5037, cmp5040, cmp5043, tobool5047, tobool5051, cmp5055, cmp5058, cmp5061, cmp5064, cmp5067, cmp5070, cmp5073, cmp5076, tobool5080, tobool5084, tobool5088, tobool5092, cmp5096, tobool5100, cmp5104, tobool5108, cmp5112, tobool5116, cmp5120, tobool5124, tobool5128, cmp5132, tobool5136, tobool5140, cmp5144, tobool5148, tobool5152, tobool5156, tobool5160, tobool5164, tobool5168, tobool5172, cmp5176, cmp5179, cmp5182, cmp5185, cmp5188, cmp5191, cmp5194, cmp5197, cmp5200, tobool5204, cmp5208, cmp5211, cmp5214, cmp5217, cmp5220, cmp5223, cmp5226, cmp5229, cmp5232, tobool5236, cmp5240, cmp5243, cmp5246, cmp5249, cmp5252, cmp5255, cmp5258, cmp5261, cmp5264, tobool5268, tobool5272, tobool5276, v2264 bool
 	var v3, frombool, v10, v27, v44, v52, v69, v77, v94, v111, v128, v139, v149, v160, v175, v186, v188, v192, v205, v216, v221, v223, v225, v235, v237, v243, v249, v255, v257, v261, v264, v266, v268, v270, v272, v274, v276, v279, v281, v283, v285, v287, v289, v291, v293, v295, v298, v300, v302, v304, v306, v308, v310, v312, v316, v318, v320, v322, v324, v327, v329, v331, v333, v336, v338, v340, v342, v344, v346, v348, v350, v352, v354, v356, v358, v360, v362, v364, v366, v368, v370, v372, v377, v382, v385, v388, v391, v394, v397, v400, v403, v406, v413, v420, v423, v424, v441, v442, v459, v460, v471, v476, v481, v495, v508, v518, v527, v534, v541, v548, v559, v572, v582, v591, v598, v605, v612, v623, v637, v654, v669, v685, v700, v715, v730, v745, v760, v775, v790, v805, v820, v836, v851, v866, v881, v896, v911, v926, v941, v956, v971, v986, v1001, v1017, v1032, v1047, v1062, v1077, v1092, v1107, v1122, v1137, v1152, v1167, v1184, v1199, v1214, v1229, v1244, v1259, v1274, v1289, v1304, v1320, v1335, v1350, v1365, v1380, v1395, v1411, v1426, v1441, v1456, v1471, v1486, v1501, v1516, v1531, v1546, v1561, v1576, v1591, v1606, v1621, v1636, v1651, v1666, v1681, v1696, v1711, v1726, v1741, v1756, v1771, v1786, v1801, v1816, v1830, v1844, v1849, v1857, v1864, v1870, v1875, v1880, v1887, v1893, v1898, v1903, v1908, v1913, v1918, v1925, v1939, v1953, v1958, v1963, v1968, v1973, v1979, v1984, v1998, v2003, v2008, v2018, v2023, v2037, v2042, v2047, v2052, v2064, v2073, v2082, v2094, v2102, v2107, v2120, v2125, v2130, v2135, v2141, v2147, v2153, v2159, v2164, v2170, v2175, v2181, v2186, v2191, v2196, v2201, v2206, v2211, v2225, v2239, v2253, v2258, v2263 byte
 	var v474, v479, v484, v498, v511, v521, v530, v537, v544, v551, v562, v575, v585, v594, v601, v608, v615, v626, v640, v657, v672, v688, v703, v718, v733, v748, v763, v778, v793, v808, v823, v839, v854, v869, v884, v899, v914, v929, v944, v959, v974, v989, v1004, v1020, v1035, v1050, v1065, v1080, v1095, v1110, v1125, v1140, v1155, v1170, v1187, v1202, v1217, v1232, v1247, v1262, v1277, v1292, v1307, v1323, v1338, v1353, v1368, v1383, v1398, v1414, v1429, v1444, v1459, v1474, v1489, v1504, v1519, v1534, v1549, v1564, v1579, v1594, v1609, v1624, v1639, v1654, v1669, v1684, v1699, v1714, v1729, v1744, v1759, v1774, v1789, v1804, v1819, v1833, v1847, v1852, v1860, v1867, v1873, v1878, v1883, v1890, v1896, v1901, v1906, v1911, v1916, v1921, v1928, v1942, v1956, v1961, v1966, v1971, v1976, v1982, v1987, v2001, v2006, v2011, v2021, v2026, v2040, v2045, v2050, v2055, v2067, v2076, v2085, v2097, v2105, v2110, v2123, v2128, v2133, v2138, v2144, v2150, v2156, v2162, v2167, v2173, v2178, v2184, v2189, v2194, v2199, v2204, v2209, v2214, v2228, v2242, v2256, v2261 func(*TSLexer)
@@ -57539,15 +57539,15 @@ func ts_lex(lexer *TSLexer, state int16) bool {
 	var v5, conv, v11, v12, conv6, v14, v15, add, v17, add13, v18, v19, v20, v21, v22, v23, v24, v25, v26, v28, v29, conv52, v31, v32, add56, v34, add61, v35, v36, v37, v38, v39, v40, v41, v42, v43, v45, v46, v47, v48, v49, v50, v51, v53, v54, conv131, v56, v57, add135, v59, add140, v60, v61, v62, v63, v64, v65, v66, v67, v68, v70, v71, v72, v73, v74, v75, v76, v78, v79, conv209, v81, v82, add213, v84, add218, v85, v86, v87, v88, v89, v90, v91, v92, v93, v95, v96, conv260, v98, v99, add264, v101, add269, v102, v103, v104, v105, v106, v107, v108, v109, v110, v112, v113, conv311, v115, v116, add315, v118, add320, v119, v120, v121, v122, v123, v124, v125, v126, v127, v129, v130, conv362, v132, v133, add366, v135, add371, v136, v137, v138, v140, v141, v142, v143, v144, v145, v146, v147, v148, v150, v151, conv426, v153, v154, add430, v156, add435, v157, v158, v159, v161, v162, conv457, v164, v165, add461, v167, add466, v168, v169, v170, v171, v172, v173, v174, v176, v177, conv501, v179, v180, add505, v182, add510, v183, v184, v185, v187, v189, v190, v191, v193, v194, v195, v196, v197, v198, v199, v200, v201, v202, v203, v204, v206, v207, v208, v209, v210, v211, v212, v213, v214, v215, v217, v218, v219, v220, v222, v224, v226, v227, v228, v229, v230, v231, v232, v233, v234, v236, v238, v239, v240, v241, v242, v244, v245, v246, v247, v248, v250, v251, v252, v253, v254, v256, v258, v259, v260, v262, v263, v265, v267, v269, v271, v273, v275, v277, v278, v280, v282, v284, v286, v288, v290, v292, v294, v296, v297, v299, v301, v303, v305, v307, v309, v311, v313, v314, v315, v317, v319, v321, v323, v325, v326, v328, v330, v332, v334, v335, v337, v339, v341, v343, v345, v347, v349, v351, v353, v355, v357, v359, v361, v363, v365, v367, v369, v371, v373, v374, v375, v376, v378, v379, v380, v381, v383, v384, v386, v387, v389, v390, v392, v393, v395, v396, v398, v399, v401, v402, v404, v405, v407, v408, v409, v410, v411, v412, v414, v415, v416, v417, v418, v419, v421, v422, v425, v426, conv1275, v428, v429, add1279, v431, add1284, v432, v433, v434, v435, v436, v437, v438, v439, v440, v443, v444, conv1329, v446, v447, add1333, v449, add1338, v450, v451, v452, v453, v454, v455, v456, v457, v458, v461, v462, conv1383, v464, v465, add1387, v467, add1392, v468, v469, v470, v486, v487, v488, v489, v490, v491, v492, v493, v494, v500, v501, v502, v503, v504, v505, v506, v507, v513, v514, v515, v516, v517, v523, v524, v525, v526, v532, v533, v539, v540, v546, v547, v553, v554, v555, v556, v557, v558, v564, v565, v566, v567, v568, v569, v570, v571, v577, v578, v579, v580, v581, v587, v588, v589, v590, v596, v597, v603, v604, v610, v611, v617, v618, v619, v620, v621, v622, v628, v629, v630, v631, v632, v633, v634, v635, v636, v642, v643, v644, v645, v646, v647, v648, v649, v650, v651, v652, v653, v659, v660, v661, v662, v663, v664, v665, v666, v667, v668, v674, v675, v676, v677, v678, v679, v680, v681, v682, v683, v684, v690, v691, v692, v693, v694, v695, v696, v697, v698, v699, v705, v706, v707, v708, v709, v710, v711, v712, v713, v714, v720, v721, v722, v723, v724, v725, v726, v727, v728, v729, v735, v736, v737, v738, v739, v740, v741, v742, v743, v744, v750, v751, v752, v753, v754, v755, v756, v757, v758, v759, v765, v766, v767, v768, v769, v770, v771, v772, v773, v774, v780, v781, v782, v783, v784, v785, v786, v787, v788, v789, v795, v796, v797, v798, v799, v800, v801, v802, v803, v804, v810, v811, v812, v813, v814, v815, v816, v817, v818, v819, v825, v826, v827, v828, v829, v830, v831, v832, v833, v834, v835, v841, v842, v843, v844, v845, v846, v847, v848, v849, v850, v856, v857, v858, v859, v860, v861, v862, v863, v864, v865, v871, v872, v873, v874, v875, v876, v877, v878, v879, v880, v886, v887, v888, v889, v890, v891, v892, v893, v894, v895, v901, v902, v903, v904, v905, v906, v907, v908, v909, v910, v916, v917, v918, v919, v920, v921, v922, v923, v924, v925, v931, v932, v933, v934, v935, v936, v937, v938, v939, v940, v946, v947, v948, v949, v950, v951, v952, v953, v954, v955, v961, v962, v963, v964, v965, v966, v967, v968, v969, v970, v976, v977, v978, v979, v980, v981, v982, v983, v984, v985, v991, v992, v993, v994, v995, v996, v997, v998, v999, v1000, v1006, v1007, v1008, v1009, v1010, v1011, v1012, v1013, v1014, v1015, v1016, v1022, v1023, v1024, v1025, v1026, v1027, v1028, v1029, v1030, v1031, v1037, v1038, v1039, v1040, v1041, v1042, v1043, v1044, v1045, v1046, v1052, v1053, v1054, v1055, v1056, v1057, v1058, v1059, v1060, v1061, v1067, v1068, v1069, v1070, v1071, v1072, v1073, v1074, v1075, v1076, v1082, v1083, v1084, v1085, v1086, v1087, v1088, v1089, v1090, v1091, v1097, v1098, v1099, v1100, v1101, v1102, v1103, v1104, v1105, v1106, v1112, v1113, v1114, v1115, v1116, v1117, v1118, v1119, v1120, v1121, v1127, v1128, v1129, v1130, v1131, v1132, v1133, v1134, v1135, v1136, v1142, v1143, v1144, v1145, v1146, v1147, v1148, v1149, v1150, v1151, v1157, v1158, v1159, v1160, v1161, v1162, v1163, v1164, v1165, v1166, v1172, v1173, v1174, v1175, v1176, v1177, v1178, v1179, v1180, v1181, v1182, v1183, v1189, v1190, v1191, v1192, v1193, v1194, v1195, v1196, v1197, v1198, v1204, v1205, v1206, v1207, v1208, v1209, v1210, v1211, v1212, v1213, v1219, v1220, v1221, v1222, v1223, v1224, v1225, v1226, v1227, v1228, v1234, v1235, v1236, v1237, v1238, v1239, v1240, v1241, v1242, v1243, v1249, v1250, v1251, v1252, v1253, v1254, v1255, v1256, v1257, v1258, v1264, v1265, v1266, v1267, v1268, v1269, v1270, v1271, v1272, v1273, v1279, v1280, v1281, v1282, v1283, v1284, v1285, v1286, v1287, v1288, v1294, v1295, v1296, v1297, v1298, v1299, v1300, v1301, v1302, v1303, v1309, v1310, v1311, v1312, v1313, v1314, v1315, v1316, v1317, v1318, v1319, v1325, v1326, v1327, v1328, v1329, v1330, v1331, v1332, v1333, v1334, v1340, v1341, v1342, v1343, v1344, v1345, v1346, v1347, v1348, v1349, v1355, v1356, v1357, v1358, v1359, v1360, v1361, v1362, v1363, v1364, v1370, v1371, v1372, v1373, v1374, v1375, v1376, v1377, v1378, v1379, v1385, v1386, v1387, v1388, v1389, v1390, v1391, v1392, v1393, v1394, v1400, v1401, v1402, v1403, v1404, v1405, v1406, v1407, v1408, v1409, v1410, v1416, v1417, v1418, v1419, v1420, v1421, v1422, v1423, v1424, v1425, v1431, v1432, v1433, v1434, v1435, v1436, v1437, v1438, v1439, v1440, v1446, v1447, v1448, v1449, v1450, v1451, v1452, v1453, v1454, v1455, v1461, v1462, v1463, v1464, v1465, v1466, v1467, v1468, v1469, v1470, v1476, v1477, v1478, v1479, v1480, v1481, v1482, v1483, v1484, v1485, v1491, v1492, v1493, v1494, v1495, v1496, v1497, v1498, v1499, v1500, v1506, v1507, v1508, v1509, v1510, v1511, v1512, v1513, v1514, v1515, v1521, v1522, v1523, v1524, v1525, v1526, v1527, v1528, v1529, v1530, v1536, v1537, v1538, v1539, v1540, v1541, v1542, v1543, v1544, v1545, v1551, v1552, v1553, v1554, v1555, v1556, v1557, v1558, v1559, v1560, v1566, v1567, v1568, v1569, v1570, v1571, v1572, v1573, v1574, v1575, v1581, v1582, v1583, v1584, v1585, v1586, v1587, v1588, v1589, v1590, v1596, v1597, v1598, v1599, v1600, v1601, v1602, v1603, v1604, v1605, v1611, v1612, v1613, v1614, v1615, v1616, v1617, v1618, v1619, v1620, v1626, v1627, v1628, v1629, v1630, v1631, v1632, v1633, v1634, v1635, v1641, v1642, v1643, v1644, v1645, v1646, v1647, v1648, v1649, v1650, v1656, v1657, v1658, v1659, v1660, v1661, v1662, v1663, v1664, v1665, v1671, v1672, v1673, v1674, v1675, v1676, v1677, v1678, v1679, v1680, v1686, v1687, v1688, v1689, v1690, v1691, v1692, v1693, v1694, v1695, v1701, v1702, v1703, v1704, v1705, v1706, v1707, v1708, v1709, v1710, v1716, v1717, v1718, v1719, v1720, v1721, v1722, v1723, v1724, v1725, v1731, v1732, v1733, v1734, v1735, v1736, v1737, v1738, v1739, v1740, v1746, v1747, v1748, v1749, v1750, v1751, v1752, v1753, v1754, v1755, v1761, v1762, v1763, v1764, v1765, v1766, v1767, v1768, v1769, v1770, v1776, v1777, v1778, v1779, v1780, v1781, v1782, v1783, v1784, v1785, v1791, v1792, v1793, v1794, v1795, v1796, v1797, v1798, v1799, v1800, v1806, v1807, v1808, v1809, v1810, v1811, v1812, v1813, v1814, v1815, v1821, v1822, v1823, v1824, v1825, v1826, v1827, v1828, v1829, v1835, v1836, v1837, v1838, v1839, v1840, v1841, v1842, v1843, v1854, v1855, v1856, v1862, v1863, v1869, v1885, v1886, v1892, v1923, v1924, v1930, v1931, v1932, v1933, v1934, v1935, v1936, v1937, v1938, v1944, v1945, v1946, v1947, v1948, v1949, v1950, v1951, v1952, v1978, v1989, v1990, v1991, v1992, v1993, v1994, v1995, v1996, v1997, v2013, v2014, v2015, v2016, v2017, v2028, v2029, v2030, v2031, v2032, v2033, v2034, v2035, v2036, v2057, v2058, v2059, v2060, v2061, v2062, v2063, v2069, v2070, v2071, v2072, v2078, v2079, v2080, v2081, v2087, v2088, v2089, v2090, v2091, v2092, v2093, v2099, v2100, v2101, v2112, v2113, v2114, v2115, v2116, v2117, v2118, v2119, v2140, v2146, v2152, v2158, v2169, v2180, v2216, v2217, v2218, v2219, v2220, v2221, v2222, v2223, v2224, v2230, v2231, v2232, v2233, v2234, v2235, v2236, v2237, v2238, v2244, v2245, v2246, v2247, v2248, v2249, v2250, v2251, v2252 int32
 	var conv4, idxprom, idxprom10, conv46, idxprom50, idxprom57, conv125, idxprom129, idxprom136, conv203, idxprom207, idxprom214, conv254, idxprom258, idxprom265, conv305, idxprom309, idxprom316, conv356, idxprom360, idxprom367, conv420, idxprom424, idxprom431, conv451, idxprom455, idxprom462, conv495, idxprom499, idxprom506, conv1269, idxprom1273, idxprom1280, conv1323, idxprom1327, idxprom1334, conv1377, idxprom1381, idxprom1388 int64
 
-	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, lexer_addr, state_addr, result, skip, eof, lookahead, i, i44, i123, i201, i252, i303, i354, i418, i449, i493, i1267, i1321, i1375, v0, advance, v1, v2, v3, tobool, v4, lookahead1, v5, v6, eof2, v7, v8, call, frombool, v9, conv, v10, tobool3, v11, conv4, cmp, v12, idxprom, arrayidx, v13, conv6, v14, cmp7, v15, add, idxprom10, arrayidx11, v16, v17, add13, v18, cmp14, v19, cmp16, v20, cmp18, v21, cmp22, v22, cmp25, v23, cmp29, v24, cmp32, v25, cmp35, v26, cmp38, v27, tobool42, v28, conv46, cmp47, v29, idxprom50, arrayidx51, v30, conv52, v31, cmp53, v32, add56, idxprom57, arrayidx58, v33, v34, add61, v35, cmp63, v36, cmp66, v37, cmp69, v38, cmp73, v39, cmp76, v40, cmp80, v41, cmp83, v42, cmp86, v43, cmp89, v44, tobool93, v45, cmp95, v46, cmp99, v47, cmp103, v48, cmp107, v49, cmp110, v50, cmp113, v51, cmp117, v52, tobool121, v53, conv125, cmp126, v54, idxprom129, arrayidx130, v55, conv131, v56, cmp132, v57, add135, idxprom136, arrayidx137, v58, v59, add140, v60, cmp142, v61, cmp145, v62, cmp148, v63, cmp152, v64, cmp155, v65, cmp159, v66, cmp162, v67, cmp165, v68, cmp168, v69, tobool172, v70, cmp174, v71, cmp178, v72, cmp182, v73, cmp185, v74, cmp188, v75, cmp192, v76, cmp195, v77, tobool199, v78, conv203, cmp204, v79, idxprom207, arrayidx208, v80, conv209, v81, cmp210, v82, add213, idxprom214, arrayidx215, v83, v84, add218, v85, cmp220, v86, cmp223, v87, cmp226, v88, cmp230, v89, cmp233, v90, cmp237, v91, cmp240, v92, cmp243, v93, cmp246, v94, tobool250, v95, conv254, cmp255, v96, idxprom258, arrayidx259, v97, conv260, v98, cmp261, v99, add264, idxprom265, arrayidx266, v100, v101, add269, v102, cmp271, v103, cmp274, v104, cmp277, v105, cmp281, v106, cmp284, v107, cmp288, v108, cmp291, v109, cmp294, v110, cmp297, v111, tobool301, v112, conv305, cmp306, v113, idxprom309, arrayidx310, v114, conv311, v115, cmp312, v116, add315, idxprom316, arrayidx317, v117, v118, add320, v119, cmp322, v120, cmp325, v121, cmp328, v122, cmp332, v123, cmp335, v124, cmp339, v125, cmp342, v126, cmp345, v127, cmp348, v128, tobool352, v129, conv356, cmp357, v130, idxprom360, arrayidx361, v131, conv362, v132, cmp363, v133, add366, idxprom367, arrayidx368, v134, v135, add371, v136, cmp373, v137, cmp376, v138, cmp379, v139, tobool383, v140, cmp385, v141, cmp389, v142, cmp393, v143, cmp396, v144, cmp399, v145, cmp403, v146, cmp406, v147, cmp409, v148, cmp412, v149, tobool416, v150, conv420, cmp421, v151, idxprom424, arrayidx425, v152, conv426, v153, cmp427, v154, add430, idxprom431, arrayidx432, v155, v156, add435, v157, cmp437, v158, cmp440, v159, cmp443, v160, tobool447, v161, conv451, cmp452, v162, idxprom455, arrayidx456, v163, conv457, v164, cmp458, v165, add461, idxprom462, arrayidx463, v166, v167, add466, v168, cmp468, v169, cmp471, v170, cmp474, v171, cmp478, v172, cmp481, v173, cmp484, v174, cmp487, v175, tobool491, v176, conv495, cmp496, v177, idxprom499, arrayidx500, v178, conv501, v179, cmp502, v180, add505, idxprom506, arrayidx507, v181, v182, add510, v183, cmp512, v184, cmp515, v185, cmp518, v186, tobool522, v187, cmp524, v188, tobool528, v189, cmp530, v190, cmp534, v191, cmp537, v192, tobool541, v193, cmp543, v194, cmp547, v195, cmp551, v196, cmp555, v197, cmp559, v198, cmp563, v199, cmp566, v200, cmp569, v201, cmp573, v202, cmp576, v203, cmp579, v204, cmp582, v205, tobool586, v206, cmp588, v207, cmp592, v208, cmp596, v209, cmp600, v210, cmp603, v211, cmp606, v212, cmp610, v213, cmp613, v214, cmp616, v215, cmp619, v216, tobool623, v217, cmp625, v218, cmp629, v219, cmp633, v220, cmp636, v221, tobool640, v222, cmp642, v223, tobool646, v224, cmp648, v225, tobool652, v226, cmp654, v227, cmp658, v228, cmp662, v229, cmp665, v230, cmp668, v231, cmp672, v232, cmp675, v233, cmp678, v234, cmp681, v235, tobool685, v236, cmp687, v237, tobool691, v238, cmp693, v239, cmp697, v240, cmp700, v241, cmp703, v242, cmp706, v243, tobool710, v244, cmp712, v245, cmp716, v246, cmp719, v247, cmp722, v248, cmp725, v249, tobool729, v250, cmp731, v251, cmp735, v252, cmp738, v253, cmp741, v254, cmp744, v255, tobool748, v256, cmp750, v257, tobool754, v258, cmp756, v259, cmp760, v260, cmp764, v261, tobool768, v262, cmp770, v263, cmp774, v264, tobool778, v265, cmp780, v266, tobool784, v267, cmp786, v268, tobool790, v269, cmp792, v270, tobool796, v271, cmp798, v272, tobool802, v273, cmp804, v274, tobool808, v275, cmp810, v276, tobool814, v277, cmp816, v278, cmp820, v279, tobool824, v280, cmp826, v281, tobool830, v282, cmp832, v283, tobool836, v284, cmp838, v285, tobool842, v286, cmp844, v287, tobool848, v288, cmp850, v289, tobool854, v290, cmp856, v291, tobool860, v292, cmp862, v293, tobool866, v294, cmp868, v295, tobool872, v296, cmp874, v297, cmp878, v298, tobool882, v299, cmp884, v300, tobool888, v301, cmp890, v302, tobool894, v303, cmp896, v304, tobool900, v305, cmp902, v306, tobool906, v307, cmp908, v308, tobool912, v309, cmp914, v310, tobool918, v311, cmp920, v312, tobool924, v313, cmp926, v314, cmp930, v315, cmp933, v316, tobool937, v317, cmp939, v318, tobool943, v319, cmp945, v320, tobool949, v321, cmp951, v322, tobool955, v323, cmp957, v324, tobool961, v325, cmp963, v326, cmp967, v327, tobool971, v328, cmp973, v329, tobool977, v330, cmp979, v331, tobool983, v332, cmp985, v333, tobool989, v334, cmp991, v335, cmp995, v336, tobool999, v337, cmp1001, v338, tobool1005, v339, cmp1007, v340, tobool1011, v341, cmp1013, v342, tobool1017, v343, cmp1019, v344, tobool1023, v345, cmp1025, v346, tobool1029, v347, cmp1031, v348, tobool1035, v349, cmp1037, v350, tobool1041, v351, cmp1043, v352, tobool1047, v353, cmp1049, v354, tobool1053, v355, cmp1055, v356, tobool1059, v357, cmp1061, v358, tobool1065, v359, cmp1067, v360, tobool1071, v361, cmp1073, v362, tobool1077, v363, cmp1079, v364, tobool1083, v365, cmp1085, v366, tobool1089, v367, cmp1091, v368, tobool1095, v369, cmp1097, v370, tobool1101, v371, cmp1103, v372, tobool1107, v373, cmp1109, v374, cmp1112, v375, cmp1116, v376, cmp1119, v377, tobool1123, v378, cmp1125, v379, cmp1128, v380, cmp1132, v381, cmp1135, v382, tobool1139, v383, cmp1141, v384, cmp1144, v385, tobool1148, v386, cmp1150, v387, cmp1153, v388, tobool1157, v389, cmp1159, v390, cmp1162, v391, tobool1166, v392, cmp1168, v393, cmp1171, v394, tobool1175, v395, cmp1177, v396, cmp1180, v397, tobool1184, v398, cmp1186, v399, cmp1189, v400, tobool1193, v401, cmp1195, v402, cmp1198, v403, tobool1202, v404, cmp1204, v405, cmp1207, v406, tobool1211, v407, cmp1213, v408, cmp1216, v409, cmp1219, v410, cmp1222, v411, cmp1225, v412, cmp1228, v413, tobool1232, v414, cmp1234, v415, cmp1237, v416, cmp1240, v417, cmp1243, v418, cmp1246, v419, cmp1249, v420, tobool1253, v421, cmp1255, v422, cmp1258, v423, tobool1262, v424, tobool1264, v425, conv1269, cmp1270, v426, idxprom1273, arrayidx1274, v427, conv1275, v428, cmp1276, v429, add1279, idxprom1280, arrayidx1281, v430, v431, add1284, v432, cmp1286, v433, cmp1289, v434, cmp1292, v435, cmp1296, v436, cmp1299, v437, cmp1303, v438, cmp1306, v439, cmp1309, v440, cmp1312, v441, tobool1316, v442, tobool1318, v443, conv1323, cmp1324, v444, idxprom1327, arrayidx1328, v445, conv1329, v446, cmp1330, v447, add1333, idxprom1334, arrayidx1335, v448, v449, add1338, v450, cmp1340, v451, cmp1343, v452, cmp1346, v453, cmp1350, v454, cmp1353, v455, cmp1357, v456, cmp1360, v457, cmp1363, v458, cmp1366, v459, tobool1370, v460, tobool1372, v461, conv1377, cmp1378, v462, idxprom1381, arrayidx1382, v463, conv1383, v464, cmp1384, v465, add1387, idxprom1388, arrayidx1389, v466, v467, add1392, v468, cmp1394, v469, cmp1397, v470, cmp1400, v471, tobool1404, v472, result_symbol, v473, mark_end, v474, v475, v476, tobool1406, v477, result_symbol1408, v478, mark_end1409, v479, v480, v481, tobool1410, v482, result_symbol1412, v483, mark_end1413, v484, v485, v486, cmp1414, v487, cmp1417, v488, cmp1420, v489, cmp1423, v490, cmp1426, v491, cmp1429, v492, cmp1432, v493, cmp1435, v494, cmp1438, v495, tobool1442, v496, result_symbol1444, v497, mark_end1445, v498, v499, v500, cmp1446, v501, cmp1450, v502, cmp1454, v503, cmp1458, v504, cmp1462, v505, cmp1465, v506, cmp1469, v507, cmp1472, v508, tobool1476, v509, result_symbol1478, v510, mark_end1479, v511, v512, v513, cmp1480, v514, cmp1484, v515, cmp1487, v516, cmp1491, v517, cmp1494, v518, tobool1498, v519, result_symbol1500, v520, mark_end1501, v521, v522, v523, cmp1502, v524, cmp1505, v525, cmp1509, v526, cmp1512, v527, tobool1516, v528, result_symbol1518, v529, mark_end1519, v530, v531, v532, cmp1520, v533, cmp1523, v534, tobool1527, v535, result_symbol1529, v536, mark_end1530, v537, v538, v539, cmp1531, v540, cmp1534, v541, tobool1538, v542, result_symbol1540, v543, mark_end1541, v544, v545, v546, cmp1542, v547, cmp1545, v548, tobool1549, v549, result_symbol1551, v550, mark_end1552, v551, v552, v553, cmp1553, v554, cmp1556, v555, cmp1559, v556, cmp1562, v557, cmp1565, v558, cmp1568, v559, tobool1572, v560, result_symbol1574, v561, mark_end1575, v562, v563, v564, cmp1576, v565, cmp1580, v566, cmp1584, v567, cmp1588, v568, cmp1592, v569, cmp1595, v570, cmp1599, v571, cmp1602, v572, tobool1606, v573, result_symbol1608, v574, mark_end1609, v575, v576, v577, cmp1610, v578, cmp1614, v579, cmp1617, v580, cmp1621, v581, cmp1624, v582, tobool1628, v583, result_symbol1630, v584, mark_end1631, v585, v586, v587, cmp1632, v588, cmp1635, v589, cmp1639, v590, cmp1642, v591, tobool1646, v592, result_symbol1648, v593, mark_end1649, v594, v595, v596, cmp1650, v597, cmp1653, v598, tobool1657, v599, result_symbol1659, v600, mark_end1660, v601, v602, v603, cmp1661, v604, cmp1664, v605, tobool1668, v606, result_symbol1670, v607, mark_end1671, v608, v609, v610, cmp1672, v611, cmp1675, v612, tobool1679, v613, result_symbol1681, v614, mark_end1682, v615, v616, v617, cmp1683, v618, cmp1686, v619, cmp1689, v620, cmp1692, v621, cmp1695, v622, cmp1698, v623, tobool1702, v624, result_symbol1704, v625, mark_end1705, v626, v627, v628, cmp1706, v629, cmp1710, v630, cmp1713, v631, cmp1716, v632, cmp1719, v633, cmp1722, v634, cmp1725, v635, cmp1728, v636, cmp1731, v637, tobool1735, v638, result_symbol1737, v639, mark_end1738, v640, v641, v642, cmp1739, v643, cmp1743, v644, cmp1747, v645, cmp1751, v646, cmp1754, v647, cmp1757, v648, cmp1760, v649, cmp1763, v650, cmp1766, v651, cmp1769, v652, cmp1772, v653, cmp1775, v654, tobool1779, v655, result_symbol1781, v656, mark_end1782, v657, v658, v659, cmp1783, v660, cmp1787, v661, cmp1790, v662, cmp1793, v663, cmp1796, v664, cmp1799, v665, cmp1802, v666, cmp1805, v667, cmp1808, v668, cmp1811, v669, tobool1815, v670, result_symbol1817, v671, mark_end1818, v672, v673, v674, cmp1819, v675, cmp1823, v676, cmp1827, v677, cmp1830, v678, cmp1833, v679, cmp1836, v680, cmp1839, v681, cmp1842, v682, cmp1845, v683, cmp1848, v684, cmp1851, v685, tobool1855, v686, result_symbol1857, v687, mark_end1858, v688, v689, v690, cmp1859, v691, cmp1863, v692, cmp1866, v693, cmp1869, v694, cmp1872, v695, cmp1875, v696, cmp1878, v697, cmp1881, v698, cmp1884, v699, cmp1887, v700, tobool1891, v701, result_symbol1893, v702, mark_end1894, v703, v704, v705, cmp1895, v706, cmp1899, v707, cmp1902, v708, cmp1905, v709, cmp1908, v710, cmp1911, v711, cmp1914, v712, cmp1917, v713, cmp1920, v714, cmp1923, v715, tobool1927, v716, result_symbol1929, v717, mark_end1930, v718, v719, v720, cmp1931, v721, cmp1935, v722, cmp1938, v723, cmp1941, v724, cmp1944, v725, cmp1947, v726, cmp1950, v727, cmp1953, v728, cmp1956, v729, cmp1959, v730, tobool1963, v731, result_symbol1965, v732, mark_end1966, v733, v734, v735, cmp1967, v736, cmp1971, v737, cmp1974, v738, cmp1977, v739, cmp1980, v740, cmp1983, v741, cmp1986, v742, cmp1989, v743, cmp1992, v744, cmp1995, v745, tobool1999, v746, result_symbol2001, v747, mark_end2002, v748, v749, v750, cmp2003, v751, cmp2007, v752, cmp2010, v753, cmp2013, v754, cmp2016, v755, cmp2019, v756, cmp2022, v757, cmp2025, v758, cmp2028, v759, cmp2031, v760, tobool2035, v761, result_symbol2037, v762, mark_end2038, v763, v764, v765, cmp2039, v766, cmp2043, v767, cmp2046, v768, cmp2049, v769, cmp2052, v770, cmp2055, v771, cmp2058, v772, cmp2061, v773, cmp2064, v774, cmp2067, v775, tobool2071, v776, result_symbol2073, v777, mark_end2074, v778, v779, v780, cmp2075, v781, cmp2079, v782, cmp2082, v783, cmp2085, v784, cmp2088, v785, cmp2091, v786, cmp2094, v787, cmp2097, v788, cmp2100, v789, cmp2103, v790, tobool2107, v791, result_symbol2109, v792, mark_end2110, v793, v794, v795, cmp2111, v796, cmp2115, v797, cmp2118, v798, cmp2121, v799, cmp2124, v800, cmp2127, v801, cmp2130, v802, cmp2133, v803, cmp2136, v804, cmp2139, v805, tobool2143, v806, result_symbol2145, v807, mark_end2146, v808, v809, v810, cmp2147, v811, cmp2151, v812, cmp2154, v813, cmp2157, v814, cmp2160, v815, cmp2163, v816, cmp2166, v817, cmp2169, v818, cmp2172, v819, cmp2175, v820, tobool2179, v821, result_symbol2181, v822, mark_end2182, v823, v824, v825, cmp2183, v826, cmp2187, v827, cmp2191, v828, cmp2194, v829, cmp2197, v830, cmp2200, v831, cmp2203, v832, cmp2206, v833, cmp2209, v834, cmp2212, v835, cmp2215, v836, tobool2219, v837, result_symbol2221, v838, mark_end2222, v839, v840, v841, cmp2223, v842, cmp2227, v843, cmp2230, v844, cmp2233, v845, cmp2236, v846, cmp2239, v847, cmp2242, v848, cmp2245, v849, cmp2248, v850, cmp2251, v851, tobool2255, v852, result_symbol2257, v853, mark_end2258, v854, v855, v856, cmp2259, v857, cmp2263, v858, cmp2266, v859, cmp2269, v860, cmp2272, v861, cmp2275, v862, cmp2278, v863, cmp2281, v864, cmp2284, v865, cmp2287, v866, tobool2291, v867, result_symbol2293, v868, mark_end2294, v869, v870, v871, cmp2295, v872, cmp2299, v873, cmp2302, v874, cmp2305, v875, cmp2308, v876, cmp2311, v877, cmp2314, v878, cmp2317, v879, cmp2320, v880, cmp2323, v881, tobool2327, v882, result_symbol2329, v883, mark_end2330, v884, v885, v886, cmp2331, v887, cmp2335, v888, cmp2338, v889, cmp2341, v890, cmp2344, v891, cmp2347, v892, cmp2350, v893, cmp2353, v894, cmp2356, v895, cmp2359, v896, tobool2363, v897, result_symbol2365, v898, mark_end2366, v899, v900, v901, cmp2367, v902, cmp2371, v903, cmp2374, v904, cmp2377, v905, cmp2380, v906, cmp2383, v907, cmp2386, v908, cmp2389, v909, cmp2392, v910, cmp2395, v911, tobool2399, v912, result_symbol2401, v913, mark_end2402, v914, v915, v916, cmp2403, v917, cmp2407, v918, cmp2410, v919, cmp2413, v920, cmp2416, v921, cmp2419, v922, cmp2422, v923, cmp2425, v924, cmp2428, v925, cmp2431, v926, tobool2435, v927, result_symbol2437, v928, mark_end2438, v929, v930, v931, cmp2439, v932, cmp2443, v933, cmp2446, v934, cmp2449, v935, cmp2452, v936, cmp2455, v937, cmp2458, v938, cmp2461, v939, cmp2464, v940, cmp2467, v941, tobool2471, v942, result_symbol2473, v943, mark_end2474, v944, v945, v946, cmp2475, v947, cmp2479, v948, cmp2482, v949, cmp2485, v950, cmp2488, v951, cmp2491, v952, cmp2494, v953, cmp2497, v954, cmp2500, v955, cmp2503, v956, tobool2507, v957, result_symbol2509, v958, mark_end2510, v959, v960, v961, cmp2511, v962, cmp2515, v963, cmp2518, v964, cmp2521, v965, cmp2524, v966, cmp2527, v967, cmp2530, v968, cmp2533, v969, cmp2536, v970, cmp2539, v971, tobool2543, v972, result_symbol2545, v973, mark_end2546, v974, v975, v976, cmp2547, v977, cmp2551, v978, cmp2554, v979, cmp2557, v980, cmp2560, v981, cmp2563, v982, cmp2566, v983, cmp2569, v984, cmp2572, v985, cmp2575, v986, tobool2579, v987, result_symbol2581, v988, mark_end2582, v989, v990, v991, cmp2583, v992, cmp2587, v993, cmp2590, v994, cmp2593, v995, cmp2596, v996, cmp2599, v997, cmp2602, v998, cmp2605, v999, cmp2608, v1000, cmp2611, v1001, tobool2615, v1002, result_symbol2617, v1003, mark_end2618, v1004, v1005, v1006, cmp2619, v1007, cmp2623, v1008, cmp2627, v1009, cmp2630, v1010, cmp2633, v1011, cmp2636, v1012, cmp2639, v1013, cmp2642, v1014, cmp2645, v1015, cmp2648, v1016, cmp2651, v1017, tobool2655, v1018, result_symbol2657, v1019, mark_end2658, v1020, v1021, v1022, cmp2659, v1023, cmp2663, v1024, cmp2666, v1025, cmp2669, v1026, cmp2672, v1027, cmp2675, v1028, cmp2678, v1029, cmp2681, v1030, cmp2684, v1031, cmp2687, v1032, tobool2691, v1033, result_symbol2693, v1034, mark_end2694, v1035, v1036, v1037, cmp2695, v1038, cmp2699, v1039, cmp2702, v1040, cmp2705, v1041, cmp2708, v1042, cmp2711, v1043, cmp2714, v1044, cmp2717, v1045, cmp2720, v1046, cmp2723, v1047, tobool2727, v1048, result_symbol2729, v1049, mark_end2730, v1050, v1051, v1052, cmp2731, v1053, cmp2735, v1054, cmp2738, v1055, cmp2741, v1056, cmp2744, v1057, cmp2747, v1058, cmp2750, v1059, cmp2753, v1060, cmp2756, v1061, cmp2759, v1062, tobool2763, v1063, result_symbol2765, v1064, mark_end2766, v1065, v1066, v1067, cmp2767, v1068, cmp2771, v1069, cmp2774, v1070, cmp2777, v1071, cmp2780, v1072, cmp2783, v1073, cmp2786, v1074, cmp2789, v1075, cmp2792, v1076, cmp2795, v1077, tobool2799, v1078, result_symbol2801, v1079, mark_end2802, v1080, v1081, v1082, cmp2803, v1083, cmp2807, v1084, cmp2810, v1085, cmp2813, v1086, cmp2816, v1087, cmp2819, v1088, cmp2822, v1089, cmp2825, v1090, cmp2828, v1091, cmp2831, v1092, tobool2835, v1093, result_symbol2837, v1094, mark_end2838, v1095, v1096, v1097, cmp2839, v1098, cmp2843, v1099, cmp2846, v1100, cmp2849, v1101, cmp2852, v1102, cmp2855, v1103, cmp2858, v1104, cmp2861, v1105, cmp2864, v1106, cmp2867, v1107, tobool2871, v1108, result_symbol2873, v1109, mark_end2874, v1110, v1111, v1112, cmp2875, v1113, cmp2879, v1114, cmp2882, v1115, cmp2885, v1116, cmp2888, v1117, cmp2891, v1118, cmp2894, v1119, cmp2897, v1120, cmp2900, v1121, cmp2903, v1122, tobool2907, v1123, result_symbol2909, v1124, mark_end2910, v1125, v1126, v1127, cmp2911, v1128, cmp2915, v1129, cmp2918, v1130, cmp2921, v1131, cmp2924, v1132, cmp2927, v1133, cmp2930, v1134, cmp2933, v1135, cmp2936, v1136, cmp2939, v1137, tobool2943, v1138, result_symbol2945, v1139, mark_end2946, v1140, v1141, v1142, cmp2947, v1143, cmp2951, v1144, cmp2954, v1145, cmp2957, v1146, cmp2960, v1147, cmp2963, v1148, cmp2966, v1149, cmp2969, v1150, cmp2972, v1151, cmp2975, v1152, tobool2979, v1153, result_symbol2981, v1154, mark_end2982, v1155, v1156, v1157, cmp2983, v1158, cmp2987, v1159, cmp2990, v1160, cmp2993, v1161, cmp2996, v1162, cmp2999, v1163, cmp3002, v1164, cmp3005, v1165, cmp3008, v1166, cmp3011, v1167, tobool3015, v1168, result_symbol3017, v1169, mark_end3018, v1170, v1171, v1172, cmp3019, v1173, cmp3023, v1174, cmp3026, v1175, cmp3030, v1176, cmp3033, v1177, cmp3036, v1178, cmp3039, v1179, cmp3042, v1180, cmp3045, v1181, cmp3048, v1182, cmp3051, v1183, cmp3054, v1184, tobool3058, v1185, result_symbol3060, v1186, mark_end3061, v1187, v1188, v1189, cmp3062, v1190, cmp3066, v1191, cmp3069, v1192, cmp3072, v1193, cmp3075, v1194, cmp3078, v1195, cmp3081, v1196, cmp3084, v1197, cmp3087, v1198, cmp3090, v1199, tobool3094, v1200, result_symbol3096, v1201, mark_end3097, v1202, v1203, v1204, cmp3098, v1205, cmp3102, v1206, cmp3105, v1207, cmp3108, v1208, cmp3111, v1209, cmp3114, v1210, cmp3117, v1211, cmp3120, v1212, cmp3123, v1213, cmp3126, v1214, tobool3130, v1215, result_symbol3132, v1216, mark_end3133, v1217, v1218, v1219, cmp3134, v1220, cmp3138, v1221, cmp3141, v1222, cmp3144, v1223, cmp3147, v1224, cmp3150, v1225, cmp3153, v1226, cmp3156, v1227, cmp3159, v1228, cmp3162, v1229, tobool3166, v1230, result_symbol3168, v1231, mark_end3169, v1232, v1233, v1234, cmp3170, v1235, cmp3174, v1236, cmp3177, v1237, cmp3180, v1238, cmp3183, v1239, cmp3186, v1240, cmp3189, v1241, cmp3192, v1242, cmp3195, v1243, cmp3198, v1244, tobool3202, v1245, result_symbol3204, v1246, mark_end3205, v1247, v1248, v1249, cmp3206, v1250, cmp3210, v1251, cmp3213, v1252, cmp3216, v1253, cmp3219, v1254, cmp3222, v1255, cmp3225, v1256, cmp3228, v1257, cmp3231, v1258, cmp3234, v1259, tobool3238, v1260, result_symbol3240, v1261, mark_end3241, v1262, v1263, v1264, cmp3242, v1265, cmp3246, v1266, cmp3249, v1267, cmp3252, v1268, cmp3255, v1269, cmp3258, v1270, cmp3261, v1271, cmp3264, v1272, cmp3267, v1273, cmp3270, v1274, tobool3274, v1275, result_symbol3276, v1276, mark_end3277, v1277, v1278, v1279, cmp3278, v1280, cmp3282, v1281, cmp3285, v1282, cmp3288, v1283, cmp3291, v1284, cmp3294, v1285, cmp3297, v1286, cmp3300, v1287, cmp3303, v1288, cmp3306, v1289, tobool3310, v1290, result_symbol3312, v1291, mark_end3313, v1292, v1293, v1294, cmp3314, v1295, cmp3318, v1296, cmp3321, v1297, cmp3324, v1298, cmp3327, v1299, cmp3330, v1300, cmp3333, v1301, cmp3336, v1302, cmp3339, v1303, cmp3342, v1304, tobool3346, v1305, result_symbol3348, v1306, mark_end3349, v1307, v1308, v1309, cmp3350, v1310, cmp3354, v1311, cmp3358, v1312, cmp3361, v1313, cmp3364, v1314, cmp3367, v1315, cmp3370, v1316, cmp3373, v1317, cmp3376, v1318, cmp3379, v1319, cmp3382, v1320, tobool3386, v1321, result_symbol3388, v1322, mark_end3389, v1323, v1324, v1325, cmp3390, v1326, cmp3394, v1327, cmp3397, v1328, cmp3400, v1329, cmp3403, v1330, cmp3406, v1331, cmp3409, v1332, cmp3412, v1333, cmp3415, v1334, cmp3418, v1335, tobool3422, v1336, result_symbol3424, v1337, mark_end3425, v1338, v1339, v1340, cmp3426, v1341, cmp3430, v1342, cmp3433, v1343, cmp3436, v1344, cmp3439, v1345, cmp3442, v1346, cmp3445, v1347, cmp3448, v1348, cmp3451, v1349, cmp3454, v1350, tobool3458, v1351, result_symbol3460, v1352, mark_end3461, v1353, v1354, v1355, cmp3462, v1356, cmp3466, v1357, cmp3469, v1358, cmp3472, v1359, cmp3475, v1360, cmp3478, v1361, cmp3481, v1362, cmp3484, v1363, cmp3487, v1364, cmp3490, v1365, tobool3494, v1366, result_symbol3496, v1367, mark_end3497, v1368, v1369, v1370, cmp3498, v1371, cmp3502, v1372, cmp3505, v1373, cmp3508, v1374, cmp3511, v1375, cmp3514, v1376, cmp3517, v1377, cmp3520, v1378, cmp3523, v1379, cmp3526, v1380, tobool3530, v1381, result_symbol3532, v1382, mark_end3533, v1383, v1384, v1385, cmp3534, v1386, cmp3538, v1387, cmp3541, v1388, cmp3544, v1389, cmp3547, v1390, cmp3550, v1391, cmp3553, v1392, cmp3556, v1393, cmp3559, v1394, cmp3562, v1395, tobool3566, v1396, result_symbol3568, v1397, mark_end3569, v1398, v1399, v1400, cmp3570, v1401, cmp3574, v1402, cmp3578, v1403, cmp3581, v1404, cmp3584, v1405, cmp3587, v1406, cmp3590, v1407, cmp3593, v1408, cmp3596, v1409, cmp3599, v1410, cmp3602, v1411, tobool3606, v1412, result_symbol3608, v1413, mark_end3609, v1414, v1415, v1416, cmp3610, v1417, cmp3614, v1418, cmp3617, v1419, cmp3620, v1420, cmp3623, v1421, cmp3626, v1422, cmp3629, v1423, cmp3632, v1424, cmp3635, v1425, cmp3638, v1426, tobool3642, v1427, result_symbol3644, v1428, mark_end3645, v1429, v1430, v1431, cmp3646, v1432, cmp3650, v1433, cmp3653, v1434, cmp3656, v1435, cmp3659, v1436, cmp3662, v1437, cmp3665, v1438, cmp3668, v1439, cmp3671, v1440, cmp3674, v1441, tobool3678, v1442, result_symbol3680, v1443, mark_end3681, v1444, v1445, v1446, cmp3682, v1447, cmp3686, v1448, cmp3689, v1449, cmp3692, v1450, cmp3695, v1451, cmp3698, v1452, cmp3701, v1453, cmp3704, v1454, cmp3707, v1455, cmp3710, v1456, tobool3714, v1457, result_symbol3716, v1458, mark_end3717, v1459, v1460, v1461, cmp3718, v1462, cmp3722, v1463, cmp3725, v1464, cmp3728, v1465, cmp3731, v1466, cmp3734, v1467, cmp3737, v1468, cmp3740, v1469, cmp3743, v1470, cmp3746, v1471, tobool3750, v1472, result_symbol3752, v1473, mark_end3753, v1474, v1475, v1476, cmp3754, v1477, cmp3758, v1478, cmp3761, v1479, cmp3764, v1480, cmp3767, v1481, cmp3770, v1482, cmp3773, v1483, cmp3776, v1484, cmp3779, v1485, cmp3782, v1486, tobool3786, v1487, result_symbol3788, v1488, mark_end3789, v1489, v1490, v1491, cmp3790, v1492, cmp3794, v1493, cmp3797, v1494, cmp3800, v1495, cmp3803, v1496, cmp3806, v1497, cmp3809, v1498, cmp3812, v1499, cmp3815, v1500, cmp3818, v1501, tobool3822, v1502, result_symbol3824, v1503, mark_end3825, v1504, v1505, v1506, cmp3826, v1507, cmp3830, v1508, cmp3833, v1509, cmp3836, v1510, cmp3839, v1511, cmp3842, v1512, cmp3845, v1513, cmp3848, v1514, cmp3851, v1515, cmp3854, v1516, tobool3858, v1517, result_symbol3860, v1518, mark_end3861, v1519, v1520, v1521, cmp3862, v1522, cmp3866, v1523, cmp3869, v1524, cmp3872, v1525, cmp3875, v1526, cmp3878, v1527, cmp3881, v1528, cmp3884, v1529, cmp3887, v1530, cmp3890, v1531, tobool3894, v1532, result_symbol3896, v1533, mark_end3897, v1534, v1535, v1536, cmp3898, v1537, cmp3902, v1538, cmp3905, v1539, cmp3908, v1540, cmp3911, v1541, cmp3914, v1542, cmp3917, v1543, cmp3920, v1544, cmp3923, v1545, cmp3926, v1546, tobool3930, v1547, result_symbol3932, v1548, mark_end3933, v1549, v1550, v1551, cmp3934, v1552, cmp3938, v1553, cmp3941, v1554, cmp3944, v1555, cmp3947, v1556, cmp3950, v1557, cmp3953, v1558, cmp3956, v1559, cmp3959, v1560, cmp3962, v1561, tobool3966, v1562, result_symbol3968, v1563, mark_end3969, v1564, v1565, v1566, cmp3970, v1567, cmp3974, v1568, cmp3977, v1569, cmp3980, v1570, cmp3983, v1571, cmp3986, v1572, cmp3989, v1573, cmp3992, v1574, cmp3995, v1575, cmp3998, v1576, tobool4002, v1577, result_symbol4004, v1578, mark_end4005, v1579, v1580, v1581, cmp4006, v1582, cmp4010, v1583, cmp4013, v1584, cmp4016, v1585, cmp4019, v1586, cmp4022, v1587, cmp4025, v1588, cmp4028, v1589, cmp4031, v1590, cmp4034, v1591, tobool4038, v1592, result_symbol4040, v1593, mark_end4041, v1594, v1595, v1596, cmp4042, v1597, cmp4046, v1598, cmp4049, v1599, cmp4052, v1600, cmp4055, v1601, cmp4058, v1602, cmp4061, v1603, cmp4064, v1604, cmp4067, v1605, cmp4070, v1606, tobool4074, v1607, result_symbol4076, v1608, mark_end4077, v1609, v1610, v1611, cmp4078, v1612, cmp4082, v1613, cmp4085, v1614, cmp4088, v1615, cmp4091, v1616, cmp4094, v1617, cmp4097, v1618, cmp4100, v1619, cmp4103, v1620, cmp4106, v1621, tobool4110, v1622, result_symbol4112, v1623, mark_end4113, v1624, v1625, v1626, cmp4114, v1627, cmp4118, v1628, cmp4121, v1629, cmp4124, v1630, cmp4127, v1631, cmp4130, v1632, cmp4133, v1633, cmp4136, v1634, cmp4139, v1635, cmp4142, v1636, tobool4146, v1637, result_symbol4148, v1638, mark_end4149, v1639, v1640, v1641, cmp4150, v1642, cmp4154, v1643, cmp4157, v1644, cmp4160, v1645, cmp4163, v1646, cmp4166, v1647, cmp4169, v1648, cmp4172, v1649, cmp4175, v1650, cmp4178, v1651, tobool4182, v1652, result_symbol4184, v1653, mark_end4185, v1654, v1655, v1656, cmp4186, v1657, cmp4190, v1658, cmp4193, v1659, cmp4196, v1660, cmp4199, v1661, cmp4202, v1662, cmp4205, v1663, cmp4208, v1664, cmp4211, v1665, cmp4214, v1666, tobool4218, v1667, result_symbol4220, v1668, mark_end4221, v1669, v1670, v1671, cmp4222, v1672, cmp4226, v1673, cmp4229, v1674, cmp4232, v1675, cmp4235, v1676, cmp4238, v1677, cmp4241, v1678, cmp4244, v1679, cmp4247, v1680, cmp4250, v1681, tobool4254, v1682, result_symbol4256, v1683, mark_end4257, v1684, v1685, v1686, cmp4258, v1687, cmp4262, v1688, cmp4265, v1689, cmp4268, v1690, cmp4271, v1691, cmp4274, v1692, cmp4277, v1693, cmp4280, v1694, cmp4283, v1695, cmp4286, v1696, tobool4290, v1697, result_symbol4292, v1698, mark_end4293, v1699, v1700, v1701, cmp4294, v1702, cmp4298, v1703, cmp4301, v1704, cmp4304, v1705, cmp4307, v1706, cmp4310, v1707, cmp4313, v1708, cmp4316, v1709, cmp4319, v1710, cmp4322, v1711, tobool4326, v1712, result_symbol4328, v1713, mark_end4329, v1714, v1715, v1716, cmp4330, v1717, cmp4334, v1718, cmp4337, v1719, cmp4340, v1720, cmp4343, v1721, cmp4346, v1722, cmp4349, v1723, cmp4352, v1724, cmp4355, v1725, cmp4358, v1726, tobool4362, v1727, result_symbol4364, v1728, mark_end4365, v1729, v1730, v1731, cmp4366, v1732, cmp4370, v1733, cmp4373, v1734, cmp4376, v1735, cmp4379, v1736, cmp4382, v1737, cmp4385, v1738, cmp4388, v1739, cmp4391, v1740, cmp4394, v1741, tobool4398, v1742, result_symbol4400, v1743, mark_end4401, v1744, v1745, v1746, cmp4402, v1747, cmp4406, v1748, cmp4409, v1749, cmp4412, v1750, cmp4415, v1751, cmp4418, v1752, cmp4421, v1753, cmp4424, v1754, cmp4427, v1755, cmp4430, v1756, tobool4434, v1757, result_symbol4436, v1758, mark_end4437, v1759, v1760, v1761, cmp4438, v1762, cmp4442, v1763, cmp4445, v1764, cmp4448, v1765, cmp4451, v1766, cmp4454, v1767, cmp4457, v1768, cmp4460, v1769, cmp4463, v1770, cmp4466, v1771, tobool4470, v1772, result_symbol4472, v1773, mark_end4473, v1774, v1775, v1776, cmp4474, v1777, cmp4478, v1778, cmp4481, v1779, cmp4484, v1780, cmp4487, v1781, cmp4490, v1782, cmp4493, v1783, cmp4496, v1784, cmp4499, v1785, cmp4502, v1786, tobool4506, v1787, result_symbol4508, v1788, mark_end4509, v1789, v1790, v1791, cmp4510, v1792, cmp4514, v1793, cmp4517, v1794, cmp4520, v1795, cmp4523, v1796, cmp4526, v1797, cmp4529, v1798, cmp4532, v1799, cmp4535, v1800, cmp4538, v1801, tobool4542, v1802, result_symbol4544, v1803, mark_end4545, v1804, v1805, v1806, cmp4546, v1807, cmp4550, v1808, cmp4553, v1809, cmp4556, v1810, cmp4559, v1811, cmp4562, v1812, cmp4565, v1813, cmp4568, v1814, cmp4571, v1815, cmp4574, v1816, tobool4578, v1817, result_symbol4580, v1818, mark_end4581, v1819, v1820, v1821, cmp4582, v1822, cmp4585, v1823, cmp4588, v1824, cmp4591, v1825, cmp4594, v1826, cmp4597, v1827, cmp4600, v1828, cmp4603, v1829, cmp4606, v1830, tobool4610, v1831, result_symbol4612, v1832, mark_end4613, v1833, v1834, v1835, cmp4614, v1836, cmp4617, v1837, cmp4620, v1838, cmp4623, v1839, cmp4626, v1840, cmp4629, v1841, cmp4632, v1842, cmp4635, v1843, cmp4638, v1844, tobool4642, v1845, result_symbol4644, v1846, mark_end4645, v1847, v1848, v1849, tobool4646, v1850, result_symbol4648, v1851, mark_end4649, v1852, v1853, v1854, cmp4650, v1855, cmp4654, v1856, cmp4658, v1857, tobool4662, v1858, result_symbol4664, v1859, mark_end4665, v1860, v1861, v1862, cmp4666, v1863, cmp4670, v1864, tobool4674, v1865, result_symbol4676, v1866, mark_end4677, v1867, v1868, v1869, cmp4678, v1870, tobool4682, v1871, result_symbol4684, v1872, mark_end4685, v1873, v1874, v1875, tobool4686, v1876, result_symbol4688, v1877, mark_end4689, v1878, v1879, v1880, tobool4690, v1881, result_symbol4692, v1882, mark_end4693, v1883, v1884, v1885, cmp4694, v1886, cmp4698, v1887, tobool4702, v1888, result_symbol4704, v1889, mark_end4705, v1890, v1891, v1892, cmp4706, v1893, tobool4710, v1894, result_symbol4712, v1895, mark_end4713, v1896, v1897, v1898, tobool4714, v1899, result_symbol4716, v1900, mark_end4717, v1901, v1902, v1903, tobool4718, v1904, result_symbol4720, v1905, mark_end4721, v1906, v1907, v1908, tobool4722, v1909, result_symbol4724, v1910, mark_end4725, v1911, v1912, v1913, tobool4726, v1914, result_symbol4728, v1915, mark_end4729, v1916, v1917, v1918, tobool4730, v1919, result_symbol4732, v1920, mark_end4733, v1921, v1922, v1923, cmp4734, v1924, cmp4737, v1925, tobool4741, v1926, result_symbol4743, v1927, mark_end4744, v1928, v1929, v1930, cmp4745, v1931, cmp4748, v1932, cmp4751, v1933, cmp4754, v1934, cmp4757, v1935, cmp4760, v1936, cmp4763, v1937, cmp4766, v1938, cmp4769, v1939, tobool4773, v1940, result_symbol4775, v1941, mark_end4776, v1942, v1943, v1944, cmp4777, v1945, cmp4780, v1946, cmp4783, v1947, cmp4786, v1948, cmp4789, v1949, cmp4792, v1950, cmp4795, v1951, cmp4798, v1952, cmp4801, v1953, tobool4805, v1954, result_symbol4807, v1955, mark_end4808, v1956, v1957, v1958, tobool4809, v1959, result_symbol4811, v1960, mark_end4812, v1961, v1962, v1963, tobool4813, v1964, result_symbol4815, v1965, mark_end4816, v1966, v1967, v1968, tobool4817, v1969, result_symbol4819, v1970, mark_end4820, v1971, v1972, v1973, tobool4821, v1974, result_symbol4823, v1975, mark_end4824, v1976, v1977, v1978, cmp4825, v1979, tobool4829, v1980, result_symbol4831, v1981, mark_end4832, v1982, v1983, v1984, tobool4833, v1985, result_symbol4835, v1986, mark_end4836, v1987, v1988, v1989, cmp4837, v1990, cmp4840, v1991, cmp4843, v1992, cmp4846, v1993, cmp4849, v1994, cmp4852, v1995, cmp4855, v1996, cmp4858, v1997, cmp4861, v1998, tobool4865, v1999, result_symbol4867, v2000, mark_end4868, v2001, v2002, v2003, tobool4869, v2004, result_symbol4871, v2005, mark_end4872, v2006, v2007, v2008, tobool4873, v2009, result_symbol4875, v2010, mark_end4876, v2011, v2012, v2013, cmp4877, v2014, cmp4881, v2015, cmp4884, v2016, cmp4887, v2017, cmp4890, v2018, tobool4894, v2019, result_symbol4896, v2020, mark_end4897, v2021, v2022, v2023, tobool4898, v2024, result_symbol4900, v2025, mark_end4901, v2026, v2027, v2028, cmp4902, v2029, cmp4905, v2030, cmp4908, v2031, cmp4911, v2032, cmp4914, v2033, cmp4917, v2034, cmp4920, v2035, cmp4923, v2036, cmp4926, v2037, tobool4930, v2038, result_symbol4932, v2039, mark_end4933, v2040, v2041, v2042, tobool4934, v2043, result_symbol4936, v2044, mark_end4937, v2045, v2046, v2047, tobool4938, v2048, result_symbol4940, v2049, mark_end4941, v2050, v2051, v2052, tobool4942, v2053, result_symbol4944, v2054, mark_end4945, v2055, v2056, v2057, cmp4946, v2058, cmp4949, v2059, cmp4952, v2060, cmp4956, v2061, cmp4959, v2062, cmp4962, v2063, cmp4965, v2064, tobool4969, v2065, result_symbol4971, v2066, mark_end4972, v2067, v2068, v2069, cmp4973, v2070, cmp4976, v2071, cmp4979, v2072, cmp4982, v2073, tobool4986, v2074, result_symbol4988, v2075, mark_end4989, v2076, v2077, v2078, cmp4990, v2079, cmp4994, v2080, cmp4997, v2081, cmp5001, v2082, tobool5005, v2083, result_symbol5007, v2084, mark_end5008, v2085, v2086, v2087, cmp5009, v2088, cmp5013, v2089, cmp5016, v2090, cmp5019, v2091, cmp5023, v2092, cmp5026, v2093, cmp5029, v2094, tobool5033, v2095, result_symbol5035, v2096, mark_end5036, v2097, v2098, v2099, cmp5037, v2100, cmp5040, v2101, cmp5043, v2102, tobool5047, v2103, result_symbol5049, v2104, mark_end5050, v2105, v2106, v2107, tobool5051, v2108, result_symbol5053, v2109, mark_end5054, v2110, v2111, v2112, cmp5055, v2113, cmp5058, v2114, cmp5061, v2115, cmp5064, v2116, cmp5067, v2117, cmp5070, v2118, cmp5073, v2119, cmp5076, v2120, tobool5080, v2121, result_symbol5082, v2122, mark_end5083, v2123, v2124, v2125, tobool5084, v2126, result_symbol5086, v2127, mark_end5087, v2128, v2129, v2130, tobool5088, v2131, result_symbol5090, v2132, mark_end5091, v2133, v2134, v2135, tobool5092, v2136, result_symbol5094, v2137, mark_end5095, v2138, v2139, v2140, cmp5096, v2141, tobool5100, v2142, result_symbol5102, v2143, mark_end5103, v2144, v2145, v2146, cmp5104, v2147, tobool5108, v2148, result_symbol5110, v2149, mark_end5111, v2150, v2151, v2152, cmp5112, v2153, tobool5116, v2154, result_symbol5118, v2155, mark_end5119, v2156, v2157, v2158, cmp5120, v2159, tobool5124, v2160, result_symbol5126, v2161, mark_end5127, v2162, v2163, v2164, tobool5128, v2165, result_symbol5130, v2166, mark_end5131, v2167, v2168, v2169, cmp5132, v2170, tobool5136, v2171, result_symbol5138, v2172, mark_end5139, v2173, v2174, v2175, tobool5140, v2176, result_symbol5142, v2177, mark_end5143, v2178, v2179, v2180, cmp5144, v2181, tobool5148, v2182, result_symbol5150, v2183, mark_end5151, v2184, v2185, v2186, tobool5152, v2187, result_symbol5154, v2188, mark_end5155, v2189, v2190, v2191, tobool5156, v2192, result_symbol5158, v2193, mark_end5159, v2194, v2195, v2196, tobool5160, v2197, result_symbol5162, v2198, mark_end5163, v2199, v2200, v2201, tobool5164, v2202, result_symbol5166, v2203, mark_end5167, v2204, v2205, v2206, tobool5168, v2207, result_symbol5170, v2208, mark_end5171, v2209, v2210, v2211, tobool5172, v2212, result_symbol5174, v2213, mark_end5175, v2214, v2215, v2216, cmp5176, v2217, cmp5179, v2218, cmp5182, v2219, cmp5185, v2220, cmp5188, v2221, cmp5191, v2222, cmp5194, v2223, cmp5197, v2224, cmp5200, v2225, tobool5204, v2226, result_symbol5206, v2227, mark_end5207, v2228, v2229, v2230, cmp5208, v2231, cmp5211, v2232, cmp5214, v2233, cmp5217, v2234, cmp5220, v2235, cmp5223, v2236, cmp5226, v2237, cmp5229, v2238, cmp5232, v2239, tobool5236, v2240, result_symbol5238, v2241, mark_end5239, v2242, v2243, v2244, cmp5240, v2245, cmp5243, v2246, cmp5246, v2247, cmp5249, v2248, cmp5252, v2249, cmp5255, v2250, cmp5258, v2251, cmp5261, v2252, cmp5264, v2253, tobool5268, v2254, result_symbol5270, v2255, mark_end5271, v2256, v2257, v2258, tobool5272, v2259, result_symbol5274, v2260, mark_end5275, v2261, v2262, v2263, tobool5276, v2264
+	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, lexer_addr, state_addr, result, local_skip, local_eof, local_lookahead, i, i44, i123, i201, i252, i303, i354, i418, i449, i493, i1267, i1321, i1375, v0, local_advance, v1, v2, v3, tobool, v4, lookahead1, v5, v6, eof2, v7, v8, call, frombool, v9, conv, v10, tobool3, v11, conv4, cmp, v12, idxprom, arrayidx, v13, conv6, v14, cmp7, v15, add, idxprom10, arrayidx11, v16, v17, add13, v18, cmp14, v19, cmp16, v20, cmp18, v21, cmp22, v22, cmp25, v23, cmp29, v24, cmp32, v25, cmp35, v26, cmp38, v27, tobool42, v28, conv46, cmp47, v29, idxprom50, arrayidx51, v30, conv52, v31, cmp53, v32, add56, idxprom57, arrayidx58, v33, v34, add61, v35, cmp63, v36, cmp66, v37, cmp69, v38, cmp73, v39, cmp76, v40, cmp80, v41, cmp83, v42, cmp86, v43, cmp89, v44, tobool93, v45, cmp95, v46, cmp99, v47, cmp103, v48, cmp107, v49, cmp110, v50, cmp113, v51, cmp117, v52, tobool121, v53, conv125, cmp126, v54, idxprom129, arrayidx130, v55, conv131, v56, cmp132, v57, add135, idxprom136, arrayidx137, v58, v59, add140, v60, cmp142, v61, cmp145, v62, cmp148, v63, cmp152, v64, cmp155, v65, cmp159, v66, cmp162, v67, cmp165, v68, cmp168, v69, tobool172, v70, cmp174, v71, cmp178, v72, cmp182, v73, cmp185, v74, cmp188, v75, cmp192, v76, cmp195, v77, tobool199, v78, conv203, cmp204, v79, idxprom207, arrayidx208, v80, conv209, v81, cmp210, v82, add213, idxprom214, arrayidx215, v83, v84, add218, v85, cmp220, v86, cmp223, v87, cmp226, v88, cmp230, v89, cmp233, v90, cmp237, v91, cmp240, v92, cmp243, v93, cmp246, v94, tobool250, v95, conv254, cmp255, v96, idxprom258, arrayidx259, v97, conv260, v98, cmp261, v99, add264, idxprom265, arrayidx266, v100, v101, add269, v102, cmp271, v103, cmp274, v104, cmp277, v105, cmp281, v106, cmp284, v107, cmp288, v108, cmp291, v109, cmp294, v110, cmp297, v111, tobool301, v112, conv305, cmp306, v113, idxprom309, arrayidx310, v114, conv311, v115, cmp312, v116, add315, idxprom316, arrayidx317, v117, v118, add320, v119, cmp322, v120, cmp325, v121, cmp328, v122, cmp332, v123, cmp335, v124, cmp339, v125, cmp342, v126, cmp345, v127, cmp348, v128, tobool352, v129, conv356, cmp357, v130, idxprom360, arrayidx361, v131, conv362, v132, cmp363, v133, add366, idxprom367, arrayidx368, v134, v135, add371, v136, cmp373, v137, cmp376, v138, cmp379, v139, tobool383, v140, cmp385, v141, cmp389, v142, cmp393, v143, cmp396, v144, cmp399, v145, cmp403, v146, cmp406, v147, cmp409, v148, cmp412, v149, tobool416, v150, conv420, cmp421, v151, idxprom424, arrayidx425, v152, conv426, v153, cmp427, v154, add430, idxprom431, arrayidx432, v155, v156, add435, v157, cmp437, v158, cmp440, v159, cmp443, v160, tobool447, v161, conv451, cmp452, v162, idxprom455, arrayidx456, v163, conv457, v164, cmp458, v165, add461, idxprom462, arrayidx463, v166, v167, add466, v168, cmp468, v169, cmp471, v170, cmp474, v171, cmp478, v172, cmp481, v173, cmp484, v174, cmp487, v175, tobool491, v176, conv495, cmp496, v177, idxprom499, arrayidx500, v178, conv501, v179, cmp502, v180, add505, idxprom506, arrayidx507, v181, v182, add510, v183, cmp512, v184, cmp515, v185, cmp518, v186, tobool522, v187, cmp524, v188, tobool528, v189, cmp530, v190, cmp534, v191, cmp537, v192, tobool541, v193, cmp543, v194, cmp547, v195, cmp551, v196, cmp555, v197, cmp559, v198, cmp563, v199, cmp566, v200, cmp569, v201, cmp573, v202, cmp576, v203, cmp579, v204, cmp582, v205, tobool586, v206, cmp588, v207, cmp592, v208, cmp596, v209, cmp600, v210, cmp603, v211, cmp606, v212, cmp610, v213, cmp613, v214, cmp616, v215, cmp619, v216, tobool623, v217, cmp625, v218, cmp629, v219, cmp633, v220, cmp636, v221, tobool640, v222, cmp642, v223, tobool646, v224, cmp648, v225, tobool652, v226, cmp654, v227, cmp658, v228, cmp662, v229, cmp665, v230, cmp668, v231, cmp672, v232, cmp675, v233, cmp678, v234, cmp681, v235, tobool685, v236, cmp687, v237, tobool691, v238, cmp693, v239, cmp697, v240, cmp700, v241, cmp703, v242, cmp706, v243, tobool710, v244, cmp712, v245, cmp716, v246, cmp719, v247, cmp722, v248, cmp725, v249, tobool729, v250, cmp731, v251, cmp735, v252, cmp738, v253, cmp741, v254, cmp744, v255, tobool748, v256, cmp750, v257, tobool754, v258, cmp756, v259, cmp760, v260, cmp764, v261, tobool768, v262, cmp770, v263, cmp774, v264, tobool778, v265, cmp780, v266, tobool784, v267, cmp786, v268, tobool790, v269, cmp792, v270, tobool796, v271, cmp798, v272, tobool802, v273, cmp804, v274, tobool808, v275, cmp810, v276, tobool814, v277, cmp816, v278, cmp820, v279, tobool824, v280, cmp826, v281, tobool830, v282, cmp832, v283, tobool836, v284, cmp838, v285, tobool842, v286, cmp844, v287, tobool848, v288, cmp850, v289, tobool854, v290, cmp856, v291, tobool860, v292, cmp862, v293, tobool866, v294, cmp868, v295, tobool872, v296, cmp874, v297, cmp878, v298, tobool882, v299, cmp884, v300, tobool888, v301, cmp890, v302, tobool894, v303, cmp896, v304, tobool900, v305, cmp902, v306, tobool906, v307, cmp908, v308, tobool912, v309, cmp914, v310, tobool918, v311, cmp920, v312, tobool924, v313, cmp926, v314, cmp930, v315, cmp933, v316, tobool937, v317, cmp939, v318, tobool943, v319, cmp945, v320, tobool949, v321, cmp951, v322, tobool955, v323, cmp957, v324, tobool961, v325, cmp963, v326, cmp967, v327, tobool971, v328, cmp973, v329, tobool977, v330, cmp979, v331, tobool983, v332, cmp985, v333, tobool989, v334, cmp991, v335, cmp995, v336, tobool999, v337, cmp1001, v338, tobool1005, v339, cmp1007, v340, tobool1011, v341, cmp1013, v342, tobool1017, v343, cmp1019, v344, tobool1023, v345, cmp1025, v346, tobool1029, v347, cmp1031, v348, tobool1035, v349, cmp1037, v350, tobool1041, v351, cmp1043, v352, tobool1047, v353, cmp1049, v354, tobool1053, v355, cmp1055, v356, tobool1059, v357, cmp1061, v358, tobool1065, v359, cmp1067, v360, tobool1071, v361, cmp1073, v362, tobool1077, v363, cmp1079, v364, tobool1083, v365, cmp1085, v366, tobool1089, v367, cmp1091, v368, tobool1095, v369, cmp1097, v370, tobool1101, v371, cmp1103, v372, tobool1107, v373, cmp1109, v374, cmp1112, v375, cmp1116, v376, cmp1119, v377, tobool1123, v378, cmp1125, v379, cmp1128, v380, cmp1132, v381, cmp1135, v382, tobool1139, v383, cmp1141, v384, cmp1144, v385, tobool1148, v386, cmp1150, v387, cmp1153, v388, tobool1157, v389, cmp1159, v390, cmp1162, v391, tobool1166, v392, cmp1168, v393, cmp1171, v394, tobool1175, v395, cmp1177, v396, cmp1180, v397, tobool1184, v398, cmp1186, v399, cmp1189, v400, tobool1193, v401, cmp1195, v402, cmp1198, v403, tobool1202, v404, cmp1204, v405, cmp1207, v406, tobool1211, v407, cmp1213, v408, cmp1216, v409, cmp1219, v410, cmp1222, v411, cmp1225, v412, cmp1228, v413, tobool1232, v414, cmp1234, v415, cmp1237, v416, cmp1240, v417, cmp1243, v418, cmp1246, v419, cmp1249, v420, tobool1253, v421, cmp1255, v422, cmp1258, v423, tobool1262, v424, tobool1264, v425, conv1269, cmp1270, v426, idxprom1273, arrayidx1274, v427, conv1275, v428, cmp1276, v429, add1279, idxprom1280, arrayidx1281, v430, v431, add1284, v432, cmp1286, v433, cmp1289, v434, cmp1292, v435, cmp1296, v436, cmp1299, v437, cmp1303, v438, cmp1306, v439, cmp1309, v440, cmp1312, v441, tobool1316, v442, tobool1318, v443, conv1323, cmp1324, v444, idxprom1327, arrayidx1328, v445, conv1329, v446, cmp1330, v447, add1333, idxprom1334, arrayidx1335, v448, v449, add1338, v450, cmp1340, v451, cmp1343, v452, cmp1346, v453, cmp1350, v454, cmp1353, v455, cmp1357, v456, cmp1360, v457, cmp1363, v458, cmp1366, v459, tobool1370, v460, tobool1372, v461, conv1377, cmp1378, v462, idxprom1381, arrayidx1382, v463, conv1383, v464, cmp1384, v465, add1387, idxprom1388, arrayidx1389, v466, v467, add1392, v468, cmp1394, v469, cmp1397, v470, cmp1400, v471, tobool1404, v472, result_symbol, v473, mark_end, v474, v475, v476, tobool1406, v477, result_symbol1408, v478, mark_end1409, v479, v480, v481, tobool1410, v482, result_symbol1412, v483, mark_end1413, v484, v485, v486, cmp1414, v487, cmp1417, v488, cmp1420, v489, cmp1423, v490, cmp1426, v491, cmp1429, v492, cmp1432, v493, cmp1435, v494, cmp1438, v495, tobool1442, v496, result_symbol1444, v497, mark_end1445, v498, v499, v500, cmp1446, v501, cmp1450, v502, cmp1454, v503, cmp1458, v504, cmp1462, v505, cmp1465, v506, cmp1469, v507, cmp1472, v508, tobool1476, v509, result_symbol1478, v510, mark_end1479, v511, v512, v513, cmp1480, v514, cmp1484, v515, cmp1487, v516, cmp1491, v517, cmp1494, v518, tobool1498, v519, result_symbol1500, v520, mark_end1501, v521, v522, v523, cmp1502, v524, cmp1505, v525, cmp1509, v526, cmp1512, v527, tobool1516, v528, result_symbol1518, v529, mark_end1519, v530, v531, v532, cmp1520, v533, cmp1523, v534, tobool1527, v535, result_symbol1529, v536, mark_end1530, v537, v538, v539, cmp1531, v540, cmp1534, v541, tobool1538, v542, result_symbol1540, v543, mark_end1541, v544, v545, v546, cmp1542, v547, cmp1545, v548, tobool1549, v549, result_symbol1551, v550, mark_end1552, v551, v552, v553, cmp1553, v554, cmp1556, v555, cmp1559, v556, cmp1562, v557, cmp1565, v558, cmp1568, v559, tobool1572, v560, result_symbol1574, v561, mark_end1575, v562, v563, v564, cmp1576, v565, cmp1580, v566, cmp1584, v567, cmp1588, v568, cmp1592, v569, cmp1595, v570, cmp1599, v571, cmp1602, v572, tobool1606, v573, result_symbol1608, v574, mark_end1609, v575, v576, v577, cmp1610, v578, cmp1614, v579, cmp1617, v580, cmp1621, v581, cmp1624, v582, tobool1628, v583, result_symbol1630, v584, mark_end1631, v585, v586, v587, cmp1632, v588, cmp1635, v589, cmp1639, v590, cmp1642, v591, tobool1646, v592, result_symbol1648, v593, mark_end1649, v594, v595, v596, cmp1650, v597, cmp1653, v598, tobool1657, v599, result_symbol1659, v600, mark_end1660, v601, v602, v603, cmp1661, v604, cmp1664, v605, tobool1668, v606, result_symbol1670, v607, mark_end1671, v608, v609, v610, cmp1672, v611, cmp1675, v612, tobool1679, v613, result_symbol1681, v614, mark_end1682, v615, v616, v617, cmp1683, v618, cmp1686, v619, cmp1689, v620, cmp1692, v621, cmp1695, v622, cmp1698, v623, tobool1702, v624, result_symbol1704, v625, mark_end1705, v626, v627, v628, cmp1706, v629, cmp1710, v630, cmp1713, v631, cmp1716, v632, cmp1719, v633, cmp1722, v634, cmp1725, v635, cmp1728, v636, cmp1731, v637, tobool1735, v638, result_symbol1737, v639, mark_end1738, v640, v641, v642, cmp1739, v643, cmp1743, v644, cmp1747, v645, cmp1751, v646, cmp1754, v647, cmp1757, v648, cmp1760, v649, cmp1763, v650, cmp1766, v651, cmp1769, v652, cmp1772, v653, cmp1775, v654, tobool1779, v655, result_symbol1781, v656, mark_end1782, v657, v658, v659, cmp1783, v660, cmp1787, v661, cmp1790, v662, cmp1793, v663, cmp1796, v664, cmp1799, v665, cmp1802, v666, cmp1805, v667, cmp1808, v668, cmp1811, v669, tobool1815, v670, result_symbol1817, v671, mark_end1818, v672, v673, v674, cmp1819, v675, cmp1823, v676, cmp1827, v677, cmp1830, v678, cmp1833, v679, cmp1836, v680, cmp1839, v681, cmp1842, v682, cmp1845, v683, cmp1848, v684, cmp1851, v685, tobool1855, v686, result_symbol1857, v687, mark_end1858, v688, v689, v690, cmp1859, v691, cmp1863, v692, cmp1866, v693, cmp1869, v694, cmp1872, v695, cmp1875, v696, cmp1878, v697, cmp1881, v698, cmp1884, v699, cmp1887, v700, tobool1891, v701, result_symbol1893, v702, mark_end1894, v703, v704, v705, cmp1895, v706, cmp1899, v707, cmp1902, v708, cmp1905, v709, cmp1908, v710, cmp1911, v711, cmp1914, v712, cmp1917, v713, cmp1920, v714, cmp1923, v715, tobool1927, v716, result_symbol1929, v717, mark_end1930, v718, v719, v720, cmp1931, v721, cmp1935, v722, cmp1938, v723, cmp1941, v724, cmp1944, v725, cmp1947, v726, cmp1950, v727, cmp1953, v728, cmp1956, v729, cmp1959, v730, tobool1963, v731, result_symbol1965, v732, mark_end1966, v733, v734, v735, cmp1967, v736, cmp1971, v737, cmp1974, v738, cmp1977, v739, cmp1980, v740, cmp1983, v741, cmp1986, v742, cmp1989, v743, cmp1992, v744, cmp1995, v745, tobool1999, v746, result_symbol2001, v747, mark_end2002, v748, v749, v750, cmp2003, v751, cmp2007, v752, cmp2010, v753, cmp2013, v754, cmp2016, v755, cmp2019, v756, cmp2022, v757, cmp2025, v758, cmp2028, v759, cmp2031, v760, tobool2035, v761, result_symbol2037, v762, mark_end2038, v763, v764, v765, cmp2039, v766, cmp2043, v767, cmp2046, v768, cmp2049, v769, cmp2052, v770, cmp2055, v771, cmp2058, v772, cmp2061, v773, cmp2064, v774, cmp2067, v775, tobool2071, v776, result_symbol2073, v777, mark_end2074, v778, v779, v780, cmp2075, v781, cmp2079, v782, cmp2082, v783, cmp2085, v784, cmp2088, v785, cmp2091, v786, cmp2094, v787, cmp2097, v788, cmp2100, v789, cmp2103, v790, tobool2107, v791, result_symbol2109, v792, mark_end2110, v793, v794, v795, cmp2111, v796, cmp2115, v797, cmp2118, v798, cmp2121, v799, cmp2124, v800, cmp2127, v801, cmp2130, v802, cmp2133, v803, cmp2136, v804, cmp2139, v805, tobool2143, v806, result_symbol2145, v807, mark_end2146, v808, v809, v810, cmp2147, v811, cmp2151, v812, cmp2154, v813, cmp2157, v814, cmp2160, v815, cmp2163, v816, cmp2166, v817, cmp2169, v818, cmp2172, v819, cmp2175, v820, tobool2179, v821, result_symbol2181, v822, mark_end2182, v823, v824, v825, cmp2183, v826, cmp2187, v827, cmp2191, v828, cmp2194, v829, cmp2197, v830, cmp2200, v831, cmp2203, v832, cmp2206, v833, cmp2209, v834, cmp2212, v835, cmp2215, v836, tobool2219, v837, result_symbol2221, v838, mark_end2222, v839, v840, v841, cmp2223, v842, cmp2227, v843, cmp2230, v844, cmp2233, v845, cmp2236, v846, cmp2239, v847, cmp2242, v848, cmp2245, v849, cmp2248, v850, cmp2251, v851, tobool2255, v852, result_symbol2257, v853, mark_end2258, v854, v855, v856, cmp2259, v857, cmp2263, v858, cmp2266, v859, cmp2269, v860, cmp2272, v861, cmp2275, v862, cmp2278, v863, cmp2281, v864, cmp2284, v865, cmp2287, v866, tobool2291, v867, result_symbol2293, v868, mark_end2294, v869, v870, v871, cmp2295, v872, cmp2299, v873, cmp2302, v874, cmp2305, v875, cmp2308, v876, cmp2311, v877, cmp2314, v878, cmp2317, v879, cmp2320, v880, cmp2323, v881, tobool2327, v882, result_symbol2329, v883, mark_end2330, v884, v885, v886, cmp2331, v887, cmp2335, v888, cmp2338, v889, cmp2341, v890, cmp2344, v891, cmp2347, v892, cmp2350, v893, cmp2353, v894, cmp2356, v895, cmp2359, v896, tobool2363, v897, result_symbol2365, v898, mark_end2366, v899, v900, v901, cmp2367, v902, cmp2371, v903, cmp2374, v904, cmp2377, v905, cmp2380, v906, cmp2383, v907, cmp2386, v908, cmp2389, v909, cmp2392, v910, cmp2395, v911, tobool2399, v912, result_symbol2401, v913, mark_end2402, v914, v915, v916, cmp2403, v917, cmp2407, v918, cmp2410, v919, cmp2413, v920, cmp2416, v921, cmp2419, v922, cmp2422, v923, cmp2425, v924, cmp2428, v925, cmp2431, v926, tobool2435, v927, result_symbol2437, v928, mark_end2438, v929, v930, v931, cmp2439, v932, cmp2443, v933, cmp2446, v934, cmp2449, v935, cmp2452, v936, cmp2455, v937, cmp2458, v938, cmp2461, v939, cmp2464, v940, cmp2467, v941, tobool2471, v942, result_symbol2473, v943, mark_end2474, v944, v945, v946, cmp2475, v947, cmp2479, v948, cmp2482, v949, cmp2485, v950, cmp2488, v951, cmp2491, v952, cmp2494, v953, cmp2497, v954, cmp2500, v955, cmp2503, v956, tobool2507, v957, result_symbol2509, v958, mark_end2510, v959, v960, v961, cmp2511, v962, cmp2515, v963, cmp2518, v964, cmp2521, v965, cmp2524, v966, cmp2527, v967, cmp2530, v968, cmp2533, v969, cmp2536, v970, cmp2539, v971, tobool2543, v972, result_symbol2545, v973, mark_end2546, v974, v975, v976, cmp2547, v977, cmp2551, v978, cmp2554, v979, cmp2557, v980, cmp2560, v981, cmp2563, v982, cmp2566, v983, cmp2569, v984, cmp2572, v985, cmp2575, v986, tobool2579, v987, result_symbol2581, v988, mark_end2582, v989, v990, v991, cmp2583, v992, cmp2587, v993, cmp2590, v994, cmp2593, v995, cmp2596, v996, cmp2599, v997, cmp2602, v998, cmp2605, v999, cmp2608, v1000, cmp2611, v1001, tobool2615, v1002, result_symbol2617, v1003, mark_end2618, v1004, v1005, v1006, cmp2619, v1007, cmp2623, v1008, cmp2627, v1009, cmp2630, v1010, cmp2633, v1011, cmp2636, v1012, cmp2639, v1013, cmp2642, v1014, cmp2645, v1015, cmp2648, v1016, cmp2651, v1017, tobool2655, v1018, result_symbol2657, v1019, mark_end2658, v1020, v1021, v1022, cmp2659, v1023, cmp2663, v1024, cmp2666, v1025, cmp2669, v1026, cmp2672, v1027, cmp2675, v1028, cmp2678, v1029, cmp2681, v1030, cmp2684, v1031, cmp2687, v1032, tobool2691, v1033, result_symbol2693, v1034, mark_end2694, v1035, v1036, v1037, cmp2695, v1038, cmp2699, v1039, cmp2702, v1040, cmp2705, v1041, cmp2708, v1042, cmp2711, v1043, cmp2714, v1044, cmp2717, v1045, cmp2720, v1046, cmp2723, v1047, tobool2727, v1048, result_symbol2729, v1049, mark_end2730, v1050, v1051, v1052, cmp2731, v1053, cmp2735, v1054, cmp2738, v1055, cmp2741, v1056, cmp2744, v1057, cmp2747, v1058, cmp2750, v1059, cmp2753, v1060, cmp2756, v1061, cmp2759, v1062, tobool2763, v1063, result_symbol2765, v1064, mark_end2766, v1065, v1066, v1067, cmp2767, v1068, cmp2771, v1069, cmp2774, v1070, cmp2777, v1071, cmp2780, v1072, cmp2783, v1073, cmp2786, v1074, cmp2789, v1075, cmp2792, v1076, cmp2795, v1077, tobool2799, v1078, result_symbol2801, v1079, mark_end2802, v1080, v1081, v1082, cmp2803, v1083, cmp2807, v1084, cmp2810, v1085, cmp2813, v1086, cmp2816, v1087, cmp2819, v1088, cmp2822, v1089, cmp2825, v1090, cmp2828, v1091, cmp2831, v1092, tobool2835, v1093, result_symbol2837, v1094, mark_end2838, v1095, v1096, v1097, cmp2839, v1098, cmp2843, v1099, cmp2846, v1100, cmp2849, v1101, cmp2852, v1102, cmp2855, v1103, cmp2858, v1104, cmp2861, v1105, cmp2864, v1106, cmp2867, v1107, tobool2871, v1108, result_symbol2873, v1109, mark_end2874, v1110, v1111, v1112, cmp2875, v1113, cmp2879, v1114, cmp2882, v1115, cmp2885, v1116, cmp2888, v1117, cmp2891, v1118, cmp2894, v1119, cmp2897, v1120, cmp2900, v1121, cmp2903, v1122, tobool2907, v1123, result_symbol2909, v1124, mark_end2910, v1125, v1126, v1127, cmp2911, v1128, cmp2915, v1129, cmp2918, v1130, cmp2921, v1131, cmp2924, v1132, cmp2927, v1133, cmp2930, v1134, cmp2933, v1135, cmp2936, v1136, cmp2939, v1137, tobool2943, v1138, result_symbol2945, v1139, mark_end2946, v1140, v1141, v1142, cmp2947, v1143, cmp2951, v1144, cmp2954, v1145, cmp2957, v1146, cmp2960, v1147, cmp2963, v1148, cmp2966, v1149, cmp2969, v1150, cmp2972, v1151, cmp2975, v1152, tobool2979, v1153, result_symbol2981, v1154, mark_end2982, v1155, v1156, v1157, cmp2983, v1158, cmp2987, v1159, cmp2990, v1160, cmp2993, v1161, cmp2996, v1162, cmp2999, v1163, cmp3002, v1164, cmp3005, v1165, cmp3008, v1166, cmp3011, v1167, tobool3015, v1168, result_symbol3017, v1169, mark_end3018, v1170, v1171, v1172, cmp3019, v1173, cmp3023, v1174, cmp3026, v1175, cmp3030, v1176, cmp3033, v1177, cmp3036, v1178, cmp3039, v1179, cmp3042, v1180, cmp3045, v1181, cmp3048, v1182, cmp3051, v1183, cmp3054, v1184, tobool3058, v1185, result_symbol3060, v1186, mark_end3061, v1187, v1188, v1189, cmp3062, v1190, cmp3066, v1191, cmp3069, v1192, cmp3072, v1193, cmp3075, v1194, cmp3078, v1195, cmp3081, v1196, cmp3084, v1197, cmp3087, v1198, cmp3090, v1199, tobool3094, v1200, result_symbol3096, v1201, mark_end3097, v1202, v1203, v1204, cmp3098, v1205, cmp3102, v1206, cmp3105, v1207, cmp3108, v1208, cmp3111, v1209, cmp3114, v1210, cmp3117, v1211, cmp3120, v1212, cmp3123, v1213, cmp3126, v1214, tobool3130, v1215, result_symbol3132, v1216, mark_end3133, v1217, v1218, v1219, cmp3134, v1220, cmp3138, v1221, cmp3141, v1222, cmp3144, v1223, cmp3147, v1224, cmp3150, v1225, cmp3153, v1226, cmp3156, v1227, cmp3159, v1228, cmp3162, v1229, tobool3166, v1230, result_symbol3168, v1231, mark_end3169, v1232, v1233, v1234, cmp3170, v1235, cmp3174, v1236, cmp3177, v1237, cmp3180, v1238, cmp3183, v1239, cmp3186, v1240, cmp3189, v1241, cmp3192, v1242, cmp3195, v1243, cmp3198, v1244, tobool3202, v1245, result_symbol3204, v1246, mark_end3205, v1247, v1248, v1249, cmp3206, v1250, cmp3210, v1251, cmp3213, v1252, cmp3216, v1253, cmp3219, v1254, cmp3222, v1255, cmp3225, v1256, cmp3228, v1257, cmp3231, v1258, cmp3234, v1259, tobool3238, v1260, result_symbol3240, v1261, mark_end3241, v1262, v1263, v1264, cmp3242, v1265, cmp3246, v1266, cmp3249, v1267, cmp3252, v1268, cmp3255, v1269, cmp3258, v1270, cmp3261, v1271, cmp3264, v1272, cmp3267, v1273, cmp3270, v1274, tobool3274, v1275, result_symbol3276, v1276, mark_end3277, v1277, v1278, v1279, cmp3278, v1280, cmp3282, v1281, cmp3285, v1282, cmp3288, v1283, cmp3291, v1284, cmp3294, v1285, cmp3297, v1286, cmp3300, v1287, cmp3303, v1288, cmp3306, v1289, tobool3310, v1290, result_symbol3312, v1291, mark_end3313, v1292, v1293, v1294, cmp3314, v1295, cmp3318, v1296, cmp3321, v1297, cmp3324, v1298, cmp3327, v1299, cmp3330, v1300, cmp3333, v1301, cmp3336, v1302, cmp3339, v1303, cmp3342, v1304, tobool3346, v1305, result_symbol3348, v1306, mark_end3349, v1307, v1308, v1309, cmp3350, v1310, cmp3354, v1311, cmp3358, v1312, cmp3361, v1313, cmp3364, v1314, cmp3367, v1315, cmp3370, v1316, cmp3373, v1317, cmp3376, v1318, cmp3379, v1319, cmp3382, v1320, tobool3386, v1321, result_symbol3388, v1322, mark_end3389, v1323, v1324, v1325, cmp3390, v1326, cmp3394, v1327, cmp3397, v1328, cmp3400, v1329, cmp3403, v1330, cmp3406, v1331, cmp3409, v1332, cmp3412, v1333, cmp3415, v1334, cmp3418, v1335, tobool3422, v1336, result_symbol3424, v1337, mark_end3425, v1338, v1339, v1340, cmp3426, v1341, cmp3430, v1342, cmp3433, v1343, cmp3436, v1344, cmp3439, v1345, cmp3442, v1346, cmp3445, v1347, cmp3448, v1348, cmp3451, v1349, cmp3454, v1350, tobool3458, v1351, result_symbol3460, v1352, mark_end3461, v1353, v1354, v1355, cmp3462, v1356, cmp3466, v1357, cmp3469, v1358, cmp3472, v1359, cmp3475, v1360, cmp3478, v1361, cmp3481, v1362, cmp3484, v1363, cmp3487, v1364, cmp3490, v1365, tobool3494, v1366, result_symbol3496, v1367, mark_end3497, v1368, v1369, v1370, cmp3498, v1371, cmp3502, v1372, cmp3505, v1373, cmp3508, v1374, cmp3511, v1375, cmp3514, v1376, cmp3517, v1377, cmp3520, v1378, cmp3523, v1379, cmp3526, v1380, tobool3530, v1381, result_symbol3532, v1382, mark_end3533, v1383, v1384, v1385, cmp3534, v1386, cmp3538, v1387, cmp3541, v1388, cmp3544, v1389, cmp3547, v1390, cmp3550, v1391, cmp3553, v1392, cmp3556, v1393, cmp3559, v1394, cmp3562, v1395, tobool3566, v1396, result_symbol3568, v1397, mark_end3569, v1398, v1399, v1400, cmp3570, v1401, cmp3574, v1402, cmp3578, v1403, cmp3581, v1404, cmp3584, v1405, cmp3587, v1406, cmp3590, v1407, cmp3593, v1408, cmp3596, v1409, cmp3599, v1410, cmp3602, v1411, tobool3606, v1412, result_symbol3608, v1413, mark_end3609, v1414, v1415, v1416, cmp3610, v1417, cmp3614, v1418, cmp3617, v1419, cmp3620, v1420, cmp3623, v1421, cmp3626, v1422, cmp3629, v1423, cmp3632, v1424, cmp3635, v1425, cmp3638, v1426, tobool3642, v1427, result_symbol3644, v1428, mark_end3645, v1429, v1430, v1431, cmp3646, v1432, cmp3650, v1433, cmp3653, v1434, cmp3656, v1435, cmp3659, v1436, cmp3662, v1437, cmp3665, v1438, cmp3668, v1439, cmp3671, v1440, cmp3674, v1441, tobool3678, v1442, result_symbol3680, v1443, mark_end3681, v1444, v1445, v1446, cmp3682, v1447, cmp3686, v1448, cmp3689, v1449, cmp3692, v1450, cmp3695, v1451, cmp3698, v1452, cmp3701, v1453, cmp3704, v1454, cmp3707, v1455, cmp3710, v1456, tobool3714, v1457, result_symbol3716, v1458, mark_end3717, v1459, v1460, v1461, cmp3718, v1462, cmp3722, v1463, cmp3725, v1464, cmp3728, v1465, cmp3731, v1466, cmp3734, v1467, cmp3737, v1468, cmp3740, v1469, cmp3743, v1470, cmp3746, v1471, tobool3750, v1472, result_symbol3752, v1473, mark_end3753, v1474, v1475, v1476, cmp3754, v1477, cmp3758, v1478, cmp3761, v1479, cmp3764, v1480, cmp3767, v1481, cmp3770, v1482, cmp3773, v1483, cmp3776, v1484, cmp3779, v1485, cmp3782, v1486, tobool3786, v1487, result_symbol3788, v1488, mark_end3789, v1489, v1490, v1491, cmp3790, v1492, cmp3794, v1493, cmp3797, v1494, cmp3800, v1495, cmp3803, v1496, cmp3806, v1497, cmp3809, v1498, cmp3812, v1499, cmp3815, v1500, cmp3818, v1501, tobool3822, v1502, result_symbol3824, v1503, mark_end3825, v1504, v1505, v1506, cmp3826, v1507, cmp3830, v1508, cmp3833, v1509, cmp3836, v1510, cmp3839, v1511, cmp3842, v1512, cmp3845, v1513, cmp3848, v1514, cmp3851, v1515, cmp3854, v1516, tobool3858, v1517, result_symbol3860, v1518, mark_end3861, v1519, v1520, v1521, cmp3862, v1522, cmp3866, v1523, cmp3869, v1524, cmp3872, v1525, cmp3875, v1526, cmp3878, v1527, cmp3881, v1528, cmp3884, v1529, cmp3887, v1530, cmp3890, v1531, tobool3894, v1532, result_symbol3896, v1533, mark_end3897, v1534, v1535, v1536, cmp3898, v1537, cmp3902, v1538, cmp3905, v1539, cmp3908, v1540, cmp3911, v1541, cmp3914, v1542, cmp3917, v1543, cmp3920, v1544, cmp3923, v1545, cmp3926, v1546, tobool3930, v1547, result_symbol3932, v1548, mark_end3933, v1549, v1550, v1551, cmp3934, v1552, cmp3938, v1553, cmp3941, v1554, cmp3944, v1555, cmp3947, v1556, cmp3950, v1557, cmp3953, v1558, cmp3956, v1559, cmp3959, v1560, cmp3962, v1561, tobool3966, v1562, result_symbol3968, v1563, mark_end3969, v1564, v1565, v1566, cmp3970, v1567, cmp3974, v1568, cmp3977, v1569, cmp3980, v1570, cmp3983, v1571, cmp3986, v1572, cmp3989, v1573, cmp3992, v1574, cmp3995, v1575, cmp3998, v1576, tobool4002, v1577, result_symbol4004, v1578, mark_end4005, v1579, v1580, v1581, cmp4006, v1582, cmp4010, v1583, cmp4013, v1584, cmp4016, v1585, cmp4019, v1586, cmp4022, v1587, cmp4025, v1588, cmp4028, v1589, cmp4031, v1590, cmp4034, v1591, tobool4038, v1592, result_symbol4040, v1593, mark_end4041, v1594, v1595, v1596, cmp4042, v1597, cmp4046, v1598, cmp4049, v1599, cmp4052, v1600, cmp4055, v1601, cmp4058, v1602, cmp4061, v1603, cmp4064, v1604, cmp4067, v1605, cmp4070, v1606, tobool4074, v1607, result_symbol4076, v1608, mark_end4077, v1609, v1610, v1611, cmp4078, v1612, cmp4082, v1613, cmp4085, v1614, cmp4088, v1615, cmp4091, v1616, cmp4094, v1617, cmp4097, v1618, cmp4100, v1619, cmp4103, v1620, cmp4106, v1621, tobool4110, v1622, result_symbol4112, v1623, mark_end4113, v1624, v1625, v1626, cmp4114, v1627, cmp4118, v1628, cmp4121, v1629, cmp4124, v1630, cmp4127, v1631, cmp4130, v1632, cmp4133, v1633, cmp4136, v1634, cmp4139, v1635, cmp4142, v1636, tobool4146, v1637, result_symbol4148, v1638, mark_end4149, v1639, v1640, v1641, cmp4150, v1642, cmp4154, v1643, cmp4157, v1644, cmp4160, v1645, cmp4163, v1646, cmp4166, v1647, cmp4169, v1648, cmp4172, v1649, cmp4175, v1650, cmp4178, v1651, tobool4182, v1652, result_symbol4184, v1653, mark_end4185, v1654, v1655, v1656, cmp4186, v1657, cmp4190, v1658, cmp4193, v1659, cmp4196, v1660, cmp4199, v1661, cmp4202, v1662, cmp4205, v1663, cmp4208, v1664, cmp4211, v1665, cmp4214, v1666, tobool4218, v1667, result_symbol4220, v1668, mark_end4221, v1669, v1670, v1671, cmp4222, v1672, cmp4226, v1673, cmp4229, v1674, cmp4232, v1675, cmp4235, v1676, cmp4238, v1677, cmp4241, v1678, cmp4244, v1679, cmp4247, v1680, cmp4250, v1681, tobool4254, v1682, result_symbol4256, v1683, mark_end4257, v1684, v1685, v1686, cmp4258, v1687, cmp4262, v1688, cmp4265, v1689, cmp4268, v1690, cmp4271, v1691, cmp4274, v1692, cmp4277, v1693, cmp4280, v1694, cmp4283, v1695, cmp4286, v1696, tobool4290, v1697, result_symbol4292, v1698, mark_end4293, v1699, v1700, v1701, cmp4294, v1702, cmp4298, v1703, cmp4301, v1704, cmp4304, v1705, cmp4307, v1706, cmp4310, v1707, cmp4313, v1708, cmp4316, v1709, cmp4319, v1710, cmp4322, v1711, tobool4326, v1712, result_symbol4328, v1713, mark_end4329, v1714, v1715, v1716, cmp4330, v1717, cmp4334, v1718, cmp4337, v1719, cmp4340, v1720, cmp4343, v1721, cmp4346, v1722, cmp4349, v1723, cmp4352, v1724, cmp4355, v1725, cmp4358, v1726, tobool4362, v1727, result_symbol4364, v1728, mark_end4365, v1729, v1730, v1731, cmp4366, v1732, cmp4370, v1733, cmp4373, v1734, cmp4376, v1735, cmp4379, v1736, cmp4382, v1737, cmp4385, v1738, cmp4388, v1739, cmp4391, v1740, cmp4394, v1741, tobool4398, v1742, result_symbol4400, v1743, mark_end4401, v1744, v1745, v1746, cmp4402, v1747, cmp4406, v1748, cmp4409, v1749, cmp4412, v1750, cmp4415, v1751, cmp4418, v1752, cmp4421, v1753, cmp4424, v1754, cmp4427, v1755, cmp4430, v1756, tobool4434, v1757, result_symbol4436, v1758, mark_end4437, v1759, v1760, v1761, cmp4438, v1762, cmp4442, v1763, cmp4445, v1764, cmp4448, v1765, cmp4451, v1766, cmp4454, v1767, cmp4457, v1768, cmp4460, v1769, cmp4463, v1770, cmp4466, v1771, tobool4470, v1772, result_symbol4472, v1773, mark_end4473, v1774, v1775, v1776, cmp4474, v1777, cmp4478, v1778, cmp4481, v1779, cmp4484, v1780, cmp4487, v1781, cmp4490, v1782, cmp4493, v1783, cmp4496, v1784, cmp4499, v1785, cmp4502, v1786, tobool4506, v1787, result_symbol4508, v1788, mark_end4509, v1789, v1790, v1791, cmp4510, v1792, cmp4514, v1793, cmp4517, v1794, cmp4520, v1795, cmp4523, v1796, cmp4526, v1797, cmp4529, v1798, cmp4532, v1799, cmp4535, v1800, cmp4538, v1801, tobool4542, v1802, result_symbol4544, v1803, mark_end4545, v1804, v1805, v1806, cmp4546, v1807, cmp4550, v1808, cmp4553, v1809, cmp4556, v1810, cmp4559, v1811, cmp4562, v1812, cmp4565, v1813, cmp4568, v1814, cmp4571, v1815, cmp4574, v1816, tobool4578, v1817, result_symbol4580, v1818, mark_end4581, v1819, v1820, v1821, cmp4582, v1822, cmp4585, v1823, cmp4588, v1824, cmp4591, v1825, cmp4594, v1826, cmp4597, v1827, cmp4600, v1828, cmp4603, v1829, cmp4606, v1830, tobool4610, v1831, result_symbol4612, v1832, mark_end4613, v1833, v1834, v1835, cmp4614, v1836, cmp4617, v1837, cmp4620, v1838, cmp4623, v1839, cmp4626, v1840, cmp4629, v1841, cmp4632, v1842, cmp4635, v1843, cmp4638, v1844, tobool4642, v1845, result_symbol4644, v1846, mark_end4645, v1847, v1848, v1849, tobool4646, v1850, result_symbol4648, v1851, mark_end4649, v1852, v1853, v1854, cmp4650, v1855, cmp4654, v1856, cmp4658, v1857, tobool4662, v1858, result_symbol4664, v1859, mark_end4665, v1860, v1861, v1862, cmp4666, v1863, cmp4670, v1864, tobool4674, v1865, result_symbol4676, v1866, mark_end4677, v1867, v1868, v1869, cmp4678, v1870, tobool4682, v1871, result_symbol4684, v1872, mark_end4685, v1873, v1874, v1875, tobool4686, v1876, result_symbol4688, v1877, mark_end4689, v1878, v1879, v1880, tobool4690, v1881, result_symbol4692, v1882, mark_end4693, v1883, v1884, v1885, cmp4694, v1886, cmp4698, v1887, tobool4702, v1888, result_symbol4704, v1889, mark_end4705, v1890, v1891, v1892, cmp4706, v1893, tobool4710, v1894, result_symbol4712, v1895, mark_end4713, v1896, v1897, v1898, tobool4714, v1899, result_symbol4716, v1900, mark_end4717, v1901, v1902, v1903, tobool4718, v1904, result_symbol4720, v1905, mark_end4721, v1906, v1907, v1908, tobool4722, v1909, result_symbol4724, v1910, mark_end4725, v1911, v1912, v1913, tobool4726, v1914, result_symbol4728, v1915, mark_end4729, v1916, v1917, v1918, tobool4730, v1919, result_symbol4732, v1920, mark_end4733, v1921, v1922, v1923, cmp4734, v1924, cmp4737, v1925, tobool4741, v1926, result_symbol4743, v1927, mark_end4744, v1928, v1929, v1930, cmp4745, v1931, cmp4748, v1932, cmp4751, v1933, cmp4754, v1934, cmp4757, v1935, cmp4760, v1936, cmp4763, v1937, cmp4766, v1938, cmp4769, v1939, tobool4773, v1940, result_symbol4775, v1941, mark_end4776, v1942, v1943, v1944, cmp4777, v1945, cmp4780, v1946, cmp4783, v1947, cmp4786, v1948, cmp4789, v1949, cmp4792, v1950, cmp4795, v1951, cmp4798, v1952, cmp4801, v1953, tobool4805, v1954, result_symbol4807, v1955, mark_end4808, v1956, v1957, v1958, tobool4809, v1959, result_symbol4811, v1960, mark_end4812, v1961, v1962, v1963, tobool4813, v1964, result_symbol4815, v1965, mark_end4816, v1966, v1967, v1968, tobool4817, v1969, result_symbol4819, v1970, mark_end4820, v1971, v1972, v1973, tobool4821, v1974, result_symbol4823, v1975, mark_end4824, v1976, v1977, v1978, cmp4825, v1979, tobool4829, v1980, result_symbol4831, v1981, mark_end4832, v1982, v1983, v1984, tobool4833, v1985, result_symbol4835, v1986, mark_end4836, v1987, v1988, v1989, cmp4837, v1990, cmp4840, v1991, cmp4843, v1992, cmp4846, v1993, cmp4849, v1994, cmp4852, v1995, cmp4855, v1996, cmp4858, v1997, cmp4861, v1998, tobool4865, v1999, result_symbol4867, v2000, mark_end4868, v2001, v2002, v2003, tobool4869, v2004, result_symbol4871, v2005, mark_end4872, v2006, v2007, v2008, tobool4873, v2009, result_symbol4875, v2010, mark_end4876, v2011, v2012, v2013, cmp4877, v2014, cmp4881, v2015, cmp4884, v2016, cmp4887, v2017, cmp4890, v2018, tobool4894, v2019, result_symbol4896, v2020, mark_end4897, v2021, v2022, v2023, tobool4898, v2024, result_symbol4900, v2025, mark_end4901, v2026, v2027, v2028, cmp4902, v2029, cmp4905, v2030, cmp4908, v2031, cmp4911, v2032, cmp4914, v2033, cmp4917, v2034, cmp4920, v2035, cmp4923, v2036, cmp4926, v2037, tobool4930, v2038, result_symbol4932, v2039, mark_end4933, v2040, v2041, v2042, tobool4934, v2043, result_symbol4936, v2044, mark_end4937, v2045, v2046, v2047, tobool4938, v2048, result_symbol4940, v2049, mark_end4941, v2050, v2051, v2052, tobool4942, v2053, result_symbol4944, v2054, mark_end4945, v2055, v2056, v2057, cmp4946, v2058, cmp4949, v2059, cmp4952, v2060, cmp4956, v2061, cmp4959, v2062, cmp4962, v2063, cmp4965, v2064, tobool4969, v2065, result_symbol4971, v2066, mark_end4972, v2067, v2068, v2069, cmp4973, v2070, cmp4976, v2071, cmp4979, v2072, cmp4982, v2073, tobool4986, v2074, result_symbol4988, v2075, mark_end4989, v2076, v2077, v2078, cmp4990, v2079, cmp4994, v2080, cmp4997, v2081, cmp5001, v2082, tobool5005, v2083, result_symbol5007, v2084, mark_end5008, v2085, v2086, v2087, cmp5009, v2088, cmp5013, v2089, cmp5016, v2090, cmp5019, v2091, cmp5023, v2092, cmp5026, v2093, cmp5029, v2094, tobool5033, v2095, result_symbol5035, v2096, mark_end5036, v2097, v2098, v2099, cmp5037, v2100, cmp5040, v2101, cmp5043, v2102, tobool5047, v2103, result_symbol5049, v2104, mark_end5050, v2105, v2106, v2107, tobool5051, v2108, result_symbol5053, v2109, mark_end5054, v2110, v2111, v2112, cmp5055, v2113, cmp5058, v2114, cmp5061, v2115, cmp5064, v2116, cmp5067, v2117, cmp5070, v2118, cmp5073, v2119, cmp5076, v2120, tobool5080, v2121, result_symbol5082, v2122, mark_end5083, v2123, v2124, v2125, tobool5084, v2126, result_symbol5086, v2127, mark_end5087, v2128, v2129, v2130, tobool5088, v2131, result_symbol5090, v2132, mark_end5091, v2133, v2134, v2135, tobool5092, v2136, result_symbol5094, v2137, mark_end5095, v2138, v2139, v2140, cmp5096, v2141, tobool5100, v2142, result_symbol5102, v2143, mark_end5103, v2144, v2145, v2146, cmp5104, v2147, tobool5108, v2148, result_symbol5110, v2149, mark_end5111, v2150, v2151, v2152, cmp5112, v2153, tobool5116, v2154, result_symbol5118, v2155, mark_end5119, v2156, v2157, v2158, cmp5120, v2159, tobool5124, v2160, result_symbol5126, v2161, mark_end5127, v2162, v2163, v2164, tobool5128, v2165, result_symbol5130, v2166, mark_end5131, v2167, v2168, v2169, cmp5132, v2170, tobool5136, v2171, result_symbol5138, v2172, mark_end5139, v2173, v2174, v2175, tobool5140, v2176, result_symbol5142, v2177, mark_end5143, v2178, v2179, v2180, cmp5144, v2181, tobool5148, v2182, result_symbol5150, v2183, mark_end5151, v2184, v2185, v2186, tobool5152, v2187, result_symbol5154, v2188, mark_end5155, v2189, v2190, v2191, tobool5156, v2192, result_symbol5158, v2193, mark_end5159, v2194, v2195, v2196, tobool5160, v2197, result_symbol5162, v2198, mark_end5163, v2199, v2200, v2201, tobool5164, v2202, result_symbol5166, v2203, mark_end5167, v2204, v2205, v2206, tobool5168, v2207, result_symbol5170, v2208, mark_end5171, v2209, v2210, v2211, tobool5172, v2212, result_symbol5174, v2213, mark_end5175, v2214, v2215, v2216, cmp5176, v2217, cmp5179, v2218, cmp5182, v2219, cmp5185, v2220, cmp5188, v2221, cmp5191, v2222, cmp5194, v2223, cmp5197, v2224, cmp5200, v2225, tobool5204, v2226, result_symbol5206, v2227, mark_end5207, v2228, v2229, v2230, cmp5208, v2231, cmp5211, v2232, cmp5214, v2233, cmp5217, v2234, cmp5220, v2235, cmp5223, v2236, cmp5226, v2237, cmp5229, v2238, cmp5232, v2239, tobool5236, v2240, result_symbol5238, v2241, mark_end5239, v2242, v2243, v2244, cmp5240, v2245, cmp5243, v2246, cmp5246, v2247, cmp5249, v2248, cmp5252, v2249, cmp5255, v2250, cmp5258, v2251, cmp5261, v2252, cmp5264, v2253, tobool5268, v2254, result_symbol5270, v2255, mark_end5271, v2256, v2257, v2258, tobool5272, v2259, result_symbol5274, v2260, mark_end5275, v2261, v2262, v2263, tobool5276, v2264
 
 	retval = new(bool)
 	lexer_addr = new(*TSLexer)
 	state_addr = new(int16)
 	result = new(byte)
-	skip = new(byte)
-	eof = new(byte)
-	lookahead = new(int32)
+	local_skip = new(byte)
+	local_eof = new(byte)
+	local_lookahead = new(int32)
 	i = new(int32)
 	i44 = new(int32)
 	i123 = new(int32)
@@ -57564,33 +57564,33 @@ func ts_lex(lexer *TSLexer, state int16) bool {
 	*lexer_addr = lexer
 	*state_addr = state
 	*result = 0
-	*skip = 0
-	*eof = 0
+	*local_skip = 0
+	*local_eof = 0
 	goto start
 
 next_state:
 	v0 = *lexer_addr
-	advance = &v0.F2
-	v1 = *advance
+	local_advance = &v0.F2
+	v1 = *local_advance
 	v2 = *lexer_addr
-	v3 = *skip
+	v3 = *local_skip
 	tobool = (v3 & 1) != 0
 	v1(v2, tobool)
 	goto start
 
 start:
-	*skip = 0
+	*local_skip = 0
 	v4 = *lexer_addr
 	lookahead1 = &v4.F0
 	v5 = *lookahead1
-	*lookahead = v5
+	*local_lookahead = v5
 	v6 = *lexer_addr
 	eof2 = &v6.F6
 	v7 = *eof2
 	v8 = *lexer_addr
 	call = v7(v8)
 	if call { frombool = 1 } else { frombool = 0 }
-	*eof = frombool
+	*local_eof = frombool
 	v9 = *state_addr
 	conv = int32(uint32(uint16(v9)))
 	switch conv {
@@ -58105,7 +58105,7 @@ start:
 	}
 
 sw_bb:
-	v10 = *eof
+	v10 = *local_eof
 	tobool3 = (v10 & 1) != 0
 	if tobool3 {
 		goto if_then
@@ -58137,7 +58137,7 @@ for_body:
 	arrayidx = &ts_lex_map[idxprom]
 	v13 = *arrayidx
 	conv6 = int32(uint32(uint16(v13)))
-	v14 = *lookahead
+	v14 = *local_lookahead
 	cmp7 = conv6 == v14
 	if cmp7 {
 		goto if_then9
@@ -58164,7 +58164,7 @@ for_inc:
 	goto for_cond
 
 for_end:
-	v18 = *lookahead
+	v18 = *local_lookahead
 	cmp14 = 9 <= v18
 	if cmp14 {
 		goto land_lhs_true
@@ -58173,7 +58173,7 @@ for_end:
 	}
 
 land_lhs_true:
-	v19 = *lookahead
+	v19 = *local_lookahead
 	cmp16 = v19 <= 13
 	if cmp16 {
 		goto if_then20
@@ -58182,7 +58182,7 @@ land_lhs_true:
 	}
 
 lor_lhs_false:
-	v20 = *lookahead
+	v20 = *local_lookahead
 	cmp18 = v20 == 32
 	if cmp18 {
 		goto if_then20
@@ -58191,12 +58191,12 @@ lor_lhs_false:
 	}
 
 if_then20:
-	*skip = 1
+	*local_skip = 1
 	*state_addr = 0
 	goto next_state
 
 if_end21:
-	v21 = *lookahead
+	v21 = *local_lookahead
 	cmp22 = 49 <= v21
 	if cmp22 {
 		goto land_lhs_true24
@@ -58205,7 +58205,7 @@ if_end21:
 	}
 
 land_lhs_true24:
-	v22 = *lookahead
+	v22 = *local_lookahead
 	cmp25 = v22 <= 57
 	if cmp25 {
 		goto if_then27
@@ -58218,7 +58218,7 @@ if_then27:
 	goto next_state
 
 if_end28:
-	v23 = *lookahead
+	v23 = *local_lookahead
 	cmp29 = 67 <= v23
 	if cmp29 {
 		goto land_lhs_true31
@@ -58227,7 +58227,7 @@ if_end28:
 	}
 
 land_lhs_true31:
-	v24 = *lookahead
+	v24 = *local_lookahead
 	cmp32 = v24 <= 90
 	if cmp32 {
 		goto if_then40
@@ -58236,7 +58236,7 @@ land_lhs_true31:
 	}
 
 lor_lhs_false34:
-	v25 = *lookahead
+	v25 = *local_lookahead
 	cmp35 = 97 <= v25
 	if cmp35 {
 		goto land_lhs_true37
@@ -58245,7 +58245,7 @@ lor_lhs_false34:
 	}
 
 land_lhs_true37:
-	v26 = *lookahead
+	v26 = *local_lookahead
 	cmp38 = v26 <= 122
 	if cmp38 {
 		goto if_then40
@@ -58283,7 +58283,7 @@ for_body49:
 	arrayidx51 = &ts_lex_map_212[idxprom50]
 	v30 = *arrayidx51
 	conv52 = int32(uint32(uint16(v30)))
-	v31 = *lookahead
+	v31 = *local_lookahead
 	cmp53 = conv52 == v31
 	if cmp53 {
 		goto if_then55
@@ -58310,7 +58310,7 @@ for_inc60:
 	goto for_cond45
 
 for_end62:
-	v35 = *lookahead
+	v35 = *local_lookahead
 	cmp63 = 9 <= v35
 	if cmp63 {
 		goto land_lhs_true65
@@ -58319,7 +58319,7 @@ for_end62:
 	}
 
 land_lhs_true65:
-	v36 = *lookahead
+	v36 = *local_lookahead
 	cmp66 = v36 <= 13
 	if cmp66 {
 		goto if_then71
@@ -58328,7 +58328,7 @@ land_lhs_true65:
 	}
 
 lor_lhs_false68:
-	v37 = *lookahead
+	v37 = *local_lookahead
 	cmp69 = v37 == 32
 	if cmp69 {
 		goto if_then71
@@ -58337,12 +58337,12 @@ lor_lhs_false68:
 	}
 
 if_then71:
-	*skip = 1
+	*local_skip = 1
 	*state_addr = 1
 	goto next_state
 
 if_end72:
-	v38 = *lookahead
+	v38 = *local_lookahead
 	cmp73 = 49 <= v38
 	if cmp73 {
 		goto land_lhs_true75
@@ -58351,7 +58351,7 @@ if_end72:
 	}
 
 land_lhs_true75:
-	v39 = *lookahead
+	v39 = *local_lookahead
 	cmp76 = v39 <= 57
 	if cmp76 {
 		goto if_then78
@@ -58364,7 +58364,7 @@ if_then78:
 	goto next_state
 
 if_end79:
-	v40 = *lookahead
+	v40 = *local_lookahead
 	cmp80 = 65 <= v40
 	if cmp80 {
 		goto land_lhs_true82
@@ -58373,7 +58373,7 @@ if_end79:
 	}
 
 land_lhs_true82:
-	v41 = *lookahead
+	v41 = *local_lookahead
 	cmp83 = v41 <= 90
 	if cmp83 {
 		goto if_then91
@@ -58382,7 +58382,7 @@ land_lhs_true82:
 	}
 
 lor_lhs_false85:
-	v42 = *lookahead
+	v42 = *local_lookahead
 	cmp86 = 97 <= v42
 	if cmp86 {
 		goto land_lhs_true88
@@ -58391,7 +58391,7 @@ lor_lhs_false85:
 	}
 
 land_lhs_true88:
-	v43 = *lookahead
+	v43 = *local_lookahead
 	cmp89 = v43 <= 122
 	if cmp89 {
 		goto if_then91
@@ -58410,7 +58410,7 @@ if_end92:
 	goto _return
 
 sw_bb94:
-	v45 = *lookahead
+	v45 = *local_lookahead
 	cmp95 = v45 == 34
 	if cmp95 {
 		goto if_then97
@@ -58423,7 +58423,7 @@ if_then97:
 	goto next_state
 
 if_end98:
-	v46 = *lookahead
+	v46 = *local_lookahead
 	cmp99 = v46 == 37
 	if cmp99 {
 		goto if_then101
@@ -58436,7 +58436,7 @@ if_then101:
 	goto next_state
 
 if_end102:
-	v47 = *lookahead
+	v47 = *local_lookahead
 	cmp103 = v47 == 92
 	if cmp103 {
 		goto if_then105
@@ -58449,7 +58449,7 @@ if_then105:
 	goto next_state
 
 if_end106:
-	v48 = *lookahead
+	v48 = *local_lookahead
 	cmp107 = 9 <= v48
 	if cmp107 {
 		goto land_lhs_true109
@@ -58458,7 +58458,7 @@ if_end106:
 	}
 
 land_lhs_true109:
-	v49 = *lookahead
+	v49 = *local_lookahead
 	cmp110 = v49 <= 13
 	if cmp110 {
 		goto if_then115
@@ -58467,7 +58467,7 @@ land_lhs_true109:
 	}
 
 lor_lhs_false112:
-	v50 = *lookahead
+	v50 = *local_lookahead
 	cmp113 = v50 == 32
 	if cmp113 {
 		goto if_then115
@@ -58480,7 +58480,7 @@ if_then115:
 	goto next_state
 
 if_end116:
-	v51 = *lookahead
+	v51 = *local_lookahead
 	cmp117 = v51 != 0
 	if cmp117 {
 		goto if_then119
@@ -58518,7 +58518,7 @@ for_body128:
 	arrayidx130 = &ts_lex_map_213[idxprom129]
 	v55 = *arrayidx130
 	conv131 = int32(uint32(uint16(v55)))
-	v56 = *lookahead
+	v56 = *local_lookahead
 	cmp132 = conv131 == v56
 	if cmp132 {
 		goto if_then134
@@ -58545,7 +58545,7 @@ for_inc139:
 	goto for_cond124
 
 for_end141:
-	v60 = *lookahead
+	v60 = *local_lookahead
 	cmp142 = 9 <= v60
 	if cmp142 {
 		goto land_lhs_true144
@@ -58554,7 +58554,7 @@ for_end141:
 	}
 
 land_lhs_true144:
-	v61 = *lookahead
+	v61 = *local_lookahead
 	cmp145 = v61 <= 13
 	if cmp145 {
 		goto if_then150
@@ -58563,7 +58563,7 @@ land_lhs_true144:
 	}
 
 lor_lhs_false147:
-	v62 = *lookahead
+	v62 = *local_lookahead
 	cmp148 = v62 == 32
 	if cmp148 {
 		goto if_then150
@@ -58572,12 +58572,12 @@ lor_lhs_false147:
 	}
 
 if_then150:
-	*skip = 1
+	*local_skip = 1
 	*state_addr = 3
 	goto next_state
 
 if_end151:
-	v63 = *lookahead
+	v63 = *local_lookahead
 	cmp152 = 49 <= v63
 	if cmp152 {
 		goto land_lhs_true154
@@ -58586,7 +58586,7 @@ if_end151:
 	}
 
 land_lhs_true154:
-	v64 = *lookahead
+	v64 = *local_lookahead
 	cmp155 = v64 <= 57
 	if cmp155 {
 		goto if_then157
@@ -58599,7 +58599,7 @@ if_then157:
 	goto next_state
 
 if_end158:
-	v65 = *lookahead
+	v65 = *local_lookahead
 	cmp159 = 65 <= v65
 	if cmp159 {
 		goto land_lhs_true161
@@ -58608,7 +58608,7 @@ if_end158:
 	}
 
 land_lhs_true161:
-	v66 = *lookahead
+	v66 = *local_lookahead
 	cmp162 = v66 <= 90
 	if cmp162 {
 		goto if_then170
@@ -58617,7 +58617,7 @@ land_lhs_true161:
 	}
 
 lor_lhs_false164:
-	v67 = *lookahead
+	v67 = *local_lookahead
 	cmp165 = 97 <= v67
 	if cmp165 {
 		goto land_lhs_true167
@@ -58626,7 +58626,7 @@ lor_lhs_false164:
 	}
 
 land_lhs_true167:
-	v68 = *lookahead
+	v68 = *local_lookahead
 	cmp168 = v68 <= 122
 	if cmp168 {
 		goto if_then170
@@ -58645,7 +58645,7 @@ if_end171:
 	goto _return
 
 sw_bb173:
-	v70 = *lookahead
+	v70 = *local_lookahead
 	cmp174 = v70 == 37
 	if cmp174 {
 		goto if_then176
@@ -58658,7 +58658,7 @@ if_then176:
 	goto next_state
 
 if_end177:
-	v71 = *lookahead
+	v71 = *local_lookahead
 	cmp178 = v71 == 92
 	if cmp178 {
 		goto if_then180
@@ -58671,7 +58671,7 @@ if_then180:
 	goto next_state
 
 if_end181:
-	v72 = *lookahead
+	v72 = *local_lookahead
 	cmp182 = 9 <= v72
 	if cmp182 {
 		goto land_lhs_true184
@@ -58680,7 +58680,7 @@ if_end181:
 	}
 
 land_lhs_true184:
-	v73 = *lookahead
+	v73 = *local_lookahead
 	cmp185 = v73 <= 13
 	if cmp185 {
 		goto if_then190
@@ -58689,7 +58689,7 @@ land_lhs_true184:
 	}
 
 lor_lhs_false187:
-	v74 = *lookahead
+	v74 = *local_lookahead
 	cmp188 = v74 == 32
 	if cmp188 {
 		goto if_then190
@@ -58702,7 +58702,7 @@ if_then190:
 	goto next_state
 
 if_end191:
-	v75 = *lookahead
+	v75 = *local_lookahead
 	cmp192 = v75 != 0
 	if cmp192 {
 		goto land_lhs_true194
@@ -58711,7 +58711,7 @@ if_end191:
 	}
 
 land_lhs_true194:
-	v76 = *lookahead
+	v76 = *local_lookahead
 	cmp195 = v76 != 34
 	if cmp195 {
 		goto if_then197
@@ -58749,7 +58749,7 @@ for_body206:
 	arrayidx208 = &ts_lex_map_214[idxprom207]
 	v80 = *arrayidx208
 	conv209 = int32(uint32(uint16(v80)))
-	v81 = *lookahead
+	v81 = *local_lookahead
 	cmp210 = conv209 == v81
 	if cmp210 {
 		goto if_then212
@@ -58776,7 +58776,7 @@ for_inc217:
 	goto for_cond202
 
 for_end219:
-	v85 = *lookahead
+	v85 = *local_lookahead
 	cmp220 = 9 <= v85
 	if cmp220 {
 		goto land_lhs_true222
@@ -58785,7 +58785,7 @@ for_end219:
 	}
 
 land_lhs_true222:
-	v86 = *lookahead
+	v86 = *local_lookahead
 	cmp223 = v86 <= 13
 	if cmp223 {
 		goto if_then228
@@ -58794,7 +58794,7 @@ land_lhs_true222:
 	}
 
 lor_lhs_false225:
-	v87 = *lookahead
+	v87 = *local_lookahead
 	cmp226 = v87 == 32
 	if cmp226 {
 		goto if_then228
@@ -58803,12 +58803,12 @@ lor_lhs_false225:
 	}
 
 if_then228:
-	*skip = 1
+	*local_skip = 1
 	*state_addr = 5
 	goto next_state
 
 if_end229:
-	v88 = *lookahead
+	v88 = *local_lookahead
 	cmp230 = 49 <= v88
 	if cmp230 {
 		goto land_lhs_true232
@@ -58817,7 +58817,7 @@ if_end229:
 	}
 
 land_lhs_true232:
-	v89 = *lookahead
+	v89 = *local_lookahead
 	cmp233 = v89 <= 57
 	if cmp233 {
 		goto if_then235
@@ -58830,7 +58830,7 @@ if_then235:
 	goto next_state
 
 if_end236:
-	v90 = *lookahead
+	v90 = *local_lookahead
 	cmp237 = 65 <= v90
 	if cmp237 {
 		goto land_lhs_true239
@@ -58839,7 +58839,7 @@ if_end236:
 	}
 
 land_lhs_true239:
-	v91 = *lookahead
+	v91 = *local_lookahead
 	cmp240 = v91 <= 90
 	if cmp240 {
 		goto if_then248
@@ -58848,7 +58848,7 @@ land_lhs_true239:
 	}
 
 lor_lhs_false242:
-	v92 = *lookahead
+	v92 = *local_lookahead
 	cmp243 = 97 <= v92
 	if cmp243 {
 		goto land_lhs_true245
@@ -58857,7 +58857,7 @@ lor_lhs_false242:
 	}
 
 land_lhs_true245:
-	v93 = *lookahead
+	v93 = *local_lookahead
 	cmp246 = v93 <= 122
 	if cmp246 {
 		goto if_then248
@@ -58895,7 +58895,7 @@ for_body257:
 	arrayidx259 = &ts_lex_map_215[idxprom258]
 	v97 = *arrayidx259
 	conv260 = int32(uint32(uint16(v97)))
-	v98 = *lookahead
+	v98 = *local_lookahead
 	cmp261 = conv260 == v98
 	if cmp261 {
 		goto if_then263
@@ -58922,7 +58922,7 @@ for_inc268:
 	goto for_cond253
 
 for_end270:
-	v102 = *lookahead
+	v102 = *local_lookahead
 	cmp271 = 9 <= v102
 	if cmp271 {
 		goto land_lhs_true273
@@ -58931,7 +58931,7 @@ for_end270:
 	}
 
 land_lhs_true273:
-	v103 = *lookahead
+	v103 = *local_lookahead
 	cmp274 = v103 <= 13
 	if cmp274 {
 		goto if_then279
@@ -58940,7 +58940,7 @@ land_lhs_true273:
 	}
 
 lor_lhs_false276:
-	v104 = *lookahead
+	v104 = *local_lookahead
 	cmp277 = v104 == 32
 	if cmp277 {
 		goto if_then279
@@ -58949,12 +58949,12 @@ lor_lhs_false276:
 	}
 
 if_then279:
-	*skip = 1
+	*local_skip = 1
 	*state_addr = 6
 	goto next_state
 
 if_end280:
-	v105 = *lookahead
+	v105 = *local_lookahead
 	cmp281 = 49 <= v105
 	if cmp281 {
 		goto land_lhs_true283
@@ -58963,7 +58963,7 @@ if_end280:
 	}
 
 land_lhs_true283:
-	v106 = *lookahead
+	v106 = *local_lookahead
 	cmp284 = v106 <= 57
 	if cmp284 {
 		goto if_then286
@@ -58976,7 +58976,7 @@ if_then286:
 	goto next_state
 
 if_end287:
-	v107 = *lookahead
+	v107 = *local_lookahead
 	cmp288 = 65 <= v107
 	if cmp288 {
 		goto land_lhs_true290
@@ -58985,7 +58985,7 @@ if_end287:
 	}
 
 land_lhs_true290:
-	v108 = *lookahead
+	v108 = *local_lookahead
 	cmp291 = v108 <= 90
 	if cmp291 {
 		goto if_then299
@@ -58994,7 +58994,7 @@ land_lhs_true290:
 	}
 
 lor_lhs_false293:
-	v109 = *lookahead
+	v109 = *local_lookahead
 	cmp294 = 97 <= v109
 	if cmp294 {
 		goto land_lhs_true296
@@ -59003,7 +59003,7 @@ lor_lhs_false293:
 	}
 
 land_lhs_true296:
-	v110 = *lookahead
+	v110 = *local_lookahead
 	cmp297 = v110 <= 122
 	if cmp297 {
 		goto if_then299
@@ -59041,7 +59041,7 @@ for_body308:
 	arrayidx310 = &ts_lex_map_216[idxprom309]
 	v114 = *arrayidx310
 	conv311 = int32(uint32(uint16(v114)))
-	v115 = *lookahead
+	v115 = *local_lookahead
 	cmp312 = conv311 == v115
 	if cmp312 {
 		goto if_then314
@@ -59068,7 +59068,7 @@ for_inc319:
 	goto for_cond304
 
 for_end321:
-	v119 = *lookahead
+	v119 = *local_lookahead
 	cmp322 = 9 <= v119
 	if cmp322 {
 		goto land_lhs_true324
@@ -59077,7 +59077,7 @@ for_end321:
 	}
 
 land_lhs_true324:
-	v120 = *lookahead
+	v120 = *local_lookahead
 	cmp325 = v120 <= 13
 	if cmp325 {
 		goto if_then330
@@ -59086,7 +59086,7 @@ land_lhs_true324:
 	}
 
 lor_lhs_false327:
-	v121 = *lookahead
+	v121 = *local_lookahead
 	cmp328 = v121 == 32
 	if cmp328 {
 		goto if_then330
@@ -59095,12 +59095,12 @@ lor_lhs_false327:
 	}
 
 if_then330:
-	*skip = 1
+	*local_skip = 1
 	*state_addr = 7
 	goto next_state
 
 if_end331:
-	v122 = *lookahead
+	v122 = *local_lookahead
 	cmp332 = 49 <= v122
 	if cmp332 {
 		goto land_lhs_true334
@@ -59109,7 +59109,7 @@ if_end331:
 	}
 
 land_lhs_true334:
-	v123 = *lookahead
+	v123 = *local_lookahead
 	cmp335 = v123 <= 57
 	if cmp335 {
 		goto if_then337
@@ -59122,7 +59122,7 @@ if_then337:
 	goto next_state
 
 if_end338:
-	v124 = *lookahead
+	v124 = *local_lookahead
 	cmp339 = 65 <= v124
 	if cmp339 {
 		goto land_lhs_true341
@@ -59131,7 +59131,7 @@ if_end338:
 	}
 
 land_lhs_true341:
-	v125 = *lookahead
+	v125 = *local_lookahead
 	cmp342 = v125 <= 90
 	if cmp342 {
 		goto if_then350
@@ -59140,7 +59140,7 @@ land_lhs_true341:
 	}
 
 lor_lhs_false344:
-	v126 = *lookahead
+	v126 = *local_lookahead
 	cmp345 = 97 <= v126
 	if cmp345 {
 		goto land_lhs_true347
@@ -59149,7 +59149,7 @@ lor_lhs_false344:
 	}
 
 land_lhs_true347:
-	v127 = *lookahead
+	v127 = *local_lookahead
 	cmp348 = v127 <= 122
 	if cmp348 {
 		goto if_then350
@@ -59187,7 +59187,7 @@ for_body359:
 	arrayidx361 = &ts_lex_map_217[idxprom360]
 	v131 = *arrayidx361
 	conv362 = int32(uint32(uint16(v131)))
-	v132 = *lookahead
+	v132 = *local_lookahead
 	cmp363 = conv362 == v132
 	if cmp363 {
 		goto if_then365
@@ -59214,7 +59214,7 @@ for_inc370:
 	goto for_cond355
 
 for_end372:
-	v136 = *lookahead
+	v136 = *local_lookahead
 	cmp373 = 9 <= v136
 	if cmp373 {
 		goto land_lhs_true375
@@ -59223,7 +59223,7 @@ for_end372:
 	}
 
 land_lhs_true375:
-	v137 = *lookahead
+	v137 = *local_lookahead
 	cmp376 = v137 <= 13
 	if cmp376 {
 		goto if_then381
@@ -59232,7 +59232,7 @@ land_lhs_true375:
 	}
 
 lor_lhs_false378:
-	v138 = *lookahead
+	v138 = *local_lookahead
 	cmp379 = v138 == 32
 	if cmp379 {
 		goto if_then381
@@ -59241,7 +59241,7 @@ lor_lhs_false378:
 	}
 
 if_then381:
-	*skip = 1
+	*local_skip = 1
 	*state_addr = 8
 	goto next_state
 
@@ -59252,7 +59252,7 @@ if_end382:
 	goto _return
 
 sw_bb384:
-	v140 = *lookahead
+	v140 = *local_lookahead
 	cmp385 = v140 == 41
 	if cmp385 {
 		goto if_then387
@@ -59265,7 +59265,7 @@ if_then387:
 	goto next_state
 
 if_end388:
-	v141 = *lookahead
+	v141 = *local_lookahead
 	cmp389 = v141 == 95
 	if cmp389 {
 		goto if_then391
@@ -59278,7 +59278,7 @@ if_then391:
 	goto next_state
 
 if_end392:
-	v142 = *lookahead
+	v142 = *local_lookahead
 	cmp393 = 9 <= v142
 	if cmp393 {
 		goto land_lhs_true395
@@ -59287,7 +59287,7 @@ if_end392:
 	}
 
 land_lhs_true395:
-	v143 = *lookahead
+	v143 = *local_lookahead
 	cmp396 = v143 <= 13
 	if cmp396 {
 		goto if_then401
@@ -59296,7 +59296,7 @@ land_lhs_true395:
 	}
 
 lor_lhs_false398:
-	v144 = *lookahead
+	v144 = *local_lookahead
 	cmp399 = v144 == 32
 	if cmp399 {
 		goto if_then401
@@ -59305,12 +59305,12 @@ lor_lhs_false398:
 	}
 
 if_then401:
-	*skip = 1
+	*local_skip = 1
 	*state_addr = 9
 	goto next_state
 
 if_end402:
-	v145 = *lookahead
+	v145 = *local_lookahead
 	cmp403 = 65 <= v145
 	if cmp403 {
 		goto land_lhs_true405
@@ -59319,7 +59319,7 @@ if_end402:
 	}
 
 land_lhs_true405:
-	v146 = *lookahead
+	v146 = *local_lookahead
 	cmp406 = v146 <= 90
 	if cmp406 {
 		goto if_then414
@@ -59328,7 +59328,7 @@ land_lhs_true405:
 	}
 
 lor_lhs_false408:
-	v147 = *lookahead
+	v147 = *local_lookahead
 	cmp409 = 97 <= v147
 	if cmp409 {
 		goto land_lhs_true411
@@ -59337,7 +59337,7 @@ lor_lhs_false408:
 	}
 
 land_lhs_true411:
-	v148 = *lookahead
+	v148 = *local_lookahead
 	cmp412 = v148 <= 122
 	if cmp412 {
 		goto if_then414
@@ -59375,7 +59375,7 @@ for_body423:
 	arrayidx425 = &ts_lex_map_218[idxprom424]
 	v152 = *arrayidx425
 	conv426 = int32(uint32(uint16(v152)))
-	v153 = *lookahead
+	v153 = *local_lookahead
 	cmp427 = conv426 == v153
 	if cmp427 {
 		goto if_then429
@@ -59402,7 +59402,7 @@ for_inc434:
 	goto for_cond419
 
 for_end436:
-	v157 = *lookahead
+	v157 = *local_lookahead
 	cmp437 = 9 <= v157
 	if cmp437 {
 		goto land_lhs_true439
@@ -59411,7 +59411,7 @@ for_end436:
 	}
 
 land_lhs_true439:
-	v158 = *lookahead
+	v158 = *local_lookahead
 	cmp440 = v158 <= 13
 	if cmp440 {
 		goto if_then445
@@ -59420,7 +59420,7 @@ land_lhs_true439:
 	}
 
 lor_lhs_false442:
-	v159 = *lookahead
+	v159 = *local_lookahead
 	cmp443 = v159 == 32
 	if cmp443 {
 		goto if_then445
@@ -59429,7 +59429,7 @@ lor_lhs_false442:
 	}
 
 if_then445:
-	*skip = 1
+	*local_skip = 1
 	*state_addr = 10
 	goto next_state
 
@@ -59459,7 +59459,7 @@ for_body454:
 	arrayidx456 = &ts_lex_map_219[idxprom455]
 	v163 = *arrayidx456
 	conv457 = int32(uint32(uint16(v163)))
-	v164 = *lookahead
+	v164 = *local_lookahead
 	cmp458 = conv457 == v164
 	if cmp458 {
 		goto if_then460
@@ -59486,7 +59486,7 @@ for_inc465:
 	goto for_cond450
 
 for_end467:
-	v168 = *lookahead
+	v168 = *local_lookahead
 	cmp468 = 9 <= v168
 	if cmp468 {
 		goto land_lhs_true470
@@ -59495,7 +59495,7 @@ for_end467:
 	}
 
 land_lhs_true470:
-	v169 = *lookahead
+	v169 = *local_lookahead
 	cmp471 = v169 <= 13
 	if cmp471 {
 		goto if_then476
@@ -59504,7 +59504,7 @@ land_lhs_true470:
 	}
 
 lor_lhs_false473:
-	v170 = *lookahead
+	v170 = *local_lookahead
 	cmp474 = v170 == 32
 	if cmp474 {
 		goto if_then476
@@ -59513,12 +59513,12 @@ lor_lhs_false473:
 	}
 
 if_then476:
-	*skip = 1
+	*local_skip = 1
 	*state_addr = 11
 	goto next_state
 
 if_end477:
-	v171 = *lookahead
+	v171 = *local_lookahead
 	cmp478 = 65 <= v171
 	if cmp478 {
 		goto land_lhs_true480
@@ -59527,7 +59527,7 @@ if_end477:
 	}
 
 land_lhs_true480:
-	v172 = *lookahead
+	v172 = *local_lookahead
 	cmp481 = v172 <= 90
 	if cmp481 {
 		goto if_then489
@@ -59536,7 +59536,7 @@ land_lhs_true480:
 	}
 
 lor_lhs_false483:
-	v173 = *lookahead
+	v173 = *local_lookahead
 	cmp484 = 97 <= v173
 	if cmp484 {
 		goto land_lhs_true486
@@ -59545,7 +59545,7 @@ lor_lhs_false483:
 	}
 
 land_lhs_true486:
-	v174 = *lookahead
+	v174 = *local_lookahead
 	cmp487 = v174 <= 122
 	if cmp487 {
 		goto if_then489
@@ -59583,7 +59583,7 @@ for_body498:
 	arrayidx500 = &ts_lex_map_220[idxprom499]
 	v178 = *arrayidx500
 	conv501 = int32(uint32(uint16(v178)))
-	v179 = *lookahead
+	v179 = *local_lookahead
 	cmp502 = conv501 == v179
 	if cmp502 {
 		goto if_then504
@@ -59610,7 +59610,7 @@ for_inc509:
 	goto for_cond494
 
 for_end511:
-	v183 = *lookahead
+	v183 = *local_lookahead
 	cmp512 = 9 <= v183
 	if cmp512 {
 		goto land_lhs_true514
@@ -59619,7 +59619,7 @@ for_end511:
 	}
 
 land_lhs_true514:
-	v184 = *lookahead
+	v184 = *local_lookahead
 	cmp515 = v184 <= 13
 	if cmp515 {
 		goto if_then520
@@ -59628,7 +59628,7 @@ land_lhs_true514:
 	}
 
 lor_lhs_false517:
-	v185 = *lookahead
+	v185 = *local_lookahead
 	cmp518 = v185 == 32
 	if cmp518 {
 		goto if_then520
@@ -59637,7 +59637,7 @@ lor_lhs_false517:
 	}
 
 if_then520:
-	*skip = 1
+	*local_skip = 1
 	*state_addr = 12
 	goto next_state
 
@@ -59648,7 +59648,7 @@ if_end521:
 	goto _return
 
 sw_bb523:
-	v187 = *lookahead
+	v187 = *local_lookahead
 	cmp524 = v187 == 46
 	if cmp524 {
 		goto if_then526
@@ -59667,7 +59667,7 @@ if_end527:
 	goto _return
 
 sw_bb529:
-	v189 = *lookahead
+	v189 = *local_lookahead
 	cmp530 = v189 == 46
 	if cmp530 {
 		goto if_then532
@@ -59680,7 +59680,7 @@ if_then532:
 	goto next_state
 
 if_end533:
-	v190 = *lookahead
+	v190 = *local_lookahead
 	cmp534 = 48 <= v190
 	if cmp534 {
 		goto land_lhs_true536
@@ -59689,7 +59689,7 @@ if_end533:
 	}
 
 land_lhs_true536:
-	v191 = *lookahead
+	v191 = *local_lookahead
 	cmp537 = v191 <= 57
 	if cmp537 {
 		goto if_then539
@@ -59708,7 +59708,7 @@ if_end540:
 	goto _return
 
 sw_bb542:
-	v193 = *lookahead
+	v193 = *local_lookahead
 	cmp543 = v193 == 46
 	if cmp543 {
 		goto if_then545
@@ -59721,7 +59721,7 @@ if_then545:
 	goto next_state
 
 if_end546:
-	v194 = *lookahead
+	v194 = *local_lookahead
 	cmp547 = v194 == 59
 	if cmp547 {
 		goto if_then549
@@ -59734,7 +59734,7 @@ if_then549:
 	goto next_state
 
 if_end550:
-	v195 = *lookahead
+	v195 = *local_lookahead
 	cmp551 = v195 == 95
 	if cmp551 {
 		goto if_then553
@@ -59747,7 +59747,7 @@ if_then553:
 	goto next_state
 
 if_end554:
-	v196 = *lookahead
+	v196 = *local_lookahead
 	cmp555 = v196 == 105
 	if cmp555 {
 		goto if_then557
@@ -59760,7 +59760,7 @@ if_then557:
 	goto next_state
 
 if_end558:
-	v197 = *lookahead
+	v197 = *local_lookahead
 	cmp559 = v197 == 125
 	if cmp559 {
 		goto if_then561
@@ -59773,7 +59773,7 @@ if_then561:
 	goto next_state
 
 if_end562:
-	v198 = *lookahead
+	v198 = *local_lookahead
 	cmp563 = 9 <= v198
 	if cmp563 {
 		goto land_lhs_true565
@@ -59782,7 +59782,7 @@ if_end562:
 	}
 
 land_lhs_true565:
-	v199 = *lookahead
+	v199 = *local_lookahead
 	cmp566 = v199 <= 13
 	if cmp566 {
 		goto if_then571
@@ -59791,7 +59791,7 @@ land_lhs_true565:
 	}
 
 lor_lhs_false568:
-	v200 = *lookahead
+	v200 = *local_lookahead
 	cmp569 = v200 == 32
 	if cmp569 {
 		goto if_then571
@@ -59800,12 +59800,12 @@ lor_lhs_false568:
 	}
 
 if_then571:
-	*skip = 1
+	*local_skip = 1
 	*state_addr = 15
 	goto next_state
 
 if_end572:
-	v201 = *lookahead
+	v201 = *local_lookahead
 	cmp573 = 65 <= v201
 	if cmp573 {
 		goto land_lhs_true575
@@ -59814,7 +59814,7 @@ if_end572:
 	}
 
 land_lhs_true575:
-	v202 = *lookahead
+	v202 = *local_lookahead
 	cmp576 = v202 <= 90
 	if cmp576 {
 		goto if_then584
@@ -59823,7 +59823,7 @@ land_lhs_true575:
 	}
 
 lor_lhs_false578:
-	v203 = *lookahead
+	v203 = *local_lookahead
 	cmp579 = 97 <= v203
 	if cmp579 {
 		goto land_lhs_true581
@@ -59832,7 +59832,7 @@ lor_lhs_false578:
 	}
 
 land_lhs_true581:
-	v204 = *lookahead
+	v204 = *local_lookahead
 	cmp582 = v204 <= 122
 	if cmp582 {
 		goto if_then584
@@ -59851,7 +59851,7 @@ if_end585:
 	goto _return
 
 sw_bb587:
-	v206 = *lookahead
+	v206 = *local_lookahead
 	cmp588 = v206 == 46
 	if cmp588 {
 		goto if_then590
@@ -59864,7 +59864,7 @@ if_then590:
 	goto next_state
 
 if_end591:
-	v207 = *lookahead
+	v207 = *local_lookahead
 	cmp592 = v207 == 95
 	if cmp592 {
 		goto if_then594
@@ -59877,7 +59877,7 @@ if_then594:
 	goto next_state
 
 if_end595:
-	v208 = *lookahead
+	v208 = *local_lookahead
 	cmp596 = v208 == 125
 	if cmp596 {
 		goto if_then598
@@ -59890,7 +59890,7 @@ if_then598:
 	goto next_state
 
 if_end599:
-	v209 = *lookahead
+	v209 = *local_lookahead
 	cmp600 = 9 <= v209
 	if cmp600 {
 		goto land_lhs_true602
@@ -59899,7 +59899,7 @@ if_end599:
 	}
 
 land_lhs_true602:
-	v210 = *lookahead
+	v210 = *local_lookahead
 	cmp603 = v210 <= 13
 	if cmp603 {
 		goto if_then608
@@ -59908,7 +59908,7 @@ land_lhs_true602:
 	}
 
 lor_lhs_false605:
-	v211 = *lookahead
+	v211 = *local_lookahead
 	cmp606 = v211 == 32
 	if cmp606 {
 		goto if_then608
@@ -59917,12 +59917,12 @@ lor_lhs_false605:
 	}
 
 if_then608:
-	*skip = 1
+	*local_skip = 1
 	*state_addr = 16
 	goto next_state
 
 if_end609:
-	v212 = *lookahead
+	v212 = *local_lookahead
 	cmp610 = 65 <= v212
 	if cmp610 {
 		goto land_lhs_true612
@@ -59931,7 +59931,7 @@ if_end609:
 	}
 
 land_lhs_true612:
-	v213 = *lookahead
+	v213 = *local_lookahead
 	cmp613 = v213 <= 90
 	if cmp613 {
 		goto if_then621
@@ -59940,7 +59940,7 @@ land_lhs_true612:
 	}
 
 lor_lhs_false615:
-	v214 = *lookahead
+	v214 = *local_lookahead
 	cmp616 = 97 <= v214
 	if cmp616 {
 		goto land_lhs_true618
@@ -59949,7 +59949,7 @@ lor_lhs_false615:
 	}
 
 land_lhs_true618:
-	v215 = *lookahead
+	v215 = *local_lookahead
 	cmp619 = v215 <= 122
 	if cmp619 {
 		goto if_then621
@@ -59968,7 +59968,7 @@ if_end622:
 	goto _return
 
 sw_bb624:
-	v217 = *lookahead
+	v217 = *local_lookahead
 	cmp625 = v217 == 46
 	if cmp625 {
 		goto if_then627
@@ -59981,7 +59981,7 @@ if_then627:
 	goto next_state
 
 if_end628:
-	v218 = *lookahead
+	v218 = *local_lookahead
 	cmp629 = v218 == 48
 	if cmp629 {
 		goto if_then631
@@ -59994,7 +59994,7 @@ if_then631:
 	goto next_state
 
 if_end632:
-	v219 = *lookahead
+	v219 = *local_lookahead
 	cmp633 = 49 <= v219
 	if cmp633 {
 		goto land_lhs_true635
@@ -60003,7 +60003,7 @@ if_end632:
 	}
 
 land_lhs_true635:
-	v220 = *lookahead
+	v220 = *local_lookahead
 	cmp636 = v220 <= 57
 	if cmp636 {
 		goto if_then638
@@ -60022,7 +60022,7 @@ if_end639:
 	goto _return
 
 sw_bb641:
-	v222 = *lookahead
+	v222 = *local_lookahead
 	cmp642 = v222 == 61
 	if cmp642 {
 		goto if_then644
@@ -60041,7 +60041,7 @@ if_end645:
 	goto _return
 
 sw_bb647:
-	v224 = *lookahead
+	v224 = *local_lookahead
 	cmp648 = v224 == 62
 	if cmp648 {
 		goto if_then650
@@ -60060,7 +60060,7 @@ if_end651:
 	goto _return
 
 sw_bb653:
-	v226 = *lookahead
+	v226 = *local_lookahead
 	cmp654 = v226 == 68
 	if cmp654 {
 		goto if_then656
@@ -60073,7 +60073,7 @@ if_then656:
 	goto next_state
 
 if_end657:
-	v227 = *lookahead
+	v227 = *local_lookahead
 	cmp658 = v227 == 95
 	if cmp658 {
 		goto if_then660
@@ -60086,7 +60086,7 @@ if_then660:
 	goto next_state
 
 if_end661:
-	v228 = *lookahead
+	v228 = *local_lookahead
 	cmp662 = 9 <= v228
 	if cmp662 {
 		goto land_lhs_true664
@@ -60095,7 +60095,7 @@ if_end661:
 	}
 
 land_lhs_true664:
-	v229 = *lookahead
+	v229 = *local_lookahead
 	cmp665 = v229 <= 13
 	if cmp665 {
 		goto if_then670
@@ -60104,7 +60104,7 @@ land_lhs_true664:
 	}
 
 lor_lhs_false667:
-	v230 = *lookahead
+	v230 = *local_lookahead
 	cmp668 = v230 == 32
 	if cmp668 {
 		goto if_then670
@@ -60113,12 +60113,12 @@ lor_lhs_false667:
 	}
 
 if_then670:
-	*skip = 1
+	*local_skip = 1
 	*state_addr = 20
 	goto next_state
 
 if_end671:
-	v231 = *lookahead
+	v231 = *local_lookahead
 	cmp672 = 65 <= v231
 	if cmp672 {
 		goto land_lhs_true674
@@ -60127,7 +60127,7 @@ if_end671:
 	}
 
 land_lhs_true674:
-	v232 = *lookahead
+	v232 = *local_lookahead
 	cmp675 = v232 <= 90
 	if cmp675 {
 		goto if_then683
@@ -60136,7 +60136,7 @@ land_lhs_true674:
 	}
 
 lor_lhs_false677:
-	v233 = *lookahead
+	v233 = *local_lookahead
 	cmp678 = 97 <= v233
 	if cmp678 {
 		goto land_lhs_true680
@@ -60145,7 +60145,7 @@ lor_lhs_false677:
 	}
 
 land_lhs_true680:
-	v234 = *lookahead
+	v234 = *local_lookahead
 	cmp681 = v234 <= 122
 	if cmp681 {
 		goto if_then683
@@ -60164,7 +60164,7 @@ if_end684:
 	goto _return
 
 sw_bb686:
-	v236 = *lookahead
+	v236 = *local_lookahead
 	cmp687 = v236 == 93
 	if cmp687 {
 		goto if_then689
@@ -60183,7 +60183,7 @@ if_end690:
 	goto _return
 
 sw_bb692:
-	v238 = *lookahead
+	v238 = *local_lookahead
 	cmp693 = v238 == 95
 	if cmp693 {
 		goto if_then695
@@ -60196,7 +60196,7 @@ if_then695:
 	goto next_state
 
 if_end696:
-	v239 = *lookahead
+	v239 = *local_lookahead
 	cmp697 = 65 <= v239
 	if cmp697 {
 		goto land_lhs_true699
@@ -60205,7 +60205,7 @@ if_end696:
 	}
 
 land_lhs_true699:
-	v240 = *lookahead
+	v240 = *local_lookahead
 	cmp700 = v240 <= 90
 	if cmp700 {
 		goto if_then708
@@ -60214,7 +60214,7 @@ land_lhs_true699:
 	}
 
 lor_lhs_false702:
-	v241 = *lookahead
+	v241 = *local_lookahead
 	cmp703 = 97 <= v241
 	if cmp703 {
 		goto land_lhs_true705
@@ -60223,7 +60223,7 @@ lor_lhs_false702:
 	}
 
 land_lhs_true705:
-	v242 = *lookahead
+	v242 = *local_lookahead
 	cmp706 = v242 <= 122
 	if cmp706 {
 		goto if_then708
@@ -60242,7 +60242,7 @@ if_end709:
 	goto _return
 
 sw_bb711:
-	v244 = *lookahead
+	v244 = *local_lookahead
 	cmp712 = v244 == 95
 	if cmp712 {
 		goto if_then714
@@ -60255,7 +60255,7 @@ if_then714:
 	goto next_state
 
 if_end715:
-	v245 = *lookahead
+	v245 = *local_lookahead
 	cmp716 = 65 <= v245
 	if cmp716 {
 		goto land_lhs_true718
@@ -60264,7 +60264,7 @@ if_end715:
 	}
 
 land_lhs_true718:
-	v246 = *lookahead
+	v246 = *local_lookahead
 	cmp719 = v246 <= 90
 	if cmp719 {
 		goto if_then727
@@ -60273,7 +60273,7 @@ land_lhs_true718:
 	}
 
 lor_lhs_false721:
-	v247 = *lookahead
+	v247 = *local_lookahead
 	cmp722 = 97 <= v247
 	if cmp722 {
 		goto land_lhs_true724
@@ -60282,7 +60282,7 @@ lor_lhs_false721:
 	}
 
 land_lhs_true724:
-	v248 = *lookahead
+	v248 = *local_lookahead
 	cmp725 = v248 <= 122
 	if cmp725 {
 		goto if_then727
@@ -60301,7 +60301,7 @@ if_end728:
 	goto _return
 
 sw_bb730:
-	v250 = *lookahead
+	v250 = *local_lookahead
 	cmp731 = v250 == 95
 	if cmp731 {
 		goto if_then733
@@ -60314,7 +60314,7 @@ if_then733:
 	goto next_state
 
 if_end734:
-	v251 = *lookahead
+	v251 = *local_lookahead
 	cmp735 = 65 <= v251
 	if cmp735 {
 		goto land_lhs_true737
@@ -60323,7 +60323,7 @@ if_end734:
 	}
 
 land_lhs_true737:
-	v252 = *lookahead
+	v252 = *local_lookahead
 	cmp738 = v252 <= 90
 	if cmp738 {
 		goto if_then746
@@ -60332,7 +60332,7 @@ land_lhs_true737:
 	}
 
 lor_lhs_false740:
-	v253 = *lookahead
+	v253 = *local_lookahead
 	cmp741 = 97 <= v253
 	if cmp741 {
 		goto land_lhs_true743
@@ -60341,7 +60341,7 @@ lor_lhs_false740:
 	}
 
 land_lhs_true743:
-	v254 = *lookahead
+	v254 = *local_lookahead
 	cmp744 = v254 <= 122
 	if cmp744 {
 		goto if_then746
@@ -60360,7 +60360,7 @@ if_end747:
 	goto _return
 
 sw_bb749:
-	v256 = *lookahead
+	v256 = *local_lookahead
 	cmp750 = v256 == 95
 	if cmp750 {
 		goto if_then752
@@ -60379,7 +60379,7 @@ if_end753:
 	goto _return
 
 sw_bb755:
-	v258 = *lookahead
+	v258 = *local_lookahead
 	cmp756 = v258 == 97
 	if cmp756 {
 		goto if_then758
@@ -60392,7 +60392,7 @@ if_then758:
 	goto next_state
 
 if_end759:
-	v259 = *lookahead
+	v259 = *local_lookahead
 	cmp760 = v259 == 111
 	if cmp760 {
 		goto if_then762
@@ -60405,7 +60405,7 @@ if_then762:
 	goto next_state
 
 if_end763:
-	v260 = *lookahead
+	v260 = *local_lookahead
 	cmp764 = v260 == 117
 	if cmp764 {
 		goto if_then766
@@ -60424,7 +60424,7 @@ if_end767:
 	goto _return
 
 sw_bb769:
-	v262 = *lookahead
+	v262 = *local_lookahead
 	cmp770 = v262 == 97
 	if cmp770 {
 		goto if_then772
@@ -60437,7 +60437,7 @@ if_then772:
 	goto next_state
 
 if_end773:
-	v263 = *lookahead
+	v263 = *local_lookahead
 	cmp774 = v263 == 99
 	if cmp774 {
 		goto if_then776
@@ -60456,7 +60456,7 @@ if_end777:
 	goto _return
 
 sw_bb779:
-	v265 = *lookahead
+	v265 = *local_lookahead
 	cmp780 = v265 == 97
 	if cmp780 {
 		goto if_then782
@@ -60475,7 +60475,7 @@ if_end783:
 	goto _return
 
 sw_bb785:
-	v267 = *lookahead
+	v267 = *local_lookahead
 	cmp786 = v267 == 97
 	if cmp786 {
 		goto if_then788
@@ -60494,7 +60494,7 @@ if_end789:
 	goto _return
 
 sw_bb791:
-	v269 = *lookahead
+	v269 = *local_lookahead
 	cmp792 = v269 == 97
 	if cmp792 {
 		goto if_then794
@@ -60513,7 +60513,7 @@ if_end795:
 	goto _return
 
 sw_bb797:
-	v271 = *lookahead
+	v271 = *local_lookahead
 	cmp798 = v271 == 99
 	if cmp798 {
 		goto if_then800
@@ -60532,7 +60532,7 @@ if_end801:
 	goto _return
 
 sw_bb803:
-	v273 = *lookahead
+	v273 = *local_lookahead
 	cmp804 = v273 == 99
 	if cmp804 {
 		goto if_then806
@@ -60551,7 +60551,7 @@ if_end807:
 	goto _return
 
 sw_bb809:
-	v275 = *lookahead
+	v275 = *local_lookahead
 	cmp810 = v275 == 100
 	if cmp810 {
 		goto if_then812
@@ -60570,7 +60570,7 @@ if_end813:
 	goto _return
 
 sw_bb815:
-	v277 = *lookahead
+	v277 = *local_lookahead
 	cmp816 = v277 == 101
 	if cmp816 {
 		goto if_then818
@@ -60583,7 +60583,7 @@ if_then818:
 	goto next_state
 
 if_end819:
-	v278 = *lookahead
+	v278 = *local_lookahead
 	cmp820 = v278 == 111
 	if cmp820 {
 		goto if_then822
@@ -60602,7 +60602,7 @@ if_end823:
 	goto _return
 
 sw_bb825:
-	v280 = *lookahead
+	v280 = *local_lookahead
 	cmp826 = v280 == 101
 	if cmp826 {
 		goto if_then828
@@ -60621,7 +60621,7 @@ if_end829:
 	goto _return
 
 sw_bb831:
-	v282 = *lookahead
+	v282 = *local_lookahead
 	cmp832 = v282 == 101
 	if cmp832 {
 		goto if_then834
@@ -60640,7 +60640,7 @@ if_end835:
 	goto _return
 
 sw_bb837:
-	v284 = *lookahead
+	v284 = *local_lookahead
 	cmp838 = v284 == 101
 	if cmp838 {
 		goto if_then840
@@ -60659,7 +60659,7 @@ if_end841:
 	goto _return
 
 sw_bb843:
-	v286 = *lookahead
+	v286 = *local_lookahead
 	cmp844 = v286 == 101
 	if cmp844 {
 		goto if_then846
@@ -60678,7 +60678,7 @@ if_end847:
 	goto _return
 
 sw_bb849:
-	v288 = *lookahead
+	v288 = *local_lookahead
 	cmp850 = v288 == 101
 	if cmp850 {
 		goto if_then852
@@ -60697,7 +60697,7 @@ if_end853:
 	goto _return
 
 sw_bb855:
-	v290 = *lookahead
+	v290 = *local_lookahead
 	cmp856 = v290 == 101
 	if cmp856 {
 		goto if_then858
@@ -60716,7 +60716,7 @@ if_end859:
 	goto _return
 
 sw_bb861:
-	v292 = *lookahead
+	v292 = *local_lookahead
 	cmp862 = v292 == 102
 	if cmp862 {
 		goto if_then864
@@ -60735,7 +60735,7 @@ if_end865:
 	goto _return
 
 sw_bb867:
-	v294 = *lookahead
+	v294 = *local_lookahead
 	cmp868 = v294 == 104
 	if cmp868 {
 		goto if_then870
@@ -60754,7 +60754,7 @@ if_end871:
 	goto _return
 
 sw_bb873:
-	v296 = *lookahead
+	v296 = *local_lookahead
 	cmp874 = v296 == 104
 	if cmp874 {
 		goto if_then876
@@ -60767,7 +60767,7 @@ if_then876:
 	goto next_state
 
 if_end877:
-	v297 = *lookahead
+	v297 = *local_lookahead
 	cmp878 = v297 == 114
 	if cmp878 {
 		goto if_then880
@@ -60786,7 +60786,7 @@ if_end881:
 	goto _return
 
 sw_bb883:
-	v299 = *lookahead
+	v299 = *local_lookahead
 	cmp884 = v299 == 105
 	if cmp884 {
 		goto if_then886
@@ -60805,7 +60805,7 @@ if_end887:
 	goto _return
 
 sw_bb889:
-	v301 = *lookahead
+	v301 = *local_lookahead
 	cmp890 = v301 == 105
 	if cmp890 {
 		goto if_then892
@@ -60824,7 +60824,7 @@ if_end893:
 	goto _return
 
 sw_bb895:
-	v303 = *lookahead
+	v303 = *local_lookahead
 	cmp896 = v303 == 105
 	if cmp896 {
 		goto if_then898
@@ -60843,7 +60843,7 @@ if_end899:
 	goto _return
 
 sw_bb901:
-	v305 = *lookahead
+	v305 = *local_lookahead
 	cmp902 = v305 == 108
 	if cmp902 {
 		goto if_then904
@@ -60862,7 +60862,7 @@ if_end905:
 	goto _return
 
 sw_bb907:
-	v307 = *lookahead
+	v307 = *local_lookahead
 	cmp908 = v307 == 108
 	if cmp908 {
 		goto if_then910
@@ -60881,7 +60881,7 @@ if_end911:
 	goto _return
 
 sw_bb913:
-	v309 = *lookahead
+	v309 = *local_lookahead
 	cmp914 = v309 == 108
 	if cmp914 {
 		goto if_then916
@@ -60900,7 +60900,7 @@ if_end917:
 	goto _return
 
 sw_bb919:
-	v311 = *lookahead
+	v311 = *local_lookahead
 	cmp920 = v311 == 108
 	if cmp920 {
 		goto if_then922
@@ -60919,7 +60919,7 @@ if_end923:
 	goto _return
 
 sw_bb925:
-	v313 = *lookahead
+	v313 = *local_lookahead
 	cmp926 = v313 == 109
 	if cmp926 {
 		goto if_then928
@@ -60932,7 +60932,7 @@ if_then928:
 	goto next_state
 
 if_end929:
-	v314 = *lookahead
+	v314 = *local_lookahead
 	cmp930 = v314 == 102
 	if cmp930 {
 		goto if_then935
@@ -60941,7 +60941,7 @@ if_end929:
 	}
 
 lor_lhs_false932:
-	v315 = *lookahead
+	v315 = *local_lookahead
 	cmp933 = v315 == 110
 	if cmp933 {
 		goto if_then935
@@ -60960,7 +60960,7 @@ if_end936:
 	goto _return
 
 sw_bb938:
-	v317 = *lookahead
+	v317 = *local_lookahead
 	cmp939 = v317 == 110
 	if cmp939 {
 		goto if_then941
@@ -60979,7 +60979,7 @@ if_end942:
 	goto _return
 
 sw_bb944:
-	v319 = *lookahead
+	v319 = *local_lookahead
 	cmp945 = v319 == 110
 	if cmp945 {
 		goto if_then947
@@ -60998,7 +60998,7 @@ if_end948:
 	goto _return
 
 sw_bb950:
-	v321 = *lookahead
+	v321 = *local_lookahead
 	cmp951 = v321 == 111
 	if cmp951 {
 		goto if_then953
@@ -61017,7 +61017,7 @@ if_end954:
 	goto _return
 
 sw_bb956:
-	v323 = *lookahead
+	v323 = *local_lookahead
 	cmp957 = v323 == 111
 	if cmp957 {
 		goto if_then959
@@ -61036,7 +61036,7 @@ if_end960:
 	goto _return
 
 sw_bb962:
-	v325 = *lookahead
+	v325 = *local_lookahead
 	cmp963 = v325 == 111
 	if cmp963 {
 		goto if_then965
@@ -61049,7 +61049,7 @@ if_then965:
 	goto next_state
 
 if_end966:
-	v326 = *lookahead
+	v326 = *local_lookahead
 	cmp967 = v326 == 117
 	if cmp967 {
 		goto if_then969
@@ -61068,7 +61068,7 @@ if_end970:
 	goto _return
 
 sw_bb972:
-	v328 = *lookahead
+	v328 = *local_lookahead
 	cmp973 = v328 == 111
 	if cmp973 {
 		goto if_then975
@@ -61087,7 +61087,7 @@ if_end976:
 	goto _return
 
 sw_bb978:
-	v330 = *lookahead
+	v330 = *local_lookahead
 	cmp979 = v330 == 111
 	if cmp979 {
 		goto if_then981
@@ -61106,7 +61106,7 @@ if_end982:
 	goto _return
 
 sw_bb984:
-	v332 = *lookahead
+	v332 = *local_lookahead
 	cmp985 = v332 == 112
 	if cmp985 {
 		goto if_then987
@@ -61125,7 +61125,7 @@ if_end988:
 	goto _return
 
 sw_bb990:
-	v334 = *lookahead
+	v334 = *local_lookahead
 	cmp991 = v334 == 112
 	if cmp991 {
 		goto if_then993
@@ -61138,7 +61138,7 @@ if_then993:
 	goto next_state
 
 if_end994:
-	v335 = *lookahead
+	v335 = *local_lookahead
 	cmp995 = v335 == 114
 	if cmp995 {
 		goto if_then997
@@ -61157,7 +61157,7 @@ if_end998:
 	goto _return
 
 sw_bb1000:
-	v337 = *lookahead
+	v337 = *local_lookahead
 	cmp1001 = v337 == 112
 	if cmp1001 {
 		goto if_then1003
@@ -61176,7 +61176,7 @@ if_end1004:
 	goto _return
 
 sw_bb1006:
-	v339 = *lookahead
+	v339 = *local_lookahead
 	cmp1007 = v339 == 114
 	if cmp1007 {
 		goto if_then1009
@@ -61195,7 +61195,7 @@ if_end1010:
 	goto _return
 
 sw_bb1012:
-	v341 = *lookahead
+	v341 = *local_lookahead
 	cmp1013 = v341 == 114
 	if cmp1013 {
 		goto if_then1015
@@ -61214,7 +61214,7 @@ if_end1016:
 	goto _return
 
 sw_bb1018:
-	v343 = *lookahead
+	v343 = *local_lookahead
 	cmp1019 = v343 == 114
 	if cmp1019 {
 		goto if_then1021
@@ -61233,7 +61233,7 @@ if_end1022:
 	goto _return
 
 sw_bb1024:
-	v345 = *lookahead
+	v345 = *local_lookahead
 	cmp1025 = v345 == 114
 	if cmp1025 {
 		goto if_then1027
@@ -61252,7 +61252,7 @@ if_end1028:
 	goto _return
 
 sw_bb1030:
-	v347 = *lookahead
+	v347 = *local_lookahead
 	cmp1031 = v347 == 114
 	if cmp1031 {
 		goto if_then1033
@@ -61271,7 +61271,7 @@ if_end1034:
 	goto _return
 
 sw_bb1036:
-	v349 = *lookahead
+	v349 = *local_lookahead
 	cmp1037 = v349 == 114
 	if cmp1037 {
 		goto if_then1039
@@ -61290,7 +61290,7 @@ if_end1040:
 	goto _return
 
 sw_bb1042:
-	v351 = *lookahead
+	v351 = *local_lookahead
 	cmp1043 = v351 == 115
 	if cmp1043 {
 		goto if_then1045
@@ -61309,7 +61309,7 @@ if_end1046:
 	goto _return
 
 sw_bb1048:
-	v353 = *lookahead
+	v353 = *local_lookahead
 	cmp1049 = v353 == 116
 	if cmp1049 {
 		goto if_then1051
@@ -61328,7 +61328,7 @@ if_end1052:
 	goto _return
 
 sw_bb1054:
-	v355 = *lookahead
+	v355 = *local_lookahead
 	cmp1055 = v355 == 116
 	if cmp1055 {
 		goto if_then1057
@@ -61347,7 +61347,7 @@ if_end1058:
 	goto _return
 
 sw_bb1060:
-	v357 = *lookahead
+	v357 = *local_lookahead
 	cmp1061 = v357 == 116
 	if cmp1061 {
 		goto if_then1063
@@ -61366,7 +61366,7 @@ if_end1064:
 	goto _return
 
 sw_bb1066:
-	v359 = *lookahead
+	v359 = *local_lookahead
 	cmp1067 = v359 == 116
 	if cmp1067 {
 		goto if_then1069
@@ -61385,7 +61385,7 @@ if_end1070:
 	goto _return
 
 sw_bb1072:
-	v361 = *lookahead
+	v361 = *local_lookahead
 	cmp1073 = v361 == 116
 	if cmp1073 {
 		goto if_then1075
@@ -61404,7 +61404,7 @@ if_end1076:
 	goto _return
 
 sw_bb1078:
-	v363 = *lookahead
+	v363 = *local_lookahead
 	cmp1079 = v363 == 116
 	if cmp1079 {
 		goto if_then1081
@@ -61423,7 +61423,7 @@ if_end1082:
 	goto _return
 
 sw_bb1084:
-	v365 = *lookahead
+	v365 = *local_lookahead
 	cmp1085 = v365 == 117
 	if cmp1085 {
 		goto if_then1087
@@ -61442,7 +61442,7 @@ if_end1088:
 	goto _return
 
 sw_bb1090:
-	v367 = *lookahead
+	v367 = *local_lookahead
 	cmp1091 = v367 == 117
 	if cmp1091 {
 		goto if_then1093
@@ -61461,7 +61461,7 @@ if_end1094:
 	goto _return
 
 sw_bb1096:
-	v369 = *lookahead
+	v369 = *local_lookahead
 	cmp1097 = v369 == 120
 	if cmp1097 {
 		goto if_then1099
@@ -61480,7 +61480,7 @@ if_end1100:
 	goto _return
 
 sw_bb1102:
-	v371 = *lookahead
+	v371 = *local_lookahead
 	cmp1103 = v371 == 121
 	if cmp1103 {
 		goto if_then1105
@@ -61499,7 +61499,7 @@ if_end1106:
 	goto _return
 
 sw_bb1108:
-	v373 = *lookahead
+	v373 = *local_lookahead
 	cmp1109 = v373 == 43
 	if cmp1109 {
 		goto if_then1114
@@ -61508,7 +61508,7 @@ sw_bb1108:
 	}
 
 lor_lhs_false1111:
-	v374 = *lookahead
+	v374 = *local_lookahead
 	cmp1112 = v374 == 45
 	if cmp1112 {
 		goto if_then1114
@@ -61521,7 +61521,7 @@ if_then1114:
 	goto next_state
 
 if_end1115:
-	v375 = *lookahead
+	v375 = *local_lookahead
 	cmp1116 = 48 <= v375
 	if cmp1116 {
 		goto land_lhs_true1118
@@ -61530,7 +61530,7 @@ if_end1115:
 	}
 
 land_lhs_true1118:
-	v376 = *lookahead
+	v376 = *local_lookahead
 	cmp1119 = v376 <= 57
 	if cmp1119 {
 		goto if_then1121
@@ -61549,7 +61549,7 @@ if_end1122:
 	goto _return
 
 sw_bb1124:
-	v378 = *lookahead
+	v378 = *local_lookahead
 	cmp1125 = v378 == 43
 	if cmp1125 {
 		goto if_then1130
@@ -61558,7 +61558,7 @@ sw_bb1124:
 	}
 
 lor_lhs_false1127:
-	v379 = *lookahead
+	v379 = *local_lookahead
 	cmp1128 = v379 == 45
 	if cmp1128 {
 		goto if_then1130
@@ -61571,7 +61571,7 @@ if_then1130:
 	goto next_state
 
 if_end1131:
-	v380 = *lookahead
+	v380 = *local_lookahead
 	cmp1132 = 48 <= v380
 	if cmp1132 {
 		goto land_lhs_true1134
@@ -61580,7 +61580,7 @@ if_end1131:
 	}
 
 land_lhs_true1134:
-	v381 = *lookahead
+	v381 = *local_lookahead
 	cmp1135 = v381 <= 57
 	if cmp1135 {
 		goto if_then1137
@@ -61599,7 +61599,7 @@ if_end1138:
 	goto _return
 
 sw_bb1140:
-	v383 = *lookahead
+	v383 = *local_lookahead
 	cmp1141 = v383 == 48
 	if cmp1141 {
 		goto if_then1146
@@ -61608,7 +61608,7 @@ sw_bb1140:
 	}
 
 lor_lhs_false1143:
-	v384 = *lookahead
+	v384 = *local_lookahead
 	cmp1144 = v384 == 49
 	if cmp1144 {
 		goto if_then1146
@@ -61627,7 +61627,7 @@ if_end1147:
 	goto _return
 
 sw_bb1149:
-	v386 = *lookahead
+	v386 = *local_lookahead
 	cmp1150 = v386 == 48
 	if cmp1150 {
 		goto if_then1155
@@ -61636,7 +61636,7 @@ sw_bb1149:
 	}
 
 lor_lhs_false1152:
-	v387 = *lookahead
+	v387 = *local_lookahead
 	cmp1153 = v387 == 49
 	if cmp1153 {
 		goto if_then1155
@@ -61655,7 +61655,7 @@ if_end1156:
 	goto _return
 
 sw_bb1158:
-	v389 = *lookahead
+	v389 = *local_lookahead
 	cmp1159 = 48 <= v389
 	if cmp1159 {
 		goto land_lhs_true1161
@@ -61664,7 +61664,7 @@ sw_bb1158:
 	}
 
 land_lhs_true1161:
-	v390 = *lookahead
+	v390 = *local_lookahead
 	cmp1162 = v390 <= 55
 	if cmp1162 {
 		goto if_then1164
@@ -61683,7 +61683,7 @@ if_end1165:
 	goto _return
 
 sw_bb1167:
-	v392 = *lookahead
+	v392 = *local_lookahead
 	cmp1168 = 48 <= v392
 	if cmp1168 {
 		goto land_lhs_true1170
@@ -61692,7 +61692,7 @@ sw_bb1167:
 	}
 
 land_lhs_true1170:
-	v393 = *lookahead
+	v393 = *local_lookahead
 	cmp1171 = v393 <= 55
 	if cmp1171 {
 		goto if_then1173
@@ -61711,7 +61711,7 @@ if_end1174:
 	goto _return
 
 sw_bb1176:
-	v395 = *lookahead
+	v395 = *local_lookahead
 	cmp1177 = 48 <= v395
 	if cmp1177 {
 		goto land_lhs_true1179
@@ -61720,7 +61720,7 @@ sw_bb1176:
 	}
 
 land_lhs_true1179:
-	v396 = *lookahead
+	v396 = *local_lookahead
 	cmp1180 = v396 <= 57
 	if cmp1180 {
 		goto if_then1182
@@ -61739,7 +61739,7 @@ if_end1183:
 	goto _return
 
 sw_bb1185:
-	v398 = *lookahead
+	v398 = *local_lookahead
 	cmp1186 = 48 <= v398
 	if cmp1186 {
 		goto land_lhs_true1188
@@ -61748,7 +61748,7 @@ sw_bb1185:
 	}
 
 land_lhs_true1188:
-	v399 = *lookahead
+	v399 = *local_lookahead
 	cmp1189 = v399 <= 57
 	if cmp1189 {
 		goto if_then1191
@@ -61767,7 +61767,7 @@ if_end1192:
 	goto _return
 
 sw_bb1194:
-	v401 = *lookahead
+	v401 = *local_lookahead
 	cmp1195 = 48 <= v401
 	if cmp1195 {
 		goto land_lhs_true1197
@@ -61776,7 +61776,7 @@ sw_bb1194:
 	}
 
 land_lhs_true1197:
-	v402 = *lookahead
+	v402 = *local_lookahead
 	cmp1198 = v402 <= 57
 	if cmp1198 {
 		goto if_then1200
@@ -61795,7 +61795,7 @@ if_end1201:
 	goto _return
 
 sw_bb1203:
-	v404 = *lookahead
+	v404 = *local_lookahead
 	cmp1204 = 48 <= v404
 	if cmp1204 {
 		goto land_lhs_true1206
@@ -61804,7 +61804,7 @@ sw_bb1203:
 	}
 
 land_lhs_true1206:
-	v405 = *lookahead
+	v405 = *local_lookahead
 	cmp1207 = v405 <= 57
 	if cmp1207 {
 		goto if_then1209
@@ -61823,7 +61823,7 @@ if_end1210:
 	goto _return
 
 sw_bb1212:
-	v407 = *lookahead
+	v407 = *local_lookahead
 	cmp1213 = 48 <= v407
 	if cmp1213 {
 		goto land_lhs_true1215
@@ -61832,7 +61832,7 @@ sw_bb1212:
 	}
 
 land_lhs_true1215:
-	v408 = *lookahead
+	v408 = *local_lookahead
 	cmp1216 = v408 <= 57
 	if cmp1216 {
 		goto if_then1230
@@ -61841,7 +61841,7 @@ land_lhs_true1215:
 	}
 
 lor_lhs_false1218:
-	v409 = *lookahead
+	v409 = *local_lookahead
 	cmp1219 = 65 <= v409
 	if cmp1219 {
 		goto land_lhs_true1221
@@ -61850,7 +61850,7 @@ lor_lhs_false1218:
 	}
 
 land_lhs_true1221:
-	v410 = *lookahead
+	v410 = *local_lookahead
 	cmp1222 = v410 <= 70
 	if cmp1222 {
 		goto if_then1230
@@ -61859,7 +61859,7 @@ land_lhs_true1221:
 	}
 
 lor_lhs_false1224:
-	v411 = *lookahead
+	v411 = *local_lookahead
 	cmp1225 = 97 <= v411
 	if cmp1225 {
 		goto land_lhs_true1227
@@ -61868,7 +61868,7 @@ lor_lhs_false1224:
 	}
 
 land_lhs_true1227:
-	v412 = *lookahead
+	v412 = *local_lookahead
 	cmp1228 = v412 <= 102
 	if cmp1228 {
 		goto if_then1230
@@ -61887,7 +61887,7 @@ if_end1231:
 	goto _return
 
 sw_bb1233:
-	v414 = *lookahead
+	v414 = *local_lookahead
 	cmp1234 = 48 <= v414
 	if cmp1234 {
 		goto land_lhs_true1236
@@ -61896,7 +61896,7 @@ sw_bb1233:
 	}
 
 land_lhs_true1236:
-	v415 = *lookahead
+	v415 = *local_lookahead
 	cmp1237 = v415 <= 57
 	if cmp1237 {
 		goto if_then1251
@@ -61905,7 +61905,7 @@ land_lhs_true1236:
 	}
 
 lor_lhs_false1239:
-	v416 = *lookahead
+	v416 = *local_lookahead
 	cmp1240 = 65 <= v416
 	if cmp1240 {
 		goto land_lhs_true1242
@@ -61914,7 +61914,7 @@ lor_lhs_false1239:
 	}
 
 land_lhs_true1242:
-	v417 = *lookahead
+	v417 = *local_lookahead
 	cmp1243 = v417 <= 70
 	if cmp1243 {
 		goto if_then1251
@@ -61923,7 +61923,7 @@ land_lhs_true1242:
 	}
 
 lor_lhs_false1245:
-	v418 = *lookahead
+	v418 = *local_lookahead
 	cmp1246 = 97 <= v418
 	if cmp1246 {
 		goto land_lhs_true1248
@@ -61932,7 +61932,7 @@ lor_lhs_false1245:
 	}
 
 land_lhs_true1248:
-	v419 = *lookahead
+	v419 = *local_lookahead
 	cmp1249 = v419 <= 102
 	if cmp1249 {
 		goto if_then1251
@@ -61951,7 +61951,7 @@ if_end1252:
 	goto _return
 
 sw_bb1254:
-	v421 = *lookahead
+	v421 = *local_lookahead
 	cmp1255 = v421 != 0
 	if cmp1255 {
 		goto land_lhs_true1257
@@ -61960,7 +61960,7 @@ sw_bb1254:
 	}
 
 land_lhs_true1257:
-	v422 = *lookahead
+	v422 = *local_lookahead
 	cmp1258 = v422 != 10
 	if cmp1258 {
 		goto if_then1260
@@ -61979,7 +61979,7 @@ if_end1261:
 	goto _return
 
 sw_bb1263:
-	v424 = *eof
+	v424 = *local_eof
 	tobool1264 = (v424 & 1) != 0
 	if tobool1264 {
 		goto if_then1265
@@ -62011,7 +62011,7 @@ for_body1272:
 	arrayidx1274 = &ts_lex_map_221[idxprom1273]
 	v427 = *arrayidx1274
 	conv1275 = int32(uint32(uint16(v427)))
-	v428 = *lookahead
+	v428 = *local_lookahead
 	cmp1276 = conv1275 == v428
 	if cmp1276 {
 		goto if_then1278
@@ -62038,7 +62038,7 @@ for_inc1283:
 	goto for_cond1268
 
 for_end1285:
-	v432 = *lookahead
+	v432 = *local_lookahead
 	cmp1286 = 9 <= v432
 	if cmp1286 {
 		goto land_lhs_true1288
@@ -62047,7 +62047,7 @@ for_end1285:
 	}
 
 land_lhs_true1288:
-	v433 = *lookahead
+	v433 = *local_lookahead
 	cmp1289 = v433 <= 13
 	if cmp1289 {
 		goto if_then1294
@@ -62056,7 +62056,7 @@ land_lhs_true1288:
 	}
 
 lor_lhs_false1291:
-	v434 = *lookahead
+	v434 = *local_lookahead
 	cmp1292 = v434 == 32
 	if cmp1292 {
 		goto if_then1294
@@ -62065,12 +62065,12 @@ lor_lhs_false1291:
 	}
 
 if_then1294:
-	*skip = 1
+	*local_skip = 1
 	*state_addr = 92
 	goto next_state
 
 if_end1295:
-	v435 = *lookahead
+	v435 = *local_lookahead
 	cmp1296 = 49 <= v435
 	if cmp1296 {
 		goto land_lhs_true1298
@@ -62079,7 +62079,7 @@ if_end1295:
 	}
 
 land_lhs_true1298:
-	v436 = *lookahead
+	v436 = *local_lookahead
 	cmp1299 = v436 <= 57
 	if cmp1299 {
 		goto if_then1301
@@ -62092,7 +62092,7 @@ if_then1301:
 	goto next_state
 
 if_end1302:
-	v437 = *lookahead
+	v437 = *local_lookahead
 	cmp1303 = 67 <= v437
 	if cmp1303 {
 		goto land_lhs_true1305
@@ -62101,7 +62101,7 @@ if_end1302:
 	}
 
 land_lhs_true1305:
-	v438 = *lookahead
+	v438 = *local_lookahead
 	cmp1306 = v438 <= 90
 	if cmp1306 {
 		goto if_then1314
@@ -62110,7 +62110,7 @@ land_lhs_true1305:
 	}
 
 lor_lhs_false1308:
-	v439 = *lookahead
+	v439 = *local_lookahead
 	cmp1309 = 97 <= v439
 	if cmp1309 {
 		goto land_lhs_true1311
@@ -62119,7 +62119,7 @@ lor_lhs_false1308:
 	}
 
 land_lhs_true1311:
-	v440 = *lookahead
+	v440 = *local_lookahead
 	cmp1312 = v440 <= 122
 	if cmp1312 {
 		goto if_then1314
@@ -62138,7 +62138,7 @@ if_end1315:
 	goto _return
 
 sw_bb1317:
-	v442 = *eof
+	v442 = *local_eof
 	tobool1318 = (v442 & 1) != 0
 	if tobool1318 {
 		goto if_then1319
@@ -62170,7 +62170,7 @@ for_body1326:
 	arrayidx1328 = &ts_lex_map_222[idxprom1327]
 	v445 = *arrayidx1328
 	conv1329 = int32(uint32(uint16(v445)))
-	v446 = *lookahead
+	v446 = *local_lookahead
 	cmp1330 = conv1329 == v446
 	if cmp1330 {
 		goto if_then1332
@@ -62197,7 +62197,7 @@ for_inc1337:
 	goto for_cond1322
 
 for_end1339:
-	v450 = *lookahead
+	v450 = *local_lookahead
 	cmp1340 = 9 <= v450
 	if cmp1340 {
 		goto land_lhs_true1342
@@ -62206,7 +62206,7 @@ for_end1339:
 	}
 
 land_lhs_true1342:
-	v451 = *lookahead
+	v451 = *local_lookahead
 	cmp1343 = v451 <= 13
 	if cmp1343 {
 		goto if_then1348
@@ -62215,7 +62215,7 @@ land_lhs_true1342:
 	}
 
 lor_lhs_false1345:
-	v452 = *lookahead
+	v452 = *local_lookahead
 	cmp1346 = v452 == 32
 	if cmp1346 {
 		goto if_then1348
@@ -62224,12 +62224,12 @@ lor_lhs_false1345:
 	}
 
 if_then1348:
-	*skip = 1
+	*local_skip = 1
 	*state_addr = 93
 	goto next_state
 
 if_end1349:
-	v453 = *lookahead
+	v453 = *local_lookahead
 	cmp1350 = 49 <= v453
 	if cmp1350 {
 		goto land_lhs_true1352
@@ -62238,7 +62238,7 @@ if_end1349:
 	}
 
 land_lhs_true1352:
-	v454 = *lookahead
+	v454 = *local_lookahead
 	cmp1353 = v454 <= 57
 	if cmp1353 {
 		goto if_then1355
@@ -62251,7 +62251,7 @@ if_then1355:
 	goto next_state
 
 if_end1356:
-	v455 = *lookahead
+	v455 = *local_lookahead
 	cmp1357 = 65 <= v455
 	if cmp1357 {
 		goto land_lhs_true1359
@@ -62260,7 +62260,7 @@ if_end1356:
 	}
 
 land_lhs_true1359:
-	v456 = *lookahead
+	v456 = *local_lookahead
 	cmp1360 = v456 <= 90
 	if cmp1360 {
 		goto if_then1368
@@ -62269,7 +62269,7 @@ land_lhs_true1359:
 	}
 
 lor_lhs_false1362:
-	v457 = *lookahead
+	v457 = *local_lookahead
 	cmp1363 = 97 <= v457
 	if cmp1363 {
 		goto land_lhs_true1365
@@ -62278,7 +62278,7 @@ lor_lhs_false1362:
 	}
 
 land_lhs_true1365:
-	v458 = *lookahead
+	v458 = *local_lookahead
 	cmp1366 = v458 <= 122
 	if cmp1366 {
 		goto if_then1368
@@ -62297,7 +62297,7 @@ if_end1369:
 	goto _return
 
 sw_bb1371:
-	v460 = *eof
+	v460 = *local_eof
 	tobool1372 = (v460 & 1) != 0
 	if tobool1372 {
 		goto if_then1373
@@ -62329,7 +62329,7 @@ for_body1380:
 	arrayidx1382 = &ts_lex_map_223[idxprom1381]
 	v463 = *arrayidx1382
 	conv1383 = int32(uint32(uint16(v463)))
-	v464 = *lookahead
+	v464 = *local_lookahead
 	cmp1384 = conv1383 == v464
 	if cmp1384 {
 		goto if_then1386
@@ -62356,7 +62356,7 @@ for_inc1391:
 	goto for_cond1376
 
 for_end1393:
-	v468 = *lookahead
+	v468 = *local_lookahead
 	cmp1394 = 9 <= v468
 	if cmp1394 {
 		goto land_lhs_true1396
@@ -62365,7 +62365,7 @@ for_end1393:
 	}
 
 land_lhs_true1396:
-	v469 = *lookahead
+	v469 = *local_lookahead
 	cmp1397 = v469 <= 13
 	if cmp1397 {
 		goto if_then1402
@@ -62374,7 +62374,7 @@ land_lhs_true1396:
 	}
 
 lor_lhs_false1399:
-	v470 = *lookahead
+	v470 = *local_lookahead
 	cmp1400 = v470 == 32
 	if cmp1400 {
 		goto if_then1402
@@ -62383,7 +62383,7 @@ lor_lhs_false1399:
 	}
 
 if_then1402:
-	*skip = 1
+	*local_skip = 1
 	*state_addr = 94
 	goto next_state
 
@@ -62433,7 +62433,7 @@ sw_bb1411:
 	v484 = *mark_end1413
 	v485 = *lexer_addr
 	v484(v485)
-	v486 = *lookahead
+	v486 = *local_lookahead
 	cmp1414 = v486 == 39
 	if cmp1414 {
 		goto if_then1440
@@ -62442,7 +62442,7 @@ sw_bb1411:
 	}
 
 lor_lhs_false1416:
-	v487 = *lookahead
+	v487 = *local_lookahead
 	cmp1417 = v487 == 45
 	if cmp1417 {
 		goto if_then1440
@@ -62451,7 +62451,7 @@ lor_lhs_false1416:
 	}
 
 lor_lhs_false1419:
-	v488 = *lookahead
+	v488 = *local_lookahead
 	cmp1420 = 48 <= v488
 	if cmp1420 {
 		goto land_lhs_true1422
@@ -62460,7 +62460,7 @@ lor_lhs_false1419:
 	}
 
 land_lhs_true1422:
-	v489 = *lookahead
+	v489 = *local_lookahead
 	cmp1423 = v489 <= 57
 	if cmp1423 {
 		goto if_then1440
@@ -62469,7 +62469,7 @@ land_lhs_true1422:
 	}
 
 lor_lhs_false1425:
-	v490 = *lookahead
+	v490 = *local_lookahead
 	cmp1426 = 65 <= v490
 	if cmp1426 {
 		goto land_lhs_true1428
@@ -62478,7 +62478,7 @@ lor_lhs_false1425:
 	}
 
 land_lhs_true1428:
-	v491 = *lookahead
+	v491 = *local_lookahead
 	cmp1429 = v491 <= 90
 	if cmp1429 {
 		goto if_then1440
@@ -62487,7 +62487,7 @@ land_lhs_true1428:
 	}
 
 lor_lhs_false1431:
-	v492 = *lookahead
+	v492 = *local_lookahead
 	cmp1432 = v492 == 95
 	if cmp1432 {
 		goto if_then1440
@@ -62496,7 +62496,7 @@ lor_lhs_false1431:
 	}
 
 lor_lhs_false1434:
-	v493 = *lookahead
+	v493 = *local_lookahead
 	cmp1435 = 97 <= v493
 	if cmp1435 {
 		goto land_lhs_true1437
@@ -62505,7 +62505,7 @@ lor_lhs_false1434:
 	}
 
 land_lhs_true1437:
-	v494 = *lookahead
+	v494 = *local_lookahead
 	cmp1438 = v494 <= 122
 	if cmp1438 {
 		goto if_then1440
@@ -62533,7 +62533,7 @@ sw_bb1443:
 	v498 = *mark_end1445
 	v499 = *lexer_addr
 	v498(v499)
-	v500 = *lookahead
+	v500 = *local_lookahead
 	cmp1446 = v500 == 46
 	if cmp1446 {
 		goto if_then1448
@@ -62546,7 +62546,7 @@ if_then1448:
 	goto next_state
 
 if_end1449:
-	v501 = *lookahead
+	v501 = *local_lookahead
 	cmp1450 = v501 == 98
 	if cmp1450 {
 		goto if_then1452
@@ -62559,7 +62559,7 @@ if_then1452:
 	goto next_state
 
 if_end1453:
-	v502 = *lookahead
+	v502 = *local_lookahead
 	cmp1454 = v502 == 111
 	if cmp1454 {
 		goto if_then1456
@@ -62572,7 +62572,7 @@ if_then1456:
 	goto next_state
 
 if_end1457:
-	v503 = *lookahead
+	v503 = *local_lookahead
 	cmp1458 = v503 == 120
 	if cmp1458 {
 		goto if_then1460
@@ -62585,7 +62585,7 @@ if_then1460:
 	goto next_state
 
 if_end1461:
-	v504 = *lookahead
+	v504 = *local_lookahead
 	cmp1462 = v504 == 69
 	if cmp1462 {
 		goto if_then1467
@@ -62594,7 +62594,7 @@ if_end1461:
 	}
 
 lor_lhs_false1464:
-	v505 = *lookahead
+	v505 = *local_lookahead
 	cmp1465 = v505 == 101
 	if cmp1465 {
 		goto if_then1467
@@ -62607,7 +62607,7 @@ if_then1467:
 	goto next_state
 
 if_end1468:
-	v506 = *lookahead
+	v506 = *local_lookahead
 	cmp1469 = 48 <= v506
 	if cmp1469 {
 		goto land_lhs_true1471
@@ -62616,7 +62616,7 @@ if_end1468:
 	}
 
 land_lhs_true1471:
-	v507 = *lookahead
+	v507 = *local_lookahead
 	cmp1472 = v507 <= 57
 	if cmp1472 {
 		goto if_then1474
@@ -62644,7 +62644,7 @@ sw_bb1477:
 	v511 = *mark_end1479
 	v512 = *lexer_addr
 	v511(v512)
-	v513 = *lookahead
+	v513 = *local_lookahead
 	cmp1480 = v513 == 46
 	if cmp1480 {
 		goto if_then1482
@@ -62657,7 +62657,7 @@ if_then1482:
 	goto next_state
 
 if_end1483:
-	v514 = *lookahead
+	v514 = *local_lookahead
 	cmp1484 = v514 == 69
 	if cmp1484 {
 		goto if_then1489
@@ -62666,7 +62666,7 @@ if_end1483:
 	}
 
 lor_lhs_false1486:
-	v515 = *lookahead
+	v515 = *local_lookahead
 	cmp1487 = v515 == 101
 	if cmp1487 {
 		goto if_then1489
@@ -62679,7 +62679,7 @@ if_then1489:
 	goto next_state
 
 if_end1490:
-	v516 = *lookahead
+	v516 = *local_lookahead
 	cmp1491 = 48 <= v516
 	if cmp1491 {
 		goto land_lhs_true1493
@@ -62688,7 +62688,7 @@ if_end1490:
 	}
 
 land_lhs_true1493:
-	v517 = *lookahead
+	v517 = *local_lookahead
 	cmp1494 = v517 <= 57
 	if cmp1494 {
 		goto if_then1496
@@ -62716,7 +62716,7 @@ sw_bb1499:
 	v521 = *mark_end1501
 	v522 = *lexer_addr
 	v521(v522)
-	v523 = *lookahead
+	v523 = *local_lookahead
 	cmp1502 = v523 == 69
 	if cmp1502 {
 		goto if_then1507
@@ -62725,7 +62725,7 @@ sw_bb1499:
 	}
 
 lor_lhs_false1504:
-	v524 = *lookahead
+	v524 = *local_lookahead
 	cmp1505 = v524 == 101
 	if cmp1505 {
 		goto if_then1507
@@ -62738,7 +62738,7 @@ if_then1507:
 	goto next_state
 
 if_end1508:
-	v525 = *lookahead
+	v525 = *local_lookahead
 	cmp1509 = 48 <= v525
 	if cmp1509 {
 		goto land_lhs_true1511
@@ -62747,7 +62747,7 @@ if_end1508:
 	}
 
 land_lhs_true1511:
-	v526 = *lookahead
+	v526 = *local_lookahead
 	cmp1512 = v526 <= 57
 	if cmp1512 {
 		goto if_then1514
@@ -62775,7 +62775,7 @@ sw_bb1517:
 	v530 = *mark_end1519
 	v531 = *lexer_addr
 	v530(v531)
-	v532 = *lookahead
+	v532 = *local_lookahead
 	cmp1520 = v532 == 48
 	if cmp1520 {
 		goto if_then1525
@@ -62784,7 +62784,7 @@ sw_bb1517:
 	}
 
 lor_lhs_false1522:
-	v533 = *lookahead
+	v533 = *local_lookahead
 	cmp1523 = v533 == 49
 	if cmp1523 {
 		goto if_then1525
@@ -62812,7 +62812,7 @@ sw_bb1528:
 	v537 = *mark_end1530
 	v538 = *lexer_addr
 	v537(v538)
-	v539 = *lookahead
+	v539 = *local_lookahead
 	cmp1531 = 48 <= v539
 	if cmp1531 {
 		goto land_lhs_true1533
@@ -62821,7 +62821,7 @@ sw_bb1528:
 	}
 
 land_lhs_true1533:
-	v540 = *lookahead
+	v540 = *local_lookahead
 	cmp1534 = v540 <= 55
 	if cmp1534 {
 		goto if_then1536
@@ -62849,7 +62849,7 @@ sw_bb1539:
 	v544 = *mark_end1541
 	v545 = *lexer_addr
 	v544(v545)
-	v546 = *lookahead
+	v546 = *local_lookahead
 	cmp1542 = 48 <= v546
 	if cmp1542 {
 		goto land_lhs_true1544
@@ -62858,7 +62858,7 @@ sw_bb1539:
 	}
 
 land_lhs_true1544:
-	v547 = *lookahead
+	v547 = *local_lookahead
 	cmp1545 = v547 <= 57
 	if cmp1545 {
 		goto if_then1547
@@ -62886,7 +62886,7 @@ sw_bb1550:
 	v551 = *mark_end1552
 	v552 = *lexer_addr
 	v551(v552)
-	v553 = *lookahead
+	v553 = *local_lookahead
 	cmp1553 = 48 <= v553
 	if cmp1553 {
 		goto land_lhs_true1555
@@ -62895,7 +62895,7 @@ sw_bb1550:
 	}
 
 land_lhs_true1555:
-	v554 = *lookahead
+	v554 = *local_lookahead
 	cmp1556 = v554 <= 57
 	if cmp1556 {
 		goto if_then1570
@@ -62904,7 +62904,7 @@ land_lhs_true1555:
 	}
 
 lor_lhs_false1558:
-	v555 = *lookahead
+	v555 = *local_lookahead
 	cmp1559 = 65 <= v555
 	if cmp1559 {
 		goto land_lhs_true1561
@@ -62913,7 +62913,7 @@ lor_lhs_false1558:
 	}
 
 land_lhs_true1561:
-	v556 = *lookahead
+	v556 = *local_lookahead
 	cmp1562 = v556 <= 70
 	if cmp1562 {
 		goto if_then1570
@@ -62922,7 +62922,7 @@ land_lhs_true1561:
 	}
 
 lor_lhs_false1564:
-	v557 = *lookahead
+	v557 = *local_lookahead
 	cmp1565 = 97 <= v557
 	if cmp1565 {
 		goto land_lhs_true1567
@@ -62931,7 +62931,7 @@ lor_lhs_false1564:
 	}
 
 land_lhs_true1567:
-	v558 = *lookahead
+	v558 = *local_lookahead
 	cmp1568 = v558 <= 102
 	if cmp1568 {
 		goto if_then1570
@@ -62959,7 +62959,7 @@ sw_bb1573:
 	v562 = *mark_end1575
 	v563 = *lexer_addr
 	v562(v563)
-	v564 = *lookahead
+	v564 = *local_lookahead
 	cmp1576 = v564 == 46
 	if cmp1576 {
 		goto if_then1578
@@ -62972,7 +62972,7 @@ if_then1578:
 	goto next_state
 
 if_end1579:
-	v565 = *lookahead
+	v565 = *local_lookahead
 	cmp1580 = v565 == 98
 	if cmp1580 {
 		goto if_then1582
@@ -62985,7 +62985,7 @@ if_then1582:
 	goto next_state
 
 if_end1583:
-	v566 = *lookahead
+	v566 = *local_lookahead
 	cmp1584 = v566 == 111
 	if cmp1584 {
 		goto if_then1586
@@ -62998,7 +62998,7 @@ if_then1586:
 	goto next_state
 
 if_end1587:
-	v567 = *lookahead
+	v567 = *local_lookahead
 	cmp1588 = v567 == 120
 	if cmp1588 {
 		goto if_then1590
@@ -63011,7 +63011,7 @@ if_then1590:
 	goto next_state
 
 if_end1591:
-	v568 = *lookahead
+	v568 = *local_lookahead
 	cmp1592 = v568 == 69
 	if cmp1592 {
 		goto if_then1597
@@ -63020,7 +63020,7 @@ if_end1591:
 	}
 
 lor_lhs_false1594:
-	v569 = *lookahead
+	v569 = *local_lookahead
 	cmp1595 = v569 == 101
 	if cmp1595 {
 		goto if_then1597
@@ -63033,7 +63033,7 @@ if_then1597:
 	goto next_state
 
 if_end1598:
-	v570 = *lookahead
+	v570 = *local_lookahead
 	cmp1599 = 48 <= v570
 	if cmp1599 {
 		goto land_lhs_true1601
@@ -63042,7 +63042,7 @@ if_end1598:
 	}
 
 land_lhs_true1601:
-	v571 = *lookahead
+	v571 = *local_lookahead
 	cmp1602 = v571 <= 57
 	if cmp1602 {
 		goto if_then1604
@@ -63070,7 +63070,7 @@ sw_bb1607:
 	v575 = *mark_end1609
 	v576 = *lexer_addr
 	v575(v576)
-	v577 = *lookahead
+	v577 = *local_lookahead
 	cmp1610 = v577 == 46
 	if cmp1610 {
 		goto if_then1612
@@ -63083,7 +63083,7 @@ if_then1612:
 	goto next_state
 
 if_end1613:
-	v578 = *lookahead
+	v578 = *local_lookahead
 	cmp1614 = v578 == 69
 	if cmp1614 {
 		goto if_then1619
@@ -63092,7 +63092,7 @@ if_end1613:
 	}
 
 lor_lhs_false1616:
-	v579 = *lookahead
+	v579 = *local_lookahead
 	cmp1617 = v579 == 101
 	if cmp1617 {
 		goto if_then1619
@@ -63105,7 +63105,7 @@ if_then1619:
 	goto next_state
 
 if_end1620:
-	v580 = *lookahead
+	v580 = *local_lookahead
 	cmp1621 = 48 <= v580
 	if cmp1621 {
 		goto land_lhs_true1623
@@ -63114,7 +63114,7 @@ if_end1620:
 	}
 
 land_lhs_true1623:
-	v581 = *lookahead
+	v581 = *local_lookahead
 	cmp1624 = v581 <= 57
 	if cmp1624 {
 		goto if_then1626
@@ -63142,7 +63142,7 @@ sw_bb1629:
 	v585 = *mark_end1631
 	v586 = *lexer_addr
 	v585(v586)
-	v587 = *lookahead
+	v587 = *local_lookahead
 	cmp1632 = v587 == 69
 	if cmp1632 {
 		goto if_then1637
@@ -63151,7 +63151,7 @@ sw_bb1629:
 	}
 
 lor_lhs_false1634:
-	v588 = *lookahead
+	v588 = *local_lookahead
 	cmp1635 = v588 == 101
 	if cmp1635 {
 		goto if_then1637
@@ -63164,7 +63164,7 @@ if_then1637:
 	goto next_state
 
 if_end1638:
-	v589 = *lookahead
+	v589 = *local_lookahead
 	cmp1639 = 48 <= v589
 	if cmp1639 {
 		goto land_lhs_true1641
@@ -63173,7 +63173,7 @@ if_end1638:
 	}
 
 land_lhs_true1641:
-	v590 = *lookahead
+	v590 = *local_lookahead
 	cmp1642 = v590 <= 57
 	if cmp1642 {
 		goto if_then1644
@@ -63201,7 +63201,7 @@ sw_bb1647:
 	v594 = *mark_end1649
 	v595 = *lexer_addr
 	v594(v595)
-	v596 = *lookahead
+	v596 = *local_lookahead
 	cmp1650 = v596 == 48
 	if cmp1650 {
 		goto if_then1655
@@ -63210,7 +63210,7 @@ sw_bb1647:
 	}
 
 lor_lhs_false1652:
-	v597 = *lookahead
+	v597 = *local_lookahead
 	cmp1653 = v597 == 49
 	if cmp1653 {
 		goto if_then1655
@@ -63238,7 +63238,7 @@ sw_bb1658:
 	v601 = *mark_end1660
 	v602 = *lexer_addr
 	v601(v602)
-	v603 = *lookahead
+	v603 = *local_lookahead
 	cmp1661 = 48 <= v603
 	if cmp1661 {
 		goto land_lhs_true1663
@@ -63247,7 +63247,7 @@ sw_bb1658:
 	}
 
 land_lhs_true1663:
-	v604 = *lookahead
+	v604 = *local_lookahead
 	cmp1664 = v604 <= 55
 	if cmp1664 {
 		goto if_then1666
@@ -63275,7 +63275,7 @@ sw_bb1669:
 	v608 = *mark_end1671
 	v609 = *lexer_addr
 	v608(v609)
-	v610 = *lookahead
+	v610 = *local_lookahead
 	cmp1672 = 48 <= v610
 	if cmp1672 {
 		goto land_lhs_true1674
@@ -63284,7 +63284,7 @@ sw_bb1669:
 	}
 
 land_lhs_true1674:
-	v611 = *lookahead
+	v611 = *local_lookahead
 	cmp1675 = v611 <= 57
 	if cmp1675 {
 		goto if_then1677
@@ -63312,7 +63312,7 @@ sw_bb1680:
 	v615 = *mark_end1682
 	v616 = *lexer_addr
 	v615(v616)
-	v617 = *lookahead
+	v617 = *local_lookahead
 	cmp1683 = 48 <= v617
 	if cmp1683 {
 		goto land_lhs_true1685
@@ -63321,7 +63321,7 @@ sw_bb1680:
 	}
 
 land_lhs_true1685:
-	v618 = *lookahead
+	v618 = *local_lookahead
 	cmp1686 = v618 <= 57
 	if cmp1686 {
 		goto if_then1700
@@ -63330,7 +63330,7 @@ land_lhs_true1685:
 	}
 
 lor_lhs_false1688:
-	v619 = *lookahead
+	v619 = *local_lookahead
 	cmp1689 = 65 <= v619
 	if cmp1689 {
 		goto land_lhs_true1691
@@ -63339,7 +63339,7 @@ lor_lhs_false1688:
 	}
 
 land_lhs_true1691:
-	v620 = *lookahead
+	v620 = *local_lookahead
 	cmp1692 = v620 <= 70
 	if cmp1692 {
 		goto if_then1700
@@ -63348,7 +63348,7 @@ land_lhs_true1691:
 	}
 
 lor_lhs_false1694:
-	v621 = *lookahead
+	v621 = *local_lookahead
 	cmp1695 = 97 <= v621
 	if cmp1695 {
 		goto land_lhs_true1697
@@ -63357,7 +63357,7 @@ lor_lhs_false1694:
 	}
 
 land_lhs_true1697:
-	v622 = *lookahead
+	v622 = *local_lookahead
 	cmp1698 = v622 <= 102
 	if cmp1698 {
 		goto if_then1700
@@ -63385,7 +63385,7 @@ sw_bb1703:
 	v626 = *mark_end1705
 	v627 = *lexer_addr
 	v626(v627)
-	v628 = *lookahead
+	v628 = *local_lookahead
 	cmp1706 = v628 == 95
 	if cmp1706 {
 		goto if_then1708
@@ -63398,7 +63398,7 @@ if_then1708:
 	goto next_state
 
 if_end1709:
-	v629 = *lookahead
+	v629 = *local_lookahead
 	cmp1710 = v629 == 39
 	if cmp1710 {
 		goto if_then1733
@@ -63407,7 +63407,7 @@ if_end1709:
 	}
 
 lor_lhs_false1712:
-	v630 = *lookahead
+	v630 = *local_lookahead
 	cmp1713 = v630 == 45
 	if cmp1713 {
 		goto if_then1733
@@ -63416,7 +63416,7 @@ lor_lhs_false1712:
 	}
 
 lor_lhs_false1715:
-	v631 = *lookahead
+	v631 = *local_lookahead
 	cmp1716 = 48 <= v631
 	if cmp1716 {
 		goto land_lhs_true1718
@@ -63425,7 +63425,7 @@ lor_lhs_false1715:
 	}
 
 land_lhs_true1718:
-	v632 = *lookahead
+	v632 = *local_lookahead
 	cmp1719 = v632 <= 57
 	if cmp1719 {
 		goto if_then1733
@@ -63434,7 +63434,7 @@ land_lhs_true1718:
 	}
 
 lor_lhs_false1721:
-	v633 = *lookahead
+	v633 = *local_lookahead
 	cmp1722 = 65 <= v633
 	if cmp1722 {
 		goto land_lhs_true1724
@@ -63443,7 +63443,7 @@ lor_lhs_false1721:
 	}
 
 land_lhs_true1724:
-	v634 = *lookahead
+	v634 = *local_lookahead
 	cmp1725 = v634 <= 90
 	if cmp1725 {
 		goto if_then1733
@@ -63452,7 +63452,7 @@ land_lhs_true1724:
 	}
 
 lor_lhs_false1727:
-	v635 = *lookahead
+	v635 = *local_lookahead
 	cmp1728 = 97 <= v635
 	if cmp1728 {
 		goto land_lhs_true1730
@@ -63461,7 +63461,7 @@ lor_lhs_false1727:
 	}
 
 land_lhs_true1730:
-	v636 = *lookahead
+	v636 = *local_lookahead
 	cmp1731 = v636 <= 122
 	if cmp1731 {
 		goto if_then1733
@@ -63489,7 +63489,7 @@ sw_bb1736:
 	v640 = *mark_end1738
 	v641 = *lexer_addr
 	v640(v641)
-	v642 = *lookahead
+	v642 = *local_lookahead
 	cmp1739 = v642 == 97
 	if cmp1739 {
 		goto if_then1741
@@ -63502,7 +63502,7 @@ if_then1741:
 	goto next_state
 
 if_end1742:
-	v643 = *lookahead
+	v643 = *local_lookahead
 	cmp1743 = v643 == 111
 	if cmp1743 {
 		goto if_then1745
@@ -63515,7 +63515,7 @@ if_then1745:
 	goto next_state
 
 if_end1746:
-	v644 = *lookahead
+	v644 = *local_lookahead
 	cmp1747 = v644 == 117
 	if cmp1747 {
 		goto if_then1749
@@ -63528,7 +63528,7 @@ if_then1749:
 	goto next_state
 
 if_end1750:
-	v645 = *lookahead
+	v645 = *local_lookahead
 	cmp1751 = v645 == 39
 	if cmp1751 {
 		goto if_then1777
@@ -63537,7 +63537,7 @@ if_end1750:
 	}
 
 lor_lhs_false1753:
-	v646 = *lookahead
+	v646 = *local_lookahead
 	cmp1754 = v646 == 45
 	if cmp1754 {
 		goto if_then1777
@@ -63546,7 +63546,7 @@ lor_lhs_false1753:
 	}
 
 lor_lhs_false1756:
-	v647 = *lookahead
+	v647 = *local_lookahead
 	cmp1757 = 48 <= v647
 	if cmp1757 {
 		goto land_lhs_true1759
@@ -63555,7 +63555,7 @@ lor_lhs_false1756:
 	}
 
 land_lhs_true1759:
-	v648 = *lookahead
+	v648 = *local_lookahead
 	cmp1760 = v648 <= 57
 	if cmp1760 {
 		goto if_then1777
@@ -63564,7 +63564,7 @@ land_lhs_true1759:
 	}
 
 lor_lhs_false1762:
-	v649 = *lookahead
+	v649 = *local_lookahead
 	cmp1763 = 65 <= v649
 	if cmp1763 {
 		goto land_lhs_true1765
@@ -63573,7 +63573,7 @@ lor_lhs_false1762:
 	}
 
 land_lhs_true1765:
-	v650 = *lookahead
+	v650 = *local_lookahead
 	cmp1766 = v650 <= 90
 	if cmp1766 {
 		goto if_then1777
@@ -63582,7 +63582,7 @@ land_lhs_true1765:
 	}
 
 lor_lhs_false1768:
-	v651 = *lookahead
+	v651 = *local_lookahead
 	cmp1769 = v651 == 95
 	if cmp1769 {
 		goto if_then1777
@@ -63591,7 +63591,7 @@ lor_lhs_false1768:
 	}
 
 lor_lhs_false1771:
-	v652 = *lookahead
+	v652 = *local_lookahead
 	cmp1772 = 98 <= v652
 	if cmp1772 {
 		goto land_lhs_true1774
@@ -63600,7 +63600,7 @@ lor_lhs_false1771:
 	}
 
 land_lhs_true1774:
-	v653 = *lookahead
+	v653 = *local_lookahead
 	cmp1775 = v653 <= 122
 	if cmp1775 {
 		goto if_then1777
@@ -63628,7 +63628,7 @@ sw_bb1780:
 	v657 = *mark_end1782
 	v658 = *lexer_addr
 	v657(v658)
-	v659 = *lookahead
+	v659 = *local_lookahead
 	cmp1783 = v659 == 97
 	if cmp1783 {
 		goto if_then1785
@@ -63641,7 +63641,7 @@ if_then1785:
 	goto next_state
 
 if_end1786:
-	v660 = *lookahead
+	v660 = *local_lookahead
 	cmp1787 = v660 == 39
 	if cmp1787 {
 		goto if_then1813
@@ -63650,7 +63650,7 @@ if_end1786:
 	}
 
 lor_lhs_false1789:
-	v661 = *lookahead
+	v661 = *local_lookahead
 	cmp1790 = v661 == 45
 	if cmp1790 {
 		goto if_then1813
@@ -63659,7 +63659,7 @@ lor_lhs_false1789:
 	}
 
 lor_lhs_false1792:
-	v662 = *lookahead
+	v662 = *local_lookahead
 	cmp1793 = 48 <= v662
 	if cmp1793 {
 		goto land_lhs_true1795
@@ -63668,7 +63668,7 @@ lor_lhs_false1792:
 	}
 
 land_lhs_true1795:
-	v663 = *lookahead
+	v663 = *local_lookahead
 	cmp1796 = v663 <= 57
 	if cmp1796 {
 		goto if_then1813
@@ -63677,7 +63677,7 @@ land_lhs_true1795:
 	}
 
 lor_lhs_false1798:
-	v664 = *lookahead
+	v664 = *local_lookahead
 	cmp1799 = 65 <= v664
 	if cmp1799 {
 		goto land_lhs_true1801
@@ -63686,7 +63686,7 @@ lor_lhs_false1798:
 	}
 
 land_lhs_true1801:
-	v665 = *lookahead
+	v665 = *local_lookahead
 	cmp1802 = v665 <= 90
 	if cmp1802 {
 		goto if_then1813
@@ -63695,7 +63695,7 @@ land_lhs_true1801:
 	}
 
 lor_lhs_false1804:
-	v666 = *lookahead
+	v666 = *local_lookahead
 	cmp1805 = v666 == 95
 	if cmp1805 {
 		goto if_then1813
@@ -63704,7 +63704,7 @@ lor_lhs_false1804:
 	}
 
 lor_lhs_false1807:
-	v667 = *lookahead
+	v667 = *local_lookahead
 	cmp1808 = 98 <= v667
 	if cmp1808 {
 		goto land_lhs_true1810
@@ -63713,7 +63713,7 @@ lor_lhs_false1807:
 	}
 
 land_lhs_true1810:
-	v668 = *lookahead
+	v668 = *local_lookahead
 	cmp1811 = v668 <= 122
 	if cmp1811 {
 		goto if_then1813
@@ -63741,7 +63741,7 @@ sw_bb1816:
 	v672 = *mark_end1818
 	v673 = *lexer_addr
 	v672(v673)
-	v674 = *lookahead
+	v674 = *local_lookahead
 	cmp1819 = v674 == 97
 	if cmp1819 {
 		goto if_then1821
@@ -63754,7 +63754,7 @@ if_then1821:
 	goto next_state
 
 if_end1822:
-	v675 = *lookahead
+	v675 = *local_lookahead
 	cmp1823 = v675 == 99
 	if cmp1823 {
 		goto if_then1825
@@ -63767,7 +63767,7 @@ if_then1825:
 	goto next_state
 
 if_end1826:
-	v676 = *lookahead
+	v676 = *local_lookahead
 	cmp1827 = v676 == 39
 	if cmp1827 {
 		goto if_then1853
@@ -63776,7 +63776,7 @@ if_end1826:
 	}
 
 lor_lhs_false1829:
-	v677 = *lookahead
+	v677 = *local_lookahead
 	cmp1830 = v677 == 45
 	if cmp1830 {
 		goto if_then1853
@@ -63785,7 +63785,7 @@ lor_lhs_false1829:
 	}
 
 lor_lhs_false1832:
-	v678 = *lookahead
+	v678 = *local_lookahead
 	cmp1833 = 48 <= v678
 	if cmp1833 {
 		goto land_lhs_true1835
@@ -63794,7 +63794,7 @@ lor_lhs_false1832:
 	}
 
 land_lhs_true1835:
-	v679 = *lookahead
+	v679 = *local_lookahead
 	cmp1836 = v679 <= 57
 	if cmp1836 {
 		goto if_then1853
@@ -63803,7 +63803,7 @@ land_lhs_true1835:
 	}
 
 lor_lhs_false1838:
-	v680 = *lookahead
+	v680 = *local_lookahead
 	cmp1839 = 65 <= v680
 	if cmp1839 {
 		goto land_lhs_true1841
@@ -63812,7 +63812,7 @@ lor_lhs_false1838:
 	}
 
 land_lhs_true1841:
-	v681 = *lookahead
+	v681 = *local_lookahead
 	cmp1842 = v681 <= 90
 	if cmp1842 {
 		goto if_then1853
@@ -63821,7 +63821,7 @@ land_lhs_true1841:
 	}
 
 lor_lhs_false1844:
-	v682 = *lookahead
+	v682 = *local_lookahead
 	cmp1845 = v682 == 95
 	if cmp1845 {
 		goto if_then1853
@@ -63830,7 +63830,7 @@ lor_lhs_false1844:
 	}
 
 lor_lhs_false1847:
-	v683 = *lookahead
+	v683 = *local_lookahead
 	cmp1848 = 98 <= v683
 	if cmp1848 {
 		goto land_lhs_true1850
@@ -63839,7 +63839,7 @@ lor_lhs_false1847:
 	}
 
 land_lhs_true1850:
-	v684 = *lookahead
+	v684 = *local_lookahead
 	cmp1851 = v684 <= 122
 	if cmp1851 {
 		goto if_then1853
@@ -63867,7 +63867,7 @@ sw_bb1856:
 	v688 = *mark_end1858
 	v689 = *lexer_addr
 	v688(v689)
-	v690 = *lookahead
+	v690 = *local_lookahead
 	cmp1859 = v690 == 97
 	if cmp1859 {
 		goto if_then1861
@@ -63880,7 +63880,7 @@ if_then1861:
 	goto next_state
 
 if_end1862:
-	v691 = *lookahead
+	v691 = *local_lookahead
 	cmp1863 = v691 == 39
 	if cmp1863 {
 		goto if_then1889
@@ -63889,7 +63889,7 @@ if_end1862:
 	}
 
 lor_lhs_false1865:
-	v692 = *lookahead
+	v692 = *local_lookahead
 	cmp1866 = v692 == 45
 	if cmp1866 {
 		goto if_then1889
@@ -63898,7 +63898,7 @@ lor_lhs_false1865:
 	}
 
 lor_lhs_false1868:
-	v693 = *lookahead
+	v693 = *local_lookahead
 	cmp1869 = 48 <= v693
 	if cmp1869 {
 		goto land_lhs_true1871
@@ -63907,7 +63907,7 @@ lor_lhs_false1868:
 	}
 
 land_lhs_true1871:
-	v694 = *lookahead
+	v694 = *local_lookahead
 	cmp1872 = v694 <= 57
 	if cmp1872 {
 		goto if_then1889
@@ -63916,7 +63916,7 @@ land_lhs_true1871:
 	}
 
 lor_lhs_false1874:
-	v695 = *lookahead
+	v695 = *local_lookahead
 	cmp1875 = 65 <= v695
 	if cmp1875 {
 		goto land_lhs_true1877
@@ -63925,7 +63925,7 @@ lor_lhs_false1874:
 	}
 
 land_lhs_true1877:
-	v696 = *lookahead
+	v696 = *local_lookahead
 	cmp1878 = v696 <= 90
 	if cmp1878 {
 		goto if_then1889
@@ -63934,7 +63934,7 @@ land_lhs_true1877:
 	}
 
 lor_lhs_false1880:
-	v697 = *lookahead
+	v697 = *local_lookahead
 	cmp1881 = v697 == 95
 	if cmp1881 {
 		goto if_then1889
@@ -63943,7 +63943,7 @@ lor_lhs_false1880:
 	}
 
 lor_lhs_false1883:
-	v698 = *lookahead
+	v698 = *local_lookahead
 	cmp1884 = 98 <= v698
 	if cmp1884 {
 		goto land_lhs_true1886
@@ -63952,7 +63952,7 @@ lor_lhs_false1883:
 	}
 
 land_lhs_true1886:
-	v699 = *lookahead
+	v699 = *local_lookahead
 	cmp1887 = v699 <= 122
 	if cmp1887 {
 		goto if_then1889
@@ -63980,7 +63980,7 @@ sw_bb1892:
 	v703 = *mark_end1894
 	v704 = *lexer_addr
 	v703(v704)
-	v705 = *lookahead
+	v705 = *local_lookahead
 	cmp1895 = v705 == 97
 	if cmp1895 {
 		goto if_then1897
@@ -63993,7 +63993,7 @@ if_then1897:
 	goto next_state
 
 if_end1898:
-	v706 = *lookahead
+	v706 = *local_lookahead
 	cmp1899 = v706 == 39
 	if cmp1899 {
 		goto if_then1925
@@ -64002,7 +64002,7 @@ if_end1898:
 	}
 
 lor_lhs_false1901:
-	v707 = *lookahead
+	v707 = *local_lookahead
 	cmp1902 = v707 == 45
 	if cmp1902 {
 		goto if_then1925
@@ -64011,7 +64011,7 @@ lor_lhs_false1901:
 	}
 
 lor_lhs_false1904:
-	v708 = *lookahead
+	v708 = *local_lookahead
 	cmp1905 = 48 <= v708
 	if cmp1905 {
 		goto land_lhs_true1907
@@ -64020,7 +64020,7 @@ lor_lhs_false1904:
 	}
 
 land_lhs_true1907:
-	v709 = *lookahead
+	v709 = *local_lookahead
 	cmp1908 = v709 <= 57
 	if cmp1908 {
 		goto if_then1925
@@ -64029,7 +64029,7 @@ land_lhs_true1907:
 	}
 
 lor_lhs_false1910:
-	v710 = *lookahead
+	v710 = *local_lookahead
 	cmp1911 = 65 <= v710
 	if cmp1911 {
 		goto land_lhs_true1913
@@ -64038,7 +64038,7 @@ lor_lhs_false1910:
 	}
 
 land_lhs_true1913:
-	v711 = *lookahead
+	v711 = *local_lookahead
 	cmp1914 = v711 <= 90
 	if cmp1914 {
 		goto if_then1925
@@ -64047,7 +64047,7 @@ land_lhs_true1913:
 	}
 
 lor_lhs_false1916:
-	v712 = *lookahead
+	v712 = *local_lookahead
 	cmp1917 = v712 == 95
 	if cmp1917 {
 		goto if_then1925
@@ -64056,7 +64056,7 @@ lor_lhs_false1916:
 	}
 
 lor_lhs_false1919:
-	v713 = *lookahead
+	v713 = *local_lookahead
 	cmp1920 = 98 <= v713
 	if cmp1920 {
 		goto land_lhs_true1922
@@ -64065,7 +64065,7 @@ lor_lhs_false1919:
 	}
 
 land_lhs_true1922:
-	v714 = *lookahead
+	v714 = *local_lookahead
 	cmp1923 = v714 <= 122
 	if cmp1923 {
 		goto if_then1925
@@ -64093,7 +64093,7 @@ sw_bb1928:
 	v718 = *mark_end1930
 	v719 = *lexer_addr
 	v718(v719)
-	v720 = *lookahead
+	v720 = *local_lookahead
 	cmp1931 = v720 == 97
 	if cmp1931 {
 		goto if_then1933
@@ -64106,7 +64106,7 @@ if_then1933:
 	goto next_state
 
 if_end1934:
-	v721 = *lookahead
+	v721 = *local_lookahead
 	cmp1935 = v721 == 39
 	if cmp1935 {
 		goto if_then1961
@@ -64115,7 +64115,7 @@ if_end1934:
 	}
 
 lor_lhs_false1937:
-	v722 = *lookahead
+	v722 = *local_lookahead
 	cmp1938 = v722 == 45
 	if cmp1938 {
 		goto if_then1961
@@ -64124,7 +64124,7 @@ lor_lhs_false1937:
 	}
 
 lor_lhs_false1940:
-	v723 = *lookahead
+	v723 = *local_lookahead
 	cmp1941 = 48 <= v723
 	if cmp1941 {
 		goto land_lhs_true1943
@@ -64133,7 +64133,7 @@ lor_lhs_false1940:
 	}
 
 land_lhs_true1943:
-	v724 = *lookahead
+	v724 = *local_lookahead
 	cmp1944 = v724 <= 57
 	if cmp1944 {
 		goto if_then1961
@@ -64142,7 +64142,7 @@ land_lhs_true1943:
 	}
 
 lor_lhs_false1946:
-	v725 = *lookahead
+	v725 = *local_lookahead
 	cmp1947 = 65 <= v725
 	if cmp1947 {
 		goto land_lhs_true1949
@@ -64151,7 +64151,7 @@ lor_lhs_false1946:
 	}
 
 land_lhs_true1949:
-	v726 = *lookahead
+	v726 = *local_lookahead
 	cmp1950 = v726 <= 90
 	if cmp1950 {
 		goto if_then1961
@@ -64160,7 +64160,7 @@ land_lhs_true1949:
 	}
 
 lor_lhs_false1952:
-	v727 = *lookahead
+	v727 = *local_lookahead
 	cmp1953 = v727 == 95
 	if cmp1953 {
 		goto if_then1961
@@ -64169,7 +64169,7 @@ lor_lhs_false1952:
 	}
 
 lor_lhs_false1955:
-	v728 = *lookahead
+	v728 = *local_lookahead
 	cmp1956 = 98 <= v728
 	if cmp1956 {
 		goto land_lhs_true1958
@@ -64178,7 +64178,7 @@ lor_lhs_false1955:
 	}
 
 land_lhs_true1958:
-	v729 = *lookahead
+	v729 = *local_lookahead
 	cmp1959 = v729 <= 122
 	if cmp1959 {
 		goto if_then1961
@@ -64206,7 +64206,7 @@ sw_bb1964:
 	v733 = *mark_end1966
 	v734 = *lexer_addr
 	v733(v734)
-	v735 = *lookahead
+	v735 = *local_lookahead
 	cmp1967 = v735 == 98
 	if cmp1967 {
 		goto if_then1969
@@ -64219,7 +64219,7 @@ if_then1969:
 	goto next_state
 
 if_end1970:
-	v736 = *lookahead
+	v736 = *local_lookahead
 	cmp1971 = v736 == 39
 	if cmp1971 {
 		goto if_then1997
@@ -64228,7 +64228,7 @@ if_end1970:
 	}
 
 lor_lhs_false1973:
-	v737 = *lookahead
+	v737 = *local_lookahead
 	cmp1974 = v737 == 45
 	if cmp1974 {
 		goto if_then1997
@@ -64237,7 +64237,7 @@ lor_lhs_false1973:
 	}
 
 lor_lhs_false1976:
-	v738 = *lookahead
+	v738 = *local_lookahead
 	cmp1977 = 48 <= v738
 	if cmp1977 {
 		goto land_lhs_true1979
@@ -64246,7 +64246,7 @@ lor_lhs_false1976:
 	}
 
 land_lhs_true1979:
-	v739 = *lookahead
+	v739 = *local_lookahead
 	cmp1980 = v739 <= 57
 	if cmp1980 {
 		goto if_then1997
@@ -64255,7 +64255,7 @@ land_lhs_true1979:
 	}
 
 lor_lhs_false1982:
-	v740 = *lookahead
+	v740 = *local_lookahead
 	cmp1983 = 65 <= v740
 	if cmp1983 {
 		goto land_lhs_true1985
@@ -64264,7 +64264,7 @@ lor_lhs_false1982:
 	}
 
 land_lhs_true1985:
-	v741 = *lookahead
+	v741 = *local_lookahead
 	cmp1986 = v741 <= 90
 	if cmp1986 {
 		goto if_then1997
@@ -64273,7 +64273,7 @@ land_lhs_true1985:
 	}
 
 lor_lhs_false1988:
-	v742 = *lookahead
+	v742 = *local_lookahead
 	cmp1989 = v742 == 95
 	if cmp1989 {
 		goto if_then1997
@@ -64282,7 +64282,7 @@ lor_lhs_false1988:
 	}
 
 lor_lhs_false1991:
-	v743 = *lookahead
+	v743 = *local_lookahead
 	cmp1992 = 97 <= v743
 	if cmp1992 {
 		goto land_lhs_true1994
@@ -64291,7 +64291,7 @@ lor_lhs_false1991:
 	}
 
 land_lhs_true1994:
-	v744 = *lookahead
+	v744 = *local_lookahead
 	cmp1995 = v744 <= 122
 	if cmp1995 {
 		goto if_then1997
@@ -64319,7 +64319,7 @@ sw_bb2000:
 	v748 = *mark_end2002
 	v749 = *lexer_addr
 	v748(v749)
-	v750 = *lookahead
+	v750 = *local_lookahead
 	cmp2003 = v750 == 99
 	if cmp2003 {
 		goto if_then2005
@@ -64332,7 +64332,7 @@ if_then2005:
 	goto next_state
 
 if_end2006:
-	v751 = *lookahead
+	v751 = *local_lookahead
 	cmp2007 = v751 == 39
 	if cmp2007 {
 		goto if_then2033
@@ -64341,7 +64341,7 @@ if_end2006:
 	}
 
 lor_lhs_false2009:
-	v752 = *lookahead
+	v752 = *local_lookahead
 	cmp2010 = v752 == 45
 	if cmp2010 {
 		goto if_then2033
@@ -64350,7 +64350,7 @@ lor_lhs_false2009:
 	}
 
 lor_lhs_false2012:
-	v753 = *lookahead
+	v753 = *local_lookahead
 	cmp2013 = 48 <= v753
 	if cmp2013 {
 		goto land_lhs_true2015
@@ -64359,7 +64359,7 @@ lor_lhs_false2012:
 	}
 
 land_lhs_true2015:
-	v754 = *lookahead
+	v754 = *local_lookahead
 	cmp2016 = v754 <= 57
 	if cmp2016 {
 		goto if_then2033
@@ -64368,7 +64368,7 @@ land_lhs_true2015:
 	}
 
 lor_lhs_false2018:
-	v755 = *lookahead
+	v755 = *local_lookahead
 	cmp2019 = 65 <= v755
 	if cmp2019 {
 		goto land_lhs_true2021
@@ -64377,7 +64377,7 @@ lor_lhs_false2018:
 	}
 
 land_lhs_true2021:
-	v756 = *lookahead
+	v756 = *local_lookahead
 	cmp2022 = v756 <= 90
 	if cmp2022 {
 		goto if_then2033
@@ -64386,7 +64386,7 @@ land_lhs_true2021:
 	}
 
 lor_lhs_false2024:
-	v757 = *lookahead
+	v757 = *local_lookahead
 	cmp2025 = v757 == 95
 	if cmp2025 {
 		goto if_then2033
@@ -64395,7 +64395,7 @@ lor_lhs_false2024:
 	}
 
 lor_lhs_false2027:
-	v758 = *lookahead
+	v758 = *local_lookahead
 	cmp2028 = 97 <= v758
 	if cmp2028 {
 		goto land_lhs_true2030
@@ -64404,7 +64404,7 @@ lor_lhs_false2027:
 	}
 
 land_lhs_true2030:
-	v759 = *lookahead
+	v759 = *local_lookahead
 	cmp2031 = v759 <= 122
 	if cmp2031 {
 		goto if_then2033
@@ -64432,7 +64432,7 @@ sw_bb2036:
 	v763 = *mark_end2038
 	v764 = *lexer_addr
 	v763(v764)
-	v765 = *lookahead
+	v765 = *local_lookahead
 	cmp2039 = v765 == 99
 	if cmp2039 {
 		goto if_then2041
@@ -64445,7 +64445,7 @@ if_then2041:
 	goto next_state
 
 if_end2042:
-	v766 = *lookahead
+	v766 = *local_lookahead
 	cmp2043 = v766 == 39
 	if cmp2043 {
 		goto if_then2069
@@ -64454,7 +64454,7 @@ if_end2042:
 	}
 
 lor_lhs_false2045:
-	v767 = *lookahead
+	v767 = *local_lookahead
 	cmp2046 = v767 == 45
 	if cmp2046 {
 		goto if_then2069
@@ -64463,7 +64463,7 @@ lor_lhs_false2045:
 	}
 
 lor_lhs_false2048:
-	v768 = *lookahead
+	v768 = *local_lookahead
 	cmp2049 = 48 <= v768
 	if cmp2049 {
 		goto land_lhs_true2051
@@ -64472,7 +64472,7 @@ lor_lhs_false2048:
 	}
 
 land_lhs_true2051:
-	v769 = *lookahead
+	v769 = *local_lookahead
 	cmp2052 = v769 <= 57
 	if cmp2052 {
 		goto if_then2069
@@ -64481,7 +64481,7 @@ land_lhs_true2051:
 	}
 
 lor_lhs_false2054:
-	v770 = *lookahead
+	v770 = *local_lookahead
 	cmp2055 = 65 <= v770
 	if cmp2055 {
 		goto land_lhs_true2057
@@ -64490,7 +64490,7 @@ lor_lhs_false2054:
 	}
 
 land_lhs_true2057:
-	v771 = *lookahead
+	v771 = *local_lookahead
 	cmp2058 = v771 <= 90
 	if cmp2058 {
 		goto if_then2069
@@ -64499,7 +64499,7 @@ land_lhs_true2057:
 	}
 
 lor_lhs_false2060:
-	v772 = *lookahead
+	v772 = *local_lookahead
 	cmp2061 = v772 == 95
 	if cmp2061 {
 		goto if_then2069
@@ -64508,7 +64508,7 @@ lor_lhs_false2060:
 	}
 
 lor_lhs_false2063:
-	v773 = *lookahead
+	v773 = *local_lookahead
 	cmp2064 = 97 <= v773
 	if cmp2064 {
 		goto land_lhs_true2066
@@ -64517,7 +64517,7 @@ lor_lhs_false2063:
 	}
 
 land_lhs_true2066:
-	v774 = *lookahead
+	v774 = *local_lookahead
 	cmp2067 = v774 <= 122
 	if cmp2067 {
 		goto if_then2069
@@ -64545,7 +64545,7 @@ sw_bb2072:
 	v778 = *mark_end2074
 	v779 = *lexer_addr
 	v778(v779)
-	v780 = *lookahead
+	v780 = *local_lookahead
 	cmp2075 = v780 == 99
 	if cmp2075 {
 		goto if_then2077
@@ -64558,7 +64558,7 @@ if_then2077:
 	goto next_state
 
 if_end2078:
-	v781 = *lookahead
+	v781 = *local_lookahead
 	cmp2079 = v781 == 39
 	if cmp2079 {
 		goto if_then2105
@@ -64567,7 +64567,7 @@ if_end2078:
 	}
 
 lor_lhs_false2081:
-	v782 = *lookahead
+	v782 = *local_lookahead
 	cmp2082 = v782 == 45
 	if cmp2082 {
 		goto if_then2105
@@ -64576,7 +64576,7 @@ lor_lhs_false2081:
 	}
 
 lor_lhs_false2084:
-	v783 = *lookahead
+	v783 = *local_lookahead
 	cmp2085 = 48 <= v783
 	if cmp2085 {
 		goto land_lhs_true2087
@@ -64585,7 +64585,7 @@ lor_lhs_false2084:
 	}
 
 land_lhs_true2087:
-	v784 = *lookahead
+	v784 = *local_lookahead
 	cmp2088 = v784 <= 57
 	if cmp2088 {
 		goto if_then2105
@@ -64594,7 +64594,7 @@ land_lhs_true2087:
 	}
 
 lor_lhs_false2090:
-	v785 = *lookahead
+	v785 = *local_lookahead
 	cmp2091 = 65 <= v785
 	if cmp2091 {
 		goto land_lhs_true2093
@@ -64603,7 +64603,7 @@ lor_lhs_false2090:
 	}
 
 land_lhs_true2093:
-	v786 = *lookahead
+	v786 = *local_lookahead
 	cmp2094 = v786 <= 90
 	if cmp2094 {
 		goto if_then2105
@@ -64612,7 +64612,7 @@ land_lhs_true2093:
 	}
 
 lor_lhs_false2096:
-	v787 = *lookahead
+	v787 = *local_lookahead
 	cmp2097 = v787 == 95
 	if cmp2097 {
 		goto if_then2105
@@ -64621,7 +64621,7 @@ lor_lhs_false2096:
 	}
 
 lor_lhs_false2099:
-	v788 = *lookahead
+	v788 = *local_lookahead
 	cmp2100 = 97 <= v788
 	if cmp2100 {
 		goto land_lhs_true2102
@@ -64630,7 +64630,7 @@ lor_lhs_false2099:
 	}
 
 land_lhs_true2102:
-	v789 = *lookahead
+	v789 = *local_lookahead
 	cmp2103 = v789 <= 122
 	if cmp2103 {
 		goto if_then2105
@@ -64658,7 +64658,7 @@ sw_bb2108:
 	v793 = *mark_end2110
 	v794 = *lexer_addr
 	v793(v794)
-	v795 = *lookahead
+	v795 = *local_lookahead
 	cmp2111 = v795 == 100
 	if cmp2111 {
 		goto if_then2113
@@ -64671,7 +64671,7 @@ if_then2113:
 	goto next_state
 
 if_end2114:
-	v796 = *lookahead
+	v796 = *local_lookahead
 	cmp2115 = v796 == 39
 	if cmp2115 {
 		goto if_then2141
@@ -64680,7 +64680,7 @@ if_end2114:
 	}
 
 lor_lhs_false2117:
-	v797 = *lookahead
+	v797 = *local_lookahead
 	cmp2118 = v797 == 45
 	if cmp2118 {
 		goto if_then2141
@@ -64689,7 +64689,7 @@ lor_lhs_false2117:
 	}
 
 lor_lhs_false2120:
-	v798 = *lookahead
+	v798 = *local_lookahead
 	cmp2121 = 48 <= v798
 	if cmp2121 {
 		goto land_lhs_true2123
@@ -64698,7 +64698,7 @@ lor_lhs_false2120:
 	}
 
 land_lhs_true2123:
-	v799 = *lookahead
+	v799 = *local_lookahead
 	cmp2124 = v799 <= 57
 	if cmp2124 {
 		goto if_then2141
@@ -64707,7 +64707,7 @@ land_lhs_true2123:
 	}
 
 lor_lhs_false2126:
-	v800 = *lookahead
+	v800 = *local_lookahead
 	cmp2127 = 65 <= v800
 	if cmp2127 {
 		goto land_lhs_true2129
@@ -64716,7 +64716,7 @@ lor_lhs_false2126:
 	}
 
 land_lhs_true2129:
-	v801 = *lookahead
+	v801 = *local_lookahead
 	cmp2130 = v801 <= 90
 	if cmp2130 {
 		goto if_then2141
@@ -64725,7 +64725,7 @@ land_lhs_true2129:
 	}
 
 lor_lhs_false2132:
-	v802 = *lookahead
+	v802 = *local_lookahead
 	cmp2133 = v802 == 95
 	if cmp2133 {
 		goto if_then2141
@@ -64734,7 +64734,7 @@ lor_lhs_false2132:
 	}
 
 lor_lhs_false2135:
-	v803 = *lookahead
+	v803 = *local_lookahead
 	cmp2136 = 97 <= v803
 	if cmp2136 {
 		goto land_lhs_true2138
@@ -64743,7 +64743,7 @@ lor_lhs_false2135:
 	}
 
 land_lhs_true2138:
-	v804 = *lookahead
+	v804 = *local_lookahead
 	cmp2139 = v804 <= 122
 	if cmp2139 {
 		goto if_then2141
@@ -64771,7 +64771,7 @@ sw_bb2144:
 	v808 = *mark_end2146
 	v809 = *lexer_addr
 	v808(v809)
-	v810 = *lookahead
+	v810 = *local_lookahead
 	cmp2147 = v810 == 100
 	if cmp2147 {
 		goto if_then2149
@@ -64784,7 +64784,7 @@ if_then2149:
 	goto next_state
 
 if_end2150:
-	v811 = *lookahead
+	v811 = *local_lookahead
 	cmp2151 = v811 == 39
 	if cmp2151 {
 		goto if_then2177
@@ -64793,7 +64793,7 @@ if_end2150:
 	}
 
 lor_lhs_false2153:
-	v812 = *lookahead
+	v812 = *local_lookahead
 	cmp2154 = v812 == 45
 	if cmp2154 {
 		goto if_then2177
@@ -64802,7 +64802,7 @@ lor_lhs_false2153:
 	}
 
 lor_lhs_false2156:
-	v813 = *lookahead
+	v813 = *local_lookahead
 	cmp2157 = 48 <= v813
 	if cmp2157 {
 		goto land_lhs_true2159
@@ -64811,7 +64811,7 @@ lor_lhs_false2156:
 	}
 
 land_lhs_true2159:
-	v814 = *lookahead
+	v814 = *local_lookahead
 	cmp2160 = v814 <= 57
 	if cmp2160 {
 		goto if_then2177
@@ -64820,7 +64820,7 @@ land_lhs_true2159:
 	}
 
 lor_lhs_false2162:
-	v815 = *lookahead
+	v815 = *local_lookahead
 	cmp2163 = 65 <= v815
 	if cmp2163 {
 		goto land_lhs_true2165
@@ -64829,7 +64829,7 @@ lor_lhs_false2162:
 	}
 
 land_lhs_true2165:
-	v816 = *lookahead
+	v816 = *local_lookahead
 	cmp2166 = v816 <= 90
 	if cmp2166 {
 		goto if_then2177
@@ -64838,7 +64838,7 @@ land_lhs_true2165:
 	}
 
 lor_lhs_false2168:
-	v817 = *lookahead
+	v817 = *local_lookahead
 	cmp2169 = v817 == 95
 	if cmp2169 {
 		goto if_then2177
@@ -64847,7 +64847,7 @@ lor_lhs_false2168:
 	}
 
 lor_lhs_false2171:
-	v818 = *lookahead
+	v818 = *local_lookahead
 	cmp2172 = 97 <= v818
 	if cmp2172 {
 		goto land_lhs_true2174
@@ -64856,7 +64856,7 @@ lor_lhs_false2171:
 	}
 
 land_lhs_true2174:
-	v819 = *lookahead
+	v819 = *local_lookahead
 	cmp2175 = v819 <= 122
 	if cmp2175 {
 		goto if_then2177
@@ -64884,7 +64884,7 @@ sw_bb2180:
 	v823 = *mark_end2182
 	v824 = *lexer_addr
 	v823(v824)
-	v825 = *lookahead
+	v825 = *local_lookahead
 	cmp2183 = v825 == 101
 	if cmp2183 {
 		goto if_then2185
@@ -64897,7 +64897,7 @@ if_then2185:
 	goto next_state
 
 if_end2186:
-	v826 = *lookahead
+	v826 = *local_lookahead
 	cmp2187 = v826 == 111
 	if cmp2187 {
 		goto if_then2189
@@ -64910,7 +64910,7 @@ if_then2189:
 	goto next_state
 
 if_end2190:
-	v827 = *lookahead
+	v827 = *local_lookahead
 	cmp2191 = v827 == 39
 	if cmp2191 {
 		goto if_then2217
@@ -64919,7 +64919,7 @@ if_end2190:
 	}
 
 lor_lhs_false2193:
-	v828 = *lookahead
+	v828 = *local_lookahead
 	cmp2194 = v828 == 45
 	if cmp2194 {
 		goto if_then2217
@@ -64928,7 +64928,7 @@ lor_lhs_false2193:
 	}
 
 lor_lhs_false2196:
-	v829 = *lookahead
+	v829 = *local_lookahead
 	cmp2197 = 48 <= v829
 	if cmp2197 {
 		goto land_lhs_true2199
@@ -64937,7 +64937,7 @@ lor_lhs_false2196:
 	}
 
 land_lhs_true2199:
-	v830 = *lookahead
+	v830 = *local_lookahead
 	cmp2200 = v830 <= 57
 	if cmp2200 {
 		goto if_then2217
@@ -64946,7 +64946,7 @@ land_lhs_true2199:
 	}
 
 lor_lhs_false2202:
-	v831 = *lookahead
+	v831 = *local_lookahead
 	cmp2203 = 65 <= v831
 	if cmp2203 {
 		goto land_lhs_true2205
@@ -64955,7 +64955,7 @@ lor_lhs_false2202:
 	}
 
 land_lhs_true2205:
-	v832 = *lookahead
+	v832 = *local_lookahead
 	cmp2206 = v832 <= 90
 	if cmp2206 {
 		goto if_then2217
@@ -64964,7 +64964,7 @@ land_lhs_true2205:
 	}
 
 lor_lhs_false2208:
-	v833 = *lookahead
+	v833 = *local_lookahead
 	cmp2209 = v833 == 95
 	if cmp2209 {
 		goto if_then2217
@@ -64973,7 +64973,7 @@ lor_lhs_false2208:
 	}
 
 lor_lhs_false2211:
-	v834 = *lookahead
+	v834 = *local_lookahead
 	cmp2212 = 97 <= v834
 	if cmp2212 {
 		goto land_lhs_true2214
@@ -64982,7 +64982,7 @@ lor_lhs_false2211:
 	}
 
 land_lhs_true2214:
-	v835 = *lookahead
+	v835 = *local_lookahead
 	cmp2215 = v835 <= 122
 	if cmp2215 {
 		goto if_then2217
@@ -65010,7 +65010,7 @@ sw_bb2220:
 	v839 = *mark_end2222
 	v840 = *lexer_addr
 	v839(v840)
-	v841 = *lookahead
+	v841 = *local_lookahead
 	cmp2223 = v841 == 101
 	if cmp2223 {
 		goto if_then2225
@@ -65023,7 +65023,7 @@ if_then2225:
 	goto next_state
 
 if_end2226:
-	v842 = *lookahead
+	v842 = *local_lookahead
 	cmp2227 = v842 == 39
 	if cmp2227 {
 		goto if_then2253
@@ -65032,7 +65032,7 @@ if_end2226:
 	}
 
 lor_lhs_false2229:
-	v843 = *lookahead
+	v843 = *local_lookahead
 	cmp2230 = v843 == 45
 	if cmp2230 {
 		goto if_then2253
@@ -65041,7 +65041,7 @@ lor_lhs_false2229:
 	}
 
 lor_lhs_false2232:
-	v844 = *lookahead
+	v844 = *local_lookahead
 	cmp2233 = 48 <= v844
 	if cmp2233 {
 		goto land_lhs_true2235
@@ -65050,7 +65050,7 @@ lor_lhs_false2232:
 	}
 
 land_lhs_true2235:
-	v845 = *lookahead
+	v845 = *local_lookahead
 	cmp2236 = v845 <= 57
 	if cmp2236 {
 		goto if_then2253
@@ -65059,7 +65059,7 @@ land_lhs_true2235:
 	}
 
 lor_lhs_false2238:
-	v846 = *lookahead
+	v846 = *local_lookahead
 	cmp2239 = 65 <= v846
 	if cmp2239 {
 		goto land_lhs_true2241
@@ -65068,7 +65068,7 @@ lor_lhs_false2238:
 	}
 
 land_lhs_true2241:
-	v847 = *lookahead
+	v847 = *local_lookahead
 	cmp2242 = v847 <= 90
 	if cmp2242 {
 		goto if_then2253
@@ -65077,7 +65077,7 @@ land_lhs_true2241:
 	}
 
 lor_lhs_false2244:
-	v848 = *lookahead
+	v848 = *local_lookahead
 	cmp2245 = v848 == 95
 	if cmp2245 {
 		goto if_then2253
@@ -65086,7 +65086,7 @@ lor_lhs_false2244:
 	}
 
 lor_lhs_false2247:
-	v849 = *lookahead
+	v849 = *local_lookahead
 	cmp2248 = 97 <= v849
 	if cmp2248 {
 		goto land_lhs_true2250
@@ -65095,7 +65095,7 @@ lor_lhs_false2247:
 	}
 
 land_lhs_true2250:
-	v850 = *lookahead
+	v850 = *local_lookahead
 	cmp2251 = v850 <= 122
 	if cmp2251 {
 		goto if_then2253
@@ -65123,7 +65123,7 @@ sw_bb2256:
 	v854 = *mark_end2258
 	v855 = *lexer_addr
 	v854(v855)
-	v856 = *lookahead
+	v856 = *local_lookahead
 	cmp2259 = v856 == 101
 	if cmp2259 {
 		goto if_then2261
@@ -65136,7 +65136,7 @@ if_then2261:
 	goto next_state
 
 if_end2262:
-	v857 = *lookahead
+	v857 = *local_lookahead
 	cmp2263 = v857 == 39
 	if cmp2263 {
 		goto if_then2289
@@ -65145,7 +65145,7 @@ if_end2262:
 	}
 
 lor_lhs_false2265:
-	v858 = *lookahead
+	v858 = *local_lookahead
 	cmp2266 = v858 == 45
 	if cmp2266 {
 		goto if_then2289
@@ -65154,7 +65154,7 @@ lor_lhs_false2265:
 	}
 
 lor_lhs_false2268:
-	v859 = *lookahead
+	v859 = *local_lookahead
 	cmp2269 = 48 <= v859
 	if cmp2269 {
 		goto land_lhs_true2271
@@ -65163,7 +65163,7 @@ lor_lhs_false2268:
 	}
 
 land_lhs_true2271:
-	v860 = *lookahead
+	v860 = *local_lookahead
 	cmp2272 = v860 <= 57
 	if cmp2272 {
 		goto if_then2289
@@ -65172,7 +65172,7 @@ land_lhs_true2271:
 	}
 
 lor_lhs_false2274:
-	v861 = *lookahead
+	v861 = *local_lookahead
 	cmp2275 = 65 <= v861
 	if cmp2275 {
 		goto land_lhs_true2277
@@ -65181,7 +65181,7 @@ lor_lhs_false2274:
 	}
 
 land_lhs_true2277:
-	v862 = *lookahead
+	v862 = *local_lookahead
 	cmp2278 = v862 <= 90
 	if cmp2278 {
 		goto if_then2289
@@ -65190,7 +65190,7 @@ land_lhs_true2277:
 	}
 
 lor_lhs_false2280:
-	v863 = *lookahead
+	v863 = *local_lookahead
 	cmp2281 = v863 == 95
 	if cmp2281 {
 		goto if_then2289
@@ -65199,7 +65199,7 @@ lor_lhs_false2280:
 	}
 
 lor_lhs_false2283:
-	v864 = *lookahead
+	v864 = *local_lookahead
 	cmp2284 = 97 <= v864
 	if cmp2284 {
 		goto land_lhs_true2286
@@ -65208,7 +65208,7 @@ lor_lhs_false2283:
 	}
 
 land_lhs_true2286:
-	v865 = *lookahead
+	v865 = *local_lookahead
 	cmp2287 = v865 <= 122
 	if cmp2287 {
 		goto if_then2289
@@ -65236,7 +65236,7 @@ sw_bb2292:
 	v869 = *mark_end2294
 	v870 = *lexer_addr
 	v869(v870)
-	v871 = *lookahead
+	v871 = *local_lookahead
 	cmp2295 = v871 == 101
 	if cmp2295 {
 		goto if_then2297
@@ -65249,7 +65249,7 @@ if_then2297:
 	goto next_state
 
 if_end2298:
-	v872 = *lookahead
+	v872 = *local_lookahead
 	cmp2299 = v872 == 39
 	if cmp2299 {
 		goto if_then2325
@@ -65258,7 +65258,7 @@ if_end2298:
 	}
 
 lor_lhs_false2301:
-	v873 = *lookahead
+	v873 = *local_lookahead
 	cmp2302 = v873 == 45
 	if cmp2302 {
 		goto if_then2325
@@ -65267,7 +65267,7 @@ lor_lhs_false2301:
 	}
 
 lor_lhs_false2304:
-	v874 = *lookahead
+	v874 = *local_lookahead
 	cmp2305 = 48 <= v874
 	if cmp2305 {
 		goto land_lhs_true2307
@@ -65276,7 +65276,7 @@ lor_lhs_false2304:
 	}
 
 land_lhs_true2307:
-	v875 = *lookahead
+	v875 = *local_lookahead
 	cmp2308 = v875 <= 57
 	if cmp2308 {
 		goto if_then2325
@@ -65285,7 +65285,7 @@ land_lhs_true2307:
 	}
 
 lor_lhs_false2310:
-	v876 = *lookahead
+	v876 = *local_lookahead
 	cmp2311 = 65 <= v876
 	if cmp2311 {
 		goto land_lhs_true2313
@@ -65294,7 +65294,7 @@ lor_lhs_false2310:
 	}
 
 land_lhs_true2313:
-	v877 = *lookahead
+	v877 = *local_lookahead
 	cmp2314 = v877 <= 90
 	if cmp2314 {
 		goto if_then2325
@@ -65303,7 +65303,7 @@ land_lhs_true2313:
 	}
 
 lor_lhs_false2316:
-	v878 = *lookahead
+	v878 = *local_lookahead
 	cmp2317 = v878 == 95
 	if cmp2317 {
 		goto if_then2325
@@ -65312,7 +65312,7 @@ lor_lhs_false2316:
 	}
 
 lor_lhs_false2319:
-	v879 = *lookahead
+	v879 = *local_lookahead
 	cmp2320 = 97 <= v879
 	if cmp2320 {
 		goto land_lhs_true2322
@@ -65321,7 +65321,7 @@ lor_lhs_false2319:
 	}
 
 land_lhs_true2322:
-	v880 = *lookahead
+	v880 = *local_lookahead
 	cmp2323 = v880 <= 122
 	if cmp2323 {
 		goto if_then2325
@@ -65349,7 +65349,7 @@ sw_bb2328:
 	v884 = *mark_end2330
 	v885 = *lexer_addr
 	v884(v885)
-	v886 = *lookahead
+	v886 = *local_lookahead
 	cmp2331 = v886 == 101
 	if cmp2331 {
 		goto if_then2333
@@ -65362,7 +65362,7 @@ if_then2333:
 	goto next_state
 
 if_end2334:
-	v887 = *lookahead
+	v887 = *local_lookahead
 	cmp2335 = v887 == 39
 	if cmp2335 {
 		goto if_then2361
@@ -65371,7 +65371,7 @@ if_end2334:
 	}
 
 lor_lhs_false2337:
-	v888 = *lookahead
+	v888 = *local_lookahead
 	cmp2338 = v888 == 45
 	if cmp2338 {
 		goto if_then2361
@@ -65380,7 +65380,7 @@ lor_lhs_false2337:
 	}
 
 lor_lhs_false2340:
-	v889 = *lookahead
+	v889 = *local_lookahead
 	cmp2341 = 48 <= v889
 	if cmp2341 {
 		goto land_lhs_true2343
@@ -65389,7 +65389,7 @@ lor_lhs_false2340:
 	}
 
 land_lhs_true2343:
-	v890 = *lookahead
+	v890 = *local_lookahead
 	cmp2344 = v890 <= 57
 	if cmp2344 {
 		goto if_then2361
@@ -65398,7 +65398,7 @@ land_lhs_true2343:
 	}
 
 lor_lhs_false2346:
-	v891 = *lookahead
+	v891 = *local_lookahead
 	cmp2347 = 65 <= v891
 	if cmp2347 {
 		goto land_lhs_true2349
@@ -65407,7 +65407,7 @@ lor_lhs_false2346:
 	}
 
 land_lhs_true2349:
-	v892 = *lookahead
+	v892 = *local_lookahead
 	cmp2350 = v892 <= 90
 	if cmp2350 {
 		goto if_then2361
@@ -65416,7 +65416,7 @@ land_lhs_true2349:
 	}
 
 lor_lhs_false2352:
-	v893 = *lookahead
+	v893 = *local_lookahead
 	cmp2353 = v893 == 95
 	if cmp2353 {
 		goto if_then2361
@@ -65425,7 +65425,7 @@ lor_lhs_false2352:
 	}
 
 lor_lhs_false2355:
-	v894 = *lookahead
+	v894 = *local_lookahead
 	cmp2356 = 97 <= v894
 	if cmp2356 {
 		goto land_lhs_true2358
@@ -65434,7 +65434,7 @@ lor_lhs_false2355:
 	}
 
 land_lhs_true2358:
-	v895 = *lookahead
+	v895 = *local_lookahead
 	cmp2359 = v895 <= 122
 	if cmp2359 {
 		goto if_then2361
@@ -65462,7 +65462,7 @@ sw_bb2364:
 	v899 = *mark_end2366
 	v900 = *lexer_addr
 	v899(v900)
-	v901 = *lookahead
+	v901 = *local_lookahead
 	cmp2367 = v901 == 101
 	if cmp2367 {
 		goto if_then2369
@@ -65475,7 +65475,7 @@ if_then2369:
 	goto next_state
 
 if_end2370:
-	v902 = *lookahead
+	v902 = *local_lookahead
 	cmp2371 = v902 == 39
 	if cmp2371 {
 		goto if_then2397
@@ -65484,7 +65484,7 @@ if_end2370:
 	}
 
 lor_lhs_false2373:
-	v903 = *lookahead
+	v903 = *local_lookahead
 	cmp2374 = v903 == 45
 	if cmp2374 {
 		goto if_then2397
@@ -65493,7 +65493,7 @@ lor_lhs_false2373:
 	}
 
 lor_lhs_false2376:
-	v904 = *lookahead
+	v904 = *local_lookahead
 	cmp2377 = 48 <= v904
 	if cmp2377 {
 		goto land_lhs_true2379
@@ -65502,7 +65502,7 @@ lor_lhs_false2376:
 	}
 
 land_lhs_true2379:
-	v905 = *lookahead
+	v905 = *local_lookahead
 	cmp2380 = v905 <= 57
 	if cmp2380 {
 		goto if_then2397
@@ -65511,7 +65511,7 @@ land_lhs_true2379:
 	}
 
 lor_lhs_false2382:
-	v906 = *lookahead
+	v906 = *local_lookahead
 	cmp2383 = 65 <= v906
 	if cmp2383 {
 		goto land_lhs_true2385
@@ -65520,7 +65520,7 @@ lor_lhs_false2382:
 	}
 
 land_lhs_true2385:
-	v907 = *lookahead
+	v907 = *local_lookahead
 	cmp2386 = v907 <= 90
 	if cmp2386 {
 		goto if_then2397
@@ -65529,7 +65529,7 @@ land_lhs_true2385:
 	}
 
 lor_lhs_false2388:
-	v908 = *lookahead
+	v908 = *local_lookahead
 	cmp2389 = v908 == 95
 	if cmp2389 {
 		goto if_then2397
@@ -65538,7 +65538,7 @@ lor_lhs_false2388:
 	}
 
 lor_lhs_false2391:
-	v909 = *lookahead
+	v909 = *local_lookahead
 	cmp2392 = 97 <= v909
 	if cmp2392 {
 		goto land_lhs_true2394
@@ -65547,7 +65547,7 @@ lor_lhs_false2391:
 	}
 
 land_lhs_true2394:
-	v910 = *lookahead
+	v910 = *local_lookahead
 	cmp2395 = v910 <= 122
 	if cmp2395 {
 		goto if_then2397
@@ -65575,7 +65575,7 @@ sw_bb2400:
 	v914 = *mark_end2402
 	v915 = *lexer_addr
 	v914(v915)
-	v916 = *lookahead
+	v916 = *local_lookahead
 	cmp2403 = v916 == 101
 	if cmp2403 {
 		goto if_then2405
@@ -65588,7 +65588,7 @@ if_then2405:
 	goto next_state
 
 if_end2406:
-	v917 = *lookahead
+	v917 = *local_lookahead
 	cmp2407 = v917 == 39
 	if cmp2407 {
 		goto if_then2433
@@ -65597,7 +65597,7 @@ if_end2406:
 	}
 
 lor_lhs_false2409:
-	v918 = *lookahead
+	v918 = *local_lookahead
 	cmp2410 = v918 == 45
 	if cmp2410 {
 		goto if_then2433
@@ -65606,7 +65606,7 @@ lor_lhs_false2409:
 	}
 
 lor_lhs_false2412:
-	v919 = *lookahead
+	v919 = *local_lookahead
 	cmp2413 = 48 <= v919
 	if cmp2413 {
 		goto land_lhs_true2415
@@ -65615,7 +65615,7 @@ lor_lhs_false2412:
 	}
 
 land_lhs_true2415:
-	v920 = *lookahead
+	v920 = *local_lookahead
 	cmp2416 = v920 <= 57
 	if cmp2416 {
 		goto if_then2433
@@ -65624,7 +65624,7 @@ land_lhs_true2415:
 	}
 
 lor_lhs_false2418:
-	v921 = *lookahead
+	v921 = *local_lookahead
 	cmp2419 = 65 <= v921
 	if cmp2419 {
 		goto land_lhs_true2421
@@ -65633,7 +65633,7 @@ lor_lhs_false2418:
 	}
 
 land_lhs_true2421:
-	v922 = *lookahead
+	v922 = *local_lookahead
 	cmp2422 = v922 <= 90
 	if cmp2422 {
 		goto if_then2433
@@ -65642,7 +65642,7 @@ land_lhs_true2421:
 	}
 
 lor_lhs_false2424:
-	v923 = *lookahead
+	v923 = *local_lookahead
 	cmp2425 = v923 == 95
 	if cmp2425 {
 		goto if_then2433
@@ -65651,7 +65651,7 @@ lor_lhs_false2424:
 	}
 
 lor_lhs_false2427:
-	v924 = *lookahead
+	v924 = *local_lookahead
 	cmp2428 = 97 <= v924
 	if cmp2428 {
 		goto land_lhs_true2430
@@ -65660,7 +65660,7 @@ lor_lhs_false2427:
 	}
 
 land_lhs_true2430:
-	v925 = *lookahead
+	v925 = *local_lookahead
 	cmp2431 = v925 <= 122
 	if cmp2431 {
 		goto if_then2433
@@ -65688,7 +65688,7 @@ sw_bb2436:
 	v929 = *mark_end2438
 	v930 = *lexer_addr
 	v929(v930)
-	v931 = *lookahead
+	v931 = *local_lookahead
 	cmp2439 = v931 == 101
 	if cmp2439 {
 		goto if_then2441
@@ -65701,7 +65701,7 @@ if_then2441:
 	goto next_state
 
 if_end2442:
-	v932 = *lookahead
+	v932 = *local_lookahead
 	cmp2443 = v932 == 39
 	if cmp2443 {
 		goto if_then2469
@@ -65710,7 +65710,7 @@ if_end2442:
 	}
 
 lor_lhs_false2445:
-	v933 = *lookahead
+	v933 = *local_lookahead
 	cmp2446 = v933 == 45
 	if cmp2446 {
 		goto if_then2469
@@ -65719,7 +65719,7 @@ lor_lhs_false2445:
 	}
 
 lor_lhs_false2448:
-	v934 = *lookahead
+	v934 = *local_lookahead
 	cmp2449 = 48 <= v934
 	if cmp2449 {
 		goto land_lhs_true2451
@@ -65728,7 +65728,7 @@ lor_lhs_false2448:
 	}
 
 land_lhs_true2451:
-	v935 = *lookahead
+	v935 = *local_lookahead
 	cmp2452 = v935 <= 57
 	if cmp2452 {
 		goto if_then2469
@@ -65737,7 +65737,7 @@ land_lhs_true2451:
 	}
 
 lor_lhs_false2454:
-	v936 = *lookahead
+	v936 = *local_lookahead
 	cmp2455 = 65 <= v936
 	if cmp2455 {
 		goto land_lhs_true2457
@@ -65746,7 +65746,7 @@ lor_lhs_false2454:
 	}
 
 land_lhs_true2457:
-	v937 = *lookahead
+	v937 = *local_lookahead
 	cmp2458 = v937 <= 90
 	if cmp2458 {
 		goto if_then2469
@@ -65755,7 +65755,7 @@ land_lhs_true2457:
 	}
 
 lor_lhs_false2460:
-	v938 = *lookahead
+	v938 = *local_lookahead
 	cmp2461 = v938 == 95
 	if cmp2461 {
 		goto if_then2469
@@ -65764,7 +65764,7 @@ lor_lhs_false2460:
 	}
 
 lor_lhs_false2463:
-	v939 = *lookahead
+	v939 = *local_lookahead
 	cmp2464 = 97 <= v939
 	if cmp2464 {
 		goto land_lhs_true2466
@@ -65773,7 +65773,7 @@ lor_lhs_false2463:
 	}
 
 land_lhs_true2466:
-	v940 = *lookahead
+	v940 = *local_lookahead
 	cmp2467 = v940 <= 122
 	if cmp2467 {
 		goto if_then2469
@@ -65801,7 +65801,7 @@ sw_bb2472:
 	v944 = *mark_end2474
 	v945 = *lexer_addr
 	v944(v945)
-	v946 = *lookahead
+	v946 = *local_lookahead
 	cmp2475 = v946 == 101
 	if cmp2475 {
 		goto if_then2477
@@ -65814,7 +65814,7 @@ if_then2477:
 	goto next_state
 
 if_end2478:
-	v947 = *lookahead
+	v947 = *local_lookahead
 	cmp2479 = v947 == 39
 	if cmp2479 {
 		goto if_then2505
@@ -65823,7 +65823,7 @@ if_end2478:
 	}
 
 lor_lhs_false2481:
-	v948 = *lookahead
+	v948 = *local_lookahead
 	cmp2482 = v948 == 45
 	if cmp2482 {
 		goto if_then2505
@@ -65832,7 +65832,7 @@ lor_lhs_false2481:
 	}
 
 lor_lhs_false2484:
-	v949 = *lookahead
+	v949 = *local_lookahead
 	cmp2485 = 48 <= v949
 	if cmp2485 {
 		goto land_lhs_true2487
@@ -65841,7 +65841,7 @@ lor_lhs_false2484:
 	}
 
 land_lhs_true2487:
-	v950 = *lookahead
+	v950 = *local_lookahead
 	cmp2488 = v950 <= 57
 	if cmp2488 {
 		goto if_then2505
@@ -65850,7 +65850,7 @@ land_lhs_true2487:
 	}
 
 lor_lhs_false2490:
-	v951 = *lookahead
+	v951 = *local_lookahead
 	cmp2491 = 65 <= v951
 	if cmp2491 {
 		goto land_lhs_true2493
@@ -65859,7 +65859,7 @@ lor_lhs_false2490:
 	}
 
 land_lhs_true2493:
-	v952 = *lookahead
+	v952 = *local_lookahead
 	cmp2494 = v952 <= 90
 	if cmp2494 {
 		goto if_then2505
@@ -65868,7 +65868,7 @@ land_lhs_true2493:
 	}
 
 lor_lhs_false2496:
-	v953 = *lookahead
+	v953 = *local_lookahead
 	cmp2497 = v953 == 95
 	if cmp2497 {
 		goto if_then2505
@@ -65877,7 +65877,7 @@ lor_lhs_false2496:
 	}
 
 lor_lhs_false2499:
-	v954 = *lookahead
+	v954 = *local_lookahead
 	cmp2500 = 97 <= v954
 	if cmp2500 {
 		goto land_lhs_true2502
@@ -65886,7 +65886,7 @@ lor_lhs_false2499:
 	}
 
 land_lhs_true2502:
-	v955 = *lookahead
+	v955 = *local_lookahead
 	cmp2503 = v955 <= 122
 	if cmp2503 {
 		goto if_then2505
@@ -65914,7 +65914,7 @@ sw_bb2508:
 	v959 = *mark_end2510
 	v960 = *lexer_addr
 	v959(v960)
-	v961 = *lookahead
+	v961 = *local_lookahead
 	cmp2511 = v961 == 102
 	if cmp2511 {
 		goto if_then2513
@@ -65927,7 +65927,7 @@ if_then2513:
 	goto next_state
 
 if_end2514:
-	v962 = *lookahead
+	v962 = *local_lookahead
 	cmp2515 = v962 == 39
 	if cmp2515 {
 		goto if_then2541
@@ -65936,7 +65936,7 @@ if_end2514:
 	}
 
 lor_lhs_false2517:
-	v963 = *lookahead
+	v963 = *local_lookahead
 	cmp2518 = v963 == 45
 	if cmp2518 {
 		goto if_then2541
@@ -65945,7 +65945,7 @@ lor_lhs_false2517:
 	}
 
 lor_lhs_false2520:
-	v964 = *lookahead
+	v964 = *local_lookahead
 	cmp2521 = 48 <= v964
 	if cmp2521 {
 		goto land_lhs_true2523
@@ -65954,7 +65954,7 @@ lor_lhs_false2520:
 	}
 
 land_lhs_true2523:
-	v965 = *lookahead
+	v965 = *local_lookahead
 	cmp2524 = v965 <= 57
 	if cmp2524 {
 		goto if_then2541
@@ -65963,7 +65963,7 @@ land_lhs_true2523:
 	}
 
 lor_lhs_false2526:
-	v966 = *lookahead
+	v966 = *local_lookahead
 	cmp2527 = 65 <= v966
 	if cmp2527 {
 		goto land_lhs_true2529
@@ -65972,7 +65972,7 @@ lor_lhs_false2526:
 	}
 
 land_lhs_true2529:
-	v967 = *lookahead
+	v967 = *local_lookahead
 	cmp2530 = v967 <= 90
 	if cmp2530 {
 		goto if_then2541
@@ -65981,7 +65981,7 @@ land_lhs_true2529:
 	}
 
 lor_lhs_false2532:
-	v968 = *lookahead
+	v968 = *local_lookahead
 	cmp2533 = v968 == 95
 	if cmp2533 {
 		goto if_then2541
@@ -65990,7 +65990,7 @@ lor_lhs_false2532:
 	}
 
 lor_lhs_false2535:
-	v969 = *lookahead
+	v969 = *local_lookahead
 	cmp2536 = 97 <= v969
 	if cmp2536 {
 		goto land_lhs_true2538
@@ -65999,7 +65999,7 @@ lor_lhs_false2535:
 	}
 
 land_lhs_true2538:
-	v970 = *lookahead
+	v970 = *local_lookahead
 	cmp2539 = v970 <= 122
 	if cmp2539 {
 		goto if_then2541
@@ -66027,7 +66027,7 @@ sw_bb2544:
 	v974 = *mark_end2546
 	v975 = *lexer_addr
 	v974(v975)
-	v976 = *lookahead
+	v976 = *local_lookahead
 	cmp2547 = v976 == 103
 	if cmp2547 {
 		goto if_then2549
@@ -66040,7 +66040,7 @@ if_then2549:
 	goto next_state
 
 if_end2550:
-	v977 = *lookahead
+	v977 = *local_lookahead
 	cmp2551 = v977 == 39
 	if cmp2551 {
 		goto if_then2577
@@ -66049,7 +66049,7 @@ if_end2550:
 	}
 
 lor_lhs_false2553:
-	v978 = *lookahead
+	v978 = *local_lookahead
 	cmp2554 = v978 == 45
 	if cmp2554 {
 		goto if_then2577
@@ -66058,7 +66058,7 @@ lor_lhs_false2553:
 	}
 
 lor_lhs_false2556:
-	v979 = *lookahead
+	v979 = *local_lookahead
 	cmp2557 = 48 <= v979
 	if cmp2557 {
 		goto land_lhs_true2559
@@ -66067,7 +66067,7 @@ lor_lhs_false2556:
 	}
 
 land_lhs_true2559:
-	v980 = *lookahead
+	v980 = *local_lookahead
 	cmp2560 = v980 <= 57
 	if cmp2560 {
 		goto if_then2577
@@ -66076,7 +66076,7 @@ land_lhs_true2559:
 	}
 
 lor_lhs_false2562:
-	v981 = *lookahead
+	v981 = *local_lookahead
 	cmp2563 = 65 <= v981
 	if cmp2563 {
 		goto land_lhs_true2565
@@ -66085,7 +66085,7 @@ lor_lhs_false2562:
 	}
 
 land_lhs_true2565:
-	v982 = *lookahead
+	v982 = *local_lookahead
 	cmp2566 = v982 <= 90
 	if cmp2566 {
 		goto if_then2577
@@ -66094,7 +66094,7 @@ land_lhs_true2565:
 	}
 
 lor_lhs_false2568:
-	v983 = *lookahead
+	v983 = *local_lookahead
 	cmp2569 = v983 == 95
 	if cmp2569 {
 		goto if_then2577
@@ -66103,7 +66103,7 @@ lor_lhs_false2568:
 	}
 
 lor_lhs_false2571:
-	v984 = *lookahead
+	v984 = *local_lookahead
 	cmp2572 = 97 <= v984
 	if cmp2572 {
 		goto land_lhs_true2574
@@ -66112,7 +66112,7 @@ lor_lhs_false2571:
 	}
 
 land_lhs_true2574:
-	v985 = *lookahead
+	v985 = *local_lookahead
 	cmp2575 = v985 <= 122
 	if cmp2575 {
 		goto if_then2577
@@ -66140,7 +66140,7 @@ sw_bb2580:
 	v989 = *mark_end2582
 	v990 = *lexer_addr
 	v989(v990)
-	v991 = *lookahead
+	v991 = *local_lookahead
 	cmp2583 = v991 == 104
 	if cmp2583 {
 		goto if_then2585
@@ -66153,7 +66153,7 @@ if_then2585:
 	goto next_state
 
 if_end2586:
-	v992 = *lookahead
+	v992 = *local_lookahead
 	cmp2587 = v992 == 39
 	if cmp2587 {
 		goto if_then2613
@@ -66162,7 +66162,7 @@ if_end2586:
 	}
 
 lor_lhs_false2589:
-	v993 = *lookahead
+	v993 = *local_lookahead
 	cmp2590 = v993 == 45
 	if cmp2590 {
 		goto if_then2613
@@ -66171,7 +66171,7 @@ lor_lhs_false2589:
 	}
 
 lor_lhs_false2592:
-	v994 = *lookahead
+	v994 = *local_lookahead
 	cmp2593 = 48 <= v994
 	if cmp2593 {
 		goto land_lhs_true2595
@@ -66180,7 +66180,7 @@ lor_lhs_false2592:
 	}
 
 land_lhs_true2595:
-	v995 = *lookahead
+	v995 = *local_lookahead
 	cmp2596 = v995 <= 57
 	if cmp2596 {
 		goto if_then2613
@@ -66189,7 +66189,7 @@ land_lhs_true2595:
 	}
 
 lor_lhs_false2598:
-	v996 = *lookahead
+	v996 = *local_lookahead
 	cmp2599 = 65 <= v996
 	if cmp2599 {
 		goto land_lhs_true2601
@@ -66198,7 +66198,7 @@ lor_lhs_false2598:
 	}
 
 land_lhs_true2601:
-	v997 = *lookahead
+	v997 = *local_lookahead
 	cmp2602 = v997 <= 90
 	if cmp2602 {
 		goto if_then2613
@@ -66207,7 +66207,7 @@ land_lhs_true2601:
 	}
 
 lor_lhs_false2604:
-	v998 = *lookahead
+	v998 = *local_lookahead
 	cmp2605 = v998 == 95
 	if cmp2605 {
 		goto if_then2613
@@ -66216,7 +66216,7 @@ lor_lhs_false2604:
 	}
 
 lor_lhs_false2607:
-	v999 = *lookahead
+	v999 = *local_lookahead
 	cmp2608 = 97 <= v999
 	if cmp2608 {
 		goto land_lhs_true2610
@@ -66225,7 +66225,7 @@ lor_lhs_false2607:
 	}
 
 land_lhs_true2610:
-	v1000 = *lookahead
+	v1000 = *local_lookahead
 	cmp2611 = v1000 <= 122
 	if cmp2611 {
 		goto if_then2613
@@ -66253,7 +66253,7 @@ sw_bb2616:
 	v1004 = *mark_end2618
 	v1005 = *lexer_addr
 	v1004(v1005)
-	v1006 = *lookahead
+	v1006 = *local_lookahead
 	cmp2619 = v1006 == 104
 	if cmp2619 {
 		goto if_then2621
@@ -66266,7 +66266,7 @@ if_then2621:
 	goto next_state
 
 if_end2622:
-	v1007 = *lookahead
+	v1007 = *local_lookahead
 	cmp2623 = v1007 == 114
 	if cmp2623 {
 		goto if_then2625
@@ -66279,7 +66279,7 @@ if_then2625:
 	goto next_state
 
 if_end2626:
-	v1008 = *lookahead
+	v1008 = *local_lookahead
 	cmp2627 = v1008 == 39
 	if cmp2627 {
 		goto if_then2653
@@ -66288,7 +66288,7 @@ if_end2626:
 	}
 
 lor_lhs_false2629:
-	v1009 = *lookahead
+	v1009 = *local_lookahead
 	cmp2630 = v1009 == 45
 	if cmp2630 {
 		goto if_then2653
@@ -66297,7 +66297,7 @@ lor_lhs_false2629:
 	}
 
 lor_lhs_false2632:
-	v1010 = *lookahead
+	v1010 = *local_lookahead
 	cmp2633 = 48 <= v1010
 	if cmp2633 {
 		goto land_lhs_true2635
@@ -66306,7 +66306,7 @@ lor_lhs_false2632:
 	}
 
 land_lhs_true2635:
-	v1011 = *lookahead
+	v1011 = *local_lookahead
 	cmp2636 = v1011 <= 57
 	if cmp2636 {
 		goto if_then2653
@@ -66315,7 +66315,7 @@ land_lhs_true2635:
 	}
 
 lor_lhs_false2638:
-	v1012 = *lookahead
+	v1012 = *local_lookahead
 	cmp2639 = 65 <= v1012
 	if cmp2639 {
 		goto land_lhs_true2641
@@ -66324,7 +66324,7 @@ lor_lhs_false2638:
 	}
 
 land_lhs_true2641:
-	v1013 = *lookahead
+	v1013 = *local_lookahead
 	cmp2642 = v1013 <= 90
 	if cmp2642 {
 		goto if_then2653
@@ -66333,7 +66333,7 @@ land_lhs_true2641:
 	}
 
 lor_lhs_false2644:
-	v1014 = *lookahead
+	v1014 = *local_lookahead
 	cmp2645 = v1014 == 95
 	if cmp2645 {
 		goto if_then2653
@@ -66342,7 +66342,7 @@ lor_lhs_false2644:
 	}
 
 lor_lhs_false2647:
-	v1015 = *lookahead
+	v1015 = *local_lookahead
 	cmp2648 = 97 <= v1015
 	if cmp2648 {
 		goto land_lhs_true2650
@@ -66351,7 +66351,7 @@ lor_lhs_false2647:
 	}
 
 land_lhs_true2650:
-	v1016 = *lookahead
+	v1016 = *local_lookahead
 	cmp2651 = v1016 <= 122
 	if cmp2651 {
 		goto if_then2653
@@ -66379,7 +66379,7 @@ sw_bb2656:
 	v1020 = *mark_end2658
 	v1021 = *lexer_addr
 	v1020(v1021)
-	v1022 = *lookahead
+	v1022 = *local_lookahead
 	cmp2659 = v1022 == 105
 	if cmp2659 {
 		goto if_then2661
@@ -66392,7 +66392,7 @@ if_then2661:
 	goto next_state
 
 if_end2662:
-	v1023 = *lookahead
+	v1023 = *local_lookahead
 	cmp2663 = v1023 == 39
 	if cmp2663 {
 		goto if_then2689
@@ -66401,7 +66401,7 @@ if_end2662:
 	}
 
 lor_lhs_false2665:
-	v1024 = *lookahead
+	v1024 = *local_lookahead
 	cmp2666 = v1024 == 45
 	if cmp2666 {
 		goto if_then2689
@@ -66410,7 +66410,7 @@ lor_lhs_false2665:
 	}
 
 lor_lhs_false2668:
-	v1025 = *lookahead
+	v1025 = *local_lookahead
 	cmp2669 = 48 <= v1025
 	if cmp2669 {
 		goto land_lhs_true2671
@@ -66419,7 +66419,7 @@ lor_lhs_false2668:
 	}
 
 land_lhs_true2671:
-	v1026 = *lookahead
+	v1026 = *local_lookahead
 	cmp2672 = v1026 <= 57
 	if cmp2672 {
 		goto if_then2689
@@ -66428,7 +66428,7 @@ land_lhs_true2671:
 	}
 
 lor_lhs_false2674:
-	v1027 = *lookahead
+	v1027 = *local_lookahead
 	cmp2675 = 65 <= v1027
 	if cmp2675 {
 		goto land_lhs_true2677
@@ -66437,7 +66437,7 @@ lor_lhs_false2674:
 	}
 
 land_lhs_true2677:
-	v1028 = *lookahead
+	v1028 = *local_lookahead
 	cmp2678 = v1028 <= 90
 	if cmp2678 {
 		goto if_then2689
@@ -66446,7 +66446,7 @@ land_lhs_true2677:
 	}
 
 lor_lhs_false2680:
-	v1029 = *lookahead
+	v1029 = *local_lookahead
 	cmp2681 = v1029 == 95
 	if cmp2681 {
 		goto if_then2689
@@ -66455,7 +66455,7 @@ lor_lhs_false2680:
 	}
 
 lor_lhs_false2683:
-	v1030 = *lookahead
+	v1030 = *local_lookahead
 	cmp2684 = 97 <= v1030
 	if cmp2684 {
 		goto land_lhs_true2686
@@ -66464,7 +66464,7 @@ lor_lhs_false2683:
 	}
 
 land_lhs_true2686:
-	v1031 = *lookahead
+	v1031 = *local_lookahead
 	cmp2687 = v1031 <= 122
 	if cmp2687 {
 		goto if_then2689
@@ -66492,7 +66492,7 @@ sw_bb2692:
 	v1035 = *mark_end2694
 	v1036 = *lexer_addr
 	v1035(v1036)
-	v1037 = *lookahead
+	v1037 = *local_lookahead
 	cmp2695 = v1037 == 105
 	if cmp2695 {
 		goto if_then2697
@@ -66505,7 +66505,7 @@ if_then2697:
 	goto next_state
 
 if_end2698:
-	v1038 = *lookahead
+	v1038 = *local_lookahead
 	cmp2699 = v1038 == 39
 	if cmp2699 {
 		goto if_then2725
@@ -66514,7 +66514,7 @@ if_end2698:
 	}
 
 lor_lhs_false2701:
-	v1039 = *lookahead
+	v1039 = *local_lookahead
 	cmp2702 = v1039 == 45
 	if cmp2702 {
 		goto if_then2725
@@ -66523,7 +66523,7 @@ lor_lhs_false2701:
 	}
 
 lor_lhs_false2704:
-	v1040 = *lookahead
+	v1040 = *local_lookahead
 	cmp2705 = 48 <= v1040
 	if cmp2705 {
 		goto land_lhs_true2707
@@ -66532,7 +66532,7 @@ lor_lhs_false2704:
 	}
 
 land_lhs_true2707:
-	v1041 = *lookahead
+	v1041 = *local_lookahead
 	cmp2708 = v1041 <= 57
 	if cmp2708 {
 		goto if_then2725
@@ -66541,7 +66541,7 @@ land_lhs_true2707:
 	}
 
 lor_lhs_false2710:
-	v1042 = *lookahead
+	v1042 = *local_lookahead
 	cmp2711 = 65 <= v1042
 	if cmp2711 {
 		goto land_lhs_true2713
@@ -66550,7 +66550,7 @@ lor_lhs_false2710:
 	}
 
 land_lhs_true2713:
-	v1043 = *lookahead
+	v1043 = *local_lookahead
 	cmp2714 = v1043 <= 90
 	if cmp2714 {
 		goto if_then2725
@@ -66559,7 +66559,7 @@ land_lhs_true2713:
 	}
 
 lor_lhs_false2716:
-	v1044 = *lookahead
+	v1044 = *local_lookahead
 	cmp2717 = v1044 == 95
 	if cmp2717 {
 		goto if_then2725
@@ -66568,7 +66568,7 @@ lor_lhs_false2716:
 	}
 
 lor_lhs_false2719:
-	v1045 = *lookahead
+	v1045 = *local_lookahead
 	cmp2720 = 97 <= v1045
 	if cmp2720 {
 		goto land_lhs_true2722
@@ -66577,7 +66577,7 @@ lor_lhs_false2719:
 	}
 
 land_lhs_true2722:
-	v1046 = *lookahead
+	v1046 = *local_lookahead
 	cmp2723 = v1046 <= 122
 	if cmp2723 {
 		goto if_then2725
@@ -66605,7 +66605,7 @@ sw_bb2728:
 	v1050 = *mark_end2730
 	v1051 = *lexer_addr
 	v1050(v1051)
-	v1052 = *lookahead
+	v1052 = *local_lookahead
 	cmp2731 = v1052 == 105
 	if cmp2731 {
 		goto if_then2733
@@ -66618,7 +66618,7 @@ if_then2733:
 	goto next_state
 
 if_end2734:
-	v1053 = *lookahead
+	v1053 = *local_lookahead
 	cmp2735 = v1053 == 39
 	if cmp2735 {
 		goto if_then2761
@@ -66627,7 +66627,7 @@ if_end2734:
 	}
 
 lor_lhs_false2737:
-	v1054 = *lookahead
+	v1054 = *local_lookahead
 	cmp2738 = v1054 == 45
 	if cmp2738 {
 		goto if_then2761
@@ -66636,7 +66636,7 @@ lor_lhs_false2737:
 	}
 
 lor_lhs_false2740:
-	v1055 = *lookahead
+	v1055 = *local_lookahead
 	cmp2741 = 48 <= v1055
 	if cmp2741 {
 		goto land_lhs_true2743
@@ -66645,7 +66645,7 @@ lor_lhs_false2740:
 	}
 
 land_lhs_true2743:
-	v1056 = *lookahead
+	v1056 = *local_lookahead
 	cmp2744 = v1056 <= 57
 	if cmp2744 {
 		goto if_then2761
@@ -66654,7 +66654,7 @@ land_lhs_true2743:
 	}
 
 lor_lhs_false2746:
-	v1057 = *lookahead
+	v1057 = *local_lookahead
 	cmp2747 = 65 <= v1057
 	if cmp2747 {
 		goto land_lhs_true2749
@@ -66663,7 +66663,7 @@ lor_lhs_false2746:
 	}
 
 land_lhs_true2749:
-	v1058 = *lookahead
+	v1058 = *local_lookahead
 	cmp2750 = v1058 <= 90
 	if cmp2750 {
 		goto if_then2761
@@ -66672,7 +66672,7 @@ land_lhs_true2749:
 	}
 
 lor_lhs_false2752:
-	v1059 = *lookahead
+	v1059 = *local_lookahead
 	cmp2753 = v1059 == 95
 	if cmp2753 {
 		goto if_then2761
@@ -66681,7 +66681,7 @@ lor_lhs_false2752:
 	}
 
 lor_lhs_false2755:
-	v1060 = *lookahead
+	v1060 = *local_lookahead
 	cmp2756 = 97 <= v1060
 	if cmp2756 {
 		goto land_lhs_true2758
@@ -66690,7 +66690,7 @@ lor_lhs_false2755:
 	}
 
 land_lhs_true2758:
-	v1061 = *lookahead
+	v1061 = *local_lookahead
 	cmp2759 = v1061 <= 122
 	if cmp2759 {
 		goto if_then2761
@@ -66718,7 +66718,7 @@ sw_bb2764:
 	v1065 = *mark_end2766
 	v1066 = *lexer_addr
 	v1065(v1066)
-	v1067 = *lookahead
+	v1067 = *local_lookahead
 	cmp2767 = v1067 == 105
 	if cmp2767 {
 		goto if_then2769
@@ -66731,7 +66731,7 @@ if_then2769:
 	goto next_state
 
 if_end2770:
-	v1068 = *lookahead
+	v1068 = *local_lookahead
 	cmp2771 = v1068 == 39
 	if cmp2771 {
 		goto if_then2797
@@ -66740,7 +66740,7 @@ if_end2770:
 	}
 
 lor_lhs_false2773:
-	v1069 = *lookahead
+	v1069 = *local_lookahead
 	cmp2774 = v1069 == 45
 	if cmp2774 {
 		goto if_then2797
@@ -66749,7 +66749,7 @@ lor_lhs_false2773:
 	}
 
 lor_lhs_false2776:
-	v1070 = *lookahead
+	v1070 = *local_lookahead
 	cmp2777 = 48 <= v1070
 	if cmp2777 {
 		goto land_lhs_true2779
@@ -66758,7 +66758,7 @@ lor_lhs_false2776:
 	}
 
 land_lhs_true2779:
-	v1071 = *lookahead
+	v1071 = *local_lookahead
 	cmp2780 = v1071 <= 57
 	if cmp2780 {
 		goto if_then2797
@@ -66767,7 +66767,7 @@ land_lhs_true2779:
 	}
 
 lor_lhs_false2782:
-	v1072 = *lookahead
+	v1072 = *local_lookahead
 	cmp2783 = 65 <= v1072
 	if cmp2783 {
 		goto land_lhs_true2785
@@ -66776,7 +66776,7 @@ lor_lhs_false2782:
 	}
 
 land_lhs_true2785:
-	v1073 = *lookahead
+	v1073 = *local_lookahead
 	cmp2786 = v1073 <= 90
 	if cmp2786 {
 		goto if_then2797
@@ -66785,7 +66785,7 @@ land_lhs_true2785:
 	}
 
 lor_lhs_false2788:
-	v1074 = *lookahead
+	v1074 = *local_lookahead
 	cmp2789 = v1074 == 95
 	if cmp2789 {
 		goto if_then2797
@@ -66794,7 +66794,7 @@ lor_lhs_false2788:
 	}
 
 lor_lhs_false2791:
-	v1075 = *lookahead
+	v1075 = *local_lookahead
 	cmp2792 = 97 <= v1075
 	if cmp2792 {
 		goto land_lhs_true2794
@@ -66803,7 +66803,7 @@ lor_lhs_false2791:
 	}
 
 land_lhs_true2794:
-	v1076 = *lookahead
+	v1076 = *local_lookahead
 	cmp2795 = v1076 <= 122
 	if cmp2795 {
 		goto if_then2797
@@ -66831,7 +66831,7 @@ sw_bb2800:
 	v1080 = *mark_end2802
 	v1081 = *lexer_addr
 	v1080(v1081)
-	v1082 = *lookahead
+	v1082 = *local_lookahead
 	cmp2803 = v1082 == 108
 	if cmp2803 {
 		goto if_then2805
@@ -66844,7 +66844,7 @@ if_then2805:
 	goto next_state
 
 if_end2806:
-	v1083 = *lookahead
+	v1083 = *local_lookahead
 	cmp2807 = v1083 == 39
 	if cmp2807 {
 		goto if_then2833
@@ -66853,7 +66853,7 @@ if_end2806:
 	}
 
 lor_lhs_false2809:
-	v1084 = *lookahead
+	v1084 = *local_lookahead
 	cmp2810 = v1084 == 45
 	if cmp2810 {
 		goto if_then2833
@@ -66862,7 +66862,7 @@ lor_lhs_false2809:
 	}
 
 lor_lhs_false2812:
-	v1085 = *lookahead
+	v1085 = *local_lookahead
 	cmp2813 = 48 <= v1085
 	if cmp2813 {
 		goto land_lhs_true2815
@@ -66871,7 +66871,7 @@ lor_lhs_false2812:
 	}
 
 land_lhs_true2815:
-	v1086 = *lookahead
+	v1086 = *local_lookahead
 	cmp2816 = v1086 <= 57
 	if cmp2816 {
 		goto if_then2833
@@ -66880,7 +66880,7 @@ land_lhs_true2815:
 	}
 
 lor_lhs_false2818:
-	v1087 = *lookahead
+	v1087 = *local_lookahead
 	cmp2819 = 65 <= v1087
 	if cmp2819 {
 		goto land_lhs_true2821
@@ -66889,7 +66889,7 @@ lor_lhs_false2818:
 	}
 
 land_lhs_true2821:
-	v1088 = *lookahead
+	v1088 = *local_lookahead
 	cmp2822 = v1088 <= 90
 	if cmp2822 {
 		goto if_then2833
@@ -66898,7 +66898,7 @@ land_lhs_true2821:
 	}
 
 lor_lhs_false2824:
-	v1089 = *lookahead
+	v1089 = *local_lookahead
 	cmp2825 = v1089 == 95
 	if cmp2825 {
 		goto if_then2833
@@ -66907,7 +66907,7 @@ lor_lhs_false2824:
 	}
 
 lor_lhs_false2827:
-	v1090 = *lookahead
+	v1090 = *local_lookahead
 	cmp2828 = 97 <= v1090
 	if cmp2828 {
 		goto land_lhs_true2830
@@ -66916,7 +66916,7 @@ lor_lhs_false2827:
 	}
 
 land_lhs_true2830:
-	v1091 = *lookahead
+	v1091 = *local_lookahead
 	cmp2831 = v1091 <= 122
 	if cmp2831 {
 		goto if_then2833
@@ -66944,7 +66944,7 @@ sw_bb2836:
 	v1095 = *mark_end2838
 	v1096 = *lexer_addr
 	v1095(v1096)
-	v1097 = *lookahead
+	v1097 = *local_lookahead
 	cmp2839 = v1097 == 108
 	if cmp2839 {
 		goto if_then2841
@@ -66957,7 +66957,7 @@ if_then2841:
 	goto next_state
 
 if_end2842:
-	v1098 = *lookahead
+	v1098 = *local_lookahead
 	cmp2843 = v1098 == 39
 	if cmp2843 {
 		goto if_then2869
@@ -66966,7 +66966,7 @@ if_end2842:
 	}
 
 lor_lhs_false2845:
-	v1099 = *lookahead
+	v1099 = *local_lookahead
 	cmp2846 = v1099 == 45
 	if cmp2846 {
 		goto if_then2869
@@ -66975,7 +66975,7 @@ lor_lhs_false2845:
 	}
 
 lor_lhs_false2848:
-	v1100 = *lookahead
+	v1100 = *local_lookahead
 	cmp2849 = 48 <= v1100
 	if cmp2849 {
 		goto land_lhs_true2851
@@ -66984,7 +66984,7 @@ lor_lhs_false2848:
 	}
 
 land_lhs_true2851:
-	v1101 = *lookahead
+	v1101 = *local_lookahead
 	cmp2852 = v1101 <= 57
 	if cmp2852 {
 		goto if_then2869
@@ -66993,7 +66993,7 @@ land_lhs_true2851:
 	}
 
 lor_lhs_false2854:
-	v1102 = *lookahead
+	v1102 = *local_lookahead
 	cmp2855 = 65 <= v1102
 	if cmp2855 {
 		goto land_lhs_true2857
@@ -67002,7 +67002,7 @@ lor_lhs_false2854:
 	}
 
 land_lhs_true2857:
-	v1103 = *lookahead
+	v1103 = *local_lookahead
 	cmp2858 = v1103 <= 90
 	if cmp2858 {
 		goto if_then2869
@@ -67011,7 +67011,7 @@ land_lhs_true2857:
 	}
 
 lor_lhs_false2860:
-	v1104 = *lookahead
+	v1104 = *local_lookahead
 	cmp2861 = v1104 == 95
 	if cmp2861 {
 		goto if_then2869
@@ -67020,7 +67020,7 @@ lor_lhs_false2860:
 	}
 
 lor_lhs_false2863:
-	v1105 = *lookahead
+	v1105 = *local_lookahead
 	cmp2864 = 97 <= v1105
 	if cmp2864 {
 		goto land_lhs_true2866
@@ -67029,7 +67029,7 @@ lor_lhs_false2863:
 	}
 
 land_lhs_true2866:
-	v1106 = *lookahead
+	v1106 = *local_lookahead
 	cmp2867 = v1106 <= 122
 	if cmp2867 {
 		goto if_then2869
@@ -67057,7 +67057,7 @@ sw_bb2872:
 	v1110 = *mark_end2874
 	v1111 = *lexer_addr
 	v1110(v1111)
-	v1112 = *lookahead
+	v1112 = *local_lookahead
 	cmp2875 = v1112 == 108
 	if cmp2875 {
 		goto if_then2877
@@ -67070,7 +67070,7 @@ if_then2877:
 	goto next_state
 
 if_end2878:
-	v1113 = *lookahead
+	v1113 = *local_lookahead
 	cmp2879 = v1113 == 39
 	if cmp2879 {
 		goto if_then2905
@@ -67079,7 +67079,7 @@ if_end2878:
 	}
 
 lor_lhs_false2881:
-	v1114 = *lookahead
+	v1114 = *local_lookahead
 	cmp2882 = v1114 == 45
 	if cmp2882 {
 		goto if_then2905
@@ -67088,7 +67088,7 @@ lor_lhs_false2881:
 	}
 
 lor_lhs_false2884:
-	v1115 = *lookahead
+	v1115 = *local_lookahead
 	cmp2885 = 48 <= v1115
 	if cmp2885 {
 		goto land_lhs_true2887
@@ -67097,7 +67097,7 @@ lor_lhs_false2884:
 	}
 
 land_lhs_true2887:
-	v1116 = *lookahead
+	v1116 = *local_lookahead
 	cmp2888 = v1116 <= 57
 	if cmp2888 {
 		goto if_then2905
@@ -67106,7 +67106,7 @@ land_lhs_true2887:
 	}
 
 lor_lhs_false2890:
-	v1117 = *lookahead
+	v1117 = *local_lookahead
 	cmp2891 = 65 <= v1117
 	if cmp2891 {
 		goto land_lhs_true2893
@@ -67115,7 +67115,7 @@ lor_lhs_false2890:
 	}
 
 land_lhs_true2893:
-	v1118 = *lookahead
+	v1118 = *local_lookahead
 	cmp2894 = v1118 <= 90
 	if cmp2894 {
 		goto if_then2905
@@ -67124,7 +67124,7 @@ land_lhs_true2893:
 	}
 
 lor_lhs_false2896:
-	v1119 = *lookahead
+	v1119 = *local_lookahead
 	cmp2897 = v1119 == 95
 	if cmp2897 {
 		goto if_then2905
@@ -67133,7 +67133,7 @@ lor_lhs_false2896:
 	}
 
 lor_lhs_false2899:
-	v1120 = *lookahead
+	v1120 = *local_lookahead
 	cmp2900 = 97 <= v1120
 	if cmp2900 {
 		goto land_lhs_true2902
@@ -67142,7 +67142,7 @@ lor_lhs_false2899:
 	}
 
 land_lhs_true2902:
-	v1121 = *lookahead
+	v1121 = *local_lookahead
 	cmp2903 = v1121 <= 122
 	if cmp2903 {
 		goto if_then2905
@@ -67170,7 +67170,7 @@ sw_bb2908:
 	v1125 = *mark_end2910
 	v1126 = *lexer_addr
 	v1125(v1126)
-	v1127 = *lookahead
+	v1127 = *local_lookahead
 	cmp2911 = v1127 == 108
 	if cmp2911 {
 		goto if_then2913
@@ -67183,7 +67183,7 @@ if_then2913:
 	goto next_state
 
 if_end2914:
-	v1128 = *lookahead
+	v1128 = *local_lookahead
 	cmp2915 = v1128 == 39
 	if cmp2915 {
 		goto if_then2941
@@ -67192,7 +67192,7 @@ if_end2914:
 	}
 
 lor_lhs_false2917:
-	v1129 = *lookahead
+	v1129 = *local_lookahead
 	cmp2918 = v1129 == 45
 	if cmp2918 {
 		goto if_then2941
@@ -67201,7 +67201,7 @@ lor_lhs_false2917:
 	}
 
 lor_lhs_false2920:
-	v1130 = *lookahead
+	v1130 = *local_lookahead
 	cmp2921 = 48 <= v1130
 	if cmp2921 {
 		goto land_lhs_true2923
@@ -67210,7 +67210,7 @@ lor_lhs_false2920:
 	}
 
 land_lhs_true2923:
-	v1131 = *lookahead
+	v1131 = *local_lookahead
 	cmp2924 = v1131 <= 57
 	if cmp2924 {
 		goto if_then2941
@@ -67219,7 +67219,7 @@ land_lhs_true2923:
 	}
 
 lor_lhs_false2926:
-	v1132 = *lookahead
+	v1132 = *local_lookahead
 	cmp2927 = 65 <= v1132
 	if cmp2927 {
 		goto land_lhs_true2929
@@ -67228,7 +67228,7 @@ lor_lhs_false2926:
 	}
 
 land_lhs_true2929:
-	v1133 = *lookahead
+	v1133 = *local_lookahead
 	cmp2930 = v1133 <= 90
 	if cmp2930 {
 		goto if_then2941
@@ -67237,7 +67237,7 @@ land_lhs_true2929:
 	}
 
 lor_lhs_false2932:
-	v1134 = *lookahead
+	v1134 = *local_lookahead
 	cmp2933 = v1134 == 95
 	if cmp2933 {
 		goto if_then2941
@@ -67246,7 +67246,7 @@ lor_lhs_false2932:
 	}
 
 lor_lhs_false2935:
-	v1135 = *lookahead
+	v1135 = *local_lookahead
 	cmp2936 = 97 <= v1135
 	if cmp2936 {
 		goto land_lhs_true2938
@@ -67255,7 +67255,7 @@ lor_lhs_false2935:
 	}
 
 land_lhs_true2938:
-	v1136 = *lookahead
+	v1136 = *local_lookahead
 	cmp2939 = v1136 <= 122
 	if cmp2939 {
 		goto if_then2941
@@ -67283,7 +67283,7 @@ sw_bb2944:
 	v1140 = *mark_end2946
 	v1141 = *lexer_addr
 	v1140(v1141)
-	v1142 = *lookahead
+	v1142 = *local_lookahead
 	cmp2947 = v1142 == 108
 	if cmp2947 {
 		goto if_then2949
@@ -67296,7 +67296,7 @@ if_then2949:
 	goto next_state
 
 if_end2950:
-	v1143 = *lookahead
+	v1143 = *local_lookahead
 	cmp2951 = v1143 == 39
 	if cmp2951 {
 		goto if_then2977
@@ -67305,7 +67305,7 @@ if_end2950:
 	}
 
 lor_lhs_false2953:
-	v1144 = *lookahead
+	v1144 = *local_lookahead
 	cmp2954 = v1144 == 45
 	if cmp2954 {
 		goto if_then2977
@@ -67314,7 +67314,7 @@ lor_lhs_false2953:
 	}
 
 lor_lhs_false2956:
-	v1145 = *lookahead
+	v1145 = *local_lookahead
 	cmp2957 = 48 <= v1145
 	if cmp2957 {
 		goto land_lhs_true2959
@@ -67323,7 +67323,7 @@ lor_lhs_false2956:
 	}
 
 land_lhs_true2959:
-	v1146 = *lookahead
+	v1146 = *local_lookahead
 	cmp2960 = v1146 <= 57
 	if cmp2960 {
 		goto if_then2977
@@ -67332,7 +67332,7 @@ land_lhs_true2959:
 	}
 
 lor_lhs_false2962:
-	v1147 = *lookahead
+	v1147 = *local_lookahead
 	cmp2963 = 65 <= v1147
 	if cmp2963 {
 		goto land_lhs_true2965
@@ -67341,7 +67341,7 @@ lor_lhs_false2962:
 	}
 
 land_lhs_true2965:
-	v1148 = *lookahead
+	v1148 = *local_lookahead
 	cmp2966 = v1148 <= 90
 	if cmp2966 {
 		goto if_then2977
@@ -67350,7 +67350,7 @@ land_lhs_true2965:
 	}
 
 lor_lhs_false2968:
-	v1149 = *lookahead
+	v1149 = *local_lookahead
 	cmp2969 = v1149 == 95
 	if cmp2969 {
 		goto if_then2977
@@ -67359,7 +67359,7 @@ lor_lhs_false2968:
 	}
 
 lor_lhs_false2971:
-	v1150 = *lookahead
+	v1150 = *local_lookahead
 	cmp2972 = 97 <= v1150
 	if cmp2972 {
 		goto land_lhs_true2974
@@ -67368,7 +67368,7 @@ lor_lhs_false2971:
 	}
 
 land_lhs_true2974:
-	v1151 = *lookahead
+	v1151 = *local_lookahead
 	cmp2975 = v1151 <= 122
 	if cmp2975 {
 		goto if_then2977
@@ -67396,7 +67396,7 @@ sw_bb2980:
 	v1155 = *mark_end2982
 	v1156 = *lexer_addr
 	v1155(v1156)
-	v1157 = *lookahead
+	v1157 = *local_lookahead
 	cmp2983 = v1157 == 108
 	if cmp2983 {
 		goto if_then2985
@@ -67409,7 +67409,7 @@ if_then2985:
 	goto next_state
 
 if_end2986:
-	v1158 = *lookahead
+	v1158 = *local_lookahead
 	cmp2987 = v1158 == 39
 	if cmp2987 {
 		goto if_then3013
@@ -67418,7 +67418,7 @@ if_end2986:
 	}
 
 lor_lhs_false2989:
-	v1159 = *lookahead
+	v1159 = *local_lookahead
 	cmp2990 = v1159 == 45
 	if cmp2990 {
 		goto if_then3013
@@ -67427,7 +67427,7 @@ lor_lhs_false2989:
 	}
 
 lor_lhs_false2992:
-	v1160 = *lookahead
+	v1160 = *local_lookahead
 	cmp2993 = 48 <= v1160
 	if cmp2993 {
 		goto land_lhs_true2995
@@ -67436,7 +67436,7 @@ lor_lhs_false2992:
 	}
 
 land_lhs_true2995:
-	v1161 = *lookahead
+	v1161 = *local_lookahead
 	cmp2996 = v1161 <= 57
 	if cmp2996 {
 		goto if_then3013
@@ -67445,7 +67445,7 @@ land_lhs_true2995:
 	}
 
 lor_lhs_false2998:
-	v1162 = *lookahead
+	v1162 = *local_lookahead
 	cmp2999 = 65 <= v1162
 	if cmp2999 {
 		goto land_lhs_true3001
@@ -67454,7 +67454,7 @@ lor_lhs_false2998:
 	}
 
 land_lhs_true3001:
-	v1163 = *lookahead
+	v1163 = *local_lookahead
 	cmp3002 = v1163 <= 90
 	if cmp3002 {
 		goto if_then3013
@@ -67463,7 +67463,7 @@ land_lhs_true3001:
 	}
 
 lor_lhs_false3004:
-	v1164 = *lookahead
+	v1164 = *local_lookahead
 	cmp3005 = v1164 == 95
 	if cmp3005 {
 		goto if_then3013
@@ -67472,7 +67472,7 @@ lor_lhs_false3004:
 	}
 
 lor_lhs_false3007:
-	v1165 = *lookahead
+	v1165 = *local_lookahead
 	cmp3008 = 97 <= v1165
 	if cmp3008 {
 		goto land_lhs_true3010
@@ -67481,7 +67481,7 @@ lor_lhs_false3007:
 	}
 
 land_lhs_true3010:
-	v1166 = *lookahead
+	v1166 = *local_lookahead
 	cmp3011 = v1166 <= 122
 	if cmp3011 {
 		goto if_then3013
@@ -67509,7 +67509,7 @@ sw_bb3016:
 	v1170 = *mark_end3018
 	v1171 = *lexer_addr
 	v1170(v1171)
-	v1172 = *lookahead
+	v1172 = *local_lookahead
 	cmp3019 = v1172 == 109
 	if cmp3019 {
 		goto if_then3021
@@ -67522,7 +67522,7 @@ if_then3021:
 	goto next_state
 
 if_end3022:
-	v1173 = *lookahead
+	v1173 = *local_lookahead
 	cmp3023 = v1173 == 102
 	if cmp3023 {
 		goto if_then3028
@@ -67531,7 +67531,7 @@ if_end3022:
 	}
 
 lor_lhs_false3025:
-	v1174 = *lookahead
+	v1174 = *local_lookahead
 	cmp3026 = v1174 == 110
 	if cmp3026 {
 		goto if_then3028
@@ -67544,7 +67544,7 @@ if_then3028:
 	goto next_state
 
 if_end3029:
-	v1175 = *lookahead
+	v1175 = *local_lookahead
 	cmp3030 = v1175 == 39
 	if cmp3030 {
 		goto if_then3056
@@ -67553,7 +67553,7 @@ if_end3029:
 	}
 
 lor_lhs_false3032:
-	v1176 = *lookahead
+	v1176 = *local_lookahead
 	cmp3033 = v1176 == 45
 	if cmp3033 {
 		goto if_then3056
@@ -67562,7 +67562,7 @@ lor_lhs_false3032:
 	}
 
 lor_lhs_false3035:
-	v1177 = *lookahead
+	v1177 = *local_lookahead
 	cmp3036 = 48 <= v1177
 	if cmp3036 {
 		goto land_lhs_true3038
@@ -67571,7 +67571,7 @@ lor_lhs_false3035:
 	}
 
 land_lhs_true3038:
-	v1178 = *lookahead
+	v1178 = *local_lookahead
 	cmp3039 = v1178 <= 57
 	if cmp3039 {
 		goto if_then3056
@@ -67580,7 +67580,7 @@ land_lhs_true3038:
 	}
 
 lor_lhs_false3041:
-	v1179 = *lookahead
+	v1179 = *local_lookahead
 	cmp3042 = 65 <= v1179
 	if cmp3042 {
 		goto land_lhs_true3044
@@ -67589,7 +67589,7 @@ lor_lhs_false3041:
 	}
 
 land_lhs_true3044:
-	v1180 = *lookahead
+	v1180 = *local_lookahead
 	cmp3045 = v1180 <= 90
 	if cmp3045 {
 		goto if_then3056
@@ -67598,7 +67598,7 @@ land_lhs_true3044:
 	}
 
 lor_lhs_false3047:
-	v1181 = *lookahead
+	v1181 = *local_lookahead
 	cmp3048 = v1181 == 95
 	if cmp3048 {
 		goto if_then3056
@@ -67607,7 +67607,7 @@ lor_lhs_false3047:
 	}
 
 lor_lhs_false3050:
-	v1182 = *lookahead
+	v1182 = *local_lookahead
 	cmp3051 = 97 <= v1182
 	if cmp3051 {
 		goto land_lhs_true3053
@@ -67616,7 +67616,7 @@ lor_lhs_false3050:
 	}
 
 land_lhs_true3053:
-	v1183 = *lookahead
+	v1183 = *local_lookahead
 	cmp3054 = v1183 <= 122
 	if cmp3054 {
 		goto if_then3056
@@ -67644,7 +67644,7 @@ sw_bb3059:
 	v1187 = *mark_end3061
 	v1188 = *lexer_addr
 	v1187(v1188)
-	v1189 = *lookahead
+	v1189 = *local_lookahead
 	cmp3062 = v1189 == 109
 	if cmp3062 {
 		goto if_then3064
@@ -67657,7 +67657,7 @@ if_then3064:
 	goto next_state
 
 if_end3065:
-	v1190 = *lookahead
+	v1190 = *local_lookahead
 	cmp3066 = v1190 == 39
 	if cmp3066 {
 		goto if_then3092
@@ -67666,7 +67666,7 @@ if_end3065:
 	}
 
 lor_lhs_false3068:
-	v1191 = *lookahead
+	v1191 = *local_lookahead
 	cmp3069 = v1191 == 45
 	if cmp3069 {
 		goto if_then3092
@@ -67675,7 +67675,7 @@ lor_lhs_false3068:
 	}
 
 lor_lhs_false3071:
-	v1192 = *lookahead
+	v1192 = *local_lookahead
 	cmp3072 = 48 <= v1192
 	if cmp3072 {
 		goto land_lhs_true3074
@@ -67684,7 +67684,7 @@ lor_lhs_false3071:
 	}
 
 land_lhs_true3074:
-	v1193 = *lookahead
+	v1193 = *local_lookahead
 	cmp3075 = v1193 <= 57
 	if cmp3075 {
 		goto if_then3092
@@ -67693,7 +67693,7 @@ land_lhs_true3074:
 	}
 
 lor_lhs_false3077:
-	v1194 = *lookahead
+	v1194 = *local_lookahead
 	cmp3078 = 65 <= v1194
 	if cmp3078 {
 		goto land_lhs_true3080
@@ -67702,7 +67702,7 @@ lor_lhs_false3077:
 	}
 
 land_lhs_true3080:
-	v1195 = *lookahead
+	v1195 = *local_lookahead
 	cmp3081 = v1195 <= 90
 	if cmp3081 {
 		goto if_then3092
@@ -67711,7 +67711,7 @@ land_lhs_true3080:
 	}
 
 lor_lhs_false3083:
-	v1196 = *lookahead
+	v1196 = *local_lookahead
 	cmp3084 = v1196 == 95
 	if cmp3084 {
 		goto if_then3092
@@ -67720,7 +67720,7 @@ lor_lhs_false3083:
 	}
 
 lor_lhs_false3086:
-	v1197 = *lookahead
+	v1197 = *local_lookahead
 	cmp3087 = 97 <= v1197
 	if cmp3087 {
 		goto land_lhs_true3089
@@ -67729,7 +67729,7 @@ lor_lhs_false3086:
 	}
 
 land_lhs_true3089:
-	v1198 = *lookahead
+	v1198 = *local_lookahead
 	cmp3090 = v1198 <= 122
 	if cmp3090 {
 		goto if_then3092
@@ -67757,7 +67757,7 @@ sw_bb3095:
 	v1202 = *mark_end3097
 	v1203 = *lexer_addr
 	v1202(v1203)
-	v1204 = *lookahead
+	v1204 = *local_lookahead
 	cmp3098 = v1204 == 110
 	if cmp3098 {
 		goto if_then3100
@@ -67770,7 +67770,7 @@ if_then3100:
 	goto next_state
 
 if_end3101:
-	v1205 = *lookahead
+	v1205 = *local_lookahead
 	cmp3102 = v1205 == 39
 	if cmp3102 {
 		goto if_then3128
@@ -67779,7 +67779,7 @@ if_end3101:
 	}
 
 lor_lhs_false3104:
-	v1206 = *lookahead
+	v1206 = *local_lookahead
 	cmp3105 = v1206 == 45
 	if cmp3105 {
 		goto if_then3128
@@ -67788,7 +67788,7 @@ lor_lhs_false3104:
 	}
 
 lor_lhs_false3107:
-	v1207 = *lookahead
+	v1207 = *local_lookahead
 	cmp3108 = 48 <= v1207
 	if cmp3108 {
 		goto land_lhs_true3110
@@ -67797,7 +67797,7 @@ lor_lhs_false3107:
 	}
 
 land_lhs_true3110:
-	v1208 = *lookahead
+	v1208 = *local_lookahead
 	cmp3111 = v1208 <= 57
 	if cmp3111 {
 		goto if_then3128
@@ -67806,7 +67806,7 @@ land_lhs_true3110:
 	}
 
 lor_lhs_false3113:
-	v1209 = *lookahead
+	v1209 = *local_lookahead
 	cmp3114 = 65 <= v1209
 	if cmp3114 {
 		goto land_lhs_true3116
@@ -67815,7 +67815,7 @@ lor_lhs_false3113:
 	}
 
 land_lhs_true3116:
-	v1210 = *lookahead
+	v1210 = *local_lookahead
 	cmp3117 = v1210 <= 90
 	if cmp3117 {
 		goto if_then3128
@@ -67824,7 +67824,7 @@ land_lhs_true3116:
 	}
 
 lor_lhs_false3119:
-	v1211 = *lookahead
+	v1211 = *local_lookahead
 	cmp3120 = v1211 == 95
 	if cmp3120 {
 		goto if_then3128
@@ -67833,7 +67833,7 @@ lor_lhs_false3119:
 	}
 
 lor_lhs_false3122:
-	v1212 = *lookahead
+	v1212 = *local_lookahead
 	cmp3123 = 97 <= v1212
 	if cmp3123 {
 		goto land_lhs_true3125
@@ -67842,7 +67842,7 @@ lor_lhs_false3122:
 	}
 
 land_lhs_true3125:
-	v1213 = *lookahead
+	v1213 = *local_lookahead
 	cmp3126 = v1213 <= 122
 	if cmp3126 {
 		goto if_then3128
@@ -67870,7 +67870,7 @@ sw_bb3131:
 	v1217 = *mark_end3133
 	v1218 = *lexer_addr
 	v1217(v1218)
-	v1219 = *lookahead
+	v1219 = *local_lookahead
 	cmp3134 = v1219 == 110
 	if cmp3134 {
 		goto if_then3136
@@ -67883,7 +67883,7 @@ if_then3136:
 	goto next_state
 
 if_end3137:
-	v1220 = *lookahead
+	v1220 = *local_lookahead
 	cmp3138 = v1220 == 39
 	if cmp3138 {
 		goto if_then3164
@@ -67892,7 +67892,7 @@ if_end3137:
 	}
 
 lor_lhs_false3140:
-	v1221 = *lookahead
+	v1221 = *local_lookahead
 	cmp3141 = v1221 == 45
 	if cmp3141 {
 		goto if_then3164
@@ -67901,7 +67901,7 @@ lor_lhs_false3140:
 	}
 
 lor_lhs_false3143:
-	v1222 = *lookahead
+	v1222 = *local_lookahead
 	cmp3144 = 48 <= v1222
 	if cmp3144 {
 		goto land_lhs_true3146
@@ -67910,7 +67910,7 @@ lor_lhs_false3143:
 	}
 
 land_lhs_true3146:
-	v1223 = *lookahead
+	v1223 = *local_lookahead
 	cmp3147 = v1223 <= 57
 	if cmp3147 {
 		goto if_then3164
@@ -67919,7 +67919,7 @@ land_lhs_true3146:
 	}
 
 lor_lhs_false3149:
-	v1224 = *lookahead
+	v1224 = *local_lookahead
 	cmp3150 = 65 <= v1224
 	if cmp3150 {
 		goto land_lhs_true3152
@@ -67928,7 +67928,7 @@ lor_lhs_false3149:
 	}
 
 land_lhs_true3152:
-	v1225 = *lookahead
+	v1225 = *local_lookahead
 	cmp3153 = v1225 <= 90
 	if cmp3153 {
 		goto if_then3164
@@ -67937,7 +67937,7 @@ land_lhs_true3152:
 	}
 
 lor_lhs_false3155:
-	v1226 = *lookahead
+	v1226 = *local_lookahead
 	cmp3156 = v1226 == 95
 	if cmp3156 {
 		goto if_then3164
@@ -67946,7 +67946,7 @@ lor_lhs_false3155:
 	}
 
 lor_lhs_false3158:
-	v1227 = *lookahead
+	v1227 = *local_lookahead
 	cmp3159 = 97 <= v1227
 	if cmp3159 {
 		goto land_lhs_true3161
@@ -67955,7 +67955,7 @@ lor_lhs_false3158:
 	}
 
 land_lhs_true3161:
-	v1228 = *lookahead
+	v1228 = *local_lookahead
 	cmp3162 = v1228 <= 122
 	if cmp3162 {
 		goto if_then3164
@@ -67983,7 +67983,7 @@ sw_bb3167:
 	v1232 = *mark_end3169
 	v1233 = *lexer_addr
 	v1232(v1233)
-	v1234 = *lookahead
+	v1234 = *local_lookahead
 	cmp3170 = v1234 == 110
 	if cmp3170 {
 		goto if_then3172
@@ -67996,7 +67996,7 @@ if_then3172:
 	goto next_state
 
 if_end3173:
-	v1235 = *lookahead
+	v1235 = *local_lookahead
 	cmp3174 = v1235 == 39
 	if cmp3174 {
 		goto if_then3200
@@ -68005,7 +68005,7 @@ if_end3173:
 	}
 
 lor_lhs_false3176:
-	v1236 = *lookahead
+	v1236 = *local_lookahead
 	cmp3177 = v1236 == 45
 	if cmp3177 {
 		goto if_then3200
@@ -68014,7 +68014,7 @@ lor_lhs_false3176:
 	}
 
 lor_lhs_false3179:
-	v1237 = *lookahead
+	v1237 = *local_lookahead
 	cmp3180 = 48 <= v1237
 	if cmp3180 {
 		goto land_lhs_true3182
@@ -68023,7 +68023,7 @@ lor_lhs_false3179:
 	}
 
 land_lhs_true3182:
-	v1238 = *lookahead
+	v1238 = *local_lookahead
 	cmp3183 = v1238 <= 57
 	if cmp3183 {
 		goto if_then3200
@@ -68032,7 +68032,7 @@ land_lhs_true3182:
 	}
 
 lor_lhs_false3185:
-	v1239 = *lookahead
+	v1239 = *local_lookahead
 	cmp3186 = 65 <= v1239
 	if cmp3186 {
 		goto land_lhs_true3188
@@ -68041,7 +68041,7 @@ lor_lhs_false3185:
 	}
 
 land_lhs_true3188:
-	v1240 = *lookahead
+	v1240 = *local_lookahead
 	cmp3189 = v1240 <= 90
 	if cmp3189 {
 		goto if_then3200
@@ -68050,7 +68050,7 @@ land_lhs_true3188:
 	}
 
 lor_lhs_false3191:
-	v1241 = *lookahead
+	v1241 = *local_lookahead
 	cmp3192 = v1241 == 95
 	if cmp3192 {
 		goto if_then3200
@@ -68059,7 +68059,7 @@ lor_lhs_false3191:
 	}
 
 lor_lhs_false3194:
-	v1242 = *lookahead
+	v1242 = *local_lookahead
 	cmp3195 = 97 <= v1242
 	if cmp3195 {
 		goto land_lhs_true3197
@@ -68068,7 +68068,7 @@ lor_lhs_false3194:
 	}
 
 land_lhs_true3197:
-	v1243 = *lookahead
+	v1243 = *local_lookahead
 	cmp3198 = v1243 <= 122
 	if cmp3198 {
 		goto if_then3200
@@ -68096,7 +68096,7 @@ sw_bb3203:
 	v1247 = *mark_end3205
 	v1248 = *lexer_addr
 	v1247(v1248)
-	v1249 = *lookahead
+	v1249 = *local_lookahead
 	cmp3206 = v1249 == 110
 	if cmp3206 {
 		goto if_then3208
@@ -68109,7 +68109,7 @@ if_then3208:
 	goto next_state
 
 if_end3209:
-	v1250 = *lookahead
+	v1250 = *local_lookahead
 	cmp3210 = v1250 == 39
 	if cmp3210 {
 		goto if_then3236
@@ -68118,7 +68118,7 @@ if_end3209:
 	}
 
 lor_lhs_false3212:
-	v1251 = *lookahead
+	v1251 = *local_lookahead
 	cmp3213 = v1251 == 45
 	if cmp3213 {
 		goto if_then3236
@@ -68127,7 +68127,7 @@ lor_lhs_false3212:
 	}
 
 lor_lhs_false3215:
-	v1252 = *lookahead
+	v1252 = *local_lookahead
 	cmp3216 = 48 <= v1252
 	if cmp3216 {
 		goto land_lhs_true3218
@@ -68136,7 +68136,7 @@ lor_lhs_false3215:
 	}
 
 land_lhs_true3218:
-	v1253 = *lookahead
+	v1253 = *local_lookahead
 	cmp3219 = v1253 <= 57
 	if cmp3219 {
 		goto if_then3236
@@ -68145,7 +68145,7 @@ land_lhs_true3218:
 	}
 
 lor_lhs_false3221:
-	v1254 = *lookahead
+	v1254 = *local_lookahead
 	cmp3222 = 65 <= v1254
 	if cmp3222 {
 		goto land_lhs_true3224
@@ -68154,7 +68154,7 @@ lor_lhs_false3221:
 	}
 
 land_lhs_true3224:
-	v1255 = *lookahead
+	v1255 = *local_lookahead
 	cmp3225 = v1255 <= 90
 	if cmp3225 {
 		goto if_then3236
@@ -68163,7 +68163,7 @@ land_lhs_true3224:
 	}
 
 lor_lhs_false3227:
-	v1256 = *lookahead
+	v1256 = *local_lookahead
 	cmp3228 = v1256 == 95
 	if cmp3228 {
 		goto if_then3236
@@ -68172,7 +68172,7 @@ lor_lhs_false3227:
 	}
 
 lor_lhs_false3230:
-	v1257 = *lookahead
+	v1257 = *local_lookahead
 	cmp3231 = 97 <= v1257
 	if cmp3231 {
 		goto land_lhs_true3233
@@ -68181,7 +68181,7 @@ lor_lhs_false3230:
 	}
 
 land_lhs_true3233:
-	v1258 = *lookahead
+	v1258 = *local_lookahead
 	cmp3234 = v1258 <= 122
 	if cmp3234 {
 		goto if_then3236
@@ -68209,7 +68209,7 @@ sw_bb3239:
 	v1262 = *mark_end3241
 	v1263 = *lexer_addr
 	v1262(v1263)
-	v1264 = *lookahead
+	v1264 = *local_lookahead
 	cmp3242 = v1264 == 110
 	if cmp3242 {
 		goto if_then3244
@@ -68222,7 +68222,7 @@ if_then3244:
 	goto next_state
 
 if_end3245:
-	v1265 = *lookahead
+	v1265 = *local_lookahead
 	cmp3246 = v1265 == 39
 	if cmp3246 {
 		goto if_then3272
@@ -68231,7 +68231,7 @@ if_end3245:
 	}
 
 lor_lhs_false3248:
-	v1266 = *lookahead
+	v1266 = *local_lookahead
 	cmp3249 = v1266 == 45
 	if cmp3249 {
 		goto if_then3272
@@ -68240,7 +68240,7 @@ lor_lhs_false3248:
 	}
 
 lor_lhs_false3251:
-	v1267 = *lookahead
+	v1267 = *local_lookahead
 	cmp3252 = 48 <= v1267
 	if cmp3252 {
 		goto land_lhs_true3254
@@ -68249,7 +68249,7 @@ lor_lhs_false3251:
 	}
 
 land_lhs_true3254:
-	v1268 = *lookahead
+	v1268 = *local_lookahead
 	cmp3255 = v1268 <= 57
 	if cmp3255 {
 		goto if_then3272
@@ -68258,7 +68258,7 @@ land_lhs_true3254:
 	}
 
 lor_lhs_false3257:
-	v1269 = *lookahead
+	v1269 = *local_lookahead
 	cmp3258 = 65 <= v1269
 	if cmp3258 {
 		goto land_lhs_true3260
@@ -68267,7 +68267,7 @@ lor_lhs_false3257:
 	}
 
 land_lhs_true3260:
-	v1270 = *lookahead
+	v1270 = *local_lookahead
 	cmp3261 = v1270 <= 90
 	if cmp3261 {
 		goto if_then3272
@@ -68276,7 +68276,7 @@ land_lhs_true3260:
 	}
 
 lor_lhs_false3263:
-	v1271 = *lookahead
+	v1271 = *local_lookahead
 	cmp3264 = v1271 == 95
 	if cmp3264 {
 		goto if_then3272
@@ -68285,7 +68285,7 @@ lor_lhs_false3263:
 	}
 
 lor_lhs_false3266:
-	v1272 = *lookahead
+	v1272 = *local_lookahead
 	cmp3267 = 97 <= v1272
 	if cmp3267 {
 		goto land_lhs_true3269
@@ -68294,7 +68294,7 @@ lor_lhs_false3266:
 	}
 
 land_lhs_true3269:
-	v1273 = *lookahead
+	v1273 = *local_lookahead
 	cmp3270 = v1273 <= 122
 	if cmp3270 {
 		goto if_then3272
@@ -68322,7 +68322,7 @@ sw_bb3275:
 	v1277 = *mark_end3277
 	v1278 = *lexer_addr
 	v1277(v1278)
-	v1279 = *lookahead
+	v1279 = *local_lookahead
 	cmp3278 = v1279 == 111
 	if cmp3278 {
 		goto if_then3280
@@ -68335,7 +68335,7 @@ if_then3280:
 	goto next_state
 
 if_end3281:
-	v1280 = *lookahead
+	v1280 = *local_lookahead
 	cmp3282 = v1280 == 39
 	if cmp3282 {
 		goto if_then3308
@@ -68344,7 +68344,7 @@ if_end3281:
 	}
 
 lor_lhs_false3284:
-	v1281 = *lookahead
+	v1281 = *local_lookahead
 	cmp3285 = v1281 == 45
 	if cmp3285 {
 		goto if_then3308
@@ -68353,7 +68353,7 @@ lor_lhs_false3284:
 	}
 
 lor_lhs_false3287:
-	v1282 = *lookahead
+	v1282 = *local_lookahead
 	cmp3288 = 48 <= v1282
 	if cmp3288 {
 		goto land_lhs_true3290
@@ -68362,7 +68362,7 @@ lor_lhs_false3287:
 	}
 
 land_lhs_true3290:
-	v1283 = *lookahead
+	v1283 = *local_lookahead
 	cmp3291 = v1283 <= 57
 	if cmp3291 {
 		goto if_then3308
@@ -68371,7 +68371,7 @@ land_lhs_true3290:
 	}
 
 lor_lhs_false3293:
-	v1284 = *lookahead
+	v1284 = *local_lookahead
 	cmp3294 = 65 <= v1284
 	if cmp3294 {
 		goto land_lhs_true3296
@@ -68380,7 +68380,7 @@ lor_lhs_false3293:
 	}
 
 land_lhs_true3296:
-	v1285 = *lookahead
+	v1285 = *local_lookahead
 	cmp3297 = v1285 <= 90
 	if cmp3297 {
 		goto if_then3308
@@ -68389,7 +68389,7 @@ land_lhs_true3296:
 	}
 
 lor_lhs_false3299:
-	v1286 = *lookahead
+	v1286 = *local_lookahead
 	cmp3300 = v1286 == 95
 	if cmp3300 {
 		goto if_then3308
@@ -68398,7 +68398,7 @@ lor_lhs_false3299:
 	}
 
 lor_lhs_false3302:
-	v1287 = *lookahead
+	v1287 = *local_lookahead
 	cmp3303 = 97 <= v1287
 	if cmp3303 {
 		goto land_lhs_true3305
@@ -68407,7 +68407,7 @@ lor_lhs_false3302:
 	}
 
 land_lhs_true3305:
-	v1288 = *lookahead
+	v1288 = *local_lookahead
 	cmp3306 = v1288 <= 122
 	if cmp3306 {
 		goto if_then3308
@@ -68435,7 +68435,7 @@ sw_bb3311:
 	v1292 = *mark_end3313
 	v1293 = *lexer_addr
 	v1292(v1293)
-	v1294 = *lookahead
+	v1294 = *local_lookahead
 	cmp3314 = v1294 == 111
 	if cmp3314 {
 		goto if_then3316
@@ -68448,7 +68448,7 @@ if_then3316:
 	goto next_state
 
 if_end3317:
-	v1295 = *lookahead
+	v1295 = *local_lookahead
 	cmp3318 = v1295 == 39
 	if cmp3318 {
 		goto if_then3344
@@ -68457,7 +68457,7 @@ if_end3317:
 	}
 
 lor_lhs_false3320:
-	v1296 = *lookahead
+	v1296 = *local_lookahead
 	cmp3321 = v1296 == 45
 	if cmp3321 {
 		goto if_then3344
@@ -68466,7 +68466,7 @@ lor_lhs_false3320:
 	}
 
 lor_lhs_false3323:
-	v1297 = *lookahead
+	v1297 = *local_lookahead
 	cmp3324 = 48 <= v1297
 	if cmp3324 {
 		goto land_lhs_true3326
@@ -68475,7 +68475,7 @@ lor_lhs_false3323:
 	}
 
 land_lhs_true3326:
-	v1298 = *lookahead
+	v1298 = *local_lookahead
 	cmp3327 = v1298 <= 57
 	if cmp3327 {
 		goto if_then3344
@@ -68484,7 +68484,7 @@ land_lhs_true3326:
 	}
 
 lor_lhs_false3329:
-	v1299 = *lookahead
+	v1299 = *local_lookahead
 	cmp3330 = 65 <= v1299
 	if cmp3330 {
 		goto land_lhs_true3332
@@ -68493,7 +68493,7 @@ lor_lhs_false3329:
 	}
 
 land_lhs_true3332:
-	v1300 = *lookahead
+	v1300 = *local_lookahead
 	cmp3333 = v1300 <= 90
 	if cmp3333 {
 		goto if_then3344
@@ -68502,7 +68502,7 @@ land_lhs_true3332:
 	}
 
 lor_lhs_false3335:
-	v1301 = *lookahead
+	v1301 = *local_lookahead
 	cmp3336 = v1301 == 95
 	if cmp3336 {
 		goto if_then3344
@@ -68511,7 +68511,7 @@ lor_lhs_false3335:
 	}
 
 lor_lhs_false3338:
-	v1302 = *lookahead
+	v1302 = *local_lookahead
 	cmp3339 = 97 <= v1302
 	if cmp3339 {
 		goto land_lhs_true3341
@@ -68520,7 +68520,7 @@ lor_lhs_false3338:
 	}
 
 land_lhs_true3341:
-	v1303 = *lookahead
+	v1303 = *local_lookahead
 	cmp3342 = v1303 <= 122
 	if cmp3342 {
 		goto if_then3344
@@ -68548,7 +68548,7 @@ sw_bb3347:
 	v1307 = *mark_end3349
 	v1308 = *lexer_addr
 	v1307(v1308)
-	v1309 = *lookahead
+	v1309 = *local_lookahead
 	cmp3350 = v1309 == 111
 	if cmp3350 {
 		goto if_then3352
@@ -68561,7 +68561,7 @@ if_then3352:
 	goto next_state
 
 if_end3353:
-	v1310 = *lookahead
+	v1310 = *local_lookahead
 	cmp3354 = v1310 == 117
 	if cmp3354 {
 		goto if_then3356
@@ -68574,7 +68574,7 @@ if_then3356:
 	goto next_state
 
 if_end3357:
-	v1311 = *lookahead
+	v1311 = *local_lookahead
 	cmp3358 = v1311 == 39
 	if cmp3358 {
 		goto if_then3384
@@ -68583,7 +68583,7 @@ if_end3357:
 	}
 
 lor_lhs_false3360:
-	v1312 = *lookahead
+	v1312 = *local_lookahead
 	cmp3361 = v1312 == 45
 	if cmp3361 {
 		goto if_then3384
@@ -68592,7 +68592,7 @@ lor_lhs_false3360:
 	}
 
 lor_lhs_false3363:
-	v1313 = *lookahead
+	v1313 = *local_lookahead
 	cmp3364 = 48 <= v1313
 	if cmp3364 {
 		goto land_lhs_true3366
@@ -68601,7 +68601,7 @@ lor_lhs_false3363:
 	}
 
 land_lhs_true3366:
-	v1314 = *lookahead
+	v1314 = *local_lookahead
 	cmp3367 = v1314 <= 57
 	if cmp3367 {
 		goto if_then3384
@@ -68610,7 +68610,7 @@ land_lhs_true3366:
 	}
 
 lor_lhs_false3369:
-	v1315 = *lookahead
+	v1315 = *local_lookahead
 	cmp3370 = 65 <= v1315
 	if cmp3370 {
 		goto land_lhs_true3372
@@ -68619,7 +68619,7 @@ lor_lhs_false3369:
 	}
 
 land_lhs_true3372:
-	v1316 = *lookahead
+	v1316 = *local_lookahead
 	cmp3373 = v1316 <= 90
 	if cmp3373 {
 		goto if_then3384
@@ -68628,7 +68628,7 @@ land_lhs_true3372:
 	}
 
 lor_lhs_false3375:
-	v1317 = *lookahead
+	v1317 = *local_lookahead
 	cmp3376 = v1317 == 95
 	if cmp3376 {
 		goto if_then3384
@@ -68637,7 +68637,7 @@ lor_lhs_false3375:
 	}
 
 lor_lhs_false3378:
-	v1318 = *lookahead
+	v1318 = *local_lookahead
 	cmp3379 = 97 <= v1318
 	if cmp3379 {
 		goto land_lhs_true3381
@@ -68646,7 +68646,7 @@ lor_lhs_false3378:
 	}
 
 land_lhs_true3381:
-	v1319 = *lookahead
+	v1319 = *local_lookahead
 	cmp3382 = v1319 <= 122
 	if cmp3382 {
 		goto if_then3384
@@ -68674,7 +68674,7 @@ sw_bb3387:
 	v1323 = *mark_end3389
 	v1324 = *lexer_addr
 	v1323(v1324)
-	v1325 = *lookahead
+	v1325 = *local_lookahead
 	cmp3390 = v1325 == 111
 	if cmp3390 {
 		goto if_then3392
@@ -68687,7 +68687,7 @@ if_then3392:
 	goto next_state
 
 if_end3393:
-	v1326 = *lookahead
+	v1326 = *local_lookahead
 	cmp3394 = v1326 == 39
 	if cmp3394 {
 		goto if_then3420
@@ -68696,7 +68696,7 @@ if_end3393:
 	}
 
 lor_lhs_false3396:
-	v1327 = *lookahead
+	v1327 = *local_lookahead
 	cmp3397 = v1327 == 45
 	if cmp3397 {
 		goto if_then3420
@@ -68705,7 +68705,7 @@ lor_lhs_false3396:
 	}
 
 lor_lhs_false3399:
-	v1328 = *lookahead
+	v1328 = *local_lookahead
 	cmp3400 = 48 <= v1328
 	if cmp3400 {
 		goto land_lhs_true3402
@@ -68714,7 +68714,7 @@ lor_lhs_false3399:
 	}
 
 land_lhs_true3402:
-	v1329 = *lookahead
+	v1329 = *local_lookahead
 	cmp3403 = v1329 <= 57
 	if cmp3403 {
 		goto if_then3420
@@ -68723,7 +68723,7 @@ land_lhs_true3402:
 	}
 
 lor_lhs_false3405:
-	v1330 = *lookahead
+	v1330 = *local_lookahead
 	cmp3406 = 65 <= v1330
 	if cmp3406 {
 		goto land_lhs_true3408
@@ -68732,7 +68732,7 @@ lor_lhs_false3405:
 	}
 
 land_lhs_true3408:
-	v1331 = *lookahead
+	v1331 = *local_lookahead
 	cmp3409 = v1331 <= 90
 	if cmp3409 {
 		goto if_then3420
@@ -68741,7 +68741,7 @@ land_lhs_true3408:
 	}
 
 lor_lhs_false3411:
-	v1332 = *lookahead
+	v1332 = *local_lookahead
 	cmp3412 = v1332 == 95
 	if cmp3412 {
 		goto if_then3420
@@ -68750,7 +68750,7 @@ lor_lhs_false3411:
 	}
 
 lor_lhs_false3414:
-	v1333 = *lookahead
+	v1333 = *local_lookahead
 	cmp3415 = 97 <= v1333
 	if cmp3415 {
 		goto land_lhs_true3417
@@ -68759,7 +68759,7 @@ lor_lhs_false3414:
 	}
 
 land_lhs_true3417:
-	v1334 = *lookahead
+	v1334 = *local_lookahead
 	cmp3418 = v1334 <= 122
 	if cmp3418 {
 		goto if_then3420
@@ -68787,7 +68787,7 @@ sw_bb3423:
 	v1338 = *mark_end3425
 	v1339 = *lexer_addr
 	v1338(v1339)
-	v1340 = *lookahead
+	v1340 = *local_lookahead
 	cmp3426 = v1340 == 111
 	if cmp3426 {
 		goto if_then3428
@@ -68800,7 +68800,7 @@ if_then3428:
 	goto next_state
 
 if_end3429:
-	v1341 = *lookahead
+	v1341 = *local_lookahead
 	cmp3430 = v1341 == 39
 	if cmp3430 {
 		goto if_then3456
@@ -68809,7 +68809,7 @@ if_end3429:
 	}
 
 lor_lhs_false3432:
-	v1342 = *lookahead
+	v1342 = *local_lookahead
 	cmp3433 = v1342 == 45
 	if cmp3433 {
 		goto if_then3456
@@ -68818,7 +68818,7 @@ lor_lhs_false3432:
 	}
 
 lor_lhs_false3435:
-	v1343 = *lookahead
+	v1343 = *local_lookahead
 	cmp3436 = 48 <= v1343
 	if cmp3436 {
 		goto land_lhs_true3438
@@ -68827,7 +68827,7 @@ lor_lhs_false3435:
 	}
 
 land_lhs_true3438:
-	v1344 = *lookahead
+	v1344 = *local_lookahead
 	cmp3439 = v1344 <= 57
 	if cmp3439 {
 		goto if_then3456
@@ -68836,7 +68836,7 @@ land_lhs_true3438:
 	}
 
 lor_lhs_false3441:
-	v1345 = *lookahead
+	v1345 = *local_lookahead
 	cmp3442 = 65 <= v1345
 	if cmp3442 {
 		goto land_lhs_true3444
@@ -68845,7 +68845,7 @@ lor_lhs_false3441:
 	}
 
 land_lhs_true3444:
-	v1346 = *lookahead
+	v1346 = *local_lookahead
 	cmp3445 = v1346 <= 90
 	if cmp3445 {
 		goto if_then3456
@@ -68854,7 +68854,7 @@ land_lhs_true3444:
 	}
 
 lor_lhs_false3447:
-	v1347 = *lookahead
+	v1347 = *local_lookahead
 	cmp3448 = v1347 == 95
 	if cmp3448 {
 		goto if_then3456
@@ -68863,7 +68863,7 @@ lor_lhs_false3447:
 	}
 
 lor_lhs_false3450:
-	v1348 = *lookahead
+	v1348 = *local_lookahead
 	cmp3451 = 97 <= v1348
 	if cmp3451 {
 		goto land_lhs_true3453
@@ -68872,7 +68872,7 @@ lor_lhs_false3450:
 	}
 
 land_lhs_true3453:
-	v1349 = *lookahead
+	v1349 = *local_lookahead
 	cmp3454 = v1349 <= 122
 	if cmp3454 {
 		goto if_then3456
@@ -68900,7 +68900,7 @@ sw_bb3459:
 	v1353 = *mark_end3461
 	v1354 = *lexer_addr
 	v1353(v1354)
-	v1355 = *lookahead
+	v1355 = *local_lookahead
 	cmp3462 = v1355 == 111
 	if cmp3462 {
 		goto if_then3464
@@ -68913,7 +68913,7 @@ if_then3464:
 	goto next_state
 
 if_end3465:
-	v1356 = *lookahead
+	v1356 = *local_lookahead
 	cmp3466 = v1356 == 39
 	if cmp3466 {
 		goto if_then3492
@@ -68922,7 +68922,7 @@ if_end3465:
 	}
 
 lor_lhs_false3468:
-	v1357 = *lookahead
+	v1357 = *local_lookahead
 	cmp3469 = v1357 == 45
 	if cmp3469 {
 		goto if_then3492
@@ -68931,7 +68931,7 @@ lor_lhs_false3468:
 	}
 
 lor_lhs_false3471:
-	v1358 = *lookahead
+	v1358 = *local_lookahead
 	cmp3472 = 48 <= v1358
 	if cmp3472 {
 		goto land_lhs_true3474
@@ -68940,7 +68940,7 @@ lor_lhs_false3471:
 	}
 
 land_lhs_true3474:
-	v1359 = *lookahead
+	v1359 = *local_lookahead
 	cmp3475 = v1359 <= 57
 	if cmp3475 {
 		goto if_then3492
@@ -68949,7 +68949,7 @@ land_lhs_true3474:
 	}
 
 lor_lhs_false3477:
-	v1360 = *lookahead
+	v1360 = *local_lookahead
 	cmp3478 = 65 <= v1360
 	if cmp3478 {
 		goto land_lhs_true3480
@@ -68958,7 +68958,7 @@ lor_lhs_false3477:
 	}
 
 land_lhs_true3480:
-	v1361 = *lookahead
+	v1361 = *local_lookahead
 	cmp3481 = v1361 <= 90
 	if cmp3481 {
 		goto if_then3492
@@ -68967,7 +68967,7 @@ land_lhs_true3480:
 	}
 
 lor_lhs_false3483:
-	v1362 = *lookahead
+	v1362 = *local_lookahead
 	cmp3484 = v1362 == 95
 	if cmp3484 {
 		goto if_then3492
@@ -68976,7 +68976,7 @@ lor_lhs_false3483:
 	}
 
 lor_lhs_false3486:
-	v1363 = *lookahead
+	v1363 = *local_lookahead
 	cmp3487 = 97 <= v1363
 	if cmp3487 {
 		goto land_lhs_true3489
@@ -68985,7 +68985,7 @@ lor_lhs_false3486:
 	}
 
 land_lhs_true3489:
-	v1364 = *lookahead
+	v1364 = *local_lookahead
 	cmp3490 = v1364 <= 122
 	if cmp3490 {
 		goto if_then3492
@@ -69013,7 +69013,7 @@ sw_bb3495:
 	v1368 = *mark_end3497
 	v1369 = *lexer_addr
 	v1368(v1369)
-	v1370 = *lookahead
+	v1370 = *local_lookahead
 	cmp3498 = v1370 == 111
 	if cmp3498 {
 		goto if_then3500
@@ -69026,7 +69026,7 @@ if_then3500:
 	goto next_state
 
 if_end3501:
-	v1371 = *lookahead
+	v1371 = *local_lookahead
 	cmp3502 = v1371 == 39
 	if cmp3502 {
 		goto if_then3528
@@ -69035,7 +69035,7 @@ if_end3501:
 	}
 
 lor_lhs_false3504:
-	v1372 = *lookahead
+	v1372 = *local_lookahead
 	cmp3505 = v1372 == 45
 	if cmp3505 {
 		goto if_then3528
@@ -69044,7 +69044,7 @@ lor_lhs_false3504:
 	}
 
 lor_lhs_false3507:
-	v1373 = *lookahead
+	v1373 = *local_lookahead
 	cmp3508 = 48 <= v1373
 	if cmp3508 {
 		goto land_lhs_true3510
@@ -69053,7 +69053,7 @@ lor_lhs_false3507:
 	}
 
 land_lhs_true3510:
-	v1374 = *lookahead
+	v1374 = *local_lookahead
 	cmp3511 = v1374 <= 57
 	if cmp3511 {
 		goto if_then3528
@@ -69062,7 +69062,7 @@ land_lhs_true3510:
 	}
 
 lor_lhs_false3513:
-	v1375 = *lookahead
+	v1375 = *local_lookahead
 	cmp3514 = 65 <= v1375
 	if cmp3514 {
 		goto land_lhs_true3516
@@ -69071,7 +69071,7 @@ lor_lhs_false3513:
 	}
 
 land_lhs_true3516:
-	v1376 = *lookahead
+	v1376 = *local_lookahead
 	cmp3517 = v1376 <= 90
 	if cmp3517 {
 		goto if_then3528
@@ -69080,7 +69080,7 @@ land_lhs_true3516:
 	}
 
 lor_lhs_false3519:
-	v1377 = *lookahead
+	v1377 = *local_lookahead
 	cmp3520 = v1377 == 95
 	if cmp3520 {
 		goto if_then3528
@@ -69089,7 +69089,7 @@ lor_lhs_false3519:
 	}
 
 lor_lhs_false3522:
-	v1378 = *lookahead
+	v1378 = *local_lookahead
 	cmp3523 = 97 <= v1378
 	if cmp3523 {
 		goto land_lhs_true3525
@@ -69098,7 +69098,7 @@ lor_lhs_false3522:
 	}
 
 land_lhs_true3525:
-	v1379 = *lookahead
+	v1379 = *local_lookahead
 	cmp3526 = v1379 <= 122
 	if cmp3526 {
 		goto if_then3528
@@ -69126,7 +69126,7 @@ sw_bb3531:
 	v1383 = *mark_end3533
 	v1384 = *lexer_addr
 	v1383(v1384)
-	v1385 = *lookahead
+	v1385 = *local_lookahead
 	cmp3534 = v1385 == 112
 	if cmp3534 {
 		goto if_then3536
@@ -69139,7 +69139,7 @@ if_then3536:
 	goto next_state
 
 if_end3537:
-	v1386 = *lookahead
+	v1386 = *local_lookahead
 	cmp3538 = v1386 == 39
 	if cmp3538 {
 		goto if_then3564
@@ -69148,7 +69148,7 @@ if_end3537:
 	}
 
 lor_lhs_false3540:
-	v1387 = *lookahead
+	v1387 = *local_lookahead
 	cmp3541 = v1387 == 45
 	if cmp3541 {
 		goto if_then3564
@@ -69157,7 +69157,7 @@ lor_lhs_false3540:
 	}
 
 lor_lhs_false3543:
-	v1388 = *lookahead
+	v1388 = *local_lookahead
 	cmp3544 = 48 <= v1388
 	if cmp3544 {
 		goto land_lhs_true3546
@@ -69166,7 +69166,7 @@ lor_lhs_false3543:
 	}
 
 land_lhs_true3546:
-	v1389 = *lookahead
+	v1389 = *local_lookahead
 	cmp3547 = v1389 <= 57
 	if cmp3547 {
 		goto if_then3564
@@ -69175,7 +69175,7 @@ land_lhs_true3546:
 	}
 
 lor_lhs_false3549:
-	v1390 = *lookahead
+	v1390 = *local_lookahead
 	cmp3550 = 65 <= v1390
 	if cmp3550 {
 		goto land_lhs_true3552
@@ -69184,7 +69184,7 @@ lor_lhs_false3549:
 	}
 
 land_lhs_true3552:
-	v1391 = *lookahead
+	v1391 = *local_lookahead
 	cmp3553 = v1391 <= 90
 	if cmp3553 {
 		goto if_then3564
@@ -69193,7 +69193,7 @@ land_lhs_true3552:
 	}
 
 lor_lhs_false3555:
-	v1392 = *lookahead
+	v1392 = *local_lookahead
 	cmp3556 = v1392 == 95
 	if cmp3556 {
 		goto if_then3564
@@ -69202,7 +69202,7 @@ lor_lhs_false3555:
 	}
 
 lor_lhs_false3558:
-	v1393 = *lookahead
+	v1393 = *local_lookahead
 	cmp3559 = 97 <= v1393
 	if cmp3559 {
 		goto land_lhs_true3561
@@ -69211,7 +69211,7 @@ lor_lhs_false3558:
 	}
 
 land_lhs_true3561:
-	v1394 = *lookahead
+	v1394 = *local_lookahead
 	cmp3562 = v1394 <= 122
 	if cmp3562 {
 		goto if_then3564
@@ -69239,7 +69239,7 @@ sw_bb3567:
 	v1398 = *mark_end3569
 	v1399 = *lexer_addr
 	v1398(v1399)
-	v1400 = *lookahead
+	v1400 = *local_lookahead
 	cmp3570 = v1400 == 112
 	if cmp3570 {
 		goto if_then3572
@@ -69252,7 +69252,7 @@ if_then3572:
 	goto next_state
 
 if_end3573:
-	v1401 = *lookahead
+	v1401 = *local_lookahead
 	cmp3574 = v1401 == 114
 	if cmp3574 {
 		goto if_then3576
@@ -69265,7 +69265,7 @@ if_then3576:
 	goto next_state
 
 if_end3577:
-	v1402 = *lookahead
+	v1402 = *local_lookahead
 	cmp3578 = v1402 == 39
 	if cmp3578 {
 		goto if_then3604
@@ -69274,7 +69274,7 @@ if_end3577:
 	}
 
 lor_lhs_false3580:
-	v1403 = *lookahead
+	v1403 = *local_lookahead
 	cmp3581 = v1403 == 45
 	if cmp3581 {
 		goto if_then3604
@@ -69283,7 +69283,7 @@ lor_lhs_false3580:
 	}
 
 lor_lhs_false3583:
-	v1404 = *lookahead
+	v1404 = *local_lookahead
 	cmp3584 = 48 <= v1404
 	if cmp3584 {
 		goto land_lhs_true3586
@@ -69292,7 +69292,7 @@ lor_lhs_false3583:
 	}
 
 land_lhs_true3586:
-	v1405 = *lookahead
+	v1405 = *local_lookahead
 	cmp3587 = v1405 <= 57
 	if cmp3587 {
 		goto if_then3604
@@ -69301,7 +69301,7 @@ land_lhs_true3586:
 	}
 
 lor_lhs_false3589:
-	v1406 = *lookahead
+	v1406 = *local_lookahead
 	cmp3590 = 65 <= v1406
 	if cmp3590 {
 		goto land_lhs_true3592
@@ -69310,7 +69310,7 @@ lor_lhs_false3589:
 	}
 
 land_lhs_true3592:
-	v1407 = *lookahead
+	v1407 = *local_lookahead
 	cmp3593 = v1407 <= 90
 	if cmp3593 {
 		goto if_then3604
@@ -69319,7 +69319,7 @@ land_lhs_true3592:
 	}
 
 lor_lhs_false3595:
-	v1408 = *lookahead
+	v1408 = *local_lookahead
 	cmp3596 = v1408 == 95
 	if cmp3596 {
 		goto if_then3604
@@ -69328,7 +69328,7 @@ lor_lhs_false3595:
 	}
 
 lor_lhs_false3598:
-	v1409 = *lookahead
+	v1409 = *local_lookahead
 	cmp3599 = 97 <= v1409
 	if cmp3599 {
 		goto land_lhs_true3601
@@ -69337,7 +69337,7 @@ lor_lhs_false3598:
 	}
 
 land_lhs_true3601:
-	v1410 = *lookahead
+	v1410 = *local_lookahead
 	cmp3602 = v1410 <= 122
 	if cmp3602 {
 		goto if_then3604
@@ -69365,7 +69365,7 @@ sw_bb3607:
 	v1414 = *mark_end3609
 	v1415 = *lexer_addr
 	v1414(v1415)
-	v1416 = *lookahead
+	v1416 = *local_lookahead
 	cmp3610 = v1416 == 112
 	if cmp3610 {
 		goto if_then3612
@@ -69378,7 +69378,7 @@ if_then3612:
 	goto next_state
 
 if_end3613:
-	v1417 = *lookahead
+	v1417 = *local_lookahead
 	cmp3614 = v1417 == 39
 	if cmp3614 {
 		goto if_then3640
@@ -69387,7 +69387,7 @@ if_end3613:
 	}
 
 lor_lhs_false3616:
-	v1418 = *lookahead
+	v1418 = *local_lookahead
 	cmp3617 = v1418 == 45
 	if cmp3617 {
 		goto if_then3640
@@ -69396,7 +69396,7 @@ lor_lhs_false3616:
 	}
 
 lor_lhs_false3619:
-	v1419 = *lookahead
+	v1419 = *local_lookahead
 	cmp3620 = 48 <= v1419
 	if cmp3620 {
 		goto land_lhs_true3622
@@ -69405,7 +69405,7 @@ lor_lhs_false3619:
 	}
 
 land_lhs_true3622:
-	v1420 = *lookahead
+	v1420 = *local_lookahead
 	cmp3623 = v1420 <= 57
 	if cmp3623 {
 		goto if_then3640
@@ -69414,7 +69414,7 @@ land_lhs_true3622:
 	}
 
 lor_lhs_false3625:
-	v1421 = *lookahead
+	v1421 = *local_lookahead
 	cmp3626 = 65 <= v1421
 	if cmp3626 {
 		goto land_lhs_true3628
@@ -69423,7 +69423,7 @@ lor_lhs_false3625:
 	}
 
 land_lhs_true3628:
-	v1422 = *lookahead
+	v1422 = *local_lookahead
 	cmp3629 = v1422 <= 90
 	if cmp3629 {
 		goto if_then3640
@@ -69432,7 +69432,7 @@ land_lhs_true3628:
 	}
 
 lor_lhs_false3631:
-	v1423 = *lookahead
+	v1423 = *local_lookahead
 	cmp3632 = v1423 == 95
 	if cmp3632 {
 		goto if_then3640
@@ -69441,7 +69441,7 @@ lor_lhs_false3631:
 	}
 
 lor_lhs_false3634:
-	v1424 = *lookahead
+	v1424 = *local_lookahead
 	cmp3635 = 97 <= v1424
 	if cmp3635 {
 		goto land_lhs_true3637
@@ -69450,7 +69450,7 @@ lor_lhs_false3634:
 	}
 
 land_lhs_true3637:
-	v1425 = *lookahead
+	v1425 = *local_lookahead
 	cmp3638 = v1425 <= 122
 	if cmp3638 {
 		goto if_then3640
@@ -69478,7 +69478,7 @@ sw_bb3643:
 	v1429 = *mark_end3645
 	v1430 = *lexer_addr
 	v1429(v1430)
-	v1431 = *lookahead
+	v1431 = *local_lookahead
 	cmp3646 = v1431 == 112
 	if cmp3646 {
 		goto if_then3648
@@ -69491,7 +69491,7 @@ if_then3648:
 	goto next_state
 
 if_end3649:
-	v1432 = *lookahead
+	v1432 = *local_lookahead
 	cmp3650 = v1432 == 39
 	if cmp3650 {
 		goto if_then3676
@@ -69500,7 +69500,7 @@ if_end3649:
 	}
 
 lor_lhs_false3652:
-	v1433 = *lookahead
+	v1433 = *local_lookahead
 	cmp3653 = v1433 == 45
 	if cmp3653 {
 		goto if_then3676
@@ -69509,7 +69509,7 @@ lor_lhs_false3652:
 	}
 
 lor_lhs_false3655:
-	v1434 = *lookahead
+	v1434 = *local_lookahead
 	cmp3656 = 48 <= v1434
 	if cmp3656 {
 		goto land_lhs_true3658
@@ -69518,7 +69518,7 @@ lor_lhs_false3655:
 	}
 
 land_lhs_true3658:
-	v1435 = *lookahead
+	v1435 = *local_lookahead
 	cmp3659 = v1435 <= 57
 	if cmp3659 {
 		goto if_then3676
@@ -69527,7 +69527,7 @@ land_lhs_true3658:
 	}
 
 lor_lhs_false3661:
-	v1436 = *lookahead
+	v1436 = *local_lookahead
 	cmp3662 = 65 <= v1436
 	if cmp3662 {
 		goto land_lhs_true3664
@@ -69536,7 +69536,7 @@ lor_lhs_false3661:
 	}
 
 land_lhs_true3664:
-	v1437 = *lookahead
+	v1437 = *local_lookahead
 	cmp3665 = v1437 <= 90
 	if cmp3665 {
 		goto if_then3676
@@ -69545,7 +69545,7 @@ land_lhs_true3664:
 	}
 
 lor_lhs_false3667:
-	v1438 = *lookahead
+	v1438 = *local_lookahead
 	cmp3668 = v1438 == 95
 	if cmp3668 {
 		goto if_then3676
@@ -69554,7 +69554,7 @@ lor_lhs_false3667:
 	}
 
 lor_lhs_false3670:
-	v1439 = *lookahead
+	v1439 = *local_lookahead
 	cmp3671 = 97 <= v1439
 	if cmp3671 {
 		goto land_lhs_true3673
@@ -69563,7 +69563,7 @@ lor_lhs_false3670:
 	}
 
 land_lhs_true3673:
-	v1440 = *lookahead
+	v1440 = *local_lookahead
 	cmp3674 = v1440 <= 122
 	if cmp3674 {
 		goto if_then3676
@@ -69591,7 +69591,7 @@ sw_bb3679:
 	v1444 = *mark_end3681
 	v1445 = *lexer_addr
 	v1444(v1445)
-	v1446 = *lookahead
+	v1446 = *local_lookahead
 	cmp3682 = v1446 == 114
 	if cmp3682 {
 		goto if_then3684
@@ -69604,7 +69604,7 @@ if_then3684:
 	goto next_state
 
 if_end3685:
-	v1447 = *lookahead
+	v1447 = *local_lookahead
 	cmp3686 = v1447 == 39
 	if cmp3686 {
 		goto if_then3712
@@ -69613,7 +69613,7 @@ if_end3685:
 	}
 
 lor_lhs_false3688:
-	v1448 = *lookahead
+	v1448 = *local_lookahead
 	cmp3689 = v1448 == 45
 	if cmp3689 {
 		goto if_then3712
@@ -69622,7 +69622,7 @@ lor_lhs_false3688:
 	}
 
 lor_lhs_false3691:
-	v1449 = *lookahead
+	v1449 = *local_lookahead
 	cmp3692 = 48 <= v1449
 	if cmp3692 {
 		goto land_lhs_true3694
@@ -69631,7 +69631,7 @@ lor_lhs_false3691:
 	}
 
 land_lhs_true3694:
-	v1450 = *lookahead
+	v1450 = *local_lookahead
 	cmp3695 = v1450 <= 57
 	if cmp3695 {
 		goto if_then3712
@@ -69640,7 +69640,7 @@ land_lhs_true3694:
 	}
 
 lor_lhs_false3697:
-	v1451 = *lookahead
+	v1451 = *local_lookahead
 	cmp3698 = 65 <= v1451
 	if cmp3698 {
 		goto land_lhs_true3700
@@ -69649,7 +69649,7 @@ lor_lhs_false3697:
 	}
 
 land_lhs_true3700:
-	v1452 = *lookahead
+	v1452 = *local_lookahead
 	cmp3701 = v1452 <= 90
 	if cmp3701 {
 		goto if_then3712
@@ -69658,7 +69658,7 @@ land_lhs_true3700:
 	}
 
 lor_lhs_false3703:
-	v1453 = *lookahead
+	v1453 = *local_lookahead
 	cmp3704 = v1453 == 95
 	if cmp3704 {
 		goto if_then3712
@@ -69667,7 +69667,7 @@ lor_lhs_false3703:
 	}
 
 lor_lhs_false3706:
-	v1454 = *lookahead
+	v1454 = *local_lookahead
 	cmp3707 = 97 <= v1454
 	if cmp3707 {
 		goto land_lhs_true3709
@@ -69676,7 +69676,7 @@ lor_lhs_false3706:
 	}
 
 land_lhs_true3709:
-	v1455 = *lookahead
+	v1455 = *local_lookahead
 	cmp3710 = v1455 <= 122
 	if cmp3710 {
 		goto if_then3712
@@ -69704,7 +69704,7 @@ sw_bb3715:
 	v1459 = *mark_end3717
 	v1460 = *lexer_addr
 	v1459(v1460)
-	v1461 = *lookahead
+	v1461 = *local_lookahead
 	cmp3718 = v1461 == 114
 	if cmp3718 {
 		goto if_then3720
@@ -69717,7 +69717,7 @@ if_then3720:
 	goto next_state
 
 if_end3721:
-	v1462 = *lookahead
+	v1462 = *local_lookahead
 	cmp3722 = v1462 == 39
 	if cmp3722 {
 		goto if_then3748
@@ -69726,7 +69726,7 @@ if_end3721:
 	}
 
 lor_lhs_false3724:
-	v1463 = *lookahead
+	v1463 = *local_lookahead
 	cmp3725 = v1463 == 45
 	if cmp3725 {
 		goto if_then3748
@@ -69735,7 +69735,7 @@ lor_lhs_false3724:
 	}
 
 lor_lhs_false3727:
-	v1464 = *lookahead
+	v1464 = *local_lookahead
 	cmp3728 = 48 <= v1464
 	if cmp3728 {
 		goto land_lhs_true3730
@@ -69744,7 +69744,7 @@ lor_lhs_false3727:
 	}
 
 land_lhs_true3730:
-	v1465 = *lookahead
+	v1465 = *local_lookahead
 	cmp3731 = v1465 <= 57
 	if cmp3731 {
 		goto if_then3748
@@ -69753,7 +69753,7 @@ land_lhs_true3730:
 	}
 
 lor_lhs_false3733:
-	v1466 = *lookahead
+	v1466 = *local_lookahead
 	cmp3734 = 65 <= v1466
 	if cmp3734 {
 		goto land_lhs_true3736
@@ -69762,7 +69762,7 @@ lor_lhs_false3733:
 	}
 
 land_lhs_true3736:
-	v1467 = *lookahead
+	v1467 = *local_lookahead
 	cmp3737 = v1467 <= 90
 	if cmp3737 {
 		goto if_then3748
@@ -69771,7 +69771,7 @@ land_lhs_true3736:
 	}
 
 lor_lhs_false3739:
-	v1468 = *lookahead
+	v1468 = *local_lookahead
 	cmp3740 = v1468 == 95
 	if cmp3740 {
 		goto if_then3748
@@ -69780,7 +69780,7 @@ lor_lhs_false3739:
 	}
 
 lor_lhs_false3742:
-	v1469 = *lookahead
+	v1469 = *local_lookahead
 	cmp3743 = 97 <= v1469
 	if cmp3743 {
 		goto land_lhs_true3745
@@ -69789,7 +69789,7 @@ lor_lhs_false3742:
 	}
 
 land_lhs_true3745:
-	v1470 = *lookahead
+	v1470 = *local_lookahead
 	cmp3746 = v1470 <= 122
 	if cmp3746 {
 		goto if_then3748
@@ -69817,7 +69817,7 @@ sw_bb3751:
 	v1474 = *mark_end3753
 	v1475 = *lexer_addr
 	v1474(v1475)
-	v1476 = *lookahead
+	v1476 = *local_lookahead
 	cmp3754 = v1476 == 114
 	if cmp3754 {
 		goto if_then3756
@@ -69830,7 +69830,7 @@ if_then3756:
 	goto next_state
 
 if_end3757:
-	v1477 = *lookahead
+	v1477 = *local_lookahead
 	cmp3758 = v1477 == 39
 	if cmp3758 {
 		goto if_then3784
@@ -69839,7 +69839,7 @@ if_end3757:
 	}
 
 lor_lhs_false3760:
-	v1478 = *lookahead
+	v1478 = *local_lookahead
 	cmp3761 = v1478 == 45
 	if cmp3761 {
 		goto if_then3784
@@ -69848,7 +69848,7 @@ lor_lhs_false3760:
 	}
 
 lor_lhs_false3763:
-	v1479 = *lookahead
+	v1479 = *local_lookahead
 	cmp3764 = 48 <= v1479
 	if cmp3764 {
 		goto land_lhs_true3766
@@ -69857,7 +69857,7 @@ lor_lhs_false3763:
 	}
 
 land_lhs_true3766:
-	v1480 = *lookahead
+	v1480 = *local_lookahead
 	cmp3767 = v1480 <= 57
 	if cmp3767 {
 		goto if_then3784
@@ -69866,7 +69866,7 @@ land_lhs_true3766:
 	}
 
 lor_lhs_false3769:
-	v1481 = *lookahead
+	v1481 = *local_lookahead
 	cmp3770 = 65 <= v1481
 	if cmp3770 {
 		goto land_lhs_true3772
@@ -69875,7 +69875,7 @@ lor_lhs_false3769:
 	}
 
 land_lhs_true3772:
-	v1482 = *lookahead
+	v1482 = *local_lookahead
 	cmp3773 = v1482 <= 90
 	if cmp3773 {
 		goto if_then3784
@@ -69884,7 +69884,7 @@ land_lhs_true3772:
 	}
 
 lor_lhs_false3775:
-	v1483 = *lookahead
+	v1483 = *local_lookahead
 	cmp3776 = v1483 == 95
 	if cmp3776 {
 		goto if_then3784
@@ -69893,7 +69893,7 @@ lor_lhs_false3775:
 	}
 
 lor_lhs_false3778:
-	v1484 = *lookahead
+	v1484 = *local_lookahead
 	cmp3779 = 97 <= v1484
 	if cmp3779 {
 		goto land_lhs_true3781
@@ -69902,7 +69902,7 @@ lor_lhs_false3778:
 	}
 
 land_lhs_true3781:
-	v1485 = *lookahead
+	v1485 = *local_lookahead
 	cmp3782 = v1485 <= 122
 	if cmp3782 {
 		goto if_then3784
@@ -69930,7 +69930,7 @@ sw_bb3787:
 	v1489 = *mark_end3789
 	v1490 = *lexer_addr
 	v1489(v1490)
-	v1491 = *lookahead
+	v1491 = *local_lookahead
 	cmp3790 = v1491 == 114
 	if cmp3790 {
 		goto if_then3792
@@ -69943,7 +69943,7 @@ if_then3792:
 	goto next_state
 
 if_end3793:
-	v1492 = *lookahead
+	v1492 = *local_lookahead
 	cmp3794 = v1492 == 39
 	if cmp3794 {
 		goto if_then3820
@@ -69952,7 +69952,7 @@ if_end3793:
 	}
 
 lor_lhs_false3796:
-	v1493 = *lookahead
+	v1493 = *local_lookahead
 	cmp3797 = v1493 == 45
 	if cmp3797 {
 		goto if_then3820
@@ -69961,7 +69961,7 @@ lor_lhs_false3796:
 	}
 
 lor_lhs_false3799:
-	v1494 = *lookahead
+	v1494 = *local_lookahead
 	cmp3800 = 48 <= v1494
 	if cmp3800 {
 		goto land_lhs_true3802
@@ -69970,7 +69970,7 @@ lor_lhs_false3799:
 	}
 
 land_lhs_true3802:
-	v1495 = *lookahead
+	v1495 = *local_lookahead
 	cmp3803 = v1495 <= 57
 	if cmp3803 {
 		goto if_then3820
@@ -69979,7 +69979,7 @@ land_lhs_true3802:
 	}
 
 lor_lhs_false3805:
-	v1496 = *lookahead
+	v1496 = *local_lookahead
 	cmp3806 = 65 <= v1496
 	if cmp3806 {
 		goto land_lhs_true3808
@@ -69988,7 +69988,7 @@ lor_lhs_false3805:
 	}
 
 land_lhs_true3808:
-	v1497 = *lookahead
+	v1497 = *local_lookahead
 	cmp3809 = v1497 <= 90
 	if cmp3809 {
 		goto if_then3820
@@ -69997,7 +69997,7 @@ land_lhs_true3808:
 	}
 
 lor_lhs_false3811:
-	v1498 = *lookahead
+	v1498 = *local_lookahead
 	cmp3812 = v1498 == 95
 	if cmp3812 {
 		goto if_then3820
@@ -70006,7 +70006,7 @@ lor_lhs_false3811:
 	}
 
 lor_lhs_false3814:
-	v1499 = *lookahead
+	v1499 = *local_lookahead
 	cmp3815 = 97 <= v1499
 	if cmp3815 {
 		goto land_lhs_true3817
@@ -70015,7 +70015,7 @@ lor_lhs_false3814:
 	}
 
 land_lhs_true3817:
-	v1500 = *lookahead
+	v1500 = *local_lookahead
 	cmp3818 = v1500 <= 122
 	if cmp3818 {
 		goto if_then3820
@@ -70043,7 +70043,7 @@ sw_bb3823:
 	v1504 = *mark_end3825
 	v1505 = *lexer_addr
 	v1504(v1505)
-	v1506 = *lookahead
+	v1506 = *local_lookahead
 	cmp3826 = v1506 == 114
 	if cmp3826 {
 		goto if_then3828
@@ -70056,7 +70056,7 @@ if_then3828:
 	goto next_state
 
 if_end3829:
-	v1507 = *lookahead
+	v1507 = *local_lookahead
 	cmp3830 = v1507 == 39
 	if cmp3830 {
 		goto if_then3856
@@ -70065,7 +70065,7 @@ if_end3829:
 	}
 
 lor_lhs_false3832:
-	v1508 = *lookahead
+	v1508 = *local_lookahead
 	cmp3833 = v1508 == 45
 	if cmp3833 {
 		goto if_then3856
@@ -70074,7 +70074,7 @@ lor_lhs_false3832:
 	}
 
 lor_lhs_false3835:
-	v1509 = *lookahead
+	v1509 = *local_lookahead
 	cmp3836 = 48 <= v1509
 	if cmp3836 {
 		goto land_lhs_true3838
@@ -70083,7 +70083,7 @@ lor_lhs_false3835:
 	}
 
 land_lhs_true3838:
-	v1510 = *lookahead
+	v1510 = *local_lookahead
 	cmp3839 = v1510 <= 57
 	if cmp3839 {
 		goto if_then3856
@@ -70092,7 +70092,7 @@ land_lhs_true3838:
 	}
 
 lor_lhs_false3841:
-	v1511 = *lookahead
+	v1511 = *local_lookahead
 	cmp3842 = 65 <= v1511
 	if cmp3842 {
 		goto land_lhs_true3844
@@ -70101,7 +70101,7 @@ lor_lhs_false3841:
 	}
 
 land_lhs_true3844:
-	v1512 = *lookahead
+	v1512 = *local_lookahead
 	cmp3845 = v1512 <= 90
 	if cmp3845 {
 		goto if_then3856
@@ -70110,7 +70110,7 @@ land_lhs_true3844:
 	}
 
 lor_lhs_false3847:
-	v1513 = *lookahead
+	v1513 = *local_lookahead
 	cmp3848 = v1513 == 95
 	if cmp3848 {
 		goto if_then3856
@@ -70119,7 +70119,7 @@ lor_lhs_false3847:
 	}
 
 lor_lhs_false3850:
-	v1514 = *lookahead
+	v1514 = *local_lookahead
 	cmp3851 = 97 <= v1514
 	if cmp3851 {
 		goto land_lhs_true3853
@@ -70128,7 +70128,7 @@ lor_lhs_false3850:
 	}
 
 land_lhs_true3853:
-	v1515 = *lookahead
+	v1515 = *local_lookahead
 	cmp3854 = v1515 <= 122
 	if cmp3854 {
 		goto if_then3856
@@ -70156,7 +70156,7 @@ sw_bb3859:
 	v1519 = *mark_end3861
 	v1520 = *lexer_addr
 	v1519(v1520)
-	v1521 = *lookahead
+	v1521 = *local_lookahead
 	cmp3862 = v1521 == 114
 	if cmp3862 {
 		goto if_then3864
@@ -70169,7 +70169,7 @@ if_then3864:
 	goto next_state
 
 if_end3865:
-	v1522 = *lookahead
+	v1522 = *local_lookahead
 	cmp3866 = v1522 == 39
 	if cmp3866 {
 		goto if_then3892
@@ -70178,7 +70178,7 @@ if_end3865:
 	}
 
 lor_lhs_false3868:
-	v1523 = *lookahead
+	v1523 = *local_lookahead
 	cmp3869 = v1523 == 45
 	if cmp3869 {
 		goto if_then3892
@@ -70187,7 +70187,7 @@ lor_lhs_false3868:
 	}
 
 lor_lhs_false3871:
-	v1524 = *lookahead
+	v1524 = *local_lookahead
 	cmp3872 = 48 <= v1524
 	if cmp3872 {
 		goto land_lhs_true3874
@@ -70196,7 +70196,7 @@ lor_lhs_false3871:
 	}
 
 land_lhs_true3874:
-	v1525 = *lookahead
+	v1525 = *local_lookahead
 	cmp3875 = v1525 <= 57
 	if cmp3875 {
 		goto if_then3892
@@ -70205,7 +70205,7 @@ land_lhs_true3874:
 	}
 
 lor_lhs_false3877:
-	v1526 = *lookahead
+	v1526 = *local_lookahead
 	cmp3878 = 65 <= v1526
 	if cmp3878 {
 		goto land_lhs_true3880
@@ -70214,7 +70214,7 @@ lor_lhs_false3877:
 	}
 
 land_lhs_true3880:
-	v1527 = *lookahead
+	v1527 = *local_lookahead
 	cmp3881 = v1527 <= 90
 	if cmp3881 {
 		goto if_then3892
@@ -70223,7 +70223,7 @@ land_lhs_true3880:
 	}
 
 lor_lhs_false3883:
-	v1528 = *lookahead
+	v1528 = *local_lookahead
 	cmp3884 = v1528 == 95
 	if cmp3884 {
 		goto if_then3892
@@ -70232,7 +70232,7 @@ lor_lhs_false3883:
 	}
 
 lor_lhs_false3886:
-	v1529 = *lookahead
+	v1529 = *local_lookahead
 	cmp3887 = 97 <= v1529
 	if cmp3887 {
 		goto land_lhs_true3889
@@ -70241,7 +70241,7 @@ lor_lhs_false3886:
 	}
 
 land_lhs_true3889:
-	v1530 = *lookahead
+	v1530 = *local_lookahead
 	cmp3890 = v1530 <= 122
 	if cmp3890 {
 		goto if_then3892
@@ -70269,7 +70269,7 @@ sw_bb3895:
 	v1534 = *mark_end3897
 	v1535 = *lexer_addr
 	v1534(v1535)
-	v1536 = *lookahead
+	v1536 = *local_lookahead
 	cmp3898 = v1536 == 114
 	if cmp3898 {
 		goto if_then3900
@@ -70282,7 +70282,7 @@ if_then3900:
 	goto next_state
 
 if_end3901:
-	v1537 = *lookahead
+	v1537 = *local_lookahead
 	cmp3902 = v1537 == 39
 	if cmp3902 {
 		goto if_then3928
@@ -70291,7 +70291,7 @@ if_end3901:
 	}
 
 lor_lhs_false3904:
-	v1538 = *lookahead
+	v1538 = *local_lookahead
 	cmp3905 = v1538 == 45
 	if cmp3905 {
 		goto if_then3928
@@ -70300,7 +70300,7 @@ lor_lhs_false3904:
 	}
 
 lor_lhs_false3907:
-	v1539 = *lookahead
+	v1539 = *local_lookahead
 	cmp3908 = 48 <= v1539
 	if cmp3908 {
 		goto land_lhs_true3910
@@ -70309,7 +70309,7 @@ lor_lhs_false3907:
 	}
 
 land_lhs_true3910:
-	v1540 = *lookahead
+	v1540 = *local_lookahead
 	cmp3911 = v1540 <= 57
 	if cmp3911 {
 		goto if_then3928
@@ -70318,7 +70318,7 @@ land_lhs_true3910:
 	}
 
 lor_lhs_false3913:
-	v1541 = *lookahead
+	v1541 = *local_lookahead
 	cmp3914 = 65 <= v1541
 	if cmp3914 {
 		goto land_lhs_true3916
@@ -70327,7 +70327,7 @@ lor_lhs_false3913:
 	}
 
 land_lhs_true3916:
-	v1542 = *lookahead
+	v1542 = *local_lookahead
 	cmp3917 = v1542 <= 90
 	if cmp3917 {
 		goto if_then3928
@@ -70336,7 +70336,7 @@ land_lhs_true3916:
 	}
 
 lor_lhs_false3919:
-	v1543 = *lookahead
+	v1543 = *local_lookahead
 	cmp3920 = v1543 == 95
 	if cmp3920 {
 		goto if_then3928
@@ -70345,7 +70345,7 @@ lor_lhs_false3919:
 	}
 
 lor_lhs_false3922:
-	v1544 = *lookahead
+	v1544 = *local_lookahead
 	cmp3923 = 97 <= v1544
 	if cmp3923 {
 		goto land_lhs_true3925
@@ -70354,7 +70354,7 @@ lor_lhs_false3922:
 	}
 
 land_lhs_true3925:
-	v1545 = *lookahead
+	v1545 = *local_lookahead
 	cmp3926 = v1545 <= 122
 	if cmp3926 {
 		goto if_then3928
@@ -70382,7 +70382,7 @@ sw_bb3931:
 	v1549 = *mark_end3933
 	v1550 = *lexer_addr
 	v1549(v1550)
-	v1551 = *lookahead
+	v1551 = *local_lookahead
 	cmp3934 = v1551 == 114
 	if cmp3934 {
 		goto if_then3936
@@ -70395,7 +70395,7 @@ if_then3936:
 	goto next_state
 
 if_end3937:
-	v1552 = *lookahead
+	v1552 = *local_lookahead
 	cmp3938 = v1552 == 39
 	if cmp3938 {
 		goto if_then3964
@@ -70404,7 +70404,7 @@ if_end3937:
 	}
 
 lor_lhs_false3940:
-	v1553 = *lookahead
+	v1553 = *local_lookahead
 	cmp3941 = v1553 == 45
 	if cmp3941 {
 		goto if_then3964
@@ -70413,7 +70413,7 @@ lor_lhs_false3940:
 	}
 
 lor_lhs_false3943:
-	v1554 = *lookahead
+	v1554 = *local_lookahead
 	cmp3944 = 48 <= v1554
 	if cmp3944 {
 		goto land_lhs_true3946
@@ -70422,7 +70422,7 @@ lor_lhs_false3943:
 	}
 
 land_lhs_true3946:
-	v1555 = *lookahead
+	v1555 = *local_lookahead
 	cmp3947 = v1555 <= 57
 	if cmp3947 {
 		goto if_then3964
@@ -70431,7 +70431,7 @@ land_lhs_true3946:
 	}
 
 lor_lhs_false3949:
-	v1556 = *lookahead
+	v1556 = *local_lookahead
 	cmp3950 = 65 <= v1556
 	if cmp3950 {
 		goto land_lhs_true3952
@@ -70440,7 +70440,7 @@ lor_lhs_false3949:
 	}
 
 land_lhs_true3952:
-	v1557 = *lookahead
+	v1557 = *local_lookahead
 	cmp3953 = v1557 <= 90
 	if cmp3953 {
 		goto if_then3964
@@ -70449,7 +70449,7 @@ land_lhs_true3952:
 	}
 
 lor_lhs_false3955:
-	v1558 = *lookahead
+	v1558 = *local_lookahead
 	cmp3956 = v1558 == 95
 	if cmp3956 {
 		goto if_then3964
@@ -70458,7 +70458,7 @@ lor_lhs_false3955:
 	}
 
 lor_lhs_false3958:
-	v1559 = *lookahead
+	v1559 = *local_lookahead
 	cmp3959 = 97 <= v1559
 	if cmp3959 {
 		goto land_lhs_true3961
@@ -70467,7 +70467,7 @@ lor_lhs_false3958:
 	}
 
 land_lhs_true3961:
-	v1560 = *lookahead
+	v1560 = *local_lookahead
 	cmp3962 = v1560 <= 122
 	if cmp3962 {
 		goto if_then3964
@@ -70495,7 +70495,7 @@ sw_bb3967:
 	v1564 = *mark_end3969
 	v1565 = *lexer_addr
 	v1564(v1565)
-	v1566 = *lookahead
+	v1566 = *local_lookahead
 	cmp3970 = v1566 == 114
 	if cmp3970 {
 		goto if_then3972
@@ -70508,7 +70508,7 @@ if_then3972:
 	goto next_state
 
 if_end3973:
-	v1567 = *lookahead
+	v1567 = *local_lookahead
 	cmp3974 = v1567 == 39
 	if cmp3974 {
 		goto if_then4000
@@ -70517,7 +70517,7 @@ if_end3973:
 	}
 
 lor_lhs_false3976:
-	v1568 = *lookahead
+	v1568 = *local_lookahead
 	cmp3977 = v1568 == 45
 	if cmp3977 {
 		goto if_then4000
@@ -70526,7 +70526,7 @@ lor_lhs_false3976:
 	}
 
 lor_lhs_false3979:
-	v1569 = *lookahead
+	v1569 = *local_lookahead
 	cmp3980 = 48 <= v1569
 	if cmp3980 {
 		goto land_lhs_true3982
@@ -70535,7 +70535,7 @@ lor_lhs_false3979:
 	}
 
 land_lhs_true3982:
-	v1570 = *lookahead
+	v1570 = *local_lookahead
 	cmp3983 = v1570 <= 57
 	if cmp3983 {
 		goto if_then4000
@@ -70544,7 +70544,7 @@ land_lhs_true3982:
 	}
 
 lor_lhs_false3985:
-	v1571 = *lookahead
+	v1571 = *local_lookahead
 	cmp3986 = 65 <= v1571
 	if cmp3986 {
 		goto land_lhs_true3988
@@ -70553,7 +70553,7 @@ lor_lhs_false3985:
 	}
 
 land_lhs_true3988:
-	v1572 = *lookahead
+	v1572 = *local_lookahead
 	cmp3989 = v1572 <= 90
 	if cmp3989 {
 		goto if_then4000
@@ -70562,7 +70562,7 @@ land_lhs_true3988:
 	}
 
 lor_lhs_false3991:
-	v1573 = *lookahead
+	v1573 = *local_lookahead
 	cmp3992 = v1573 == 95
 	if cmp3992 {
 		goto if_then4000
@@ -70571,7 +70571,7 @@ lor_lhs_false3991:
 	}
 
 lor_lhs_false3994:
-	v1574 = *lookahead
+	v1574 = *local_lookahead
 	cmp3995 = 97 <= v1574
 	if cmp3995 {
 		goto land_lhs_true3997
@@ -70580,7 +70580,7 @@ lor_lhs_false3994:
 	}
 
 land_lhs_true3997:
-	v1575 = *lookahead
+	v1575 = *local_lookahead
 	cmp3998 = v1575 <= 122
 	if cmp3998 {
 		goto if_then4000
@@ -70608,7 +70608,7 @@ sw_bb4003:
 	v1579 = *mark_end4005
 	v1580 = *lexer_addr
 	v1579(v1580)
-	v1581 = *lookahead
+	v1581 = *local_lookahead
 	cmp4006 = v1581 == 115
 	if cmp4006 {
 		goto if_then4008
@@ -70621,7 +70621,7 @@ if_then4008:
 	goto next_state
 
 if_end4009:
-	v1582 = *lookahead
+	v1582 = *local_lookahead
 	cmp4010 = v1582 == 39
 	if cmp4010 {
 		goto if_then4036
@@ -70630,7 +70630,7 @@ if_end4009:
 	}
 
 lor_lhs_false4012:
-	v1583 = *lookahead
+	v1583 = *local_lookahead
 	cmp4013 = v1583 == 45
 	if cmp4013 {
 		goto if_then4036
@@ -70639,7 +70639,7 @@ lor_lhs_false4012:
 	}
 
 lor_lhs_false4015:
-	v1584 = *lookahead
+	v1584 = *local_lookahead
 	cmp4016 = 48 <= v1584
 	if cmp4016 {
 		goto land_lhs_true4018
@@ -70648,7 +70648,7 @@ lor_lhs_false4015:
 	}
 
 land_lhs_true4018:
-	v1585 = *lookahead
+	v1585 = *local_lookahead
 	cmp4019 = v1585 <= 57
 	if cmp4019 {
 		goto if_then4036
@@ -70657,7 +70657,7 @@ land_lhs_true4018:
 	}
 
 lor_lhs_false4021:
-	v1586 = *lookahead
+	v1586 = *local_lookahead
 	cmp4022 = 65 <= v1586
 	if cmp4022 {
 		goto land_lhs_true4024
@@ -70666,7 +70666,7 @@ lor_lhs_false4021:
 	}
 
 land_lhs_true4024:
-	v1587 = *lookahead
+	v1587 = *local_lookahead
 	cmp4025 = v1587 <= 90
 	if cmp4025 {
 		goto if_then4036
@@ -70675,7 +70675,7 @@ land_lhs_true4024:
 	}
 
 lor_lhs_false4027:
-	v1588 = *lookahead
+	v1588 = *local_lookahead
 	cmp4028 = v1588 == 95
 	if cmp4028 {
 		goto if_then4036
@@ -70684,7 +70684,7 @@ lor_lhs_false4027:
 	}
 
 lor_lhs_false4030:
-	v1589 = *lookahead
+	v1589 = *local_lookahead
 	cmp4031 = 97 <= v1589
 	if cmp4031 {
 		goto land_lhs_true4033
@@ -70693,7 +70693,7 @@ lor_lhs_false4030:
 	}
 
 land_lhs_true4033:
-	v1590 = *lookahead
+	v1590 = *local_lookahead
 	cmp4034 = v1590 <= 122
 	if cmp4034 {
 		goto if_then4036
@@ -70721,7 +70721,7 @@ sw_bb4039:
 	v1594 = *mark_end4041
 	v1595 = *lexer_addr
 	v1594(v1595)
-	v1596 = *lookahead
+	v1596 = *local_lookahead
 	cmp4042 = v1596 == 116
 	if cmp4042 {
 		goto if_then4044
@@ -70734,7 +70734,7 @@ if_then4044:
 	goto next_state
 
 if_end4045:
-	v1597 = *lookahead
+	v1597 = *local_lookahead
 	cmp4046 = v1597 == 39
 	if cmp4046 {
 		goto if_then4072
@@ -70743,7 +70743,7 @@ if_end4045:
 	}
 
 lor_lhs_false4048:
-	v1598 = *lookahead
+	v1598 = *local_lookahead
 	cmp4049 = v1598 == 45
 	if cmp4049 {
 		goto if_then4072
@@ -70752,7 +70752,7 @@ lor_lhs_false4048:
 	}
 
 lor_lhs_false4051:
-	v1599 = *lookahead
+	v1599 = *local_lookahead
 	cmp4052 = 48 <= v1599
 	if cmp4052 {
 		goto land_lhs_true4054
@@ -70761,7 +70761,7 @@ lor_lhs_false4051:
 	}
 
 land_lhs_true4054:
-	v1600 = *lookahead
+	v1600 = *local_lookahead
 	cmp4055 = v1600 <= 57
 	if cmp4055 {
 		goto if_then4072
@@ -70770,7 +70770,7 @@ land_lhs_true4054:
 	}
 
 lor_lhs_false4057:
-	v1601 = *lookahead
+	v1601 = *local_lookahead
 	cmp4058 = 65 <= v1601
 	if cmp4058 {
 		goto land_lhs_true4060
@@ -70779,7 +70779,7 @@ lor_lhs_false4057:
 	}
 
 land_lhs_true4060:
-	v1602 = *lookahead
+	v1602 = *local_lookahead
 	cmp4061 = v1602 <= 90
 	if cmp4061 {
 		goto if_then4072
@@ -70788,7 +70788,7 @@ land_lhs_true4060:
 	}
 
 lor_lhs_false4063:
-	v1603 = *lookahead
+	v1603 = *local_lookahead
 	cmp4064 = v1603 == 95
 	if cmp4064 {
 		goto if_then4072
@@ -70797,7 +70797,7 @@ lor_lhs_false4063:
 	}
 
 lor_lhs_false4066:
-	v1604 = *lookahead
+	v1604 = *local_lookahead
 	cmp4067 = 97 <= v1604
 	if cmp4067 {
 		goto land_lhs_true4069
@@ -70806,7 +70806,7 @@ lor_lhs_false4066:
 	}
 
 land_lhs_true4069:
-	v1605 = *lookahead
+	v1605 = *local_lookahead
 	cmp4070 = v1605 <= 122
 	if cmp4070 {
 		goto if_then4072
@@ -70834,7 +70834,7 @@ sw_bb4075:
 	v1609 = *mark_end4077
 	v1610 = *lexer_addr
 	v1609(v1610)
-	v1611 = *lookahead
+	v1611 = *local_lookahead
 	cmp4078 = v1611 == 116
 	if cmp4078 {
 		goto if_then4080
@@ -70847,7 +70847,7 @@ if_then4080:
 	goto next_state
 
 if_end4081:
-	v1612 = *lookahead
+	v1612 = *local_lookahead
 	cmp4082 = v1612 == 39
 	if cmp4082 {
 		goto if_then4108
@@ -70856,7 +70856,7 @@ if_end4081:
 	}
 
 lor_lhs_false4084:
-	v1613 = *lookahead
+	v1613 = *local_lookahead
 	cmp4085 = v1613 == 45
 	if cmp4085 {
 		goto if_then4108
@@ -70865,7 +70865,7 @@ lor_lhs_false4084:
 	}
 
 lor_lhs_false4087:
-	v1614 = *lookahead
+	v1614 = *local_lookahead
 	cmp4088 = 48 <= v1614
 	if cmp4088 {
 		goto land_lhs_true4090
@@ -70874,7 +70874,7 @@ lor_lhs_false4087:
 	}
 
 land_lhs_true4090:
-	v1615 = *lookahead
+	v1615 = *local_lookahead
 	cmp4091 = v1615 <= 57
 	if cmp4091 {
 		goto if_then4108
@@ -70883,7 +70883,7 @@ land_lhs_true4090:
 	}
 
 lor_lhs_false4093:
-	v1616 = *lookahead
+	v1616 = *local_lookahead
 	cmp4094 = 65 <= v1616
 	if cmp4094 {
 		goto land_lhs_true4096
@@ -70892,7 +70892,7 @@ lor_lhs_false4093:
 	}
 
 land_lhs_true4096:
-	v1617 = *lookahead
+	v1617 = *local_lookahead
 	cmp4097 = v1617 <= 90
 	if cmp4097 {
 		goto if_then4108
@@ -70901,7 +70901,7 @@ land_lhs_true4096:
 	}
 
 lor_lhs_false4099:
-	v1618 = *lookahead
+	v1618 = *local_lookahead
 	cmp4100 = v1618 == 95
 	if cmp4100 {
 		goto if_then4108
@@ -70910,7 +70910,7 @@ lor_lhs_false4099:
 	}
 
 lor_lhs_false4102:
-	v1619 = *lookahead
+	v1619 = *local_lookahead
 	cmp4103 = 97 <= v1619
 	if cmp4103 {
 		goto land_lhs_true4105
@@ -70919,7 +70919,7 @@ lor_lhs_false4102:
 	}
 
 land_lhs_true4105:
-	v1620 = *lookahead
+	v1620 = *local_lookahead
 	cmp4106 = v1620 <= 122
 	if cmp4106 {
 		goto if_then4108
@@ -70947,7 +70947,7 @@ sw_bb4111:
 	v1624 = *mark_end4113
 	v1625 = *lexer_addr
 	v1624(v1625)
-	v1626 = *lookahead
+	v1626 = *local_lookahead
 	cmp4114 = v1626 == 116
 	if cmp4114 {
 		goto if_then4116
@@ -70960,7 +70960,7 @@ if_then4116:
 	goto next_state
 
 if_end4117:
-	v1627 = *lookahead
+	v1627 = *local_lookahead
 	cmp4118 = v1627 == 39
 	if cmp4118 {
 		goto if_then4144
@@ -70969,7 +70969,7 @@ if_end4117:
 	}
 
 lor_lhs_false4120:
-	v1628 = *lookahead
+	v1628 = *local_lookahead
 	cmp4121 = v1628 == 45
 	if cmp4121 {
 		goto if_then4144
@@ -70978,7 +70978,7 @@ lor_lhs_false4120:
 	}
 
 lor_lhs_false4123:
-	v1629 = *lookahead
+	v1629 = *local_lookahead
 	cmp4124 = 48 <= v1629
 	if cmp4124 {
 		goto land_lhs_true4126
@@ -70987,7 +70987,7 @@ lor_lhs_false4123:
 	}
 
 land_lhs_true4126:
-	v1630 = *lookahead
+	v1630 = *local_lookahead
 	cmp4127 = v1630 <= 57
 	if cmp4127 {
 		goto if_then4144
@@ -70996,7 +70996,7 @@ land_lhs_true4126:
 	}
 
 lor_lhs_false4129:
-	v1631 = *lookahead
+	v1631 = *local_lookahead
 	cmp4130 = 65 <= v1631
 	if cmp4130 {
 		goto land_lhs_true4132
@@ -71005,7 +71005,7 @@ lor_lhs_false4129:
 	}
 
 land_lhs_true4132:
-	v1632 = *lookahead
+	v1632 = *local_lookahead
 	cmp4133 = v1632 <= 90
 	if cmp4133 {
 		goto if_then4144
@@ -71014,7 +71014,7 @@ land_lhs_true4132:
 	}
 
 lor_lhs_false4135:
-	v1633 = *lookahead
+	v1633 = *local_lookahead
 	cmp4136 = v1633 == 95
 	if cmp4136 {
 		goto if_then4144
@@ -71023,7 +71023,7 @@ lor_lhs_false4135:
 	}
 
 lor_lhs_false4138:
-	v1634 = *lookahead
+	v1634 = *local_lookahead
 	cmp4139 = 97 <= v1634
 	if cmp4139 {
 		goto land_lhs_true4141
@@ -71032,7 +71032,7 @@ lor_lhs_false4138:
 	}
 
 land_lhs_true4141:
-	v1635 = *lookahead
+	v1635 = *local_lookahead
 	cmp4142 = v1635 <= 122
 	if cmp4142 {
 		goto if_then4144
@@ -71060,7 +71060,7 @@ sw_bb4147:
 	v1639 = *mark_end4149
 	v1640 = *lexer_addr
 	v1639(v1640)
-	v1641 = *lookahead
+	v1641 = *local_lookahead
 	cmp4150 = v1641 == 116
 	if cmp4150 {
 		goto if_then4152
@@ -71073,7 +71073,7 @@ if_then4152:
 	goto next_state
 
 if_end4153:
-	v1642 = *lookahead
+	v1642 = *local_lookahead
 	cmp4154 = v1642 == 39
 	if cmp4154 {
 		goto if_then4180
@@ -71082,7 +71082,7 @@ if_end4153:
 	}
 
 lor_lhs_false4156:
-	v1643 = *lookahead
+	v1643 = *local_lookahead
 	cmp4157 = v1643 == 45
 	if cmp4157 {
 		goto if_then4180
@@ -71091,7 +71091,7 @@ lor_lhs_false4156:
 	}
 
 lor_lhs_false4159:
-	v1644 = *lookahead
+	v1644 = *local_lookahead
 	cmp4160 = 48 <= v1644
 	if cmp4160 {
 		goto land_lhs_true4162
@@ -71100,7 +71100,7 @@ lor_lhs_false4159:
 	}
 
 land_lhs_true4162:
-	v1645 = *lookahead
+	v1645 = *local_lookahead
 	cmp4163 = v1645 <= 57
 	if cmp4163 {
 		goto if_then4180
@@ -71109,7 +71109,7 @@ land_lhs_true4162:
 	}
 
 lor_lhs_false4165:
-	v1646 = *lookahead
+	v1646 = *local_lookahead
 	cmp4166 = 65 <= v1646
 	if cmp4166 {
 		goto land_lhs_true4168
@@ -71118,7 +71118,7 @@ lor_lhs_false4165:
 	}
 
 land_lhs_true4168:
-	v1647 = *lookahead
+	v1647 = *local_lookahead
 	cmp4169 = v1647 <= 90
 	if cmp4169 {
 		goto if_then4180
@@ -71127,7 +71127,7 @@ land_lhs_true4168:
 	}
 
 lor_lhs_false4171:
-	v1648 = *lookahead
+	v1648 = *local_lookahead
 	cmp4172 = v1648 == 95
 	if cmp4172 {
 		goto if_then4180
@@ -71136,7 +71136,7 @@ lor_lhs_false4171:
 	}
 
 lor_lhs_false4174:
-	v1649 = *lookahead
+	v1649 = *local_lookahead
 	cmp4175 = 97 <= v1649
 	if cmp4175 {
 		goto land_lhs_true4177
@@ -71145,7 +71145,7 @@ lor_lhs_false4174:
 	}
 
 land_lhs_true4177:
-	v1650 = *lookahead
+	v1650 = *local_lookahead
 	cmp4178 = v1650 <= 122
 	if cmp4178 {
 		goto if_then4180
@@ -71173,7 +71173,7 @@ sw_bb4183:
 	v1654 = *mark_end4185
 	v1655 = *lexer_addr
 	v1654(v1655)
-	v1656 = *lookahead
+	v1656 = *local_lookahead
 	cmp4186 = v1656 == 116
 	if cmp4186 {
 		goto if_then4188
@@ -71186,7 +71186,7 @@ if_then4188:
 	goto next_state
 
 if_end4189:
-	v1657 = *lookahead
+	v1657 = *local_lookahead
 	cmp4190 = v1657 == 39
 	if cmp4190 {
 		goto if_then4216
@@ -71195,7 +71195,7 @@ if_end4189:
 	}
 
 lor_lhs_false4192:
-	v1658 = *lookahead
+	v1658 = *local_lookahead
 	cmp4193 = v1658 == 45
 	if cmp4193 {
 		goto if_then4216
@@ -71204,7 +71204,7 @@ lor_lhs_false4192:
 	}
 
 lor_lhs_false4195:
-	v1659 = *lookahead
+	v1659 = *local_lookahead
 	cmp4196 = 48 <= v1659
 	if cmp4196 {
 		goto land_lhs_true4198
@@ -71213,7 +71213,7 @@ lor_lhs_false4195:
 	}
 
 land_lhs_true4198:
-	v1660 = *lookahead
+	v1660 = *local_lookahead
 	cmp4199 = v1660 <= 57
 	if cmp4199 {
 		goto if_then4216
@@ -71222,7 +71222,7 @@ land_lhs_true4198:
 	}
 
 lor_lhs_false4201:
-	v1661 = *lookahead
+	v1661 = *local_lookahead
 	cmp4202 = 65 <= v1661
 	if cmp4202 {
 		goto land_lhs_true4204
@@ -71231,7 +71231,7 @@ lor_lhs_false4201:
 	}
 
 land_lhs_true4204:
-	v1662 = *lookahead
+	v1662 = *local_lookahead
 	cmp4205 = v1662 <= 90
 	if cmp4205 {
 		goto if_then4216
@@ -71240,7 +71240,7 @@ land_lhs_true4204:
 	}
 
 lor_lhs_false4207:
-	v1663 = *lookahead
+	v1663 = *local_lookahead
 	cmp4208 = v1663 == 95
 	if cmp4208 {
 		goto if_then4216
@@ -71249,7 +71249,7 @@ lor_lhs_false4207:
 	}
 
 lor_lhs_false4210:
-	v1664 = *lookahead
+	v1664 = *local_lookahead
 	cmp4211 = 97 <= v1664
 	if cmp4211 {
 		goto land_lhs_true4213
@@ -71258,7 +71258,7 @@ lor_lhs_false4210:
 	}
 
 land_lhs_true4213:
-	v1665 = *lookahead
+	v1665 = *local_lookahead
 	cmp4214 = v1665 <= 122
 	if cmp4214 {
 		goto if_then4216
@@ -71286,7 +71286,7 @@ sw_bb4219:
 	v1669 = *mark_end4221
 	v1670 = *lexer_addr
 	v1669(v1670)
-	v1671 = *lookahead
+	v1671 = *local_lookahead
 	cmp4222 = v1671 == 116
 	if cmp4222 {
 		goto if_then4224
@@ -71299,7 +71299,7 @@ if_then4224:
 	goto next_state
 
 if_end4225:
-	v1672 = *lookahead
+	v1672 = *local_lookahead
 	cmp4226 = v1672 == 39
 	if cmp4226 {
 		goto if_then4252
@@ -71308,7 +71308,7 @@ if_end4225:
 	}
 
 lor_lhs_false4228:
-	v1673 = *lookahead
+	v1673 = *local_lookahead
 	cmp4229 = v1673 == 45
 	if cmp4229 {
 		goto if_then4252
@@ -71317,7 +71317,7 @@ lor_lhs_false4228:
 	}
 
 lor_lhs_false4231:
-	v1674 = *lookahead
+	v1674 = *local_lookahead
 	cmp4232 = 48 <= v1674
 	if cmp4232 {
 		goto land_lhs_true4234
@@ -71326,7 +71326,7 @@ lor_lhs_false4231:
 	}
 
 land_lhs_true4234:
-	v1675 = *lookahead
+	v1675 = *local_lookahead
 	cmp4235 = v1675 <= 57
 	if cmp4235 {
 		goto if_then4252
@@ -71335,7 +71335,7 @@ land_lhs_true4234:
 	}
 
 lor_lhs_false4237:
-	v1676 = *lookahead
+	v1676 = *local_lookahead
 	cmp4238 = 65 <= v1676
 	if cmp4238 {
 		goto land_lhs_true4240
@@ -71344,7 +71344,7 @@ lor_lhs_false4237:
 	}
 
 land_lhs_true4240:
-	v1677 = *lookahead
+	v1677 = *local_lookahead
 	cmp4241 = v1677 <= 90
 	if cmp4241 {
 		goto if_then4252
@@ -71353,7 +71353,7 @@ land_lhs_true4240:
 	}
 
 lor_lhs_false4243:
-	v1678 = *lookahead
+	v1678 = *local_lookahead
 	cmp4244 = v1678 == 95
 	if cmp4244 {
 		goto if_then4252
@@ -71362,7 +71362,7 @@ lor_lhs_false4243:
 	}
 
 lor_lhs_false4246:
-	v1679 = *lookahead
+	v1679 = *local_lookahead
 	cmp4247 = 97 <= v1679
 	if cmp4247 {
 		goto land_lhs_true4249
@@ -71371,7 +71371,7 @@ lor_lhs_false4246:
 	}
 
 land_lhs_true4249:
-	v1680 = *lookahead
+	v1680 = *local_lookahead
 	cmp4250 = v1680 <= 122
 	if cmp4250 {
 		goto if_then4252
@@ -71399,7 +71399,7 @@ sw_bb4255:
 	v1684 = *mark_end4257
 	v1685 = *lexer_addr
 	v1684(v1685)
-	v1686 = *lookahead
+	v1686 = *local_lookahead
 	cmp4258 = v1686 == 116
 	if cmp4258 {
 		goto if_then4260
@@ -71412,7 +71412,7 @@ if_then4260:
 	goto next_state
 
 if_end4261:
-	v1687 = *lookahead
+	v1687 = *local_lookahead
 	cmp4262 = v1687 == 39
 	if cmp4262 {
 		goto if_then4288
@@ -71421,7 +71421,7 @@ if_end4261:
 	}
 
 lor_lhs_false4264:
-	v1688 = *lookahead
+	v1688 = *local_lookahead
 	cmp4265 = v1688 == 45
 	if cmp4265 {
 		goto if_then4288
@@ -71430,7 +71430,7 @@ lor_lhs_false4264:
 	}
 
 lor_lhs_false4267:
-	v1689 = *lookahead
+	v1689 = *local_lookahead
 	cmp4268 = 48 <= v1689
 	if cmp4268 {
 		goto land_lhs_true4270
@@ -71439,7 +71439,7 @@ lor_lhs_false4267:
 	}
 
 land_lhs_true4270:
-	v1690 = *lookahead
+	v1690 = *local_lookahead
 	cmp4271 = v1690 <= 57
 	if cmp4271 {
 		goto if_then4288
@@ -71448,7 +71448,7 @@ land_lhs_true4270:
 	}
 
 lor_lhs_false4273:
-	v1691 = *lookahead
+	v1691 = *local_lookahead
 	cmp4274 = 65 <= v1691
 	if cmp4274 {
 		goto land_lhs_true4276
@@ -71457,7 +71457,7 @@ lor_lhs_false4273:
 	}
 
 land_lhs_true4276:
-	v1692 = *lookahead
+	v1692 = *local_lookahead
 	cmp4277 = v1692 <= 90
 	if cmp4277 {
 		goto if_then4288
@@ -71466,7 +71466,7 @@ land_lhs_true4276:
 	}
 
 lor_lhs_false4279:
-	v1693 = *lookahead
+	v1693 = *local_lookahead
 	cmp4280 = v1693 == 95
 	if cmp4280 {
 		goto if_then4288
@@ -71475,7 +71475,7 @@ lor_lhs_false4279:
 	}
 
 lor_lhs_false4282:
-	v1694 = *lookahead
+	v1694 = *local_lookahead
 	cmp4283 = 97 <= v1694
 	if cmp4283 {
 		goto land_lhs_true4285
@@ -71484,7 +71484,7 @@ lor_lhs_false4282:
 	}
 
 land_lhs_true4285:
-	v1695 = *lookahead
+	v1695 = *local_lookahead
 	cmp4286 = v1695 <= 122
 	if cmp4286 {
 		goto if_then4288
@@ -71512,7 +71512,7 @@ sw_bb4291:
 	v1699 = *mark_end4293
 	v1700 = *lexer_addr
 	v1699(v1700)
-	v1701 = *lookahead
+	v1701 = *local_lookahead
 	cmp4294 = v1701 == 117
 	if cmp4294 {
 		goto if_then4296
@@ -71525,7 +71525,7 @@ if_then4296:
 	goto next_state
 
 if_end4297:
-	v1702 = *lookahead
+	v1702 = *local_lookahead
 	cmp4298 = v1702 == 39
 	if cmp4298 {
 		goto if_then4324
@@ -71534,7 +71534,7 @@ if_end4297:
 	}
 
 lor_lhs_false4300:
-	v1703 = *lookahead
+	v1703 = *local_lookahead
 	cmp4301 = v1703 == 45
 	if cmp4301 {
 		goto if_then4324
@@ -71543,7 +71543,7 @@ lor_lhs_false4300:
 	}
 
 lor_lhs_false4303:
-	v1704 = *lookahead
+	v1704 = *local_lookahead
 	cmp4304 = 48 <= v1704
 	if cmp4304 {
 		goto land_lhs_true4306
@@ -71552,7 +71552,7 @@ lor_lhs_false4303:
 	}
 
 land_lhs_true4306:
-	v1705 = *lookahead
+	v1705 = *local_lookahead
 	cmp4307 = v1705 <= 57
 	if cmp4307 {
 		goto if_then4324
@@ -71561,7 +71561,7 @@ land_lhs_true4306:
 	}
 
 lor_lhs_false4309:
-	v1706 = *lookahead
+	v1706 = *local_lookahead
 	cmp4310 = 65 <= v1706
 	if cmp4310 {
 		goto land_lhs_true4312
@@ -71570,7 +71570,7 @@ lor_lhs_false4309:
 	}
 
 land_lhs_true4312:
-	v1707 = *lookahead
+	v1707 = *local_lookahead
 	cmp4313 = v1707 <= 90
 	if cmp4313 {
 		goto if_then4324
@@ -71579,7 +71579,7 @@ land_lhs_true4312:
 	}
 
 lor_lhs_false4315:
-	v1708 = *lookahead
+	v1708 = *local_lookahead
 	cmp4316 = v1708 == 95
 	if cmp4316 {
 		goto if_then4324
@@ -71588,7 +71588,7 @@ lor_lhs_false4315:
 	}
 
 lor_lhs_false4318:
-	v1709 = *lookahead
+	v1709 = *local_lookahead
 	cmp4319 = 97 <= v1709
 	if cmp4319 {
 		goto land_lhs_true4321
@@ -71597,7 +71597,7 @@ lor_lhs_false4318:
 	}
 
 land_lhs_true4321:
-	v1710 = *lookahead
+	v1710 = *local_lookahead
 	cmp4322 = v1710 <= 122
 	if cmp4322 {
 		goto if_then4324
@@ -71625,7 +71625,7 @@ sw_bb4327:
 	v1714 = *mark_end4329
 	v1715 = *lexer_addr
 	v1714(v1715)
-	v1716 = *lookahead
+	v1716 = *local_lookahead
 	cmp4330 = v1716 == 117
 	if cmp4330 {
 		goto if_then4332
@@ -71638,7 +71638,7 @@ if_then4332:
 	goto next_state
 
 if_end4333:
-	v1717 = *lookahead
+	v1717 = *local_lookahead
 	cmp4334 = v1717 == 39
 	if cmp4334 {
 		goto if_then4360
@@ -71647,7 +71647,7 @@ if_end4333:
 	}
 
 lor_lhs_false4336:
-	v1718 = *lookahead
+	v1718 = *local_lookahead
 	cmp4337 = v1718 == 45
 	if cmp4337 {
 		goto if_then4360
@@ -71656,7 +71656,7 @@ lor_lhs_false4336:
 	}
 
 lor_lhs_false4339:
-	v1719 = *lookahead
+	v1719 = *local_lookahead
 	cmp4340 = 48 <= v1719
 	if cmp4340 {
 		goto land_lhs_true4342
@@ -71665,7 +71665,7 @@ lor_lhs_false4339:
 	}
 
 land_lhs_true4342:
-	v1720 = *lookahead
+	v1720 = *local_lookahead
 	cmp4343 = v1720 <= 57
 	if cmp4343 {
 		goto if_then4360
@@ -71674,7 +71674,7 @@ land_lhs_true4342:
 	}
 
 lor_lhs_false4345:
-	v1721 = *lookahead
+	v1721 = *local_lookahead
 	cmp4346 = 65 <= v1721
 	if cmp4346 {
 		goto land_lhs_true4348
@@ -71683,7 +71683,7 @@ lor_lhs_false4345:
 	}
 
 land_lhs_true4348:
-	v1722 = *lookahead
+	v1722 = *local_lookahead
 	cmp4349 = v1722 <= 90
 	if cmp4349 {
 		goto if_then4360
@@ -71692,7 +71692,7 @@ land_lhs_true4348:
 	}
 
 lor_lhs_false4351:
-	v1723 = *lookahead
+	v1723 = *local_lookahead
 	cmp4352 = v1723 == 95
 	if cmp4352 {
 		goto if_then4360
@@ -71701,7 +71701,7 @@ lor_lhs_false4351:
 	}
 
 lor_lhs_false4354:
-	v1724 = *lookahead
+	v1724 = *local_lookahead
 	cmp4355 = 97 <= v1724
 	if cmp4355 {
 		goto land_lhs_true4357
@@ -71710,7 +71710,7 @@ lor_lhs_false4354:
 	}
 
 land_lhs_true4357:
-	v1725 = *lookahead
+	v1725 = *local_lookahead
 	cmp4358 = v1725 <= 122
 	if cmp4358 {
 		goto if_then4360
@@ -71738,7 +71738,7 @@ sw_bb4363:
 	v1729 = *mark_end4365
 	v1730 = *lexer_addr
 	v1729(v1730)
-	v1731 = *lookahead
+	v1731 = *local_lookahead
 	cmp4366 = v1731 == 117
 	if cmp4366 {
 		goto if_then4368
@@ -71751,7 +71751,7 @@ if_then4368:
 	goto next_state
 
 if_end4369:
-	v1732 = *lookahead
+	v1732 = *local_lookahead
 	cmp4370 = v1732 == 39
 	if cmp4370 {
 		goto if_then4396
@@ -71760,7 +71760,7 @@ if_end4369:
 	}
 
 lor_lhs_false4372:
-	v1733 = *lookahead
+	v1733 = *local_lookahead
 	cmp4373 = v1733 == 45
 	if cmp4373 {
 		goto if_then4396
@@ -71769,7 +71769,7 @@ lor_lhs_false4372:
 	}
 
 lor_lhs_false4375:
-	v1734 = *lookahead
+	v1734 = *local_lookahead
 	cmp4376 = 48 <= v1734
 	if cmp4376 {
 		goto land_lhs_true4378
@@ -71778,7 +71778,7 @@ lor_lhs_false4375:
 	}
 
 land_lhs_true4378:
-	v1735 = *lookahead
+	v1735 = *local_lookahead
 	cmp4379 = v1735 <= 57
 	if cmp4379 {
 		goto if_then4396
@@ -71787,7 +71787,7 @@ land_lhs_true4378:
 	}
 
 lor_lhs_false4381:
-	v1736 = *lookahead
+	v1736 = *local_lookahead
 	cmp4382 = 65 <= v1736
 	if cmp4382 {
 		goto land_lhs_true4384
@@ -71796,7 +71796,7 @@ lor_lhs_false4381:
 	}
 
 land_lhs_true4384:
-	v1737 = *lookahead
+	v1737 = *local_lookahead
 	cmp4385 = v1737 <= 90
 	if cmp4385 {
 		goto if_then4396
@@ -71805,7 +71805,7 @@ land_lhs_true4384:
 	}
 
 lor_lhs_false4387:
-	v1738 = *lookahead
+	v1738 = *local_lookahead
 	cmp4388 = v1738 == 95
 	if cmp4388 {
 		goto if_then4396
@@ -71814,7 +71814,7 @@ lor_lhs_false4387:
 	}
 
 lor_lhs_false4390:
-	v1739 = *lookahead
+	v1739 = *local_lookahead
 	cmp4391 = 97 <= v1739
 	if cmp4391 {
 		goto land_lhs_true4393
@@ -71823,7 +71823,7 @@ lor_lhs_false4390:
 	}
 
 land_lhs_true4393:
-	v1740 = *lookahead
+	v1740 = *local_lookahead
 	cmp4394 = v1740 <= 122
 	if cmp4394 {
 		goto if_then4396
@@ -71851,7 +71851,7 @@ sw_bb4399:
 	v1744 = *mark_end4401
 	v1745 = *lexer_addr
 	v1744(v1745)
-	v1746 = *lookahead
+	v1746 = *local_lookahead
 	cmp4402 = v1746 == 117
 	if cmp4402 {
 		goto if_then4404
@@ -71864,7 +71864,7 @@ if_then4404:
 	goto next_state
 
 if_end4405:
-	v1747 = *lookahead
+	v1747 = *local_lookahead
 	cmp4406 = v1747 == 39
 	if cmp4406 {
 		goto if_then4432
@@ -71873,7 +71873,7 @@ if_end4405:
 	}
 
 lor_lhs_false4408:
-	v1748 = *lookahead
+	v1748 = *local_lookahead
 	cmp4409 = v1748 == 45
 	if cmp4409 {
 		goto if_then4432
@@ -71882,7 +71882,7 @@ lor_lhs_false4408:
 	}
 
 lor_lhs_false4411:
-	v1749 = *lookahead
+	v1749 = *local_lookahead
 	cmp4412 = 48 <= v1749
 	if cmp4412 {
 		goto land_lhs_true4414
@@ -71891,7 +71891,7 @@ lor_lhs_false4411:
 	}
 
 land_lhs_true4414:
-	v1750 = *lookahead
+	v1750 = *local_lookahead
 	cmp4415 = v1750 <= 57
 	if cmp4415 {
 		goto if_then4432
@@ -71900,7 +71900,7 @@ land_lhs_true4414:
 	}
 
 lor_lhs_false4417:
-	v1751 = *lookahead
+	v1751 = *local_lookahead
 	cmp4418 = 65 <= v1751
 	if cmp4418 {
 		goto land_lhs_true4420
@@ -71909,7 +71909,7 @@ lor_lhs_false4417:
 	}
 
 land_lhs_true4420:
-	v1752 = *lookahead
+	v1752 = *local_lookahead
 	cmp4421 = v1752 <= 90
 	if cmp4421 {
 		goto if_then4432
@@ -71918,7 +71918,7 @@ land_lhs_true4420:
 	}
 
 lor_lhs_false4423:
-	v1753 = *lookahead
+	v1753 = *local_lookahead
 	cmp4424 = v1753 == 95
 	if cmp4424 {
 		goto if_then4432
@@ -71927,7 +71927,7 @@ lor_lhs_false4423:
 	}
 
 lor_lhs_false4426:
-	v1754 = *lookahead
+	v1754 = *local_lookahead
 	cmp4427 = 97 <= v1754
 	if cmp4427 {
 		goto land_lhs_true4429
@@ -71936,7 +71936,7 @@ lor_lhs_false4426:
 	}
 
 land_lhs_true4429:
-	v1755 = *lookahead
+	v1755 = *local_lookahead
 	cmp4430 = v1755 <= 122
 	if cmp4430 {
 		goto if_then4432
@@ -71964,7 +71964,7 @@ sw_bb4435:
 	v1759 = *mark_end4437
 	v1760 = *lexer_addr
 	v1759(v1760)
-	v1761 = *lookahead
+	v1761 = *local_lookahead
 	cmp4438 = v1761 == 120
 	if cmp4438 {
 		goto if_then4440
@@ -71977,7 +71977,7 @@ if_then4440:
 	goto next_state
 
 if_end4441:
-	v1762 = *lookahead
+	v1762 = *local_lookahead
 	cmp4442 = v1762 == 39
 	if cmp4442 {
 		goto if_then4468
@@ -71986,7 +71986,7 @@ if_end4441:
 	}
 
 lor_lhs_false4444:
-	v1763 = *lookahead
+	v1763 = *local_lookahead
 	cmp4445 = v1763 == 45
 	if cmp4445 {
 		goto if_then4468
@@ -71995,7 +71995,7 @@ lor_lhs_false4444:
 	}
 
 lor_lhs_false4447:
-	v1764 = *lookahead
+	v1764 = *local_lookahead
 	cmp4448 = 48 <= v1764
 	if cmp4448 {
 		goto land_lhs_true4450
@@ -72004,7 +72004,7 @@ lor_lhs_false4447:
 	}
 
 land_lhs_true4450:
-	v1765 = *lookahead
+	v1765 = *local_lookahead
 	cmp4451 = v1765 <= 57
 	if cmp4451 {
 		goto if_then4468
@@ -72013,7 +72013,7 @@ land_lhs_true4450:
 	}
 
 lor_lhs_false4453:
-	v1766 = *lookahead
+	v1766 = *local_lookahead
 	cmp4454 = 65 <= v1766
 	if cmp4454 {
 		goto land_lhs_true4456
@@ -72022,7 +72022,7 @@ lor_lhs_false4453:
 	}
 
 land_lhs_true4456:
-	v1767 = *lookahead
+	v1767 = *local_lookahead
 	cmp4457 = v1767 <= 90
 	if cmp4457 {
 		goto if_then4468
@@ -72031,7 +72031,7 @@ land_lhs_true4456:
 	}
 
 lor_lhs_false4459:
-	v1768 = *lookahead
+	v1768 = *local_lookahead
 	cmp4460 = v1768 == 95
 	if cmp4460 {
 		goto if_then4468
@@ -72040,7 +72040,7 @@ lor_lhs_false4459:
 	}
 
 lor_lhs_false4462:
-	v1769 = *lookahead
+	v1769 = *local_lookahead
 	cmp4463 = 97 <= v1769
 	if cmp4463 {
 		goto land_lhs_true4465
@@ -72049,7 +72049,7 @@ lor_lhs_false4462:
 	}
 
 land_lhs_true4465:
-	v1770 = *lookahead
+	v1770 = *local_lookahead
 	cmp4466 = v1770 <= 122
 	if cmp4466 {
 		goto if_then4468
@@ -72077,7 +72077,7 @@ sw_bb4471:
 	v1774 = *mark_end4473
 	v1775 = *lexer_addr
 	v1774(v1775)
-	v1776 = *lookahead
+	v1776 = *local_lookahead
 	cmp4474 = v1776 == 121
 	if cmp4474 {
 		goto if_then4476
@@ -72090,7 +72090,7 @@ if_then4476:
 	goto next_state
 
 if_end4477:
-	v1777 = *lookahead
+	v1777 = *local_lookahead
 	cmp4478 = v1777 == 39
 	if cmp4478 {
 		goto if_then4504
@@ -72099,7 +72099,7 @@ if_end4477:
 	}
 
 lor_lhs_false4480:
-	v1778 = *lookahead
+	v1778 = *local_lookahead
 	cmp4481 = v1778 == 45
 	if cmp4481 {
 		goto if_then4504
@@ -72108,7 +72108,7 @@ lor_lhs_false4480:
 	}
 
 lor_lhs_false4483:
-	v1779 = *lookahead
+	v1779 = *local_lookahead
 	cmp4484 = 48 <= v1779
 	if cmp4484 {
 		goto land_lhs_true4486
@@ -72117,7 +72117,7 @@ lor_lhs_false4483:
 	}
 
 land_lhs_true4486:
-	v1780 = *lookahead
+	v1780 = *local_lookahead
 	cmp4487 = v1780 <= 57
 	if cmp4487 {
 		goto if_then4504
@@ -72126,7 +72126,7 @@ land_lhs_true4486:
 	}
 
 lor_lhs_false4489:
-	v1781 = *lookahead
+	v1781 = *local_lookahead
 	cmp4490 = 65 <= v1781
 	if cmp4490 {
 		goto land_lhs_true4492
@@ -72135,7 +72135,7 @@ lor_lhs_false4489:
 	}
 
 land_lhs_true4492:
-	v1782 = *lookahead
+	v1782 = *local_lookahead
 	cmp4493 = v1782 <= 90
 	if cmp4493 {
 		goto if_then4504
@@ -72144,7 +72144,7 @@ land_lhs_true4492:
 	}
 
 lor_lhs_false4495:
-	v1783 = *lookahead
+	v1783 = *local_lookahead
 	cmp4496 = v1783 == 95
 	if cmp4496 {
 		goto if_then4504
@@ -72153,7 +72153,7 @@ lor_lhs_false4495:
 	}
 
 lor_lhs_false4498:
-	v1784 = *lookahead
+	v1784 = *local_lookahead
 	cmp4499 = 97 <= v1784
 	if cmp4499 {
 		goto land_lhs_true4501
@@ -72162,7 +72162,7 @@ lor_lhs_false4498:
 	}
 
 land_lhs_true4501:
-	v1785 = *lookahead
+	v1785 = *local_lookahead
 	cmp4502 = v1785 <= 122
 	if cmp4502 {
 		goto if_then4504
@@ -72190,7 +72190,7 @@ sw_bb4507:
 	v1789 = *mark_end4509
 	v1790 = *lexer_addr
 	v1789(v1790)
-	v1791 = *lookahead
+	v1791 = *local_lookahead
 	cmp4510 = v1791 == 121
 	if cmp4510 {
 		goto if_then4512
@@ -72203,7 +72203,7 @@ if_then4512:
 	goto next_state
 
 if_end4513:
-	v1792 = *lookahead
+	v1792 = *local_lookahead
 	cmp4514 = v1792 == 39
 	if cmp4514 {
 		goto if_then4540
@@ -72212,7 +72212,7 @@ if_end4513:
 	}
 
 lor_lhs_false4516:
-	v1793 = *lookahead
+	v1793 = *local_lookahead
 	cmp4517 = v1793 == 45
 	if cmp4517 {
 		goto if_then4540
@@ -72221,7 +72221,7 @@ lor_lhs_false4516:
 	}
 
 lor_lhs_false4519:
-	v1794 = *lookahead
+	v1794 = *local_lookahead
 	cmp4520 = 48 <= v1794
 	if cmp4520 {
 		goto land_lhs_true4522
@@ -72230,7 +72230,7 @@ lor_lhs_false4519:
 	}
 
 land_lhs_true4522:
-	v1795 = *lookahead
+	v1795 = *local_lookahead
 	cmp4523 = v1795 <= 57
 	if cmp4523 {
 		goto if_then4540
@@ -72239,7 +72239,7 @@ land_lhs_true4522:
 	}
 
 lor_lhs_false4525:
-	v1796 = *lookahead
+	v1796 = *local_lookahead
 	cmp4526 = 65 <= v1796
 	if cmp4526 {
 		goto land_lhs_true4528
@@ -72248,7 +72248,7 @@ lor_lhs_false4525:
 	}
 
 land_lhs_true4528:
-	v1797 = *lookahead
+	v1797 = *local_lookahead
 	cmp4529 = v1797 <= 90
 	if cmp4529 {
 		goto if_then4540
@@ -72257,7 +72257,7 @@ land_lhs_true4528:
 	}
 
 lor_lhs_false4531:
-	v1798 = *lookahead
+	v1798 = *local_lookahead
 	cmp4532 = v1798 == 95
 	if cmp4532 {
 		goto if_then4540
@@ -72266,7 +72266,7 @@ lor_lhs_false4531:
 	}
 
 lor_lhs_false4534:
-	v1799 = *lookahead
+	v1799 = *local_lookahead
 	cmp4535 = 97 <= v1799
 	if cmp4535 {
 		goto land_lhs_true4537
@@ -72275,7 +72275,7 @@ lor_lhs_false4534:
 	}
 
 land_lhs_true4537:
-	v1800 = *lookahead
+	v1800 = *local_lookahead
 	cmp4538 = v1800 <= 122
 	if cmp4538 {
 		goto if_then4540
@@ -72303,7 +72303,7 @@ sw_bb4543:
 	v1804 = *mark_end4545
 	v1805 = *lexer_addr
 	v1804(v1805)
-	v1806 = *lookahead
+	v1806 = *local_lookahead
 	cmp4546 = v1806 == 121
 	if cmp4546 {
 		goto if_then4548
@@ -72316,7 +72316,7 @@ if_then4548:
 	goto next_state
 
 if_end4549:
-	v1807 = *lookahead
+	v1807 = *local_lookahead
 	cmp4550 = v1807 == 39
 	if cmp4550 {
 		goto if_then4576
@@ -72325,7 +72325,7 @@ if_end4549:
 	}
 
 lor_lhs_false4552:
-	v1808 = *lookahead
+	v1808 = *local_lookahead
 	cmp4553 = v1808 == 45
 	if cmp4553 {
 		goto if_then4576
@@ -72334,7 +72334,7 @@ lor_lhs_false4552:
 	}
 
 lor_lhs_false4555:
-	v1809 = *lookahead
+	v1809 = *local_lookahead
 	cmp4556 = 48 <= v1809
 	if cmp4556 {
 		goto land_lhs_true4558
@@ -72343,7 +72343,7 @@ lor_lhs_false4555:
 	}
 
 land_lhs_true4558:
-	v1810 = *lookahead
+	v1810 = *local_lookahead
 	cmp4559 = v1810 <= 57
 	if cmp4559 {
 		goto if_then4576
@@ -72352,7 +72352,7 @@ land_lhs_true4558:
 	}
 
 lor_lhs_false4561:
-	v1811 = *lookahead
+	v1811 = *local_lookahead
 	cmp4562 = 65 <= v1811
 	if cmp4562 {
 		goto land_lhs_true4564
@@ -72361,7 +72361,7 @@ lor_lhs_false4561:
 	}
 
 land_lhs_true4564:
-	v1812 = *lookahead
+	v1812 = *local_lookahead
 	cmp4565 = v1812 <= 90
 	if cmp4565 {
 		goto if_then4576
@@ -72370,7 +72370,7 @@ land_lhs_true4564:
 	}
 
 lor_lhs_false4567:
-	v1813 = *lookahead
+	v1813 = *local_lookahead
 	cmp4568 = v1813 == 95
 	if cmp4568 {
 		goto if_then4576
@@ -72379,7 +72379,7 @@ lor_lhs_false4567:
 	}
 
 lor_lhs_false4570:
-	v1814 = *lookahead
+	v1814 = *local_lookahead
 	cmp4571 = 97 <= v1814
 	if cmp4571 {
 		goto land_lhs_true4573
@@ -72388,7 +72388,7 @@ lor_lhs_false4570:
 	}
 
 land_lhs_true4573:
-	v1815 = *lookahead
+	v1815 = *local_lookahead
 	cmp4574 = v1815 <= 122
 	if cmp4574 {
 		goto if_then4576
@@ -72416,7 +72416,7 @@ sw_bb4579:
 	v1819 = *mark_end4581
 	v1820 = *lexer_addr
 	v1819(v1820)
-	v1821 = *lookahead
+	v1821 = *local_lookahead
 	cmp4582 = v1821 == 39
 	if cmp4582 {
 		goto if_then4608
@@ -72425,7 +72425,7 @@ sw_bb4579:
 	}
 
 lor_lhs_false4584:
-	v1822 = *lookahead
+	v1822 = *local_lookahead
 	cmp4585 = v1822 == 45
 	if cmp4585 {
 		goto if_then4608
@@ -72434,7 +72434,7 @@ lor_lhs_false4584:
 	}
 
 lor_lhs_false4587:
-	v1823 = *lookahead
+	v1823 = *local_lookahead
 	cmp4588 = 48 <= v1823
 	if cmp4588 {
 		goto land_lhs_true4590
@@ -72443,7 +72443,7 @@ lor_lhs_false4587:
 	}
 
 land_lhs_true4590:
-	v1824 = *lookahead
+	v1824 = *local_lookahead
 	cmp4591 = v1824 <= 57
 	if cmp4591 {
 		goto if_then4608
@@ -72452,7 +72452,7 @@ land_lhs_true4590:
 	}
 
 lor_lhs_false4593:
-	v1825 = *lookahead
+	v1825 = *local_lookahead
 	cmp4594 = 65 <= v1825
 	if cmp4594 {
 		goto land_lhs_true4596
@@ -72461,7 +72461,7 @@ lor_lhs_false4593:
 	}
 
 land_lhs_true4596:
-	v1826 = *lookahead
+	v1826 = *local_lookahead
 	cmp4597 = v1826 <= 90
 	if cmp4597 {
 		goto if_then4608
@@ -72470,7 +72470,7 @@ land_lhs_true4596:
 	}
 
 lor_lhs_false4599:
-	v1827 = *lookahead
+	v1827 = *local_lookahead
 	cmp4600 = v1827 == 95
 	if cmp4600 {
 		goto if_then4608
@@ -72479,7 +72479,7 @@ lor_lhs_false4599:
 	}
 
 lor_lhs_false4602:
-	v1828 = *lookahead
+	v1828 = *local_lookahead
 	cmp4603 = 97 <= v1828
 	if cmp4603 {
 		goto land_lhs_true4605
@@ -72488,7 +72488,7 @@ lor_lhs_false4602:
 	}
 
 land_lhs_true4605:
-	v1829 = *lookahead
+	v1829 = *local_lookahead
 	cmp4606 = v1829 <= 122
 	if cmp4606 {
 		goto if_then4608
@@ -72516,7 +72516,7 @@ sw_bb4611:
 	v1833 = *mark_end4613
 	v1834 = *lexer_addr
 	v1833(v1834)
-	v1835 = *lookahead
+	v1835 = *local_lookahead
 	cmp4614 = v1835 == 39
 	if cmp4614 {
 		goto if_then4640
@@ -72525,7 +72525,7 @@ sw_bb4611:
 	}
 
 lor_lhs_false4616:
-	v1836 = *lookahead
+	v1836 = *local_lookahead
 	cmp4617 = v1836 == 45
 	if cmp4617 {
 		goto if_then4640
@@ -72534,7 +72534,7 @@ lor_lhs_false4616:
 	}
 
 lor_lhs_false4619:
-	v1837 = *lookahead
+	v1837 = *local_lookahead
 	cmp4620 = 48 <= v1837
 	if cmp4620 {
 		goto land_lhs_true4622
@@ -72543,7 +72543,7 @@ lor_lhs_false4619:
 	}
 
 land_lhs_true4622:
-	v1838 = *lookahead
+	v1838 = *local_lookahead
 	cmp4623 = v1838 <= 57
 	if cmp4623 {
 		goto if_then4640
@@ -72552,7 +72552,7 @@ land_lhs_true4622:
 	}
 
 lor_lhs_false4625:
-	v1839 = *lookahead
+	v1839 = *local_lookahead
 	cmp4626 = 65 <= v1839
 	if cmp4626 {
 		goto land_lhs_true4628
@@ -72561,7 +72561,7 @@ lor_lhs_false4625:
 	}
 
 land_lhs_true4628:
-	v1840 = *lookahead
+	v1840 = *local_lookahead
 	cmp4629 = v1840 <= 90
 	if cmp4629 {
 		goto if_then4640
@@ -72570,7 +72570,7 @@ land_lhs_true4628:
 	}
 
 lor_lhs_false4631:
-	v1841 = *lookahead
+	v1841 = *local_lookahead
 	cmp4632 = v1841 == 95
 	if cmp4632 {
 		goto if_then4640
@@ -72579,7 +72579,7 @@ lor_lhs_false4631:
 	}
 
 lor_lhs_false4634:
-	v1842 = *lookahead
+	v1842 = *local_lookahead
 	cmp4635 = 97 <= v1842
 	if cmp4635 {
 		goto land_lhs_true4637
@@ -72588,7 +72588,7 @@ lor_lhs_false4634:
 	}
 
 land_lhs_true4637:
-	v1843 = *lookahead
+	v1843 = *local_lookahead
 	cmp4638 = v1843 <= 122
 	if cmp4638 {
 		goto if_then4640
@@ -72631,7 +72631,7 @@ sw_bb4647:
 	v1852 = *mark_end4649
 	v1853 = *lexer_addr
 	v1852(v1853)
-	v1854 = *lookahead
+	v1854 = *local_lookahead
 	cmp4650 = v1854 == 62
 	if cmp4650 {
 		goto if_then4652
@@ -72644,7 +72644,7 @@ if_then4652:
 	goto next_state
 
 if_end4653:
-	v1855 = *lookahead
+	v1855 = *local_lookahead
 	cmp4654 = v1855 == 93
 	if cmp4654 {
 		goto if_then4656
@@ -72657,7 +72657,7 @@ if_then4656:
 	goto next_state
 
 if_end4657:
-	v1856 = *lookahead
+	v1856 = *local_lookahead
 	cmp4658 = v1856 == 124
 	if cmp4658 {
 		goto if_then4660
@@ -72685,7 +72685,7 @@ sw_bb4663:
 	v1860 = *mark_end4665
 	v1861 = *lexer_addr
 	v1860(v1861)
-	v1862 = *lookahead
+	v1862 = *local_lookahead
 	cmp4666 = v1862 == 62
 	if cmp4666 {
 		goto if_then4668
@@ -72698,7 +72698,7 @@ if_then4668:
 	goto next_state
 
 if_end4669:
-	v1863 = *lookahead
+	v1863 = *local_lookahead
 	cmp4670 = v1863 == 124
 	if cmp4670 {
 		goto if_then4672
@@ -72726,7 +72726,7 @@ sw_bb4675:
 	v1867 = *mark_end4677
 	v1868 = *lexer_addr
 	v1867(v1868)
-	v1869 = *lookahead
+	v1869 = *local_lookahead
 	cmp4678 = v1869 == 93
 	if cmp4678 {
 		goto if_then4680
@@ -72784,7 +72784,7 @@ sw_bb4691:
 	v1883 = *mark_end4693
 	v1884 = *lexer_addr
 	v1883(v1884)
-	v1885 = *lookahead
+	v1885 = *local_lookahead
 	cmp4694 = v1885 == 61
 	if cmp4694 {
 		goto if_then4696
@@ -72797,7 +72797,7 @@ if_then4696:
 	goto next_state
 
 if_end4697:
-	v1886 = *lookahead
+	v1886 = *local_lookahead
 	cmp4698 = v1886 == 62
 	if cmp4698 {
 		goto if_then4700
@@ -72825,7 +72825,7 @@ sw_bb4703:
 	v1890 = *mark_end4705
 	v1891 = *lexer_addr
 	v1890(v1891)
-	v1892 = *lookahead
+	v1892 = *local_lookahead
 	cmp4706 = v1892 == 62
 	if cmp4706 {
 		goto if_then4708
@@ -72928,7 +72928,7 @@ sw_bb4731:
 	v1921 = *mark_end4733
 	v1922 = *lexer_addr
 	v1921(v1922)
-	v1923 = *lookahead
+	v1923 = *local_lookahead
 	cmp4734 = 48 <= v1923
 	if cmp4734 {
 		goto land_lhs_true4736
@@ -72937,7 +72937,7 @@ sw_bb4731:
 	}
 
 land_lhs_true4736:
-	v1924 = *lookahead
+	v1924 = *local_lookahead
 	cmp4737 = v1924 <= 57
 	if cmp4737 {
 		goto if_then4739
@@ -72965,7 +72965,7 @@ sw_bb4742:
 	v1928 = *mark_end4744
 	v1929 = *lexer_addr
 	v1928(v1929)
-	v1930 = *lookahead
+	v1930 = *local_lookahead
 	cmp4745 = v1930 == 39
 	if cmp4745 {
 		goto if_then4771
@@ -72974,7 +72974,7 @@ sw_bb4742:
 	}
 
 lor_lhs_false4747:
-	v1931 = *lookahead
+	v1931 = *local_lookahead
 	cmp4748 = v1931 == 45
 	if cmp4748 {
 		goto if_then4771
@@ -72983,7 +72983,7 @@ lor_lhs_false4747:
 	}
 
 lor_lhs_false4750:
-	v1932 = *lookahead
+	v1932 = *local_lookahead
 	cmp4751 = 48 <= v1932
 	if cmp4751 {
 		goto land_lhs_true4753
@@ -72992,7 +72992,7 @@ lor_lhs_false4750:
 	}
 
 land_lhs_true4753:
-	v1933 = *lookahead
+	v1933 = *local_lookahead
 	cmp4754 = v1933 <= 57
 	if cmp4754 {
 		goto if_then4771
@@ -73001,7 +73001,7 @@ land_lhs_true4753:
 	}
 
 lor_lhs_false4756:
-	v1934 = *lookahead
+	v1934 = *local_lookahead
 	cmp4757 = 65 <= v1934
 	if cmp4757 {
 		goto land_lhs_true4759
@@ -73010,7 +73010,7 @@ lor_lhs_false4756:
 	}
 
 land_lhs_true4759:
-	v1935 = *lookahead
+	v1935 = *local_lookahead
 	cmp4760 = v1935 <= 90
 	if cmp4760 {
 		goto if_then4771
@@ -73019,7 +73019,7 @@ land_lhs_true4759:
 	}
 
 lor_lhs_false4762:
-	v1936 = *lookahead
+	v1936 = *local_lookahead
 	cmp4763 = v1936 == 95
 	if cmp4763 {
 		goto if_then4771
@@ -73028,7 +73028,7 @@ lor_lhs_false4762:
 	}
 
 lor_lhs_false4765:
-	v1937 = *lookahead
+	v1937 = *local_lookahead
 	cmp4766 = 97 <= v1937
 	if cmp4766 {
 		goto land_lhs_true4768
@@ -73037,7 +73037,7 @@ lor_lhs_false4765:
 	}
 
 land_lhs_true4768:
-	v1938 = *lookahead
+	v1938 = *local_lookahead
 	cmp4769 = v1938 <= 122
 	if cmp4769 {
 		goto if_then4771
@@ -73065,7 +73065,7 @@ sw_bb4774:
 	v1942 = *mark_end4776
 	v1943 = *lexer_addr
 	v1942(v1943)
-	v1944 = *lookahead
+	v1944 = *local_lookahead
 	cmp4777 = v1944 == 39
 	if cmp4777 {
 		goto if_then4803
@@ -73074,7 +73074,7 @@ sw_bb4774:
 	}
 
 lor_lhs_false4779:
-	v1945 = *lookahead
+	v1945 = *local_lookahead
 	cmp4780 = v1945 == 45
 	if cmp4780 {
 		goto if_then4803
@@ -73083,7 +73083,7 @@ lor_lhs_false4779:
 	}
 
 lor_lhs_false4782:
-	v1946 = *lookahead
+	v1946 = *local_lookahead
 	cmp4783 = 48 <= v1946
 	if cmp4783 {
 		goto land_lhs_true4785
@@ -73092,7 +73092,7 @@ lor_lhs_false4782:
 	}
 
 land_lhs_true4785:
-	v1947 = *lookahead
+	v1947 = *local_lookahead
 	cmp4786 = v1947 <= 57
 	if cmp4786 {
 		goto if_then4803
@@ -73101,7 +73101,7 @@ land_lhs_true4785:
 	}
 
 lor_lhs_false4788:
-	v1948 = *lookahead
+	v1948 = *local_lookahead
 	cmp4789 = 65 <= v1948
 	if cmp4789 {
 		goto land_lhs_true4791
@@ -73110,7 +73110,7 @@ lor_lhs_false4788:
 	}
 
 land_lhs_true4791:
-	v1949 = *lookahead
+	v1949 = *local_lookahead
 	cmp4792 = v1949 <= 90
 	if cmp4792 {
 		goto if_then4803
@@ -73119,7 +73119,7 @@ land_lhs_true4791:
 	}
 
 lor_lhs_false4794:
-	v1950 = *lookahead
+	v1950 = *local_lookahead
 	cmp4795 = v1950 == 95
 	if cmp4795 {
 		goto if_then4803
@@ -73128,7 +73128,7 @@ lor_lhs_false4794:
 	}
 
 lor_lhs_false4797:
-	v1951 = *lookahead
+	v1951 = *local_lookahead
 	cmp4798 = 97 <= v1951
 	if cmp4798 {
 		goto land_lhs_true4800
@@ -73137,7 +73137,7 @@ lor_lhs_false4797:
 	}
 
 land_lhs_true4800:
-	v1952 = *lookahead
+	v1952 = *local_lookahead
 	cmp4801 = v1952 <= 122
 	if cmp4801 {
 		goto if_then4803
@@ -73225,7 +73225,7 @@ sw_bb4822:
 	v1976 = *mark_end4824
 	v1977 = *lexer_addr
 	v1976(v1977)
-	v1978 = *lookahead
+	v1978 = *local_lookahead
 	cmp4825 = v1978 == 124
 	if cmp4825 {
 		goto if_then4827
@@ -73268,7 +73268,7 @@ sw_bb4834:
 	v1987 = *mark_end4836
 	v1988 = *lexer_addr
 	v1987(v1988)
-	v1989 = *lookahead
+	v1989 = *local_lookahead
 	cmp4837 = v1989 == 39
 	if cmp4837 {
 		goto if_then4863
@@ -73277,7 +73277,7 @@ sw_bb4834:
 	}
 
 lor_lhs_false4839:
-	v1990 = *lookahead
+	v1990 = *local_lookahead
 	cmp4840 = v1990 == 45
 	if cmp4840 {
 		goto if_then4863
@@ -73286,7 +73286,7 @@ lor_lhs_false4839:
 	}
 
 lor_lhs_false4842:
-	v1991 = *lookahead
+	v1991 = *local_lookahead
 	cmp4843 = 48 <= v1991
 	if cmp4843 {
 		goto land_lhs_true4845
@@ -73295,7 +73295,7 @@ lor_lhs_false4842:
 	}
 
 land_lhs_true4845:
-	v1992 = *lookahead
+	v1992 = *local_lookahead
 	cmp4846 = v1992 <= 57
 	if cmp4846 {
 		goto if_then4863
@@ -73304,7 +73304,7 @@ land_lhs_true4845:
 	}
 
 lor_lhs_false4848:
-	v1993 = *lookahead
+	v1993 = *local_lookahead
 	cmp4849 = 65 <= v1993
 	if cmp4849 {
 		goto land_lhs_true4851
@@ -73313,7 +73313,7 @@ lor_lhs_false4848:
 	}
 
 land_lhs_true4851:
-	v1994 = *lookahead
+	v1994 = *local_lookahead
 	cmp4852 = v1994 <= 90
 	if cmp4852 {
 		goto if_then4863
@@ -73322,7 +73322,7 @@ land_lhs_true4851:
 	}
 
 lor_lhs_false4854:
-	v1995 = *lookahead
+	v1995 = *local_lookahead
 	cmp4855 = v1995 == 95
 	if cmp4855 {
 		goto if_then4863
@@ -73331,7 +73331,7 @@ lor_lhs_false4854:
 	}
 
 lor_lhs_false4857:
-	v1996 = *lookahead
+	v1996 = *local_lookahead
 	cmp4858 = 97 <= v1996
 	if cmp4858 {
 		goto land_lhs_true4860
@@ -73340,7 +73340,7 @@ lor_lhs_false4857:
 	}
 
 land_lhs_true4860:
-	v1997 = *lookahead
+	v1997 = *local_lookahead
 	cmp4861 = v1997 <= 122
 	if cmp4861 {
 		goto if_then4863
@@ -73398,7 +73398,7 @@ sw_bb4874:
 	v2011 = *mark_end4876
 	v2012 = *lexer_addr
 	v2011(v2012)
-	v2013 = *lookahead
+	v2013 = *local_lookahead
 	cmp4877 = v2013 == 95
 	if cmp4877 {
 		goto if_then4879
@@ -73411,7 +73411,7 @@ if_then4879:
 	goto next_state
 
 if_end4880:
-	v2014 = *lookahead
+	v2014 = *local_lookahead
 	cmp4881 = 65 <= v2014
 	if cmp4881 {
 		goto land_lhs_true4883
@@ -73420,7 +73420,7 @@ if_end4880:
 	}
 
 land_lhs_true4883:
-	v2015 = *lookahead
+	v2015 = *local_lookahead
 	cmp4884 = v2015 <= 90
 	if cmp4884 {
 		goto if_then4892
@@ -73429,7 +73429,7 @@ land_lhs_true4883:
 	}
 
 lor_lhs_false4886:
-	v2016 = *lookahead
+	v2016 = *local_lookahead
 	cmp4887 = 97 <= v2016
 	if cmp4887 {
 		goto land_lhs_true4889
@@ -73438,7 +73438,7 @@ lor_lhs_false4886:
 	}
 
 land_lhs_true4889:
-	v2017 = *lookahead
+	v2017 = *local_lookahead
 	cmp4890 = v2017 <= 122
 	if cmp4890 {
 		goto if_then4892
@@ -73481,7 +73481,7 @@ sw_bb4899:
 	v2026 = *mark_end4901
 	v2027 = *lexer_addr
 	v2026(v2027)
-	v2028 = *lookahead
+	v2028 = *local_lookahead
 	cmp4902 = v2028 == 39
 	if cmp4902 {
 		goto if_then4928
@@ -73490,7 +73490,7 @@ sw_bb4899:
 	}
 
 lor_lhs_false4904:
-	v2029 = *lookahead
+	v2029 = *local_lookahead
 	cmp4905 = v2029 == 45
 	if cmp4905 {
 		goto if_then4928
@@ -73499,7 +73499,7 @@ lor_lhs_false4904:
 	}
 
 lor_lhs_false4907:
-	v2030 = *lookahead
+	v2030 = *local_lookahead
 	cmp4908 = 48 <= v2030
 	if cmp4908 {
 		goto land_lhs_true4910
@@ -73508,7 +73508,7 @@ lor_lhs_false4907:
 	}
 
 land_lhs_true4910:
-	v2031 = *lookahead
+	v2031 = *local_lookahead
 	cmp4911 = v2031 <= 57
 	if cmp4911 {
 		goto if_then4928
@@ -73517,7 +73517,7 @@ land_lhs_true4910:
 	}
 
 lor_lhs_false4913:
-	v2032 = *lookahead
+	v2032 = *local_lookahead
 	cmp4914 = 65 <= v2032
 	if cmp4914 {
 		goto land_lhs_true4916
@@ -73526,7 +73526,7 @@ lor_lhs_false4913:
 	}
 
 land_lhs_true4916:
-	v2033 = *lookahead
+	v2033 = *local_lookahead
 	cmp4917 = v2033 <= 90
 	if cmp4917 {
 		goto if_then4928
@@ -73535,7 +73535,7 @@ land_lhs_true4916:
 	}
 
 lor_lhs_false4919:
-	v2034 = *lookahead
+	v2034 = *local_lookahead
 	cmp4920 = v2034 == 95
 	if cmp4920 {
 		goto if_then4928
@@ -73544,7 +73544,7 @@ lor_lhs_false4919:
 	}
 
 lor_lhs_false4922:
-	v2035 = *lookahead
+	v2035 = *local_lookahead
 	cmp4923 = 97 <= v2035
 	if cmp4923 {
 		goto land_lhs_true4925
@@ -73553,7 +73553,7 @@ lor_lhs_false4922:
 	}
 
 land_lhs_true4925:
-	v2036 = *lookahead
+	v2036 = *local_lookahead
 	cmp4926 = v2036 <= 122
 	if cmp4926 {
 		goto if_then4928
@@ -73626,7 +73626,7 @@ sw_bb4943:
 	v2055 = *mark_end4945
 	v2056 = *lexer_addr
 	v2055(v2056)
-	v2057 = *lookahead
+	v2057 = *local_lookahead
 	cmp4946 = 9 <= v2057
 	if cmp4946 {
 		goto land_lhs_true4948
@@ -73635,7 +73635,7 @@ sw_bb4943:
 	}
 
 land_lhs_true4948:
-	v2058 = *lookahead
+	v2058 = *local_lookahead
 	cmp4949 = v2058 <= 13
 	if cmp4949 {
 		goto if_then4954
@@ -73644,7 +73644,7 @@ land_lhs_true4948:
 	}
 
 lor_lhs_false4951:
-	v2059 = *lookahead
+	v2059 = *local_lookahead
 	cmp4952 = v2059 == 32
 	if cmp4952 {
 		goto if_then4954
@@ -73657,7 +73657,7 @@ if_then4954:
 	goto next_state
 
 if_end4955:
-	v2060 = *lookahead
+	v2060 = *local_lookahead
 	cmp4956 = v2060 != 0
 	if cmp4956 {
 		goto land_lhs_true4958
@@ -73666,7 +73666,7 @@ if_end4955:
 	}
 
 land_lhs_true4958:
-	v2061 = *lookahead
+	v2061 = *local_lookahead
 	cmp4959 = v2061 != 34
 	if cmp4959 {
 		goto land_lhs_true4961
@@ -73675,7 +73675,7 @@ land_lhs_true4958:
 	}
 
 land_lhs_true4961:
-	v2062 = *lookahead
+	v2062 = *local_lookahead
 	cmp4962 = v2062 != 37
 	if cmp4962 {
 		goto land_lhs_true4964
@@ -73684,7 +73684,7 @@ land_lhs_true4961:
 	}
 
 land_lhs_true4964:
-	v2063 = *lookahead
+	v2063 = *local_lookahead
 	cmp4965 = v2063 != 92
 	if cmp4965 {
 		goto if_then4967
@@ -73712,7 +73712,7 @@ sw_bb4970:
 	v2067 = *mark_end4972
 	v2068 = *lexer_addr
 	v2067(v2068)
-	v2069 = *lookahead
+	v2069 = *local_lookahead
 	cmp4973 = v2069 != 0
 	if cmp4973 {
 		goto land_lhs_true4975
@@ -73721,7 +73721,7 @@ sw_bb4970:
 	}
 
 land_lhs_true4975:
-	v2070 = *lookahead
+	v2070 = *local_lookahead
 	cmp4976 = v2070 != 34
 	if cmp4976 {
 		goto land_lhs_true4978
@@ -73730,7 +73730,7 @@ land_lhs_true4975:
 	}
 
 land_lhs_true4978:
-	v2071 = *lookahead
+	v2071 = *local_lookahead
 	cmp4979 = v2071 != 37
 	if cmp4979 {
 		goto land_lhs_true4981
@@ -73739,7 +73739,7 @@ land_lhs_true4978:
 	}
 
 land_lhs_true4981:
-	v2072 = *lookahead
+	v2072 = *local_lookahead
 	cmp4982 = v2072 != 92
 	if cmp4982 {
 		goto if_then4984
@@ -73767,7 +73767,7 @@ sw_bb4987:
 	v2076 = *mark_end4989
 	v2077 = *lexer_addr
 	v2076(v2077)
-	v2078 = *lookahead
+	v2078 = *local_lookahead
 	cmp4990 = v2078 == 10
 	if cmp4990 {
 		goto if_then4992
@@ -73780,7 +73780,7 @@ if_then4992:
 	goto next_state
 
 if_end4993:
-	v2079 = *lookahead
+	v2079 = *local_lookahead
 	cmp4994 = v2079 == 34
 	if cmp4994 {
 		goto if_then4999
@@ -73789,7 +73789,7 @@ if_end4993:
 	}
 
 lor_lhs_false4996:
-	v2080 = *lookahead
+	v2080 = *local_lookahead
 	cmp4997 = v2080 == 37
 	if cmp4997 {
 		goto if_then4999
@@ -73802,7 +73802,7 @@ if_then4999:
 	goto next_state
 
 if_end5000:
-	v2081 = *lookahead
+	v2081 = *local_lookahead
 	cmp5001 = v2081 != 0
 	if cmp5001 {
 		goto if_then5003
@@ -73830,7 +73830,7 @@ sw_bb5006:
 	v2085 = *mark_end5008
 	v2086 = *lexer_addr
 	v2085(v2086)
-	v2087 = *lookahead
+	v2087 = *local_lookahead
 	cmp5009 = v2087 == 92
 	if cmp5009 {
 		goto if_then5011
@@ -73843,7 +73843,7 @@ if_then5011:
 	goto next_state
 
 if_end5012:
-	v2088 = *lookahead
+	v2088 = *local_lookahead
 	cmp5013 = 9 <= v2088
 	if cmp5013 {
 		goto land_lhs_true5015
@@ -73852,7 +73852,7 @@ if_end5012:
 	}
 
 land_lhs_true5015:
-	v2089 = *lookahead
+	v2089 = *local_lookahead
 	cmp5016 = v2089 <= 13
 	if cmp5016 {
 		goto if_then5021
@@ -73861,7 +73861,7 @@ land_lhs_true5015:
 	}
 
 lor_lhs_false5018:
-	v2090 = *lookahead
+	v2090 = *local_lookahead
 	cmp5019 = v2090 == 32
 	if cmp5019 {
 		goto if_then5021
@@ -73874,7 +73874,7 @@ if_then5021:
 	goto next_state
 
 if_end5022:
-	v2091 = *lookahead
+	v2091 = *local_lookahead
 	cmp5023 = v2091 != 0
 	if cmp5023 {
 		goto land_lhs_true5025
@@ -73883,7 +73883,7 @@ if_end5022:
 	}
 
 land_lhs_true5025:
-	v2092 = *lookahead
+	v2092 = *local_lookahead
 	cmp5026 = v2092 != 34
 	if cmp5026 {
 		goto land_lhs_true5028
@@ -73892,7 +73892,7 @@ land_lhs_true5025:
 	}
 
 land_lhs_true5028:
-	v2093 = *lookahead
+	v2093 = *local_lookahead
 	cmp5029 = v2093 != 37
 	if cmp5029 {
 		goto if_then5031
@@ -73920,7 +73920,7 @@ sw_bb5034:
 	v2097 = *mark_end5036
 	v2098 = *lexer_addr
 	v2097(v2098)
-	v2099 = *lookahead
+	v2099 = *local_lookahead
 	cmp5037 = v2099 != 0
 	if cmp5037 {
 		goto land_lhs_true5039
@@ -73929,7 +73929,7 @@ sw_bb5034:
 	}
 
 land_lhs_true5039:
-	v2100 = *lookahead
+	v2100 = *local_lookahead
 	cmp5040 = v2100 != 34
 	if cmp5040 {
 		goto land_lhs_true5042
@@ -73938,7 +73938,7 @@ land_lhs_true5039:
 	}
 
 land_lhs_true5042:
-	v2101 = *lookahead
+	v2101 = *local_lookahead
 	cmp5043 = v2101 != 37
 	if cmp5043 {
 		goto if_then5045
@@ -73981,7 +73981,7 @@ sw_bb5052:
 	v2110 = *mark_end5054
 	v2111 = *lexer_addr
 	v2110(v2111)
-	v2112 = *lookahead
+	v2112 = *local_lookahead
 	cmp5055 = v2112 == 39
 	if cmp5055 {
 		goto if_then5078
@@ -73990,7 +73990,7 @@ sw_bb5052:
 	}
 
 lor_lhs_false5057:
-	v2113 = *lookahead
+	v2113 = *local_lookahead
 	cmp5058 = 45 <= v2113
 	if cmp5058 {
 		goto land_lhs_true5060
@@ -73999,7 +73999,7 @@ lor_lhs_false5057:
 	}
 
 land_lhs_true5060:
-	v2114 = *lookahead
+	v2114 = *local_lookahead
 	cmp5061 = v2114 <= 57
 	if cmp5061 {
 		goto if_then5078
@@ -74008,7 +74008,7 @@ land_lhs_true5060:
 	}
 
 lor_lhs_false5063:
-	v2115 = *lookahead
+	v2115 = *local_lookahead
 	cmp5064 = 65 <= v2115
 	if cmp5064 {
 		goto land_lhs_true5066
@@ -74017,7 +74017,7 @@ lor_lhs_false5063:
 	}
 
 land_lhs_true5066:
-	v2116 = *lookahead
+	v2116 = *local_lookahead
 	cmp5067 = v2116 <= 90
 	if cmp5067 {
 		goto if_then5078
@@ -74026,7 +74026,7 @@ land_lhs_true5066:
 	}
 
 lor_lhs_false5069:
-	v2117 = *lookahead
+	v2117 = *local_lookahead
 	cmp5070 = v2117 == 95
 	if cmp5070 {
 		goto if_then5078
@@ -74035,7 +74035,7 @@ lor_lhs_false5069:
 	}
 
 lor_lhs_false5072:
-	v2118 = *lookahead
+	v2118 = *local_lookahead
 	cmp5073 = 97 <= v2118
 	if cmp5073 {
 		goto land_lhs_true5075
@@ -74044,7 +74044,7 @@ lor_lhs_false5072:
 	}
 
 land_lhs_true5075:
-	v2119 = *lookahead
+	v2119 = *local_lookahead
 	cmp5076 = v2119 <= 122
 	if cmp5076 {
 		goto if_then5078
@@ -74117,7 +74117,7 @@ sw_bb5093:
 	v2138 = *mark_end5095
 	v2139 = *lexer_addr
 	v2138(v2139)
-	v2140 = *lookahead
+	v2140 = *local_lookahead
 	cmp5096 = v2140 == 43
 	if cmp5096 {
 		goto if_then5098
@@ -74145,7 +74145,7 @@ sw_bb5101:
 	v2144 = *mark_end5103
 	v2145 = *lexer_addr
 	v2144(v2145)
-	v2146 = *lookahead
+	v2146 = *local_lookahead
 	cmp5104 = v2146 == 62
 	if cmp5104 {
 		goto if_then5106
@@ -74173,7 +74173,7 @@ sw_bb5109:
 	v2150 = *mark_end5111
 	v2151 = *lexer_addr
 	v2150(v2151)
-	v2152 = *lookahead
+	v2152 = *local_lookahead
 	cmp5112 = v2152 == 61
 	if cmp5112 {
 		goto if_then5114
@@ -74201,7 +74201,7 @@ sw_bb5117:
 	v2156 = *mark_end5119
 	v2157 = *lexer_addr
 	v2156(v2157)
-	v2158 = *lookahead
+	v2158 = *local_lookahead
 	cmp5120 = v2158 == 38
 	if cmp5120 {
 		goto if_then5122
@@ -74244,7 +74244,7 @@ sw_bb5129:
 	v2167 = *mark_end5131
 	v2168 = *lexer_addr
 	v2167(v2168)
-	v2169 = *lookahead
+	v2169 = *local_lookahead
 	cmp5132 = v2169 == 61
 	if cmp5132 {
 		goto if_then5134
@@ -74287,7 +74287,7 @@ sw_bb5141:
 	v2178 = *mark_end5143
 	v2179 = *lexer_addr
 	v2178(v2179)
-	v2180 = *lookahead
+	v2180 = *local_lookahead
 	cmp5144 = v2180 == 61
 	if cmp5144 {
 		goto if_then5146
@@ -74405,7 +74405,7 @@ sw_bb5173:
 	v2214 = *mark_end5175
 	v2215 = *lexer_addr
 	v2214(v2215)
-	v2216 = *lookahead
+	v2216 = *local_lookahead
 	cmp5176 = v2216 == 39
 	if cmp5176 {
 		goto if_then5202
@@ -74414,7 +74414,7 @@ sw_bb5173:
 	}
 
 lor_lhs_false5178:
-	v2217 = *lookahead
+	v2217 = *local_lookahead
 	cmp5179 = v2217 == 45
 	if cmp5179 {
 		goto if_then5202
@@ -74423,7 +74423,7 @@ lor_lhs_false5178:
 	}
 
 lor_lhs_false5181:
-	v2218 = *lookahead
+	v2218 = *local_lookahead
 	cmp5182 = 48 <= v2218
 	if cmp5182 {
 		goto land_lhs_true5184
@@ -74432,7 +74432,7 @@ lor_lhs_false5181:
 	}
 
 land_lhs_true5184:
-	v2219 = *lookahead
+	v2219 = *local_lookahead
 	cmp5185 = v2219 <= 57
 	if cmp5185 {
 		goto if_then5202
@@ -74441,7 +74441,7 @@ land_lhs_true5184:
 	}
 
 lor_lhs_false5187:
-	v2220 = *lookahead
+	v2220 = *local_lookahead
 	cmp5188 = 65 <= v2220
 	if cmp5188 {
 		goto land_lhs_true5190
@@ -74450,7 +74450,7 @@ lor_lhs_false5187:
 	}
 
 land_lhs_true5190:
-	v2221 = *lookahead
+	v2221 = *local_lookahead
 	cmp5191 = v2221 <= 90
 	if cmp5191 {
 		goto if_then5202
@@ -74459,7 +74459,7 @@ land_lhs_true5190:
 	}
 
 lor_lhs_false5193:
-	v2222 = *lookahead
+	v2222 = *local_lookahead
 	cmp5194 = v2222 == 95
 	if cmp5194 {
 		goto if_then5202
@@ -74468,7 +74468,7 @@ lor_lhs_false5193:
 	}
 
 lor_lhs_false5196:
-	v2223 = *lookahead
+	v2223 = *local_lookahead
 	cmp5197 = 97 <= v2223
 	if cmp5197 {
 		goto land_lhs_true5199
@@ -74477,7 +74477,7 @@ lor_lhs_false5196:
 	}
 
 land_lhs_true5199:
-	v2224 = *lookahead
+	v2224 = *local_lookahead
 	cmp5200 = v2224 <= 122
 	if cmp5200 {
 		goto if_then5202
@@ -74505,7 +74505,7 @@ sw_bb5205:
 	v2228 = *mark_end5207
 	v2229 = *lexer_addr
 	v2228(v2229)
-	v2230 = *lookahead
+	v2230 = *local_lookahead
 	cmp5208 = v2230 == 39
 	if cmp5208 {
 		goto if_then5234
@@ -74514,7 +74514,7 @@ sw_bb5205:
 	}
 
 lor_lhs_false5210:
-	v2231 = *lookahead
+	v2231 = *local_lookahead
 	cmp5211 = v2231 == 45
 	if cmp5211 {
 		goto if_then5234
@@ -74523,7 +74523,7 @@ lor_lhs_false5210:
 	}
 
 lor_lhs_false5213:
-	v2232 = *lookahead
+	v2232 = *local_lookahead
 	cmp5214 = 48 <= v2232
 	if cmp5214 {
 		goto land_lhs_true5216
@@ -74532,7 +74532,7 @@ lor_lhs_false5213:
 	}
 
 land_lhs_true5216:
-	v2233 = *lookahead
+	v2233 = *local_lookahead
 	cmp5217 = v2233 <= 57
 	if cmp5217 {
 		goto if_then5234
@@ -74541,7 +74541,7 @@ land_lhs_true5216:
 	}
 
 lor_lhs_false5219:
-	v2234 = *lookahead
+	v2234 = *local_lookahead
 	cmp5220 = 65 <= v2234
 	if cmp5220 {
 		goto land_lhs_true5222
@@ -74550,7 +74550,7 @@ lor_lhs_false5219:
 	}
 
 land_lhs_true5222:
-	v2235 = *lookahead
+	v2235 = *local_lookahead
 	cmp5223 = v2235 <= 90
 	if cmp5223 {
 		goto if_then5234
@@ -74559,7 +74559,7 @@ land_lhs_true5222:
 	}
 
 lor_lhs_false5225:
-	v2236 = *lookahead
+	v2236 = *local_lookahead
 	cmp5226 = v2236 == 95
 	if cmp5226 {
 		goto if_then5234
@@ -74568,7 +74568,7 @@ lor_lhs_false5225:
 	}
 
 lor_lhs_false5228:
-	v2237 = *lookahead
+	v2237 = *local_lookahead
 	cmp5229 = 97 <= v2237
 	if cmp5229 {
 		goto land_lhs_true5231
@@ -74577,7 +74577,7 @@ lor_lhs_false5228:
 	}
 
 land_lhs_true5231:
-	v2238 = *lookahead
+	v2238 = *local_lookahead
 	cmp5232 = v2238 <= 122
 	if cmp5232 {
 		goto if_then5234
@@ -74605,7 +74605,7 @@ sw_bb5237:
 	v2242 = *mark_end5239
 	v2243 = *lexer_addr
 	v2242(v2243)
-	v2244 = *lookahead
+	v2244 = *local_lookahead
 	cmp5240 = v2244 == 39
 	if cmp5240 {
 		goto if_then5266
@@ -74614,7 +74614,7 @@ sw_bb5237:
 	}
 
 lor_lhs_false5242:
-	v2245 = *lookahead
+	v2245 = *local_lookahead
 	cmp5243 = v2245 == 45
 	if cmp5243 {
 		goto if_then5266
@@ -74623,7 +74623,7 @@ lor_lhs_false5242:
 	}
 
 lor_lhs_false5245:
-	v2246 = *lookahead
+	v2246 = *local_lookahead
 	cmp5246 = 48 <= v2246
 	if cmp5246 {
 		goto land_lhs_true5248
@@ -74632,7 +74632,7 @@ lor_lhs_false5245:
 	}
 
 land_lhs_true5248:
-	v2247 = *lookahead
+	v2247 = *local_lookahead
 	cmp5249 = v2247 <= 57
 	if cmp5249 {
 		goto if_then5266
@@ -74641,7 +74641,7 @@ land_lhs_true5248:
 	}
 
 lor_lhs_false5251:
-	v2248 = *lookahead
+	v2248 = *local_lookahead
 	cmp5252 = 65 <= v2248
 	if cmp5252 {
 		goto land_lhs_true5254
@@ -74650,7 +74650,7 @@ lor_lhs_false5251:
 	}
 
 land_lhs_true5254:
-	v2249 = *lookahead
+	v2249 = *local_lookahead
 	cmp5255 = v2249 <= 90
 	if cmp5255 {
 		goto if_then5266
@@ -74659,7 +74659,7 @@ land_lhs_true5254:
 	}
 
 lor_lhs_false5257:
-	v2250 = *lookahead
+	v2250 = *local_lookahead
 	cmp5258 = v2250 == 95
 	if cmp5258 {
 		goto if_then5266
@@ -74668,7 +74668,7 @@ lor_lhs_false5257:
 	}
 
 lor_lhs_false5260:
-	v2251 = *lookahead
+	v2251 = *local_lookahead
 	cmp5261 = 97 <= v2251
 	if cmp5261 {
 		goto land_lhs_true5263
@@ -74677,7 +74677,7 @@ lor_lhs_false5260:
 	}
 
 land_lhs_true5263:
-	v2252 = *lookahead
+	v2252 = *local_lookahead
 	cmp5264 = v2252 <= 122
 	if cmp5264 {
 		goto if_then5266
@@ -74738,12 +74738,12 @@ func ts_lex_keywords(lexer *TSLexer, state int16) bool {
 	var lexer_addr **TSLexer
 	var v0, v2, v4, v6, v8, v62, v63, v65, v69, v70, v72, v94, v95, v97, v106, v107, v109, v113, v114, v116, v128, v129, v131, v139, v140, v142, v156, v157, v159, v165, v166, v168, v170, v171, v173, v177, v178, v180, v184, v185, v187, v191, v192, v194, v204, v205, v207, v209, v210, v212, v220, v221, v223, v233, v234, v236, v238, v239, v241, v249, v250, v252 *TSLexer
 	var retval *bool
-	var result, skip, eof *byte
+	var result, local_skip, local_eof *byte
 	var mark_end, mark_end160, mark_end224, mark_end250, mark_end260, mark_end294, mark_end316, mark_end356, mark_end372, mark_end376, mark_end386, mark_end396, mark_end406, mark_end434, mark_end438, mark_end460, mark_end488, mark_end492, mark_end514 *func(*TSLexer)
 	var eof2 *func(*TSLexer) bool
-	var advance *func(*TSLexer, bool)
+	var local_advance *func(*TSLexer, bool)
 	var state_addr, arrayidx, arrayidx9, result_symbol, result_symbol159, result_symbol223, result_symbol249, result_symbol259, result_symbol293, result_symbol315, result_symbol355, result_symbol371, result_symbol375, result_symbol385, result_symbol395, result_symbol405, result_symbol433, result_symbol437, result_symbol459, result_symbol487, result_symbol491, result_symbol513 *int16
-	var lookahead, i, lookahead1 *int32
+	var local_lookahead, i, lookahead1 *int32
 	var tobool, call, cmp, cmp6, cmp11, cmp13, cmp15, tobool19, cmp21, cmp25, tobool29, cmp31, tobool35, cmp37, cmp41, cmp45, tobool49, cmp51, cmp55, cmp59, tobool63, cmp65, tobool69, cmp71, tobool75, cmp77, cmp81, tobool85, cmp87, tobool91, cmp93, tobool97, cmp99, tobool103, cmp105, cmp109, tobool113, cmp115, tobool119, cmp121, tobool125, cmp127, tobool131, cmp133, tobool137, cmp139, tobool143, cmp145, tobool149, tobool151, cmp153, tobool157, tobool161, cmp163, tobool167, cmp169, tobool173, cmp175, tobool179, cmp181, tobool185, cmp187, tobool191, cmp193, tobool197, cmp199, tobool203, cmp205, tobool209, cmp211, tobool215, cmp217, tobool221, tobool225, cmp227, tobool231, cmp233, tobool237, cmp239, cmp243, tobool247, tobool251, cmp253, tobool257, tobool261, cmp263, tobool267, cmp269, tobool273, cmp275, tobool279, cmp281, tobool285, cmp287, tobool291, tobool295, cmp297, tobool301, cmp303, tobool307, cmp309, tobool313, tobool317, cmp319, tobool323, cmp325, tobool329, cmp331, tobool335, cmp337, tobool341, cmp343, tobool347, cmp349, tobool353, tobool357, cmp359, tobool363, cmp365, tobool369, tobool373, tobool377, cmp379, tobool383, tobool387, cmp389, tobool393, tobool397, cmp399, tobool403, tobool407, cmp409, tobool413, cmp415, tobool419, cmp421, tobool425, cmp427, tobool431, tobool435, tobool439, cmp441, tobool445, cmp447, tobool451, cmp453, tobool457, tobool461, cmp463, tobool467, cmp469, tobool473, cmp475, tobool479, cmp481, tobool485, tobool489, tobool493, cmp495, tobool499, cmp501, tobool505, cmp507, tobool511, tobool515, v254 bool
 	var v3, frombool, v20, v23, v25, v29, v33, v35, v37, v40, v42, v44, v46, v49, v51, v53, v55, v57, v59, v61, v66, v68, v73, v75, v77, v79, v81, v83, v85, v87, v89, v91, v93, v98, v100, v102, v105, v110, v112, v117, v119, v121, v123, v125, v127, v132, v134, v136, v138, v143, v145, v147, v149, v151, v153, v155, v160, v162, v164, v169, v174, v176, v181, v183, v188, v190, v195, v197, v199, v201, v203, v208, v213, v215, v217, v219, v224, v226, v228, v230, v232, v237, v242, v244, v246, v248, v253 byte
 	var v64, v71, v96, v108, v115, v130, v141, v158, v167, v172, v179, v186, v193, v206, v211, v222, v235, v240, v251 func(*TSLexer)
@@ -74753,46 +74753,46 @@ func ts_lex_keywords(lexer *TSLexer, state int16) bool {
 	var v5, conv, v10, v11, conv5, v13, v14, add, v16, add10, v17, v18, v19, v21, v22, v24, v26, v27, v28, v30, v31, v32, v34, v36, v38, v39, v41, v43, v45, v47, v48, v50, v52, v54, v56, v58, v60, v67, v74, v76, v78, v80, v82, v84, v86, v88, v90, v92, v99, v101, v103, v104, v111, v118, v120, v122, v124, v126, v133, v135, v137, v144, v146, v148, v150, v152, v154, v161, v163, v175, v182, v189, v196, v198, v200, v202, v214, v216, v218, v225, v227, v229, v231, v243, v245, v247 int32
 	var conv3, idxprom, idxprom8 int64
 
-	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, lexer_addr, state_addr, result, skip, eof, lookahead, i, v0, advance, v1, v2, v3, tobool, v4, lookahead1, v5, v6, eof2, v7, v8, call, frombool, v9, conv, v10, conv3, cmp, v11, idxprom, arrayidx, v12, conv5, v13, cmp6, v14, add, idxprom8, arrayidx9, v15, v16, add10, v17, cmp11, v18, cmp13, v19, cmp15, v20, tobool19, v21, cmp21, v22, cmp25, v23, tobool29, v24, cmp31, v25, tobool35, v26, cmp37, v27, cmp41, v28, cmp45, v29, tobool49, v30, cmp51, v31, cmp55, v32, cmp59, v33, tobool63, v34, cmp65, v35, tobool69, v36, cmp71, v37, tobool75, v38, cmp77, v39, cmp81, v40, tobool85, v41, cmp87, v42, tobool91, v43, cmp93, v44, tobool97, v45, cmp99, v46, tobool103, v47, cmp105, v48, cmp109, v49, tobool113, v50, cmp115, v51, tobool119, v52, cmp121, v53, tobool125, v54, cmp127, v55, tobool131, v56, cmp133, v57, tobool137, v58, cmp139, v59, tobool143, v60, cmp145, v61, tobool149, v62, result_symbol, v63, mark_end, v64, v65, v66, tobool151, v67, cmp153, v68, tobool157, v69, result_symbol159, v70, mark_end160, v71, v72, v73, tobool161, v74, cmp163, v75, tobool167, v76, cmp169, v77, tobool173, v78, cmp175, v79, tobool179, v80, cmp181, v81, tobool185, v82, cmp187, v83, tobool191, v84, cmp193, v85, tobool197, v86, cmp199, v87, tobool203, v88, cmp205, v89, tobool209, v90, cmp211, v91, tobool215, v92, cmp217, v93, tobool221, v94, result_symbol223, v95, mark_end224, v96, v97, v98, tobool225, v99, cmp227, v100, tobool231, v101, cmp233, v102, tobool237, v103, cmp239, v104, cmp243, v105, tobool247, v106, result_symbol249, v107, mark_end250, v108, v109, v110, tobool251, v111, cmp253, v112, tobool257, v113, result_symbol259, v114, mark_end260, v115, v116, v117, tobool261, v118, cmp263, v119, tobool267, v120, cmp269, v121, tobool273, v122, cmp275, v123, tobool279, v124, cmp281, v125, tobool285, v126, cmp287, v127, tobool291, v128, result_symbol293, v129, mark_end294, v130, v131, v132, tobool295, v133, cmp297, v134, tobool301, v135, cmp303, v136, tobool307, v137, cmp309, v138, tobool313, v139, result_symbol315, v140, mark_end316, v141, v142, v143, tobool317, v144, cmp319, v145, tobool323, v146, cmp325, v147, tobool329, v148, cmp331, v149, tobool335, v150, cmp337, v151, tobool341, v152, cmp343, v153, tobool347, v154, cmp349, v155, tobool353, v156, result_symbol355, v157, mark_end356, v158, v159, v160, tobool357, v161, cmp359, v162, tobool363, v163, cmp365, v164, tobool369, v165, result_symbol371, v166, mark_end372, v167, v168, v169, tobool373, v170, result_symbol375, v171, mark_end376, v172, v173, v174, tobool377, v175, cmp379, v176, tobool383, v177, result_symbol385, v178, mark_end386, v179, v180, v181, tobool387, v182, cmp389, v183, tobool393, v184, result_symbol395, v185, mark_end396, v186, v187, v188, tobool397, v189, cmp399, v190, tobool403, v191, result_symbol405, v192, mark_end406, v193, v194, v195, tobool407, v196, cmp409, v197, tobool413, v198, cmp415, v199, tobool419, v200, cmp421, v201, tobool425, v202, cmp427, v203, tobool431, v204, result_symbol433, v205, mark_end434, v206, v207, v208, tobool435, v209, result_symbol437, v210, mark_end438, v211, v212, v213, tobool439, v214, cmp441, v215, tobool445, v216, cmp447, v217, tobool451, v218, cmp453, v219, tobool457, v220, result_symbol459, v221, mark_end460, v222, v223, v224, tobool461, v225, cmp463, v226, tobool467, v227, cmp469, v228, tobool473, v229, cmp475, v230, tobool479, v231, cmp481, v232, tobool485, v233, result_symbol487, v234, mark_end488, v235, v236, v237, tobool489, v238, result_symbol491, v239, mark_end492, v240, v241, v242, tobool493, v243, cmp495, v244, tobool499, v245, cmp501, v246, tobool505, v247, cmp507, v248, tobool511, v249, result_symbol513, v250, mark_end514, v251, v252, v253, tobool515, v254
+	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, lexer_addr, state_addr, result, local_skip, local_eof, local_lookahead, i, v0, local_advance, v1, v2, v3, tobool, v4, lookahead1, v5, v6, eof2, v7, v8, call, frombool, v9, conv, v10, conv3, cmp, v11, idxprom, arrayidx, v12, conv5, v13, cmp6, v14, add, idxprom8, arrayidx9, v15, v16, add10, v17, cmp11, v18, cmp13, v19, cmp15, v20, tobool19, v21, cmp21, v22, cmp25, v23, tobool29, v24, cmp31, v25, tobool35, v26, cmp37, v27, cmp41, v28, cmp45, v29, tobool49, v30, cmp51, v31, cmp55, v32, cmp59, v33, tobool63, v34, cmp65, v35, tobool69, v36, cmp71, v37, tobool75, v38, cmp77, v39, cmp81, v40, tobool85, v41, cmp87, v42, tobool91, v43, cmp93, v44, tobool97, v45, cmp99, v46, tobool103, v47, cmp105, v48, cmp109, v49, tobool113, v50, cmp115, v51, tobool119, v52, cmp121, v53, tobool125, v54, cmp127, v55, tobool131, v56, cmp133, v57, tobool137, v58, cmp139, v59, tobool143, v60, cmp145, v61, tobool149, v62, result_symbol, v63, mark_end, v64, v65, v66, tobool151, v67, cmp153, v68, tobool157, v69, result_symbol159, v70, mark_end160, v71, v72, v73, tobool161, v74, cmp163, v75, tobool167, v76, cmp169, v77, tobool173, v78, cmp175, v79, tobool179, v80, cmp181, v81, tobool185, v82, cmp187, v83, tobool191, v84, cmp193, v85, tobool197, v86, cmp199, v87, tobool203, v88, cmp205, v89, tobool209, v90, cmp211, v91, tobool215, v92, cmp217, v93, tobool221, v94, result_symbol223, v95, mark_end224, v96, v97, v98, tobool225, v99, cmp227, v100, tobool231, v101, cmp233, v102, tobool237, v103, cmp239, v104, cmp243, v105, tobool247, v106, result_symbol249, v107, mark_end250, v108, v109, v110, tobool251, v111, cmp253, v112, tobool257, v113, result_symbol259, v114, mark_end260, v115, v116, v117, tobool261, v118, cmp263, v119, tobool267, v120, cmp269, v121, tobool273, v122, cmp275, v123, tobool279, v124, cmp281, v125, tobool285, v126, cmp287, v127, tobool291, v128, result_symbol293, v129, mark_end294, v130, v131, v132, tobool295, v133, cmp297, v134, tobool301, v135, cmp303, v136, tobool307, v137, cmp309, v138, tobool313, v139, result_symbol315, v140, mark_end316, v141, v142, v143, tobool317, v144, cmp319, v145, tobool323, v146, cmp325, v147, tobool329, v148, cmp331, v149, tobool335, v150, cmp337, v151, tobool341, v152, cmp343, v153, tobool347, v154, cmp349, v155, tobool353, v156, result_symbol355, v157, mark_end356, v158, v159, v160, tobool357, v161, cmp359, v162, tobool363, v163, cmp365, v164, tobool369, v165, result_symbol371, v166, mark_end372, v167, v168, v169, tobool373, v170, result_symbol375, v171, mark_end376, v172, v173, v174, tobool377, v175, cmp379, v176, tobool383, v177, result_symbol385, v178, mark_end386, v179, v180, v181, tobool387, v182, cmp389, v183, tobool393, v184, result_symbol395, v185, mark_end396, v186, v187, v188, tobool397, v189, cmp399, v190, tobool403, v191, result_symbol405, v192, mark_end406, v193, v194, v195, tobool407, v196, cmp409, v197, tobool413, v198, cmp415, v199, tobool419, v200, cmp421, v201, tobool425, v202, cmp427, v203, tobool431, v204, result_symbol433, v205, mark_end434, v206, v207, v208, tobool435, v209, result_symbol437, v210, mark_end438, v211, v212, v213, tobool439, v214, cmp441, v215, tobool445, v216, cmp447, v217, tobool451, v218, cmp453, v219, tobool457, v220, result_symbol459, v221, mark_end460, v222, v223, v224, tobool461, v225, cmp463, v226, tobool467, v227, cmp469, v228, tobool473, v229, cmp475, v230, tobool479, v231, cmp481, v232, tobool485, v233, result_symbol487, v234, mark_end488, v235, v236, v237, tobool489, v238, result_symbol491, v239, mark_end492, v240, v241, v242, tobool493, v243, cmp495, v244, tobool499, v245, cmp501, v246, tobool505, v247, cmp507, v248, tobool511, v249, result_symbol513, v250, mark_end514, v251, v252, v253, tobool515, v254
 
 	retval = new(bool)
 	lexer_addr = new(*TSLexer)
 	state_addr = new(int16)
 	result = new(byte)
-	skip = new(byte)
-	eof = new(byte)
-	lookahead = new(int32)
+	local_skip = new(byte)
+	local_eof = new(byte)
+	local_lookahead = new(int32)
 	i = new(int32)
 	*lexer_addr = lexer
 	*state_addr = state
 	*result = 0
-	*skip = 0
-	*eof = 0
+	*local_skip = 0
+	*local_eof = 0
 	goto start
 
 next_state:
 	v0 = *lexer_addr
-	advance = &v0.F2
-	v1 = *advance
+	local_advance = &v0.F2
+	v1 = *local_advance
 	v2 = *lexer_addr
-	v3 = *skip
+	v3 = *local_skip
 	tobool = (v3 & 1) != 0
 	v1(v2, tobool)
 	goto start
 
 start:
-	*skip = 0
+	*local_skip = 0
 	v4 = *lexer_addr
 	lookahead1 = &v4.F0
 	v5 = *lookahead1
-	*lookahead = v5
+	*local_lookahead = v5
 	v6 = *lexer_addr
 	eof2 = &v6.F6
 	v7 = *eof2
 	v8 = *lexer_addr
 	call = v7(v8)
 	if call { frombool = 1 } else { frombool = 0 }
-	*eof = frombool
+	*local_eof = frombool
 	v9 = *state_addr
 	conv = int32(uint32(uint16(v9)))
 	switch conv {
@@ -74990,7 +74990,7 @@ for_body:
 	arrayidx = &ts_lex_keywords_map[idxprom]
 	v12 = *arrayidx
 	conv5 = int32(uint32(uint16(v12)))
-	v13 = *lookahead
+	v13 = *local_lookahead
 	cmp6 = conv5 == v13
 	if cmp6 {
 		goto if_then
@@ -75017,7 +75017,7 @@ for_inc:
 	goto for_cond
 
 for_end:
-	v17 = *lookahead
+	v17 = *local_lookahead
 	cmp11 = 9 <= v17
 	if cmp11 {
 		goto land_lhs_true
@@ -75026,7 +75026,7 @@ for_end:
 	}
 
 land_lhs_true:
-	v18 = *lookahead
+	v18 = *local_lookahead
 	cmp13 = v18 <= 13
 	if cmp13 {
 		goto if_then17
@@ -75035,7 +75035,7 @@ land_lhs_true:
 	}
 
 lor_lhs_false:
-	v19 = *lookahead
+	v19 = *local_lookahead
 	cmp15 = v19 == 32
 	if cmp15 {
 		goto if_then17
@@ -75044,7 +75044,7 @@ lor_lhs_false:
 	}
 
 if_then17:
-	*skip = 1
+	*local_skip = 1
 	*state_addr = 0
 	goto next_state
 
@@ -75055,7 +75055,7 @@ if_end18:
 	goto _return
 
 sw_bb20:
-	v21 = *lookahead
+	v21 = *local_lookahead
 	cmp21 = v21 == 101
 	if cmp21 {
 		goto if_then23
@@ -75068,7 +75068,7 @@ if_then23:
 	goto next_state
 
 if_end24:
-	v22 = *lookahead
+	v22 = *local_lookahead
 	cmp25 = v22 == 111
 	if cmp25 {
 		goto if_then27
@@ -75087,7 +75087,7 @@ if_end28:
 	goto _return
 
 sw_bb30:
-	v24 = *lookahead
+	v24 = *local_lookahead
 	cmp31 = v24 == 108
 	if cmp31 {
 		goto if_then33
@@ -75106,7 +75106,7 @@ if_end34:
 	goto _return
 
 sw_bb36:
-	v26 = *lookahead
+	v26 = *local_lookahead
 	cmp37 = v26 == 97
 	if cmp37 {
 		goto if_then39
@@ -75119,7 +75119,7 @@ if_then39:
 	goto next_state
 
 if_end40:
-	v27 = *lookahead
+	v27 = *local_lookahead
 	cmp41 = v27 == 111
 	if cmp41 {
 		goto if_then43
@@ -75132,7 +75132,7 @@ if_then43:
 	goto next_state
 
 if_end44:
-	v28 = *lookahead
+	v28 = *local_lookahead
 	cmp45 = v28 == 117
 	if cmp45 {
 		goto if_then47
@@ -75151,7 +75151,7 @@ if_end48:
 	goto _return
 
 sw_bb50:
-	v30 = *lookahead
+	v30 = *local_lookahead
 	cmp51 = v30 == 102
 	if cmp51 {
 		goto if_then53
@@ -75164,7 +75164,7 @@ if_then53:
 	goto next_state
 
 if_end54:
-	v31 = *lookahead
+	v31 = *local_lookahead
 	cmp55 = v31 == 109
 	if cmp55 {
 		goto if_then57
@@ -75177,7 +75177,7 @@ if_then57:
 	goto next_state
 
 if_end58:
-	v32 = *lookahead
+	v32 = *local_lookahead
 	cmp59 = v32 == 110
 	if cmp59 {
 		goto if_then61
@@ -75196,7 +75196,7 @@ if_end62:
 	goto _return
 
 sw_bb64:
-	v34 = *lookahead
+	v34 = *local_lookahead
 	cmp65 = v34 == 101
 	if cmp65 {
 		goto if_then67
@@ -75215,7 +75215,7 @@ if_end68:
 	goto _return
 
 sw_bb70:
-	v36 = *lookahead
+	v36 = *local_lookahead
 	cmp71 = v36 == 97
 	if cmp71 {
 		goto if_then73
@@ -75234,7 +75234,7 @@ if_end74:
 	goto _return
 
 sw_bb76:
-	v38 = *lookahead
+	v38 = *local_lookahead
 	cmp77 = v38 == 111
 	if cmp77 {
 		goto if_then79
@@ -75247,7 +75247,7 @@ if_then79:
 	goto next_state
 
 if_end80:
-	v39 = *lookahead
+	v39 = *local_lookahead
 	cmp81 = v39 == 117
 	if cmp81 {
 		goto if_then83
@@ -75266,7 +75266,7 @@ if_end84:
 	goto _return
 
 sw_bb86:
-	v41 = *lookahead
+	v41 = *local_lookahead
 	cmp87 = v41 == 112
 	if cmp87 {
 		goto if_then89
@@ -75285,7 +75285,7 @@ if_end90:
 	goto _return
 
 sw_bb92:
-	v43 = *lookahead
+	v43 = *local_lookahead
 	cmp93 = v43 == 114
 	if cmp93 {
 		goto if_then95
@@ -75304,7 +75304,7 @@ if_end96:
 	goto _return
 
 sw_bb98:
-	v45 = *lookahead
+	v45 = *local_lookahead
 	cmp99 = v45 == 101
 	if cmp99 {
 		goto if_then101
@@ -75323,7 +75323,7 @@ if_end102:
 	goto _return
 
 sw_bb104:
-	v47 = *lookahead
+	v47 = *local_lookahead
 	cmp105 = v47 == 104
 	if cmp105 {
 		goto if_then107
@@ -75336,7 +75336,7 @@ if_then107:
 	goto next_state
 
 if_end108:
-	v48 = *lookahead
+	v48 = *local_lookahead
 	cmp109 = v48 == 114
 	if cmp109 {
 		goto if_then111
@@ -75355,7 +75355,7 @@ if_end112:
 	goto _return
 
 sw_bb114:
-	v50 = *lookahead
+	v50 = *local_lookahead
 	cmp115 = v50 == 102
 	if cmp115 {
 		goto if_then117
@@ -75374,7 +75374,7 @@ if_end118:
 	goto _return
 
 sw_bb120:
-	v52 = *lookahead
+	v52 = *local_lookahead
 	cmp121 = v52 == 99
 	if cmp121 {
 		goto if_then123
@@ -75393,7 +75393,7 @@ if_end124:
 	goto _return
 
 sw_bb126:
-	v54 = *lookahead
+	v54 = *local_lookahead
 	cmp127 = v54 == 115
 	if cmp127 {
 		goto if_then129
@@ -75412,7 +75412,7 @@ if_end130:
 	goto _return
 
 sw_bb132:
-	v56 = *lookahead
+	v56 = *local_lookahead
 	cmp133 = v56 == 108
 	if cmp133 {
 		goto if_then135
@@ -75431,7 +75431,7 @@ if_end136:
 	goto _return
 
 sw_bb138:
-	v58 = *lookahead
+	v58 = *local_lookahead
 	cmp139 = v58 == 114
 	if cmp139 {
 		goto if_then141
@@ -75450,7 +75450,7 @@ if_end142:
 	goto _return
 
 sw_bb144:
-	v60 = *lookahead
+	v60 = *local_lookahead
 	cmp145 = v60 == 110
 	if cmp145 {
 		goto if_then147
@@ -75484,7 +75484,7 @@ sw_bb150:
 	goto _return
 
 sw_bb152:
-	v67 = *lookahead
+	v67 = *local_lookahead
 	cmp153 = v67 == 112
 	if cmp153 {
 		goto if_then155
@@ -75518,7 +75518,7 @@ sw_bb158:
 	goto _return
 
 sw_bb162:
-	v74 = *lookahead
+	v74 = *local_lookahead
 	cmp163 = v74 == 116
 	if cmp163 {
 		goto if_then165
@@ -75537,7 +75537,7 @@ if_end166:
 	goto _return
 
 sw_bb168:
-	v76 = *lookahead
+	v76 = *local_lookahead
 	cmp169 = v76 == 116
 	if cmp169 {
 		goto if_then171
@@ -75556,7 +75556,7 @@ if_end172:
 	goto _return
 
 sw_bb174:
-	v78 = *lookahead
+	v78 = *local_lookahead
 	cmp175 = v78 == 116
 	if cmp175 {
 		goto if_then177
@@ -75575,7 +75575,7 @@ if_end178:
 	goto _return
 
 sw_bb180:
-	v80 = *lookahead
+	v80 = *local_lookahead
 	cmp181 = v80 == 108
 	if cmp181 {
 		goto if_then183
@@ -75594,7 +75594,7 @@ if_end184:
 	goto _return
 
 sw_bb186:
-	v82 = *lookahead
+	v82 = *local_lookahead
 	cmp187 = v82 == 116
 	if cmp187 {
 		goto if_then189
@@ -75613,7 +75613,7 @@ if_end190:
 	goto _return
 
 sw_bb192:
-	v84 = *lookahead
+	v84 = *local_lookahead
 	cmp193 = v84 == 105
 	if cmp193 {
 		goto if_then195
@@ -75632,7 +75632,7 @@ if_end196:
 	goto _return
 
 sw_bb198:
-	v86 = *lookahead
+	v86 = *local_lookahead
 	cmp199 = v86 == 99
 	if cmp199 {
 		goto if_then201
@@ -75651,7 +75651,7 @@ if_end202:
 	goto _return
 
 sw_bb204:
-	v88 = *lookahead
+	v88 = *local_lookahead
 	cmp205 = v88 == 101
 	if cmp205 {
 		goto if_then207
@@ -75670,7 +75670,7 @@ if_end208:
 	goto _return
 
 sw_bb210:
-	v90 = *lookahead
+	v90 = *local_lookahead
 	cmp211 = v90 == 117
 	if cmp211 {
 		goto if_then213
@@ -75689,7 +75689,7 @@ if_end214:
 	goto _return
 
 sw_bb216:
-	v92 = *lookahead
+	v92 = *local_lookahead
 	cmp217 = v92 == 97
 	if cmp217 {
 		goto if_then219
@@ -75723,7 +75723,7 @@ sw_bb222:
 	goto _return
 
 sw_bb226:
-	v99 = *lookahead
+	v99 = *local_lookahead
 	cmp227 = v99 == 101
 	if cmp227 {
 		goto if_then229
@@ -75742,7 +75742,7 @@ if_end230:
 	goto _return
 
 sw_bb232:
-	v101 = *lookahead
+	v101 = *local_lookahead
 	cmp233 = v101 == 115
 	if cmp233 {
 		goto if_then235
@@ -75761,7 +75761,7 @@ if_end236:
 	goto _return
 
 sw_bb238:
-	v103 = *lookahead
+	v103 = *local_lookahead
 	cmp239 = v103 == 97
 	if cmp239 {
 		goto if_then241
@@ -75774,7 +75774,7 @@ if_then241:
 	goto next_state
 
 if_end242:
-	v104 = *lookahead
+	v104 = *local_lookahead
 	cmp243 = v104 == 99
 	if cmp243 {
 		goto if_then245
@@ -75808,7 +75808,7 @@ sw_bb248:
 	goto _return
 
 sw_bb252:
-	v111 = *lookahead
+	v111 = *local_lookahead
 	cmp253 = v111 == 111
 	if cmp253 {
 		goto if_then255
@@ -75842,7 +75842,7 @@ sw_bb258:
 	goto _return
 
 sw_bb262:
-	v118 = *lookahead
+	v118 = *local_lookahead
 	cmp263 = v118 == 99
 	if cmp263 {
 		goto if_then265
@@ -75861,7 +75861,7 @@ if_end266:
 	goto _return
 
 sw_bb268:
-	v120 = *lookahead
+	v120 = *local_lookahead
 	cmp269 = v120 == 95
 	if cmp269 {
 		goto if_then271
@@ -75880,7 +75880,7 @@ if_end272:
 	goto _return
 
 sw_bb274:
-	v122 = *lookahead
+	v122 = *local_lookahead
 	cmp275 = v122 == 108
 	if cmp275 {
 		goto if_then277
@@ -75899,7 +75899,7 @@ if_end278:
 	goto _return
 
 sw_bb280:
-	v124 = *lookahead
+	v124 = *local_lookahead
 	cmp281 = v124 == 105
 	if cmp281 {
 		goto if_then283
@@ -75918,7 +75918,7 @@ if_end284:
 	goto _return
 
 sw_bb286:
-	v126 = *lookahead
+	v126 = *local_lookahead
 	cmp287 = v126 == 111
 	if cmp287 {
 		goto if_then289
@@ -75952,7 +75952,7 @@ sw_bb292:
 	goto _return
 
 sw_bb296:
-	v133 = *lookahead
+	v133 = *local_lookahead
 	cmp297 = v133 == 110
 	if cmp297 {
 		goto if_then299
@@ -75971,7 +75971,7 @@ if_end300:
 	goto _return
 
 sw_bb302:
-	v135 = *lookahead
+	v135 = *local_lookahead
 	cmp303 = v135 == 101
 	if cmp303 {
 		goto if_then305
@@ -75990,7 +75990,7 @@ if_end306:
 	goto _return
 
 sw_bb308:
-	v137 = *lookahead
+	v137 = *local_lookahead
 	cmp309 = v137 == 117
 	if cmp309 {
 		goto if_then311
@@ -76024,7 +76024,7 @@ sw_bb314:
 	goto _return
 
 sw_bb318:
-	v144 = *lookahead
+	v144 = *local_lookahead
 	cmp319 = v144 == 101
 	if cmp319 {
 		goto if_then321
@@ -76043,7 +76043,7 @@ if_end322:
 	goto _return
 
 sw_bb324:
-	v146 = *lookahead
+	v146 = *local_lookahead
 	cmp325 = v146 == 108
 	if cmp325 {
 		goto if_then327
@@ -76062,7 +76062,7 @@ if_end328:
 	goto _return
 
 sw_bb330:
-	v148 = *lookahead
+	v148 = *local_lookahead
 	cmp331 = v148 == 101
 	if cmp331 {
 		goto if_then333
@@ -76081,7 +76081,7 @@ if_end334:
 	goto _return
 
 sw_bb336:
-	v150 = *lookahead
+	v150 = *local_lookahead
 	cmp337 = v150 == 114
 	if cmp337 {
 		goto if_then339
@@ -76100,7 +76100,7 @@ if_end340:
 	goto _return
 
 sw_bb342:
-	v152 = *lookahead
+	v152 = *local_lookahead
 	cmp343 = v152 == 104
 	if cmp343 {
 		goto if_then345
@@ -76119,7 +76119,7 @@ if_end346:
 	goto _return
 
 sw_bb348:
-	v154 = *lookahead
+	v154 = *local_lookahead
 	cmp349 = v154 == 101
 	if cmp349 {
 		goto if_then351
@@ -76153,7 +76153,7 @@ sw_bb354:
 	goto _return
 
 sw_bb358:
-	v161 = *lookahead
+	v161 = *local_lookahead
 	cmp359 = v161 == 111
 	if cmp359 {
 		goto if_then361
@@ -76172,7 +76172,7 @@ if_end362:
 	goto _return
 
 sw_bb364:
-	v163 = *lookahead
+	v163 = *local_lookahead
 	cmp365 = v163 == 114
 	if cmp365 {
 		goto if_then367
@@ -76221,7 +76221,7 @@ sw_bb374:
 	goto _return
 
 sw_bb378:
-	v175 = *lookahead
+	v175 = *local_lookahead
 	cmp379 = v175 == 108
 	if cmp379 {
 		goto if_then381
@@ -76255,7 +76255,7 @@ sw_bb384:
 	goto _return
 
 sw_bb388:
-	v182 = *lookahead
+	v182 = *local_lookahead
 	cmp389 = v182 == 108
 	if cmp389 {
 		goto if_then391
@@ -76289,7 +76289,7 @@ sw_bb394:
 	goto _return
 
 sw_bb398:
-	v189 = *lookahead
+	v189 = *local_lookahead
 	cmp399 = v189 == 116
 	if cmp399 {
 		goto if_then401
@@ -76323,7 +76323,7 @@ sw_bb404:
 	goto _return
 
 sw_bb408:
-	v196 = *lookahead
+	v196 = *local_lookahead
 	cmp409 = v196 == 120
 	if cmp409 {
 		goto if_then411
@@ -76342,7 +76342,7 @@ if_end412:
 	goto _return
 
 sw_bb414:
-	v198 = *lookahead
+	v198 = *local_lookahead
 	cmp415 = v198 == 110
 	if cmp415 {
 		goto if_then417
@@ -76361,7 +76361,7 @@ if_end418:
 	goto _return
 
 sw_bb420:
-	v200 = *lookahead
+	v200 = *local_lookahead
 	cmp421 = v200 == 105
 	if cmp421 {
 		goto if_then423
@@ -76380,7 +76380,7 @@ if_end424:
 	goto _return
 
 sw_bb426:
-	v202 = *lookahead
+	v202 = *local_lookahead
 	cmp427 = v202 == 116
 	if cmp427 {
 		goto if_then429
@@ -76429,7 +76429,7 @@ sw_bb436:
 	goto _return
 
 sw_bb440:
-	v214 = *lookahead
+	v214 = *local_lookahead
 	cmp441 = v214 == 112
 	if cmp441 {
 		goto if_then443
@@ -76448,7 +76448,7 @@ if_end444:
 	goto _return
 
 sw_bb446:
-	v216 = *lookahead
+	v216 = *local_lookahead
 	cmp447 = v216 == 97
 	if cmp447 {
 		goto if_then449
@@ -76467,7 +76467,7 @@ if_end450:
 	goto _return
 
 sw_bb452:
-	v218 = *lookahead
+	v218 = *local_lookahead
 	cmp453 = v218 == 116
 	if cmp453 {
 		goto if_then455
@@ -76501,7 +76501,7 @@ sw_bb458:
 	goto _return
 
 sw_bb462:
-	v225 = *lookahead
+	v225 = *local_lookahead
 	cmp463 = v225 == 111
 	if cmp463 {
 		goto if_then465
@@ -76520,7 +76520,7 @@ if_end466:
 	goto _return
 
 sw_bb468:
-	v227 = *lookahead
+	v227 = *local_lookahead
 	cmp469 = v227 == 108
 	if cmp469 {
 		goto if_then471
@@ -76539,7 +76539,7 @@ if_end472:
 	goto _return
 
 sw_bb474:
-	v229 = *lookahead
+	v229 = *local_lookahead
 	cmp475 = v229 == 121
 	if cmp475 {
 		goto if_then477
@@ -76558,7 +76558,7 @@ if_end478:
 	goto _return
 
 sw_bb480:
-	v231 = *lookahead
+	v231 = *local_lookahead
 	cmp481 = v231 == 114
 	if cmp481 {
 		goto if_then483
@@ -76607,7 +76607,7 @@ sw_bb490:
 	goto _return
 
 sw_bb494:
-	v243 = *lookahead
+	v243 = *local_lookahead
 	cmp495 = v243 == 116
 	if cmp495 {
 		goto if_then497
@@ -76626,7 +76626,7 @@ if_end498:
 	goto _return
 
 sw_bb500:
-	v245 = *lookahead
+	v245 = *local_lookahead
 	cmp501 = v245 == 101
 	if cmp501 {
 		goto if_then503
@@ -76645,7 +76645,7 @@ if_end504:
 	goto _return
 
 sw_bb506:
-	v247 = *lookahead
+	v247 = *local_lookahead
 	cmp507 = v247 == 100
 	if cmp507 {
 		goto if_then509
@@ -76690,32 +76690,32 @@ _return:
 func lookahead(lexer *TSLexer) int32 {
 	var lexer_addr **TSLexer
 	var v0 *TSLexer
-	var lookahead *int32
+	var local_lookahead *int32
 	var v1 int32
 
-	_, _, _, _ = lexer_addr, v0, lookahead, v1
+	_, _, _, _ = lexer_addr, v0, local_lookahead, v1
 
 	lexer_addr = new(*TSLexer)
 	*lexer_addr = lexer
 	v0 = *lexer_addr
-	lookahead = &v0.F0
-	v1 = *lookahead
+	local_lookahead = &v0.F0
+	v1 = *local_lookahead
 	return v1
 }
 
 func skip(lexer *TSLexer) {
 	var lexer_addr **TSLexer
 	var v0, v2 *TSLexer
-	var advance *func(*TSLexer, bool)
+	var local_advance *func(*TSLexer, bool)
 	var v1 func(*TSLexer, bool)
 
-	_, _, _, _, _ = lexer_addr, v0, advance, v1, v2
+	_, _, _, _, _ = lexer_addr, v0, local_advance, v1, v2
 
 	lexer_addr = new(*TSLexer)
 	*lexer_addr = lexer
 	v0 = *lexer_addr
-	advance = &v0.F2
-	v1 = *advance
+	local_advance = &v0.F2
+	v1 = *local_advance
 	v2 = *lexer_addr
 	v1(v2, true)
 }
@@ -76723,16 +76723,16 @@ func skip(lexer *TSLexer) {
 func advance(lexer *TSLexer) {
 	var lexer_addr **TSLexer
 	var v0, v2 *TSLexer
-	var advance *func(*TSLexer, bool)
+	var local_advance *func(*TSLexer, bool)
 	var v1 func(*TSLexer, bool)
 
-	_, _, _, _, _ = lexer_addr, v0, advance, v1, v2
+	_, _, _, _, _ = lexer_addr, v0, local_advance, v1, v2
 
 	lexer_addr = new(*TSLexer)
 	*lexer_addr = lexer
 	v0 = *lexer_addr
-	advance = &v0.F2
-	v1 = *advance
+	local_advance = &v0.F2
+	v1 = *local_advance
 	v2 = *lexer_addr
 	v1(v2, false)
 }
@@ -77814,23 +77814,23 @@ _return:
 func eof(lexer *TSLexer) bool {
 	var lexer_addr **TSLexer
 	var v0, v2 *TSLexer
-	var eof *func(*TSLexer) bool
+	var local_eof *func(*TSLexer) bool
 	var call bool
 	var v1 func(*TSLexer) bool
 
-	_, _, _, _, _, _ = lexer_addr, v0, eof, v1, v2, call
+	_, _, _, _, _, _ = lexer_addr, v0, local_eof, v1, v2, call
 
 	lexer_addr = new(*TSLexer)
 	*lexer_addr = lexer
 	v0 = *lexer_addr
-	eof = &v0.F6
-	v1 = *eof
+	local_eof = &v0.F6
+	v1 = *local_eof
 	v2 = *lexer_addr
 	call = v1(v2)
 	return call
 }
 
-func valid_symtag_start(lookahead int32) bool {
+func valid_symtag_start(local_lookahead int32) bool {
 	var lookahead_addr *int32
 	var cmp, cmp1, cmp2, cmp3, v4, v5 bool
 	var v0, v1, v2, v3 int32
@@ -77838,7 +77838,7 @@ func valid_symtag_start(lookahead int32) bool {
 	_, _, _, _, _, _, _, _, _, _, _ = lookahead_addr, v0, cmp, v1, cmp1, v2, cmp2, v3, cmp3, v4, v5
 
 	lookahead_addr = new(int32)
-	*lookahead_addr = lookahead
+	*lookahead_addr = local_lookahead
 	v0 = *lookahead_addr
 	cmp = 97 <= v0
 	if cmp {
@@ -77881,7 +77881,7 @@ lor_end:
 	return v5
 }
 
-func valid_symtag_middle(lookahead int32) bool {
+func valid_symtag_middle(local_lookahead int32) bool {
 	var lookahead_addr *int32
 	var call, cmp, cmp1, cmp3, cmp5, cmp6, v6 bool
 	var v0, v1, v2, v3, v4, v5 int32
@@ -77889,7 +77889,7 @@ func valid_symtag_middle(lookahead int32) bool {
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _ = lookahead_addr, v0, call, v1, cmp, v2, cmp1, v3, cmp3, v4, cmp5, v5, cmp6, v6
 
 	lookahead_addr = new(int32)
-	*lookahead_addr = lookahead
+	*lookahead_addr = local_lookahead
 	v0 = *lookahead_addr
 	call = valid_symtag_start(v0)
 	if call {

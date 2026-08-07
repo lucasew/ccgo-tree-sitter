@@ -553298,17 +553298,17 @@ var ts_lex_keywords_map_406 [16]int16 = [16]int16{
 }
 
 func tree_sitter_nim_external_scanner_create() *byte {
-	var state **state
+	var local_state **state
 	var v2 *byte
 	var call, v0, v1 *state
 	var tobool bool
 
-	_, _, _, _, _, _ = state, call, v0, tobool, v1, v2
+	_, _, _, _, _, _ = local_state, call, v0, tobool, v1, v2
 
-	state = new(*state)
+	local_state = new(*state)
 	call = state_new()
-	*state = call
-	v0 = *state
+	*local_state = call
+	v0 = *local_state
 	tobool = v0 != nil
 	if tobool {
 		goto if_end
@@ -553320,7 +553320,7 @@ if_then:
 	goto if_end
 
 if_end:
-	v1 = *state
+	v1 = *local_state
 	v2 = (*byte)(unsafe.Pointer(v1))
 	return v2
 }
@@ -553586,10 +553586,10 @@ if_end:
 _return:
 }
 
-func tree_sitter_nim_external_scanner_scan(payload *byte, lexer *TSLexer, valid_tokens *byte) bool {
+func tree_sitter_nim_external_scanner_scan(payload *byte, lexer *TSLexer, local_valid_tokens *byte) bool {
 	var lexer_addr, _lexer **TSLexer
 	var payload_addr, valid_tokens_addr **byte
-	var state, state6, state8 **state
+	var local_state, state6, state8 **state
 	var v1, v4 *TSLexer
 	var retval *bool
 	var found, v0, v2, v3, v5, v7, v9, v10 *byte
@@ -553601,7 +553601,7 @@ func tree_sitter_nim_external_scanner_scan(payload *byte, lexer *TSLexer, valid_
 	var frombool, v15 byte
 	var call, v12 int32
 
-	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, payload_addr, lexer_addr, valid_tokens_addr, ctx, tmp, found, v0, tobool, v1, tobool1, v2, tobool3, v3, v4, _lexer, v5, v6, state, valid_tokens4, v7, call, v8, v9, v10, valid_tokens5, v11, v12, state6, v13, call7, frombool, state8, v14, v15, tobool9, v16
+	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, payload_addr, lexer_addr, valid_tokens_addr, ctx, tmp, found, v0, tobool, v1, tobool1, v2, tobool3, v3, v4, _lexer, v5, v6, local_state, valid_tokens4, v7, call, v8, v9, v10, valid_tokens5, v11, v12, state6, v13, call7, frombool, state8, v14, v15, tobool9, v16
 
 	retval = new(bool)
 	payload_addr = new(*byte)
@@ -553612,7 +553612,7 @@ func tree_sitter_nim_external_scanner_scan(payload *byte, lexer *TSLexer, valid_
 	found = new(byte)
 	*payload_addr = payload
 	*lexer_addr = lexer
-	*valid_tokens_addr = valid_tokens
+	*valid_tokens_addr = local_valid_tokens
 	v0 = *payload_addr
 	tobool = v0 != nil
 	if tobool {
@@ -553651,8 +553651,8 @@ if_end:
 	*_lexer = v4
 	v5 = *payload_addr
 	v6 = (*state)(unsafe.Pointer(v5))
-	state = &ctx.F1
-	*state = v6
+	local_state = &ctx.F1
+	*local_state = v6
 	valid_tokens4 = &ctx.F3
 	v7 = *valid_tokens_addr
 	call = valid_tokens_from_array(v7)
@@ -553685,7 +553685,7 @@ _return:
 	return v16
 }
 
-func valid_tokens_from_array(valid_tokens *byte) int32 {
+func valid_tokens_from_array(local_valid_tokens *byte) int32 {
 	var valid_tokens_addr **byte
 	var v0, v2, arrayidx *byte
 	var i, v6, v8 *int32
@@ -553700,7 +553700,7 @@ func valid_tokens_from_array(valid_tokens *byte) int32 {
 	retval = new(valid_tokens)
 	valid_tokens_addr = new(*byte)
 	i = new(int32)
-	*valid_tokens_addr = valid_tokens
+	*valid_tokens_addr = local_valid_tokens
 	v0 = (*byte)(unsafe.Pointer(retval))
 	libc.Memmove(v0, &__const_valid_tokens_from_array_result.F0, int64(4))
 	*i = 0
@@ -554069,7 +554069,7 @@ func tree_sitter_nim() *TSLanguage {
 	return &tree_sitter_nim_language
 }
 
-func ts_lex(lexer *TSLexer, state int16) bool {
+func ts_lex(lexer *TSLexer, local_state int16) bool {
 	var lexer_addr **TSLexer
 	var v0, v2, v4, v6, v8, v1072, v1073, v1075, v1077, v1078, v1080, v1082, v1083, v1085, v1089, v1090, v1092, v1094, v1095, v1097, v1106, v1107, v1109, v1118, v1119, v1121, v1123, v1124, v1126, v1128, v1129, v1131, v1138, v1139, v1141, v1148, v1149, v1151, v1153, v1154, v1156, v1158, v1159, v1161, v1164, v1165, v1167, v1169, v1170, v1172, v1174, v1175, v1177, v1179, v1180, v1182, v1192, v1193, v1195, v1205, v1206, v1208, v1217, v1218, v1220, v1222, v1223, v1225, v1227, v1228, v1230, v1233, v1234, v1236, v1243, v1244, v1246, v1252, v1253, v1255, v1261, v1262, v1264, v1270, v1271, v1273, v1279, v1280, v1282, v1288, v1289, v1291, v1297, v1298, v1300, v1306, v1307, v1309, v1315, v1316, v1318, v1324, v1325, v1327, v1329, v1330, v1332, v1340, v1341, v1343, v1350, v1351, v1353, v1360, v1361, v1363, v1370, v1371, v1373, v1380, v1381, v1383, v1390, v1391, v1393, v1400, v1401, v1403, v1410, v1411, v1413, v1420, v1421, v1423, v1430, v1431, v1433, v1440, v1441, v1443, v1450, v1451, v1453, v1460, v1461, v1463, v1470, v1471, v1473, v1480, v1481, v1483, v1490, v1491, v1493, v1503, v1504, v1506, v1515, v1516, v1518, v1528, v1529, v1531, v1540, v1541, v1543, v1550, v1551, v1553, v1560, v1561, v1563, v1569, v1570, v1572, v1578, v1579, v1581, v1591, v1592, v1594, v1603, v1604, v1606, v1616, v1617, v1619, v1628, v1629, v1631, v1638, v1639, v1641, v1648, v1649, v1651, v1657, v1658, v1660, v1666, v1667, v1669, v1679, v1680, v1682, v1691, v1692, v1694, v1704, v1705, v1707, v1716, v1717, v1719, v1726, v1727, v1729, v1736, v1737, v1739, v1745, v1746, v1748, v1754, v1755, v1757, v1767, v1768, v1770, v1780, v1781, v1783, v1793, v1794, v1796, v1806, v1807, v1809, v1817, v1818, v1820, v1827, v1828, v1830, v1837, v1838, v1840, v1846, v1847, v1849, v1861, v1862, v1864, v1874, v1875, v1877, v1886, v1887, v1889, v1896, v1897, v1899, v1905, v1906, v1908, v1918, v1919, v1921, v1930, v1931, v1933, v1943, v1944, v1946, v1955, v1956, v1958, v1965, v1966, v1968, v1975, v1976, v1978, v1984, v1985, v1987, v1993, v1994, v1996, v2006, v2007, v2009, v2018, v2019, v2021, v2031, v2032, v2034, v2043, v2044, v2046, v2053, v2054, v2056, v2063, v2064, v2066, v2072, v2073, v2075, v2081, v2082, v2084, v2091, v2092, v2094, v2101, v2102, v2104, v2110, v2111, v2113, v2119, v2120, v2122, v2132, v2133, v2135, v2144, v2145, v2147, v2157, v2158, v2160, v2169, v2170, v2172, v2179, v2180, v2182, v2189, v2190, v2192, v2198, v2199, v2201, v2207, v2208, v2210, v2220, v2221, v2223, v2232, v2233, v2235, v2242, v2243, v2245, v2251, v2252, v2254, v2266, v2267, v2269, v2279, v2280, v2282, v2291, v2292, v2294, v2304, v2305, v2307, v2317, v2318, v2320, v2332, v2333, v2335, v2345, v2346, v2348, v2357, v2358, v2360, v2368, v2369, v2371, v2378, v2379, v2381, v2388, v2389, v2391, v2398, v2399, v2401, v2407, v2408, v2410, v2416, v2417, v2419, v2422, v2423, v2425, v2427, v2428, v2430, v2432, v2433, v2435, v2438, v2439, v2441, v2444, v2445, v2447, v2449, v2450, v2452, v2454, v2455, v2457, v2467, v2468, v2470, v2480, v2481, v2483, v2485, v2486, v2488, v2499, v2500, v2502, v2513, v2514, v2516, v2531, v2532, v2534, v2549, v2550, v2552, v2567, v2568, v2570, v2585, v2586, v2588, v2603, v2604, v2606, v2615, v2616, v2618, v2629, v2630, v2632, v2647, v2648, v2650, v2656, v2657, v2659, v2663, v2664, v2666, v2668, v2669, v2671, v2682, v2683, v2685, v2695, v2696, v2698, v2705, v2706, v2708, v2713, v2714, v2716, v2720, v2721, v2723, v2731, v2732, v2734, v2739, v2740, v2742, v2747, v2748, v2750, v2755, v2756, v2758, v2763, v2764, v2766, v2771, v2772, v2774, v2779, v2780, v2782, v2787, v2788, v2790, v2794, v2795, v2797, v2799, v2800, v2802, v2804, v2805, v2807, v2809, v2810, v2812, v2814, v2815, v2817, v2821, v2822, v2824, v2827, v2828, v2830, v2840, v2841, v2843, v2854, v2855, v2857, v2866, v2867, v2869, v2876, v2877, v2879, v2881, v2882, v2884, v2888, v2889, v2891, v2894, v2895, v2897, v2900, v2901, v2903, v2905, v2906, v2908, v2910, v2911, v2913, v2915, v2916, v2918, v2920, v2921, v2923, v2925, v2926, v2928, v2937, v2938, v2940, v2947, v2948, v2950, v2955, v2956, v2958, v2962, v2963, v2965, v2967, v2968, v2970, v2974, v2975, v2977, v2979, v2980, v2982, v2987, v2988, v2990, v2995, v2996, v2998, v3002, v3003, v3005, v3011, v3012, v3014, v3020, v3021, v3023, v3029, v3030, v3032, v3034, v3035, v3037, v3039, v3040, v3042, v3045, v3046, v3048, v3050, v3051, v3053, v3055, v3056, v3058, v3060, v3061, v3063, v3065, v3066, v3068, v3070, v3071, v3073, v3075, v3076, v3078, v3081, v3082, v3084, v3087, v3088, v3090, v3095, v3096, v3098, v3102, v3103, v3105 *TSLexer
 	var retval *bool
@@ -554142,7 +554142,7 @@ func ts_lex(lexer *TSLexer, state int16) bool {
 	i6587 = new(int32)
 	i6664 = new(int32)
 	*lexer_addr = lexer
-	*state_addr = state
+	*state_addr = local_state
 	*result = 0
 	*skip = 0
 	*eof = 0
@@ -578680,7 +578680,7 @@ _return:
 	return v3111
 }
 
-func ts_lex_keywords(lexer *TSLexer, state int16) bool {
+func ts_lex_keywords(lexer *TSLexer, local_state int16) bool {
 	var lexer_addr **TSLexer
 	var v0, v2, v4, v6, v8, v154, v155, v157, v211, v212, v214, v271, v272, v274, v280, v281, v283, v288, v289, v291, v356, v357, v359, v361, v362, v364, v477, v478, v480, v485, v486, v488, v549, v550, v552, v597, v598, v600, v647, v648, v650, v676, v677, v679, v684, v685, v687, v692, v693, v695, v710, v711, v713, v725, v726, v728, v742, v743, v745, v756, v757, v759, v761, v762, v764, v783, v784, v786, v812, v813, v815, v833, v834, v836, v848, v849, v851, v872, v873, v875, v877, v878, v880, v929, v930, v932, v937, v938, v940, v945, v946, v948, v974, v975, v977, v982, v983, v985, v1053, v1054, v1056, v1096, v1097, v1099, v1111, v1112, v1114, v1133, v1134, v1136, v1141, v1142, v1144, v1156, v1157, v1159, v1178, v1179, v1181, v1235, v1236, v1238, v1250, v1251, v1253, v1265, v1266, v1268, v1273, v1274, v1276, v1288, v1289, v1291, v1317, v1318, v1320, v1325, v1326, v1328, v1333, v1334, v1336, v1341, v1342, v1344, v1384, v1385, v1387, v1392, v1393, v1395, v1407, v1408, v1410, v1429, v1430, v1432, v1437, v1438, v1440, v1445, v1446, v1448, v1453, v1454, v1456, v1468, v1469, v1471, v1490, v1491, v1493, v1505, v1506, v1508, v1513, v1514, v1516, v1535, v1536, v1538, v1550, v1551, v1553, v1558, v1559, v1561, v1566, v1567, v1569, v1574, v1575, v1577 *TSLexer
 	var retval *bool
@@ -578722,7 +578722,7 @@ func ts_lex_keywords(lexer *TSLexer, state int16) bool {
 	i1494 = new(int32)
 	i2422 = new(int32)
 	*lexer_addr = lexer
-	*state_addr = state
+	*state_addr = local_state
 	*result = 0
 	*skip = 0
 	*eof = 0
@@ -593103,28 +593103,28 @@ func indent_vec_debug(self *indent_vec) {
 
 func lex_init(ctx *context) bool {
 	var ctx_addr **context
-	var state, state14 **state
+	var local_state, state14 **state
 	var retval *bool
 	var current_indent *byte
 	var v0, v3, v6, v10, v11, v12, v14, v17 *context
 	var layout_stack, layout_stack15 *indent_vec
 	var len, v4, v7 *int32
 	var v1, v15 *state
-	var valid_tokens, valid_tokens2 *valid_tokens
+	var local_valid_tokens, valid_tokens2 *valid_tokens
 	var cmp, call, call3, cmp6, cmp10, cmp17, call21, v18 bool
 	var call9, v13, v16 byte
 	var v2, v5, v8, v9, call5, conv, call16 int32
 	var call4 int64
 
-	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, ctx_addr, current_indent, v0, state, v1, layout_stack, len, v2, cmp, v3, valid_tokens, v4, v5, call, v6, valid_tokens2, v7, v8, v9, call3, v10, call4, v11, call5, cmp6, v12, call9, v13, conv, cmp10, v14, state14, v15, layout_stack15, v16, call16, cmp17, v17, call21, v18
+	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, ctx_addr, current_indent, v0, local_state, v1, layout_stack, len, v2, cmp, v3, local_valid_tokens, v4, v5, call, v6, valid_tokens2, v7, v8, v9, call3, v10, call4, v11, call5, cmp6, v12, call9, v13, conv, cmp10, v14, state14, v15, layout_stack15, v16, call16, cmp17, v17, call21, v18
 
 	retval = new(bool)
 	ctx_addr = new(*context)
 	current_indent = new(byte)
 	*ctx_addr = ctx
 	v0 = *ctx_addr
-	state = &v0.F1
-	v1 = *state
+	local_state = &v0.F1
+	v1 = *local_state
 	layout_stack = &v1.F0
 	len = &layout_stack.F0
 	v2 = *len
@@ -593137,8 +593137,8 @@ func lex_init(ctx *context) bool {
 
 lor_lhs_false:
 	v3 = *ctx_addr
-	valid_tokens = &v3.F3
-	v4 = (*int32)(unsafe.Pointer(valid_tokens))
+	local_valid_tokens = &v3.F3
+	v4 = (*int32)(unsafe.Pointer(local_valid_tokens))
 	v5 = *v4
 	call = valid_tokens_is_error(v5)
 	if call {
@@ -593231,19 +593231,19 @@ func lex_comment_content(ctx *context) bool {
 	var retval *bool
 	var v0, v4, v7, v10, v11, v12, v13, v14, v15, v16, v17, v19, v20, v21, v24, v27, v28, v29, v30 *context
 	var nesting, v1, v5, v8, v25 *int32
-	var valid_tokens, valid_tokens1, valid_tokens3, valid_tokens28 *valid_tokens
+	var local_valid_tokens, valid_tokens1, valid_tokens3, valid_tokens28 *valid_tokens
 	var call, call2, call4, call6, lnot, call9, call12, lnot13, cmp, cmp17, cmp21, cmp24, cmp26, call29, cmp32, call34, call37, v31 bool
 	var v2, v3, v6, v9, call7, call8, call15, call16, v18, inc, call20, call23, v22, v23, dec, v26, call31, call42 int32
 
-	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, ctx_addr, nesting, v0, valid_tokens, v1, v2, v3, call, v4, valid_tokens1, v5, v6, call2, v7, valid_tokens3, v8, v9, call4, v10, call6, lnot, v11, call7, v12, call8, v13, v14, call9, v15, call12, lnot13, v16, call15, cmp, v17, call16, cmp17, v18, inc, v19, v20, call20, cmp21, v21, call23, cmp24, v22, cmp26, v23, dec, v24, valid_tokens28, v25, v26, call29, v27, call31, cmp32, v28, call34, v29, call37, v30, call42, v31
+	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, ctx_addr, nesting, v0, local_valid_tokens, v1, v2, v3, call, v4, valid_tokens1, v5, v6, call2, v7, valid_tokens3, v8, v9, call4, v10, call6, lnot, v11, call7, v12, call8, v13, v14, call9, v15, call12, lnot13, v16, call15, cmp, v17, call16, cmp17, v18, inc, v19, v20, call20, cmp21, v21, call23, cmp24, v22, cmp26, v23, dec, v24, valid_tokens28, v25, v26, call29, v27, call31, cmp32, v28, call34, v29, call37, v30, call42, v31
 
 	retval = new(bool)
 	ctx_addr = new(*context)
 	nesting = new(int32)
 	*ctx_addr = ctx
 	v0 = *ctx_addr
-	valid_tokens = &v0.F3
-	v1 = (*int32)(unsafe.Pointer(valid_tokens))
+	local_valid_tokens = &v0.F3
+	v1 = (*int32)(unsafe.Pointer(local_valid_tokens))
 	v2 = *v1
 	v3 = *(*int32)(unsafe.Pointer(&COMMENT_TOKENS))
 	call = valid_tokens_any_valid(v2, v3)
@@ -593471,12 +593471,12 @@ func lex_long_string_quote(ctx *context) bool {
 	var count *byte
 	var v0, v1, v4, v5, v8, v11, v12, v13, v14 *context
 	var v2 *int32
-	var valid_tokens *valid_tokens
+	var local_valid_tokens *valid_tokens
 	var cmp, call1, cmp4, cmp5, v7, cmp9, call12, cmp15, call18, v15 bool
 	var v6, v9, inc, v10 byte
 	var call, v3, call2, call3, conv, call7, conv8, call14 int32
 
-	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, ctx_addr, count, v0, call, cmp, v1, valid_tokens, v2, v3, call1, v4, call2, v5, call3, cmp4, v6, conv, cmp5, v7, v8, call7, v9, inc, v10, conv8, cmp9, v11, v12, call12, v13, call14, cmp15, v14, call18, v15
+	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, ctx_addr, count, v0, call, cmp, v1, local_valid_tokens, v2, v3, call1, v4, call2, v5, call3, cmp4, v6, conv, cmp5, v7, v8, call7, v9, inc, v10, conv8, cmp9, v11, v12, call12, v13, call14, cmp15, v14, call18, v15
 
 	retval = new(bool)
 	ctx_addr = new(*context)
@@ -593493,8 +593493,8 @@ func lex_long_string_quote(ctx *context) bool {
 
 lor_lhs_false:
 	v1 = *ctx_addr
-	valid_tokens = &v1.F3
-	v2 = (*int32)(unsafe.Pointer(valid_tokens))
+	local_valid_tokens = &v1.F3
+	v2 = (*int32)(unsafe.Pointer(local_valid_tokens))
 	v3 = *v2
 	call1 = valid_tokens_test(v3, 3)
 	if call1 {
@@ -593718,19 +593718,19 @@ if_end17:
 
 func lex_indent(ctx *context) bool {
 	var ctx_addr **context
-	var state, state7, state17, state92, state98 **state
+	var local_state, state7, state17, state92, state98 **state
 	var retval *bool
 	var current_indent, current_layout *byte
 	var v0, v1, v4, v6, v8, v13, v16, v17, v20, v25, v26, v31, v35, v38, v40, v42, v43, v44, v48, v51, v54, v55, v58, v60, v61, v63, v64 *context
 	var layout_stack, layout_stack8, layout_stack18, layout_stack93, layout_stack99 *indent_vec
 	var last_count, last_count___COUNTER__, len, v9, v18, v21, v27, advance_counter, v36, advance_counter62, v45, v49, len94, advance_counter104, advance_counter108 *int32
 	var v2, v7, v14, v56, v59 *state
-	var valid_tokens, valid_tokens27, valid_tokens30, valid_tokens42, valid_tokens55, valid_tokens74, valid_tokens77 *valid_tokens
+	var local_valid_tokens, valid_tokens27, valid_tokens30, valid_tokens42, valid_tokens55, valid_tokens74, valid_tokens77 *valid_tokens
 	var cmp, cmp1, cmp3, call10, cmp14, cmp20, call24, call28, call31, cmp36, call39, call43, cmp47, cmp52, call56, call58, cmp63, call66, call71, call75, call78, call81, cmp86, call89, cmp95, call100, call105, cmp109, v67 bool
 	var call2, v5, call9, v11, v12, v15, v23, v24, v29, v30, v33, v34, v52, v53 byte
 	var call, v3, conv, v10, conv12, conv13, call19, v19, v22, conv34, conv35, v28, conv45, conv46, v32, conv50, conv51, v37, v39, v41, v46, v47, v50, conv84, conv85, v57, v62, v65, v66 int32
 
-	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, ctx_addr, current_indent, current_layout, last_count, last_count___COUNTER__, v0, call, cmp, v1, state, v2, layout_stack, len, v3, cmp1, v4, call2, v5, conv, cmp3, v6, state7, v7, layout_stack8, call9, v8, valid_tokens, v9, v10, call10, v11, conv12, v12, conv13, cmp14, v13, state17, v14, layout_stack18, v15, call19, cmp20, v16, call24, v17, valid_tokens27, v18, v19, call28, v20, valid_tokens30, v21, v22, call31, v23, conv34, v24, conv35, cmp36, v25, call39, v26, valid_tokens42, v27, v28, call43, v29, conv45, v30, conv46, cmp47, v31, advance_counter, v32, v33, conv50, v34, conv51, cmp52, v35, valid_tokens55, v36, v37, call56, v38, call58, v39, v40, advance_counter62, v41, cmp63, v42, call66, v43, call71, v44, valid_tokens74, v45, v46, v47, call75, v48, valid_tokens77, v49, v50, call78, v51, call81, v52, conv84, v53, conv85, cmp86, v54, call89, v55, state92, v56, layout_stack93, len94, v57, cmp95, v58, state98, v59, layout_stack99, v60, call100, v61, advance_counter104, v62, v63, call105, v64, advance_counter108, v65, v66, cmp109, v67
+	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, ctx_addr, current_indent, current_layout, last_count, last_count___COUNTER__, v0, call, cmp, v1, local_state, v2, layout_stack, len, v3, cmp1, v4, call2, v5, conv, cmp3, v6, state7, v7, layout_stack8, call9, v8, local_valid_tokens, v9, v10, call10, v11, conv12, v12, conv13, cmp14, v13, state17, v14, layout_stack18, v15, call19, cmp20, v16, call24, v17, valid_tokens27, v18, v19, call28, v20, valid_tokens30, v21, v22, call31, v23, conv34, v24, conv35, cmp36, v25, call39, v26, valid_tokens42, v27, v28, call43, v29, conv45, v30, conv46, cmp47, v31, advance_counter, v32, v33, conv50, v34, conv51, cmp52, v35, valid_tokens55, v36, v37, call56, v38, call58, v39, v40, advance_counter62, v41, cmp63, v42, call66, v43, call71, v44, valid_tokens74, v45, v46, v47, call75, v48, valid_tokens77, v49, v50, call78, v51, call81, v52, conv84, v53, conv85, cmp86, v54, call89, v55, state92, v56, layout_stack93, len94, v57, cmp95, v58, state98, v59, layout_stack99, v60, call100, v61, advance_counter104, v62, v63, call105, v64, advance_counter108, v65, v66, cmp109, v67
 
 	retval = new(bool)
 	ctx_addr = new(*context)
@@ -593750,8 +593750,8 @@ func lex_indent(ctx *context) bool {
 
 lor_lhs_false:
 	v1 = *ctx_addr
-	state = &v1.F1
-	v2 = *state
+	local_state = &v1.F1
+	v2 = *local_state
 	layout_stack = &v2.F0
 	len = &layout_stack.F0
 	v3 = *len
@@ -593791,8 +593791,8 @@ if_end6:
 	call9 = indent_vec_back(layout_stack8)
 	*current_layout = call9
 	v8 = *ctx_addr
-	valid_tokens = &v8.F3
-	v9 = (*int32)(unsafe.Pointer(valid_tokens))
+	local_valid_tokens = &v8.F3
+	v9 = (*int32)(unsafe.Pointer(local_valid_tokens))
 	v10 = *v9
 	call10 = valid_tokens_test(v10, 4)
 	if call10 {
@@ -594142,13 +594142,13 @@ func lex_operators(ctx *context, immediate bool) bool {
 	var immediate_addr *byte
 	var v0, v4, v5, v9, v11, v12, v17, v21, v22 *context
 	var first_character, result, last_count___COUNTER__, v1, advance_counter, advance_counter9, v19 *int32
-	var valid_tokens, valid_tokens16 *valid_tokens
+	var local_valid_tokens, valid_tokens16 *valid_tokens
 	var call, tobool, cmp, cmp4, call6, cmp10, cmp15, call17, call20, v24 bool
 	var frombool, v6 byte
 	var v2, v3, call1, call2, v7, v8, v10, v13, v14, v15, cond, v18, v20, v23 int32
 	var v16 int64
 
-	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, ctx_addr, immediate_addr, first_character, result, last_count___COUNTER__, frombool, v0, valid_tokens, v1, v2, v3, call, v4, call1, v5, v6, tobool, call2, v7, cmp, v8, cmp4, v9, advance_counter, v10, v11, call6, v12, advance_counter9, v13, v14, cmp10, v15, cmp15, v16, cond, v17, valid_tokens16, v18, v19, v20, call17, v21, v22, v23, call20, v24
+	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, ctx_addr, immediate_addr, first_character, result, last_count___COUNTER__, frombool, v0, local_valid_tokens, v1, v2, v3, call, v4, call1, v5, v6, tobool, call2, v7, cmp, v8, cmp4, v9, advance_counter, v10, v11, call6, v12, advance_counter9, v13, v14, cmp10, v15, cmp15, v16, cond, v17, valid_tokens16, v18, v19, v20, call17, v21, v22, v23, call20, v24
 
 	retval = new(bool)
 	ctx_addr = new(*context)
@@ -594160,8 +594160,8 @@ func lex_operators(ctx *context, immediate bool) bool {
 	if immediate { frombool = 1 } else { frombool = 0 }
 	*immediate_addr = frombool
 	v0 = *ctx_addr
-	valid_tokens = &v0.F3
-	v1 = (*int32)(unsafe.Pointer(valid_tokens))
+	local_valid_tokens = &v0.F3
+	v1 = (*int32)(unsafe.Pointer(local_valid_tokens))
 	v2 = *v1
 	v3 = *(*int32)(unsafe.Pointer(&UNARY_OPS))
 	call = valid_tokens_any_valid(v2, v3)
@@ -594285,26 +594285,26 @@ _return:
 
 func lex_inline_layout(ctx *context) bool {
 	var ctx_addr **context
-	var state, state26, state32 **state
+	var local_state, state26, state32 **state
 	var retval *bool
 	var flags *byte
 	var v0, v3, v4, v5, v8, v9, v12, v13, v16, v17, v20, v23, v25 *context
 	var layout_stack, layout_stack27, layout_stack33 *indent_vec
 	var len, v6, v10, v14, v18, len28 *int32
 	var v1, v21, v24 *state
-	var valid_tokens, valid_tokens11, valid_tokens17, valid_tokens22 *valid_tokens
+	var local_valid_tokens, valid_tokens11, valid_tokens17, valid_tokens22 *valid_tokens
 	var cmp, tobool, call1, cmp7, call12, call13, call18, call20, call23, cmp29, call34, v26 bool
 	var bf_load, bf_clear byte
 	var v2, conv, and, call, v7, call6, v11, v15, v19, v22 int32
 
-	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, ctx_addr, v0, state, v1, layout_stack, len, v2, cmp, v3, flags, bf_load, bf_clear, conv, and, tobool, v4, call, v5, valid_tokens, v6, v7, call1, v8, call6, cmp7, v9, valid_tokens11, v10, v11, call12, v12, call13, v13, valid_tokens17, v14, v15, call18, v16, call20, v17, valid_tokens22, v18, v19, call23, v20, state26, v21, layout_stack27, len28, v22, cmp29, v23, state32, v24, layout_stack33, v25, call34, v26
+	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, ctx_addr, v0, local_state, v1, layout_stack, len, v2, cmp, v3, flags, bf_load, bf_clear, conv, and, tobool, v4, call, v5, local_valid_tokens, v6, v7, call1, v8, call6, cmp7, v9, valid_tokens11, v10, v11, call12, v12, call13, v13, valid_tokens17, v14, v15, call18, v16, call20, v17, valid_tokens22, v18, v19, call23, v20, state26, v21, layout_stack27, len28, v22, cmp29, v23, state32, v24, layout_stack33, v25, call34, v26
 
 	retval = new(bool)
 	ctx_addr = new(*context)
 	*ctx_addr = ctx
 	v0 = *ctx_addr
-	state = &v0.F1
-	v1 = *state
+	local_state = &v0.F1
+	v1 = *local_state
 	layout_stack = &v1.F0
 	len = &layout_stack.F0
 	v2 = *len
@@ -594353,8 +594353,8 @@ if_end:
 
 sw_bb:
 	v5 = *ctx_addr
-	valid_tokens = &v5.F3
-	v6 = (*int32)(unsafe.Pointer(valid_tokens))
+	local_valid_tokens = &v5.F3
+	v6 = (*int32)(unsafe.Pointer(local_valid_tokens))
 	v7 = *v6
 	call1 = valid_tokens_test(v7, 10)
 	if call1 {
@@ -595440,11 +595440,11 @@ func lex_case_of(ctx *context) bool {
 	var retval *bool
 	var v0, v1, v4, v5, v6, v7, v8 *context
 	var v2 *int32
-	var valid_tokens *valid_tokens
+	var local_valid_tokens *valid_tokens
 	var cmp, call1, call4, call7, v9 bool
 	var call, v3, call2, call3 int32
 
-	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, ctx_addr, v0, call, cmp, v1, valid_tokens, v2, v3, call1, v4, v5, call2, v6, call3, call4, v7, v8, call7, v9
+	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, ctx_addr, v0, call, cmp, v1, local_valid_tokens, v2, v3, call1, v4, v5, call2, v6, call3, call4, v7, v8, call7, v9
 
 	retval = new(bool)
 	ctx_addr = new(*context)
@@ -595460,8 +595460,8 @@ func lex_case_of(ctx *context) bool {
 
 lor_lhs_false:
 	v1 = *ctx_addr
-	valid_tokens = &v1.F3
-	v2 = (*int32)(unsafe.Pointer(valid_tokens))
+	local_valid_tokens = &v1.F3
+	v2 = (*int32)(unsafe.Pointer(local_valid_tokens))
 	v3 = *v2
 	call1 = valid_tokens_test(v3, 16)
 	if call1 {
@@ -595813,18 +595813,18 @@ func scan_operator(ctx *context, immediate bool) int32 {
 	var ctx_addr **context
 	var immediate_addr *byte
 	var v1, v4, v5, v6, v7, v8, v9, v11, v12, v13, v14, v16, v17, v20 *context
-	var retval, state, first_character, v18 *int32
-	var valid_tokens *valid_tokens
+	var retval, local_state, first_character, v18 *int32
+	var local_valid_tokens *valid_tokens
 	var tobool, call1, call14, call32, call36 bool
 	var frombool, v0 byte
 	var call, v2, v3, call4, call6, call8, call10, call12, call13, v10, call16, call21, call23, call27, v15, call31, v19, call41, v21 int32
 
-	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, ctx_addr, immediate_addr, state, first_character, frombool, v0, tobool, v1, call, v2, call1, v3, v4, call4, v5, call6, v6, call8, v7, call10, v8, call12, v9, call13, call14, v10, v11, call16, v12, call21, v13, call23, v14, call27, v15, v16, call31, call32, v17, valid_tokens, v18, v19, call36, v20, call41, v21
+	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, ctx_addr, immediate_addr, local_state, first_character, frombool, v0, tobool, v1, call, v2, call1, v3, v4, call4, v5, call6, v6, call8, v7, call10, v8, call12, v9, call13, call14, v10, v11, call16, v12, call21, v13, call23, v14, call27, v15, v16, call31, call32, v17, local_valid_tokens, v18, v19, call36, v20, call41, v21
 
 	retval = new(int32)
 	ctx_addr = new(*context)
 	immediate_addr = new(byte)
-	state = new(int32)
+	local_state = new(int32)
 	first_character = new(int32)
 	*ctx_addr = ctx
 	if immediate { frombool = 1 } else { frombool = 0 }
@@ -595842,7 +595842,7 @@ if_then:
 	goto _return
 
 if_end:
-	*state = 0
+	*local_state = 0
 	v1 = *ctx_addr
 	call = context_lookahead(v1)
 	*first_character = call
@@ -595878,31 +595878,31 @@ if_end3:
 sw_bb:
 	v4 = *ctx_addr
 	call4 = context_advance(v4, false)
-	*state = 3
+	*local_state = 3
 	goto sw_epilog
 
 sw_bb5:
 	v5 = *ctx_addr
 	call6 = context_advance(v5, false)
-	*state = 4
+	*local_state = 4
 	goto sw_epilog
 
 sw_bb7:
 	v6 = *ctx_addr
 	call8 = context_advance(v6, false)
-	*state = 1
+	*local_state = 1
 	goto sw_epilog
 
 sw_bb9:
 	v7 = *ctx_addr
 	call10 = context_advance(v7, false)
-	*state = 5
+	*local_state = 5
 	goto sw_epilog
 
 sw_bb11:
 	v8 = *ctx_addr
 	call12 = context_advance(v8, false)
-	*state = 6
+	*local_state = 6
 	goto sw_epilog
 
 sw_default:
@@ -595922,7 +595922,7 @@ while_cond:
 	}
 
 while_body:
-	v10 = *state
+	v10 = *local_state
 	switch v10 {
 	case 6:
 		goto sw_bb15
@@ -595956,7 +595956,7 @@ sw_bb17:
 	goto loop_end
 
 sw_default18:
-	*state = 0
+	*local_state = 0
 	goto sw_epilog19
 
 sw_epilog19:
@@ -595973,20 +595973,20 @@ sw_bb20:
 	}
 
 sw_bb22:
-	*state = 2
+	*local_state = 2
 	v13 = *ctx_addr
 	call23 = context_advance(v13, false)
 	goto sw_epilog25
 
 sw_default24:
-	*state = 0
+	*local_state = 0
 	goto sw_epilog25
 
 sw_epilog25:
 	goto sw_epilog28
 
 sw_bb26:
-	*state = 0
+	*local_state = 0
 	v14 = *ctx_addr
 	call27 = context_advance(v14, false)
 	goto sw_epilog28
@@ -595998,7 +595998,7 @@ while_end:
 	goto loop_end
 
 loop_end:
-	v15 = *state
+	v15 = *local_state
 	switch v15 {
 	case 4:
 		goto sw_bb29
@@ -596039,8 +596039,8 @@ if_end34:
 
 sw_bb35:
 	v17 = *ctx_addr
-	valid_tokens = &v17.F3
-	v18 = (*int32)(unsafe.Pointer(valid_tokens))
+	local_valid_tokens = &v17.F3
+	v18 = (*int32)(unsafe.Pointer(local_valid_tokens))
 	v19 = *v18
 	call36 = valid_tokens_test(v19, 15)
 	if call36 {

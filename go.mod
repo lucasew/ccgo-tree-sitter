@@ -5,7 +5,7 @@ go 1.25.0
 require github.com/spf13/cobra v1.10.2
 
 require (
-	github.com/andybalholm/leaven v0.0.0-20260807041728-b1d2ef945dc5 // indirect
+	github.com/andybalholm/leaven v0.0.0-20260807042358-8f95a18bdf99 // indirect
 	github.com/llir/ll v0.0.0-20210719001141-246f2b6b1fa9 // indirect
 	github.com/llir/llvm v0.3.5-0.20220120022543-ad080cea55b7 // indirect
 	github.com/mewmew/float v0.0.0-20201204173432-505706aa38fa // indirect
@@ -225,7 +225,7 @@ replace modernc.org/libc => github.com/modernc-tree-sitter/libc v0.0.0-202607072
 
 tool github.com/andybalholm/leaven
 
-replace github.com/andybalholm/leaven => github.com/lewtec/leaven v0.0.0-20260807041728-b1d2ef945dc5
+replace github.com/andybalholm/leaven => github.com/lewtec/leaven v0.0.0-20260807042358-8f95a18bdf99
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar => ./grammar
 

@@ -512,7 +512,7 @@ type TSParser struct {
 	F10 TokenCache
 	F11 ReusableNode
 	F12 *byte
-	F13 *_IO_FILE
+	F13 *os.File
 	F14 int32
 	F15 int32
 	F16 Subtree
@@ -674,38 +674,6 @@ type WriteToStringFrame struct {
 	F9 *int16
 	F10 *TSFieldMapEntry
 	F11 *TSFieldMapEntry
-}
-
-type _IO_FILE struct {
-	F0 int32
-	F1 *byte
-	F2 *byte
-	F3 *byte
-	F4 *byte
-	F5 *byte
-	F6 *byte
-	F7 *byte
-	F8 *byte
-	F9 *byte
-	F10 *byte
-	F11 *byte
-	F12 *_IO_marker
-	F13 *_IO_FILE
-	F14 int32
-	F15 int32
-	F16 int64
-	F17 int16
-	F18 byte
-	F19 [1]byte
-	F20 *byte
-	F21 int64
-	F22 *_IO_codecvt
-	F23 *_IO_wide_data
-	F24 *_IO_FILE
-	F25 *byte
-	F26 int64
-	F27 int32
-	F28 [20]byte
 }
 
 type _IO_codecvt struct {
@@ -3740,9 +3708,9 @@ var __PRETTY_FUNCTION____array__splice [105]byte = [105]byte{
 
 func ts_malloc_default(size int64) *byte {
 	var result **byte
-	var v3 *_IO_FILE
 	var call, v2, v5 *byte
 	var size_addr *int64
+	var v3 *os.File
 	var cmp, tobool bool
 	var call1 int32
 	var v0, v1, v4 int64
@@ -3775,8 +3743,8 @@ land_lhs_true:
 if_then:
 	v3 = os.Stderr
 	v4 = *size_addr
-	call1 = fprintf(v3, &_str_116[int64(0)], v4)
-	abort()
+	call1 = libc.Fprintf(v3, &_str_116[int64(0)], v4)
+	libc.Abort()
 	panic("unreachable")
 
 if_end:
@@ -3786,9 +3754,9 @@ if_end:
 
 func ts_calloc_default(count int64, size int64) *byte {
 	var result **byte
-	var v4 *_IO_FILE
 	var call, v3, v7 *byte
 	var count_addr, size_addr *int64
+	var v4 *os.File
 	var cmp, tobool bool
 	var call1 int32
 	var v0, v1, v2, v5, v6, mul int64
@@ -3826,8 +3794,8 @@ if_then:
 	v5 = *count_addr
 	v6 = *size_addr
 	mul = v5 * v6
-	call1 = fprintf(v4, &_str_116[int64(0)], mul)
-	abort()
+	call1 = libc.Fprintf(v4, &_str_116[int64(0)], mul)
+	libc.Abort()
 	panic("unreachable")
 
 if_end:
@@ -3837,9 +3805,9 @@ if_end:
 
 func ts_realloc_default(buffer *byte, size int64) *byte {
 	var buffer_addr, result **byte
-	var v4 *_IO_FILE
 	var v0, call, v3, v6 *byte
 	var size_addr *int64
+	var v4 *os.File
 	var cmp, tobool bool
 	var call1 int32
 	var v1, v2, v5 int64
@@ -3853,7 +3821,7 @@ func ts_realloc_default(buffer *byte, size int64) *byte {
 	*size_addr = size
 	v0 = *buffer_addr
 	v1 = *size_addr
-	call = realloc(v0, v1)
+	call = libc.Realloc(v0, v1)
 	*result = call
 	v2 = *size_addr
 	cmp = uint64(v2) > uint64(0)
@@ -3875,8 +3843,8 @@ land_lhs_true:
 if_then:
 	v4 = os.Stderr
 	v5 = *size_addr
-	call1 = fprintf(v4, &_str_117[int64(0)], v5)
-	abort()
+	call1 = libc.Fprintf(v4, &_str_117[int64(0)], v5)
+	libc.Abort()
 	panic("unreachable")
 
 if_end:
@@ -17443,8 +17411,8 @@ func ts_parser_new() *TSParser {
 	var language **TSLanguage
 	var self **TSParser
 	var contents16 **TSRange
-	var dot_graph_file **_IO_FILE
 	var external_scanner_payload **byte
+	var dot_graph_file **os.File
 	var lexer *Lexer
 	var v7, v10 *ReduceAction
 	var reduce_actions, reduce_actions1, reduce_actions2, reduce_actions3, reduce_actions5, reduce_actions8 *ReduceActionSet
@@ -19765,10 +19733,10 @@ func ts_parser_set_logger(self *TSParser, logger_coerce0 *byte, logger_coerce1 f
 
 func ts_parser_print_dot_graphs(self *TSParser, fd int32) {
 	var self_addr **TSParser
-	var dot_graph_file, dot_graph_file1, dot_graph_file4, dot_graph_file5 **_IO_FILE
+	var dot_graph_file, dot_graph_file1, dot_graph_file4, dot_graph_file5 **os.File
 	var v0, v2, v6, v7 *TSParser
-	var v1, v3, call3 *_IO_FILE
 	var fd_addr *int32
+	var v1, v3, call3 *os.File
 	var tobool, cmp bool
 	var call, v4, v5 int32
 
@@ -20146,7 +20114,7 @@ func ts_parser_parse(self *TSParser, old_tree *TSTree, input *TSInput) *TSTree {
 	var _range, range184, included_ranges, included_ranges33, contents, contents194, included_ranges246 **TSRange
 	var retval, old_tree_addr, result **TSTree
 	var wasm_store, wasm_store7 **TSWasmStore
-	var dot_graph_file, dot_graph_file44, dot_graph_file52, dot_graph_file57, dot_graph_file59, dot_graph_file76, dot_graph_file91, dot_graph_file113, dot_graph_file140, dot_graph_file145, dot_graph_file147, dot_graph_file225, dot_graph_file233, dot_graph_file238, dot_graph_file240 **_IO_FILE
+	var dot_graph_file, dot_graph_file44, dot_graph_file52, dot_graph_file57, dot_graph_file59, dot_graph_file76, dot_graph_file91, dot_graph_file113, dot_graph_file140, dot_graph_file145, dot_graph_file147, dot_graph_file225, dot_graph_file233, dot_graph_file238, dot_graph_file240 **os.File
 	var coerce, coerce127, coerce152 *Length
 	var lexer, lexer11, lexer14, lexer19, lexer32, lexer34, lexer39, lexer47, lexer71, lexer79, lexer86, lexer94, lexer108, lexer116, lexer220, lexer228, lexer245, lexer247 *Lexer
 	var reusable_node, reusable_node85 *ReusableNode
@@ -20163,11 +20131,11 @@ func ts_parser_parse(self *TSParser, old_tree *TSTree, input *TSInput) *TSTree {
 	var v28, v29, v32, v35, v37, v45, call250, v209, v210 *TSTree
 	var v6, v8 *TSWasmStore
 	var debug_buffer, debug_buffer48, debug_buffer80, debug_buffer95, debug_buffer117, debug_buffer229 *[1024]byte
-	var v20, v50, v54, v59, v62, v75, v87, v101, v128, v134, v136, v184, v188, v193, v196 *_IO_FILE
 	var allow_node_reuse, arraydecay, canceled_balancing, has_scanner_error, v33, v34, arraydecay49, arraydecay81, arraydecay96, arraydecay118, v112, v113, v118, v119, has_scanner_error135, v140, v141, canceled_balancing217, canceled_balancing219, arraydecay230, v206, v207 *byte
 	var log, log41, log73, log88, log110, log222 *func(*byte, int32, *byte)
 	var read *func(*byte, int32, int64, *int32) *byte
 	var i, position, last_position, version_count, version, min_error_cost, size, included_range_difference_index, operation_count, included_range_count, included_range_count35, size63, size65, start_byte, end_byte, row, column, bytes, included_range_difference_index178, size180, included_range_difference_index185, size187, included_range_difference_index195, end_byte198, included_range_difference_index202, included_range_count248 *int32
+	var v20, v50, v54, v59, v62, v75, v87, v101, v128, v134, v136, v184, v188, v193, v196 *os.File
 	var tmp_coerce, tmp_coerce128, tmp_coerce153 *struct {
 	F0 int64
 	F1 int32
@@ -21182,15 +21150,15 @@ lor_end:
 
 func ts_parser__log(self *TSParser) {
 	var self_addr **TSParser
-	var dot_graph_file, dot_graph_file9, dot_graph_file20, dot_graph_file24, dot_graph_file26 **_IO_FILE
 	var chr, payload **byte
+	var dot_graph_file, dot_graph_file9, dot_graph_file20, dot_graph_file24, dot_graph_file26 **os.File
 	var lexer, lexer1, lexer4, lexer6, lexer10 *Lexer
 	var logger, logger2, logger5 *TSLogger
 	var v0, v2, v4, v6, v7, v9, v11, v18, v22, v25 *TSParser
 	var debug_buffer, debug_buffer11 *[1024]byte
-	var v8, v10, v19, v23, v26 *_IO_FILE
 	var v5, arraydecay, arrayidx, v12, v14, v16, v20, v24, incdec_ptr *byte
 	var log, log3 *func(*byte, int32, *byte)
+	var v8, v10, v19, v23, v26 *os.File
 	var tobool, tobool7, cmp, cmp14, cmp17 bool
 	var v13, v15, v17, v21 byte
 	var v1, v3 func(*byte, int32, *byte)
@@ -21246,7 +21214,7 @@ if_then8:
 	v9 = *self_addr
 	dot_graph_file9 = &v9.F13
 	v10 = *dot_graph_file9
-	call = fprintf(v10, &_str_129[int64(0)])
+	call = libc.Fprintf(v10, &_str_129[int64(0)])
 	v11 = *self_addr
 	lexer10 = &v11.F0
 	debug_buffer11 = &lexer10.F15
@@ -21314,7 +21282,7 @@ for_end:
 	v25 = *self_addr
 	dot_graph_file26 = &v25.F13
 	v26 = *dot_graph_file26
-	call27 = fprintf(v26, &_str_130[int64(0)])
+	call27 = libc.Fprintf(v26, &_str_130[int64(0)])
 	goto if_end28
 
 if_end28:
@@ -21602,33 +21570,33 @@ if_then:
 if_end:
 }
 
-func ts_subtree_print_dot_graph(self_coerce *SubtreeHeapData, language *TSLanguage, f *_IO_FILE) {
+func ts_subtree_print_dot_graph(self_coerce *SubtreeHeapData, language *TSLanguage, f *os.File) {
 	var coerce_dive **SubtreeHeapData
 	var language_addr **TSLanguage
-	var f_addr **_IO_FILE
+	var f_addr **os.File
 	var self *Subtree
 	var v2 *TSLanguage
-	var v0, v1, v3, v4 *_IO_FILE
+	var v0, v1, v3, v4 *os.File
 	var call, call1, call2 int32
 
 	_, _, _, _, _, _, _, _, _, _, _, _ = self, language_addr, f_addr, coerce_dive, v0, call, v1, call1, v2, v3, v4, call2
 
 	self = new(Subtree)
 	language_addr = new(*TSLanguage)
-	f_addr = new(*_IO_FILE)
+	f_addr = new(*os.File)
 	coerce_dive = &self.F0
 	*coerce_dive = self_coerce
 	*language_addr = language
 	*f_addr = f
 	v0 = *f_addr
-	call = fprintf(v0, &_str_110[int64(0)])
+	call = libc.Fprintf(v0, &_str_110[int64(0)])
 	v1 = *f_addr
-	call1 = fprintf(v1, &_str_63[int64(0)])
+	call1 = libc.Fprintf(v1, &_str_63[int64(0)])
 	v2 = *language_addr
 	v3 = *f_addr
 	ts_subtree__print_dot_graph(self, 0, v2, 0, v3)
 	v4 = *f_addr
-	call2 = fprintf(v4, &_str_91[int64(0)])
+	call2 = libc.Fprintf(v4, &_str_91[int64(0)])
 }
 
 func ts_stack_version_count(self *Stack) int32 {
@@ -21837,7 +21805,7 @@ func ts_parser__advance(self *TSParser, version int32, allow_node_reuse bool) bo
 	var language, language33, language77, language110, language167, language179, language199, language204, language209, language210, language227, language231, language232, language241, language243, language268 **TSLanguage
 	var actions **TSParseAction
 	var self_addr **TSParser
-	var dot_graph_file, dot_graph_file62, dot_graph_file104, dot_graph_file137, dot_graph_file163, dot_graph_file168, dot_graph_file170, dot_graph_file221, dot_graph_file262 **_IO_FILE
+	var dot_graph_file, dot_graph_file62, dot_graph_file104, dot_graph_file137, dot_graph_file163, dot_graph_file168, dot_graph_file170, dot_graph_file221, dot_graph_file262 **os.File
 	var coerce *Length
 	var lexer, lexer51, lexer57, lexer65, lexer99, lexer107, lexer132, lexer140, lexer216, lexer224, lexer257, lexer265 *Lexer
 	var mutable_lookahead *MutableSubtree
@@ -21852,7 +21820,6 @@ func ts_parser__advance(self *TSParser, version int32, allow_node_reuse bool) bo
 	var v0, v3, v9, v15, v22, v30, v35, v38, v42, v46, v49, v60, v62, v64, v65, v67, v69, v71, v73, v75, v77, v78, v82, v88, v91, v93, v95, v96, v100, v101, v111, v113, v115, v116, v117, v121, v122, v123, v127, v130, v134, v136, v138, v140, v142, v144, v148, v154, v156, v161, v164, v168, v171, v175, v177, v179, v180, v183, v185, v188, v189, v191, v194, v199, v201, v204, v206, v208, v210, v211, v214, v215 *TSParser
 	var table_entry *TableEntry
 	var debug_buffer, debug_buffer66, debug_buffer108, debug_buffer141, debug_buffer225, debug_buffer266 *[1024]byte
-	var v63, v70, v94, v114, v135, v141, v143, v178, v209 *_IO_FILE
 	var shift, shift45, shift55, shift82 *anon_3
 	var reduce, reduce112, reduce116, reduce118, reduce121, reduce123 *anon_4
 	var retval *bool
@@ -21860,6 +21827,7 @@ func ts_parser__advance(self *TSParser, version int32, allow_node_reuse bool) bo
 	var log, log59, log101, log134, log218, log259 *func(*byte, int32, *byte)
 	var state, next_state, state56, symbol, symbol117, dynamic_precedence, production_id, keyword_capture_token, keyword_capture_token211, keyword_capture_token233, keyword_capture_token242 *int16
 	var version_addr, position, last_reduction_version, i, reduction_version, bytes, action_count, action_count91, action_count212 *int32
+	var v63, v70, v94, v114, v135, v141, v143, v178, v209 *os.File
 	var tmp_coerce *struct {
 	F0 int64
 	F1 int32
@@ -22816,7 +22784,7 @@ _return:
 	return v219
 }
 
-func ts_stack_print_dot_graph(self *Stack, language *TSLanguage, f *_IO_FILE) bool {
+func ts_stack_print_dot_graph(self *Stack, language *TSLanguage, f *os.File) bool {
 	var contents124, contents287, contents291, contents292, contents303, contents306, contents308 ***StackNode
 	var state51 **ExternalScannerState
 	var self_addr **Stack
@@ -22827,8 +22795,8 @@ func ts_stack_print_dot_graph(self *Stack, language *TSLanguage, f *_IO_FILE) bo
 	var contents44 **StackSummaryEntry
 	var ptr, ptr53, ptr149, coerce_dive, ptr185, coerce_dive189, ptr196, coerce_dive203, coerce_dive207, coerce_dive215, coerce_dive223, coerce_dive226 **SubtreeHeapData
 	var language_addr **TSLanguage
-	var f_addr **_IO_FILE
 	var data **byte
+	var f_addr **os.File
 	var external_scanner_state, v63, v66 *ExternalScannerState
 	var position, position165 *Length
 	var v0, v3, v5, v12, v14, v17, v19, v36, v38, v74, v77, v79, v81, v82, v84, v94, v97, v99, v179, v181, v184, v187, v189, v191, v192, v194, v198, v200, v202, v204 *Stack
@@ -22843,13 +22811,13 @@ func ts_stack_print_dot_graph(self *Stack, language *TSLanguage, f *_IO_FILE) bo
 	var v167 *TSLanguage
 	var extent, extent166 *TSPoint
 	var links, links152, links175 *[8]StackLink
-	var v6, v7, v8, v9, v10, v24, v26, v33, v34, v42, v47, v64, v68, v73, v115, v120, v127, v128, v131, v149, v155, v158, v160, v161, v166, v168, v171, v172, v173, v176, v217 *_IO_FILE
 	var heads, heads9, heads14 *anon_20
 	var iterators, iterators1, iterators2, iterators7, iterators70, iterators72, iterators74, iterators77, iterators79, iterators81, iterators94, iterators99, iterators106, iterators234, iterators241, iterators247, iterators249, iterators251, iterators254, iterators256, iterators258, iterators264, iterators266, iterators273, iterators275 *anon_21
 	var visited_nodes *anon_22
 	var all_iterators_done, quoted, v2, call, v11, v30, call54, v69, arrayidx62, v76, call76, v86, v89, v90, v102, v103, v117, v147, v148, v151, v153, is_pending, v186, call253, v196, v197, v210, call290, v221 *byte
 	var state, state138, link_count, state160, link_count170 *int16
 	var i, j, j56, i92, j112, j168, capacity, size, size8, size10, status, status21, size34, size38, length, size73, capacity75, size82, size95, size100, size114, size118, row, column, node_count, error_cost, dynamic_precedence, size235, size250, capacity252, size259, size265, size267, size276, size288, capacity289, size293, size309, capacity310 *int32
+	var v6, v7, v8, v9, v10, v24, v26, v33, v34, v42, v47, v64, v68, v73, v115, v120, v127, v128, v131, v149, v155, v158, v160, v161, v166, v168, v171, v172, v173, v176, v217 *os.File
 	var v62 *struct {
 	F0 ExternalScannerState
 }
@@ -22864,7 +22832,7 @@ func ts_stack_print_dot_graph(self *Stack, language *TSLanguage, f *_IO_FILE) bo
 
 	self_addr = new(*Stack)
 	language_addr = new(*TSLanguage)
-	f_addr = new(*_IO_FILE)
+	f_addr = new(*os.File)
 	visited_nodes = new(anon_22)
 	i = new(int32)
 	head = new(*StackHead)
@@ -22914,11 +22882,11 @@ if_then:
 
 if_end:
 	v8 = *f_addr
-	call4 = fprintf(v8, &_str_61[int64(0)])
+	call4 = libc.Fprintf(v8, &_str_61[int64(0)])
 	v9 = *f_addr
-	call5 = fprintf(v9, &_str_62[int64(0)])
+	call5 = libc.Fprintf(v9, &_str_62[int64(0)])
 	v10 = *f_addr
-	call6 = fprintf(v10, &_str_63[int64(0)])
+	call6 = libc.Fprintf(v10, &_str_63[int64(0)])
 	v11 = (*byte)(unsafe.Pointer(visited_nodes))
 	libc.Memset(v11, 0, int64(16))
 	v12 = *self_addr
@@ -22986,14 +22954,14 @@ if_then17:
 if_end18:
 	v24 = *f_addr
 	v25 = *i
-	call19 = fprintf(v24, &_str_64[int64(0)], v25)
+	call19 = libc.Fprintf(v24, &_str_64[int64(0)], v25)
 	v26 = *f_addr
 	v27 = *i
 	v28 = *head
 	node = &v28.F0
 	v29 = *node
 	v30 = (*byte)(unsafe.Pointer(v29))
-	call20 = fprintf(v26, &_str_65[int64(0)], v27, v30)
+	call20 = libc.Fprintf(v26, &_str_65[int64(0)], v27, v30)
 	v31 = *head
 	status21 = &v31.F5
 	v32 = *status21
@@ -23006,7 +22974,7 @@ if_end18:
 
 if_then23:
 	v33 = *f_addr
-	call24 = fprintf(v33, &_str_66[int64(0)])
+	call24 = libc.Fprintf(v33, &_str_66[int64(0)])
 	goto if_end25
 
 if_end25:
@@ -23018,7 +22986,7 @@ if_end25:
 	v38 = *self_addr
 	v39 = *i
 	call27 = ts_stack_error_cost(v38, v39)
-	call28 = fprintf(v34, &_str_67[int64(0)], v35, call26, call27)
+	call28 = libc.Fprintf(v34, &_str_67[int64(0)], v35, call26, call27)
 	v40 = *head
 	summary = &v40.F1
 	v41 = *summary
@@ -23031,7 +22999,7 @@ if_end25:
 
 if_then30:
 	v42 = *f_addr
-	call31 = fprintf(v42, &_str_68[int64(0)])
+	call31 = libc.Fprintf(v42, &_str_68[int64(0)])
 	*j = 0
 	goto for_cond32
 
@@ -23083,7 +23051,7 @@ if_end42:
 	state = &arrayidx46.F2
 	v56 = *state
 	conv = int32(uint32(uint16(v56)))
-	call47 = fprintf(v47, &_str_69[int64(0)], conv)
+	call47 = libc.Fprintf(v47, &_str_69[int64(0)], conv)
 	goto for_inc
 
 for_inc:
@@ -23119,7 +23087,7 @@ if_then50:
 	call54 = ts_external_scanner_state_data(v63)
 	*data = call54
 	v64 = *f_addr
-	call55 = fprintf(v64, &_str_71[int64(0)])
+	call55 = libc.Fprintf(v64, &_str_71[int64(0)])
 	*j56 = 0
 	goto for_cond57
 
@@ -23143,7 +23111,7 @@ for_body60:
 	arrayidx62 = libc.AddPointer(v69, int(idxprom61))
 	v71 = *arrayidx62
 	conv63 = int32(int8(v71))
-	call64 = fprintf(v68, &_str_72[int64(0)], conv63)
+	call64 = libc.Fprintf(v68, &_str_72[int64(0)], conv63)
 	goto for_inc65
 
 for_inc65:
@@ -23157,7 +23125,7 @@ for_end67:
 
 if_end68:
 	v73 = *f_addr
-	call69 = fprintf(v73, &_str_73[int64(0)])
+	call69 = libc.Fprintf(v73, &_str_73[int64(0)])
 	goto do_body
 
 do_body:
@@ -23355,7 +23323,7 @@ if_end136:
 	v115 = *f_addr
 	v116 = *node110
 	v117 = (*byte)(unsafe.Pointer(v116))
-	call137 = fprintf(v115, &_str_76[int64(0)], v117)
+	call137 = libc.Fprintf(v115, &_str_76[int64(0)], v117)
 	v118 = *node110
 	state138 = &v118.F0
 	v119 = *state138
@@ -23369,7 +23337,7 @@ if_end136:
 
 if_then142:
 	v120 = *f_addr
-	call143 = fprintf(v120, &_str_77[int64(0)])
+	call143 = libc.Fprintf(v120, &_str_77[int64(0)])
 	goto if_end164
 
 if_else144:
@@ -23414,7 +23382,7 @@ land_lhs_true151:
 
 if_then157:
 	v127 = *f_addr
-	call158 = fprintf(v127, &_str_78[int64(0)])
+	call158 = libc.Fprintf(v127, &_str_78[int64(0)])
 	goto if_end163
 
 if_else159:
@@ -23423,7 +23391,7 @@ if_else159:
 	state160 = &v129.F0
 	v130 = *state160
 	conv161 = int32(uint32(uint16(v130)))
-	call162 = fprintf(v128, &_str_79[int64(0)], conv161)
+	call162 = libc.Fprintf(v128, &_str_79[int64(0)], conv161)
 	goto if_end163
 
 if_end163:
@@ -23451,7 +23419,7 @@ if_end164:
 	v140 = *node110
 	dynamic_precedence = &v140.F7
 	v141 = *dynamic_precedence
-	call167 = fprintf(v131, &_str_80[int64(0)], add, v135, v137, v139, v141)
+	call167 = libc.Fprintf(v131, &_str_80[int64(0)], add, v135, v137, v139, v141)
 	*j168 = 0
 	goto for_cond169
 
@@ -23483,7 +23451,7 @@ for_body174:
 	node178 = &link.F0
 	v152 = *node178
 	v153 = (*byte)(unsafe.Pointer(v152))
-	call179 = fprintf(v149, &_str_81[int64(0)], v151, v153)
+	call179 = libc.Fprintf(v149, &_str_81[int64(0)], v151, v153)
 	is_pending = &link.F2
 	v154 = *is_pending
 	tobool180 = (v154 & 1) != 0
@@ -23495,7 +23463,7 @@ for_body174:
 
 if_then181:
 	v155 = *f_addr
-	call182 = fprintf(v155, &_str_82[int64(0)])
+	call182 = libc.Fprintf(v155, &_str_82[int64(0)])
 	goto if_end183
 
 if_end183:
@@ -23522,7 +23490,7 @@ land_lhs_true187:
 
 if_then192:
 	v158 = *f_addr
-	call193 = fprintf(v158, &_str_83[int64(0)])
+	call193 = libc.Fprintf(v158, &_str_83[int64(0)])
 	goto if_end194
 
 if_end194:
@@ -23538,12 +23506,12 @@ if_end194:
 
 if_then198:
 	v160 = *f_addr
-	call199 = fprintf(v160, &_str_84[int64(0)])
+	call199 = libc.Fprintf(v160, &_str_84[int64(0)])
 	goto if_end229
 
 if_else200:
 	v161 = *f_addr
-	call201 = fprintf(v161, &_str_85[int64(0)])
+	call201 = libc.Fprintf(v161, &_str_85[int64(0)])
 	subtree202 = &link.F1
 	coerce_dive203 = &subtree202.F0
 	v162 = *coerce_dive203
@@ -23577,7 +23545,7 @@ land_end:
 
 if_then211:
 	v166 = *f_addr
-	call212 = fprintf(v166, &_str_86[int64(0)])
+	call212 = libc.Fprintf(v166, &_str_86[int64(0)])
 	goto if_end213
 
 if_end213:
@@ -23598,12 +23566,12 @@ if_end213:
 
 if_then218:
 	v171 = *f_addr
-	call219 = fprintf(v171, &_str_86[int64(0)])
+	call219 = libc.Fprintf(v171, &_str_86[int64(0)])
 	goto if_end220
 
 if_end220:
 	v172 = *f_addr
-	call221 = fprintf(v172, &_str_87[int64(0)])
+	call221 = libc.Fprintf(v172, &_str_87[int64(0)])
 	v173 = *f_addr
 	subtree222 = &link.F1
 	coerce_dive223 = &subtree222.F0
@@ -23613,12 +23581,12 @@ if_end220:
 	coerce_dive226 = &subtree225.F0
 	v175 = *coerce_dive226
 	call227 = ts_subtree_dynamic_precedence(v175)
-	call228 = fprintf(v173, &_str_88[int64(0)], call224, call227)
+	call228 = libc.Fprintf(v173, &_str_88[int64(0)], call224, call227)
 	goto if_end229
 
 if_end229:
 	v176 = *f_addr
-	call230 = fprintf(v176, &_str_89[int64(0)])
+	call230 = libc.Fprintf(v176, &_str_89[int64(0)])
 	v177 = *j168
 	cmp231 = v177 == 0
 	if cmp231 {
@@ -23790,7 +23758,7 @@ for_end300:
 
 while_end:
 	v217 = *f_addr
-	call301 = fprintf(v217, &_str_91[int64(0)])
+	call301 = libc.Fprintf(v217, &_str_91[int64(0)])
 	goto do_body302
 
 do_body302:
@@ -23829,7 +23797,7 @@ func ts_parser__condense_stack(self *TSParser) int32 {
 	var coerce_dive, coerce_dive67 **SubtreeHeapData
 	var language **TSLanguage
 	var self_addr **TSParser
-	var dot_graph_file, dot_graph_file86, dot_graph_file94, dot_graph_file98, dot_graph_file100 **_IO_FILE
+	var dot_graph_file, dot_graph_file86, dot_graph_file94, dot_graph_file98, dot_graph_file100 **os.File
 	var status_i, status_j *ErrorStatus
 	var lexer, lexer60, lexer81, lexer89 *Lexer
 	var v2, v4, v7, v42, v47, v53, v59, v63, v70, v72, v74, v76, v80, v93, v96, v102, v117 *Stack
@@ -23839,11 +23807,11 @@ func ts_parser__condense_stack(self *TSParser) int32 {
 	var logger, logger82 *TSLogger
 	var v1, v3, v6, v10, v23, v30, v41, v46, v52, v58, v62, v69, v71, v73, v75, v79, v83, v85, v87, v89, v91, v92, v95, v98, v101, v108, v110, v112, v113, v114, v116, v118, v120, v122 *TSParser
 	var debug_buffer, debug_buffer90 *[1024]byte
-	var v88, v111, v115, v121, v123 *_IO_FILE
 	var made_changes, has_unpaused_version, is_in_error, arraydecay, arraydecay91 *byte
 	var log, log83 *func(*byte, int32, *byte)
 	var min_error_cost, i, j, i44, n, cost, cost7, accept_count *int32
 	var v13, v15, v26, v28, v32, v34, v37, v39 *int64
+	var v88, v111, v115, v121, v123 *os.File
 	var v12, v25, v31, v36 *struct {
 	F0 int64
 	F1 int64
@@ -51722,14 +51690,14 @@ cond_end:
 	return tobool
 }
 
-func ts_language_write_symbol_as_dot_string(self *TSLanguage, f *_IO_FILE, symbol int16) {
+func ts_language_write_symbol_as_dot_string(self *TSLanguage, f *os.File, symbol int16) {
 	var self_addr **TSLanguage
-	var f_addr **_IO_FILE
 	var name, chr **byte
+	var f_addr **os.File
 	var v0 *TSLanguage
-	var v7, v10, v11, v12, v15 *_IO_FILE
 	var call, v2, v3, v5, v8, v13, v16, incdec_ptr *byte
 	var symbol_addr *int16
+	var v7, v10, v11, v12, v15 *os.File
 	var tobool bool
 	var v4, v6, v9, v14 byte
 	var v1 int16
@@ -51738,7 +51706,7 @@ func ts_language_write_symbol_as_dot_string(self *TSLanguage, f *_IO_FILE, symbo
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self_addr, f_addr, symbol_addr, name, chr, v0, v1, call, v2, v3, v4, tobool, v5, v6, conv, v7, call1, v8, v9, conv2, v10, call3, v11, call5, v12, call7, v13, v14, conv8, v15, call9, v16, incdec_ptr
 
 	self_addr = new(*TSLanguage)
-	f_addr = new(*_IO_FILE)
+	f_addr = new(*os.File)
 	symbol_addr = new(int16)
 	name = new(*byte)
 	chr = new(*byte)
@@ -60412,20 +60380,20 @@ do_end331:
 	return sub_ptr_sub
 }
 
-func ts_subtree__print_dot_graph(self *Subtree, start_offset int32, language *TSLanguage, alias_symbol int16, f *_IO_FILE) {
+func ts_subtree__print_dot_graph(self *Subtree, start_offset int32, language *TSLanguage, alias_symbol int16, f *os.File) {
 	var self_addr, child **Subtree
 	var coerce_dive, coerce_dive4, coerce_dive8, coerce_dive12, coerce_dive17, coerce_dive22, coerce_dive25, coerce_dive27, coerce_dive30, coerce_dive33, coerce_dive35, coerce_dive37, coerce_dive40, coerce_dive43, ptr, ptr51, coerce_dive57, coerce_dive60, ptr67, ptr68, coerce_dive71, coerce_dive80 **SubtreeHeapData
 	var language_addr **TSLanguage
-	var f_addr **_IO_FILE
 	var alias_sequences **int16
+	var f_addr **os.File
 	var v0, v6, v9, v15, v18, v21, v27, v29, v31, v33, v35, v37, v39, v41, v43, v45, v50, v58, v60, v64, v66, v68, v69, add_ptr, cond70, arrayidx, v73, v81, v87, v89, v92 *Subtree
 	var v1, v7, v16, v19, v22, v28, v30, v32, v34, v36, v38, v40, v42, v44, v46, v51, v59, v61, v67, v70, v74, v93 *SubtreeHeapData
 	var data *SubtreeInlineData
 	var v11, v56, v76, v83 *TSLanguage
-	var v8, v12, v14, v17, v20, v23, v24, v49, v54, v85, v86 *_IO_FILE
 	var v10, v65, v88, v90 *byte
 	var alias_symbol_addr, subtree_symbol, symbol, subtree_alias_symbol, max_alias_sequence_length, v77, arrayidx77 *int16
 	var start_offset_addr, end_offset, child_start_offset, child_info_offset, i, n, lookahead_char, lookahead_char52, child_count *int32
+	var v8, v12, v14, v17, v20, v23, v24, v49, v54, v85, v86 *os.File
 	var v47, v52 *struct {
 	F0 ExternalScannerState
 }
@@ -60441,7 +60409,7 @@ func ts_subtree__print_dot_graph(self *Subtree, start_offset int32, language *TS
 	start_offset_addr = new(int32)
 	language_addr = new(*TSLanguage)
 	alias_symbol_addr = new(int16)
-	f_addr = new(*_IO_FILE)
+	f_addr = new(*os.File)
 	subtree_symbol = new(int16)
 	symbol = new(int16)
 	end_offset = new(int32)
@@ -60495,13 +60463,13 @@ cond_end:
 	v8 = *f_addr
 	v9 = *self_addr
 	v10 = (*byte)(unsafe.Pointer(v9))
-	call6 = fprintf(v8, &_str_103[int64(0)], v10)
+	call6 = libc.Fprintf(v8, &_str_103[int64(0)], v10)
 	v11 = *language_addr
 	v12 = *f_addr
 	v13 = *symbol
 	ts_language_write_symbol_as_dot_string(v11, v12, v13)
 	v14 = *f_addr
-	call7 = fprintf(v14, &_str_87[int64(0)])
+	call7 = libc.Fprintf(v14, &_str_87[int64(0)])
 	v15 = *self_addr
 	coerce_dive8 = &v15.F0
 	v16 = *coerce_dive8
@@ -60515,7 +60483,7 @@ cond_end:
 
 if_then:
 	v17 = *f_addr
-	call11 = fprintf(v17, &_str_104[int64(0)])
+	call11 = libc.Fprintf(v17, &_str_104[int64(0)])
 	goto if_end
 
 if_end:
@@ -60531,7 +60499,7 @@ if_end:
 
 if_then14:
 	v20 = *f_addr
-	call15 = fprintf(v20, &_str_105[int64(0)])
+	call15 = libc.Fprintf(v20, &_str_105[int64(0)])
 	goto if_end16
 
 if_end16:
@@ -60547,7 +60515,7 @@ if_end16:
 
 if_then19:
 	v23 = *f_addr
-	call20 = fprintf(v23, &_str_106[int64(0)])
+	call20 = libc.Fprintf(v23, &_str_106[int64(0)])
 	goto if_end21
 
 if_end21:
@@ -60585,7 +60553,7 @@ if_end21:
 	coerce_dive37 = &v39.F0
 	v40 = *coerce_dive37
 	call38 = ts_subtree_lookahead_bytes(v40)
-	call39 = fprintf(v24, &_str_107[int64(0)], v25, v26, conv24, call26, conv29, conv32, call34, call36, call38)
+	call39 = libc.Fprintf(v24, &_str_107[int64(0)], v25, v26, conv24, call26, conv29, conv32, call34, call36, call38)
 	v41 = *self_addr
 	coerce_dive40 = &v41.F0
 	v42 = *coerce_dive40
@@ -60630,12 +60598,12 @@ if_then50:
 	v52 = &v51.F9
 	lookahead_char52 = (*int32)(unsafe.Pointer(v52))
 	v53 = *lookahead_char52
-	call53 = fprintf(v49, &_str_108[int64(0)], v53)
+	call53 = libc.Fprintf(v49, &_str_108[int64(0)], v53)
 	goto if_end54
 
 if_end54:
 	v54 = *f_addr
-	call55 = fprintf(v54, &_str_73[int64(0)])
+	call55 = libc.Fprintf(v54, &_str_73[int64(0)])
 	v55 = *start_offset_addr
 	*child_start_offset = v55
 	v56 = *language_addr
@@ -60752,7 +60720,7 @@ if_end78:
 	v89 = *child
 	v90 = (*byte)(unsafe.Pointer(v89))
 	v91 = *i
-	call79 = fprintf(v86, &_str_109[int64(0)], v88, v90, v91)
+	call79 = libc.Fprintf(v86, &_str_109[int64(0)], v88, v90, v91)
 	v92 = *child
 	coerce_dive80 = &v92.F0
 	v93 = *coerce_dive80
@@ -66993,20 +66961,20 @@ func ts_tree_print_dot_graph(self *TSTree, file_descriptor int32) {
 	var coerce_dive **SubtreeHeapData
 	var language **TSLanguage
 	var self_addr **TSTree
-	var file **_IO_FILE
+	var file **os.File
 	var root *Subtree
 	var v5 *SubtreeHeapData
 	var v3 *TSLanguage
 	var v1, v2 *TSTree
-	var call1, v4, v6 *_IO_FILE
 	var file_descriptor_addr *int32
+	var call1, v4, v6 *os.File
 	var v0, call, call2 int32
 
 	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = self_addr, file_descriptor_addr, file, v0, call, call1, v1, root, v2, language, v3, v4, coerce_dive, v5, v6, call2
 
 	self_addr = new(*TSTree)
 	file_descriptor_addr = new(int32)
-	file = new(*_IO_FILE)
+	file = new(*os.File)
 	*self_addr = self
 	*file_descriptor_addr = file_descriptor
 	v0 = *file_descriptor_addr
@@ -68920,9 +68888,9 @@ func ts_parser__reuse_node(self *TSParser, version int32, state *int16, position
 	var language, language33, language64, language112, language128, language143, language147, language164 **TSLanguage
 	var self_addr **TSParser
 	var table_entry_addr **TableEntry
-	var dot_graph_file, dot_graph_file27, dot_graph_file58, dot_graph_file106, dot_graph_file137, dot_graph_file158 **_IO_FILE
 	var reason **byte
 	var state_addr **int16
+	var dot_graph_file, dot_graph_file27, dot_graph_file58, dot_graph_file106, dot_graph_file137, dot_graph_file158 **os.File
 	var lexer, lexer13, lexer22, lexer30, lexer53, lexer61, lexer101, lexer109, lexer132, lexer140, lexer153, lexer161 *Lexer
 	var reusable_node, reusable_node3, reusable_node41, reusable_node44, reusable_node47, reusable_node70, reusable_node118, reusable_node121, reusable_node151 *ReusableNode
 	var v75 *Stack
@@ -68933,11 +68901,11 @@ func ts_parser__reuse_node(self *TSParser, version int32, state *int16, position
 	var v0, v6, v12, v14, v16, v17, v20, v23, v25, v27, v28, v31, v34, v35, v36, v39, v41, v43, v44, v47, v48, v53, v60, v62, v64, v66, v69, v70, v71, v72, v74, v79, v85, v90, v92, v94, v95, v98, v101, v102, v103, v105, v107, v108, v111 *TSParser
 	var v84, v88 *TableEntry
 	var debug_buffer, debug_buffer31, debug_buffer62, debug_buffer110, debug_buffer141, debug_buffer162 *[1024]byte
-	var v15, v26, v42, v63, v93, v106 *_IO_FILE
 	var v1, v2, v3, v4, arraydecay, call16, arraydecay32, call36, arraydecay63, call67, v59, arraydecay111, v65, call115, arraydecay142, call146, call148, arraydecay163, call167, v113, v114 *byte
 	var log, log24, log55, log103, log134, log155 *func(*byte, int32, *byte)
 	var leaf_symbol, v77, v81, v86 *int16
 	var version_addr, position_addr, byte_offset, end_byte_offset *int32
+	var v15, v26, v42, v63, v93, v106 *os.File
 	var tobool, call8, cmp, tobool10, tobool11, cmp20, tobool25, tobool28, cmp39, call42, call51, tobool56, tobool59, call73, call76, call80, call84, call88, call92, tobool99, tobool104, tobool107, call119, call122, call130, tobool135, tobool138, tobool156, tobool159 bool
 	var v13, v24, v40, v61, v91, v104 func(*byte, int32, *byte)
 	var call15, call35, call66, call114, call123, call127, v82, v83, v87, call145, v100, call166 int16
@@ -69670,9 +69638,9 @@ func ts_parser__lex(self *TSParser, version int32, parse_state int16) *SubtreeHe
 	var ptr, coerce_dive, coerce_dive44, ptr50, coerce_dive56, coerce_dive214, coerce_dive300, coerce_dive303, coerce_dive305, ptr306, ptr311, coerce_dive328, coerce_dive392, coerce_dive398 **SubtreeHeapData
 	var language, language69, language71, language98, language99, language151, language212, language239, language246, language273, language280, language298, language327 **TSLanguage
 	var self_addr **TSParser
-	var dot_graph_file, dot_graph_file32, dot_graph_file92, dot_graph_file128, dot_graph_file164, dot_graph_file320 **_IO_FILE
 	var buf, symbol326 **byte
 	var symbol_map, symbol_map101, symbol_map241 **int16
+	var dot_graph_file, dot_graph_file32, dot_graph_file92, dot_graph_file128, dot_graph_file164, dot_graph_file320 **os.File
 	var column_data, column_data22, column_data121 *ColumnData
 	var call57, external_scanner_state *ExternalScannerState
 	var start_position, error_start_position, error_end_position, current_position, padding, size, padding219, size225, coerce, current_position20, token_end_position, token_start_position, token_start_position174, current_position179, current_position201, token_start_position221, token_end_position227, token_start_position229, token_end_position234, token_end_position256, token_start_position260, token_end_position268 *Length
@@ -69689,7 +69657,6 @@ func ts_parser__lex(self *TSParser, version int32, parse_state int16) *SubtreeHe
 	var v0, v6, v8, v10, v11, v12, v17, v25, v32, v35, v39, v41, v43, v47, v48, v49, v51, v53, v55, v57, v59, v61, v65, v68, v71, v78, v82, v84, v86, v87, v89, v92, v95, v97, v99, v106, v109, v111, v113, v117, v118, v119, v123, v126, v132, v140, v142, v144, v145, v146, v149, v152, v154, v157, v159, v160, v161, v163, v164, v198, v202, v218, v220, v235, v236, v252, v255, v261, v265, v267, v268, v275, v276, v278, v281, v284, v286, v289, v291, v293, v300, v320, v325, v327, v329, v330, v379 *TSParser
 	var extent, extent40, extent136, extent138 *TSPoint
 	var debug_buffer, debug_buffer36, debug_buffer59, debug_buffer96, debug_buffer132, debug_buffer168, debug_buffer308, debug_buffer324 *[1024]byte
-	var v9, v42, v85, v112, v143, v328 *_IO_FILE
 	var external_scanner, external_scanner100, external_scanner240 *anon_6
 	var found_external_token, error_mode, skipped_error, called_get_column, external_scanner_state_changed, found_token, token_is_extra, is_keyword, v3, v4, arraydecay, v15, v16, v21, v22, v23, v24, v26, v27, v33, v34, v36, v37, arraydecay37, has_scanner_error, arraydecay60, arraydecay97, call107, did_get_column, v100, v101, v107, v108, arraydecay133, v120, v121, v128, v129, v130, v131, v133, v134, arraydecay169, v147, v148, v150, v151, v165, v166, v168, v169, v174, v175, v180, v181, v182, v183, v188, v189, v194, v195, v204, v205, v210, v211, v216, v217, v221, v222, v227, v228, v233, v234, v237, v238, v243, v244, v249, v250, v269, v270, v302, v303, v308, v309, v314, v315, arraydecay309, arraydecay325, call330, v333, v334, arrayidx334, v339, arrayidx341, v342, arrayidx344, v344, arrayidx347, v346, arrayidx351, v348, arrayidx354, v350, arrayidx358, v352, arrayidx361, v354, arrayidx365, v356, arrayidx368, v358, arrayidx372, v360, arrayidx375, v362, arrayidx379, v364, arrayidx382, v366, arrayidx384, v369, arrayidx387, v372, add_ptr, v376, v377, v380, v381 *byte
 	var eof *func(*TSLexer) bool
@@ -69698,6 +69665,7 @@ func ts_parser__lex(self *TSParser, version int32, parse_state int16) *SubtreeHe
 	var parse_state_addr, symbol, next_parse_state, symbol215, lex_state, external_lex_state, external_lex_state38, external_lex_state45, v67, result_symbol, arrayidx, v91, result_symbol104, arrayidx106, lex_state134, result_symbol193, result_symbol218, v257, arrayidx243, keyword_capture_token, result_symbol276, result_symbol283, result_symbol289, has_external_scanner_state_change *int16
 	var version_addr, first_error_character, lookahead_end_byte, external_scanner_state_len, lookahead_bytes, lookahead_bytes232, end_byte, off, i, v30, row, column, bytes, bytes64, v104, row137, column139, v137, lookahead, bytes180, bytes181, v172, v178, v186, v192, bytes210, v208, v214, v225, v231, v241, v247, bytes235, bytes257, v273, bytes269, v306, v312, bytes395 *int32
 	var tmp_coerce, lex_mode_coerce, tmp_coerce153, v28, v102, v135, v170, v176, v184, v190, v206, v212, v223, v229, v239, v245, v271, v304, v310 *int64
+	var v9, v42, v85, v112, v143, v328 *os.File
 	var v319 *struct {
 	F0 ExternalScannerState
 }
@@ -71298,7 +71266,7 @@ func ts_parser__breakdown_lookahead(self *TSParser, lookahead *Subtree, state in
 	var coerce_dive, coerce_dive1, coerce_dive3, coerce_dive10, coerce_dive16, coerce_dive19, coerce_dive20 **SubtreeHeapData
 	var language **TSLanguage
 	var self_addr **TSParser
-	var dot_graph_file **_IO_FILE
+	var dot_graph_file **os.File
 	var lexer, lexer9 *Lexer
 	var v0, v14, v15 *ReusableNode
 	var tree, tmp, v20, v22, v25 *Subtree
@@ -71308,10 +71276,10 @@ func ts_parser__breakdown_lookahead(self *TSParser, lookahead *Subtree, state in
 	var logger *TSLogger
 	var v5, v7, v9, v10, v13, v19 *TSParser
 	var debug_buffer *[1024]byte
-	var v8 *_IO_FILE
 	var did_descend, arraydecay, call12, v16, v17, v23, v24 *byte
 	var log *func(*byte, int32, *byte)
 	var state_addr *int16
+	var v8 *os.File
 	var cmp, cmp6, v4, tobool, tobool8, call14, tobool17 bool
 	var v18 byte
 	var v6 func(*byte, int32, *byte)
@@ -71861,8 +71829,8 @@ func ts_parser__reduce(self *TSParser, version int32, symbol int16, count int32,
 	var coerce_dive, coerce_dive67, coerce_dive69, coerce_dive70, coerce_dive77, coerce_dive79, coerce_dive80, coerce_dive99, ptr, ptr129, ptr133, ptr137, ptr139, ptr142, coerce_dive147, coerce_dive149, coerce_dive150, coerce_dive169 **SubtreeHeapData
 	var language, language97, language109 **TSLanguage
 	var self_addr **TSParser
-	var dot_graph_file **_IO_FILE
 	var _array_swap_tmp **byte
+	var dot_graph_file **os.File
 	var lexer, lexer17 *Lexer
 	var parent, tmp *MutableSubtree
 	var v1, v3, v12, v26, v99, v123, v132, v148, v155 *Stack
@@ -71876,12 +71844,12 @@ func ts_parser__reduce(self *TSParser, version int32, symbol int16, count int32,
 	var logger *TSLogger
 	var v0, v2, v11, v25, v28, v32, v34, v36, v37, v46, v50, v53, v68, v69, v72, v73, v74, v77, v80, v82, v85, v86, v87, v88, v89, v92, v96, v97, v98, v101, v122, v129, v131, v135, v137, v147, v154 *TSParser
 	var debug_buffer *[1024]byte
-	var v35 *_IO_FILE
 	var is_fragile_addr, end_of_non_terminal_extra_addr, v19, v20, arraydecay, v42, v43, v48, v49, v61, v62, v66, v67, v79, v83, v94, v95 *byte
 	var log *func(*byte, int32, *byte)
 	var symbol_addr, production_id_addr, state, next_state, extra, fragile_left, fragile_right, parse_state, parse_state140 *int16
 	var version_addr, count_addr, dynamic_precedence_addr, initial_version_count, removed_version_count, halted_version_count, i, slice_version, j, j171, size, size6, version8, size13, size21, version30, version31, size43, size49, version59, version60, size90, capacity, size93, capacity95, size102, size122, dynamic_precedence143, size153, size159 *int32
 	var v9 *int64
+	var v35 *os.File
 	var v6 *struct {
 	F0 *StackSlice
 	F1 int64
@@ -73100,7 +73068,7 @@ func ts_parser__recover(self *TSParser, version int32, lookahead_coerce *Subtree
 	var language, language90, language130, language156, language205, language244, language264, language411 **TSLanguage
 	var actions **TSParseAction
 	var self_addr **TSParser
-	var dot_graph_file, dot_graph_file86, dot_graph_file91, dot_graph_file93, dot_graph_file117, dot_graph_file126, dot_graph_file131, dot_graph_file133, dot_graph_file148, dot_graph_file238 **_IO_FILE
+	var dot_graph_file, dot_graph_file86, dot_graph_file91, dot_graph_file93, dot_graph_file117, dot_graph_file126, dot_graph_file131, dot_graph_file133, dot_graph_file148, dot_graph_file238 **os.File
 	var status *ErrorStatus
 	var position, coerce, coerce193, position19, position57, position61 *Length
 	var lexer, lexer81, lexer112, lexer120, lexer143, lexer151, lexer233, lexer241 *Lexer
@@ -73120,13 +73088,13 @@ func ts_parser__recover(self *TSParser, version int32, lookahead_coerce *Subtree
 	var v0, v2, v7, v10, v13, v37, v41, v56, v59, v63, v67, v69, v71, v74, v75, v77, v79, v81, v83, v88, v90, v93, v95, v97, v99, v100, v103, v105, v107, v109, v111, v115, v117, v119, v120, v122, v124, v128, v132, v134, v137, v141, v144, v152, v155, v158, v160, v170, v175, v177, v179, v180, v183, v196, v199, v210, v216, v221, v226, v255, v259, v265, v271, v273, v283 *TSParser
 	var extent, extent62, extent195 *TSPoint
 	var debug_buffer, debug_buffer121, debug_buffer152, debug_buffer242 *[1024]byte
-	var v70, v76, v82, v84, v96, v104, v110, v112, v118, v178 *_IO_FILE
 	var shift *anon_3
 	var did_recover, would_merge, has_error, v5, v6, v27, v28, v44, v45, arraydecay, arraydecay122, arraydecay153, v121, v149, v150, _type, extra, v173, v174, arraydecay243, call247, v184, v186, call252, v189, call257, v194, v195, v235, call362, v251, v252, v257, v258, is_in_error, has_error445 *byte
 	var log, log114, log145, log235 *func(*byte, int32, *byte)
 	var state, state37, state70, state75, state82 *int16
 	var version_addr, previous_version_count, node_count_since_error, current_error_cost, i, depth, j, new_cost, i102, new_cost185, n, i276, i430, size, size12, bytes, bytes20, depth25, bytes45, bytes46, depth55, bytes56, bytes58, row, row63, row196, capacity, size255, capacity256, size260, size272, size278, size283, size297, version305, size310, version318, size322, version330, size332, size342, size351, size352, capacity361, size363, size373, size383, size392, size402 *int32
 	var v205, v276, v278 *int64
+	var v70, v76, v82, v84, v96, v104, v110, v112, v118, v178 *os.File
 	var v202 *struct {
 	F0 *StackSlice
 	F1 int64
@@ -74566,7 +74534,7 @@ func ts_parser__breakdown_top_of_stack(self *TSParser, version int32) bool {
 	var coerce_dive, ptr, ptr21, coerce_dive24, coerce_dive27, coerce_dive31, coerce_dive34, coerce_dive39, coerce_dive43, coerce_dive62, coerce_dive66, coerce_dive85 **SubtreeHeapData
 	var language, language84, language94 **TSLanguage
 	var self_addr **TSParser
-	var dot_graph_file, dot_graph_file90, dot_graph_file95, dot_graph_file97 **_IO_FILE
+	var dot_graph_file, dot_graph_file90, dot_graph_file95, dot_graph_file97 **os.File
 	var lexer, lexer83 *Lexer
 	var v1, v18, v44, v59, v82 *Stack
 	var slice, v5, v13, arrayidx *StackSlice
@@ -74580,12 +74548,12 @@ func ts_parser__breakdown_top_of_stack(self *TSParser, version int32) bool {
 	var logger *TSLogger
 	var v0, v17, v38, v43, v58, v64, v70, v72, v74, v75, v78, v79, v81, v83, v85, v87 *TSParser
 	var debug_buffer *[1024]byte
-	var v73, v80, v86, v88 *_IO_FILE
 	var did_break_down, pending, v15, v16, v22, v23, v27, v33, v34, v56, v57, v69, arraydecay, call87 *byte
 	var log *func(*byte, int32, *byte)
 	var state *int16
 	var version_addr, i, j, n, j44, size, size1, size2, version7, size9, child_count, version41, size47, size51, version61, size78, capacity *int32
 	var v6 *int64
+	var v73, v80, v86, v88 *os.File
 	var v3 *struct {
 	F0 *StackSlice
 	F1 int64
@@ -76250,7 +76218,7 @@ func ts_parser__select_tree(self *TSParser, left_coerce *SubtreeHeapData, right_
 	var coerce_dive, coerce_dive1, ptr, ptr2, coerce_dive6, coerce_dive7, coerce_dive14, coerce_dive18, coerce_dive24, coerce_dive26, coerce_dive42, coerce_dive46, coerce_dive52, coerce_dive54, coerce_dive70, coerce_dive73, coerce_dive76, coerce_dive79, coerce_dive84, coerce_dive86, coerce_dive102, coerce_dive105, coerce_dive108, coerce_dive111, coerce_dive116, coerce_dive121, coerce_dive122, coerce_dive136, coerce_dive140, coerce_dive158, coerce_dive162, coerce_dive179, coerce_dive183 **SubtreeHeapData
 	var language, language17, language41, language45, language69, language75, language101, language107, language135, language139, language157, language161, language178, language182 **TSLanguage
 	var self_addr **TSParser
-	var dot_graph_file, dot_graph_file35, dot_graph_file63, dot_graph_file95, dot_graph_file129, dot_graph_file151, dot_graph_file172 **_IO_FILE
+	var dot_graph_file, dot_graph_file35, dot_graph_file63, dot_graph_file95, dot_graph_file129, dot_graph_file151, dot_graph_file172 **os.File
 	var lexer, lexer13, lexer30, lexer38, lexer58, lexer66, lexer90, lexer98, lexer124, lexer132, lexer146, lexer154, lexer167, lexer175 *Lexer
 	var left, right *Subtree
 	var v0, v1, v2, v3, v11, v14, v16, v17, v25, v28, v30, v31, v39, v40, v43, v44, v46, v47, v55, v56, v59, v60, v62, v64, v65, v74, v77, v86, v89, v98, v101 *SubtreeHeapData
@@ -76259,11 +76227,11 @@ func ts_parser__select_tree(self *TSParser, left_coerce *SubtreeHeapData, right_
 	var logger, logger31, logger59, logger91, logger125, logger147, logger168 *TSLogger
 	var v4, v6, v8, v9, v12, v15, v18, v20, v22, v23, v26, v29, v32, v34, v36, v37, v41, v45, v48, v50, v52, v53, v57, v61, v63, v67, v69, v71, v72, v75, v78, v79, v81, v83, v84, v87, v90, v91, v93, v95, v96, v99, v102 *TSParser
 	var debug_buffer, debug_buffer39, debug_buffer67, debug_buffer99, debug_buffer133, debug_buffer155, debug_buffer176 *[1024]byte
-	var v7, v21, v35, v51, v70, v82, v94 *_IO_FILE
 	var retval *bool
 	var arraydecay, call16, call20, arraydecay40, call44, call48, arraydecay68, call72, call78, arraydecay100, call104, call110, arraydecay134, call138, call142, arraydecay156, call160, call164, arraydecay177, call181, call185 *byte
 	var log, log32, log60, log92, log126, log148, log169 *func(*byte, int32, *byte)
 	var comparison *int32
+	var v7, v21, v35, v51, v70, v82, v94 *os.File
 	var tobool, tobool3, cmp, tobool10, tobool11, cmp28, tobool33, tobool36, cmp56, tobool61, tobool64, cmp88, tobool93, tobool96, cmp118, tobool127, tobool130, tobool149, tobool152, tobool170, tobool173, v103 bool
 	var v5, v19, v33, v49, v68, v80, v92 func(*byte, int32, *byte)
 	var call15, call19, call43, call47, call71, call77, call103, call109, call137, call141, call159, call163, call180, call184 int16
@@ -77924,7 +77892,7 @@ func ts_parser__handle_error(self *TSParser, version int32, lookahead_coerce *Su
 	var coerce_dive, coerce_dive25, coerce_dive34, coerce_dive36, coerce_dive42, coerce_dive44, coerce_dive45, ptr, coerce_dive66, coerce_dive84, coerce_dive90 **SubtreeHeapData
 	var language, language14, language24, language40, language55, language95 **TSLanguage
 	var self_addr **TSParser
-	var dot_graph_file, dot_graph_file91, dot_graph_file96, dot_graph_file98 **_IO_FILE
+	var dot_graph_file, dot_graph_file91, dot_graph_file96, dot_graph_file98 **os.File
 	var position, padding, token_end_position *Length
 	var lexer, lexer29, lexer30, lexer49, lexer54 *Lexer
 	var reusable_node *ReusableNode
@@ -77936,12 +77904,12 @@ func ts_parser__handle_error(self *TSParser, version int32, lookahead_coerce *Su
 	var logger *TSLogger
 	var v0, v2, v4, v6, v15, v19, v22, v29, v33, v40, v41, v58, v61, v64, v72, v77, v80, v82, v84, v85, v88, v91, v93, v104, v110, v114, v115, v116, v119, v121, v123, v125, v127 *TSParser
 	var debug_buffer *[1024]byte
-	var v83, v120, v126, v128 *_IO_FILE
 	var did_insert_missing_token, did_merge, v9, v10, v34, v35, v42, v43, v48, v49, v54, v55, v66, v67, arraydecay, call56 *byte
 	var log *func(*byte, int32, *byte)
 	var state, missing_symbol, state_after_missing_symbol *int16
 	var version_addr, previous_version_count, version_count, v, lookahead_bytes, version_with_missing_tree, i, token_count, v38, v46, v52, v70 *int32
 	var v36, v44, v50, v68 *int64
+	var v83, v120, v126, v128 *os.File
 	var tmp_coerce, position_coerce, token_end_position_coerce, position_coerce31, tmp_coerce33, padding_coerce *struct {
 	F0 int64
 	F1 int32

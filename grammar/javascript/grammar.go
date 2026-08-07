@@ -95912,7 +95912,7 @@ sw_bb43:
 	v37 = *lexer_addr
 	lookahead44 = &v37.F0
 	v38 = *lookahead44
-	call45 = iswdigit(v38)
+	call45 = libc.Iswdigit(v38)
 	tobool46 = call45 != 0
 	*retval = tobool46
 	goto _return
@@ -95970,7 +95970,7 @@ if_end60:
 	v52 = *lexer_addr
 	lookahead61 = &v52.F0
 	v53 = *lookahead61
-	call62 = iswalpha(v53)
+	call62 = libc.Iswalpha(v53)
 	tobool63 = call62 != 0
 	if tobool63 {
 		goto if_end65
@@ -96030,7 +96030,7 @@ for_end73:
 	v61 = *lexer_addr
 	lookahead74 = &v61.F0
 	v62 = *lookahead74
-	call75 = iswalpha(v62)
+	call75 = libc.Iswalpha(v62)
 	tobool76 = call75 != 0
 	if tobool76 {
 		goto if_end78
@@ -96148,7 +96148,7 @@ if_then9:
 	v15 = *lexer_addr
 	lookahead10 = &v15.F0
 	v16 = *lookahead10
-	call11 = iswdigit(v16)
+	call11 = libc.Iswdigit(v16)
 	tobool12 = call11 != 0
 	if tobool12 {
 		goto if_then13

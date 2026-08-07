@@ -5398,7 +5398,7 @@ land_lhs_true63:
 	v55 = *lexer_addr
 	lookahead64 = &v55.F0
 	v56 = *lookahead64
-	call65 = iswdigit(v56)
+	call65 = libc.Iswdigit(v56)
 	tobool66 = call65 != 0
 	if tobool66 {
 		goto if_then67
@@ -5450,7 +5450,7 @@ if_then76:
 	v65 = *lexer_addr
 	lookahead77 = &v65.F0
 	v66 = *lookahead77
-	call78 = iswalpha(v66)
+	call78 = libc.Iswalpha(v66)
 	tobool79 = call78 != 0
 	if tobool79 {
 		goto if_then80
@@ -5665,7 +5665,7 @@ if_end130:
 	v103 = *lexer_addr
 	lookahead131 = &v103.F0
 	v104 = *lookahead131
-	call132 = iswdigit(v104)
+	call132 = libc.Iswdigit(v104)
 	tobool133 = call132 != 0
 	if tobool133 {
 		goto if_end135
@@ -5684,7 +5684,7 @@ while_cond136:
 	v105 = *lexer_addr
 	lookahead137 = &v105.F0
 	v106 = *lookahead137
-	call138 = iswdigit(v106)
+	call138 = libc.Iswdigit(v106)
 	tobool139 = call138 != 0
 	if tobool139 {
 		goto while_body140
@@ -5883,7 +5883,7 @@ func is_num_char(c int32) bool {
 
 lor_rhs:
 	v1 = *c_addr
-	call = iswdigit(v1)
+	call = libc.Iswdigit(v1)
 	tobool = call != 0
 	v2 = tobool
 	goto lor_end

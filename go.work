@@ -68,12 +68,14 @@ use (
 	./grammar/groovy
 	./grammar/gstlaunch
 	./grammar/hare
+	./grammar/haskell
 	./grammar/hcl
 	./grammar/heex
 	./grammar/hlsl
 	./grammar/html
 	./grammar/http
 	./grammar/hyprlang
+	./grammar/idris
 	./grammar/ini
 	./grammar/ispc
 	./grammar/java
@@ -127,6 +129,7 @@ use (
 	./grammar/proto
 	./grammar/psv
 	./grammar/puppet
+	./grammar/purescript
 	./grammar/pymanifest
 	./grammar/python
 	./grammar/ql

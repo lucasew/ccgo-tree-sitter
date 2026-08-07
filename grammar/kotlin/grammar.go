@@ -491801,7 +491801,7 @@ land_lhs_true:
 	v33 = *lexer_addr
 	lookahead35 = &v33.F0
 	v34 = *lookahead35
-	call = iswalpha(v34)
+	call = libc.Iswalpha(v34)
 	tobool36 = call != 0
 	if tobool36 {
 		goto if_then44
@@ -491934,7 +491934,7 @@ land_lhs_true77:
 	v59 = *lexer_addr
 	lookahead78 = &v59.F0
 	v60 = *lookahead78
-	call79 = iswalpha(v60)
+	call79 = libc.Iswalpha(v60)
 	tobool80 = call79 != 0
 	if tobool80 {
 		goto if_then85

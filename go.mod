@@ -5,7 +5,7 @@ go 1.25.0
 require github.com/spf13/cobra v1.10.2
 
 require (
-	github.com/andybalholm/leaven v0.0.0-20260807044944-c23fa918feeb // indirect
+	github.com/andybalholm/leaven v0.0.0-20260807161919-d7e0c93ee95b // indirect
 	github.com/llir/ll v0.0.0-20210719001141-246f2b6b1fa9 // indirect
 	github.com/llir/llvm v0.3.5-0.20220120022543-ad080cea55b7 // indirect
 	github.com/mewmew/float v0.0.0-20201204173432-505706aa38fa // indirect
@@ -95,12 +95,14 @@ require (
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/groovy v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/gstlaunch v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/hare v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/haskell v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/hcl v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/heex v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/hlsl v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/html v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/http v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/hyprlang v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/idris v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/ini v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/ispc v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/java v0.0.0
@@ -154,6 +156,7 @@ require (
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/proto v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/psv v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/puppet v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/purescript v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/pymanifest v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/python v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/ql v0.0.0
@@ -225,7 +228,7 @@ replace modernc.org/libc => github.com/modernc-tree-sitter/libc v0.0.0-202607072
 
 tool github.com/andybalholm/leaven
 
-replace github.com/andybalholm/leaven => github.com/lewtec/leaven v0.0.0-20260807044944-c23fa918feeb
+replace github.com/andybalholm/leaven => github.com/lewtec/leaven v0.0.0-20260807161919-d7e0c93ee95b
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar => ./grammar
 
@@ -359,6 +362,8 @@ replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/gstlaunch => ./g
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/hare => ./grammar/hare
 
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/haskell => ./grammar/haskell
+
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/hcl => ./grammar/hcl
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/heex => ./grammar/heex
@@ -370,6 +375,8 @@ replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/html => ./gramma
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/http => ./grammar/http
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/hyprlang => ./grammar/hyprlang
+
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/idris => ./grammar/idris
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/ini => ./grammar/ini
 
@@ -476,6 +483,8 @@ replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/proto => ./gramm
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/psv => ./grammar/psv
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/puppet => ./grammar/puppet
+
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/purescript => ./grammar/purescript
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/pymanifest => ./grammar/pymanifest
 

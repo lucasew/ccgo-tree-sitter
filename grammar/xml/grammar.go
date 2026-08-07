@@ -148,10 +148,10 @@ var _str [29]byte = [29]byte{
 	40, 116, 97, 103, 115, 41, 45, 62, 115, 105, 122, 101, 0,
 }
 
-var _str_1 [38]byte = [38]byte{
+var _str_1 [37]byte = [37]byte{
 	47, 116, 109, 112, 47, 108, 101, 97, 118, 101, 110, 45, 120, 109, 108, 45,
-	50, 53, 53, 52, 52, 56, 54, 53, 57, 53, 47, 99, 111, 109, 98, 105,
-	110, 101, 100, 46, 99, 0,
+	54, 57, 51, 50, 54, 55, 48, 56, 54, 47, 99, 111, 109, 98, 105, 110,
+	101, 100, 46, 99, 0,
 }
 
 var __PRETTY_FUNCTION___tree_sitter_xml_external_scanner_destroy [54]byte = [54]byte{
@@ -42365,7 +42365,7 @@ func is_valid_name_start_char(chr int32) bool {
 	chr_addr = new(int32)
 	*chr_addr = chr
 	v0 = *chr_addr
-	call = iswalpha(v0)
+	call = libc.Iswalpha(v0)
 	tobool = call != 0
 	if tobool {
 		v3 = true

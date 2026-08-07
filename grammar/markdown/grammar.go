@@ -1529,10 +1529,10 @@ var _str [9]byte = [9]byte{109, 97, 114, 107, 100, 111, 119, 110, 0}
 
 var _str_1 [12]byte = [12]byte{116, 109, 112, 32, 33, 61, 32, 78, 85, 76, 76, 0}
 
-var _str_2 [42]byte = [42]byte{
+var _str_2 [43]byte = [43]byte{
 	47, 116, 109, 112, 47, 108, 101, 97, 118, 101, 110, 45, 109, 97, 114, 107,
-	100, 111, 119, 110, 45, 57, 54, 57, 51, 50, 55, 49, 52, 51, 47, 99,
-	111, 109, 98, 105, 110, 101, 100, 46, 99, 0,
+	100, 111, 119, 110, 45, 51, 49, 49, 54, 48, 49, 57, 48, 53, 50, 47,
+	99, 111, 109, 98, 105, 110, 101, 100, 46, 99, 0,
 }
 
 var __PRETTY_FUNCTION___deserialize [56]byte = [56]byte{
@@ -114582,7 +114582,7 @@ while_cond:
 	v97 = *lexer_addr
 	lookahead118 = &v97.F0
 	v98 = *lookahead118
-	call119 = iswalpha(v98)
+	call119 = libc.Iswalpha(v98)
 	tobool120 = call119 != 0
 	if tobool120 {
 		goto while_body
@@ -115119,7 +115119,7 @@ if_end278:
 	v180 = *lexer_addr
 	lookahead279 = &v180.F0
 	v181 = *lookahead279
-	call280 = iswalpha(v181)
+	call280 = libc.Iswalpha(v181)
 	tobool281 = call280 != 0
 	if tobool281 {
 		goto if_end291

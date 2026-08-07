@@ -125365,7 +125365,7 @@ if_then:
 	v18 = *lexer_addr
 	lookahead20 = &v18.F0
 	v19 = *lookahead20
-	call21 = iswdigit(v19)
+	call21 = libc.Iswdigit(v19)
 	tobool22 = call21 != 0
 	if tobool22 {
 		goto if_then23
@@ -125445,14 +125445,14 @@ if_then35:
 	v37 = *lexer_addr
 	lookahead39 = &v37.F0
 	v38 = *lookahead39
-	call40 = iswalpha(v38)
+	call40 = libc.Iswalpha(v38)
 	tobool41 = call40 != 0
 	if tobool41 { frombool42 = 1 } else { frombool42 = 0 }
 	*is_alpha = frombool42
 	v39 = *lexer_addr
 	lookahead43 = &v39.F0
 	v40 = *lookahead43
-	call44 = iswdigit(v40)
+	call44 = libc.Iswdigit(v40)
 	tobool45 = call44 != 0
 	if tobool45 { frombool46 = 1 } else { frombool46 = 0 }
 	*is_digit = frombool46
@@ -126642,7 +126642,7 @@ if_then7:
 	v16 = *lexer_addr
 	lookahead8 = &v16.F0
 	v17 = *lookahead8
-	call = iswdigit(v17)
+	call = libc.Iswdigit(v17)
 	tobool9 = call != 0
 	*retval = tobool9
 	goto _return
@@ -138895,7 +138895,7 @@ if_then:
 
 if_end:
 	v1 = *chr_addr
-	call = iswalpha(v1)
+	call = libc.Iswalpha(v1)
 	tobool = call != 0
 	if tobool { frombool1 = 1 } else { frombool1 = 0 }
 	*alpha = frombool1
@@ -138910,7 +138910,7 @@ if_end:
 
 land_rhs:
 	v3 = *chr_addr
-	call3 = iswdigit(v3)
+	call3 = libc.Iswdigit(v3)
 	tobool4 = call3 != 0
 	v4 = tobool4
 	goto land_end

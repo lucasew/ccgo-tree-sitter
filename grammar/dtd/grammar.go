@@ -31833,7 +31833,7 @@ func is_valid_name_start_char(chr int32) bool {
 	chr_addr = new(int32)
 	*chr_addr = chr
 	v0 = *chr_addr
-	call = iswalpha(v0)
+	call = libc.Iswalpha(v0)
 	tobool = call != 0
 	if tobool {
 		v3 = true

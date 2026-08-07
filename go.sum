@@ -41,6 +41,12 @@ github.com/lewtec/leaven v0.0.0-20260807043854-63b3eed56286 h1:+Mrg33OlZJ4iybdft
 github.com/lewtec/leaven v0.0.0-20260807043854-63b3eed56286/go.mod h1:lqGqcD+dn7ZITclEQatDE81z3qi3aKqvfNuT0GCoQBc=
 github.com/lewtec/leaven v0.0.0-20260807044944-c23fa918feeb h1:5eljziIkc3/OplicdSXB6dK3xpKqMcvY3lbwquyNCQM=
 github.com/lewtec/leaven v0.0.0-20260807044944-c23fa918feeb/go.mod h1:lqGqcD+dn7ZITclEQatDE81z3qi3aKqvfNuT0GCoQBc=
+github.com/lewtec/leaven v0.0.0-20260807144536-691d9e807e2a h1:wFDCVNUWp+BjO1V9VGON874/hg4LnCAgqp8OMpBc3ng=
+github.com/lewtec/leaven v0.0.0-20260807144536-691d9e807e2a/go.mod h1:lqGqcD+dn7ZITclEQatDE81z3qi3aKqvfNuT0GCoQBc=
+github.com/lewtec/leaven v0.0.0-20260807160523-2af667b1519c h1:BsZ3lKRu5sS1o8C0gvoP4w8YbTfqN1BaSHkP8jv27io=
+github.com/lewtec/leaven v0.0.0-20260807160523-2af667b1519c/go.mod h1:lqGqcD+dn7ZITclEQatDE81z3qi3aKqvfNuT0GCoQBc=
+github.com/lewtec/leaven v0.0.0-20260807161919-d7e0c93ee95b h1:Pm833tX28JggqMWlhzB0mCv+pLBf7aIvtQrrXxWP56Q=
+github.com/lewtec/leaven v0.0.0-20260807161919-d7e0c93ee95b/go.mod h1:lqGqcD+dn7ZITclEQatDE81z3qi3aKqvfNuT0GCoQBc=
 github.com/llir/ll v0.0.0-20210719001141-246f2b6b1fa9 h1:Hq2U9Y7KGvx2FHe4u3fOr2qLkuonIUMcDhcY59Smwsc=
 github.com/llir/ll v0.0.0-20210719001141-246f2b6b1fa9/go.mod h1:2F+W9dmrXLYy3UZXnii5UM7QDRiVsz4QkMpC0vaBU7M=
 github.com/llir/llvm v0.3.5-0.20220120022543-ad080cea55b7 h1:qpWeOVS0QMji1NhDfYKc7bYU9HFl+Yi1K5aWCbn6f8I=

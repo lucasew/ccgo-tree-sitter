@@ -394664,7 +394664,7 @@ while_end62:
 	v58 = *lexer_addr
 	lookahead63 = &v58.F0
 	v59 = *lookahead63
-	call64 = iswdigit(v59)
+	call64 = libc.Iswdigit(v59)
 	tobool65 = call64 != 0
 	if tobool65 {
 		goto if_end67
@@ -394683,7 +394683,7 @@ while_cond68:
 	v60 = *lexer_addr
 	lookahead69 = &v60.F0
 	v61 = *lookahead69
-	call70 = iswdigit(v61)
+	call70 = libc.Iswdigit(v61)
 	tobool71 = call70 != 0
 	if tobool71 {
 		goto while_body72
@@ -428497,7 +428497,7 @@ sw_bb:
 	v3 = *lexer_addr
 	lookahead1 = &v3.F0
 	v4 = *lookahead1
-	call = iswdigit(v4)
+	call = libc.Iswdigit(v4)
 	tobool = call != 0
 	if tobool {
 		goto if_then
@@ -428524,7 +428524,7 @@ for_body:
 	v7 = *lexer_addr
 	lookahead2 = &v7.F0
 	v8 = *lookahead2
-	call3 = iswdigit(v8)
+	call3 = libc.Iswdigit(v8)
 	tobool4 = call3 != 0
 	if tobool4 {
 		goto if_end
@@ -428598,7 +428598,7 @@ for_body11:
 	v15 = *lexer_addr
 	lookahead12 = &v15.F0
 	v16 = *lookahead12
-	call13 = iswdigit(v16)
+	call13 = libc.Iswdigit(v16)
 	tobool14 = call13 != 0
 	if tobool14 {
 		goto if_end22
@@ -428667,7 +428667,7 @@ for_body30:
 	v25 = *lexer_addr
 	lookahead31 = &v25.F0
 	v26 = *lookahead31
-	call32 = iswdigit(v26)
+	call32 = libc.Iswdigit(v26)
 	tobool33 = call32 != 0
 	if tobool33 {
 		goto lor_lhs_false34

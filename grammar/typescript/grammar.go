@@ -285628,7 +285628,7 @@ if_end47:
 	v42 = *lexer_addr
 	lookahead48 = &v42.F0
 	v43 = *lookahead48
-	call49 = iswalpha(v43)
+	call49 = libc.Iswalpha(v43)
 	tobool50 = call49 != 0
 	if tobool50 {
 		goto if_end52
@@ -285688,7 +285688,7 @@ for_end61:
 	v51 = *lexer_addr
 	lookahead62 = &v51.F0
 	v52 = *lookahead62
-	call63 = iswalpha(v52)
+	call63 = libc.Iswalpha(v52)
 	tobool64 = call63 != 0
 	if tobool64 {
 		goto if_end66
@@ -285874,7 +285874,7 @@ if_then28:
 	v26 = *lexer_addr
 	lookahead29 = &v26.F0
 	v27 = *lookahead29
-	call30 = iswdigit(v27)
+	call30 = libc.Iswdigit(v27)
 	tobool31 = call30 != 0
 	if tobool31 {
 		goto if_then32

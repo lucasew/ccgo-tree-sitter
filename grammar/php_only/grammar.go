@@ -185615,7 +185615,7 @@ land_lhs_true121:
 	v93 = *lexer_addr
 	lookahead122 = &v93.F0
 	v94 = *lookahead122
-	call123 = iswdigit(v94)
+	call123 = libc.Iswdigit(v94)
 	tobool124 = call123 != 0
 	if tobool124 {
 		goto lor_lhs_false125
@@ -186627,7 +186627,7 @@ if_end22:
 	v16 = *lexer_addr
 	lookahead23 = &v16.F0
 	v17 = *lookahead23
-	call24 = iswdigit(v17)
+	call24 = libc.Iswdigit(v17)
 	tobool25 = call24 != 0
 	if tobool25 {
 		goto land_lhs_true

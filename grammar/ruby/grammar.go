@@ -164,7 +164,7 @@ var _str [48]byte = [48]byte{
 
 var _str_1 [39]byte = [39]byte{
 	47, 116, 109, 112, 47, 108, 101, 97, 118, 101, 110, 45, 114, 117, 98, 121,
-	45, 49, 54, 48, 53, 57, 51, 53, 51, 48, 56, 47, 99, 111, 109, 98,
+	45, 50, 53, 49, 56, 53, 57, 54, 57, 48, 57, 47, 99, 111, 109, 98,
 	105, 110, 101, 100, 46, 99, 0,
 }
 
@@ -208443,7 +208443,7 @@ land_lhs_true190:
 	v115 = *lexer_addr
 	lookahead191 = &v115.F0
 	v116 = *lookahead191
-	call192 = iswdigit(v116)
+	call192 = libc.Iswdigit(v116)
 	tobool193 = call192 != 0
 	if tobool193 {
 		goto if_then194
@@ -208735,7 +208735,7 @@ land_lhs_true272:
 	v169 = *lexer_addr
 	lookahead273 = &v169.F0
 	v170 = *lookahead273
-	call274 = iswalpha(v170)
+	call274 = libc.Iswalpha(v170)
 	tobool275 = call274 != 0
 	if tobool275 {
 		goto if_then288
@@ -241757,7 +241757,7 @@ if_then18:
 	v17 = *lexer_addr
 	lookahead19 = &v17.F0
 	v18 = *lookahead19
-	call20 = iswalpha(v18)
+	call20 = libc.Iswalpha(v18)
 	tobool21 = call20 != 0
 	if tobool21 {
 		v21 = true
@@ -241854,7 +241854,7 @@ land_rhs:
 	v33 = *lexer_addr
 	lookahead52 = &v33.F0
 	v34 = *lookahead52
-	call53 = iswdigit(v34)
+	call53 = libc.Iswdigit(v34)
 	tobool54 = call53 != 0
 	lnot = tobool54 != true
 	v35 = lnot

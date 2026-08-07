@@ -922,7 +922,7 @@ var ts_current_calloc func(int64, int64) *byte = ts_calloc_default
 
 var ts_current_realloc func(*byte, int64) *byte = ts_realloc_default
 
-var ts_current_free func(*byte) = free
+var ts_current_free func(*byte) = libc.Free
 
 var _str [29]byte = [29]byte{
 	40, 117, 105, 110, 116, 51, 50, 95, 116, 41, 40, 105, 41, 32, 60, 32,
@@ -3944,7 +3944,7 @@ cond_true12:
 	goto cond_end14
 
 cond_false13:
-	cond15 = free
+	cond15 = libc.Free
 	goto cond_end14
 
 cond_end14:
@@ -4007,7 +4007,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str[int64(0)], &_str_1[int64(0)], 37, &__PRETTY_FUNCTION___ts_range_array_intersects[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_1[int64(0)], 37, &__PRETTY_FUNCTION___ts_range_array_intersects[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -4648,7 +4648,7 @@ if_then5:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_118[int64(0)], &_str_1[int64(0)], 16, &__PRETTY_FUNCTION___ts_range_array_add[int64(0)])
+	libc.AssertFail(&_str_118[int64(0)], &_str_1[int64(0)], 16, &__PRETTY_FUNCTION___ts_range_array_add[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -5822,7 +5822,7 @@ if_then100:
 	goto if_end102
 
 if_else101:
-	__assert_fail(&_str_2[int64(0)], &_str_1[int64(0)], 536, &__PRETTY_FUNCTION___ts_subtree_get_changed_ranges[int64(0)])
+	libc.AssertFail(&_str_2[int64(0)], &_str_1[int64(0)], 536, &__PRETTY_FUNCTION___ts_subtree_get_changed_ranges[int64(0)])
 	panic("unreachable")
 
 if_end102:
@@ -6174,7 +6174,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_119[int64(0)], &_str_1[int64(0)], 174, &__PRETTY_FUNCTION___iterator_start_position[int64(0)])
+	libc.AssertFail(&_str_119[int64(0)], &_str_1[int64(0)], 174, &__PRETTY_FUNCTION___iterator_start_position[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -6684,7 +6684,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_119[int64(0)], &_str_1[int64(0)], 183, &__PRETTY_FUNCTION___iterator_end_position[int64(0)])
+	libc.AssertFail(&_str_119[int64(0)], &_str_1[int64(0)], 183, &__PRETTY_FUNCTION___iterator_end_position[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -6912,7 +6912,7 @@ if_then5:
 	goto if_end6
 
 if_else:
-	__assert_fail(&_str_119[int64(0)], &_str_1[int64(0)], 252, &__PRETTY_FUNCTION___iterator_descend[int64(0)])
+	libc.AssertFail(&_str_119[int64(0)], &_str_1[int64(0)], 252, &__PRETTY_FUNCTION___iterator_descend[int64(0)])
 	panic("unreachable")
 
 if_end6:
@@ -7513,7 +7513,7 @@ if_then22:
 	goto if_end24
 
 if_else23:
-	__assert_fail(&_str_119[int64(0)], &_str_1[int64(0)], 309, &__PRETTY_FUNCTION___iterator_advance[int64(0)])
+	libc.AssertFail(&_str_119[int64(0)], &_str_1[int64(0)], 309, &__PRETTY_FUNCTION___iterator_advance[int64(0)])
 	panic("unreachable")
 
 if_end24:
@@ -7859,7 +7859,7 @@ if_then7:
 	goto if_end8
 
 if_else:
-	__assert_fail(&_str_119[int64(0)], &_str_1[int64(0)], 242, &__PRETTY_FUNCTION___iterator_ascend[int64(0)])
+	libc.AssertFail(&_str_119[int64(0)], &_str_1[int64(0)], 242, &__PRETTY_FUNCTION___iterator_ascend[int64(0)])
 	panic("unreachable")
 
 if_end8:
@@ -8543,7 +8543,7 @@ if_then8:
 	goto if_end
 
 if_else9:
-	__assert_fail(&_str_3[int64(0)], &_str_4[int64(0)], 79, &__PRETTY_FUNCTION___ts_language_table_entry[int64(0)])
+	libc.AssertFail(&_str_3[int64(0)], &_str_4[int64(0)], 79, &__PRETTY_FUNCTION___ts_language_table_entry[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -18605,7 +18605,7 @@ if_then35:
 	goto if_end36
 
 if_else:
-	__assert_fail(&_str_46[int64(0)], &_str_47[int64(0)], 447, &__PRETTY_FUNCTION___ts_stack_delete[int64(0)])
+	libc.AssertFail(&_str_46[int64(0)], &_str_47[int64(0)], 447, &__PRETTY_FUNCTION___ts_stack_delete[int64(0)])
 	panic("unreachable")
 
 if_end36:
@@ -18681,7 +18681,7 @@ if_then56:
 	goto if_end58
 
 if_else57:
-	__assert_fail(&_str_48[int64(0)], &_str_47[int64(0)], 452, &__PRETTY_FUNCTION___ts_stack_delete[int64(0)])
+	libc.AssertFail(&_str_48[int64(0)], &_str_47[int64(0)], 452, &__PRETTY_FUNCTION___ts_stack_delete[int64(0)])
 	panic("unreachable")
 
 if_end58:
@@ -18865,7 +18865,7 @@ if_then1:
 	goto if_end2
 
 if_else:
-	__assert_fail(&_str_99[int64(0)], &_str_93[int64(0)], 569, &__PRETTY_FUNCTION___ts_subtree_release[int64(0)])
+	libc.AssertFail(&_str_99[int64(0)], &_str_93[int64(0)], 569, &__PRETTY_FUNCTION___ts_subtree_release[int64(0)])
 	panic("unreachable")
 
 if_end2:
@@ -19055,7 +19055,7 @@ if_then55:
 	goto if_end57
 
 if_else56:
-	__assert_fail(&_str_101[int64(0)], &_str_93[int64(0)], 581, &__PRETTY_FUNCTION___ts_subtree_release[int64(0)])
+	libc.AssertFail(&_str_101[int64(0)], &_str_93[int64(0)], 581, &__PRETTY_FUNCTION___ts_subtree_release[int64(0)])
 	panic("unreachable")
 
 if_end57:
@@ -19245,7 +19245,7 @@ if_then5:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_96[int64(0)], &_str_93[int64(0)], 130, &__PRETTY_FUNCTION___ts_subtree_pool_delete[int64(0)])
+	libc.AssertFail(&_str_96[int64(0)], &_str_93[int64(0)], 130, &__PRETTY_FUNCTION___ts_subtree_pool_delete[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -20018,7 +20018,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_46[int64(0)], &_str_47[int64(0)], 769, &__PRETTY_FUNCTION___ts_stack_clear[int64(0)])
+	libc.AssertFail(&_str_46[int64(0)], &_str_47[int64(0)], 769, &__PRETTY_FUNCTION___ts_stack_clear[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -20480,7 +20480,7 @@ if_then67:
 	goto if_end69
 
 if_else68:
-	__assert_fail(&_str_11[int64(0)], &_str_12[int64(0)], 2143, &__PRETTY_FUNCTION___ts_parser_parse[int64(0)])
+	libc.AssertFail(&_str_11[int64(0)], &_str_12[int64(0)], 2143, &__PRETTY_FUNCTION___ts_parser_parse[int64(0)])
 	panic("unreachable")
 
 if_end69:
@@ -20888,7 +20888,7 @@ if_then190:
 	goto if_end192
 
 if_else191:
-	__assert_fail(&_str_17[int64(0)], &_str_12[int64(0)], 2200, &__PRETTY_FUNCTION___ts_parser_parse[int64(0)])
+	libc.AssertFail(&_str_17[int64(0)], &_str_12[int64(0)], 2200, &__PRETTY_FUNCTION___ts_parser_parse[int64(0)])
 	panic("unreachable")
 
 if_end192:
@@ -20958,7 +20958,7 @@ if_then212:
 	goto if_end214
 
 if_else213:
-	__assert_fail(&_str_18[int64(0)], &_str_12[int64(0)], 2210, &__PRETTY_FUNCTION___ts_parser_parse[int64(0)])
+	libc.AssertFail(&_str_18[int64(0)], &_str_12[int64(0)], 2210, &__PRETTY_FUNCTION___ts_parser_parse[int64(0)])
 	panic("unreachable")
 
 if_end214:
@@ -21454,7 +21454,7 @@ if_then1:
 	goto if_end2
 
 if_else:
-	__assert_fail(&_str_99[int64(0)], &_str_93[int64(0)], 560, &__PRETTY_FUNCTION___ts_subtree_retain[int64(0)])
+	libc.AssertFail(&_str_99[int64(0)], &_str_93[int64(0)], 560, &__PRETTY_FUNCTION___ts_subtree_retain[int64(0)])
 	panic("unreachable")
 
 if_end2:
@@ -21477,7 +21477,7 @@ if_then8:
 	goto if_end10
 
 if_else9:
-	__assert_fail(&_str_100[int64(0)], &_str_93[int64(0)], 562, &__PRETTY_FUNCTION___ts_subtree_retain[int64(0)])
+	libc.AssertFail(&_str_100[int64(0)], &_str_93[int64(0)], 562, &__PRETTY_FUNCTION___ts_subtree_retain[int64(0)])
 	panic("unreachable")
 
 if_end10:
@@ -21650,7 +21650,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_49[int64(0)], &_str_47[int64(0)], 746, &__PRETTY_FUNCTION___ts_stack_is_active[int64(0)])
+	libc.AssertFail(&_str_49[int64(0)], &_str_47[int64(0)], 746, &__PRETTY_FUNCTION___ts_stack_is_active[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -21704,7 +21704,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_49[int64(0)], &_str_47[int64(0)], 475, &__PRETTY_FUNCTION___ts_stack_state[int64(0)])
+	libc.AssertFail(&_str_49[int64(0)], &_str_47[int64(0)], 475, &__PRETTY_FUNCTION___ts_stack_state[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -21775,7 +21775,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_49[int64(0)], &_str_47[int64(0)], 479, &__PRETTY_FUNCTION___ts_stack_position[int64(0)])
+	libc.AssertFail(&_str_49[int64(0)], &_str_47[int64(0)], 479, &__PRETTY_FUNCTION___ts_stack_position[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -22926,7 +22926,7 @@ if_then12:
 	goto if_end13
 
 if_else:
-	__assert_fail(&_str_46[int64(0)], &_str_47[int64(0)], 792, &__PRETTY_FUNCTION___ts_stack_print_dot_graph[int64(0)])
+	libc.AssertFail(&_str_46[int64(0)], &_str_47[int64(0)], 792, &__PRETTY_FUNCTION___ts_stack_print_dot_graph[int64(0)])
 	panic("unreachable")
 
 if_end13:
@@ -23036,7 +23036,7 @@ if_then40:
 	goto if_end42
 
 if_else41:
-	__assert_fail(&_str_70[int64(0)], &_str_47[int64(0)], 810, &__PRETTY_FUNCTION___ts_stack_print_dot_graph[int64(0)])
+	libc.AssertFail(&_str_70[int64(0)], &_str_47[int64(0)], 810, &__PRETTY_FUNCTION___ts_stack_print_dot_graph[int64(0)])
 	panic("unreachable")
 
 if_end42:
@@ -23229,7 +23229,7 @@ if_then103:
 	goto if_end105
 
 if_else104:
-	__assert_fail(&_str_74[int64(0)], &_str_47[int64(0)], 831, &__PRETTY_FUNCTION___ts_stack_print_dot_graph[int64(0)])
+	libc.AssertFail(&_str_74[int64(0)], &_str_47[int64(0)], 831, &__PRETTY_FUNCTION___ts_stack_print_dot_graph[int64(0)])
 	panic("unreachable")
 
 if_end105:
@@ -23275,7 +23275,7 @@ if_then121:
 	goto if_end123
 
 if_else122:
-	__assert_fail(&_str_75[int64(0)], &_str_47[int64(0)], 835, &__PRETTY_FUNCTION___ts_stack_print_dot_graph[int64(0)])
+	libc.AssertFail(&_str_75[int64(0)], &_str_47[int64(0)], 835, &__PRETTY_FUNCTION___ts_stack_print_dot_graph[int64(0)])
 	panic("unreachable")
 
 if_end123:
@@ -23612,7 +23612,7 @@ if_then238:
 	goto if_end240
 
 if_else239:
-	__assert_fail(&_str_74[int64(0)], &_str_47[int64(0)], 894, &__PRETTY_FUNCTION___ts_stack_print_dot_graph[int64(0)])
+	libc.AssertFail(&_str_74[int64(0)], &_str_47[int64(0)], 894, &__PRETTY_FUNCTION___ts_stack_print_dot_graph[int64(0)])
 	panic("unreachable")
 
 if_end240:
@@ -23686,7 +23686,7 @@ if_then270:
 	goto if_end272
 
 if_else271:
-	__assert_fail(&_str_90[int64(0)], &_str_47[int64(0)], 897, &__PRETTY_FUNCTION___ts_stack_print_dot_graph[int64(0)])
+	libc.AssertFail(&_str_90[int64(0)], &_str_47[int64(0)], 897, &__PRETTY_FUNCTION___ts_stack_print_dot_graph[int64(0)])
 	panic("unreachable")
 
 if_end272:
@@ -24549,7 +24549,7 @@ if_then39:
 	goto if_end40
 
 if_else:
-	__assert_fail(&_str_185[int64(0)], &_str_12[int64(0)], 1918, &__PRETTY_FUNCTION___ts_parser__balance_subtree[int64(0)])
+	libc.AssertFail(&_str_185[int64(0)], &_str_12[int64(0)], 1918, &__PRETTY_FUNCTION___ts_parser__balance_subtree[int64(0)])
 	panic("unreachable")
 
 if_end40:
@@ -25734,7 +25734,7 @@ if_then100:
 	goto if_end101
 
 if_else:
-	__assert_fail(&_str_20[int64(0)], &_str_21[int64(0)], 3072, &__PRETTY_FUNCTION___ts_query_new[int64(0)])
+	libc.AssertFail(&_str_20[int64(0)], &_str_21[int64(0)], 3072, &__PRETTY_FUNCTION___ts_query_new[int64(0)])
 	panic("unreachable")
 
 if_end101:
@@ -25868,7 +25868,7 @@ if_then149:
 	goto if_end151
 
 if_else150:
-	__assert_fail(&_str_22[int64(0)], &_str_21[int64(0)], 3093, &__PRETTY_FUNCTION___ts_query_new[int64(0)])
+	libc.AssertFail(&_str_22[int64(0)], &_str_21[int64(0)], 3093, &__PRETTY_FUNCTION___ts_query_new[int64(0)])
 	panic("unreachable")
 
 if_end151:
@@ -25932,7 +25932,7 @@ if_then168:
 	goto if_end170
 
 if_else169:
-	__assert_fail(&_str_23[int64(0)], &_str_21[int64(0)], 3100, &__PRETTY_FUNCTION___ts_query_new[int64(0)])
+	libc.AssertFail(&_str_23[int64(0)], &_str_21[int64(0)], 3100, &__PRETTY_FUNCTION___ts_query_new[int64(0)])
 	panic("unreachable")
 
 if_end170:
@@ -26041,7 +26041,7 @@ if_then204:
 	goto if_end206
 
 if_else205:
-	__assert_fail(&_str_24[int64(0)], &_str_21[int64(0)], 3115, &__PRETTY_FUNCTION___ts_query_new[int64(0)])
+	libc.AssertFail(&_str_24[int64(0)], &_str_21[int64(0)], 3115, &__PRETTY_FUNCTION___ts_query_new[int64(0)])
 	panic("unreachable")
 
 if_end206:
@@ -26227,7 +26227,7 @@ if_then272:
 	goto if_end274
 
 if_else273:
-	__assert_fail(&_str_25[int64(0)], &_str_21[int64(0)], 3157, &__PRETTY_FUNCTION___ts_query_new[int64(0)])
+	libc.AssertFail(&_str_25[int64(0)], &_str_21[int64(0)], 3157, &__PRETTY_FUNCTION___ts_query_new[int64(0)])
 	panic("unreachable")
 
 if_end274:
@@ -26314,7 +26314,7 @@ if_then306:
 	goto if_end308
 
 if_else307:
-	__assert_fail(&_str_26[int64(0)], &_str_21[int64(0)], 3163, &__PRETTY_FUNCTION___ts_query_new[int64(0)])
+	libc.AssertFail(&_str_26[int64(0)], &_str_21[int64(0)], 3163, &__PRETTY_FUNCTION___ts_query_new[int64(0)])
 	panic("unreachable")
 
 if_end308:
@@ -26486,7 +26486,7 @@ if_then377:
 	goto if_end379
 
 if_else378:
-	__assert_fail(&_str_25[int64(0)], &_str_21[int64(0)], 3186, &__PRETTY_FUNCTION___ts_query_new[int64(0)])
+	libc.AssertFail(&_str_25[int64(0)], &_str_21[int64(0)], 3186, &__PRETTY_FUNCTION___ts_query_new[int64(0)])
 	panic("unreachable")
 
 if_end379:
@@ -27077,7 +27077,7 @@ if_then16:
 	goto if_end17
 
 if_else:
-	__assert_fail(&_str_187[int64(0)], &_str_21[int64(0)], 2412, &__PRETTY_FUNCTION___ts_query__parse_pattern[int64(0)])
+	libc.AssertFail(&_str_187[int64(0)], &_str_21[int64(0)], 2412, &__PRETTY_FUNCTION___ts_query__parse_pattern[int64(0)])
 	panic("unreachable")
 
 if_end17:
@@ -27415,7 +27415,7 @@ if_then128:
 	goto if_end130
 
 if_else129:
-	__assert_fail(&_str_188[int64(0)], &_str_21[int64(0)], 2467, &__PRETTY_FUNCTION___ts_query__parse_pattern[int64(0)])
+	libc.AssertFail(&_str_188[int64(0)], &_str_21[int64(0)], 2467, &__PRETTY_FUNCTION___ts_query__parse_pattern[int64(0)])
 	panic("unreachable")
 
 if_end130:
@@ -27441,7 +27441,7 @@ if_then137:
 	goto if_end139
 
 if_else138:
-	__assert_fail(&_str_189[int64(0)], &_str_21[int64(0)], 2468, &__PRETTY_FUNCTION___ts_query__parse_pattern[int64(0)])
+	libc.AssertFail(&_str_189[int64(0)], &_str_21[int64(0)], 2468, &__PRETTY_FUNCTION___ts_query__parse_pattern[int64(0)])
 	panic("unreachable")
 
 if_end139:
@@ -27469,7 +27469,7 @@ if_then148:
 	goto if_end150
 
 if_else149:
-	__assert_fail(&_str_24[int64(0)], &_str_21[int64(0)], 2469, &__PRETTY_FUNCTION___ts_query__parse_pattern[int64(0)])
+	libc.AssertFail(&_str_24[int64(0)], &_str_21[int64(0)], 2469, &__PRETTY_FUNCTION___ts_query__parse_pattern[int64(0)])
 	panic("unreachable")
 
 if_end150:
@@ -27498,7 +27498,7 @@ if_then160:
 	goto if_end162
 
 if_else161:
-	__assert_fail(&_str_190[int64(0)], &_str_21[int64(0)], 2470, &__PRETTY_FUNCTION___ts_query__parse_pattern[int64(0)])
+	libc.AssertFail(&_str_190[int64(0)], &_str_21[int64(0)], 2470, &__PRETTY_FUNCTION___ts_query__parse_pattern[int64(0)])
 	panic("unreachable")
 
 if_end162:
@@ -28091,7 +28091,7 @@ if_then345:
 	goto if_end347
 
 if_else346:
-	__assert_fail(&_str_192[int64(0)], &_str_21[int64(0)], 2619, &__PRETTY_FUNCTION___ts_query__parse_pattern[int64(0)])
+	libc.AssertFail(&_str_192[int64(0)], &_str_21[int64(0)], 2619, &__PRETTY_FUNCTION___ts_query__parse_pattern[int64(0)])
 	panic("unreachable")
 
 if_end347:
@@ -28635,7 +28635,7 @@ if_then529:
 	goto if_end531
 
 if_else530:
-	__assert_fail(&_str_193[int64(0)], &_str_21[int64(0)], 2764, &__PRETTY_FUNCTION___ts_query__parse_pattern[int64(0)])
+	libc.AssertFail(&_str_193[int64(0)], &_str_21[int64(0)], 2764, &__PRETTY_FUNCTION___ts_query__parse_pattern[int64(0)])
 	panic("unreachable")
 
 if_end531:
@@ -28700,7 +28700,7 @@ if_then557:
 	goto if_end559
 
 if_else558:
-	__assert_fail(&_str_194[int64(0)], &_str_21[int64(0)], 2770, &__PRETTY_FUNCTION___ts_query__parse_pattern[int64(0)])
+	libc.AssertFail(&_str_194[int64(0)], &_str_21[int64(0)], 2770, &__PRETTY_FUNCTION___ts_query__parse_pattern[int64(0)])
 	panic("unreachable")
 
 if_end559:
@@ -28775,7 +28775,7 @@ if_then585:
 	goto if_end587
 
 if_else586:
-	__assert_fail(&_str_195[int64(0)], &_str_21[int64(0)], 2776, &__PRETTY_FUNCTION___ts_query__parse_pattern[int64(0)])
+	libc.AssertFail(&_str_195[int64(0)], &_str_21[int64(0)], 2776, &__PRETTY_FUNCTION___ts_query__parse_pattern[int64(0)])
 	panic("unreachable")
 
 if_end587:
@@ -29176,7 +29176,7 @@ if_then725:
 	goto if_end727
 
 if_else726:
-	__assert_fail(&_str_24[int64(0)], &_str_21[int64(0)], 2883, &__PRETTY_FUNCTION___ts_query__parse_pattern[int64(0)])
+	libc.AssertFail(&_str_24[int64(0)], &_str_21[int64(0)], 2883, &__PRETTY_FUNCTION___ts_query__parse_pattern[int64(0)])
 	panic("unreachable")
 
 if_end727:
@@ -29257,7 +29257,7 @@ if_then756:
 	goto if_end758
 
 if_else757:
-	__assert_fail(&_str_24[int64(0)], &_str_21[int64(0)], 2892, &__PRETTY_FUNCTION___ts_query__parse_pattern[int64(0)])
+	libc.AssertFail(&_str_24[int64(0)], &_str_21[int64(0)], 2892, &__PRETTY_FUNCTION___ts_query__parse_pattern[int64(0)])
 	panic("unreachable")
 
 if_end758:
@@ -29442,7 +29442,7 @@ if_then817:
 	goto if_end819
 
 if_else818:
-	__assert_fail(&_str_24[int64(0)], &_str_21[int64(0)], 2956, &__PRETTY_FUNCTION___ts_query__parse_pattern[int64(0)])
+	libc.AssertFail(&_str_24[int64(0)], &_str_21[int64(0)], 2956, &__PRETTY_FUNCTION___ts_query__parse_pattern[int64(0)])
 	panic("unreachable")
 
 if_end819:
@@ -29692,7 +29692,7 @@ if_then923:
 	goto if_end925
 
 if_else924:
-	__assert_fail(&_str_196[int64(0)], &_str_21[int64(0)], 2996, &__PRETTY_FUNCTION___ts_query__parse_pattern[int64(0)])
+	libc.AssertFail(&_str_196[int64(0)], &_str_21[int64(0)], 2996, &__PRETTY_FUNCTION___ts_query__parse_pattern[int64(0)])
 	panic("unreachable")
 
 if_end925:
@@ -29760,7 +29760,7 @@ if_then951:
 	goto if_end953
 
 if_else952:
-	__assert_fail(&_str_197[int64(0)], &_str_21[int64(0)], 2998, &__PRETTY_FUNCTION___ts_query__parse_pattern[int64(0)])
+	libc.AssertFail(&_str_197[int64(0)], &_str_21[int64(0)], 2998, &__PRETTY_FUNCTION___ts_query__parse_pattern[int64(0)])
 	panic("unreachable")
 
 if_end953:
@@ -29810,7 +29810,7 @@ if_then972:
 	goto if_end974
 
 if_else973:
-	__assert_fail(&_str_196[int64(0)], &_str_21[int64(0)], 3004, &__PRETTY_FUNCTION___ts_query__parse_pattern[int64(0)])
+	libc.AssertFail(&_str_196[int64(0)], &_str_21[int64(0)], 3004, &__PRETTY_FUNCTION___ts_query__parse_pattern[int64(0)])
 	panic("unreachable")
 
 if_end974:
@@ -29877,7 +29877,7 @@ if_then999:
 	goto if_end1001
 
 if_else1000:
-	__assert_fail(&_str_197[int64(0)], &_str_21[int64(0)], 3006, &__PRETTY_FUNCTION___ts_query__parse_pattern[int64(0)])
+	libc.AssertFail(&_str_197[int64(0)], &_str_21[int64(0)], 3006, &__PRETTY_FUNCTION___ts_query__parse_pattern[int64(0)])
 	panic("unreachable")
 
 if_end1001:
@@ -30514,7 +30514,7 @@ if_then112:
 	goto if_end113
 
 if_else:
-	__assert_fail(&_str_27[int64(0)], &_str_21[int64(0)], 3224, &__PRETTY_FUNCTION___ts_query_delete[int64(0)])
+	libc.AssertFail(&_str_27[int64(0)], &_str_21[int64(0)], 3224, &__PRETTY_FUNCTION___ts_query_delete[int64(0)])
 	panic("unreachable")
 
 if_end113:
@@ -30653,7 +30653,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_203[int64(0)], &_str_21[int64(0)], 1291, &__PRETTY_FUNCTION___ts_query__pattern_map_insert[int64(0)])
+	libc.AssertFail(&_str_203[int64(0)], &_str_21[int64(0)], 1291, &__PRETTY_FUNCTION___ts_query__pattern_map_insert[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -30684,7 +30684,7 @@ if_then9:
 	goto if_end11
 
 if_else10:
-	__assert_fail(&_str_204[int64(0)], &_str_21[int64(0)], 1293, &__PRETTY_FUNCTION___ts_query__pattern_map_insert[int64(0)])
+	libc.AssertFail(&_str_204[int64(0)], &_str_21[int64(0)], 1293, &__PRETTY_FUNCTION___ts_query__pattern_map_insert[int64(0)])
 	panic("unreachable")
 
 if_end11:
@@ -31023,7 +31023,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_33[int64(0)], &_str_21[int64(0)], 1656, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_33[int64(0)], &_str_21[int64(0)], 1656, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -31065,7 +31065,7 @@ if_then9:
 	goto if_end11
 
 if_else10:
-	__assert_fail(&_str_210[int64(0)], &_str_21[int64(0)], 1658, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_210[int64(0)], &_str_21[int64(0)], 1658, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end11:
@@ -31169,7 +31169,7 @@ if_then44:
 	goto if_end46
 
 if_else45:
-	__assert_fail(&_str_25[int64(0)], &_str_21[int64(0)], 1671, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_25[int64(0)], &_str_21[int64(0)], 1671, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end46:
@@ -31267,7 +31267,7 @@ if_then81:
 	goto if_end83
 
 if_else82:
-	__assert_fail(&_str_211[int64(0)], &_str_21[int64(0)], 1682, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_211[int64(0)], &_str_21[int64(0)], 1682, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end83:
@@ -31481,7 +31481,7 @@ if_then162:
 	goto if_end164
 
 if_else163:
-	__assert_fail(&_str_211[int64(0)], &_str_21[int64(0)], 1710, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_211[int64(0)], &_str_21[int64(0)], 1710, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end164:
@@ -31641,7 +31641,7 @@ if_then222:
 	goto if_end224
 
 if_else223:
-	__assert_fail(&_str_212[int64(0)], &_str_21[int64(0)], 1725, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_212[int64(0)], &_str_21[int64(0)], 1725, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end224:
@@ -31748,7 +31748,7 @@ if_then258:
 	goto if_end260
 
 if_else259:
-	__assert_fail(&_str_213[int64(0)], &_str_21[int64(0)], 1749, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_213[int64(0)], &_str_21[int64(0)], 1749, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end260:
@@ -31775,7 +31775,7 @@ if_then268:
 	goto if_end270
 
 if_else269:
-	__assert_fail(&_str_214[int64(0)], &_str_21[int64(0)], 1750, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_214[int64(0)], &_str_21[int64(0)], 1750, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end270:
@@ -32423,7 +32423,7 @@ if_then504:
 	goto if_end506
 
 if_else505:
-	__assert_fail(&_str_215[int64(0)], &_str_21[int64(0)], 1792, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_215[int64(0)], &_str_21[int64(0)], 1792, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end506:
@@ -32465,7 +32465,7 @@ if_then521:
 	goto if_end523
 
 if_else522:
-	__assert_fail(&_str_216[int64(0)], &_str_21[int64(0)], 1793, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_216[int64(0)], &_str_21[int64(0)], 1793, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end523:
@@ -32833,7 +32833,7 @@ if_then664:
 	goto if_end666
 
 if_else665:
-	__assert_fail(&_str_215[int64(0)], &_str_21[int64(0)], 1829, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_215[int64(0)], &_str_21[int64(0)], 1829, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end666:
@@ -32875,7 +32875,7 @@ if_then681:
 	goto if_end683
 
 if_else682:
-	__assert_fail(&_str_217[int64(0)], &_str_21[int64(0)], 1832, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_217[int64(0)], &_str_21[int64(0)], 1832, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end683:
@@ -33007,7 +33007,7 @@ if_then736:
 	goto if_end738
 
 if_else737:
-	__assert_fail(&_str_218[int64(0)], &_str_21[int64(0)], 1846, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_218[int64(0)], &_str_21[int64(0)], 1846, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end738:
@@ -33409,7 +33409,7 @@ if_then906:
 	goto if_end908
 
 if_else907:
-	__assert_fail(&_str_213[int64(0)], &_str_21[int64(0)], 1910, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_213[int64(0)], &_str_21[int64(0)], 1910, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end908:
@@ -33438,7 +33438,7 @@ if_then918:
 	goto if_end920
 
 if_else919:
-	__assert_fail(&_str_214[int64(0)], &_str_21[int64(0)], 1911, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_214[int64(0)], &_str_21[int64(0)], 1911, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end920:
@@ -33469,7 +33469,7 @@ if_then932:
 	goto if_end934
 
 if_else933:
-	__assert_fail(&_str_214[int64(0)], &_str_21[int64(0)], 1912, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_214[int64(0)], &_str_21[int64(0)], 1912, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end934:
@@ -33765,7 +33765,7 @@ if_then1050:
 	goto if_end1052
 
 if_else1051:
-	__assert_fail(&_str_219[int64(0)], &_str_21[int64(0)], 1923, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_219[int64(0)], &_str_21[int64(0)], 1923, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end1052:
@@ -33785,7 +33785,7 @@ if_then1057:
 	goto if_end1059
 
 if_else1058:
-	__assert_fail(&_str_220[int64(0)], &_str_21[int64(0)], 1924, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_220[int64(0)], &_str_21[int64(0)], 1924, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end1059:
@@ -33818,7 +33818,7 @@ if_then1070:
 	goto if_end1072
 
 if_else1071:
-	__assert_fail(&_str_215[int64(0)], &_str_21[int64(0)], 1931, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_215[int64(0)], &_str_21[int64(0)], 1931, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end1072:
@@ -33867,7 +33867,7 @@ if_then1088:
 	goto if_end1090
 
 if_else1089:
-	__assert_fail(&_str_221[int64(0)], &_str_21[int64(0)], 1935, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_221[int64(0)], &_str_21[int64(0)], 1935, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end1090:
@@ -33965,7 +33965,7 @@ if_then1127:
 	goto if_end1129
 
 if_else1128:
-	__assert_fail(&_str_211[int64(0)], &_str_21[int64(0)], 1966, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_211[int64(0)], &_str_21[int64(0)], 1966, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end1129:
@@ -34086,7 +34086,7 @@ if_then1177:
 	goto if_end1179
 
 if_else1178:
-	__assert_fail(&_str_222[int64(0)], &_str_21[int64(0)], 1984, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_222[int64(0)], &_str_21[int64(0)], 1984, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end1179:
@@ -34273,7 +34273,7 @@ if_then1254:
 	goto if_end1256
 
 if_else1255:
-	__assert_fail(&_str_220[int64(0)], &_str_21[int64(0)], 1992, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_220[int64(0)], &_str_21[int64(0)], 1992, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end1256:
@@ -34323,7 +34323,7 @@ if_then1274:
 	goto if_end1276
 
 if_else1275:
-	__assert_fail(&_str_223[int64(0)], &_str_21[int64(0)], 2000, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_223[int64(0)], &_str_21[int64(0)], 2000, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end1276:
@@ -34352,7 +34352,7 @@ if_then1287:
 	goto if_end1289
 
 if_else1288:
-	__assert_fail(&_str_224[int64(0)], &_str_21[int64(0)], 2001, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_224[int64(0)], &_str_21[int64(0)], 2001, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end1289:
@@ -34471,7 +34471,7 @@ if_then1337:
 	goto if_end1339
 
 if_else1338:
-	__assert_fail(&_str_225[int64(0)], &_str_21[int64(0)], 2016, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_225[int64(0)], &_str_21[int64(0)], 2016, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end1339:
@@ -34528,7 +34528,7 @@ if_then1357:
 	goto if_end1359
 
 if_else1358:
-	__assert_fail(&_str_226[int64(0)], &_str_21[int64(0)], 2025, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_226[int64(0)], &_str_21[int64(0)], 2025, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end1359:
@@ -34758,7 +34758,7 @@ if_then1449:
 	goto if_end1451
 
 if_else1450:
-	__assert_fail(&_str_211[int64(0)], &_str_21[int64(0)], 2038, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_211[int64(0)], &_str_21[int64(0)], 2038, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end1451:
@@ -35021,7 +35021,7 @@ if_then1555:
 	goto if_end1557
 
 if_else1556:
-	__assert_fail(&_str_25[int64(0)], &_str_21[int64(0)], 2058, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_25[int64(0)], &_str_21[int64(0)], 2058, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end1557:
@@ -35116,7 +35116,7 @@ if_then1593:
 	goto if_end1595
 
 if_else1594:
-	__assert_fail(&_str_197[int64(0)], &_str_21[int64(0)], 2071, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_197[int64(0)], &_str_21[int64(0)], 2071, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end1595:
@@ -35159,7 +35159,7 @@ if_then1609:
 	goto if_end1611
 
 if_else1610:
-	__assert_fail(&_str_227[int64(0)], &_str_21[int64(0)], 2076, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_227[int64(0)], &_str_21[int64(0)], 2076, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end1611:
@@ -35266,7 +35266,7 @@ if_then1655:
 	goto if_end1657
 
 if_else1656:
-	__assert_fail(&_str_228[int64(0)], &_str_21[int64(0)], 2098, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_228[int64(0)], &_str_21[int64(0)], 2098, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end1657:
@@ -35294,7 +35294,7 @@ if_then1666:
 	goto if_end1668
 
 if_else1667:
-	__assert_fail(&_str_229[int64(0)], &_str_21[int64(0)], 2099, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_229[int64(0)], &_str_21[int64(0)], 2099, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end1668:
@@ -35341,7 +35341,7 @@ if_then1687:
 	goto if_end1689
 
 if_else1688:
-	__assert_fail(&_str_230[int64(0)], &_str_21[int64(0)], 2104, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_230[int64(0)], &_str_21[int64(0)], 2104, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end1689:
@@ -35418,7 +35418,7 @@ if_then1717:
 	goto if_end1719
 
 if_else1718:
-	__assert_fail(&_str_231[int64(0)], &_str_21[int64(0)], 2109, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_231[int64(0)], &_str_21[int64(0)], 2109, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end1719:
@@ -35510,7 +35510,7 @@ if_then1756:
 	goto if_end1758
 
 if_else1757:
-	__assert_fail(&_str_232[int64(0)], &_str_21[int64(0)], 2138, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_232[int64(0)], &_str_21[int64(0)], 2138, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end1758:
@@ -35559,7 +35559,7 @@ if_then1777:
 	goto if_end1779
 
 if_else1778:
-	__assert_fail(&_str_233[int64(0)], &_str_21[int64(0)], 2142, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_233[int64(0)], &_str_21[int64(0)], 2142, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end1779:
@@ -35782,7 +35782,7 @@ if_then1864:
 	goto if_end1866
 
 if_else1865:
-	__assert_fail(&_str_218[int64(0)], &_str_21[int64(0)], 2161, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_218[int64(0)], &_str_21[int64(0)], 2161, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end1866:
@@ -35817,7 +35817,7 @@ if_then1877:
 	goto if_end1879
 
 if_else1878:
-	__assert_fail(&_str_218[int64(0)], &_str_21[int64(0)], 2161, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_218[int64(0)], &_str_21[int64(0)], 2161, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end1879:
@@ -35848,7 +35848,7 @@ if_then1889:
 	goto if_end1891
 
 if_else1890:
-	__assert_fail(&_str_218[int64(0)], &_str_21[int64(0)], 2161, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_218[int64(0)], &_str_21[int64(0)], 2161, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end1891:
@@ -35874,7 +35874,7 @@ if_then1900:
 	goto if_end1902
 
 if_else1901:
-	__assert_fail(&_str_218[int64(0)], &_str_21[int64(0)], 2161, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_218[int64(0)], &_str_21[int64(0)], 2161, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end1902:
@@ -35900,7 +35900,7 @@ if_then1911:
 	goto if_end1913
 
 if_else1912:
-	__assert_fail(&_str_218[int64(0)], &_str_21[int64(0)], 2161, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_218[int64(0)], &_str_21[int64(0)], 2161, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end1913:
@@ -35932,7 +35932,7 @@ if_then1924:
 	goto if_end1926
 
 if_else1925:
-	__assert_fail(&_str_218[int64(0)], &_str_21[int64(0)], 2162, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_218[int64(0)], &_str_21[int64(0)], 2162, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end1926:
@@ -35967,7 +35967,7 @@ if_then1937:
 	goto if_end1939
 
 if_else1938:
-	__assert_fail(&_str_218[int64(0)], &_str_21[int64(0)], 2162, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_218[int64(0)], &_str_21[int64(0)], 2162, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end1939:
@@ -35998,7 +35998,7 @@ if_then1949:
 	goto if_end1951
 
 if_else1950:
-	__assert_fail(&_str_218[int64(0)], &_str_21[int64(0)], 2162, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_218[int64(0)], &_str_21[int64(0)], 2162, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end1951:
@@ -36024,7 +36024,7 @@ if_then1960:
 	goto if_end1962
 
 if_else1961:
-	__assert_fail(&_str_218[int64(0)], &_str_21[int64(0)], 2162, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_218[int64(0)], &_str_21[int64(0)], 2162, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end1962:
@@ -36050,7 +36050,7 @@ if_then1971:
 	goto if_end1973
 
 if_else1972:
-	__assert_fail(&_str_218[int64(0)], &_str_21[int64(0)], 2162, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
+	libc.AssertFail(&_str_218[int64(0)], &_str_21[int64(0)], 2162, &__PRETTY_FUNCTION___ts_query__analyze_patterns[int64(0)])
 	panic("unreachable")
 
 if_end1973:
@@ -36829,7 +36829,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_28[int64(0)], &_str_21[int64(0)], 3256, &__PRETTY_FUNCTION___ts_query_copy[int64(0)])
+	libc.AssertFail(&_str_28[int64(0)], &_str_21[int64(0)], 3256, &__PRETTY_FUNCTION___ts_query_copy[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -36857,7 +36857,7 @@ if_then202:
 	goto if_end204
 
 if_else203:
-	__assert_fail(&_str_29[int64(0)], &_str_21[int64(0)], 3257, &__PRETTY_FUNCTION___ts_query_copy[int64(0)])
+	libc.AssertFail(&_str_29[int64(0)], &_str_21[int64(0)], 3257, &__PRETTY_FUNCTION___ts_query_copy[int64(0)])
 	panic("unreachable")
 
 if_end204:
@@ -37087,7 +37087,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_240[int64(0)], &_str_21[int64(0)], 940, &__PRETTY_FUNCTION___symbol_table_name_for_id[int64(0)])
+	libc.AssertFail(&_str_240[int64(0)], &_str_21[int64(0)], 940, &__PRETTY_FUNCTION___symbol_table_name_for_id[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -37122,7 +37122,7 @@ if_then7:
 	goto if_end9
 
 if_else8:
-	__assert_fail(&_str_201[int64(0)], &_str_21[int64(0)], 942, &__PRETTY_FUNCTION___symbol_table_name_for_id[int64(0)])
+	libc.AssertFail(&_str_201[int64(0)], &_str_21[int64(0)], 942, &__PRETTY_FUNCTION___symbol_table_name_for_id[int64(0)])
 	panic("unreachable")
 
 if_end9:
@@ -37174,7 +37174,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_30[int64(0)], &_str_21[int64(0)], 3290, &__PRETTY_FUNCTION___ts_query_capture_quantifier_for_id[int64(0)])
+	libc.AssertFail(&_str_30[int64(0)], &_str_21[int64(0)], 3290, &__PRETTY_FUNCTION___ts_query_capture_quantifier_for_id[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -37245,7 +37245,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_199[int64(0)], &_str_21[int64(0)], 843, &__PRETTY_FUNCTION___capture_quantifier_for_id[int64(0)])
+	libc.AssertFail(&_str_199[int64(0)], &_str_21[int64(0)], 843, &__PRETTY_FUNCTION___capture_quantifier_for_id[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -37334,7 +37334,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_31[int64(0)], &_str_21[int64(0)], 3307, &__PRETTY_FUNCTION___ts_query_predicates_for_pattern[int64(0)])
+	libc.AssertFail(&_str_31[int64(0)], &_str_21[int64(0)], 3307, &__PRETTY_FUNCTION___ts_query_predicates_for_pattern[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -37384,7 +37384,7 @@ if_then9:
 	goto if_end11
 
 if_else10:
-	__assert_fail(&_str_32[int64(0)], &_str_21[int64(0)], 3310, &__PRETTY_FUNCTION___ts_query_predicates_for_pattern[int64(0)])
+	libc.AssertFail(&_str_32[int64(0)], &_str_21[int64(0)], 3310, &__PRETTY_FUNCTION___ts_query_predicates_for_pattern[int64(0)])
 	panic("unreachable")
 
 if_end11:
@@ -37437,7 +37437,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_31[int64(0)], &_str_21[int64(0)], 3317, &__PRETTY_FUNCTION___ts_query_start_byte_for_pattern[int64(0)])
+	libc.AssertFail(&_str_31[int64(0)], &_str_21[int64(0)], 3317, &__PRETTY_FUNCTION___ts_query_start_byte_for_pattern[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -37486,7 +37486,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_31[int64(0)], &_str_21[int64(0)], 3324, &__PRETTY_FUNCTION___ts_query_end_byte_for_pattern[int64(0)])
+	libc.AssertFail(&_str_31[int64(0)], &_str_21[int64(0)], 3324, &__PRETTY_FUNCTION___ts_query_end_byte_for_pattern[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -37560,7 +37560,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_33[int64(0)], &_str_21[int64(0)], 3332, &__PRETTY_FUNCTION___ts_query_is_pattern_rooted[int64(0)])
+	libc.AssertFail(&_str_33[int64(0)], &_str_21[int64(0)], 3332, &__PRETTY_FUNCTION___ts_query_is_pattern_rooted[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -37670,7 +37670,7 @@ if_then4:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_31[int64(0)], &_str_21[int64(0)], 3345, &__PRETTY_FUNCTION___ts_query_is_pattern_non_local[int64(0)])
+	libc.AssertFail(&_str_31[int64(0)], &_str_21[int64(0)], 3345, &__PRETTY_FUNCTION___ts_query_is_pattern_non_local[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -37757,7 +37757,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_34[int64(0)], &_str_21[int64(0)], 3357, &__PRETTY_FUNCTION___ts_query_is_pattern_guaranteed_at_step[int64(0)])
+	libc.AssertFail(&_str_34[int64(0)], &_str_21[int64(0)], 3357, &__PRETTY_FUNCTION___ts_query_is_pattern_guaranteed_at_step[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -37827,7 +37827,7 @@ if_then18:
 	goto if_end20
 
 if_else19:
-	__assert_fail(&_str_24[int64(0)], &_str_21[int64(0)], 3362, &__PRETTY_FUNCTION___ts_query_is_pattern_guaranteed_at_step[int64(0)])
+	libc.AssertFail(&_str_24[int64(0)], &_str_21[int64(0)], 3362, &__PRETTY_FUNCTION___ts_query_is_pattern_guaranteed_at_step[int64(0)])
 	panic("unreachable")
 
 if_end20:
@@ -37895,7 +37895,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_24[int64(0)], &_str_21[int64(0)], 3373, &__PRETTY_FUNCTION___ts_query__step_is_fallible[int64(0)])
+	libc.AssertFail(&_str_24[int64(0)], &_str_21[int64(0)], 3373, &__PRETTY_FUNCTION___ts_query__step_is_fallible[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -37929,7 +37929,7 @@ if_then8:
 	goto if_end10
 
 if_else9:
-	__assert_fail(&_str_35[int64(0)], &_str_21[int64(0)], 3376, &__PRETTY_FUNCTION___ts_query__step_is_fallible[int64(0)])
+	libc.AssertFail(&_str_35[int64(0)], &_str_21[int64(0)], 3376, &__PRETTY_FUNCTION___ts_query__step_is_fallible[int64(0)])
 	panic("unreachable")
 
 if_end10:
@@ -37952,7 +37952,7 @@ if_then17:
 	goto if_end19
 
 if_else18:
-	__assert_fail(&_str_36[int64(0)], &_str_21[int64(0)], 3377, &__PRETTY_FUNCTION___ts_query__step_is_fallible[int64(0)])
+	libc.AssertFail(&_str_36[int64(0)], &_str_21[int64(0)], 3377, &__PRETTY_FUNCTION___ts_query__step_is_fallible[int64(0)])
 	panic("unreachable")
 
 if_end19:
@@ -38150,7 +38150,7 @@ if_then5:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_25[int64(0)], &_str_21[int64(0)], 3398, &__PRETTY_FUNCTION___ts_query_disable_capture[int64(0)])
+	libc.AssertFail(&_str_25[int64(0)], &_str_21[int64(0)], 3398, &__PRETTY_FUNCTION___ts_query_disable_capture[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -38238,7 +38238,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_241[int64(0)], &_str_21[int64(0)], 926, &__PRETTY_FUNCTION___symbol_table_id_for_name[int64(0)])
+	libc.AssertFail(&_str_241[int64(0)], &_str_21[int64(0)], 926, &__PRETTY_FUNCTION___symbol_table_id_for_name[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -38280,7 +38280,7 @@ if_then9:
 	goto if_end11
 
 if_else10:
-	__assert_fail(&_str_201[int64(0)], &_str_21[int64(0)], 929, &__PRETTY_FUNCTION___symbol_table_id_for_name[int64(0)])
+	libc.AssertFail(&_str_201[int64(0)], &_str_21[int64(0)], 929, &__PRETTY_FUNCTION___symbol_table_id_for_name[int64(0)])
 	panic("unreachable")
 
 if_end11:
@@ -38507,7 +38507,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_33[int64(0)], &_str_21[int64(0)], 3411, &__PRETTY_FUNCTION___ts_query_disable_pattern[int64(0)])
+	libc.AssertFail(&_str_33[int64(0)], &_str_21[int64(0)], 3411, &__PRETTY_FUNCTION___ts_query_disable_pattern[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -38594,7 +38594,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_242[int64(0)], &_str_243[int64(0)], 199, &__PRETTY_FUNCTION____array__erase[int64(0)])
+	libc.AssertFail(&_str_242[int64(0)], &_str_243[int64(0)], 199, &__PRETTY_FUNCTION____array__erase[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -39005,7 +39005,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_244[int64(0)], &_str_21[int64(0)], 462, &__PRETTY_FUNCTION___capture_list_pool_delete[int64(0)])
+	libc.AssertFail(&_str_244[int64(0)], &_str_21[int64(0)], 462, &__PRETTY_FUNCTION___capture_list_pool_delete[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -39043,7 +39043,7 @@ if_then10:
 	goto if_end12
 
 if_else11:
-	__assert_fail(&_str_244[int64(0)], &_str_21[int64(0)], 462, &__PRETTY_FUNCTION___capture_list_pool_delete[int64(0)])
+	libc.AssertFail(&_str_244[int64(0)], &_str_21[int64(0)], 462, &__PRETTY_FUNCTION___capture_list_pool_delete[int64(0)])
 	panic("unreachable")
 
 if_end12:
@@ -39077,7 +39077,7 @@ if_then22:
 	goto if_end24
 
 if_else23:
-	__assert_fail(&_str_244[int64(0)], &_str_21[int64(0)], 462, &__PRETTY_FUNCTION___capture_list_pool_delete[int64(0)])
+	libc.AssertFail(&_str_244[int64(0)], &_str_21[int64(0)], 462, &__PRETTY_FUNCTION___capture_list_pool_delete[int64(0)])
 	panic("unreachable")
 
 if_end24:
@@ -39106,7 +39106,7 @@ if_then33:
 	goto if_end35
 
 if_else34:
-	__assert_fail(&_str_244[int64(0)], &_str_21[int64(0)], 462, &__PRETTY_FUNCTION___capture_list_pool_delete[int64(0)])
+	libc.AssertFail(&_str_244[int64(0)], &_str_21[int64(0)], 462, &__PRETTY_FUNCTION___capture_list_pool_delete[int64(0)])
 	panic("unreachable")
 
 if_end35:
@@ -39135,7 +39135,7 @@ if_then44:
 	goto if_end46
 
 if_else45:
-	__assert_fail(&_str_244[int64(0)], &_str_21[int64(0)], 462, &__PRETTY_FUNCTION___capture_list_pool_delete[int64(0)])
+	libc.AssertFail(&_str_244[int64(0)], &_str_21[int64(0)], 462, &__PRETTY_FUNCTION___capture_list_pool_delete[int64(0)])
 	panic("unreachable")
 
 if_end46:
@@ -39331,7 +39331,7 @@ if_then4:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_37[int64(0)], &_str_21[int64(0)], 3486, &__PRETTY_FUNCTION___ts_query_cursor_exec[int64(0)])
+	libc.AssertFail(&_str_37[int64(0)], &_str_21[int64(0)], 3486, &__PRETTY_FUNCTION___ts_query_cursor_exec[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -39580,7 +39580,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_244[int64(0)], &_str_21[int64(0)], 455, &__PRETTY_FUNCTION___capture_list_pool_reset[int64(0)])
+	libc.AssertFail(&_str_244[int64(0)], &_str_21[int64(0)], 455, &__PRETTY_FUNCTION___capture_list_pool_reset[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -40230,7 +40230,7 @@ if_then9:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_38[int64(0)], &_str_21[int64(0)], 3703, &__PRETTY_FUNCTION___ts_query_cursor__compare_captures[int64(0)])
+	libc.AssertFail(&_str_38[int64(0)], &_str_21[int64(0)], 3703, &__PRETTY_FUNCTION___ts_query_cursor__compare_captures[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -40256,7 +40256,7 @@ if_then12:
 	goto if_end14
 
 if_else13:
-	__assert_fail(&_str_39[int64(0)], &_str_21[int64(0)], 3704, &__PRETTY_FUNCTION___ts_query_cursor__compare_captures[int64(0)])
+	libc.AssertFail(&_str_39[int64(0)], &_str_21[int64(0)], 3704, &__PRETTY_FUNCTION___ts_query_cursor__compare_captures[int64(0)])
 	panic("unreachable")
 
 if_end14:
@@ -40442,7 +40442,7 @@ if_then4:
 	goto if_end5
 
 if_else:
-	__assert_fail(&_str_245[int64(0)], &_str_21[int64(0)], 469, &__PRETTY_FUNCTION___capture_list_pool_get[int64(0)])
+	libc.AssertFail(&_str_245[int64(0)], &_str_21[int64(0)], 469, &__PRETTY_FUNCTION___capture_list_pool_get[int64(0)])
 	panic("unreachable")
 
 if_end5:
@@ -41016,7 +41016,7 @@ if_then15:
 	goto if_end16
 
 if_else:
-	__assert_fail(&_str_40[int64(0)], &_str_21[int64(0)], 4646, &__PRETTY_FUNCTION___ts_query_cursor_next_match[int64(0)])
+	libc.AssertFail(&_str_40[int64(0)], &_str_21[int64(0)], 4646, &__PRETTY_FUNCTION___ts_query_cursor_next_match[int64(0)])
 	panic("unreachable")
 
 if_end16:
@@ -41044,7 +41044,7 @@ if_then21:
 	goto if_end23
 
 if_else22:
-	__assert_fail(&_str_41[int64(0)], &_str_21[int64(0)], 4647, &__PRETTY_FUNCTION___ts_query_cursor_next_match[int64(0)])
+	libc.AssertFail(&_str_41[int64(0)], &_str_21[int64(0)], 4647, &__PRETTY_FUNCTION___ts_query_cursor_next_match[int64(0)])
 	panic("unreachable")
 
 if_end23:
@@ -41103,7 +41103,7 @@ if_then37:
 	goto if_end39
 
 if_else38:
-	__assert_fail(&_str_41[int64(0)], &_str_21[int64(0)], 4654, &__PRETTY_FUNCTION___ts_query_cursor_next_match[int64(0)])
+	libc.AssertFail(&_str_41[int64(0)], &_str_21[int64(0)], 4654, &__PRETTY_FUNCTION___ts_query_cursor_next_match[int64(0)])
 	panic("unreachable")
 
 if_end39:
@@ -41580,7 +41580,7 @@ if_then46:
 	goto if_end47
 
 if_else:
-	__assert_fail(&_str_42[int64(0)], &_str_21[int64(0)], 4078, &__PRETTY_FUNCTION___ts_query_cursor__advance[int64(0)])
+	libc.AssertFail(&_str_42[int64(0)], &_str_21[int64(0)], 4078, &__PRETTY_FUNCTION___ts_query_cursor__advance[int64(0)])
 	panic("unreachable")
 
 if_end47:
@@ -41613,7 +41613,7 @@ if_then55:
 	goto if_end57
 
 if_else56:
-	__assert_fail(&_str_246[int64(0)], &_str_21[int64(0)], 4079, &__PRETTY_FUNCTION___ts_query_cursor__advance[int64(0)])
+	libc.AssertFail(&_str_246[int64(0)], &_str_21[int64(0)], 4079, &__PRETTY_FUNCTION___ts_query_cursor__advance[int64(0)])
 	panic("unreachable")
 
 if_end57:
@@ -41748,7 +41748,7 @@ if_then103:
 	goto if_end105
 
 if_else104:
-	__assert_fail(&_str_247[int64(0)], &_str_21[int64(0)], 4112, &__PRETTY_FUNCTION___ts_query_cursor__advance[int64(0)])
+	libc.AssertFail(&_str_247[int64(0)], &_str_21[int64(0)], 4112, &__PRETTY_FUNCTION___ts_query_cursor__advance[int64(0)])
 	panic("unreachable")
 
 if_end105:
@@ -42078,7 +42078,7 @@ if_then215:
 	goto if_end217
 
 if_else216:
-	__assert_fail(&_str_248[int64(0)], &_str_21[int64(0)], 4207, &__PRETTY_FUNCTION___ts_query_cursor__advance[int64(0)])
+	libc.AssertFail(&_str_248[int64(0)], &_str_21[int64(0)], 4207, &__PRETTY_FUNCTION___ts_query_cursor__advance[int64(0)])
 	panic("unreachable")
 
 if_end217:
@@ -42113,7 +42113,7 @@ if_then231:
 	goto if_end233
 
 if_else232:
-	__assert_fail(&_str_249[int64(0)], &_str_21[int64(0)], 4211, &__PRETTY_FUNCTION___ts_query_cursor__advance[int64(0)])
+	libc.AssertFail(&_str_249[int64(0)], &_str_21[int64(0)], 4211, &__PRETTY_FUNCTION___ts_query_cursor__advance[int64(0)])
 	panic("unreachable")
 
 if_end233:
@@ -42281,7 +42281,7 @@ if_then285:
 	goto if_end287
 
 if_else286:
-	__assert_fail(&_str_248[int64(0)], &_str_21[int64(0)], 4229, &__PRETTY_FUNCTION___ts_query_cursor__advance[int64(0)])
+	libc.AssertFail(&_str_248[int64(0)], &_str_21[int64(0)], 4229, &__PRETTY_FUNCTION___ts_query_cursor__advance[int64(0)])
 	panic("unreachable")
 
 if_end287:
@@ -42316,7 +42316,7 @@ if_then301:
 	goto if_end303
 
 if_else302:
-	__assert_fail(&_str_249[int64(0)], &_str_21[int64(0)], 4231, &__PRETTY_FUNCTION___ts_query_cursor__advance[int64(0)])
+	libc.AssertFail(&_str_249[int64(0)], &_str_21[int64(0)], 4231, &__PRETTY_FUNCTION___ts_query_cursor__advance[int64(0)])
 	panic("unreachable")
 
 if_end303:
@@ -42464,7 +42464,7 @@ if_then354:
 	goto if_end356
 
 if_else355:
-	__assert_fail(&_str_248[int64(0)], &_str_21[int64(0)], 4249, &__PRETTY_FUNCTION___ts_query_cursor__advance[int64(0)])
+	libc.AssertFail(&_str_248[int64(0)], &_str_21[int64(0)], 4249, &__PRETTY_FUNCTION___ts_query_cursor__advance[int64(0)])
 	panic("unreachable")
 
 if_end356:
@@ -42499,7 +42499,7 @@ if_then369:
 	goto if_end371
 
 if_else370:
-	__assert_fail(&_str_249[int64(0)], &_str_21[int64(0)], 4250, &__PRETTY_FUNCTION___ts_query_cursor__advance[int64(0)])
+	libc.AssertFail(&_str_249[int64(0)], &_str_21[int64(0)], 4250, &__PRETTY_FUNCTION___ts_query_cursor__advance[int64(0)])
 	panic("unreachable")
 
 if_end371:
@@ -42569,7 +42569,7 @@ if_then395:
 	goto if_end397
 
 if_else396:
-	__assert_fail(&_str_250[int64(0)], &_str_21[int64(0)], 4256, &__PRETTY_FUNCTION___ts_query_cursor__advance[int64(0)])
+	libc.AssertFail(&_str_250[int64(0)], &_str_21[int64(0)], 4256, &__PRETTY_FUNCTION___ts_query_cursor__advance[int64(0)])
 	panic("unreachable")
 
 if_end397:
@@ -42602,7 +42602,7 @@ if_then410:
 	goto if_end412
 
 if_else411:
-	__assert_fail(&_str_246[int64(0)], &_str_21[int64(0)], 4257, &__PRETTY_FUNCTION___ts_query_cursor__advance[int64(0)])
+	libc.AssertFail(&_str_246[int64(0)], &_str_21[int64(0)], 4257, &__PRETTY_FUNCTION___ts_query_cursor__advance[int64(0)])
 	panic("unreachable")
 
 if_end412:
@@ -43004,7 +43004,7 @@ if_then552:
 	goto if_end554
 
 if_else553:
-	__assert_fail(&_str_251[int64(0)], &_str_21[int64(0)], 4306, &__PRETTY_FUNCTION___ts_query_cursor__advance[int64(0)])
+	libc.AssertFail(&_str_251[int64(0)], &_str_21[int64(0)], 4306, &__PRETTY_FUNCTION___ts_query_cursor__advance[int64(0)])
 	panic("unreachable")
 
 if_end554:
@@ -43363,7 +43363,7 @@ if_then677:
 	goto if_end679
 
 if_else678:
-	__assert_fail(&_str_246[int64(0)], &_str_21[int64(0)], 4407, &__PRETTY_FUNCTION___ts_query_cursor__advance[int64(0)])
+	libc.AssertFail(&_str_246[int64(0)], &_str_21[int64(0)], 4407, &__PRETTY_FUNCTION___ts_query_cursor__advance[int64(0)])
 	panic("unreachable")
 
 if_end679:
@@ -43503,7 +43503,7 @@ if_then737:
 	goto if_end739
 
 if_else738:
-	__assert_fail(&_str_252[int64(0)], &_str_21[int64(0)], 4433, &__PRETTY_FUNCTION___ts_query_cursor__advance[int64(0)])
+	libc.AssertFail(&_str_252[int64(0)], &_str_21[int64(0)], 4433, &__PRETTY_FUNCTION___ts_query_cursor__advance[int64(0)])
 	panic("unreachable")
 
 if_end739:
@@ -43536,7 +43536,7 @@ if_then751:
 	goto if_end753
 
 if_else752:
-	__assert_fail(&_str_253[int64(0)], &_str_21[int64(0)], 4434, &__PRETTY_FUNCTION___ts_query_cursor__advance[int64(0)])
+	libc.AssertFail(&_str_253[int64(0)], &_str_21[int64(0)], 4434, &__PRETTY_FUNCTION___ts_query_cursor__advance[int64(0)])
 	panic("unreachable")
 
 if_end753:
@@ -43782,7 +43782,7 @@ if_then851:
 	goto if_end853
 
 if_else852:
-	__assert_fail(&_str_250[int64(0)], &_str_21[int64(0)], 4495, &__PRETTY_FUNCTION___ts_query_cursor__advance[int64(0)])
+	libc.AssertFail(&_str_250[int64(0)], &_str_21[int64(0)], 4495, &__PRETTY_FUNCTION___ts_query_cursor__advance[int64(0)])
 	panic("unreachable")
 
 if_end853:
@@ -43860,7 +43860,7 @@ if_then882:
 	goto if_end884
 
 if_else883:
-	__assert_fail(&_str_252[int64(0)], &_str_21[int64(0)], 4507, &__PRETTY_FUNCTION___ts_query_cursor__advance[int64(0)])
+	libc.AssertFail(&_str_252[int64(0)], &_str_21[int64(0)], 4507, &__PRETTY_FUNCTION___ts_query_cursor__advance[int64(0)])
 	panic("unreachable")
 
 if_end884:
@@ -43957,7 +43957,7 @@ if_then920:
 	goto if_end922
 
 if_else921:
-	__assert_fail(&_str_254[int64(0)], &_str_21[int64(0)], 4534, &__PRETTY_FUNCTION___ts_query_cursor__advance[int64(0)])
+	libc.AssertFail(&_str_254[int64(0)], &_str_21[int64(0)], 4534, &__PRETTY_FUNCTION___ts_query_cursor__advance[int64(0)])
 	panic("unreachable")
 
 if_end922:
@@ -43985,7 +43985,7 @@ if_then932:
 	goto if_end934
 
 if_else933:
-	__assert_fail(&_str_255[int64(0)], &_str_21[int64(0)], 4535, &__PRETTY_FUNCTION___ts_query_cursor__advance[int64(0)])
+	libc.AssertFail(&_str_255[int64(0)], &_str_21[int64(0)], 4535, &__PRETTY_FUNCTION___ts_query_cursor__advance[int64(0)])
 	panic("unreachable")
 
 if_end934:
@@ -44225,7 +44225,7 @@ if_then1029:
 	goto if_end1031
 
 if_else1030:
-	__assert_fail(&_str_246[int64(0)], &_str_21[int64(0)], 4595, &__PRETTY_FUNCTION___ts_query_cursor__advance[int64(0)])
+	libc.AssertFail(&_str_246[int64(0)], &_str_21[int64(0)], 4595, &__PRETTY_FUNCTION___ts_query_cursor__advance[int64(0)])
 	panic("unreachable")
 
 if_end1031:
@@ -44480,7 +44480,7 @@ if_then4:
 	goto if_end5
 
 if_else:
-	__assert_fail(&_str_245[int64(0)], &_str_21[int64(0)], 509, &__PRETTY_FUNCTION___capture_list_pool_release[int64(0)])
+	libc.AssertFail(&_str_245[int64(0)], &_str_21[int64(0)], 509, &__PRETTY_FUNCTION___capture_list_pool_release[int64(0)])
 	panic("unreachable")
 
 if_end5:
@@ -44560,7 +44560,7 @@ if_then4:
 	goto if_end5
 
 if_else:
-	__assert_fail(&_str_267[int64(0)], &_str_21[int64(0)], 614, &__PRETTY_FUNCTION___finished_state_erase[int64(0)])
+	libc.AssertFail(&_str_267[int64(0)], &_str_21[int64(0)], 614, &__PRETTY_FUNCTION___finished_state_erase[int64(0)])
 	panic("unreachable")
 
 if_end5:
@@ -44588,7 +44588,7 @@ if_then10:
 	goto if_end12
 
 if_else11:
-	__assert_fail(&_str_271[int64(0)], &_str_21[int64(0)], 614, &__PRETTY_FUNCTION___finished_state_erase[int64(0)])
+	libc.AssertFail(&_str_271[int64(0)], &_str_21[int64(0)], 614, &__PRETTY_FUNCTION___finished_state_erase[int64(0)])
 	panic("unreachable")
 
 if_end12:
@@ -44633,7 +44633,7 @@ if_then23:
 	goto if_end25
 
 if_else24:
-	__assert_fail(&_str_267[int64(0)], &_str_21[int64(0)], 618, &__PRETTY_FUNCTION___finished_state_erase[int64(0)])
+	libc.AssertFail(&_str_267[int64(0)], &_str_21[int64(0)], 618, &__PRETTY_FUNCTION___finished_state_erase[int64(0)])
 	panic("unreachable")
 
 if_end25:
@@ -44660,7 +44660,7 @@ if_then32:
 	goto if_end34
 
 if_else33:
-	__assert_fail(&_str_272[int64(0)], &_str_21[int64(0)], 619, &__PRETTY_FUNCTION___finished_state_erase[int64(0)])
+	libc.AssertFail(&_str_272[int64(0)], &_str_21[int64(0)], 619, &__PRETTY_FUNCTION___finished_state_erase[int64(0)])
 	panic("unreachable")
 
 if_end34:
@@ -44769,7 +44769,7 @@ if_then5:
 	goto if_end6
 
 if_else:
-	__assert_fail(&_str_40[int64(0)], &_str_21[int64(0)], 4683, &__PRETTY_FUNCTION___ts_query_cursor_remove_match[int64(0)])
+	libc.AssertFail(&_str_40[int64(0)], &_str_21[int64(0)], 4683, &__PRETTY_FUNCTION___ts_query_cursor_remove_match[int64(0)])
 	panic("unreachable")
 
 if_end6:
@@ -44884,7 +44884,7 @@ if_then34:
 	goto if_end36
 
 if_else35:
-	__assert_fail(&_str_42[int64(0)], &_str_21[int64(0)], 4702, &__PRETTY_FUNCTION___ts_query_cursor_remove_match[int64(0)])
+	libc.AssertFail(&_str_42[int64(0)], &_str_21[int64(0)], 4702, &__PRETTY_FUNCTION___ts_query_cursor_remove_match[int64(0)])
 	panic("unreachable")
 
 if_end36:
@@ -45039,7 +45039,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_43[int64(0)], &_str_21[int64(0)], 4746, &__PRETTY_FUNCTION___ts_query_cursor_next_capture[int64(0)])
+	libc.AssertFail(&_str_43[int64(0)], &_str_21[int64(0)], 4746, &__PRETTY_FUNCTION___ts_query_cursor_next_capture[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -45116,7 +45116,7 @@ if_then25:
 	goto if_end27
 
 if_else26:
-	__assert_fail(&_str_44[int64(0)], &_str_21[int64(0)], 4763, &__PRETTY_FUNCTION___ts_query_cursor_next_capture[int64(0)])
+	libc.AssertFail(&_str_44[int64(0)], &_str_21[int64(0)], 4763, &__PRETTY_FUNCTION___ts_query_cursor_next_capture[int64(0)])
 	panic("unreachable")
 
 if_end27:
@@ -45335,7 +45335,7 @@ if_then93:
 	goto if_end95
 
 if_else94:
-	__assert_fail(&_str_45[int64(0)], &_str_21[int64(0)], 4804, &__PRETTY_FUNCTION___ts_query_cursor_next_capture[int64(0)])
+	libc.AssertFail(&_str_45[int64(0)], &_str_21[int64(0)], 4804, &__PRETTY_FUNCTION___ts_query_cursor_next_capture[int64(0)])
 	panic("unreachable")
 
 if_end95:
@@ -45502,7 +45502,7 @@ if_then157:
 	goto if_end159
 
 if_else158:
-	__assert_fail(&_str_45[int64(0)], &_str_21[int64(0)], 4838, &__PRETTY_FUNCTION___ts_query_cursor_next_capture[int64(0)])
+	libc.AssertFail(&_str_45[int64(0)], &_str_21[int64(0)], 4838, &__PRETTY_FUNCTION___ts_query_cursor_next_capture[int64(0)])
 	panic("unreachable")
 
 if_end159:
@@ -45652,7 +45652,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_42[int64(0)], &_str_21[int64(0)], 3620, &__PRETTY_FUNCTION___ts_query_cursor__first_in_progress_capture[int64(0)])
+	libc.AssertFail(&_str_42[int64(0)], &_str_21[int64(0)], 3620, &__PRETTY_FUNCTION___ts_query_cursor__first_in_progress_capture[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -45730,7 +45730,7 @@ if_then23:
 	goto if_end25
 
 if_else24:
-	__assert_fail(&_str_44[int64(0)], &_str_21[int64(0)], 3631, &__PRETTY_FUNCTION___ts_query_cursor__first_in_progress_capture[int64(0)])
+	libc.AssertFail(&_str_44[int64(0)], &_str_21[int64(0)], 3631, &__PRETTY_FUNCTION___ts_query_cursor__first_in_progress_capture[int64(0)])
 	panic("unreachable")
 
 if_end25:
@@ -45868,7 +45868,7 @@ if_then65:
 	goto if_end67
 
 if_else66:
-	__assert_fail(&_str_246[int64(0)], &_str_21[int64(0)], 3647, &__PRETTY_FUNCTION___ts_query_cursor__first_in_progress_capture[int64(0)])
+	libc.AssertFail(&_str_246[int64(0)], &_str_21[int64(0)], 3647, &__PRETTY_FUNCTION___ts_query_cursor__first_in_progress_capture[int64(0)])
 	panic("unreachable")
 
 if_end67:
@@ -46017,7 +46017,7 @@ if_then3:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_273[int64(0)], &_str_21[int64(0)], 599, &__PRETTY_FUNCTION___finished_state_pop[int64(0)])
+	libc.AssertFail(&_str_273[int64(0)], &_str_21[int64(0)], 599, &__PRETTY_FUNCTION___finished_state_pop[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -46043,7 +46043,7 @@ if_then7:
 	goto if_end9
 
 if_else8:
-	__assert_fail(&_str_271[int64(0)], &_str_21[int64(0)], 599, &__PRETTY_FUNCTION___finished_state_pop[int64(0)])
+	libc.AssertFail(&_str_271[int64(0)], &_str_21[int64(0)], 599, &__PRETTY_FUNCTION___finished_state_pop[int64(0)])
 	panic("unreachable")
 
 if_end9:
@@ -46152,7 +46152,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_274[int64(0)], &_str_21[int64(0)], 559, &__PRETTY_FUNCTION___finished_state_sift_down[int64(0)])
+	libc.AssertFail(&_str_274[int64(0)], &_str_21[int64(0)], 559, &__PRETTY_FUNCTION___finished_state_sift_down[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -46177,7 +46177,7 @@ if_then8:
 	goto if_end10
 
 if_else9:
-	__assert_fail(&_str_275[int64(0)], &_str_21[int64(0)], 560, &__PRETTY_FUNCTION___finished_state_sift_down[int64(0)])
+	libc.AssertFail(&_str_275[int64(0)], &_str_21[int64(0)], 560, &__PRETTY_FUNCTION___finished_state_sift_down[int64(0)])
 	panic("unreachable")
 
 if_end10:
@@ -46226,7 +46226,7 @@ if_then20:
 	goto if_end22
 
 if_else21:
-	__assert_fail(&_str_276[int64(0)], &_str_21[int64(0)], 566, &__PRETTY_FUNCTION___finished_state_sift_down[int64(0)])
+	libc.AssertFail(&_str_276[int64(0)], &_str_21[int64(0)], 566, &__PRETTY_FUNCTION___finished_state_sift_down[int64(0)])
 	panic("unreachable")
 
 if_end22:
@@ -46251,7 +46251,7 @@ if_then28:
 	goto if_end30
 
 if_else29:
-	__assert_fail(&_str_275[int64(0)], &_str_21[int64(0)], 567, &__PRETTY_FUNCTION___finished_state_sift_down[int64(0)])
+	libc.AssertFail(&_str_275[int64(0)], &_str_21[int64(0)], 567, &__PRETTY_FUNCTION___finished_state_sift_down[int64(0)])
 	panic("unreachable")
 
 if_end30:
@@ -46672,7 +46672,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_277[int64(0)], &_str_47[int64(0)], 96, &__PRETTY_FUNCTION___stack_node_release[int64(0)])
+	libc.AssertFail(&_str_277[int64(0)], &_str_47[int64(0)], 96, &__PRETTY_FUNCTION___stack_node_release[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -47080,7 +47080,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_46[int64(0)], &_str_47[int64(0)], 466, &__PRETTY_FUNCTION___ts_stack_halted_version_count[int64(0)])
+	libc.AssertFail(&_str_46[int64(0)], &_str_47[int64(0)], 466, &__PRETTY_FUNCTION___ts_stack_halted_version_count[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -47160,7 +47160,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_49[int64(0)], &_str_47[int64(0)], 483, &__PRETTY_FUNCTION___ts_stack_last_external_token[int64(0)])
+	libc.AssertFail(&_str_49[int64(0)], &_str_47[int64(0)], 483, &__PRETTY_FUNCTION___ts_stack_last_external_token[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -47223,7 +47223,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_49[int64(0)], &_str_47[int64(0)], 487, &__PRETTY_FUNCTION___ts_stack_set_last_external_token[int64(0)])
+	libc.AssertFail(&_str_49[int64(0)], &_str_47[int64(0)], 487, &__PRETTY_FUNCTION___ts_stack_set_last_external_token[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -47325,7 +47325,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_49[int64(0)], &_str_47[int64(0)], 494, &__PRETTY_FUNCTION___ts_stack_error_cost[int64(0)])
+	libc.AssertFail(&_str_49[int64(0)], &_str_47[int64(0)], 494, &__PRETTY_FUNCTION___ts_stack_error_cost[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -47430,7 +47430,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_49[int64(0)], &_str_47[int64(0)], 505, &__PRETTY_FUNCTION___ts_stack_node_count_since_error[int64(0)])
+	libc.AssertFail(&_str_49[int64(0)], &_str_47[int64(0)], 505, &__PRETTY_FUNCTION___ts_stack_node_count_since_error[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -47534,7 +47534,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_49[int64(0)], &_str_47[int64(0)], 519, &__PRETTY_FUNCTION___ts_stack_push[int64(0)])
+	libc.AssertFail(&_str_49[int64(0)], &_str_47[int64(0)], 519, &__PRETTY_FUNCTION___ts_stack_push[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -47739,7 +47739,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_49[int64(0)], &_str_47[int64(0)], 334, &__PRETTY_FUNCTION___stack__iter[int64(0)])
+	libc.AssertFail(&_str_49[int64(0)], &_str_47[int64(0)], 334, &__PRETTY_FUNCTION___stack__iter[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -47887,7 +47887,7 @@ if_then47:
 	goto if_end49
 
 if_else48:
-	__assert_fail(&_str_74[int64(0)], &_str_47[int64(0)], 352, &__PRETTY_FUNCTION___stack__iter[int64(0)])
+	libc.AssertFail(&_str_74[int64(0)], &_str_47[int64(0)], 352, &__PRETTY_FUNCTION___stack__iter[int64(0)])
 	panic("unreachable")
 
 if_end49:
@@ -48076,7 +48076,7 @@ if_then99:
 	goto if_end101
 
 if_else100:
-	__assert_fail(&_str_74[int64(0)], &_str_47[int64(0)], 387, &__PRETTY_FUNCTION___stack__iter[int64(0)])
+	libc.AssertFail(&_str_74[int64(0)], &_str_47[int64(0)], 387, &__PRETTY_FUNCTION___stack__iter[int64(0)])
 	panic("unreachable")
 
 if_end101:
@@ -48130,7 +48130,7 @@ if_then120:
 	goto if_end122
 
 if_else121:
-	__assert_fail(&_str_74[int64(0)], &_str_47[int64(0)], 391, &__PRETTY_FUNCTION___stack__iter[int64(0)])
+	libc.AssertFail(&_str_74[int64(0)], &_str_47[int64(0)], 391, &__PRETTY_FUNCTION___stack__iter[int64(0)])
 	panic("unreachable")
 
 if_end122:
@@ -48203,7 +48203,7 @@ if_then151:
 	goto if_end153
 
 if_else152:
-	__assert_fail(&_str_90[int64(0)], &_str_47[int64(0)], 393, &__PRETTY_FUNCTION___stack__iter[int64(0)])
+	libc.AssertFail(&_str_90[int64(0)], &_str_47[int64(0)], 393, &__PRETTY_FUNCTION___stack__iter[int64(0)])
 	panic("unreachable")
 
 if_end153:
@@ -48503,7 +48503,7 @@ if_then3:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_50[int64(0)], &_str_47[int64(0)], 555, &__PRETTY_FUNCTION___ts_stack_pop_pending[int64(0)])
+	libc.AssertFail(&_str_50[int64(0)], &_str_47[int64(0)], 555, &__PRETTY_FUNCTION___ts_stack_pop_pending[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -48528,7 +48528,7 @@ if_then7:
 	goto if_end9
 
 if_else8:
-	__assert_fail(&_str_50[int64(0)], &_str_47[int64(0)], 556, &__PRETTY_FUNCTION___ts_stack_pop_pending[int64(0)])
+	libc.AssertFail(&_str_50[int64(0)], &_str_47[int64(0)], 556, &__PRETTY_FUNCTION___ts_stack_pop_pending[int64(0)])
 	panic("unreachable")
 
 if_end9:
@@ -48657,7 +48657,7 @@ if_then2:
 	goto if_end3
 
 if_else:
-	__assert_fail(&_str_52[int64(0)], &_str_47[int64(0)], 678, &__PRETTY_FUNCTION___ts_stack_renumber_version[int64(0)])
+	libc.AssertFail(&_str_52[int64(0)], &_str_47[int64(0)], 678, &__PRETTY_FUNCTION___ts_stack_renumber_version[int64(0)])
 	panic("unreachable")
 
 if_end3:
@@ -48677,7 +48677,7 @@ if_then5:
 	goto if_end7
 
 if_else6:
-	__assert_fail(&_str_53[int64(0)], &_str_47[int64(0)], 679, &__PRETTY_FUNCTION___ts_stack_renumber_version[int64(0)])
+	libc.AssertFail(&_str_53[int64(0)], &_str_47[int64(0)], 679, &__PRETTY_FUNCTION___ts_stack_renumber_version[int64(0)])
 	panic("unreachable")
 
 if_end7:
@@ -48697,7 +48697,7 @@ if_then11:
 	goto if_end13
 
 if_else12:
-	__assert_fail(&_str_54[int64(0)], &_str_47[int64(0)], 680, &__PRETTY_FUNCTION___ts_stack_renumber_version[int64(0)])
+	libc.AssertFail(&_str_54[int64(0)], &_str_47[int64(0)], 680, &__PRETTY_FUNCTION___ts_stack_renumber_version[int64(0)])
 	panic("unreachable")
 
 if_end13:
@@ -48725,7 +48725,7 @@ if_then18:
 	goto if_end20
 
 if_else19:
-	__assert_fail(&_str_55[int64(0)], &_str_47[int64(0)], 681, &__PRETTY_FUNCTION___ts_stack_renumber_version[int64(0)])
+	libc.AssertFail(&_str_55[int64(0)], &_str_47[int64(0)], 681, &__PRETTY_FUNCTION___ts_stack_renumber_version[int64(0)])
 	panic("unreachable")
 
 if_end20:
@@ -48871,7 +48871,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_49[int64(0)], &_str_47[int64(0)], 576, &__PRETTY_FUNCTION___ts_stack_pop_error[int64(0)])
+	libc.AssertFail(&_str_49[int64(0)], &_str_47[int64(0)], 576, &__PRETTY_FUNCTION___ts_stack_pop_error[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -48971,7 +48971,7 @@ if_then21:
 	goto if_end23
 
 if_else22:
-	__assert_fail(&_str_51[int64(0)], &_str_47[int64(0)], 582, &__PRETTY_FUNCTION___ts_stack_pop_error[int64(0)])
+	libc.AssertFail(&_str_51[int64(0)], &_str_47[int64(0)], 582, &__PRETTY_FUNCTION___ts_stack_pop_error[int64(0)])
 	panic("unreachable")
 
 if_end23:
@@ -48989,7 +48989,7 @@ if_then27:
 	goto if_end29
 
 if_else28:
-	__assert_fail(&_str_50[int64(0)], &_str_47[int64(0)], 583, &__PRETTY_FUNCTION___ts_stack_pop_error[int64(0)])
+	libc.AssertFail(&_str_50[int64(0)], &_str_47[int64(0)], 583, &__PRETTY_FUNCTION___ts_stack_pop_error[int64(0)])
 	panic("unreachable")
 
 if_end29:
@@ -49013,7 +49013,7 @@ if_then36:
 	goto if_end38
 
 if_else37:
-	__assert_fail(&_str_50[int64(0)], &_str_47[int64(0)], 584, &__PRETTY_FUNCTION___ts_stack_pop_error[int64(0)])
+	libc.AssertFail(&_str_50[int64(0)], &_str_47[int64(0)], 584, &__PRETTY_FUNCTION___ts_stack_pop_error[int64(0)])
 	panic("unreachable")
 
 if_end38:
@@ -49139,7 +49139,7 @@ if_then4:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_279[int64(0)], &_str_47[int64(0)], 564, &__PRETTY_FUNCTION___pop_error_callback[int64(0)])
+	libc.AssertFail(&_str_279[int64(0)], &_str_47[int64(0)], 564, &__PRETTY_FUNCTION___pop_error_callback[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -49350,7 +49350,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_49[int64(0)], &_str_47[int64(0)], 631, &__PRETTY_FUNCTION___ts_stack_record_summary[int64(0)])
+	libc.AssertFail(&_str_49[int64(0)], &_str_47[int64(0)], 631, &__PRETTY_FUNCTION___ts_stack_record_summary[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -49534,7 +49534,7 @@ if_then7:
 	goto if_end8
 
 if_else:
-	__assert_fail(&_str_280[int64(0)], &_str_47[int64(0)], 612, &__PRETTY_FUNCTION___summarize_stack_callback[int64(0)])
+	libc.AssertFail(&_str_280[int64(0)], &_str_47[int64(0)], 612, &__PRETTY_FUNCTION___summarize_stack_callback[int64(0)])
 	panic("unreachable")
 
 if_end8:
@@ -49702,7 +49702,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_49[int64(0)], &_str_47[int64(0)], 640, &__PRETTY_FUNCTION___ts_stack_get_summary[int64(0)])
+	libc.AssertFail(&_str_49[int64(0)], &_str_47[int64(0)], 640, &__PRETTY_FUNCTION___ts_stack_get_summary[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -49753,7 +49753,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_49[int64(0)], &_str_47[int64(0)], 644, &__PRETTY_FUNCTION___ts_stack_dynamic_precedence[int64(0)])
+	libc.AssertFail(&_str_49[int64(0)], &_str_47[int64(0)], 644, &__PRETTY_FUNCTION___ts_stack_dynamic_precedence[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -49819,7 +49819,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_49[int64(0)], &_str_47[int64(0)], 648, &__PRETTY_FUNCTION___ts_stack_has_advanced_since_error[int64(0)])
+	libc.AssertFail(&_str_49[int64(0)], &_str_47[int64(0)], 648, &__PRETTY_FUNCTION___ts_stack_has_advanced_since_error[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -50036,7 +50036,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_49[int64(0)], &_str_47[int64(0)], 672, &__PRETTY_FUNCTION___ts_stack_remove_version[int64(0)])
+	libc.AssertFail(&_str_49[int64(0)], &_str_47[int64(0)], 672, &__PRETTY_FUNCTION___ts_stack_remove_version[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -50102,7 +50102,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_54[int64(0)], &_str_47[int64(0)], 692, &__PRETTY_FUNCTION___ts_stack_swap_versions[int64(0)])
+	libc.AssertFail(&_str_54[int64(0)], &_str_47[int64(0)], 692, &__PRETTY_FUNCTION___ts_stack_swap_versions[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -50132,7 +50132,7 @@ if_then5:
 	goto if_end7
 
 if_else6:
-	__assert_fail(&_str_54[int64(0)], &_str_47[int64(0)], 693, &__PRETTY_FUNCTION___ts_stack_swap_versions[int64(0)])
+	libc.AssertFail(&_str_54[int64(0)], &_str_47[int64(0)], 693, &__PRETTY_FUNCTION___ts_stack_swap_versions[int64(0)])
 	panic("unreachable")
 
 if_end7:
@@ -50159,7 +50159,7 @@ if_then15:
 	goto if_end17
 
 if_else16:
-	__assert_fail(&_str_55[int64(0)], &_str_47[int64(0)], 693, &__PRETTY_FUNCTION___ts_stack_swap_versions[int64(0)])
+	libc.AssertFail(&_str_55[int64(0)], &_str_47[int64(0)], 693, &__PRETTY_FUNCTION___ts_stack_swap_versions[int64(0)])
 	panic("unreachable")
 
 if_end17:
@@ -50189,7 +50189,7 @@ if_then25:
 	goto if_end27
 
 if_else26:
-	__assert_fail(&_str_55[int64(0)], &_str_47[int64(0)], 694, &__PRETTY_FUNCTION___ts_stack_swap_versions[int64(0)])
+	libc.AssertFail(&_str_55[int64(0)], &_str_47[int64(0)], 694, &__PRETTY_FUNCTION___ts_stack_swap_versions[int64(0)])
 	panic("unreachable")
 
 if_end27:
@@ -50247,7 +50247,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_56[int64(0)], &_str_47[int64(0)], 698, &__PRETTY_FUNCTION___ts_stack_copy_version[int64(0)])
+	libc.AssertFail(&_str_56[int64(0)], &_str_47[int64(0)], 698, &__PRETTY_FUNCTION___ts_stack_copy_version[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -50267,7 +50267,7 @@ if_then4:
 	goto if_end6
 
 if_else5:
-	__assert_fail(&_str_49[int64(0)], &_str_47[int64(0)], 699, &__PRETTY_FUNCTION___ts_stack_copy_version[int64(0)])
+	libc.AssertFail(&_str_49[int64(0)], &_str_47[int64(0)], 699, &__PRETTY_FUNCTION___ts_stack_copy_version[int64(0)])
 	panic("unreachable")
 
 if_end6:
@@ -50340,7 +50340,7 @@ if_then26:
 	goto if_end28
 
 if_else27:
-	__assert_fail(&_str_57[int64(0)], &_str_47[int64(0)], 701, &__PRETTY_FUNCTION___ts_stack_copy_version[int64(0)])
+	libc.AssertFail(&_str_57[int64(0)], &_str_47[int64(0)], 701, &__PRETTY_FUNCTION___ts_stack_copy_version[int64(0)])
 	panic("unreachable")
 
 if_end28:
@@ -50428,7 +50428,7 @@ if_then1:
 	goto if_end2
 
 if_else:
-	__assert_fail(&_str_281[int64(0)], &_str_47[int64(0)], 85, &__PRETTY_FUNCTION___stack_node_retain[int64(0)])
+	libc.AssertFail(&_str_281[int64(0)], &_str_47[int64(0)], 85, &__PRETTY_FUNCTION___stack_node_retain[int64(0)])
 	panic("unreachable")
 
 if_end2:
@@ -50451,7 +50451,7 @@ if_then6:
 	goto if_end8
 
 if_else7:
-	__assert_fail(&_str_277[int64(0)], &_str_47[int64(0)], 87, &__PRETTY_FUNCTION___stack_node_retain[int64(0)])
+	libc.AssertFail(&_str_277[int64(0)], &_str_47[int64(0)], 87, &__PRETTY_FUNCTION___stack_node_retain[int64(0)])
 	panic("unreachable")
 
 if_end8:
@@ -50520,7 +50520,7 @@ if_then1:
 	goto if_end2
 
 if_else:
-	__assert_fail(&_str_58[int64(0)], &_str_47[int64(0)], 710, &__PRETTY_FUNCTION___ts_stack_merge[int64(0)])
+	libc.AssertFail(&_str_58[int64(0)], &_str_47[int64(0)], 710, &__PRETTY_FUNCTION___ts_stack_merge[int64(0)])
 	panic("unreachable")
 
 if_end2:
@@ -50548,7 +50548,7 @@ if_then7:
 	goto if_end9
 
 if_else8:
-	__assert_fail(&_str_59[int64(0)], &_str_47[int64(0)], 711, &__PRETTY_FUNCTION___ts_stack_merge[int64(0)])
+	libc.AssertFail(&_str_59[int64(0)], &_str_47[int64(0)], 711, &__PRETTY_FUNCTION___ts_stack_merge[int64(0)])
 	panic("unreachable")
 
 if_end9:
@@ -50683,7 +50683,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_58[int64(0)], &_str_47[int64(0)], 723, &__PRETTY_FUNCTION___ts_stack_can_merge[int64(0)])
+	libc.AssertFail(&_str_58[int64(0)], &_str_47[int64(0)], 723, &__PRETTY_FUNCTION___ts_stack_can_merge[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -50711,7 +50711,7 @@ if_then5:
 	goto if_end7
 
 if_else6:
-	__assert_fail(&_str_59[int64(0)], &_str_47[int64(0)], 724, &__PRETTY_FUNCTION___ts_stack_can_merge[int64(0)])
+	libc.AssertFail(&_str_59[int64(0)], &_str_47[int64(0)], 724, &__PRETTY_FUNCTION___ts_stack_can_merge[int64(0)])
 	panic("unreachable")
 
 if_end7:
@@ -51309,7 +51309,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_49[int64(0)], &_str_47[int64(0)], 735, &__PRETTY_FUNCTION___ts_stack_halt[int64(0)])
+	libc.AssertFail(&_str_49[int64(0)], &_str_47[int64(0)], 735, &__PRETTY_FUNCTION___ts_stack_halt[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -51366,7 +51366,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_49[int64(0)], &_str_47[int64(0)], 739, &__PRETTY_FUNCTION___ts_stack_pause[int64(0)])
+	libc.AssertFail(&_str_49[int64(0)], &_str_47[int64(0)], 739, &__PRETTY_FUNCTION___ts_stack_pause[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -51429,7 +51429,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_49[int64(0)], &_str_47[int64(0)], 750, &__PRETTY_FUNCTION___ts_stack_is_halted[int64(0)])
+	libc.AssertFail(&_str_49[int64(0)], &_str_47[int64(0)], 750, &__PRETTY_FUNCTION___ts_stack_is_halted[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -51479,7 +51479,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_49[int64(0)], &_str_47[int64(0)], 754, &__PRETTY_FUNCTION___ts_stack_is_paused[int64(0)])
+	libc.AssertFail(&_str_49[int64(0)], &_str_47[int64(0)], 754, &__PRETTY_FUNCTION___ts_stack_is_paused[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -51536,7 +51536,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_49[int64(0)], &_str_47[int64(0)], 758, &__PRETTY_FUNCTION___ts_stack_resume[int64(0)])
+	libc.AssertFail(&_str_49[int64(0)], &_str_47[int64(0)], 758, &__PRETTY_FUNCTION___ts_stack_resume[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -51562,7 +51562,7 @@ if_then3:
 	goto if_end5
 
 if_else4:
-	__assert_fail(&_str_60[int64(0)], &_str_47[int64(0)], 759, &__PRETTY_FUNCTION___ts_stack_resume[int64(0)])
+	libc.AssertFail(&_str_60[int64(0)], &_str_47[int64(0)], 759, &__PRETTY_FUNCTION___ts_stack_resume[int64(0)])
 	panic("unreachable")
 
 if_end5:
@@ -52183,7 +52183,7 @@ if_then17:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_92[int64(0)], &_str_93[int64(0)], 76, &__PRETTY_FUNCTION___ts_subtree_array_copy[int64(0)])
+	libc.AssertFail(&_str_92[int64(0)], &_str_93[int64(0)], 76, &__PRETTY_FUNCTION___ts_subtree_array_copy[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -52263,7 +52263,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str[int64(0)], &_str_93[int64(0)], 83, &__PRETTY_FUNCTION___ts_subtree_array_clear[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_93[int64(0)], 83, &__PRETTY_FUNCTION___ts_subtree_array_clear[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -52403,7 +52403,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_94[int64(0)], &_str_93[int64(0)], 99, &__PRETTY_FUNCTION___ts_subtree_array_remove_trailing_extras[int64(0)])
+	libc.AssertFail(&_str_94[int64(0)], &_str_93[int64(0)], 99, &__PRETTY_FUNCTION___ts_subtree_array_remove_trailing_extras[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -52542,7 +52542,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str[int64(0)], &_str_93[int64(0)], 113, &__PRETTY_FUNCTION___ts_subtree_array_reverse[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_93[int64(0)], 113, &__PRETTY_FUNCTION___ts_subtree_array_reverse[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -52570,7 +52570,7 @@ if_then9:
 	goto if_end11
 
 if_else10:
-	__assert_fail(&_str[int64(0)], &_str_93[int64(0)], 114, &__PRETTY_FUNCTION___ts_subtree_array_reverse[int64(0)])
+	libc.AssertFail(&_str[int64(0)], &_str_93[int64(0)], 114, &__PRETTY_FUNCTION___ts_subtree_array_reverse[int64(0)])
 	panic("unreachable")
 
 if_end11:
@@ -52596,7 +52596,7 @@ if_then19:
 	goto if_end21
 
 if_else20:
-	__assert_fail(&_str_95[int64(0)], &_str_93[int64(0)], 114, &__PRETTY_FUNCTION___ts_subtree_array_reverse[int64(0)])
+	libc.AssertFail(&_str_95[int64(0)], &_str_93[int64(0)], 114, &__PRETTY_FUNCTION___ts_subtree_array_reverse[int64(0)])
 	panic("unreachable")
 
 if_end21:
@@ -52624,7 +52624,7 @@ if_then28:
 	goto if_end30
 
 if_else29:
-	__assert_fail(&_str_95[int64(0)], &_str_93[int64(0)], 115, &__PRETTY_FUNCTION___ts_subtree_array_reverse[int64(0)])
+	libc.AssertFail(&_str_95[int64(0)], &_str_93[int64(0)], 115, &__PRETTY_FUNCTION___ts_subtree_array_reverse[int64(0)])
 	panic("unreachable")
 
 if_end30:
@@ -53282,7 +53282,7 @@ if_then2:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_97[int64(0)], &_str_93[int64(0)], 233, &__PRETTY_FUNCTION___ts_subtree_set_symbol[int64(0)])
+	libc.AssertFail(&_str_97[int64(0)], &_str_93[int64(0)], 233, &__PRETTY_FUNCTION___ts_subtree_set_symbol[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -54508,7 +54508,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_98[int64(0)], &_str_93[int64(0)], 343, &__PRETTY_FUNCTION___ts_subtree_summarize_children[int64(0)])
+	libc.AssertFail(&_str_98[int64(0)], &_str_93[int64(0)], 343, &__PRETTY_FUNCTION___ts_subtree_summarize_children[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -59446,7 +59446,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_284[int64(0)], &_str_93[int64(0)], 855, &__PRETTY_FUNCTION___ts_subtree__write_to_string[int64(0)])
+	libc.AssertFail(&_str_284[int64(0)], &_str_93[int64(0)], 855, &__PRETTY_FUNCTION___ts_subtree__write_to_string[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -61250,7 +61250,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_111[int64(0)], &_str_112[int64(0)], 40, &__PRETTY_FUNCTION___ts_tree_cursor_iterate_children[int64(0)])
+	libc.AssertFail(&_str_111[int64(0)], &_str_112[int64(0)], 40, &__PRETTY_FUNCTION___ts_tree_cursor_iterate_children[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -62962,7 +62962,7 @@ if_then4:
 	goto if_end5
 
 if_else:
-	__assert_fail(&_str_111[int64(0)], &_str_112[int64(0)], 380, &__PRETTY_FUNCTION___ts_tree_cursor_goto_previous_sibling_internal[int64(0)])
+	libc.AssertFail(&_str_111[int64(0)], &_str_112[int64(0)], 380, &__PRETTY_FUNCTION___ts_tree_cursor_goto_previous_sibling_internal[int64(0)])
 	panic("unreachable")
 
 if_end5:
@@ -63018,7 +63018,7 @@ if_then19:
 	goto if_end21
 
 if_else20:
-	__assert_fail(&_str_113[int64(0)], &_str_112[int64(0)], 384, &__PRETTY_FUNCTION___ts_tree_cursor_goto_previous_sibling_internal[int64(0)])
+	libc.AssertFail(&_str_113[int64(0)], &_str_112[int64(0)], 384, &__PRETTY_FUNCTION___ts_tree_cursor_goto_previous_sibling_internal[int64(0)])
 	panic("unreachable")
 
 if_end21:
@@ -63059,7 +63059,7 @@ if_then37:
 	goto if_end39
 
 if_else38:
-	__assert_fail(&_str_111[int64(0)], &_str_112[int64(0)], 386, &__PRETTY_FUNCTION___ts_tree_cursor_goto_previous_sibling_internal[int64(0)])
+	libc.AssertFail(&_str_111[int64(0)], &_str_112[int64(0)], 386, &__PRETTY_FUNCTION___ts_tree_cursor_goto_previous_sibling_internal[int64(0)])
 	panic("unreachable")
 
 if_end39:
@@ -63269,7 +63269,7 @@ if_then85:
 	goto if_end87
 
 if_else86:
-	__assert_fail(&_str_111[int64(0)], &_str_112[int64(0)], 398, &__PRETTY_FUNCTION___ts_tree_cursor_goto_previous_sibling_internal[int64(0)])
+	libc.AssertFail(&_str_111[int64(0)], &_str_112[int64(0)], 398, &__PRETTY_FUNCTION___ts_tree_cursor_goto_previous_sibling_internal[int64(0)])
 	panic("unreachable")
 
 if_end87:
@@ -63869,7 +63869,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_303[int64(0)], &_str_112[int64(0)], 24, &__PRETTY_FUNCTION___ts_tree_cursor_is_entry_visible[int64(0)])
+	libc.AssertFail(&_str_303[int64(0)], &_str_112[int64(0)], 24, &__PRETTY_FUNCTION___ts_tree_cursor_is_entry_visible[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -63937,7 +63937,7 @@ if_then13:
 	goto if_end15
 
 if_else14:
-	__assert_fail(&_str_304[int64(0)], &_str_112[int64(0)], 28, &__PRETTY_FUNCTION___ts_tree_cursor_is_entry_visible[int64(0)])
+	libc.AssertFail(&_str_304[int64(0)], &_str_112[int64(0)], 28, &__PRETTY_FUNCTION___ts_tree_cursor_is_entry_visible[int64(0)])
 	panic("unreachable")
 
 if_end15:
@@ -64052,7 +64052,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_114[int64(0)], &_str_112[int64(0)], 435, &__PRETTY_FUNCTION___ts_tree_cursor_goto_descendant[int64(0)])
+	libc.AssertFail(&_str_114[int64(0)], &_str_112[int64(0)], 435, &__PRETTY_FUNCTION___ts_tree_cursor_goto_descendant[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -64304,7 +64304,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_111[int64(0)], &_str_112[int64(0)], 479, &__PRETTY_FUNCTION___ts_tree_cursor_current_descendant_index[int64(0)])
+	libc.AssertFail(&_str_111[int64(0)], &_str_112[int64(0)], 479, &__PRETTY_FUNCTION___ts_tree_cursor_current_descendant_index[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -64405,7 +64405,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_111[int64(0)], &_str_112[int64(0)], 485, &__PRETTY_FUNCTION___ts_tree_cursor_current_node[int64(0)])
+	libc.AssertFail(&_str_111[int64(0)], &_str_112[int64(0)], 485, &__PRETTY_FUNCTION___ts_tree_cursor_current_node[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -64493,7 +64493,7 @@ if_then21:
 	goto if_end23
 
 if_else22:
-	__assert_fail(&_str_113[int64(0)], &_str_112[int64(0)], 489, &__PRETTY_FUNCTION___ts_tree_cursor_current_node[int64(0)])
+	libc.AssertFail(&_str_113[int64(0)], &_str_112[int64(0)], 489, &__PRETTY_FUNCTION___ts_tree_cursor_current_node[int64(0)])
 	panic("unreachable")
 
 if_end23:
@@ -64743,7 +64743,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_114[int64(0)], &_str_112[int64(0)], 526, &__PRETTY_FUNCTION___ts_tree_cursor_current_status[int64(0)])
+	libc.AssertFail(&_str_114[int64(0)], &_str_112[int64(0)], 526, &__PRETTY_FUNCTION___ts_tree_cursor_current_status[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -64772,7 +64772,7 @@ if_then10:
 	goto if_end12
 
 if_else11:
-	__assert_fail(&_str_115[int64(0)], &_str_112[int64(0)], 527, &__PRETTY_FUNCTION___ts_tree_cursor_current_status[int64(0)])
+	libc.AssertFail(&_str_115[int64(0)], &_str_112[int64(0)], 527, &__PRETTY_FUNCTION___ts_tree_cursor_current_status[int64(0)])
 	panic("unreachable")
 
 if_end12:
@@ -65610,7 +65610,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_114[int64(0)], &_str_112[int64(0)], 640, &__PRETTY_FUNCTION___ts_tree_cursor_parent_node[int64(0)])
+	libc.AssertFail(&_str_114[int64(0)], &_str_112[int64(0)], 640, &__PRETTY_FUNCTION___ts_tree_cursor_parent_node[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -65650,7 +65650,7 @@ if_then12:
 	goto if_end14
 
 if_else13:
-	__assert_fail(&_str_115[int64(0)], &_str_112[int64(0)], 644, &__PRETTY_FUNCTION___ts_tree_cursor_parent_node[int64(0)])
+	libc.AssertFail(&_str_115[int64(0)], &_str_112[int64(0)], 644, &__PRETTY_FUNCTION___ts_tree_cursor_parent_node[int64(0)])
 	panic("unreachable")
 
 if_end14:
@@ -65861,7 +65861,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_114[int64(0)], &_str_112[int64(0)], 669, &__PRETTY_FUNCTION___ts_tree_cursor_current_field_id[int64(0)])
+	libc.AssertFail(&_str_114[int64(0)], &_str_112[int64(0)], 669, &__PRETTY_FUNCTION___ts_tree_cursor_current_field_id[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -65890,7 +65890,7 @@ if_then10:
 	goto if_end12
 
 if_else11:
-	__assert_fail(&_str_115[int64(0)], &_str_112[int64(0)], 670, &__PRETTY_FUNCTION___ts_tree_cursor_current_field_id[int64(0)])
+	libc.AssertFail(&_str_115[int64(0)], &_str_112[int64(0)], 670, &__PRETTY_FUNCTION___ts_tree_cursor_current_field_id[int64(0)])
 	panic("unreachable")
 
 if_end12:
@@ -66246,7 +66246,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_305[int64(0)], &_str_243[int64(0)], 263, &__PRETTY_FUNCTION____array__splice[int64(0)])
+	libc.AssertFail(&_str_305[int64(0)], &_str_243[int64(0)], 263, &__PRETTY_FUNCTION____array__splice[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -67275,7 +67275,7 @@ if_then9:
 	goto if_end10
 
 if_else:
-	__assert_fail(&_str_120[int64(0)], &_str_1[int64(0)], 220, &__PRETTY_FUNCTION___iterator_get_visible_state[int64(0)])
+	libc.AssertFail(&_str_120[int64(0)], &_str_1[int64(0)], 220, &__PRETTY_FUNCTION___iterator_get_visible_state[int64(0)])
 	panic("unreachable")
 
 if_end10:
@@ -67317,7 +67317,7 @@ if_then20:
 	goto if_end22
 
 if_else21:
-	__assert_fail(&_str_121[int64(0)], &_str_1[int64(0)], 223, &__PRETTY_FUNCTION___iterator_get_visible_state[int64(0)])
+	libc.AssertFail(&_str_121[int64(0)], &_str_1[int64(0)], 223, &__PRETTY_FUNCTION___iterator_get_visible_state[int64(0)])
 	panic("unreachable")
 
 if_end22:
@@ -67471,7 +67471,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_119[int64(0)], &_str_1[int64(0)], 193, &__PRETTY_FUNCTION___iterator_tree_is_visible[int64(0)])
+	libc.AssertFail(&_str_119[int64(0)], &_str_1[int64(0)], 193, &__PRETTY_FUNCTION___iterator_tree_is_visible[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -67542,7 +67542,7 @@ if_then26:
 	goto if_end28
 
 if_else27:
-	__assert_fail(&_str_122[int64(0)], &_str_1[int64(0)], 196, &__PRETTY_FUNCTION___iterator_tree_is_visible[int64(0)])
+	libc.AssertFail(&_str_122[int64(0)], &_str_1[int64(0)], 196, &__PRETTY_FUNCTION___iterator_tree_is_visible[int64(0)])
 	panic("unreachable")
 
 if_end28:
@@ -68757,7 +68757,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_111[int64(0)], &_str_131[int64(0)], 63, &__PRETTY_FUNCTION___reusable_node_descend[int64(0)])
+	libc.AssertFail(&_str_111[int64(0)], &_str_131[int64(0)], 63, &__PRETTY_FUNCTION___reusable_node_descend[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -71596,7 +71596,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_111[int64(0)], &_str_131[int64(0)], 40, &__PRETTY_FUNCTION___reusable_node_advance[int64(0)])
+	libc.AssertFail(&_str_111[int64(0)], &_str_131[int64(0)], 40, &__PRETTY_FUNCTION___reusable_node_advance[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -71704,7 +71704,7 @@ if_then36:
 	goto if_end38
 
 if_else37:
-	__assert_fail(&_str_111[int64(0)], &_str_131[int64(0)], 52, &__PRETTY_FUNCTION___reusable_node_advance[int64(0)])
+	libc.AssertFail(&_str_111[int64(0)], &_str_131[int64(0)], 52, &__PRETTY_FUNCTION___reusable_node_advance[int64(0)])
 	panic("unreachable")
 
 if_end38:
@@ -71974,7 +71974,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_158[int64(0)], &_str_12[int64(0)], 958, &__PRETTY_FUNCTION___ts_parser__reduce[int64(0)])
+	libc.AssertFail(&_str_158[int64(0)], &_str_12[int64(0)], 958, &__PRETTY_FUNCTION___ts_parser__reduce[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -72078,7 +72078,7 @@ if_then23:
 	goto if_end25
 
 if_else24:
-	__assert_fail(&_str_160[int64(0)], &_str_12[int64(0)], 971, &__PRETTY_FUNCTION___ts_parser__reduce[int64(0)])
+	libc.AssertFail(&_str_160[int64(0)], &_str_12[int64(0)], 971, &__PRETTY_FUNCTION___ts_parser__reduce[int64(0)])
 	panic("unreachable")
 
 if_end25:
@@ -72165,7 +72165,7 @@ if_then52:
 	goto if_end54
 
 if_else53:
-	__assert_fail(&_str_160[int64(0)], &_str_12[int64(0)], 994, &__PRETTY_FUNCTION___ts_parser__reduce[int64(0)])
+	libc.AssertFail(&_str_160[int64(0)], &_str_12[int64(0)], 994, &__PRETTY_FUNCTION___ts_parser__reduce[int64(0)])
 	panic("unreachable")
 
 if_end54:
@@ -72470,7 +72470,7 @@ if_then162:
 	goto if_end164
 
 if_else163:
-	__assert_fail(&_str_161[int64(0)], &_str_12[int64(0)], 1036, &__PRETTY_FUNCTION___ts_parser__reduce[int64(0)])
+	libc.AssertFail(&_str_161[int64(0)], &_str_12[int64(0)], 1036, &__PRETTY_FUNCTION___ts_parser__reduce[int64(0)])
 	panic("unreachable")
 
 if_end164:
@@ -72664,7 +72664,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_166[int64(0)], &_str_12[int64(0)], 1059, &__PRETTY_FUNCTION___ts_parser__accept[int64(0)])
+	libc.AssertFail(&_str_166[int64(0)], &_str_12[int64(0)], 1059, &__PRETTY_FUNCTION___ts_parser__accept[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -72719,7 +72719,7 @@ if_then7:
 	goto if_end9
 
 if_else8:
-	__assert_fail(&_str_158[int64(0)], &_str_12[int64(0)], 1064, &__PRETTY_FUNCTION___ts_parser__accept[int64(0)])
+	libc.AssertFail(&_str_158[int64(0)], &_str_12[int64(0)], 1064, &__PRETTY_FUNCTION___ts_parser__accept[int64(0)])
 	panic("unreachable")
 
 if_end9:
@@ -72765,7 +72765,7 @@ if_then16:
 	goto if_end18
 
 if_else17:
-	__assert_fail(&_str_167[int64(0)], &_str_12[int64(0)], 1068, &__PRETTY_FUNCTION___ts_parser__accept[int64(0)])
+	libc.AssertFail(&_str_167[int64(0)], &_str_12[int64(0)], 1068, &__PRETTY_FUNCTION___ts_parser__accept[int64(0)])
 	panic("unreachable")
 
 if_end18:
@@ -72802,7 +72802,7 @@ if_then25:
 	goto if_end27
 
 if_else26:
-	__assert_fail(&_str_168[int64(0)], &_str_12[int64(0)], 1070, &__PRETTY_FUNCTION___ts_parser__accept[int64(0)])
+	libc.AssertFail(&_str_168[int64(0)], &_str_12[int64(0)], 1070, &__PRETTY_FUNCTION___ts_parser__accept[int64(0)])
 	panic("unreachable")
 
 if_end27:
@@ -72946,7 +72946,7 @@ if_then59:
 	goto if_end61
 
 if_else60:
-	__assert_fail(&_str_169[int64(0)], &_str_12[int64(0)], 1088, &__PRETTY_FUNCTION___ts_parser__accept[int64(0)])
+	libc.AssertFail(&_str_169[int64(0)], &_str_12[int64(0)], 1088, &__PRETTY_FUNCTION___ts_parser__accept[int64(0)])
 	panic("unreachable")
 
 if_end61:
@@ -73041,7 +73041,7 @@ if_then89:
 	goto if_end91
 
 if_else90:
-	__assert_fail(&_str_50[int64(0)], &_str_12[int64(0)], 1103, &__PRETTY_FUNCTION___ts_parser__accept[int64(0)])
+	libc.AssertFail(&_str_50[int64(0)], &_str_12[int64(0)], 1103, &__PRETTY_FUNCTION___ts_parser__accept[int64(0)])
 	panic("unreachable")
 
 if_end91:
@@ -73263,7 +73263,7 @@ if_then14:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_170[int64(0)], &_str_12[int64(0)], 1307, &__PRETTY_FUNCTION___ts_parser__recover[int64(0)])
+	libc.AssertFail(&_str_170[int64(0)], &_str_12[int64(0)], 1307, &__PRETTY_FUNCTION___ts_parser__recover[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -74060,7 +74060,7 @@ if_then286:
 	goto if_end288
 
 if_else287:
-	__assert_fail(&_str_158[int64(0)], &_str_12[int64(0)], 1434, &__PRETTY_FUNCTION___ts_parser__recover[int64(0)])
+	libc.AssertFail(&_str_158[int64(0)], &_str_12[int64(0)], 1434, &__PRETTY_FUNCTION___ts_parser__recover[int64(0)])
 	panic("unreachable")
 
 if_end288:
@@ -74100,7 +74100,7 @@ if_then300:
 	goto if_end302
 
 if_else301:
-	__assert_fail(&_str_50[int64(0)], &_str_12[int64(0)], 1436, &__PRETTY_FUNCTION___ts_parser__recover[int64(0)])
+	libc.AssertFail(&_str_50[int64(0)], &_str_12[int64(0)], 1436, &__PRETTY_FUNCTION___ts_parser__recover[int64(0)])
 	panic("unreachable")
 
 if_end302:
@@ -74134,7 +74134,7 @@ if_then313:
 	goto if_end315
 
 if_else314:
-	__assert_fail(&_str_50[int64(0)], &_str_12[int64(0)], 1437, &__PRETTY_FUNCTION___ts_parser__recover[int64(0)])
+	libc.AssertFail(&_str_50[int64(0)], &_str_12[int64(0)], 1437, &__PRETTY_FUNCTION___ts_parser__recover[int64(0)])
 	panic("unreachable")
 
 if_end315:
@@ -74167,7 +74167,7 @@ if_then325:
 	goto if_end327
 
 if_else326:
-	__assert_fail(&_str_50[int64(0)], &_str_12[int64(0)], 1441, &__PRETTY_FUNCTION___ts_parser__recover[int64(0)])
+	libc.AssertFail(&_str_50[int64(0)], &_str_12[int64(0)], 1441, &__PRETTY_FUNCTION___ts_parser__recover[int64(0)])
 	panic("unreachable")
 
 if_end327:
@@ -74194,7 +74194,7 @@ if_then335:
 	goto if_end337
 
 if_else336:
-	__assert_fail(&_str_50[int64(0)], &_str_12[int64(0)], 1442, &__PRETTY_FUNCTION___ts_parser__recover[int64(0)])
+	libc.AssertFail(&_str_50[int64(0)], &_str_12[int64(0)], 1442, &__PRETTY_FUNCTION___ts_parser__recover[int64(0)])
 	panic("unreachable")
 
 if_end337:
@@ -74218,7 +74218,7 @@ if_then345:
 	goto if_end347
 
 if_else346:
-	__assert_fail(&_str_50[int64(0)], &_str_12[int64(0)], 1442, &__PRETTY_FUNCTION___ts_parser__recover[int64(0)])
+	libc.AssertFail(&_str_50[int64(0)], &_str_12[int64(0)], 1442, &__PRETTY_FUNCTION___ts_parser__recover[int64(0)])
 	panic("unreachable")
 
 if_end347:
@@ -74241,7 +74241,7 @@ if_then355:
 	goto if_end357
 
 if_else356:
-	__assert_fail(&_str_50[int64(0)], &_str_12[int64(0)], 1442, &__PRETTY_FUNCTION___ts_parser__recover[int64(0)])
+	libc.AssertFail(&_str_50[int64(0)], &_str_12[int64(0)], 1442, &__PRETTY_FUNCTION___ts_parser__recover[int64(0)])
 	panic("unreachable")
 
 if_end357:
@@ -74265,7 +74265,7 @@ if_then366:
 	goto if_end368
 
 if_else367:
-	__assert_fail(&_str_50[int64(0)], &_str_12[int64(0)], 1442, &__PRETTY_FUNCTION___ts_parser__recover[int64(0)])
+	libc.AssertFail(&_str_50[int64(0)], &_str_12[int64(0)], 1442, &__PRETTY_FUNCTION___ts_parser__recover[int64(0)])
 	panic("unreachable")
 
 if_end368:
@@ -74288,7 +74288,7 @@ if_then376:
 	goto if_end378
 
 if_else377:
-	__assert_fail(&_str_50[int64(0)], &_str_12[int64(0)], 1442, &__PRETTY_FUNCTION___ts_parser__recover[int64(0)])
+	libc.AssertFail(&_str_50[int64(0)], &_str_12[int64(0)], 1442, &__PRETTY_FUNCTION___ts_parser__recover[int64(0)])
 	panic("unreachable")
 
 if_end378:
@@ -74311,7 +74311,7 @@ if_then386:
 	goto if_end388
 
 if_else387:
-	__assert_fail(&_str_50[int64(0)], &_str_12[int64(0)], 1442, &__PRETTY_FUNCTION___ts_parser__recover[int64(0)])
+	libc.AssertFail(&_str_50[int64(0)], &_str_12[int64(0)], 1442, &__PRETTY_FUNCTION___ts_parser__recover[int64(0)])
 	panic("unreachable")
 
 if_end388:
@@ -74349,7 +74349,7 @@ if_then405:
 	goto if_end407
 
 if_else406:
-	__assert_fail(&_str_50[int64(0)], &_str_12[int64(0)], 1445, &__PRETTY_FUNCTION___ts_parser__recover[int64(0)])
+	libc.AssertFail(&_str_50[int64(0)], &_str_12[int64(0)], 1445, &__PRETTY_FUNCTION___ts_parser__recover[int64(0)])
 	panic("unreachable")
 
 if_end407:
@@ -74652,7 +74652,7 @@ if_then4:
 	goto if_end5
 
 if_else:
-	__assert_fail(&_str_158[int64(0)], &_str_12[int64(0)], 190, &__PRETTY_FUNCTION___ts_parser__breakdown_top_of_stack[int64(0)])
+	libc.AssertFail(&_str_158[int64(0)], &_str_12[int64(0)], 190, &__PRETTY_FUNCTION___ts_parser__breakdown_top_of_stack[int64(0)])
 	panic("unreachable")
 
 if_end5:
@@ -74685,7 +74685,7 @@ if_then11:
 	goto if_end13
 
 if_else12:
-	__assert_fail(&_str_178[int64(0)], &_str_12[int64(0)], 192, &__PRETTY_FUNCTION___ts_parser__breakdown_top_of_stack[int64(0)])
+	libc.AssertFail(&_str_178[int64(0)], &_str_12[int64(0)], 192, &__PRETTY_FUNCTION___ts_parser__breakdown_top_of_stack[int64(0)])
 	panic("unreachable")
 
 if_end13:
@@ -74849,7 +74849,7 @@ if_then53:
 	goto if_end55
 
 if_else54:
-	__assert_fail(&_str_177[int64(0)], &_str_12[int64(0)], 209, &__PRETTY_FUNCTION___ts_parser__breakdown_top_of_stack[int64(0)])
+	libc.AssertFail(&_str_177[int64(0)], &_str_12[int64(0)], 209, &__PRETTY_FUNCTION___ts_parser__breakdown_top_of_stack[int64(0)])
 	panic("unreachable")
 
 if_end55:
@@ -75823,7 +75823,7 @@ if_then13:
 	goto if_end15
 
 if_else14:
-	__assert_fail(&_str_156[int64(0)], &_str_12[int64(0)], 409, &__PRETTY_FUNCTION___ts_parser__external_scanner_serialize[int64(0)])
+	libc.AssertFail(&_str_156[int64(0)], &_str_12[int64(0)], 409, &__PRETTY_FUNCTION___ts_parser__external_scanner_serialize[int64(0)])
 	panic("unreachable")
 
 if_end15:
@@ -77130,7 +77130,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_158[int64(0)], &_str_12[int64(0)], 1232, &__PRETTY_FUNCTION___ts_parser__recover_to_state[int64(0)])
+	libc.AssertFail(&_str_158[int64(0)], &_str_12[int64(0)], 1232, &__PRETTY_FUNCTION___ts_parser__recover_to_state[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -77245,7 +77245,7 @@ if_then34:
 	goto if_end36
 
 if_else35:
-	__assert_fail(&_str_175[int64(0)], &_str_12[int64(0)], 1249, &__PRETTY_FUNCTION___ts_parser__recover_to_state[int64(0)])
+	libc.AssertFail(&_str_175[int64(0)], &_str_12[int64(0)], 1249, &__PRETTY_FUNCTION___ts_parser__recover_to_state[int64(0)])
 	panic("unreachable")
 
 if_end36:
@@ -77262,7 +77262,7 @@ if_then40:
 	goto if_end42
 
 if_else41:
-	__assert_fail(&_str_176[int64(0)], &_str_12[int64(0)], 1250, &__PRETTY_FUNCTION___ts_parser__recover_to_state[int64(0)])
+	libc.AssertFail(&_str_176[int64(0)], &_str_12[int64(0)], 1250, &__PRETTY_FUNCTION___ts_parser__recover_to_state[int64(0)])
 	panic("unreachable")
 
 if_end42:
@@ -77359,7 +77359,7 @@ if_then67:
 	goto if_end69
 
 if_else68:
-	__assert_fail(&_str_177[int64(0)], &_str_12[int64(0)], 1255, &__PRETTY_FUNCTION___ts_parser__recover_to_state[int64(0)])
+	libc.AssertFail(&_str_177[int64(0)], &_str_12[int64(0)], 1255, &__PRETTY_FUNCTION___ts_parser__recover_to_state[int64(0)])
 	panic("unreachable")
 
 if_end69:
@@ -77495,7 +77495,7 @@ if_then115:
 	goto if_end117
 
 if_else116:
-	__assert_fail(&_str_161[int64(0)], &_str_12[int64(0)], 1271, &__PRETTY_FUNCTION___ts_parser__recover_to_state[int64(0)])
+	libc.AssertFail(&_str_161[int64(0)], &_str_12[int64(0)], 1271, &__PRETTY_FUNCTION___ts_parser__recover_to_state[int64(0)])
 	panic("unreachable")
 
 if_end117:
@@ -78314,7 +78314,7 @@ if_then78:
 	goto if_end79
 
 if_else:
-	__assert_fail(&_str_183[int64(0)], &_str_12[int64(0)], 1549, &__PRETTY_FUNCTION___ts_parser__handle_error[int64(0)])
+	libc.AssertFail(&_str_183[int64(0)], &_str_12[int64(0)], 1549, &__PRETTY_FUNCTION___ts_parser__handle_error[int64(0)])
 	panic("unreachable")
 
 if_end79:
@@ -78778,7 +78778,7 @@ if_then88:
 	goto if_end90
 
 if_else89:
-	__assert_fail(&_str_184[int64(0)], &_str_12[int64(0)], 1194, &__PRETTY_FUNCTION___ts_parser__do_all_potential_reductions[int64(0)])
+	libc.AssertFail(&_str_184[int64(0)], &_str_12[int64(0)], 1194, &__PRETTY_FUNCTION___ts_parser__do_all_potential_reductions[int64(0)])
 	panic("unreachable")
 
 if_end90:
@@ -79543,7 +79543,7 @@ if_then27:
 	goto if_end28
 
 if_else:
-	__assert_fail(&_str_198[int64(0)], &_str_21[int64(0)], 894, &__PRETTY_FUNCTION___capture_quantifiers_join_all[int64(0)])
+	libc.AssertFail(&_str_198[int64(0)], &_str_21[int64(0)], 894, &__PRETTY_FUNCTION___capture_quantifiers_join_all[int64(0)])
 	panic("unreachable")
 
 if_end28:
@@ -79569,7 +79569,7 @@ if_then33:
 	goto if_end35
 
 if_else34:
-	__assert_fail(&_str_199[int64(0)], &_str_21[int64(0)], 895, &__PRETTY_FUNCTION___capture_quantifiers_join_all[int64(0)])
+	libc.AssertFail(&_str_199[int64(0)], &_str_21[int64(0)], 895, &__PRETTY_FUNCTION___capture_quantifiers_join_all[int64(0)])
 	panic("unreachable")
 
 if_end35:
@@ -79633,7 +79633,7 @@ if_then54:
 	goto if_end56
 
 if_else55:
-	__assert_fail(&_str_199[int64(0)], &_str_21[int64(0)], 899, &__PRETTY_FUNCTION___capture_quantifiers_join_all[int64(0)])
+	libc.AssertFail(&_str_199[int64(0)], &_str_21[int64(0)], 899, &__PRETTY_FUNCTION___capture_quantifiers_join_all[int64(0)])
 	panic("unreachable")
 
 if_end56:
@@ -79847,7 +79847,7 @@ if_then31:
 	goto if_end32
 
 if_else:
-	__assert_fail(&_str_198[int64(0)], &_str_21[int64(0)], 868, &__PRETTY_FUNCTION___capture_quantifiers_add_all[int64(0)])
+	libc.AssertFail(&_str_198[int64(0)], &_str_21[int64(0)], 868, &__PRETTY_FUNCTION___capture_quantifiers_add_all[int64(0)])
 	panic("unreachable")
 
 if_end32:
@@ -79874,7 +79874,7 @@ if_then38:
 	goto if_end40
 
 if_else39:
-	__assert_fail(&_str_199[int64(0)], &_str_21[int64(0)], 869, &__PRETTY_FUNCTION___capture_quantifiers_add_all[int64(0)])
+	libc.AssertFail(&_str_199[int64(0)], &_str_21[int64(0)], 869, &__PRETTY_FUNCTION___capture_quantifiers_add_all[int64(0)])
 	panic("unreachable")
 
 if_end40:
@@ -81015,7 +81015,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_24[int64(0)], &_str_21[int64(0)], 2183, &__PRETTY_FUNCTION___ts_query__add_negated_fields[int64(0)])
+	libc.AssertFail(&_str_24[int64(0)], &_str_21[int64(0)], 2183, &__PRETTY_FUNCTION___ts_query__add_negated_fields[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -81063,7 +81063,7 @@ if_then10:
 	goto if_end12
 
 if_else11:
-	__assert_fail(&_str_200[int64(0)], &_str_21[int64(0)], 2191, &__PRETTY_FUNCTION___ts_query__add_negated_fields[int64(0)])
+	libc.AssertFail(&_str_200[int64(0)], &_str_21[int64(0)], 2191, &__PRETTY_FUNCTION___ts_query__add_negated_fields[int64(0)])
 	panic("unreachable")
 
 if_end12:
@@ -81544,7 +81544,7 @@ if_then29:
 	goto if_end30
 
 if_else:
-	__assert_fail(&_str_201[int64(0)], &_str_21[int64(0)], 957, &__PRETTY_FUNCTION___symbol_table_insert_name[int64(0)])
+	libc.AssertFail(&_str_201[int64(0)], &_str_21[int64(0)], 957, &__PRETTY_FUNCTION___symbol_table_insert_name[int64(0)])
 	panic("unreachable")
 
 if_end30:
@@ -81580,7 +81580,7 @@ if_then41:
 	goto if_end43
 
 if_else42:
-	__assert_fail(&_str_202[int64(0)], &_str_21[int64(0)], 958, &__PRETTY_FUNCTION___symbol_table_insert_name[int64(0)])
+	libc.AssertFail(&_str_202[int64(0)], &_str_21[int64(0)], 958, &__PRETTY_FUNCTION___symbol_table_insert_name[int64(0)])
 	panic("unreachable")
 
 if_end43:
@@ -81776,7 +81776,7 @@ if_then31:
 	goto if_end32
 
 if_else:
-	__assert_fail(&_str_199[int64(0)], &_str_21[int64(0)], 855, &__PRETTY_FUNCTION___capture_quantifiers_add_for_id[int64(0)])
+	libc.AssertFail(&_str_199[int64(0)], &_str_21[int64(0)], 855, &__PRETTY_FUNCTION___capture_quantifiers_add_for_id[int64(0)])
 	panic("unreachable")
 
 if_end32:
@@ -81920,7 +81920,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_199[int64(0)], &_str_21[int64(0)], 880, &__PRETTY_FUNCTION___capture_quantifiers_mul[int64(0)])
+	libc.AssertFail(&_str_199[int64(0)], &_str_21[int64(0)], 880, &__PRETTY_FUNCTION___capture_quantifiers_mul[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -82320,7 +82320,7 @@ if_then9:
 	goto if_end10
 
 if_else:
-	__assert_fail(&_str_205[int64(0)], &_str_21[int64(0)], 1253, &__PRETTY_FUNCTION___ts_query__pattern_map_search[int64(0)])
+	libc.AssertFail(&_str_205[int64(0)], &_str_21[int64(0)], 1253, &__PRETTY_FUNCTION___ts_query__pattern_map_search[int64(0)])
 	panic("unreachable")
 
 if_end10:
@@ -82349,7 +82349,7 @@ if_then16:
 	goto if_end18
 
 if_else17:
-	__assert_fail(&_str_206[int64(0)], &_str_21[int64(0)], 1254, &__PRETTY_FUNCTION___ts_query__pattern_map_search[int64(0)])
+	libc.AssertFail(&_str_206[int64(0)], &_str_21[int64(0)], 1254, &__PRETTY_FUNCTION___ts_query__pattern_map_search[int64(0)])
 	panic("unreachable")
 
 if_end18:
@@ -82373,7 +82373,7 @@ if_then25:
 	goto if_end27
 
 if_else26:
-	__assert_fail(&_str_205[int64(0)], &_str_21[int64(0)], 1253, &__PRETTY_FUNCTION___ts_query__pattern_map_search[int64(0)])
+	libc.AssertFail(&_str_205[int64(0)], &_str_21[int64(0)], 1253, &__PRETTY_FUNCTION___ts_query__pattern_map_search[int64(0)])
 	panic("unreachable")
 
 if_end27:
@@ -82431,7 +82431,7 @@ if_then47:
 	goto if_end49
 
 if_else48:
-	__assert_fail(&_str_207[int64(0)], &_str_21[int64(0)], 1260, &__PRETTY_FUNCTION___ts_query__pattern_map_search[int64(0)])
+	libc.AssertFail(&_str_207[int64(0)], &_str_21[int64(0)], 1260, &__PRETTY_FUNCTION___ts_query__pattern_map_search[int64(0)])
 	panic("unreachable")
 
 if_end49:
@@ -82460,7 +82460,7 @@ if_then60:
 	goto if_end62
 
 if_else61:
-	__assert_fail(&_str_208[int64(0)], &_str_21[int64(0)], 1261, &__PRETTY_FUNCTION___ts_query__pattern_map_search[int64(0)])
+	libc.AssertFail(&_str_208[int64(0)], &_str_21[int64(0)], 1261, &__PRETTY_FUNCTION___ts_query__pattern_map_search[int64(0)])
 	panic("unreachable")
 
 if_end62:
@@ -82484,7 +82484,7 @@ if_then69:
 	goto if_end71
 
 if_else70:
-	__assert_fail(&_str_207[int64(0)], &_str_21[int64(0)], 1260, &__PRETTY_FUNCTION___ts_query__pattern_map_search[int64(0)])
+	libc.AssertFail(&_str_207[int64(0)], &_str_21[int64(0)], 1260, &__PRETTY_FUNCTION___ts_query__pattern_map_search[int64(0)])
 	panic("unreachable")
 
 if_end71:
@@ -82546,7 +82546,7 @@ if_then94:
 	goto if_end96
 
 if_else95:
-	__assert_fail(&_str_207[int64(0)], &_str_21[int64(0)], 1267, &__PRETTY_FUNCTION___ts_query__pattern_map_search[int64(0)])
+	libc.AssertFail(&_str_207[int64(0)], &_str_21[int64(0)], 1267, &__PRETTY_FUNCTION___ts_query__pattern_map_search[int64(0)])
 	panic("unreachable")
 
 if_end96:
@@ -82575,7 +82575,7 @@ if_then107:
 	goto if_end109
 
 if_else108:
-	__assert_fail(&_str_209[int64(0)], &_str_21[int64(0)], 1268, &__PRETTY_FUNCTION___ts_query__pattern_map_search[int64(0)])
+	libc.AssertFail(&_str_209[int64(0)], &_str_21[int64(0)], 1268, &__PRETTY_FUNCTION___ts_query__pattern_map_search[int64(0)])
 	panic("unreachable")
 
 if_end109:
@@ -82599,7 +82599,7 @@ if_then116:
 	goto if_end118
 
 if_else117:
-	__assert_fail(&_str_207[int64(0)], &_str_21[int64(0)], 1267, &__PRETTY_FUNCTION___ts_query__pattern_map_search[int64(0)])
+	libc.AssertFail(&_str_207[int64(0)], &_str_21[int64(0)], 1267, &__PRETTY_FUNCTION___ts_query__pattern_map_search[int64(0)])
 	panic("unreachable")
 
 if_end118:
@@ -83539,7 +83539,7 @@ if_then26:
 	goto if_end27
 
 if_else:
-	__assert_fail(&_str_234[int64(0)], &_str_21[int64(0)], 1373, &__PRETTY_FUNCTION___ts_query__perform_analysis[int64(0)])
+	libc.AssertFail(&_str_234[int64(0)], &_str_21[int64(0)], 1373, &__PRETTY_FUNCTION___ts_query__perform_analysis[int64(0)])
 	panic("unreachable")
 
 if_end27:
@@ -83584,7 +83584,7 @@ if_then38:
 	goto if_end40
 
 if_else39:
-	__assert_fail(&_str_235[int64(0)], &_str_21[int64(0)], 1383, &__PRETTY_FUNCTION___ts_query__perform_analysis[int64(0)])
+	libc.AssertFail(&_str_235[int64(0)], &_str_21[int64(0)], 1383, &__PRETTY_FUNCTION___ts_query__perform_analysis[int64(0)])
 	panic("unreachable")
 
 if_end40:
@@ -83664,7 +83664,7 @@ if_then63:
 	goto if_end65
 
 if_else64:
-	__assert_fail(&_str_234[int64(0)], &_str_21[int64(0)], 1396, &__PRETTY_FUNCTION___ts_query__perform_analysis[int64(0)])
+	libc.AssertFail(&_str_234[int64(0)], &_str_21[int64(0)], 1396, &__PRETTY_FUNCTION___ts_query__perform_analysis[int64(0)])
 	panic("unreachable")
 
 if_end65:
@@ -83733,7 +83733,7 @@ if_then85:
 	goto if_end87
 
 if_else86:
-	__assert_fail(&_str_236[int64(0)], &_str_21[int64(0)], 1408, &__PRETTY_FUNCTION___ts_query__perform_analysis[int64(0)])
+	libc.AssertFail(&_str_236[int64(0)], &_str_21[int64(0)], 1408, &__PRETTY_FUNCTION___ts_query__perform_analysis[int64(0)])
 	panic("unreachable")
 
 if_end87:
@@ -83897,7 +83897,7 @@ if_then139:
 	goto if_end141
 
 if_else140:
-	__assert_fail(&_str_237[int64(0)], &_str_21[int64(0)], 1413, &__PRETTY_FUNCTION___ts_query__perform_analysis[int64(0)])
+	libc.AssertFail(&_str_237[int64(0)], &_str_21[int64(0)], 1413, &__PRETTY_FUNCTION___ts_query__perform_analysis[int64(0)])
 	panic("unreachable")
 
 if_end141:
@@ -84196,7 +84196,7 @@ if_then256:
 	goto if_end258
 
 if_else257:
-	__assert_fail(&_str_238[int64(0)], &_str_21[int64(0)], 1449, &__PRETTY_FUNCTION___ts_query__perform_analysis[int64(0)])
+	libc.AssertFail(&_str_238[int64(0)], &_str_21[int64(0)], 1449, &__PRETTY_FUNCTION___ts_query__perform_analysis[int64(0)])
 	panic("unreachable")
 
 if_end258:
@@ -84767,7 +84767,7 @@ if_then460:
 	goto if_end462
 
 if_else461:
-	__assert_fail(&_str_239[int64(0)], &_str_21[int64(0)], 1556, &__PRETTY_FUNCTION___ts_query__perform_analysis[int64(0)])
+	libc.AssertFail(&_str_239[int64(0)], &_str_21[int64(0)], 1556, &__PRETTY_FUNCTION___ts_query__perform_analysis[int64(0)])
 	panic("unreachable")
 
 if_end462:
@@ -84893,7 +84893,7 @@ if_then512:
 	goto if_end514
 
 if_else513:
-	__assert_fail(&_str_239[int64(0)], &_str_21[int64(0)], 1580, &__PRETTY_FUNCTION___ts_query__perform_analysis[int64(0)])
+	libc.AssertFail(&_str_239[int64(0)], &_str_21[int64(0)], 1580, &__PRETTY_FUNCTION___ts_query__perform_analysis[int64(0)])
 	panic("unreachable")
 
 if_end514:
@@ -85345,7 +85345,7 @@ if_then694:
 	goto if_end696
 
 if_else695:
-	__assert_fail(&_str_239[int64(0)], &_str_21[int64(0)], 1600, &__PRETTY_FUNCTION___ts_query__perform_analysis[int64(0)])
+	libc.AssertFail(&_str_239[int64(0)], &_str_21[int64(0)], 1600, &__PRETTY_FUNCTION___ts_query__perform_analysis[int64(0)])
 	panic("unreachable")
 
 if_end696:
@@ -86531,7 +86531,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_249[int64(0)], &_str_21[int64(0)], 3783, &__PRETTY_FUNCTION___ts_query_cursor__add_state[int64(0)])
+	libc.AssertFail(&_str_249[int64(0)], &_str_21[int64(0)], 3783, &__PRETTY_FUNCTION___ts_query_cursor__add_state[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -86590,7 +86590,7 @@ if_then15:
 	goto if_end17
 
 if_else16:
-	__assert_fail(&_str_256[int64(0)], &_str_21[int64(0)], 3807, &__PRETTY_FUNCTION___ts_query_cursor__add_state[int64(0)])
+	libc.AssertFail(&_str_256[int64(0)], &_str_21[int64(0)], 3807, &__PRETTY_FUNCTION___ts_query_cursor__add_state[int64(0)])
 	panic("unreachable")
 
 if_end17:
@@ -86929,7 +86929,7 @@ if_then26:
 	goto if_end27
 
 if_else:
-	__assert_fail(&_str_257[int64(0)], &_str_21[int64(0)], 3943, &__PRETTY_FUNCTION___ts_query_cursor__copy_state[int64(0)])
+	libc.AssertFail(&_str_257[int64(0)], &_str_21[int64(0)], 3943, &__PRETTY_FUNCTION___ts_query_cursor__copy_state[int64(0)])
 	panic("unreachable")
 
 if_end27:
@@ -86959,7 +86959,7 @@ if_then35:
 	goto if_end37
 
 if_else36:
-	__assert_fail(&_str_258[int64(0)], &_str_21[int64(0)], 3944, &__PRETTY_FUNCTION___ts_query_cursor__copy_state[int64(0)])
+	libc.AssertFail(&_str_258[int64(0)], &_str_21[int64(0)], 3944, &__PRETTY_FUNCTION___ts_query_cursor__copy_state[int64(0)])
 	panic("unreachable")
 
 if_end37:
@@ -87198,7 +87198,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_260[int64(0)], &_str_21[int64(0)], 3767, &__PRETTY_FUNCTION___ts_query_cursor__sort_states_by_capture[int64(0)])
+	libc.AssertFail(&_str_260[int64(0)], &_str_21[int64(0)], 3767, &__PRETTY_FUNCTION___ts_query_cursor__sort_states_by_capture[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -87224,7 +87224,7 @@ if_then6:
 	goto if_end8
 
 if_else7:
-	__assert_fail(&_str_261[int64(0)], &_str_21[int64(0)], 3767, &__PRETTY_FUNCTION___ts_query_cursor__sort_states_by_capture[int64(0)])
+	libc.AssertFail(&_str_261[int64(0)], &_str_21[int64(0)], 3767, &__PRETTY_FUNCTION___ts_query_cursor__sort_states_by_capture[int64(0)])
 	panic("unreachable")
 
 if_end8:
@@ -87261,7 +87261,7 @@ if_then17:
 	goto if_end19
 
 if_else18:
-	__assert_fail(&_str_260[int64(0)], &_str_21[int64(0)], 3769, &__PRETTY_FUNCTION___ts_query_cursor__sort_states_by_capture[int64(0)])
+	libc.AssertFail(&_str_260[int64(0)], &_str_21[int64(0)], 3769, &__PRETTY_FUNCTION___ts_query_cursor__sort_states_by_capture[int64(0)])
 	panic("unreachable")
 
 if_end19:
@@ -87294,7 +87294,7 @@ if_then25:
 	goto if_end27
 
 if_else26:
-	__assert_fail(&_str_262[int64(0)], &_str_21[int64(0)], 3772, &__PRETTY_FUNCTION___ts_query_cursor__sort_states_by_capture[int64(0)])
+	libc.AssertFail(&_str_262[int64(0)], &_str_21[int64(0)], 3772, &__PRETTY_FUNCTION___ts_query_cursor__sort_states_by_capture[int64(0)])
 	panic("unreachable")
 
 if_end27:
@@ -87320,7 +87320,7 @@ if_then34:
 	goto if_end36
 
 if_else35:
-	__assert_fail(&_str_263[int64(0)], &_str_21[int64(0)], 3772, &__PRETTY_FUNCTION___ts_query_cursor__sort_states_by_capture[int64(0)])
+	libc.AssertFail(&_str_263[int64(0)], &_str_21[int64(0)], 3772, &__PRETTY_FUNCTION___ts_query_cursor__sort_states_by_capture[int64(0)])
 	panic("unreachable")
 
 if_end36:
@@ -87367,7 +87367,7 @@ if_then45:
 	goto if_end47
 
 if_else46:
-	__assert_fail(&_str_263[int64(0)], &_str_21[int64(0)], 3774, &__PRETTY_FUNCTION___ts_query_cursor__sort_states_by_capture[int64(0)])
+	libc.AssertFail(&_str_263[int64(0)], &_str_21[int64(0)], 3774, &__PRETTY_FUNCTION___ts_query_cursor__sort_states_by_capture[int64(0)])
 	panic("unreachable")
 
 if_end47:
@@ -87405,7 +87405,7 @@ if_then55:
 	goto if_end57
 
 if_else56:
-	__assert_fail(&_str_262[int64(0)], &_str_21[int64(0)], 3775, &__PRETTY_FUNCTION___ts_query_cursor__sort_states_by_capture[int64(0)])
+	libc.AssertFail(&_str_262[int64(0)], &_str_21[int64(0)], 3775, &__PRETTY_FUNCTION___ts_query_cursor__sort_states_by_capture[int64(0)])
 	panic("unreachable")
 
 if_end57:
@@ -87534,7 +87534,7 @@ if_then5:
 	goto if_end6
 
 if_else:
-	__assert_fail(&_str_42[int64(0)], &_str_21[int64(0)], 3959, &__PRETTY_FUNCTION___ts_query_cursor__should_descend[int64(0)])
+	libc.AssertFail(&_str_42[int64(0)], &_str_21[int64(0)], 3959, &__PRETTY_FUNCTION___ts_query_cursor__should_descend[int64(0)])
 	panic("unreachable")
 
 if_end6:
@@ -87567,7 +87567,7 @@ if_then11:
 	goto if_end13
 
 if_else12:
-	__assert_fail(&_str_246[int64(0)], &_str_21[int64(0)], 3960, &__PRETTY_FUNCTION___ts_query_cursor__should_descend[int64(0)])
+	libc.AssertFail(&_str_246[int64(0)], &_str_21[int64(0)], 3960, &__PRETTY_FUNCTION___ts_query_cursor__should_descend[int64(0)])
 	panic("unreachable")
 
 if_end13:
@@ -87920,7 +87920,7 @@ if_then9:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_257[int64(0)], &_str_21[int64(0)], 3873, &__PRETTY_FUNCTION___ts_query_cursor__prepare_to_capture[int64(0)])
+	libc.AssertFail(&_str_257[int64(0)], &_str_21[int64(0)], 3873, &__PRETTY_FUNCTION___ts_query_cursor__prepare_to_capture[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -88049,7 +88049,7 @@ if_then5:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_244[int64(0)], &_str_21[int64(0)], 487, &__PRETTY_FUNCTION___capture_list_pool_acquire[int64(0)])
+	libc.AssertFail(&_str_244[int64(0)], &_str_21[int64(0)], 487, &__PRETTY_FUNCTION___capture_list_pool_acquire[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -88086,7 +88086,7 @@ if_then13:
 	goto if_end15
 
 if_else14:
-	__assert_fail(&_str_244[int64(0)], &_str_21[int64(0)], 488, &__PRETTY_FUNCTION___capture_list_pool_acquire[int64(0)])
+	libc.AssertFail(&_str_244[int64(0)], &_str_21[int64(0)], 488, &__PRETTY_FUNCTION___capture_list_pool_acquire[int64(0)])
 	panic("unreachable")
 
 if_end15:
@@ -88229,7 +88229,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_259[int64(0)], &_str_21[int64(0)], 473, &__PRETTY_FUNCTION___capture_list_pool_get_mut[int64(0)])
+	libc.AssertFail(&_str_259[int64(0)], &_str_21[int64(0)], 473, &__PRETTY_FUNCTION___capture_list_pool_get_mut[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -88249,7 +88249,7 @@ if_then4:
 	goto if_end6
 
 if_else5:
-	__assert_fail(&_str_245[int64(0)], &_str_21[int64(0)], 474, &__PRETTY_FUNCTION___capture_list_pool_get_mut[int64(0)])
+	libc.AssertFail(&_str_245[int64(0)], &_str_21[int64(0)], 474, &__PRETTY_FUNCTION___capture_list_pool_get_mut[int64(0)])
 	panic("unreachable")
 
 if_end6:
@@ -88419,7 +88419,7 @@ if_then46:
 	goto if_end47
 
 if_else:
-	__assert_fail(&_str_264[int64(0)], &_str_21[int64(0)], 3755, &__PRETTY_FUNCTION___ts_query_cursor__state_precedes[int64(0)])
+	libc.AssertFail(&_str_264[int64(0)], &_str_21[int64(0)], 3755, &__PRETTY_FUNCTION___ts_query_cursor__state_precedes[int64(0)])
 	panic("unreachable")
 
 if_end47:
@@ -88443,7 +88443,7 @@ if_then52:
 	goto if_end54
 
 if_else53:
-	__assert_fail(&_str_265[int64(0)], &_str_21[int64(0)], 3756, &__PRETTY_FUNCTION___ts_query_cursor__state_precedes[int64(0)])
+	libc.AssertFail(&_str_265[int64(0)], &_str_21[int64(0)], 3756, &__PRETTY_FUNCTION___ts_query_cursor__state_precedes[int64(0)])
 	panic("unreachable")
 
 if_end54:
@@ -88510,7 +88510,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_111[int64(0)], &_str_266[int64(0)], 42, &__PRETTY_FUNCTION___ts_tree_cursor_current_subtree[int64(0)])
+	libc.AssertFail(&_str_111[int64(0)], &_str_266[int64(0)], 42, &__PRETTY_FUNCTION___ts_tree_cursor_current_subtree[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -88669,7 +88669,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_267[int64(0)], &_str_21[int64(0)], 586, &__PRETTY_FUNCTION___finished_state_sift_up[int64(0)])
+	libc.AssertFail(&_str_267[int64(0)], &_str_21[int64(0)], 586, &__PRETTY_FUNCTION___finished_state_sift_up[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -88694,7 +88694,7 @@ if_then4:
 	goto if_end6
 
 if_else5:
-	__assert_fail(&_str_268[int64(0)], &_str_21[int64(0)], 587, &__PRETTY_FUNCTION___finished_state_sift_up[int64(0)])
+	libc.AssertFail(&_str_268[int64(0)], &_str_21[int64(0)], 587, &__PRETTY_FUNCTION___finished_state_sift_up[int64(0)])
 	panic("unreachable")
 
 if_end6:
@@ -88941,7 +88941,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_269[int64(0)], &_str_21[int64(0)], 525, &__PRETTY_FUNCTION___finished_state_swap[int64(0)])
+	libc.AssertFail(&_str_269[int64(0)], &_str_21[int64(0)], 525, &__PRETTY_FUNCTION___finished_state_swap[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -88969,7 +88969,7 @@ if_then3:
 	goto if_end5
 
 if_else4:
-	__assert_fail(&_str_269[int64(0)], &_str_21[int64(0)], 526, &__PRETTY_FUNCTION___finished_state_swap[int64(0)])
+	libc.AssertFail(&_str_269[int64(0)], &_str_21[int64(0)], 526, &__PRETTY_FUNCTION___finished_state_swap[int64(0)])
 	panic("unreachable")
 
 if_end5:
@@ -88994,7 +88994,7 @@ if_then11:
 	goto if_end13
 
 if_else12:
-	__assert_fail(&_str_270[int64(0)], &_str_21[int64(0)], 526, &__PRETTY_FUNCTION___finished_state_swap[int64(0)])
+	libc.AssertFail(&_str_270[int64(0)], &_str_21[int64(0)], 526, &__PRETTY_FUNCTION___finished_state_swap[int64(0)])
 	panic("unreachable")
 
 if_end13:
@@ -89022,7 +89022,7 @@ if_then19:
 	goto if_end21
 
 if_else20:
-	__assert_fail(&_str_270[int64(0)], &_str_21[int64(0)], 527, &__PRETTY_FUNCTION___finished_state_swap[int64(0)])
+	libc.AssertFail(&_str_270[int64(0)], &_str_21[int64(0)], 527, &__PRETTY_FUNCTION___finished_state_swap[int64(0)])
 	panic("unreachable")
 
 if_end21:
@@ -89163,7 +89163,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_241[int64(0)], &_str_47[int64(0)], 311, &__PRETTY_FUNCTION___ts_stack__add_slice[int64(0)])
+	libc.AssertFail(&_str_241[int64(0)], &_str_47[int64(0)], 311, &__PRETTY_FUNCTION___ts_stack__add_slice[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -89193,7 +89193,7 @@ if_then8:
 	goto if_end10
 
 if_else9:
-	__assert_fail(&_str_49[int64(0)], &_str_47[int64(0)], 312, &__PRETTY_FUNCTION___ts_stack__add_slice[int64(0)])
+	libc.AssertFail(&_str_49[int64(0)], &_str_47[int64(0)], 312, &__PRETTY_FUNCTION___ts_stack__add_slice[int64(0)])
 	panic("unreachable")
 
 if_end10:
@@ -89358,7 +89358,7 @@ if_then:
 	goto if_end
 
 if_else:
-	__assert_fail(&_str_278[int64(0)], &_str_47[int64(0)], 293, &__PRETTY_FUNCTION___ts_stack__add_version[int64(0)])
+	libc.AssertFail(&_str_278[int64(0)], &_str_47[int64(0)], 293, &__PRETTY_FUNCTION___ts_stack__add_version[int64(0)])
 	panic("unreachable")
 
 if_end:
@@ -89389,7 +89389,7 @@ if_then7:
 	goto if_end9
 
 if_else8:
-	__assert_fail(&_str_278[int64(0)], &_str_47[int64(0)], 294, &__PRETTY_FUNCTION___ts_stack__add_version[int64(0)])
+	libc.AssertFail(&_str_278[int64(0)], &_str_47[int64(0)], 294, &__PRETTY_FUNCTION___ts_stack__add_version[int64(0)])
 	panic("unreachable")
 
 if_end9:

@@ -42,7 +42,7 @@ func (t *LeavenTranspiler) TranspileCore(outputDir string) error {
 	if err := t.emitLLVM(libC, llPath, includes); err != nil {
 		return err
 	}
-	if err := t.runLeaven(llPath); err != nil {
+	if err := t.runLeaven(llPath, "grammar"); err != nil {
 		return err
 	}
 	srcGo := strings.TrimSuffix(llPath, ".ll") + ".go"
@@ -108,7 +108,8 @@ func (t *LeavenTranspiler) TranspileGrammar(grammarPath, grammarName, grammarRoo
 	if err := t.emitLLVM(srcC, llPath, includes); err != nil {
 		return err
 	}
-	if err := t.runLeaven(llPath); err != nil {
+	pkg := "grammar_" + grammarName
+	if err := t.runLeaven(llPath, pkg); err != nil {
 		return err
 	}
 	srcGo := strings.TrimSuffix(llPath, ".ll") + ".go"
@@ -180,18 +181,22 @@ func (t *LeavenTranspiler) emitLLVM(srcC, llPath string, includes []string) erro
 }
 
 // runLeaven invokes `go tool leaven` (module tool; no global install).
-func (t *LeavenTranspiler) runLeaven(llPath string) error {
+// pkg is the generated Go package name (-package).
+func (t *LeavenTranspiler) runLeaven(llPath, pkg string) error {
 	abs, err := filepath.Abs(llPath)
 	if err != nil {
 		return err
 	}
-	cmd := exec.Command("go", "tool", "leaven", abs)
+	if pkg == "" {
+		pkg = "main"
+	}
+	cmd := exec.Command("go", "tool", "leaven", "-package", pkg, abs)
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 	if root, err := moduleRoot(); err == nil {
 		cmd.Dir = root
 	}
-	slog.Info("go tool leaven", "ll", abs)
+	slog.Info("go tool leaven", "ll", abs, "package", pkg)
 	if err := cmd.Run(); err != nil {
 		return fmt.Errorf("go tool leaven: %w", err)
 	}

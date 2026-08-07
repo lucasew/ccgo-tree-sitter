@@ -5,7 +5,7 @@ go 1.25.0
 require github.com/spf13/cobra v1.10.2
 
 require (
-	github.com/andybalholm/leaven v0.0.0-20260807014845-f2df5085d5b0 // indirect
+	github.com/andybalholm/leaven v0.0.0-20260807025114-6897c02e3c54 // indirect
 	github.com/llir/ll v0.0.0-20210719001141-246f2b6b1fa9 // indirect
 	github.com/llir/llvm v0.3.5-0.20220120022543-ad080cea55b7 // indirect
 	github.com/mewmew/float v0.0.0-20201204173432-505706aa38fa // indirect
@@ -18,48 +18,88 @@ require (
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
+	github.com/ncruces/go-strftime v1.0.0 // indirect
+	github.com/remyoudompheng/bigfft v0.0.0-20230129092748-24d4a6f8daec // indirect
+	github.com/spf13/pflag v1.0.9 // indirect
+	golang.org/x/exp v0.0.0-20251023183803-a4bb9ffd2546 // indirect
+	golang.org/x/mod v0.38.0
+	golang.org/x/sync v0.21.0 // indirect
+	golang.org/x/sys v0.46.0 // indirect
+	golang.org/x/tools v0.47.0 // indirect
+	modernc.org/gc/v3 v3.1.2 // indirect
+	modernc.org/mathutil v1.7.1 // indirect
+	modernc.org/memory v1.11.0 // indirect
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/COBOL v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/ada v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/asm v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/beancount v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/bibtex v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/bicep v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/c v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/capnp v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/chatito v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/clojure v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/cmake v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/comment v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/commonlisp v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/core_schema v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/cpon v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/css v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/cst v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/csv v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/cue v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/cyberchef v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/dart v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/diff v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/dockerfile v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/dtd v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/eex v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/elixir v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/embedded_template v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/erlang v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/fish v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/fluent v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/func v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/git_config v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/git_rebase v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/gitattributes v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/gitcommit v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/gitignore v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/gleam v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/glsl v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/gn v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/go v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/godot_resource v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/gosum v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/gpg v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/graphql v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/groovy v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/gstlaunch v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/hare v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/heex v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/hyprlang v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/ini v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/ispc v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/java v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/javascript v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/jsdoc v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/json v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/json5 v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/json_schema v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/julia v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/kconfig v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/kdl v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/legacy_schema v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/linkerscript v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/llvm v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/lua v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/luadoc v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/luap v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/luau v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/make v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/markdown_inline v0.0.0
+	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/matlab v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/meson v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/move v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/nasm v0.0.0
@@ -109,17 +149,6 @@ require (
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/xcompose v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/yuck v0.0.0
 	github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/zig v0.0.0
-	github.com/ncruces/go-strftime v1.0.0 // indirect
-	github.com/remyoudompheng/bigfft v0.0.0-20230129092748-24d4a6f8daec // indirect
-	github.com/spf13/pflag v1.0.9 // indirect
-	golang.org/x/exp v0.0.0-20251023183803-a4bb9ffd2546 // indirect
-	golang.org/x/mod v0.38.0
-	golang.org/x/sync v0.21.0 // indirect
-	golang.org/x/sys v0.46.0 // indirect
-	golang.org/x/tools v0.47.0 // indirect
-	modernc.org/gc/v3 v3.1.2 // indirect
-	modernc.org/mathutil v1.7.1 // indirect
-	modernc.org/memory v1.11.0 // indirect
 )
 
 replace modernc.org/ccgo/v4 => github.com/modernc-tree-sitter/ccgo/v4 v4.0.0-20260711120204-5fee9207d50b
@@ -127,6 +156,8 @@ replace modernc.org/ccgo/v4 => github.com/modernc-tree-sitter/ccgo/v4 v4.0.0-202
 replace modernc.org/libc => github.com/modernc-tree-sitter/libc v0.0.0-20260707203921-3c7a53d19f3f
 
 tool github.com/andybalholm/leaven
+
+replace github.com/andybalholm/leaven => github.com/lewtec/leaven v0.0.0-20260807025114-6897c02e3c54
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar => ./grammar
 
@@ -136,7 +167,13 @@ replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/ada => ./grammar
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/asm => ./grammar/asm
 
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/beancount => ./grammar/beancount
+
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/bibtex => ./grammar/bibtex
+
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/bicep => ./grammar/bicep
+
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/c => ./grammar/c
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/capnp => ./grammar/capnp
 
@@ -146,13 +183,21 @@ replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/clojure => ./gra
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/cmake => ./grammar/cmake
 
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/comment => ./grammar/comment
+
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/commonlisp => ./grammar/commonlisp
+
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/core_schema => ./grammar/core_schema
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/cpon => ./grammar/cpon
 
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/css => ./grammar/css
+
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/cst => ./grammar/cst
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/csv => ./grammar/csv
+
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/cue => ./grammar/cue
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/cyberchef => ./grammar/cyberchef
 
@@ -160,7 +205,13 @@ replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/dart => ./gramma
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/diff => ./grammar/diff
 
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/dockerfile => ./grammar/dockerfile
+
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/dtd => ./grammar/dtd
+
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/eex => ./grammar/eex
+
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/elixir => ./grammar/elixir
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/embedded_template => ./grammar/embedded_template
 
@@ -168,9 +219,15 @@ replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/erlang => ./gram
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/fish => ./grammar/fish
 
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/fluent => ./grammar/fluent
+
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/func => ./grammar/func
 
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/git_config => ./grammar/git_config
+
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/git_rebase => ./grammar/git_rebase
+
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/gitattributes => ./grammar/gitattributes
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/gitcommit => ./grammar/gitcommit
 
@@ -178,27 +235,51 @@ replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/gitignore => ./g
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/gleam => ./grammar/gleam
 
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/glsl => ./grammar/glsl
+
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/gn => ./grammar/gn
+
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/go => ./grammar/go
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/godot_resource => ./grammar/godot_resource
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/gosum => ./grammar/gosum
 
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/gpg => ./grammar/gpg
+
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/graphql => ./grammar/graphql
+
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/groovy => ./grammar/groovy
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/gstlaunch => ./grammar/gstlaunch
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/hare => ./grammar/hare
 
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/heex => ./grammar/heex
+
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/hyprlang => ./grammar/hyprlang
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/ini => ./grammar/ini
+
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/ispc => ./grammar/ispc
+
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/java => ./grammar/java
+
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/javascript => ./grammar/javascript
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/jsdoc => ./grammar/jsdoc
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/json => ./grammar/json
 
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/json5 => ./grammar/json5
+
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/json_schema => ./grammar/json_schema
+
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/julia => ./grammar/julia
+
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/kconfig => ./grammar/kconfig
+
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/kdl => ./grammar/kdl
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/legacy_schema => ./grammar/legacy_schema
 
@@ -206,11 +287,19 @@ replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/linkerscript => 
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/llvm => ./grammar/llvm
 
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/lua => ./grammar/lua
+
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/luadoc => ./grammar/luadoc
+
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/luap => ./grammar/luap
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/luau => ./grammar/luau
 
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/make => ./grammar/make
+
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/markdown_inline => ./grammar/markdown_inline
+
+replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/matlab => ./grammar/matlab
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/meson => ./grammar/meson
 
@@ -309,5 +398,3 @@ replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/xcompose => ./gr
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/yuck => ./grammar/yuck
 
 replace github.com/modernc-tree-sitter/ccgo-tree-sitter/grammar/zig => ./grammar/zig
-
-replace github.com/andybalholm/leaven => github.com/lewtec/leaven v0.0.0-20260807014845-f2df5085d5b0

@@ -25,6 +25,8 @@ github.com/lewtec/leaven v0.0.0-20260807032247-5a1e157bbc0b h1:BREW70qzYObENWtua
 github.com/lewtec/leaven v0.0.0-20260807032247-5a1e157bbc0b/go.mod h1:lqGqcD+dn7ZITclEQatDE81z3qi3aKqvfNuT0GCoQBc=
 github.com/lewtec/leaven v0.0.0-20260807032641-18ce574062f4 h1:aN72t8qE9JFJaNp1NmgiVGaymqLmHvxmvh/mHjHPmOU=
 github.com/lewtec/leaven v0.0.0-20260807032641-18ce574062f4/go.mod h1:lqGqcD+dn7ZITclEQatDE81z3qi3aKqvfNuT0GCoQBc=
+github.com/lewtec/leaven v0.0.0-20260807035503-1fa6eff3fd7d h1:DibtZuNksZYwSyDj1TouGV203Iq2ye7sRqCni6IMxqM=
+github.com/lewtec/leaven v0.0.0-20260807035503-1fa6eff3fd7d/go.mod h1:lqGqcD+dn7ZITclEQatDE81z3qi3aKqvfNuT0GCoQBc=
 github.com/llir/ll v0.0.0-20210719001141-246f2b6b1fa9 h1:Hq2U9Y7KGvx2FHe4u3fOr2qLkuonIUMcDhcY59Smwsc=
 github.com/llir/ll v0.0.0-20210719001141-246f2b6b1fa9/go.mod h1:2F+W9dmrXLYy3UZXnii5UM7QDRiVsz4QkMpC0vaBU7M=
 github.com/llir/llvm v0.3.5-0.20220120022543-ad080cea55b7 h1:qpWeOVS0QMji1NhDfYKc7bYU9HFl+Yi1K5aWCbn6f8I=

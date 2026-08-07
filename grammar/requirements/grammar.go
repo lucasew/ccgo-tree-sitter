@@ -33,7 +33,7 @@ type TSLanguage struct {
 	F23 func(*TSLexer, int16) bool
 	F24 func(*TSLexer, int16) bool
 	F25 int16
-	F26 anon.2
+	F26 anon_2
 	F27 *int16
 	F28 *byte
 	F29 *int16
@@ -79,15 +79,38 @@ type TSSymbolMetadata struct {
 	F2 byte
 }
 
+type anon_0 struct {
+	F0 byte
+	F1 byte
+	F2 int16
+	F3 int16
+	F4 int16
+}
+
+type anon_1 struct {
+	F0 byte
+	F1 byte
+}
+
+type anon_2 struct {
+	F0 *byte
+	F1 *int16
+	F2 func() *byte
+	F3 func(*byte)
+	F4 func(*byte, *TSLexer, *byte) bool
+	F5 func(*byte, *byte) int32
+	F6 func(*byte, *byte, int32)
+}
+
 type TSParseAction struct {
-	F0 anon.0
+	F0 anon_0
 }
 
 type TSParseActionEntry struct {
 	F0 TSParseAction
 }
 
-var tree_sitter_requirements_language TSLanguage = TSLanguage{15, 95, 0, 66, 0, 228, 2, 6, 3, 8, &(*[2][95]int16)(unsafe.Pointer(&ts_parse_table))[0][0], &ts_small_parse_table[0], &ts_small_parse_table_map[0], &(*[525]TSParseActionEntry)(unsafe.Pointer(&ts_parse_actions))[0], &ts_symbol_names[0], &ts_field_names[0], &ts_field_map_slices[0], &ts_field_map_entries[0], &ts_symbol_metadata[0], &ts_symbol_map[0], &ts_non_terminal_alias_map[0], &ts_alias_sequences[0][0], &ts_lex_modes[0], ts_lex, ts_lex_keywords, 1, anon.2{}, &ts_primary_state_ids[0], &_str[0], nil, 0, 0, nil, nil, nil, TSLanguageMetadata{0, 6, 0}}
+var tree_sitter_requirements_language TSLanguage = TSLanguage{15, 95, 0, 66, 0, 228, 2, 6, 3, 8, &(*[2][95]int16)(unsafe.Pointer(&ts_parse_table))[0][0], &ts_small_parse_table[0], &ts_small_parse_table_map[0], &(*[525]TSParseActionEntry)(unsafe.Pointer(&ts_parse_actions))[0], &ts_symbol_names[0], &ts_field_names[0], &ts_field_map_slices[0], &ts_field_map_entries[0], &ts_symbol_metadata[0], &ts_symbol_map[0], &ts_non_terminal_alias_map[0], &ts_alias_sequences[0][0], &ts_lex_modes[0], ts_lex, ts_lex_keywords, 1, anon_2{}, &ts_primary_state_ids[0], &_str[0], nil, 0, 0, nil, nil, nil, TSLanguageMetadata{0, 6, 0}}
 
 var ts_small_parse_table [4922]int16 = [4922]int16{
 	6, 3, 1, 63, 37, 1, 65, 2, 1, 86, 3, 1, 94, 39, 5, 1,
@@ -525,11 +548,11 @@ var ts_parse_table struct {
 
 var ts_parse_actions struct {
 	F0 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F1 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F2 struct {
@@ -539,7 +562,7 @@ var ts_parse_actions struct {
 }
 }
 	F3 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F4 struct {
@@ -554,12 +577,12 @@ var ts_parse_actions struct {
 }
 }
 	F5 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F6 TSParseActionEntry
 	F7 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F8 struct {
@@ -574,7 +597,7 @@ var ts_parse_actions struct {
 }
 }
 	F9 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F10 struct {
@@ -589,7 +612,7 @@ var ts_parse_actions struct {
 }
 }
 	F11 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F12 struct {
@@ -604,7 +627,7 @@ var ts_parse_actions struct {
 }
 }
 	F13 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F14 struct {
@@ -619,7 +642,7 @@ var ts_parse_actions struct {
 }
 }
 	F15 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F16 struct {
@@ -634,7 +657,7 @@ var ts_parse_actions struct {
 }
 }
 	F17 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F18 struct {
@@ -649,7 +672,7 @@ var ts_parse_actions struct {
 }
 }
 	F19 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F20 struct {
@@ -664,7 +687,7 @@ var ts_parse_actions struct {
 }
 }
 	F21 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F22 struct {
@@ -679,7 +702,7 @@ var ts_parse_actions struct {
 }
 }
 	F23 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F24 struct {
@@ -694,7 +717,7 @@ var ts_parse_actions struct {
 }
 }
 	F25 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F26 struct {
@@ -709,7 +732,7 @@ var ts_parse_actions struct {
 }
 }
 	F27 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F28 struct {
@@ -724,7 +747,7 @@ var ts_parse_actions struct {
 }
 }
 	F29 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F30 struct {
@@ -739,7 +762,7 @@ var ts_parse_actions struct {
 }
 }
 	F31 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F32 struct {
@@ -754,7 +777,7 @@ var ts_parse_actions struct {
 }
 }
 	F33 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F34 struct {
@@ -769,7 +792,7 @@ var ts_parse_actions struct {
 }
 }
 	F35 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F36 struct {
@@ -784,7 +807,7 @@ var ts_parse_actions struct {
 }
 }
 	F37 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F38 struct {
@@ -799,27 +822,27 @@ var ts_parse_actions struct {
 }
 }
 	F39 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F40 TSParseActionEntry
 	F41 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F42 TSParseActionEntry
 	F43 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F44 TSParseActionEntry
 	F45 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F46 TSParseActionEntry
 	F47 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F48 TSParseActionEntry
@@ -835,27 +858,27 @@ var ts_parse_actions struct {
 }
 }
 	F50 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F51 TSParseActionEntry
 	F52 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F53 TSParseActionEntry
 	F54 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F55 TSParseActionEntry
 	F56 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F57 TSParseActionEntry
 	F58 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F59 TSParseActionEntry
@@ -871,7 +894,7 @@ var ts_parse_actions struct {
 }
 }
 	F61 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F62 TSParseActionEntry
@@ -887,7 +910,7 @@ var ts_parse_actions struct {
 }
 }
 	F64 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F65 TSParseActionEntry
@@ -903,7 +926,7 @@ var ts_parse_actions struct {
 }
 }
 	F67 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F68 TSParseActionEntry
@@ -919,7 +942,7 @@ var ts_parse_actions struct {
 }
 }
 	F70 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F71 TSParseActionEntry
@@ -935,7 +958,7 @@ var ts_parse_actions struct {
 }
 }
 	F73 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F74 TSParseActionEntry
@@ -951,7 +974,7 @@ var ts_parse_actions struct {
 }
 }
 	F76 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F77 TSParseActionEntry
@@ -967,7 +990,7 @@ var ts_parse_actions struct {
 }
 }
 	F79 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F80 TSParseActionEntry
@@ -983,7 +1006,7 @@ var ts_parse_actions struct {
 }
 }
 	F82 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F83 TSParseActionEntry
@@ -999,7 +1022,7 @@ var ts_parse_actions struct {
 }
 }
 	F85 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F86 TSParseActionEntry
@@ -1015,7 +1038,7 @@ var ts_parse_actions struct {
 }
 }
 	F88 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F89 TSParseActionEntry
@@ -1031,7 +1054,7 @@ var ts_parse_actions struct {
 }
 }
 	F91 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F92 TSParseActionEntry
@@ -1047,7 +1070,7 @@ var ts_parse_actions struct {
 }
 }
 	F94 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F95 TSParseActionEntry
@@ -1063,7 +1086,7 @@ var ts_parse_actions struct {
 }
 }
 	F97 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F98 TSParseActionEntry
@@ -1079,7 +1102,7 @@ var ts_parse_actions struct {
 }
 }
 	F100 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F101 TSParseActionEntry
@@ -1095,7 +1118,7 @@ var ts_parse_actions struct {
 }
 }
 	F103 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F104 TSParseActionEntry
@@ -1111,7 +1134,7 @@ var ts_parse_actions struct {
 }
 }
 	F106 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F107 struct {
@@ -1126,7 +1149,7 @@ var ts_parse_actions struct {
 }
 }
 	F108 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F109 struct {
@@ -1141,7 +1164,7 @@ var ts_parse_actions struct {
 }
 }
 	F110 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F111 struct {
@@ -1156,52 +1179,52 @@ var ts_parse_actions struct {
 }
 }
 	F112 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F113 TSParseActionEntry
 	F114 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F115 TSParseActionEntry
 	F116 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F117 TSParseActionEntry
 	F118 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F119 TSParseActionEntry
 	F120 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F121 TSParseActionEntry
 	F122 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F123 TSParseActionEntry
 	F124 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F125 TSParseActionEntry
 	F126 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F127 TSParseActionEntry
 	F128 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F129 TSParseActionEntry
 	F130 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F131 struct {
@@ -1216,7 +1239,7 @@ var ts_parse_actions struct {
 }
 }
 	F132 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F133 struct {
@@ -1231,7 +1254,7 @@ var ts_parse_actions struct {
 }
 }
 	F134 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F135 struct {
@@ -1246,12 +1269,12 @@ var ts_parse_actions struct {
 }
 }
 	F136 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F137 TSParseActionEntry
 	F138 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F139 struct {
@@ -1266,7 +1289,7 @@ var ts_parse_actions struct {
 }
 }
 	F140 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F141 struct {
@@ -1281,7 +1304,7 @@ var ts_parse_actions struct {
 }
 }
 	F142 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F143 struct {
@@ -1296,7 +1319,7 @@ var ts_parse_actions struct {
 }
 }
 	F144 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F145 struct {
@@ -1311,7 +1334,7 @@ var ts_parse_actions struct {
 }
 }
 	F146 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F147 struct {
@@ -1326,7 +1349,7 @@ var ts_parse_actions struct {
 }
 }
 	F148 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F149 struct {
@@ -1341,7 +1364,7 @@ var ts_parse_actions struct {
 }
 }
 	F150 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F151 TSParseActionEntry
@@ -1357,7 +1380,7 @@ var ts_parse_actions struct {
 }
 }
 	F153 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F154 TSParseActionEntry
@@ -1373,12 +1396,12 @@ var ts_parse_actions struct {
 }
 }
 	F156 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F157 TSParseActionEntry
 	F158 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F159 TSParseActionEntry
@@ -1394,7 +1417,7 @@ var ts_parse_actions struct {
 }
 }
 	F161 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F162 struct {
@@ -1409,7 +1432,7 @@ var ts_parse_actions struct {
 }
 }
 	F163 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F164 struct {
@@ -1424,7 +1447,7 @@ var ts_parse_actions struct {
 }
 }
 	F165 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F166 struct {
@@ -1439,7 +1462,7 @@ var ts_parse_actions struct {
 }
 }
 	F167 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F168 struct {
@@ -1454,7 +1477,7 @@ var ts_parse_actions struct {
 }
 }
 	F169 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F170 struct {
@@ -1469,12 +1492,12 @@ var ts_parse_actions struct {
 }
 }
 	F171 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F172 TSParseActionEntry
 	F173 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F174 struct {
@@ -1489,12 +1512,12 @@ var ts_parse_actions struct {
 }
 }
 	F175 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F176 TSParseActionEntry
 	F177 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F178 TSParseActionEntry
@@ -1510,7 +1533,7 @@ var ts_parse_actions struct {
 }
 }
 	F180 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F181 TSParseActionEntry
@@ -1526,17 +1549,17 @@ var ts_parse_actions struct {
 }
 }
 	F183 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F184 TSParseActionEntry
 	F185 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F186 TSParseActionEntry
 	F187 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F188 TSParseActionEntry
@@ -1552,22 +1575,22 @@ var ts_parse_actions struct {
 }
 }
 	F190 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F191 TSParseActionEntry
 	F192 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F193 TSParseActionEntry
 	F194 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F195 TSParseActionEntry
 	F196 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F197 TSParseActionEntry
@@ -1583,7 +1606,7 @@ var ts_parse_actions struct {
 }
 }
 	F199 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F200 TSParseActionEntry
@@ -1599,42 +1622,42 @@ var ts_parse_actions struct {
 }
 }
 	F202 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F203 TSParseActionEntry
 	F204 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F205 TSParseActionEntry
 	F206 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F207 TSParseActionEntry
 	F208 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F209 TSParseActionEntry
 	F210 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F211 TSParseActionEntry
 	F212 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F213 TSParseActionEntry
 	F214 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F215 TSParseActionEntry
 	F216 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F217 struct {
@@ -1649,7 +1672,7 @@ var ts_parse_actions struct {
 }
 }
 	F218 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F219 struct {
@@ -1664,12 +1687,12 @@ var ts_parse_actions struct {
 }
 }
 	F220 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F221 TSParseActionEntry
 	F222 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F223 TSParseActionEntry
@@ -1685,7 +1708,7 @@ var ts_parse_actions struct {
 }
 }
 	F225 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F226 TSParseActionEntry
@@ -1701,17 +1724,17 @@ var ts_parse_actions struct {
 }
 }
 	F228 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F229 TSParseActionEntry
 	F230 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F231 TSParseActionEntry
 	F232 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F233 TSParseActionEntry
@@ -1727,12 +1750,12 @@ var ts_parse_actions struct {
 }
 }
 	F235 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F236 TSParseActionEntry
 	F237 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F238 struct {
@@ -1747,12 +1770,12 @@ var ts_parse_actions struct {
 }
 }
 	F239 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F240 TSParseActionEntry
 	F241 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F242 struct {
@@ -1767,7 +1790,7 @@ var ts_parse_actions struct {
 }
 }
 	F243 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F244 struct {
@@ -1782,12 +1805,12 @@ var ts_parse_actions struct {
 }
 }
 	F245 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F246 TSParseActionEntry
 	F247 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F248 TSParseActionEntry
@@ -1803,42 +1826,42 @@ var ts_parse_actions struct {
 }
 }
 	F250 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F251 TSParseActionEntry
 	F252 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F253 TSParseActionEntry
 	F254 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F255 TSParseActionEntry
 	F256 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F257 TSParseActionEntry
 	F258 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F259 TSParseActionEntry
 	F260 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F261 TSParseActionEntry
 	F262 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F263 TSParseActionEntry
 	F264 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F265 struct {
@@ -1853,7 +1876,7 @@ var ts_parse_actions struct {
 }
 }
 	F266 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F267 struct {
@@ -1868,7 +1891,7 @@ var ts_parse_actions struct {
 }
 }
 	F268 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F269 struct {
@@ -1883,7 +1906,7 @@ var ts_parse_actions struct {
 }
 }
 	F270 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F271 struct {
@@ -1898,7 +1921,7 @@ var ts_parse_actions struct {
 }
 }
 	F272 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F273 struct {
@@ -1913,7 +1936,7 @@ var ts_parse_actions struct {
 }
 }
 	F274 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F275 struct {
@@ -1928,82 +1951,82 @@ var ts_parse_actions struct {
 }
 }
 	F276 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F277 TSParseActionEntry
 	F278 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F279 TSParseActionEntry
 	F280 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F281 TSParseActionEntry
 	F282 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F283 TSParseActionEntry
 	F284 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F285 TSParseActionEntry
 	F286 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F287 TSParseActionEntry
 	F288 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F289 TSParseActionEntry
 	F290 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F291 TSParseActionEntry
 	F292 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F293 TSParseActionEntry
 	F294 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F295 TSParseActionEntry
 	F296 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F297 TSParseActionEntry
 	F298 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F299 TSParseActionEntry
 	F300 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F301 TSParseActionEntry
 	F302 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F303 TSParseActionEntry
 	F304 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F305 TSParseActionEntry
 	F306 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F307 struct {
@@ -2018,7 +2041,7 @@ var ts_parse_actions struct {
 }
 }
 	F308 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F309 struct {
@@ -2033,7 +2056,7 @@ var ts_parse_actions struct {
 }
 }
 	F310 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F311 struct {
@@ -2048,12 +2071,12 @@ var ts_parse_actions struct {
 }
 }
 	F312 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F313 TSParseActionEntry
 	F314 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F315 struct {
@@ -2068,7 +2091,7 @@ var ts_parse_actions struct {
 }
 }
 	F316 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F317 TSParseActionEntry
@@ -2084,12 +2107,12 @@ var ts_parse_actions struct {
 }
 }
 	F319 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F320 TSParseActionEntry
 	F321 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F322 TSParseActionEntry
@@ -2105,22 +2128,22 @@ var ts_parse_actions struct {
 }
 }
 	F324 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F325 TSParseActionEntry
 	F326 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F327 TSParseActionEntry
 	F328 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F329 TSParseActionEntry
 	F330 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F331 struct {
@@ -2135,7 +2158,7 @@ var ts_parse_actions struct {
 }
 }
 	F332 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F333 struct {
@@ -2150,12 +2173,12 @@ var ts_parse_actions struct {
 }
 }
 	F334 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F335 TSParseActionEntry
 	F336 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F337 TSParseActionEntry
@@ -2171,7 +2194,7 @@ var ts_parse_actions struct {
 }
 }
 	F339 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F340 TSParseActionEntry
@@ -2187,7 +2210,7 @@ var ts_parse_actions struct {
 }
 }
 	F342 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F343 struct {
@@ -2202,7 +2225,7 @@ var ts_parse_actions struct {
 }
 }
 	F344 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F345 struct {
@@ -2217,12 +2240,12 @@ var ts_parse_actions struct {
 }
 }
 	F346 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F347 TSParseActionEntry
 	F348 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F349 struct {
@@ -2237,12 +2260,12 @@ var ts_parse_actions struct {
 }
 }
 	F350 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F351 TSParseActionEntry
 	F352 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F353 struct {
@@ -2257,7 +2280,7 @@ var ts_parse_actions struct {
 }
 }
 	F354 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F355 struct {
@@ -2272,7 +2295,7 @@ var ts_parse_actions struct {
 }
 }
 	F356 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F357 struct {
@@ -2287,7 +2310,7 @@ var ts_parse_actions struct {
 }
 }
 	F358 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F359 struct {
@@ -2302,7 +2325,7 @@ var ts_parse_actions struct {
 }
 }
 	F360 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F361 TSParseActionEntry
@@ -2318,7 +2341,7 @@ var ts_parse_actions struct {
 }
 }
 	F363 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F364 TSParseActionEntry
@@ -2334,12 +2357,12 @@ var ts_parse_actions struct {
 }
 }
 	F366 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F367 TSParseActionEntry
 	F368 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F369 struct {
@@ -2354,7 +2377,7 @@ var ts_parse_actions struct {
 }
 }
 	F370 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F371 struct {
@@ -2369,12 +2392,12 @@ var ts_parse_actions struct {
 }
 }
 	F372 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F373 TSParseActionEntry
 	F374 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F375 struct {
@@ -2389,22 +2412,22 @@ var ts_parse_actions struct {
 }
 }
 	F376 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F377 TSParseActionEntry
 	F378 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F379 TSParseActionEntry
 	F380 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F381 TSParseActionEntry
 	F382 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F383 TSParseActionEntry
@@ -2420,17 +2443,17 @@ var ts_parse_actions struct {
 }
 }
 	F385 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F386 TSParseActionEntry
 	F387 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F388 TSParseActionEntry
 	F389 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F390 struct {
@@ -2445,7 +2468,7 @@ var ts_parse_actions struct {
 }
 }
 	F391 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F392 struct {
@@ -2460,7 +2483,7 @@ var ts_parse_actions struct {
 }
 }
 	F393 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F394 struct {
@@ -2475,7 +2498,7 @@ var ts_parse_actions struct {
 }
 }
 	F395 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F396 struct {
@@ -2490,7 +2513,7 @@ var ts_parse_actions struct {
 }
 }
 	F397 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F398 struct {
@@ -2505,7 +2528,7 @@ var ts_parse_actions struct {
 }
 }
 	F399 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F400 struct {
@@ -2520,7 +2543,7 @@ var ts_parse_actions struct {
 }
 }
 	F401 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F402 struct {
@@ -2535,7 +2558,7 @@ var ts_parse_actions struct {
 }
 }
 	F403 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F404 struct {
@@ -2550,7 +2573,7 @@ var ts_parse_actions struct {
 }
 }
 	F405 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F406 struct {
@@ -2565,7 +2588,7 @@ var ts_parse_actions struct {
 }
 }
 	F407 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F408 struct {
@@ -2580,7 +2603,7 @@ var ts_parse_actions struct {
 }
 }
 	F409 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F410 struct {
@@ -2595,7 +2618,7 @@ var ts_parse_actions struct {
 }
 }
 	F411 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F412 TSParseActionEntry
@@ -2611,7 +2634,7 @@ var ts_parse_actions struct {
 }
 }
 	F414 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F415 struct {
@@ -2626,7 +2649,7 @@ var ts_parse_actions struct {
 }
 }
 	F416 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F417 struct {
@@ -2641,7 +2664,7 @@ var ts_parse_actions struct {
 }
 }
 	F418 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F419 struct {
@@ -2656,7 +2679,7 @@ var ts_parse_actions struct {
 }
 }
 	F420 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F421 struct {
@@ -2671,7 +2694,7 @@ var ts_parse_actions struct {
 }
 }
 	F422 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F423 struct {
@@ -2686,7 +2709,7 @@ var ts_parse_actions struct {
 }
 }
 	F424 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F425 struct {
@@ -2701,7 +2724,7 @@ var ts_parse_actions struct {
 }
 }
 	F426 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F427 struct {
@@ -2716,7 +2739,7 @@ var ts_parse_actions struct {
 }
 }
 	F428 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F429 struct {
@@ -2731,7 +2754,7 @@ var ts_parse_actions struct {
 }
 }
 	F430 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F431 struct {
@@ -2746,7 +2769,7 @@ var ts_parse_actions struct {
 }
 }
 	F432 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F433 struct {
@@ -2761,7 +2784,7 @@ var ts_parse_actions struct {
 }
 }
 	F434 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F435 struct {
@@ -2776,7 +2799,7 @@ var ts_parse_actions struct {
 }
 }
 	F436 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F437 struct {
@@ -2791,7 +2814,7 @@ var ts_parse_actions struct {
 }
 }
 	F438 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F439 struct {
@@ -2806,17 +2829,17 @@ var ts_parse_actions struct {
 }
 }
 	F440 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F441 TSParseActionEntry
 	F442 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F443 TSParseActionEntry
 	F444 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F445 struct {
@@ -2831,7 +2854,7 @@ var ts_parse_actions struct {
 }
 }
 	F446 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F447 struct {
@@ -2846,12 +2869,12 @@ var ts_parse_actions struct {
 }
 }
 	F448 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F449 TSParseActionEntry
 	F450 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F451 struct {
@@ -2866,17 +2889,17 @@ var ts_parse_actions struct {
 }
 }
 	F452 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F453 TSParseActionEntry
 	F454 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F455 TSParseActionEntry
 	F456 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F457 TSParseActionEntry
@@ -2892,7 +2915,7 @@ var ts_parse_actions struct {
 }
 }
 	F459 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F460 struct {
@@ -2907,7 +2930,7 @@ var ts_parse_actions struct {
 }
 }
 	F461 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F462 struct {
@@ -2922,7 +2945,7 @@ var ts_parse_actions struct {
 }
 }
 	F463 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F464 struct {
@@ -2937,7 +2960,7 @@ var ts_parse_actions struct {
 }
 }
 	F465 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F466 struct {
@@ -2952,12 +2975,12 @@ var ts_parse_actions struct {
 }
 }
 	F467 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F468 TSParseActionEntry
 	F469 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F470 struct {
@@ -2972,7 +2995,7 @@ var ts_parse_actions struct {
 }
 }
 	F471 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F472 struct {
@@ -2987,12 +3010,12 @@ var ts_parse_actions struct {
 }
 }
 	F473 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F474 TSParseActionEntry
 	F475 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F476 struct {
@@ -3007,22 +3030,22 @@ var ts_parse_actions struct {
 }
 }
 	F477 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F478 TSParseActionEntry
 	F479 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F480 TSParseActionEntry
 	F481 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F482 TSParseActionEntry
 	F483 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F484 struct {
@@ -3037,7 +3060,7 @@ var ts_parse_actions struct {
 }
 }
 	F485 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F486 struct {
@@ -3052,7 +3075,7 @@ var ts_parse_actions struct {
 }
 }
 	F487 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F488 struct {
@@ -3067,7 +3090,7 @@ var ts_parse_actions struct {
 }
 }
 	F489 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F490 struct {
@@ -3082,7 +3105,7 @@ var ts_parse_actions struct {
 }
 }
 	F491 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F492 struct {
@@ -3097,7 +3120,7 @@ var ts_parse_actions struct {
 }
 }
 	F493 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F494 struct {
@@ -3112,7 +3135,7 @@ var ts_parse_actions struct {
 }
 }
 	F495 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F496 struct {
@@ -3127,7 +3150,7 @@ var ts_parse_actions struct {
 }
 }
 	F497 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F498 struct {
@@ -3142,7 +3165,7 @@ var ts_parse_actions struct {
 }
 }
 	F499 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F500 struct {
@@ -3152,7 +3175,7 @@ var ts_parse_actions struct {
 }
 }
 	F501 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F502 struct {
@@ -3167,7 +3190,7 @@ var ts_parse_actions struct {
 }
 }
 	F503 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F504 struct {
@@ -3182,7 +3205,7 @@ var ts_parse_actions struct {
 }
 }
 	F505 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F506 struct {
@@ -3197,7 +3220,7 @@ var ts_parse_actions struct {
 }
 }
 	F507 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F508 struct {
@@ -3212,7 +3235,7 @@ var ts_parse_actions struct {
 }
 }
 	F509 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F510 struct {
@@ -3227,7 +3250,7 @@ var ts_parse_actions struct {
 }
 }
 	F511 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F512 struct {
@@ -3242,7 +3265,7 @@ var ts_parse_actions struct {
 }
 }
 	F513 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F514 struct {
@@ -3257,7 +3280,7 @@ var ts_parse_actions struct {
 }
 }
 	F515 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F516 struct {
@@ -3272,7 +3295,7 @@ var ts_parse_actions struct {
 }
 }
 	F517 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F518 struct {
@@ -3287,27 +3310,27 @@ var ts_parse_actions struct {
 }
 }
 	F519 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F520 TSParseActionEntry
 	F521 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F522 TSParseActionEntry
 	F523 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F524 TSParseActionEntry
 } = struct {
 	F0 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F1 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F2 struct {
@@ -3317,7 +3340,7 @@ var ts_parse_actions struct {
 }
 }
 	F3 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F4 struct {
@@ -3332,12 +3355,12 @@ var ts_parse_actions struct {
 }
 }
 	F5 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F6 TSParseActionEntry
 	F7 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F8 struct {
@@ -3352,7 +3375,7 @@ var ts_parse_actions struct {
 }
 }
 	F9 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F10 struct {
@@ -3367,7 +3390,7 @@ var ts_parse_actions struct {
 }
 }
 	F11 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F12 struct {
@@ -3382,7 +3405,7 @@ var ts_parse_actions struct {
 }
 }
 	F13 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F14 struct {
@@ -3397,7 +3420,7 @@ var ts_parse_actions struct {
 }
 }
 	F15 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F16 struct {
@@ -3412,7 +3435,7 @@ var ts_parse_actions struct {
 }
 }
 	F17 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F18 struct {
@@ -3427,7 +3450,7 @@ var ts_parse_actions struct {
 }
 }
 	F19 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F20 struct {
@@ -3442,7 +3465,7 @@ var ts_parse_actions struct {
 }
 }
 	F21 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F22 struct {
@@ -3457,7 +3480,7 @@ var ts_parse_actions struct {
 }
 }
 	F23 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F24 struct {
@@ -3472,7 +3495,7 @@ var ts_parse_actions struct {
 }
 }
 	F25 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F26 struct {
@@ -3487,7 +3510,7 @@ var ts_parse_actions struct {
 }
 }
 	F27 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F28 struct {
@@ -3502,7 +3525,7 @@ var ts_parse_actions struct {
 }
 }
 	F29 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F30 struct {
@@ -3517,7 +3540,7 @@ var ts_parse_actions struct {
 }
 }
 	F31 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F32 struct {
@@ -3532,7 +3555,7 @@ var ts_parse_actions struct {
 }
 }
 	F33 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F34 struct {
@@ -3547,7 +3570,7 @@ var ts_parse_actions struct {
 }
 }
 	F35 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F36 struct {
@@ -3562,7 +3585,7 @@ var ts_parse_actions struct {
 }
 }
 	F37 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F38 struct {
@@ -3577,27 +3600,27 @@ var ts_parse_actions struct {
 }
 }
 	F39 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F40 TSParseActionEntry
 	F41 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F42 TSParseActionEntry
 	F43 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F44 TSParseActionEntry
 	F45 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F46 TSParseActionEntry
 	F47 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F48 TSParseActionEntry
@@ -3613,27 +3636,27 @@ var ts_parse_actions struct {
 }
 }
 	F50 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F51 TSParseActionEntry
 	F52 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F53 TSParseActionEntry
 	F54 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F55 TSParseActionEntry
 	F56 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F57 TSParseActionEntry
 	F58 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F59 TSParseActionEntry
@@ -3649,7 +3672,7 @@ var ts_parse_actions struct {
 }
 }
 	F61 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F62 TSParseActionEntry
@@ -3665,7 +3688,7 @@ var ts_parse_actions struct {
 }
 }
 	F64 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F65 TSParseActionEntry
@@ -3681,7 +3704,7 @@ var ts_parse_actions struct {
 }
 }
 	F67 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F68 TSParseActionEntry
@@ -3697,7 +3720,7 @@ var ts_parse_actions struct {
 }
 }
 	F70 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F71 TSParseActionEntry
@@ -3713,7 +3736,7 @@ var ts_parse_actions struct {
 }
 }
 	F73 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F74 TSParseActionEntry
@@ -3729,7 +3752,7 @@ var ts_parse_actions struct {
 }
 }
 	F76 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F77 TSParseActionEntry
@@ -3745,7 +3768,7 @@ var ts_parse_actions struct {
 }
 }
 	F79 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F80 TSParseActionEntry
@@ -3761,7 +3784,7 @@ var ts_parse_actions struct {
 }
 }
 	F82 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F83 TSParseActionEntry
@@ -3777,7 +3800,7 @@ var ts_parse_actions struct {
 }
 }
 	F85 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F86 TSParseActionEntry
@@ -3793,7 +3816,7 @@ var ts_parse_actions struct {
 }
 }
 	F88 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F89 TSParseActionEntry
@@ -3809,7 +3832,7 @@ var ts_parse_actions struct {
 }
 }
 	F91 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F92 TSParseActionEntry
@@ -3825,7 +3848,7 @@ var ts_parse_actions struct {
 }
 }
 	F94 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F95 TSParseActionEntry
@@ -3841,7 +3864,7 @@ var ts_parse_actions struct {
 }
 }
 	F97 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F98 TSParseActionEntry
@@ -3857,7 +3880,7 @@ var ts_parse_actions struct {
 }
 }
 	F100 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F101 TSParseActionEntry
@@ -3873,7 +3896,7 @@ var ts_parse_actions struct {
 }
 }
 	F103 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F104 TSParseActionEntry
@@ -3889,7 +3912,7 @@ var ts_parse_actions struct {
 }
 }
 	F106 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F107 struct {
@@ -3904,7 +3927,7 @@ var ts_parse_actions struct {
 }
 }
 	F108 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F109 struct {
@@ -3919,7 +3942,7 @@ var ts_parse_actions struct {
 }
 }
 	F110 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F111 struct {
@@ -3934,52 +3957,52 @@ var ts_parse_actions struct {
 }
 }
 	F112 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F113 TSParseActionEntry
 	F114 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F115 TSParseActionEntry
 	F116 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F117 TSParseActionEntry
 	F118 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F119 TSParseActionEntry
 	F120 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F121 TSParseActionEntry
 	F122 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F123 TSParseActionEntry
 	F124 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F125 TSParseActionEntry
 	F126 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F127 TSParseActionEntry
 	F128 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F129 TSParseActionEntry
 	F130 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F131 struct {
@@ -3994,7 +4017,7 @@ var ts_parse_actions struct {
 }
 }
 	F132 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F133 struct {
@@ -4009,7 +4032,7 @@ var ts_parse_actions struct {
 }
 }
 	F134 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F135 struct {
@@ -4024,12 +4047,12 @@ var ts_parse_actions struct {
 }
 }
 	F136 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F137 TSParseActionEntry
 	F138 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F139 struct {
@@ -4044,7 +4067,7 @@ var ts_parse_actions struct {
 }
 }
 	F140 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F141 struct {
@@ -4059,7 +4082,7 @@ var ts_parse_actions struct {
 }
 }
 	F142 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F143 struct {
@@ -4074,7 +4097,7 @@ var ts_parse_actions struct {
 }
 }
 	F144 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F145 struct {
@@ -4089,7 +4112,7 @@ var ts_parse_actions struct {
 }
 }
 	F146 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F147 struct {
@@ -4104,7 +4127,7 @@ var ts_parse_actions struct {
 }
 }
 	F148 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F149 struct {
@@ -4119,7 +4142,7 @@ var ts_parse_actions struct {
 }
 }
 	F150 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F151 TSParseActionEntry
@@ -4135,7 +4158,7 @@ var ts_parse_actions struct {
 }
 }
 	F153 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F154 TSParseActionEntry
@@ -4151,12 +4174,12 @@ var ts_parse_actions struct {
 }
 }
 	F156 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F157 TSParseActionEntry
 	F158 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F159 TSParseActionEntry
@@ -4172,7 +4195,7 @@ var ts_parse_actions struct {
 }
 }
 	F161 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F162 struct {
@@ -4187,7 +4210,7 @@ var ts_parse_actions struct {
 }
 }
 	F163 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F164 struct {
@@ -4202,7 +4225,7 @@ var ts_parse_actions struct {
 }
 }
 	F165 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F166 struct {
@@ -4217,7 +4240,7 @@ var ts_parse_actions struct {
 }
 }
 	F167 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F168 struct {
@@ -4232,7 +4255,7 @@ var ts_parse_actions struct {
 }
 }
 	F169 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F170 struct {
@@ -4247,12 +4270,12 @@ var ts_parse_actions struct {
 }
 }
 	F171 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F172 TSParseActionEntry
 	F173 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F174 struct {
@@ -4267,12 +4290,12 @@ var ts_parse_actions struct {
 }
 }
 	F175 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F176 TSParseActionEntry
 	F177 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F178 TSParseActionEntry
@@ -4288,7 +4311,7 @@ var ts_parse_actions struct {
 }
 }
 	F180 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F181 TSParseActionEntry
@@ -4304,17 +4327,17 @@ var ts_parse_actions struct {
 }
 }
 	F183 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F184 TSParseActionEntry
 	F185 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F186 TSParseActionEntry
 	F187 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F188 TSParseActionEntry
@@ -4330,22 +4353,22 @@ var ts_parse_actions struct {
 }
 }
 	F190 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F191 TSParseActionEntry
 	F192 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F193 TSParseActionEntry
 	F194 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F195 TSParseActionEntry
 	F196 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F197 TSParseActionEntry
@@ -4361,7 +4384,7 @@ var ts_parse_actions struct {
 }
 }
 	F199 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F200 TSParseActionEntry
@@ -4377,42 +4400,42 @@ var ts_parse_actions struct {
 }
 }
 	F202 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F203 TSParseActionEntry
 	F204 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F205 TSParseActionEntry
 	F206 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F207 TSParseActionEntry
 	F208 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F209 TSParseActionEntry
 	F210 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F211 TSParseActionEntry
 	F212 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F213 TSParseActionEntry
 	F214 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F215 TSParseActionEntry
 	F216 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F217 struct {
@@ -4427,7 +4450,7 @@ var ts_parse_actions struct {
 }
 }
 	F218 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F219 struct {
@@ -4442,12 +4465,12 @@ var ts_parse_actions struct {
 }
 }
 	F220 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F221 TSParseActionEntry
 	F222 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F223 TSParseActionEntry
@@ -4463,7 +4486,7 @@ var ts_parse_actions struct {
 }
 }
 	F225 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F226 TSParseActionEntry
@@ -4479,17 +4502,17 @@ var ts_parse_actions struct {
 }
 }
 	F228 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F229 TSParseActionEntry
 	F230 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F231 TSParseActionEntry
 	F232 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F233 TSParseActionEntry
@@ -4505,12 +4528,12 @@ var ts_parse_actions struct {
 }
 }
 	F235 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F236 TSParseActionEntry
 	F237 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F238 struct {
@@ -4525,12 +4548,12 @@ var ts_parse_actions struct {
 }
 }
 	F239 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F240 TSParseActionEntry
 	F241 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F242 struct {
@@ -4545,7 +4568,7 @@ var ts_parse_actions struct {
 }
 }
 	F243 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F244 struct {
@@ -4560,12 +4583,12 @@ var ts_parse_actions struct {
 }
 }
 	F245 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F246 TSParseActionEntry
 	F247 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F248 TSParseActionEntry
@@ -4581,42 +4604,42 @@ var ts_parse_actions struct {
 }
 }
 	F250 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F251 TSParseActionEntry
 	F252 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F253 TSParseActionEntry
 	F254 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F255 TSParseActionEntry
 	F256 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F257 TSParseActionEntry
 	F258 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F259 TSParseActionEntry
 	F260 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F261 TSParseActionEntry
 	F262 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F263 TSParseActionEntry
 	F264 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F265 struct {
@@ -4631,7 +4654,7 @@ var ts_parse_actions struct {
 }
 }
 	F266 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F267 struct {
@@ -4646,7 +4669,7 @@ var ts_parse_actions struct {
 }
 }
 	F268 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F269 struct {
@@ -4661,7 +4684,7 @@ var ts_parse_actions struct {
 }
 }
 	F270 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F271 struct {
@@ -4676,7 +4699,7 @@ var ts_parse_actions struct {
 }
 }
 	F272 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F273 struct {
@@ -4691,7 +4714,7 @@ var ts_parse_actions struct {
 }
 }
 	F274 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F275 struct {
@@ -4706,82 +4729,82 @@ var ts_parse_actions struct {
 }
 }
 	F276 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F277 TSParseActionEntry
 	F278 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F279 TSParseActionEntry
 	F280 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F281 TSParseActionEntry
 	F282 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F283 TSParseActionEntry
 	F284 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F285 TSParseActionEntry
 	F286 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F287 TSParseActionEntry
 	F288 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F289 TSParseActionEntry
 	F290 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F291 TSParseActionEntry
 	F292 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F293 TSParseActionEntry
 	F294 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F295 TSParseActionEntry
 	F296 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F297 TSParseActionEntry
 	F298 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F299 TSParseActionEntry
 	F300 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F301 TSParseActionEntry
 	F302 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F303 TSParseActionEntry
 	F304 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F305 TSParseActionEntry
 	F306 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F307 struct {
@@ -4796,7 +4819,7 @@ var ts_parse_actions struct {
 }
 }
 	F308 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F309 struct {
@@ -4811,7 +4834,7 @@ var ts_parse_actions struct {
 }
 }
 	F310 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F311 struct {
@@ -4826,12 +4849,12 @@ var ts_parse_actions struct {
 }
 }
 	F312 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F313 TSParseActionEntry
 	F314 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F315 struct {
@@ -4846,7 +4869,7 @@ var ts_parse_actions struct {
 }
 }
 	F316 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F317 TSParseActionEntry
@@ -4862,12 +4885,12 @@ var ts_parse_actions struct {
 }
 }
 	F319 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F320 TSParseActionEntry
 	F321 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F322 TSParseActionEntry
@@ -4883,22 +4906,22 @@ var ts_parse_actions struct {
 }
 }
 	F324 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F325 TSParseActionEntry
 	F326 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F327 TSParseActionEntry
 	F328 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F329 TSParseActionEntry
 	F330 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F331 struct {
@@ -4913,7 +4936,7 @@ var ts_parse_actions struct {
 }
 }
 	F332 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F333 struct {
@@ -4928,12 +4951,12 @@ var ts_parse_actions struct {
 }
 }
 	F334 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F335 TSParseActionEntry
 	F336 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F337 TSParseActionEntry
@@ -4949,7 +4972,7 @@ var ts_parse_actions struct {
 }
 }
 	F339 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F340 TSParseActionEntry
@@ -4965,7 +4988,7 @@ var ts_parse_actions struct {
 }
 }
 	F342 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F343 struct {
@@ -4980,7 +5003,7 @@ var ts_parse_actions struct {
 }
 }
 	F344 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F345 struct {
@@ -4995,12 +5018,12 @@ var ts_parse_actions struct {
 }
 }
 	F346 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F347 TSParseActionEntry
 	F348 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F349 struct {
@@ -5015,12 +5038,12 @@ var ts_parse_actions struct {
 }
 }
 	F350 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F351 TSParseActionEntry
 	F352 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F353 struct {
@@ -5035,7 +5058,7 @@ var ts_parse_actions struct {
 }
 }
 	F354 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F355 struct {
@@ -5050,7 +5073,7 @@ var ts_parse_actions struct {
 }
 }
 	F356 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F357 struct {
@@ -5065,7 +5088,7 @@ var ts_parse_actions struct {
 }
 }
 	F358 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F359 struct {
@@ -5080,7 +5103,7 @@ var ts_parse_actions struct {
 }
 }
 	F360 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F361 TSParseActionEntry
@@ -5096,7 +5119,7 @@ var ts_parse_actions struct {
 }
 }
 	F363 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F364 TSParseActionEntry
@@ -5112,12 +5135,12 @@ var ts_parse_actions struct {
 }
 }
 	F366 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F367 TSParseActionEntry
 	F368 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F369 struct {
@@ -5132,7 +5155,7 @@ var ts_parse_actions struct {
 }
 }
 	F370 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F371 struct {
@@ -5147,12 +5170,12 @@ var ts_parse_actions struct {
 }
 }
 	F372 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F373 TSParseActionEntry
 	F374 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F375 struct {
@@ -5167,22 +5190,22 @@ var ts_parse_actions struct {
 }
 }
 	F376 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F377 TSParseActionEntry
 	F378 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F379 TSParseActionEntry
 	F380 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F381 TSParseActionEntry
 	F382 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F383 TSParseActionEntry
@@ -5198,17 +5221,17 @@ var ts_parse_actions struct {
 }
 }
 	F385 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F386 TSParseActionEntry
 	F387 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F388 TSParseActionEntry
 	F389 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F390 struct {
@@ -5223,7 +5246,7 @@ var ts_parse_actions struct {
 }
 }
 	F391 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F392 struct {
@@ -5238,7 +5261,7 @@ var ts_parse_actions struct {
 }
 }
 	F393 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F394 struct {
@@ -5253,7 +5276,7 @@ var ts_parse_actions struct {
 }
 }
 	F395 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F396 struct {
@@ -5268,7 +5291,7 @@ var ts_parse_actions struct {
 }
 }
 	F397 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F398 struct {
@@ -5283,7 +5306,7 @@ var ts_parse_actions struct {
 }
 }
 	F399 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F400 struct {
@@ -5298,7 +5321,7 @@ var ts_parse_actions struct {
 }
 }
 	F401 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F402 struct {
@@ -5313,7 +5336,7 @@ var ts_parse_actions struct {
 }
 }
 	F403 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F404 struct {
@@ -5328,7 +5351,7 @@ var ts_parse_actions struct {
 }
 }
 	F405 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F406 struct {
@@ -5343,7 +5366,7 @@ var ts_parse_actions struct {
 }
 }
 	F407 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F408 struct {
@@ -5358,7 +5381,7 @@ var ts_parse_actions struct {
 }
 }
 	F409 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F410 struct {
@@ -5373,7 +5396,7 @@ var ts_parse_actions struct {
 }
 }
 	F411 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F412 TSParseActionEntry
@@ -5389,7 +5412,7 @@ var ts_parse_actions struct {
 }
 }
 	F414 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F415 struct {
@@ -5404,7 +5427,7 @@ var ts_parse_actions struct {
 }
 }
 	F416 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F417 struct {
@@ -5419,7 +5442,7 @@ var ts_parse_actions struct {
 }
 }
 	F418 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F419 struct {
@@ -5434,7 +5457,7 @@ var ts_parse_actions struct {
 }
 }
 	F420 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F421 struct {
@@ -5449,7 +5472,7 @@ var ts_parse_actions struct {
 }
 }
 	F422 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F423 struct {
@@ -5464,7 +5487,7 @@ var ts_parse_actions struct {
 }
 }
 	F424 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F425 struct {
@@ -5479,7 +5502,7 @@ var ts_parse_actions struct {
 }
 }
 	F426 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F427 struct {
@@ -5494,7 +5517,7 @@ var ts_parse_actions struct {
 }
 }
 	F428 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F429 struct {
@@ -5509,7 +5532,7 @@ var ts_parse_actions struct {
 }
 }
 	F430 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F431 struct {
@@ -5524,7 +5547,7 @@ var ts_parse_actions struct {
 }
 }
 	F432 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F433 struct {
@@ -5539,7 +5562,7 @@ var ts_parse_actions struct {
 }
 }
 	F434 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F435 struct {
@@ -5554,7 +5577,7 @@ var ts_parse_actions struct {
 }
 }
 	F436 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F437 struct {
@@ -5569,7 +5592,7 @@ var ts_parse_actions struct {
 }
 }
 	F438 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F439 struct {
@@ -5584,17 +5607,17 @@ var ts_parse_actions struct {
 }
 }
 	F440 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F441 TSParseActionEntry
 	F442 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F443 TSParseActionEntry
 	F444 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F445 struct {
@@ -5609,7 +5632,7 @@ var ts_parse_actions struct {
 }
 }
 	F446 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F447 struct {
@@ -5624,12 +5647,12 @@ var ts_parse_actions struct {
 }
 }
 	F448 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F449 TSParseActionEntry
 	F450 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F451 struct {
@@ -5644,17 +5667,17 @@ var ts_parse_actions struct {
 }
 }
 	F452 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F453 TSParseActionEntry
 	F454 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F455 TSParseActionEntry
 	F456 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F457 TSParseActionEntry
@@ -5670,7 +5693,7 @@ var ts_parse_actions struct {
 }
 }
 	F459 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F460 struct {
@@ -5685,7 +5708,7 @@ var ts_parse_actions struct {
 }
 }
 	F461 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F462 struct {
@@ -5700,7 +5723,7 @@ var ts_parse_actions struct {
 }
 }
 	F463 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F464 struct {
@@ -5715,7 +5738,7 @@ var ts_parse_actions struct {
 }
 }
 	F465 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F466 struct {
@@ -5730,12 +5753,12 @@ var ts_parse_actions struct {
 }
 }
 	F467 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F468 TSParseActionEntry
 	F469 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F470 struct {
@@ -5750,7 +5773,7 @@ var ts_parse_actions struct {
 }
 }
 	F471 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F472 struct {
@@ -5765,12 +5788,12 @@ var ts_parse_actions struct {
 }
 }
 	F473 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F474 TSParseActionEntry
 	F475 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F476 struct {
@@ -5785,22 +5808,22 @@ var ts_parse_actions struct {
 }
 }
 	F477 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F478 TSParseActionEntry
 	F479 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F480 TSParseActionEntry
 	F481 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F482 TSParseActionEntry
 	F483 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F484 struct {
@@ -5815,7 +5838,7 @@ var ts_parse_actions struct {
 }
 }
 	F485 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F486 struct {
@@ -5830,7 +5853,7 @@ var ts_parse_actions struct {
 }
 }
 	F487 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F488 struct {
@@ -5845,7 +5868,7 @@ var ts_parse_actions struct {
 }
 }
 	F489 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F490 struct {
@@ -5860,7 +5883,7 @@ var ts_parse_actions struct {
 }
 }
 	F491 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F492 struct {
@@ -5875,7 +5898,7 @@ var ts_parse_actions struct {
 }
 }
 	F493 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F494 struct {
@@ -5890,7 +5913,7 @@ var ts_parse_actions struct {
 }
 }
 	F495 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F496 struct {
@@ -5905,7 +5928,7 @@ var ts_parse_actions struct {
 }
 }
 	F497 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F498 struct {
@@ -5920,7 +5943,7 @@ var ts_parse_actions struct {
 }
 }
 	F499 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F500 struct {
@@ -5930,7 +5953,7 @@ var ts_parse_actions struct {
 }
 }
 	F501 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F502 struct {
@@ -5945,7 +5968,7 @@ var ts_parse_actions struct {
 }
 }
 	F503 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F504 struct {
@@ -5960,7 +5983,7 @@ var ts_parse_actions struct {
 }
 }
 	F505 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F506 struct {
@@ -5975,7 +5998,7 @@ var ts_parse_actions struct {
 }
 }
 	F507 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F508 struct {
@@ -5990,7 +6013,7 @@ var ts_parse_actions struct {
 }
 }
 	F509 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F510 struct {
@@ -6005,7 +6028,7 @@ var ts_parse_actions struct {
 }
 }
 	F511 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F512 struct {
@@ -6020,7 +6043,7 @@ var ts_parse_actions struct {
 }
 }
 	F513 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F514 struct {
@@ -6035,7 +6058,7 @@ var ts_parse_actions struct {
 }
 }
 	F515 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F516 struct {
@@ -6050,7 +6073,7 @@ var ts_parse_actions struct {
 }
 }
 	F517 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F518 struct {
@@ -6065,27 +6088,27 @@ var ts_parse_actions struct {
 }
 }
 	F519 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F520 TSParseActionEntry
 	F521 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F522 TSParseActionEntry
 	F523 struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
 }
 	F524 TSParseActionEntry
 }{struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{}, [6]byte{}}, struct {
-	F0 anon.1
+}{anon_1{}, [6]byte{}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 0}, [6]byte{}}, struct {
+}{anon_1{1, 0}, [6]byte{}}, struct {
 	F0 struct {
 	F0 byte
 	F1 [7]byte
@@ -6094,9 +6117,9 @@ var ts_parse_actions struct {
 	F0 byte
 	F1 [7]byte
 }{3, [7]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -6120,12 +6143,12 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 131, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 0, 66, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 0, 66, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 0}, [6]byte{}}, struct {
+}{anon_1{1, 0}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -6149,9 +6172,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 20, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -6175,9 +6198,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 8, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -6201,9 +6224,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 157, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -6227,9 +6250,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 136, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 0}, [6]byte{}}, struct {
+}{anon_1{1, 0}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -6253,9 +6276,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 136, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -6279,9 +6302,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 142, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -6305,9 +6328,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 189, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 0}, [6]byte{}}, struct {
+}{anon_1{1, 0}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -6331,9 +6354,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 189, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -6357,9 +6380,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 58, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -6383,9 +6406,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 160, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -6409,9 +6432,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 57, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -6435,9 +6458,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 129, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -6461,9 +6484,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 32, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -6487,9 +6510,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 146, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -6513,9 +6536,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 212, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -6539,21 +6562,21 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 4, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 0}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 1, 87, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 0}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 1, 87, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 1, 87, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 1, 87, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 0}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 94, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 0}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 94, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 94, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 94, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 94, 0, 0}}}, struct {
+}{anon_1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 94, 0, 0}}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -6577,21 +6600,21 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 4, 0, 1}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 0}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 1, 94, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 0}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 1, 94, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 1, 94, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 1, 94, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 1, 66, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 1, 66, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 88, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 88, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{2, 0}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 88, 0, 0}}}, struct {
+}{anon_1{2, 0}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 88, 0, 0}}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -6615,9 +6638,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 20, 0, 1}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 88, 0, 0}}}, struct {
+}{anon_1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 88, 0, 0}}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -6641,9 +6664,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 8, 0, 1}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 88, 0, 0}}}, struct {
+}{anon_1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 88, 0, 0}}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -6667,9 +6690,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 157, 0, 1}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 88, 0, 0}}}, struct {
+}{anon_1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 88, 0, 0}}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -6693,9 +6716,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 136, 0, 1}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{2, 0}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 88, 0, 0}}}, struct {
+}{anon_1{2, 0}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 88, 0, 0}}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -6719,9 +6742,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 136, 0, 1}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 88, 0, 0}}}, struct {
+}{anon_1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 88, 0, 0}}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -6745,9 +6768,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 142, 0, 1}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 88, 0, 0}}}, struct {
+}{anon_1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 88, 0, 0}}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -6771,9 +6794,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 189, 0, 1}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{2, 0}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 88, 0, 0}}}, struct {
+}{anon_1{2, 0}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 88, 0, 0}}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -6797,9 +6820,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 189, 0, 1}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 88, 0, 0}}}, struct {
+}{anon_1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 88, 0, 0}}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -6823,9 +6846,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 58, 0, 1}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 88, 0, 0}}}, struct {
+}{anon_1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 88, 0, 0}}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -6849,9 +6872,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 160, 0, 1}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 88, 0, 0}}}, struct {
+}{anon_1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 88, 0, 0}}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -6875,9 +6898,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 57, 0, 1}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 88, 0, 0}}}, struct {
+}{anon_1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 88, 0, 0}}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -6901,9 +6924,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 129, 0, 1}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 88, 0, 0}}}, struct {
+}{anon_1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 88, 0, 0}}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -6927,9 +6950,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 32, 0, 1}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 88, 0, 0}}}, struct {
+}{anon_1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 88, 0, 0}}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -6953,9 +6976,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 146, 0, 1}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 88, 0, 0}}}, struct {
+}{anon_1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 88, 0, 0}}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -6979,9 +7002,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 212, 0, 1}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 88, 0, 0}}}, struct {
+}{anon_1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 88, 0, 0}}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -7005,9 +7028,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 4, 0, 1}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -7031,9 +7054,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 10, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -7057,9 +7080,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 148, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -7083,36 +7106,36 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 207, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 1, 88, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 1, 88, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 0}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 1, 88, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 0}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 1, 88, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 3, 88, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 3, 88, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 0}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 3, 88, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 0}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 3, 88, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 0}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 88, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 0}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 88, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 4, 88, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 4, 88, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 0}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 4, 88, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 0}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 4, 88, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 5, 88, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 5, 88, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 0}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 5, 88, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 0}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 5, 88, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -7136,9 +7159,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 13, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -7162,9 +7185,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 162, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -7188,12 +7211,12 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 31, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 1, 67, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 1, 67, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -7217,9 +7240,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 139, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -7243,9 +7266,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 113, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -7269,9 +7292,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 127, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -7295,9 +7318,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 149, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -7321,9 +7344,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 14, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -7347,9 +7370,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 152, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 1, 67, 0, 0}}}, struct {
+}{anon_1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 1, 67, 0, 0}}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -7373,9 +7396,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 4, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 94, 0, 0}}}, struct {
+}{anon_1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 94, 0, 0}}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -7399,12 +7422,12 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 31, 0, 1}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 67, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 67, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 67, 0, 0}}}, struct {
+}{anon_1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 67, 0, 0}}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -7428,9 +7451,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 4, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 0}, [6]byte{}}, struct {
+}{anon_1{1, 0}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -7454,9 +7477,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 172, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -7480,9 +7503,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 208, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -7506,9 +7529,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 201, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 0}, [6]byte{}}, struct {
+}{anon_1{1, 0}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -7532,9 +7555,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 131, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -7558,12 +7581,12 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 118, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 3, 72, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 3, 72, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -7587,12 +7610,12 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 151, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 92, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 92, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 92, 0, 0}}}, struct {
+}{anon_1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 92, 0, 0}}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -7616,9 +7639,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 151, 0, 1}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 92, 0, 0}}}, struct {
+}{anon_1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 92, 0, 0}}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -7642,15 +7665,15 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 4, 0, 1}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 4, 72, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 4, 72, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 3, 67, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 3, 67, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 3, 67, 0, 0}}}, struct {
+}{anon_1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 3, 67, 0, 0}}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -7674,18 +7697,18 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 4, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 5, 72, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 5, 72, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 72, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 72, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 91, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 91, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{2, 0}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 91, 0, 0}}}, struct {
+}{anon_1{2, 0}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 91, 0, 0}}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -7709,9 +7732,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 81, 0, 1}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 91, 0, 0}}}, struct {
+}{anon_1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 91, 0, 0}}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -7735,30 +7758,30 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 223, 0, 1}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 3, 80, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 3, 80, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 3, 79, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 3, 79, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 4, 79, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 4, 79, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 5, 80, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 5, 80, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 5, 79, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 5, 79, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 4, 80, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 4, 80, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 70, 0, 1}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 70, 0, 1}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 0}, [6]byte{}}, struct {
+}{anon_1{1, 0}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -7782,9 +7805,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 81, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -7808,12 +7831,12 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 223, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 89, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 89, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 89, 0, 0}}}, struct {
+}{anon_1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 89, 0, 0}}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -7837,9 +7860,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 152, 0, 1}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 89, 0, 0}}}, struct {
+}{anon_1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 89, 0, 0}}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -7863,15 +7886,15 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 4, 0, 1}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 3, 68, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 3, 68, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 4, 67, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 4, 67, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 4, 67, 0, 0}}}, struct {
+}{anon_1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 4, 67, 0, 0}}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -7895,12 +7918,12 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 4, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 4, 68, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 4, 68, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -7924,12 +7947,12 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 153, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 3, 73, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 3, 73, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -7953,9 +7976,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 16, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -7979,12 +8002,12 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 17, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 5, 67, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 5, 67, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 5, 67, 0, 0}}}, struct {
+}{anon_1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 5, 67, 0, 0}}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -8008,30 +8031,30 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 4, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 5, 68, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 5, 68, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 6, 68, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 6, 68, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 73, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 73, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 4, 73, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 4, 73, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 7, 68, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 7, 68, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 8, 68, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 8, 68, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 4, 77, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 4, 77, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -8055,9 +8078,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 138, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -8081,9 +8104,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 115, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -8107,9 +8130,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 124, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -8133,9 +8156,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 140, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -8159,9 +8182,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 15, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -8185,54 +8208,54 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 141, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 3, 92, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 3, 92, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 4, 92, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 4, 92, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 5, 78, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 5, 78, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 5, 77, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 5, 77, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 4, 78, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 4, 78, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 5, 92, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 5, 92, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 3, 84, 0, 5}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 3, 84, 0, 5}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 6, 92, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 6, 92, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 3, 78, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 3, 78, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 1, 91, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 1, 91, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 0}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 1, 91, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 0}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 1, 91, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 1, 76, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 1, 76, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 3, 85, 0, 4}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 3, 85, 0, 4}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 0}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 3, 85, 0, 4}}}, struct {
-	F0 anon.1
+}{anon_1{1, 0}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 3, 85, 0, 4}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 3, 77, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 3, 77, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -8256,9 +8279,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 106, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -8282,9 +8305,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 174, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -8308,12 +8331,12 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 175, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 1, 83, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 1, 83, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 0}, [6]byte{}}, struct {
+}{anon_1{1, 0}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -8337,9 +8360,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 91, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 94, 0, 0}}}, struct {
+}{anon_1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 94, 0, 0}}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -8363,12 +8386,12 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 118, 0, 1}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 93, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 93, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{2, 0}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 93, 0, 0}}}, struct {
+}{anon_1{2, 0}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 93, 0, 0}}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -8392,18 +8415,18 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 91, 0, 1}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 1, 93, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 1, 93, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 0}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 1, 93, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 0}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 1, 93, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 3, 71, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 3, 71, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 0}, [6]byte{}}, struct {
+}{anon_1{1, 0}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -8427,9 +8450,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 133, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -8453,12 +8476,12 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 204, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 90, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 90, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 90, 0, 0}}}, struct {
+}{anon_1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 90, 0, 0}}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -8482,9 +8505,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 147, 0, 1}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 90, 0, 0}}}, struct {
+}{anon_1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 90, 0, 0}}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -8508,9 +8531,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 4, 0, 1}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -8534,9 +8557,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 63, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -8560,12 +8583,12 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 147, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 4, 71, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 4, 71, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -8589,12 +8612,12 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 65, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 5, 71, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 5, 71, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -8618,9 +8641,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 80, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -8644,9 +8667,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 76, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -8670,9 +8693,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 68, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -8696,9 +8719,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 51, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{2, 0}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 91, 0, 0}}}, struct {
+}{anon_1{2, 0}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 91, 0, 0}}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -8722,9 +8745,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 133, 0, 1}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 91, 0, 0}}}, struct {
+}{anon_1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 91, 0, 0}}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -8748,12 +8771,12 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 204, 0, 1}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 69, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 69, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -8777,9 +8800,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 130, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 0}, [6]byte{}}, struct {
+}{anon_1{1, 0}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -8803,12 +8826,12 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 130, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 1, 71, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 1, 71, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -8832,18 +8855,18 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 56, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 4, 69, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 4, 69, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 3, 69, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 3, 69, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 1, 89, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 1, 89, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 94, 0, 0}}}, struct {
+}{anon_1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 94, 0, 0}}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -8867,15 +8890,15 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 153, 0, 1}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 4, 82, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 4, 82, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 3, 82, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 3, 82, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -8899,9 +8922,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 109, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -8925,9 +8948,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 225, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -8951,9 +8974,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 164, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -8977,9 +9000,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 72, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -9003,9 +9026,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 192, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -9029,9 +9052,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 144, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -9055,9 +9078,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 119, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -9081,9 +9104,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 110, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -9107,9 +9130,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 33, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -9133,9 +9156,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 92, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -9159,9 +9182,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 102, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{2, 0}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 93, 0, 0}}}, struct {
+}{anon_1{2, 0}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 93, 0, 0}}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -9185,9 +9208,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 172, 0, 1}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -9211,9 +9234,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 73, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -9237,9 +9260,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 52, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -9263,9 +9286,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 171, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -9289,9 +9312,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 9, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -9315,9 +9338,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 41, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -9341,9 +9364,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 77, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -9367,9 +9390,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 134, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -9393,9 +9416,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 101, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -9419,9 +9442,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 107, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -9445,9 +9468,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 93, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -9471,9 +9494,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 97, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -9497,9 +9520,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 98, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -9523,15 +9546,15 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 104, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 1, 75, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 1, 75, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 3, 90, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 3, 90, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -9555,9 +9578,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 18, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -9581,12 +9604,12 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 19, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 3, 74, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 3, 74, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -9610,15 +9633,15 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 74, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 4, 90, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 4, 90, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 1, 74, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 1, 74, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 94, 0, 0}}}, struct {
+}{anon_1{2, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 94, 0, 0}}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -9642,9 +9665,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 192, 0, 1}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -9668,9 +9691,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 11, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -9694,9 +9717,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 222, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -9720,9 +9743,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 198, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -9746,12 +9769,12 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 132, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 3, 81, 0, 3}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 3, 81, 0, 3}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -9775,9 +9798,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 226, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -9801,12 +9824,12 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 196, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 3, 81, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 3, 81, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -9830,18 +9853,18 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 69, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 1, 81, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 1, 81, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 81, 0, 2}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 81, 0, 2}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 81, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 81, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -9865,9 +9888,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 83, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -9891,9 +9914,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 135, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -9917,9 +9940,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 227, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -9943,9 +9966,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 78, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -9969,9 +9992,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 79, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -9995,9 +10018,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 169, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 0}, [6]byte{}}, struct {
+}{anon_1{1, 0}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -10021,9 +10044,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 203, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -10047,9 +10070,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 219, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 byte
 	F1 [7]byte
@@ -10058,9 +10081,9 @@ var ts_parse_actions struct {
 	F0 byte
 	F1 [7]byte
 }{2, [7]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 0}, [6]byte{}}, struct {
+}{anon_1{1, 0}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -10084,9 +10107,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 197, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -10110,9 +10133,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 150, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -10136,9 +10159,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 99, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -10162,9 +10185,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 38, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -10188,9 +10211,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 161, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -10214,9 +10237,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 100, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -10240,9 +10263,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 166, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -10266,9 +10289,9 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 12, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, struct {
+}{anon_1{1, 1}, [6]byte{}}, struct {
 	F0 struct {
 	F0 struct {
 	F0 byte
@@ -10292,15 +10315,15 @@ var ts_parse_actions struct {
 	F2 byte
 	F3 byte
 }{0, 194, 0, 0}, [2]byte{}}}, struct {
-	F0 anon.1
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 2, 86, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 2, 86, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 3, 86, 0, 0}}}, struct {
-	F0 anon.1
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 3, 86, 0, 0}}}, struct {
+	F0 anon_1
 	F1 [6]byte
-}{anon.1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon.0{1, 4, 86, 0, 0}}}}
+}{anon_1{1, 1}, [6]byte{}}, TSParseActionEntry{TSParseAction{anon_0{1, 4, 86, 0, 0}}}}
 
 var _str_3 [4]byte = [4]byte{101, 110, 100, 0}
 

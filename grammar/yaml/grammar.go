@@ -1,5 +1,10 @@
 package grammar_yaml
 
+import (
+	"unsafe"
+	"github.com/andybalholm/leaven/libc"
+)
+
 type Array struct {
 	F0 *byte
 	F1 int32
@@ -3230,7 +3235,7 @@ var _str_1 [15]byte = [15]byte{115, 105, 122, 101, 32, 61, 61, 32, 108, 101, 110
 
 var _str_2 [39]byte = [39]byte{
 	47, 116, 109, 112, 47, 108, 101, 97, 118, 101, 110, 45, 121, 97, 109, 108,
-	45, 51, 52, 51, 51, 52, 52, 48, 50, 56, 56, 47, 99, 111, 109, 98,
+	45, 50, 55, 48, 52, 55, 55, 56, 51, 49, 51, 47, 99, 111, 109, 98,
 	105, 110, 101, 100, 46, 99, 0,
 }
 
@@ -41229,7 +41234,7 @@ func scan(scanner *Scanner, lexer *TSLexer, valid_symbols *byte) bool {
 	v3 = *valid_symbols_addr
 	arrayidx = libc.AddPointer(v3, int(int64(48)))
 	v4 = *arrayidx
-	tobool = byte(v4 & 1)
+	tobool = (v4 & 1) != 0
 	if tobool {
 		v11 = true
 		goto lor_end
@@ -41241,7 +41246,7 @@ lor_lhs_false:
 	v5 = *valid_symbols_addr
 	arrayidx1 = libc.AddPointer(v5, int(int64(49)))
 	v6 = *arrayidx1
-	tobool2 = byte(v6 & 1)
+	tobool2 = (v6 & 1) != 0
 	if tobool2 {
 		v11 = true
 		goto lor_end
@@ -41253,7 +41258,7 @@ lor_lhs_false3:
 	v7 = *valid_symbols_addr
 	arrayidx4 = libc.AddPointer(v7, int(int64(59)))
 	v8 = *arrayidx4
-	tobool5 = byte(v8 & 1)
+	tobool5 = (v8 & 1) != 0
 	if tobool5 {
 		v11 = true
 		goto lor_end
@@ -41265,7 +41270,7 @@ lor_rhs:
 	v9 = *valid_symbols_addr
 	arrayidx6 = libc.AddPointer(v9, int(int64(60)))
 	v10 = *arrayidx6
-	tobool7 = byte(v10 & 1)
+	tobool7 = (v10 & 1) != 0
 	v11 = tobool7
 	goto lor_end
 
@@ -41373,7 +41378,7 @@ for_cond:
 
 if_then27:
 	v35 = *has_tab_ind
-	tobool28 = byte(v35 & 1)
+	tobool28 = (v35 & 1) != 0
 	if tobool28 {
 		goto if_end30
 	} else {
@@ -41431,7 +41436,7 @@ if_then38:
 
 if_else39:
 	v47 = *allow_comment
-	tobool40 = byte(v47 & 1)
+	tobool40 = (v47 & 1) != 0
 	if tobool40 {
 		goto land_lhs_true
 	} else {
@@ -41453,7 +41458,7 @@ if_then45:
 	v50 = *valid_symbols_addr
 	arrayidx46 = libc.AddPointer(v50, int(int64(24)))
 	v51 = *arrayidx46
-	tobool47 = byte(v51 & 1)
+	tobool47 = (v51 & 1) != 0
 	if tobool47 {
 		goto land_lhs_true49
 	} else {
@@ -41464,7 +41469,7 @@ land_lhs_true49:
 	v52 = *valid_symbols_addr
 	arrayidx50 = libc.AddPointer(v52, int(int64(110)))
 	v53 = *arrayidx50
-	tobool51 = byte(v53 & 1)
+	tobool51 = (v53 & 1) != 0
 	if tobool51 {
 		goto land_lhs_true53
 	} else {
@@ -41516,7 +41521,7 @@ if_end65:
 	v62 = *valid_symbols_addr
 	arrayidx66 = libc.AddPointer(v62, int(int64(24)))
 	v63 = *arrayidx66
-	tobool67 = byte(v63 & 1)
+	tobool67 = (v63 & 1) != 0
 	if tobool67 {
 		goto cond_true69
 	} else {
@@ -41664,7 +41669,7 @@ if_then107:
 	v93 = *valid_symbols_addr
 	arrayidx108 = libc.AddPointer(v93, int(int64(110)))
 	v94 = *arrayidx108
-	tobool109 = byte(v94 & 1)
+	tobool109 = (v94 & 1) != 0
 	if tobool109 {
 		goto if_then110
 	} else {
@@ -41705,7 +41710,7 @@ if_end118:
 	v102 = *valid_symbols_addr
 	arrayidx119 = v102
 	v103 = *arrayidx119
-	tobool120 = byte(v103 & 1)
+	tobool120 = (v103 & 1) != 0
 	if tobool120 {
 		goto if_then121
 	} else {
@@ -41744,7 +41749,7 @@ if_end124:
 	v114 = *valid_symbols_addr
 	arrayidx128 = libc.AddPointer(v114, int(int64(110)))
 	v115 = *arrayidx128
-	tobool129 = byte(v115 & 1)
+	tobool129 = (v115 & 1) != 0
 	if tobool129 {
 		goto land_lhs_true131
 	} else {
@@ -41765,7 +41770,7 @@ land_lhs_true131:
 
 land_lhs_true136:
 	v118 = *has_tab_ind
-	tobool137 = byte(v118 & 1)
+	tobool137 = (v118 & 1) != 0
 	if tobool137 {
 		goto if_end174
 	} else {
@@ -41882,12 +41887,12 @@ if_end174:
 	if cmp179 { frombool181 = 1 } else { frombool181 = 0 }
 	*has_nwl = frombool181
 	v138 = *has_nwl
-	tobool182 = byte(v138 & 1)
+	tobool182 = (v138 & 1) != 0
 	lnot183 = tobool182 != true
 	if lnot183 { frombool184 = 1 } else { frombool184 = 0 }
 	*is_r = frombool184
 	v139 = *has_nwl
-	tobool185 = byte(v139 & 1)
+	tobool185 = (v139 & 1) != 0
 	if tobool185 {
 		goto land_rhs187
 	} else {
@@ -41908,7 +41913,7 @@ land_end192:
 	if v142 { frombool193 = 1 } else { frombool193 = 0 }
 	*is_br = frombool193
 	v143 = *has_nwl
-	tobool194 = byte(v143 & 1)
+	tobool194 = (v143 & 1) != 0
 	if tobool194 {
 		goto land_lhs_true196
 	} else {
@@ -41931,7 +41936,7 @@ land_lhs_true196:
 
 land_rhs201:
 	v146 = *has_tab_ind
-	tobool202 = byte(v146 & 1)
+	tobool202 = (v146 & 1) != 0
 	lnot203 = tobool202 != true
 	v147 = lnot203
 	goto land_end204
@@ -41947,7 +41952,7 @@ land_end204:
 	v149 = *valid_symbols_addr
 	arrayidx210 = libc.AddPointer(v149, int(int64(2)))
 	v150 = *arrayidx210
-	tobool211 = byte(v150 & 1)
+	tobool211 = (v150 & 1) != 0
 	if tobool211 {
 		goto land_lhs_true213
 	} else {
@@ -41956,7 +41961,7 @@ land_end204:
 
 land_lhs_true213:
 	v151 = *is_r
-	tobool214 = byte(v151 & 1)
+	tobool214 = (v151 & 1) != 0
 	if tobool214 {
 		goto if_then216
 	} else {
@@ -41974,7 +41979,7 @@ if_end218:
 	v154 = *valid_symbols_addr
 	arrayidx219 = libc.AddPointer(v154, int(int64(4)))
 	v155 = *arrayidx219
-	tobool220 = byte(v155 & 1)
+	tobool220 = (v155 & 1) != 0
 	if tobool220 {
 		goto land_lhs_true222
 	} else {
@@ -41983,7 +41988,7 @@ if_end218:
 
 land_lhs_true222:
 	v156 = *is_r
-	tobool223 = byte(v156 & 1)
+	tobool223 = (v156 & 1) != 0
 	if tobool223 {
 		goto if_then225
 	} else {
@@ -42001,7 +42006,7 @@ if_end227:
 	v159 = *valid_symbols_addr
 	arrayidx228 = libc.AddPointer(v159, int(int64(5)))
 	v160 = *arrayidx228
-	tobool229 = byte(v160 & 1)
+	tobool229 = (v160 & 1) != 0
 	if tobool229 {
 		goto land_lhs_true231
 	} else {
@@ -42010,7 +42015,7 @@ if_end227:
 
 land_lhs_true231:
 	v161 = *is_r
-	tobool232 = byte(v161 & 1)
+	tobool232 = (v161 & 1) != 0
 	if tobool232 {
 		goto if_then234
 	} else {
@@ -42028,7 +42033,7 @@ if_end236:
 	v164 = *valid_symbols_addr
 	arrayidx237 = libc.AddPointer(v164, int(int64(7)))
 	v165 = *arrayidx237
-	tobool238 = byte(v165 & 1)
+	tobool238 = (v165 & 1) != 0
 	if tobool238 {
 		goto land_lhs_true240
 	} else {
@@ -42037,7 +42042,7 @@ if_end236:
 
 land_lhs_true240:
 	v166 = *is_r
-	tobool241 = byte(v166 & 1)
+	tobool241 = (v166 & 1) != 0
 	if tobool241 {
 		goto if_then243
 	} else {
@@ -42055,7 +42060,7 @@ if_end245:
 	v169 = *valid_symbols_addr
 	arrayidx246 = libc.AddPointer(v169, int(int64(24)))
 	v170 = *arrayidx246
-	tobool247 = byte(v170 & 1)
+	tobool247 = (v170 & 1) != 0
 	if tobool247 {
 		goto land_lhs_true249
 	} else {
@@ -42064,7 +42069,7 @@ if_end245:
 
 land_lhs_true249:
 	v171 = *is_br
-	tobool250 = byte(v171 & 1)
+	tobool250 = (v171 & 1) != 0
 	if tobool250 {
 		goto land_lhs_true252
 	} else {
@@ -42089,7 +42094,7 @@ if_end256:
 	v174 = *valid_symbols_addr
 	arrayidx257 = libc.AddPointer(v174, int(int64(48)))
 	v175 = *arrayidx257
-	tobool258 = byte(v175 & 1)
+	tobool258 = (v175 & 1) != 0
 	if tobool258 {
 		goto land_lhs_true260
 	} else {
@@ -42098,7 +42103,7 @@ if_end256:
 
 land_lhs_true260:
 	v176 = *is_r
-	tobool261 = byte(v176 & 1)
+	tobool261 = (v176 & 1) != 0
 	if tobool261 {
 		goto land_lhs_true263
 	} else {
@@ -42119,7 +42124,7 @@ lor_lhs_false266:
 	v179 = *valid_symbols_addr
 	arrayidx267 = libc.AddPointer(v179, int(int64(49)))
 	v180 = *arrayidx267
-	tobool268 = byte(v180 & 1)
+	tobool268 = (v180 & 1) != 0
 	if tobool268 {
 		goto land_lhs_true270
 	} else {
@@ -42128,7 +42133,7 @@ lor_lhs_false266:
 
 land_lhs_true270:
 	v181 = *is_br
-	tobool271 = byte(v181 & 1)
+	tobool271 = (v181 & 1) != 0
 	if tobool271 {
 		goto land_lhs_true276
 	} else {
@@ -42137,7 +42142,7 @@ land_lhs_true270:
 
 lor_lhs_false273:
 	v182 = *has_nwl
-	tobool274 = byte(v182 & 1)
+	tobool274 = (v182 & 1) != 0
 	if tobool274 {
 		goto land_lhs_true276
 	} else {
@@ -42162,7 +42167,7 @@ if_end280:
 	v185 = *valid_symbols_addr
 	arrayidx281 = libc.AddPointer(v185, int(int64(59)))
 	v186 = *arrayidx281
-	tobool282 = byte(v186 & 1)
+	tobool282 = (v186 & 1) != 0
 	if tobool282 {
 		goto land_lhs_true284
 	} else {
@@ -42171,7 +42176,7 @@ if_end280:
 
 land_lhs_true284:
 	v187 = *is_r
-	tobool285 = byte(v187 & 1)
+	tobool285 = (v187 & 1) != 0
 	if tobool285 {
 		goto land_lhs_true287
 	} else {
@@ -42192,7 +42197,7 @@ lor_lhs_false290:
 	v190 = *valid_symbols_addr
 	arrayidx291 = libc.AddPointer(v190, int(int64(60)))
 	v191 = *arrayidx291
-	tobool292 = byte(v191 & 1)
+	tobool292 = (v191 & 1) != 0
 	if tobool292 {
 		goto land_lhs_true294
 	} else {
@@ -42201,7 +42206,7 @@ lor_lhs_false290:
 
 land_lhs_true294:
 	v192 = *is_br
-	tobool295 = byte(v192 & 1)
+	tobool295 = (v192 & 1) != 0
 	if tobool295 {
 		goto land_lhs_true297
 	} else {
@@ -42226,7 +42231,7 @@ if_end301:
 	v195 = *valid_symbols_addr
 	arrayidx302 = libc.AddPointer(v195, int(int64(105)))
 	v196 = *arrayidx302
-	tobool303 = byte(v196 & 1)
+	tobool303 = (v196 & 1) != 0
 	if tobool303 {
 		goto land_lhs_true305
 	} else {
@@ -42235,7 +42240,7 @@ if_end301:
 
 land_lhs_true305:
 	v197 = *is_r
-	tobool306 = byte(v197 & 1)
+	tobool306 = (v197 & 1) != 0
 	if tobool306 {
 		goto if_then308
 	} else {
@@ -42253,7 +42258,7 @@ if_end310:
 	v200 = *valid_symbols_addr
 	arrayidx311 = libc.AddPointer(v200, int(int64(109)))
 	v201 = *arrayidx311
-	tobool312 = byte(v201 & 1)
+	tobool312 = (v201 & 1) != 0
 	if tobool312 {
 		goto land_lhs_true314
 	} else {
@@ -42262,7 +42267,7 @@ if_end310:
 
 land_lhs_true314:
 	v202 = *is_r
-	tobool315 = byte(v202 & 1)
+	tobool315 = (v202 & 1) != 0
 	if tobool315 {
 		goto if_then317
 	} else {
@@ -42291,7 +42296,7 @@ if_then323:
 	v207 = *valid_symbols_addr
 	arrayidx324 = libc.AddPointer(v207, int(int64(1)))
 	v208 = *arrayidx324
-	tobool325 = byte(v208 & 1)
+	tobool325 = (v208 & 1) != 0
 	if tobool325 {
 		goto land_lhs_true327
 	} else {
@@ -42300,7 +42305,7 @@ if_then323:
 
 land_lhs_true327:
 	v209 = *is_s
-	tobool328 = byte(v209 & 1)
+	tobool328 = (v209 & 1) != 0
 	if tobool328 {
 		goto if_then330
 	} else {
@@ -42332,7 +42337,7 @@ if_then337:
 	v214 = *valid_symbols_addr
 	arrayidx338 = libc.AddPointer(v214, int(int64(106)))
 	v215 = *arrayidx338
-	tobool339 = byte(v215 & 1)
+	tobool339 = (v215 & 1) != 0
 	if tobool339 {
 		goto land_lhs_true341
 	} else {
@@ -42341,7 +42346,7 @@ if_then337:
 
 land_lhs_true341:
 	v216 = *is_r
-	tobool342 = byte(v216 & 1)
+	tobool342 = (v216 & 1) != 0
 	if tobool342 {
 		goto if_then344
 	} else {
@@ -42372,7 +42377,7 @@ if_then349:
 	blk_imp_col = &v223.F3
 	*blk_imp_col = v222
 	v224 = *has_tab_ind
-	tobool351 = byte(v224 & 1)
+	tobool351 = (v224 & 1) != 0
 	if tobool351 { conv352 = 1 } else { conv352 = 0 }
 	v225 = *scanner_addr
 	blk_imp_tab = &v225.F4
@@ -42390,7 +42395,7 @@ if_end355:
 	v228 = *valid_symbols_addr
 	arrayidx356 = libc.AddPointer(v228, int(int64(107)))
 	v229 = *arrayidx356
-	tobool357 = byte(v229 & 1)
+	tobool357 = (v229 & 1) != 0
 	if tobool357 {
 		goto land_lhs_true359
 	} else {
@@ -42399,7 +42404,7 @@ if_end355:
 
 land_lhs_true359:
 	v230 = *is_br
-	tobool360 = byte(v230 & 1)
+	tobool360 = (v230 & 1) != 0
 	if tobool360 {
 		goto if_then362
 	} else {
@@ -42430,7 +42435,7 @@ if_then368:
 	blk_imp_col370 = &v237.F3
 	*blk_imp_col370 = v236
 	v238 = *has_tab_ind
-	tobool371 = byte(v238 & 1)
+	tobool371 = (v238 & 1) != 0
 	if tobool371 { conv372 = 1 } else { conv372 = 0 }
 	v239 = *scanner_addr
 	blk_imp_tab373 = &v239.F4
@@ -42448,7 +42453,7 @@ if_end376:
 	v242 = *valid_symbols_addr
 	arrayidx377 = libc.AddPointer(v242, int(int64(108)))
 	v243 = *arrayidx377
-	tobool378 = byte(v243 & 1)
+	tobool378 = (v243 & 1) != 0
 	if tobool378 {
 		goto land_lhs_true380
 	} else {
@@ -42457,7 +42462,7 @@ if_end376:
 
 land_lhs_true380:
 	v244 = *is_b
-	tobool381 = byte(v244 & 1)
+	tobool381 = (v244 & 1) != 0
 	if tobool381 {
 		goto if_then383
 	} else {
@@ -42488,7 +42493,7 @@ if_then389:
 	blk_imp_col391 = &v251.F3
 	*blk_imp_col391 = v250
 	v252 = *has_tab_ind
-	tobool392 = byte(v252 & 1)
+	tobool392 = (v252 & 1) != 0
 	if tobool392 { conv393 = 1 } else { conv393 = 0 }
 	v253 = *scanner_addr
 	blk_imp_tab394 = &v253.F4
@@ -42520,7 +42525,7 @@ if_then402:
 	v258 = *valid_symbols_addr
 	arrayidx403 = libc.AddPointer(v258, int(int64(102)))
 	v259 = *arrayidx403
-	tobool404 = byte(v259 & 1)
+	tobool404 = (v259 & 1) != 0
 	if tobool404 {
 		goto land_lhs_true406
 	} else {
@@ -42529,7 +42534,7 @@ if_then402:
 
 land_lhs_true406:
 	v260 = *is_r
-	tobool407 = byte(v260 & 1)
+	tobool407 = (v260 & 1) != 0
 	if tobool407 {
 		goto if_then409
 	} else {
@@ -42560,7 +42565,7 @@ if_then415:
 	blk_imp_col417 = &v267.F3
 	*blk_imp_col417 = v266
 	v268 = *has_tab_ind
-	tobool418 = byte(v268 & 1)
+	tobool418 = (v268 & 1) != 0
 	if tobool418 { conv419 = 1 } else { conv419 = 0 }
 	v269 = *scanner_addr
 	blk_imp_tab420 = &v269.F4
@@ -42578,7 +42583,7 @@ if_end423:
 	v272 = *valid_symbols_addr
 	arrayidx424 = libc.AddPointer(v272, int(int64(103)))
 	v273 = *arrayidx424
-	tobool425 = byte(v273 & 1)
+	tobool425 = (v273 & 1) != 0
 	if tobool425 {
 		goto land_lhs_true427
 	} else {
@@ -42587,7 +42592,7 @@ if_end423:
 
 land_lhs_true427:
 	v274 = *is_br
-	tobool428 = byte(v274 & 1)
+	tobool428 = (v274 & 1) != 0
 	if tobool428 {
 		goto if_then430
 	} else {
@@ -42618,7 +42623,7 @@ if_then436:
 	blk_imp_col438 = &v281.F3
 	*blk_imp_col438 = v280
 	v282 = *has_tab_ind
-	tobool439 = byte(v282 & 1)
+	tobool439 = (v282 & 1) != 0
 	if tobool439 { conv440 = 1 } else { conv440 = 0 }
 	v283 = *scanner_addr
 	blk_imp_tab441 = &v283.F4
@@ -42636,7 +42641,7 @@ if_end444:
 	v286 = *valid_symbols_addr
 	arrayidx445 = libc.AddPointer(v286, int(int64(104)))
 	v287 = *arrayidx445
-	tobool446 = byte(v287 & 1)
+	tobool446 = (v287 & 1) != 0
 	if tobool446 {
 		goto land_lhs_true448
 	} else {
@@ -42645,7 +42650,7 @@ if_end444:
 
 land_lhs_true448:
 	v288 = *is_b
-	tobool449 = byte(v288 & 1)
+	tobool449 = (v288 & 1) != 0
 	if tobool449 {
 		goto if_then451
 	} else {
@@ -42676,7 +42681,7 @@ if_then457:
 	blk_imp_col459 = &v295.F3
 	*blk_imp_col459 = v294
 	v296 = *has_tab_ind
-	tobool460 = byte(v296 & 1)
+	tobool460 = (v296 & 1) != 0
 	if tobool460 { conv461 = 1 } else { conv461 = 0 }
 	v297 = *scanner_addr
 	blk_imp_tab462 = &v297.F4
@@ -42708,7 +42713,7 @@ if_then470:
 	v302 = *valid_symbols_addr
 	arrayidx471 = libc.AddPointer(v302, int(int64(99)))
 	v303 = *arrayidx471
-	tobool472 = byte(v303 & 1)
+	tobool472 = (v303 & 1) != 0
 	if tobool472 {
 		goto land_lhs_true474
 	} else {
@@ -42717,7 +42722,7 @@ if_then470:
 
 land_lhs_true474:
 	v304 = *is_r
-	tobool475 = byte(v304 & 1)
+	tobool475 = (v304 & 1) != 0
 	if tobool475 {
 		goto if_then477
 	} else {
@@ -42748,7 +42753,7 @@ if_then483:
 	blk_imp_col485 = &v311.F3
 	*blk_imp_col485 = v310
 	v312 = *has_tab_ind
-	tobool486 = byte(v312 & 1)
+	tobool486 = (v312 & 1) != 0
 	if tobool486 { conv487 = 1 } else { conv487 = 0 }
 	v313 = *scanner_addr
 	blk_imp_tab488 = &v313.F4
@@ -42766,7 +42771,7 @@ if_end491:
 	v316 = *valid_symbols_addr
 	arrayidx492 = libc.AddPointer(v316, int(int64(100)))
 	v317 = *arrayidx492
-	tobool493 = byte(v317 & 1)
+	tobool493 = (v317 & 1) != 0
 	if tobool493 {
 		goto land_lhs_true495
 	} else {
@@ -42775,7 +42780,7 @@ if_end491:
 
 land_lhs_true495:
 	v318 = *is_br
-	tobool496 = byte(v318 & 1)
+	tobool496 = (v318 & 1) != 0
 	if tobool496 {
 		goto if_then498
 	} else {
@@ -42806,7 +42811,7 @@ if_then504:
 	blk_imp_col506 = &v325.F3
 	*blk_imp_col506 = v324
 	v326 = *has_tab_ind
-	tobool507 = byte(v326 & 1)
+	tobool507 = (v326 & 1) != 0
 	if tobool507 { conv508 = 1 } else { conv508 = 0 }
 	v327 = *scanner_addr
 	blk_imp_tab509 = &v327.F4
@@ -42824,7 +42829,7 @@ if_end512:
 	v330 = *valid_symbols_addr
 	arrayidx513 = libc.AddPointer(v330, int(int64(101)))
 	v331 = *arrayidx513
-	tobool514 = byte(v331 & 1)
+	tobool514 = (v331 & 1) != 0
 	if tobool514 {
 		goto land_lhs_true516
 	} else {
@@ -42833,7 +42838,7 @@ if_end512:
 
 land_lhs_true516:
 	v332 = *is_b
-	tobool517 = byte(v332 & 1)
+	tobool517 = (v332 & 1) != 0
 	if tobool517 {
 		goto if_then519
 	} else {
@@ -42864,7 +42869,7 @@ if_then525:
 	blk_imp_col527 = &v339.F3
 	*blk_imp_col527 = v338
 	v340 = *has_tab_ind
-	tobool528 = byte(v340 & 1)
+	tobool528 = (v340 & 1) != 0
 	if tobool528 { conv529 = 1 } else { conv529 = 0 }
 	v341 = *scanner_addr
 	blk_imp_tab530 = &v341.F4
@@ -42896,7 +42901,7 @@ if_then538:
 	v346 = *valid_symbols_addr
 	arrayidx539 = libc.AddPointer(v346, int(int64(25)))
 	v347 = *arrayidx539
-	tobool540 = byte(v347 & 1)
+	tobool540 = (v347 & 1) != 0
 	if tobool540 {
 		goto land_lhs_true542
 	} else {
@@ -42905,7 +42910,7 @@ if_then538:
 
 land_lhs_true542:
 	v348 = *is_r
-	tobool543 = byte(v348 & 1)
+	tobool543 = (v348 & 1) != 0
 	if tobool543 {
 		goto if_then545
 	} else {
@@ -42936,7 +42941,7 @@ if_then551:
 	blk_imp_col553 = &v355.F3
 	*blk_imp_col553 = v354
 	v356 = *has_tab_ind
-	tobool554 = byte(v356 & 1)
+	tobool554 = (v356 & 1) != 0
 	if tobool554 { conv555 = 1 } else { conv555 = 0 }
 	v357 = *scanner_addr
 	blk_imp_tab556 = &v357.F4
@@ -42962,7 +42967,7 @@ if_end559:
 	v364 = *valid_symbols_addr
 	arrayidx560 = libc.AddPointer(v364, int(int64(26)))
 	v365 = *arrayidx560
-	tobool561 = byte(v365 & 1)
+	tobool561 = (v365 & 1) != 0
 	if tobool561 {
 		goto land_lhs_true563
 	} else {
@@ -42971,7 +42976,7 @@ if_end559:
 
 land_lhs_true563:
 	v366 = *is_br
-	tobool564 = byte(v366 & 1)
+	tobool564 = (v366 & 1) != 0
 	if tobool564 {
 		goto if_then566
 	} else {
@@ -43002,7 +43007,7 @@ if_then572:
 	blk_imp_col574 = &v373.F3
 	*blk_imp_col574 = v372
 	v374 = *has_tab_ind
-	tobool575 = byte(v374 & 1)
+	tobool575 = (v374 & 1) != 0
 	if tobool575 { conv576 = 1 } else { conv576 = 0 }
 	v375 = *scanner_addr
 	blk_imp_tab577 = &v375.F4
@@ -43028,7 +43033,7 @@ if_end580:
 	v382 = *valid_symbols_addr
 	arrayidx581 = libc.AddPointer(v382, int(int64(27)))
 	v383 = *arrayidx581
-	tobool582 = byte(v383 & 1)
+	tobool582 = (v383 & 1) != 0
 	if tobool582 {
 		goto land_lhs_true584
 	} else {
@@ -43037,7 +43042,7 @@ if_end580:
 
 land_lhs_true584:
 	v384 = *is_b
-	tobool585 = byte(v384 & 1)
+	tobool585 = (v384 & 1) != 0
 	if tobool585 {
 		goto if_then587
 	} else {
@@ -43068,7 +43073,7 @@ if_then593:
 	blk_imp_col595 = &v391.F3
 	*blk_imp_col595 = v390
 	v392 = *has_tab_ind
-	tobool596 = byte(v392 & 1)
+	tobool596 = (v392 & 1) != 0
 	if tobool596 { conv597 = 1 } else { conv597 = 0 }
 	v393 = *scanner_addr
 	blk_imp_tab598 = &v393.F4
@@ -43108,7 +43113,7 @@ if_then606:
 	v402 = *valid_symbols_addr
 	arrayidx607 = libc.AddPointer(v402, int(int64(28)))
 	v403 = *arrayidx607
-	tobool608 = byte(v403 & 1)
+	tobool608 = (v403 & 1) != 0
 	if tobool608 {
 		goto land_lhs_true610
 	} else {
@@ -43117,7 +43122,7 @@ if_then606:
 
 land_lhs_true610:
 	v404 = *is_r
-	tobool611 = byte(v404 & 1)
+	tobool611 = (v404 & 1) != 0
 	if tobool611 {
 		goto if_then613
 	} else {
@@ -43143,7 +43148,7 @@ if_end615:
 	v411 = *valid_symbols_addr
 	arrayidx616 = libc.AddPointer(v411, int(int64(29)))
 	v412 = *arrayidx616
-	tobool617 = byte(v412 & 1)
+	tobool617 = (v412 & 1) != 0
 	if tobool617 {
 		goto land_lhs_true619
 	} else {
@@ -43152,7 +43157,7 @@ if_end615:
 
 land_lhs_true619:
 	v413 = *is_br
-	tobool620 = byte(v413 & 1)
+	tobool620 = (v413 & 1) != 0
 	if tobool620 {
 		goto if_then622
 	} else {
@@ -43178,7 +43183,7 @@ if_end624:
 	v420 = *valid_symbols_addr
 	arrayidx625 = libc.AddPointer(v420, int(int64(30)))
 	v421 = *arrayidx625
-	tobool626 = byte(v421 & 1)
+	tobool626 = (v421 & 1) != 0
 	if tobool626 {
 		goto land_lhs_true628
 	} else {
@@ -43187,7 +43192,7 @@ if_end624:
 
 land_lhs_true628:
 	v422 = *is_b
-	tobool629 = byte(v422 & 1)
+	tobool629 = (v422 & 1) != 0
 	if tobool629 {
 		goto if_then631
 	} else {
@@ -43227,7 +43232,7 @@ if_then638:
 	v431 = *valid_symbols_addr
 	arrayidx639 = libc.AddPointer(v431, int(int64(31)))
 	v432 = *arrayidx639
-	tobool640 = byte(v432 & 1)
+	tobool640 = (v432 & 1) != 0
 	if tobool640 {
 		goto land_lhs_true642
 	} else {
@@ -43236,7 +43241,7 @@ if_then638:
 
 land_lhs_true642:
 	v433 = *is_r
-	tobool643 = byte(v433 & 1)
+	tobool643 = (v433 & 1) != 0
 	if tobool643 {
 		goto if_then645
 	} else {
@@ -43267,7 +43272,7 @@ if_then651:
 	blk_imp_col653 = &v440.F3
 	*blk_imp_col653 = v439
 	v441 = *has_tab_ind
-	tobool654 = byte(v441 & 1)
+	tobool654 = (v441 & 1) != 0
 	if tobool654 { conv655 = 1 } else { conv655 = 0 }
 	v442 = *scanner_addr
 	blk_imp_tab656 = &v442.F4
@@ -43293,7 +43298,7 @@ if_end659:
 	v449 = *valid_symbols_addr
 	arrayidx660 = libc.AddPointer(v449, int(int64(32)))
 	v450 = *arrayidx660
-	tobool661 = byte(v450 & 1)
+	tobool661 = (v450 & 1) != 0
 	if tobool661 {
 		goto land_lhs_true663
 	} else {
@@ -43302,7 +43307,7 @@ if_end659:
 
 land_lhs_true663:
 	v451 = *is_br
-	tobool664 = byte(v451 & 1)
+	tobool664 = (v451 & 1) != 0
 	if tobool664 {
 		goto if_then666
 	} else {
@@ -43333,7 +43338,7 @@ if_then672:
 	blk_imp_col674 = &v458.F3
 	*blk_imp_col674 = v457
 	v459 = *has_tab_ind
-	tobool675 = byte(v459 & 1)
+	tobool675 = (v459 & 1) != 0
 	if tobool675 { conv676 = 1 } else { conv676 = 0 }
 	v460 = *scanner_addr
 	blk_imp_tab677 = &v460.F4
@@ -43359,7 +43364,7 @@ if_end680:
 	v467 = *valid_symbols_addr
 	arrayidx681 = libc.AddPointer(v467, int(int64(33)))
 	v468 = *arrayidx681
-	tobool682 = byte(v468 & 1)
+	tobool682 = (v468 & 1) != 0
 	if tobool682 {
 		goto land_lhs_true684
 	} else {
@@ -43368,7 +43373,7 @@ if_end680:
 
 land_lhs_true684:
 	v469 = *is_b
-	tobool685 = byte(v469 & 1)
+	tobool685 = (v469 & 1) != 0
 	if tobool685 {
 		goto if_then687
 	} else {
@@ -43399,7 +43404,7 @@ if_then693:
 	blk_imp_col695 = &v476.F3
 	*blk_imp_col695 = v475
 	v477 = *has_tab_ind
-	tobool696 = byte(v477 & 1)
+	tobool696 = (v477 & 1) != 0
 	if tobool696 { conv697 = 1 } else { conv697 = 0 }
 	v478 = *scanner_addr
 	blk_imp_tab698 = &v478.F4
@@ -43439,7 +43444,7 @@ if_then706:
 	v487 = *valid_symbols_addr
 	arrayidx707 = libc.AddPointer(v487, int(int64(34)))
 	v488 = *arrayidx707
-	tobool708 = byte(v488 & 1)
+	tobool708 = (v488 & 1) != 0
 	if tobool708 {
 		goto land_lhs_true710
 	} else {
@@ -43448,7 +43453,7 @@ if_then706:
 
 land_lhs_true710:
 	v489 = *is_r
-	tobool711 = byte(v489 & 1)
+	tobool711 = (v489 & 1) != 0
 	if tobool711 {
 		goto if_then713
 	} else {
@@ -43474,7 +43479,7 @@ if_end715:
 	v496 = *valid_symbols_addr
 	arrayidx716 = libc.AddPointer(v496, int(int64(35)))
 	v497 = *arrayidx716
-	tobool717 = byte(v497 & 1)
+	tobool717 = (v497 & 1) != 0
 	if tobool717 {
 		goto land_lhs_true719
 	} else {
@@ -43483,7 +43488,7 @@ if_end715:
 
 land_lhs_true719:
 	v498 = *is_br
-	tobool720 = byte(v498 & 1)
+	tobool720 = (v498 & 1) != 0
 	if tobool720 {
 		goto if_then722
 	} else {
@@ -43509,7 +43514,7 @@ if_end724:
 	v505 = *valid_symbols_addr
 	arrayidx725 = libc.AddPointer(v505, int(int64(36)))
 	v506 = *arrayidx725
-	tobool726 = byte(v506 & 1)
+	tobool726 = (v506 & 1) != 0
 	if tobool726 {
 		goto land_lhs_true728
 	} else {
@@ -43518,7 +43523,7 @@ if_end724:
 
 land_lhs_true728:
 	v507 = *is_b
-	tobool729 = byte(v507 & 1)
+	tobool729 = (v507 & 1) != 0
 	if tobool729 {
 		goto if_then731
 	} else {
@@ -43558,7 +43563,7 @@ if_then738:
 	v516 = *valid_symbols_addr
 	arrayidx739 = libc.AddPointer(v516, int(int64(37)))
 	v517 = *arrayidx739
-	tobool740 = byte(v517 & 1)
+	tobool740 = (v517 & 1) != 0
 	if tobool740 {
 		goto land_lhs_true742
 	} else {
@@ -43567,7 +43572,7 @@ if_then738:
 
 land_lhs_true742:
 	v518 = *is_r
-	tobool743 = byte(v518 & 1)
+	tobool743 = (v518 & 1) != 0
 	if tobool743 {
 		goto if_then745
 	} else {
@@ -43593,7 +43598,7 @@ if_end747:
 	v525 = *valid_symbols_addr
 	arrayidx748 = libc.AddPointer(v525, int(int64(38)))
 	v526 = *arrayidx748
-	tobool749 = byte(v526 & 1)
+	tobool749 = (v526 & 1) != 0
 	if tobool749 {
 		goto land_lhs_true751
 	} else {
@@ -43602,7 +43607,7 @@ if_end747:
 
 land_lhs_true751:
 	v527 = *is_br
-	tobool752 = byte(v527 & 1)
+	tobool752 = (v527 & 1) != 0
 	if tobool752 {
 		goto if_then754
 	} else {
@@ -43642,7 +43647,7 @@ if_then761:
 	v536 = *valid_symbols_addr
 	arrayidx762 = libc.AddPointer(v536, int(int64(45)))
 	v537 = *arrayidx762
-	tobool763 = byte(v537 & 1)
+	tobool763 = (v537 & 1) != 0
 	if tobool763 {
 		goto land_lhs_true765
 	} else {
@@ -43651,7 +43656,7 @@ if_then761:
 
 land_lhs_true765:
 	v538 = *is_r
-	tobool766 = byte(v538 & 1)
+	tobool766 = (v538 & 1) != 0
 	if tobool766 {
 		goto if_then768
 	} else {
@@ -43682,7 +43687,7 @@ if_then774:
 	blk_imp_col776 = &v545.F3
 	*blk_imp_col776 = v544
 	v546 = *has_tab_ind
-	tobool777 = byte(v546 & 1)
+	tobool777 = (v546 & 1) != 0
 	if tobool777 { conv778 = 1 } else { conv778 = 0 }
 	v547 = *scanner_addr
 	blk_imp_tab779 = &v547.F4
@@ -43708,7 +43713,7 @@ if_end782:
 	v554 = *valid_symbols_addr
 	arrayidx783 = libc.AddPointer(v554, int(int64(46)))
 	v555 = *arrayidx783
-	tobool784 = byte(v555 & 1)
+	tobool784 = (v555 & 1) != 0
 	if tobool784 {
 		goto land_lhs_true786
 	} else {
@@ -43717,7 +43722,7 @@ if_end782:
 
 land_lhs_true786:
 	v556 = *is_br
-	tobool787 = byte(v556 & 1)
+	tobool787 = (v556 & 1) != 0
 	if tobool787 {
 		goto if_then789
 	} else {
@@ -43748,7 +43753,7 @@ if_then795:
 	blk_imp_col797 = &v563.F3
 	*blk_imp_col797 = v562
 	v564 = *has_tab_ind
-	tobool798 = byte(v564 & 1)
+	tobool798 = (v564 & 1) != 0
 	if tobool798 { conv799 = 1 } else { conv799 = 0 }
 	v565 = *scanner_addr
 	blk_imp_tab800 = &v565.F4
@@ -43774,7 +43779,7 @@ if_end803:
 	v572 = *valid_symbols_addr
 	arrayidx804 = libc.AddPointer(v572, int(int64(47)))
 	v573 = *arrayidx804
-	tobool805 = byte(v573 & 1)
+	tobool805 = (v573 & 1) != 0
 	if tobool805 {
 		goto land_lhs_true807
 	} else {
@@ -43783,7 +43788,7 @@ if_end803:
 
 land_lhs_true807:
 	v574 = *is_b
-	tobool808 = byte(v574 & 1)
+	tobool808 = (v574 & 1) != 0
 	if tobool808 {
 		goto if_then810
 	} else {
@@ -43814,7 +43819,7 @@ if_then816:
 	blk_imp_col818 = &v581.F3
 	*blk_imp_col818 = v580
 	v582 = *has_tab_ind
-	tobool819 = byte(v582 & 1)
+	tobool819 = (v582 & 1) != 0
 	if tobool819 { conv820 = 1 } else { conv820 = 0 }
 	v583 = *scanner_addr
 	blk_imp_tab821 = &v583.F4
@@ -43840,7 +43845,7 @@ if_end824:
 	v590 = *valid_symbols_addr
 	arrayidx825 = libc.AddPointer(v590, int(int64(54)))
 	v591 = *arrayidx825
-	tobool826 = byte(v591 & 1)
+	tobool826 = (v591 & 1) != 0
 	if tobool826 {
 		goto land_lhs_true828
 	} else {
@@ -43849,7 +43854,7 @@ if_end824:
 
 land_lhs_true828:
 	v592 = *is_r
-	tobool829 = byte(v592 & 1)
+	tobool829 = (v592 & 1) != 0
 	if tobool829 {
 		goto if_then831
 	} else {
@@ -43875,7 +43880,7 @@ if_end833:
 	v599 = *valid_symbols_addr
 	arrayidx834 = libc.AddPointer(v599, int(int64(55)))
 	v600 = *arrayidx834
-	tobool835 = byte(v600 & 1)
+	tobool835 = (v600 & 1) != 0
 	if tobool835 {
 		goto land_lhs_true837
 	} else {
@@ -43884,7 +43889,7 @@ if_end833:
 
 land_lhs_true837:
 	v601 = *is_br
-	tobool838 = byte(v601 & 1)
+	tobool838 = (v601 & 1) != 0
 	if tobool838 {
 		goto if_then840
 	} else {
@@ -43924,7 +43929,7 @@ if_then847:
 	v610 = *valid_symbols_addr
 	arrayidx848 = libc.AddPointer(v610, int(int64(56)))
 	v611 = *arrayidx848
-	tobool849 = byte(v611 & 1)
+	tobool849 = (v611 & 1) != 0
 	if tobool849 {
 		goto land_lhs_true851
 	} else {
@@ -43933,7 +43938,7 @@ if_then847:
 
 land_lhs_true851:
 	v612 = *is_r
-	tobool852 = byte(v612 & 1)
+	tobool852 = (v612 & 1) != 0
 	if tobool852 {
 		goto if_then854
 	} else {
@@ -43964,7 +43969,7 @@ if_then860:
 	blk_imp_col862 = &v619.F3
 	*blk_imp_col862 = v618
 	v620 = *has_tab_ind
-	tobool863 = byte(v620 & 1)
+	tobool863 = (v620 & 1) != 0
 	if tobool863 { conv864 = 1 } else { conv864 = 0 }
 	v621 = *scanner_addr
 	blk_imp_tab865 = &v621.F4
@@ -43990,7 +43995,7 @@ if_end868:
 	v628 = *valid_symbols_addr
 	arrayidx869 = libc.AddPointer(v628, int(int64(57)))
 	v629 = *arrayidx869
-	tobool870 = byte(v629 & 1)
+	tobool870 = (v629 & 1) != 0
 	if tobool870 {
 		goto land_lhs_true872
 	} else {
@@ -43999,7 +44004,7 @@ if_end868:
 
 land_lhs_true872:
 	v630 = *is_br
-	tobool873 = byte(v630 & 1)
+	tobool873 = (v630 & 1) != 0
 	if tobool873 {
 		goto if_then875
 	} else {
@@ -44030,7 +44035,7 @@ if_then881:
 	blk_imp_col883 = &v637.F3
 	*blk_imp_col883 = v636
 	v638 = *has_tab_ind
-	tobool884 = byte(v638 & 1)
+	tobool884 = (v638 & 1) != 0
 	if tobool884 { conv885 = 1 } else { conv885 = 0 }
 	v639 = *scanner_addr
 	blk_imp_tab886 = &v639.F4
@@ -44056,7 +44061,7 @@ if_end889:
 	v646 = *valid_symbols_addr
 	arrayidx890 = libc.AddPointer(v646, int(int64(58)))
 	v647 = *arrayidx890
-	tobool891 = byte(v647 & 1)
+	tobool891 = (v647 & 1) != 0
 	if tobool891 {
 		goto land_lhs_true893
 	} else {
@@ -44065,7 +44070,7 @@ if_end889:
 
 land_lhs_true893:
 	v648 = *is_b
-	tobool894 = byte(v648 & 1)
+	tobool894 = (v648 & 1) != 0
 	if tobool894 {
 		goto if_then896
 	} else {
@@ -44096,7 +44101,7 @@ if_then902:
 	blk_imp_col904 = &v655.F3
 	*blk_imp_col904 = v654
 	v656 = *has_tab_ind
-	tobool905 = byte(v656 & 1)
+	tobool905 = (v656 & 1) != 0
 	if tobool905 { conv906 = 1 } else { conv906 = 0 }
 	v657 = *scanner_addr
 	blk_imp_tab907 = &v657.F4
@@ -44122,7 +44127,7 @@ if_end910:
 	v664 = *valid_symbols_addr
 	arrayidx911 = libc.AddPointer(v664, int(int64(63)))
 	v665 = *arrayidx911
-	tobool912 = byte(v665 & 1)
+	tobool912 = (v665 & 1) != 0
 	if tobool912 {
 		goto land_lhs_true914
 	} else {
@@ -44131,7 +44136,7 @@ if_end910:
 
 land_lhs_true914:
 	v666 = *is_r
-	tobool915 = byte(v666 & 1)
+	tobool915 = (v666 & 1) != 0
 	if tobool915 {
 		goto if_then917
 	} else {
@@ -44183,7 +44188,7 @@ if_end925:
 	v681 = *valid_symbols_addr
 	arrayidx926 = libc.AddPointer(v681, int(int64(64)))
 	v682 = *arrayidx926
-	tobool927 = byte(v682 & 1)
+	tobool927 = (v682 & 1) != 0
 	if tobool927 {
 		goto land_lhs_true929
 	} else {
@@ -44192,7 +44197,7 @@ if_end925:
 
 land_lhs_true929:
 	v683 = *is_br
-	tobool930 = byte(v683 & 1)
+	tobool930 = (v683 & 1) != 0
 	if tobool930 {
 		goto if_then932
 	} else {
@@ -44258,7 +44263,7 @@ if_then945:
 	v700 = *valid_symbols_addr
 	arrayidx946 = libc.AddPointer(v700, int(int64(13)))
 	v701 = *arrayidx946
-	tobool947 = byte(v701 & 1)
+	tobool947 = (v701 & 1) != 0
 	if tobool947 {
 		goto land_rhs949
 	} else {
@@ -44268,7 +44273,7 @@ if_then945:
 
 land_rhs949:
 	v702 = *is_r
-	tobool950 = byte(v702 & 1)
+	tobool950 = (v702 & 1) != 0
 	v703 = tobool950
 	goto land_end952
 
@@ -44278,7 +44283,7 @@ land_end952:
 	v704 = *valid_symbols_addr
 	arrayidx954 = libc.AddPointer(v704, int(int64(14)))
 	v705 = *arrayidx954
-	tobool955 = byte(v705 & 1)
+	tobool955 = (v705 & 1) != 0
 	if tobool955 {
 		goto land_rhs957
 	} else {
@@ -44288,7 +44293,7 @@ land_end952:
 
 land_rhs957:
 	v706 = *is_br
-	tobool958 = byte(v706 & 1)
+	tobool958 = (v706 & 1) != 0
 	v707 = tobool958
 	goto land_end960
 
@@ -44298,7 +44303,7 @@ land_end960:
 	v708 = *valid_symbols_addr
 	arrayidx962 = libc.AddPointer(v708, int(int64(15)))
 	v709 = *arrayidx962
-	tobool963 = byte(v709 & 1)
+	tobool963 = (v709 & 1) != 0
 	if tobool963 {
 		goto land_rhs965
 	} else {
@@ -44308,7 +44313,7 @@ land_end960:
 
 land_rhs965:
 	v710 = *is_b
-	tobool966 = byte(v710 & 1)
+	tobool966 = (v710 & 1) != 0
 	v711 = tobool966
 	goto land_end968
 
@@ -44318,7 +44323,7 @@ land_end968:
 	v712 = *valid_symbols_addr
 	arrayidx970 = libc.AddPointer(v712, int(int64(39)))
 	v713 = *arrayidx970
-	tobool971 = byte(v713 & 1)
+	tobool971 = (v713 & 1) != 0
 	if tobool971 {
 		goto land_rhs973
 	} else {
@@ -44328,7 +44333,7 @@ land_end968:
 
 land_rhs973:
 	v714 = *is_r
-	tobool974 = byte(v714 & 1)
+	tobool974 = (v714 & 1) != 0
 	v715 = tobool974
 	goto land_end976
 
@@ -44338,7 +44343,7 @@ land_end976:
 	v716 = *valid_symbols_addr
 	arrayidx978 = libc.AddPointer(v716, int(int64(40)))
 	v717 = *arrayidx978
-	tobool979 = byte(v717 & 1)
+	tobool979 = (v717 & 1) != 0
 	if tobool979 {
 		goto land_rhs981
 	} else {
@@ -44348,7 +44353,7 @@ land_end976:
 
 land_rhs981:
 	v718 = *is_br
-	tobool982 = byte(v718 & 1)
+	tobool982 = (v718 & 1) != 0
 	v719 = tobool982
 	goto land_end984
 
@@ -44356,7 +44361,7 @@ land_end984:
 	if v719 { frombool985 = 1 } else { frombool985 = 0 }
 	*is_br_flw_key_bgn = frombool985
 	v720 = *is_r_blk_key_bgn
-	tobool986 = byte(v720 & 1)
+	tobool986 = (v720 & 1) != 0
 	if tobool986 {
 		goto if_then1000
 	} else {
@@ -44365,7 +44370,7 @@ land_end984:
 
 lor_lhs_false988:
 	v721 = *is_br_blk_key_bgn
-	tobool989 = byte(v721 & 1)
+	tobool989 = (v721 & 1) != 0
 	if tobool989 {
 		goto if_then1000
 	} else {
@@ -44374,7 +44379,7 @@ lor_lhs_false988:
 
 lor_lhs_false991:
 	v722 = *is_b_blk_key_bgn
-	tobool992 = byte(v722 & 1)
+	tobool992 = (v722 & 1) != 0
 	if tobool992 {
 		goto if_then1000
 	} else {
@@ -44383,7 +44388,7 @@ lor_lhs_false991:
 
 lor_lhs_false994:
 	v723 = *is_r_flw_key_bgn
-	tobool995 = byte(v723 & 1)
+	tobool995 = (v723 & 1) != 0
 	if tobool995 {
 		goto if_then1000
 	} else {
@@ -44392,7 +44397,7 @@ lor_lhs_false994:
 
 lor_lhs_false997:
 	v724 = *is_br_flw_key_bgn
-	tobool998 = byte(v724 & 1)
+	tobool998 = (v724 & 1) != 0
 	if tobool998 {
 		goto if_then1000
 	} else {
@@ -44418,7 +44423,7 @@ if_then1003:
 	v730 = *lexer_addr
 	mrk_end(v729, v730)
 	v731 = *is_r_blk_key_bgn
-	tobool1004 = byte(v731 & 1)
+	tobool1004 = (v731 & 1) != 0
 	if tobool1004 {
 		goto if_then1005
 	} else {
@@ -44427,7 +44432,7 @@ if_then1003:
 
 if_then1005:
 	v732 = *has_tab_ind
-	tobool1006 = byte(v732 & 1)
+	tobool1006 = (v732 & 1) != 0
 	if tobool1006 {
 		goto if_then1007
 	} else {
@@ -44452,7 +44457,7 @@ if_end1008:
 
 if_end1010:
 	v737 = *is_br_blk_key_bgn
-	tobool1011 = byte(v737 & 1)
+	tobool1011 = (v737 & 1) != 0
 	if tobool1011 {
 		goto if_then1012
 	} else {
@@ -44461,7 +44466,7 @@ if_end1010:
 
 if_then1012:
 	v738 = *has_tab_ind
-	tobool1013 = byte(v738 & 1)
+	tobool1013 = (v738 & 1) != 0
 	if tobool1013 {
 		goto if_then1014
 	} else {
@@ -44486,7 +44491,7 @@ if_end1015:
 
 if_end1017:
 	v743 = *is_b_blk_key_bgn
-	tobool1018 = byte(v743 & 1)
+	tobool1018 = (v743 & 1) != 0
 	if tobool1018 {
 		goto if_then1019
 	} else {
@@ -44504,7 +44509,7 @@ if_then1019:
 
 if_end1021:
 	v746 = *is_r_flw_key_bgn
-	tobool1022 = byte(v746 & 1)
+	tobool1022 = (v746 & 1) != 0
 	if tobool1022 {
 		goto if_then1023
 	} else {
@@ -44522,7 +44527,7 @@ if_then1023:
 
 if_end1025:
 	v749 = *is_br_flw_key_bgn
-	tobool1026 = byte(v749 & 1)
+	tobool1026 = (v749 & 1) != 0
 	if tobool1026 {
 		goto if_then1027
 	} else {
@@ -44562,7 +44567,7 @@ if_then1036:
 	v754 = *valid_symbols_addr
 	arrayidx1037 = libc.AddPointer(v754, int(int64(41)))
 	v755 = *arrayidx1037
-	tobool1038 = byte(v755 & 1)
+	tobool1038 = (v755 & 1) != 0
 	if tobool1038 {
 		goto land_lhs_true1040
 	} else {
@@ -44571,7 +44576,7 @@ if_then1036:
 
 land_lhs_true1040:
 	v756 = *is_r
-	tobool1041 = byte(v756 & 1)
+	tobool1041 = (v756 & 1) != 0
 	if tobool1041 {
 		goto if_then1043
 	} else {
@@ -44597,7 +44602,7 @@ if_end1045:
 	v763 = *valid_symbols_addr
 	arrayidx1046 = libc.AddPointer(v763, int(int64(42)))
 	v764 = *arrayidx1046
-	tobool1047 = byte(v764 & 1)
+	tobool1047 = (v764 & 1) != 0
 	if tobool1047 {
 		goto land_lhs_true1049
 	} else {
@@ -44606,7 +44611,7 @@ if_end1045:
 
 land_lhs_true1049:
 	v765 = *is_br
-	tobool1050 = byte(v765 & 1)
+	tobool1050 = (v765 & 1) != 0
 	if tobool1050 {
 		goto if_then1052
 	} else {
@@ -44632,7 +44637,7 @@ if_end1054:
 	v772 = *valid_symbols_addr
 	arrayidx1055 = libc.AddPointer(v772, int(int64(16)))
 	v773 = *arrayidx1055
-	tobool1056 = byte(v773 & 1)
+	tobool1056 = (v773 & 1) != 0
 	if tobool1056 {
 		goto land_rhs1058
 	} else {
@@ -44642,7 +44647,7 @@ if_end1054:
 
 land_rhs1058:
 	v774 = *is_r
-	tobool1059 = byte(v774 & 1)
+	tobool1059 = (v774 & 1) != 0
 	v775 = tobool1059
 	goto land_end1061
 
@@ -44652,7 +44657,7 @@ land_end1061:
 	v776 = *valid_symbols_addr
 	arrayidx1063 = libc.AddPointer(v776, int(int64(17)))
 	v777 = *arrayidx1063
-	tobool1064 = byte(v777 & 1)
+	tobool1064 = (v777 & 1) != 0
 	if tobool1064 {
 		goto land_rhs1066
 	} else {
@@ -44662,7 +44667,7 @@ land_end1061:
 
 land_rhs1066:
 	v778 = *is_br
-	tobool1067 = byte(v778 & 1)
+	tobool1067 = (v778 & 1) != 0
 	v779 = tobool1067
 	goto land_end1069
 
@@ -44672,7 +44677,7 @@ land_end1069:
 	v780 = *valid_symbols_addr
 	arrayidx1071 = libc.AddPointer(v780, int(int64(18)))
 	v781 = *arrayidx1071
-	tobool1072 = byte(v781 & 1)
+	tobool1072 = (v781 & 1) != 0
 	if tobool1072 {
 		goto land_rhs1074
 	} else {
@@ -44682,7 +44687,7 @@ land_end1069:
 
 land_rhs1074:
 	v782 = *is_b
-	tobool1075 = byte(v782 & 1)
+	tobool1075 = (v782 & 1) != 0
 	v783 = tobool1075
 	goto land_end1077
 
@@ -44692,7 +44697,7 @@ land_end1077:
 	v784 = *valid_symbols_addr
 	arrayidx1079 = libc.AddPointer(v784, int(int64(19)))
 	v785 = *arrayidx1079
-	tobool1080 = byte(v785 & 1)
+	tobool1080 = (v785 & 1) != 0
 	if tobool1080 {
 		goto land_rhs1082
 	} else {
@@ -44702,7 +44707,7 @@ land_end1077:
 
 land_rhs1082:
 	v786 = *is_r
-	tobool1083 = byte(v786 & 1)
+	tobool1083 = (v786 & 1) != 0
 	v787 = tobool1083
 	goto land_end1085
 
@@ -44712,7 +44717,7 @@ land_end1085:
 	v788 = *valid_symbols_addr
 	arrayidx1087 = libc.AddPointer(v788, int(int64(43)))
 	v789 = *arrayidx1087
-	tobool1088 = byte(v789 & 1)
+	tobool1088 = (v789 & 1) != 0
 	if tobool1088 {
 		goto land_rhs1090
 	} else {
@@ -44722,7 +44727,7 @@ land_end1085:
 
 land_rhs1090:
 	v790 = *is_r
-	tobool1091 = byte(v790 & 1)
+	tobool1091 = (v790 & 1) != 0
 	v791 = tobool1091
 	goto land_end1093
 
@@ -44732,7 +44737,7 @@ land_end1093:
 	v792 = *valid_symbols_addr
 	arrayidx1095 = libc.AddPointer(v792, int(int64(44)))
 	v793 = *arrayidx1095
-	tobool1096 = byte(v793 & 1)
+	tobool1096 = (v793 & 1) != 0
 	if tobool1096 {
 		goto land_rhs1098
 	} else {
@@ -44742,7 +44747,7 @@ land_end1093:
 
 land_rhs1098:
 	v794 = *is_br
-	tobool1099 = byte(v794 & 1)
+	tobool1099 = (v794 & 1) != 0
 	v795 = tobool1099
 	goto land_end1101
 
@@ -44750,7 +44755,7 @@ land_end1101:
 	if v795 { frombool1102 = 1 } else { frombool1102 = 0 }
 	*is_br_flw_njv_bgn = frombool1102
 	v796 = *is_r_blk_val_bgn
-	tobool1103 = byte(v796 & 1)
+	tobool1103 = (v796 & 1) != 0
 	if tobool1103 {
 		goto if_then1120
 	} else {
@@ -44759,7 +44764,7 @@ land_end1101:
 
 lor_lhs_false1105:
 	v797 = *is_br_blk_val_bgn
-	tobool1106 = byte(v797 & 1)
+	tobool1106 = (v797 & 1) != 0
 	if tobool1106 {
 		goto if_then1120
 	} else {
@@ -44768,7 +44773,7 @@ lor_lhs_false1105:
 
 lor_lhs_false1108:
 	v798 = *is_b_blk_val_bgn
-	tobool1109 = byte(v798 & 1)
+	tobool1109 = (v798 & 1) != 0
 	if tobool1109 {
 		goto if_then1120
 	} else {
@@ -44777,7 +44782,7 @@ lor_lhs_false1108:
 
 lor_lhs_false1111:
 	v799 = *is_r_blk_imp_bgn
-	tobool1112 = byte(v799 & 1)
+	tobool1112 = (v799 & 1) != 0
 	if tobool1112 {
 		goto if_then1120
 	} else {
@@ -44786,7 +44791,7 @@ lor_lhs_false1111:
 
 lor_lhs_false1114:
 	v800 = *is_r_flw_njv_bgn
-	tobool1115 = byte(v800 & 1)
+	tobool1115 = (v800 & 1) != 0
 	if tobool1115 {
 		goto if_then1120
 	} else {
@@ -44795,7 +44800,7 @@ lor_lhs_false1114:
 
 lor_lhs_false1117:
 	v801 = *is_br_flw_njv_bgn
-	tobool1118 = byte(v801 & 1)
+	tobool1118 = (v801 & 1) != 0
 	if tobool1118 {
 		goto if_then1120
 	} else {
@@ -44813,7 +44818,7 @@ if_then1120:
 	if call1122 { frombool1123 = 1 } else { frombool1123 = 0 }
 	*is_lka_wht = frombool1123
 	v806 = *is_lka_wht
-	tobool1124 = byte(v806 & 1)
+	tobool1124 = (v806 & 1) != 0
 	if tobool1124 {
 		goto if_then1125
 	} else {
@@ -44822,7 +44827,7 @@ if_then1120:
 
 if_then1125:
 	v807 = *is_r_blk_val_bgn
-	tobool1126 = byte(v807 & 1)
+	tobool1126 = (v807 & 1) != 0
 	if tobool1126 {
 		goto if_then1127
 	} else {
@@ -44831,7 +44836,7 @@ if_then1125:
 
 if_then1127:
 	v808 = *has_tab_ind
-	tobool1128 = byte(v808 & 1)
+	tobool1128 = (v808 & 1) != 0
 	if tobool1128 {
 		goto if_then1129
 	} else {
@@ -44859,7 +44864,7 @@ if_end1130:
 
 if_end1132:
 	v815 = *is_br_blk_val_bgn
-	tobool1133 = byte(v815 & 1)
+	tobool1133 = (v815 & 1) != 0
 	if tobool1133 {
 		goto if_then1134
 	} else {
@@ -44868,7 +44873,7 @@ if_end1132:
 
 if_then1134:
 	v816 = *has_tab_ind
-	tobool1135 = byte(v816 & 1)
+	tobool1135 = (v816 & 1) != 0
 	if tobool1135 {
 		goto if_then1136
 	} else {
@@ -44896,7 +44901,7 @@ if_end1137:
 
 if_end1139:
 	v823 = *is_b_blk_val_bgn
-	tobool1140 = byte(v823 & 1)
+	tobool1140 = (v823 & 1) != 0
 	if tobool1140 {
 		goto if_then1141
 	} else {
@@ -44917,7 +44922,7 @@ if_then1141:
 
 if_end1143:
 	v828 = *is_r_blk_imp_bgn
-	tobool1144 = byte(v828 & 1)
+	tobool1144 = (v828 & 1) != 0
 	if tobool1144 {
 		goto if_then1145
 	} else {
@@ -44978,7 +44983,7 @@ if_end1159:
 
 if_end1160:
 	v841 = *is_lka_wht
-	tobool1161 = byte(v841 & 1)
+	tobool1161 = (v841 & 1) != 0
 	if tobool1161 {
 		goto if_then1175
 	} else {
@@ -45020,7 +45025,7 @@ lor_lhs_false1171:
 
 if_then1175:
 	v848 = *is_r_flw_njv_bgn
-	tobool1176 = byte(v848 & 1)
+	tobool1176 = (v848 & 1) != 0
 	if tobool1176 {
 		goto if_then1177
 	} else {
@@ -45041,7 +45046,7 @@ if_then1177:
 
 if_end1179:
 	v853 = *is_br_flw_njv_bgn
-	tobool1180 = byte(v853 & 1)
+	tobool1180 = (v853 & 1) != 0
 	if tobool1180 {
 		goto if_then1181
 	} else {
@@ -45084,7 +45089,7 @@ if_then1190:
 	v860 = *valid_symbols_addr
 	arrayidx1191 = libc.AddPointer(v860, int(int64(10)))
 	v861 = *arrayidx1191
-	tobool1192 = byte(v861 & 1)
+	tobool1192 = (v861 & 1) != 0
 	if tobool1192 {
 		goto land_rhs1194
 	} else {
@@ -45094,7 +45099,7 @@ if_then1190:
 
 land_rhs1194:
 	v862 = *is_r
-	tobool1195 = byte(v862 & 1)
+	tobool1195 = (v862 & 1) != 0
 	v863 = tobool1195
 	goto land_end1197
 
@@ -45104,7 +45109,7 @@ land_end1197:
 	v864 = *valid_symbols_addr
 	arrayidx1199 = libc.AddPointer(v864, int(int64(11)))
 	v865 = *arrayidx1199
-	tobool1200 = byte(v865 & 1)
+	tobool1200 = (v865 & 1) != 0
 	if tobool1200 {
 		goto land_rhs1202
 	} else {
@@ -45114,7 +45119,7 @@ land_end1197:
 
 land_rhs1202:
 	v866 = *is_br
-	tobool1203 = byte(v866 & 1)
+	tobool1203 = (v866 & 1) != 0
 	v867 = tobool1203
 	goto land_end1205
 
@@ -45124,7 +45129,7 @@ land_end1205:
 	v868 = *valid_symbols_addr
 	arrayidx1207 = libc.AddPointer(v868, int(int64(12)))
 	v869 = *arrayidx1207
-	tobool1208 = byte(v869 & 1)
+	tobool1208 = (v869 & 1) != 0
 	if tobool1208 {
 		goto land_rhs1210
 	} else {
@@ -45134,7 +45139,7 @@ land_end1205:
 
 land_rhs1210:
 	v870 = *is_b
-	tobool1211 = byte(v870 & 1)
+	tobool1211 = (v870 & 1) != 0
 	v871 = tobool1211
 	goto land_end1213
 
@@ -45142,11 +45147,11 @@ land_end1213:
 	if v871 { frombool1214 = 1 } else { frombool1214 = 0 }
 	*is_b_blk_seq_bgn = frombool1214
 	v872 = *is_s
-	tobool1215 = byte(v872 & 1)
+	tobool1215 = (v872 & 1) != 0
 	if tobool1215 { frombool1216 = 1 } else { frombool1216 = 0 }
 	*is_s_drs_end = frombool1216
 	v873 = *is_r_blk_seq_bgn
-	tobool1217 = byte(v873 & 1)
+	tobool1217 = (v873 & 1) != 0
 	if tobool1217 {
 		goto if_then1228
 	} else {
@@ -45155,7 +45160,7 @@ land_end1213:
 
 lor_lhs_false1219:
 	v874 = *is_br_blk_seq_bgn
-	tobool1220 = byte(v874 & 1)
+	tobool1220 = (v874 & 1) != 0
 	if tobool1220 {
 		goto if_then1228
 	} else {
@@ -45164,7 +45169,7 @@ lor_lhs_false1219:
 
 lor_lhs_false1222:
 	v875 = *is_b_blk_seq_bgn
-	tobool1223 = byte(v875 & 1)
+	tobool1223 = (v875 & 1) != 0
 	if tobool1223 {
 		goto if_then1228
 	} else {
@@ -45173,7 +45178,7 @@ lor_lhs_false1222:
 
 lor_lhs_false1225:
 	v876 = *is_s_drs_end
-	tobool1226 = byte(v876 & 1)
+	tobool1226 = (v876 & 1) != 0
 	if tobool1226 {
 		goto if_then1228
 	} else {
@@ -45196,7 +45201,7 @@ if_then1228:
 
 if_then1231:
 	v881 = *is_r_blk_seq_bgn
-	tobool1232 = byte(v881 & 1)
+	tobool1232 = (v881 & 1) != 0
 	if tobool1232 {
 		goto if_then1233
 	} else {
@@ -45205,7 +45210,7 @@ if_then1231:
 
 if_then1233:
 	v882 = *has_tab_ind
-	tobool1234 = byte(v882 & 1)
+	tobool1234 = (v882 & 1) != 0
 	if tobool1234 {
 		goto if_then1235
 	} else {
@@ -45233,7 +45238,7 @@ if_end1236:
 
 if_end1238:
 	v889 = *is_br_blk_seq_bgn
-	tobool1239 = byte(v889 & 1)
+	tobool1239 = (v889 & 1) != 0
 	if tobool1239 {
 		goto if_then1240
 	} else {
@@ -45242,7 +45247,7 @@ if_end1238:
 
 if_then1240:
 	v890 = *has_tab_ind
-	tobool1241 = byte(v890 & 1)
+	tobool1241 = (v890 & 1) != 0
 	if tobool1241 {
 		goto if_then1242
 	} else {
@@ -45270,7 +45275,7 @@ if_end1243:
 
 if_end1245:
 	v897 = *is_b_blk_seq_bgn
-	tobool1246 = byte(v897 & 1)
+	tobool1246 = (v897 & 1) != 0
 	if tobool1246 {
 		goto if_then1247
 	} else {
@@ -45321,7 +45326,7 @@ if_else1255:
 
 land_lhs_true1259:
 	v907 = *is_s_drs_end
-	tobool1260 = byte(v907 & 1)
+	tobool1260 = (v907 & 1) != 0
 	if tobool1260 {
 		goto if_then1262
 	} else {
@@ -45360,7 +45365,7 @@ if_then1269:
 	v916 = *valid_symbols_addr
 	arrayidx1270 = libc.AddPointer(v916, int(int64(110)))
 	v917 = *arrayidx1270
-	tobool1271 = byte(v917 & 1)
+	tobool1271 = (v917 & 1) != 0
 	if tobool1271 {
 		goto if_then1272
 	} else {
@@ -45434,7 +45439,7 @@ if_else1287:
 
 if_then1291:
 	v929 = *is_s
-	tobool1292 = byte(v929 & 1)
+	tobool1292 = (v929 & 1) != 0
 	if tobool1292 {
 		goto if_then1293
 	} else {
@@ -45487,7 +45492,7 @@ if_then1304:
 	v942 = *valid_symbols_addr
 	arrayidx1305 = libc.AddPointer(v942, int(int64(110)))
 	v943 = *arrayidx1305
-	tobool1306 = byte(v943 & 1)
+	tobool1306 = (v943 & 1) != 0
 	if tobool1306 {
 		goto if_then1307
 	} else {
@@ -45560,7 +45565,7 @@ if_then1325:
 	v955 = *valid_symbols_addr
 	arrayidx1326 = libc.AddPointer(v955, int(int64(50)))
 	v956 = *arrayidx1326
-	tobool1327 = byte(v956 & 1)
+	tobool1327 = (v956 & 1) != 0
 	if tobool1327 {
 		goto land_rhs1329
 	} else {
@@ -45570,7 +45575,7 @@ if_then1325:
 
 land_rhs1329:
 	v957 = *is_r
-	tobool1330 = byte(v957 & 1)
+	tobool1330 = (v957 & 1) != 0
 	v958 = tobool1330
 	goto land_end1332
 
@@ -45580,7 +45585,7 @@ land_end1332:
 	v959 = *valid_symbols_addr
 	arrayidx1334 = libc.AddPointer(v959, int(int64(51)))
 	v960 = *arrayidx1334
-	tobool1335 = byte(v960 & 1)
+	tobool1335 = (v960 & 1) != 0
 	if tobool1335 {
 		goto land_rhs1337
 	} else {
@@ -45590,7 +45595,7 @@ land_end1332:
 
 land_rhs1337:
 	v961 = *is_br
-	tobool1338 = byte(v961 & 1)
+	tobool1338 = (v961 & 1) != 0
 	v962 = tobool1338
 	goto land_end1340
 
@@ -45600,7 +45605,7 @@ land_end1340:
 	v963 = *valid_symbols_addr
 	arrayidx1342 = libc.AddPointer(v963, int(int64(52)))
 	v964 = *arrayidx1342
-	tobool1343 = byte(v964 & 1)
+	tobool1343 = (v964 & 1) != 0
 	if tobool1343 {
 		goto land_rhs1345
 	} else {
@@ -45610,7 +45615,7 @@ land_end1340:
 
 land_rhs1345:
 	v965 = *is_r
-	tobool1346 = byte(v965 & 1)
+	tobool1346 = (v965 & 1) != 0
 	v966 = tobool1346
 	goto land_end1348
 
@@ -45620,7 +45625,7 @@ land_end1348:
 	v967 = *valid_symbols_addr
 	arrayidx1350 = libc.AddPointer(v967, int(int64(53)))
 	v968 = *arrayidx1350
-	tobool1351 = byte(v968 & 1)
+	tobool1351 = (v968 & 1) != 0
 	if tobool1351 {
 		goto land_rhs1353
 	} else {
@@ -45630,7 +45635,7 @@ land_end1348:
 
 land_rhs1353:
 	v969 = *is_br
-	tobool1354 = byte(v969 & 1)
+	tobool1354 = (v969 & 1) != 0
 	v970 = tobool1354
 	goto land_end1356
 
@@ -45638,7 +45643,7 @@ land_end1356:
 	if v970 { frombool1357 = 1 } else { frombool1357 = 0 }
 	*is_br_dqt_esc_seq = frombool1357
 	v971 = *is_r_dqt_esc_nwl
-	tobool1358 = byte(v971 & 1)
+	tobool1358 = (v971 & 1) != 0
 	if tobool1358 {
 		goto if_then1369
 	} else {
@@ -45647,7 +45652,7 @@ land_end1356:
 
 lor_lhs_false1360:
 	v972 = *is_br_dqt_esc_nwl
-	tobool1361 = byte(v972 & 1)
+	tobool1361 = (v972 & 1) != 0
 	if tobool1361 {
 		goto if_then1369
 	} else {
@@ -45656,7 +45661,7 @@ lor_lhs_false1360:
 
 lor_lhs_false1363:
 	v973 = *is_r_dqt_esc_seq
-	tobool1364 = byte(v973 & 1)
+	tobool1364 = (v973 & 1) != 0
 	if tobool1364 {
 		goto if_then1369
 	} else {
@@ -45665,7 +45670,7 @@ lor_lhs_false1363:
 
 lor_lhs_false1366:
 	v974 = *is_br_dqt_esc_seq
-	tobool1367 = byte(v974 & 1)
+	tobool1367 = (v974 & 1) != 0
 	if tobool1367 {
 		goto if_then1369
 	} else {
@@ -45688,7 +45693,7 @@ if_then1369:
 
 if_then1372:
 	v979 = *is_r_dqt_esc_nwl
-	tobool1373 = byte(v979 & 1)
+	tobool1373 = (v979 & 1) != 0
 	if tobool1373 {
 		goto if_then1374
 	} else {
@@ -45709,7 +45714,7 @@ if_then1374:
 
 if_end1376:
 	v984 = *is_br_dqt_esc_nwl
-	tobool1377 = byte(v984 & 1)
+	tobool1377 = (v984 & 1) != 0
 	if tobool1377 {
 		goto if_then1378
 	} else {
@@ -45733,7 +45738,7 @@ if_end1380:
 
 if_end1381:
 	v989 = *is_r_dqt_esc_seq
-	tobool1382 = byte(v989 & 1)
+	tobool1382 = (v989 & 1) != 0
 	if tobool1382 {
 		goto if_then1383
 	} else {
@@ -45749,7 +45754,7 @@ if_then1383:
 
 if_end1385:
 	v992 = *is_br_dqt_esc_seq
-	tobool1386 = byte(v992 & 1)
+	tobool1386 = (v992 & 1) != 0
 	if tobool1386 {
 		goto if_then1387
 	} else {
@@ -45785,7 +45790,7 @@ if_then1395:
 	v997 = *valid_symbols_addr
 	arrayidx1396 = libc.AddPointer(v997, int(int64(20)))
 	v998 = *arrayidx1396
-	tobool1397 = byte(v998 & 1)
+	tobool1397 = (v998 & 1) != 0
 	if tobool1397 {
 		goto land_lhs_true1399
 	} else {
@@ -45794,7 +45799,7 @@ if_then1395:
 
 land_lhs_true1399:
 	v999 = *is_r
-	tobool1400 = byte(v999 & 1)
+	tobool1400 = (v999 & 1) != 0
 	if tobool1400 {
 		goto if_then1402
 	} else {
@@ -45812,7 +45817,7 @@ if_end1404:
 	v1002 = *valid_symbols_addr
 	arrayidx1405 = libc.AddPointer(v1002, int(int64(21)))
 	v1003 = *arrayidx1405
-	tobool1406 = byte(v1003 & 1)
+	tobool1406 = (v1003 & 1) != 0
 	if tobool1406 {
 		goto land_lhs_true1408
 	} else {
@@ -45821,7 +45826,7 @@ if_end1404:
 
 land_lhs_true1408:
 	v1004 = *is_br
-	tobool1409 = byte(v1004 & 1)
+	tobool1409 = (v1004 & 1) != 0
 	if tobool1409 {
 		goto if_then1411
 	} else {
@@ -45853,7 +45858,7 @@ if_then1418:
 	v1009 = *valid_symbols_addr
 	arrayidx1419 = libc.AddPointer(v1009, int(int64(22)))
 	v1010 = *arrayidx1419
-	tobool1420 = byte(v1010 & 1)
+	tobool1420 = (v1010 & 1) != 0
 	if tobool1420 {
 		goto land_lhs_true1422
 	} else {
@@ -45862,7 +45867,7 @@ if_then1418:
 
 land_lhs_true1422:
 	v1011 = *is_r
-	tobool1423 = byte(v1011 & 1)
+	tobool1423 = (v1011 & 1) != 0
 	if tobool1423 {
 		goto if_then1425
 	} else {
@@ -45880,7 +45885,7 @@ if_end1427:
 	v1014 = *valid_symbols_addr
 	arrayidx1428 = libc.AddPointer(v1014, int(int64(23)))
 	v1015 = *arrayidx1428
-	tobool1429 = byte(v1015 & 1)
+	tobool1429 = (v1015 & 1) != 0
 	if tobool1429 {
 		goto land_lhs_true1431
 	} else {
@@ -45889,7 +45894,7 @@ if_end1427:
 
 land_lhs_true1431:
 	v1016 = *is_br
-	tobool1432 = byte(v1016 & 1)
+	tobool1432 = (v1016 & 1) != 0
 	if tobool1432 {
 		goto if_then1434
 	} else {
@@ -45961,7 +45966,7 @@ if_end1454:
 	v1019 = *valid_symbols_addr
 	arrayidx1455 = libc.AddPointer(v1019, int(int64(90)))
 	v1020 = *arrayidx1455
-	tobool1456 = byte(v1020 & 1)
+	tobool1456 = (v1020 & 1) != 0
 	if tobool1456 {
 		goto land_lhs_true1458
 	} else {
@@ -45970,7 +45975,7 @@ if_end1454:
 
 land_lhs_true1458:
 	v1021 = *is_r
-	tobool1459 = byte(v1021 & 1)
+	tobool1459 = (v1021 & 1) != 0
 	if tobool1459 {
 		v1029 = true
 		goto lor_end1476
@@ -45982,7 +45987,7 @@ lor_lhs_false1461:
 	v1022 = *valid_symbols_addr
 	arrayidx1462 = libc.AddPointer(v1022, int(int64(91)))
 	v1023 = *arrayidx1462
-	tobool1463 = byte(v1023 & 1)
+	tobool1463 = (v1023 & 1) != 0
 	if tobool1463 {
 		goto land_lhs_true1465
 	} else {
@@ -45991,7 +45996,7 @@ lor_lhs_false1461:
 
 land_lhs_true1465:
 	v1024 = *is_br
-	tobool1466 = byte(v1024 & 1)
+	tobool1466 = (v1024 & 1) != 0
 	if tobool1466 {
 		v1029 = true
 		goto lor_end1476
@@ -46003,7 +46008,7 @@ lor_rhs1468:
 	v1025 = *valid_symbols_addr
 	arrayidx1469 = libc.AddPointer(v1025, int(int64(92)))
 	v1026 = *arrayidx1469
-	tobool1470 = byte(v1026 & 1)
+	tobool1470 = (v1026 & 1) != 0
 	if tobool1470 {
 		goto land_rhs1472
 	} else {
@@ -46013,7 +46018,7 @@ lor_rhs1468:
 
 land_rhs1472:
 	v1027 = *is_b
-	tobool1473 = byte(v1027 & 1)
+	tobool1473 = (v1027 & 1) != 0
 	v1028 = tobool1473
 	goto land_end1475
 
@@ -46027,7 +46032,7 @@ lor_end1476:
 	v1030 = *valid_symbols_addr
 	arrayidx1478 = libc.AddPointer(v1030, int(int64(93)))
 	v1031 = *arrayidx1478
-	tobool1479 = byte(v1031 & 1)
+	tobool1479 = (v1031 & 1) != 0
 	if tobool1479 {
 		goto land_lhs_true1481
 	} else {
@@ -46036,7 +46041,7 @@ lor_end1476:
 
 land_lhs_true1481:
 	v1032 = *is_r
-	tobool1482 = byte(v1032 & 1)
+	tobool1482 = (v1032 & 1) != 0
 	if tobool1482 {
 		v1037 = true
 		goto lor_end1492
@@ -46048,7 +46053,7 @@ lor_rhs1484:
 	v1033 = *valid_symbols_addr
 	arrayidx1485 = libc.AddPointer(v1033, int(int64(94)))
 	v1034 = *arrayidx1485
-	tobool1486 = byte(v1034 & 1)
+	tobool1486 = (v1034 & 1) != 0
 	if tobool1486 {
 		goto land_rhs1488
 	} else {
@@ -46058,7 +46063,7 @@ lor_rhs1484:
 
 land_rhs1488:
 	v1035 = *is_br
-	tobool1489 = byte(v1035 & 1)
+	tobool1489 = (v1035 & 1) != 0
 	v1036 = tobool1489
 	goto land_end1491
 
@@ -46072,7 +46077,7 @@ lor_end1492:
 	v1038 = *valid_symbols_addr
 	arrayidx1494 = libc.AddPointer(v1038, int(int64(95)))
 	v1039 = *arrayidx1494
-	tobool1495 = byte(v1039 & 1)
+	tobool1495 = (v1039 & 1) != 0
 	if tobool1495 {
 		goto land_lhs_true1497
 	} else {
@@ -46081,7 +46086,7 @@ lor_end1492:
 
 land_lhs_true1497:
 	v1040 = *is_r
-	tobool1498 = byte(v1040 & 1)
+	tobool1498 = (v1040 & 1) != 0
 	if tobool1498 {
 		v1045 = true
 		goto lor_end1508
@@ -46093,7 +46098,7 @@ lor_rhs1500:
 	v1041 = *valid_symbols_addr
 	arrayidx1501 = libc.AddPointer(v1041, int(int64(96)))
 	v1042 = *arrayidx1501
-	tobool1502 = byte(v1042 & 1)
+	tobool1502 = (v1042 & 1) != 0
 	if tobool1502 {
 		goto land_rhs1504
 	} else {
@@ -46103,7 +46108,7 @@ lor_rhs1500:
 
 land_rhs1504:
 	v1043 = *is_br
-	tobool1505 = byte(v1043 & 1)
+	tobool1505 = (v1043 & 1) != 0
 	v1044 = tobool1505
 	goto land_end1507
 
@@ -46117,7 +46122,7 @@ lor_end1508:
 	v1046 = *valid_symbols_addr
 	arrayidx1510 = libc.AddPointer(v1046, int(int64(97)))
 	v1047 = *arrayidx1510
-	tobool1511 = byte(v1047 & 1)
+	tobool1511 = (v1047 & 1) != 0
 	if tobool1511 {
 		goto land_lhs_true1513
 	} else {
@@ -46126,7 +46131,7 @@ lor_end1508:
 
 land_lhs_true1513:
 	v1048 = *is_r
-	tobool1514 = byte(v1048 & 1)
+	tobool1514 = (v1048 & 1) != 0
 	if tobool1514 {
 		v1053 = true
 		goto lor_end1524
@@ -46138,7 +46143,7 @@ lor_rhs1516:
 	v1049 = *valid_symbols_addr
 	arrayidx1517 = libc.AddPointer(v1049, int(int64(98)))
 	v1050 = *arrayidx1517
-	tobool1518 = byte(v1050 & 1)
+	tobool1518 = (v1050 & 1) != 0
 	if tobool1518 {
 		goto land_rhs1520
 	} else {
@@ -46148,7 +46153,7 @@ lor_rhs1516:
 
 land_rhs1520:
 	v1051 = *is_br
-	tobool1521 = byte(v1051 & 1)
+	tobool1521 = (v1051 & 1) != 0
 	v1052 = tobool1521
 	goto land_end1523
 
@@ -46160,7 +46165,7 @@ lor_end1524:
 	if v1053 { frombool1525 = 1 } else { frombool1525 = 0 }
 	*maybe_mtl_pln_flw = frombool1525
 	v1054 = *maybe_sgl_pln_blk
-	tobool1526 = byte(v1054 & 1)
+	tobool1526 = (v1054 & 1) != 0
 	if tobool1526 {
 		goto if_then1537
 	} else {
@@ -46169,7 +46174,7 @@ lor_end1524:
 
 lor_lhs_false1528:
 	v1055 = *maybe_sgl_pln_flw
-	tobool1529 = byte(v1055 & 1)
+	tobool1529 = (v1055 & 1) != 0
 	if tobool1529 {
 		goto if_then1537
 	} else {
@@ -46178,7 +46183,7 @@ lor_lhs_false1528:
 
 lor_lhs_false1531:
 	v1056 = *maybe_mtl_pln_blk
-	tobool1532 = byte(v1056 & 1)
+	tobool1532 = (v1056 & 1) != 0
 	if tobool1532 {
 		goto if_then1537
 	} else {
@@ -46187,7 +46192,7 @@ lor_lhs_false1531:
 
 lor_lhs_false1534:
 	v1057 = *maybe_mtl_pln_flw
-	tobool1535 = byte(v1057 & 1)
+	tobool1535 = (v1057 & 1) != 0
 	if tobool1535 {
 		goto if_then1537
 	} else {
@@ -46196,7 +46201,7 @@ lor_lhs_false1534:
 
 if_then1537:
 	v1058 = *maybe_sgl_pln_blk
-	tobool1538 = byte(v1058 & 1)
+	tobool1538 = (v1058 & 1) != 0
 	if tobool1538 {
 		v1060 = true
 		goto lor_end1543
@@ -46206,7 +46211,7 @@ if_then1537:
 
 lor_rhs1540:
 	v1059 = *maybe_mtl_pln_blk
-	tobool1541 = byte(v1059 & 1)
+	tobool1541 = (v1059 & 1) != 0
 	v1060 = tobool1541
 	goto lor_end1543
 
@@ -46214,7 +46219,7 @@ lor_end1543:
 	if v1060 { frombool1544 = 1 } else { frombool1544 = 0 }
 	*is_in_blk = frombool1544
 	v1061 = *is_in_blk
-	tobool1545 = byte(v1061 & 1)
+	tobool1545 = (v1061 & 1) != 0
 	if tobool1545 { v1062 = 1 } else { v1062 = 0 }
 	if tobool1545 { cond1547 = is_plain_safe_in_block } else { cond1547 = is_plain_safe_in_flow }
 	*is_plain_safe = cond1547
@@ -46317,7 +46322,7 @@ lor_end1581:
 	if v1080 { frombool1582 = 1 } else { frombool1582 = 0 }
 	*is_plain_first = frombool1582
 	v1081 = *is_plain_first
-	tobool1583 = byte(v1081 & 1)
+	tobool1583 = (v1081 & 1) != 0
 	if tobool1583 {
 		goto if_end1585
 	} else {
@@ -46527,7 +46532,7 @@ for_end1641:
 
 if_then1646:
 	v1120 = *maybe_sgl_pln_blk
-	tobool1647 = byte(v1120 & 1)
+	tobool1647 = (v1120 & 1) != 0
 	if tobool1647 {
 		goto if_then1648
 	} else {
@@ -46558,7 +46563,7 @@ if_then1654:
 	blk_imp_col1656 = &v1127.F3
 	*blk_imp_col1656 = v1126
 	v1128 = *has_tab_ind
-	tobool1657 = byte(v1128 & 1)
+	tobool1657 = (v1128 & 1) != 0
 	if tobool1657 { conv1658 = 1 } else { conv1658 = 0 }
 	v1129 = *scanner_addr
 	blk_imp_tab1659 = &v1129.F4
@@ -46569,7 +46574,7 @@ if_end1660:
 	v1130 = *scanner_addr
 	flush(v1130)
 	v1131 = *is_r
-	tobool1661 = byte(v1131 & 1)
+	tobool1661 = (v1131 & 1) != 0
 	if tobool1661 {
 		goto cond_true1663
 	} else {
@@ -46645,7 +46650,7 @@ cond_end1687:
 
 cond_false1689:
 	v1141 = *is_br
-	tobool1690 = byte(v1141 & 1)
+	tobool1690 = (v1141 & 1) != 0
 	if tobool1690 {
 		goto cond_true1692
 	} else {
@@ -46800,7 +46805,7 @@ cond_end1746:
 
 if_end1750:
 	v1161 = *maybe_sgl_pln_flw
-	tobool1751 = byte(v1161 & 1)
+	tobool1751 = (v1161 & 1) != 0
 	if tobool1751 {
 		goto if_then1752
 	} else {
@@ -46811,7 +46816,7 @@ if_then1752:
 	v1162 = *scanner_addr
 	flush(v1162)
 	v1163 = *is_r
-	tobool1753 = byte(v1163 & 1)
+	tobool1753 = (v1163 & 1) != 0
 	if tobool1753 {
 		goto cond_true1755
 	} else {
@@ -46965,7 +46970,7 @@ if_end1811:
 
 if_else1812:
 	v1183 = *maybe_mtl_pln_blk
-	tobool1813 = byte(v1183 & 1)
+	tobool1813 = (v1183 & 1) != 0
 	if tobool1813 {
 		goto if_then1814
 	} else {
@@ -46996,7 +47001,7 @@ if_then1820:
 	blk_imp_col1822 = &v1190.F3
 	*blk_imp_col1822 = v1189
 	v1191 = *has_tab_ind
-	tobool1823 = byte(v1191 & 1)
+	tobool1823 = (v1191 & 1) != 0
 	if tobool1823 { conv1824 = 1 } else { conv1824 = 0 }
 	v1192 = *scanner_addr
 	blk_imp_tab1825 = &v1192.F4
@@ -47007,7 +47012,7 @@ if_end1826:
 	v1193 = *scanner_addr
 	flush(v1193)
 	v1194 = *is_r
-	tobool1827 = byte(v1194 & 1)
+	tobool1827 = (v1194 & 1) != 0
 	if tobool1827 { v1195 = 1 } else { v1195 = 0 }
 	if tobool1827 { cond1829 = 95 } else { cond1829 = 96 }
 	conv1830 = int16(cond1829)
@@ -47019,7 +47024,7 @@ if_end1826:
 
 if_end1832:
 	v1197 = *maybe_mtl_pln_flw
-	tobool1833 = byte(v1197 & 1)
+	tobool1833 = (v1197 & 1) != 0
 	if tobool1833 {
 		goto if_then1834
 	} else {
@@ -47030,7 +47035,7 @@ if_then1834:
 	v1198 = *scanner_addr
 	flush(v1198)
 	v1199 = *is_r
-	tobool1835 = byte(v1199 & 1)
+	tobool1835 = (v1199 & 1) != 0
 	if tobool1835 { v1200 = 1 } else { v1200 = 0 }
 	if tobool1835 { cond1837 = 97 } else { cond1837 = 98 }
 	conv1838 = int16(cond1837)
@@ -47051,7 +47056,7 @@ if_end1842:
 	v1202 = *valid_symbols_addr
 	arrayidx1843 = libc.AddPointer(v1202, int(int64(112)))
 	v1203 = *arrayidx1843
-	tobool1844 = byte(v1203 & 1)
+	tobool1844 = (v1203 & 1) != 0
 	lnot1845 = tobool1844 != true
 	*retval = lnot1845
 	goto _return
@@ -47105,7 +47110,7 @@ next_state:
 	v1 = *advance
 	v2 = *lexer_addr
 	v3 = *skip
-	tobool = byte(v3 & 1)
+	tobool = (v3 & 1) != 0
 	v1(v2, tobool)
 	goto start
 
@@ -47144,7 +47149,7 @@ sw_bb:
 	v13 = *lexer_addr
 	v12(v13)
 	v14 = *eof
-	tobool3 = byte(v14 & 1)
+	tobool3 = (v14 & 1) != 0
 	if tobool3 {
 		goto if_then
 	} else {
@@ -47157,7 +47162,7 @@ if_then:
 
 if_end:
 	v15 = *result
-	tobool4 = byte(v15 & 1)
+	tobool4 = (v15 & 1) != 0
 	*retval = tobool4
 	goto _return
 
@@ -47172,7 +47177,7 @@ sw_bb5:
 	v19 = *lexer_addr
 	v18(v19)
 	v20 = *result
-	tobool8 = byte(v20 & 1)
+	tobool8 = (v20 & 1) != 0
 	*retval = tobool8
 	goto _return
 
@@ -52016,7 +52021,7 @@ func scn_pln_cnt(scanner *Scanner, lexer *TSLexer, is_plain_safe func(int32) boo
 	if call7 { frombool8 = 1 } else { frombool8 = 0 }
 	*is_lka_saf = frombool8
 	v10 = *is_lka_saf
-	tobool = byte(v10 & 1)
+	tobool = (v10 & 1) != 0
 	if tobool {
 		goto if_then
 	} else {
@@ -52025,7 +52030,7 @@ func scn_pln_cnt(scanner *Scanner, lexer *TSLexer, is_plain_safe func(int32) boo
 
 lor_lhs_false:
 	v11 = *is_lka_wsp
-	tobool9 = byte(v11 & 1)
+	tobool9 = (v11 & 1) != 0
 	if tobool9 {
 		goto if_then
 	} else {
@@ -52037,7 +52042,7 @@ if_then:
 
 for_cond:
 	v12 = *is_lka_saf
-	tobool10 = byte(v12 & 1)
+	tobool10 = (v12 & 1) != 0
 	if tobool10 {
 		goto land_lhs_true
 	} else {
@@ -52089,7 +52094,7 @@ if_then15:
 
 if_else:
 	v27 = *is_cur_saf
-	tobool19 = byte(v27 & 1)
+	tobool19 = (v27 & 1) != 0
 	if tobool19 {
 		goto land_lhs_true20
 	} else {
@@ -52130,7 +52135,7 @@ if_then23:
 
 if_else29:
 	v40 = *is_lka_wsp
-	tobool30 = byte(v40 & 1)
+	tobool30 = (v40 & 1) != 0
 	if tobool30 {
 		goto if_then31
 	} else {
@@ -52186,11 +52191,11 @@ if_end43:
 
 if_end44:
 	v53 = *is_lka_wsp
-	tobool45 = byte(v53 & 1)
+	tobool45 = (v53 & 1) != 0
 	if tobool45 { frombool46 = 1 } else { frombool46 = 0 }
 	*is_cur_wsp = frombool46
 	v54 = *is_lka_saf
-	tobool47 = byte(v54 & 1)
+	tobool47 = (v54 & 1) != 0
 	if tobool47 { frombool48 = 1 } else { frombool48 = 0 }
 	*is_cur_saf = frombool48
 	v55 = *lexer_addr
@@ -52218,7 +52223,7 @@ if_end44:
 
 if_then57:
 	v62 = *is_lka_saf
-	tobool58 = byte(v62 & 1)
+	tobool58 = (v62 & 1) != 0
 	if tobool58 {
 		goto if_then59
 	} else {

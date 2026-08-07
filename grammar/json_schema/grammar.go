@@ -1,5 +1,7 @@
 package grammar_json_schema
 
+import "unsafe"
+
 type TSFieldMapEntry struct {
 	F0 int16
 	F1 byte
@@ -395,7 +397,7 @@ next_state:
 	v1 = *advance
 	v2 = *lexer_addr
 	v3 = *skip
-	tobool = byte(v3 & 1)
+	tobool = (v3 & 1) != 0
 	v1(v2, tobool)
 	goto start
 
@@ -461,7 +463,7 @@ start:
 
 sw_bb:
 	v10 = *eof
-	tobool3 = byte(v10 & 1)
+	tobool3 = (v10 & 1) != 0
 	if tobool3 {
 		goto if_then
 	} else {
@@ -561,7 +563,7 @@ if_then27:
 
 if_end28:
 	v18 = *result
-	tobool29 = byte(v18 & 1)
+	tobool29 = (v18 & 1) != 0
 	*retval = tobool29
 	goto _return
 
@@ -602,7 +604,7 @@ if_then40:
 
 if_end41:
 	v22 = *result
-	tobool42 = byte(v22 & 1)
+	tobool42 = (v22 & 1) != 0
 	*retval = tobool42
 	goto _return
 
@@ -621,7 +623,7 @@ if_then46:
 
 if_end47:
 	v24 = *result
-	tobool48 = byte(v24 & 1)
+	tobool48 = (v24 & 1) != 0
 	*retval = tobool48
 	goto _return
 
@@ -640,7 +642,7 @@ if_then52:
 
 if_end53:
 	v26 = *result
-	tobool54 = byte(v26 & 1)
+	tobool54 = (v26 & 1) != 0
 	*retval = tobool54
 	goto _return
 
@@ -659,7 +661,7 @@ if_then58:
 
 if_end59:
 	v28 = *result
-	tobool60 = byte(v28 & 1)
+	tobool60 = (v28 & 1) != 0
 	*retval = tobool60
 	goto _return
 
@@ -678,7 +680,7 @@ if_then64:
 
 if_end65:
 	v30 = *result
-	tobool66 = byte(v30 & 1)
+	tobool66 = (v30 & 1) != 0
 	*retval = tobool66
 	goto _return
 
@@ -697,7 +699,7 @@ if_then70:
 
 if_end71:
 	v32 = *result
-	tobool72 = byte(v32 & 1)
+	tobool72 = (v32 & 1) != 0
 	*retval = tobool72
 	goto _return
 
@@ -716,7 +718,7 @@ if_then76:
 
 if_end77:
 	v34 = *result
-	tobool78 = byte(v34 & 1)
+	tobool78 = (v34 & 1) != 0
 	*retval = tobool78
 	goto _return
 
@@ -735,7 +737,7 @@ if_then82:
 
 if_end83:
 	v36 = *result
-	tobool84 = byte(v36 & 1)
+	tobool84 = (v36 & 1) != 0
 	*retval = tobool84
 	goto _return
 
@@ -754,7 +756,7 @@ if_then88:
 
 if_end89:
 	v38 = *result
-	tobool90 = byte(v38 & 1)
+	tobool90 = (v38 & 1) != 0
 	*retval = tobool90
 	goto _return
 
@@ -773,7 +775,7 @@ if_then94:
 
 if_end95:
 	v40 = *result
-	tobool96 = byte(v40 & 1)
+	tobool96 = (v40 & 1) != 0
 	*retval = tobool96
 	goto _return
 
@@ -823,7 +825,7 @@ if_then109:
 
 if_end110:
 	v45 = *result
-	tobool111 = byte(v45 & 1)
+	tobool111 = (v45 & 1) != 0
 	*retval = tobool111
 	goto _return
 
@@ -851,7 +853,7 @@ if_then118:
 
 if_end119:
 	v48 = *result
-	tobool120 = byte(v48 & 1)
+	tobool120 = (v48 & 1) != 0
 	*retval = tobool120
 	goto _return
 
@@ -866,7 +868,7 @@ sw_bb121:
 	v52 = *lexer_addr
 	v51(v52)
 	v53 = *result
-	tobool122 = byte(v53 & 1)
+	tobool122 = (v53 & 1) != 0
 	*retval = tobool122
 	goto _return
 
@@ -881,7 +883,7 @@ sw_bb123:
 	v57 = *lexer_addr
 	v56(v57)
 	v58 = *result
-	tobool126 = byte(v58 & 1)
+	tobool126 = (v58 & 1) != 0
 	*retval = tobool126
 	goto _return
 
@@ -896,7 +898,7 @@ sw_bb127:
 	v62 = *lexer_addr
 	v61(v62)
 	v63 = *result
-	tobool130 = byte(v63 & 1)
+	tobool130 = (v63 & 1) != 0
 	*retval = tobool130
 	goto _return
 
@@ -946,7 +948,7 @@ if_then143:
 
 if_end144:
 	v71 = *result
-	tobool145 = byte(v71 & 1)
+	tobool145 = (v71 & 1) != 0
 	*retval = tobool145
 	goto _return
 
@@ -1018,7 +1020,7 @@ if_then165:
 
 if_end166:
 	v81 = *result
-	tobool167 = byte(v81 & 1)
+	tobool167 = (v81 & 1) != 0
 	*retval = tobool167
 	goto _return
 
@@ -1077,7 +1079,7 @@ if_then183:
 
 if_end184:
 	v90 = *result
-	tobool185 = byte(v90 & 1)
+	tobool185 = (v90 & 1) != 0
 	*retval = tobool185
 	goto _return
 
@@ -1114,7 +1116,7 @@ if_then194:
 
 if_end195:
 	v97 = *result
-	tobool196 = byte(v97 & 1)
+	tobool196 = (v97 & 1) != 0
 	*retval = tobool196
 	goto _return
 

@@ -1,5 +1,10 @@
 package grammar_terraform
 
+import (
+	"unsafe"
+	"github.com/andybalholm/leaven/libc"
+)
+
 type Context struct {
 	F0 int32
 	F1 String
@@ -1875,7 +1880,7 @@ var _str_1 [12]byte = [12]byte{116, 109, 112, 32, 33, 61, 32, 78, 85, 76, 76, 0}
 
 var _str_2 [44]byte = [44]byte{
 	47, 116, 109, 112, 47, 108, 101, 97, 118, 101, 110, 45, 116, 101, 114, 114,
-	97, 102, 111, 114, 109, 45, 49, 51, 54, 54, 49, 56, 48, 49, 55, 55,
+	97, 102, 111, 114, 109, 45, 50, 53, 57, 57, 48, 55, 55, 57, 56, 55,
 	47, 99, 111, 109, 98, 105, 110, 101, 100, 46, 99, 0,
 }
 
@@ -26691,12 +26696,12 @@ func serialize(scanner *Scanner, buf *byte) int32 {
 	var heredoc_identifier, heredoc_identifier21, heredoc_identifier34, heredoc_identifier41, heredoc_identifier43, heredoc_identifier46 *String
 	var v2, arrayidx, v5, v18, arrayidx28, v21, v23, arrayidx33, v26, v28, arrayidx40, v31 *byte
 	var context_stack, context_stack1, context_stack4, context_stack8 *context_vec
-	var retval, size, i, len, len2, len5, len14, len22, type, len35, len44, len47 *int32
+	var retval, size, i, len, len2, len5, len14, len22, _type, len35, len44, len47 *int32
 	var cmp, cmp6, cmp17, cmp23 bool
 	var v1, v3, v6, conv3, v7, v9, v12, v13, v15, v17, v19, v22, conv31, v24, v27, conv38, v29, v33, v35, v36, add48, v37, inc, v38, v39 int32
 	var idxprom, conv, add, idxprom9, conv11, add12, add13, conv15, add16, idxprom27, conv29, add30, idxprom32, conv36, add37, idxprom39, conv45 int64
 
-	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, scanner_addr, buf_addr, size, i, context, v0, context_stack, len, v1, cmp, v2, v3, idxprom, arrayidx, v4, context_stack1, len2, v5, v6, conv, add, conv3, v7, v8, context_stack4, len5, v9, cmp6, v10, context_stack8, data, v11, v12, idxprom9, arrayidx10, v13, conv11, add12, add13, v14, heredoc_identifier, len14, v15, conv15, add16, cmp17, v16, heredoc_identifier21, len22, v17, cmp23, v18, v19, idxprom27, arrayidx28, v20, type, v21, v22, conv29, add30, conv31, v23, v24, idxprom32, arrayidx33, v25, heredoc_identifier34, len35, v26, v27, conv36, add37, conv38, v28, v29, idxprom39, arrayidx40, v30, heredoc_identifier41, data42, v31, v32, heredoc_identifier43, len44, v33, conv45, v34, heredoc_identifier46, len47, v35, v36, add48, v37, inc, v38, v39
+	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, scanner_addr, buf_addr, size, i, context, v0, context_stack, len, v1, cmp, v2, v3, idxprom, arrayidx, v4, context_stack1, len2, v5, v6, conv, add, conv3, v7, v8, context_stack4, len5, v9, cmp6, v10, context_stack8, data, v11, v12, idxprom9, arrayidx10, v13, conv11, add12, add13, v14, heredoc_identifier, len14, v15, conv15, add16, cmp17, v16, heredoc_identifier21, len22, v17, cmp23, v18, v19, idxprom27, arrayidx28, v20, _type, v21, v22, conv29, add30, conv31, v23, v24, idxprom32, arrayidx33, v25, heredoc_identifier34, len35, v26, v27, conv36, add37, conv38, v28, v29, idxprom39, arrayidx40, v30, heredoc_identifier41, data42, v31, v32, heredoc_identifier43, len44, v33, conv45, v34, heredoc_identifier46, len47, v35, v36, add48, v37, inc, v38, v39
 
 	retval = new(int32)
 	scanner_addr = new(*Scanner)
@@ -26805,8 +26810,8 @@ if_end26:
 	idxprom27 = int64(uint64(uint32(v19)))
 	arrayidx28 = libc.AddPointer(v18, int(idxprom27))
 	v20 = *context
-	type = &v20.F0
-	v21 = (*byte)(unsafe.Pointer(type))
+	_type = &v20.F0
+	v21 = (*byte)(unsafe.Pointer(_type))
 	libc.Memmove(arrayidx28, v21, int64(4))
 	v22 = *size
 	conv29 = int64(uint64(uint32(v22)))
@@ -26901,7 +26906,7 @@ func deserialize(scanner *Scanner, buffer *byte, length int32) {
 	var tmp, heredoc_identifier, heredoc_identifier8, heredoc_identifier14, heredoc_identifier28, heredoc_identifier42, heredoc_identifier47, heredoc_identifier56, heredoc_identifier58, heredoc_identifier60, heredoc_identifier63, heredoc_identifier67, heredoc_identifier70, heredoc_identifier75 *String
 	var v6, v10, v17, v18, arrayidx22, v27, v28, v29, v30, v31, arrayidx30, v34, v35, arrayidx35, v41, call51, v43, v44, v45, add_ptr, v50, v51, add_ptr73, v63, call99, v68, v69, v83, v84 *byte
 	var context_stack, context_stack1, context_stack4, context_stack10, context_stack16, context_stack79, context_stack81, context_stack87, context_stack89, context_stack94, context_stack105, context_stack107, context_stack114, context_stack121, context_stack126, context_stack129, context_stack131 *context_vec
-	var length_addr, i, size, context_stack_size, j, heredoc_identifier_size, len, len17, type, cap, len61, len64, cap68, len76, cap80, len82, len90, len95, len115, len122, cap127, len132 *int32
+	var length_addr, i, size, context_stack_size, j, heredoc_identifier_size, len, len17, _type, cap, len61, len64, cap68, len76, cap80, len82, len90, len95, len115, len122, cap127, len132 *int32
 	var v24 *int64
 	var v23 *struct {
 	F0 int64
@@ -26915,7 +26920,7 @@ func deserialize(scanner *Scanner, buffer *byte, length int32) {
 	F1 *byte
 }
 
-	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = scanner_addr, buffer_addr, length_addr, i, size, context_stack_size, j, ctx, tmp, heredoc_identifier_size, tmp46, tmp86, v0, v1, context_stack, len, v2, cmp, v3, context_stack1, data, v4, v5, idxprom, arrayidx, heredoc_identifier, data2, v6, cmp3, v7, context_stack4, data5, v8, v9, idxprom6, arrayidx7, heredoc_identifier8, data9, v10, v11, context_stack10, data11, v12, v13, idxprom12, arrayidx13, heredoc_identifier14, data15, v14, inc, v15, context_stack16, len17, v16, cmp18, v17, v18, v19, idxprom21, arrayidx22, v20, conv, add, conv23, v21, v22, cmp25, heredoc_identifier28, call, v23, v24, v25, v26, v27, v28, v29, type, v30, v31, v32, idxprom29, arrayidx30, v33, conv31, add32, conv33, v34, v35, v36, idxprom34, arrayidx35, v37, conv36, add37, conv38, v38, cmp39, heredoc_identifier42, cap, v39, v40, cmp43, heredoc_identifier47, data48, v41, v42, add49, conv50, mul, call51, v43, cmp52, v44, heredoc_identifier56, data57, heredoc_identifier58, data59, v45, heredoc_identifier60, len61, v46, idx_ext, add_ptr, v47, add62, heredoc_identifier63, len64, v48, sub, conv65, mul66, v49, heredoc_identifier67, cap68, heredoc_identifier70, data71, v50, v51, v52, idx_ext72, add_ptr73, v53, conv74, v54, heredoc_identifier75, len76, v55, v56, add77, v57, context_stack79, cap80, v58, v59, context_stack81, len82, v60, cmp83, v61, context_stack87, data88, v62, v63, v64, context_stack89, len90, v65, mul91, cmp92, v66, context_stack94, len95, v67, mul96, cond, conv97, mul98, call99, v68, cmp100, v69, v70, v71, context_stack105, data106, v72, context_stack107, data108, v73, cmp109, v74, context_stack114, len115, v75, mul116, cmp117, v76, context_stack121, len122, v77, mul123, cond125, v78, context_stack126, cap127, v79, context_stack129, data130, v80, v81, context_stack131, len132, v82, inc133, idxprom134, arrayidx135, v83, v84, v85, inc137, v86, v87, cmp139
+	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = scanner_addr, buffer_addr, length_addr, i, size, context_stack_size, j, ctx, tmp, heredoc_identifier_size, tmp46, tmp86, v0, v1, context_stack, len, v2, cmp, v3, context_stack1, data, v4, v5, idxprom, arrayidx, heredoc_identifier, data2, v6, cmp3, v7, context_stack4, data5, v8, v9, idxprom6, arrayidx7, heredoc_identifier8, data9, v10, v11, context_stack10, data11, v12, v13, idxprom12, arrayidx13, heredoc_identifier14, data15, v14, inc, v15, context_stack16, len17, v16, cmp18, v17, v18, v19, idxprom21, arrayidx22, v20, conv, add, conv23, v21, v22, cmp25, heredoc_identifier28, call, v23, v24, v25, v26, v27, v28, v29, _type, v30, v31, v32, idxprom29, arrayidx30, v33, conv31, add32, conv33, v34, v35, v36, idxprom34, arrayidx35, v37, conv36, add37, conv38, v38, cmp39, heredoc_identifier42, cap, v39, v40, cmp43, heredoc_identifier47, data48, v41, v42, add49, conv50, mul, call51, v43, cmp52, v44, heredoc_identifier56, data57, heredoc_identifier58, data59, v45, heredoc_identifier60, len61, v46, idx_ext, add_ptr, v47, add62, heredoc_identifier63, len64, v48, sub, conv65, mul66, v49, heredoc_identifier67, cap68, heredoc_identifier70, data71, v50, v51, v52, idx_ext72, add_ptr73, v53, conv74, v54, heredoc_identifier75, len76, v55, v56, add77, v57, context_stack79, cap80, v58, v59, context_stack81, len82, v60, cmp83, v61, context_stack87, data88, v62, v63, v64, context_stack89, len90, v65, mul91, cmp92, v66, context_stack94, len95, v67, mul96, cond, conv97, mul98, call99, v68, cmp100, v69, v70, v71, context_stack105, data106, v72, context_stack107, data108, v73, cmp109, v74, context_stack114, len115, v75, mul116, cmp117, v76, context_stack121, len122, v77, mul123, cond125, v78, context_stack126, cap127, v79, context_stack129, data130, v80, v81, context_stack131, len132, v82, inc133, idxprom134, arrayidx135, v83, v84, v85, inc137, v86, v87, cmp139
 
 	scanner_addr = new(*Scanner)
 	buffer_addr = new(*byte)
@@ -27056,8 +27061,8 @@ for_body27:
 	v28 = (*byte)(unsafe.Pointer(heredoc_identifier28))
 	v29 = (*byte)(unsafe.Pointer(tmp))
 	libc.Memmove(v28, v29, int64(16))
-	type = &ctx.F0
-	v30 = (*byte)(unsafe.Pointer(type))
+	_type = &ctx.F0
+	v30 = (*byte)(unsafe.Pointer(_type))
 	v31 = *buffer_addr
 	v32 = *size
 	idxprom29 = int64(uint64(uint32(v32)))
@@ -27383,7 +27388,7 @@ func scan(scanner *Scanner, lexer *TSLexer, valid_symbols *byte) bool {
 	var has_leading_whitespace_with_newline, v7, arrayidx, v16, v17, v18, v25, call25, v30, v31, v45, v46, v48, arrayidx61, v57, v62, v70, arrayidx106, v72, arrayidx110, v84, v85, v86, v93, call153, v98, v99, v113, v114, v123, arrayidx205, v132, v137, v145, arrayidx252, v147, arrayidx256, v159, v160, v161, v168, call299, v173, v174, v188, v189, v198, arrayidx351, v207, v212, v220, arrayidx398, v227, v237, call435, v240, v241, v242, add_ptr, v251, arrayidx477, v254, v255, v262, call506, v267, v268, v282, v283, v285, arrayidx545, v293, v294, v299, arrayidx569, v320, v325, v338, arrayidx630, v355, arrayidx668 *byte
 	var context_stack, context_stack13, context_stack17, context_stack18, context_stack21, context_stack30, context_stack32, context_stack39, context_stack46, context_stack51, context_stack54, context_stack56, context_stack72, context_stack74, context_stack83, context_stack85, context_stack93, context_stack95, context_stack102, context_stack129, context_stack131, context_stack137, context_stack139, context_stack146, context_stack159, context_stack161, context_stack168, context_stack175, context_stack180, context_stack183, context_stack185, context_stack216, context_stack218, context_stack228, context_stack230, context_stack238, context_stack240, context_stack247, context_stack275, context_stack277, context_stack283, context_stack285, context_stack292, context_stack305, context_stack307, context_stack314, context_stack321, context_stack326, context_stack329, context_stack331, context_stack362, context_stack364, context_stack374, context_stack376, context_stack384, context_stack386, context_stack393, context_stack482, context_stack484, context_stack490, context_stack492, context_stack499, context_stack512, context_stack514, context_stack521, context_stack528, context_stack533, context_stack536, context_stack538, context_stack555, context_stack557, context_stack591, context_stack593, context_stack603, context_stack605, context_stack613, context_stack615, context_stack622 *context_vec
 	var mark_end, mark_end627 *func(*TSLexer)
-	var i642, i655, lookahead, lookahead1, lookahead2, lookahead9, type, cap, len, len19, len22, len40, len47, cap52, len57, lookahead68, len75, len86, len96, len103, lookahead116, lookahead120, type125, cap130, len132, len140, len147, len169, len176, cap181, len186, lookahead192, lookahead196, lookahead212, len219, len231, len241, len248, lookahead262, lookahead266, type271, cap276, len278, len286, len293, len315, len322, cap327, len332, lookahead338, lookahead342, lookahead358, len365, len377, len387, len394, lookahead406, lookahead409, lookahead412, cap416, len417, len423, len429, len443, len444, len450, len455, len459, len465, cap469, lookahead471, len474, type480, cap483, len485, len493, len500, len522, len529, cap534, len539, len558, len563, lookahead567, lookahead579, lookahead582, lookahead587, len594, len606, len616, len623, lookahead637, lookahead638 *int32
+	var i642, i655, lookahead, lookahead1, lookahead2, lookahead9, _type, cap, len, len19, len22, len40, len47, cap52, len57, lookahead68, len75, len86, len96, len103, lookahead116, lookahead120, type125, cap130, len132, len140, len147, len169, len176, cap181, len186, lookahead192, lookahead196, lookahead212, len219, len231, len241, len248, lookahead262, lookahead266, type271, cap276, len278, len286, len293, len315, len322, cap327, len332, lookahead338, lookahead342, lookahead358, len365, len377, len387, len394, lookahead406, lookahead409, lookahead412, cap416, len417, len423, len429, len443, len444, len450, len455, len459, len465, cap469, lookahead471, len474, type480, cap483, len485, len493, len500, len522, len529, cap534, len539, len558, len563, lookahead567, lookahead579, lookahead582, lookahead587, len594, len606, len616, len623, lookahead637, lookahead638 *int32
 	var i, v13, v81, v156, v224 *int64
 	var v12, v80, v155, v223 *struct {
 	F0 int64
@@ -27399,7 +27404,7 @@ func scan(scanner *Scanner, lexer *TSLexer, valid_symbols *byte) bool {
 	F1 *byte
 }
 
-	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, scanner_addr, lexer_addr, valid_symbols_addr, has_leading_whitespace_with_newline, ctx, tmp, tmp16, ctx124, tmp127, tmp136, ctx270, tmp273, tmp282, identifier, tmp421, ctx479, tmp489, expected_identifier, i, i642, i655, v0, lookahead, v1, call, tobool, v2, lookahead1, v3, cmp, v4, v5, lookahead2, v6, cmp3, v7, arrayidx, v8, tobool6, v9, call7, v10, lookahead9, v11, cmp10, type, heredoc_identifier, call12, v12, v13, v14, v15, v16, v17, v18, v19, context_stack, cap, v20, v21, context_stack13, len, v22, cmp14, v23, context_stack17, data, v24, v25, v26, context_stack18, len19, v27, mul, cmp20, v28, context_stack21, len22, v29, mul23, cond, conv, mul24, call25, v30, cmp26, v31, v32, v33, context_stack30, data31, v34, context_stack32, data33, v35, cmp34, v36, context_stack39, len40, v37, mul41, cmp42, v38, context_stack46, len47, v39, mul48, cond50, v40, context_stack51, cap52, v41, context_stack54, data55, v42, v43, context_stack56, len57, v44, inc, idxprom, arrayidx58, v45, v46, v47, call59, v48, arrayidx61, v49, tobool62, v50, call65, v51, lookahead68, v52, cmp69, v53, context_stack72, data73, v54, v55, context_stack74, len75, v56, sub, idxprom76, arrayidx77, heredoc_identifier78, data79, v57, cmp80, v58, context_stack83, data84, v59, v60, context_stack85, len86, v61, sub87, idxprom88, arrayidx89, heredoc_identifier90, data91, v62, v63, context_stack93, data94, v64, v65, context_stack95, len96, v66, sub97, idxprom98, arrayidx99, heredoc_identifier100, data101, v67, context_stack102, len103, v68, dec, v69, call104, v70, arrayidx106, v71, tobool107, v72, arrayidx110, v73, tobool111, v74, call114, v75, lookahead116, v76, cmp117, v77, v78, lookahead120, v79, cmp121, type125, heredoc_identifier126, call128, v80, v81, v82, v83, v84, v85, v86, v87, context_stack129, cap130, v88, v89, context_stack131, len132, v90, cmp133, v91, context_stack137, data138, v92, v93, v94, context_stack139, len140, v95, mul141, cmp142, v96, context_stack146, len147, v97, mul148, cond150, conv151, mul152, call153, v98, cmp154, v99, v100, v101, context_stack159, data160, v102, context_stack161, data162, v103, cmp163, v104, context_stack168, len169, v105, mul170, cmp171, v106, context_stack175, len176, v107, mul177, cond179, v108, context_stack180, cap181, v109, context_stack183, data184, v110, v111, context_stack185, len186, v112, inc187, idxprom188, arrayidx189, v113, v114, v115, call190, v116, lookahead192, v117, cmp193, v118, v119, lookahead196, v120, cmp197, v121, call200, v122, call203, v123, arrayidx205, v124, tobool206, v125, call209, v126, lookahead212, v127, cmp213, v128, context_stack216, data217, v129, v130, context_stack218, len219, v131, sub220, idxprom221, arrayidx222, heredoc_identifier223, data224, v132, cmp225, v133, context_stack228, data229, v134, v135, context_stack230, len231, v136, sub232, idxprom233, arrayidx234, heredoc_identifier235, data236, v137, v138, context_stack238, data239, v139, v140, context_stack240, len241, v141, sub242, idxprom243, arrayidx244, heredoc_identifier245, data246, v142, context_stack247, len248, v143, dec249, v144, call250, v145, arrayidx252, v146, tobool253, v147, arrayidx256, v148, tobool257, v149, call260, v150, lookahead262, v151, cmp263, v152, v153, lookahead266, v154, cmp267, type271, heredoc_identifier272, call274, v155, v156, v157, v158, v159, v160, v161, v162, context_stack275, cap276, v163, v164, context_stack277, len278, v165, cmp279, v166, context_stack283, data284, v167, v168, v169, context_stack285, len286, v170, mul287, cmp288, v171, context_stack292, len293, v172, mul294, cond296, conv297, mul298, call299, v173, cmp300, v174, v175, v176, context_stack305, data306, v177, context_stack307, data308, v178, cmp309, v179, context_stack314, len315, v180, mul316, cmp317, v181, context_stack321, len322, v182, mul323, cond325, v183, context_stack326, cap327, v184, context_stack329, data330, v185, v186, context_stack331, len332, v187, inc333, idxprom334, arrayidx335, v188, v189, v190, call336, v191, lookahead338, v192, cmp339, v193, v194, lookahead342, v195, cmp343, v196, call346, v197, call349, v198, arrayidx351, v199, tobool352, v200, call355, v201, lookahead358, v202, cmp359, v203, context_stack362, data363, v204, v205, context_stack364, len365, v206, sub366, idxprom367, arrayidx368, heredoc_identifier369, data370, v207, cmp371, v208, context_stack374, data375, v209, v210, context_stack376, len377, v211, sub378, idxprom379, arrayidx380, heredoc_identifier381, data382, v212, v213, context_stack384, data385, v214, v215, context_stack386, len387, v216, sub388, idxprom389, arrayidx390, heredoc_identifier391, data392, v217, context_stack393, len394, v218, dec395, v219, call396, v220, arrayidx398, v221, tobool399, v222, call402, call404, v223, v224, v225, v226, v227, v228, lookahead406, v229, call407, tobool408, v230, lookahead409, v231, cmp410, v232, lookahead412, v233, cmp413, v234, cap416, v235, len417, v236, cmp418, data422, v237, len423, v238, mul424, cmp425, len429, v239, mul430, cond432, add, conv433, mul434, call435, v240, cmp436, v241, data441, data442, v242, len443, v243, idx_ext, add_ptr, len444, v244, mul445, cmp446, len450, v245, mul451, cond453, add454, len455, v246, sub456, conv457, mul458, len459, v247, mul460, cmp461, len465, v248, mul466, cond468, cap469, v249, lookahead471, v250, conv472, data473, v251, len474, v252, inc475, idxprom476, arrayidx477, v253, type480, heredoc_identifier481, v254, v255, v256, context_stack482, cap483, v257, v258, context_stack484, len485, v259, cmp486, v260, context_stack490, data491, v261, v262, v263, context_stack492, len493, v264, mul494, cmp495, v265, context_stack499, len500, v266, mul501, cond503, conv504, mul505, call506, v267, cmp507, v268, v269, v270, context_stack512, data513, v271, context_stack514, data515, v272, cmp516, v273, context_stack521, len522, v274, mul523, cmp524, v275, context_stack528, len529, v276, mul530, cond532, v277, context_stack533, cap534, v278, context_stack536, data537, v279, v280, context_stack538, len539, v281, inc540, idxprom541, arrayidx542, v282, v283, v284, call543, v285, arrayidx545, v286, tobool546, v287, call549, v288, tobool552, v289, context_stack555, data556, v290, v291, context_stack557, len558, v292, sub559, idxprom560, arrayidx561, heredoc_identifier562, v293, v294, v295, len563, v296, conv564, cmp565, v297, lookahead567, v298, data568, v299, v300, arrayidx569, v301, conv570, cmp571, v302, v303, call575, v304, inc577, v305, mark_end, v306, v307, v308, lookahead579, v309, call580, tobool581, v310, lookahead582, v311, cmp583, v312, v313, v314, lookahead587, v315, cmp588, v316, context_stack591, data592, v317, v318, context_stack593, len594, v319, sub595, idxprom596, arrayidx597, heredoc_identifier598, data599, v320, cmp600, v321, context_stack603, data604, v322, v323, context_stack605, len606, v324, sub607, idxprom608, arrayidx609, heredoc_identifier610, data611, v325, v326, context_stack613, data614, v327, v328, context_stack615, len616, v329, sub617, idxprom618, arrayidx619, heredoc_identifier620, data621, v330, context_stack622, len623, v331, dec624, v332, call625, v333, v334, mark_end627, v335, v336, v337, call628, v338, arrayidx630, v339, tobool631, v340, call634, v341, lookahead637, v342, v343, v344, lookahead638, v345, v346, call640, v347, cmp644, v348, call647, v349, inc651, v350, call653, v351, cmp657, v352, call660, v353, inc664, v354, call666, v355, arrayidx668, v356, tobool669, v357, call672, v358, call675, v359
+	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, scanner_addr, lexer_addr, valid_symbols_addr, has_leading_whitespace_with_newline, ctx, tmp, tmp16, ctx124, tmp127, tmp136, ctx270, tmp273, tmp282, identifier, tmp421, ctx479, tmp489, expected_identifier, i, i642, i655, v0, lookahead, v1, call, tobool, v2, lookahead1, v3, cmp, v4, v5, lookahead2, v6, cmp3, v7, arrayidx, v8, tobool6, v9, call7, v10, lookahead9, v11, cmp10, _type, heredoc_identifier, call12, v12, v13, v14, v15, v16, v17, v18, v19, context_stack, cap, v20, v21, context_stack13, len, v22, cmp14, v23, context_stack17, data, v24, v25, v26, context_stack18, len19, v27, mul, cmp20, v28, context_stack21, len22, v29, mul23, cond, conv, mul24, call25, v30, cmp26, v31, v32, v33, context_stack30, data31, v34, context_stack32, data33, v35, cmp34, v36, context_stack39, len40, v37, mul41, cmp42, v38, context_stack46, len47, v39, mul48, cond50, v40, context_stack51, cap52, v41, context_stack54, data55, v42, v43, context_stack56, len57, v44, inc, idxprom, arrayidx58, v45, v46, v47, call59, v48, arrayidx61, v49, tobool62, v50, call65, v51, lookahead68, v52, cmp69, v53, context_stack72, data73, v54, v55, context_stack74, len75, v56, sub, idxprom76, arrayidx77, heredoc_identifier78, data79, v57, cmp80, v58, context_stack83, data84, v59, v60, context_stack85, len86, v61, sub87, idxprom88, arrayidx89, heredoc_identifier90, data91, v62, v63, context_stack93, data94, v64, v65, context_stack95, len96, v66, sub97, idxprom98, arrayidx99, heredoc_identifier100, data101, v67, context_stack102, len103, v68, dec, v69, call104, v70, arrayidx106, v71, tobool107, v72, arrayidx110, v73, tobool111, v74, call114, v75, lookahead116, v76, cmp117, v77, v78, lookahead120, v79, cmp121, type125, heredoc_identifier126, call128, v80, v81, v82, v83, v84, v85, v86, v87, context_stack129, cap130, v88, v89, context_stack131, len132, v90, cmp133, v91, context_stack137, data138, v92, v93, v94, context_stack139, len140, v95, mul141, cmp142, v96, context_stack146, len147, v97, mul148, cond150, conv151, mul152, call153, v98, cmp154, v99, v100, v101, context_stack159, data160, v102, context_stack161, data162, v103, cmp163, v104, context_stack168, len169, v105, mul170, cmp171, v106, context_stack175, len176, v107, mul177, cond179, v108, context_stack180, cap181, v109, context_stack183, data184, v110, v111, context_stack185, len186, v112, inc187, idxprom188, arrayidx189, v113, v114, v115, call190, v116, lookahead192, v117, cmp193, v118, v119, lookahead196, v120, cmp197, v121, call200, v122, call203, v123, arrayidx205, v124, tobool206, v125, call209, v126, lookahead212, v127, cmp213, v128, context_stack216, data217, v129, v130, context_stack218, len219, v131, sub220, idxprom221, arrayidx222, heredoc_identifier223, data224, v132, cmp225, v133, context_stack228, data229, v134, v135, context_stack230, len231, v136, sub232, idxprom233, arrayidx234, heredoc_identifier235, data236, v137, v138, context_stack238, data239, v139, v140, context_stack240, len241, v141, sub242, idxprom243, arrayidx244, heredoc_identifier245, data246, v142, context_stack247, len248, v143, dec249, v144, call250, v145, arrayidx252, v146, tobool253, v147, arrayidx256, v148, tobool257, v149, call260, v150, lookahead262, v151, cmp263, v152, v153, lookahead266, v154, cmp267, type271, heredoc_identifier272, call274, v155, v156, v157, v158, v159, v160, v161, v162, context_stack275, cap276, v163, v164, context_stack277, len278, v165, cmp279, v166, context_stack283, data284, v167, v168, v169, context_stack285, len286, v170, mul287, cmp288, v171, context_stack292, len293, v172, mul294, cond296, conv297, mul298, call299, v173, cmp300, v174, v175, v176, context_stack305, data306, v177, context_stack307, data308, v178, cmp309, v179, context_stack314, len315, v180, mul316, cmp317, v181, context_stack321, len322, v182, mul323, cond325, v183, context_stack326, cap327, v184, context_stack329, data330, v185, v186, context_stack331, len332, v187, inc333, idxprom334, arrayidx335, v188, v189, v190, call336, v191, lookahead338, v192, cmp339, v193, v194, lookahead342, v195, cmp343, v196, call346, v197, call349, v198, arrayidx351, v199, tobool352, v200, call355, v201, lookahead358, v202, cmp359, v203, context_stack362, data363, v204, v205, context_stack364, len365, v206, sub366, idxprom367, arrayidx368, heredoc_identifier369, data370, v207, cmp371, v208, context_stack374, data375, v209, v210, context_stack376, len377, v211, sub378, idxprom379, arrayidx380, heredoc_identifier381, data382, v212, v213, context_stack384, data385, v214, v215, context_stack386, len387, v216, sub388, idxprom389, arrayidx390, heredoc_identifier391, data392, v217, context_stack393, len394, v218, dec395, v219, call396, v220, arrayidx398, v221, tobool399, v222, call402, call404, v223, v224, v225, v226, v227, v228, lookahead406, v229, call407, tobool408, v230, lookahead409, v231, cmp410, v232, lookahead412, v233, cmp413, v234, cap416, v235, len417, v236, cmp418, data422, v237, len423, v238, mul424, cmp425, len429, v239, mul430, cond432, add, conv433, mul434, call435, v240, cmp436, v241, data441, data442, v242, len443, v243, idx_ext, add_ptr, len444, v244, mul445, cmp446, len450, v245, mul451, cond453, add454, len455, v246, sub456, conv457, mul458, len459, v247, mul460, cmp461, len465, v248, mul466, cond468, cap469, v249, lookahead471, v250, conv472, data473, v251, len474, v252, inc475, idxprom476, arrayidx477, v253, type480, heredoc_identifier481, v254, v255, v256, context_stack482, cap483, v257, v258, context_stack484, len485, v259, cmp486, v260, context_stack490, data491, v261, v262, v263, context_stack492, len493, v264, mul494, cmp495, v265, context_stack499, len500, v266, mul501, cond503, conv504, mul505, call506, v267, cmp507, v268, v269, v270, context_stack512, data513, v271, context_stack514, data515, v272, cmp516, v273, context_stack521, len522, v274, mul523, cmp524, v275, context_stack528, len529, v276, mul530, cond532, v277, context_stack533, cap534, v278, context_stack536, data537, v279, v280, context_stack538, len539, v281, inc540, idxprom541, arrayidx542, v282, v283, v284, call543, v285, arrayidx545, v286, tobool546, v287, call549, v288, tobool552, v289, context_stack555, data556, v290, v291, context_stack557, len558, v292, sub559, idxprom560, arrayidx561, heredoc_identifier562, v293, v294, v295, len563, v296, conv564, cmp565, v297, lookahead567, v298, data568, v299, v300, arrayidx569, v301, conv570, cmp571, v302, v303, call575, v304, inc577, v305, mark_end, v306, v307, v308, lookahead579, v309, call580, tobool581, v310, lookahead582, v311, cmp583, v312, v313, v314, lookahead587, v315, cmp588, v316, context_stack591, data592, v317, v318, context_stack593, len594, v319, sub595, idxprom596, arrayidx597, heredoc_identifier598, data599, v320, cmp600, v321, context_stack603, data604, v322, v323, context_stack605, len606, v324, sub607, idxprom608, arrayidx609, heredoc_identifier610, data611, v325, v326, context_stack613, data614, v327, v328, context_stack615, len616, v329, sub617, idxprom618, arrayidx619, heredoc_identifier620, data621, v330, context_stack622, len623, v331, dec624, v332, call625, v333, v334, mark_end627, v335, v336, v337, call628, v338, arrayidx630, v339, tobool631, v340, call634, v341, lookahead637, v342, v343, v344, lookahead638, v345, v346, call640, v347, cmp644, v348, call647, v349, inc651, v350, call653, v351, cmp657, v352, call660, v353, inc664, v354, call666, v355, arrayidx668, v356, tobool669, v357, call672, v358, call675, v359
 
 	retval = new(bool)
 	scanner_addr = new(*Scanner)
@@ -27480,7 +27485,7 @@ if_end5:
 	v7 = *valid_symbols_addr
 	arrayidx = v7
 	v8 = *arrayidx
-	tobool6 = byte(v8 & 1)
+	tobool6 = (v8 & 1) != 0
 	if tobool6 {
 		goto land_lhs_true
 	} else {
@@ -27508,8 +27513,8 @@ land_lhs_true8:
 	}
 
 if_then11:
-	type = &ctx.F0
-	*type = 2
+	_type = &ctx.F0
+	*_type = 2
 	heredoc_identifier = &ctx.F1
 	call12 = string_new()
 	v12 = (*struct {
@@ -27674,7 +27679,7 @@ if_end60:
 	v48 = *valid_symbols_addr
 	arrayidx61 = libc.AddPointer(v48, int(int64(1)))
 	v49 = *arrayidx61
-	tobool62 = byte(v49 & 1)
+	tobool62 = (v49 & 1) != 0
 	if tobool62 {
 		goto land_lhs_true64
 	} else {
@@ -27770,7 +27775,7 @@ if_end105:
 	v70 = *valid_symbols_addr
 	arrayidx106 = libc.AddPointer(v70, int(int64(3)))
 	v71 = *arrayidx106
-	tobool107 = byte(v71 & 1)
+	tobool107 = (v71 & 1) != 0
 	if tobool107 {
 		goto land_lhs_true109
 	} else {
@@ -27781,7 +27786,7 @@ land_lhs_true109:
 	v72 = *valid_symbols_addr
 	arrayidx110 = libc.AddPointer(v72, int(int64(2)))
 	v73 = *arrayidx110
-	tobool111 = byte(v73 & 1)
+	tobool111 = (v73 & 1) != 0
 	if tobool111 {
 		goto land_lhs_true113
 	} else {
@@ -28027,7 +28032,7 @@ if_end204:
 	v123 = *valid_symbols_addr
 	arrayidx205 = libc.AddPointer(v123, int(int64(4)))
 	v124 = *arrayidx205
-	tobool206 = byte(v124 & 1)
+	tobool206 = (v124 & 1) != 0
 	if tobool206 {
 		goto land_lhs_true208
 	} else {
@@ -28123,7 +28128,7 @@ if_end251:
 	v145 = *valid_symbols_addr
 	arrayidx252 = libc.AddPointer(v145, int(int64(5)))
 	v146 = *arrayidx252
-	tobool253 = byte(v146 & 1)
+	tobool253 = (v146 & 1) != 0
 	if tobool253 {
 		goto land_lhs_true255
 	} else {
@@ -28134,7 +28139,7 @@ land_lhs_true255:
 	v147 = *valid_symbols_addr
 	arrayidx256 = libc.AddPointer(v147, int(int64(2)))
 	v148 = *arrayidx256
-	tobool257 = byte(v148 & 1)
+	tobool257 = (v148 & 1) != 0
 	if tobool257 {
 		goto land_lhs_true259
 	} else {
@@ -28380,7 +28385,7 @@ if_end350:
 	v198 = *valid_symbols_addr
 	arrayidx351 = libc.AddPointer(v198, int(int64(6)))
 	v199 = *arrayidx351
-	tobool352 = byte(v199 & 1)
+	tobool352 = (v199 & 1) != 0
 	if tobool352 {
 		goto land_lhs_true354
 	} else {
@@ -28476,7 +28481,7 @@ if_end397:
 	v220 = *valid_symbols_addr
 	arrayidx398 = libc.AddPointer(v220, int(int64(7)))
 	v221 = *arrayidx398
-	tobool399 = byte(v221 & 1)
+	tobool399 = (v221 & 1) != 0
 	if tobool399 {
 		goto land_lhs_true401
 	} else {
@@ -28842,7 +28847,7 @@ if_end544:
 	v285 = *valid_symbols_addr
 	arrayidx545 = libc.AddPointer(v285, int(int64(7)))
 	v286 = *arrayidx545
-	tobool546 = byte(v286 & 1)
+	tobool546 = (v286 & 1) != 0
 	if tobool546 {
 		goto land_lhs_true548
 	} else {
@@ -28860,7 +28865,7 @@ land_lhs_true548:
 
 land_lhs_true551:
 	v288 = *has_leading_whitespace_with_newline
-	tobool552 = byte(v288 & 1)
+	tobool552 = (v288 & 1) != 0
 	if tobool552 {
 		goto if_then554
 	} else {
@@ -29069,7 +29074,7 @@ if_end629:
 	v338 = *valid_symbols_addr
 	arrayidx630 = libc.AddPointer(v338, int(int64(2)))
 	v339 = *arrayidx630
-	tobool631 = byte(v339 & 1)
+	tobool631 = (v339 & 1) != 0
 	if tobool631 {
 		goto land_lhs_true633
 	} else {
@@ -29220,7 +29225,7 @@ if_end667:
 	v355 = *valid_symbols_addr
 	arrayidx668 = libc.AddPointer(v355, int(int64(2)))
 	v356 = *arrayidx668
-	tobool669 = byte(v356 & 1)
+	tobool669 = (v356 & 1) != 0
 	if tobool669 {
 		goto land_lhs_true671
 	} else {
@@ -29419,7 +29424,7 @@ next_state:
 	v1 = *advance
 	v2 = *lexer_addr
 	v3 = *skip
-	tobool = byte(v3 & 1)
+	tobool = (v3 & 1) != 0
 	v1(v2, tobool)
 	goto start
 
@@ -29677,7 +29682,7 @@ start:
 
 sw_bb:
 	v10 = *eof
-	tobool3 = byte(v10 & 1)
+	tobool3 = (v10 & 1) != 0
 	if tobool3 {
 		goto if_then
 	} else {
@@ -29789,7 +29794,7 @@ if_then27:
 
 if_end28:
 	v23 = *result
-	tobool29 = byte(v23 & 1)
+	tobool29 = (v23 & 1) != 0
 	*retval = tobool29
 	goto _return
 
@@ -29907,7 +29912,7 @@ if_then68:
 
 if_end69:
 	v37 = *result
-	tobool70 = byte(v37 & 1)
+	tobool70 = (v37 & 1) != 0
 	*retval = tobool70
 	goto _return
 
@@ -29990,7 +29995,7 @@ if_then99:
 
 if_end100:
 	v48 = *result
-	tobool101 = byte(v48 & 1)
+	tobool101 = (v48 & 1) != 0
 	*retval = tobool101
 	goto _return
 
@@ -30108,7 +30113,7 @@ if_then140:
 
 if_end141:
 	v62 = *result
-	tobool142 = byte(v62 & 1)
+	tobool142 = (v62 & 1) != 0
 	*retval = tobool142
 	goto _return
 
@@ -30210,7 +30215,7 @@ if_then171:
 
 if_end172:
 	v71 = *result
-	tobool173 = byte(v71 & 1)
+	tobool173 = (v71 & 1) != 0
 	*retval = tobool173
 	goto _return
 
@@ -30229,7 +30234,7 @@ if_then177:
 
 if_end178:
 	v73 = *result
-	tobool179 = byte(v73 & 1)
+	tobool179 = (v73 & 1) != 0
 	*retval = tobool179
 	goto _return
 
@@ -30261,7 +30266,7 @@ if_then187:
 
 if_end188:
 	v76 = *result
-	tobool189 = byte(v76 & 1)
+	tobool189 = (v76 & 1) != 0
 	*retval = tobool189
 	goto _return
 
@@ -30306,7 +30311,7 @@ if_then201:
 
 if_end202:
 	v80 = *result
-	tobool203 = byte(v80 & 1)
+	tobool203 = (v80 & 1) != 0
 	*retval = tobool203
 	goto _return
 
@@ -30338,7 +30343,7 @@ if_then211:
 
 if_end212:
 	v83 = *result
-	tobool213 = byte(v83 & 1)
+	tobool213 = (v83 & 1) != 0
 	*retval = tobool213
 	goto _return
 
@@ -30357,7 +30362,7 @@ if_then217:
 
 if_end218:
 	v85 = *result
-	tobool219 = byte(v85 & 1)
+	tobool219 = (v85 & 1) != 0
 	*retval = tobool219
 	goto _return
 
@@ -30376,7 +30381,7 @@ if_then223:
 
 if_end224:
 	v87 = *result
-	tobool225 = byte(v87 & 1)
+	tobool225 = (v87 & 1) != 0
 	*retval = tobool225
 	goto _return
 
@@ -30395,7 +30400,7 @@ if_then229:
 
 if_end230:
 	v89 = *result
-	tobool231 = byte(v89 & 1)
+	tobool231 = (v89 & 1) != 0
 	*retval = tobool231
 	goto _return
 
@@ -30414,7 +30419,7 @@ if_then235:
 
 if_end236:
 	v91 = *result
-	tobool237 = byte(v91 & 1)
+	tobool237 = (v91 & 1) != 0
 	*retval = tobool237
 	goto _return
 
@@ -30433,7 +30438,7 @@ if_then241:
 
 if_end242:
 	v93 = *result
-	tobool243 = byte(v93 & 1)
+	tobool243 = (v93 & 1) != 0
 	*retval = tobool243
 	goto _return
 
@@ -30465,7 +30470,7 @@ if_then251:
 
 if_end252:
 	v96 = *result
-	tobool253 = byte(v96 & 1)
+	tobool253 = (v96 & 1) != 0
 	*retval = tobool253
 	goto _return
 
@@ -30484,7 +30489,7 @@ if_then257:
 
 if_end258:
 	v98 = *result
-	tobool259 = byte(v98 & 1)
+	tobool259 = (v98 & 1) != 0
 	*retval = tobool259
 	goto _return
 
@@ -30516,7 +30521,7 @@ if_then267:
 
 if_end268:
 	v101 = *result
-	tobool269 = byte(v101 & 1)
+	tobool269 = (v101 & 1) != 0
 	*retval = tobool269
 	goto _return
 
@@ -30535,7 +30540,7 @@ if_then273:
 
 if_end274:
 	v103 = *result
-	tobool275 = byte(v103 & 1)
+	tobool275 = (v103 & 1) != 0
 	*retval = tobool275
 	goto _return
 
@@ -30554,7 +30559,7 @@ if_then279:
 
 if_end280:
 	v105 = *result
-	tobool281 = byte(v105 & 1)
+	tobool281 = (v105 & 1) != 0
 	*retval = tobool281
 	goto _return
 
@@ -30573,7 +30578,7 @@ if_then285:
 
 if_end286:
 	v107 = *result
-	tobool287 = byte(v107 & 1)
+	tobool287 = (v107 & 1) != 0
 	*retval = tobool287
 	goto _return
 
@@ -30592,7 +30597,7 @@ if_then291:
 
 if_end292:
 	v109 = *result
-	tobool293 = byte(v109 & 1)
+	tobool293 = (v109 & 1) != 0
 	*retval = tobool293
 	goto _return
 
@@ -30611,7 +30616,7 @@ if_then297:
 
 if_end298:
 	v111 = *result
-	tobool299 = byte(v111 & 1)
+	tobool299 = (v111 & 1) != 0
 	*retval = tobool299
 	goto _return
 
@@ -30643,7 +30648,7 @@ if_then307:
 
 if_end308:
 	v114 = *result
-	tobool309 = byte(v114 & 1)
+	tobool309 = (v114 & 1) != 0
 	*retval = tobool309
 	goto _return
 
@@ -30675,7 +30680,7 @@ if_then317:
 
 if_end318:
 	v117 = *result
-	tobool319 = byte(v117 & 1)
+	tobool319 = (v117 & 1) != 0
 	*retval = tobool319
 	goto _return
 
@@ -30694,7 +30699,7 @@ if_then323:
 
 if_end324:
 	v119 = *result
-	tobool325 = byte(v119 & 1)
+	tobool325 = (v119 & 1) != 0
 	*retval = tobool325
 	goto _return
 
@@ -30726,7 +30731,7 @@ if_then333:
 
 if_end334:
 	v122 = *result
-	tobool335 = byte(v122 & 1)
+	tobool335 = (v122 & 1) != 0
 	*retval = tobool335
 	goto _return
 
@@ -30745,7 +30750,7 @@ if_then339:
 
 if_end340:
 	v124 = *result
-	tobool341 = byte(v124 & 1)
+	tobool341 = (v124 & 1) != 0
 	*retval = tobool341
 	goto _return
 
@@ -30764,7 +30769,7 @@ if_then345:
 
 if_end346:
 	v126 = *result
-	tobool347 = byte(v126 & 1)
+	tobool347 = (v126 & 1) != 0
 	*retval = tobool347
 	goto _return
 
@@ -30783,7 +30788,7 @@ if_then351:
 
 if_end352:
 	v128 = *result
-	tobool353 = byte(v128 & 1)
+	tobool353 = (v128 & 1) != 0
 	*retval = tobool353
 	goto _return
 
@@ -30802,7 +30807,7 @@ if_then357:
 
 if_end358:
 	v130 = *result
-	tobool359 = byte(v130 & 1)
+	tobool359 = (v130 & 1) != 0
 	*retval = tobool359
 	goto _return
 
@@ -30821,7 +30826,7 @@ if_then363:
 
 if_end364:
 	v132 = *result
-	tobool365 = byte(v132 & 1)
+	tobool365 = (v132 & 1) != 0
 	*retval = tobool365
 	goto _return
 
@@ -30840,7 +30845,7 @@ if_then369:
 
 if_end370:
 	v134 = *result
-	tobool371 = byte(v134 & 1)
+	tobool371 = (v134 & 1) != 0
 	*retval = tobool371
 	goto _return
 
@@ -30859,7 +30864,7 @@ if_then375:
 
 if_end376:
 	v136 = *result
-	tobool377 = byte(v136 & 1)
+	tobool377 = (v136 & 1) != 0
 	*retval = tobool377
 	goto _return
 
@@ -30878,7 +30883,7 @@ if_then381:
 
 if_end382:
 	v138 = *result
-	tobool383 = byte(v138 & 1)
+	tobool383 = (v138 & 1) != 0
 	*retval = tobool383
 	goto _return
 
@@ -30897,7 +30902,7 @@ if_then387:
 
 if_end388:
 	v140 = *result
-	tobool389 = byte(v140 & 1)
+	tobool389 = (v140 & 1) != 0
 	*retval = tobool389
 	goto _return
 
@@ -30916,7 +30921,7 @@ if_then393:
 
 if_end394:
 	v142 = *result
-	tobool395 = byte(v142 & 1)
+	tobool395 = (v142 & 1) != 0
 	*retval = tobool395
 	goto _return
 
@@ -30935,7 +30940,7 @@ if_then399:
 
 if_end400:
 	v144 = *result
-	tobool401 = byte(v144 & 1)
+	tobool401 = (v144 & 1) != 0
 	*retval = tobool401
 	goto _return
 
@@ -30954,7 +30959,7 @@ if_then405:
 
 if_end406:
 	v146 = *result
-	tobool407 = byte(v146 & 1)
+	tobool407 = (v146 & 1) != 0
 	*retval = tobool407
 	goto _return
 
@@ -31004,7 +31009,7 @@ if_then421:
 
 if_end422:
 	v151 = *result
-	tobool423 = byte(v151 & 1)
+	tobool423 = (v151 & 1) != 0
 	*retval = tobool423
 	goto _return
 
@@ -31032,7 +31037,7 @@ if_then430:
 
 if_end431:
 	v154 = *result
-	tobool432 = byte(v154 & 1)
+	tobool432 = (v154 & 1) != 0
 	*retval = tobool432
 	goto _return
 
@@ -31060,7 +31065,7 @@ if_then439:
 
 if_end440:
 	v157 = *result
-	tobool441 = byte(v157 & 1)
+	tobool441 = (v157 & 1) != 0
 	*retval = tobool441
 	goto _return
 
@@ -31124,13 +31129,13 @@ if_then460:
 
 if_end461:
 	v164 = *result
-	tobool462 = byte(v164 & 1)
+	tobool462 = (v164 & 1) != 0
 	*retval = tobool462
 	goto _return
 
 sw_bb463:
 	v165 = *eof
-	tobool464 = byte(v165 & 1)
+	tobool464 = (v165 & 1) != 0
 	if tobool464 {
 		goto if_then465
 	} else {
@@ -31255,7 +31260,7 @@ if_then504:
 
 if_end505:
 	v179 = *result
-	tobool506 = byte(v179 & 1)
+	tobool506 = (v179 & 1) != 0
 	*retval = tobool506
 	goto _return
 
@@ -31270,7 +31275,7 @@ sw_bb507:
 	v183 = *lexer_addr
 	v182(v183)
 	v184 = *result
-	tobool508 = byte(v184 & 1)
+	tobool508 = (v184 & 1) != 0
 	*retval = tobool508
 	goto _return
 
@@ -31285,7 +31290,7 @@ sw_bb509:
 	v188 = *lexer_addr
 	v187(v188)
 	v189 = *result
-	tobool512 = byte(v189 & 1)
+	tobool512 = (v189 & 1) != 0
 	*retval = tobool512
 	goto _return
 
@@ -31326,7 +31331,7 @@ if_then522:
 
 if_end523:
 	v196 = *result
-	tobool524 = byte(v196 & 1)
+	tobool524 = (v196 & 1) != 0
 	*retval = tobool524
 	goto _return
 
@@ -31341,7 +31346,7 @@ sw_bb525:
 	v200 = *lexer_addr
 	v199(v200)
 	v201 = *result
-	tobool528 = byte(v201 & 1)
+	tobool528 = (v201 & 1) != 0
 	*retval = tobool528
 	goto _return
 
@@ -31356,7 +31361,7 @@ sw_bb529:
 	v205 = *lexer_addr
 	v204(v205)
 	v206 = *result
-	tobool532 = byte(v206 & 1)
+	tobool532 = (v206 & 1) != 0
 	*retval = tobool532
 	goto _return
 
@@ -31423,7 +31428,7 @@ if_then549:
 
 if_end550:
 	v215 = *result
-	tobool551 = byte(v215 & 1)
+	tobool551 = (v215 & 1) != 0
 	*retval = tobool551
 	goto _return
 
@@ -31477,7 +31482,7 @@ if_then564:
 
 if_end565:
 	v223 = *result
-	tobool566 = byte(v223 & 1)
+	tobool566 = (v223 & 1) != 0
 	*retval = tobool566
 	goto _return
 
@@ -31531,7 +31536,7 @@ if_then579:
 
 if_end580:
 	v231 = *result
-	tobool581 = byte(v231 & 1)
+	tobool581 = (v231 & 1) != 0
 	*retval = tobool581
 	goto _return
 
@@ -31585,7 +31590,7 @@ if_then594:
 
 if_end595:
 	v239 = *result
-	tobool596 = byte(v239 & 1)
+	tobool596 = (v239 & 1) != 0
 	*retval = tobool596
 	goto _return
 
@@ -31639,7 +31644,7 @@ if_then609:
 
 if_end610:
 	v247 = *result
-	tobool611 = byte(v247 & 1)
+	tobool611 = (v247 & 1) != 0
 	*retval = tobool611
 	goto _return
 
@@ -31693,7 +31698,7 @@ if_then624:
 
 if_end625:
 	v255 = *result
-	tobool626 = byte(v255 & 1)
+	tobool626 = (v255 & 1) != 0
 	*retval = tobool626
 	goto _return
 
@@ -31747,7 +31752,7 @@ if_then639:
 
 if_end640:
 	v263 = *result
-	tobool641 = byte(v263 & 1)
+	tobool641 = (v263 & 1) != 0
 	*retval = tobool641
 	goto _return
 
@@ -31801,7 +31806,7 @@ if_then654:
 
 if_end655:
 	v271 = *result
-	tobool656 = byte(v271 & 1)
+	tobool656 = (v271 & 1) != 0
 	*retval = tobool656
 	goto _return
 
@@ -31855,7 +31860,7 @@ if_then669:
 
 if_end670:
 	v279 = *result
-	tobool671 = byte(v279 & 1)
+	tobool671 = (v279 & 1) != 0
 	*retval = tobool671
 	goto _return
 
@@ -31909,7 +31914,7 @@ if_then684:
 
 if_end685:
 	v287 = *result
-	tobool686 = byte(v287 & 1)
+	tobool686 = (v287 & 1) != 0
 	*retval = tobool686
 	goto _return
 
@@ -31963,7 +31968,7 @@ if_then699:
 
 if_end700:
 	v295 = *result
-	tobool701 = byte(v295 & 1)
+	tobool701 = (v295 & 1) != 0
 	*retval = tobool701
 	goto _return
 
@@ -32017,7 +32022,7 @@ if_then714:
 
 if_end715:
 	v303 = *result
-	tobool716 = byte(v303 & 1)
+	tobool716 = (v303 & 1) != 0
 	*retval = tobool716
 	goto _return
 
@@ -32058,7 +32063,7 @@ if_then725:
 
 if_end726:
 	v310 = *result
-	tobool727 = byte(v310 & 1)
+	tobool727 = (v310 & 1) != 0
 	*retval = tobool727
 	goto _return
 
@@ -32073,7 +32078,7 @@ sw_bb728:
 	v314 = *lexer_addr
 	v313(v314)
 	v315 = *result
-	tobool731 = byte(v315 & 1)
+	tobool731 = (v315 & 1) != 0
 	*retval = tobool731
 	goto _return
 
@@ -32088,7 +32093,7 @@ sw_bb732:
 	v319 = *lexer_addr
 	v318(v319)
 	v320 = *result
-	tobool735 = byte(v320 & 1)
+	tobool735 = (v320 & 1) != 0
 	*retval = tobool735
 	goto _return
 
@@ -32151,7 +32156,7 @@ if_then752:
 
 if_end753:
 	v329 = *result
-	tobool754 = byte(v329 & 1)
+	tobool754 = (v329 & 1) != 0
 	*retval = tobool754
 	goto _return
 
@@ -32201,7 +32206,7 @@ if_then767:
 
 if_end768:
 	v337 = *result
-	tobool769 = byte(v337 & 1)
+	tobool769 = (v337 & 1) != 0
 	*retval = tobool769
 	goto _return
 
@@ -32260,7 +32265,7 @@ if_then785:
 
 if_end786:
 	v346 = *result
-	tobool787 = byte(v346 & 1)
+	tobool787 = (v346 & 1) != 0
 	*retval = tobool787
 	goto _return
 
@@ -32297,7 +32302,7 @@ if_then796:
 
 if_end797:
 	v353 = *result
-	tobool798 = byte(v353 & 1)
+	tobool798 = (v353 & 1) != 0
 	*retval = tobool798
 	goto _return
 
@@ -32370,7 +32375,7 @@ if_then819:
 
 if_end820:
 	v364 = *result
-	tobool821 = byte(v364 & 1)
+	tobool821 = (v364 & 1) != 0
 	*retval = tobool821
 	goto _return
 
@@ -32385,7 +32390,7 @@ sw_bb822:
 	v368 = *lexer_addr
 	v367(v368)
 	v369 = *result
-	tobool825 = byte(v369 & 1)
+	tobool825 = (v369 & 1) != 0
 	*retval = tobool825
 	goto _return
 
@@ -32426,7 +32431,7 @@ if_then834:
 
 if_end835:
 	v376 = *result
-	tobool836 = byte(v376 & 1)
+	tobool836 = (v376 & 1) != 0
 	*retval = tobool836
 	goto _return
 
@@ -32441,7 +32446,7 @@ sw_bb837:
 	v380 = *lexer_addr
 	v379(v380)
 	v381 = *result
-	tobool840 = byte(v381 & 1)
+	tobool840 = (v381 & 1) != 0
 	*retval = tobool840
 	goto _return
 
@@ -32482,7 +32487,7 @@ if_then849:
 
 if_end850:
 	v388 = *result
-	tobool851 = byte(v388 & 1)
+	tobool851 = (v388 & 1) != 0
 	*retval = tobool851
 	goto _return
 
@@ -32497,7 +32502,7 @@ sw_bb852:
 	v392 = *lexer_addr
 	v391(v392)
 	v393 = *result
-	tobool855 = byte(v393 & 1)
+	tobool855 = (v393 & 1) != 0
 	*retval = tobool855
 	goto _return
 
@@ -32538,7 +32543,7 @@ if_then864:
 
 if_end865:
 	v400 = *result
-	tobool866 = byte(v400 & 1)
+	tobool866 = (v400 & 1) != 0
 	*retval = tobool866
 	goto _return
 
@@ -32553,7 +32558,7 @@ sw_bb867:
 	v404 = *lexer_addr
 	v403(v404)
 	v405 = *result
-	tobool870 = byte(v405 & 1)
+	tobool870 = (v405 & 1) != 0
 	*retval = tobool870
 	goto _return
 
@@ -32568,7 +32573,7 @@ sw_bb871:
 	v409 = *lexer_addr
 	v408(v409)
 	v410 = *result
-	tobool874 = byte(v410 & 1)
+	tobool874 = (v410 & 1) != 0
 	*retval = tobool874
 	goto _return
 
@@ -32596,7 +32601,7 @@ if_then880:
 
 if_end881:
 	v416 = *result
-	tobool882 = byte(v416 & 1)
+	tobool882 = (v416 & 1) != 0
 	*retval = tobool882
 	goto _return
 
@@ -32611,7 +32616,7 @@ sw_bb883:
 	v420 = *lexer_addr
 	v419(v420)
 	v421 = *result
-	tobool886 = byte(v421 & 1)
+	tobool886 = (v421 & 1) != 0
 	*retval = tobool886
 	goto _return
 
@@ -32626,7 +32631,7 @@ sw_bb887:
 	v425 = *lexer_addr
 	v424(v425)
 	v426 = *result
-	tobool890 = byte(v426 & 1)
+	tobool890 = (v426 & 1) != 0
 	*retval = tobool890
 	goto _return
 
@@ -32654,7 +32659,7 @@ if_then896:
 
 if_end897:
 	v432 = *result
-	tobool898 = byte(v432 & 1)
+	tobool898 = (v432 & 1) != 0
 	*retval = tobool898
 	goto _return
 
@@ -32695,7 +32700,7 @@ if_then908:
 
 if_end909:
 	v439 = *result
-	tobool910 = byte(v439 & 1)
+	tobool910 = (v439 & 1) != 0
 	*retval = tobool910
 	goto _return
 
@@ -32732,7 +32737,7 @@ if_then919:
 
 if_end920:
 	v446 = *result
-	tobool921 = byte(v446 & 1)
+	tobool921 = (v446 & 1) != 0
 	*retval = tobool921
 	goto _return
 
@@ -32747,7 +32752,7 @@ sw_bb922:
 	v450 = *lexer_addr
 	v449(v450)
 	v451 = *result
-	tobool925 = byte(v451 & 1)
+	tobool925 = (v451 & 1) != 0
 	*retval = tobool925
 	goto _return
 
@@ -32762,7 +32767,7 @@ sw_bb926:
 	v455 = *lexer_addr
 	v454(v455)
 	v456 = *result
-	tobool929 = byte(v456 & 1)
+	tobool929 = (v456 & 1) != 0
 	*retval = tobool929
 	goto _return
 
@@ -32777,7 +32782,7 @@ sw_bb930:
 	v460 = *lexer_addr
 	v459(v460)
 	v461 = *result
-	tobool933 = byte(v461 & 1)
+	tobool933 = (v461 & 1) != 0
 	*retval = tobool933
 	goto _return
 
@@ -32792,7 +32797,7 @@ sw_bb934:
 	v465 = *lexer_addr
 	v464(v465)
 	v466 = *result
-	tobool937 = byte(v466 & 1)
+	tobool937 = (v466 & 1) != 0
 	*retval = tobool937
 	goto _return
 
@@ -32833,7 +32838,7 @@ if_then946:
 
 if_end947:
 	v473 = *result
-	tobool948 = byte(v473 & 1)
+	tobool948 = (v473 & 1) != 0
 	*retval = tobool948
 	goto _return
 
@@ -32848,7 +32853,7 @@ sw_bb949:
 	v477 = *lexer_addr
 	v476(v477)
 	v478 = *result
-	tobool952 = byte(v478 & 1)
+	tobool952 = (v478 & 1) != 0
 	*retval = tobool952
 	goto _return
 
@@ -32863,7 +32868,7 @@ sw_bb953:
 	v482 = *lexer_addr
 	v481(v482)
 	v483 = *result
-	tobool956 = byte(v483 & 1)
+	tobool956 = (v483 & 1) != 0
 	*retval = tobool956
 	goto _return
 
@@ -32878,7 +32883,7 @@ sw_bb957:
 	v487 = *lexer_addr
 	v486(v487)
 	v488 = *result
-	tobool960 = byte(v488 & 1)
+	tobool960 = (v488 & 1) != 0
 	*retval = tobool960
 	goto _return
 
@@ -32893,7 +32898,7 @@ sw_bb961:
 	v492 = *lexer_addr
 	v491(v492)
 	v493 = *result
-	tobool964 = byte(v493 & 1)
+	tobool964 = (v493 & 1) != 0
 	*retval = tobool964
 	goto _return
 
@@ -32908,7 +32913,7 @@ sw_bb965:
 	v497 = *lexer_addr
 	v496(v497)
 	v498 = *result
-	tobool968 = byte(v498 & 1)
+	tobool968 = (v498 & 1) != 0
 	*retval = tobool968
 	goto _return
 
@@ -32923,7 +32928,7 @@ sw_bb969:
 	v502 = *lexer_addr
 	v501(v502)
 	v503 = *result
-	tobool972 = byte(v503 & 1)
+	tobool972 = (v503 & 1) != 0
 	*retval = tobool972
 	goto _return
 
@@ -32951,7 +32956,7 @@ if_then978:
 
 if_end979:
 	v509 = *result
-	tobool980 = byte(v509 & 1)
+	tobool980 = (v509 & 1) != 0
 	*retval = tobool980
 	goto _return
 
@@ -32966,7 +32971,7 @@ sw_bb981:
 	v513 = *lexer_addr
 	v512(v513)
 	v514 = *result
-	tobool984 = byte(v514 & 1)
+	tobool984 = (v514 & 1) != 0
 	*retval = tobool984
 	goto _return
 
@@ -33007,7 +33012,7 @@ if_then994:
 
 if_end995:
 	v521 = *result
-	tobool996 = byte(v521 & 1)
+	tobool996 = (v521 & 1) != 0
 	*retval = tobool996
 	goto _return
 
@@ -33022,7 +33027,7 @@ sw_bb997:
 	v525 = *lexer_addr
 	v524(v525)
 	v526 = *result
-	tobool1000 = byte(v526 & 1)
+	tobool1000 = (v526 & 1) != 0
 	*retval = tobool1000
 	goto _return
 
@@ -33037,7 +33042,7 @@ sw_bb1001:
 	v530 = *lexer_addr
 	v529(v530)
 	v531 = *result
-	tobool1004 = byte(v531 & 1)
+	tobool1004 = (v531 & 1) != 0
 	*retval = tobool1004
 	goto _return
 
@@ -33065,7 +33070,7 @@ if_then1010:
 
 if_end1011:
 	v537 = *result
-	tobool1012 = byte(v537 & 1)
+	tobool1012 = (v537 & 1) != 0
 	*retval = tobool1012
 	goto _return
 
@@ -33080,7 +33085,7 @@ sw_bb1013:
 	v541 = *lexer_addr
 	v540(v541)
 	v542 = *result
-	tobool1016 = byte(v542 & 1)
+	tobool1016 = (v542 & 1) != 0
 	*retval = tobool1016
 	goto _return
 
@@ -33121,7 +33126,7 @@ if_then1026:
 
 if_end1027:
 	v549 = *result
-	tobool1028 = byte(v549 & 1)
+	tobool1028 = (v549 & 1) != 0
 	*retval = tobool1028
 	goto _return
 
@@ -33149,7 +33154,7 @@ if_then1034:
 
 if_end1035:
 	v555 = *result
-	tobool1036 = byte(v555 & 1)
+	tobool1036 = (v555 & 1) != 0
 	*retval = tobool1036
 	goto _return
 
@@ -33164,7 +33169,7 @@ sw_bb1037:
 	v559 = *lexer_addr
 	v558(v559)
 	v560 = *result
-	tobool1040 = byte(v560 & 1)
+	tobool1040 = (v560 & 1) != 0
 	*retval = tobool1040
 	goto _return
 
@@ -33179,7 +33184,7 @@ sw_bb1041:
 	v564 = *lexer_addr
 	v563(v564)
 	v565 = *result
-	tobool1044 = byte(v565 & 1)
+	tobool1044 = (v565 & 1) != 0
 	*retval = tobool1044
 	goto _return
 
@@ -33194,7 +33199,7 @@ sw_bb1045:
 	v569 = *lexer_addr
 	v568(v569)
 	v570 = *result
-	tobool1048 = byte(v570 & 1)
+	tobool1048 = (v570 & 1) != 0
 	*retval = tobool1048
 	goto _return
 
@@ -33209,7 +33214,7 @@ sw_bb1049:
 	v574 = *lexer_addr
 	v573(v574)
 	v575 = *result
-	tobool1052 = byte(v575 & 1)
+	tobool1052 = (v575 & 1) != 0
 	*retval = tobool1052
 	goto _return
 
@@ -33224,7 +33229,7 @@ sw_bb1053:
 	v579 = *lexer_addr
 	v578(v579)
 	v580 = *result
-	tobool1056 = byte(v580 & 1)
+	tobool1056 = (v580 & 1) != 0
 	*retval = tobool1056
 	goto _return
 
@@ -33252,7 +33257,7 @@ if_then1062:
 
 if_end1063:
 	v586 = *result
-	tobool1064 = byte(v586 & 1)
+	tobool1064 = (v586 & 1) != 0
 	*retval = tobool1064
 	goto _return
 
@@ -33267,7 +33272,7 @@ sw_bb1065:
 	v590 = *lexer_addr
 	v589(v590)
 	v591 = *result
-	tobool1068 = byte(v591 & 1)
+	tobool1068 = (v591 & 1) != 0
 	*retval = tobool1068
 	goto _return
 
@@ -33282,7 +33287,7 @@ sw_bb1069:
 	v595 = *lexer_addr
 	v594(v595)
 	v596 = *result
-	tobool1072 = byte(v596 & 1)
+	tobool1072 = (v596 & 1) != 0
 	*retval = tobool1072
 	goto _return
 
@@ -33297,7 +33302,7 @@ sw_bb1073:
 	v600 = *lexer_addr
 	v599(v600)
 	v601 = *result
-	tobool1076 = byte(v601 & 1)
+	tobool1076 = (v601 & 1) != 0
 	*retval = tobool1076
 	goto _return
 
@@ -33312,7 +33317,7 @@ sw_bb1077:
 	v605 = *lexer_addr
 	v604(v605)
 	v606 = *result
-	tobool1080 = byte(v606 & 1)
+	tobool1080 = (v606 & 1) != 0
 	*retval = tobool1080
 	goto _return
 
@@ -33327,7 +33332,7 @@ sw_bb1081:
 	v610 = *lexer_addr
 	v609(v610)
 	v611 = *result
-	tobool1084 = byte(v611 & 1)
+	tobool1084 = (v611 & 1) != 0
 	*retval = tobool1084
 	goto _return
 
@@ -33342,7 +33347,7 @@ sw_bb1085:
 	v615 = *lexer_addr
 	v614(v615)
 	v616 = *result
-	tobool1088 = byte(v616 & 1)
+	tobool1088 = (v616 & 1) != 0
 	*retval = tobool1088
 	goto _return
 
@@ -33379,7 +33384,7 @@ if_then1097:
 
 if_end1098:
 	v623 = *result
-	tobool1099 = byte(v623 & 1)
+	tobool1099 = (v623 & 1) != 0
 	*retval = tobool1099
 	goto _return
 
@@ -33394,7 +33399,7 @@ sw_bb1100:
 	v627 = *lexer_addr
 	v626(v627)
 	v628 = *result
-	tobool1103 = byte(v628 & 1)
+	tobool1103 = (v628 & 1) != 0
 	*retval = tobool1103
 	goto _return
 
@@ -33624,7 +33629,7 @@ lor_end:
 	return v2
 }
 
-func in_context_type(scanner *Scanner, type int32) bool {
+func in_context_type(scanner *Scanner, _type int32) bool {
 	var data **Context
 	var scanner_addr **Scanner
 	var v3, arrayidx *Context
@@ -33642,7 +33647,7 @@ func in_context_type(scanner *Scanner, type int32) bool {
 	scanner_addr = new(*Scanner)
 	type_addr = new(int32)
 	*scanner_addr = scanner
-	*type_addr = type
+	*type_addr = _type
 	v0 = *scanner_addr
 	context_stack = &v0.F0
 	len = &context_stack.F0
@@ -33683,7 +33688,7 @@ _return:
 }
 
 func set_contains(ranges *TSCharacterRange, len int32, lookahead int32) bool {
-	var ranges_addr, range, range8 **TSCharacterRange
+	var ranges_addr, _range, range8 **TSCharacterRange
 	var v6, arrayidx, v9, v12, v15, v20, arrayidx10, v23, v26 *TSCharacterRange
 	var retval *bool
 	var len_addr, lookahead_addr, index, size, half_size, mid_index, start, end, end3, start11, end13 *int32
@@ -33691,7 +33696,7 @@ func set_contains(ranges *TSCharacterRange, len int32, lookahead int32) bool {
 	var v0, v1, sub, v2, v3, div, v4, v5, add, v7, v8, v10, v11, v13, v14, v16, v17, v18, v19, sub7, v21, v22, v24, v25, v27 int32
 	var idxprom, idxprom9 int64
 
-	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, ranges_addr, len_addr, lookahead_addr, index, size, half_size, mid_index, range, range8, v0, v1, sub, v2, cmp, v3, div, v4, v5, add, v6, v7, idxprom, arrayidx, v8, v9, start, v10, cmp1, v11, v12, end, v13, cmp2, v14, v15, end3, v16, cmp4, v17, v18, v19, sub7, v20, v21, idxprom9, arrayidx10, v22, v23, start11, v24, cmp12, v25, v26, end13, v27, cmp14, v28, v29
+	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, ranges_addr, len_addr, lookahead_addr, index, size, half_size, mid_index, _range, range8, v0, v1, sub, v2, cmp, v3, div, v4, v5, add, v6, v7, idxprom, arrayidx, v8, v9, start, v10, cmp1, v11, v12, end, v13, cmp2, v14, v15, end3, v16, cmp4, v17, v18, v19, sub7, v20, v21, idxprom9, arrayidx10, v22, v23, start11, v24, cmp12, v25, v26, end13, v27, cmp14, v28, v29
 
 	retval = new(bool)
 	ranges_addr = new(*TSCharacterRange)
@@ -33701,7 +33706,7 @@ func set_contains(ranges *TSCharacterRange, len int32, lookahead int32) bool {
 	size = new(int32)
 	half_size = new(int32)
 	mid_index = new(int32)
-	range = new(*TSCharacterRange)
+	_range = new(*TSCharacterRange)
 	range8 = new(*TSCharacterRange)
 	*ranges_addr = ranges
 	*len_addr = len
@@ -33734,9 +33739,9 @@ while_body:
 	v7 = *mid_index
 	idxprom = int64(uint64(uint32(v7)))
 	arrayidx = libc.AddPointer(v6, int(idxprom))
-	*range = arrayidx
+	*_range = arrayidx
 	v8 = *lookahead_addr
-	v9 = *range
+	v9 = *_range
 	start = &v9.F0
 	v10 = *start
 	cmp1 = v8 >= v10
@@ -33748,7 +33753,7 @@ while_body:
 
 land_lhs_true:
 	v11 = *lookahead_addr
-	v12 = *range
+	v12 = *_range
 	end = &v12.F1
 	v13 = *end
 	cmp2 = v11 <= v13
@@ -33764,7 +33769,7 @@ if_then:
 
 if_else:
 	v14 = *lookahead_addr
-	v15 = *range
+	v15 = *_range
 	end3 = &v15.F1
 	v16 = *end3
 	cmp4 = v14 > v16

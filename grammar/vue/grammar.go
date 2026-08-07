@@ -1,5 +1,10 @@
 package grammar_vue
 
+import (
+	"unsafe"
+	"github.com/andybalholm/leaven/libc"
+)
+
 type Array struct {
 	F0 *byte
 	F1 int32
@@ -153,10 +158,10 @@ var _str [39]byte = [39]byte{
 	45, 62, 115, 105, 122, 101, 0,
 }
 
-var _str_1 [38]byte = [38]byte{
+var _str_1 [37]byte = [37]byte{
 	47, 116, 109, 112, 47, 108, 101, 97, 118, 101, 110, 45, 118, 117, 101, 45,
-	49, 51, 50, 48, 48, 54, 50, 57, 56, 51, 47, 99, 111, 109, 98, 105,
-	110, 101, 100, 46, 99, 0,
+	52, 56, 52, 55, 50, 56, 54, 51, 50, 47, 99, 111, 109, 98, 105, 110,
+	101, 100, 46, 99, 0,
 }
 
 var __PRETTY_FUNCTION___tree_sitter_vue_external_scanner_destroy [54]byte = [54]byte{
@@ -6862,7 +6867,7 @@ func scan(scanner *Scanner, lexer *TSLexer, valid_symbols *byte) bool {
 	v0 = *valid_symbols_addr
 	arrayidx = v0
 	v1 = *arrayidx
-	tobool = byte(v1 & 1)
+	tobool = (v1 & 1) != 0
 	if tobool {
 		goto land_rhs
 	} else {
@@ -6874,7 +6879,7 @@ land_rhs:
 	v2 = *valid_symbols_addr
 	arrayidx1 = libc.AddPointer(v2, int(int64(7)))
 	v3 = *arrayidx1
-	tobool2 = byte(v3 & 1)
+	tobool2 = (v3 & 1) != 0
 	v4 = tobool2
 	goto land_end
 
@@ -6882,7 +6887,7 @@ land_end:
 	if v4 { frombool = 1 } else { frombool = 0 }
 	*is_error_recovery = frombool
 	v5 = *is_error_recovery
-	tobool3 = byte(v5 & 1)
+	tobool3 = (v5 & 1) != 0
 	if tobool3 {
 		goto if_end92
 	} else {
@@ -6904,7 +6909,7 @@ land_lhs_true4:
 	v8 = *valid_symbols_addr
 	arrayidx5 = libc.AddPointer(v8, int(int64(10)))
 	v9 = *arrayidx5
-	tobool6 = byte(v9 & 1)
+	tobool6 = (v9 & 1) != 0
 	if tobool6 {
 		goto if_then
 	} else {
@@ -6915,7 +6920,7 @@ lor_lhs_false:
 	v10 = *valid_symbols_addr
 	arrayidx7 = libc.AddPointer(v10, int(int64(11)))
 	v11 = *arrayidx7
-	tobool8 = byte(v11 & 1)
+	tobool8 = (v11 & 1) != 0
 	if tobool8 {
 		goto if_then
 	} else {
@@ -6927,7 +6932,7 @@ if_then:
 	v12 = *valid_symbols_addr
 	arrayidx9 = libc.AddPointer(v12, int(int64(8)))
 	v13 = *arrayidx9
-	tobool10 = byte(v13 & 1)
+	tobool10 = (v13 & 1) != 0
 	if tobool10 {
 		goto if_end
 	} else {
@@ -7080,7 +7085,7 @@ sw_bb38:
 	v40 = *valid_symbols_addr
 	arrayidx39 = libc.AddPointer(v40, int(int64(11)))
 	v41 = *arrayidx39
-	tobool40 = byte(v41 & 1)
+	tobool40 = (v41 & 1) != 0
 	if tobool40 {
 		goto if_then41
 	} else {
@@ -7110,7 +7115,7 @@ if_then45:
 	result_symbol = &v48.F1
 	*result_symbol = 11
 	v49 = *advanced_once
-	tobool46 = byte(v49 & 1)
+	tobool46 = (v49 & 1) != 0
 	*retval = tobool46
 	goto _return
 
@@ -7149,7 +7154,7 @@ sw_bb54:
 	v55 = *valid_symbols_addr
 	arrayidx55 = libc.AddPointer(v55, int(int64(10)))
 	v56 = *arrayidx55
-	tobool56 = byte(v56 & 1)
+	tobool56 = (v56 & 1) != 0
 	if tobool56 {
 		goto if_then57
 	} else {
@@ -7178,7 +7183,7 @@ while_cond59:
 
 while_body63:
 	v62 = *advanced_once
-	tobool64 = byte(v62 & 1)
+	tobool64 = (v62 & 1) != 0
 	if tobool64 {
 		goto if_then65
 	} else {
@@ -7241,7 +7246,7 @@ sw_default:
 	cmp78 = v71 != 10
 	if cmp78 { conv = 1 } else { conv = 0 }
 	v72 = *advanced_once
-	tobool79 = byte(v72 & 1)
+	tobool79 = (v72 & 1) != 0
 	if tobool79 { conv80 = 1 } else { conv80 = 0 }
 	or = conv80 | conv
 	tobool81 = or != 0
@@ -7275,7 +7280,7 @@ if_end87:
 
 loop_exit:
 	v77 = *advanced_once
-	tobool88 = byte(v77 & 1)
+	tobool88 = (v77 & 1) != 0
 	if tobool88 {
 		goto if_then89
 	} else {
@@ -7296,7 +7301,7 @@ if_end92:
 	v79 = *valid_symbols_addr
 	arrayidx93 = libc.AddPointer(v79, int(int64(7)))
 	v80 = *arrayidx93
-	tobool94 = byte(v80 & 1)
+	tobool94 = (v80 & 1) != 0
 	if tobool94 {
 		goto land_lhs_true96
 	} else {
@@ -7307,7 +7312,7 @@ land_lhs_true96:
 	v81 = *valid_symbols_addr
 	arrayidx97 = v81
 	v82 = *arrayidx97
-	tobool98 = byte(v82 & 1)
+	tobool98 = (v82 & 1) != 0
 	if tobool98 {
 		goto if_end104
 	} else {
@@ -7318,7 +7323,7 @@ land_lhs_true99:
 	v83 = *valid_symbols_addr
 	arrayidx100 = libc.AddPointer(v83, int(int64(3)))
 	v84 = *arrayidx100
-	tobool101 = byte(v84 & 1)
+	tobool101 = (v84 & 1) != 0
 	if tobool101 {
 		goto if_end104
 	} else {
@@ -7397,7 +7402,7 @@ if_end119:
 	v100 = *valid_symbols_addr
 	arrayidx120 = libc.AddPointer(v100, int(int64(6)))
 	v101 = *arrayidx120
-	tobool121 = byte(v101 & 1)
+	tobool121 = (v101 & 1) != 0
 	if tobool121 {
 		goto if_then122
 	} else {
@@ -7418,7 +7423,7 @@ sw_bb125:
 	v104 = *valid_symbols_addr
 	arrayidx126 = libc.AddPointer(v104, int(int64(6)))
 	v105 = *arrayidx126
-	tobool127 = byte(v105 & 1)
+	tobool127 = (v105 & 1) != 0
 	if tobool127 {
 		goto if_then128
 	} else {
@@ -7439,7 +7444,7 @@ sw_bb131:
 	v108 = *valid_symbols_addr
 	arrayidx132 = libc.AddPointer(v108, int(int64(5)))
 	v109 = *arrayidx132
-	tobool133 = byte(v109 & 1)
+	tobool133 = (v109 & 1) != 0
 	if tobool133 {
 		goto if_then134
 	} else {
@@ -7460,7 +7465,7 @@ sw_default137:
 	v112 = *valid_symbols_addr
 	arrayidx138 = v112
 	v113 = *arrayidx138
-	tobool139 = byte(v113 & 1)
+	tobool139 = (v113 & 1) != 0
 	if tobool139 {
 		goto land_lhs_true145
 	} else {
@@ -7471,7 +7476,7 @@ lor_lhs_false141:
 	v114 = *valid_symbols_addr
 	arrayidx142 = libc.AddPointer(v114, int(int64(3)))
 	v115 = *arrayidx142
-	tobool143 = byte(v115 & 1)
+	tobool143 = (v115 & 1) != 0
 	if tobool143 {
 		goto land_lhs_true145
 	} else {
@@ -7482,7 +7487,7 @@ land_lhs_true145:
 	v116 = *valid_symbols_addr
 	arrayidx146 = libc.AddPointer(v116, int(int64(7)))
 	v117 = *arrayidx146
-	tobool147 = byte(v117 & 1)
+	tobool147 = (v117 & 1) != 0
 	if tobool147 {
 		goto if_end157
 	} else {
@@ -7493,7 +7498,7 @@ if_then148:
 	v118 = *valid_symbols_addr
 	arrayidx149 = v118
 	v119 = *arrayidx149
-	tobool150 = byte(v119 & 1)
+	tobool150 = (v119 & 1) != 0
 	if tobool150 {
 		goto cond_true
 	} else {
@@ -7565,7 +7570,7 @@ func serialize(scanner *Scanner, buffer *byte) int32 {
 	var tag, v11, arrayidx12 *Tag
 	var v4, arrayidx, v6, v13, v14, v21, arrayidx28, v24, arrayidx32, v26, arrayidx34, v28, call, v34, arrayidx48, v37, arrayidx51, v38 *byte
 	var tag_count, serialized_tag_count *int16
-	var size3, name_length, size, size2, type, size15, type25, type44 *int32
+	var size3, name_length, size, size2, _type, size15, type25, type44 *int32
 	var tags, tags1, tags10 *struct {
 	F0 *Tag
 	F1 int32
@@ -7577,7 +7582,7 @@ func serialize(scanner *Scanner, buffer *byte) int32 {
 	var v1, v3, cond, v5, v7, conv5, conv6, conv7, v15, v16, v17, v18, add19, v19, add20, v20, v22, inc, v23, v25, inc30, v27, v29, v30, v31, add38, v32, add39, v33, v35, inc46, v39 int32
 	var idxprom, conv4, add, idxprom11, idxprom27, idxprom31, idxprom33, conv37, idxprom47 int64
 
-	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = scanner_addr, buffer_addr, tag_count, serialized_tag_count, size3, tag, name_length, v0, tags, size, v1, cmp, v2, tags1, size2, v3, cond, conv, v4, v5, idxprom, arrayidx, v6, v7, conv4, add, conv5, v8, conv6, v9, conv7, cmp8, v10, tags10, contents, v11, v12, idxprom11, arrayidx12, v13, v14, type, v15, cmp13, custom_tag_name, size15, v16, v17, cmp16, v18, add19, v19, add20, cmp21, type25, v20, conv26, v21, v22, inc, idxprom27, arrayidx28, v23, conv29, v24, v25, inc30, idxprom31, arrayidx32, v26, v27, idxprom33, arrayidx34, custom_tag_name35, contents36, v28, v29, conv37, call, v30, v31, add38, v32, add39, cmp40, type44, v33, conv45, v34, v35, inc46, idxprom47, arrayidx48, v36, inc50, v37, arrayidx51, v38, v39
+	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = scanner_addr, buffer_addr, tag_count, serialized_tag_count, size3, tag, name_length, v0, tags, size, v1, cmp, v2, tags1, size2, v3, cond, conv, v4, v5, idxprom, arrayidx, v6, v7, conv4, add, conv5, v8, conv6, v9, conv7, cmp8, v10, tags10, contents, v11, v12, idxprom11, arrayidx12, v13, v14, _type, v15, cmp13, custom_tag_name, size15, v16, v17, cmp16, v18, add19, v19, add20, cmp21, type25, v20, conv26, v21, v22, inc, idxprom27, arrayidx28, v23, conv29, v24, v25, inc30, idxprom31, arrayidx32, v26, v27, idxprom33, arrayidx34, custom_tag_name35, contents36, v28, v29, conv37, call, v30, v31, add38, v32, add39, cmp40, type44, v33, conv45, v34, v35, inc46, idxprom47, arrayidx48, v36, inc50, v37, arrayidx51, v38, v39
 
 	scanner_addr = new(*Scanner)
 	buffer_addr = new(*byte)
@@ -7652,8 +7657,8 @@ for_body:
 	v13 = (*byte)(unsafe.Pointer(tag))
 	v14 = (*byte)(unsafe.Pointer(arrayidx12))
 	libc.Memmove(v13, v14, int64(24))
-	type = &tag.F0
-	v15 = *type
+	_type = &tag.F0
+	v15 = *_type
 	cmp13 = v15 == 126
 	if cmp13 {
 		goto if_then
@@ -7809,7 +7814,7 @@ func deserialize(scanner *Scanner, buffer *byte, length int32) {
 	var tag, tmp, v4, arrayidx, v42, arrayidx55, v53, arrayidx71 *Tag
 	var v9, v10, arrayidx7, v13, v14, arrayidx10, v23, arrayidx27, v27, arrayidx35, v33, v34, arrayidx44, v45, v46, v56, v57 *byte
 	var tag_count, serialized_tag_count, name_length *int16
-	var length_addr, i, size5, iter, size, size3, type, type29, size40, size52, size68 *int32
+	var length_addr, i, size5, iter, size, size3, _type, type29, size40, size52, size68 *int32
 	var tags, tags1, tags2, tags14, tags48, tags49, tags51, tags64, tags65, tags67 *struct {
 	F0 *Tag
 	F1 int32
@@ -7821,7 +7826,7 @@ func deserialize(scanner *Scanner, buffer *byte, length int32) {
 	var v0, v2, v5, v6, inc, v8, v11, v12, conv8, v15, v16, conv13, conv15, conv16, v21, conv21, v24, inc25, conv28, v26, v28, inc33, conv37, conv38, v35, conv46, v38, add47, v44, inc53, v47, inc57, v48, conv60, v55, inc69, v58, inc73 int32
 	var idxprom, idxprom6, conv, add, idxprom9, conv11, add12, idxprom26, idxprom34, idxprom43, conv45, idxprom54, idxprom70 int64
 
-	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = scanner_addr, buffer_addr, length_addr, i, size5, tag_count, serialized_tag_count, iter, tag, name_length, tmp, v0, v1, tags, size, v2, cmp, v3, tags1, contents, v4, v5, idxprom, arrayidx, v6, inc, v7, tags2, size3, v8, cmp4, v9, v10, v11, idxprom6, arrayidx7, v12, conv, add, conv8, v13, v14, v15, idxprom9, arrayidx10, v16, conv11, add12, conv13, v17, tags14, v18, v19, conv15, v20, conv16, cmp17, v21, v22, conv21, cmp22, v23, v24, inc25, idxprom26, arrayidx27, v25, conv28, type, type29, v26, cmp30, v27, v28, inc33, idxprom34, arrayidx35, v29, conv36, custom_tag_name, v30, v31, conv37, v32, conv38, custom_tag_name39, size40, custom_tag_name41, contents42, v33, v34, v35, idxprom43, arrayidx44, v36, conv45, v37, conv46, v38, add47, v39, tags48, v40, v41, tags49, contents50, v42, v43, tags51, size52, v44, inc53, idxprom54, arrayidx55, v45, v46, v47, inc57, v48, v49, conv60, cmp61, v50, tags64, v51, v52, tags65, contents66, v53, v54, tags67, size68, v55, inc69, idxprom70, arrayidx71, v56, v57, v58, inc73
+	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = scanner_addr, buffer_addr, length_addr, i, size5, tag_count, serialized_tag_count, iter, tag, name_length, tmp, v0, v1, tags, size, v2, cmp, v3, tags1, contents, v4, v5, idxprom, arrayidx, v6, inc, v7, tags2, size3, v8, cmp4, v9, v10, v11, idxprom6, arrayidx7, v12, conv, add, conv8, v13, v14, v15, idxprom9, arrayidx10, v16, conv11, add12, conv13, v17, tags14, v18, v19, conv15, v20, conv16, cmp17, v21, v22, conv21, cmp22, v23, v24, inc25, idxprom26, arrayidx27, v25, conv28, _type, type29, v26, cmp30, v27, v28, inc33, idxprom34, arrayidx35, v29, conv36, custom_tag_name, v30, v31, conv37, v32, conv38, custom_tag_name39, size40, custom_tag_name41, contents42, v33, v34, v35, idxprom43, arrayidx44, v36, conv45, v37, conv46, v38, add47, v39, tags48, v40, v41, tags49, contents50, v42, v43, tags51, size52, v44, inc53, idxprom54, arrayidx55, v45, v46, v47, inc57, v48, v49, conv60, cmp61, v50, tags64, v51, v52, tags65, contents66, v53, v54, tags67, size68, v55, inc69, idxprom70, arrayidx71, v56, v57, v58, inc73
 
 	scanner_addr = new(*Scanner)
 	buffer_addr = new(*byte)
@@ -7950,8 +7955,8 @@ for_body24:
 	arrayidx27 = libc.AddPointer(v23, int(idxprom26))
 	v25 = *arrayidx27
 	conv28 = int32(int8(v25))
-	type = &tag.F0
-	*type = conv28
+	_type = &tag.F0
+	*_type = conv28
 	type29 = &tag.F0
 	v26 = *type29
 	cmp30 = v26 == 126
@@ -8172,17 +8177,17 @@ func tag_free(self *Tag) {
 	var v3 *Array
 	var custom_tag_name *String
 	var v0, v2 *Tag
-	var type *int32
+	var _type *int32
 	var cmp bool
 	var v1 int32
 
-	_, _, _, _, _, _, _, _ = self_addr, v0, type, v1, cmp, v2, custom_tag_name, v3
+	_, _, _, _, _, _, _, _ = self_addr, v0, _type, v1, cmp, v2, custom_tag_name, v3
 
 	self_addr = new(*Tag)
 	*self_addr = self
 	v0 = *self_addr
-	type = &v0.F0
-	v1 = *type
+	_type = &v0.F0
+	v1 = *_type
 	cmp = v1 == 126
 	if cmp {
 		goto if_then
@@ -8290,7 +8295,7 @@ next_state:
 	v1 = *advance
 	v2 = *lexer_addr
 	v3 = *skip
-	tobool = byte(v3 & 1)
+	tobool = (v3 & 1) != 0
 	v1(v2, tobool)
 	goto start
 
@@ -8518,7 +8523,7 @@ start:
 
 sw_bb:
 	v10 = *eof
-	tobool3 = byte(v10 & 1)
+	tobool3 = (v10 & 1) != 0
 	if tobool3 {
 		goto if_then
 	} else {
@@ -8609,7 +8614,7 @@ if_then20:
 
 if_end21:
 	v21 = *result
-	tobool22 = byte(v21 & 1)
+	tobool22 = (v21 & 1) != 0
 	*retval = tobool22
 	goto _return
 
@@ -8704,7 +8709,7 @@ if_then50:
 
 if_end51:
 	v30 = *result
-	tobool52 = byte(v30 & 1)
+	tobool52 = (v30 & 1) != 0
 	*retval = tobool52
 	goto _return
 
@@ -8767,7 +8772,7 @@ if_then70:
 
 if_end71:
 	v36 = *result
-	tobool72 = byte(v36 & 1)
+	tobool72 = (v36 & 1) != 0
 	*retval = tobool72
 	goto _return
 
@@ -8909,7 +8914,7 @@ if_then120:
 
 if_end121:
 	v53 = *result
-	tobool122 = byte(v53 & 1)
+	tobool122 = (v53 & 1) != 0
 	*retval = tobool122
 	goto _return
 
@@ -9051,7 +9056,7 @@ if_then170:
 
 if_end171:
 	v70 = *result
-	tobool172 = byte(v70 & 1)
+	tobool172 = (v70 & 1) != 0
 	*retval = tobool172
 	goto _return
 
@@ -9193,7 +9198,7 @@ if_then220:
 
 if_end221:
 	v87 = *result
-	tobool222 = byte(v87 & 1)
+	tobool222 = (v87 & 1) != 0
 	*retval = tobool222
 	goto _return
 
@@ -9252,7 +9257,7 @@ if_then239:
 
 if_end240:
 	v93 = *result
-	tobool241 = byte(v93 & 1)
+	tobool241 = (v93 & 1) != 0
 	*retval = tobool241
 	goto _return
 
@@ -9315,7 +9320,7 @@ if_then259:
 
 if_end260:
 	v99 = *result
-	tobool261 = byte(v99 & 1)
+	tobool261 = (v99 & 1) != 0
 	*retval = tobool261
 	goto _return
 
@@ -9334,7 +9339,7 @@ if_then265:
 
 if_end266:
 	v101 = *result
-	tobool267 = byte(v101 & 1)
+	tobool267 = (v101 & 1) != 0
 	*retval = tobool267
 	goto _return
 
@@ -9353,7 +9358,7 @@ if_then271:
 
 if_end272:
 	v103 = *result
-	tobool273 = byte(v103 & 1)
+	tobool273 = (v103 & 1) != 0
 	*retval = tobool273
 	goto _return
 
@@ -9480,7 +9485,7 @@ if_then312:
 
 if_end313:
 	v116 = *result
-	tobool314 = byte(v116 & 1)
+	tobool314 = (v116 & 1) != 0
 	*retval = tobool314
 	goto _return
 
@@ -9584,7 +9589,7 @@ if_then346:
 
 if_end347:
 	v127 = *result
-	tobool348 = byte(v127 & 1)
+	tobool348 = (v127 & 1) != 0
 	*retval = tobool348
 	goto _return
 
@@ -9603,7 +9608,7 @@ if_then352:
 
 if_end353:
 	v129 = *result
-	tobool354 = byte(v129 & 1)
+	tobool354 = (v129 & 1) != 0
 	*retval = tobool354
 	goto _return
 
@@ -9622,7 +9627,7 @@ if_then358:
 
 if_end359:
 	v131 = *result
-	tobool360 = byte(v131 & 1)
+	tobool360 = (v131 & 1) != 0
 	*retval = tobool360
 	goto _return
 
@@ -9650,7 +9655,7 @@ if_then367:
 
 if_end368:
 	v134 = *result
-	tobool369 = byte(v134 & 1)
+	tobool369 = (v134 & 1) != 0
 	*retval = tobool369
 	goto _return
 
@@ -9678,7 +9683,7 @@ if_then376:
 
 if_end377:
 	v137 = *result
-	tobool378 = byte(v137 & 1)
+	tobool378 = (v137 & 1) != 0
 	*retval = tobool378
 	goto _return
 
@@ -9706,7 +9711,7 @@ if_then385:
 
 if_end386:
 	v140 = *result
-	tobool387 = byte(v140 & 1)
+	tobool387 = (v140 & 1) != 0
 	*retval = tobool387
 	goto _return
 
@@ -9734,7 +9739,7 @@ if_then394:
 
 if_end395:
 	v143 = *result
-	tobool396 = byte(v143 & 1)
+	tobool396 = (v143 & 1) != 0
 	*retval = tobool396
 	goto _return
 
@@ -9762,7 +9767,7 @@ if_then403:
 
 if_end404:
 	v146 = *result
-	tobool405 = byte(v146 & 1)
+	tobool405 = (v146 & 1) != 0
 	*retval = tobool405
 	goto _return
 
@@ -9812,7 +9817,7 @@ if_then419:
 
 if_end420:
 	v151 = *result
-	tobool421 = byte(v151 & 1)
+	tobool421 = (v151 & 1) != 0
 	*retval = tobool421
 	goto _return
 
@@ -9840,7 +9845,7 @@ if_then428:
 
 if_end429:
 	v154 = *result
-	tobool430 = byte(v154 & 1)
+	tobool430 = (v154 & 1) != 0
 	*retval = tobool430
 	goto _return
 
@@ -9954,7 +9959,7 @@ if_then465:
 
 if_end466:
 	v166 = *result
-	tobool467 = byte(v166 & 1)
+	tobool467 = (v166 & 1) != 0
 	*retval = tobool467
 	goto _return
 
@@ -10013,7 +10018,7 @@ if_then484:
 
 if_end485:
 	v172 = *result
-	tobool486 = byte(v172 & 1)
+	tobool486 = (v172 & 1) != 0
 	*retval = tobool486
 	goto _return
 
@@ -10077,7 +10082,7 @@ if_then505:
 
 if_end506:
 	v179 = *result
-	tobool507 = byte(v179 & 1)
+	tobool507 = (v179 & 1) != 0
 	*retval = tobool507
 	goto _return
 
@@ -10186,7 +10191,7 @@ if_then541:
 
 if_end542:
 	v191 = *result
-	tobool543 = byte(v191 & 1)
+	tobool543 = (v191 & 1) != 0
 	*retval = tobool543
 	goto _return
 
@@ -10286,13 +10291,13 @@ if_then574:
 
 if_end575:
 	v202 = *result
-	tobool576 = byte(v202 & 1)
+	tobool576 = (v202 & 1) != 0
 	*retval = tobool576
 	goto _return
 
 sw_bb577:
 	v203 = *eof
-	tobool578 = byte(v203 & 1)
+	tobool578 = (v203 & 1) != 0
 	if tobool578 {
 		goto if_then579
 	} else {
@@ -10383,7 +10388,7 @@ if_then608:
 
 if_end609:
 	v214 = *result
-	tobool610 = byte(v214 & 1)
+	tobool610 = (v214 & 1) != 0
 	*retval = tobool610
 	goto _return
 
@@ -10398,7 +10403,7 @@ sw_bb611:
 	v218 = *lexer_addr
 	v217(v218)
 	v219 = *result
-	tobool612 = byte(v219 & 1)
+	tobool612 = (v219 & 1) != 0
 	*retval = tobool612
 	goto _return
 
@@ -10413,7 +10418,7 @@ sw_bb613:
 	v223 = *lexer_addr
 	v222(v223)
 	v224 = *result
-	tobool616 = byte(v224 & 1)
+	tobool616 = (v224 & 1) != 0
 	*retval = tobool616
 	goto _return
 
@@ -10481,7 +10486,7 @@ if_then635:
 
 if_end636:
 	v234 = *result
-	tobool637 = byte(v234 & 1)
+	tobool637 = (v234 & 1) != 0
 	*retval = tobool637
 	goto _return
 
@@ -10518,7 +10523,7 @@ if_then646:
 
 if_end647:
 	v241 = *result
-	tobool648 = byte(v241 & 1)
+	tobool648 = (v241 & 1) != 0
 	*retval = tobool648
 	goto _return
 
@@ -10533,7 +10538,7 @@ sw_bb649:
 	v245 = *lexer_addr
 	v244(v245)
 	v246 = *result
-	tobool652 = byte(v246 & 1)
+	tobool652 = (v246 & 1) != 0
 	*retval = tobool652
 	goto _return
 
@@ -10548,7 +10553,7 @@ sw_bb653:
 	v250 = *lexer_addr
 	v249(v250)
 	v251 = *result
-	tobool656 = byte(v251 & 1)
+	tobool656 = (v251 & 1) != 0
 	*retval = tobool656
 	goto _return
 
@@ -10589,7 +10594,7 @@ if_then666:
 
 if_end667:
 	v258 = *result
-	tobool668 = byte(v258 & 1)
+	tobool668 = (v258 & 1) != 0
 	*retval = tobool668
 	goto _return
 
@@ -10604,7 +10609,7 @@ sw_bb669:
 	v262 = *lexer_addr
 	v261(v262)
 	v263 = *result
-	tobool672 = byte(v263 & 1)
+	tobool672 = (v263 & 1) != 0
 	*retval = tobool672
 	goto _return
 
@@ -10619,7 +10624,7 @@ sw_bb673:
 	v267 = *lexer_addr
 	v266(v267)
 	v268 = *result
-	tobool676 = byte(v268 & 1)
+	tobool676 = (v268 & 1) != 0
 	*retval = tobool676
 	goto _return
 
@@ -10634,7 +10639,7 @@ sw_bb677:
 	v272 = *lexer_addr
 	v271(v272)
 	v273 = *result
-	tobool680 = byte(v273 & 1)
+	tobool680 = (v273 & 1) != 0
 	*retval = tobool680
 	goto _return
 
@@ -10747,7 +10752,7 @@ if_then714:
 
 if_end715:
 	v288 = *result
-	tobool716 = byte(v288 & 1)
+	tobool716 = (v288 & 1) != 0
 	*retval = tobool716
 	goto _return
 
@@ -10878,7 +10883,7 @@ if_then756:
 
 if_end757:
 	v305 = *result
-	tobool758 = byte(v305 & 1)
+	tobool758 = (v305 & 1) != 0
 	*retval = tobool758
 	goto _return
 
@@ -10978,7 +10983,7 @@ if_then788:
 
 if_end789:
 	v319 = *result
-	tobool790 = byte(v319 & 1)
+	tobool790 = (v319 & 1) != 0
 	*retval = tobool790
 	goto _return
 
@@ -11069,7 +11074,7 @@ if_then817:
 
 if_end818:
 	v332 = *result
-	tobool819 = byte(v332 & 1)
+	tobool819 = (v332 & 1) != 0
 	*retval = tobool819
 	goto _return
 
@@ -11084,7 +11089,7 @@ sw_bb820:
 	v336 = *lexer_addr
 	v335(v336)
 	v337 = *result
-	tobool823 = byte(v337 & 1)
+	tobool823 = (v337 & 1) != 0
 	*retval = tobool823
 	goto _return
 
@@ -11112,7 +11117,7 @@ if_then829:
 
 if_end830:
 	v343 = *result
-	tobool831 = byte(v343 & 1)
+	tobool831 = (v343 & 1) != 0
 	*retval = tobool831
 	goto _return
 
@@ -11162,7 +11167,7 @@ if_then844:
 
 if_end845:
 	v351 = *result
-	tobool846 = byte(v351 & 1)
+	tobool846 = (v351 & 1) != 0
 	*retval = tobool846
 	goto _return
 
@@ -11212,7 +11217,7 @@ if_then859:
 
 if_end860:
 	v359 = *result
-	tobool861 = byte(v359 & 1)
+	tobool861 = (v359 & 1) != 0
 	*retval = tobool861
 	goto _return
 
@@ -11262,7 +11267,7 @@ if_then874:
 
 if_end875:
 	v367 = *result
-	tobool876 = byte(v367 & 1)
+	tobool876 = (v367 & 1) != 0
 	*retval = tobool876
 	goto _return
 
@@ -11312,7 +11317,7 @@ if_then889:
 
 if_end890:
 	v375 = *result
-	tobool891 = byte(v375 & 1)
+	tobool891 = (v375 & 1) != 0
 	*retval = tobool891
 	goto _return
 
@@ -11398,7 +11403,7 @@ if_then916:
 
 if_end917:
 	v387 = *result
-	tobool918 = byte(v387 & 1)
+	tobool918 = (v387 & 1) != 0
 	*retval = tobool918
 	goto _return
 
@@ -11484,7 +11489,7 @@ if_then943:
 
 if_end944:
 	v399 = *result
-	tobool945 = byte(v399 & 1)
+	tobool945 = (v399 & 1) != 0
 	*retval = tobool945
 	goto _return
 
@@ -11570,7 +11575,7 @@ if_then970:
 
 if_end971:
 	v411 = *result
-	tobool972 = byte(v411 & 1)
+	tobool972 = (v411 & 1) != 0
 	*retval = tobool972
 	goto _return
 
@@ -11656,7 +11661,7 @@ if_then997:
 
 if_end998:
 	v423 = *result
-	tobool999 = byte(v423 & 1)
+	tobool999 = (v423 & 1) != 0
 	*retval = tobool999
 	goto _return
 
@@ -11742,7 +11747,7 @@ if_then1024:
 
 if_end1025:
 	v435 = *result
-	tobool1026 = byte(v435 & 1)
+	tobool1026 = (v435 & 1) != 0
 	*retval = tobool1026
 	goto _return
 
@@ -11810,7 +11815,7 @@ if_then1045:
 
 if_end1046:
 	v445 = *result
-	tobool1047 = byte(v445 & 1)
+	tobool1047 = (v445 & 1) != 0
 	*retval = tobool1047
 	goto _return
 
@@ -11878,7 +11883,7 @@ if_then1066:
 
 if_end1067:
 	v455 = *result
-	tobool1068 = byte(v455 & 1)
+	tobool1068 = (v455 & 1) != 0
 	*retval = tobool1068
 	goto _return
 
@@ -11946,7 +11951,7 @@ if_then1087:
 
 if_end1088:
 	v465 = *result
-	tobool1089 = byte(v465 & 1)
+	tobool1089 = (v465 & 1) != 0
 	*retval = tobool1089
 	goto _return
 
@@ -12014,7 +12019,7 @@ if_then1108:
 
 if_end1109:
 	v475 = *result
-	tobool1110 = byte(v475 & 1)
+	tobool1110 = (v475 & 1) != 0
 	*retval = tobool1110
 	goto _return
 
@@ -12082,7 +12087,7 @@ if_then1129:
 
 if_end1130:
 	v485 = *result
-	tobool1131 = byte(v485 & 1)
+	tobool1131 = (v485 & 1) != 0
 	*retval = tobool1131
 	goto _return
 
@@ -12150,7 +12155,7 @@ if_then1150:
 
 if_end1151:
 	v495 = *result
-	tobool1152 = byte(v495 & 1)
+	tobool1152 = (v495 & 1) != 0
 	*retval = tobool1152
 	goto _return
 
@@ -12218,7 +12223,7 @@ if_then1171:
 
 if_end1172:
 	v505 = *result
-	tobool1173 = byte(v505 & 1)
+	tobool1173 = (v505 & 1) != 0
 	*retval = tobool1173
 	goto _return
 
@@ -12286,7 +12291,7 @@ if_then1192:
 
 if_end1193:
 	v515 = *result
-	tobool1194 = byte(v515 & 1)
+	tobool1194 = (v515 & 1) != 0
 	*retval = tobool1194
 	goto _return
 
@@ -12354,7 +12359,7 @@ if_then1213:
 
 if_end1214:
 	v525 = *result
-	tobool1215 = byte(v525 & 1)
+	tobool1215 = (v525 & 1) != 0
 	*retval = tobool1215
 	goto _return
 
@@ -12422,7 +12427,7 @@ if_then1234:
 
 if_end1235:
 	v535 = *result
-	tobool1236 = byte(v535 & 1)
+	tobool1236 = (v535 & 1) != 0
 	*retval = tobool1236
 	goto _return
 
@@ -12490,7 +12495,7 @@ if_then1255:
 
 if_end1256:
 	v545 = *result
-	tobool1257 = byte(v545 & 1)
+	tobool1257 = (v545 & 1) != 0
 	*retval = tobool1257
 	goto _return
 
@@ -12558,7 +12563,7 @@ if_then1276:
 
 if_end1277:
 	v555 = *result
-	tobool1278 = byte(v555 & 1)
+	tobool1278 = (v555 & 1) != 0
 	*retval = tobool1278
 	goto _return
 
@@ -12626,7 +12631,7 @@ if_then1297:
 
 if_end1298:
 	v565 = *result
-	tobool1299 = byte(v565 & 1)
+	tobool1299 = (v565 & 1) != 0
 	*retval = tobool1299
 	goto _return
 
@@ -12694,7 +12699,7 @@ if_then1318:
 
 if_end1319:
 	v575 = *result
-	tobool1320 = byte(v575 & 1)
+	tobool1320 = (v575 & 1) != 0
 	*retval = tobool1320
 	goto _return
 
@@ -12762,7 +12767,7 @@ if_then1339:
 
 if_end1340:
 	v585 = *result
-	tobool1341 = byte(v585 & 1)
+	tobool1341 = (v585 & 1) != 0
 	*retval = tobool1341
 	goto _return
 
@@ -12830,7 +12835,7 @@ if_then1360:
 
 if_end1361:
 	v595 = *result
-	tobool1362 = byte(v595 & 1)
+	tobool1362 = (v595 & 1) != 0
 	*retval = tobool1362
 	goto _return
 
@@ -12898,7 +12903,7 @@ if_then1381:
 
 if_end1382:
 	v605 = *result
-	tobool1383 = byte(v605 & 1)
+	tobool1383 = (v605 & 1) != 0
 	*retval = tobool1383
 	goto _return
 
@@ -12966,7 +12971,7 @@ if_then1402:
 
 if_end1403:
 	v615 = *result
-	tobool1404 = byte(v615 & 1)
+	tobool1404 = (v615 & 1) != 0
 	*retval = tobool1404
 	goto _return
 
@@ -13034,7 +13039,7 @@ if_then1423:
 
 if_end1424:
 	v625 = *result
-	tobool1425 = byte(v625 & 1)
+	tobool1425 = (v625 & 1) != 0
 	*retval = tobool1425
 	goto _return
 
@@ -13102,7 +13107,7 @@ if_then1444:
 
 if_end1445:
 	v635 = *result
-	tobool1446 = byte(v635 & 1)
+	tobool1446 = (v635 & 1) != 0
 	*retval = tobool1446
 	goto _return
 
@@ -13170,7 +13175,7 @@ if_then1465:
 
 if_end1466:
 	v645 = *result
-	tobool1467 = byte(v645 & 1)
+	tobool1467 = (v645 & 1) != 0
 	*retval = tobool1467
 	goto _return
 
@@ -13238,7 +13243,7 @@ if_then1486:
 
 if_end1487:
 	v655 = *result
-	tobool1488 = byte(v655 & 1)
+	tobool1488 = (v655 & 1) != 0
 	*retval = tobool1488
 	goto _return
 
@@ -13306,7 +13311,7 @@ if_then1507:
 
 if_end1508:
 	v665 = *result
-	tobool1509 = byte(v665 & 1)
+	tobool1509 = (v665 & 1) != 0
 	*retval = tobool1509
 	goto _return
 
@@ -13374,7 +13379,7 @@ if_then1528:
 
 if_end1529:
 	v675 = *result
-	tobool1530 = byte(v675 & 1)
+	tobool1530 = (v675 & 1) != 0
 	*retval = tobool1530
 	goto _return
 
@@ -13442,7 +13447,7 @@ if_then1549:
 
 if_end1550:
 	v685 = *result
-	tobool1551 = byte(v685 & 1)
+	tobool1551 = (v685 & 1) != 0
 	*retval = tobool1551
 	goto _return
 
@@ -13510,7 +13515,7 @@ if_then1570:
 
 if_end1571:
 	v695 = *result
-	tobool1572 = byte(v695 & 1)
+	tobool1572 = (v695 & 1) != 0
 	*retval = tobool1572
 	goto _return
 
@@ -13578,7 +13583,7 @@ if_then1591:
 
 if_end1592:
 	v705 = *result
-	tobool1593 = byte(v705 & 1)
+	tobool1593 = (v705 & 1) != 0
 	*retval = tobool1593
 	goto _return
 
@@ -13646,7 +13651,7 @@ if_then1612:
 
 if_end1613:
 	v715 = *result
-	tobool1614 = byte(v715 & 1)
+	tobool1614 = (v715 & 1) != 0
 	*retval = tobool1614
 	goto _return
 
@@ -13714,7 +13719,7 @@ if_then1633:
 
 if_end1634:
 	v725 = *result
-	tobool1635 = byte(v725 & 1)
+	tobool1635 = (v725 & 1) != 0
 	*retval = tobool1635
 	goto _return
 
@@ -13729,7 +13734,7 @@ sw_bb1636:
 	v729 = *lexer_addr
 	v728(v729)
 	v730 = *result
-	tobool1639 = byte(v730 & 1)
+	tobool1639 = (v730 & 1) != 0
 	*retval = tobool1639
 	goto _return
 
@@ -13797,7 +13802,7 @@ if_then1658:
 
 if_end1659:
 	v740 = *result
-	tobool1660 = byte(v740 & 1)
+	tobool1660 = (v740 & 1) != 0
 	*retval = tobool1660
 	goto _return
 
@@ -13834,7 +13839,7 @@ if_then1669:
 
 if_end1670:
 	v747 = *result
-	tobool1671 = byte(v747 & 1)
+	tobool1671 = (v747 & 1) != 0
 	*retval = tobool1671
 	goto _return
 
@@ -13849,7 +13854,7 @@ sw_bb1672:
 	v751 = *lexer_addr
 	v750(v751)
 	v752 = *result
-	tobool1675 = byte(v752 & 1)
+	tobool1675 = (v752 & 1) != 0
 	*retval = tobool1675
 	goto _return
 
@@ -13917,7 +13922,7 @@ if_then1694:
 
 if_end1695:
 	v762 = *result
-	tobool1696 = byte(v762 & 1)
+	tobool1696 = (v762 & 1) != 0
 	*retval = tobool1696
 	goto _return
 
@@ -13954,7 +13959,7 @@ if_then1705:
 
 if_end1706:
 	v769 = *result
-	tobool1707 = byte(v769 & 1)
+	tobool1707 = (v769 & 1) != 0
 	*retval = tobool1707
 	goto _return
 
@@ -13969,7 +13974,7 @@ sw_bb1708:
 	v773 = *lexer_addr
 	v772(v773)
 	v774 = *result
-	tobool1711 = byte(v774 & 1)
+	tobool1711 = (v774 & 1) != 0
 	*retval = tobool1711
 	goto _return
 
@@ -13984,7 +13989,7 @@ sw_bb1712:
 	v778 = *lexer_addr
 	v777(v778)
 	v779 = *result
-	tobool1715 = byte(v779 & 1)
+	tobool1715 = (v779 & 1) != 0
 	*retval = tobool1715
 	goto _return
 
@@ -13999,7 +14004,7 @@ sw_bb1716:
 	v783 = *lexer_addr
 	v782(v783)
 	v784 = *result
-	tobool1719 = byte(v784 & 1)
+	tobool1719 = (v784 & 1) != 0
 	*retval = tobool1719
 	goto _return
 
@@ -14014,7 +14019,7 @@ sw_bb1720:
 	v788 = *lexer_addr
 	v787(v788)
 	v789 = *result
-	tobool1723 = byte(v789 & 1)
+	tobool1723 = (v789 & 1) != 0
 	*retval = tobool1723
 	goto _return
 
@@ -14029,7 +14034,7 @@ sw_bb1724:
 	v793 = *lexer_addr
 	v792(v793)
 	v794 = *result
-	tobool1727 = byte(v794 & 1)
+	tobool1727 = (v794 & 1) != 0
 	*retval = tobool1727
 	goto _return
 
@@ -14044,7 +14049,7 @@ sw_bb1728:
 	v798 = *lexer_addr
 	v797(v798)
 	v799 = *result
-	tobool1731 = byte(v799 & 1)
+	tobool1731 = (v799 & 1) != 0
 	*retval = tobool1731
 	goto _return
 
@@ -14059,7 +14064,7 @@ sw_bb1732:
 	v803 = *lexer_addr
 	v802(v803)
 	v804 = *result
-	tobool1735 = byte(v804 & 1)
+	tobool1735 = (v804 & 1) != 0
 	*retval = tobool1735
 	goto _return
 
@@ -14177,7 +14182,7 @@ if_then1771:
 
 if_end1772:
 	v820 = *result
-	tobool1773 = byte(v820 & 1)
+	tobool1773 = (v820 & 1) != 0
 	*retval = tobool1773
 	goto _return
 
@@ -14295,7 +14300,7 @@ if_then1809:
 
 if_end1810:
 	v836 = *result
-	tobool1811 = byte(v836 & 1)
+	tobool1811 = (v836 & 1) != 0
 	*retval = tobool1811
 	goto _return
 
@@ -14310,7 +14315,7 @@ sw_bb1812:
 	v840 = *lexer_addr
 	v839(v840)
 	v841 = *result
-	tobool1815 = byte(v841 & 1)
+	tobool1815 = (v841 & 1) != 0
 	*retval = tobool1815
 	goto _return
 
@@ -14325,7 +14330,7 @@ sw_bb1816:
 	v845 = *lexer_addr
 	v844(v845)
 	v846 = *result
-	tobool1819 = byte(v846 & 1)
+	tobool1819 = (v846 & 1) != 0
 	*retval = tobool1819
 	goto _return
 
@@ -14434,7 +14439,7 @@ if_then1852:
 
 if_end1853:
 	v861 = *result
-	tobool1854 = byte(v861 & 1)
+	tobool1854 = (v861 & 1) != 0
 	*retval = tobool1854
 	goto _return
 
@@ -14449,7 +14454,7 @@ sw_bb1855:
 	v865 = *lexer_addr
 	v864(v865)
 	v866 = *result
-	tobool1858 = byte(v866 & 1)
+	tobool1858 = (v866 & 1) != 0
 	*retval = tobool1858
 	goto _return
 
@@ -14558,7 +14563,7 @@ if_then1891:
 
 if_end1892:
 	v881 = *result
-	tobool1893 = byte(v881 & 1)
+	tobool1893 = (v881 & 1) != 0
 	*retval = tobool1893
 	goto _return
 
@@ -14617,7 +14622,7 @@ func scan_raw_text(scanner *Scanner, lexer *TSLexer) bool {
 	var cond, v19, arrayidx15, v24 *byte
 	var mark_end, mark_end26 *func(*TSLexer)
 	var result_symbol *int16
-	var delimiter_index, size, size2, size4, size10, type, lookahead, lookahead13 *int32
+	var delimiter_index, size, size2, size4, size10, _type, lookahead, lookahead13 *int32
 	var tags, tags1, tags3, tags8, tags9 *struct {
 	F0 *Tag
 	F1 int32
@@ -14629,7 +14634,7 @@ func scan_raw_text(scanner *Scanner, lexer *TSLexer) bool {
 	var v1, v6, sub, v8, v12, sub11, v13, v16, v18, call, v20, conv, v22, inc, v23 int32
 	var idxprom, v14, idxprom14, conv19, call20 int64
 
-	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, scanner_addr, lexer_addr, end_delimiter, delimiter_index, v0, tags, size, v1, cmp, v2, mark_end, v3, v4, v5, tags1, size2, v6, sub, v7, tags3, size4, v8, cmp5, v9, tags8, contents, v10, v11, tags9, size10, v12, sub11, idxprom, arrayidx, type, v13, cmp12, v14, cond, v15, lookahead, v16, tobool, v17, lookahead13, v18, call, v19, v20, idxprom14, arrayidx15, v21, conv, cmp16, v22, inc, v23, conv19, v24, call20, cmp21, v25, v26, v27, mark_end26, v28, v29, v30, result_symbol, v31
+	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, scanner_addr, lexer_addr, end_delimiter, delimiter_index, v0, tags, size, v1, cmp, v2, mark_end, v3, v4, v5, tags1, size2, v6, sub, v7, tags3, size4, v8, cmp5, v9, tags8, contents, v10, v11, tags9, size10, v12, sub11, idxprom, arrayidx, _type, v13, cmp12, v14, cond, v15, lookahead, v16, tobool, v17, lookahead13, v18, call, v19, v20, idxprom14, arrayidx15, v21, conv, cmp16, v22, inc, v23, conv19, v24, call20, cmp21, v25, v26, v27, mark_end26, v28, v29, v30, result_symbol, v31
 
 	retval = new(bool)
 	scanner_addr = new(*Scanner)
@@ -14694,8 +14699,8 @@ if_end7:
 	sub11 = v12 - 1
 	idxprom = int64(uint64(uint32(sub11)))
 	arrayidx = libc.AddPointer(v10, int(idxprom))
-	type = &arrayidx.F0
-	v13 = *type
+	_type = &arrayidx.F0
+	v13 = *_type
 	cmp12 = v13 == 99
 	if cmp12 { v14 = 1 } else { v14 = 0 }
 	if cmp12 { cond = &_str_4[int64(0)] } else { cond = &_str_5[int64(0)] }
@@ -14923,7 +14928,7 @@ func scan_implicit_end_tag(scanner *Scanner, lexer *TSLexer) bool {
 	var is_closing_tag, v20, v30 *byte
 	var eof, eof74 *func(*TSLexer) bool
 	var result_symbol, result_symbol59, result_symbol77 *int16
-	var i, size, size2, size4, size8, lookahead, size17, size26, size30, size33, size41, size49, type, type56, type65, type68, type71 *int32
+	var i, size, size2, size4, size8, lookahead, size17, size26, size30, size33, size41, size49, _type, type56, type65, type68, type71 *int32
 	var v21, v31 *int64
 	var tags, tags1, tags3, tags6, tags7, tags25, tags29, tags32, tags38, tags40, tags48, tags51 *struct {
 	F0 *Tag
@@ -14944,7 +14949,7 @@ func scan_implicit_end_tag(scanner *Scanner, lexer *TSLexer) bool {
 	F1 int64
 }
 
-	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, scanner_addr, lexer_addr, parent, is_closing_tag, tag_name, next_tag, i, v0, tags, size, v1, cmp, v2, tags1, size2, v3, sub, v4, tags3, size4, v5, cmp5, v6, tags6, contents, v7, v8, tags7, size8, v9, sub9, idxprom, arrayidx, cond, v10, lookahead, v11, cmp10, v12, v13, tobool, v14, call, v15, v16, result_symbol, v17, call16, v18, v19, v20, v21, v22, size17, v23, cmp18, v24, eof, v25, v26, call20, v27, v28, v29, v30, v31, v32, v33, tobool23, v34, tags25, size26, v35, cmp27, v36, tags29, size30, v37, sub31, v38, tags32, size33, v39, cmp34, v40, tags38, contents39, v41, v42, tags40, size41, v43, sub42, idxprom43, arrayidx44, call45, v44, tags48, size49, v45, v46, cmp50, v47, tags51, contents52, v48, v49, sub53, idxprom54, arrayidx55, type, v50, type56, v51, cmp57, v52, v53, result_symbol59, v54, dec, v55, tobool62, v56, call64, v57, type65, v58, cmp66, v59, type68, v60, cmp69, v61, type71, v62, cmp72, v63, eof74, v64, v65, call75, v66, v67, result_symbol77, v68
+	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, scanner_addr, lexer_addr, parent, is_closing_tag, tag_name, next_tag, i, v0, tags, size, v1, cmp, v2, tags1, size2, v3, sub, v4, tags3, size4, v5, cmp5, v6, tags6, contents, v7, v8, tags7, size8, v9, sub9, idxprom, arrayidx, cond, v10, lookahead, v11, cmp10, v12, v13, tobool, v14, call, v15, v16, result_symbol, v17, call16, v18, v19, v20, v21, v22, size17, v23, cmp18, v24, eof, v25, v26, call20, v27, v28, v29, v30, v31, v32, v33, tobool23, v34, tags25, size26, v35, cmp27, v36, tags29, size30, v37, sub31, v38, tags32, size33, v39, cmp34, v40, tags38, contents39, v41, v42, tags40, size41, v43, sub42, idxprom43, arrayidx44, call45, v44, tags48, size49, v45, v46, cmp50, v47, tags51, contents52, v48, v49, sub53, idxprom54, arrayidx55, _type, v50, type56, v51, cmp57, v52, v53, result_symbol59, v54, dec, v55, tobool62, v56, call64, v57, type65, v58, cmp66, v59, type68, v60, cmp69, v61, type71, v62, cmp72, v63, eof74, v64, v65, call75, v66, v67, result_symbol77, v68
 
 	retval = new(bool)
 	scanner_addr = new(*Scanner)
@@ -15110,7 +15115,7 @@ if_end22:
 	v32 = *v31
 	tag_for_name(next_tag, v30, v32)
 	v33 = *is_closing_tag
-	tobool23 = byte(v33 & 1)
+	tobool23 = (v33 & 1) != 0
 	if tobool23 {
 		goto if_then24
 	} else {
@@ -15203,8 +15208,8 @@ for_body:
 	sub53 = v49 - 1
 	idxprom54 = int64(uint64(uint32(sub53)))
 	arrayidx55 = libc.AddPointer(v48, int(idxprom54))
-	type = &arrayidx55.F0
-	v50 = *type
+	_type = &arrayidx55.F0
+	v50 = *_type
 	type56 = &next_tag.F0
 	v51 = *type56
 	cmp57 = v50 == v51
@@ -15424,7 +15429,7 @@ func scan_start_tag_name(scanner *Scanner, lexer *TSLexer) bool {
 	var retval *bool
 	var v3, v10, v19, v20 *byte
 	var result_symbol, result_symbol5, result_symbol7, result_symbol8 *int16
-	var size, size3, type *int32
+	var size, size3, _type *int32
 	var v4, v11 *int64
 	var tags, tags1, tags2 *struct {
 	F0 *Tag
@@ -15443,7 +15448,7 @@ func scan_start_tag_name(scanner *Scanner, lexer *TSLexer) bool {
 	F1 int64
 }
 
-	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, scanner_addr, lexer_addr, tag_name, tag, v0, call, v1, v2, v3, v4, v5, size, v6, cmp, v7, v8, v9, v10, v11, v12, v13, tags, v14, v15, tags1, contents, v16, v17, tags2, size3, v18, inc, idxprom, arrayidx, v19, v20, type, v21, v22, result_symbol, v23, result_symbol5, v24, result_symbol7, v25, result_symbol8, v26
+	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, scanner_addr, lexer_addr, tag_name, tag, v0, call, v1, v2, v3, v4, v5, size, v6, cmp, v7, v8, v9, v10, v11, v12, v13, tags, v14, v15, tags1, contents, v16, v17, tags2, size3, v18, inc, idxprom, arrayidx, v19, v20, _type, v21, v22, result_symbol, v23, result_symbol5, v24, result_symbol7, v25, result_symbol8, v26
 
 	retval = new(bool)
 	scanner_addr = new(*Scanner)
@@ -15508,8 +15513,8 @@ if_end:
 	v19 = (*byte)(unsafe.Pointer(arrayidx))
 	v20 = (*byte)(unsafe.Pointer(tag))
 	libc.Memmove(v19, v20, int64(24))
-	type = &tag.F0
-	v21 = *type
+	_type = &tag.F0
+	v21 = *_type
 	switch v21 {
 	case 114:
 		goto sw_bb
@@ -15713,17 +15718,17 @@ _return:
 func tag_is_void(self *Tag) bool {
 	var self_addr **Tag
 	var v0 *Tag
-	var type *int32
+	var _type *int32
 	var cmp bool
 	var v1 int32
 
-	_, _, _, _, _ = self_addr, v0, type, v1, cmp
+	_, _, _, _, _ = self_addr, v0, _type, v1, cmp
 
 	self_addr = new(*Tag)
 	*self_addr = self
 	v0 = *self_addr
-	type = &v0.F0
-	v1 = *type
+	_type = &v0.F0
+	v1 = *_type
 	cmp = uint32(v1) < 23
 	return cmp
 }
@@ -15874,7 +15879,7 @@ func tag_for_name(agg_result *Tag, name_coerce0 *byte, name_coerce1 int64) {
 	var v6 *Array
 	var name, custom_tag_name *String
 	var v4, v5 *byte
-	var type, type1 *int32
+	var _type, type1 *int32
 	var v2 *int64
 	var v0 *struct {
 	F0 *byte
@@ -15883,7 +15888,7 @@ func tag_for_name(agg_result *Tag, name_coerce0 *byte, name_coerce1 int64) {
 	var cmp bool
 	var call, v3 int32
 
-	_, _, _, _, _, _, _, _, _, _, _, _, _ = name, v0, v1, v2, call, type, type1, v3, cmp, custom_tag_name, v4, v5, v6
+	_, _, _, _, _, _, _, _, _, _, _, _, _ = name, v0, v1, v2, call, _type, type1, v3, cmp, custom_tag_name, v4, v5, v6
 
 	name = new(String)
 	v0 = (*struct {
@@ -15896,8 +15901,8 @@ func tag_for_name(agg_result *Tag, name_coerce0 *byte, name_coerce1 int64) {
 	*v2 = name_coerce1
 	tag_new(agg_result)
 	call = tag_type_for_name(name)
-	type = &agg_result.F0
-	*type = call
+	_type = &agg_result.F0
+	*_type = call
 	type1 = &agg_result.F0
 	v3 = *type1
 	cmp = v3 == 126
@@ -15929,12 +15934,12 @@ func tag_eq(self *Tag, other *Tag) bool {
 	var v0, v2, v4, v6, v8, v10, v12, v14 *Tag
 	var retval *bool
 	var v11, v13 *byte
-	var type, type1, type2, size, size6, size14 *int32
+	var _type, type1, type2, size, size6, size14 *int32
 	var cmp, cmp3, cmp7, cmp15, v16 bool
 	var v1, v3, v5, v7, v9, v15, call int32
 	var conv int64
 
-	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, self_addr, other_addr, v0, type, v1, v2, type1, v3, cmp, v4, type2, v5, cmp3, v6, custom_tag_name, size, v7, v8, custom_tag_name5, size6, v9, cmp7, v10, custom_tag_name10, contents, v11, v12, custom_tag_name11, contents12, v13, v14, custom_tag_name13, size14, v15, conv, call, cmp15, v16
+	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, self_addr, other_addr, v0, _type, v1, v2, type1, v3, cmp, v4, type2, v5, cmp3, v6, custom_tag_name, size, v7, v8, custom_tag_name5, size6, v9, cmp7, v10, custom_tag_name10, contents, v11, v12, custom_tag_name11, contents12, v13, v14, custom_tag_name13, size14, v15, conv, call, cmp15, v16
 
 	retval = new(bool)
 	self_addr = new(*Tag)
@@ -15942,8 +15947,8 @@ func tag_eq(self *Tag, other *Tag) bool {
 	*self_addr = self
 	*other_addr = other
 	v0 = *self_addr
-	type = &v0.F0
-	v1 = *type
+	_type = &v0.F0
+	v1 = *_type
 	v2 = *other_addr
 	type1 = &v2.F0
 	v3 = *type1
@@ -16031,12 +16036,12 @@ func tag_can_contain(self *Tag, other *Tag) bool {
 	var self_addr, other_addr **Tag
 	var v0, v2 *Tag
 	var retval *bool
-	var child, i, type, type1, arrayidx *int32
+	var child, i, _type, type1, arrayidx *int32
 	var cmp, cmp3, cmp4, v7, cmp6, cmp7, cmp9, cmp11, cmp12, cmp14, v17, cmp17, cmp19, cmp21, cmp23, cmp25, v23, v24 bool
 	var v1, v3, v4, v5, v6, v8, v9, v10, v11, v12, inc, v13, v14, v15, v16, v18, v19, v20, v21, v22 int32
 	var idxprom int64
 
-	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, self_addr, other_addr, child, i, v0, type, v1, v2, type1, v3, v4, cmp, v5, cmp3, v6, cmp4, v7, v8, cmp6, v9, v10, idxprom, arrayidx, v11, cmp7, v12, inc, v13, cmp9, v14, cmp11, v15, cmp12, v16, cmp14, v17, v18, cmp17, v19, cmp19, v20, cmp21, v21, cmp23, v22, cmp25, v23, v24
+	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, self_addr, other_addr, child, i, v0, _type, v1, v2, type1, v3, v4, cmp, v5, cmp3, v6, cmp4, v7, v8, cmp6, v9, v10, idxprom, arrayidx, v11, cmp7, v12, inc, v13, cmp9, v14, cmp11, v15, cmp12, v16, cmp14, v17, v18, cmp17, v19, cmp19, v20, cmp21, v21, cmp23, v22, cmp25, v23, v24
 
 	retval = new(bool)
 	self_addr = new(*Tag)
@@ -16046,8 +16051,8 @@ func tag_can_contain(self *Tag, other *Tag) bool {
 	*self_addr = self
 	*other_addr = other
 	v0 = *other_addr
-	type = &v0.F0
-	v1 = *type
+	_type = &v0.F0
+	v1 = *_type
 	*child = v1
 	v2 = *self_addr
 	type1 = &v2.F0
@@ -16492,13 +16497,13 @@ func tag_new(agg_result *Tag) {
 	var contents **byte
 	var _compoundliteral, custom_tag_name *String
 	var v0, v1 *byte
-	var type, size, capacity *int32
+	var _type, size, capacity *int32
 
-	_, _, _, _, _, _, _, _ = _compoundliteral, type, custom_tag_name, contents, size, capacity, v0, v1
+	_, _, _, _, _, _, _, _ = _compoundliteral, _type, custom_tag_name, contents, size, capacity, v0, v1
 
 	_compoundliteral = new(String)
-	type = &agg_result.F0
-	*type = 127
+	_type = &agg_result.F0
+	*_type = 127
 	custom_tag_name = &agg_result.F1
 	contents = &_compoundliteral.F0
 	*contents = nil

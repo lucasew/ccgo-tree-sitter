@@ -1,5 +1,10 @@
 package grammar_php_only
 
+import (
+	"unsafe"
+	"github.com/andybalholm/leaven/libc"
+)
+
 type Heredoc struct {
 	F0 byte
 	F1 String
@@ -156129,7 +156134,7 @@ next_state:
 	v1 = *advance
 	v2 = *lexer_addr
 	v3 = *skip
-	tobool = byte(v3 & 1)
+	tobool = (v3 & 1) != 0
 	v1(v2, tobool)
 	goto start
 
@@ -156717,7 +156722,7 @@ start:
 
 sw_bb:
 	v10 = *eof
-	tobool3 = byte(v10 & 1)
+	tobool3 = (v10 & 1) != 0
 	if tobool3 {
 		goto if_then
 	} else {
@@ -156906,7 +156911,7 @@ if_then52:
 
 if_end53:
 	v31 = *result
-	tobool54 = byte(v31 & 1)
+	tobool54 = (v31 & 1) != 0
 	*retval = tobool54
 	goto _return
 
@@ -156925,7 +156930,7 @@ if_then58:
 
 if_end59:
 	v33 = *result
-	tobool60 = byte(v33 & 1)
+	tobool60 = (v33 & 1) != 0
 	*retval = tobool60
 	goto _return
 
@@ -156979,7 +156984,7 @@ if_then75:
 
 if_end76:
 	v38 = *result
-	tobool77 = byte(v38 & 1)
+	tobool77 = (v38 & 1) != 0
 	*retval = tobool77
 	goto _return
 
@@ -157099,7 +157104,7 @@ if_then118:
 
 if_end119:
 	v53 = *result
-	tobool120 = byte(v53 & 1)
+	tobool120 = (v53 & 1) != 0
 	*retval = tobool120
 	goto _return
 
@@ -157219,7 +157224,7 @@ if_then161:
 
 if_end162:
 	v68 = *result
-	tobool163 = byte(v68 & 1)
+	tobool163 = (v68 & 1) != 0
 	*retval = tobool163
 	goto _return
 
@@ -157401,7 +157406,7 @@ if_then224:
 
 if_end225:
 	v89 = *result
-	tobool226 = byte(v89 & 1)
+	tobool226 = (v89 & 1) != 0
 	*retval = tobool226
 	goto _return
 
@@ -157601,7 +157606,7 @@ if_then293:
 
 if_end294:
 	v112 = *result
-	tobool295 = byte(v112 & 1)
+	tobool295 = (v112 & 1) != 0
 	*retval = tobool295
 	goto _return
 
@@ -157801,7 +157806,7 @@ if_then362:
 
 if_end363:
 	v135 = *result
-	tobool364 = byte(v135 & 1)
+	tobool364 = (v135 & 1) != 0
 	*retval = tobool364
 	goto _return
 
@@ -158001,7 +158006,7 @@ if_then431:
 
 if_end432:
 	v158 = *result
-	tobool433 = byte(v158 & 1)
+	tobool433 = (v158 & 1) != 0
 	*retval = tobool433
 	goto _return
 
@@ -158161,7 +158166,7 @@ if_then487:
 
 if_end488:
 	v177 = *result
-	tobool489 = byte(v177 & 1)
+	tobool489 = (v177 & 1) != 0
 	*retval = tobool489
 	goto _return
 
@@ -158321,7 +158326,7 @@ if_then543:
 
 if_end544:
 	v196 = *result
-	tobool545 = byte(v196 & 1)
+	tobool545 = (v196 & 1) != 0
 	*retval = tobool545
 	goto _return
 
@@ -158508,7 +158513,7 @@ if_then608:
 
 if_end609:
 	v218 = *result
-	tobool610 = byte(v218 & 1)
+	tobool610 = (v218 & 1) != 0
 	*retval = tobool610
 	goto _return
 
@@ -158695,7 +158700,7 @@ if_then673:
 
 if_end674:
 	v240 = *result
-	tobool675 = byte(v240 & 1)
+	tobool675 = (v240 & 1) != 0
 	*retval = tobool675
 	goto _return
 
@@ -158895,7 +158900,7 @@ if_then742:
 
 if_end743:
 	v263 = *result
-	tobool744 = byte(v263 & 1)
+	tobool744 = (v263 & 1) != 0
 	*retval = tobool744
 	goto _return
 
@@ -159073,7 +159078,7 @@ if_then804:
 
 if_end805:
 	v284 = *result
-	tobool806 = byte(v284 & 1)
+	tobool806 = (v284 & 1) != 0
 	*retval = tobool806
 	goto _return
 
@@ -159105,7 +159110,7 @@ if_then814:
 
 if_end815:
 	v287 = *result
-	tobool816 = byte(v287 & 1)
+	tobool816 = (v287 & 1) != 0
 	*retval = tobool816
 	goto _return
 
@@ -159292,7 +159297,7 @@ if_then879:
 
 if_end880:
 	v309 = *result
-	tobool881 = byte(v309 & 1)
+	tobool881 = (v309 & 1) != 0
 	*retval = tobool881
 	goto _return
 
@@ -159434,7 +159439,7 @@ if_then929:
 
 if_end930:
 	v326 = *result
-	tobool931 = byte(v326 & 1)
+	tobool931 = (v326 & 1) != 0
 	*retval = tobool931
 	goto _return
 
@@ -159621,7 +159626,7 @@ if_then994:
 
 if_end995:
 	v348 = *result
-	tobool996 = byte(v348 & 1)
+	tobool996 = (v348 & 1) != 0
 	*retval = tobool996
 	goto _return
 
@@ -159836,7 +159841,7 @@ if_then1063:
 
 if_end1064:
 	v369 = *result
-	tobool1065 = byte(v369 & 1)
+	tobool1065 = (v369 & 1) != 0
 	*retval = tobool1065
 	goto _return
 
@@ -160068,7 +160073,7 @@ if_then1137:
 
 if_end1138:
 	v391 = *result
-	tobool1139 = byte(v391 & 1)
+	tobool1139 = (v391 & 1) != 0
 	*retval = tobool1139
 	goto _return
 
@@ -160255,7 +160260,7 @@ if_then1202:
 
 if_end1203:
 	v413 = *result
-	tobool1204 = byte(v413 & 1)
+	tobool1204 = (v413 & 1) != 0
 	*retval = tobool1204
 	goto _return
 
@@ -160442,7 +160447,7 @@ if_then1267:
 
 if_end1268:
 	v435 = *result
-	tobool1269 = byte(v435 & 1)
+	tobool1269 = (v435 & 1) != 0
 	*retval = tobool1269
 	goto _return
 
@@ -160629,7 +160634,7 @@ if_then1332:
 
 if_end1333:
 	v457 = *result
-	tobool1334 = byte(v457 & 1)
+	tobool1334 = (v457 & 1) != 0
 	*retval = tobool1334
 	goto _return
 
@@ -160861,7 +160866,7 @@ if_then1406:
 
 if_end1407:
 	v479 = *result
-	tobool1408 = byte(v479 & 1)
+	tobool1408 = (v479 & 1) != 0
 	*retval = tobool1408
 	goto _return
 
@@ -161076,7 +161081,7 @@ if_then1475:
 
 if_end1476:
 	v500 = *result
-	tobool1477 = byte(v500 & 1)
+	tobool1477 = (v500 & 1) != 0
 	*retval = tobool1477
 	goto _return
 
@@ -161278,7 +161283,7 @@ if_then1540:
 
 if_end1541:
 	v520 = *result
-	tobool1542 = byte(v520 & 1)
+	tobool1542 = (v520 & 1) != 0
 	*retval = tobool1542
 	goto _return
 
@@ -161465,7 +161470,7 @@ if_then1605:
 
 if_end1606:
 	v542 = *result
-	tobool1607 = byte(v542 & 1)
+	tobool1607 = (v542 & 1) != 0
 	*retval = tobool1607
 	goto _return
 
@@ -161603,7 +161608,7 @@ if_then1649:
 
 if_end1650:
 	v555 = *result
-	tobool1651 = byte(v555 & 1)
+	tobool1651 = (v555 & 1) != 0
 	*retval = tobool1651
 	goto _return
 
@@ -161635,7 +161640,7 @@ if_then1659:
 
 if_end1660:
 	v558 = *result
-	tobool1661 = byte(v558 & 1)
+	tobool1661 = (v558 & 1) != 0
 	*retval = tobool1661
 	goto _return
 
@@ -161680,7 +161685,7 @@ if_then1673:
 
 if_end1674:
 	v562 = *result
-	tobool1675 = byte(v562 & 1)
+	tobool1675 = (v562 & 1) != 0
 	*retval = tobool1675
 	goto _return
 
@@ -161712,7 +161717,7 @@ if_then1683:
 
 if_end1684:
 	v565 = *result
-	tobool1685 = byte(v565 & 1)
+	tobool1685 = (v565 & 1) != 0
 	*retval = tobool1685
 	goto _return
 
@@ -161731,7 +161736,7 @@ if_then1689:
 
 if_end1690:
 	v567 = *result
-	tobool1691 = byte(v567 & 1)
+	tobool1691 = (v567 & 1) != 0
 	*retval = tobool1691
 	goto _return
 
@@ -161807,7 +161812,7 @@ if_then1713:
 
 if_end1714:
 	v574 = *result
-	tobool1715 = byte(v574 & 1)
+	tobool1715 = (v574 & 1) != 0
 	*retval = tobool1715
 	goto _return
 
@@ -161826,7 +161831,7 @@ if_then1719:
 
 if_end1720:
 	v576 = *result
-	tobool1721 = byte(v576 & 1)
+	tobool1721 = (v576 & 1) != 0
 	*retval = tobool1721
 	goto _return
 
@@ -161845,7 +161850,7 @@ if_then1725:
 
 if_end1726:
 	v578 = *result
-	tobool1727 = byte(v578 & 1)
+	tobool1727 = (v578 & 1) != 0
 	*retval = tobool1727
 	goto _return
 
@@ -161864,7 +161869,7 @@ if_then1731:
 
 if_end1732:
 	v580 = *result
-	tobool1733 = byte(v580 & 1)
+	tobool1733 = (v580 & 1) != 0
 	*retval = tobool1733
 	goto _return
 
@@ -161896,7 +161901,7 @@ if_then1741:
 
 if_end1742:
 	v583 = *result
-	tobool1743 = byte(v583 & 1)
+	tobool1743 = (v583 & 1) != 0
 	*retval = tobool1743
 	goto _return
 
@@ -161915,7 +161920,7 @@ if_then1747:
 
 if_end1748:
 	v585 = *result
-	tobool1749 = byte(v585 & 1)
+	tobool1749 = (v585 & 1) != 0
 	*retval = tobool1749
 	goto _return
 
@@ -161947,7 +161952,7 @@ if_then1757:
 
 if_end1758:
 	v588 = *result
-	tobool1759 = byte(v588 & 1)
+	tobool1759 = (v588 & 1) != 0
 	*retval = tobool1759
 	goto _return
 
@@ -161966,7 +161971,7 @@ if_then1763:
 
 if_end1764:
 	v590 = *result
-	tobool1765 = byte(v590 & 1)
+	tobool1765 = (v590 & 1) != 0
 	*retval = tobool1765
 	goto _return
 
@@ -161985,7 +161990,7 @@ if_then1769:
 
 if_end1770:
 	v592 = *result
-	tobool1771 = byte(v592 & 1)
+	tobool1771 = (v592 & 1) != 0
 	*retval = tobool1771
 	goto _return
 
@@ -162004,7 +162009,7 @@ if_then1775:
 
 if_end1776:
 	v594 = *result
-	tobool1777 = byte(v594 & 1)
+	tobool1777 = (v594 & 1) != 0
 	*retval = tobool1777
 	goto _return
 
@@ -162023,7 +162028,7 @@ if_then1781:
 
 if_end1782:
 	v596 = *result
-	tobool1783 = byte(v596 & 1)
+	tobool1783 = (v596 & 1) != 0
 	*retval = tobool1783
 	goto _return
 
@@ -162090,7 +162095,7 @@ if_then1801:
 
 if_end1802:
 	v602 = *result
-	tobool1803 = byte(v602 & 1)
+	tobool1803 = (v602 & 1) != 0
 	*retval = tobool1803
 	goto _return
 
@@ -162109,7 +162114,7 @@ if_then1807:
 
 if_end1808:
 	v604 = *result
-	tobool1809 = byte(v604 & 1)
+	tobool1809 = (v604 & 1) != 0
 	*retval = tobool1809
 	goto _return
 
@@ -162186,7 +162191,7 @@ if_then1832:
 
 if_end1833:
 	v612 = *result
-	tobool1834 = byte(v612 & 1)
+	tobool1834 = (v612 & 1) != 0
 	*retval = tobool1834
 	goto _return
 
@@ -162227,7 +162232,7 @@ if_then1845:
 
 if_end1846:
 	v616 = *result
-	tobool1847 = byte(v616 & 1)
+	tobool1847 = (v616 & 1) != 0
 	*retval = tobool1847
 	goto _return
 
@@ -162277,7 +162282,7 @@ if_then1861:
 
 if_end1862:
 	v621 = *result
-	tobool1863 = byte(v621 & 1)
+	tobool1863 = (v621 & 1) != 0
 	*retval = tobool1863
 	goto _return
 
@@ -162305,7 +162310,7 @@ if_then1870:
 
 if_end1871:
 	v624 = *result
-	tobool1872 = byte(v624 & 1)
+	tobool1872 = (v624 & 1) != 0
 	*retval = tobool1872
 	goto _return
 
@@ -162333,7 +162338,7 @@ if_then1879:
 
 if_end1880:
 	v627 = *result
-	tobool1881 = byte(v627 & 1)
+	tobool1881 = (v627 & 1) != 0
 	*retval = tobool1881
 	goto _return
 
@@ -162361,7 +162366,7 @@ if_then1888:
 
 if_end1889:
 	v630 = *result
-	tobool1890 = byte(v630 & 1)
+	tobool1890 = (v630 & 1) != 0
 	*retval = tobool1890
 	goto _return
 
@@ -162389,7 +162394,7 @@ if_then1897:
 
 if_end1898:
 	v633 = *result
-	tobool1899 = byte(v633 & 1)
+	tobool1899 = (v633 & 1) != 0
 	*retval = tobool1899
 	goto _return
 
@@ -162417,7 +162422,7 @@ if_then1906:
 
 if_end1907:
 	v636 = *result
-	tobool1908 = byte(v636 & 1)
+	tobool1908 = (v636 & 1) != 0
 	*retval = tobool1908
 	goto _return
 
@@ -162445,7 +162450,7 @@ if_then1915:
 
 if_end1916:
 	v639 = *result
-	tobool1917 = byte(v639 & 1)
+	tobool1917 = (v639 & 1) != 0
 	*retval = tobool1917
 	goto _return
 
@@ -162473,7 +162478,7 @@ if_then1924:
 
 if_end1925:
 	v642 = *result
-	tobool1926 = byte(v642 & 1)
+	tobool1926 = (v642 & 1) != 0
 	*retval = tobool1926
 	goto _return
 
@@ -162501,7 +162506,7 @@ if_then1933:
 
 if_end1934:
 	v645 = *result
-	tobool1935 = byte(v645 & 1)
+	tobool1935 = (v645 & 1) != 0
 	*retval = tobool1935
 	goto _return
 
@@ -162529,7 +162534,7 @@ if_then1942:
 
 if_end1943:
 	v648 = *result
-	tobool1944 = byte(v648 & 1)
+	tobool1944 = (v648 & 1) != 0
 	*retval = tobool1944
 	goto _return
 
@@ -162557,7 +162562,7 @@ if_then1951:
 
 if_end1952:
 	v651 = *result
-	tobool1953 = byte(v651 & 1)
+	tobool1953 = (v651 & 1) != 0
 	*retval = tobool1953
 	goto _return
 
@@ -162585,7 +162590,7 @@ if_then1960:
 
 if_end1961:
 	v654 = *result
-	tobool1962 = byte(v654 & 1)
+	tobool1962 = (v654 & 1) != 0
 	*retval = tobool1962
 	goto _return
 
@@ -162613,7 +162618,7 @@ if_then1969:
 
 if_end1970:
 	v657 = *result
-	tobool1971 = byte(v657 & 1)
+	tobool1971 = (v657 & 1) != 0
 	*retval = tobool1971
 	goto _return
 
@@ -162641,7 +162646,7 @@ if_then1978:
 
 if_end1979:
 	v660 = *result
-	tobool1980 = byte(v660 & 1)
+	tobool1980 = (v660 & 1) != 0
 	*retval = tobool1980
 	goto _return
 
@@ -162669,7 +162674,7 @@ if_then1987:
 
 if_end1988:
 	v663 = *result
-	tobool1989 = byte(v663 & 1)
+	tobool1989 = (v663 & 1) != 0
 	*retval = tobool1989
 	goto _return
 
@@ -162697,7 +162702,7 @@ if_then1996:
 
 if_end1997:
 	v666 = *result
-	tobool1998 = byte(v666 & 1)
+	tobool1998 = (v666 & 1) != 0
 	*retval = tobool1998
 	goto _return
 
@@ -162725,7 +162730,7 @@ if_then2005:
 
 if_end2006:
 	v669 = *result
-	tobool2007 = byte(v669 & 1)
+	tobool2007 = (v669 & 1) != 0
 	*retval = tobool2007
 	goto _return
 
@@ -162775,7 +162780,7 @@ if_then2021:
 
 if_end2022:
 	v674 = *result
-	tobool2023 = byte(v674 & 1)
+	tobool2023 = (v674 & 1) != 0
 	*retval = tobool2023
 	goto _return
 
@@ -162803,7 +162808,7 @@ if_then2030:
 
 if_end2031:
 	v677 = *result
-	tobool2032 = byte(v677 & 1)
+	tobool2032 = (v677 & 1) != 0
 	*retval = tobool2032
 	goto _return
 
@@ -162831,7 +162836,7 @@ if_then2039:
 
 if_end2040:
 	v680 = *result
-	tobool2041 = byte(v680 & 1)
+	tobool2041 = (v680 & 1) != 0
 	*retval = tobool2041
 	goto _return
 
@@ -162859,7 +162864,7 @@ if_then2048:
 
 if_end2049:
 	v683 = *result
-	tobool2050 = byte(v683 & 1)
+	tobool2050 = (v683 & 1) != 0
 	*retval = tobool2050
 	goto _return
 
@@ -162887,7 +162892,7 @@ if_then2057:
 
 if_end2058:
 	v686 = *result
-	tobool2059 = byte(v686 & 1)
+	tobool2059 = (v686 & 1) != 0
 	*retval = tobool2059
 	goto _return
 
@@ -162915,7 +162920,7 @@ if_then2066:
 
 if_end2067:
 	v689 = *result
-	tobool2068 = byte(v689 & 1)
+	tobool2068 = (v689 & 1) != 0
 	*retval = tobool2068
 	goto _return
 
@@ -162943,7 +162948,7 @@ if_then2075:
 
 if_end2076:
 	v692 = *result
-	tobool2077 = byte(v692 & 1)
+	tobool2077 = (v692 & 1) != 0
 	*retval = tobool2077
 	goto _return
 
@@ -163007,7 +163012,7 @@ if_then2096:
 
 if_end2097:
 	v699 = *result
-	tobool2098 = byte(v699 & 1)
+	tobool2098 = (v699 & 1) != 0
 	*retval = tobool2098
 	goto _return
 
@@ -163071,7 +163076,7 @@ if_then2117:
 
 if_end2118:
 	v706 = *result
-	tobool2119 = byte(v706 & 1)
+	tobool2119 = (v706 & 1) != 0
 	*retval = tobool2119
 	goto _return
 
@@ -163135,13 +163140,13 @@ if_then2138:
 
 if_end2139:
 	v713 = *result
-	tobool2140 = byte(v713 & 1)
+	tobool2140 = (v713 & 1) != 0
 	*retval = tobool2140
 	goto _return
 
 sw_bb2141:
 	v714 = *eof
-	tobool2142 = byte(v714 & 1)
+	tobool2142 = (v714 & 1) != 0
 	if tobool2142 {
 		goto if_then2143
 	} else {
@@ -163330,13 +163335,13 @@ if_then2204:
 
 if_end2205:
 	v735 = *result
-	tobool2206 = byte(v735 & 1)
+	tobool2206 = (v735 & 1) != 0
 	*retval = tobool2206
 	goto _return
 
 sw_bb2207:
 	v736 = *eof
-	tobool2208 = byte(v736 & 1)
+	tobool2208 = (v736 & 1) != 0
 	if tobool2208 {
 		goto if_then2209
 	} else {
@@ -163543,13 +163548,13 @@ if_then2276:
 
 if_end2277:
 	v759 = *result
-	tobool2278 = byte(v759 & 1)
+	tobool2278 = (v759 & 1) != 0
 	*retval = tobool2278
 	goto _return
 
 sw_bb2279:
 	v760 = *eof
-	tobool2280 = byte(v760 & 1)
+	tobool2280 = (v760 & 1) != 0
 	if tobool2280 {
 		goto if_then2281
 	} else {
@@ -163756,7 +163761,7 @@ if_then2348:
 
 if_end2349:
 	v783 = *result
-	tobool2350 = byte(v783 & 1)
+	tobool2350 = (v783 & 1) != 0
 	*retval = tobool2350
 	goto _return
 
@@ -163771,7 +163776,7 @@ sw_bb2351:
 	v787 = *lexer_addr
 	v786(v787)
 	v788 = *result
-	tobool2352 = byte(v788 & 1)
+	tobool2352 = (v788 & 1) != 0
 	*retval = tobool2352
 	goto _return
 
@@ -163786,7 +163791,7 @@ sw_bb2353:
 	v792 = *lexer_addr
 	v791(v792)
 	v793 = *result
-	tobool2356 = byte(v793 & 1)
+	tobool2356 = (v793 & 1) != 0
 	*retval = tobool2356
 	goto _return
 
@@ -163836,7 +163841,7 @@ if_then2369:
 
 if_end2370:
 	v801 = *result
-	tobool2371 = byte(v801 & 1)
+	tobool2371 = (v801 & 1) != 0
 	*retval = tobool2371
 	goto _return
 
@@ -163851,7 +163856,7 @@ sw_bb2372:
 	v805 = *lexer_addr
 	v804(v805)
 	v806 = *result
-	tobool2375 = byte(v806 & 1)
+	tobool2375 = (v806 & 1) != 0
 	*retval = tobool2375
 	goto _return
 
@@ -163866,7 +163871,7 @@ sw_bb2376:
 	v810 = *lexer_addr
 	v809(v810)
 	v811 = *result
-	tobool2379 = byte(v811 & 1)
+	tobool2379 = (v811 & 1) != 0
 	*retval = tobool2379
 	goto _return
 
@@ -163881,7 +163886,7 @@ sw_bb2380:
 	v815 = *lexer_addr
 	v814(v815)
 	v816 = *result
-	tobool2383 = byte(v816 & 1)
+	tobool2383 = (v816 & 1) != 0
 	*retval = tobool2383
 	goto _return
 
@@ -163909,7 +163914,7 @@ if_then2389:
 
 if_end2390:
 	v822 = *result
-	tobool2391 = byte(v822 & 1)
+	tobool2391 = (v822 & 1) != 0
 	*retval = tobool2391
 	goto _return
 
@@ -163950,7 +163955,7 @@ if_then2401:
 
 if_end2402:
 	v829 = *result
-	tobool2403 = byte(v829 & 1)
+	tobool2403 = (v829 & 1) != 0
 	*retval = tobool2403
 	goto _return
 
@@ -163965,7 +163970,7 @@ sw_bb2404:
 	v833 = *lexer_addr
 	v832(v833)
 	v834 = *result
-	tobool2407 = byte(v834 & 1)
+	tobool2407 = (v834 & 1) != 0
 	*retval = tobool2407
 	goto _return
 
@@ -164006,7 +164011,7 @@ if_then2417:
 
 if_end2418:
 	v841 = *result
-	tobool2419 = byte(v841 & 1)
+	tobool2419 = (v841 & 1) != 0
 	*retval = tobool2419
 	goto _return
 
@@ -164021,7 +164026,7 @@ sw_bb2420:
 	v845 = *lexer_addr
 	v844(v845)
 	v846 = *result
-	tobool2423 = byte(v846 & 1)
+	tobool2423 = (v846 & 1) != 0
 	*retval = tobool2423
 	goto _return
 
@@ -164036,7 +164041,7 @@ sw_bb2424:
 	v850 = *lexer_addr
 	v849(v850)
 	v851 = *result
-	tobool2427 = byte(v851 & 1)
+	tobool2427 = (v851 & 1) != 0
 	*retval = tobool2427
 	goto _return
 
@@ -164051,7 +164056,7 @@ sw_bb2428:
 	v855 = *lexer_addr
 	v854(v855)
 	v856 = *result
-	tobool2431 = byte(v856 & 1)
+	tobool2431 = (v856 & 1) != 0
 	*retval = tobool2431
 	goto _return
 
@@ -164066,7 +164071,7 @@ sw_bb2432:
 	v860 = *lexer_addr
 	v859(v860)
 	v861 = *result
-	tobool2435 = byte(v861 & 1)
+	tobool2435 = (v861 & 1) != 0
 	*retval = tobool2435
 	goto _return
 
@@ -164094,7 +164099,7 @@ if_then2441:
 
 if_end2442:
 	v867 = *result
-	tobool2443 = byte(v867 & 1)
+	tobool2443 = (v867 & 1) != 0
 	*retval = tobool2443
 	goto _return
 
@@ -164109,7 +164114,7 @@ sw_bb2444:
 	v871 = *lexer_addr
 	v870(v871)
 	v872 = *result
-	tobool2447 = byte(v872 & 1)
+	tobool2447 = (v872 & 1) != 0
 	*retval = tobool2447
 	goto _return
 
@@ -164124,7 +164129,7 @@ sw_bb2448:
 	v876 = *lexer_addr
 	v875(v876)
 	v877 = *result
-	tobool2451 = byte(v877 & 1)
+	tobool2451 = (v877 & 1) != 0
 	*retval = tobool2451
 	goto _return
 
@@ -164139,7 +164144,7 @@ sw_bb2452:
 	v881 = *lexer_addr
 	v880(v881)
 	v882 = *result
-	tobool2455 = byte(v882 & 1)
+	tobool2455 = (v882 & 1) != 0
 	*retval = tobool2455
 	goto _return
 
@@ -164154,7 +164159,7 @@ sw_bb2456:
 	v886 = *lexer_addr
 	v885(v886)
 	v887 = *result
-	tobool2459 = byte(v887 & 1)
+	tobool2459 = (v887 & 1) != 0
 	*retval = tobool2459
 	goto _return
 
@@ -164169,7 +164174,7 @@ sw_bb2460:
 	v891 = *lexer_addr
 	v890(v891)
 	v892 = *result
-	tobool2463 = byte(v892 & 1)
+	tobool2463 = (v892 & 1) != 0
 	*retval = tobool2463
 	goto _return
 
@@ -164184,7 +164189,7 @@ sw_bb2464:
 	v896 = *lexer_addr
 	v895(v896)
 	v897 = *result
-	tobool2467 = byte(v897 & 1)
+	tobool2467 = (v897 & 1) != 0
 	*retval = tobool2467
 	goto _return
 
@@ -164199,7 +164204,7 @@ sw_bb2468:
 	v901 = *lexer_addr
 	v900(v901)
 	v902 = *result
-	tobool2471 = byte(v902 & 1)
+	tobool2471 = (v902 & 1) != 0
 	*retval = tobool2471
 	goto _return
 
@@ -164253,7 +164258,7 @@ if_then2485:
 
 if_end2486:
 	v910 = *result
-	tobool2487 = byte(v910 & 1)
+	tobool2487 = (v910 & 1) != 0
 	*retval = tobool2487
 	goto _return
 
@@ -164294,7 +164299,7 @@ if_then2497:
 
 if_end2498:
 	v917 = *result
-	tobool2499 = byte(v917 & 1)
+	tobool2499 = (v917 & 1) != 0
 	*retval = tobool2499
 	goto _return
 
@@ -164335,7 +164340,7 @@ if_then2509:
 
 if_end2510:
 	v924 = *result
-	tobool2511 = byte(v924 & 1)
+	tobool2511 = (v924 & 1) != 0
 	*retval = tobool2511
 	goto _return
 
@@ -164363,7 +164368,7 @@ if_then2517:
 
 if_end2518:
 	v930 = *result
-	tobool2519 = byte(v930 & 1)
+	tobool2519 = (v930 & 1) != 0
 	*retval = tobool2519
 	goto _return
 
@@ -164378,7 +164383,7 @@ sw_bb2520:
 	v934 = *lexer_addr
 	v933(v934)
 	v935 = *result
-	tobool2523 = byte(v935 & 1)
+	tobool2523 = (v935 & 1) != 0
 	*retval = tobool2523
 	goto _return
 
@@ -164432,7 +164437,7 @@ if_then2537:
 
 if_end2538:
 	v943 = *result
-	tobool2539 = byte(v943 & 1)
+	tobool2539 = (v943 & 1) != 0
 	*retval = tobool2539
 	goto _return
 
@@ -164473,7 +164478,7 @@ if_then2549:
 
 if_end2550:
 	v950 = *result
-	tobool2551 = byte(v950 & 1)
+	tobool2551 = (v950 & 1) != 0
 	*retval = tobool2551
 	goto _return
 
@@ -164501,7 +164506,7 @@ if_then2556:
 
 if_end2557:
 	v956 = *result
-	tobool2558 = byte(v956 & 1)
+	tobool2558 = (v956 & 1) != 0
 	*retval = tobool2558
 	goto _return
 
@@ -164529,7 +164534,7 @@ if_then2563:
 
 if_end2564:
 	v962 = *result
-	tobool2565 = byte(v962 & 1)
+	tobool2565 = (v962 & 1) != 0
 	*retval = tobool2565
 	goto _return
 
@@ -164557,7 +164562,7 @@ if_then2570:
 
 if_end2571:
 	v968 = *result
-	tobool2572 = byte(v968 & 1)
+	tobool2572 = (v968 & 1) != 0
 	*retval = tobool2572
 	goto _return
 
@@ -164585,7 +164590,7 @@ if_then2577:
 
 if_end2578:
 	v974 = *result
-	tobool2579 = byte(v974 & 1)
+	tobool2579 = (v974 & 1) != 0
 	*retval = tobool2579
 	goto _return
 
@@ -164613,7 +164618,7 @@ if_then2584:
 
 if_end2585:
 	v980 = *result
-	tobool2586 = byte(v980 & 1)
+	tobool2586 = (v980 & 1) != 0
 	*retval = tobool2586
 	goto _return
 
@@ -164641,7 +164646,7 @@ if_then2591:
 
 if_end2592:
 	v986 = *result
-	tobool2593 = byte(v986 & 1)
+	tobool2593 = (v986 & 1) != 0
 	*retval = tobool2593
 	goto _return
 
@@ -164669,7 +164674,7 @@ if_then2598:
 
 if_end2599:
 	v992 = *result
-	tobool2600 = byte(v992 & 1)
+	tobool2600 = (v992 & 1) != 0
 	*retval = tobool2600
 	goto _return
 
@@ -164754,7 +164759,7 @@ if_then2624:
 
 if_end2625:
 	v1003 = *result
-	tobool2626 = byte(v1003 & 1)
+	tobool2626 = (v1003 & 1) != 0
 	*retval = tobool2626
 	goto _return
 
@@ -164826,7 +164831,7 @@ if_then2646:
 
 if_end2647:
 	v1013 = *result
-	tobool2648 = byte(v1013 & 1)
+	tobool2648 = (v1013 & 1) != 0
 	*retval = tobool2648
 	goto _return
 
@@ -165006,7 +165011,7 @@ if_then2704:
 
 if_end2705:
 	v1035 = *result
-	tobool2706 = byte(v1035 & 1)
+	tobool2706 = (v1035 & 1) != 0
 	*retval = tobool2706
 	goto _return
 
@@ -165056,7 +165061,7 @@ if_then2719:
 
 if_end2720:
 	v1043 = *result
-	tobool2721 = byte(v1043 & 1)
+	tobool2721 = (v1043 & 1) != 0
 	*retval = tobool2721
 	goto _return
 
@@ -165139,7 +165144,7 @@ if_then2749:
 
 if_end2750:
 	v1057 = *result
-	tobool2751 = byte(v1057 & 1)
+	tobool2751 = (v1057 & 1) != 0
 	*retval = tobool2751
 	goto _return
 
@@ -165246,7 +165251,7 @@ if_then2782:
 
 if_end2783:
 	v1070 = *result
-	tobool2784 = byte(v1070 & 1)
+	tobool2784 = (v1070 & 1) != 0
 	*retval = tobool2784
 	goto _return
 
@@ -165331,7 +165336,7 @@ if_then2808:
 
 if_end2809:
 	v1081 = *result
-	tobool2810 = byte(v1081 & 1)
+	tobool2810 = (v1081 & 1) != 0
 	*retval = tobool2810
 	goto _return
 
@@ -165381,7 +165386,7 @@ if_then2823:
 
 if_end2824:
 	v1089 = *result
-	tobool2825 = byte(v1089 & 1)
+	tobool2825 = (v1089 & 1) != 0
 	*retval = tobool2825
 	goto _return
 
@@ -165467,7 +165472,7 @@ if_then2850:
 
 if_end2851:
 	v1101 = *result
-	tobool2852 = byte(v1101 & 1)
+	tobool2852 = (v1101 & 1) != 0
 	*retval = tobool2852
 	goto _return
 
@@ -165583,7 +165588,7 @@ if_then2886:
 
 if_end2887:
 	v1115 = *result
-	tobool2888 = byte(v1115 & 1)
+	tobool2888 = (v1115 & 1) != 0
 	*retval = tobool2888
 	goto _return
 
@@ -165633,7 +165638,7 @@ if_then2901:
 
 if_end2902:
 	v1123 = *result
-	tobool2903 = byte(v1123 & 1)
+	tobool2903 = (v1123 & 1) != 0
 	*retval = tobool2903
 	goto _return
 
@@ -165683,7 +165688,7 @@ if_then2916:
 
 if_end2917:
 	v1131 = *result
-	tobool2918 = byte(v1131 & 1)
+	tobool2918 = (v1131 & 1) != 0
 	*retval = tobool2918
 	goto _return
 
@@ -165698,7 +165703,7 @@ sw_bb2919:
 	v1135 = *lexer_addr
 	v1134(v1135)
 	v1136 = *result
-	tobool2922 = byte(v1136 & 1)
+	tobool2922 = (v1136 & 1) != 0
 	*retval = tobool2922
 	goto _return
 
@@ -165726,7 +165731,7 @@ if_then2928:
 
 if_end2929:
 	v1142 = *result
-	tobool2930 = byte(v1142 & 1)
+	tobool2930 = (v1142 & 1) != 0
 	*retval = tobool2930
 	goto _return
 
@@ -165767,7 +165772,7 @@ if_then2940:
 
 if_end2941:
 	v1149 = *result
-	tobool2942 = byte(v1149 & 1)
+	tobool2942 = (v1149 & 1) != 0
 	*retval = tobool2942
 	goto _return
 
@@ -165782,7 +165787,7 @@ sw_bb2943:
 	v1153 = *lexer_addr
 	v1152(v1153)
 	v1154 = *result
-	tobool2946 = byte(v1154 & 1)
+	tobool2946 = (v1154 & 1) != 0
 	*retval = tobool2946
 	goto _return
 
@@ -165810,7 +165815,7 @@ if_then2952:
 
 if_end2953:
 	v1160 = *result
-	tobool2954 = byte(v1160 & 1)
+	tobool2954 = (v1160 & 1) != 0
 	*retval = tobool2954
 	goto _return
 
@@ -165864,7 +165869,7 @@ if_then2968:
 
 if_end2969:
 	v1168 = *result
-	tobool2970 = byte(v1168 & 1)
+	tobool2970 = (v1168 & 1) != 0
 	*retval = tobool2970
 	goto _return
 
@@ -165905,7 +165910,7 @@ if_then2980:
 
 if_end2981:
 	v1175 = *result
-	tobool2982 = byte(v1175 & 1)
+	tobool2982 = (v1175 & 1) != 0
 	*retval = tobool2982
 	goto _return
 
@@ -165933,7 +165938,7 @@ if_then2988:
 
 if_end2989:
 	v1181 = *result
-	tobool2990 = byte(v1181 & 1)
+	tobool2990 = (v1181 & 1) != 0
 	*retval = tobool2990
 	goto _return
 
@@ -165948,7 +165953,7 @@ sw_bb2991:
 	v1185 = *lexer_addr
 	v1184(v1185)
 	v1186 = *result
-	tobool2994 = byte(v1186 & 1)
+	tobool2994 = (v1186 & 1) != 0
 	*retval = tobool2994
 	goto _return
 
@@ -165963,7 +165968,7 @@ sw_bb2995:
 	v1190 = *lexer_addr
 	v1189(v1190)
 	v1191 = *result
-	tobool2998 = byte(v1191 & 1)
+	tobool2998 = (v1191 & 1) != 0
 	*retval = tobool2998
 	goto _return
 
@@ -165991,7 +165996,7 @@ if_then3004:
 
 if_end3005:
 	v1197 = *result
-	tobool3006 = byte(v1197 & 1)
+	tobool3006 = (v1197 & 1) != 0
 	*retval = tobool3006
 	goto _return
 
@@ -166006,7 +166011,7 @@ sw_bb3007:
 	v1201 = *lexer_addr
 	v1200(v1201)
 	v1202 = *result
-	tobool3010 = byte(v1202 & 1)
+	tobool3010 = (v1202 & 1) != 0
 	*retval = tobool3010
 	goto _return
 
@@ -166021,7 +166026,7 @@ sw_bb3011:
 	v1206 = *lexer_addr
 	v1205(v1206)
 	v1207 = *result
-	tobool3014 = byte(v1207 & 1)
+	tobool3014 = (v1207 & 1) != 0
 	*retval = tobool3014
 	goto _return
 
@@ -166036,7 +166041,7 @@ sw_bb3015:
 	v1211 = *lexer_addr
 	v1210(v1211)
 	v1212 = *result
-	tobool3018 = byte(v1212 & 1)
+	tobool3018 = (v1212 & 1) != 0
 	*retval = tobool3018
 	goto _return
 
@@ -166051,7 +166056,7 @@ sw_bb3019:
 	v1216 = *lexer_addr
 	v1215(v1216)
 	v1217 = *result
-	tobool3022 = byte(v1217 & 1)
+	tobool3022 = (v1217 & 1) != 0
 	*retval = tobool3022
 	goto _return
 
@@ -166066,7 +166071,7 @@ sw_bb3023:
 	v1221 = *lexer_addr
 	v1220(v1221)
 	v1222 = *result
-	tobool3026 = byte(v1222 & 1)
+	tobool3026 = (v1222 & 1) != 0
 	*retval = tobool3026
 	goto _return
 
@@ -166081,7 +166086,7 @@ sw_bb3027:
 	v1226 = *lexer_addr
 	v1225(v1226)
 	v1227 = *result
-	tobool3030 = byte(v1227 & 1)
+	tobool3030 = (v1227 & 1) != 0
 	*retval = tobool3030
 	goto _return
 
@@ -166096,7 +166101,7 @@ sw_bb3031:
 	v1231 = *lexer_addr
 	v1230(v1231)
 	v1232 = *result
-	tobool3034 = byte(v1232 & 1)
+	tobool3034 = (v1232 & 1) != 0
 	*retval = tobool3034
 	goto _return
 
@@ -166111,7 +166116,7 @@ sw_bb3035:
 	v1236 = *lexer_addr
 	v1235(v1236)
 	v1237 = *result
-	tobool3038 = byte(v1237 & 1)
+	tobool3038 = (v1237 & 1) != 0
 	*retval = tobool3038
 	goto _return
 
@@ -166126,7 +166131,7 @@ sw_bb3039:
 	v1241 = *lexer_addr
 	v1240(v1241)
 	v1242 = *result
-	tobool3042 = byte(v1242 & 1)
+	tobool3042 = (v1242 & 1) != 0
 	*retval = tobool3042
 	goto _return
 
@@ -166141,7 +166146,7 @@ sw_bb3043:
 	v1246 = *lexer_addr
 	v1245(v1246)
 	v1247 = *result
-	tobool3046 = byte(v1247 & 1)
+	tobool3046 = (v1247 & 1) != 0
 	*retval = tobool3046
 	goto _return
 
@@ -166156,7 +166161,7 @@ sw_bb3047:
 	v1251 = *lexer_addr
 	v1250(v1251)
 	v1252 = *result
-	tobool3050 = byte(v1252 & 1)
+	tobool3050 = (v1252 & 1) != 0
 	*retval = tobool3050
 	goto _return
 
@@ -166171,7 +166176,7 @@ sw_bb3051:
 	v1256 = *lexer_addr
 	v1255(v1256)
 	v1257 = *result
-	tobool3054 = byte(v1257 & 1)
+	tobool3054 = (v1257 & 1) != 0
 	*retval = tobool3054
 	goto _return
 
@@ -166186,7 +166191,7 @@ sw_bb3055:
 	v1261 = *lexer_addr
 	v1260(v1261)
 	v1262 = *result
-	tobool3058 = byte(v1262 & 1)
+	tobool3058 = (v1262 & 1) != 0
 	*retval = tobool3058
 	goto _return
 
@@ -166201,7 +166206,7 @@ sw_bb3059:
 	v1266 = *lexer_addr
 	v1265(v1266)
 	v1267 = *result
-	tobool3062 = byte(v1267 & 1)
+	tobool3062 = (v1267 & 1) != 0
 	*retval = tobool3062
 	goto _return
 
@@ -166216,7 +166221,7 @@ sw_bb3063:
 	v1271 = *lexer_addr
 	v1270(v1271)
 	v1272 = *result
-	tobool3066 = byte(v1272 & 1)
+	tobool3066 = (v1272 & 1) != 0
 	*retval = tobool3066
 	goto _return
 
@@ -166231,7 +166236,7 @@ sw_bb3067:
 	v1276 = *lexer_addr
 	v1275(v1276)
 	v1277 = *result
-	tobool3070 = byte(v1277 & 1)
+	tobool3070 = (v1277 & 1) != 0
 	*retval = tobool3070
 	goto _return
 
@@ -166246,7 +166251,7 @@ sw_bb3071:
 	v1281 = *lexer_addr
 	v1280(v1281)
 	v1282 = *result
-	tobool3074 = byte(v1282 & 1)
+	tobool3074 = (v1282 & 1) != 0
 	*retval = tobool3074
 	goto _return
 
@@ -166261,7 +166266,7 @@ sw_bb3075:
 	v1286 = *lexer_addr
 	v1285(v1286)
 	v1287 = *result
-	tobool3078 = byte(v1287 & 1)
+	tobool3078 = (v1287 & 1) != 0
 	*retval = tobool3078
 	goto _return
 
@@ -166276,7 +166281,7 @@ sw_bb3079:
 	v1291 = *lexer_addr
 	v1290(v1291)
 	v1292 = *result
-	tobool3082 = byte(v1292 & 1)
+	tobool3082 = (v1292 & 1) != 0
 	*retval = tobool3082
 	goto _return
 
@@ -166291,7 +166296,7 @@ sw_bb3083:
 	v1296 = *lexer_addr
 	v1295(v1296)
 	v1297 = *result
-	tobool3086 = byte(v1297 & 1)
+	tobool3086 = (v1297 & 1) != 0
 	*retval = tobool3086
 	goto _return
 
@@ -166306,7 +166311,7 @@ sw_bb3087:
 	v1301 = *lexer_addr
 	v1300(v1301)
 	v1302 = *result
-	tobool3090 = byte(v1302 & 1)
+	tobool3090 = (v1302 & 1) != 0
 	*retval = tobool3090
 	goto _return
 
@@ -166321,7 +166326,7 @@ sw_bb3091:
 	v1306 = *lexer_addr
 	v1305(v1306)
 	v1307 = *result
-	tobool3094 = byte(v1307 & 1)
+	tobool3094 = (v1307 & 1) != 0
 	*retval = tobool3094
 	goto _return
 
@@ -166349,7 +166354,7 @@ if_then3099:
 
 if_end3100:
 	v1313 = *result
-	tobool3101 = byte(v1313 & 1)
+	tobool3101 = (v1313 & 1) != 0
 	*retval = tobool3101
 	goto _return
 
@@ -166364,7 +166369,7 @@ sw_bb3102:
 	v1317 = *lexer_addr
 	v1316(v1317)
 	v1318 = *result
-	tobool3105 = byte(v1318 & 1)
+	tobool3105 = (v1318 & 1) != 0
 	*retval = tobool3105
 	goto _return
 
@@ -166392,7 +166397,7 @@ if_then3110:
 
 if_end3111:
 	v1324 = *result
-	tobool3112 = byte(v1324 & 1)
+	tobool3112 = (v1324 & 1) != 0
 	*retval = tobool3112
 	goto _return
 
@@ -166407,7 +166412,7 @@ sw_bb3113:
 	v1328 = *lexer_addr
 	v1327(v1328)
 	v1329 = *result
-	tobool3116 = byte(v1329 & 1)
+	tobool3116 = (v1329 & 1) != 0
 	*retval = tobool3116
 	goto _return
 
@@ -166422,7 +166427,7 @@ sw_bb3117:
 	v1333 = *lexer_addr
 	v1332(v1333)
 	v1334 = *result
-	tobool3120 = byte(v1334 & 1)
+	tobool3120 = (v1334 & 1) != 0
 	*retval = tobool3120
 	goto _return
 
@@ -166459,7 +166464,7 @@ if_then3129:
 
 if_end3130:
 	v1341 = *result
-	tobool3131 = byte(v1341 & 1)
+	tobool3131 = (v1341 & 1) != 0
 	*retval = tobool3131
 	goto _return
 
@@ -166496,7 +166501,7 @@ if_then3140:
 
 if_end3141:
 	v1348 = *result
-	tobool3142 = byte(v1348 & 1)
+	tobool3142 = (v1348 & 1) != 0
 	*retval = tobool3142
 	goto _return
 
@@ -166569,7 +166574,7 @@ if_then3163:
 
 if_end3164:
 	v1359 = *result
-	tobool3165 = byte(v1359 & 1)
+	tobool3165 = (v1359 & 1) != 0
 	*retval = tobool3165
 	goto _return
 
@@ -166584,7 +166589,7 @@ sw_bb3166:
 	v1363 = *lexer_addr
 	v1362(v1363)
 	v1364 = *result
-	tobool3169 = byte(v1364 & 1)
+	tobool3169 = (v1364 & 1) != 0
 	*retval = tobool3169
 	goto _return
 
@@ -166612,7 +166617,7 @@ if_then3175:
 
 if_end3176:
 	v1370 = *result
-	tobool3177 = byte(v1370 & 1)
+	tobool3177 = (v1370 & 1) != 0
 	*retval = tobool3177
 	goto _return
 
@@ -166627,7 +166632,7 @@ sw_bb3178:
 	v1374 = *lexer_addr
 	v1373(v1374)
 	v1375 = *result
-	tobool3181 = byte(v1375 & 1)
+	tobool3181 = (v1375 & 1) != 0
 	*retval = tobool3181
 	goto _return
 
@@ -166642,7 +166647,7 @@ sw_bb3182:
 	v1379 = *lexer_addr
 	v1378(v1379)
 	v1380 = *result
-	tobool3185 = byte(v1380 & 1)
+	tobool3185 = (v1380 & 1) != 0
 	*retval = tobool3185
 	goto _return
 
@@ -166657,7 +166662,7 @@ sw_bb3186:
 	v1384 = *lexer_addr
 	v1383(v1384)
 	v1385 = *result
-	tobool3189 = byte(v1385 & 1)
+	tobool3189 = (v1385 & 1) != 0
 	*retval = tobool3189
 	goto _return
 
@@ -166672,7 +166677,7 @@ sw_bb3190:
 	v1389 = *lexer_addr
 	v1388(v1389)
 	v1390 = *result
-	tobool3193 = byte(v1390 & 1)
+	tobool3193 = (v1390 & 1) != 0
 	*retval = tobool3193
 	goto _return
 
@@ -166687,7 +166692,7 @@ sw_bb3194:
 	v1394 = *lexer_addr
 	v1393(v1394)
 	v1395 = *result
-	tobool3197 = byte(v1395 & 1)
+	tobool3197 = (v1395 & 1) != 0
 	*retval = tobool3197
 	goto _return
 
@@ -166772,7 +166777,7 @@ if_then3221:
 
 if_end3222:
 	v1406 = *result
-	tobool3223 = byte(v1406 & 1)
+	tobool3223 = (v1406 & 1) != 0
 	*retval = tobool3223
 	goto _return
 
@@ -166831,7 +166836,7 @@ if_then3239:
 
 if_end3240:
 	v1415 = *result
-	tobool3241 = byte(v1415 & 1)
+	tobool3241 = (v1415 & 1) != 0
 	*retval = tobool3241
 	goto _return
 
@@ -166970,7 +166975,7 @@ if_then3283:
 
 if_end3284:
 	v1432 = *result
-	tobool3285 = byte(v1432 & 1)
+	tobool3285 = (v1432 & 1) != 0
 	*retval = tobool3285
 	goto _return
 
@@ -167042,7 +167047,7 @@ if_then3305:
 
 if_end3306:
 	v1442 = *result
-	tobool3307 = byte(v1442 & 1)
+	tobool3307 = (v1442 & 1) != 0
 	*retval = tobool3307
 	goto _return
 
@@ -167114,7 +167119,7 @@ if_then3327:
 
 if_end3328:
 	v1452 = *result
-	tobool3329 = byte(v1452 & 1)
+	tobool3329 = (v1452 & 1) != 0
 	*retval = tobool3329
 	goto _return
 
@@ -167173,7 +167178,7 @@ if_then3345:
 
 if_end3346:
 	v1461 = *result
-	tobool3347 = byte(v1461 & 1)
+	tobool3347 = (v1461 & 1) != 0
 	*retval = tobool3347
 	goto _return
 
@@ -167254,7 +167259,7 @@ if_then3370:
 
 if_end3371:
 	v1472 = *result
-	tobool3372 = byte(v1472 & 1)
+	tobool3372 = (v1472 & 1) != 0
 	*retval = tobool3372
 	goto _return
 
@@ -167349,7 +167354,7 @@ if_then3400:
 
 if_end3401:
 	v1485 = *result
-	tobool3402 = byte(v1485 & 1)
+	tobool3402 = (v1485 & 1) != 0
 	*retval = tobool3402
 	goto _return
 
@@ -167395,7 +167400,7 @@ if_then3414:
 
 if_end3415:
 	v1493 = *result
-	tobool3416 = byte(v1493 & 1)
+	tobool3416 = (v1493 & 1) != 0
 	*retval = tobool3416
 	goto _return
 
@@ -167410,7 +167415,7 @@ sw_bb3417:
 	v1497 = *lexer_addr
 	v1496(v1497)
 	v1498 = *result
-	tobool3420 = byte(v1498 & 1)
+	tobool3420 = (v1498 & 1) != 0
 	*retval = tobool3420
 	goto _return
 
@@ -167425,7 +167430,7 @@ sw_bb3421:
 	v1502 = *lexer_addr
 	v1501(v1502)
 	v1503 = *result
-	tobool3424 = byte(v1503 & 1)
+	tobool3424 = (v1503 & 1) != 0
 	*retval = tobool3424
 	goto _return
 
@@ -167466,7 +167471,7 @@ if_then3434:
 
 if_end3435:
 	v1510 = *result
-	tobool3436 = byte(v1510 & 1)
+	tobool3436 = (v1510 & 1) != 0
 	*retval = tobool3436
 	goto _return
 
@@ -167481,7 +167486,7 @@ sw_bb3437:
 	v1514 = *lexer_addr
 	v1513(v1514)
 	v1515 = *result
-	tobool3440 = byte(v1515 & 1)
+	tobool3440 = (v1515 & 1) != 0
 	*retval = tobool3440
 	goto _return
 
@@ -167496,7 +167501,7 @@ sw_bb3441:
 	v1519 = *lexer_addr
 	v1518(v1519)
 	v1520 = *result
-	tobool3444 = byte(v1520 & 1)
+	tobool3444 = (v1520 & 1) != 0
 	*retval = tobool3444
 	goto _return
 
@@ -167511,7 +167516,7 @@ sw_bb3445:
 	v1524 = *lexer_addr
 	v1523(v1524)
 	v1525 = *result
-	tobool3448 = byte(v1525 & 1)
+	tobool3448 = (v1525 & 1) != 0
 	*retval = tobool3448
 	goto _return
 
@@ -167526,7 +167531,7 @@ sw_bb3449:
 	v1529 = *lexer_addr
 	v1528(v1529)
 	v1530 = *result
-	tobool3452 = byte(v1530 & 1)
+	tobool3452 = (v1530 & 1) != 0
 	*retval = tobool3452
 	goto _return
 
@@ -167541,7 +167546,7 @@ sw_bb3453:
 	v1534 = *lexer_addr
 	v1533(v1534)
 	v1535 = *result
-	tobool3456 = byte(v1535 & 1)
+	tobool3456 = (v1535 & 1) != 0
 	*retval = tobool3456
 	goto _return
 
@@ -167569,7 +167574,7 @@ if_then3462:
 
 if_end3463:
 	v1541 = *result
-	tobool3464 = byte(v1541 & 1)
+	tobool3464 = (v1541 & 1) != 0
 	*retval = tobool3464
 	goto _return
 
@@ -167584,7 +167589,7 @@ sw_bb3465:
 	v1545 = *lexer_addr
 	v1544(v1545)
 	v1546 = *result
-	tobool3468 = byte(v1546 & 1)
+	tobool3468 = (v1546 & 1) != 0
 	*retval = tobool3468
 	goto _return
 
@@ -167612,7 +167617,7 @@ if_then3474:
 
 if_end3475:
 	v1552 = *result
-	tobool3476 = byte(v1552 & 1)
+	tobool3476 = (v1552 & 1) != 0
 	*retval = tobool3476
 	goto _return
 
@@ -167627,7 +167632,7 @@ sw_bb3477:
 	v1556 = *lexer_addr
 	v1555(v1556)
 	v1557 = *result
-	tobool3480 = byte(v1557 & 1)
+	tobool3480 = (v1557 & 1) != 0
 	*retval = tobool3480
 	goto _return
 
@@ -167642,7 +167647,7 @@ sw_bb3481:
 	v1561 = *lexer_addr
 	v1560(v1561)
 	v1562 = *result
-	tobool3484 = byte(v1562 & 1)
+	tobool3484 = (v1562 & 1) != 0
 	*retval = tobool3484
 	goto _return
 
@@ -167657,7 +167662,7 @@ sw_bb3485:
 	v1566 = *lexer_addr
 	v1565(v1566)
 	v1567 = *result
-	tobool3488 = byte(v1567 & 1)
+	tobool3488 = (v1567 & 1) != 0
 	*retval = tobool3488
 	goto _return
 
@@ -167685,7 +167690,7 @@ if_then3494:
 
 if_end3495:
 	v1573 = *result
-	tobool3496 = byte(v1573 & 1)
+	tobool3496 = (v1573 & 1) != 0
 	*retval = tobool3496
 	goto _return
 
@@ -167713,7 +167718,7 @@ if_then3502:
 
 if_end3503:
 	v1579 = *result
-	tobool3504 = byte(v1579 & 1)
+	tobool3504 = (v1579 & 1) != 0
 	*retval = tobool3504
 	goto _return
 
@@ -167741,7 +167746,7 @@ if_then3510:
 
 if_end3511:
 	v1585 = *result
-	tobool3512 = byte(v1585 & 1)
+	tobool3512 = (v1585 & 1) != 0
 	*retval = tobool3512
 	goto _return
 
@@ -167756,7 +167761,7 @@ sw_bb3513:
 	v1589 = *lexer_addr
 	v1588(v1589)
 	v1590 = *result
-	tobool3516 = byte(v1590 & 1)
+	tobool3516 = (v1590 & 1) != 0
 	*retval = tobool3516
 	goto _return
 
@@ -167771,7 +167776,7 @@ sw_bb3517:
 	v1594 = *lexer_addr
 	v1593(v1594)
 	v1595 = *result
-	tobool3520 = byte(v1595 & 1)
+	tobool3520 = (v1595 & 1) != 0
 	*retval = tobool3520
 	goto _return
 
@@ -167786,7 +167791,7 @@ sw_bb3521:
 	v1599 = *lexer_addr
 	v1598(v1599)
 	v1600 = *result
-	tobool3524 = byte(v1600 & 1)
+	tobool3524 = (v1600 & 1) != 0
 	*retval = tobool3524
 	goto _return
 
@@ -167853,7 +167858,7 @@ if_then3542:
 
 if_end3543:
 	v1609 = *result
-	tobool3544 = byte(v1609 & 1)
+	tobool3544 = (v1609 & 1) != 0
 	*retval = tobool3544
 	goto _return
 
@@ -167907,7 +167912,7 @@ if_then3558:
 
 if_end3559:
 	v1617 = *result
-	tobool3560 = byte(v1617 & 1)
+	tobool3560 = (v1617 & 1) != 0
 	*retval = tobool3560
 	goto _return
 
@@ -167961,7 +167966,7 @@ if_then3574:
 
 if_end3575:
 	v1625 = *result
-	tobool3576 = byte(v1625 & 1)
+	tobool3576 = (v1625 & 1) != 0
 	*retval = tobool3576
 	goto _return
 
@@ -168015,7 +168020,7 @@ if_then3590:
 
 if_end3591:
 	v1633 = *result
-	tobool3592 = byte(v1633 & 1)
+	tobool3592 = (v1633 & 1) != 0
 	*retval = tobool3592
 	goto _return
 
@@ -168056,7 +168061,7 @@ if_then3602:
 
 if_end3603:
 	v1640 = *result
-	tobool3604 = byte(v1640 & 1)
+	tobool3604 = (v1640 & 1) != 0
 	*retval = tobool3604
 	goto _return
 
@@ -168097,7 +168102,7 @@ if_then3614:
 
 if_end3615:
 	v1647 = *result
-	tobool3616 = byte(v1647 & 1)
+	tobool3616 = (v1647 & 1) != 0
 	*retval = tobool3616
 	goto _return
 
@@ -168125,7 +168130,7 @@ if_then3622:
 
 if_end3623:
 	v1653 = *result
-	tobool3624 = byte(v1653 & 1)
+	tobool3624 = (v1653 & 1) != 0
 	*retval = tobool3624
 	goto _return
 
@@ -168140,7 +168145,7 @@ sw_bb3625:
 	v1657 = *lexer_addr
 	v1656(v1657)
 	v1658 = *result
-	tobool3628 = byte(v1658 & 1)
+	tobool3628 = (v1658 & 1) != 0
 	*retval = tobool3628
 	goto _return
 
@@ -168155,7 +168160,7 @@ sw_bb3629:
 	v1662 = *lexer_addr
 	v1661(v1662)
 	v1663 = *result
-	tobool3632 = byte(v1663 & 1)
+	tobool3632 = (v1663 & 1) != 0
 	*retval = tobool3632
 	goto _return
 
@@ -168170,7 +168175,7 @@ sw_bb3633:
 	v1667 = *lexer_addr
 	v1666(v1667)
 	v1668 = *result
-	tobool3636 = byte(v1668 & 1)
+	tobool3636 = (v1668 & 1) != 0
 	*retval = tobool3636
 	goto _return
 
@@ -168185,7 +168190,7 @@ sw_bb3637:
 	v1672 = *lexer_addr
 	v1671(v1672)
 	v1673 = *result
-	tobool3640 = byte(v1673 & 1)
+	tobool3640 = (v1673 & 1) != 0
 	*retval = tobool3640
 	goto _return
 
@@ -168270,7 +168275,7 @@ if_then3664:
 
 if_end3665:
 	v1684 = *result
-	tobool3666 = byte(v1684 & 1)
+	tobool3666 = (v1684 & 1) != 0
 	*retval = tobool3666
 	goto _return
 
@@ -168298,7 +168303,7 @@ if_then3672:
 
 if_end3673:
 	v1690 = *result
-	tobool3674 = byte(v1690 & 1)
+	tobool3674 = (v1690 & 1) != 0
 	*retval = tobool3674
 	goto _return
 
@@ -168313,7 +168318,7 @@ sw_bb3675:
 	v1694 = *lexer_addr
 	v1693(v1694)
 	v1695 = *result
-	tobool3678 = byte(v1695 & 1)
+	tobool3678 = (v1695 & 1) != 0
 	*retval = tobool3678
 	goto _return
 
@@ -168341,7 +168346,7 @@ if_then3684:
 
 if_end3685:
 	v1701 = *result
-	tobool3686 = byte(v1701 & 1)
+	tobool3686 = (v1701 & 1) != 0
 	*retval = tobool3686
 	goto _return
 
@@ -168382,7 +168387,7 @@ if_then3696:
 
 if_end3697:
 	v1708 = *result
-	tobool3698 = byte(v1708 & 1)
+	tobool3698 = (v1708 & 1) != 0
 	*retval = tobool3698
 	goto _return
 
@@ -168410,7 +168415,7 @@ if_then3704:
 
 if_end3705:
 	v1714 = *result
-	tobool3706 = byte(v1714 & 1)
+	tobool3706 = (v1714 & 1) != 0
 	*retval = tobool3706
 	goto _return
 
@@ -168425,7 +168430,7 @@ sw_bb3707:
 	v1718 = *lexer_addr
 	v1717(v1718)
 	v1719 = *result
-	tobool3710 = byte(v1719 & 1)
+	tobool3710 = (v1719 & 1) != 0
 	*retval = tobool3710
 	goto _return
 
@@ -168453,7 +168458,7 @@ if_then3716:
 
 if_end3717:
 	v1725 = *result
-	tobool3718 = byte(v1725 & 1)
+	tobool3718 = (v1725 & 1) != 0
 	*retval = tobool3718
 	goto _return
 
@@ -168494,7 +168499,7 @@ if_then3728:
 
 if_end3729:
 	v1732 = *result
-	tobool3730 = byte(v1732 & 1)
+	tobool3730 = (v1732 & 1) != 0
 	*retval = tobool3730
 	goto _return
 
@@ -168522,7 +168527,7 @@ if_then3736:
 
 if_end3737:
 	v1738 = *result
-	tobool3738 = byte(v1738 & 1)
+	tobool3738 = (v1738 & 1) != 0
 	*retval = tobool3738
 	goto _return
 
@@ -168563,7 +168568,7 @@ if_then3748:
 
 if_end3749:
 	v1745 = *result
-	tobool3750 = byte(v1745 & 1)
+	tobool3750 = (v1745 & 1) != 0
 	*retval = tobool3750
 	goto _return
 
@@ -168617,7 +168622,7 @@ if_then3764:
 
 if_end3765:
 	v1753 = *result
-	tobool3766 = byte(v1753 & 1)
+	tobool3766 = (v1753 & 1) != 0
 	*retval = tobool3766
 	goto _return
 
@@ -168632,7 +168637,7 @@ sw_bb3767:
 	v1757 = *lexer_addr
 	v1756(v1757)
 	v1758 = *result
-	tobool3770 = byte(v1758 & 1)
+	tobool3770 = (v1758 & 1) != 0
 	*retval = tobool3770
 	goto _return
 
@@ -168660,7 +168665,7 @@ if_then3776:
 
 if_end3777:
 	v1764 = *result
-	tobool3778 = byte(v1764 & 1)
+	tobool3778 = (v1764 & 1) != 0
 	*retval = tobool3778
 	goto _return
 
@@ -168701,7 +168706,7 @@ if_then3787:
 
 if_end3788:
 	v1771 = *result
-	tobool3789 = byte(v1771 & 1)
+	tobool3789 = (v1771 & 1) != 0
 	*retval = tobool3789
 	goto _return
 
@@ -168777,7 +168782,7 @@ if_then3809:
 
 if_end3810:
 	v1781 = *result
-	tobool3811 = byte(v1781 & 1)
+	tobool3811 = (v1781 & 1) != 0
 	*retval = tobool3811
 	goto _return
 
@@ -168831,7 +168836,7 @@ if_then3824:
 
 if_end3825:
 	v1789 = *result
-	tobool3826 = byte(v1789 & 1)
+	tobool3826 = (v1789 & 1) != 0
 	*retval = tobool3826
 	goto _return
 
@@ -169046,7 +169051,7 @@ if_then3893:
 
 if_end3894:
 	v1814 = *result
-	tobool3895 = byte(v1814 & 1)
+	tobool3895 = (v1814 & 1) != 0
 	*retval = tobool3895
 	goto _return
 
@@ -169118,7 +169123,7 @@ if_then3914:
 
 if_end3915:
 	v1824 = *result
-	tobool3916 = byte(v1824 & 1)
+	tobool3916 = (v1824 & 1) != 0
 	*retval = tobool3916
 	goto _return
 
@@ -169190,7 +169195,7 @@ if_then3935:
 
 if_end3936:
 	v1834 = *result
-	tobool3937 = byte(v1834 & 1)
+	tobool3937 = (v1834 & 1) != 0
 	*retval = tobool3937
 	goto _return
 
@@ -169240,7 +169245,7 @@ if_then3949:
 
 if_end3950:
 	v1842 = *result
-	tobool3951 = byte(v1842 & 1)
+	tobool3951 = (v1842 & 1) != 0
 	*retval = tobool3951
 	goto _return
 
@@ -169290,7 +169295,7 @@ if_then3963:
 
 if_end3964:
 	v1850 = *result
-	tobool3965 = byte(v1850 & 1)
+	tobool3965 = (v1850 & 1) != 0
 	*retval = tobool3965
 	goto _return
 
@@ -169340,7 +169345,7 @@ if_then3977:
 
 if_end3978:
 	v1858 = *result
-	tobool3979 = byte(v1858 & 1)
+	tobool3979 = (v1858 & 1) != 0
 	*retval = tobool3979
 	goto _return
 
@@ -169390,7 +169395,7 @@ if_then3991:
 
 if_end3992:
 	v1866 = *result
-	tobool3993 = byte(v1866 & 1)
+	tobool3993 = (v1866 & 1) != 0
 	*retval = tobool3993
 	goto _return
 
@@ -169440,7 +169445,7 @@ if_then4005:
 
 if_end4006:
 	v1874 = *result
-	tobool4007 = byte(v1874 & 1)
+	tobool4007 = (v1874 & 1) != 0
 	*retval = tobool4007
 	goto _return
 
@@ -169490,7 +169495,7 @@ if_then4019:
 
 if_end4020:
 	v1882 = *result
-	tobool4021 = byte(v1882 & 1)
+	tobool4021 = (v1882 & 1) != 0
 	*retval = tobool4021
 	goto _return
 
@@ -169540,7 +169545,7 @@ if_then4033:
 
 if_end4034:
 	v1890 = *result
-	tobool4035 = byte(v1890 & 1)
+	tobool4035 = (v1890 & 1) != 0
 	*retval = tobool4035
 	goto _return
 
@@ -169590,7 +169595,7 @@ if_then4047:
 
 if_end4048:
 	v1898 = *result
-	tobool4049 = byte(v1898 & 1)
+	tobool4049 = (v1898 & 1) != 0
 	*retval = tobool4049
 	goto _return
 
@@ -169640,7 +169645,7 @@ if_then4061:
 
 if_end4062:
 	v1906 = *result
-	tobool4063 = byte(v1906 & 1)
+	tobool4063 = (v1906 & 1) != 0
 	*retval = tobool4063
 	goto _return
 
@@ -169690,7 +169695,7 @@ if_then4075:
 
 if_end4076:
 	v1914 = *result
-	tobool4077 = byte(v1914 & 1)
+	tobool4077 = (v1914 & 1) != 0
 	*retval = tobool4077
 	goto _return
 
@@ -169740,7 +169745,7 @@ if_then4089:
 
 if_end4090:
 	v1922 = *result
-	tobool4091 = byte(v1922 & 1)
+	tobool4091 = (v1922 & 1) != 0
 	*retval = tobool4091
 	goto _return
 
@@ -169790,7 +169795,7 @@ if_then4103:
 
 if_end4104:
 	v1930 = *result
-	tobool4105 = byte(v1930 & 1)
+	tobool4105 = (v1930 & 1) != 0
 	*retval = tobool4105
 	goto _return
 
@@ -169840,7 +169845,7 @@ if_then4117:
 
 if_end4118:
 	v1938 = *result
-	tobool4119 = byte(v1938 & 1)
+	tobool4119 = (v1938 & 1) != 0
 	*retval = tobool4119
 	goto _return
 
@@ -169890,7 +169895,7 @@ if_then4131:
 
 if_end4132:
 	v1946 = *result
-	tobool4133 = byte(v1946 & 1)
+	tobool4133 = (v1946 & 1) != 0
 	*retval = tobool4133
 	goto _return
 
@@ -169940,7 +169945,7 @@ if_then4145:
 
 if_end4146:
 	v1954 = *result
-	tobool4147 = byte(v1954 & 1)
+	tobool4147 = (v1954 & 1) != 0
 	*retval = tobool4147
 	goto _return
 
@@ -169990,7 +169995,7 @@ if_then4159:
 
 if_end4160:
 	v1962 = *result
-	tobool4161 = byte(v1962 & 1)
+	tobool4161 = (v1962 & 1) != 0
 	*retval = tobool4161
 	goto _return
 
@@ -170040,7 +170045,7 @@ if_then4173:
 
 if_end4174:
 	v1970 = *result
-	tobool4175 = byte(v1970 & 1)
+	tobool4175 = (v1970 & 1) != 0
 	*retval = tobool4175
 	goto _return
 
@@ -170090,7 +170095,7 @@ if_then4187:
 
 if_end4188:
 	v1978 = *result
-	tobool4189 = byte(v1978 & 1)
+	tobool4189 = (v1978 & 1) != 0
 	*retval = tobool4189
 	goto _return
 
@@ -170140,7 +170145,7 @@ if_then4201:
 
 if_end4202:
 	v1986 = *result
-	tobool4203 = byte(v1986 & 1)
+	tobool4203 = (v1986 & 1) != 0
 	*retval = tobool4203
 	goto _return
 
@@ -170190,7 +170195,7 @@ if_then4215:
 
 if_end4216:
 	v1994 = *result
-	tobool4217 = byte(v1994 & 1)
+	tobool4217 = (v1994 & 1) != 0
 	*retval = tobool4217
 	goto _return
 
@@ -170240,7 +170245,7 @@ if_then4229:
 
 if_end4230:
 	v2002 = *result
-	tobool4231 = byte(v2002 & 1)
+	tobool4231 = (v2002 & 1) != 0
 	*retval = tobool4231
 	goto _return
 
@@ -170290,7 +170295,7 @@ if_then4243:
 
 if_end4244:
 	v2010 = *result
-	tobool4245 = byte(v2010 & 1)
+	tobool4245 = (v2010 & 1) != 0
 	*retval = tobool4245
 	goto _return
 
@@ -170340,7 +170345,7 @@ if_then4257:
 
 if_end4258:
 	v2018 = *result
-	tobool4259 = byte(v2018 & 1)
+	tobool4259 = (v2018 & 1) != 0
 	*retval = tobool4259
 	goto _return
 
@@ -170390,7 +170395,7 @@ if_then4271:
 
 if_end4272:
 	v2026 = *result
-	tobool4273 = byte(v2026 & 1)
+	tobool4273 = (v2026 & 1) != 0
 	*retval = tobool4273
 	goto _return
 
@@ -170440,7 +170445,7 @@ if_then4285:
 
 if_end4286:
 	v2034 = *result
-	tobool4287 = byte(v2034 & 1)
+	tobool4287 = (v2034 & 1) != 0
 	*retval = tobool4287
 	goto _return
 
@@ -170490,7 +170495,7 @@ if_then4299:
 
 if_end4300:
 	v2042 = *result
-	tobool4301 = byte(v2042 & 1)
+	tobool4301 = (v2042 & 1) != 0
 	*retval = tobool4301
 	goto _return
 
@@ -170540,7 +170545,7 @@ if_then4313:
 
 if_end4314:
 	v2050 = *result
-	tobool4315 = byte(v2050 & 1)
+	tobool4315 = (v2050 & 1) != 0
 	*retval = tobool4315
 	goto _return
 
@@ -170590,7 +170595,7 @@ if_then4327:
 
 if_end4328:
 	v2058 = *result
-	tobool4329 = byte(v2058 & 1)
+	tobool4329 = (v2058 & 1) != 0
 	*retval = tobool4329
 	goto _return
 
@@ -170640,7 +170645,7 @@ if_then4341:
 
 if_end4342:
 	v2066 = *result
-	tobool4343 = byte(v2066 & 1)
+	tobool4343 = (v2066 & 1) != 0
 	*retval = tobool4343
 	goto _return
 
@@ -170690,7 +170695,7 @@ if_then4355:
 
 if_end4356:
 	v2074 = *result
-	tobool4357 = byte(v2074 & 1)
+	tobool4357 = (v2074 & 1) != 0
 	*retval = tobool4357
 	goto _return
 
@@ -170740,7 +170745,7 @@ if_then4369:
 
 if_end4370:
 	v2082 = *result
-	tobool4371 = byte(v2082 & 1)
+	tobool4371 = (v2082 & 1) != 0
 	*retval = tobool4371
 	goto _return
 
@@ -170790,7 +170795,7 @@ if_then4383:
 
 if_end4384:
 	v2090 = *result
-	tobool4385 = byte(v2090 & 1)
+	tobool4385 = (v2090 & 1) != 0
 	*retval = tobool4385
 	goto _return
 
@@ -170840,7 +170845,7 @@ if_then4397:
 
 if_end4398:
 	v2098 = *result
-	tobool4399 = byte(v2098 & 1)
+	tobool4399 = (v2098 & 1) != 0
 	*retval = tobool4399
 	goto _return
 
@@ -170890,7 +170895,7 @@ if_then4411:
 
 if_end4412:
 	v2106 = *result
-	tobool4413 = byte(v2106 & 1)
+	tobool4413 = (v2106 & 1) != 0
 	*retval = tobool4413
 	goto _return
 
@@ -170940,7 +170945,7 @@ if_then4425:
 
 if_end4426:
 	v2114 = *result
-	tobool4427 = byte(v2114 & 1)
+	tobool4427 = (v2114 & 1) != 0
 	*retval = tobool4427
 	goto _return
 
@@ -170990,7 +170995,7 @@ if_then4439:
 
 if_end4440:
 	v2122 = *result
-	tobool4441 = byte(v2122 & 1)
+	tobool4441 = (v2122 & 1) != 0
 	*retval = tobool4441
 	goto _return
 
@@ -171040,7 +171045,7 @@ if_then4453:
 
 if_end4454:
 	v2130 = *result
-	tobool4455 = byte(v2130 & 1)
+	tobool4455 = (v2130 & 1) != 0
 	*retval = tobool4455
 	goto _return
 
@@ -171090,7 +171095,7 @@ if_then4467:
 
 if_end4468:
 	v2138 = *result
-	tobool4469 = byte(v2138 & 1)
+	tobool4469 = (v2138 & 1) != 0
 	*retval = tobool4469
 	goto _return
 
@@ -171140,7 +171145,7 @@ if_then4481:
 
 if_end4482:
 	v2146 = *result
-	tobool4483 = byte(v2146 & 1)
+	tobool4483 = (v2146 & 1) != 0
 	*retval = tobool4483
 	goto _return
 
@@ -171190,7 +171195,7 @@ if_then4495:
 
 if_end4496:
 	v2154 = *result
-	tobool4497 = byte(v2154 & 1)
+	tobool4497 = (v2154 & 1) != 0
 	*retval = tobool4497
 	goto _return
 
@@ -171240,7 +171245,7 @@ if_then4509:
 
 if_end4510:
 	v2162 = *result
-	tobool4511 = byte(v2162 & 1)
+	tobool4511 = (v2162 & 1) != 0
 	*retval = tobool4511
 	goto _return
 
@@ -171290,7 +171295,7 @@ if_then4523:
 
 if_end4524:
 	v2170 = *result
-	tobool4525 = byte(v2170 & 1)
+	tobool4525 = (v2170 & 1) != 0
 	*retval = tobool4525
 	goto _return
 
@@ -171318,7 +171323,7 @@ if_then4530:
 
 if_end4531:
 	v2176 = *result
-	tobool4532 = byte(v2176 & 1)
+	tobool4532 = (v2176 & 1) != 0
 	*retval = tobool4532
 	goto _return
 
@@ -171333,7 +171338,7 @@ sw_bb4533:
 	v2180 = *lexer_addr
 	v2179(v2180)
 	v2181 = *result
-	tobool4536 = byte(v2181 & 1)
+	tobool4536 = (v2181 & 1) != 0
 	*retval = tobool4536
 	goto _return
 
@@ -171392,7 +171397,7 @@ if_then4552:
 
 if_end4553:
 	v2190 = *result
-	tobool4554 = byte(v2190 & 1)
+	tobool4554 = (v2190 & 1) != 0
 	*retval = tobool4554
 	goto _return
 
@@ -171460,7 +171465,7 @@ if_then4573:
 
 if_end4574:
 	v2200 = *result
-	tobool4575 = byte(v2200 & 1)
+	tobool4575 = (v2200 & 1) != 0
 	*retval = tobool4575
 	goto _return
 
@@ -171524,7 +171529,7 @@ if_then4593:
 
 if_end4594:
 	v2210 = *result
-	tobool4595 = byte(v2210 & 1)
+	tobool4595 = (v2210 & 1) != 0
 	*retval = tobool4595
 	goto _return
 
@@ -171586,7 +171591,7 @@ next_state:
 	v1 = *advance
 	v2 = *lexer_addr
 	v3 = *skip
-	tobool = byte(v3 & 1)
+	tobool = (v3 & 1) != 0
 	v1(v2, tobool)
 	goto start
 
@@ -172512,7 +172517,7 @@ if_then29:
 
 if_end30:
 	v24 = *result
-	tobool31 = byte(v24 & 1)
+	tobool31 = (v24 & 1) != 0
 	*retval = tobool31
 	goto _return
 
@@ -172584,7 +172589,7 @@ if_then52:
 
 if_end53:
 	v31 = *result
-	tobool54 = byte(v31 & 1)
+	tobool54 = (v31 & 1) != 0
 	*retval = tobool54
 	goto _return
 
@@ -172656,7 +172661,7 @@ if_then75:
 
 if_end76:
 	v38 = *result
-	tobool77 = byte(v38 & 1)
+	tobool77 = (v38 & 1) != 0
 	*retval = tobool77
 	goto _return
 
@@ -172708,7 +172713,7 @@ for_inc95:
 
 for_end97:
 	v46 = *result
-	tobool98 = byte(v46 & 1)
+	tobool98 = (v46 & 1) != 0
 	*retval = tobool98
 	goto _return
 
@@ -172760,7 +172765,7 @@ for_inc116:
 
 for_end118:
 	v54 = *result
-	tobool119 = byte(v54 & 1)
+	tobool119 = (v54 & 1) != 0
 	*retval = tobool119
 	goto _return
 
@@ -172812,7 +172817,7 @@ for_inc137:
 
 for_end139:
 	v62 = *result
-	tobool140 = byte(v62 & 1)
+	tobool140 = (v62 & 1) != 0
 	*retval = tobool140
 	goto _return
 
@@ -172862,7 +172867,7 @@ if_then154:
 
 if_end155:
 	v67 = *result
-	tobool156 = byte(v67 & 1)
+	tobool156 = (v67 & 1) != 0
 	*retval = tobool156
 	goto _return
 
@@ -172890,7 +172895,7 @@ if_then163:
 
 if_end164:
 	v70 = *result
-	tobool165 = byte(v70 & 1)
+	tobool165 = (v70 & 1) != 0
 	*retval = tobool165
 	goto _return
 
@@ -172962,7 +172967,7 @@ if_then186:
 
 if_end187:
 	v77 = *result
-	tobool188 = byte(v77 & 1)
+	tobool188 = (v77 & 1) != 0
 	*retval = tobool188
 	goto _return
 
@@ -173012,7 +173017,7 @@ if_then202:
 
 if_end203:
 	v82 = *result
-	tobool204 = byte(v82 & 1)
+	tobool204 = (v82 & 1) != 0
 	*retval = tobool204
 	goto _return
 
@@ -173040,7 +173045,7 @@ if_then211:
 
 if_end212:
 	v85 = *result
-	tobool213 = byte(v85 & 1)
+	tobool213 = (v85 & 1) != 0
 	*retval = tobool213
 	goto _return
 
@@ -173125,7 +173130,7 @@ if_then238:
 
 if_end239:
 	v93 = *result
-	tobool240 = byte(v93 & 1)
+	tobool240 = (v93 & 1) != 0
 	*retval = tobool240
 	goto _return
 
@@ -173201,7 +173206,7 @@ if_then262:
 
 if_end263:
 	v100 = *result
-	tobool264 = byte(v100 & 1)
+	tobool264 = (v100 & 1) != 0
 	*retval = tobool264
 	goto _return
 
@@ -173253,7 +173258,7 @@ for_inc282:
 
 for_end284:
 	v108 = *result
-	tobool285 = byte(v108 & 1)
+	tobool285 = (v108 & 1) != 0
 	*retval = tobool285
 	goto _return
 
@@ -173305,7 +173310,7 @@ for_inc303:
 
 for_end305:
 	v116 = *result
-	tobool306 = byte(v116 & 1)
+	tobool306 = (v116 & 1) != 0
 	*retval = tobool306
 	goto _return
 
@@ -173357,7 +173362,7 @@ for_inc324:
 
 for_end326:
 	v124 = *result
-	tobool327 = byte(v124 & 1)
+	tobool327 = (v124 & 1) != 0
 	*retval = tobool327
 	goto _return
 
@@ -173420,7 +173425,7 @@ if_then345:
 
 if_end346:
 	v130 = *result
-	tobool347 = byte(v130 & 1)
+	tobool347 = (v130 & 1) != 0
 	*retval = tobool347
 	goto _return
 
@@ -173461,7 +173466,7 @@ if_then358:
 
 if_end359:
 	v134 = *result
-	tobool360 = byte(v134 & 1)
+	tobool360 = (v134 & 1) != 0
 	*retval = tobool360
 	goto _return
 
@@ -173537,7 +173542,7 @@ if_then382:
 
 if_end383:
 	v141 = *result
-	tobool384 = byte(v141 & 1)
+	tobool384 = (v141 & 1) != 0
 	*retval = tobool384
 	goto _return
 
@@ -173600,7 +173605,7 @@ if_then402:
 
 if_end403:
 	v147 = *result
-	tobool404 = byte(v147 & 1)
+	tobool404 = (v147 & 1) != 0
 	*retval = tobool404
 	goto _return
 
@@ -173641,7 +173646,7 @@ if_then415:
 
 if_end416:
 	v151 = *result
-	tobool417 = byte(v151 & 1)
+	tobool417 = (v151 & 1) != 0
 	*retval = tobool417
 	goto _return
 
@@ -173713,7 +173718,7 @@ if_then438:
 
 if_end439:
 	v158 = *result
-	tobool440 = byte(v158 & 1)
+	tobool440 = (v158 & 1) != 0
 	*retval = tobool440
 	goto _return
 
@@ -173763,7 +173768,7 @@ if_then454:
 
 if_end455:
 	v163 = *result
-	tobool456 = byte(v163 & 1)
+	tobool456 = (v163 & 1) != 0
 	*retval = tobool456
 	goto _return
 
@@ -173813,7 +173818,7 @@ if_then470:
 
 if_end471:
 	v168 = *result
-	tobool472 = byte(v168 & 1)
+	tobool472 = (v168 & 1) != 0
 	*retval = tobool472
 	goto _return
 
@@ -173841,7 +173846,7 @@ if_then479:
 
 if_end480:
 	v171 = *result
-	tobool481 = byte(v171 & 1)
+	tobool481 = (v171 & 1) != 0
 	*retval = tobool481
 	goto _return
 
@@ -173891,7 +173896,7 @@ if_then495:
 
 if_end496:
 	v176 = *result
-	tobool497 = byte(v176 & 1)
+	tobool497 = (v176 & 1) != 0
 	*retval = tobool497
 	goto _return
 
@@ -173963,7 +173968,7 @@ if_then518:
 
 if_end519:
 	v183 = *result
-	tobool520 = byte(v183 & 1)
+	tobool520 = (v183 & 1) != 0
 	*retval = tobool520
 	goto _return
 
@@ -173991,7 +173996,7 @@ if_then527:
 
 if_end528:
 	v186 = *result
-	tobool529 = byte(v186 & 1)
+	tobool529 = (v186 & 1) != 0
 	*retval = tobool529
 	goto _return
 
@@ -174041,7 +174046,7 @@ if_then543:
 
 if_end544:
 	v191 = *result
-	tobool545 = byte(v191 & 1)
+	tobool545 = (v191 & 1) != 0
 	*retval = tobool545
 	goto _return
 
@@ -174069,7 +174074,7 @@ if_then552:
 
 if_end553:
 	v194 = *result
-	tobool554 = byte(v194 & 1)
+	tobool554 = (v194 & 1) != 0
 	*retval = tobool554
 	goto _return
 
@@ -174097,7 +174102,7 @@ if_then561:
 
 if_end562:
 	v197 = *result
-	tobool563 = byte(v197 & 1)
+	tobool563 = (v197 & 1) != 0
 	*retval = tobool563
 	goto _return
 
@@ -174125,7 +174130,7 @@ if_then570:
 
 if_end571:
 	v200 = *result
-	tobool572 = byte(v200 & 1)
+	tobool572 = (v200 & 1) != 0
 	*retval = tobool572
 	goto _return
 
@@ -174153,7 +174158,7 @@ if_then579:
 
 if_end580:
 	v203 = *result
-	tobool581 = byte(v203 & 1)
+	tobool581 = (v203 & 1) != 0
 	*retval = tobool581
 	goto _return
 
@@ -174181,7 +174186,7 @@ if_then588:
 
 if_end589:
 	v206 = *result
-	tobool590 = byte(v206 & 1)
+	tobool590 = (v206 & 1) != 0
 	*retval = tobool590
 	goto _return
 
@@ -174196,7 +174201,7 @@ sw_bb591:
 	v210 = *lexer_addr
 	v209(v210)
 	v211 = *result
-	tobool592 = byte(v211 & 1)
+	tobool592 = (v211 & 1) != 0
 	*retval = tobool592
 	goto _return
 
@@ -174224,7 +174229,7 @@ if_then599:
 
 if_end600:
 	v214 = *result
-	tobool601 = byte(v214 & 1)
+	tobool601 = (v214 & 1) != 0
 	*retval = tobool601
 	goto _return
 
@@ -174252,7 +174257,7 @@ if_then608:
 
 if_end609:
 	v217 = *result
-	tobool610 = byte(v217 & 1)
+	tobool610 = (v217 & 1) != 0
 	*retval = tobool610
 	goto _return
 
@@ -174280,7 +174285,7 @@ if_then617:
 
 if_end618:
 	v220 = *result
-	tobool619 = byte(v220 & 1)
+	tobool619 = (v220 & 1) != 0
 	*retval = tobool619
 	goto _return
 
@@ -174308,7 +174313,7 @@ if_then626:
 
 if_end627:
 	v223 = *result
-	tobool628 = byte(v223 & 1)
+	tobool628 = (v223 & 1) != 0
 	*retval = tobool628
 	goto _return
 
@@ -174336,7 +174341,7 @@ if_then635:
 
 if_end636:
 	v226 = *result
-	tobool637 = byte(v226 & 1)
+	tobool637 = (v226 & 1) != 0
 	*retval = tobool637
 	goto _return
 
@@ -174386,7 +174391,7 @@ if_then651:
 
 if_end652:
 	v231 = *result
-	tobool653 = byte(v231 & 1)
+	tobool653 = (v231 & 1) != 0
 	*retval = tobool653
 	goto _return
 
@@ -174436,7 +174441,7 @@ if_then667:
 
 if_end668:
 	v236 = *result
-	tobool669 = byte(v236 & 1)
+	tobool669 = (v236 & 1) != 0
 	*retval = tobool669
 	goto _return
 
@@ -174464,7 +174469,7 @@ if_then676:
 
 if_end677:
 	v239 = *result
-	tobool678 = byte(v239 & 1)
+	tobool678 = (v239 & 1) != 0
 	*retval = tobool678
 	goto _return
 
@@ -174492,7 +174497,7 @@ if_then685:
 
 if_end686:
 	v242 = *result
-	tobool687 = byte(v242 & 1)
+	tobool687 = (v242 & 1) != 0
 	*retval = tobool687
 	goto _return
 
@@ -174507,7 +174512,7 @@ sw_bb688:
 	v246 = *lexer_addr
 	v245(v246)
 	v247 = *result
-	tobool691 = byte(v247 & 1)
+	tobool691 = (v247 & 1) != 0
 	*retval = tobool691
 	goto _return
 
@@ -174535,7 +174540,7 @@ if_then698:
 
 if_end699:
 	v250 = *result
-	tobool700 = byte(v250 & 1)
+	tobool700 = (v250 & 1) != 0
 	*retval = tobool700
 	goto _return
 
@@ -174563,7 +174568,7 @@ if_then707:
 
 if_end708:
 	v253 = *result
-	tobool709 = byte(v253 & 1)
+	tobool709 = (v253 & 1) != 0
 	*retval = tobool709
 	goto _return
 
@@ -174578,7 +174583,7 @@ sw_bb710:
 	v257 = *lexer_addr
 	v256(v257)
 	v258 = *result
-	tobool713 = byte(v258 & 1)
+	tobool713 = (v258 & 1) != 0
 	*retval = tobool713
 	goto _return
 
@@ -174606,7 +174611,7 @@ if_then720:
 
 if_end721:
 	v261 = *result
-	tobool722 = byte(v261 & 1)
+	tobool722 = (v261 & 1) != 0
 	*retval = tobool722
 	goto _return
 
@@ -174678,7 +174683,7 @@ if_then743:
 
 if_end744:
 	v268 = *result
-	tobool745 = byte(v268 & 1)
+	tobool745 = (v268 & 1) != 0
 	*retval = tobool745
 	goto _return
 
@@ -174706,7 +174711,7 @@ if_then752:
 
 if_end753:
 	v271 = *result
-	tobool754 = byte(v271 & 1)
+	tobool754 = (v271 & 1) != 0
 	*retval = tobool754
 	goto _return
 
@@ -174734,7 +174739,7 @@ if_then761:
 
 if_end762:
 	v274 = *result
-	tobool763 = byte(v274 & 1)
+	tobool763 = (v274 & 1) != 0
 	*retval = tobool763
 	goto _return
 
@@ -174784,7 +174789,7 @@ if_then777:
 
 if_end778:
 	v279 = *result
-	tobool779 = byte(v279 & 1)
+	tobool779 = (v279 & 1) != 0
 	*retval = tobool779
 	goto _return
 
@@ -174799,7 +174804,7 @@ sw_bb780:
 	v283 = *lexer_addr
 	v282(v283)
 	v284 = *result
-	tobool783 = byte(v284 & 1)
+	tobool783 = (v284 & 1) != 0
 	*retval = tobool783
 	goto _return
 
@@ -174827,7 +174832,7 @@ if_then790:
 
 if_end791:
 	v287 = *result
-	tobool792 = byte(v287 & 1)
+	tobool792 = (v287 & 1) != 0
 	*retval = tobool792
 	goto _return
 
@@ -174855,7 +174860,7 @@ if_then799:
 
 if_end800:
 	v290 = *result
-	tobool801 = byte(v290 & 1)
+	tobool801 = (v290 & 1) != 0
 	*retval = tobool801
 	goto _return
 
@@ -174883,7 +174888,7 @@ if_then808:
 
 if_end809:
 	v293 = *result
-	tobool810 = byte(v293 & 1)
+	tobool810 = (v293 & 1) != 0
 	*retval = tobool810
 	goto _return
 
@@ -174911,7 +174916,7 @@ if_then817:
 
 if_end818:
 	v296 = *result
-	tobool819 = byte(v296 & 1)
+	tobool819 = (v296 & 1) != 0
 	*retval = tobool819
 	goto _return
 
@@ -174983,7 +174988,7 @@ if_then840:
 
 if_end841:
 	v303 = *result
-	tobool842 = byte(v303 & 1)
+	tobool842 = (v303 & 1) != 0
 	*retval = tobool842
 	goto _return
 
@@ -175011,7 +175016,7 @@ if_then849:
 
 if_end850:
 	v306 = *result
-	tobool851 = byte(v306 & 1)
+	tobool851 = (v306 & 1) != 0
 	*retval = tobool851
 	goto _return
 
@@ -175030,7 +175035,7 @@ if_then855:
 
 if_end856:
 	v308 = *result
-	tobool857 = byte(v308 & 1)
+	tobool857 = (v308 & 1) != 0
 	*retval = tobool857
 	goto _return
 
@@ -175062,7 +175067,7 @@ if_then865:
 
 if_end866:
 	v311 = *result
-	tobool867 = byte(v311 & 1)
+	tobool867 = (v311 & 1) != 0
 	*retval = tobool867
 	goto _return
 
@@ -175125,7 +175130,7 @@ if_then885:
 
 if_end886:
 	v317 = *result
-	tobool887 = byte(v317 & 1)
+	tobool887 = (v317 & 1) != 0
 	*retval = tobool887
 	goto _return
 
@@ -175144,7 +175149,7 @@ if_then891:
 
 if_end892:
 	v319 = *result
-	tobool893 = byte(v319 & 1)
+	tobool893 = (v319 & 1) != 0
 	*retval = tobool893
 	goto _return
 
@@ -175220,7 +175225,7 @@ if_then915:
 
 if_end916:
 	v326 = *result
-	tobool917 = byte(v326 & 1)
+	tobool917 = (v326 & 1) != 0
 	*retval = tobool917
 	goto _return
 
@@ -175239,7 +175244,7 @@ if_then921:
 
 if_end922:
 	v328 = *result
-	tobool923 = byte(v328 & 1)
+	tobool923 = (v328 & 1) != 0
 	*retval = tobool923
 	goto _return
 
@@ -175258,7 +175263,7 @@ if_then927:
 
 if_end928:
 	v330 = *result
-	tobool929 = byte(v330 & 1)
+	tobool929 = (v330 & 1) != 0
 	*retval = tobool929
 	goto _return
 
@@ -175299,7 +175304,7 @@ if_then940:
 
 if_end941:
 	v334 = *result
-	tobool942 = byte(v334 & 1)
+	tobool942 = (v334 & 1) != 0
 	*retval = tobool942
 	goto _return
 
@@ -175318,7 +175323,7 @@ if_then946:
 
 if_end947:
 	v336 = *result
-	tobool948 = byte(v336 & 1)
+	tobool948 = (v336 & 1) != 0
 	*retval = tobool948
 	goto _return
 
@@ -175337,7 +175342,7 @@ if_then952:
 
 if_end953:
 	v338 = *result
-	tobool954 = byte(v338 & 1)
+	tobool954 = (v338 & 1) != 0
 	*retval = tobool954
 	goto _return
 
@@ -175409,7 +175414,7 @@ if_then975:
 
 if_end976:
 	v345 = *result
-	tobool977 = byte(v345 & 1)
+	tobool977 = (v345 & 1) != 0
 	*retval = tobool977
 	goto _return
 
@@ -175459,7 +175464,7 @@ if_then991:
 
 if_end992:
 	v350 = *result
-	tobool993 = byte(v350 & 1)
+	tobool993 = (v350 & 1) != 0
 	*retval = tobool993
 	goto _return
 
@@ -175487,7 +175492,7 @@ if_then1000:
 
 if_end1001:
 	v353 = *result
-	tobool1002 = byte(v353 & 1)
+	tobool1002 = (v353 & 1) != 0
 	*retval = tobool1002
 	goto _return
 
@@ -175537,7 +175542,7 @@ if_then1016:
 
 if_end1017:
 	v358 = *result
-	tobool1018 = byte(v358 & 1)
+	tobool1018 = (v358 & 1) != 0
 	*retval = tobool1018
 	goto _return
 
@@ -175574,7 +175579,7 @@ if_then1027:
 
 if_end1028:
 	v365 = *result
-	tobool1029 = byte(v365 & 1)
+	tobool1029 = (v365 & 1) != 0
 	*retval = tobool1029
 	goto _return
 
@@ -175602,7 +175607,7 @@ if_then1036:
 
 if_end1037:
 	v368 = *result
-	tobool1038 = byte(v368 & 1)
+	tobool1038 = (v368 & 1) != 0
 	*retval = tobool1038
 	goto _return
 
@@ -175630,7 +175635,7 @@ if_then1045:
 
 if_end1046:
 	v371 = *result
-	tobool1047 = byte(v371 & 1)
+	tobool1047 = (v371 & 1) != 0
 	*retval = tobool1047
 	goto _return
 
@@ -175658,7 +175663,7 @@ if_then1054:
 
 if_end1055:
 	v374 = *result
-	tobool1056 = byte(v374 & 1)
+	tobool1056 = (v374 & 1) != 0
 	*retval = tobool1056
 	goto _return
 
@@ -175686,7 +175691,7 @@ if_then1063:
 
 if_end1064:
 	v377 = *result
-	tobool1065 = byte(v377 & 1)
+	tobool1065 = (v377 & 1) != 0
 	*retval = tobool1065
 	goto _return
 
@@ -175714,7 +175719,7 @@ if_then1072:
 
 if_end1073:
 	v380 = *result
-	tobool1074 = byte(v380 & 1)
+	tobool1074 = (v380 & 1) != 0
 	*retval = tobool1074
 	goto _return
 
@@ -175742,7 +175747,7 @@ if_then1081:
 
 if_end1082:
 	v383 = *result
-	tobool1083 = byte(v383 & 1)
+	tobool1083 = (v383 & 1) != 0
 	*retval = tobool1083
 	goto _return
 
@@ -175792,7 +175797,7 @@ if_then1097:
 
 if_end1098:
 	v388 = *result
-	tobool1099 = byte(v388 & 1)
+	tobool1099 = (v388 & 1) != 0
 	*retval = tobool1099
 	goto _return
 
@@ -175820,7 +175825,7 @@ if_then1106:
 
 if_end1107:
 	v391 = *result
-	tobool1108 = byte(v391 & 1)
+	tobool1108 = (v391 & 1) != 0
 	*retval = tobool1108
 	goto _return
 
@@ -175892,7 +175897,7 @@ if_then1129:
 
 if_end1130:
 	v398 = *result
-	tobool1131 = byte(v398 & 1)
+	tobool1131 = (v398 & 1) != 0
 	*retval = tobool1131
 	goto _return
 
@@ -175920,7 +175925,7 @@ if_then1138:
 
 if_end1139:
 	v401 = *result
-	tobool1140 = byte(v401 & 1)
+	tobool1140 = (v401 & 1) != 0
 	*retval = tobool1140
 	goto _return
 
@@ -175948,7 +175953,7 @@ if_then1147:
 
 if_end1148:
 	v404 = *result
-	tobool1149 = byte(v404 & 1)
+	tobool1149 = (v404 & 1) != 0
 	*retval = tobool1149
 	goto _return
 
@@ -175976,7 +175981,7 @@ if_then1156:
 
 if_end1157:
 	v407 = *result
-	tobool1158 = byte(v407 & 1)
+	tobool1158 = (v407 & 1) != 0
 	*retval = tobool1158
 	goto _return
 
@@ -176004,7 +176009,7 @@ if_then1165:
 
 if_end1166:
 	v410 = *result
-	tobool1167 = byte(v410 & 1)
+	tobool1167 = (v410 & 1) != 0
 	*retval = tobool1167
 	goto _return
 
@@ -176032,7 +176037,7 @@ if_then1174:
 
 if_end1175:
 	v413 = *result
-	tobool1176 = byte(v413 & 1)
+	tobool1176 = (v413 & 1) != 0
 	*retval = tobool1176
 	goto _return
 
@@ -176060,7 +176065,7 @@ if_then1183:
 
 if_end1184:
 	v416 = *result
-	tobool1185 = byte(v416 & 1)
+	tobool1185 = (v416 & 1) != 0
 	*retval = tobool1185
 	goto _return
 
@@ -176075,7 +176080,7 @@ sw_bb1186:
 	v420 = *lexer_addr
 	v419(v420)
 	v421 = *result
-	tobool1189 = byte(v421 & 1)
+	tobool1189 = (v421 & 1) != 0
 	*retval = tobool1189
 	goto _return
 
@@ -176103,7 +176108,7 @@ if_then1196:
 
 if_end1197:
 	v424 = *result
-	tobool1198 = byte(v424 & 1)
+	tobool1198 = (v424 & 1) != 0
 	*retval = tobool1198
 	goto _return
 
@@ -176131,7 +176136,7 @@ if_then1205:
 
 if_end1206:
 	v427 = *result
-	tobool1207 = byte(v427 & 1)
+	tobool1207 = (v427 & 1) != 0
 	*retval = tobool1207
 	goto _return
 
@@ -176159,7 +176164,7 @@ if_then1214:
 
 if_end1215:
 	v430 = *result
-	tobool1216 = byte(v430 & 1)
+	tobool1216 = (v430 & 1) != 0
 	*retval = tobool1216
 	goto _return
 
@@ -176187,7 +176192,7 @@ if_then1223:
 
 if_end1224:
 	v433 = *result
-	tobool1225 = byte(v433 & 1)
+	tobool1225 = (v433 & 1) != 0
 	*retval = tobool1225
 	goto _return
 
@@ -176215,7 +176220,7 @@ if_then1232:
 
 if_end1233:
 	v436 = *result
-	tobool1234 = byte(v436 & 1)
+	tobool1234 = (v436 & 1) != 0
 	*retval = tobool1234
 	goto _return
 
@@ -176267,7 +176272,7 @@ for_inc1252:
 
 for_end1254:
 	v444 = *result
-	tobool1255 = byte(v444 & 1)
+	tobool1255 = (v444 & 1) != 0
 	*retval = tobool1255
 	goto _return
 
@@ -176295,7 +176300,7 @@ if_then1262:
 
 if_end1263:
 	v447 = *result
-	tobool1264 = byte(v447 & 1)
+	tobool1264 = (v447 & 1) != 0
 	*retval = tobool1264
 	goto _return
 
@@ -176323,7 +176328,7 @@ if_then1271:
 
 if_end1272:
 	v450 = *result
-	tobool1273 = byte(v450 & 1)
+	tobool1273 = (v450 & 1) != 0
 	*retval = tobool1273
 	goto _return
 
@@ -176351,7 +176356,7 @@ if_then1280:
 
 if_end1281:
 	v453 = *result
-	tobool1282 = byte(v453 & 1)
+	tobool1282 = (v453 & 1) != 0
 	*retval = tobool1282
 	goto _return
 
@@ -176379,7 +176384,7 @@ if_then1289:
 
 if_end1290:
 	v456 = *result
-	tobool1291 = byte(v456 & 1)
+	tobool1291 = (v456 & 1) != 0
 	*retval = tobool1291
 	goto _return
 
@@ -176407,7 +176412,7 @@ if_then1298:
 
 if_end1299:
 	v459 = *result
-	tobool1300 = byte(v459 & 1)
+	tobool1300 = (v459 & 1) != 0
 	*retval = tobool1300
 	goto _return
 
@@ -176444,7 +176449,7 @@ if_then1309:
 
 if_end1310:
 	v466 = *result
-	tobool1311 = byte(v466 & 1)
+	tobool1311 = (v466 & 1) != 0
 	*retval = tobool1311
 	goto _return
 
@@ -176472,7 +176477,7 @@ if_then1318:
 
 if_end1319:
 	v469 = *result
-	tobool1320 = byte(v469 & 1)
+	tobool1320 = (v469 & 1) != 0
 	*retval = tobool1320
 	goto _return
 
@@ -176500,7 +176505,7 @@ if_then1327:
 
 if_end1328:
 	v472 = *result
-	tobool1329 = byte(v472 & 1)
+	tobool1329 = (v472 & 1) != 0
 	*retval = tobool1329
 	goto _return
 
@@ -176528,7 +176533,7 @@ if_then1336:
 
 if_end1337:
 	v475 = *result
-	tobool1338 = byte(v475 & 1)
+	tobool1338 = (v475 & 1) != 0
 	*retval = tobool1338
 	goto _return
 
@@ -176556,7 +176561,7 @@ if_then1345:
 
 if_end1346:
 	v478 = *result
-	tobool1347 = byte(v478 & 1)
+	tobool1347 = (v478 & 1) != 0
 	*retval = tobool1347
 	goto _return
 
@@ -176584,7 +176589,7 @@ if_then1354:
 
 if_end1355:
 	v481 = *result
-	tobool1356 = byte(v481 & 1)
+	tobool1356 = (v481 & 1) != 0
 	*retval = tobool1356
 	goto _return
 
@@ -176612,7 +176617,7 @@ if_then1363:
 
 if_end1364:
 	v484 = *result
-	tobool1365 = byte(v484 & 1)
+	tobool1365 = (v484 & 1) != 0
 	*retval = tobool1365
 	goto _return
 
@@ -176640,7 +176645,7 @@ if_then1372:
 
 if_end1373:
 	v487 = *result
-	tobool1374 = byte(v487 & 1)
+	tobool1374 = (v487 & 1) != 0
 	*retval = tobool1374
 	goto _return
 
@@ -176668,7 +176673,7 @@ if_then1381:
 
 if_end1382:
 	v490 = *result
-	tobool1383 = byte(v490 & 1)
+	tobool1383 = (v490 & 1) != 0
 	*retval = tobool1383
 	goto _return
 
@@ -176683,7 +176688,7 @@ sw_bb1384:
 	v494 = *lexer_addr
 	v493(v494)
 	v495 = *result
-	tobool1387 = byte(v495 & 1)
+	tobool1387 = (v495 & 1) != 0
 	*retval = tobool1387
 	goto _return
 
@@ -176711,7 +176716,7 @@ if_then1394:
 
 if_end1395:
 	v498 = *result
-	tobool1396 = byte(v498 & 1)
+	tobool1396 = (v498 & 1) != 0
 	*retval = tobool1396
 	goto _return
 
@@ -176739,7 +176744,7 @@ if_then1403:
 
 if_end1404:
 	v501 = *result
-	tobool1405 = byte(v501 & 1)
+	tobool1405 = (v501 & 1) != 0
 	*retval = tobool1405
 	goto _return
 
@@ -176767,7 +176772,7 @@ if_then1412:
 
 if_end1413:
 	v504 = *result
-	tobool1414 = byte(v504 & 1)
+	tobool1414 = (v504 & 1) != 0
 	*retval = tobool1414
 	goto _return
 
@@ -176795,7 +176800,7 @@ if_then1421:
 
 if_end1422:
 	v507 = *result
-	tobool1423 = byte(v507 & 1)
+	tobool1423 = (v507 & 1) != 0
 	*retval = tobool1423
 	goto _return
 
@@ -176823,7 +176828,7 @@ if_then1430:
 
 if_end1431:
 	v510 = *result
-	tobool1432 = byte(v510 & 1)
+	tobool1432 = (v510 & 1) != 0
 	*retval = tobool1432
 	goto _return
 
@@ -176851,7 +176856,7 @@ if_then1439:
 
 if_end1440:
 	v513 = *result
-	tobool1441 = byte(v513 & 1)
+	tobool1441 = (v513 & 1) != 0
 	*retval = tobool1441
 	goto _return
 
@@ -176866,7 +176871,7 @@ sw_bb1442:
 	v517 = *lexer_addr
 	v516(v517)
 	v518 = *result
-	tobool1445 = byte(v518 & 1)
+	tobool1445 = (v518 & 1) != 0
 	*retval = tobool1445
 	goto _return
 
@@ -176881,7 +176886,7 @@ sw_bb1446:
 	v522 = *lexer_addr
 	v521(v522)
 	v523 = *result
-	tobool1449 = byte(v523 & 1)
+	tobool1449 = (v523 & 1) != 0
 	*retval = tobool1449
 	goto _return
 
@@ -176900,7 +176905,7 @@ if_then1453:
 
 if_end1454:
 	v525 = *result
-	tobool1455 = byte(v525 & 1)
+	tobool1455 = (v525 & 1) != 0
 	*retval = tobool1455
 	goto _return
 
@@ -176932,7 +176937,7 @@ if_then1463:
 
 if_end1464:
 	v528 = *result
-	tobool1465 = byte(v528 & 1)
+	tobool1465 = (v528 & 1) != 0
 	*retval = tobool1465
 	goto _return
 
@@ -176951,7 +176956,7 @@ if_then1469:
 
 if_end1470:
 	v530 = *result
-	tobool1471 = byte(v530 & 1)
+	tobool1471 = (v530 & 1) != 0
 	*retval = tobool1471
 	goto _return
 
@@ -176970,7 +176975,7 @@ if_then1475:
 
 if_end1476:
 	v532 = *result
-	tobool1477 = byte(v532 & 1)
+	tobool1477 = (v532 & 1) != 0
 	*retval = tobool1477
 	goto _return
 
@@ -177007,7 +177012,7 @@ if_then1486:
 
 if_end1487:
 	v539 = *result
-	tobool1488 = byte(v539 & 1)
+	tobool1488 = (v539 & 1) != 0
 	*retval = tobool1488
 	goto _return
 
@@ -177026,7 +177031,7 @@ if_then1492:
 
 if_end1493:
 	v541 = *result
-	tobool1494 = byte(v541 & 1)
+	tobool1494 = (v541 & 1) != 0
 	*retval = tobool1494
 	goto _return
 
@@ -177045,7 +177050,7 @@ if_then1498:
 
 if_end1499:
 	v543 = *result
-	tobool1500 = byte(v543 & 1)
+	tobool1500 = (v543 & 1) != 0
 	*retval = tobool1500
 	goto _return
 
@@ -177064,7 +177069,7 @@ if_then1504:
 
 if_end1505:
 	v545 = *result
-	tobool1506 = byte(v545 & 1)
+	tobool1506 = (v545 & 1) != 0
 	*retval = tobool1506
 	goto _return
 
@@ -177083,7 +177088,7 @@ if_then1510:
 
 if_end1511:
 	v547 = *result
-	tobool1512 = byte(v547 & 1)
+	tobool1512 = (v547 & 1) != 0
 	*retval = tobool1512
 	goto _return
 
@@ -177102,7 +177107,7 @@ if_then1516:
 
 if_end1517:
 	v549 = *result
-	tobool1518 = byte(v549 & 1)
+	tobool1518 = (v549 & 1) != 0
 	*retval = tobool1518
 	goto _return
 
@@ -177130,7 +177135,7 @@ if_then1525:
 
 if_end1526:
 	v552 = *result
-	tobool1527 = byte(v552 & 1)
+	tobool1527 = (v552 & 1) != 0
 	*retval = tobool1527
 	goto _return
 
@@ -177158,7 +177163,7 @@ if_then1534:
 
 if_end1535:
 	v555 = *result
-	tobool1536 = byte(v555 & 1)
+	tobool1536 = (v555 & 1) != 0
 	*retval = tobool1536
 	goto _return
 
@@ -177186,7 +177191,7 @@ if_then1543:
 
 if_end1544:
 	v558 = *result
-	tobool1545 = byte(v558 & 1)
+	tobool1545 = (v558 & 1) != 0
 	*retval = tobool1545
 	goto _return
 
@@ -177214,7 +177219,7 @@ if_then1552:
 
 if_end1553:
 	v561 = *result
-	tobool1554 = byte(v561 & 1)
+	tobool1554 = (v561 & 1) != 0
 	*retval = tobool1554
 	goto _return
 
@@ -177242,7 +177247,7 @@ if_then1561:
 
 if_end1562:
 	v564 = *result
-	tobool1563 = byte(v564 & 1)
+	tobool1563 = (v564 & 1) != 0
 	*retval = tobool1563
 	goto _return
 
@@ -177292,7 +177297,7 @@ if_then1577:
 
 if_end1578:
 	v569 = *result
-	tobool1579 = byte(v569 & 1)
+	tobool1579 = (v569 & 1) != 0
 	*retval = tobool1579
 	goto _return
 
@@ -177320,7 +177325,7 @@ if_then1586:
 
 if_end1587:
 	v572 = *result
-	tobool1588 = byte(v572 & 1)
+	tobool1588 = (v572 & 1) != 0
 	*retval = tobool1588
 	goto _return
 
@@ -177348,7 +177353,7 @@ if_then1595:
 
 if_end1596:
 	v575 = *result
-	tobool1597 = byte(v575 & 1)
+	tobool1597 = (v575 & 1) != 0
 	*retval = tobool1597
 	goto _return
 
@@ -177376,7 +177381,7 @@ if_then1604:
 
 if_end1605:
 	v578 = *result
-	tobool1606 = byte(v578 & 1)
+	tobool1606 = (v578 & 1) != 0
 	*retval = tobool1606
 	goto _return
 
@@ -177404,7 +177409,7 @@ if_then1613:
 
 if_end1614:
 	v581 = *result
-	tobool1615 = byte(v581 & 1)
+	tobool1615 = (v581 & 1) != 0
 	*retval = tobool1615
 	goto _return
 
@@ -177432,7 +177437,7 @@ if_then1622:
 
 if_end1623:
 	v584 = *result
-	tobool1624 = byte(v584 & 1)
+	tobool1624 = (v584 & 1) != 0
 	*retval = tobool1624
 	goto _return
 
@@ -177460,7 +177465,7 @@ if_then1631:
 
 if_end1632:
 	v587 = *result
-	tobool1633 = byte(v587 & 1)
+	tobool1633 = (v587 & 1) != 0
 	*retval = tobool1633
 	goto _return
 
@@ -177488,7 +177493,7 @@ if_then1640:
 
 if_end1641:
 	v590 = *result
-	tobool1642 = byte(v590 & 1)
+	tobool1642 = (v590 & 1) != 0
 	*retval = tobool1642
 	goto _return
 
@@ -177516,7 +177521,7 @@ if_then1649:
 
 if_end1650:
 	v593 = *result
-	tobool1651 = byte(v593 & 1)
+	tobool1651 = (v593 & 1) != 0
 	*retval = tobool1651
 	goto _return
 
@@ -177544,7 +177549,7 @@ if_then1658:
 
 if_end1659:
 	v596 = *result
-	tobool1660 = byte(v596 & 1)
+	tobool1660 = (v596 & 1) != 0
 	*retval = tobool1660
 	goto _return
 
@@ -177594,7 +177599,7 @@ if_then1674:
 
 if_end1675:
 	v601 = *result
-	tobool1676 = byte(v601 & 1)
+	tobool1676 = (v601 & 1) != 0
 	*retval = tobool1676
 	goto _return
 
@@ -177622,7 +177627,7 @@ if_then1683:
 
 if_end1684:
 	v604 = *result
-	tobool1685 = byte(v604 & 1)
+	tobool1685 = (v604 & 1) != 0
 	*retval = tobool1685
 	goto _return
 
@@ -177650,7 +177655,7 @@ if_then1692:
 
 if_end1693:
 	v607 = *result
-	tobool1694 = byte(v607 & 1)
+	tobool1694 = (v607 & 1) != 0
 	*retval = tobool1694
 	goto _return
 
@@ -177700,7 +177705,7 @@ if_then1708:
 
 if_end1709:
 	v612 = *result
-	tobool1710 = byte(v612 & 1)
+	tobool1710 = (v612 & 1) != 0
 	*retval = tobool1710
 	goto _return
 
@@ -177728,7 +177733,7 @@ if_then1717:
 
 if_end1718:
 	v615 = *result
-	tobool1719 = byte(v615 & 1)
+	tobool1719 = (v615 & 1) != 0
 	*retval = tobool1719
 	goto _return
 
@@ -177756,7 +177761,7 @@ if_then1726:
 
 if_end1727:
 	v618 = *result
-	tobool1728 = byte(v618 & 1)
+	tobool1728 = (v618 & 1) != 0
 	*retval = tobool1728
 	goto _return
 
@@ -177771,7 +177776,7 @@ sw_bb1729:
 	v622 = *lexer_addr
 	v621(v622)
 	v623 = *result
-	tobool1732 = byte(v623 & 1)
+	tobool1732 = (v623 & 1) != 0
 	*retval = tobool1732
 	goto _return
 
@@ -177799,7 +177804,7 @@ if_then1739:
 
 if_end1740:
 	v626 = *result
-	tobool1741 = byte(v626 & 1)
+	tobool1741 = (v626 & 1) != 0
 	*retval = tobool1741
 	goto _return
 
@@ -177827,7 +177832,7 @@ if_then1748:
 
 if_end1749:
 	v629 = *result
-	tobool1750 = byte(v629 & 1)
+	tobool1750 = (v629 & 1) != 0
 	*retval = tobool1750
 	goto _return
 
@@ -177842,7 +177847,7 @@ sw_bb1751:
 	v633 = *lexer_addr
 	v632(v633)
 	v634 = *result
-	tobool1754 = byte(v634 & 1)
+	tobool1754 = (v634 & 1) != 0
 	*retval = tobool1754
 	goto _return
 
@@ -177870,7 +177875,7 @@ if_then1761:
 
 if_end1762:
 	v637 = *result
-	tobool1763 = byte(v637 & 1)
+	tobool1763 = (v637 & 1) != 0
 	*retval = tobool1763
 	goto _return
 
@@ -177898,7 +177903,7 @@ if_then1770:
 
 if_end1771:
 	v640 = *result
-	tobool1772 = byte(v640 & 1)
+	tobool1772 = (v640 & 1) != 0
 	*retval = tobool1772
 	goto _return
 
@@ -177926,7 +177931,7 @@ if_then1779:
 
 if_end1780:
 	v643 = *result
-	tobool1781 = byte(v643 & 1)
+	tobool1781 = (v643 & 1) != 0
 	*retval = tobool1781
 	goto _return
 
@@ -177954,7 +177959,7 @@ if_then1788:
 
 if_end1789:
 	v646 = *result
-	tobool1790 = byte(v646 & 1)
+	tobool1790 = (v646 & 1) != 0
 	*retval = tobool1790
 	goto _return
 
@@ -177991,7 +177996,7 @@ if_then1800:
 
 if_end1801:
 	v650 = *result
-	tobool1802 = byte(v650 & 1)
+	tobool1802 = (v650 & 1) != 0
 	*retval = tobool1802
 	goto _return
 
@@ -178006,7 +178011,7 @@ sw_bb1803:
 	v654 = *lexer_addr
 	v653(v654)
 	v655 = *result
-	tobool1806 = byte(v655 & 1)
+	tobool1806 = (v655 & 1) != 0
 	*retval = tobool1806
 	goto _return
 
@@ -178043,7 +178048,7 @@ if_then1815:
 
 if_end1816:
 	v662 = *result
-	tobool1817 = byte(v662 & 1)
+	tobool1817 = (v662 & 1) != 0
 	*retval = tobool1817
 	goto _return
 
@@ -178071,7 +178076,7 @@ if_then1824:
 
 if_end1825:
 	v665 = *result
-	tobool1826 = byte(v665 & 1)
+	tobool1826 = (v665 & 1) != 0
 	*retval = tobool1826
 	goto _return
 
@@ -178099,7 +178104,7 @@ if_then1833:
 
 if_end1834:
 	v668 = *result
-	tobool1835 = byte(v668 & 1)
+	tobool1835 = (v668 & 1) != 0
 	*retval = tobool1835
 	goto _return
 
@@ -178127,7 +178132,7 @@ if_then1842:
 
 if_end1843:
 	v671 = *result
-	tobool1844 = byte(v671 & 1)
+	tobool1844 = (v671 & 1) != 0
 	*retval = tobool1844
 	goto _return
 
@@ -178155,7 +178160,7 @@ if_then1851:
 
 if_end1852:
 	v674 = *result
-	tobool1853 = byte(v674 & 1)
+	tobool1853 = (v674 & 1) != 0
 	*retval = tobool1853
 	goto _return
 
@@ -178183,7 +178188,7 @@ if_then1860:
 
 if_end1861:
 	v677 = *result
-	tobool1862 = byte(v677 & 1)
+	tobool1862 = (v677 & 1) != 0
 	*retval = tobool1862
 	goto _return
 
@@ -178198,7 +178203,7 @@ sw_bb1863:
 	v681 = *lexer_addr
 	v680(v681)
 	v682 = *result
-	tobool1866 = byte(v682 & 1)
+	tobool1866 = (v682 & 1) != 0
 	*retval = tobool1866
 	goto _return
 
@@ -178213,7 +178218,7 @@ sw_bb1867:
 	v686 = *lexer_addr
 	v685(v686)
 	v687 = *result
-	tobool1870 = byte(v687 & 1)
+	tobool1870 = (v687 & 1) != 0
 	*retval = tobool1870
 	goto _return
 
@@ -178241,7 +178246,7 @@ if_then1877:
 
 if_end1878:
 	v690 = *result
-	tobool1879 = byte(v690 & 1)
+	tobool1879 = (v690 & 1) != 0
 	*retval = tobool1879
 	goto _return
 
@@ -178269,7 +178274,7 @@ if_then1886:
 
 if_end1887:
 	v693 = *result
-	tobool1888 = byte(v693 & 1)
+	tobool1888 = (v693 & 1) != 0
 	*retval = tobool1888
 	goto _return
 
@@ -178297,7 +178302,7 @@ if_then1895:
 
 if_end1896:
 	v696 = *result
-	tobool1897 = byte(v696 & 1)
+	tobool1897 = (v696 & 1) != 0
 	*retval = tobool1897
 	goto _return
 
@@ -178325,7 +178330,7 @@ if_then1904:
 
 if_end1905:
 	v699 = *result
-	tobool1906 = byte(v699 & 1)
+	tobool1906 = (v699 & 1) != 0
 	*retval = tobool1906
 	goto _return
 
@@ -178353,7 +178358,7 @@ if_then1913:
 
 if_end1914:
 	v702 = *result
-	tobool1915 = byte(v702 & 1)
+	tobool1915 = (v702 & 1) != 0
 	*retval = tobool1915
 	goto _return
 
@@ -178381,7 +178386,7 @@ if_then1922:
 
 if_end1923:
 	v705 = *result
-	tobool1924 = byte(v705 & 1)
+	tobool1924 = (v705 & 1) != 0
 	*retval = tobool1924
 	goto _return
 
@@ -178409,7 +178414,7 @@ if_then1931:
 
 if_end1932:
 	v708 = *result
-	tobool1933 = byte(v708 & 1)
+	tobool1933 = (v708 & 1) != 0
 	*retval = tobool1933
 	goto _return
 
@@ -178459,7 +178464,7 @@ if_then1947:
 
 if_end1948:
 	v713 = *result
-	tobool1949 = byte(v713 & 1)
+	tobool1949 = (v713 & 1) != 0
 	*retval = tobool1949
 	goto _return
 
@@ -178509,7 +178514,7 @@ if_then1963:
 
 if_end1964:
 	v718 = *result
-	tobool1965 = byte(v718 & 1)
+	tobool1965 = (v718 & 1) != 0
 	*retval = tobool1965
 	goto _return
 
@@ -178537,7 +178542,7 @@ if_then1972:
 
 if_end1973:
 	v721 = *result
-	tobool1974 = byte(v721 & 1)
+	tobool1974 = (v721 & 1) != 0
 	*retval = tobool1974
 	goto _return
 
@@ -178565,7 +178570,7 @@ if_then1981:
 
 if_end1982:
 	v724 = *result
-	tobool1983 = byte(v724 & 1)
+	tobool1983 = (v724 & 1) != 0
 	*retval = tobool1983
 	goto _return
 
@@ -178593,7 +178598,7 @@ if_then1990:
 
 if_end1991:
 	v727 = *result
-	tobool1992 = byte(v727 & 1)
+	tobool1992 = (v727 & 1) != 0
 	*retval = tobool1992
 	goto _return
 
@@ -178608,7 +178613,7 @@ sw_bb1993:
 	v731 = *lexer_addr
 	v730(v731)
 	v732 = *result
-	tobool1996 = byte(v732 & 1)
+	tobool1996 = (v732 & 1) != 0
 	*retval = tobool1996
 	goto _return
 
@@ -178636,7 +178641,7 @@ if_then2003:
 
 if_end2004:
 	v735 = *result
-	tobool2005 = byte(v735 & 1)
+	tobool2005 = (v735 & 1) != 0
 	*retval = tobool2005
 	goto _return
 
@@ -178664,7 +178669,7 @@ if_then2012:
 
 if_end2013:
 	v738 = *result
-	tobool2014 = byte(v738 & 1)
+	tobool2014 = (v738 & 1) != 0
 	*retval = tobool2014
 	goto _return
 
@@ -178692,7 +178697,7 @@ if_then2021:
 
 if_end2022:
 	v741 = *result
-	tobool2023 = byte(v741 & 1)
+	tobool2023 = (v741 & 1) != 0
 	*retval = tobool2023
 	goto _return
 
@@ -178720,7 +178725,7 @@ if_then2030:
 
 if_end2031:
 	v744 = *result
-	tobool2032 = byte(v744 & 1)
+	tobool2032 = (v744 & 1) != 0
 	*retval = tobool2032
 	goto _return
 
@@ -178735,7 +178740,7 @@ sw_bb2033:
 	v748 = *lexer_addr
 	v747(v748)
 	v749 = *result
-	tobool2036 = byte(v749 & 1)
+	tobool2036 = (v749 & 1) != 0
 	*retval = tobool2036
 	goto _return
 
@@ -178754,7 +178759,7 @@ if_then2040:
 
 if_end2041:
 	v751 = *result
-	tobool2042 = byte(v751 & 1)
+	tobool2042 = (v751 & 1) != 0
 	*retval = tobool2042
 	goto _return
 
@@ -178791,7 +178796,7 @@ if_then2051:
 
 if_end2052:
 	v758 = *result
-	tobool2053 = byte(v758 & 1)
+	tobool2053 = (v758 & 1) != 0
 	*retval = tobool2053
 	goto _return
 
@@ -178810,7 +178815,7 @@ if_then2057:
 
 if_end2058:
 	v760 = *result
-	tobool2059 = byte(v760 & 1)
+	tobool2059 = (v760 & 1) != 0
 	*retval = tobool2059
 	goto _return
 
@@ -178829,7 +178834,7 @@ if_then2063:
 
 if_end2064:
 	v762 = *result
-	tobool2065 = byte(v762 & 1)
+	tobool2065 = (v762 & 1) != 0
 	*retval = tobool2065
 	goto _return
 
@@ -178844,7 +178849,7 @@ sw_bb2066:
 	v766 = *lexer_addr
 	v765(v766)
 	v767 = *result
-	tobool2069 = byte(v767 & 1)
+	tobool2069 = (v767 & 1) != 0
 	*retval = tobool2069
 	goto _return
 
@@ -178863,7 +178868,7 @@ if_then2073:
 
 if_end2074:
 	v769 = *result
-	tobool2075 = byte(v769 & 1)
+	tobool2075 = (v769 & 1) != 0
 	*retval = tobool2075
 	goto _return
 
@@ -178895,7 +178900,7 @@ if_then2083:
 
 if_end2084:
 	v772 = *result
-	tobool2085 = byte(v772 & 1)
+	tobool2085 = (v772 & 1) != 0
 	*retval = tobool2085
 	goto _return
 
@@ -178914,7 +178919,7 @@ if_then2089:
 
 if_end2090:
 	v774 = *result
-	tobool2091 = byte(v774 & 1)
+	tobool2091 = (v774 & 1) != 0
 	*retval = tobool2091
 	goto _return
 
@@ -178933,7 +178938,7 @@ if_then2095:
 
 if_end2096:
 	v776 = *result
-	tobool2097 = byte(v776 & 1)
+	tobool2097 = (v776 & 1) != 0
 	*retval = tobool2097
 	goto _return
 
@@ -178961,7 +178966,7 @@ if_then2104:
 
 if_end2105:
 	v779 = *result
-	tobool2106 = byte(v779 & 1)
+	tobool2106 = (v779 & 1) != 0
 	*retval = tobool2106
 	goto _return
 
@@ -178976,7 +178981,7 @@ sw_bb2107:
 	v783 = *lexer_addr
 	v782(v783)
 	v784 = *result
-	tobool2110 = byte(v784 & 1)
+	tobool2110 = (v784 & 1) != 0
 	*retval = tobool2110
 	goto _return
 
@@ -179004,7 +179009,7 @@ if_then2117:
 
 if_end2118:
 	v787 = *result
-	tobool2119 = byte(v787 & 1)
+	tobool2119 = (v787 & 1) != 0
 	*retval = tobool2119
 	goto _return
 
@@ -179032,7 +179037,7 @@ if_then2126:
 
 if_end2127:
 	v790 = *result
-	tobool2128 = byte(v790 & 1)
+	tobool2128 = (v790 & 1) != 0
 	*retval = tobool2128
 	goto _return
 
@@ -179060,7 +179065,7 @@ if_then2135:
 
 if_end2136:
 	v793 = *result
-	tobool2137 = byte(v793 & 1)
+	tobool2137 = (v793 & 1) != 0
 	*retval = tobool2137
 	goto _return
 
@@ -179088,7 +179093,7 @@ if_then2144:
 
 if_end2145:
 	v796 = *result
-	tobool2146 = byte(v796 & 1)
+	tobool2146 = (v796 & 1) != 0
 	*retval = tobool2146
 	goto _return
 
@@ -179116,7 +179121,7 @@ if_then2153:
 
 if_end2154:
 	v799 = *result
-	tobool2155 = byte(v799 & 1)
+	tobool2155 = (v799 & 1) != 0
 	*retval = tobool2155
 	goto _return
 
@@ -179144,7 +179149,7 @@ if_then2162:
 
 if_end2163:
 	v802 = *result
-	tobool2164 = byte(v802 & 1)
+	tobool2164 = (v802 & 1) != 0
 	*retval = tobool2164
 	goto _return
 
@@ -179172,7 +179177,7 @@ if_then2171:
 
 if_end2172:
 	v805 = *result
-	tobool2173 = byte(v805 & 1)
+	tobool2173 = (v805 & 1) != 0
 	*retval = tobool2173
 	goto _return
 
@@ -179200,7 +179205,7 @@ if_then2180:
 
 if_end2181:
 	v808 = *result
-	tobool2182 = byte(v808 & 1)
+	tobool2182 = (v808 & 1) != 0
 	*retval = tobool2182
 	goto _return
 
@@ -179228,7 +179233,7 @@ if_then2189:
 
 if_end2190:
 	v811 = *result
-	tobool2191 = byte(v811 & 1)
+	tobool2191 = (v811 & 1) != 0
 	*retval = tobool2191
 	goto _return
 
@@ -179243,7 +179248,7 @@ sw_bb2192:
 	v815 = *lexer_addr
 	v814(v815)
 	v816 = *result
-	tobool2195 = byte(v816 & 1)
+	tobool2195 = (v816 & 1) != 0
 	*retval = tobool2195
 	goto _return
 
@@ -179258,7 +179263,7 @@ sw_bb2196:
 	v820 = *lexer_addr
 	v819(v820)
 	v821 = *result
-	tobool2199 = byte(v821 & 1)
+	tobool2199 = (v821 & 1) != 0
 	*retval = tobool2199
 	goto _return
 
@@ -179286,7 +179291,7 @@ if_then2206:
 
 if_end2207:
 	v824 = *result
-	tobool2208 = byte(v824 & 1)
+	tobool2208 = (v824 & 1) != 0
 	*retval = tobool2208
 	goto _return
 
@@ -179314,7 +179319,7 @@ if_then2215:
 
 if_end2216:
 	v827 = *result
-	tobool2217 = byte(v827 & 1)
+	tobool2217 = (v827 & 1) != 0
 	*retval = tobool2217
 	goto _return
 
@@ -179342,7 +179347,7 @@ if_then2224:
 
 if_end2225:
 	v830 = *result
-	tobool2226 = byte(v830 & 1)
+	tobool2226 = (v830 & 1) != 0
 	*retval = tobool2226
 	goto _return
 
@@ -179370,7 +179375,7 @@ if_then2233:
 
 if_end2234:
 	v833 = *result
-	tobool2235 = byte(v833 & 1)
+	tobool2235 = (v833 & 1) != 0
 	*retval = tobool2235
 	goto _return
 
@@ -179398,7 +179403,7 @@ if_then2242:
 
 if_end2243:
 	v836 = *result
-	tobool2244 = byte(v836 & 1)
+	tobool2244 = (v836 & 1) != 0
 	*retval = tobool2244
 	goto _return
 
@@ -179426,7 +179431,7 @@ if_then2251:
 
 if_end2252:
 	v839 = *result
-	tobool2253 = byte(v839 & 1)
+	tobool2253 = (v839 & 1) != 0
 	*retval = tobool2253
 	goto _return
 
@@ -179454,7 +179459,7 @@ if_then2260:
 
 if_end2261:
 	v842 = *result
-	tobool2262 = byte(v842 & 1)
+	tobool2262 = (v842 & 1) != 0
 	*retval = tobool2262
 	goto _return
 
@@ -179482,7 +179487,7 @@ if_then2269:
 
 if_end2270:
 	v845 = *result
-	tobool2271 = byte(v845 & 1)
+	tobool2271 = (v845 & 1) != 0
 	*retval = tobool2271
 	goto _return
 
@@ -179497,7 +179502,7 @@ sw_bb2272:
 	v849 = *lexer_addr
 	v848(v849)
 	v850 = *result
-	tobool2275 = byte(v850 & 1)
+	tobool2275 = (v850 & 1) != 0
 	*retval = tobool2275
 	goto _return
 
@@ -179525,7 +179530,7 @@ if_then2282:
 
 if_end2283:
 	v853 = *result
-	tobool2284 = byte(v853 & 1)
+	tobool2284 = (v853 & 1) != 0
 	*retval = tobool2284
 	goto _return
 
@@ -179553,7 +179558,7 @@ if_then2291:
 
 if_end2292:
 	v856 = *result
-	tobool2293 = byte(v856 & 1)
+	tobool2293 = (v856 & 1) != 0
 	*retval = tobool2293
 	goto _return
 
@@ -179568,7 +179573,7 @@ sw_bb2294:
 	v860 = *lexer_addr
 	v859(v860)
 	v861 = *result
-	tobool2297 = byte(v861 & 1)
+	tobool2297 = (v861 & 1) != 0
 	*retval = tobool2297
 	goto _return
 
@@ -179596,7 +179601,7 @@ if_then2304:
 
 if_end2305:
 	v864 = *result
-	tobool2306 = byte(v864 & 1)
+	tobool2306 = (v864 & 1) != 0
 	*retval = tobool2306
 	goto _return
 
@@ -179624,7 +179629,7 @@ if_then2313:
 
 if_end2314:
 	v867 = *result
-	tobool2315 = byte(v867 & 1)
+	tobool2315 = (v867 & 1) != 0
 	*retval = tobool2315
 	goto _return
 
@@ -179652,7 +179657,7 @@ if_then2322:
 
 if_end2323:
 	v870 = *result
-	tobool2324 = byte(v870 & 1)
+	tobool2324 = (v870 & 1) != 0
 	*retval = tobool2324
 	goto _return
 
@@ -179680,7 +179685,7 @@ if_then2331:
 
 if_end2332:
 	v873 = *result
-	tobool2333 = byte(v873 & 1)
+	tobool2333 = (v873 & 1) != 0
 	*retval = tobool2333
 	goto _return
 
@@ -179708,7 +179713,7 @@ if_then2340:
 
 if_end2341:
 	v876 = *result
-	tobool2342 = byte(v876 & 1)
+	tobool2342 = (v876 & 1) != 0
 	*retval = tobool2342
 	goto _return
 
@@ -179723,7 +179728,7 @@ sw_bb2343:
 	v880 = *lexer_addr
 	v879(v880)
 	v881 = *result
-	tobool2346 = byte(v881 & 1)
+	tobool2346 = (v881 & 1) != 0
 	*retval = tobool2346
 	goto _return
 
@@ -179751,7 +179756,7 @@ if_then2353:
 
 if_end2354:
 	v884 = *result
-	tobool2355 = byte(v884 & 1)
+	tobool2355 = (v884 & 1) != 0
 	*retval = tobool2355
 	goto _return
 
@@ -179779,7 +179784,7 @@ if_then2362:
 
 if_end2363:
 	v887 = *result
-	tobool2364 = byte(v887 & 1)
+	tobool2364 = (v887 & 1) != 0
 	*retval = tobool2364
 	goto _return
 
@@ -179807,7 +179812,7 @@ if_then2371:
 
 if_end2372:
 	v890 = *result
-	tobool2373 = byte(v890 & 1)
+	tobool2373 = (v890 & 1) != 0
 	*retval = tobool2373
 	goto _return
 
@@ -179822,7 +179827,7 @@ sw_bb2374:
 	v894 = *lexer_addr
 	v893(v894)
 	v895 = *result
-	tobool2377 = byte(v895 & 1)
+	tobool2377 = (v895 & 1) != 0
 	*retval = tobool2377
 	goto _return
 
@@ -179850,7 +179855,7 @@ if_then2384:
 
 if_end2385:
 	v898 = *result
-	tobool2386 = byte(v898 & 1)
+	tobool2386 = (v898 & 1) != 0
 	*retval = tobool2386
 	goto _return
 
@@ -179878,7 +179883,7 @@ if_then2393:
 
 if_end2394:
 	v901 = *result
-	tobool2395 = byte(v901 & 1)
+	tobool2395 = (v901 & 1) != 0
 	*retval = tobool2395
 	goto _return
 
@@ -179906,7 +179911,7 @@ if_then2402:
 
 if_end2403:
 	v904 = *result
-	tobool2404 = byte(v904 & 1)
+	tobool2404 = (v904 & 1) != 0
 	*retval = tobool2404
 	goto _return
 
@@ -179921,7 +179926,7 @@ sw_bb2405:
 	v908 = *lexer_addr
 	v907(v908)
 	v909 = *result
-	tobool2408 = byte(v909 & 1)
+	tobool2408 = (v909 & 1) != 0
 	*retval = tobool2408
 	goto _return
 
@@ -179958,7 +179963,7 @@ if_then2417:
 
 if_end2418:
 	v916 = *result
-	tobool2419 = byte(v916 & 1)
+	tobool2419 = (v916 & 1) != 0
 	*retval = tobool2419
 	goto _return
 
@@ -179986,7 +179991,7 @@ if_then2426:
 
 if_end2427:
 	v919 = *result
-	tobool2428 = byte(v919 & 1)
+	tobool2428 = (v919 & 1) != 0
 	*retval = tobool2428
 	goto _return
 
@@ -180014,7 +180019,7 @@ if_then2435:
 
 if_end2436:
 	v922 = *result
-	tobool2437 = byte(v922 & 1)
+	tobool2437 = (v922 & 1) != 0
 	*retval = tobool2437
 	goto _return
 
@@ -180042,7 +180047,7 @@ if_then2444:
 
 if_end2445:
 	v925 = *result
-	tobool2446 = byte(v925 & 1)
+	tobool2446 = (v925 & 1) != 0
 	*retval = tobool2446
 	goto _return
 
@@ -180070,7 +180075,7 @@ if_then2453:
 
 if_end2454:
 	v928 = *result
-	tobool2455 = byte(v928 & 1)
+	tobool2455 = (v928 & 1) != 0
 	*retval = tobool2455
 	goto _return
 
@@ -180098,7 +180103,7 @@ if_then2462:
 
 if_end2463:
 	v931 = *result
-	tobool2464 = byte(v931 & 1)
+	tobool2464 = (v931 & 1) != 0
 	*retval = tobool2464
 	goto _return
 
@@ -180126,7 +180131,7 @@ if_then2471:
 
 if_end2472:
 	v934 = *result
-	tobool2473 = byte(v934 & 1)
+	tobool2473 = (v934 & 1) != 0
 	*retval = tobool2473
 	goto _return
 
@@ -180154,7 +180159,7 @@ if_then2480:
 
 if_end2481:
 	v937 = *result
-	tobool2482 = byte(v937 & 1)
+	tobool2482 = (v937 & 1) != 0
 	*retval = tobool2482
 	goto _return
 
@@ -180182,7 +180187,7 @@ if_then2489:
 
 if_end2490:
 	v940 = *result
-	tobool2491 = byte(v940 & 1)
+	tobool2491 = (v940 & 1) != 0
 	*retval = tobool2491
 	goto _return
 
@@ -180210,7 +180215,7 @@ if_then2498:
 
 if_end2499:
 	v943 = *result
-	tobool2500 = byte(v943 & 1)
+	tobool2500 = (v943 & 1) != 0
 	*retval = tobool2500
 	goto _return
 
@@ -180238,7 +180243,7 @@ if_then2507:
 
 if_end2508:
 	v946 = *result
-	tobool2509 = byte(v946 & 1)
+	tobool2509 = (v946 & 1) != 0
 	*retval = tobool2509
 	goto _return
 
@@ -180253,7 +180258,7 @@ sw_bb2510:
 	v950 = *lexer_addr
 	v949(v950)
 	v951 = *result
-	tobool2513 = byte(v951 & 1)
+	tobool2513 = (v951 & 1) != 0
 	*retval = tobool2513
 	goto _return
 
@@ -180281,7 +180286,7 @@ if_then2520:
 
 if_end2521:
 	v954 = *result
-	tobool2522 = byte(v954 & 1)
+	tobool2522 = (v954 & 1) != 0
 	*retval = tobool2522
 	goto _return
 
@@ -180309,7 +180314,7 @@ if_then2529:
 
 if_end2530:
 	v957 = *result
-	tobool2531 = byte(v957 & 1)
+	tobool2531 = (v957 & 1) != 0
 	*retval = tobool2531
 	goto _return
 
@@ -180324,7 +180329,7 @@ sw_bb2532:
 	v961 = *lexer_addr
 	v960(v961)
 	v962 = *result
-	tobool2535 = byte(v962 & 1)
+	tobool2535 = (v962 & 1) != 0
 	*retval = tobool2535
 	goto _return
 
@@ -180339,7 +180344,7 @@ sw_bb2536:
 	v966 = *lexer_addr
 	v965(v966)
 	v967 = *result
-	tobool2539 = byte(v967 & 1)
+	tobool2539 = (v967 & 1) != 0
 	*retval = tobool2539
 	goto _return
 
@@ -180354,7 +180359,7 @@ sw_bb2540:
 	v971 = *lexer_addr
 	v970(v971)
 	v972 = *result
-	tobool2543 = byte(v972 & 1)
+	tobool2543 = (v972 & 1) != 0
 	*retval = tobool2543
 	goto _return
 
@@ -180373,7 +180378,7 @@ if_then2547:
 
 if_end2548:
 	v974 = *result
-	tobool2549 = byte(v974 & 1)
+	tobool2549 = (v974 & 1) != 0
 	*retval = tobool2549
 	goto _return
 
@@ -180388,7 +180393,7 @@ sw_bb2550:
 	v978 = *lexer_addr
 	v977(v978)
 	v979 = *result
-	tobool2553 = byte(v979 & 1)
+	tobool2553 = (v979 & 1) != 0
 	*retval = tobool2553
 	goto _return
 
@@ -180407,7 +180412,7 @@ if_then2557:
 
 if_end2558:
 	v981 = *result
-	tobool2559 = byte(v981 & 1)
+	tobool2559 = (v981 & 1) != 0
 	*retval = tobool2559
 	goto _return
 
@@ -180426,7 +180431,7 @@ if_then2563:
 
 if_end2564:
 	v983 = *result
-	tobool2565 = byte(v983 & 1)
+	tobool2565 = (v983 & 1) != 0
 	*retval = tobool2565
 	goto _return
 
@@ -180445,7 +180450,7 @@ if_then2569:
 
 if_end2570:
 	v985 = *result
-	tobool2571 = byte(v985 & 1)
+	tobool2571 = (v985 & 1) != 0
 	*retval = tobool2571
 	goto _return
 
@@ -180460,7 +180465,7 @@ sw_bb2572:
 	v989 = *lexer_addr
 	v988(v989)
 	v990 = *result
-	tobool2575 = byte(v990 & 1)
+	tobool2575 = (v990 & 1) != 0
 	*retval = tobool2575
 	goto _return
 
@@ -180475,7 +180480,7 @@ sw_bb2576:
 	v994 = *lexer_addr
 	v993(v994)
 	v995 = *result
-	tobool2579 = byte(v995 & 1)
+	tobool2579 = (v995 & 1) != 0
 	*retval = tobool2579
 	goto _return
 
@@ -180503,7 +180508,7 @@ if_then2586:
 
 if_end2587:
 	v998 = *result
-	tobool2588 = byte(v998 & 1)
+	tobool2588 = (v998 & 1) != 0
 	*retval = tobool2588
 	goto _return
 
@@ -180518,7 +180523,7 @@ sw_bb2589:
 	v1002 = *lexer_addr
 	v1001(v1002)
 	v1003 = *result
-	tobool2592 = byte(v1003 & 1)
+	tobool2592 = (v1003 & 1) != 0
 	*retval = tobool2592
 	goto _return
 
@@ -180533,7 +180538,7 @@ sw_bb2593:
 	v1007 = *lexer_addr
 	v1006(v1007)
 	v1008 = *result
-	tobool2596 = byte(v1008 & 1)
+	tobool2596 = (v1008 & 1) != 0
 	*retval = tobool2596
 	goto _return
 
@@ -180548,7 +180553,7 @@ sw_bb2597:
 	v1012 = *lexer_addr
 	v1011(v1012)
 	v1013 = *result
-	tobool2600 = byte(v1013 & 1)
+	tobool2600 = (v1013 & 1) != 0
 	*retval = tobool2600
 	goto _return
 
@@ -180563,7 +180568,7 @@ sw_bb2601:
 	v1017 = *lexer_addr
 	v1016(v1017)
 	v1018 = *result
-	tobool2604 = byte(v1018 & 1)
+	tobool2604 = (v1018 & 1) != 0
 	*retval = tobool2604
 	goto _return
 
@@ -180591,7 +180596,7 @@ if_then2611:
 
 if_end2612:
 	v1021 = *result
-	tobool2613 = byte(v1021 & 1)
+	tobool2613 = (v1021 & 1) != 0
 	*retval = tobool2613
 	goto _return
 
@@ -180619,7 +180624,7 @@ if_then2620:
 
 if_end2621:
 	v1024 = *result
-	tobool2622 = byte(v1024 & 1)
+	tobool2622 = (v1024 & 1) != 0
 	*retval = tobool2622
 	goto _return
 
@@ -180647,7 +180652,7 @@ if_then2629:
 
 if_end2630:
 	v1027 = *result
-	tobool2631 = byte(v1027 & 1)
+	tobool2631 = (v1027 & 1) != 0
 	*retval = tobool2631
 	goto _return
 
@@ -180675,7 +180680,7 @@ if_then2638:
 
 if_end2639:
 	v1030 = *result
-	tobool2640 = byte(v1030 & 1)
+	tobool2640 = (v1030 & 1) != 0
 	*retval = tobool2640
 	goto _return
 
@@ -180703,7 +180708,7 @@ if_then2647:
 
 if_end2648:
 	v1033 = *result
-	tobool2649 = byte(v1033 & 1)
+	tobool2649 = (v1033 & 1) != 0
 	*retval = tobool2649
 	goto _return
 
@@ -180718,7 +180723,7 @@ sw_bb2650:
 	v1037 = *lexer_addr
 	v1036(v1037)
 	v1038 = *result
-	tobool2653 = byte(v1038 & 1)
+	tobool2653 = (v1038 & 1) != 0
 	*retval = tobool2653
 	goto _return
 
@@ -180733,7 +180738,7 @@ sw_bb2654:
 	v1042 = *lexer_addr
 	v1041(v1042)
 	v1043 = *result
-	tobool2657 = byte(v1043 & 1)
+	tobool2657 = (v1043 & 1) != 0
 	*retval = tobool2657
 	goto _return
 
@@ -180761,7 +180766,7 @@ if_then2664:
 
 if_end2665:
 	v1046 = *result
-	tobool2666 = byte(v1046 & 1)
+	tobool2666 = (v1046 & 1) != 0
 	*retval = tobool2666
 	goto _return
 
@@ -180776,7 +180781,7 @@ sw_bb2667:
 	v1050 = *lexer_addr
 	v1049(v1050)
 	v1051 = *result
-	tobool2670 = byte(v1051 & 1)
+	tobool2670 = (v1051 & 1) != 0
 	*retval = tobool2670
 	goto _return
 
@@ -180804,7 +180809,7 @@ if_then2677:
 
 if_end2678:
 	v1054 = *result
-	tobool2679 = byte(v1054 & 1)
+	tobool2679 = (v1054 & 1) != 0
 	*retval = tobool2679
 	goto _return
 
@@ -180832,7 +180837,7 @@ if_then2686:
 
 if_end2687:
 	v1057 = *result
-	tobool2688 = byte(v1057 & 1)
+	tobool2688 = (v1057 & 1) != 0
 	*retval = tobool2688
 	goto _return
 
@@ -180860,7 +180865,7 @@ if_then2695:
 
 if_end2696:
 	v1060 = *result
-	tobool2697 = byte(v1060 & 1)
+	tobool2697 = (v1060 & 1) != 0
 	*retval = tobool2697
 	goto _return
 
@@ -180888,7 +180893,7 @@ if_then2704:
 
 if_end2705:
 	v1063 = *result
-	tobool2706 = byte(v1063 & 1)
+	tobool2706 = (v1063 & 1) != 0
 	*retval = tobool2706
 	goto _return
 
@@ -180916,7 +180921,7 @@ if_then2713:
 
 if_end2714:
 	v1066 = *result
-	tobool2715 = byte(v1066 & 1)
+	tobool2715 = (v1066 & 1) != 0
 	*retval = tobool2715
 	goto _return
 
@@ -180944,7 +180949,7 @@ if_then2722:
 
 if_end2723:
 	v1069 = *result
-	tobool2724 = byte(v1069 & 1)
+	tobool2724 = (v1069 & 1) != 0
 	*retval = tobool2724
 	goto _return
 
@@ -180959,7 +180964,7 @@ sw_bb2725:
 	v1073 = *lexer_addr
 	v1072(v1073)
 	v1074 = *result
-	tobool2728 = byte(v1074 & 1)
+	tobool2728 = (v1074 & 1) != 0
 	*retval = tobool2728
 	goto _return
 
@@ -180974,7 +180979,7 @@ sw_bb2729:
 	v1078 = *lexer_addr
 	v1077(v1078)
 	v1079 = *result
-	tobool2732 = byte(v1079 & 1)
+	tobool2732 = (v1079 & 1) != 0
 	*retval = tobool2732
 	goto _return
 
@@ -181002,7 +181007,7 @@ if_then2739:
 
 if_end2740:
 	v1082 = *result
-	tobool2741 = byte(v1082 & 1)
+	tobool2741 = (v1082 & 1) != 0
 	*retval = tobool2741
 	goto _return
 
@@ -181017,7 +181022,7 @@ sw_bb2742:
 	v1086 = *lexer_addr
 	v1085(v1086)
 	v1087 = *result
-	tobool2745 = byte(v1087 & 1)
+	tobool2745 = (v1087 & 1) != 0
 	*retval = tobool2745
 	goto _return
 
@@ -181045,7 +181050,7 @@ if_then2752:
 
 if_end2753:
 	v1090 = *result
-	tobool2754 = byte(v1090 & 1)
+	tobool2754 = (v1090 & 1) != 0
 	*retval = tobool2754
 	goto _return
 
@@ -181060,7 +181065,7 @@ sw_bb2755:
 	v1094 = *lexer_addr
 	v1093(v1094)
 	v1095 = *result
-	tobool2758 = byte(v1095 & 1)
+	tobool2758 = (v1095 & 1) != 0
 	*retval = tobool2758
 	goto _return
 
@@ -181088,7 +181093,7 @@ if_then2765:
 
 if_end2766:
 	v1098 = *result
-	tobool2767 = byte(v1098 & 1)
+	tobool2767 = (v1098 & 1) != 0
 	*retval = tobool2767
 	goto _return
 
@@ -181125,7 +181130,7 @@ if_then2776:
 
 if_end2777:
 	v1105 = *result
-	tobool2778 = byte(v1105 & 1)
+	tobool2778 = (v1105 & 1) != 0
 	*retval = tobool2778
 	goto _return
 
@@ -181153,7 +181158,7 @@ if_then2785:
 
 if_end2786:
 	v1108 = *result
-	tobool2787 = byte(v1108 & 1)
+	tobool2787 = (v1108 & 1) != 0
 	*retval = tobool2787
 	goto _return
 
@@ -181181,7 +181186,7 @@ if_then2794:
 
 if_end2795:
 	v1111 = *result
-	tobool2796 = byte(v1111 & 1)
+	tobool2796 = (v1111 & 1) != 0
 	*retval = tobool2796
 	goto _return
 
@@ -181209,7 +181214,7 @@ if_then2803:
 
 if_end2804:
 	v1114 = *result
-	tobool2805 = byte(v1114 & 1)
+	tobool2805 = (v1114 & 1) != 0
 	*retval = tobool2805
 	goto _return
 
@@ -181237,7 +181242,7 @@ if_then2812:
 
 if_end2813:
 	v1117 = *result
-	tobool2814 = byte(v1117 & 1)
+	tobool2814 = (v1117 & 1) != 0
 	*retval = tobool2814
 	goto _return
 
@@ -181265,7 +181270,7 @@ if_then2821:
 
 if_end2822:
 	v1120 = *result
-	tobool2823 = byte(v1120 & 1)
+	tobool2823 = (v1120 & 1) != 0
 	*retval = tobool2823
 	goto _return
 
@@ -181293,7 +181298,7 @@ if_then2830:
 
 if_end2831:
 	v1123 = *result
-	tobool2832 = byte(v1123 & 1)
+	tobool2832 = (v1123 & 1) != 0
 	*retval = tobool2832
 	goto _return
 
@@ -181321,7 +181326,7 @@ if_then2839:
 
 if_end2840:
 	v1126 = *result
-	tobool2841 = byte(v1126 & 1)
+	tobool2841 = (v1126 & 1) != 0
 	*retval = tobool2841
 	goto _return
 
@@ -181349,7 +181354,7 @@ if_then2848:
 
 if_end2849:
 	v1129 = *result
-	tobool2850 = byte(v1129 & 1)
+	tobool2850 = (v1129 & 1) != 0
 	*retval = tobool2850
 	goto _return
 
@@ -181377,7 +181382,7 @@ if_then2857:
 
 if_end2858:
 	v1132 = *result
-	tobool2859 = byte(v1132 & 1)
+	tobool2859 = (v1132 & 1) != 0
 	*retval = tobool2859
 	goto _return
 
@@ -181405,7 +181410,7 @@ if_then2866:
 
 if_end2867:
 	v1135 = *result
-	tobool2868 = byte(v1135 & 1)
+	tobool2868 = (v1135 & 1) != 0
 	*retval = tobool2868
 	goto _return
 
@@ -181433,7 +181438,7 @@ if_then2875:
 
 if_end2876:
 	v1138 = *result
-	tobool2877 = byte(v1138 & 1)
+	tobool2877 = (v1138 & 1) != 0
 	*retval = tobool2877
 	goto _return
 
@@ -181461,7 +181466,7 @@ if_then2884:
 
 if_end2885:
 	v1141 = *result
-	tobool2886 = byte(v1141 & 1)
+	tobool2886 = (v1141 & 1) != 0
 	*retval = tobool2886
 	goto _return
 
@@ -181489,7 +181494,7 @@ if_then2893:
 
 if_end2894:
 	v1144 = *result
-	tobool2895 = byte(v1144 & 1)
+	tobool2895 = (v1144 & 1) != 0
 	*retval = tobool2895
 	goto _return
 
@@ -181517,7 +181522,7 @@ if_then2902:
 
 if_end2903:
 	v1147 = *result
-	tobool2904 = byte(v1147 & 1)
+	tobool2904 = (v1147 & 1) != 0
 	*retval = tobool2904
 	goto _return
 
@@ -181532,7 +181537,7 @@ sw_bb2905:
 	v1151 = *lexer_addr
 	v1150(v1151)
 	v1152 = *result
-	tobool2908 = byte(v1152 & 1)
+	tobool2908 = (v1152 & 1) != 0
 	*retval = tobool2908
 	goto _return
 
@@ -181547,7 +181552,7 @@ sw_bb2909:
 	v1156 = *lexer_addr
 	v1155(v1156)
 	v1157 = *result
-	tobool2912 = byte(v1157 & 1)
+	tobool2912 = (v1157 & 1) != 0
 	*retval = tobool2912
 	goto _return
 
@@ -181566,7 +181571,7 @@ if_then2916:
 
 if_end2917:
 	v1159 = *result
-	tobool2918 = byte(v1159 & 1)
+	tobool2918 = (v1159 & 1) != 0
 	*retval = tobool2918
 	goto _return
 
@@ -181581,7 +181586,7 @@ sw_bb2919:
 	v1163 = *lexer_addr
 	v1162(v1163)
 	v1164 = *result
-	tobool2922 = byte(v1164 & 1)
+	tobool2922 = (v1164 & 1) != 0
 	*retval = tobool2922
 	goto _return
 
@@ -181600,7 +181605,7 @@ if_then2926:
 
 if_end2927:
 	v1166 = *result
-	tobool2928 = byte(v1166 & 1)
+	tobool2928 = (v1166 & 1) != 0
 	*retval = tobool2928
 	goto _return
 
@@ -181615,7 +181620,7 @@ sw_bb2929:
 	v1170 = *lexer_addr
 	v1169(v1170)
 	v1171 = *result
-	tobool2932 = byte(v1171 & 1)
+	tobool2932 = (v1171 & 1) != 0
 	*retval = tobool2932
 	goto _return
 
@@ -181643,7 +181648,7 @@ if_then2939:
 
 if_end2940:
 	v1174 = *result
-	tobool2941 = byte(v1174 & 1)
+	tobool2941 = (v1174 & 1) != 0
 	*retval = tobool2941
 	goto _return
 
@@ -181671,7 +181676,7 @@ if_then2948:
 
 if_end2949:
 	v1177 = *result
-	tobool2950 = byte(v1177 & 1)
+	tobool2950 = (v1177 & 1) != 0
 	*retval = tobool2950
 	goto _return
 
@@ -181699,7 +181704,7 @@ if_then2957:
 
 if_end2958:
 	v1180 = *result
-	tobool2959 = byte(v1180 & 1)
+	tobool2959 = (v1180 & 1) != 0
 	*retval = tobool2959
 	goto _return
 
@@ -181727,7 +181732,7 @@ if_then2966:
 
 if_end2967:
 	v1183 = *result
-	tobool2968 = byte(v1183 & 1)
+	tobool2968 = (v1183 & 1) != 0
 	*retval = tobool2968
 	goto _return
 
@@ -181742,7 +181747,7 @@ sw_bb2969:
 	v1187 = *lexer_addr
 	v1186(v1187)
 	v1188 = *result
-	tobool2972 = byte(v1188 & 1)
+	tobool2972 = (v1188 & 1) != 0
 	*retval = tobool2972
 	goto _return
 
@@ -181757,7 +181762,7 @@ sw_bb2973:
 	v1192 = *lexer_addr
 	v1191(v1192)
 	v1193 = *result
-	tobool2976 = byte(v1193 & 1)
+	tobool2976 = (v1193 & 1) != 0
 	*retval = tobool2976
 	goto _return
 
@@ -181772,7 +181777,7 @@ sw_bb2977:
 	v1197 = *lexer_addr
 	v1196(v1197)
 	v1198 = *result
-	tobool2980 = byte(v1198 & 1)
+	tobool2980 = (v1198 & 1) != 0
 	*retval = tobool2980
 	goto _return
 
@@ -181800,7 +181805,7 @@ if_then2987:
 
 if_end2988:
 	v1201 = *result
-	tobool2989 = byte(v1201 & 1)
+	tobool2989 = (v1201 & 1) != 0
 	*retval = tobool2989
 	goto _return
 
@@ -181828,7 +181833,7 @@ if_then2996:
 
 if_end2997:
 	v1204 = *result
-	tobool2998 = byte(v1204 & 1)
+	tobool2998 = (v1204 & 1) != 0
 	*retval = tobool2998
 	goto _return
 
@@ -181843,7 +181848,7 @@ sw_bb2999:
 	v1208 = *lexer_addr
 	v1207(v1208)
 	v1209 = *result
-	tobool3002 = byte(v1209 & 1)
+	tobool3002 = (v1209 & 1) != 0
 	*retval = tobool3002
 	goto _return
 
@@ -181871,7 +181876,7 @@ if_then3009:
 
 if_end3010:
 	v1212 = *result
-	tobool3011 = byte(v1212 & 1)
+	tobool3011 = (v1212 & 1) != 0
 	*retval = tobool3011
 	goto _return
 
@@ -181899,7 +181904,7 @@ if_then3018:
 
 if_end3019:
 	v1215 = *result
-	tobool3020 = byte(v1215 & 1)
+	tobool3020 = (v1215 & 1) != 0
 	*retval = tobool3020
 	goto _return
 
@@ -181914,7 +181919,7 @@ sw_bb3021:
 	v1219 = *lexer_addr
 	v1218(v1219)
 	v1220 = *result
-	tobool3024 = byte(v1220 & 1)
+	tobool3024 = (v1220 & 1) != 0
 	*retval = tobool3024
 	goto _return
 
@@ -181942,7 +181947,7 @@ if_then3031:
 
 if_end3032:
 	v1223 = *result
-	tobool3033 = byte(v1223 & 1)
+	tobool3033 = (v1223 & 1) != 0
 	*retval = tobool3033
 	goto _return
 
@@ -181957,7 +181962,7 @@ sw_bb3034:
 	v1227 = *lexer_addr
 	v1226(v1227)
 	v1228 = *result
-	tobool3037 = byte(v1228 & 1)
+	tobool3037 = (v1228 & 1) != 0
 	*retval = tobool3037
 	goto _return
 
@@ -181985,7 +181990,7 @@ if_then3044:
 
 if_end3045:
 	v1231 = *result
-	tobool3046 = byte(v1231 & 1)
+	tobool3046 = (v1231 & 1) != 0
 	*retval = tobool3046
 	goto _return
 
@@ -182013,7 +182018,7 @@ if_then3053:
 
 if_end3054:
 	v1234 = *result
-	tobool3055 = byte(v1234 & 1)
+	tobool3055 = (v1234 & 1) != 0
 	*retval = tobool3055
 	goto _return
 
@@ -182041,7 +182046,7 @@ if_then3062:
 
 if_end3063:
 	v1237 = *result
-	tobool3064 = byte(v1237 & 1)
+	tobool3064 = (v1237 & 1) != 0
 	*retval = tobool3064
 	goto _return
 
@@ -182069,7 +182074,7 @@ if_then3071:
 
 if_end3072:
 	v1240 = *result
-	tobool3073 = byte(v1240 & 1)
+	tobool3073 = (v1240 & 1) != 0
 	*retval = tobool3073
 	goto _return
 
@@ -182084,7 +182089,7 @@ sw_bb3074:
 	v1244 = *lexer_addr
 	v1243(v1244)
 	v1245 = *result
-	tobool3077 = byte(v1245 & 1)
+	tobool3077 = (v1245 & 1) != 0
 	*retval = tobool3077
 	goto _return
 
@@ -182099,7 +182104,7 @@ sw_bb3078:
 	v1249 = *lexer_addr
 	v1248(v1249)
 	v1250 = *result
-	tobool3081 = byte(v1250 & 1)
+	tobool3081 = (v1250 & 1) != 0
 	*retval = tobool3081
 	goto _return
 
@@ -182114,7 +182119,7 @@ sw_bb3082:
 	v1254 = *lexer_addr
 	v1253(v1254)
 	v1255 = *result
-	tobool3085 = byte(v1255 & 1)
+	tobool3085 = (v1255 & 1) != 0
 	*retval = tobool3085
 	goto _return
 
@@ -182142,7 +182147,7 @@ if_then3092:
 
 if_end3093:
 	v1258 = *result
-	tobool3094 = byte(v1258 & 1)
+	tobool3094 = (v1258 & 1) != 0
 	*retval = tobool3094
 	goto _return
 
@@ -182170,7 +182175,7 @@ if_then3101:
 
 if_end3102:
 	v1261 = *result
-	tobool3103 = byte(v1261 & 1)
+	tobool3103 = (v1261 & 1) != 0
 	*retval = tobool3103
 	goto _return
 
@@ -182198,7 +182203,7 @@ if_then3109:
 
 if_end3110:
 	v1267 = *result
-	tobool3111 = byte(v1267 & 1)
+	tobool3111 = (v1267 & 1) != 0
 	*retval = tobool3111
 	goto _return
 
@@ -182226,7 +182231,7 @@ if_then3118:
 
 if_end3119:
 	v1270 = *result
-	tobool3120 = byte(v1270 & 1)
+	tobool3120 = (v1270 & 1) != 0
 	*retval = tobool3120
 	goto _return
 
@@ -182254,7 +182259,7 @@ if_then3127:
 
 if_end3128:
 	v1273 = *result
-	tobool3129 = byte(v1273 & 1)
+	tobool3129 = (v1273 & 1) != 0
 	*retval = tobool3129
 	goto _return
 
@@ -182269,7 +182274,7 @@ sw_bb3130:
 	v1277 = *lexer_addr
 	v1276(v1277)
 	v1278 = *result
-	tobool3133 = byte(v1278 & 1)
+	tobool3133 = (v1278 & 1) != 0
 	*retval = tobool3133
 	goto _return
 
@@ -182297,7 +182302,7 @@ if_then3140:
 
 if_end3141:
 	v1281 = *result
-	tobool3142 = byte(v1281 & 1)
+	tobool3142 = (v1281 & 1) != 0
 	*retval = tobool3142
 	goto _return
 
@@ -182325,7 +182330,7 @@ if_then3149:
 
 if_end3150:
 	v1284 = *result
-	tobool3151 = byte(v1284 & 1)
+	tobool3151 = (v1284 & 1) != 0
 	*retval = tobool3151
 	goto _return
 
@@ -182353,7 +182358,7 @@ if_then3158:
 
 if_end3159:
 	v1287 = *result
-	tobool3160 = byte(v1287 & 1)
+	tobool3160 = (v1287 & 1) != 0
 	*retval = tobool3160
 	goto _return
 
@@ -182372,7 +182377,7 @@ if_then3164:
 
 if_end3165:
 	v1289 = *result
-	tobool3166 = byte(v1289 & 1)
+	tobool3166 = (v1289 & 1) != 0
 	*retval = tobool3166
 	goto _return
 
@@ -182391,7 +182396,7 @@ if_then3170:
 
 if_end3171:
 	v1291 = *result
-	tobool3172 = byte(v1291 & 1)
+	tobool3172 = (v1291 & 1) != 0
 	*retval = tobool3172
 	goto _return
 
@@ -182419,7 +182424,7 @@ if_then3179:
 
 if_end3180:
 	v1294 = *result
-	tobool3181 = byte(v1294 & 1)
+	tobool3181 = (v1294 & 1) != 0
 	*retval = tobool3181
 	goto _return
 
@@ -182447,7 +182452,7 @@ if_then3188:
 
 if_end3189:
 	v1297 = *result
-	tobool3190 = byte(v1297 & 1)
+	tobool3190 = (v1297 & 1) != 0
 	*retval = tobool3190
 	goto _return
 
@@ -182462,7 +182467,7 @@ sw_bb3191:
 	v1301 = *lexer_addr
 	v1300(v1301)
 	v1302 = *result
-	tobool3194 = byte(v1302 & 1)
+	tobool3194 = (v1302 & 1) != 0
 	*retval = tobool3194
 	goto _return
 
@@ -182477,7 +182482,7 @@ sw_bb3195:
 	v1306 = *lexer_addr
 	v1305(v1306)
 	v1307 = *result
-	tobool3198 = byte(v1307 & 1)
+	tobool3198 = (v1307 & 1) != 0
 	*retval = tobool3198
 	goto _return
 
@@ -182492,7 +182497,7 @@ sw_bb3199:
 	v1311 = *lexer_addr
 	v1310(v1311)
 	v1312 = *result
-	tobool3202 = byte(v1312 & 1)
+	tobool3202 = (v1312 & 1) != 0
 	*retval = tobool3202
 	goto _return
 
@@ -182520,7 +182525,7 @@ if_then3209:
 
 if_end3210:
 	v1315 = *result
-	tobool3211 = byte(v1315 & 1)
+	tobool3211 = (v1315 & 1) != 0
 	*retval = tobool3211
 	goto _return
 
@@ -182548,7 +182553,7 @@ if_then3218:
 
 if_end3219:
 	v1318 = *result
-	tobool3220 = byte(v1318 & 1)
+	tobool3220 = (v1318 & 1) != 0
 	*retval = tobool3220
 	goto _return
 
@@ -182576,7 +182581,7 @@ if_then3226:
 
 if_end3227:
 	v1324 = *result
-	tobool3228 = byte(v1324 & 1)
+	tobool3228 = (v1324 & 1) != 0
 	*retval = tobool3228
 	goto _return
 
@@ -182591,7 +182596,7 @@ sw_bb3229:
 	v1328 = *lexer_addr
 	v1327(v1328)
 	v1329 = *result
-	tobool3232 = byte(v1329 & 1)
+	tobool3232 = (v1329 & 1) != 0
 	*retval = tobool3232
 	goto _return
 
@@ -182619,7 +182624,7 @@ if_then3239:
 
 if_end3240:
 	v1332 = *result
-	tobool3241 = byte(v1332 & 1)
+	tobool3241 = (v1332 & 1) != 0
 	*retval = tobool3241
 	goto _return
 
@@ -182647,7 +182652,7 @@ if_then3248:
 
 if_end3249:
 	v1335 = *result
-	tobool3250 = byte(v1335 & 1)
+	tobool3250 = (v1335 & 1) != 0
 	*retval = tobool3250
 	goto _return
 
@@ -182675,7 +182680,7 @@ if_then3257:
 
 if_end3258:
 	v1338 = *result
-	tobool3259 = byte(v1338 & 1)
+	tobool3259 = (v1338 & 1) != 0
 	*retval = tobool3259
 	goto _return
 
@@ -182690,7 +182695,7 @@ sw_bb3260:
 	v1342 = *lexer_addr
 	v1341(v1342)
 	v1343 = *result
-	tobool3263 = byte(v1343 & 1)
+	tobool3263 = (v1343 & 1) != 0
 	*retval = tobool3263
 	goto _return
 
@@ -182705,7 +182710,7 @@ sw_bb3264:
 	v1347 = *lexer_addr
 	v1346(v1347)
 	v1348 = *result
-	tobool3267 = byte(v1348 & 1)
+	tobool3267 = (v1348 & 1) != 0
 	*retval = tobool3267
 	goto _return
 
@@ -182733,7 +182738,7 @@ if_then3274:
 
 if_end3275:
 	v1351 = *result
-	tobool3276 = byte(v1351 & 1)
+	tobool3276 = (v1351 & 1) != 0
 	*retval = tobool3276
 	goto _return
 
@@ -182761,7 +182766,7 @@ if_then3283:
 
 if_end3284:
 	v1354 = *result
-	tobool3285 = byte(v1354 & 1)
+	tobool3285 = (v1354 & 1) != 0
 	*retval = tobool3285
 	goto _return
 
@@ -182789,7 +182794,7 @@ if_then3292:
 
 if_end3293:
 	v1357 = *result
-	tobool3294 = byte(v1357 & 1)
+	tobool3294 = (v1357 & 1) != 0
 	*retval = tobool3294
 	goto _return
 
@@ -182817,7 +182822,7 @@ if_then3301:
 
 if_end3302:
 	v1360 = *result
-	tobool3303 = byte(v1360 & 1)
+	tobool3303 = (v1360 & 1) != 0
 	*retval = tobool3303
 	goto _return
 
@@ -182845,7 +182850,7 @@ if_then3310:
 
 if_end3311:
 	v1363 = *result
-	tobool3312 = byte(v1363 & 1)
+	tobool3312 = (v1363 & 1) != 0
 	*retval = tobool3312
 	goto _return
 
@@ -182860,7 +182865,7 @@ sw_bb3313:
 	v1367 = *lexer_addr
 	v1366(v1367)
 	v1368 = *result
-	tobool3316 = byte(v1368 & 1)
+	tobool3316 = (v1368 & 1) != 0
 	*retval = tobool3316
 	goto _return
 
@@ -182888,7 +182893,7 @@ if_then3323:
 
 if_end3324:
 	v1371 = *result
-	tobool3325 = byte(v1371 & 1)
+	tobool3325 = (v1371 & 1) != 0
 	*retval = tobool3325
 	goto _return
 
@@ -182903,7 +182908,7 @@ sw_bb3326:
 	v1375 = *lexer_addr
 	v1374(v1375)
 	v1376 = *result
-	tobool3329 = byte(v1376 & 1)
+	tobool3329 = (v1376 & 1) != 0
 	*retval = tobool3329
 	goto _return
 
@@ -182922,7 +182927,7 @@ if_then3333:
 
 if_end3334:
 	v1378 = *result
-	tobool3335 = byte(v1378 & 1)
+	tobool3335 = (v1378 & 1) != 0
 	*retval = tobool3335
 	goto _return
 
@@ -182937,7 +182942,7 @@ sw_bb3336:
 	v1382 = *lexer_addr
 	v1381(v1382)
 	v1383 = *result
-	tobool3339 = byte(v1383 & 1)
+	tobool3339 = (v1383 & 1) != 0
 	*retval = tobool3339
 	goto _return
 
@@ -182952,7 +182957,7 @@ sw_bb3340:
 	v1387 = *lexer_addr
 	v1386(v1387)
 	v1388 = *result
-	tobool3343 = byte(v1388 & 1)
+	tobool3343 = (v1388 & 1) != 0
 	*retval = tobool3343
 	goto _return
 
@@ -182980,7 +182985,7 @@ if_then3350:
 
 if_end3351:
 	v1391 = *result
-	tobool3352 = byte(v1391 & 1)
+	tobool3352 = (v1391 & 1) != 0
 	*retval = tobool3352
 	goto _return
 
@@ -182995,7 +183000,7 @@ sw_bb3353:
 	v1395 = *lexer_addr
 	v1394(v1395)
 	v1396 = *result
-	tobool3356 = byte(v1396 & 1)
+	tobool3356 = (v1396 & 1) != 0
 	*retval = tobool3356
 	goto _return
 
@@ -183023,7 +183028,7 @@ if_then3363:
 
 if_end3364:
 	v1399 = *result
-	tobool3365 = byte(v1399 & 1)
+	tobool3365 = (v1399 & 1) != 0
 	*retval = tobool3365
 	goto _return
 
@@ -183051,7 +183056,7 @@ if_then3372:
 
 if_end3373:
 	v1402 = *result
-	tobool3374 = byte(v1402 & 1)
+	tobool3374 = (v1402 & 1) != 0
 	*retval = tobool3374
 	goto _return
 
@@ -183079,7 +183084,7 @@ if_then3381:
 
 if_end3382:
 	v1405 = *result
-	tobool3383 = byte(v1405 & 1)
+	tobool3383 = (v1405 & 1) != 0
 	*retval = tobool3383
 	goto _return
 
@@ -183094,7 +183099,7 @@ sw_bb3384:
 	v1409 = *lexer_addr
 	v1408(v1409)
 	v1410 = *result
-	tobool3387 = byte(v1410 & 1)
+	tobool3387 = (v1410 & 1) != 0
 	*retval = tobool3387
 	goto _return
 
@@ -183122,7 +183127,7 @@ if_then3394:
 
 if_end3395:
 	v1413 = *result
-	tobool3396 = byte(v1413 & 1)
+	tobool3396 = (v1413 & 1) != 0
 	*retval = tobool3396
 	goto _return
 
@@ -183150,7 +183155,7 @@ if_then3403:
 
 if_end3404:
 	v1416 = *result
-	tobool3405 = byte(v1416 & 1)
+	tobool3405 = (v1416 & 1) != 0
 	*retval = tobool3405
 	goto _return
 
@@ -183178,7 +183183,7 @@ if_then3412:
 
 if_end3413:
 	v1419 = *result
-	tobool3414 = byte(v1419 & 1)
+	tobool3414 = (v1419 & 1) != 0
 	*retval = tobool3414
 	goto _return
 
@@ -183193,7 +183198,7 @@ sw_bb3415:
 	v1423 = *lexer_addr
 	v1422(v1423)
 	v1424 = *result
-	tobool3418 = byte(v1424 & 1)
+	tobool3418 = (v1424 & 1) != 0
 	*retval = tobool3418
 	goto _return
 
@@ -183208,7 +183213,7 @@ sw_bb3419:
 	v1428 = *lexer_addr
 	v1427(v1428)
 	v1429 = *result
-	tobool3422 = byte(v1429 & 1)
+	tobool3422 = (v1429 & 1) != 0
 	*retval = tobool3422
 	goto _return
 
@@ -183223,7 +183228,7 @@ sw_bb3423:
 	v1433 = *lexer_addr
 	v1432(v1433)
 	v1434 = *result
-	tobool3426 = byte(v1434 & 1)
+	tobool3426 = (v1434 & 1) != 0
 	*retval = tobool3426
 	goto _return
 
@@ -183242,7 +183247,7 @@ if_then3430:
 
 if_end3431:
 	v1436 = *result
-	tobool3432 = byte(v1436 & 1)
+	tobool3432 = (v1436 & 1) != 0
 	*retval = tobool3432
 	goto _return
 
@@ -183257,7 +183262,7 @@ sw_bb3433:
 	v1440 = *lexer_addr
 	v1439(v1440)
 	v1441 = *result
-	tobool3436 = byte(v1441 & 1)
+	tobool3436 = (v1441 & 1) != 0
 	*retval = tobool3436
 	goto _return
 
@@ -183285,7 +183290,7 @@ if_then3443:
 
 if_end3444:
 	v1444 = *result
-	tobool3445 = byte(v1444 & 1)
+	tobool3445 = (v1444 & 1) != 0
 	*retval = tobool3445
 	goto _return
 
@@ -183300,7 +183305,7 @@ sw_bb3446:
 	v1448 = *lexer_addr
 	v1447(v1448)
 	v1449 = *result
-	tobool3449 = byte(v1449 & 1)
+	tobool3449 = (v1449 & 1) != 0
 	*retval = tobool3449
 	goto _return
 
@@ -183315,7 +183320,7 @@ sw_bb3450:
 	v1453 = *lexer_addr
 	v1452(v1453)
 	v1454 = *result
-	tobool3453 = byte(v1454 & 1)
+	tobool3453 = (v1454 & 1) != 0
 	*retval = tobool3453
 	goto _return
 
@@ -183330,7 +183335,7 @@ sw_bb3454:
 	v1458 = *lexer_addr
 	v1457(v1458)
 	v1459 = *result
-	tobool3457 = byte(v1459 & 1)
+	tobool3457 = (v1459 & 1) != 0
 	*retval = tobool3457
 	goto _return
 
@@ -183358,7 +183363,7 @@ if_then3464:
 
 if_end3465:
 	v1462 = *result
-	tobool3466 = byte(v1462 & 1)
+	tobool3466 = (v1462 & 1) != 0
 	*retval = tobool3466
 	goto _return
 
@@ -183373,7 +183378,7 @@ sw_bb3467:
 	v1466 = *lexer_addr
 	v1465(v1466)
 	v1467 = *result
-	tobool3470 = byte(v1467 & 1)
+	tobool3470 = (v1467 & 1) != 0
 	*retval = tobool3470
 	goto _return
 
@@ -183392,7 +183397,7 @@ if_then3474:
 
 if_end3475:
 	v1469 = *result
-	tobool3476 = byte(v1469 & 1)
+	tobool3476 = (v1469 & 1) != 0
 	*retval = tobool3476
 	goto _return
 
@@ -183420,7 +183425,7 @@ if_then3483:
 
 if_end3484:
 	v1472 = *result
-	tobool3485 = byte(v1472 & 1)
+	tobool3485 = (v1472 & 1) != 0
 	*retval = tobool3485
 	goto _return
 
@@ -183448,7 +183453,7 @@ if_then3492:
 
 if_end3493:
 	v1475 = *result
-	tobool3494 = byte(v1475 & 1)
+	tobool3494 = (v1475 & 1) != 0
 	*retval = tobool3494
 	goto _return
 
@@ -183467,7 +183472,7 @@ if_then3498:
 
 if_end3499:
 	v1477 = *result
-	tobool3500 = byte(v1477 & 1)
+	tobool3500 = (v1477 & 1) != 0
 	*retval = tobool3500
 	goto _return
 
@@ -183495,7 +183500,7 @@ if_then3507:
 
 if_end3508:
 	v1480 = *result
-	tobool3509 = byte(v1480 & 1)
+	tobool3509 = (v1480 & 1) != 0
 	*retval = tobool3509
 	goto _return
 
@@ -183510,7 +183515,7 @@ sw_bb3510:
 	v1484 = *lexer_addr
 	v1483(v1484)
 	v1485 = *result
-	tobool3513 = byte(v1485 & 1)
+	tobool3513 = (v1485 & 1) != 0
 	*retval = tobool3513
 	goto _return
 
@@ -183525,7 +183530,7 @@ sw_bb3514:
 	v1489 = *lexer_addr
 	v1488(v1489)
 	v1490 = *result
-	tobool3517 = byte(v1490 & 1)
+	tobool3517 = (v1490 & 1) != 0
 	*retval = tobool3517
 	goto _return
 
@@ -183540,7 +183545,7 @@ sw_bb3518:
 	v1494 = *lexer_addr
 	v1493(v1494)
 	v1495 = *result
-	tobool3521 = byte(v1495 & 1)
+	tobool3521 = (v1495 & 1) != 0
 	*retval = tobool3521
 	goto _return
 
@@ -183675,7 +183680,7 @@ if_end:
 	v14 = *heredoc
 	end_word_indentation_allowed = &v14.F0
 	v15 = *end_word_indentation_allowed
-	tobool = byte(v15 & 1)
+	tobool = (v15 & 1) != 0
 	if tobool { conv14 = 1 } else { conv14 = 0 }
 	v16 = *buffer_addr
 	v17 = *size
@@ -184370,11 +184375,11 @@ func scan(scanner *Scanner, lexer *TSLexer, valid_symbols *byte) bool {
 	v0 = *valid_symbols_addr
 	arrayidx = libc.AddPointer(v0, int(int64(11)))
 	v1 = *arrayidx
-	tobool = byte(v1 & 1)
+	tobool = (v1 & 1) != 0
 	if tobool { frombool = 1 } else { frombool = 0 }
 	*is_error_recovery = frombool
 	v2 = *is_error_recovery
-	tobool1 = byte(v2 & 1)
+	tobool1 = (v2 & 1) != 0
 	if tobool1 {
 		goto if_then
 	} else {
@@ -184397,7 +184402,7 @@ if_end:
 	v7 = *valid_symbols_addr
 	arrayidx2 = libc.AddPointer(v7, int(int64(2)))
 	v8 = *arrayidx2
-	tobool3 = byte(v8 & 1)
+	tobool3 = (v8 & 1) != 0
 	if tobool3 {
 		goto if_then4
 	} else {
@@ -184418,7 +184423,7 @@ if_end5:
 	v12 = *valid_symbols_addr
 	arrayidx6 = libc.AddPointer(v12, int(int64(1)))
 	v13 = *arrayidx6
-	tobool7 = byte(v13 & 1)
+	tobool7 = (v13 & 1) != 0
 	if tobool7 {
 		goto if_then8
 	} else {
@@ -184439,7 +184444,7 @@ if_end11:
 	v17 = *valid_symbols_addr
 	arrayidx12 = libc.AddPointer(v17, int(int64(4)))
 	v18 = *arrayidx12
-	tobool13 = byte(v18 & 1)
+	tobool13 = (v18 & 1) != 0
 	if tobool13 {
 		goto if_then14
 	} else {
@@ -184460,7 +184465,7 @@ if_end17:
 	v22 = *valid_symbols_addr
 	arrayidx18 = libc.AddPointer(v22, int(int64(3)))
 	v23 = *arrayidx18
-	tobool19 = byte(v23 & 1)
+	tobool19 = (v23 & 1) != 0
 	if tobool19 {
 		goto if_then20
 	} else {
@@ -184481,7 +184486,7 @@ if_end23:
 	v27 = *valid_symbols_addr
 	arrayidx24 = libc.AddPointer(v27, int(int64(6)))
 	v28 = *arrayidx24
-	tobool25 = byte(v28 & 1)
+	tobool25 = (v28 & 1) != 0
 	if tobool25 {
 		goto if_then26
 	} else {
@@ -184502,7 +184507,7 @@ if_end29:
 	v32 = *valid_symbols_addr
 	arrayidx30 = libc.AddPointer(v32, int(int64(5)))
 	v33 = *arrayidx30
-	tobool31 = byte(v33 & 1)
+	tobool31 = (v33 & 1) != 0
 	if tobool31 {
 		goto if_then32
 	} else {
@@ -184523,7 +184528,7 @@ if_end35:
 	v37 = *valid_symbols_addr
 	arrayidx36 = libc.AddPointer(v37, int(int64(10)))
 	v38 = *arrayidx36
-	tobool37 = byte(v38 & 1)
+	tobool37 = (v38 & 1) != 0
 	if tobool37 {
 		goto if_then38
 	} else {
@@ -184544,7 +184549,7 @@ if_end41:
 	v42 = *valid_symbols_addr
 	arrayidx42 = libc.AddPointer(v42, int(int64(9)))
 	v43 = *arrayidx42
-	tobool43 = byte(v43 & 1)
+	tobool43 = (v43 & 1) != 0
 	if tobool43 {
 		goto if_then44
 	} else {
@@ -184783,7 +184788,7 @@ if_end109:
 	v85 = *valid_symbols_addr
 	arrayidx110 = libc.AddPointer(v85, int(int64(7)))
 	v86 = *arrayidx110
-	tobool111 = byte(v86 & 1)
+	tobool111 = (v86 & 1) != 0
 	if tobool111 {
 		goto land_lhs_true
 	} else {
@@ -184813,7 +184818,7 @@ if_end115:
 	v91 = *valid_symbols_addr
 	arrayidx116 = libc.AddPointer(v91, int(int64(8)))
 	v92 = *arrayidx116
-	tobool117 = byte(v92 & 1)
+	tobool117 = (v92 & 1) != 0
 	if tobool117 {
 		goto if_then118
 	} else {
@@ -184961,7 +184966,7 @@ if_end167:
 	v127 = *valid_symbols_addr
 	arrayidx168 = v127
 	v128 = *arrayidx168
-	tobool169 = byte(v128 & 1)
+	tobool169 = (v128 & 1) != 0
 	if tobool169 {
 		goto if_then170
 	} else {
@@ -185050,7 +185055,7 @@ func scan_encapsed_part_string(scanner *Scanner, lexer *TSLexer, is_after_variab
 	*is_execution_string_addr = frombool2
 	*has_consumed_content = 0
 	v0 = *is_heredoc_addr
-	tobool = byte(v0 & 1)
+	tobool = (v0 & 1) != 0
 	if tobool {
 		goto land_lhs_true
 	} else {
@@ -185271,7 +185276,7 @@ for_inc:
 
 for_end:
 	v42 = *end_tag_matched
-	tobool44 = byte(v42 & 1)
+	tobool44 = (v42 & 1) != 0
 	if tobool44 {
 		goto if_then45
 	} else {
@@ -185394,7 +185399,7 @@ if_end75:
 
 if_end76:
 	v61 = *has_consumed_content
-	tobool77 = byte(v61 & 1)
+	tobool77 = (v61 & 1) != 0
 	if tobool77 { frombool78 = 1 } else { frombool78 = 0 }
 	*has_content = frombool78
 	goto for_cond79
@@ -185433,7 +185438,7 @@ for_cond79:
 
 sw_bb:
 	v67 = *is_heredoc_addr
-	tobool81 = byte(v67 & 1)
+	tobool81 = (v67 & 1) != 0
 	if tobool81 {
 		goto if_end86
 	} else {
@@ -185442,7 +185447,7 @@ sw_bb:
 
 land_lhs_true82:
 	v68 = *is_execution_string_addr
-	tobool83 = byte(v68 & 1)
+	tobool83 = (v68 & 1) != 0
 	if tobool83 {
 		goto if_end86
 	} else {
@@ -185451,7 +185456,7 @@ land_lhs_true82:
 
 if_then84:
 	v69 = *has_content
-	tobool85 = byte(v69 & 1)
+	tobool85 = (v69 & 1) != 0
 	*retval = tobool85
 	goto _return
 
@@ -185462,7 +185467,7 @@ if_end86:
 
 sw_bb87:
 	v71 = *is_execution_string_addr
-	tobool88 = byte(v71 & 1)
+	tobool88 = (v71 & 1) != 0
 	if tobool88 {
 		goto if_then89
 	} else {
@@ -185471,7 +185476,7 @@ sw_bb87:
 
 if_then89:
 	v72 = *has_content
-	tobool90 = byte(v72 & 1)
+	tobool90 = (v72 & 1) != 0
 	*retval = tobool90
 	goto _return
 
@@ -185482,7 +185487,7 @@ if_end91:
 
 sw_bb92:
 	v74 = *is_heredoc_addr
-	tobool93 = byte(v74 & 1)
+	tobool93 = (v74 & 1) != 0
 	if tobool93 {
 		goto if_then94
 	} else {
@@ -185491,7 +185496,7 @@ sw_bb92:
 
 if_then94:
 	v75 = *has_content
-	tobool95 = byte(v75 & 1)
+	tobool95 = (v75 & 1) != 0
 	*retval = tobool95
 	goto _return
 
@@ -185520,7 +185525,7 @@ if_then100:
 
 if_end101:
 	v81 = *is_execution_string_addr
-	tobool102 = byte(v81 & 1)
+	tobool102 = (v81 & 1) != 0
 	if tobool102 {
 		goto land_lhs_true103
 	} else {
@@ -185540,13 +185545,13 @@ land_lhs_true103:
 
 if_then106:
 	v84 = *has_content
-	tobool107 = byte(v84 & 1)
+	tobool107 = (v84 & 1) != 0
 	*retval = tobool107
 	goto _return
 
 if_end108:
 	v85 = *is_heredoc_addr
-	tobool109 = byte(v85 & 1)
+	tobool109 = (v85 & 1) != 0
 	if tobool109 {
 		goto land_lhs_true110
 	} else {
@@ -185580,7 +185585,7 @@ if_end114:
 
 if_then116:
 	v90 = *has_content
-	tobool117 = byte(v90 & 1)
+	tobool117 = (v90 & 1) != 0
 	*retval = tobool117
 	goto _return
 
@@ -185623,7 +185628,7 @@ lor_lhs_false125:
 
 if_then128:
 	v97 = *has_content
-	tobool129 = byte(v97 & 1)
+	tobool129 = (v97 & 1) != 0
 	*retval = tobool129
 	goto _return
 
@@ -185632,7 +185637,7 @@ if_end130:
 
 sw_bb131:
 	v98 = *is_after_variable_addr
-	tobool132 = byte(v98 & 1)
+	tobool132 = (v98 & 1) != 0
 	if tobool132 {
 		goto if_then133
 	} else {
@@ -185665,7 +185670,7 @@ if_then136:
 
 if_then138:
 	v104 = *has_content
-	tobool139 = byte(v104 & 1)
+	tobool139 = (v104 & 1) != 0
 	*retval = tobool139
 	goto _return
 
@@ -185680,7 +185685,7 @@ if_end142:
 
 sw_bb143:
 	v105 = *is_after_variable_addr
-	tobool144 = byte(v105 & 1)
+	tobool144 = (v105 & 1) != 0
 	if tobool144 {
 		goto if_then145
 	} else {
@@ -185689,7 +185694,7 @@ sw_bb143:
 
 if_then145:
 	v106 = *has_content
-	tobool146 = byte(v106 & 1)
+	tobool146 = (v106 & 1) != 0
 	*retval = tobool146
 	goto _return
 
@@ -185713,7 +185718,7 @@ sw_bb148:
 
 if_then151:
 	v111 = *has_content
-	tobool152 = byte(v111 & 1)
+	tobool152 = (v111 & 1) != 0
 	*retval = tobool152
 	goto _return
 
@@ -185978,7 +185983,7 @@ for_inc:
 
 for_end:
 	v36 = *end_tag_matched
-	tobool34 = byte(v36 & 1)
+	tobool34 = (v36 & 1) != 0
 	if tobool34 {
 		goto if_then35
 	} else {
@@ -186098,7 +186103,7 @@ if_end63:
 
 if_end64:
 	v55 = *has_consumed_content
-	tobool65 = byte(v55 & 1)
+	tobool65 = (v55 & 1) != 0
 	if tobool65 { frombool66 = 1 } else { frombool66 = 0 }
 	*has_content = frombool66
 	goto for_cond67
@@ -186123,7 +186128,7 @@ for_cond67:
 
 sw_bb:
 	v61 = *has_content
-	tobool69 = byte(v61 & 1)
+	tobool69 = (v61 & 1) != 0
 	*retval = tobool69
 	goto _return
 
@@ -186700,7 +186705,7 @@ lor_end:
 }
 
 func set_contains(ranges *TSCharacterRange, len int32, lookahead int32) bool {
-	var ranges_addr, range, range8 **TSCharacterRange
+	var ranges_addr, _range, range8 **TSCharacterRange
 	var v6, arrayidx, v9, v12, v15, v20, arrayidx10, v23, v26 *TSCharacterRange
 	var retval *bool
 	var len_addr, lookahead_addr, index, size, half_size, mid_index, start, end, end3, start11, end13 *int32
@@ -186708,7 +186713,7 @@ func set_contains(ranges *TSCharacterRange, len int32, lookahead int32) bool {
 	var v0, v1, sub, v2, v3, div, v4, v5, add, v7, v8, v10, v11, v13, v14, v16, v17, v18, v19, sub7, v21, v22, v24, v25, v27 int32
 	var idxprom, idxprom9 int64
 
-	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, ranges_addr, len_addr, lookahead_addr, index, size, half_size, mid_index, range, range8, v0, v1, sub, v2, cmp, v3, div, v4, v5, add, v6, v7, idxprom, arrayidx, v8, v9, start, v10, cmp1, v11, v12, end, v13, cmp2, v14, v15, end3, v16, cmp4, v17, v18, v19, sub7, v20, v21, idxprom9, arrayidx10, v22, v23, start11, v24, cmp12, v25, v26, end13, v27, cmp14, v28, v29
+	_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _ = retval, ranges_addr, len_addr, lookahead_addr, index, size, half_size, mid_index, _range, range8, v0, v1, sub, v2, cmp, v3, div, v4, v5, add, v6, v7, idxprom, arrayidx, v8, v9, start, v10, cmp1, v11, v12, end, v13, cmp2, v14, v15, end3, v16, cmp4, v17, v18, v19, sub7, v20, v21, idxprom9, arrayidx10, v22, v23, start11, v24, cmp12, v25, v26, end13, v27, cmp14, v28, v29
 
 	retval = new(bool)
 	ranges_addr = new(*TSCharacterRange)
@@ -186718,7 +186723,7 @@ func set_contains(ranges *TSCharacterRange, len int32, lookahead int32) bool {
 	size = new(int32)
 	half_size = new(int32)
 	mid_index = new(int32)
-	range = new(*TSCharacterRange)
+	_range = new(*TSCharacterRange)
 	range8 = new(*TSCharacterRange)
 	*ranges_addr = ranges
 	*len_addr = len
@@ -186751,9 +186756,9 @@ while_body:
 	v7 = *mid_index
 	idxprom = int64(uint64(uint32(v7)))
 	arrayidx = libc.AddPointer(v6, int(idxprom))
-	*range = arrayidx
+	*_range = arrayidx
 	v8 = *lookahead_addr
-	v9 = *range
+	v9 = *_range
 	start = &v9.F0
 	v10 = *start
 	cmp1 = v8 >= v10
@@ -186765,7 +186770,7 @@ while_body:
 
 land_lhs_true:
 	v11 = *lookahead_addr
-	v12 = *range
+	v12 = *_range
 	end = &v12.F1
 	v13 = *end
 	cmp2 = v11 <= v13
@@ -186781,7 +186786,7 @@ if_then:
 
 if_else:
 	v14 = *lookahead_addr
-	v15 = *range
+	v15 = *_range
 	end3 = &v15.F1
 	v16 = *end3
 	cmp4 = v14 > v16

@@ -1,0 +1,149 @@
+{
+  "language": "vim",
+  "file": "SOURCE.txt",
+  "root": {
+    "type": "script_file",
+    "start_byte": 0,
+    "end_byte": 120,
+    "children": [
+      {
+        "type": "user_command",
+        "start_byte": 0,
+        "end_byte": 65,
+        "children": [
+          {
+            "type": "command_name",
+            "start_byte": 0,
+            "end_byte": 6,
+            "text": "Stolen"
+          },
+          {
+            "type": "arguments",
+            "start_byte": 6,
+            "end_byte": 65,
+            "children": [
+              {
+                "type": "command_argument",
+                "start_byte": 6,
+                "end_byte": 14,
+                "text": "/adapted"
+              },
+              {
+                "type": "command_argument",
+                "start_byte": 15,
+                "end_byte": 19,
+                "text": "from"
+              },
+              {
+                "type": "command_argument",
+                "start_byte": 20,
+                "end_byte": 28,
+                "text": "upstream"
+              },
+              {
+                "type": "command_argument",
+                "start_byte": 29,
+                "end_byte": 40,
+                "text": "tree-sitter"
+              },
+              {
+                "type": "command_argument",
+                "start_byte": 41,
+                "end_byte": 47,
+                "text": "corpus"
+              },
+              {
+                "type": "command_argument",
+                "start_byte": 48,
+                "end_byte": 51,
+                "text": "for"
+              },
+              {
+                "type": "command_argument",
+                "start_byte": 52,
+                "end_byte": 56,
+                "text": "this"
+              },
+              {
+                "type": "command_argument",
+                "start_byte": 57,
+                "end_byte": 65,
+                "text": "grammar."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "unknown_builtin_statement",
+        "start_byte": 66,
+        "end_byte": 102,
+        "children": [
+          {
+            "type": "unknown_command_name",
+            "start_byte": 66,
+            "end_byte": 72,
+            "text": "origin"
+          },
+          {
+            "type": "arguments",
+            "start_byte": 72,
+            "end_byte": 102,
+            "children": [
+              {
+                "type": "command_argument",
+                "start_byte": 72,
+                "end_byte": 73,
+                "text": ":"
+              },
+              {
+                "type": "command_argument",
+                "start_byte": 74,
+                "end_byte": 95,
+                "text": "let_statement.txt#Let"
+              },
+              {
+                "type": "command_argument",
+                "start_byte": 96,
+                "end_byte": 102,
+                "text": "global"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "unknown_builtin_statement",
+        "start_byte": 103,
+        "end_byte": 119,
+        "children": [
+          {
+            "type": "unknown_command_name",
+            "start_byte": 103,
+            "end_byte": 107,
+            "text": "file"
+          },
+          {
+            "type": "arguments",
+            "start_byte": 107,
+            "end_byte": 119,
+            "children": [
+              {
+                "type": "command_argument",
+                "start_byte": 107,
+                "end_byte": 108,
+                "text": ":"
+              },
+              {
+                "type": "command_argument",
+                "start_byte": 109,
+                "end_byte": 119,
+                "text": "sample.vim"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

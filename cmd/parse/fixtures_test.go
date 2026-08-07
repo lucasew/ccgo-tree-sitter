@@ -200,6 +200,10 @@ func listFixtureSources(langDir string) ([]string, error) {
 		if strings.HasSuffix(name, goldenSuffix) {
 			continue
 		}
+		// provenance / notes (not source)
+		if name == "SOURCE.txt" || strings.HasPrefix(name, ".") {
+			continue
+		}
 		files = append(files, name)
 	}
 	slices.Sort(files)

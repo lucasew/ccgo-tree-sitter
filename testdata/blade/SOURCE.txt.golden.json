@@ -1,0 +1,17 @@
+{
+  "language": "blade",
+  "file": "SOURCE.txt",
+  "root": {
+    "type": "document",
+    "start_byte": 0,
+    "end_byte": 119,
+    "children": [
+      {
+        "type": "text",
+        "start_byte": 0,
+        "end_byte": 119,
+        "text": "Stolen/adapted from upstream tree-sitter corpus for this grammar.\norigin: attributes.txt#@class\nfile: sample.blade.php\n"
+      }
+    ]
+  }
+}

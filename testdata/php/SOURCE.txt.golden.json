@@ -1,0 +1,17 @@
+{
+  "language": "php",
+  "file": "SOURCE.txt",
+  "root": {
+    "type": "program",
+    "start_byte": 0,
+    "end_byte": 116,
+    "children": [
+      {
+        "type": "text",
+        "start_byte": 0,
+        "end_byte": 116,
+        "text": "Stolen/adapted from upstream tree-sitter corpus for this grammar.\norigin: class.txt#Abstract class\nfile: sample.php\n"
+      }
+    ]
+  }
+}

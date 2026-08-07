@@ -6,6 +6,7 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
+	"regexp"
 	"strings"
 )
 
@@ -91,7 +92,10 @@ func (t *LeavenTranspiler) TranspileGrammar(grammarPath, grammarName, grammarRoo
 	srcC := parserC
 	if hasScanner {
 		combined := filepath.Join(tmpDir, "combined.c")
-		if err := combineFiles([]string{scannerC, parserC}, combined); err != nil {
+		// scanner.c first (typed definitions), then parser.c with external-scanner
+		// prototypes stripped so void*/const prototypes do not conflict with
+		// scanner Payload*/char* definitions (idris, purescript, …).
+		if err := combineScannerAndParser(scannerC, parserC, combined); err != nil {
 			return err
 		}
 		srcC = combined
@@ -216,8 +220,21 @@ func moduleRoot() (string, error) {
 	return filepath.Dir(mod), nil
 }
 
-// combineFiles concatenates C sources into one TU for a single clang/leaven pass.
-func combineFiles(inputs []string, output string) (err error) {
+// combineScannerAndParser writes scanner.c then parser.c into one TU.
+// Parser forward decls of tree_sitter_*_external_scanner_* are stripped so
+// they do not conflict with scanner definitions (Payload* vs void*, char* vs
+// const char*).
+func combineScannerAndParser(scannerPath, parserPath, output string) (err error) {
+	scanner, err := os.ReadFile(scannerPath)
+	if err != nil {
+		return err
+	}
+	parser, err := os.ReadFile(parserPath)
+	if err != nil {
+		return err
+	}
+	parser = stripExternalScannerPrototypes(parser)
+
 	out, err := os.Create(output)
 	if err != nil {
 		return err
@@ -227,17 +244,32 @@ func combineFiles(inputs []string, output string) (err error) {
 			err = cerr
 		}
 	}()
-	for _, input := range inputs {
-		data, err := os.ReadFile(input)
-		if err != nil {
-			return err
-		}
-		if _, err = out.Write(data); err != nil {
-			return err
-		}
-		if _, err = out.WriteString("\n\n"); err != nil {
-			return err
-		}
+	if _, err = out.Write(scanner); err != nil {
+		return err
+	}
+	if _, err = out.WriteString("\n\n"); err != nil {
+		return err
+	}
+	if _, err = out.Write(parser); err != nil {
+		return err
+	}
+	if _, err = out.WriteString("\n"); err != nil {
+		return err
 	}
 	return nil
+}
+
+// externalScannerProto matches a single-line C prototype for the external
+// scanner hooks that generated parser.c emits (definition ends with '{', not ';').
+var externalScannerProto = regexp.MustCompile(
+	`(?m)^[ \t]*(?:extern[ \t]+)?` +
+		`[a-zA-Z_][\w\s\*]*\b` +
+		`tree_sitter_\w+_external_scanner_(?:create|destroy|scan|serialize|deserialize)` +
+		`\s*\([^;]*\)\s*;[ \t]*\r?\n?`,
+)
+
+// stripExternalScannerPrototypes removes parser.c forward decls of external
+// scanner API symbols. Leaves language-table references and any definitions.
+func stripExternalScannerPrototypes(src []byte) []byte {
+	return externalScannerProto.ReplaceAll(src, nil)
 }
